@@ -2715,3 +2715,31 @@ main > section:not(.hero){
 @media(max-width:560px){.universal-lightbox figure:has(.universal-lightbox-links > a:only-child) img{max-height:64vh;max-height:64dvh}.universal-lightbox-links:has(> a:only-child){width:auto;margin-top:1px;padding:0}.universal-lightbox-links:has(> a:only-child) a:only-child{justify-content:center;min-height:auto;padding:8px 16px;text-align:center}}
 html[lang="hu-HU"] .featured-historic-portrait:after{content:'Kiemelt mű'}
 html[lang="de-AT"] .featured-historic-portrait:after{content:'Ausgewähltes Werk'}
+
+/* BANHALMI refined video, mobile typography and spacing */
+.biography-source-note{margin-top:clamp(42px,6vw,82px);max-width:860px;line-height:1.55}
+.youtube-poster{position:relative;margin:0;aspect-ratio:16/9;overflow:hidden;border-radius:28px;background:#111 center/cover no-repeat;border:1px solid rgba(32,37,48,.08)}
+.youtube-poster[data-youtube-id="npJ6YeYxQ64"]{background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),url("https://i.ytimg.com/vi/npJ6YeYxQ64/maxresdefault.jpg")}
+.youtube-poster[data-youtube-id="WtcqlkGnmmY"]{background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),url("https://i.ytimg.com/vi/WtcqlkGnmmY/maxresdefault.jpg")}
+.youtube-poster-button{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:transparent;display:grid;place-items:center}
+.youtube-play{width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 12px 35px rgba(0,0,0,.2);position:relative;transition:transform .35s ease,background .35s ease}
+.youtube-play:after{content:"";position:absolute;left:31px;top:23px;border-left:24px solid #111;border-top:15px solid transparent;border-bottom:15px solid transparent}
+.youtube-poster-button:hover .youtube-play,.youtube-poster-button:focus-visible .youtube-play{transform:scale(1.06);background:#fff}
+.youtube-poster iframe{width:100%;height:100%;border:0;display:block}
+.event-video-section .youtube-poster-wide{margin:clamp(24px,4vw,48px) 0}
+.external-proof-cards-single{grid-template-columns:minmax(0,760px);justify-content:center}
+.external-proof-cards-single .external-proof-card{min-height:auto;gap:26px;padding:clamp(26px,4vw,42px)}
+.external-proof-card h3,.external-proof-card .more{overflow-wrap:normal;word-break:normal;hyphens:none}
+.media-index li{grid-template-columns:minmax(132px,auto) minmax(0,1fr)}
+.media-index span{overflow-wrap:normal;word-break:normal;hyphens:none}
+@media(max-width:760px){
+  .biography-source-note{margin-top:52px;padding-top:0}
+  .youtube-poster{border-radius:22px}
+  .youtube-play{width:62px;height:62px}
+  .youtube-play:after{left:26px;top:19px;border-left-width:20px;border-top-width:12px;border-bottom-width:12px}
+  .media-index li{grid-template-columns:1fr;gap:8px;padding:18px 0}
+  .media-index span{display:block;max-width:100%;white-space:normal}
+  .external-proof-cards-single .external-proof-card{padding:26px;gap:22px}
+  .external-proof-card h3{font-size:clamp(1.18rem,6vw,1.55rem);line-height:1.16}
+}
+@media(prefers-reduced-motion:reduce){.youtube-play{transition:none}}

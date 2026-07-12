@@ -780,3 +780,24 @@
   });
 })();
 
+
+/* Privacy-enhanced YouTube poster activation */
+(() => {
+  const activate = (poster) => {
+    if (!poster || poster.dataset.youtubeLoaded === 'true') return;
+    const id = poster.dataset.youtubeId;
+    if (!id) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+    iframe.title = 'YouTube video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    poster.dataset.youtubeLoaded = 'true';
+    poster.replaceChildren(iframe);
+  };
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('.youtube-poster-button');
+    if (button) activate(button.closest('.youtube-poster'));
+  });
+})();
