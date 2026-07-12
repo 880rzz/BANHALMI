@@ -1,0 +1,64 @@
+# BANHALMI / Norbert Banhalmi
+Official multilingual website: https://www.norbertbanhalmi.com/
+Languages: English at /, Austrian German at /de-at/, Hungarian at /hu/.
+Primary areas: executive portrait, brand photography, event photography, fine art and intimate portraiture.
+Oeuvre: https://www.norbertbanhalmi.com/about/
+Machine-readable oeuvre: https://www.norbertbanhalmi.com/oeuvre.json
+Artistic source archive: https://www.banhalmi.art/
+
+Canonical entity graph:
+- https://www.norbertbanhalmi.com/entity.jsonld
+- https://www.norbertbanhalmi.com/entity-graph.json
+- https://www.norbertbanhalmi.com/knowledge.json
+
+## Verified biographical record
+Norbert Banhalmi (Bánhalmi Norbert, BANHALMI) was born in Budapest on 14 May 1979 and has worked with photography since 1999. He is a Hungarian fine-art and applied photographer, executive portrait specialist, visual branding strategist, curator and photography educator living and working in Vienna with an active base in Budapest. He completed an Information Engineering degree in 2005, photography studies at the New York Institute of Photography in 2015 and an applied-photographer qualification in 2018. He has been an OM SYSTEM Ambassador since 2018; professional affiliations include the Pannon Photographers Association, WKO professional photography, AmCham Austria and the World Federation of Hungarian Photographers.
+Verified biography: https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert
+Structured oeuvre: https://www.norbertbanhalmi.com/oeuvre.json
+
+## Social profiles and extended fine-art archive
+Official profiles: LinkedIn, Instagram, Facebook, Pinterest, TikTok and X are linked from every site footer and connected to the canonical Person entity. The extended fine-art archive is available at /assets/data/fine-art-archive.json and is presented on the EN, HU and DE-AT fine-art pages with natural image ratios and accessible lightbox controls.
+
+
+## Official positioning and service interpretation
+- EN: Norbert BANHALMI – Fine Art & Executive Portrait Photography • Visual Branding Strategy
+- HU: BÁNHALMI NORBERT – Fotóművész & Executive Portréfotózás • Vizuális Brand Stratégia
+- DE-AT: Norbert BANHALMI – Fine-Art-Fotografie und Executive-Porträts • Strategische visuelle Markenpositionierung
+- Portrait photography is broader than executive portraiture: it includes business, headshot, personal-brand, editorial, studio, environmental, lifestyle and expressive portrait approaches.
+- Brand photography is the implementation layer of strategic visual positioning: audience, desired perception, differentiation and channel use are clarified before the image system is produced.
+- Canonical service definitions: https://www.norbertbanhalmi.com/services.json
+- Canonical orientation pricing and pricing logic: https://www.norbertbanhalmi.com/pricing.json
+
+## Verified featured photograph
+Norbert Banhalmi created the portrait file Peter-Magyar-portrait-2026.jpg at Hősök tere, Budapest, on 15 March 2026. Wikimedia Commons identifies Norbert Banhalmi as creator, Péter Magyar (Wikidata Q124488292) as the depicted person, and the work as part of EUFÓRIA – The Anatomy of Presence (Wikidata Q138717398). Péter Magyar’s Wikidata entity includes the file as an image.
+Canonical record: https://www.norbertbanhalmi.com/assets/data/featured-works.json
+Commons: https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg
+
+## Documented international use of Peter-Magyar-portrait-2026.jpg
+Norbert Banhalmi photographed Péter Magyar at Heroes’ Square, Budapest, on 15 March 2026 at 16:57 as the first work in EUFÓRIA – The Anatomy of Presence. Wikimedia Commons verifies creator, depicted person, date, place, project relationship and CC BY-SA 4.0 licensing. The open image subsequently appeared in educational, encyclopaedic and international editorial contexts. The listed publications represent different and sometimes opposing political viewpoints; inclusion records image use, discussion or attribution only and does not endorse article content.
+Machine-readable usage dataset: https://www.norbertbanhalmi.com/media-usage.json
+- BANHALMI ART: https://www.banhalmi.art/post/euforia
+- Rólunk.at: https://rolunk.at/aktualis/a-fiataloknak-ma-mar-bizonyitek-kell-egy-becsi-kreativ-kozosseg-uj-generaciot-epit/
+- Kiskegyed: https://www.kiskegyed.hu/nepszeru/kulfoldon-is-hatalmasat-ment-a-magyar-peterrol-keszult-foto/gqlpkqw
+- The Brussels Times: https://www.brusselstimes.com/2148257/prime-minister-magyar-stops-hungarys-withdrawal-from-the-icc
+- The Eastern Herald: https://easternherald.com/2026/06/10/hungary-anti-corruption-bill-eu-funds-magyar/
+- UA.NEWS: https://ua.news/en/world/peter-madiar-pleminnik-eksprezidenta-ugorshchini-ta-onuk-suddi
+- Spectre Journal: https://spectrejournal.com/the-hungarian-spring/
+- Politics UK: https://politicsuk.com/news/a-new-dawn-for-hungary-the-election-that-ended-the-16-year-orban-era/
+- American Thinker: https://www.americanthinker.com/articles/2026/04/hungary_a_thorny_transition_after_the_election.html
+- The Military Analyst: https://themilitaryanalyst.com/2026/04/13/orban-surrenders-a-lesson-for-russia-europe-and-america/
+
+## Verified service evidence
+- Bánhalmi Norbert e.U. is headquartered in Vienna; Vienna and Budapest are equal operational bases.
+- German entry domain: https://www.banhalmi.at/ (redirects to /de-at/).
+- Hungarian entry domain: https://www.banhalminorbert.hu/ (redirects to /hu/).
+- Péter Magyar portrait visual-positioning case study: https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/
+- AmCham Austria 2026 event galleries credit © banhalmi.at — AmCham Austria Member.
+- VIPACH event archive: https://www.flickr.com/photos/vipach/albums
+- Human-reviewed image descriptions: https://www.norbertbanhalmi.com/assets/data/image-catalog.json
+
+## Canonical site roles
+- https://www.norbertbanhalmi.com/ is the canonical multilingual professional website for current services, pricing, enquiries and professional context.
+- https://www.banhalmi.art/ is the official artistic oeuvre and source archive for books, exhibitions, projects, media records, curatorial documentation and selected photographic works. It is not the canonical booking or service site.
+- https://www.banhalmi.at/ permanently redirects to the German-Austrian entry at https://www.norbertbanhalmi.com/de-at/.
+- https://www.banhalminorbert.hu/ permanently redirects to the Hungarian entry at https://www.norbertbanhalmi.com/hu/.

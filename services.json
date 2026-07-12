@@ -1,0 +1,162 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://www.norbertbanhalmi.com/services.json#services",
+  "name": "BANHALMI multilingual service definitions",
+  "dateModified": "2026-07-09",
+  "itemListElement": [
+    {
+      "@type": "Service",
+      "@id": "https://www.norbertbanhalmi.com/portrait/#service",
+      "name": "Portrait Photography",
+      "alternateName": [
+        "Executive Portrait Photography",
+        "Business Portraits",
+        "Headshots",
+        "Editorial Portraits",
+        "Personal Brand Portraits",
+        "Studio Portraits",
+        "Environmental Portraits"
+      ],
+      "description": "Portrait photography by Norbert Banhalmi in Vienna and Budapest: executive, business, personal-brand, editorial, classic studio, environmental and expressive portrait styles.",
+      "provider": {
+        "@id": "https://www.norbertbanhalmi.com/#organization",
+        "headquarters": {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        "sameAs": [
+          "https://www.banhalmi.at/",
+          "https://www.banhalminorbert.hu/"
+        ],
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "companyHeadquarters",
+            "name": "Company headquarters",
+            "value": "Vienna, Austria"
+          }
+        ]
+      },
+      "url": "https://www.norbertbanhalmi.com/portrait/"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.norbertbanhalmi.com/lifestyle/#service",
+      "name": "Brand Photography and Visual Positioning Strategy",
+      "alternateName": [
+        "Visual Branding Strategy",
+        "Strategic Visual Positioning",
+        "Personal Brand Photography",
+        "Corporate Brand Photography"
+      ],
+      "description": "Brand photography and visual positioning strategy by Norbert Banhalmi: strategic image systems for founders, personal brands, teams and organizations in Vienna, Budapest and Europe.",
+      "provider": {
+        "@id": "https://www.norbertbanhalmi.com/#organization",
+        "headquarters": {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        "sameAs": [
+          "https://www.banhalmi.at/",
+          "https://www.banhalminorbert.hu/"
+        ],
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "companyHeadquarters",
+            "name": "Company headquarters",
+            "value": "Vienna, Austria"
+          }
+        ]
+      },
+      "url": "https://www.norbertbanhalmi.com/lifestyle/"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.norbertbanhalmi.com/event-photography/#service",
+      "name": "Event Photography",
+      "provider": {
+        "@id": "https://www.norbertbanhalmi.com/#organization",
+        "headquarters": {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        "sameAs": [
+          "https://www.banhalmi.at/",
+          "https://www.banhalminorbert.hu/"
+        ],
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "companyHeadquarters",
+            "name": "Company headquarters",
+            "value": "Vienna, Austria"
+          }
+        ]
+      },
+      "url": "https://www.norbertbanhalmi.com/event-photography/"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.norbertbanhalmi.com/glamour/#service",
+      "name": "Fine Art and Intimate Portrait Photography",
+      "provider": {
+        "@id": "https://www.norbertbanhalmi.com/#organization",
+        "headquarters": {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        "sameAs": [
+          "https://www.banhalmi.at/",
+          "https://www.banhalminorbert.hu/"
+        ],
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "companyHeadquarters",
+            "name": "Company headquarters",
+            "value": "Vienna, Austria"
+          }
+        ]
+      },
+      "url": "https://www.norbertbanhalmi.com/glamour/"
+    }
+  ],
+  "languageVersions": {
+    "en": "https://www.norbertbanhalmi.com/",
+    "hu-HU": "https://www.norbertbanhalmi.com/hu/",
+    "de-AT": "https://www.norbertbanhalmi.com/de-at/"
+  },
+  "pricing": "https://www.norbertbanhalmi.com/pricing.json",
+  "featuredWork": {
+    "@type": [
+      "ImageObject",
+      "Photograph"
+    ],
+    "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026",
+    "id": "peter-magyar-portrait-2026",
+    "name": "Péter Magyar portrait, Budapest, 15 March 2026",
+    "type": "executive-documentary-portrait",
+    "creator": {
+      "@id": "https://www.banhalmi.art/norbert-banhalmi",
+      "name": "Norbert Banhalmi",
+      "wikidata": "https://www.wikidata.org/wiki/Q56391118"
+    },
+    "about": {
+      "@id": "https://www.wikidata.org/wiki/Q124488292",
+      "name": "Péter Magyar"
+    },
+    "dateCreated": "2026-03-15T16:57:25+01:00",
+    "location": "Hősök tere, Budapest, Hungary",
+    "image": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
+    "width": 1351,
+    "height": 1800,
+    "encodingFormat": "image/webp",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+    "sameAs": [
+      "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg"
+    ],
+    "subjectWikidata": "https://www.wikidata.org/wiki/Q124488292",
+    "projectArticle": "https://www.banhalmi.art/post/euforia",
+    "projectWikidata": "https://www.wikidata.org/wiki/Q138717398",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "creditText": "Photograph by Norbert Banhalmi"
+  }
+}

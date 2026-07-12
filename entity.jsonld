@@ -1,0 +1,1253 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.banhalmi.art/norbert-banhalmi",
+      "name": "Norbert Banhalmi",
+      "alternateName": [
+        "Bánhalmi Norbert",
+        "BANHALMI",
+        "Norbert Bánhalmi"
+      ],
+      "givenName": "Norbert",
+      "familyName": "Banhalmi",
+      "birthDate": "1979-05-14",
+      "birthPlace": {
+        "@type": "City",
+        "@id": "https://www.wikidata.org/wiki/Q1781",
+        "name": "Budapest"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "Hungary",
+        "alternateName": "HU"
+      },
+      "jobTitle": [
+        "Fine Art Photographer",
+        "Applied Photographer",
+        "Executive Portrait Photographer",
+        "Portrait Photographer",
+        "Visual Branding Strategist",
+        "Photography Curator",
+        "Photography Educator",
+        "Visual Artist",
+        "OM SYSTEM Ambassador"
+      ],
+      "description": "Norbert BANHALMI is a Hungarian fine-art and applied photographer, executive portrait specialist, visual branding strategist, curator and photography educator. Active since 1999, he lives and works in Vienna and maintains professional ties to Budapest; his practice spans commissioned portraiture, brand and event photography, books, exhibitions, curatorial programmes and community education.",
+      "url": "https://www.banhalmi.art/norbert-banhalmi",
+      "mainEntityOfPage": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#webpage"
+      },
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q56391118",
+        "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+        "https://commons.wikimedia.org/wiki/User:B%C3%A1nhalmi_Norbert",
+        "https://www.google.com/search?kgmid=/g/11f5lxwl_6",
+        "https://www.instagram.com/norbert.banhalmi/",
+        "https://www.facebook.com/norbert.banhalmi",
+        "https://www.facebook.com/banhalmi.norbert",
+        "https://www.linkedin.com/in/norbertbanhalmi/",
+        "https://x.com/banhalminorbert",
+        "https://www.pinterest.com/norbertbanhalmi/",
+        "https://www.tiktok.com/@banhalmi.norbert"
+      ],
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
+        "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
+        "caption": "Norbert Banhalmi – Executive Portrait Photographer & Visual Artist"
+      },
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "Hungarian",
+          "alternateName": "hu"
+        },
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        },
+        {
+          "@type": "Language",
+          "name": "German",
+          "alternateName": "de"
+        }
+      ],
+      "worksFor": {
+        "@id": "https://www.norbertbanhalmi.com/#organization",
+        "sameAs": [
+          "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien%20%28bundesland%29&suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru",
+          "https://www.banhalmi.at/",
+          "https://www.banhalminorbert.hu/"
+        ],
+        "headquarters": {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "companyHeadquarters",
+            "name": "Company headquarters",
+            "value": "Vienna, Austria"
+          }
+        ]
+      },
+      "workLocation": [
+        {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+        }
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.wikidata.org/wiki/Q138413481",
+          "name": "AmCham Austria — American Chamber of Commerce in Austria",
+          "url": "https://www.amcham.at/"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.wikidata.org/wiki/Q138413557",
+          "name": "Magyar Fotóművészek Világszövetsége",
+          "alternateName": "World Federation of Hungarian Photographers",
+          "url": "https://www.mfvsz.com/hu/tagsag/"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.wikidata.org/wiki/Q138424838",
+          "name": "WKO Wien — Landesinnung der Berufsfotografie"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.norbertbanhalmi.com/#pannon-photographers-association",
+          "name": "Pannon Fényképészkör Egyesület",
+          "url": "https://fenykepeszkor.hu/"
+        }
+      ],
+      "affiliation": [
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138416887"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138482177"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138414682"
+        },
+        {
+          "@type": "Organization",
+          "name": "OM SYSTEM",
+          "url": "https://explore.omsystem.com/"
+        }
+      ],
+      "award": [
+        "Turul Award — 2021",
+        "Turul Award — 2022",
+        "TOP100 of Hungary recognition — 2022",
+        "Turul Award — 2023",
+        "Turul Award — 2024",
+        "Turul Award — 2025"
+      ],
+      "performerIn": [
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138454278"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138454296"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138454309"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138454318"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138454332"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138454346"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138454365"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138454422"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138454436"
+        }
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Turul Award Wikidata",
+          "value": "https://www.wikidata.org/wiki/Q138578053"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "TOP100 recognition Wikidata",
+          "value": "https://www.wikidata.org/wiki/Q138578385"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "professionalRole",
+          "name": "OM SYSTEM Ambassador",
+          "value": "Since 2018-09-18"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "membership",
+          "name": "Pannon Fényképészkör Egyesület — honorary member",
+          "value": "Since 2023"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "membership",
+          "name": "WKO Wien / Landesinnung der Berufsfotografie",
+          "value": "Since 2023-11-27"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "membership",
+          "name": "AmCham Austria",
+          "value": "Since 2026"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "membership",
+          "name": "Magyar Fotóművészek Világszövetsége",
+          "value": "Since 2026"
+        }
+      ],
+      "subjectOf": [
+        {
+          "@id": "https://www.norbertbanhalmi.com/#website",
+          "alternateName": [
+            "banhalmi.at — German entry domain",
+            "banhalminorbert.hu — Hungarian entry domain"
+          ]
+        },
+        {
+          "@id": "https://www.banhalmi.art/#website",
+          "name": "BANHALMI Art — official artistic oeuvre and source archive",
+          "description": "BANHALMI Art is Norbert Banhalmi's official artistic oeuvre and source archive for books, exhibitions, media appearances, curatorial documentation and selected photographic works. Current professional services, pricing and enquiries are canonical on norbertbanhalmi.com."
+        }
+      ],
+      "knowsAbout": [
+        "fine-art photography",
+        "executive portrait photography",
+        "portrait photography across multiple styles",
+        "business headshots",
+        "editorial portraiture",
+        "personal branding",
+        "visual branding strategy",
+        "strategic visual positioning",
+        "brand photography",
+        "event photography",
+        "photographic exhibitions",
+        "photography books",
+        "curatorial practice",
+        "applied photography",
+        "documentary portraiture",
+        "photography education",
+        "photography workshops",
+        "digital exhibitions",
+        "community arts",
+        "visual media literacy",
+        "artificial intelligence and image culture"
+      ],
+      "hasOccupation": [
+        {
+          "@type": "Occupation",
+          "name": "Fine Art Photographer"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Applied Photographer"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Executive Portrait Photographer"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Portrait Photographer"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Visual Branding Strategist"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Photography Curator"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Photography Educator"
+        }
+      ],
+      "creatorOf": [
+        {
+          "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        }
+      ],
+      "homeLocation": {
+        "@type": "City",
+        "@id": "https://www.wikidata.org/wiki/Q1741",
+        "name": "Vienna"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://www.norbertbanhalmi.com/#gabor-denes-university",
+          "name": "Gábor Dénes University",
+          "alternateName": [
+            "Gábor Dénes Egyetem",
+            "Gábor Dénes Főiskola"
+          ],
+          "url": "https://gde.hu/"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://www.norbertbanhalmi.com/#nyip",
+          "name": "New York Institute of Photography",
+          "url": "https://www.nyip.edu/"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://www.norbertbanhalmi.com/#focus-education",
+          "name": "FOCUS Oktatási Kft.",
+          "alternateName": "FOCUS Education"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Bachelor of Engineering",
+          "name": "Information Engineering degree, 2005",
+          "recognizedBy": {
+            "@id": "https://www.norbertbanhalmi.com/#gabor-denes-university"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Photography qualification",
+          "name": "Photography qualification, 2015",
+          "recognizedBy": {
+            "@id": "https://www.norbertbanhalmi.com/#nyip"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Applied photography qualification",
+          "name": "Applied photographer qualification, 2018",
+          "recognizedBy": {
+            "@id": "https://www.norbertbanhalmi.com/#focus-education"
+          }
+        }
+      ],
+      "citation": [
+        "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+        "https://www.wikidata.org/wiki/Q56391118"
+      ]
+    },
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://www.norbertbanhalmi.com/#organization",
+      "name": "Bánhalmi Norbert e.U.",
+      "legalName": "Bánhalmi Norbert e.U.",
+      "url": "https://www.norbertbanhalmi.com/",
+      "founder": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "email": "hello@norbertbanhalmi.com",
+      "telephone": "+4367761655592",
+      "areaServed": [
+        {
+          "@id": "https://www.wikidata.org/wiki/Q1741"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q1781"
+        },
+        "Europe"
+      ],
+      "availableLanguage": [
+        "en",
+        "hu-HU",
+        "de-AT"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Schwedenplatz 2 / Laurenzerberg 5",
+        "postalCode": "1010",
+        "addressLocality": "Wien",
+        "addressCountry": "AT"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/#logo",
+        "url": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+        "width": 512,
+        "height": 512,
+        "caption": "BANHALMI"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "hello@norbertbanhalmi.com",
+        "telephone": "+4367761655592",
+        "availableLanguage": [
+          "English",
+          "German",
+          "Hungarian"
+        ],
+        "areaServed": [
+          "AT",
+          "HU",
+          "EU"
+        ]
+      },
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q138425941",
+        "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien%20%28bundesland%29&suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru",
+        "https://www.banhalmi.at/",
+        "https://www.banhalminorbert.hu/"
+      ],
+      "location": [
+        {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+        }
+      ],
+      "description": "Photography and visual positioning practice led by Norbert BANHALMI, providing multi-style portrait photography, executive portraiture, strategic visual branding, brand photography, event documentation and fine-art work in Vienna, Budapest and across Europe.",
+      "slogan": [
+        "Norbert BANHALMI – Fine Art & Executive Portrait Photography • Visual Branding Strategy",
+        "BÁNHALMI NORBERT – Fotóművész & Executive Portréfotózás • Vizuális Brand Stratégia",
+        "Norbert BANHALMI – Fine-Art-Fotografie und Executive-Porträts • Strategische visuelle Markenpositionierung"
+      ],
+      "knowsAbout": [
+        "portrait photography",
+        "executive portraiture",
+        "visual branding strategy",
+        "visual positioning",
+        "brand photography",
+        "event photography",
+        "fine-art photography"
+      ],
+      "headquarters": {
+        "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "companyHeadquarters",
+          "name": "Company headquarters",
+          "value": "Vienna, Austria"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.norbertbanhalmi.com/#website",
+      "url": "https://www.norbertbanhalmi.com/",
+      "name": "BANHALMI | Norbert Banhalmi",
+      "publisher": {
+        "@id": "https://www.norbertbanhalmi.com/#organization",
+        "sameAs": [
+          "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien%20%28bundesland%29&suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru",
+          "https://www.banhalmi.at/",
+          "https://www.banhalminorbert.hu/"
+        ],
+        "headquarters": {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "companyHeadquarters",
+            "name": "Company headquarters",
+            "value": "Vienna, Austria"
+          }
+        ]
+      },
+      "about": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "inLanguage": [
+        "en",
+        "hu-HU",
+        "de-AT"
+      ],
+      "alternateName": [
+        "Norbert BANHALMI – Fine Art & Executive Portrait Photography • Visual Branding Strategy",
+        "BÁNHALMI NORBERT – Fotóművész & Executive Portréfotózás • Vizuális Brand Stratégia",
+        "Norbert BANHALMI – Fine-Art-Fotografie und Executive-Porträts • Strategische visuelle Markenpositionierung",
+        "banhalmi.at — German entry domain",
+        "banhalminorbert.hu — Hungarian entry domain"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.banhalmi.art/#website",
+      "url": "https://www.banhalmi.art/",
+      "name": "BANHALMI Art — official artistic oeuvre and source archive",
+      "description": "BANHALMI Art is Norbert Banhalmi's official artistic oeuvre and source archive for books, exhibitions, media appearances, curatorial documentation and selected photographic works. Current professional services, pricing and enquiries are canonical on norbertbanhalmi.com.",
+      "about": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "inLanguage": [
+        "hu",
+        "en",
+        "de"
+      ]
+    },
+    {
+      "@type": "City",
+      "@id": "https://www.wikidata.org/wiki/Q1741",
+      "name": "Vienna",
+      "sameAs": "https://www.wikidata.org/wiki/Q1741"
+    },
+    {
+      "@type": "City",
+      "@id": "https://www.wikidata.org/wiki/Q1781",
+      "name": "Budapest",
+      "sameAs": "https://www.wikidata.org/wiki/Q1781"
+    },
+    {
+      "@type": "Place",
+      "@id": "https://www.norbertbanhalmi.com/#vienna-studio",
+      "name": "Norbert Banhalmi Studio Vienna",
+      "sameAs": "https://www.wikidata.org/wiki/Q138426506",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Schwedenplatz 2 / Laurenzerberg 5",
+        "postalCode": "1010",
+        "addressLocality": "Wien",
+        "addressCountry": "AT"
+      },
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q1741"
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://www.norbertbanhalmi.com/#budapest-studio",
+      "name": "Norbert Banhalmi Studio Budapest",
+      "sameAs": "https://www.wikidata.org/wiki/Q138830452",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Lágymányosi utca 15",
+        "postalCode": "1111",
+        "addressLocality": "Budapest",
+        "addressCountry": "HU"
+      },
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q1781"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.wikidata.org/wiki/Q138413481",
+      "name": "AmCham Austria — American Chamber of Commerce in Austria",
+      "sameAs": "https://www.wikidata.org/wiki/Q138413481"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.wikidata.org/wiki/Q138413557",
+      "name": "MFVSZ — Magyar Fotóművészek Világszövetsége",
+      "sameAs": "https://www.wikidata.org/wiki/Q138413557"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.wikidata.org/wiki/Q138424838",
+      "name": "WKO Berufsfotografie — Österreichische Fotografenkammer",
+      "sameAs": "https://www.wikidata.org/wiki/Q138424838"
+    },
+    {
+      "@type": "ArtGallery",
+      "@id": "https://www.wikidata.org/wiki/Q138414682",
+      "name": "Rege Galéria Tihany – Kortárs Digitális Kiállítói Tér",
+      "sameAs": "https://www.wikidata.org/wiki/Q138414682",
+      "foundingDate": "2020",
+      "founder": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.wikidata.org/wiki/Q138416887",
+      "name": "VIPACH – Vienna Photo Art & Creative Hub",
+      "url": "https://www.vipach.at/",
+      "sameAs": "https://www.wikidata.org/wiki/Q138416887",
+      "foundingDate": "2024-09-01",
+      "founder": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.wikidata.org/wiki/Q138482177",
+      "name": "HIPStudio – Visual Identity & Presence Agency",
+      "url": "https://www.hipstudio.hu/",
+      "sameAs": "https://www.wikidata.org/wiki/Q138482177",
+      "foundingDate": "2006-03-15",
+      "founder": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://www.wikidata.org/wiki/Q138578053",
+      "name": "Turul Award",
+      "sameAs": "https://www.wikidata.org/wiki/Q138578053"
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://www.wikidata.org/wiki/Q138578385",
+      "name": "TOP100 of Hungary recognition",
+      "sameAs": "https://www.wikidata.org/wiki/Q138578385"
+    },
+    {
+      "@type": "Book",
+      "@id": "https://www.wikidata.org/wiki/Q138426842",
+      "name": "Ébredés: Az Új kezdet!",
+      "alternateName": "Awakening: The New Beginning!",
+      "url": "https://www.banhalmi.art/konyveim#ebredes",
+      "sameAs": "https://www.wikidata.org/wiki/Q138426842",
+      "datePublished": "2017",
+      "inLanguage": "hu",
+      "author": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "isbn": "9789631286632"
+    },
+    {
+      "@type": "Book",
+      "@id": "https://www.wikidata.org/wiki/Q138426876",
+      "name": "A Nő világa",
+      "alternateName": "The Woman's World",
+      "url": "https://www.banhalmi.art/konyveim#anovilaga",
+      "sameAs": "https://www.wikidata.org/wiki/Q138426876",
+      "datePublished": "2018",
+      "inLanguage": "hu",
+      "author": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "isbn": "9786150018294"
+    },
+    {
+      "@type": "Book",
+      "@id": "https://www.wikidata.org/wiki/Q138667343",
+      "name": "Mesés könyv",
+      "url": "https://bookberry.hu/termek/meses-konyv/",
+      "sameAs": "https://www.wikidata.org/wiki/Q138667343",
+      "datePublished": "2019-11-23",
+      "inLanguage": "hu",
+      "isbn": "9786156030047",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Hayden Moore"
+        },
+        {
+          "@type": "Person",
+          "name": "Carol Souya"
+        },
+        {
+          "@type": "Person",
+          "name": "Becca Prior"
+        }
+      ],
+      "illustrator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://www.wikidata.org/wiki/Q138667529",
+      "name": "Szösszenetek",
+      "alternateName": "Snippets",
+      "url": "https://www.banhalmi.art/konyveim#szosszenetek",
+      "sameAs": "https://www.wikidata.org/wiki/Q138667529",
+      "datePublished": "2017",
+      "inLanguage": "hu",
+      "author": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "isbn": "9786155596766"
+    },
+    {
+      "@type": "ExhibitionEvent",
+      "@id": "https://www.wikidata.org/wiki/Q138454278",
+      "name": "Mérföldkövek ’56",
+      "alternateName": "Milestones ’56",
+      "url": "https://www.banhalmi.art/fotokiallitasok/merfoldkovek1956",
+      "sameAs": "https://www.wikidata.org/wiki/Q138454278",
+      "startDate": "2016",
+      "performer": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "ExhibitionEvent",
+      "@id": "https://www.wikidata.org/wiki/Q138454296",
+      "name": "Magyar nők New Yorkban",
+      "alternateName": "Hungarian Women in New York",
+      "url": "https://www.banhalmi.art/fotokiallitasok/fotokiallitas3",
+      "sameAs": "https://www.wikidata.org/wiki/Q138454296",
+      "startDate": "2014",
+      "performer": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "ExhibitionEvent",
+      "@id": "https://www.wikidata.org/wiki/Q138454309",
+      "name": "Ébredés",
+      "alternateName": "Awakening",
+      "url": "https://www.banhalmi.art/fotokiallitasok/ebredes",
+      "sameAs": "https://www.wikidata.org/wiki/Q138454309",
+      "startDate": "2017",
+      "performer": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "ExhibitionEvent",
+      "@id": "https://www.wikidata.org/wiki/Q138454318",
+      "name": "Balerina projekt",
+      "alternateName": "Ballerina Project New York",
+      "url": "https://www.banhalmi.art/fotokiallitasok/balerina-project-new-york",
+      "sameAs": "https://www.wikidata.org/wiki/Q138454318",
+      "startDate": "2018",
+      "performer": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "ExhibitionEvent",
+      "@id": "https://www.wikidata.org/wiki/Q138454332",
+      "name": "The Men's Dream",
+      "url": "https://www.banhalmi.art/fotokiallitasok/themensdream",
+      "sameAs": "https://www.wikidata.org/wiki/Q138454332",
+      "startDate": "2022",
+      "performer": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "ExhibitionEvent",
+      "@id": "https://www.wikidata.org/wiki/Q138454346",
+      "name": "The Frame",
+      "url": "https://www.banhalmi.art/fotokiallitasok/theframe",
+      "sameAs": "https://www.wikidata.org/wiki/Q138454346",
+      "startDate": "2021",
+      "performer": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "ExhibitionEvent",
+      "@id": "https://www.wikidata.org/wiki/Q138454365",
+      "name": "Touch",
+      "url": "https://www.banhalmi.art/fotokiallitasok/touch-wien",
+      "sameAs": "https://www.wikidata.org/wiki/Q138454365",
+      "startDate": "2024",
+      "performer": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "ExhibitionEvent",
+      "@id": "https://www.wikidata.org/wiki/Q138454422",
+      "name": "Más/KÉPp/Más",
+      "alternateName": "Different in a Different Way",
+      "url": "https://www.banhalmi.art/fotokiallitasok/mas-kepp-mas",
+      "sameAs": "https://www.wikidata.org/wiki/Q138454422",
+      "startDate": "2025",
+      "performer": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "ExhibitionEvent",
+      "@id": "https://www.wikidata.org/wiki/Q138454436",
+      "name": "Apa lettem!",
+      "alternateName": "I Became a Father!",
+      "url": "https://www.banhalmi.art/fotokiallitasok/fotokiallitas5",
+      "sameAs": "https://www.wikidata.org/wiki/Q138454436",
+      "startDate": "2016",
+      "performer": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "VisualArtwork",
+      "@id": "https://www.banhalmi.art/post/euforia#artwork",
+      "name": "EUFÓRIA — The Anatomy of Presence",
+      "url": "https://www.banhalmi.art/post/euforia",
+      "sameAs": "https://www.wikidata.org/wiki/Q138717398",
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "dateCreated": "2026",
+      "temporalCoverage": "2026/2027",
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "hasPart": [
+        {
+          "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "ImageObject",
+        "Photograph"
+      ],
+      "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026",
+      "name": "Péter Magyar portrait, Budapest, 15 March 2026",
+      "description": "Portrait of Péter Magyar photographed by Norbert Banhalmi at Heroes’ Square in Budapest on 15 March 2026 at 16:57 as the first work in EUFÓRIA – The Anatomy of Presence. Wikimedia Commons documents creator, depicted person, date, location, project and CC BY-SA 4.0 licensing. The open image has documented reuse across international publications representing different editorial viewpoints.",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
+      "url": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "dateCreated": "2026-03-15T16:57:25+01:00",
+      "contentLocation": {
+        "@type": "Place",
+        "name": "Hősök tere, Budapest, Hungary"
+      },
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+      "isPartOf": [
+        {
+          "@id": "https://www.banhalmi.art/post/euforia#artwork"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q138717398"
+        }
+      ],
+      "subjectOf": [
+        {
+          "@id": "https://www.banhalmi.art/post/euforia#article"
+        },
+        {
+          "@id": "https://rolunk.at/aktualis/a-fiataloknak-ma-mar-bizonyitek-kell-egy-becsi-kreativ-kozosseg-uj-generaciot-epit/#article"
+        },
+        {
+          "@id": "https://www.kiskegyed.hu/nepszeru/kulfoldon-is-hatalmasat-ment-a-magyar-peterrol-keszult-foto/gqlpkqw#article"
+        },
+        {
+          "@id": "https://www.brusselstimes.com/2148257/prime-minister-magyar-stops-hungarys-withdrawal-from-the-icc#article"
+        },
+        {
+          "@id": "https://easternherald.com/2026/06/10/hungary-anti-corruption-bill-eu-funds-magyar/#article"
+        },
+        {
+          "@id": "https://ua.news/en/world/peter-madiar-pleminnik-eksprezidenta-ugorshchini-ta-onuk-suddi#article"
+        },
+        {
+          "@id": "https://spectrejournal.com/the-hungarian-spring/#article"
+        },
+        {
+          "@id": "https://politicsuk.com/news/a-new-dawn-for-hungary-the-election-that-ended-the-16-year-orban-era/#article"
+        },
+        {
+          "@id": "https://www.americanthinker.com/articles/2026/04/hungary_a_thorny_transition_after_the_election.html#article"
+        },
+        {
+          "@id": "https://themilitaryanalyst.com/2026/04/13/orban-surrenders-a-lesson-for-russia-europe-and-america/#article"
+        }
+      ],
+      "keywords": [
+        "executive portrait photography",
+        "documentary portrait",
+        "Péter Magyar",
+        "Magyar Péter",
+        "Norbert Banhalmi",
+        "Bánhalmi Norbert",
+        "EUFÓRIA",
+        "Hősök tere",
+        "Budapest",
+        "Wikimedia Commons",
+        "Wikidata Q124488292"
+      ],
+      "alternateName": [
+        "Peter-Magyar-portrait-2026.jpg",
+        "Magyar Péter portréja – Budapest, 2026. március 15."
+      ],
+      "sameAs": [
+        "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg"
+      ],
+      "isBasedOn": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+      "encodingFormat": "image/webp",
+      "width": 1351,
+      "height": 1800,
+      "creditText": "Photograph by Norbert Banhalmi",
+      "copyrightHolder": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi. Licensed under CC BY-SA 4.0.",
+      "about": {
+        "@id": "https://www.wikidata.org/wiki/Q124488292"
+      },
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Wikimedia Commons filename",
+          "value": "Peter-Magyar-portrait-2026.jpg",
+          "url": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Depicted person Wikidata",
+          "value": "Q124488292",
+          "url": "https://www.wikidata.org/wiki/Q124488292"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Creator Wikidata",
+          "value": "Q56391118",
+          "url": "https://www.wikidata.org/wiki/Q56391118"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Project Wikidata",
+          "value": "Q138717398",
+          "url": "https://www.wikidata.org/wiki/Q138717398"
+        }
+      ],
+      "associatedMedia": {
+        "@type": "DataFeed",
+        "@id": "https://www.norbertbanhalmi.com/media-usage.json#dataset",
+        "url": "https://www.norbertbanhalmi.com/media-usage.json"
+      },
+      "usageInfo": "https://www.norbertbanhalmi.com/media-usage.json"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.wikidata.org/wiki/Q124488292",
+      "name": "Péter Magyar",
+      "alternateName": [
+        "Magyar Péter",
+        "Peter Magyar"
+      ],
+      "url": "https://www.wikidata.org/wiki/Q124488292",
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "subjectOf": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      }
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://www.norbertbanhalmi.com/#gabor-denes-university",
+      "name": "Gábor Dénes University",
+      "alternateName": [
+        "Gábor Dénes Egyetem",
+        "Gábor Dénes Főiskola"
+      ],
+      "url": "https://gde.hu/"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://www.norbertbanhalmi.com/#nyip",
+      "name": "New York Institute of Photography",
+      "url": "https://www.nyip.edu/"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://www.norbertbanhalmi.com/#focus-education",
+      "name": "FOCUS Oktatási Kft.",
+      "alternateName": "FOCUS Education"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.norbertbanhalmi.com/#pannon-photographers-association",
+      "name": "Pannon Fényképészkör Egyesület",
+      "url": "https://fenykepeszkor.hu/"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://www.norbertbanhalmi.com/#vienna-hungarian-school",
+      "name": "Bécsi Magyar Iskola",
+      "alternateName": "Hungarian School Vienna",
+      "url": "https://www.magyariskola.at/"
+    },
+    {
+      "@type": "EducationalOccupationalProgram",
+      "@id": "https://www.norbertbanhalmi.com/#be-smart-kids-club",
+      "name": "Be Smart Kids Club",
+      "description": "Free digital skills programme launched in 2026 for Hungarian-speaking young people aged 10–16, connecting AI, content creation and modern web development with service to nonprofit organizations.",
+      "provider": {
+        "@id": "https://www.norbertbanhalmi.com/#vienna-hungarian-school"
+      },
+      "educationalCredentialAwarded": "Practical digital and AI literacy"
+    },
+    {
+      "@type": "ExhibitionEvent",
+      "@id": "https://www.norbertbanhalmi.com/#oncology-centre-permanent-exhibition",
+      "name": "Permanent portrait exhibition at the Csolnoky Ferenc Hospital Oncology Centre",
+      "startDate": "2018",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Hospital",
+        "name": "Csolnoky Ferenc Hospital Oncology Centre",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Veszprém",
+          "addressCountry": "HU"
+        }
+      },
+      "url": "https://www.veol.hu/vezeto-hirek/2018/03/csolnoky-ferenc-korhaz-onkologiai-centrum-rak-kiallitas",
+      "contributor": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.norbertbanhalmi.com/#wikipedia-biography-source",
+      "name": "Bánhalmi Norbert — Hungarian Wikipedia biography",
+      "url": "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+      "dateModified": "2026-06-18",
+      "inLanguage": "hu-HU",
+      "about": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.banhalmi.art/post/euforia#article",
+      "url": "https://www.banhalmi.art/post/euforia",
+      "headline": "EUFÓRIA – a Jelenlét anatómiája",
+      "datePublished": "2026-02-10",
+      "inLanguage": "hu-HU",
+      "publisher": {
+        "@type": "Organization",
+        "name": "BANHALMI ART"
+      },
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "creditText": "Primary project source documenting creation context, exact location and date, open licensing, and the later public history of the portrait."
+    },
+    {
+      "@type": "Article",
+      "@id": "https://rolunk.at/aktualis/a-fiataloknak-ma-mar-bizonyitek-kell-egy-becsi-kreativ-kozosseg-uj-generaciot-epit/#article",
+      "url": "https://rolunk.at/aktualis/a-fiataloknak-ma-mar-bizonyitek-kell-egy-becsi-kreativ-kozosseg-uj-generaciot-epit/",
+      "headline": "A fiataloknak ma már bizonyíték kell – egy bécsi kreatív közösség új generációt épít",
+      "datePublished": "2026-06-10",
+      "inLanguage": "hu-HU",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Rólunk.at"
+      },
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "creditText": "Documents the photograph as a Wikimedia, structured-data and AI-discoverability teaching case."
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.kiskegyed.hu/nepszeru/kulfoldon-is-hatalmasat-ment-a-magyar-peterrol-keszult-foto/gqlpkqw#article",
+      "url": "https://www.kiskegyed.hu/nepszeru/kulfoldon-is-hatalmasat-ment-a-magyar-peterrol-keszult-foto/gqlpkqw",
+      "headline": "Külföldön is hatalmasat ment a Magyar Péterről készült fotó",
+      "datePublished": "2026-05-25",
+      "inLanguage": "hu-HU",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kiskegyed"
+      },
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "creditText": "Coverage focused on the photograph and its international circulation."
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://www.brusselstimes.com/2148257/prime-minister-magyar-stops-hungarys-withdrawal-from-the-icc#article",
+      "url": "https://www.brusselstimes.com/2148257/prime-minister-magyar-stops-hungarys-withdrawal-from-the-icc",
+      "headline": "Prime Minister Magyar stops Hungary's withdrawal from the ICC",
+      "datePublished": "2026-05-22",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Brussels Times"
+      },
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "creditText": "Uses the exact Commons file and visibly credits Wikimedia Commons; creator attribution is anchored in the Commons record."
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://easternherald.com/2026/06/10/hungary-anti-corruption-bill-eu-funds-magyar/#article",
+      "url": "https://easternherald.com/2026/06/10/hungary-anti-corruption-bill-eu-funds-magyar/",
+      "headline": "Hungary Tables the Anti-Graft Law Meant to Unlock the Billions Orban Froze",
+      "datePublished": "2026-06-10",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Eastern Herald"
+      },
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "creditText": "Uses the portrait as the lead image and identifies Wikimedia Commons as the image source."
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://ua.news/en/world/peter-madiar-pleminnik-eksprezidenta-ugorshchini-ta-onuk-suddi#article",
+      "url": "https://ua.news/en/world/peter-madiar-pleminnik-eksprezidenta-ugorshchini-ta-onuk-suddi",
+      "headline": "Peter Magyar is the second cousin of the former president of Hungary and the grandson of a judge",
+      "datePublished": "2026-04-13",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "UA.NEWS"
+      },
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "creditText": "The portrait appears in the article body. No clear creator credit was visible in the archived page capture, so authorship is linked back to Wikimedia Commons."
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://spectrejournal.com/the-hungarian-spring/#article",
+      "url": "https://spectrejournal.com/the-hungarian-spring/",
+      "headline": "The Hungarian Spring",
+      "datePublished": "2026-05-26",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Spectre Journal"
+      },
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "creditText": "Visible caption: Photo Credit: Norbert Banhalmi via Wikimedia Commons."
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://politicsuk.com/news/a-new-dawn-for-hungary-the-election-that-ended-the-16-year-orban-era/#article",
+      "url": "https://politicsuk.com/news/a-new-dawn-for-hungary-the-election-that-ended-the-16-year-orban-era/",
+      "headline": "A New Dawn for Hungary: The Election That Ended the 16-Year Orbán Era",
+      "datePublished": "2026-04-16",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Politics UK"
+      },
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "creditText": "Visible image line names Norbert Banhalmi and identifies Flickr as the source."
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://www.americanthinker.com/articles/2026/04/hungary_a_thorny_transition_after_the_election.html#article",
+      "url": "https://www.americanthinker.com/articles/2026/04/hungary_a_thorny_transition_after_the_election.html",
+      "headline": "Hungary: A Thorny Transition After The Election",
+      "datePublished": "2026-04-17",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "American Thinker"
+      },
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "creditText": "Visible credit names Norbert Bánhalmi, CC BY-SA 4.0, via Wikimedia Commons, and states the image is unaltered."
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://themilitaryanalyst.com/2026/04/13/orban-surrenders-a-lesson-for-russia-europe-and-america/#article",
+      "url": "https://themilitaryanalyst.com/2026/04/13/orban-surrenders-a-lesson-for-russia-europe-and-america/",
+      "headline": "Orban Surrenders: A Lesson for Russia, Europe and America",
+      "datePublished": "2026-04-13",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Military Analyst"
+      },
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+      },
+      "creditText": "Archived page capture visibly credits the photograph to Norbert Banhalmi and CC BY-SA 4.0 via Wikimedia Commons."
+    }
+  ],
+  "officialPositioning": {
+    "en": "Norbert BANHALMI – Fine Art & Executive Portrait Photography • Visual Branding Strategy",
+    "hu": "BÁNHALMI NORBERT – Fotóművész & Executive Portréfotózás • Vizuális Brand Stratégia",
+    "de-AT": "Norbert BANHALMI – Fine-Art-Fotografie und Executive-Porträts • Strategische visuelle Markenpositionierung"
+  },
+  "serviceDefinitions": "https://www.norbertbanhalmi.com/services.json",
+  "pricing": "https://www.norbertbanhalmi.com/pricing.json",
+  "dateModified": "2026-07-12",
+  "sourceReferences": [
+    "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+    "https://www.wikidata.org/wiki/Q56391118",
+    "https://rolunk.at/aktualis/a-fiataloknak-ma-mar-bizonyitek-kell-egy-becsi-kreativ-kozosseg-uj-generaciot-epit/",
+    "https://www.kiskegyed.hu/nepszeru/kulfoldon-is-hatalmasat-ment-a-magyar-peterrol-keszult-foto/gqlpkqw",
+    "https://www.brusselstimes.com/2148257/prime-minister-magyar-stops-hungarys-withdrawal-from-the-icc",
+    "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+    "https://www.wikidata.org/wiki/Q124488292",
+    "https://www.banhalmi.art/post/euforia",
+    "https://easternherald.com/2026/06/10/hungary-anti-corruption-bill-eu-funds-magyar/",
+    "https://ua.news/en/world/peter-madiar-pleminnik-eksprezidenta-ugorshchini-ta-onuk-suddi",
+    "https://spectrejournal.com/the-hungarian-spring/",
+    "https://politicsuk.com/news/a-new-dawn-for-hungary-the-election-that-ended-the-16-year-orban-era/",
+    "https://www.americanthinker.com/articles/2026/04/hungary_a_thorny_transition_after_the_election.html",
+    "https://themilitaryanalyst.com/2026/04/13/orban-surrenders-a-lesson-for-russia-europe-and-america/",
+    "https://www.norbertbanhalmi.com/media-usage.json"
+  ],
+  "siteRoles": {
+    "professionalCanonical": "https://www.norbertbanhalmi.com/",
+    "professionalPurpose": "Current multilingual services, pricing, enquiries and professional context.",
+    "artisticArchive": "https://www.banhalmi.art/",
+    "artisticArchivePurpose": "Official artistic oeuvre and source archive for books, exhibitions, projects, media records, curatorial documentation and selected works."
+  }
+}
