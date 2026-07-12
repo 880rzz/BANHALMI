@@ -207,7 +207,8 @@
         "@id": "https://www.norbertbanhalmi.com/media-usage.json#dataset",
         "url": "https://www.norbertbanhalmi.com/media-usage.json"
       },
-      "usageInfo": "https://www.norbertbanhalmi.com/media-usage.json"
+      "usageInfo": "https://www.norbertbanhalmi.com/media-usage.json",
+      "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg"
     },
     {
       "@type": "Person",

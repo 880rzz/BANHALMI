@@ -56,7 +56,8 @@
         "@type": "ImageObject",
         "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
         "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
-        "caption": "Norbert Banhalmi – Executive Portrait Photographer & Visual Artist"
+        "caption": "Norbert Banhalmi – Executive Portrait Photographer & Visual Artist",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
       },
       "knowsLanguage": [
         {
@@ -397,7 +398,8 @@
         "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
         "width": 512,
         "height": 512,
-        "caption": "BANHALMI"
+        "caption": "BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
       },
       "contactPoint": {
         "@type": "ContactPoint",

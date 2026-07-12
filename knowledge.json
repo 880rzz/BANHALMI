@@ -106,7 +106,8 @@
       "https://www.banhalmi.art/post/euforia"
     ],
     "name": "Péter Magyar portrait, Budapest, 15 March 2026",
-    "mediaUsageDataset": "https://www.norbertbanhalmi.com/media-usage.json"
+    "mediaUsageDataset": "https://www.norbertbanhalmi.com/media-usage.json",
+    "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg"
   },
   "personSummary": {
     "name": "Norbert Banhalmi",
