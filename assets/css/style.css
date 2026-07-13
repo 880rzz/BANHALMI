@@ -2274,13 +2274,16 @@ main > section:not(.hero){
 
 /* Contact pathways: direct enquiry vs guided estimate */
 .contact-pathways-intro{max-width:820px;margin-bottom:32px}
-.contact-pathway-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+.contact-pathway-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
 .contact-pathway-card{display:flex;flex-direction:column;min-height:300px;padding:36px}
 .contact-pathway-card h3{margin-bottom:14px}
 .contact-pathway-card p{margin:0 0 28px;color:var(--muted);line-height:1.6}
 .contact-pathway-card .btn{margin-top:auto;align-self:flex-start}
 .contact-pathway-card-primary{border-color:rgba(157,119,45,.42);background:linear-gradient(180deg,#fff 0%,#fbf8f1 100%)}
 .contact-form-section{scroll-margin-top:88px}
+@media (max-width:1100px){
+  .contact-pathway-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 @media (max-width:760px){
   .contact-pathway-grid{grid-template-columns:1fr;gap:18px}
   .contact-pathway-card{min-height:0;padding:28px}

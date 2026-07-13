@@ -208,7 +208,8 @@
         "url": "https://www.norbertbanhalmi.com/media-usage.json"
       },
       "usageInfo": "https://www.norbertbanhalmi.com/media-usage.json",
-      "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg"
+      "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+      "copyrightNotice": "© Norbert Banhalmi. Licensed under CC BY-SA 4.0."
     },
     {
       "@type": "Person",

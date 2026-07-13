@@ -107,7 +107,9 @@
     ],
     "name": "Péter Magyar portrait, Budapest, 15 March 2026",
     "mediaUsageDataset": "https://www.norbertbanhalmi.com/media-usage.json",
-    "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg"
+    "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "copyrightNotice": "© Norbert Banhalmi. Licensed under CC BY-SA 4.0."
   },
   "personSummary": {
     "name": "Norbert Banhalmi",
