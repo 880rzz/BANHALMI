@@ -11,30 +11,18 @@
     "de-AT"
   ],
   "about": {
-    "@id": "https://www.banhalmi.art/norbert-banhalmi",
-    "name": "Bánhalmi Norbert",
-    "alternateName": [
-      "Norbert Banhalmi",
-      "Norbert Bánhalmi",
-      "Norbert BANHALMI",
-      "BANHALMI"
-    ]
+    "@id": "https://www.banhalmi.art/norbert-banhalmi"
   },
   "dataFeedElement": [
     {
-      "@id": "https://www.banhalmi.art/norbert-banhalmi",
-      "name": "Bánhalmi Norbert",
-      "alternateName": [
-        "Norbert Banhalmi",
-        "Norbert Bánhalmi",
-        "Norbert BANHALMI",
-        "BANHALMI"
-      ]
+      "@id": "https://www.banhalmi.art/norbert-banhalmi"
     },
     {
       "@id": "https://www.norbertbanhalmi.com/#organization",
       "sameAs": [
-        "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien%20%28bundesland%29&suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru"
+        "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien%20%28bundesland%29&suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru",
+        "https://www.banhalmi.at/",
+        "https://www.banhalminorbert.hu/"
       ],
       "headquarters": {
         "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
@@ -46,46 +34,19 @@
           "name": "Company headquarters",
           "value": "Vienna, Austria"
         }
-      ],
-      "founder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
-      }
+      ]
     },
     {
       "@id": "https://www.norbertbanhalmi.com/#website",
       "alternateName": [
         "banhalmi.at — German entry domain",
         "banhalminorbert.hu — Hungarian entry domain"
-      ],
-      "url": "https://www.norbertbanhalmi.com/",
-      "about": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
-      },
-      "publisher": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
-      }
+      ]
     },
     {
       "@id": "https://www.banhalmi.art/#website",
-      "name": "BANHALMI ART | Bánhalmi Norbert művészeti archívuma",
-      "description": "Bánhalmi Norbert fotóművészeti életművének, kiállításainak, könyveinek, médiamegjelenéseinek, alkotói projektjeinek és kurátori dokumentációjának hivatalos archívuma.",
-      "url": "https://www.banhalmi.art/",
-      "alternateName": [
-        "Bánhalmi Norbert fotóművészeti életműve és archívuma",
-        "BANHALMI ART"
-      ],
-      "about": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
-      },
-      "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
-      },
-      "publisher": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
-      },
-      "copyrightHolder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
-      }
+      "name": "BANHALMI Art — official artistic oeuvre and source archive",
+      "description": "BANHALMI Art is Norbert Banhalmi's official artistic oeuvre and source archive for books, exhibitions, media appearances, curatorial documentation and selected photographic works. Current professional services, pricing and enquiries are canonical on norbertbanhalmi.com."
     },
     {
       "@id": "https://www.wikidata.org/wiki/Q1741"
@@ -171,14 +132,7 @@
       "name": "EUFÓRIA — The Anatomy of Presence",
       "sameAs": "https://www.wikidata.org/wiki/Q138717398",
       "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       },
       "image": {
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
@@ -197,14 +151,7 @@
       "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026",
       "name": "Péter Magyar portrait, Budapest, 15 March 2026",
       "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       },
       "about": {
         "@id": "https://www.wikidata.org/wiki/Q124488292"
@@ -287,14 +234,7 @@
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
       },
       "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -359,14 +299,7 @@
       },
       "url": "https://www.veol.hu/vezeto-hirek/2018/03/csolnoky-ferenc-korhaz-onkologiai-centrum-rak-kiallitas",
       "contributor": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -377,14 +310,7 @@
       "dateModified": "2026-06-18",
       "inLanguage": "hu-HU",
       "about": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -595,10 +521,7 @@
       ],
       "description": "Head of the BANHALMI Budapest Studio, professional fashion and portrait photographer, OM SYSTEM Ambassador, long-term BANHALMI collaborator since 2018 and designated representative within the AmCham Austria business community.",
       "worksFor": {
-        "@id": "https://www.norbertbanhalmi.com/#organization",
-        "founder": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
-        }
+        "@id": "https://www.norbertbanhalmi.com/#organization"
       },
       "workLocation": {
         "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
@@ -629,14 +552,7 @@
         "AmCham Austria member relations"
       ],
       "colleague": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       },
       "additionalProperty": [
         {

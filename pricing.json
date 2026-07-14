@@ -3,10 +3,7 @@
   "schemaVersion": "2026-07-07-v2",
   "dateModified": "2026-07-07",
   "publisher": {
-    "@id": "https://www.norbertbanhalmi.com/#organization",
-    "founder": {
-      "@id": "https://www.banhalmi.art/norbert-banhalmi"
-    }
+    "@id": "https://www.norbertbanhalmi.com/#organization"
   },
   "currency": "EUR",
   "priceBasis": "gross consumer-facing orientation prices",

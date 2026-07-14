@@ -4,15 +4,14 @@
     {
       "@type": "Person",
       "@id": "https://www.banhalmi.art/norbert-banhalmi",
-      "name": "Bánhalmi Norbert",
+      "name": "Norbert Banhalmi",
       "alternateName": [
-        "Norbert Banhalmi",
-        "Norbert Bánhalmi",
-        "Norbert BANHALMI",
-        "BANHALMI"
+        "Bánhalmi Norbert",
+        "BANHALMI",
+        "Norbert Bánhalmi"
       ],
       "givenName": "Norbert",
-      "familyName": "Bánhalmi",
+      "familyName": "Banhalmi",
       "birthDate": "1979-05-14",
       "birthPlace": {
         "@type": "City",
@@ -82,7 +81,9 @@
       "worksFor": {
         "@id": "https://www.norbertbanhalmi.com/#organization",
         "sameAs": [
-          "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien%20%28bundesland%29&suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru"
+          "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien%20%28bundesland%29&suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru",
+          "https://www.banhalmi.at/",
+          "https://www.banhalminorbert.hu/"
         ],
         "headquarters": {
           "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
@@ -94,10 +95,7 @@
             "name": "Company headquarters",
             "value": "Vienna, Austria"
           }
-        ],
-        "founder": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
-        }
+        ]
       },
       "workLocation": [
         {
@@ -222,36 +220,12 @@
           "alternateName": [
             "banhalmi.at — German entry domain",
             "banhalminorbert.hu — Hungarian entry domain"
-          ],
-          "url": "https://www.norbertbanhalmi.com/",
-          "about": {
-            "@id": "https://www.banhalmi.art/norbert-banhalmi"
-          },
-          "publisher": {
-            "@id": "https://www.norbertbanhalmi.com/#organization"
-          }
+          ]
         },
         {
           "@id": "https://www.banhalmi.art/#website",
-          "name": "BANHALMI ART | Bánhalmi Norbert művészeti archívuma",
-          "description": "Bánhalmi Norbert fotóművészeti életművének, kiállításainak, könyveinek, médiamegjelenéseinek, alkotói projektjeinek és kurátori dokumentációjának hivatalos archívuma.",
-          "url": "https://www.banhalmi.art/",
-          "alternateName": [
-            "Bánhalmi Norbert fotóművészeti életműve és archívuma",
-            "BANHALMI ART"
-          ],
-          "about": {
-            "@id": "https://www.banhalmi.art/norbert-banhalmi"
-          },
-          "creator": {
-            "@id": "https://www.banhalmi.art/norbert-banhalmi"
-          },
-          "publisher": {
-            "@id": "https://www.norbertbanhalmi.com/#organization"
-          },
-          "copyrightHolder": {
-            "@id": "https://www.banhalmi.art/norbert-banhalmi"
-          }
+          "name": "BANHALMI Art — official artistic oeuvre and source archive",
+          "description": "BANHALMI Art is Norbert Banhalmi's official artistic oeuvre and source archive for books, exhibitions, media appearances, curatorial documentation and selected photographic works. Current professional services, pricing and enquiries are canonical on norbertbanhalmi.com."
         }
       ],
       "knowsAbout": [
@@ -373,20 +347,16 @@
       ]
     },
     {
-      "@type": "Organization",
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
       "@id": "https://www.norbertbanhalmi.com/#organization",
-      "name": "BANHALMI",
+      "name": "Bánhalmi Norbert e.U.",
       "legalName": "Bánhalmi Norbert e.U.",
       "url": "https://www.norbertbanhalmi.com/",
       "founder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       },
       "email": "hello@norbertbanhalmi.com",
       "telephone": "+4367761655592",
@@ -466,7 +436,9 @@
       ],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q138425941",
-        "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien%20%28bundesland%29&suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru"
+        "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien%20%28bundesland%29&suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru",
+        "https://www.banhalmi.at/",
+        "https://www.banhalminorbert.hu/"
       ],
       "location": [
         {
@@ -543,10 +515,7 @@
           "name": "BANHALMI membership and event support within AmCham Austria",
           "about": [
             {
-              "@id": "https://www.norbertbanhalmi.com/#organization",
-              "founder": {
-                "@id": "https://www.banhalmi.art/norbert-banhalmi"
-              }
+              "@id": "https://www.norbertbanhalmi.com/#organization"
             },
             {
               "@id": "https://www.norbertbanhalmi.com/#amcham-austria"
@@ -563,16 +532,6 @@
         {
           "@id": "https://www.norbertbanhalmi.com/speier-viko/#person"
         }
-      ],
-      "foundingDate": "2023-11-27",
-      "brand": {
-        "@id": "https://www.norbertbanhalmi.com/#brand"
-      },
-      "alternateName": [
-        "Bánhalmi Norbert Photography",
-        "Norbert BANHALMI – Fine Art & Executive Portrait Photography • Visual Branding Strategy",
-        "BÁNHALMI NORBERT – Fotóművész & Executive Portréfotózás • Vizuális Brand Stratégia",
-        "Norbert BANHALMI – Fine-Art-Fotografie und Executive-Porträts • Strategische visuelle Markenpositionierung"
       ]
     },
     {
@@ -583,7 +542,9 @@
       "publisher": {
         "@id": "https://www.norbertbanhalmi.com/#organization",
         "sameAs": [
-          "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien%20%28bundesland%29&suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru"
+          "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien%20%28bundesland%29&suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru",
+          "https://www.banhalmi.at/",
+          "https://www.banhalminorbert.hu/"
         ],
         "headquarters": {
           "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
@@ -595,10 +556,7 @@
             "name": "Company headquarters",
             "value": "Vienna, Austria"
           }
-        ],
-        "founder": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
-        }
+        ]
       },
       "about": {
         "@id": "https://www.banhalmi.art/norbert-banhalmi"
@@ -620,8 +578,8 @@
       "@type": "WebSite",
       "@id": "https://www.banhalmi.art/#website",
       "url": "https://www.banhalmi.art/",
-      "name": "BANHALMI ART | Bánhalmi Norbert művészeti archívuma",
-      "description": "Bánhalmi Norbert fotóművészeti életművének, kiállításainak, könyveinek, médiamegjelenéseinek, alkotói projektjeinek és kurátori dokumentációjának hivatalos archívuma.",
+      "name": "BANHALMI Art — official artistic oeuvre and source archive",
+      "description": "BANHALMI Art is Norbert Banhalmi's official artistic oeuvre and source archive for books, exhibitions, media appearances, curatorial documentation and selected photographic works. Current professional services, pricing and enquiries are canonical on norbertbanhalmi.com.",
       "about": {
         "@id": "https://www.banhalmi.art/norbert-banhalmi"
       },
@@ -629,20 +587,7 @@
         "hu",
         "en",
         "de"
-      ],
-      "alternateName": [
-        "Bánhalmi Norbert fotóművészeti életműve és archívuma",
-        "BANHALMI ART"
-      ],
-      "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
-      },
-      "publisher": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
-      },
-      "copyrightHolder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
-      }
+      ]
     },
     {
       "@type": "City",
@@ -718,14 +663,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138414682",
       "foundingDate": "2020",
       "founder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -736,14 +674,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138416887",
       "foundingDate": "2024-09-01",
       "founder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -754,14 +685,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138482177",
       "foundingDate": "2006-03-15",
       "founder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -786,14 +710,7 @@
       "datePublished": "2017",
       "inLanguage": "hu",
       "author": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       },
       "isbn": "9789631286632"
     },
@@ -807,14 +724,7 @@
       "datePublished": "2018",
       "inLanguage": "hu",
       "author": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       },
       "isbn": "9786150018294"
     },
@@ -842,14 +752,7 @@
         }
       ],
       "illustrator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -862,14 +765,7 @@
       "datePublished": "2017",
       "inLanguage": "hu",
       "author": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       },
       "isbn": "9786155596766"
     },
@@ -882,14 +778,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454278",
       "startDate": "2016",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -901,14 +790,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454296",
       "startDate": "2014",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -920,14 +802,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454309",
       "startDate": "2017",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -939,14 +814,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454318",
       "startDate": "2018",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -957,14 +825,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454332",
       "startDate": "2022",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -975,14 +836,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454346",
       "startDate": "2021",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -993,14 +847,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454365",
       "startDate": "2024",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -1012,14 +859,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454422",
       "startDate": "2025",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -1031,14 +871,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454436",
       "startDate": "2016",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -1048,14 +881,7 @@
       "url": "https://www.banhalmi.art/post/euforia",
       "sameAs": "https://www.wikidata.org/wiki/Q138717398",
       "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       },
       "dateCreated": "2026",
       "temporalCoverage": "2026/2027",
@@ -1079,14 +905,7 @@
       "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
       "url": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
       "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       },
       "dateCreated": "2026-03-15T16:57:25+01:00",
       "contentLocation": {
@@ -1161,14 +980,7 @@
       "height": 1800,
       "creditText": "Photograph by Norbert Banhalmi",
       "copyrightHolder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       },
       "copyrightNotice": "© Norbert Banhalmi. Licensed under CC BY-SA 4.0.",
       "about": {
@@ -1285,14 +1097,7 @@
       },
       "url": "https://www.veol.hu/vezeto-hirek/2018/03/csolnoky-ferenc-korhaz-onkologiai-centrum-rak-kiallitas",
       "contributor": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -1303,14 +1108,7 @@
       "dateModified": "2026-06-18",
       "inLanguage": "hu-HU",
       "about": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     },
     {
@@ -1521,10 +1319,7 @@
       ],
       "description": "Head of the BANHALMI Budapest Studio, professional fashion and portrait photographer, OM SYSTEM Ambassador, long-term BANHALMI collaborator since 2018 and designated representative within the AmCham Austria business community.",
       "worksFor": {
-        "@id": "https://www.norbertbanhalmi.com/#organization",
-        "founder": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
-        }
+        "@id": "https://www.norbertbanhalmi.com/#organization"
       },
       "workLocation": {
         "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
@@ -1555,14 +1350,7 @@
         "AmCham Austria member relations"
       ],
       "colleague": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi",
-        "name": "Bánhalmi Norbert",
-        "alternateName": [
-          "Norbert Banhalmi",
-          "Norbert Bánhalmi",
-          "Norbert BANHALMI",
-          "BANHALMI"
-        ]
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       },
       "additionalProperty": [
         {
@@ -1591,10 +1379,7 @@
       "name": "AmCham Austria Event Photography Support",
       "serviceType": "Business event photography and visual documentation support",
       "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#organization",
-        "founder": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
-        }
+        "@id": "https://www.norbertbanhalmi.com/#organization"
       },
       "audience": {
         "@type": "BusinessAudience",
@@ -1637,23 +1422,6 @@
         "postalCode": "1090",
         "addressLocality": "Vienna",
         "addressCountry": "AT"
-      }
-    },
-    {
-      "@type": "Brand",
-      "@id": "https://www.norbertbanhalmi.com/#brand",
-      "name": "BANHALMI",
-      "alternateName": [
-        "Norbert BANHALMI",
-        "Bánhalmi Norbert Photography"
-      ],
-      "url": "https://www.norbertbanhalmi.com/",
-      "description": "A BANHALMI fotográfiai és vizuális márka 1999 óta épül.",
-      "logo": {
-        "@id": "https://www.norbertbanhalmi.com/#logo"
-      },
-      "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
       }
     }
   ],
