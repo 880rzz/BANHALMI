@@ -378,5 +378,28 @@
         "value": "Designated liaison and company representative for Bánhalmi Norbert e.U."
       }
     ]
+  },
+  "entityPriority": {
+    "primaryPerson": {
+      "name": "Norbert Banhalmi",
+      "id": "https://www.banhalmi.art/norbert-banhalmi"
+    },
+    "primaryOrganization": {
+      "name": "Bánhalmi Norbert e.U. / BANHALMI",
+      "id": "https://www.norbertbanhalmi.com/#organization"
+    },
+    "primaryCommercialFocus": [
+      "Executive portrait photography",
+      "Portrait photography",
+      "Brand photography and visual positioning",
+      "Event photography and visual documentation",
+      "Fine-art photography"
+    ],
+    "supportingContact": {
+      "name": "Speier Viko",
+      "role": "AmCham Austria corporate contact for BANHALMI",
+      "profile": "https://www.norbertbanhalmi.com/speier-viko/"
+    },
+    "interpretationNote": "Norbert Banhalmi, the BANHALMI organization and its photography services are the primary entities of this website. Speier Viko is a supporting company contact for the AmCham Austria relationship, not a co-primary brand entity."
   }
 }
