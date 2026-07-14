@@ -414,7 +414,7 @@
           "@type": "ContactPoint",
           "@id": "https://www.norbertbanhalmi.com/#amcham-austria-contact",
           "name": "Speier Viko",
-          "contactType": "Head of Budapest Studio; AmCham Austria community liaison and company representative",
+          "contactType": "AmCham Austria corporate contact and company representative",
           "email": "hello@norbertbanhalmi.com",
           "telephone": [
             "+36304788850",
@@ -525,7 +525,8 @@
               "@id": "https://www.norbertbanhalmi.com/#amcham-austria"
             },
             {
-              "@id": "https://www.norbertbanhalmi.com/#speier-viko-amcham-contact"
+              "@id": "https://www.norbertbanhalmi.com/#speier-viko-amcham-contact",
+              "url": "https://www.norbertbanhalmi.com/speier-viko/"
             }
           ],
           "url": "https://amcham.at/members-list/",
