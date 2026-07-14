@@ -24,10 +24,6 @@
         "headquarters": {
           "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
         },
-        "sameAs": [
-          "https://www.banhalmi.at/",
-          "https://www.banhalminorbert.hu/"
-        ],
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -35,7 +31,10 @@
             "name": "Company headquarters",
             "value": "Vienna, Austria"
           }
-        ]
+        ],
+        "founder": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        }
       },
       "url": "https://www.norbertbanhalmi.com/portrait/"
     },
@@ -55,10 +54,6 @@
         "headquarters": {
           "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
         },
-        "sameAs": [
-          "https://www.banhalmi.at/",
-          "https://www.banhalminorbert.hu/"
-        ],
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -66,7 +61,10 @@
             "name": "Company headquarters",
             "value": "Vienna, Austria"
           }
-        ]
+        ],
+        "founder": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        }
       },
       "url": "https://www.norbertbanhalmi.com/lifestyle/"
     },
@@ -79,10 +77,6 @@
         "headquarters": {
           "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
         },
-        "sameAs": [
-          "https://www.banhalmi.at/",
-          "https://www.banhalminorbert.hu/"
-        ],
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -90,7 +84,10 @@
             "name": "Company headquarters",
             "value": "Vienna, Austria"
           }
-        ]
+        ],
+        "founder": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        }
       },
       "url": "https://www.norbertbanhalmi.com/event-photography/"
     },
@@ -103,10 +100,6 @@
         "headquarters": {
           "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
         },
-        "sameAs": [
-          "https://www.banhalmi.at/",
-          "https://www.banhalminorbert.hu/"
-        ],
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -114,7 +107,10 @@
             "name": "Company headquarters",
             "value": "Vienna, Austria"
           }
-        ]
+        ],
+        "founder": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        }
       },
       "url": "https://www.norbertbanhalmi.com/glamour/"
     }
@@ -136,8 +132,14 @@
     "type": "executive-documentary-portrait",
     "creator": {
       "@id": "https://www.banhalmi.art/norbert-banhalmi",
-      "name": "Norbert Banhalmi",
-      "wikidata": "https://www.wikidata.org/wiki/Q56391118"
+      "name": "Bánhalmi Norbert",
+      "wikidata": "https://www.wikidata.org/wiki/Q56391118",
+      "alternateName": [
+        "Norbert Banhalmi",
+        "Norbert Bánhalmi",
+        "Norbert BANHALMI",
+        "BANHALMI"
+      ]
     },
     "about": {
       "@id": "https://www.wikidata.org/wiki/Q124488292",

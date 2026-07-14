@@ -6,10 +6,24 @@
   "url": "https://www.norbertbanhalmi.com/knowledge.json",
   "dateModified": "2026-07-14",
   "about": {
-    "@id": "https://www.banhalmi.art/norbert-banhalmi"
+    "@id": "https://www.banhalmi.art/norbert-banhalmi",
+    "name": "Bánhalmi Norbert",
+    "alternateName": [
+      "Norbert Banhalmi",
+      "Norbert Bánhalmi",
+      "Norbert BANHALMI",
+      "BANHALMI"
+    ]
   },
   "mainEntity": {
-    "@id": "https://www.banhalmi.art/norbert-banhalmi"
+    "@id": "https://www.banhalmi.art/norbert-banhalmi",
+    "name": "Bánhalmi Norbert",
+    "alternateName": [
+      "Norbert Banhalmi",
+      "Norbert Bánhalmi",
+      "Norbert BANHALMI",
+      "BANHALMI"
+    ]
   },
   "distribution": [
     {
@@ -78,7 +92,14 @@
       "Photograph"
     ],
     "creator": {
-      "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      "@id": "https://www.banhalmi.art/norbert-banhalmi",
+      "name": "Bánhalmi Norbert",
+      "alternateName": [
+        "Norbert Banhalmi",
+        "Norbert Bánhalmi",
+        "Norbert BANHALMI",
+        "BANHALMI"
+      ]
     },
     "about": {
       "@id": "https://www.wikidata.org/wiki/Q124488292"
@@ -112,9 +133,11 @@
     "copyrightNotice": "© Norbert Banhalmi. Licensed under CC BY-SA 4.0."
   },
   "personSummary": {
-    "name": "Norbert Banhalmi",
+    "name": "Bánhalmi Norbert",
     "alternateName": [
-      "Bánhalmi Norbert",
+      "Norbert Banhalmi",
+      "Norbert Bánhalmi",
+      "Norbert BANHALMI",
       "BANHALMI"
     ],
     "birthDate": "1979-05-14",
@@ -325,7 +348,10 @@
     ],
     "description": "Head of the BANHALMI Budapest Studio, professional fashion and portrait photographer, OM SYSTEM Ambassador, long-term BANHALMI collaborator since 2018 and designated representative within the AmCham Austria business community.",
     "worksFor": {
-      "@id": "https://www.norbertbanhalmi.com/#organization"
+      "@id": "https://www.norbertbanhalmi.com/#organization",
+      "founder": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      }
     },
     "workLocation": {
       "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
@@ -356,7 +382,14 @@
       "AmCham Austria member relations"
     ],
     "colleague": {
-      "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      "@id": "https://www.banhalmi.art/norbert-banhalmi",
+      "name": "Bánhalmi Norbert",
+      "alternateName": [
+        "Norbert Banhalmi",
+        "Norbert Bánhalmi",
+        "Norbert BANHALMI",
+        "BANHALMI"
+      ]
     },
     "additionalProperty": [
       {
@@ -381,7 +414,7 @@
   },
   "entityPriority": {
     "primaryPerson": {
-      "name": "Norbert Banhalmi",
+      "name": "Bánhalmi Norbert",
       "id": "https://www.banhalmi.art/norbert-banhalmi"
     },
     "primaryOrganization": {
