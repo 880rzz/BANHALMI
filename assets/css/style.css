@@ -2811,3 +2811,10 @@ html[lang="de-AT"] .featured-historic-portrait:after{content:'Ausgewähltes Werk
   .person-profile-facts .entity-facts{grid-template-columns:1fr;gap:10px}
   .person-profile-facts .entity-facts>div{padding:18px 18px 20px;border-radius:14px}
 }
+
+
+/* Reviews consent and lazy-loader feedback */
+.reviews-consent-note{margin:22px 0 8px;padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.03)}
+.reviews-consent-note p{margin:0 0 12px;color:var(--muted);max-width:66ch}
+.review-drawer.reviews-loading [class*="elfsight-app-"]{min-height:120px;position:relative}
+.review-drawer.reviews-loading [class*="elfsight-app-"]::before{content:attr(data-loading-label);display:block;padding:24px 0;color:var(--muted);font-size:.95rem}

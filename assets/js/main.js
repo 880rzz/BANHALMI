@@ -106,57 +106,205 @@
     try { localStorage.setItem(KEY, JSON.stringify({choice:choice,version:CONSENT_VERSION,savedAt:Date.now(),expiresAt:Date.now()+CONSENT_TTL_MS})); } catch (e) {}
   }
   function hasReviewComponent() { return !!document.querySelector('[data-third-party-reviews="true"]'); }
-  var reviewObserver = null;
   var reviewDetails = null;
   var reviewDetailsHandler = null;
   var reviewLoaderArmed = false;
-  function loadReviewScripts() {
-    if (!hasReviewComponent()) return;
-    if (reviewObserver) { reviewObserver.disconnect(); reviewObserver = null; }
-    if (reviewDetails && reviewDetailsHandler) reviewDetails.removeEventListener("toggle", reviewDetailsHandler);
-    reviewDetails = null; reviewDetailsHandler = null;
-    if (!document.getElementById("trustindex-richsnippet")) {
-      var ti = document.createElement("script"); ti.id = "trustindex-richsnippet"; ti.defer = true; ti.async = true;
-      ti.src = "https://cdn.trustindex.io/assets/js/richsnippet.js?c307c9433572g62e"; document.head.appendChild(ti);
-    }
-    if (document.querySelector('[class*="elfsight-app-"]') && !document.getElementById("elfsight-platform")) {
-      var ef = document.createElement("script"); ef.id = "elfsight-platform"; ef.defer = true; ef.async = true;
-      ef.src = "https://elfsightcdn.com/platform.js"; document.head.appendChild(ef);
+  var reviewScriptsLoading = false;
+
+  function findReviewDetails(target) {
+    if (!target) return null;
+    if (target.matches && target.matches("details")) return target;
+    return target.querySelector("details.review-drawer") || target.querySelector("details") || target.closest("details");
+  }
+
+  function hasScriptSource(fragment) {
+    return Array.prototype.some.call(document.scripts, function (script) {
+      return String(script.src || "").indexOf(fragment) !== -1;
+    });
+  }
+
+  function reviewCopy() {
+    var lang = String(document.documentElement.lang || "en").toLowerCase();
+    if (lang.indexOf("hu") === 0) return {
+      note: "A Google-vélemények külső szolgáltatáson keresztül töltődnek be. A megjelenítéshez fogadja el az opcionális szolgáltatásokat.",
+      button: "Süti-beállítások megnyitása",
+      loading: "Az ügyfélvélemények betöltése…"
+    };
+    if (lang.indexOf("de") === 0) return {
+      note: "Google-Bewertungen werden über einen externen Dienst geladen. Bitte akzeptieren Sie optionale Dienste, um sie anzuzeigen.",
+      button: "Cookie-Einstellungen öffnen",
+      loading: "Kundenstimmen werden geladen…"
+    };
+    return {
+      note: "Google reviews are loaded through an external service. Please accept optional services to display them.",
+      button: "Open cookie settings",
+      loading: "Loading client reviews…"
+    };
+  }
+
+  function getReviewWidget(details) {
+    return details ? details.querySelector('[class*="elfsight-app-"]') : null;
+  }
+
+  function removeReviewConsentNote(details) {
+    if (!details) return;
+    var note = details.querySelector(".reviews-consent-note");
+    if (note) note.remove();
+  }
+
+  function showReviewConsentNote(details) {
+    if (!details || details.querySelector(".reviews-consent-note")) return;
+    var copy = reviewCopy();
+    var widget = getReviewWidget(details);
+    var note = document.createElement("div");
+    note.className = "reviews-consent-note";
+    note.setAttribute("role", "status");
+    var text = document.createElement("p");
+    text.textContent = copy.note;
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "btn btn-ghost";
+    button.textContent = copy.button;
+    button.addEventListener("click", function () { openCookieSettings(); });
+    note.appendChild(text);
+    note.appendChild(button);
+    if (widget) details.insertBefore(note, widget); else details.appendChild(note);
+  }
+
+  function setReviewLoading(details, isLoading) {
+    if (!details) return;
+    var widget = getReviewWidget(details);
+    if (!widget) return;
+    if (isLoading) {
+      var copy = reviewCopy();
+      widget.setAttribute("aria-busy", "true");
+      widget.setAttribute("data-loading-label", copy.loading);
+      details.classList.add("reviews-loading");
+    } else {
+      widget.removeAttribute("aria-busy");
+      details.classList.remove("reviews-loading");
     }
   }
-  function grant() {
-    if (window.BANHALMI_ANALYTICS && typeof window.BANHALMI_ANALYTICS.grant === "function") window.BANHALMI_ANALYTICS.grant();
-    if (!hasReviewComponent() || reviewLoaderArmed) return;
-    reviewLoaderArmed = true;
+
+  function loadReviewScripts() {
+    if (!hasReviewComponent() || reviewScriptsLoading) return;
     var target = document.querySelector('[data-third-party-reviews="true"]');
-    if (!target) return;
-    reviewDetails = target.closest("details");
-    if (reviewDetails) {
-      reviewDetails.removeAttribute("open");
-      reviewDetailsHandler = function () { if (reviewDetails && reviewDetails.open) loadReviewScripts(); };
-      reviewDetails.addEventListener("toggle", reviewDetailsHandler);
+    var details = findReviewDetails(target);
+    if (details && !details.open) return;
+
+    reviewScriptsLoading = true;
+    removeReviewConsentNote(details);
+    setReviewLoading(details, true);
+
+    // Wait until the opened <details> element has a measurable layout before
+    // Elfsight scans the widget container.
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        if (!hasScriptSource("cdn.trustindex.io/assets/js/richsnippet.js")) {
+          var ti = document.createElement("script");
+          ti.id = "trustindex-richsnippet";
+          ti.defer = true;
+          ti.async = true;
+          ti.src = "https://cdn.trustindex.io/assets/js/richsnippet.js?c307c9433572g62e";
+          document.head.appendChild(ti);
+        }
+
+        if (document.querySelector('[class*="elfsight-app-"]') && !hasScriptSource("elfsightcdn.com/platform.js")) {
+          var ef = document.createElement("script");
+          ef.id = "elfsight-platform";
+          ef.defer = true;
+          ef.async = true;
+          ef.src = "https://elfsightcdn.com/platform.js";
+          ef.addEventListener("load", function () { setReviewLoading(details, false); });
+          ef.addEventListener("error", function () {
+            reviewScriptsLoading = false;
+            setReviewLoading(details, false);
+          });
+          document.head.appendChild(ef);
+        } else {
+          setReviewLoading(details, false);
+        }
+      });
+    });
+  }
+
+  function setupReviewLoader() {
+    if (!hasReviewComponent() || reviewLoaderArmed) return;
+    var target = document.querySelector('[data-third-party-reviews="true"]');
+    reviewDetails = findReviewDetails(target);
+    if (!reviewDetails) {
+      reviewLoaderArmed = true;
+      if (readChoice() === "all") loadReviewScripts();
       return;
     }
-    // Fallback only for a page that embeds reviews without a details element.
-    loadReviewScripts();
+
+    reviewLoaderArmed = true;
+    reviewDetailsHandler = function () {
+      if (!reviewDetails || !reviewDetails.open) return;
+      if (readChoice() === "all") loadReviewScripts();
+      else {
+        showReviewConsentNote(reviewDetails);
+        openCookieSettings();
+      }
+    };
+    reviewDetails.addEventListener("toggle", reviewDetailsHandler);
+    if (reviewDetails.open) reviewDetailsHandler();
   }
+
+  function grant() {
+    if (window.BANHALMI_ANALYTICS && typeof window.BANHALMI_ANALYTICS.grant === "function") window.BANHALMI_ANALYTICS.grant();
+    setupReviewLoader();
+    removeReviewConsentNote(reviewDetails);
+    if (reviewDetails && reviewDetails.open) loadReviewScripts();
+  }
+
   function revokeThirdPartyScripts() {
     if (window.BANHALMI_ANALYTICS && typeof window.BANHALMI_ANALYTICS.revoke === "function") window.BANHALMI_ANALYTICS.revoke();
-    if (reviewObserver) { reviewObserver.disconnect(); reviewObserver = null; }
-    if (reviewDetails && reviewDetailsHandler) reviewDetails.removeEventListener("toggle", reviewDetailsHandler);
-    reviewDetails = null; reviewDetailsHandler = null; reviewLoaderArmed = false;
-    ["trustindex-richsnippet", "elfsight-platform"].forEach(function (id) { var el=document.getElementById(id); if(el&&el.parentNode)el.parentNode.removeChild(el); });
-    document.querySelectorAll('iframe[src*="trustindex"],iframe[src*="elfsight"],script[src*="trustindex"],script[src*="elfsight"]').forEach(function(el){el.remove();});
+    reviewScriptsLoading = false;
+    ["trustindex-richsnippet", "elfsight-platform"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    });
+    document.querySelectorAll('iframe[src*="trustindex"],iframe[src*="elfsight"],script[src*="trustindex"],script[src*="elfsight"]').forEach(function (el) { el.remove(); });
+    document.querySelectorAll('[class*="elfsight-app-"]').forEach(function (widget) {
+      widget.innerHTML = "";
+      widget.removeAttribute("aria-busy");
+    });
+    if (reviewDetails && reviewDetails.open) showReviewConsentNote(reviewDetails);
   }
-  function openCookieSettings() { if(!bar)return; bar.classList.add("show"); var first=bar.querySelector("button"); if(first)first.focus({preventScroll:true}); }
+
+  function openCookieSettings() {
+    if (!bar) return;
+    bar.classList.add("show");
+    var first = bar.querySelector("button");
+    if (first) first.focus({preventScroll:true});
+  }
+
+  setupReviewLoader();
   if (bar) {
-    var initialChoice=readChoice();
-    if (!initialChoice) bar.classList.add("show"); else if (initialChoice === "all") grant();
-    var accept=bar.querySelector("[data-accept]"), decline=bar.querySelector("[data-decline]");
-    if (accept) accept.addEventListener("click",function(){saveChoice("all");bar.classList.remove("show");grant();});
-    if (decline) decline.addEventListener("click",function(){var wasAll=readChoice()==="all";saveChoice("essential");revokeThirdPartyScripts();bar.classList.remove("show");if(wasAll)window.location.reload();});
+    var initialChoice = readChoice();
+    if (!initialChoice) bar.classList.add("show");
+    else if (initialChoice === "all") grant();
+    var accept = bar.querySelector("[data-accept]"), decline = bar.querySelector("[data-decline]");
+    if (accept) accept.addEventListener("click", function () {
+      saveChoice("all");
+      bar.classList.remove("show");
+      grant();
+    });
+    if (decline) decline.addEventListener("click", function () {
+      var wasAll = readChoice() === "all";
+      saveChoice("essential");
+      revokeThirdPartyScripts();
+      bar.classList.remove("show");
+      if (wasAll) window.location.reload();
+    });
   }
-  document.querySelectorAll("[data-cookie-settings]").forEach(function(button){button.addEventListener("click",function(event){event.preventDefault();openCookieSettings();});});
+  document.querySelectorAll("[data-cookie-settings]").forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      openCookieSettings();
+    });
+  });
 
 
   // Budget guidance for the guided quote builder
