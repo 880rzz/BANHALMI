@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.norbertbanhalmi.com/</loc>
     <lastmod>2026-07-11</lastmod>
@@ -468,4 +468,47 @@
     <loc>https://www.norbertbanhalmi.com/de-at/barrierefreiheit/</loc>
     <lastmod>2026-07-11</lastmod>
   </url>
-<url><loc>https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/</loc><lastmod>2026-07-11</lastmod><image:image><image:loc>https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp</image:loc><image:caption>Péter Magyar portrait, Budapest, 15 March 2026 — photograph by Norbert Banhalmi</image:caption></image:image></url><url><loc>https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/</loc><lastmod>2026-07-11</lastmod><image:image><image:loc>https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp</image:loc><image:caption>Magyar Péter portréja, Budapest, 2026. március 15. — Bánhalmi Norbert fényképe</image:caption></image:image></url><url><loc>https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/</loc><lastmod>2026-07-11</lastmod><image:image><image:loc>https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp</image:loc><image:caption>Porträt von Péter Magyar, Budapest, 15. März 2026 — Fotografie von Norbert Bánhalmi</image:caption></image:image></url></urlset>
+<url><loc>https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/</loc><lastmod>2026-07-11</lastmod><image:image><image:loc>https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp</image:loc><image:caption>Péter Magyar portrait, Budapest, 15 March 2026 — photograph by Norbert Banhalmi</image:caption></image:image></url><url><loc>https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/</loc><lastmod>2026-07-11</lastmod><image:image><image:loc>https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp</image:loc><image:caption>Magyar Péter portréja, Budapest, 2026. március 15. — Bánhalmi Norbert fényképe</image:caption></image:image></url><url><loc>https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/</loc><lastmod>2026-07-11</lastmod><image:image><image:loc>https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp</image:loc><image:caption>Porträt von Péter Magyar, Budapest, 15. März 2026 — Fotografie von Norbert Bánhalmi</image:caption></image:image></url>
+  <url>
+    <loc>https://www.norbertbanhalmi.com/speier-viko/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+    <image:image>
+      <image:loc>https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-01.webp</image:loc>
+      <image:caption>Speier Viko, Head of the BANHALMI Budapest Studio — photograph by Norbert Banhalmi</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.norbertbanhalmi.com/speier-viko/"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://www.norbertbanhalmi.com/de-at/speier-viko/"/>
+    <xhtml:link rel="alternate" hreflang="hu-HU" href="https://www.norbertbanhalmi.com/hu/speier-viko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.norbertbanhalmi.com/speier-viko/"/>
+  </url>
+  <url>
+    <loc>https://www.norbertbanhalmi.com/hu/speier-viko/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+    <image:image>
+      <image:loc>https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-01.webp</image:loc>
+      <image:caption>Speier Vikó, a BANHALMI budapesti stúdiójának vezetője — Bánhalmi Norbert fotója</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.norbertbanhalmi.com/speier-viko/"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://www.norbertbanhalmi.com/de-at/speier-viko/"/>
+    <xhtml:link rel="alternate" hreflang="hu-HU" href="https://www.norbertbanhalmi.com/hu/speier-viko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.norbertbanhalmi.com/speier-viko/"/>
+  </url>
+  <url>
+    <loc>https://www.norbertbanhalmi.com/de-at/speier-viko/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+    <image:image>
+      <image:loc>https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-01.webp</image:loc>
+      <image:caption>Speier Viko, Leiterin des BANHALMI Studios Budapest — Fotografie von Norbert Banhalmi</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.norbertbanhalmi.com/speier-viko/"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://www.norbertbanhalmi.com/de-at/speier-viko/"/>
+    <xhtml:link rel="alternate" hreflang="hu-HU" href="https://www.norbertbanhalmi.com/hu/speier-viko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.norbertbanhalmi.com/speier-viko/"/>
+  </url>
+</urlset>

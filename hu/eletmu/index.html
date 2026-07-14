@@ -117,12 +117,6 @@
       "memberOf": [
         {
           "@type": "Organization",
-          "@id": "https://www.wikidata.org/wiki/Q138413481",
-          "name": "AmCham Austria — American Chamber of Commerce in Austria",
-          "url": "https://www.amcham.at/"
-        },
-        {
-          "@type": "Organization",
           "@id": "https://www.wikidata.org/wiki/Q138413557",
           "name": "Magyar Fotóművészek Világszövetsége",
           "alternateName": "World Federation of Hungarian Photographers",
@@ -192,12 +186,6 @@
           "propertyID": "membership",
           "name": "WKO Wien / Landesinnung der Berufsfotografie",
           "value": "Since 2023-11-27"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "membership",
-          "name": "AmCham Austria",
-          "value": "Since 2026"
         },
         {
           "@type": "PropertyValue",
@@ -382,22 +370,47 @@
         },
         "creditText": "BANHALMI"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "email": "hello@norbertbanhalmi.com",
-        "telephone": "+4367761655592",
-        "availableLanguage": [
-          "English",
-          "German",
-          "Hungarian"
-        ],
-        "areaServed": [
-          "AT",
-          "HU",
-          "EU"
-        ]
-      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "hello@norbertbanhalmi.com",
+          "telephone": "+4367761655592",
+          "availableLanguage": [
+            "English",
+            "German",
+            "Hungarian"
+          ],
+          "areaServed": [
+            "AT",
+            "HU",
+            "EU"
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "@id": "https://www.norbertbanhalmi.com/#amcham-austria-contact",
+          "name": "Speier Viko",
+          "contactType": "AmCham Austria community liaison and company representative",
+          "email": "hello@norbertbanhalmi.com",
+          "telephone": [
+            "+36304788850",
+            "+4367764733262"
+          ],
+          "url": "https://www.vikospeier.com/hu/about",
+          "areaServed": [
+            "AT",
+            "HU",
+            "EU"
+          ],
+          "availableLanguage": [
+            "English",
+            "German",
+            "Hungarian"
+          ],
+          "description": "Designated contact representing Bánhalmi Norbert e.U. within the AmCham Austria business community."
+        }
+      ],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q138425941",
         "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&amp;standortid=1&amp;standortname=wien%20%28bundesland%29&amp;suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru",
@@ -425,7 +438,10 @@
         "visual positioning",
         "brand photography",
         "event photography",
-        "fine-art photography"
+        "fine-art photography",
+        "AmCham Austria business network",
+        "Austrian–United States business relations",
+        "international business event photography"
       ],
       "headquarters": {
         "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
@@ -436,6 +452,57 @@
           "propertyID": "companyHeadquarters",
           "name": "Company headquarters",
           "value": "Vienna, Austria"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "amchamAustriaMembership",
+          "name": "AmCham Austria membership",
+          "value": "Bánhalmi Norbert e.U. is a member of AmCham Austria since 2026. Official members directory: https://amcham.at/members-list/"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "amchamAustriaEventSupport",
+          "name": "AmCham Austria event photography support",
+          "value": "BANHALMI supports selected AmCham Austria and member-community events with professional photography and visual documentation."
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "amchamAustriaRepresentative",
+          "name": "AmCham Austria company representative",
+          "value": "Speier Viko is the designated contact and representative of Bánhalmi Norbert e.U. within the AmCham Austria business community."
+        }
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.norbertbanhalmi.com/#amcham-austria",
+          "name": "American Chamber of Commerce in Austria",
+          "alternateName": "AmCham Austria",
+          "url": "https://www.amcham.at/",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138413481",
+            "https://www.amcham.at/"
+          ]
+        }
+      ],
+      "subjectOf": [
+        {
+          "@type": "CreativeWork",
+          "@id": "https://www.norbertbanhalmi.com/#amcham-austria-membership-statement",
+          "name": "BANHALMI membership and event support within AmCham Austria",
+          "about": [
+            {
+              "@id": "https://www.norbertbanhalmi.com/#organization"
+            },
+            {
+              "@id": "https://www.norbertbanhalmi.com/#amcham-austria"
+            },
+            {
+              "@id": "https://www.norbertbanhalmi.com/#speier-viko-amcham-contact"
+            }
+          ],
+          "url": "https://amcham.at/members-list/",
+          "description": "Bánhalmi Norbert e.U. is an AmCham Austria member. Speier Viko is the designated community contact and company representative, and BANHALMI supports selected AmCham Austria and member events with photography."
         }
       ]
     },
@@ -537,12 +604,6 @@
       "containedInPlace": {
         "@id": "https://www.wikidata.org/wiki/Q1781"
       }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.wikidata.org/wiki/Q138413481",
-      "name": "AmCham Austria — American Chamber of Commerce in Austria",
-      "sameAs": "https://www.wikidata.org/wiki/Q138413481"
     },
     {
       "@type": "Organization",
@@ -680,15 +741,92 @@
       },
       "dateCreated": "2026",
       "temporalCoverage": "2026/2027"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.norbertbanhalmi.com/#speier-viko-amcham-contact",
+      "name": "Speier Viko",
+      "alternateName": "Speier Vikó",
+      "url": "https://www.vikospeier.com/hu/about",
+      "image": "https://www.norbertbanhalmi.com/assets/img/team/speier-viko-amcham-focus-666.webp",
+      "jobTitle": [
+        "Professional Fashion and Portrait Photographer",
+        "OM SYSTEM Ambassador",
+        "AmCham Austria Community Liaison for BANHALMI"
+      ],
+      "description": "Professional fashion and portrait photographer, OM SYSTEM Ambassador and long-term BANHALMI collaborator since 2018. She is the designated contact representing Bánhalmi Norbert e.U. within the AmCham Austria business community.",
+      "affiliation": [
+        {
+          "@id": "https://www.norbertbanhalmi.com/#organization"
+        }
+      ],
+      "knowsAbout": [
+        "fashion photography",
+        "portrait photography",
+        "event photography",
+        "international business events",
+        "AmCham Austria member relations"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.norbertbanhalmi.com/#amcham-austria-event-photography-support",
+      "name": "AmCham Austria Event Photography Support",
+      "serviceType": "Business event photography and visual documentation support",
+      "provider": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "AmCham Austria member community",
+        "audienceType": "AmCham Austria and its member organisations"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Austria"
+      },
+      "url": "https://www.norbertbanhalmi.com/contact/",
+      "description": "Bánhalmi Norbert e.U. supports selected AmCham Austria and member-community events with professional photography and visual documentation.",
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#amcham-austria"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.norbertbanhalmi.com/#amcham-austria",
+      "additionalType": "https://www.wikidata.org/wiki/Q2178147",
+      "name": "American Chamber of Commerce in Austria",
+      "alternateName": [
+        "AmCham Austria",
+        "American Chamber of Commerce Austria"
+      ],
+      "description": "A Vienna-based non-profit business and trade association promoting Austrian–United States commercial relations and providing an international business network for its members.",
+      "url": "https://www.amcham.at/",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q138413481",
+        "https://www.amcham.at/"
+      ],
+      "foundingDate": "1960",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Austria"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Porzellangasse 39/7",
+        "postalCode": "1090",
+        "addressLocality": "Vienna",
+        "addressCountry": "AT"
+      }
     }
   ]
 }</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","@id":"https://www.norbertbanhalmi.com/hu/eletmu/#webpage","url":"https://www.norbertbanhalmi.com/hu/eletmu/","name":"Bánhalmi Norbert — Életmű, életrajz, könyvek és kiállítások","description":"Bánhalmi Norbert több mint 25 éves fotográfiai életművének átfogó bemutatása: életrajz, kurátori kontextus, kiállítások, könyvek, média és alkalmazott munka.","inLanguage":"hu-HU","isPartOf":{"@type":"WebSite","@id":"https://www.norbertbanhalmi.com/#website","url":"https://www.norbertbanhalmi.com/","name":"BANHALMI","inLanguage":["en","hu-HU","de-AT"],"about":{"@id":"https://www.banhalmi.art/norbert-banhalmi"},"alternateName":["Norbert BANHALMI – Fine Art & Executive Portrait Photography • Visual Branding Strategy","BÁNHALMI NORBERT – Fotóművész & Executive Portréfotózás • Vizuális Brand Stratégia","Norbert BANHALMI – Fine-Art-Fotografie und Executive-Porträts • Strategische visuelle Markenpositionierung","banhalmi.at — German entry domain","banhalminorbert.hu — Hungarian entry domain"]},"about":{"@id":"https://www.banhalmi.art/norbert-banhalmi"},"mainEntity":{"@id":"https://www.banhalmi.art/norbert-banhalmi"},"dateCreated":"2026-07-07","dateModified":"2026-07-07","primaryImageOfPage":{"@id":"https://www.norbertbanhalmi.com/hu/eletmu/#primaryimage"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageObject","@id":"https://www.norbertbanhalmi.com/hu/eletmu/#primaryimage","contentUrl":"https://www.norbertbanhalmi.com/assets/img/curated/official-wikimedia-portrait.webp","url":"https://www.norbertbanhalmi.com/assets/img/curated/official-wikimedia-portrait.webp","caption":"Norbert Banhalmi portrait.","creator":{"@id":"https://www.banhalmi.art/norbert-banhalmi"},"creditText":"Norbert Banhalmi / BANHALMI","copyrightNotice":"© Norbert Banhalmi / BANHALMI. All rights reserved.","license":"https://www.norbertbanhalmi.com/hu/aszf/","acquireLicensePage":"https://www.norbertbanhalmi.com/hu/ajanlatkeres/","representativeOfPage":true,"width":1500,"height":1500}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://www.norbertbanhalmi.com/hu/eletmu/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Kezdőlap","item":"https://www.norbertbanhalmi.com/hu/"},{"@type":"ListItem","position":2,"name":"Huszonöt év fotográfiája, amelyet egy kérdés tart össze: ki van a látható felszín mögött?","item":"https://www.norbertbanhalmi.com/hu/eletmu/"}]}</script><link href="/pricing.json" rel="alternate" title="BANHALMI pricing data" type="application/json"/><link href="/services.json" rel="alternate" title="BANHALMI service definitions" type="application/json"/><link href="/media-usage.json" rel="alternate" title="Documented media use of Peter-Magyar-portrait-2026.jpg" type="application/ld+json"/><script defer="" src="/assets/js/analytics.js?v=20260714-ga4"></script></head><body><a class="skip-link" href="#main">Ugrás a tartalomhoz</a><header class="site-header"><div class="wrap"><nav aria-label="Fő navigáció" class="nav">
 <a class="brand" href="/hu/"><img alt="BANHALMI embléma" class="brand-logo" decoding="async" height="26" src="/assets/img/brand/banhalmi-logo-black-transparent.svg" width="26"/><span class="brand-word">BANHALMI</span></a>
 <ul class="nav-links">
 <li><a href="/hu/eletmu/">Életmű</a></li><li><a href="/hu/portre/">Portréfotózás</a></li><li><a href="/hu/brand/">Brand &amp; vizuális pozicionálás</a></li><li><a href="/hu/rendezvenyfotozas/">C-Level események</a></li><li><a href="/hu/muveszi-fotografia/">Művészi fotográfia</a></li><li><a href="/hu/archivum/">Archívum</a></li><li><a href="/hu/gyik/">GYIK</a></li><li><a href="/hu/kapcsolat/">Kapcsolat</a></li><li><a class="nav-cta" href="/hu/ajanlatkeres/">Ajánlatkérés</a></li>
-</ul><div aria-label="Nyelv" class="lang-switch" role="group"><a class="" href="/about/" hreflang="en">EN</a><span class="sep">/</span><a class="" href="/de-at/werk/" hreflang="de-AT">DE</a><span class="sep">/</span><a class="active" href="/hu/eletmu/" hreflang="hu-HU">HU</a></div><button type="button" aria-expanded="false" aria-label="Menü" class="menu-btn"><span></span><span></span><span></span></button></nav></div></header><main id="main"><section class="hero oeuvre-hero"><div class="wrap"><p class="eyebrow">Életmű · Életrajz · Kurátori kontextus</p><h1>Huszonöt év fotográfiája, amelyet egy kérdés tart össze: ki van a látható felszín mögött?</h1><p class="lead">Ez az oldal egyszerre szól két olvasónak: az ügyfélnek, aki a szakmai módszert szeretné megérteni, és a kurátornak, aki a hosszabb alkotói ívet keresi. Ugyanaz a gyakorlat mozog felelősség és sebezhetőség, alkalmazott kép és önálló kutatás között.</p><figure class="service-hero-image editorial-hero reveal"><picture><source sizes="(min-width: 960px) 420px, min(420px, calc(100vw - 44px))" srcset="/assets/img/curated/official-wikimedia-portrait-420.avif 420w, /assets/img/curated/official-wikimedia-portrait-540.avif 540w, /assets/img/curated/official-wikimedia-portrait-720.avif 720w, /assets/img/curated/official-wikimedia-portrait-960.avif 960w, /assets/img/curated/official-wikimedia-portrait-1200.avif 1200w, /assets/img/curated/official-wikimedia-portrait-1500.avif 1500w" type="image/avif"/><source sizes="(min-width: 960px) 420px, min(420px, calc(100vw - 44px))" srcset="/assets/img/curated/official-wikimedia-portrait-420.webp 420w, /assets/img/curated/official-wikimedia-portrait-540.webp 540w, /assets/img/curated/official-wikimedia-portrait-720.webp 720w, /assets/img/curated/official-wikimedia-portrait-960.webp 960w, /assets/img/curated/official-wikimedia-portrait-1200.webp 1200w, /assets/img/curated/official-wikimedia-portrait-1500.webp 1500w" type="image/webp"/><img alt="Norbert Banhalmi portrait." decoding="async" fetchpriority="high" height="1500" loading="eager" sizes="(min-width: 960px) 420px, min(420px, calc(100vw - 44px))" src="/assets/img/curated/official-wikimedia-portrait.webp" srcset="/assets/img/curated/official-wikimedia-portrait-420.webp 420w, /assets/img/curated/official-wikimedia-portrait-540.webp 540w, /assets/img/curated/official-wikimedia-portrait-720.webp 720w, /assets/img/curated/official-wikimedia-portrait-960.webp 960w, /assets/img/curated/official-wikimedia-portrait-1200.webp 1200w, /assets/img/curated/official-wikimedia-portrait-1500.webp 1500w" width="1500"/></picture></figure></div></section><section class="section-band entity-summary" id="entity-summary"><div class="wrap"><div class="section-head reveal"><span class="eyebrow">Entity summary</span><h2>Bánhalmi Norbert — ellenőrizhető szakmai áttekintés</h2></div><dl class="entity-facts reveal"><dt>Szakmai szerepek</dt><dd>Fotóművész és alkalmazott fotográfus, executive portréspecialista, vizuális brand stratéga, kurátor és fotográfiai oktató.</dd><dt>Született</dt><dd>1979. május 14., Budapest.</dd><dt>Aktív</dt><dd>1999 óta — több mint huszonöt év fotográfiai gyakorlat.</dd><dt>Fő bázisok</dt><dd>Bécs és Budapest; közép-európai és nemzetközi megbízások.</dd><dt>Tanulmányok</dt><dd>Informatikai mérnöki diploma (2005), New York Institute of Photography képzés (2015), alkalmazott fotográfusi képesítés (2018).</dd><dt>Könyvek és kiállítások</dt><dd>Három könyv, húsz dokumentált kiállítás és hosszú távú projekt, valamint 2018 óta állandó onkológiai kiállítás.</dd><dt>Szakmai kapcsolódások</dt><dd>OM SYSTEM márkanagykövet 2018 óta; Pannon tiszteletbeli tag 2023 óta; WKO szakmai tag 2023 óta; AmCham Austria- és MFVSZ-tag 2026 óta.</dd><dt>Elismerések</dt><dd>Turul-díj 2021–2025 között, TOP100 of Hungary elismerés 2022-ben.</dd><dt>Wikipédia</dt><dd><a href="https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert" rel="noopener noreferrer" target="_blank">Ellenőrzött magyar Wikipédia-életrajz ↗</a></dd></dl></div></section>
+</ul><div aria-label="Nyelv" class="lang-switch" role="group"><a class="" href="/about/" hreflang="en">EN</a><span class="sep">/</span><a class="" href="/de-at/werk/" hreflang="de-AT">DE</a><span class="sep">/</span><a class="active" href="/hu/eletmu/" hreflang="hu-HU">HU</a></div><button type="button" aria-expanded="false" aria-label="Menü" class="menu-btn"><span></span><span></span><span></span></button></nav></div></header><main id="main"><section class="hero oeuvre-hero"><div class="wrap"><p class="eyebrow">Életmű · Életrajz · Kurátori kontextus</p><h1>Huszonöt év fotográfiája, amelyet egy kérdés tart össze: ki van a látható felszín mögött?</h1><p class="lead">Ez az oldal egyszerre szól két olvasónak: az ügyfélnek, aki a szakmai módszert szeretné megérteni, és a kurátornak, aki a hosszabb alkotói ívet keresi. Ugyanaz a gyakorlat mozog felelősség és sebezhetőség, alkalmazott kép és önálló kutatás között.</p><figure class="service-hero-image editorial-hero reveal"><picture><source sizes="(min-width: 960px) 420px, min(420px, calc(100vw - 44px))" srcset="/assets/img/curated/official-wikimedia-portrait-420.avif 420w, /assets/img/curated/official-wikimedia-portrait-540.avif 540w, /assets/img/curated/official-wikimedia-portrait-720.avif 720w, /assets/img/curated/official-wikimedia-portrait-960.avif 960w, /assets/img/curated/official-wikimedia-portrait-1200.avif 1200w, /assets/img/curated/official-wikimedia-portrait-1500.avif 1500w" type="image/avif"/><source sizes="(min-width: 960px) 420px, min(420px, calc(100vw - 44px))" srcset="/assets/img/curated/official-wikimedia-portrait-420.webp 420w, /assets/img/curated/official-wikimedia-portrait-540.webp 540w, /assets/img/curated/official-wikimedia-portrait-720.webp 720w, /assets/img/curated/official-wikimedia-portrait-960.webp 960w, /assets/img/curated/official-wikimedia-portrait-1200.webp 1200w, /assets/img/curated/official-wikimedia-portrait-1500.webp 1500w" type="image/webp"/><img alt="Norbert Banhalmi portrait." decoding="async" fetchpriority="high" height="1500" loading="eager" sizes="(min-width: 960px) 420px, min(420px, calc(100vw - 44px))" src="/assets/img/curated/official-wikimedia-portrait.webp" srcset="/assets/img/curated/official-wikimedia-portrait-420.webp 420w, /assets/img/curated/official-wikimedia-portrait-540.webp 540w, /assets/img/curated/official-wikimedia-portrait-720.webp 720w, /assets/img/curated/official-wikimedia-portrait-960.webp 960w, /assets/img/curated/official-wikimedia-portrait-1200.webp 1200w, /assets/img/curated/official-wikimedia-portrait-1500.webp 1500w" width="1500"/></picture></figure></div></section><section class="section-band entity-summary" id="entity-summary"><div class="wrap"><div class="section-head reveal"><span class="eyebrow">Entitás-összefoglaló</span><h2>Bánhalmi Norbert — ellenőrizhető szakmai áttekintés</h2></div><dl class="entity-facts reveal"><dt>Szakmai szerepek</dt><dd>Fotóművész és alkalmazott fotográfus, executive portréspecialista, vizuális brand stratéga, kurátor és fotográfiai oktató.</dd><dt>Született</dt><dd>1979. május 14., Budapest.</dd><dt>Aktív</dt><dd>1999 óta — több mint huszonöt év fotográfiai gyakorlat.</dd><dt>Fő bázisok</dt><dd>Bécs és Budapest; közép-európai és nemzetközi megbízások.</dd><dt>Tanulmányok</dt><dd>Informatikai mérnöki diploma (2005), New York Institute of Photography képzés (2015), alkalmazott fotográfusi képesítés (2018).</dd><dt>Könyvek és kiállítások</dt><dd>Három könyv, húsz dokumentált kiállítás és hosszú távú projekt, valamint 2018 óta állandó onkológiai kiállítás.</dd><dt>Szakmai kapcsolódások</dt><dd>OM SYSTEM márkanagykövet 2018 óta; Pannon tiszteletbeli tag 2023 óta; WKO szakmai tag 2023 óta; AmCham Austria- és MFVSZ-tag 2026 óta.</dd><dt>Elismerések</dt><dd>Turul-díj 2021–2025 között, TOP100 of Hungary elismerés 2022-ben.</dd><dt>Wikipédia</dt><dd><a href="https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert" rel="noopener noreferrer" target="_blank">Ellenőrzött magyar Wikipédia-életrajz ↗</a></dd></dl></div></section>
 <nav aria-label="Oeuvre sections" class="oeuvre-jump"><div class="wrap"><a href="#origin">A fegyelemtől a figyelemig</a><a href="#timeline">Válogatott kronológia</a><a href="#exhibitions">Kiállítások és hosszú távú projektek</a><a href="#books">Könyvek</a><a href="#media">Válogatott médiamegjelenések és interjúk</a><a href="#professional-record">Tanulmányok és tagságok</a><a href="#curatorial-programme">Kurátori program</a><a href="#professional-articles">Szakmai írások</a><a href="#video-media">Videóarchívum</a><a href="#peter-magyar-portrait-2026">Kiemelt mű</a></div></nav>
-<section class="section-band" id="origin"><div class="wrap about-portrait-split"><div><div class="section-head reveal"><span class="eyebrow">Biography</span><h2 id="a-fegyelemtol-a-figyelemig">A fegyelemtől a figyelemig</h2></div><div class="prose reveal structural-prose"><p>Gyerekként űrhajós akartam lenni, és az ismeretlent szerettem volna felfedezni. Végül nem a csillagok, hanem az ember belső világa felé indultam el. A felfedezés vágya megmaradt.</p><p>Első szakmai nyelvem az informatika volt: 2005-ben informatikai mérnöki diplomát szereztem. A fotográfia ezzel párhuzamosan vált hivatássá: 2006-ban létrehoztam a Magyar Honvédség professzionális fotóstúdióját, 2015-ben elvégeztem a New York Institute of Photography képzését, 2018-ban pedig alkalmazott fotográfusi képesítést szereztem Budapesten.</p><p>New York 2014-ben változtatta meg a látásmódomat. Megtanított arra, hogy a várost, az embert és a képet kapcsolatként lássam, ne pusztán egy háttér elé helyezett témaként. Azóta a megbízásos portrék, a dokumentarista projektek, a könyvek és a kurátori munka párbeszédben fejlődnek.</p><p>Bécsben élek és dolgozom, miközben Budapest továbbra is aktív szakmai bázisom. A megbízások és kiállítások mellett közösséget építek, workshopokat tartok, és olyan projekteket indítok, amelyekben a vizuális kultúra az oktatás és a közösségi segítség eszközévé válik.</p></div></div><figure class="youtube-poster reveal" data-youtube-id="npJ6YeYxQ64"><button class="youtube-poster-button" type="button" aria-label="A BANHALMI jubileumi interjú lejátszása"><span class="youtube-play" aria-hidden="true"></span></button></figure></div></section>
+<section class="section-band" id="origin"><div class="wrap about-portrait-split"><div><div class="section-head reveal"><span class="eyebrow">Életrajz</span><h2 id="a-fegyelemtol-a-figyelemig">A fegyelemtől a figyelemig</h2></div><div class="prose reveal structural-prose"><p>Gyerekként űrhajós akartam lenni, és az ismeretlent szerettem volna felfedezni. Végül nem a csillagok, hanem az ember belső világa felé indultam el. A felfedezés vágya megmaradt.</p><p>Első szakmai nyelvem az informatika volt: 2005-ben informatikai mérnöki diplomát szereztem. A fotográfia ezzel párhuzamosan vált hivatássá: 2006-ban létrehoztam a Magyar Honvédség professzionális fotóstúdióját, 2015-ben elvégeztem a New York Institute of Photography képzését, 2018-ban pedig alkalmazott fotográfusi képesítést szereztem Budapesten.</p><p>New York 2014-ben változtatta meg a látásmódomat. Megtanított arra, hogy a várost, az embert és a képet kapcsolatként lássam, ne pusztán egy háttér elé helyezett témaként. Azóta a megbízásos portrék, a dokumentarista projektek, a könyvek és a kurátori munka párbeszédben fejlődnek.</p><p>Bécsben élek és dolgozom, miközben Budapest továbbra is aktív szakmai bázisom. A megbízások és kiállítások mellett közösséget építek, workshopokat tartok, és olyan projekteket indítok, amelyekben a vizuális kultúra az oktatás és a közösségi segítség eszközévé válik.</p></div></div><figure class="youtube-poster reveal" data-youtube-id="npJ6YeYxQ64"><button class="youtube-poster-button" type="button" aria-label="A BANHALMI jubileumi interjú lejátszása"><span class="youtube-play" aria-hidden="true"></span></button></figure></div></section>
 <section><div class="wrap"><div class="section-head reveal"><span class="eyebrow">Curatorial frame</span><h2 id="humanista-objektiv-rend-sebezhetoseg-es-kortars-emlekezet">Humanista objektív: rend, sebezhetőség és kortárs emlékezet</h2></div><div class="prose reveal structural-prose"><p>Az életmű újra és újra szigorú vizuális struktúrát épít olyan témák köré, amelyek nem egyszerűsíthetők: öregedés, betegség, történelmi trauma, női identitás, apaság, szexualitás, digitális megtévesztés és az érintés iránti szükséglet.</p><p>A képek nem látványosságot keresnek. Ellenőrzött teret hoznak létre, ahol az alany összetett maradhat. A katonai és kereskedelmi gyakorlatból örökölt formai fegyelem nem megkeményíti az embert, hanem védi a méltóságát.</p><p>A rend és az érzelem közötti feszültség az executive portréhoz is hidat képez. Egy vezetői kép és egy művészi testtanulmány más forma, mégis mindkettő bizalomra, határokra, figyelemre és a jelenlét szerepléstől való megkülönböztetésére épül.</p></div></div></section>
 <section class="section-band" id="timeline"><div class="wrap"><div class="section-head reveal"><span class="eyebrow">1999–2026</span><h2>Válogatott kronológia</h2></div><div class="timeline-grid"><div class="timeline-entry reveal"><div class="timeline-year">1999</div><p>A fotográfia tartós alkotói és szakmai gyakorlattá válik.</p></div><div class="timeline-entry reveal"><div class="timeline-year">2005–2006</div><p>Informatikai mérnöki diploma, majd a Magyar Honvédség professzionális fotóstúdiójának létrehozása.</p></div><div class="timeline-entry reveal"><div class="timeline-year">2014–2018</div><p>New York-i projektek, jelentős portrékiállítások, NYIP-tanulmányok, alkalmazott fotográfusi képesítés és három interdiszciplináris könyv.</p></div><div class="timeline-entry reveal"><div class="timeline-year">2018</div><p>Olympus — ma OM SYSTEM — márkanagykövet; állandó kiállítás nyílik a veszprémi Csolnoky Ferenc Kórház Onkológiai Centrumában.</p></div><div class="timeline-entry reveal"><div class="timeline-year">2020–2023</div><p>A tihanyi digitális Rege Galéria társalapítója és kurátora; The Frame-, NFT- és AI-projektek vizsgálják a kép változó szerepét.</p></div><div class="timeline-entry reveal"><div class="timeline-year">2024</div><p>Magyar nyelvű fotós oktatást indít Bécsben, és részt vesz a később VIPACH néven nemzetközivé váló közösség építésében.</p></div><div class="timeline-entry reveal"><div class="timeline-year">2025</div><p>Közösségi portréprojektek támogatják a Bécsi Magyar Iskola klíma- és zongoraprojektjét.</p></div><div class="timeline-entry reveal"><div class="timeline-year">2026</div><p>Csatlakozik az AmCham Austriához és a Magyar Fotóművészek Világszövetségéhez; elindítja a 10–16 évesek ingyenes Be Smart Kids Club programját.</p></div></div></div></section><section id="professional-record"><div class="wrap"><div class="section-head reveal"><span class="eyebrow">Szakmai háttér</span><h2>Tanulmányok, tagságok és közösségi munka</h2></div><div class="cards books-grid"><article class="book-card card reveal"><span class="eyebrow">2005 · 2015 · 2018</span><h3>Tanulmányok</h3><p>Informatikai mérnöki diploma a Gábor Dénes Egyetemen; fotográfiai képzés a New York Institute of Photography intézményben; alkalmazott fotográfusi képesítés Budapesten.</p></article><article class="book-card card reveal"><span class="eyebrow">2018–2026</span><h3>Tagságok és márkanagyköveti szerep</h3><p>OM SYSTEM márkanagykövet; a Pannon Fényképészkör tiszteletbeli tagja; a WKO hivatásos fotográfiai szervezetének, az AmCham Austriának és az MFVSZ-nek a tagja.</p></article><article class="book-card card reveal"><span class="eyebrow">2021–2026</span><h3>Oktatás és közösség</h3><p>Művészet Elvitelre jótékonysági akció, bécsi fotós workshopok, közösségi portré-adománygyűjtések és a digitális tudást nonprofit segítséggel összekötő ingyenes Be Smart Kids Club.</p></article></div><p class="source-note biography-source-note reveal"><a href="https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert" rel="noopener noreferrer" target="_blank">Az életrajzi bővítés a magyar Wikipédia 2026. június 18-án ellenőrzött változata és a szócikkben hivatkozott független vagy intézményi források alapján készült. ↗</a></p></div></section>
 <section id="exhibitions"><div class="wrap"><div class="section-head reveal"><span class="eyebrow">Kurátori térkép</span><h2 id="kiallitasok-es-hosszu-tavu-projektek">Kiállítások és hosszú távú projektek</h2><p>Az alábbi lista tömör kurátori térkép. Minden projekt a művészeti archívumban található teljes forrásoldalra vezet.</p></div><div class="exhibition-list"><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2014</span><span>Stefánia Palace, Budapest</span></div><h3 id="az-igazi-nok-real-women"><a href="https://www.banhalmi.art/fotokiallitasok/fotokiallitas1" rel="me">Az igazi Nők / Real Women</a></h3><p>Digitális korrekció nélküli természetes szépség; 30+1 portré kérdőjelezte meg a retusált tökéletesség mítoszát.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/fotokiallitas1" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2014</span><span>Velodrom Millenáris, Budapest</span></div><h3 id="regi-kacer-idok-the-good-old-flirty-days"><a href="https://www.banhalmi.art/fotokiallitasok/fotokiallitas2" rel="me">Régi kacér idők / The Good Old Flirty Days</a></h3><p>A pin-up attitűdként, nem jelmezként jelent meg, elválasztva a játékos nőiséget az életkori és testnormáktól.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/fotokiallitas2" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2014</span><span>Hungarian House, New York</span></div><h3 id="magyar-nok-new-yorkban-hungarian-women-in-new-york"><a href="https://www.banhalmi.art/fotokiallitasok/fotokiallitas3" rel="me">Magyar nők New Yorkban / Hungarian Women in New York</a></h3><p>A városi portréfotográfia magyar női identitást kapcsolt New York személyesen választott helyszíneihez.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/fotokiallitas3" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2015</span><span>Stefánia Palace, Budapest</span></div><h3 id="a-no-otven-arnyalata-50-shades-of-woman"><a href="https://www.banhalmi.art/fotokiallitasok/fotokiallitas4" rel="me">A Nő ötven árnyalata / 50 Shades of Woman</a></h3><p>Tudatosan változatos érzelmi spektrum vizsgálta a társadalmi szerep és a belső állapot közötti távolságot.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/fotokiallitas4" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2016</span><span>Bálna, Budapest</span></div><h3 id="apa-lettem-i-became-a-father"><a href="https://www.banhalmi.art/fotokiallitasok/fotokiallitas5" rel="me">Apa lettem / I Became a Father</a></h3><p>Monokróm közeli tanulmányok bontották le a férfiasság sztereotípiáit az apa és gyermek intim kapcsolatán keresztül.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/fotokiallitas5" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2016</span><span>Hungarian House, New York</span></div><h3 id="merfoldkovek-56-milestones-56"><a href="https://www.banhalmi.art/fotokiallitasok/merfoldkovek1956" rel="me">Mérföldkövek ’56 / Milestones ’56</a></h3><p>Portrék és személyes tárgyak adtak egyéni arcot az 1956-os emigráció történelmi traumájának és túlélőerejének.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/merfoldkovek1956" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2017–2018</span><span>Budapest · Noszvaj · Veszprém</span></div><h3 id="ebredes-az-uj-kezdet-awakening"><a href="https://www.banhalmi.art/fotokiallitasok/ebredes" rel="me">Ébredés – az Új kezdet / Awakening</a></h3><p>Nőgyógyászati daganatos betegség után élő nők hegei a túlélés jeleiként, nem hiányként jelentek meg.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/ebredes" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2017</span><span>Hungary, travelling project</span></div><h3 id="szosszenetek-snippets"><a href="https://www.banhalmi.art/fotokiallitasok/szosszenetek" rel="me">Szösszenetek / Snippets</a></h3><p>Fotográfia, költészet, videó és előadás alkotott interdiszciplináris párbeszédet a Vincent &amp; Vincent párossal.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/szosszenetek" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal" data-added-complete-record="pest-2018"><div class="exhibition-meta"><span>2018</span><span>Városháza, Budapest</span></div><h3 id="pest-megye-kortars-muveszei"><a href="https://www.banhalmi.art/fotokiallitasok/fotokiallitas8" rel="me">Pest megye kortárs művészei</a></h3><p>Csoportos kiállítás, amely New York-i fotókon keresztül kapcsolta össze a lokális és globális identitást, Gödöllő képviseletében.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/fotokiallitas8" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2018</span><span>Book and exhibition project</span></div><h3 id="a-no-vilaga-the-world-of-woman"><a href="https://www.banhalmi.art/fotokiallitasok/anovilaga" rel="me">A Nő világa / The World of Woman</a></h3><p>A női élet kilenc természetes átmenete személyes vallomásokon és portrékon keresztül jelent meg.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/anovilaga" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2018</span><span>New York</span></div><h3 id="ballerina-project-new-york"><a href="https://www.banhalmi.art/fotokiallitasok/balerina-project-new-york" rel="me">Ballerina Project New York</a></h3><p>Mozgás, fegyelem és érzelem a színpadon kívül, klasszikus technika és városi tér között.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/balerina-project-new-york" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2021</span><span>Rege Gallery, Tihany</span></div><h3 id="the-frame-20-years"><a href="https://www.banhalmi.art/fotokiallitasok/theframe" rel="me">The Frame — 20 Years</a></h3><p>A Samsung The Frame két évtized munkájának változó digitális kiállítási felületévé vált.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/theframe" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2021</span><span>Rege Gallery, Tihany</span></div><h3 id="te-is-lehetsz-you-can-be-too"><a href="https://www.banhalmi.art/fotokiallitasok/teislehetsz" rel="me">Te is lehetsz… / You Can Be Too…</a></h3><p>A Magyar Nemzeti Balettintézettel készült együttműködés a fegyelemre, a válás folyamatára és a pályaválasztásra figyelt.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/teislehetsz" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2022</span><span>Club Skinos, New York</span></div><h3 id="the-mens-dream"><a href="https://www.banhalmi.art/fotokiallitasok/themensdream" rel="me">The Men’s Dream</a></h3><p>A művészi akt, az NFT-technológia és a jótékonysági aukció a digitális kultúra hitelességét vizsgálta.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/themensdream" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2023</span><span>Rege Gallery, Tihany</span></div><h3 id="a-valosag-hamis-arcai-the-false-faces-of-reality"><a href="https://www.banhalmi.art/fotokiallitasok/avalosag" rel="me">A valóság hamis arcai / The False Faces of Reality</a></h3><p>AI-portrék provokálták a médiatudatosságot és a technikailag tökéletes képekkel szembeni kételyt.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/avalosag" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2024</span><span>Vienna · Munich</span></div><h3 id="touch-vienna-touch-munich"><a href="https://www.banhalmi.art/fotokiallitasok/touch-wien" rel="me">Touch Vienna &amp; Touch Munich</a></h3><p>Meleg, arany tónusú képek mutatták be a tantramasszázst holisztikus gondoskodásként, az érintést pedig szakrális emberi tettként.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/touch-wien" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2024</span><span>Bewusst Sein Im Fokus, Vienna</span></div><h3 id="en-a-no-i-am-the-woman"><a href="https://www.banhalmi.art/fotokiallitasok/enano" rel="me">Én a Nő / I Am the Woman</a></h3><p>Kollektív vizuális mozaik utasította el a nőiség egyetlen definícióját, és megelőlegezte a VIPACH közösségi logikáját.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/enano" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2025</span><span>CITYgalleryVIENNA, Vienna</span></div><h3 id="femme-fatale"><a href="https://www.banhalmi.art/fotokiallitasok/femmefatale" rel="me">Femme Fatale</a></h3><p>Lírai lágyság és elemi erő találkozott az archetípus közös újraolvasásában.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/femmefatale" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal"><div class="exhibition-meta"><span>2025</span><span>Veszprém</span></div><h3 id="mas-kep-mas-different-image-different"><a href="https://www.banhalmi.art/fotokiallitasok/mas-kepp-mas" rel="me">Más kép / Más / Different Image Different</a></h3><p>A Szele Zsófia költészetével párbeszédben álló fotográfia krónikus betegséget, gondoskodást, rezilienciát és szeretetet vizsgált.</p><a class="btn-link" href="https://www.banhalmi.art/fotokiallitasok/mas-kepp-mas" rel="me">banhalmi.art ↗</a></article><article class="exhibition-entry reveal" data-added-complete-record="euforia-2027"><div class="exhibition-meta"><span>2027</span><span>Fejlesztés alatt · 2026–2027</span></div><h3 id="euforia-a-jelenlet-anatomiaja"><a href="https://www.banhalmi.art/post/euforia" rel="me">EUFÓRIA — a Jelenlét anatómiája</a></h3><p>Húsz alkotásból álló összművészeti projekt, amely fotográfiát, zenét, technológiát és emberi történeteket kapcsol össze a megrendezetlen jelenlét körül; tisztelgés Robert Capa szellemisége előtt.</p><a class="btn-link" href="https://www.banhalmi.art/post/euforia" rel="me">banhalmi.art ↗</a></article></div></div></section><section id="permanent-exhibition"><div class="wrap"><div class="section-head reveal"><span class="eyebrow">2018–</span><h2>Állandó kiállítás</h2><p>2018 óta a veszprémi Csolnoky Ferenc Kórház Onkológiai Centrumában hosszú távú kiállítás mutatja be daganatos betegséggel érintett nők portréit és személyes történeteit.</p></div><a class="btn-link" href="https://www.veol.hu/vezeto-hirek/2018/03/csolnoky-ferenc-korhaz-onkologiai-centrum-rak-kiallitas" rel="noopener noreferrer" target="_blank">Source / Forrás / Quelle ↗</a></div></section><section class="section-band" id="curatorial-programme"><div class="wrap"><div class="section-head reveal"><span class="eyebrow">Rege Galéria · Tihany · 2020–2022</span><h2>Válogatott kurátori program</h2><p>A digitális Rege Galéria társalapítójaként és kurátoraként fotográfiai és képzőművészeti projekteket mutattam be Samsung The Frame kijelzőkön és kapcsolódó kiállítási formákban.</p></div><ul class="media-index reveal"><li><span>2020</span><p>Most vagy Soha — fotókiállítás</p></li><li><span>2020</span><p>Sári varázslatos világa — Bernát Sára festményei</p></li><li><span>2021</span><p>Szemek a nagyvilágból — Kónya Péter fotókiállítása</p></li><li><span>2021</span><p>Medi-Szín — Szabó Sipos Barnabás festményei</p></li><li><span>2021</span><p>The Frame — digitális fotóművészeti kiállítás</p></li><li><span>2021</span><p>Balaton-felvidék — Pannon Fényképészkör</p></li><li><span>2022</span><p>Félúton — Gecse-Legény Enikő digitális festménykiállítása</p></li><li><span>2022</span><p>A természet csendje — Baumann Béla × John Judit × Polgár Martina</p></li></ul></div></section>
