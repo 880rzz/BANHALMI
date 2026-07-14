@@ -2777,8 +2777,3 @@ html[lang="de-AT"] .featured-historic-portrait:after{content:'Ausgewähltes Werk
     object-position:50% 42%;
   }
 }
-
-
-/* AmCham Austria membership and liaison links */
-.amcham-profile-links{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;align-items:center;margin-top:1rem}.amcham-profile-links .more{margin-top:0}
-@media (max-width:620px){.amcham-profile-links{align-items:flex-start;flex-direction:column;gap:.65rem}}
