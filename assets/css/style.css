@@ -2811,3 +2811,31 @@ html[lang="de-AT"] .featured-historic-portrait:after{content:'Ausgewähltes Werk
   .person-profile-facts .entity-facts{grid-template-columns:1fr;gap:10px}
   .person-profile-facts .entity-facts>div{padding:18px 18px 20px;border-radius:14px}
 }
+
+
+/* Release responsive safeguards and multilingual layout hardening — 2026-07-14 */
+html,body{max-width:100%;overflow-x:clip}
+main,section,.wrap,.grid,.card,.service-card,.contact-card,.person-profile-hero-copy,.person-profile-network-card{min-width:0}
+img,picture,video,canvas,svg,iframe{max-width:100%}
+input,select,textarea,button{max-width:100%;min-width:0}
+.btn,.btn-link,.nav-cta{max-width:100%;white-space:normal;text-align:center;overflow-wrap:anywhere}
+.contact-card a,.legal-copy a,.policy-copy a,.entity-facts dd,.footer-grid a{overflow-wrap:anywhere;word-break:normal}
+pre,code{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
+.table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media(max-width:1100px){
+  .person-profile-hero .wrap{grid-template-columns:minmax(0,1fr) minmax(320px,.72fr);gap:clamp(32px,4vw,58px)}
+  .person-profile-hero h1{font-size:clamp(2.35rem,5.6vw,4.35rem);line-height:1.02}
+}
+@media(max-width:900px){
+  .person-profile-hero .wrap{grid-template-columns:1fr}
+  .person-profile-hero-copy,.person-profile-hero-media{width:100%;max-width:680px;justify-self:center}
+  .person-profile-hero-copy{text-align:left}
+  .person-profile-facts{gap:30px}
+}
+@media(max-width:480px){
+  .wrap{width:min(100% - 32px,var(--wrap,1200px))}
+  .hero h1,.person-profile-hero h1{hyphens:auto;overflow-wrap:break-word;text-wrap:balance}
+  .section-head h2,.executive-profile-block h2{hyphens:auto;overflow-wrap:break-word}
+  .person-profile-facts .entity-facts>div{padding:17px}
+  .amcham-profile-card{padding:18px}
+}
