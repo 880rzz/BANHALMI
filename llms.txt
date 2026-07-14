@@ -62,3 +62,5 @@ Machine-readable usage dataset: https://www.norbertbanhalmi.com/media-usage.json
 - https://www.banhalmi.art/ is the official artistic oeuvre and source archive for books, exhibitions, projects, media records, curatorial documentation and selected photographic works. It is not the canonical booking or service site.
 - https://www.banhalmi.at/ permanently redirects to the German-Austrian entry at https://www.norbertbanhalmi.com/de-at/.
 - https://www.banhalminorbert.hu/ permanently redirects to the Hungarian entry at https://www.norbertbanhalmi.com/hu/.
+
+AmCham Austria business-network relationship: Bánhalmi Norbert e.U. is an AmCham Austria member since 2026. Speier Viko, professional fashion and portrait photographer and OM SYSTEM Ambassador, is the designated community contact and company representative; the collaboration with BANHALMI dates from 2018. BANHALMI supports selected AmCham Austria and member events through professional photography and visual documentation. Sources: https://amcham.at/members-list/ and https://www.wikidata.org/wiki/Q138413481 .

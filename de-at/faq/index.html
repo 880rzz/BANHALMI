@@ -117,12 +117,6 @@
       "memberOf": [
         {
           "@type": "Organization",
-          "@id": "https://www.wikidata.org/wiki/Q138413481",
-          "name": "AmCham Austria — American Chamber of Commerce in Austria",
-          "url": "https://www.amcham.at/"
-        },
-        {
-          "@type": "Organization",
           "@id": "https://www.wikidata.org/wiki/Q138413557",
           "name": "Magyar Fotóművészek Világszövetsége",
           "alternateName": "World Federation of Hungarian Photographers",
@@ -192,12 +186,6 @@
           "propertyID": "membership",
           "name": "WKO Wien / Landesinnung der Berufsfotografie",
           "value": "Since 2023-11-27"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "membership",
-          "name": "AmCham Austria",
-          "value": "Since 2026"
         },
         {
           "@type": "PropertyValue",
@@ -382,22 +370,47 @@
         },
         "creditText": "BANHALMI"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "email": "hello@norbertbanhalmi.com",
-        "telephone": "+4367761655592",
-        "availableLanguage": [
-          "English",
-          "German",
-          "Hungarian"
-        ],
-        "areaServed": [
-          "AT",
-          "HU",
-          "EU"
-        ]
-      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "hello@norbertbanhalmi.com",
+          "telephone": "+4367761655592",
+          "availableLanguage": [
+            "English",
+            "German",
+            "Hungarian"
+          ],
+          "areaServed": [
+            "AT",
+            "HU",
+            "EU"
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "@id": "https://www.norbertbanhalmi.com/#amcham-austria-contact",
+          "name": "Speier Viko",
+          "contactType": "AmCham Austria community liaison and company representative",
+          "email": "hello@norbertbanhalmi.com",
+          "telephone": [
+            "+36304788850",
+            "+4367764733262"
+          ],
+          "url": "https://www.vikospeier.com/hu/about",
+          "areaServed": [
+            "AT",
+            "HU",
+            "EU"
+          ],
+          "availableLanguage": [
+            "English",
+            "German",
+            "Hungarian"
+          ],
+          "description": "Designated contact representing Bánhalmi Norbert e.U. within the AmCham Austria business community."
+        }
+      ],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q138425941",
         "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&amp;standortid=1&amp;standortname=wien%20%28bundesland%29&amp;suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru",
@@ -425,7 +438,10 @@
         "visual positioning",
         "brand photography",
         "event photography",
-        "fine-art photography"
+        "fine-art photography",
+        "AmCham Austria business network",
+        "Austrian–United States business relations",
+        "international business event photography"
       ],
       "headquarters": {
         "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
@@ -436,6 +452,57 @@
           "propertyID": "companyHeadquarters",
           "name": "Company headquarters",
           "value": "Vienna, Austria"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "amchamAustriaMembership",
+          "name": "AmCham Austria membership",
+          "value": "Bánhalmi Norbert e.U. is a member of AmCham Austria since 2026. Official members directory: https://amcham.at/members-list/"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "amchamAustriaEventSupport",
+          "name": "AmCham Austria event photography support",
+          "value": "BANHALMI supports selected AmCham Austria and member-community events with professional photography and visual documentation."
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "amchamAustriaRepresentative",
+          "name": "AmCham Austria company representative",
+          "value": "Speier Viko is the designated contact and representative of Bánhalmi Norbert e.U. within the AmCham Austria business community."
+        }
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.norbertbanhalmi.com/#amcham-austria",
+          "name": "American Chamber of Commerce in Austria",
+          "alternateName": "AmCham Austria",
+          "url": "https://www.amcham.at/",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138413481",
+            "https://www.amcham.at/"
+          ]
+        }
+      ],
+      "subjectOf": [
+        {
+          "@type": "CreativeWork",
+          "@id": "https://www.norbertbanhalmi.com/#amcham-austria-membership-statement",
+          "name": "BANHALMI membership and event support within AmCham Austria",
+          "about": [
+            {
+              "@id": "https://www.norbertbanhalmi.com/#organization"
+            },
+            {
+              "@id": "https://www.norbertbanhalmi.com/#amcham-austria"
+            },
+            {
+              "@id": "https://www.norbertbanhalmi.com/#speier-viko-amcham-contact"
+            }
+          ],
+          "url": "https://amcham.at/members-list/",
+          "description": "Bánhalmi Norbert e.U. is an AmCham Austria member. Speier Viko is the designated community contact and company representative, and BANHALMI supports selected AmCham Austria and member events with photography."
         }
       ]
     },
@@ -493,6 +560,83 @@
         "en",
         "de"
       ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.norbertbanhalmi.com/#speier-viko-amcham-contact",
+      "name": "Speier Viko",
+      "alternateName": "Speier Vikó",
+      "url": "https://www.vikospeier.com/hu/about",
+      "image": "https://www.norbertbanhalmi.com/assets/img/team/speier-viko-amcham-focus-666.webp",
+      "jobTitle": [
+        "Professional Fashion and Portrait Photographer",
+        "OM SYSTEM Ambassador",
+        "AmCham Austria Community Liaison for BANHALMI"
+      ],
+      "description": "Professional fashion and portrait photographer, OM SYSTEM Ambassador and long-term BANHALMI collaborator since 2018. She is the designated contact representing Bánhalmi Norbert e.U. within the AmCham Austria business community.",
+      "affiliation": [
+        {
+          "@id": "https://www.norbertbanhalmi.com/#organization"
+        }
+      ],
+      "knowsAbout": [
+        "fashion photography",
+        "portrait photography",
+        "event photography",
+        "international business events",
+        "AmCham Austria member relations"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.norbertbanhalmi.com/#amcham-austria-event-photography-support",
+      "name": "AmCham Austria Event Photography Support",
+      "serviceType": "Business event photography and visual documentation support",
+      "provider": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "AmCham Austria member community",
+        "audienceType": "AmCham Austria and its member organisations"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Austria"
+      },
+      "url": "https://www.norbertbanhalmi.com/contact/",
+      "description": "Bánhalmi Norbert e.U. supports selected AmCham Austria and member-community events with professional photography and visual documentation.",
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#amcham-austria"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.norbertbanhalmi.com/#amcham-austria",
+      "additionalType": "https://www.wikidata.org/wiki/Q2178147",
+      "name": "American Chamber of Commerce in Austria",
+      "alternateName": [
+        "AmCham Austria",
+        "American Chamber of Commerce Austria"
+      ],
+      "description": "A Vienna-based non-profit business and trade association promoting Austrian–United States commercial relations and providing an international business network for its members.",
+      "url": "https://www.amcham.at/",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q138413481",
+        "https://www.amcham.at/"
+      ],
+      "foundingDate": "1960",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Austria"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Porzellangasse 39/7",
+        "postalCode": "1090",
+        "addressLocality": "Vienna",
+        "addressCountry": "AT"
+      }
     }
   ]
 }</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.norbertbanhalmi.com/de-at/faq/#webpage","url":"https://www.norbertbanhalmi.com/de-at/faq/","name":"Häufige Fragen | BANHALMI","description":"Ausführliche Fragen und Antworten zu BANHALMI Executive Porträts, Brandfotografie, Eventfotografie, Preisen und Nutzungsrechten.","inLanguage":"de-AT","isPartOf":{"@type":"WebSite","@id":"https://www.norbertbanhalmi.com/#website","url":"https://www.norbertbanhalmi.com/","name":"BANHALMI","inLanguage":["en","hu-HU","de-AT"],"about":{"@id":"https://www.banhalmi.art/norbert-banhalmi"},"alternateName":["Norbert BANHALMI – Fine Art & Executive Portrait Photography • Visual Branding Strategy","BÁNHALMI NORBERT – Fotóművész & Executive Portréfotózás • Vizuális Brand Stratégia","Norbert BANHALMI – Fine-Art-Fotografie und Executive-Porträts • Strategische visuelle Markenpositionierung","banhalmi.at — German entry domain","banhalminorbert.hu — Hungarian entry domain"]},"about":{"@id":"https://www.banhalmi.art/norbert-banhalmi"},"dateModified":"2026-07-07"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://www.norbertbanhalmi.com/de-at/faq/#faq","mainEntity":[{"@type":"Question","name":"Für wen ist Executive-Porträtfotografie gedacht?","acceptedAnswer":{"@type":"Answer","text":"Für Gründer:innen, C-Level-Führungskräfte, Berater:innen, Expert:innen und Teams, deren Bild bereits vor dem ersten persönlichen Gespräch Vertrauen schaffen soll."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Headshot und Executive-Porträt?","acceptedAnswer":{"@type":"Answer","text":"Ein Headshot identifiziert in erster Linie die Person. Ein Executive-Porträt vermittelt zusätzlich Rolle, Autorität, Nahbarkeit und Markenkontext."}},{"@type":"Question","name":"Wie bereiten Sie sich auf das Shooting vor?","acceptedAnswer":{"@type":"Answer","text":"Vor dem Termin erhalten Sie praktische Hinweise zu Kleidung, Erscheinungsbild, Bildzielen und vorgesehener Nutzung."}},{"@type":"Question","name":"Erhalten Sie Unterstützung bei Haltung und Ausdruck?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die Anleitung ist ruhig und präzise und berücksichtigt Haltung, Ausdruck, Hände und den späteren Einsatz des Bildes."}},{"@type":"Question","name":"Arbeiten Sie auch vor Ort?","acceptedAnswer":{"@type":"Answer","text":"Ja. Das Shooting kann im Wiener oder Budapester Studio, in Ihrem Unternehmen, an einer Eventlocation oder an einem anderen vereinbarten Ort stattfinden."}},{"@type":"Question","name":"Können Styling, Hair und Make-up organisiert werden?","acceptedAnswer":{"@type":"Answer","text":"Ja. Stylist:in, Hair Professional und Make-up Artist können bei Bedarf in die Produktion eingebunden werden."}},{"@type":"Question","name":"Können mehrere Personen in einer Produktion fotografiert werden?","acceptedAnswer":{"@type":"Answer","text":"Ja. Führungsteams, Boards, Gründer:innen und Abteilungen können in einem konsistenten visuellen System fotografiert werden."}},{"@type":"Question","name":"Kann ein Team aus mehreren Fotograf:innen eingesetzt werden?","acceptedAnswer":{"@type":"Answer","text":"Ja. Größere Produktionen und C-Level-Events können durch ein koordiniertes Team abgedeckt werden."}},{"@type":"Question","name":"Ist eine sofortige Retusche vor Ort möglich?","acceptedAnswer":{"@type":"Answer","text":"Ja. Bei ausgewählten Executive-, Event- und Presseproduktionen können Bilder noch während des Einsatzes ausgewählt, professionell retuschiert und vor Ort übergeben werden."}},{"@type":"Question","name":"Ist eine druckfertige Übergabe möglich?","acceptedAnswer":{"@type":"Answer","text":"Ja. Auf Wunsch werden finale Dateien druckfertig in geeigneter Auflösung und mit passendem Farbprofil sowie zusätzlich weboptimiert geliefert."}},{"@type":"Question","name":"Wie werden die finalen Bilder ausgewählt?","acceptedAnswer":{"@type":"Answer","text":"Je nach Produktionsformat kann die Auswahl gemeinsam vor Ort oder nach dem Shooting erfolgen."}},{"@type":"Question","name":"Wie schnell werden die Bilder geliefert?","acceptedAnswer":{"@type":"Answer","text":"Die Lieferfrist wird im schriftlichen Angebot festgelegt. Für ausgewählte Projekte sind beschleunigte oder taggleiche Workflows möglich."}},{"@type":"Question","name":"Was umfasst strategische visuelle Markenpositionierung?","acceptedAnswer":{"@type":"Answer","text":"Sie verbindet Bildsprache, Porträtstil, visuelle Hierarchie und Nutzung über Website, LinkedIn, Presse, Kampagnen und institutionelle Kommunikation hinweg."}},{"@type":"Question","name":"Fotografieren Sie C-Level-Events?","acceptedAnswer":{"@type":"Answer","text":"Ja. Executive Meetings, Konferenzen, Preisverleihungen und hochrangige institutionelle Veranstaltungen werden diskret dokumentiert."}},{"@type":"Question","name":"Sind Fine-Art- oder intime Aufnahmen möglich?","acceptedAnswer":{"@type":"Answer","text":"Ja, ausschließlich in einem respektvollen künstlerischen Rahmen mit vorab vereinbarter Einwilligung, Privatsphäre und klaren Grenzen."}},{"@type":"Question","name":"Ist der kalkulierte Preis endgültig?","acceptedAnswer":{"@type":"Answer","text":"Nein. Er ist eine unverbindliche Orientierung. Das schriftliche Angebot richtet sich nach Umfang, Ort, Timing, Nutzungsrechten, Produktionskomplexität und steuerlichem Status."}},{"@type":"Question","name":"Wie werden Nutzungsrechte geregelt?","acceptedAnswer":{"@type":"Answer","text":"Nutzungsrechte richten sich nach Projekt, Medien, Dauer und Gebiet und werden im schriftlichen Angebot festgehalten."}},{"@type":"Question","name":"Ist Reverse Charge innerhalb der EU möglich?","acceptedAnswer":{"@type":"Answer","text":"Ja. Berechtigte Unternehmen außerhalb Österreichs können nach Angabe und Prüfung der Unternehmens- und UID-Daten im Reverse-Charge-Verfahren abgerechnet werden."}},{"@type":"Question","name":"Wie werden Bilder nach der DSGVO behandelt?","acceptedAnswer":{"@type":"Answer","text":"Bilder und personenbezogene Daten werden vertraulich und nur für den vereinbarten Zweck verarbeitet. Eine Veröffentlichung erfolgt ausschließlich mit Zustimmung."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://www.norbertbanhalmi.com/de-at/faq/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://www.norbertbanhalmi.com/de-at/"},{"@type":"ListItem","position":2,"name":"Häufige Fragen","item":"https://www.norbertbanhalmi.com/de-at/faq/"}]}</script><link href="/pricing.json" rel="alternate" title="BANHALMI pricing data" type="application/json"/><link href="/services.json" rel="alternate" title="BANHALMI service definitions" type="application/json"/><script defer="" src="/assets/js/analytics.js?v=20260714-ga4"></script></head><body><a class="skip-link" href="#main">Zum Inhalt springen</a><header class="site-header"><div class="wrap"><nav aria-label="Hauptnavigation" class="nav">

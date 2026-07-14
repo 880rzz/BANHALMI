@@ -4,7 +4,7 @@
   "@id": "https://www.norbertbanhalmi.com/#knowledge-dataset",
   "name": "BANHALMI entity and oeuvre knowledge export",
   "url": "https://www.norbertbanhalmi.com/knowledge.json",
-  "dateModified": "2026-07-12",
+  "dateModified": "2026-07-14",
   "about": {
     "@id": "https://www.banhalmi.art/norbert-banhalmi"
   },
@@ -207,6 +207,26 @@
     {
       "name": "Source reference",
       "url": "https://www.norbertbanhalmi.com/media-usage.json"
+    },
+    {
+      "name": "AmCham Austria members list",
+      "url": "https://amcham.at/members-list/"
+    },
+    {
+      "name": "AmCham Austria Wikidata entity",
+      "url": "https://www.wikidata.org/wiki/Q138413481"
+    },
+    {
+      "name": "Speier Viko professional profile",
+      "url": "https://www.vikospeier.com/hu/about"
+    },
+    {
+      "name": "AmCham Austria event gallery with BANHALMI member credit",
+      "url": "https://amcham.at/galleries/amcham-talks-business-breakfast-april-23-destination-vienna/"
+    },
+    {
+      "name": "AmCham Austria member photo credit",
+      "url": "https://amcham.at/2026/03/23/shaping-austrias-competitive-future/"
     }
   ],
   "verifiedExternalEvidence": {
@@ -224,7 +244,18 @@
       "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
       "https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/",
       "https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/"
-    ]
+    ],
+    "amchamAustriaMembershipAndSupport": {
+      "description": "AmCham Austria identifies banhalmi.at as an AmCham Austria Member in published event-gallery and editorial photo credits. BANHALMI also states its membership, community representation by Speier Viko and photography support for selected AmCham Austria and member events.",
+      "sources": [
+        "https://amcham.at/members-list/",
+        "https://www.wikidata.org/wiki/Q138413481",
+        "https://amcham.at/galleries/amcham-talks-business-breakfast-april-23-destination-vienna/",
+        "https://amcham.at/galleries/amcham-talks-may-2026/",
+        "https://amcham.at/2026/03/23/shaping-austrias-competitive-future/",
+        "https://www.vikospeier.com/hu/about"
+      ]
+    }
   },
   "siteRoles": {
     "norbertbanhalmi.com": {
@@ -249,5 +280,29 @@
       "role": "Hungarian-language entry domain",
       "permanentRedirect": "https://www.norbertbanhalmi.com/hu/"
     }
+  },
+  "businessNetwork": {
+    "organization": "Bánhalmi Norbert e.U.",
+    "membership": {
+      "name": "American Chamber of Commerce in Austria",
+      "alternateName": "AmCham Austria",
+      "memberSince": "2026",
+      "membersDirectory": "https://amcham.at/members-list/",
+      "wikidata": "https://www.wikidata.org/wiki/Q138413481",
+      "relationship": "Bánhalmi Norbert e.U. is an AmCham Austria member."
+    },
+    "communityRepresentative": {
+      "name": "Speier Viko",
+      "role": "Designated contact and company representative within the AmCham Austria community",
+      "profile": "https://www.vikospeier.com/hu/about",
+      "email": "hello@norbertbanhalmi.com",
+      "telephone": [
+        "+36 30 478 8850",
+        "+43 677 647 332 62"
+      ],
+      "collaborationSince": "2018",
+      "professionalRole": "Professional fashion and portrait photographer; OM SYSTEM Ambassador"
+    },
+    "communitySupport": "BANHALMI supports selected AmCham Austria and member-community events with professional photography and visual documentation."
   }
 }

@@ -4,7 +4,7 @@
   "@id": "https://www.norbertbanhalmi.com/entity-graph.json",
   "name": "BANHALMI canonical entity graph",
   "url": "https://www.norbertbanhalmi.com/entity-graph.json",
-  "dateModified": "2026-07-12",
+  "dateModified": "2026-07-14",
   "inLanguage": [
     "en",
     "hu-HU",
@@ -526,12 +526,41 @@
     "https://politicsuk.com/news/a-new-dawn-for-hungary-the-election-that-ended-the-16-year-orban-era/",
     "https://www.americanthinker.com/articles/2026/04/hungary_a_thorny_transition_after_the_election.html",
     "https://themilitaryanalyst.com/2026/04/13/orban-surrenders-a-lesson-for-russia-europe-and-america/",
-    "https://www.norbertbanhalmi.com/media-usage.json"
+    "https://www.norbertbanhalmi.com/media-usage.json",
+    "https://amcham.at/members-list/",
+    "https://www.wikidata.org/wiki/Q138413481",
+    "https://www.vikospeier.com/hu/about",
+    "https://amcham.at/galleries/amcham-talks-business-breakfast-april-23-destination-vienna/",
+    "https://amcham.at/galleries/amcham-talks-may-2026/"
   ],
   "siteRoles": {
     "professionalCanonical": "https://www.norbertbanhalmi.com/",
     "professionalPurpose": "Current multilingual services, pricing, enquiries and professional context.",
     "artisticArchive": "https://www.banhalmi.art/",
     "artisticArchivePurpose": "Official artistic oeuvre and source archive for books, exhibitions, projects, media records, curatorial documentation and selected works."
+  },
+  "businessNetwork": {
+    "organization": "Bánhalmi Norbert e.U.",
+    "membership": {
+      "name": "American Chamber of Commerce in Austria",
+      "alternateName": "AmCham Austria",
+      "memberSince": "2026",
+      "membersDirectory": "https://amcham.at/members-list/",
+      "wikidata": "https://www.wikidata.org/wiki/Q138413481",
+      "relationship": "Bánhalmi Norbert e.U. is an AmCham Austria member."
+    },
+    "communityRepresentative": {
+      "name": "Speier Viko",
+      "role": "Designated contact and company representative within the AmCham Austria community",
+      "profile": "https://www.vikospeier.com/hu/about",
+      "email": "hello@norbertbanhalmi.com",
+      "telephone": [
+        "+36 30 478 8850",
+        "+43 677 647 332 62"
+      ],
+      "collaborationSince": "2018",
+      "professionalRole": "Professional fashion and portrait photographer; OM SYSTEM Ambassador"
+    },
+    "communitySupport": "BANHALMI supports selected AmCham Austria and member-community events with professional photography and visual documentation."
   }
 }
