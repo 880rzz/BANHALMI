@@ -59,7 +59,11 @@
         "caption": "Norbert Banhalmi – Executive Portrait Photographer & Visual Artist",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
         "license": "https://creativecommons.org/licenses/by-sa/4.0/",
-        "copyrightNotice": "© Norbert Banhalmi. Licensed under CC BY-SA 4.0."
+        "copyrightNotice": "© Norbert Banhalmi. Licensed under CC BY-SA 4.0.",
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        },
+        "creditText": "Norbert Banhalmi / Wikimedia Commons"
       },
       "knowsLanguage": [
         {
@@ -403,7 +407,11 @@
         "caption": "BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
         "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-        "copyrightNotice": "© BANHALMI. All rights reserved."
+        "copyrightNotice": "© BANHALMI. All rights reserved.",
+        "creator": {
+          "@id": "https://www.norbertbanhalmi.com/#organization"
+        },
+        "creditText": "BANHALMI"
       },
       "contactPoint": {
         "@type": "ContactPoint",

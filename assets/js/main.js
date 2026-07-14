@@ -82,16 +82,17 @@
   }
 
   // Versioned cookie/optional-service consent gate.
-  var KEY = "banhalmi_consent_v2";
-  var CONSENT_VERSION = "2.0";
+  var KEY = "banhalmi_consent_v3";
+  var CONSENT_VERSION = "3.0";
   var CONSENT_TTL_MS = 180 * 24 * 60 * 60 * 1000;
   var bar = document.querySelector(".cookie");
   function readChoice() {
     try {
       var raw = localStorage.getItem(KEY);
       if (!raw) {
-        var legacy = localStorage.getItem("banhalmi_consent");
-        if (legacy) localStorage.removeItem("banhalmi_consent");
+        ["banhalmi_consent", "banhalmi_consent_v2"].forEach(function (legacyKey) {
+          if (localStorage.getItem(legacyKey)) localStorage.removeItem(legacyKey);
+        });
         return null;
       }
       var data = JSON.parse(raw);
@@ -124,6 +125,7 @@
     }
   }
   function grant() {
+    if (window.BANHALMI_ANALYTICS && typeof window.BANHALMI_ANALYTICS.grant === "function") window.BANHALMI_ANALYTICS.grant();
     if (!hasReviewComponent() || reviewLoaderArmed) return;
     reviewLoaderArmed = true;
     var target = document.querySelector('[data-third-party-reviews="true"]');
@@ -139,6 +141,7 @@
     loadReviewScripts();
   }
   function revokeThirdPartyScripts() {
+    if (window.BANHALMI_ANALYTICS && typeof window.BANHALMI_ANALYTICS.revoke === "function") window.BANHALMI_ANALYTICS.revoke();
     if (reviewObserver) { reviewObserver.disconnect(); reviewObserver = null; }
     if (reviewDetails && reviewDetailsHandler) reviewDetails.removeEventListener("toggle", reviewDetailsHandler);
     reviewDetails = null; reviewDetailsHandler = null; reviewLoaderArmed = false;

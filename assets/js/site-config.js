@@ -4,5 +4,6 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   submissionMode: "cloudflare-workers-dev-language-payload",
   siteLanguage: document.documentElement.lang || "en",
   siteDomain: "www.norbertbanhalmi.com",
-  supportEmail: "hello@norbertbanhalmi.com"
+  supportEmail: "hello@norbertbanhalmi.com",
+  analyticsMeasurementId: "G-90C452LJKQ"
 });
