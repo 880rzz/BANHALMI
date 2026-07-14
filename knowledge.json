@@ -293,8 +293,10 @@
     },
     "communityRepresentative": {
       "name": "Speier Viko",
-      "role": "Designated contact and company representative within the AmCham Austria community",
-      "profile": "https://www.vikospeier.com/hu/about",
+      "role": "Head of the BANHALMI Budapest Studio; designated corporate contact for BANHALMI within the AmCham Austria business community and company representative",
+      "profile": "https://www.norbertbanhalmi.com/speier-viko/",
+      "officialWebsite": "https://www.vikospeier.com/hu/about",
+      "linkedin": "https://www.linkedin.com/in/vikospeier/",
       "email": "hello@norbertbanhalmi.com",
       "telephone": [
         "+36 30 478 8850",
@@ -304,5 +306,77 @@
       "professionalRole": "Professional fashion and portrait photographer; OM SYSTEM Ambassador"
     },
     "communitySupport": "BANHALMI supports selected AmCham Austria and member-community events with professional photography and visual documentation."
+  },
+  "teamMember": {
+    "@type": "Person",
+    "@id": "https://www.norbertbanhalmi.com/speier-viko/#person",
+    "name": "Speier Viko",
+    "alternateName": [
+      "Speier Vikó",
+      "Viktória Speier"
+    ],
+    "url": "https://www.norbertbanhalmi.com/speier-viko/",
+    "image": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-01.webp",
+    "jobTitle": [
+      "Head of BANHALMI Budapest Studio",
+      "Professional Fashion and Portrait Photographer",
+      "OM SYSTEM Ambassador",
+      "AmCham Austria Corporate Contact for BANHALMI"
+    ],
+    "description": "Head of the BANHALMI Budapest Studio, professional fashion and portrait photographer, OM SYSTEM Ambassador, long-term BANHALMI collaborator since 2018 and designated representative within the AmCham Austria business community.",
+    "worksFor": {
+      "@id": "https://www.norbertbanhalmi.com/#organization"
+    },
+    "workLocation": {
+      "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+    },
+    "affiliation": [
+      {
+        "@id": "https://www.wikidata.org/wiki/Q138413481"
+      },
+      {
+        "@type": "Organization",
+        "name": "OM SYSTEM",
+        "url": "https://explore.omsystem.com/"
+      }
+    ],
+    "sameAs": [
+      "https://www.vikospeier.com/hu/about",
+      "https://www.linkedin.com/in/vikospeier/"
+    ],
+    "knowsAbout": [
+      "fashion photography",
+      "portrait photography",
+      "business portrait photography",
+      "personal branding",
+      "visual positioning",
+      "creative production",
+      "studio management",
+      "event photography",
+      "AmCham Austria member relations"
+    ],
+    "colleague": {
+      "@id": "https://www.banhalmi.art/norbert-banhalmi"
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "propertyID": "collaborationSince",
+        "name": "BANHALMI collaboration since",
+        "value": "2018"
+      },
+      {
+        "@type": "PropertyValue",
+        "propertyID": "studioLeadership",
+        "name": "Studio leadership",
+        "value": "Head of the BANHALMI Budapest Studio"
+      },
+      {
+        "@type": "PropertyValue",
+        "propertyID": "communityRepresentation",
+        "name": "AmCham Austria representation",
+        "value": "Designated liaison and company representative for Bánhalmi Norbert e.U."
+      }
+    ]
   }
 }

@@ -117,12 +117,6 @@
       "memberOf": [
         {
           "@type": "Organization",
-          "@id": "https://www.wikidata.org/wiki/Q138413481",
-          "name": "AmCham Austria — American Chamber of Commerce in Austria",
-          "url": "https://www.amcham.at/"
-        },
-        {
-          "@type": "Organization",
           "@id": "https://www.wikidata.org/wiki/Q138413557",
           "name": "Magyar Fotóművészek Világszövetsége",
           "alternateName": "World Federation of Hungarian Photographers",
@@ -192,12 +186,6 @@
           "propertyID": "membership",
           "name": "WKO Wien / Landesinnung der Berufsfotografie",
           "value": "Since 2023-11-27"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "membership",
-          "name": "AmCham Austria",
-          "value": "Since 2026"
         },
         {
           "@type": "PropertyValue",
@@ -382,22 +370,47 @@
         },
         "creditText": "BANHALMI"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "email": "hello@norbertbanhalmi.com",
-        "telephone": "+4367761655592",
-        "availableLanguage": [
-          "English",
-          "German",
-          "Hungarian"
-        ],
-        "areaServed": [
-          "AT",
-          "HU",
-          "EU"
-        ]
-      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "hello@norbertbanhalmi.com",
+          "telephone": "+4367761655592",
+          "availableLanguage": [
+            "English",
+            "German",
+            "Hungarian"
+          ],
+          "areaServed": [
+            "AT",
+            "HU",
+            "EU"
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "@id": "https://www.norbertbanhalmi.com/#amcham-austria-contact",
+          "name": "Speier Viko",
+          "contactType": "AmCham Austria community liaison and company representative",
+          "email": "hello@norbertbanhalmi.com",
+          "telephone": [
+            "+36304788850",
+            "+4367764733262"
+          ],
+          "url": "https://www.vikospeier.com/hu/about",
+          "areaServed": [
+            "AT",
+            "HU",
+            "EU"
+          ],
+          "availableLanguage": [
+            "English",
+            "German",
+            "Hungarian"
+          ],
+          "description": "Designated contact representing Bánhalmi Norbert e.U. within the AmCham Austria business community."
+        }
+      ],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q138425941",
         "https://firmen.wko.at/norbert-banhalmi-executive-portr%C3%A4t-und-visuelle-positionierung/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&amp;standortid=1&amp;standortname=wien%20%28bundesland%29&amp;suchbegriff=norbert%20banhalmi%20executive%20portr%C3%A4t%20und%20visuelle%20positionieru",
@@ -425,7 +438,10 @@
         "visual positioning",
         "brand photography",
         "event photography",
-        "fine-art photography"
+        "fine-art photography",
+        "AmCham Austria business network",
+        "Austrian–United States business relations",
+        "international business event photography"
       ],
       "headquarters": {
         "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
@@ -436,6 +452,57 @@
           "propertyID": "companyHeadquarters",
           "name": "Company headquarters",
           "value": "Vienna, Austria"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "amchamAustriaMembership",
+          "name": "AmCham Austria membership",
+          "value": "Bánhalmi Norbert e.U. is a member of AmCham Austria since 2026. Official members directory: https://amcham.at/members-list/"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "amchamAustriaEventSupport",
+          "name": "AmCham Austria event photography support",
+          "value": "BANHALMI supports selected AmCham Austria and member-community events with professional photography and visual documentation."
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "amchamAustriaRepresentative",
+          "name": "AmCham Austria company representative",
+          "value": "Speier Viko is the designated contact and representative of Bánhalmi Norbert e.U. within the AmCham Austria business community."
+        }
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.norbertbanhalmi.com/#amcham-austria",
+          "name": "American Chamber of Commerce in Austria",
+          "alternateName": "AmCham Austria",
+          "url": "https://www.amcham.at/",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138413481",
+            "https://www.amcham.at/"
+          ]
+        }
+      ],
+      "subjectOf": [
+        {
+          "@type": "CreativeWork",
+          "@id": "https://www.norbertbanhalmi.com/#amcham-austria-membership-statement",
+          "name": "BANHALMI membership and event support within AmCham Austria",
+          "about": [
+            {
+              "@id": "https://www.norbertbanhalmi.com/#organization"
+            },
+            {
+              "@id": "https://www.norbertbanhalmi.com/#amcham-austria"
+            },
+            {
+              "@id": "https://www.norbertbanhalmi.com/#speier-viko-amcham-contact"
+            }
+          ],
+          "url": "https://amcham.at/members-list/",
+          "description": "Bánhalmi Norbert e.U. is an AmCham Austria member. Speier Viko is the designated community contact and company representative, and BANHALMI supports selected AmCham Austria and member events with photography."
         }
       ]
     },
@@ -537,12 +604,6 @@
       "containedInPlace": {
         "@id": "https://www.wikidata.org/wiki/Q1781"
       }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.wikidata.org/wiki/Q138413481",
-      "name": "AmCham Austria — American Chamber of Commerce in Austria",
-      "sameAs": "https://www.wikidata.org/wiki/Q138413481"
     },
     {
       "@type": "Organization",
@@ -680,6 +741,83 @@
       },
       "dateCreated": "2026",
       "temporalCoverage": "2026/2027"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.norbertbanhalmi.com/#speier-viko-amcham-contact",
+      "name": "Speier Viko",
+      "alternateName": "Speier Vikó",
+      "url": "https://www.vikospeier.com/hu/about",
+      "image": "https://www.norbertbanhalmi.com/assets/img/team/speier-viko-amcham-focus-666.webp",
+      "jobTitle": [
+        "Professional Fashion and Portrait Photographer",
+        "OM SYSTEM Ambassador",
+        "AmCham Austria Corporate Contact for BANHALMI"
+      ],
+      "description": "Professional fashion and portrait photographer, OM SYSTEM Ambassador and long-term BANHALMI collaborator since 2018. She is the designated contact representing Bánhalmi Norbert e.U. within the AmCham Austria business community.",
+      "affiliation": [
+        {
+          "@id": "https://www.norbertbanhalmi.com/#organization"
+        }
+      ],
+      "knowsAbout": [
+        "fashion photography",
+        "portrait photography",
+        "event photography",
+        "international business events",
+        "AmCham Austria member relations"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.norbertbanhalmi.com/#amcham-austria-event-photography-support",
+      "name": "AmCham Austria Event Photography Support",
+      "serviceType": "Business event photography and visual documentation support",
+      "provider": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "AmCham Austria member community",
+        "audienceType": "AmCham Austria and its member organisations"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Austria"
+      },
+      "url": "https://www.norbertbanhalmi.com/contact/",
+      "description": "Bánhalmi Norbert e.U. supports selected AmCham Austria and member-community events with professional photography and visual documentation.",
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#amcham-austria"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.norbertbanhalmi.com/#amcham-austria",
+      "additionalType": "https://www.wikidata.org/wiki/Q2178147",
+      "name": "American Chamber of Commerce in Austria",
+      "alternateName": [
+        "AmCham Austria",
+        "American Chamber of Commerce Austria"
+      ],
+      "description": "A Vienna-based non-profit business and trade association promoting Austrian–United States commercial relations and providing an international business network for its members.",
+      "url": "https://www.amcham.at/",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q138413481",
+        "https://www.amcham.at/"
+      ],
+      "foundingDate": "1960",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Austria"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Porzellangasse 39/7",
+        "postalCode": "1090",
+        "addressLocality": "Vienna",
+        "addressCountry": "AT"
+      }
     }
   ]
 }</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.norbertbanhalmi.com/#webpage","url":"https://www.norbertbanhalmi.com/","name":"Norbert Banhalmi | Executive Portraits, Fine Art & Oeuvre","description":"Norbert Banhalmi’s executive portrait, brand, event and fine art photography, together with a 25+ year artistic oeuvre between Vienna and Budapest.","inLanguage":"en","isPartOf":{"@type":"WebSite","@id":"https://www.norbertbanhalmi.com/#website","url":"https://www.norbertbanhalmi.com/","name":"BANHALMI","inLanguage":["en","hu-HU","de-AT"],"about":{"@id":"https://www.banhalmi.art/norbert-banhalmi"},"alternateName":["Norbert BANHALMI – Fine Art & Executive Portrait Photography • Visual Branding Strategy","BÁNHALMI NORBERT – Fotóművész & Executive Portréfotózás • Vizuális Brand Stratégia","Norbert BANHALMI – Fine-Art-Fotografie und Executive-Porträts • Strategische visuelle Markenpositionierung","banhalmi.at — German entry domain","banhalminorbert.hu — Hungarian entry domain"]},"about":{"@id":"https://www.banhalmi.art/norbert-banhalmi"},"dateModified":"2026-07-07"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageObject","@id":"https://www.norbertbanhalmi.com/#primaryimage","contentUrl":"https://www.norbertbanhalmi.com/assets/img/curated/hero-signature.webp","url":"https://www.norbertbanhalmi.com/assets/img/curated/hero-signature.webp","caption":"BANHALMI signature portrait composition.","creator":{"@id":"https://www.banhalmi.art/norbert-banhalmi"},"creditText":"Norbert Banhalmi / BANHALMI","copyrightNotice":"© Norbert Banhalmi / BANHALMI. All rights reserved.","license":"https://www.norbertbanhalmi.com/terms-conditions/","acquireLicensePage":"https://www.norbertbanhalmi.com/requestaquote/","representativeOfPage":true,"width":2400,"height":1117}</script><link href="/pricing.json" rel="alternate" title="BANHALMI pricing data" type="application/json"/><link href="/services.json" rel="alternate" title="BANHALMI service definitions" type="application/json"/><script defer="" src="/assets/js/analytics.js?v=20260714-ga4"></script></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap"><nav aria-label="Main navigation" class="nav">
