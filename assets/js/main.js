@@ -200,7 +200,9 @@
     // Elfsight scans the widget container.
     window.requestAnimationFrame(function () {
       window.requestAnimationFrame(function () {
-        if (!hasScriptSource("cdn.trustindex.io/assets/js/richsnippet.js")) {
+        var pathName = window.location.pathname.replace(/\/index\.html$/, "/");
+        var isLanguageHomepage = pathName === "/" || pathName === "/hu/" || pathName === "/de-at/";
+        if (isLanguageHomepage && !hasScriptSource("cdn.trustindex.io/assets/js/richsnippet.js")) {
           var ti = document.createElement("script");
           ti.id = "trustindex-richsnippet";
           ti.defer = true;
