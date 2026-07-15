@@ -1685,20 +1685,20 @@ main a.editorial-inline-link:hover{
 .hero.hero-image-first .eyebrow{max-width:1100px;line-height:1.35}.hero-location-line{margin:.55rem 0 1.4rem;color:var(--muted);font-size:clamp(.82rem,1.15vw,.98rem);letter-spacing:.08em;text-transform:uppercase}.pricing-logic-card{margin-top:2rem;padding:clamp(1.25rem,3vw,2rem);border:1px solid var(--line);border-radius:24px;background:var(--surface)}.pricing-logic-card ul{margin:.75rem 0 0;padding-left:1.2rem}.pricing-logic-card li{margin:.45rem 0}.machine-data-links{font-size:.92rem;color:var(--muted)}
 
 
-/* BANHALMI age-restricted fine-art gallery — 2026-07-08 */
-.age-gallery-notice{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;margin:0 0 30px;padding:20px 22px;border:1px solid var(--line,#ddd);border-radius:18px;background:#f7f7f5;color:var(--text,#202530)}
-.age-gallery-notice strong{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#171a20;color:#fff;font-size:.92rem;letter-spacing:.04em}
-.age-gallery-notice p{margin:2px 0 0;line-height:1.6;color:var(--muted,#62666f)}
+/* BANHALMI age-restricted fine-art images — image-level gate only */
 .age-restricted-item{position:relative}
 .age-restricted-item .image-open{position:relative;overflow:hidden;border-radius:inherit;background:#111}
 .age-restricted-preview{filter:brightness(.38) saturate(.72);transform:scale(1.02)!important;opacity:.96}
-.age-restricted-badge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;display:inline-flex;align-items:center;justify-content:center;min-width:168px;padding:12px 18px;border:1px solid rgba(255,255,255,.7);border-radius:999px;background:rgba(8,9,12,.78);color:#fff;font-size:.82rem;font-weight:700;letter-spacing:.035em;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.28);backdrop-filter:none;inset:0;z-index:10020;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(8,9,12,.78);backdrop-filter:none;padding:clamp(28px,5vw,48px);border-radius:28px;background:#fff;color:#202530;box-shadow:0 32px 100px rgba(0,0,0,.38)}
+.age-restricted-badge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;display:inline-flex;align-items:center;justify-content:center;min-width:168px;padding:12px 18px;border:1px solid rgba(255,255,255,.72);border-radius:999px;background:rgba(8,9,12,.84);color:#fff;font-size:.82rem;font-weight:700;letter-spacing:.035em;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.28);pointer-events:none}
+.age-verification-dialog{position:fixed;inset:0;z-index:10020;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(8,9,12,.82)}
+.age-verification-dialog.open{display:flex}
+.age-verification-panel{width:min(560px,100%);padding:clamp(28px,5vw,48px);border-radius:28px;background:#fff;color:#202530;box-shadow:0 32px 100px rgba(0,0,0,.38)}
 .age-verification-kicker{display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;margin-bottom:22px;border-radius:50%;background:#171a20;color:#fff;font-weight:750}
 .age-verification-panel h2{margin:0 0 14px;font-size:clamp(1.7rem,4vw,2.45rem);line-height:1.12}
 .age-verification-panel p{margin:0;color:#62666f;line-height:1.65}
 .age-verification-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 .age-verification-actions button{flex:1;min-width:190px}
-@media(max-width:560px){.age-gallery-notice{grid-template-columns:1fr}.age-gallery-notice strong{width:46px;height:46px}.age-verification-actions{flex-direction:column}.age-verification-actions button{width:100%}}
+@media(max-width:560px){.age-restricted-badge{min-width:148px;padding:10px 14px;font-size:.76rem}.age-verification-actions{flex-direction:column}.age-verification-actions button{width:100%;min-width:0}}
 
 /* Official WKO Vienna company profile in the global footer */
 .footer-wko-profile{
