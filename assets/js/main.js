@@ -779,7 +779,13 @@
       ".service-lower-gallery-item",
       ".banhalmi-gallery-item",
       ".banhalmi-fine-art-gallery-item",
-      ".hero-figure"
+      ".hero-figure",
+      ".person-profile-hero-media",
+      ".amcham-profile-media",
+      ".about-portrait-split figure",
+      ".oeuvre-teaser figure",
+      ".archive-card figure",
+      ".image-open"
     ].join(","))).filter(function (element) {
       return !shouldSkip(element) && !element.closest(".universal-lightbox");
     });

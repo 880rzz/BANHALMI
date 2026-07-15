@@ -7,11 +7,11 @@
   "creator": {
     "@id": "https://www.banhalmi.art/norbert-banhalmi"
   },
-  "dateModified": "2026-07-12",
+  "dateModified": "2026-07-12T12:00:00+02:00",
   "dataFeedElement": [
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-01.webp#image",
@@ -26,7 +26,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -36,7 +38,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-02.webp#image",
@@ -51,7 +53,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -61,7 +65,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-03.webp#image",
@@ -76,7 +80,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -86,7 +92,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-04.webp#image",
@@ -101,7 +107,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -111,7 +119,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-05.webp#image",
@@ -126,7 +134,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -136,7 +146,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-06.webp#image",
@@ -151,7 +161,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -161,7 +173,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-07.webp#image",
@@ -176,7 +188,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -186,7 +200,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-08.webp#image",
@@ -201,7 +215,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -211,7 +227,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-09.webp#image",
@@ -226,7 +242,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -236,7 +254,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-10.webp#image",
@@ -251,7 +269,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -261,7 +281,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-11.webp#image",
@@ -276,7 +296,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -286,7 +308,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-12.webp#image",
@@ -301,7 +323,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -311,7 +335,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-13.webp#image",
@@ -326,7 +350,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -336,7 +362,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-14.webp#image",
@@ -351,7 +377,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -361,7 +389,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-15.webp#image",
@@ -376,7 +404,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -386,7 +416,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-16.webp#image",
@@ -401,7 +431,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -411,7 +443,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-17.webp#image",
@@ -426,7 +458,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -436,7 +470,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-18.webp#image",
@@ -451,7 +485,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -461,7 +497,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-19.webp#image",
@@ -476,7 +512,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -486,7 +524,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-20.webp#image",
@@ -501,7 +539,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -511,7 +551,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-21.webp#image",
@@ -526,7 +566,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -536,7 +578,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-22.webp#image",
@@ -551,7 +593,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -561,7 +605,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-23.webp#image",
@@ -576,7 +620,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -586,7 +632,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-24.webp#image",
@@ -601,7 +647,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -611,7 +659,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-25.webp#image",
@@ -626,7 +674,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -636,7 +686,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-26.webp#image",
@@ -651,7 +701,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -661,7 +713,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-27.webp#image",
@@ -676,7 +728,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -686,7 +740,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-28.webp#image",
@@ -701,7 +755,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -711,7 +767,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-29.webp#image",
@@ -726,7 +782,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -736,7 +794,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-30.webp#image",
@@ -751,7 +809,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -761,7 +821,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-31.webp#image",
@@ -776,7 +836,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -786,7 +848,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-32.webp#image",
@@ -801,7 +863,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -811,7 +875,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-33.webp#image",
@@ -826,7 +890,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -836,7 +902,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-34.webp#image",
@@ -851,7 +917,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -861,7 +929,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-35.webp#image",
@@ -876,7 +944,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -886,7 +956,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-36.webp#image",
@@ -901,7 +971,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -911,7 +983,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-37.webp#image",
@@ -926,7 +998,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -936,7 +1010,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-38.webp#image",
@@ -951,7 +1025,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -961,7 +1037,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-39.webp#image",
@@ -976,7 +1052,9 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -986,7 +1064,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-01.webp#image",
@@ -1001,7 +1079,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1011,7 +1091,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-02.webp#image",
@@ -1026,7 +1106,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1036,7 +1118,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-03.webp#image",
@@ -1051,7 +1133,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1061,7 +1145,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-04.webp#image",
@@ -1076,7 +1160,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1086,7 +1172,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-05.webp#image",
@@ -1101,7 +1187,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1111,7 +1199,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-06.webp#image",
@@ -1126,7 +1214,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1136,7 +1226,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-07.webp#image",
@@ -1151,7 +1241,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1161,7 +1253,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-08.webp#image",
@@ -1176,7 +1268,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1186,7 +1280,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-09.webp#image",
@@ -1201,7 +1295,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1211,7 +1307,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-10.webp#image",
@@ -1226,7 +1322,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1236,7 +1334,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-11.webp#image",
@@ -1251,7 +1349,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1261,7 +1361,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-12.webp#image",
@@ -1276,7 +1376,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1286,7 +1388,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-13.webp#image",
@@ -1301,7 +1403,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1311,7 +1415,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-14.webp#image",
@@ -1326,7 +1430,9 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1336,7 +1442,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-01-vintage-car-garden.webp#image",
@@ -1351,7 +1457,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1361,7 +1469,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-02-times-square-night.webp#image",
@@ -1376,7 +1484,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1386,7 +1496,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-03-artist-studio-overhead.webp#image",
@@ -1401,7 +1511,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1411,7 +1523,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-04-urban-fashion-crouching.webp#image",
@@ -1426,7 +1538,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1436,7 +1550,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-05-bride-spiral-staircase.webp#image",
@@ -1451,7 +1565,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1461,7 +1577,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-06-yacht-manhattan-sunset.webp#image",
@@ -1476,7 +1592,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1486,7 +1604,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-07-low-key-body-study.webp#image",
@@ -1501,7 +1619,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1511,7 +1631,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-08-purple-flower-macro.webp#image",
@@ -1526,7 +1646,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1536,7 +1658,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-09-tattooed-body-detail.webp#image",
@@ -1551,7 +1673,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1561,7 +1685,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-10-sunset-lake-silhouette.webp#image",
@@ -1576,7 +1700,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1586,7 +1712,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-11-dramatic-stairwell-window.webp#image",
@@ -1601,7 +1727,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1611,7 +1739,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-12-woman-red-classic-car.webp#image",
@@ -1626,7 +1754,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1636,7 +1766,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-13-balloons-times-square.webp#image",
@@ -1651,7 +1781,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1661,7 +1793,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-14-woman-color-portrait.webp#image",
@@ -1676,7 +1808,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1686,7 +1820,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-15-blue-haired-violinist.webp#image",
@@ -1701,7 +1835,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1711,7 +1847,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-16-couple-new-york-street.webp#image",
@@ -1726,7 +1862,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1736,7 +1874,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-19-monochrome-intimate-portrait.webp#image",
@@ -1751,7 +1889,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1761,7 +1901,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-20-lone-figure-new-york.webp#image",
@@ -1776,7 +1916,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1786,7 +1928,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-21-man-rooftop-new-york.webp#image",
@@ -1801,7 +1943,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1811,7 +1955,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-23-geometric-building-facade.webp#image",
@@ -1826,7 +1970,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1836,7 +1982,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-24-solitary-woman-beach.webp#image",
@@ -1851,7 +1997,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1861,7 +2009,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-25-manhattan-fog-skyline.webp#image",
@@ -1876,7 +2024,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1886,7 +2036,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-26-urban-figure-street.webp#image",
@@ -1901,7 +2051,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1911,7 +2063,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-27-modern-interior-skyline.webp#image",
@@ -1926,7 +2078,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1936,7 +2090,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-28-skyline-framed-window.webp#image",
@@ -1951,7 +2105,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1961,7 +2117,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-29-classic-car-new-york.webp#image",
@@ -1976,7 +2132,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -1986,7 +2144,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-31-police-motorcycles-night.webp#image",
@@ -2001,7 +2159,9 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2011,7 +2171,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-01-horizontal-light.webp#image",
@@ -2026,7 +2186,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2036,7 +2198,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-02-vertical-deep.webp#image",
@@ -2051,7 +2213,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2061,7 +2225,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-03-horizontal-balanced.webp#image",
@@ -2076,7 +2240,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2086,7 +2252,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-04-horizontal-balanced.webp#image",
@@ -2101,7 +2267,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2111,7 +2279,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-05-horizontal-light.webp#image",
@@ -2126,7 +2294,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2136,7 +2306,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-06-vertical-deep.webp#image",
@@ -2151,7 +2321,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2161,7 +2333,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-07-vertical-deep.webp#image",
@@ -2176,7 +2348,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2186,7 +2360,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-08-vertical-balanced.webp#image",
@@ -2201,7 +2375,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2211,7 +2387,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-09-vertical-deep.webp#image",
@@ -2226,7 +2402,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2236,7 +2414,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-10-vertical-deep.webp#image",
@@ -2251,7 +2429,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2261,7 +2441,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-11-vertical-balanced.webp#image",
@@ -2276,7 +2456,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2286,7 +2468,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-13-vertical-deep.webp#image",
@@ -2301,7 +2483,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2311,7 +2495,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-14-vertical-deep.webp#image",
@@ -2326,7 +2510,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2336,7 +2522,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-15-horizontal-balanced.webp#image",
@@ -2351,7 +2537,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2361,7 +2549,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-16-vertical-deep.webp#image",
@@ -2376,7 +2564,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2386,7 +2576,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-17-horizontal-balanced.webp#image",
@@ -2401,7 +2591,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2411,7 +2603,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-18-vertical-deep.webp#image",
@@ -2426,7 +2618,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2436,7 +2630,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-19-vertical-balanced.webp#image",
@@ -2451,7 +2645,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2461,7 +2657,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-20-vertical-deep.webp#image",
@@ -2476,7 +2672,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2486,7 +2684,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-21-vertical-deep.webp#image",
@@ -2501,7 +2699,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2511,7 +2711,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-22-vertical-deep.webp#image",
@@ -2526,7 +2726,9 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2536,7 +2738,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-01-horizontal-balanced.webp#image",
@@ -2551,7 +2753,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2561,7 +2765,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-02-vertical-balanced.webp#image",
@@ -2576,7 +2780,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2586,7 +2792,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-03-horizontal-deep.webp#image",
@@ -2601,7 +2807,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2611,7 +2819,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-04-horizontal-balanced.webp#image",
@@ -2626,7 +2834,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2636,7 +2846,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-05-horizontal-balanced.webp#image",
@@ -2651,7 +2861,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2661,7 +2873,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-06-vertical-balanced.webp#image",
@@ -2676,7 +2888,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2686,7 +2900,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-07-vertical-balanced.webp#image",
@@ -2701,7 +2915,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2711,7 +2927,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-08-vertical-light.webp#image",
@@ -2726,7 +2942,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2736,7 +2954,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-09-horizontal-balanced.webp#image",
@@ -2751,7 +2969,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2761,7 +2981,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-10-horizontal-deep.webp#image",
@@ -2776,7 +2996,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2786,7 +3008,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-11-vertical-balanced.webp#image",
@@ -2801,7 +3023,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2811,7 +3035,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-12-square-deep.webp#image",
@@ -2826,7 +3050,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2836,7 +3062,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-13-horizontal-balanced.webp#image",
@@ -2851,7 +3077,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2861,7 +3089,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-14-vertical-deep.webp#image",
@@ -2876,7 +3104,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2886,7 +3116,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-15-square-balanced.webp#image",
@@ -2901,7 +3131,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2911,7 +3143,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-16-square-deep.webp#image",
@@ -2926,7 +3158,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2936,7 +3170,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-17-square-balanced.webp#image",
@@ -2951,7 +3185,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2961,7 +3197,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-18-horizontal-deep.webp#image",
@@ -2976,7 +3212,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -2986,7 +3224,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-19-horizontal-balanced.webp#image",
@@ -3001,7 +3239,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3011,7 +3251,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-20-vertical-balanced.webp#image",
@@ -3026,7 +3266,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3036,7 +3278,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-21-horizontal-balanced.webp#image",
@@ -3051,7 +3293,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3061,7 +3305,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-22-vertical-balanced.webp#image",
@@ -3076,7 +3320,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3086,7 +3332,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-23-square-balanced.webp#image",
@@ -3101,7 +3347,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3111,7 +3359,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-24-vertical-balanced.webp#image",
@@ -3126,7 +3374,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3136,7 +3386,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-25-horizontal-deep.webp#image",
@@ -3151,7 +3401,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3161,7 +3413,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-26-vertical-balanced.webp#image",
@@ -3176,7 +3428,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3186,7 +3440,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-27-vertical-deep.webp#image",
@@ -3201,7 +3455,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3211,7 +3467,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-28-horizontal-balanced.webp#image",
@@ -3226,7 +3482,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3236,7 +3494,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-29-vertical-balanced.webp#image",
@@ -3251,7 +3509,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3261,7 +3521,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-30-horizontal-light.webp#image",
@@ -3276,7 +3536,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3286,7 +3548,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-31-vertical-balanced.webp#image",
@@ -3301,7 +3563,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3311,7 +3575,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-32-horizontal-light.webp#image",
@@ -3326,7 +3590,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3336,7 +3602,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-33-square-balanced.webp#image",
@@ -3351,7 +3617,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3361,7 +3629,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-34-horizontal-deep.webp#image",
@@ -3376,7 +3644,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3386,7 +3656,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-35-vertical-deep.webp#image",
@@ -3401,7 +3671,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3411,7 +3683,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-36-vertical-deep.webp#image",
@@ -3426,7 +3698,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3436,7 +3710,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-37-horizontal-balanced.webp#image",
@@ -3451,7 +3725,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3461,7 +3737,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-38-vertical-balanced.webp#image",
@@ -3476,7 +3752,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3486,7 +3764,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-39-horizontal-deep.webp#image",
@@ -3501,7 +3779,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3511,7 +3791,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-40-horizontal-balanced.webp#image",
@@ -3526,7 +3806,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3536,7 +3818,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-41-horizontal-deep.webp#image",
@@ -3551,7 +3833,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3561,7 +3845,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-42-horizontal-balanced.webp#image",
@@ -3576,7 +3860,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3586,7 +3872,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-43-horizontal-light.webp#image",
@@ -3601,7 +3887,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3611,7 +3899,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-44-vertical-balanced.webp#image",
@@ -3626,7 +3914,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3636,7 +3926,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-45-horizontal-balanced.webp#image",
@@ -3651,7 +3941,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3661,7 +3953,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-46-horizontal-balanced.webp#image",
@@ -3676,7 +3968,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3686,7 +3980,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-47-square-deep.webp#image",
@@ -3701,7 +3995,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3711,7 +4007,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-48-horizontal-balanced.webp#image",
@@ -3726,7 +4022,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3736,7 +4034,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-49-horizontal-deep.webp#image",
@@ -3751,7 +4049,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3761,7 +4061,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-50-horizontal-balanced.webp#image",
@@ -3776,7 +4076,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3786,7 +4088,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-51-horizontal-balanced.webp#image",
@@ -3801,7 +4103,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3811,7 +4115,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-52-square-deep.webp#image",
@@ -3826,7 +4130,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3836,7 +4142,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-53-square-balanced.webp#image",
@@ -3851,7 +4157,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3861,7 +4169,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-54-square-deep.webp#image",
@@ -3876,7 +4184,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3886,7 +4196,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-55-horizontal-balanced.webp#image",
@@ -3901,7 +4211,9 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -3911,7 +4223,7 @@
     },
     {
       "@type": "DataFeedItem",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
         "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp#image",
@@ -3928,7 +4240,9 @@
           "Wikimedia Commons"
         ],
         "creator": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi"
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
         },
         "creditText": "Norbert Banhalmi / BANHALMI",
         "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",

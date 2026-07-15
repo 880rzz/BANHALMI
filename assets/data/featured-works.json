@@ -11,7 +11,9 @@
       "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
       "url": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
       "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        "@id": "https://www.banhalmi.art/norbert-banhalmi",
+        "@type": "Person",
+        "name": "Bánhalmi Norbert"
       },
       "dateCreated": "2026-03-15T16:57:25+01:00",
       "contentLocation": {
@@ -95,5 +97,5 @@
       ]
     }
   ],
-  "dateModified": "2026-07-09"
+  "dateModified": "2026-07-09T12:00:00+02:00"
 }
