@@ -1,7 +1,7 @@
 # BANHALMI / Norbert Banhalmi
 Official multilingual website: https://www.norbertbanhalmi.com/
 Languages: English at /, Austrian German at /de-at/, Hungarian at /hu/.
-Primary areas: executive portrait, brand photography, event photography, fine art and intimate portraiture.
+Primary areas: executive portrait, brand photography, team-led event photography, fine art and intimate portraiture. Event assignments are delivered by a coordinated photography team personally directed by Norbert Banhalmi, with team size adapted to the venue, schedule and parallel programme.
 Oeuvre: https://www.norbertbanhalmi.com/about/
 Machine-readable oeuvre: https://www.norbertbanhalmi.com/oeuvre.json
 Artistic source archive: https://www.banhalmi.art/
@@ -64,6 +64,6 @@ Machine-readable usage dataset: https://www.norbertbanhalmi.com/media-usage.json
 - https://www.banhalminorbert.hu/ permanently redirects to the Hungarian entry at https://www.norbertbanhalmi.com/hu/.
 
 PRIMARY ENTITY AND SERVICE FOCUS
-Norbert Banhalmi is the primary person represented by this website. Bánhalmi Norbert e.U. / BANHALMI is the primary organization. The primary commercial topics are executive portrait photography, portrait photography, brand photography and visual positioning, event photography and visual documentation, and fine-art photography. Speier Viko is a supporting company contact for the AmCham Austria relationship; she is not a co-primary brand entity.
+Norbert Banhalmi is the primary person represented by this website. Bánhalmi Norbert e.U. / BANHALMI is the primary organization. The primary commercial topics are executive portrait photography, portrait photography, brand photography and visual positioning, team-led event photography and coordinated multi-photographer visual documentation, and fine-art photography. Speier Viko is a supporting company contact for the AmCham Austria relationship; she is not a co-primary brand entity.
 
 AmCham Austria business-network relationship: Bánhalmi Norbert e.U. is an AmCham Austria member since 2026. Speier Viko is the designated BANHALMI company contact for this network. This is a supporting contact role; the primary entities remain Norbert Banhalmi, BANHALMI and its photography services. BANHALMI supports selected AmCham Austria and member events through professional photography and visual documentation. Sources: https://amcham.at/members-list/ and https://www.wikidata.org/wiki/Q138413481 .

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "schemaVersion": "2026-07-07-v2",
-  "dateModified": "2026-07-07",
+  "dateModified": "2026-07-15",
   "publisher": {
     "@id": "https://www.norbertbanhalmi.com/#organization"
   },
@@ -185,7 +185,12 @@
           "grossEUR": 2490
         }
       ],
-      "additionalPhotographerPerHourGrossEUR": 120
+      "additionalPhotographerPerHourGrossEUR": 120,
+      "deliveryModel": {
+        "en": "Event assignments are led by Norbert Banhalmi and delivered with a coordinated photography team. Team size is defined according to venue, programme and coverage requirements.",
+        "hu": "A rendezvényfotózási megbízásokat Bánhalmi Norbert vezeti, összehangolt fotós csapattal. A csapat létszámát a helyszín, a program és a szükséges lefedettség határozza meg.",
+        "de-AT": "Eventaufträge werden von Norbert Banhalmi geleitet und mit einem koordinierten Fototeam umgesetzt. Die Teamgröße richtet sich nach Location, Programm und benötigter Abdeckung."
+      }
     }
   ],
   "finalOfferFactors": [

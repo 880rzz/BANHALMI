@@ -3,7 +3,7 @@
   "@type": "ItemList",
   "@id": "https://www.norbertbanhalmi.com/services.json#services",
   "name": "BANHALMI multilingual service definitions",
-  "dateModified": "2026-07-09",
+  "dateModified": "2026-07-15",
   "itemListElement": [
     {
       "@type": "Service",
@@ -92,7 +92,21 @@
           }
         ]
       },
-      "url": "https://www.norbertbanhalmi.com/event-photography/"
+      "url": "https://www.norbertbanhalmi.com/event-photography/",
+      "alternateName": [
+        "Team-led Event Photography",
+        "Corporate Event Photography Team",
+        "Coordinated Multi-photographer Event Coverage"
+      ],
+      "description": "Team-led event photography directed by Norbert Banhalmi: coordinated photographers and assistants for executive meetings, conferences, cultural occasions and private events in Vienna, Budapest and across Europe.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "deliveryModel",
+          "name": "Event coverage model",
+          "value": "Norbert Banhalmi personally leads the visual direction, team structure, coordination and final image selection."
+        }
+      ]
     },
     {
       "@type": "Service",

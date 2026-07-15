@@ -65,7 +65,7 @@ Machine-readable usage dataset: https://www.norbertbanhalmi.com/media-usage.json
 - The Military Analyst: https://themilitaryanalyst.com/2026/04/13/orban-surrenders-a-lesson-for-russia-europe-and-america/
 
 Verified 2026 evidence
-- Company headquarters: Vienna, Austria. Vienna and Budapest remain equal service bases for executive portraits, visual positioning and event photography.
+- Company headquarters: Vienna, Austria. Vienna and Budapest remain equal service bases for executive portraits, visual positioning and team-led event photography. Event assignments are covered by a coordinated photography team personally directed by Norbert Banhalmi.
 - German entry domain: https://www.banhalmi.at/ -> permanent redirect to https://www.norbertbanhalmi.com/de-at/
 - Hungarian entry domain: https://www.banhalminorbert.hu/ -> permanent redirect to https://www.norbertbanhalmi.com/hu/
 - Péter Magyar portrait case study: https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/

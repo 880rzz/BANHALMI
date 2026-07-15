@@ -392,7 +392,7 @@
       "Executive portrait photography",
       "Portrait photography",
       "Brand photography and visual positioning",
-      "Event photography and visual documentation",
+      "Team-led event photography and coordinated multi-photographer visual documentation",
       "Fine-art photography"
     ],
     "supportingContact": {
@@ -401,5 +401,17 @@
       "profile": "https://www.norbertbanhalmi.com/speier-viko/"
     },
     "interpretationNote": "Norbert Banhalmi, the BANHALMI organization and its photography services are the primary entities of this website. Speier Viko is a supporting company contact for the AmCham Austria relationship, not a co-primary brand entity."
+  },
+  "serviceDelivery": {
+    "eventPhotography": {
+      "model": "Norbert Banhalmi personally leads and coordinates a trusted team of photographers and assistants.",
+      "scaling": "Team size and roles are adapted to the venue, schedule, parallel programme and delivery priorities.",
+      "qualityControl": "Norbert Banhalmi remains responsible for visual direction, consistent image language and final selection.",
+      "servicePages": {
+        "en": "https://www.norbertbanhalmi.com/event-photography/",
+        "hu-HU": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
+        "de-AT": "https://www.norbertbanhalmi.com/de-at/eventfotografie/"
+      }
+    }
   }
 }
