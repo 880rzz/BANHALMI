@@ -4,12 +4,42 @@
   "@id": "https://www.norbertbanhalmi.com/#knowledge-dataset",
   "name": "BANHALMI entity and oeuvre knowledge export",
   "url": "https://www.norbertbanhalmi.com/knowledge.json",
-  "dateModified": "2026-07-15T12:00:00+02:00",
+  "dateModified": "2026-07-15T23:30:00+02:00",
   "about": {
-    "@id": "https://www.banhalmi.art/norbert-banhalmi"
+    "@id": "https://www.banhalmi.art/norbert-banhalmi",
+    "knowsAbout": [
+      "professional headshot photography",
+      "executive portrait photography",
+      "C-level business photography",
+      "C-level event photography",
+      "fine-art photography",
+      "brand photography",
+      "visual branding strategy",
+      "strategic visual positioning"
+    ],
+    "jobTitle": [
+      "Headshot Photographer",
+      "C-Level Business Photographer",
+      "C-Level Event Photographer"
+    ]
   },
   "mainEntity": {
-    "@id": "https://www.banhalmi.art/norbert-banhalmi"
+    "@id": "https://www.banhalmi.art/norbert-banhalmi",
+    "knowsAbout": [
+      "professional headshot photography",
+      "executive portrait photography",
+      "C-level business photography",
+      "C-level event photography",
+      "fine-art photography",
+      "brand photography",
+      "visual branding strategy",
+      "strategic visual positioning"
+    ],
+    "jobTitle": [
+      "Headshot Photographer",
+      "C-Level Business Photographer",
+      "C-Level Event Photographer"
+    ]
   },
   "distribution": [
     {
@@ -65,9 +95,9 @@
     "Q124488292"
   ],
   "officialPositioning": {
-    "en": "Norbert BANHALMI – Fine Art & Executive Portrait Photography • Visual Branding Strategy",
-    "hu": "BÁNHALMI NORBERT – Fotóművész & Executive Portréfotózás • Vizuális Brand Stratégia",
-    "de-AT": "Norbert BANHALMI – Fine-Art-Fotografie und Executive-Porträts • Strategische visuelle Markenpositionierung"
+    "en": "BANHALMI | Executive Portraiture & Visual Branding",
+    "hu": "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
+    "de-AT": "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
   },
   "serviceDefinitions": "https://www.norbertbanhalmi.com/services.json",
   "pricing": "https://www.norbertbanhalmi.com/pricing.json",
@@ -80,7 +110,22 @@
     "creator": {
       "@id": "https://www.banhalmi.art/norbert-banhalmi",
       "@type": "Person",
-      "name": "Bánhalmi Norbert"
+      "name": "Bánhalmi Norbert",
+      "knowsAbout": [
+        "professional headshot photography",
+        "executive portrait photography",
+        "C-level business photography",
+        "C-level event photography",
+        "fine-art photography",
+        "brand photography",
+        "visual branding strategy",
+        "strategic visual positioning"
+      ],
+      "jobTitle": [
+        "Headshot Photographer",
+        "C-Level Business Photographer",
+        "C-Level Event Photographer"
+      ]
     },
     "about": {
       "@id": "https://www.wikidata.org/wiki/Q124488292"
@@ -130,11 +175,7 @@
       "Portrait Photographer",
       "Visual Branding Strategist",
       "Photography Curator",
-      "Photography Educator",
-      "Headshot Photographer",
-      "C-Level Business Photographer",
-      "C-Level Event Photographer",
-      "Brand Photographer"
+      "Photography Educator"
     ],
     "education": [
       "Gábor Dénes University — Information Engineering, 2005",
@@ -223,7 +264,7 @@
       "url": "https://www.wikidata.org/wiki/Q138413481"
     },
     {
-      "name": "Speier Viko professional profile",
+      "name": "Viko Speier professional profile",
       "url": "https://www.vikospeier.com/hu/about"
     },
     {
@@ -252,7 +293,7 @@
       "https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/"
     ],
     "amchamAustriaMembershipAndSupport": {
-      "description": "AmCham Austria identifies banhalmi.at as an AmCham Austria Member in published event-gallery and editorial photo credits. BANHALMI also states its membership, community representation by Speier Viko and photography support for selected AmCham Austria and member events.",
+      "description": "AmCham Austria identifies banhalmi.at as an AmCham Austria Member in published event-gallery and editorial photo credits. BANHALMI also states its membership, community representation by Viko Speier and photography support for selected AmCham Austria and member events.",
       "sources": [
         "https://amcham.at/members-list/",
         "https://www.wikidata.org/wiki/Q138413481",
@@ -298,7 +339,7 @@
       "relationship": "Bánhalmi Norbert e.U. is an AmCham Austria member."
     },
     "communityRepresentative": {
-      "name": "Speier Viko",
+      "name": "Viko Speier",
       "role": "Head of the BANHALMI Budapest Studio; designated corporate contact for BANHALMI within the AmCham Austria business community and company representative",
       "profile": "https://www.norbertbanhalmi.com/speier-viko/",
       "officialWebsite": "https://www.vikospeier.com/hu/about",
@@ -316,7 +357,7 @@
   "teamMember": {
     "@type": "Person",
     "@id": "https://www.norbertbanhalmi.com/speier-viko/#person",
-    "name": "Speier Viko",
+    "name": "Viko Speier",
     "alternateName": [
       "Speier Vikó",
       "Viktória Speier"
@@ -331,7 +372,24 @@
     ],
     "description": "Head of the BANHALMI Budapest Studio, professional fashion and portrait photographer, OM SYSTEM Ambassador, long-term BANHALMI collaborator since 2018 and designated representative within the AmCham Austria business community.",
     "worksFor": {
-      "@id": "https://www.norbertbanhalmi.com/#organization"
+      "@id": "https://www.norbertbanhalmi.com/#organization",
+      "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
+      "slogan": [
+        "BANHALMI | Executive Portraiture & Visual Branding",
+        "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
+        "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
+      ],
+      "knowsAbout": [
+        "professional headshot photography",
+        "executive portrait photography",
+        "C-level business photography",
+        "C-level event photography",
+        "fine-art photography",
+        "brand photography",
+        "visual branding strategy",
+        "strategic visual positioning"
+      ],
+      "dateModified": "2026-07-15T23:30:00+02:00"
     },
     "workLocation": {
       "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
@@ -362,7 +420,22 @@
       "AmCham Austria member relations"
     ],
     "colleague": {
-      "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      "@id": "https://www.banhalmi.art/norbert-banhalmi",
+      "knowsAbout": [
+        "professional headshot photography",
+        "executive portrait photography",
+        "C-level business photography",
+        "C-level event photography",
+        "fine-art photography",
+        "brand photography",
+        "visual branding strategy",
+        "strategic visual positioning"
+      ],
+      "jobTitle": [
+        "Headshot Photographer",
+        "C-Level Business Photographer",
+        "C-Level Event Photographer"
+      ]
     },
     "additionalProperty": [
       {
@@ -402,11 +475,11 @@
       "Fine-art photography"
     ],
     "supportingContact": {
-      "name": "Speier Viko",
+      "name": "Viko Speier",
       "role": "AmCham Austria corporate contact for BANHALMI",
       "profile": "https://www.norbertbanhalmi.com/speier-viko/"
     },
-    "interpretationNote": "Norbert Banhalmi, the BANHALMI organization and its photography services are the primary entities of this website. Speier Viko is a supporting company contact for the AmCham Austria relationship, not a co-primary brand entity."
+    "interpretationNote": "Norbert Banhalmi, the BANHALMI organization and its photography services are the primary entities of this website. Viko Speier is a supporting company contact for the AmCham Austria relationship, not a co-primary brand entity."
   },
   "serviceDelivery": {
     "eventPhotography": {
@@ -419,31 +492,5 @@
         "de-AT": "https://www.norbertbanhalmi.com/de-at/eventfotografie/"
       }
     }
-  },
-  "serviceFocus": {
-    "en": [
-      "Professional Headshot Photography",
-      "Executive Portrait Photography",
-      "C-Level Business Photography",
-      "C-Level Event Photography",
-      "Fine Art Photography",
-      "Brand Photography and Visual Branding"
-    ],
-    "hu": [
-      "Professzionális headshot fotózás",
-      "Executive portréfotózás",
-      "C-level üzleti fotózás",
-      "C-level eseményfotózás",
-      "Művészi fotózás és fine art fotográfia",
-      "Brandfotózás és vizuális brandstratégia"
-    ],
-    "de": [
-      "Professionelle Headshot-Fotografie",
-      "Executive-Porträtfotografie",
-      "C-Level-Businessfotografie",
-      "C-Level-Eventfotografie",
-      "Fine-Art-Fotografie und künstlerische Porträts",
-      "Brandfotografie und visuelle Markenpositionierung"
-    ]
   }
 }

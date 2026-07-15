@@ -1,9 +1,26 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "schemaVersion": "2026-07-07-v2",
-  "dateModified": "2026-07-15T12:00:00+02:00",
+  "dateModified": "2026-07-15T23:30:00+02:00",
   "publisher": {
-    "@id": "https://www.norbertbanhalmi.com/#organization"
+    "@id": "https://www.norbertbanhalmi.com/#organization",
+    "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
+    "slogan": [
+      "BANHALMI | Executive Portraiture & Visual Branding",
+      "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
+      "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
+    ],
+    "knowsAbout": [
+      "professional headshot photography",
+      "executive portrait photography",
+      "C-level business photography",
+      "C-level event photography",
+      "fine-art photography",
+      "brand photography",
+      "visual branding strategy",
+      "strategic visual positioning"
+    ],
+    "dateModified": "2026-07-15T23:30:00+02:00"
   },
   "currency": "EUR",
   "priceBasis": "gross consumer-facing orientation prices",
@@ -50,14 +67,16 @@
     {
       "id": "portrait",
       "name": {
-        "en": "Portrait photography",
-        "hu": "Portréfotózás",
-        "de-AT": "Porträtfotografie"
+        "en": "Headshots, executive portraits and C-level business photography",
+        "hu": "Headshot, executive portré és C-level üzleti fotózás",
+        "de-AT": "Headshots, Executive-Porträts und C-Level-Businessfotografie"
       },
       "scope": [
-        "executive",
-        "business",
-        "headshot",
+        "professional headshot",
+        "executive portrait",
+        "C-level business photography",
+        "board and leadership photography",
+        "corporate team photography",
         "personal brand",
         "editorial",
         "studio",

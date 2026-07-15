@@ -4,18 +4,48 @@
   "@id": "https://www.norbertbanhalmi.com/entity-graph.json",
   "name": "BANHALMI canonical entity graph",
   "url": "https://www.norbertbanhalmi.com/entity-graph.json",
-  "dateModified": "2026-07-14T12:00:00+02:00",
+  "dateModified": "2026-07-15T23:30:00+02:00",
   "inLanguage": [
     "en",
     "hu-HU",
     "de-AT"
   ],
   "about": {
-    "@id": "https://www.banhalmi.art/norbert-banhalmi"
+    "@id": "https://www.banhalmi.art/norbert-banhalmi",
+    "knowsAbout": [
+      "professional headshot photography",
+      "executive portrait photography",
+      "C-level business photography",
+      "C-level event photography",
+      "fine-art photography",
+      "brand photography",
+      "visual branding strategy",
+      "strategic visual positioning"
+    ],
+    "jobTitle": [
+      "Headshot Photographer",
+      "C-Level Business Photographer",
+      "C-Level Event Photographer"
+    ]
   },
   "dataFeedElement": [
     {
-      "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      "@id": "https://www.banhalmi.art/norbert-banhalmi",
+      "knowsAbout": [
+        "professional headshot photography",
+        "executive portrait photography",
+        "C-level business photography",
+        "C-level event photography",
+        "fine-art photography",
+        "brand photography",
+        "visual branding strategy",
+        "strategic visual positioning"
+      ],
+      "jobTitle": [
+        "Headshot Photographer",
+        "C-Level Business Photographer",
+        "C-Level Event Photographer"
+      ]
     },
     {
       "@id": "https://www.norbertbanhalmi.com/#organization",
@@ -34,13 +64,33 @@
           "name": "Company headquarters",
           "value": "Vienna, Austria"
         }
-      ]
+      ],
+      "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
+      "slogan": [
+        "BANHALMI | Executive Portraiture & Visual Branding",
+        "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
+        "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
+      ],
+      "knowsAbout": [
+        "professional headshot photography",
+        "executive portrait photography",
+        "C-level business photography",
+        "C-level event photography",
+        "fine-art photography",
+        "brand photography",
+        "visual branding strategy",
+        "strategic visual positioning"
+      ],
+      "dateModified": "2026-07-15T23:30:00+02:00"
     },
     {
       "@id": "https://www.norbertbanhalmi.com/#website",
       "alternateName": [
         "banhalmi.at — German entry domain",
-        "banhalminorbert.hu — Hungarian entry domain"
+        "banhalminorbert.hu — Hungarian entry domain",
+        "BANHALMI | Executive Portraiture & Visual Branding",
+        "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
+        "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
       ]
     },
     {
@@ -132,7 +182,22 @@
       "name": "EUFÓRIA — The Anatomy of Presence",
       "sameAs": "https://www.wikidata.org/wiki/Q138717398",
       "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        "@id": "https://www.banhalmi.art/norbert-banhalmi",
+        "knowsAbout": [
+          "professional headshot photography",
+          "executive portrait photography",
+          "C-level business photography",
+          "C-level event photography",
+          "fine-art photography",
+          "brand photography",
+          "visual branding strategy",
+          "strategic visual positioning"
+        ],
+        "jobTitle": [
+          "Headshot Photographer",
+          "C-Level Business Photographer",
+          "C-Level Event Photographer"
+        ]
       },
       "image": {
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
@@ -153,7 +218,22 @@
       "creator": {
         "@id": "https://www.banhalmi.art/norbert-banhalmi",
         "@type": "Person",
-        "name": "Bánhalmi Norbert"
+        "name": "Bánhalmi Norbert",
+        "knowsAbout": [
+          "professional headshot photography",
+          "executive portrait photography",
+          "C-level business photography",
+          "C-level event photography",
+          "fine-art photography",
+          "brand photography",
+          "visual branding strategy",
+          "strategic visual positioning"
+        ],
+        "jobTitle": [
+          "Headshot Photographer",
+          "C-Level Business Photographer",
+          "C-Level Event Photographer"
+        ]
       },
       "about": {
         "@id": "https://www.wikidata.org/wiki/Q124488292"
@@ -236,7 +316,22 @@
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
       },
       "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        "@id": "https://www.banhalmi.art/norbert-banhalmi",
+        "knowsAbout": [
+          "professional headshot photography",
+          "executive portrait photography",
+          "C-level business photography",
+          "C-level event photography",
+          "fine-art photography",
+          "brand photography",
+          "visual branding strategy",
+          "strategic visual positioning"
+        ],
+        "jobTitle": [
+          "Headshot Photographer",
+          "C-Level Business Photographer",
+          "C-Level Event Photographer"
+        ]
       }
     },
     {
@@ -301,7 +396,22 @@
       },
       "url": "https://www.veol.hu/vezeto-hirek/2018/03/csolnoky-ferenc-korhaz-onkologiai-centrum-rak-kiallitas",
       "contributor": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        "@id": "https://www.banhalmi.art/norbert-banhalmi",
+        "knowsAbout": [
+          "professional headshot photography",
+          "executive portrait photography",
+          "C-level business photography",
+          "C-level event photography",
+          "fine-art photography",
+          "brand photography",
+          "visual branding strategy",
+          "strategic visual positioning"
+        ],
+        "jobTitle": [
+          "Headshot Photographer",
+          "C-Level Business Photographer",
+          "C-Level Event Photographer"
+        ]
       }
     },
     {
@@ -312,7 +422,22 @@
       "dateModified": "2026-06-18T12:00:00+02:00",
       "inLanguage": "hu-HU",
       "about": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        "@id": "https://www.banhalmi.art/norbert-banhalmi",
+        "knowsAbout": [
+          "professional headshot photography",
+          "executive portrait photography",
+          "C-level business photography",
+          "C-level event photography",
+          "fine-art photography",
+          "brand photography",
+          "visual branding strategy",
+          "strategic visual positioning"
+        ],
+        "jobTitle": [
+          "Headshot Photographer",
+          "C-Level Business Photographer",
+          "C-Level Event Photographer"
+        ]
       }
     },
     {
@@ -508,7 +633,7 @@
     {
       "@type": "Person",
       "@id": "https://www.norbertbanhalmi.com/speier-viko/#person",
-      "name": "Speier Viko",
+      "name": "Viko Speier",
       "alternateName": [
         "Speier Vikó",
         "Viktória Speier"
@@ -523,7 +648,24 @@
       ],
       "description": "Head of the BANHALMI Budapest Studio, professional fashion and portrait photographer, OM SYSTEM Ambassador, long-term BANHALMI collaborator since 2018 and designated representative within the AmCham Austria business community.",
       "worksFor": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.norbertbanhalmi.com/#organization",
+        "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
+        "slogan": [
+          "BANHALMI | Executive Portraiture & Visual Branding",
+          "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
+          "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
+        ],
+        "knowsAbout": [
+          "professional headshot photography",
+          "executive portrait photography",
+          "C-level business photography",
+          "C-level event photography",
+          "fine-art photography",
+          "brand photography",
+          "visual branding strategy",
+          "strategic visual positioning"
+        ],
+        "dateModified": "2026-07-15T23:30:00+02:00"
       },
       "workLocation": {
         "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
@@ -554,7 +696,22 @@
         "AmCham Austria member relations"
       ],
       "colleague": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        "@id": "https://www.banhalmi.art/norbert-banhalmi",
+        "knowsAbout": [
+          "professional headshot photography",
+          "executive portrait photography",
+          "C-level business photography",
+          "C-level event photography",
+          "fine-art photography",
+          "brand photography",
+          "visual branding strategy",
+          "strategic visual positioning"
+        ],
+        "jobTitle": [
+          "Headshot Photographer",
+          "C-Level Business Photographer",
+          "C-Level Event Photographer"
+        ]
       },
       "additionalProperty": [
         {
@@ -579,9 +736,9 @@
     }
   ],
   "officialPositioning": {
-    "en": "Norbert BANHALMI – Fine Art & Executive Portrait Photography • Visual Branding Strategy",
-    "hu": "BÁNHALMI NORBERT – Fotóművész & Executive Portréfotózás • Vizuális Brand Stratégia",
-    "de-AT": "Norbert BANHALMI – Fine-Art-Fotografie und Executive-Porträts • Strategische visuelle Markenpositionierung"
+    "en": "BANHALMI | Executive Portraiture & Visual Branding",
+    "hu": "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
+    "de-AT": "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
   },
   "serviceDefinitions": "https://www.norbertbanhalmi.com/services.json",
   "pricing": "https://www.norbertbanhalmi.com/pricing.json",
@@ -624,7 +781,7 @@
       "relationship": "Bánhalmi Norbert e.U. is an AmCham Austria member."
     },
     "communityRepresentative": {
-      "name": "Speier Viko",
+      "name": "Viko Speier",
       "role": "Head of the BANHALMI Budapest Studio; designated contact and company representative within the AmCham Austria community",
       "profile": "https://www.norbertbanhalmi.com/speier-viko/",
       "email": "hello@norbertbanhalmi.com",

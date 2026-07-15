@@ -3,18 +3,20 @@
   "@type": "ItemList",
   "@id": "https://www.norbertbanhalmi.com/services.json#services",
   "name": "BANHALMI multilingual service definitions",
-  "dateModified": "2026-07-15T12:00:00+02:00",
+  "dateModified": "2026-07-15T23:30:00+02:00",
   "itemListElement": [
     {
       "@type": "Service",
       "@id": "https://www.norbertbanhalmi.com/portrait/#service",
-      "name": "Executive Portrait Photography",
+      "name": "Headshots, Executive Portraits and C-Level Business Photography",
       "alternateName": [
-        "Executive Portraits",
-        "Leadership Portrait Photography",
-        "Board Portrait Photography"
+        "Professional Headshot Photography",
+        "Executive Portrait Photography",
+        "C-Level Business Photography",
+        "Board and Leadership Photography",
+        "Corporate Team Photography"
       ],
-      "description": "Strategic executive portrait photography for founders, executives, board members and public-facing leaders in Vienna, Budapest and across Europe.",
+      "description": "Professional headshots, executive portraits and C-level business photography for founders, board members, leadership teams and companies in Vienna, Budapest and across Europe.",
       "provider": {
         "@id": "https://www.norbertbanhalmi.com/#organization",
         "headquarters": {
@@ -31,86 +33,73 @@
             "name": "Company headquarters",
             "value": "Vienna, Austria"
           }
-        ]
+        ],
+        "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
+        "slogan": [
+          "BANHALMI | Executive Portraiture & Visual Branding",
+          "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
+          "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
+        ],
+        "knowsAbout": [
+          "professional headshot photography",
+          "executive portrait photography",
+          "C-level business photography",
+          "C-level event photography",
+          "fine-art photography",
+          "brand photography",
+          "visual branding strategy",
+          "strategic visual positioning"
+        ],
+        "dateModified": "2026-07-15T23:30:00+02:00"
       },
       "url": "https://www.norbertbanhalmi.com/portrait/",
-      "serviceType": "Executive Portrait Photography"
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.norbertbanhalmi.com/headshot-photography/#service",
-      "name": "Professional Headshot Photography",
-      "alternateName": [
-        "Business Headshots",
-        "Corporate Headshots",
-        "Executive Headshots",
-        "Team Headshot Photography"
+      "category": [
+        "Headshot Photography",
+        "Executive Portrait Photography",
+        "C-Level Business Photography"
       ],
-      "description": "Professional individual and team headshot photography for LinkedIn, company websites, speakers and corporate profiles in Vienna, Budapest and across Europe.",
-      "serviceType": "Headshot Photography",
-      "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#organization",
-        "headquarters": {
-          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
-        },
-        "sameAs": [
-          "https://www.banhalmi.at/",
-          "https://www.banhalminorbert.hu/"
-        ],
-        "additionalProperty": [
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Portrait and C-Level business photography services",
+        "itemListElement": [
           {
-            "@type": "PropertyValue",
-            "propertyID": "companyHeadquarters",
-            "name": "Company headquarters",
-            "value": "Vienna, Austria"
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Professional Headshot Photography",
+              "url": "https://www.norbertbanhalmi.com/portrait/#headshots"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Executive Portrait Photography",
+              "url": "https://www.norbertbanhalmi.com/portrait/#executive-portraits"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "C-Level Business Photography",
+              "url": "https://www.norbertbanhalmi.com/portrait/#c-level-business-photography"
+            }
           }
         ]
-      },
-      "url": "https://www.norbertbanhalmi.com/headshot-photography/"
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.norbertbanhalmi.com/c-level-business-photography/#service",
-      "name": "C-Level Business Photography",
-      "alternateName": [
-        "Leadership Photography",
-        "Executive Business Photography",
-        "Board Photography",
-        "Management Team Photography"
-      ],
-      "description": "C-level business photography for executives, boards and leadership teams: portraits, meetings and corporate communication in Vienna and Budapest.",
-      "serviceType": "C-Level Business Photography",
-      "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#organization",
-        "headquarters": {
-          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
-        },
-        "sameAs": [
-          "https://www.banhalmi.at/",
-          "https://www.banhalminorbert.hu/"
-        ],
-        "additionalProperty": [
-          {
-            "@type": "PropertyValue",
-            "propertyID": "companyHeadquarters",
-            "name": "Company headquarters",
-            "value": "Vienna, Austria"
-          }
-        ]
-      },
-      "url": "https://www.norbertbanhalmi.com/c-level-business-photography/"
+      }
     },
     {
       "@type": "Service",
       "@id": "https://www.norbertbanhalmi.com/lifestyle/#service",
-      "name": "Brand Photography & Visual Branding",
+      "name": "Brand Photography and Visual Positioning",
       "alternateName": [
         "Visual Branding Strategy",
         "Strategic Visual Positioning",
-        "Corporate Brand Photography",
-        "Personal Brand Photography"
+        "Personal Brand Photography",
+        "Corporate Brand Photography"
       ],
-      "description": "Strategic brand photography, visual branding and coherent image systems by Norbert Banhalmi for founders, leadership teams and organisations in Vienna, Budapest and across Europe.",
+      "description": "Strategic brand photography and visual positioning for founders, C-level leaders, teams, products and organizations in Vienna, Budapest and across Europe.",
       "provider": {
         "@id": "https://www.norbertbanhalmi.com/#organization",
         "headquarters": {
@@ -127,15 +116,31 @@
             "name": "Company headquarters",
             "value": "Vienna, Austria"
           }
-        ]
+        ],
+        "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
+        "slogan": [
+          "BANHALMI | Executive Portraiture & Visual Branding",
+          "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
+          "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
+        ],
+        "knowsAbout": [
+          "professional headshot photography",
+          "executive portrait photography",
+          "C-level business photography",
+          "C-level event photography",
+          "fine-art photography",
+          "brand photography",
+          "visual branding strategy",
+          "strategic visual positioning"
+        ],
+        "dateModified": "2026-07-15T23:30:00+02:00"
       },
-      "url": "https://www.norbertbanhalmi.com/lifestyle/",
-      "serviceType": "Brand Photography & Visual Branding"
+      "url": "https://www.norbertbanhalmi.com/lifestyle/"
     },
     {
       "@type": "Service",
       "@id": "https://www.norbertbanhalmi.com/event-photography/#service",
-      "name": "C-Level & Corporate Event Photography",
+      "name": "C-Level Event Photography with a Photographer Team",
       "provider": {
         "@id": "https://www.norbertbanhalmi.com/#organization",
         "headquarters": {
@@ -152,16 +157,33 @@
             "name": "Company headquarters",
             "value": "Vienna, Austria"
           }
-        ]
+        ],
+        "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
+        "slogan": [
+          "BANHALMI | Executive Portraiture & Visual Branding",
+          "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
+          "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
+        ],
+        "knowsAbout": [
+          "professional headshot photography",
+          "executive portrait photography",
+          "C-level business photography",
+          "C-level event photography",
+          "fine-art photography",
+          "brand photography",
+          "visual branding strategy",
+          "strategic visual positioning"
+        ],
+        "dateModified": "2026-07-15T23:30:00+02:00"
       },
       "url": "https://www.norbertbanhalmi.com/event-photography/",
       "alternateName": [
-        "Executive Event Photography",
-        "Corporate Event Photography",
-        "Board Meeting Photography",
-        "Leadership Event Photography"
+        "C-Level Event Photography",
+        "Corporate Event Photography Team",
+        "Leadership Summit Photography",
+        "Board Meeting Photography"
       ],
-      "description": "Team-led C-level and corporate event photography directed by Norbert Banhalmi for executive meetings, conferences, institutions and private events in Vienna, Budapest and across Europe.",
+      "description": "Team-led C-level event photography directed by Norbert Banhalmi for leadership summits, board meetings, conferences and corporate events across Europe.",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -169,13 +191,12 @@
           "name": "Event coverage model",
           "value": "Norbert Banhalmi personally leads the visual direction, team structure, coordination and final image selection."
         }
-      ],
-      "serviceType": "C-Level & Corporate Event Photography"
+      ]
     },
     {
       "@type": "Service",
       "@id": "https://www.norbertbanhalmi.com/glamour/#service",
-      "name": "Fine Art Photography & Artistic Portraiture",
+      "name": "Fine Art Photography and Nude Art",
       "provider": {
         "@id": "https://www.norbertbanhalmi.com/#organization",
         "headquarters": {
@@ -192,17 +213,27 @@
             "name": "Company headquarters",
             "value": "Vienna, Austria"
           }
-        ]
+        ],
+        "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
+        "slogan": [
+          "BANHALMI | Executive Portraiture & Visual Branding",
+          "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
+          "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
+        ],
+        "knowsAbout": [
+          "professional headshot photography",
+          "executive portrait photography",
+          "C-level business photography",
+          "C-level event photography",
+          "fine-art photography",
+          "brand photography",
+          "visual branding strategy",
+          "strategic visual positioning"
+        ],
+        "dateModified": "2026-07-15T23:30:00+02:00"
       },
       "url": "https://www.norbertbanhalmi.com/glamour/",
-      "alternateName": [
-        "Artistic Photography",
-        "Fine Art Portrait Photography",
-        "Intimate Portraiture",
-        "Author-led Photography"
-      ],
-      "description": "Fine art photography and artistic portraiture by Norbert Banhalmi exploring identity, body, memory, presence and personal visual narratives.",
-      "serviceType": "Fine Art Photography & Artistic Portraiture"
+      "description": "Fine-art photography, artistic portraiture and nude art exploring identity, biography, intimacy, recovery and human presence."
     }
   ],
   "languageVersions": {
@@ -224,7 +255,22 @@
       "@id": "https://www.banhalmi.art/norbert-banhalmi",
       "name": "Bánhalmi Norbert",
       "wikidata": "https://www.wikidata.org/wiki/Q56391118",
-      "@type": "Person"
+      "@type": "Person",
+      "knowsAbout": [
+        "professional headshot photography",
+        "executive portrait photography",
+        "C-level business photography",
+        "C-level event photography",
+        "fine-art photography",
+        "brand photography",
+        "visual branding strategy",
+        "strategic visual positioning"
+      ],
+      "jobTitle": [
+        "Headshot Photographer",
+        "C-Level Business Photographer",
+        "C-Level Event Photographer"
+      ]
     },
     "about": {
       "@id": "https://www.wikidata.org/wiki/Q124488292",
