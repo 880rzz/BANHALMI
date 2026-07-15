@@ -4,7 +4,7 @@
   "@id": "https://www.norbertbanhalmi.com/#knowledge-dataset",
   "name": "BANHALMI entity and oeuvre knowledge export",
   "url": "https://www.norbertbanhalmi.com/knowledge.json",
-  "dateModified": "2026-07-14T12:00:00+02:00",
+  "dateModified": "2026-07-15T12:00:00+02:00",
   "about": {
     "@id": "https://www.banhalmi.art/norbert-banhalmi"
   },
@@ -130,7 +130,11 @@
       "Portrait Photographer",
       "Visual Branding Strategist",
       "Photography Curator",
-      "Photography Educator"
+      "Photography Educator",
+      "Headshot Photographer",
+      "C-Level Business Photographer",
+      "C-Level Event Photographer",
+      "Brand Photographer"
     ],
     "education": [
       "Gábor Dénes University — Information Engineering, 2005",
@@ -415,5 +419,31 @@
         "de-AT": "https://www.norbertbanhalmi.com/de-at/eventfotografie/"
       }
     }
+  },
+  "serviceFocus": {
+    "en": [
+      "Professional Headshot Photography",
+      "Executive Portrait Photography",
+      "C-Level Business Photography",
+      "C-Level Event Photography",
+      "Fine Art Photography",
+      "Brand Photography and Visual Branding"
+    ],
+    "hu": [
+      "Professzionális headshot fotózás",
+      "Executive portréfotózás",
+      "C-level üzleti fotózás",
+      "C-level eseményfotózás",
+      "Művészi fotózás és fine art fotográfia",
+      "Brandfotózás és vizuális brandstratégia"
+    ],
+    "de": [
+      "Professionelle Headshot-Fotografie",
+      "Executive-Porträtfotografie",
+      "C-Level-Businessfotografie",
+      "C-Level-Eventfotografie",
+      "Fine-Art-Fotografie und künstlerische Porträts",
+      "Brandfotografie und visuelle Markenpositionierung"
+    ]
   }
 }

@@ -32,7 +32,11 @@
         "Photography Curator",
         "Photography Educator",
         "Visual Artist",
-        "OM SYSTEM Ambassador"
+        "OM SYSTEM Ambassador",
+        "Headshot Photographer",
+        "C-Level Business Photographer",
+        "C-Level Event Photographer",
+        "Brand Photographer"
       ],
       "description": "Norbert BANHALMI is a Hungarian fine-art and applied photographer, executive portrait specialist, visual branding strategist, curator and photography educator. Active since 1999, he lives and works in Vienna and maintains professional ties to Budapest; his practice spans commissioned portraiture, brand and event photography, books, exhibitions, curatorial programmes and community education.",
       "url": "https://www.banhalmi.art/norbert-banhalmi",
@@ -234,27 +238,14 @@
         }
       ],
       "knowsAbout": [
-        "fine-art photography",
-        "executive portrait photography",
-        "portrait photography across multiple styles",
-        "business headshots",
-        "editorial portraiture",
-        "personal branding",
-        "visual branding strategy",
-        "strategic visual positioning",
-        "brand photography",
-        "event photography",
-        "photographic exhibitions",
-        "photography books",
-        "curatorial practice",
-        "applied photography",
-        "documentary portraiture",
-        "photography education",
-        "photography workshops",
-        "digital exhibitions",
-        "community arts",
-        "visual media literacy",
-        "artificial intelligence and image culture"
+        "Professional Headshot Photography",
+        "Executive Portrait Photography",
+        "C-Level Business Photography",
+        "C-Level Event Photography",
+        "Fine Art Photography",
+        "Brand Photography",
+        "Visual Branding Strategy",
+        "Strategic Visual Positioning"
       ],
       "hasOccupation": [
         {
@@ -458,23 +449,20 @@
           "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
         }
       ],
-      "description": "Photography and visual positioning practice led by Norbert BANHALMI, providing multi-style portrait photography, executive portraiture, strategic visual branding, brand photography, team-led event documentation and fine-art work in Vienna, Budapest and across Europe.",
+      "description": "BANHALMI is a Vienna- and Budapest-based photography and visual branding practice specialising in professional headshots, executive portraiture, C-level business photography, C-level event photography, fine art photography and strategic brand photography.",
       "slogan": [
         "Norbert BANHALMI – Fine Art & Executive Portrait Photography • Visual Branding Strategy",
         "BÁNHALMI NORBERT – Fotóművész & Executive Portréfotózás • Vizuális Brand Stratégia",
         "Norbert BANHALMI – Fine-Art-Fotografie und Executive-Porträts • Strategische visuelle Markenpositionierung"
       ],
       "knowsAbout": [
-        "portrait photography",
-        "executive portraiture",
-        "visual branding strategy",
-        "visual positioning",
-        "brand photography",
-        "event photography",
-        "fine-art photography",
-        "AmCham Austria business network",
-        "Austrian–United States business relations",
-        "international business event photography"
+        "Professional Headshots",
+        "Executive Portraiture",
+        "C-Level Business Photography",
+        "C-Level Event Photography",
+        "Fine Art Photography",
+        "Brand Photography",
+        "Visual Branding"
       ],
       "headquarters": {
         "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
