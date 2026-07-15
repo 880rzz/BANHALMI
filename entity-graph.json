@@ -4,7 +4,7 @@
   "@id": "https://www.norbertbanhalmi.com/entity-graph.json",
   "name": "BANHALMI canonical entity graph",
   "url": "https://www.norbertbanhalmi.com/entity-graph.json",
-  "dateModified": "2026-07-14",
+  "dateModified": "2026-07-14T12:00:00+02:00",
   "inLanguage": [
     "en",
     "hu-HU",
@@ -151,7 +151,9 @@
       "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026",
       "name": "Péter Magyar portrait, Budapest, 15 March 2026",
       "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        "@id": "https://www.banhalmi.art/norbert-banhalmi",
+        "@type": "Person",
+        "name": "Bánhalmi Norbert"
       },
       "about": {
         "@id": "https://www.wikidata.org/wiki/Q124488292"
@@ -307,7 +309,7 @@
       "@id": "https://www.norbertbanhalmi.com/#wikipedia-biography-source",
       "name": "Bánhalmi Norbert — Hungarian Wikipedia biography",
       "url": "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
-      "dateModified": "2026-06-18",
+      "dateModified": "2026-06-18T12:00:00+02:00",
       "inLanguage": "hu-HU",
       "about": {
         "@id": "https://www.banhalmi.art/norbert-banhalmi"

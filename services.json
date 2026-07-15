@@ -3,7 +3,7 @@
   "@type": "ItemList",
   "@id": "https://www.norbertbanhalmi.com/services.json#services",
   "name": "BANHALMI multilingual service definitions",
-  "dateModified": "2026-07-15",
+  "dateModified": "2026-07-15T12:00:00+02:00",
   "itemListElement": [
     {
       "@type": "Service",
@@ -150,8 +150,9 @@
     "type": "executive-documentary-portrait",
     "creator": {
       "@id": "https://www.banhalmi.art/norbert-banhalmi",
-      "name": "Norbert Banhalmi",
-      "wikidata": "https://www.wikidata.org/wiki/Q56391118"
+      "name": "Bánhalmi Norbert",
+      "wikidata": "https://www.wikidata.org/wiki/Q56391118",
+      "@type": "Person"
     },
     "about": {
       "@id": "https://www.wikidata.org/wiki/Q124488292",

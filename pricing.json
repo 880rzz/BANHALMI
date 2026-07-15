@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "schemaVersion": "2026-07-07-v2",
-  "dateModified": "2026-07-15",
+  "dateModified": "2026-07-15T12:00:00+02:00",
   "publisher": {
     "@id": "https://www.norbertbanhalmi.com/#organization"
   },

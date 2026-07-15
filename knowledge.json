@@ -4,7 +4,7 @@
   "@id": "https://www.norbertbanhalmi.com/#knowledge-dataset",
   "name": "BANHALMI entity and oeuvre knowledge export",
   "url": "https://www.norbertbanhalmi.com/knowledge.json",
-  "dateModified": "2026-07-14",
+  "dateModified": "2026-07-14T12:00:00+02:00",
   "about": {
     "@id": "https://www.banhalmi.art/norbert-banhalmi"
   },
@@ -78,7 +78,9 @@
       "Photograph"
     ],
     "creator": {
-      "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      "@id": "https://www.banhalmi.art/norbert-banhalmi",
+      "@type": "Person",
+      "name": "Bánhalmi Norbert"
     },
     "about": {
       "@id": "https://www.wikidata.org/wiki/Q124488292"
