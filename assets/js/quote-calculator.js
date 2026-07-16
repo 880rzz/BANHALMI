@@ -11,7 +11,47 @@
     de:{net:'Netto',vat:'USt.',gross:'Brutto',vat20:'Die vorläufige Kalkulation enthält 20% österreichische USt. Eine 0%-Behandlung kann erst nach Prüfung des Unternehmens, der UID und der anwendbaren gesetzlichen Voraussetzungen gültig werden.',reverse:'Die vorläufige Kalkulation enthält weiterhin 20% österreichische USt. Die 0%-Behandlung wird erst nach Prüfung des Unternehmens, der UID und der anwendbaren gesetzlichen Voraussetzungen gültig.',individual:'Einzelporträt',group:'Gruppenporträt',brand:'Brand-Fotografie',art:'Fine-Art-Fotografie',event:'Eventfotografie',people:'Personen',person:'Person',photographers:'Fotostation(en)',retouches:'retuschierte Bilder',perPerson:'pro Person',travel:'Anfahrt',vehicles:'Fahrzeug(e)',instant:'sofortige Retusche vor Ort',hours:'begonnene Stunde(n)',coordination:'Terminabstimmung gewünscht',included:'im Paket enthalten',mobileStudio:'mobiles Studio',crew:'Teammitglieder',addons:{stylist:'Styling',hair:'Hair-Styling',makeup:'Make-up',express:'Expresslieferung',artdirection:'Art Direction'}}
   };
   function applyPricingJson(data){var p=data&&data.priceComponentsGrossEUR;if(!p)throw new Error('priceComponentsGrossEUR missing');var map={headshotcv:'headshotCvGross',quick30:'individualQuick30',guided60:'individualGuided60',guided120:'individualGuided120',groupSetup:'groupSetupLaterRetouching',groupPerson:'groupPerPersonLaterRetouching',brand60:'brandFastOneHour',brand120:'brandTwoHours',brand180:'brandThreeHours',brand240:'brandFourHours',art60:'fineArtOneHour',art120:'fineArtTwoHours',art180:'fineArtThreeHours',event60:'eventOneHour',event120:'eventTwoHours',event180:'eventThreeHours',event240:'eventFourHours',eventFullDay:'eventFullDay',retouchPortrait:'retouchedImagePortrait',retouchGroup:'retouchedImageGroup',retouchArt:'retouchedImageFineArt',stylist:'stylist',hair:'hair',makeup:'makeup',express:'expressDelivery',mobile:'mobileStudio',artdirection:'artDirection',instantretouch:'instantRetouchingPerStartedHourGross',travelVehicle:'travelPerVehicleGross',extraPhotographer:'additionalPhotographer',extraPhotographerEventHour:'additionalPhotographerEventPerHour'};var missing=[];Object.keys(map).forEach(function(k){var n=Number(p[map[k]]);if(!isFinite(n)||n<0)missing.push(map[k]);});if(missing.length)throw new Error('Missing/invalid price keys: '+missing.join(', '));Object.keys(map).forEach(function(k){pricesGross[k]=Number(p[map[k]]);});var services=Array.isArray(data.services)?data.services:[];var brand=services.find(function(x){return x&&x.id==='brand-visual-positioning';});var art=services.find(function(x){return x&&x.id==='fine-art';});pricingMeta.brandIncluded=Number(brand&&brand.includedRetouchedImages);pricingMeta.artIncluded=Number(art&&art.includedRetouchedImages);if(!isFinite(pricingMeta.brandIncluded)||pricingMeta.brandIncluded<0||!isFinite(pricingMeta.artIncluded)||pricingMeta.artIncluded<0)throw new Error('Missing included-retouch metadata');pricingLoaded=true;pricingReady=true;pricingError='';}
-  function pricingUiError(f){var l=lang(f);return l==='hu'?'Az árlista jelenleg nem tölthető be. Az ajánlat letöltése és elküldése átmenetileg nem lehetséges.':l==='de'?'Die Preisliste kann derzeit nicht geladen werden. Download und Versand des Angebots sind vorübergehend nicht möglich.':'The price list cannot be loaded right now. Quote download and submission are temporarily unavailable.';}function setPricingUi(ready,message){document.querySelectorAll('[data-download-quote-pdf]').forEach(function(b){b.disabled=!ready;b.setAttribute('aria-disabled',ready?'false':'true');});document.querySelectorAll('[data-smart-quote]').forEach(function(f){f.setAttribute('data-pricing-ready',ready?'true':'false');f.querySelectorAll('[type=submit]').forEach(function(b){b.disabled=!ready;});var scope=f.closest('section')||f.parentElement||document;var n=f.querySelector('[data-pricing-status]')||scope.querySelector('[data-pricing-status]');if(n){n.hidden=ready;n.textContent=ready?'':(message==='pricing-error'?pricingUiError(f):(message||n.getAttribute('data-loading-message')||n.textContent||''));}});}function loadPricing(){setPricingUi(false,'');if(!window.fetch){pricingError='Pricing service unavailable';setPricingUi(false,'pricing-error');return Promise.resolve(false);}return fetch('/pricing.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('pricing.json unavailable');return r.json();}).then(function(d){applyPricingJson(d);document.querySelectorAll('[data-smart-quote]').forEach(paint);setPricingUi(true,'');return true;}).catch(function(err){pricingReady=false;pricingError=String(err&&err.message||err);console.error('[BANHALMI quote] pricing unavailable; quote submission is blocked.',err);setPricingUi(false,'pricing-error');return false;});}
+  function pricingUiError(f){var l=lang(f);return l==='hu'?'Az árlista jelenleg nem tölthető be. Az ajánlat letöltése és elküldése átmenetileg nem lehetséges.':l==='de'?'Die Preisliste kann derzeit nicht geladen werden. Download und Versand des Angebots sind vorübergehend nicht möglich.':'The price list cannot be loaded right now. Quote download and submission are temporarily unavailable.';}function setPricingUi(ready,message){document.querySelectorAll('[data-download-quote-pdf]').forEach(function(b){b.disabled=!ready;b.setAttribute('aria-disabled',ready?'false':'true');});document.querySelectorAll('[data-smart-quote]').forEach(function(f){f.setAttribute('data-pricing-ready',ready?'true':'false');f.querySelectorAll('[type=submit]').forEach(function(b){b.disabled=!ready;});var scope=f.closest('section')||f.parentElement||document;var n=f.querySelector('[data-pricing-status]')||scope.querySelector('[data-pricing-status]');if(n){n.hidden=ready;n.textContent=ready?'':(message==='pricing-error'?pricingUiError(f):(message||n.getAttribute('data-loading-message')||n.textContent||''));}});}function loadPricing(){
+    setPricingUi(false,'');
+    var embedded=window.BANHALMI_PRICING_DATA;
+    if(embedded){
+      try{
+        applyPricingJson(embedded);
+        document.querySelectorAll('[data-smart-quote]').forEach(paint);
+        setPricingUi(true,'');
+      }catch(embeddedError){
+        pricingReady=false;
+        pricingError=String(embeddedError&&embeddedError.message||embeddedError);
+        console.error('[BANHALMI quote] embedded pricing data is invalid.',embeddedError);
+      }
+    }
+    var protocol=String(window.location&&window.location.protocol||'');
+    if(!window.fetch||protocol==='file:'){
+      if(pricingReady)return Promise.resolve(true);
+      setPricingUi(false,'pricing-error');
+      return Promise.resolve(false);
+    }
+    return fetch('/pricing.json',{cache:'no-store'}).then(function(r){
+      if(!r.ok)throw new Error('pricing.json unavailable');
+      return r.json();
+    }).then(function(d){
+      applyPricingJson(d);
+      document.querySelectorAll('[data-smart-quote]').forEach(paint);
+      setPricingUi(true,'');
+      return true;
+    }).catch(function(err){
+      pricingError=String(err&&err.message||err);
+      if(pricingReady){
+        console.warn('[BANHALMI quote] network pricing refresh failed; verified embedded pricing remains active.',err);
+        setPricingUi(true,'');
+        return true;
+      }
+      pricingReady=false;
+      console.error('[BANHALMI quote] pricing unavailable; quote submission is blocked.',err);
+      setPricingUi(false,'pricing-error');
+      return false;
+    });
+  }
   function val(f,n,d){var e=f.querySelector('[name="'+n+'"]:checked')||f.querySelector('[name="'+n+'"]');return e?e.value:d;}
   function num(f,n,d){var e=f.querySelector('[name="'+n+'"]'),x=e?parseFloat(e.value):d;return isFinite(x)?x:d;}
   function checked(f,n){return Array.prototype.map.call(f.querySelectorAll('[name="'+n+'"]:checked'),function(e){return e.value;});}
