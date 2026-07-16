@@ -355,8 +355,10 @@
   // Contact and quote forms — send JSON to the configured endpoint.
   // Forms require a verified JSON-capable endpoint. Use the first-party Worker route in site-config.js.
   function readField(form, name) {
+    var checked = form.querySelector('[name="' + name + '"]:checked');
+    if (checked) return String(checked.value || '').trim();
     var el = form.querySelector('[name="' + name + '"]');
-    return el? String(el.value || '').trim(): '';
+    return el ? String(el.value || '').trim() : '';
   }
   function readChecked(form, name) {
     return Array.prototype.slice.call(form.querySelectorAll('[name="' + name + '"]:checked')).map(function (el) { return el.value; });
@@ -368,12 +370,14 @@
   function normalizeVatId(value) {
     return String(value || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
   }
-  function isEuReverseChargeEligible(vatId, companyName) {
+  function isEuReverseChargeEligible(vatId, companyName, customerType, billingCountry) {
     var prefixes = ['BE','BG','CZ','DK','DE','EE','IE','EL','GR','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','PL','PT','RO','SI','SK','FI','SE'];
     var raw = normalizeVatId(vatId);
-    if (!companyName || raw.length < 4) return false;
+    var country = String(billingCountry || '').toUpperCase();
+    if (customerType !== 'business' || !companyName || raw.length < 4) return false;
     var prefix = raw.slice(0, 2);
-    return prefix!== 'AT' && prefixes.indexOf(prefix)!== -1;
+    var normalizedCountry = country === 'GR' ? 'EL' : country;
+    return prefix !== 'AT' && prefixes.indexOf(prefix) !== -1 && normalizedCountry === prefix;
   }
   function normalizeUiLanguage(lang) {
     var value = String(lang || 'en').toLowerCase();
@@ -381,13 +385,35 @@
     if (value.indexOf('de') === 0) return 'de';
     return 'en';
   }
+  function cleanOptionLabel(label) {
+    if (!label) return '';
+    var clone = label.cloneNode(true);
+    clone.querySelectorAll('.info-tip,[data-tooltip]').forEach(function (node) { node.remove(); });
+    return (clone.textContent || '').replace(/\s+/g, ' ').trim();
+  }
   function selectedOptionText(form, name) {
     var field = form && form.elements ? form.elements[name] : null;
     if (!field) return '';
     if (field.tagName === 'SELECT' && field.selectedIndex >= 0) {
       return (field.options[field.selectedIndex].textContent || '').trim();
     }
+    var checked = form.querySelector('[name="' + name + '"]:checked');
+    if (checked) {
+      var id = checked.id;
+      var label = id ? form.querySelector('label[for="' + id.replace(/"/g, '\"') + '"]') : checked.closest('label');
+      if (label) return cleanOptionLabel(label);
+      return String(checked.value || '').trim();
+    }
     return readField(form, name);
+  }
+  function addonLabel(code, lang) {
+    var map = {
+      en:{mobile:'Mobile studio',instantretouch:'Immediate on-site retouching',stylist:'Stylist',hair:'Hair stylist',makeup:'Make-up artist',express:'Express delivery',artdirection:'Art direction'},
+      hu:{mobile:'Mobil stúdió',instantretouch:'Azonnali helyszíni retusálás',stylist:'Stylist',hair:'Fodrász',makeup:'Sminkes',express:'Expressz átadás',artdirection:'Művészeti irányítás'},
+      de:{mobile:'Mobiles Studio',instantretouch:'Sofortige Retusche vor Ort',stylist:'Styling',hair:'Hair-Styling',makeup:'Make-up',express:'Expresslieferung',artdirection:'Art Direction'}
+    };
+    lang = normalizeUiLanguage(lang);
+    return (map[lang] && map[lang][code]) || code;
   }
   function categoryLabel(category, lang) {
     lang = normalizeUiLanguage(lang);
@@ -398,6 +424,15 @@
     };
     return (map[lang] && map[lang][category]) || category;
   }
+
+  function quoteLocalizedText(lang) {
+    lang = normalizeUiLanguage(lang);
+    return {
+      en:{formTitle:'BANHALMI guided quote request',durations:{headshotcv:'10 minutes',quick30:'30 minutes',guided60:'1 hour',guided120:'2 hours',brand60:'1 hour',brand120:'2 hours',brand180:'3 hours',brand240:'4 hours',art60:'1 hour',art120:'2 hours',art180:'3 hours',event60:'1 hour',event120:'2 hours',event180:'3 hours',event240:'4 hours',eventFullDay:'full day / up to 8 hours'},retouch:{selected:'selected retouched images',instant:'immediate on-site retouching selected',later:'later retouching',brand:'image selection and retouching per selected image',art:'fine-art retouching per selected image',event:'estimated delivered event images; standard event selection and colour correction are included, detailed portrait retouching is quoted separately'},groupPackage:'Quality group portrait',hours:'hour(s)',amcham:'Professional Network Benefit',additional:'additional retouched images at no extra cost',total:'total',pending:'50% additional retouched images once the final image count is confirmed.'},
+      hu:{formTitle:'BANHALMI vezetett árajánlatkérés',durations:{headshotcv:'10 perc',quick30:'30 perc',guided60:'1 óra',guided120:'2 óra',brand60:'1 óra',brand120:'2 óra',brand180:'3 óra',brand240:'4 óra',art60:'1 óra',art120:'2 óra',art180:'3 óra',event60:'1 óra',event120:'2 óra',event180:'3 óra',event240:'4 óra',eventFullDay:'egész nap / legfeljebb 8 óra'},retouch:{selected:'kiválasztott retusált képek',instant:'azonnali helyszíni retusálás kiválasztva',later:'utólagos retusálás',brand:'képkiválasztás és retusálás kiválasztott képenként',art:'művészi retusálás kiválasztott képenként',event:'becsült átadott eseményképek; a standard válogatás és színkorrekció a csomag része, a részletes portréretus külön ajánlat'},groupPackage:'Minőségi csoportos portré',hours:'óra',amcham:'Professional Network Benefit',additional:'további retusált kép felár nélkül',total:'összesen',pending:'a végleges képszám jóváhagyása után 50% további retusált kép jár.'},
+      de:{formTitle:'BANHALMI geführte Angebotsanfrage',durations:{headshotcv:'10 Minuten',quick30:'30 Minuten',guided60:'1 Stunde',guided120:'2 Stunden',brand60:'1 Stunde',brand120:'2 Stunden',brand180:'3 Stunden',brand240:'4 Stunden',art60:'1 Stunde',art120:'2 Stunden',art180:'3 Stunden',event60:'1 Stunde',event120:'2 Stunden',event180:'3 Stunden',event240:'4 Stunden',eventFullDay:'ganzer Tag / bis zu 8 Stunden'},retouch:{selected:'ausgewählte retuschierte Bilder',instant:'sofortige Retusche vor Ort ausgewählt',later:'nachträgliche Retusche',brand:'Bildauswahl und Retusche je ausgewähltem Bild',art:'Fine-Art-Retusche je ausgewähltem Bild',event:'voraussichtlich gelieferte Eventbilder; Standardauswahl und Farbkorrektur sind enthalten, detaillierte Porträtretusche wird separat angeboten'},groupPackage:'Qualitatives Gruppenporträt',hours:'Stunde(n)',amcham:'Professional Network Benefit',additional:'zusätzliche retuschierte Bilder ohne Aufpreis',total:'insgesamt',pending:'50 % zusätzliche retuschierte Bilder nach Bestätigung der endgültigen Bildanzahl.'}
+    }[lang];
+  }
   function buildQuotePayload(form) {
     var lang = normalizeUiLanguage(form.getAttribute('data-lang') || document.documentElement.lang || 'en');
     var quoteEngine = window.BANHALMI_QUOTE;
@@ -405,45 +440,64 @@
     var category = readRadio(form, 'category') || 'individual';
     var companyName = readField(form, 'company');
     var vatId = readField(form, 'vat_id');
-    var reverse = estimate?!!estimate.reverse: isEuReverseChargeEligible(vatId, companyName);
+    var customerType = readField(form, 'customer_type');
+    var billingCountry = readField(form, 'billing_country');
+    var reverseEligible = estimate ? !!estimate.reverseEligible : isEuReverseChargeEligible(vatId, companyName, customerType, billingCountry);
     var addons = readChecked(form, 'addons');
+    var ql = quoteLocalizedText(lang);
     var payload = {
       language: lang,
       pageUrl: window.location.href,
       turnstileToken: readField(form, 'cf-turnstile-response'),
       formType: 'quote',
-      payloadVersion: 'banhalmi-quote-v3-shared-engine',
-      formTitle: 'BANHALMI guided quote request',
+      payloadVersion: 'banhalmi-quote-v5-full-audit',
+      formTitle: ql.formTitle,
       category: categoryLabel(category, lang),
       categoryCode: category,
       packageName: '',
       duration: '',
       peopleCount: '',
-      retouchedImages: readField(form, 'retouched_images'),
+      retouchedImages: estimate? String(estimate.retouchedImagesTotal || readField(form, 'retouched_images')): readField(form, 'retouched_images'),
+      retouchedImagesPerPerson: readField(form, 'retouched_images'),
+      retouchedImagesTotal: estimate? String(estimate.retouchedImagesTotal || readField(form, 'retouched_images')): readField(form, 'retouched_images'),
+      instantRetouchHours: estimate? String(estimate.instantRetouchHours || 0): '0',
       retouchMode: '',
-      photographerCount: category === 'group'? readField(form, 'photographers'): (readField(form, 'photographer_team') || ''),
-      coordinationPreference: readField(form, 'coordination_preference'),
+      photographerCount: estimate? String(estimate.photographerCount || 1): '1',
       projectGoals: readChecked(form, 'project_goals').join(', '),
       amchamMember:!!form.querySelector('[name="amcham_member"]:checked'),
       amchamCountry: readField(form, 'amcham_country'),
       amchamBenefit: '',
-      locationType: readField(form, 'location'),
+      locationType: readRadio(form, 'location') || readField(form, 'location'),
       locationDetails: readField(form, 'specific_location'),
-      preferredDates: readField(form, 'timeframe'),
-      preferredTime: readField(form, 'preferred_time'),
+      travelCountry: readField(form, 'travel_country'),
+      travelPricingStatus: estimate && estimate.customTravel ? 'custom-quote-required' : 'included-or-not-applicable',
+      displayedTotalExcludesInternationalTravel: !!(estimate && estimate.customTravel),
+      preferredSlots: [1,2,3].map(function(i){
+        var date = readField(form,'preferred_date_'+i);
+        var daypartCode = readField(form,'preferred_daypart_'+i);
+        var daypartLabel = selectedOptionText(form,'preferred_daypart_'+i);
+        return date ? {date:date, daypartCode:daypartCode, daypartLabel:daypartLabel} : null;
+      }).filter(Boolean).sort(function(a,b){return a.date.localeCompare(b.date);}),
+      preferredDates: [1,2,3].map(function(i){ var d=readField(form,'preferred_date_'+i), t=selectedOptionText(form,'preferred_daypart_'+i); return d?{date:d,label:d+' ('+(t||'')+')'}:null; }).filter(Boolean).sort(function(a,b){return a.date.localeCompare(b.date);}).map(function(x){return x.label;}).join(', '),
+      dateCoordinationRequested: !!form.querySelector('[name="date_coordination_requested"]:checked'),
       addons: addons.join(', '),
+      addonLabels: addons.map(function(code){ return addonLabel(code, lang); }).join(', '),
       budget: readField(form, 'budget'),
       netAmount: estimate? String(estimate.net): readField(form, 'estimate_net'),
-      vatRate: reverse? '0%': '20%',
+      vatRate: '20%',
+      potentialZeroVatAfterVerification: reverseEligible,
       vatAmount: estimate? String(estimate.vat): readField(form, 'estimate_vat'),
       grossAmount: estimate? String(estimate.gross): readField(form, 'estimate_gross'),
-      reverseCharge: reverse,
-      euVatNumber: normalizeVatId(vatId),
+      reverseCharge: false,
+      reverseChargeEligibilityPendingVerification: reverseEligible,
+      vatLegalNote: lang==='hu'?'A 0%-os ÁFA csak a cég, a közösségi adószám és a vonatkozó jogszabályi feltételek ellenőrzése után lesz érvényes.':lang==='de'?'Die 0%-Behandlung wird erst nach Prüfung des Unternehmens, der UID und der anwendbaren gesetzlichen Voraussetzungen gültig.':'0% VAT becomes valid only after the company, VAT ID and applicable legal requirements have been verified.',
+      euVatNumber: customerType === 'business' ? normalizeVatId(vatId) : '',
       name: readField(form, 'name'),
       email: readField(form, 'email'),
       phone: readField(form, 'phone'),
-      companyName: companyName,
-      billingAddress: readField(form, 'billing_address'),
+      customerType: customerType,
+      billingCountry: billingCountry,
+      companyName: customerType === 'business' ? companyName : '',
       message: readField(form, 'message'),
       privacyAcknowledged:!!form.querySelector('[name="privacy_acknowledged"]:checked'),
       sendCopy:!!form.querySelector('[name="send_copy"]:checked'),
@@ -452,33 +506,56 @@
     };
     if (category === 'individual') {
       payload.packageName = readRadio(form, 'individual_mode');
-      payload.duration = payload.packageName === 'quick30'? '30 minutes': (payload.packageName === 'guided120'? '2 hours': '1 hour');
-      payload.retouchMode = 'selected retouched images';
+      payload.packageCode = payload.packageName;
+      payload.packageLabel = selectedOptionText(form, 'individual_mode') || payload.packageName;
+      payload.durationCode = payload.packageName;
+      payload.duration = ql.durations[payload.packageName] || '';
+      payload.retouchMode = ql.retouch.selected;
     } else if (category === 'group') {
       payload.peopleCount = readField(form, 'people_count');
-      payload.photographerCount = readField(form, 'photographers') || readField(form, 'photographer_team');
-      payload.retouchMode = readRadio(form, 'group_delivery') === 'instant'? 'immediate retouching / max 6 people': 'later retouching / originals delivered immediately / 48h retouching';
-      payload.packageName = 'group-' + (readRadio(form, 'group_delivery') || 'later');
-      payload.duration = 'from 1 hour, depending on team size';
+      payload.photographerCount = estimate? String(estimate.photographerCount || 1): '1';
+      payload.retouchMode = readChecked(form,'addons').indexOf('instantretouch')>=0? ql.retouch.instant: ql.retouch.later;
+      payload.packageCode = 'group-quality-portrait';
+      payload.packageName = ql.groupPackage;
+      payload.packageLabel = ql.groupPackage;
+      payload.durationCode = readField(form, 'group_hours');
+      payload.duration = readField(form, 'group_hours') + ' ' + ql.hours;
     } else if (category === 'brand') {
+      payload.peopleCount = readField(form, 'brand_people_count');
       payload.packageName = readRadio(form, 'brand_duration');
-      payload.duration = ({brand60:'1 hour', brand120:'2 hours', brand180:'3 hours', brand240:'4 hours'})[payload.packageName] || '';
-      payload.retouchMode = 'immediate selection, retouching per selected image';
+      payload.packageCode = payload.packageName;
+      payload.packageLabel = selectedOptionText(form, 'brand_duration') || payload.packageName;
+      payload.durationCode = payload.packageName;
+      payload.duration = ql.durations[payload.packageName] || '';
+      payload.retouchMode = ql.retouch.brand;
     } else if (category === 'art') {
-      payload.packageName = [readRadio(form, 'art_type'), readField(form, 'art_duration') || 'art60'].filter(Boolean).join(' / ');
-      payload.duration = ({art60:'1 hour', art120:'2 hours', art180:'3 hours'})[readField(form, 'art_duration') || 'art60'] || 'selected fine-art block';
-      payload.retouchMode = 'fine art retouching per selected image';
+      payload.packageCode = [readRadio(form, 'art_type'), readField(form, 'art_duration') || 'art60'].filter(Boolean).join(' / ');
+      payload.packageName = payload.packageCode;
+      payload.packageLabel = [selectedOptionText(form, 'art_type'), selectedOptionText(form, 'art_duration')].filter(Boolean).join(' — ') || payload.packageCode;
+      payload.durationCode = readField(form, 'art_duration') || 'art60';
+      payload.duration = ql.durations[payload.durationCode] || '';
+      payload.retouchMode = ql.retouch.art;
     } else if (category === 'event') {
       payload.packageName = readRadio(form, 'event_duration');
-      payload.duration = ({event60:'1 hour', event120:'2 hours', event180:'3 hours', event240:'4 hours', eventFullDay:'full day / up to 8 hours'})[payload.packageName] || '';
-      payload.retouchMode = 'event selection and retouching per selected image';
+      payload.packageCode = payload.packageName;
+      payload.packageLabel = selectedOptionText(form, 'event_duration') || payload.packageName;
+      payload.durationCode = payload.packageName;
+      payload.duration = ql.durations[payload.packageName] || '';
+      payload.retouchMode = ql.retouch.event;
+      payload.eventGuestCount = readField(form, 'event_guest_count');
+      payload.eventParallelTracks = readField(form, 'event_parallel_tracks');
+      payload.eventExtraPhotographers = readField(form, 'event_extra_photographers');
+      payload.eventRecommendedPhotographerCount = estimate?String(estimate.eventRecommendedPhotographers||estimate.photographerCount||1):'1';
+      payload.eventDeliveredImagesEstimate = estimate?String(estimate.eventDeliveredImagesEstimate||readField(form,'retouched_images')):readField(form,'retouched_images');
     }
-    var selectedRetouches = parseInt(payload.retouchedImages || '0', 10) || 0;
-    if (payload.amchamMember && selectedRetouches > 0) {
+    var selectedRetouches = parseInt(payload.retouchedImagesTotal || payload.retouchedImages || '0', 10) || 0;
+    if (payload.amchamMember && category !== 'event' && selectedRetouches > 0) {
       var extra = Math.ceil(selectedRetouches * 0.5);
-      payload.amchamBenefit = 'Professional Network Benefit: +' + extra + ' additional retouched images at no extra cost (' + (selectedRetouches + extra) + ' total).';
-    } else if (payload.amchamMember) {
-      payload.amchamBenefit = 'Professional Network Benefit applies: 50% additional retouched images once the final image count is confirmed.';
+      payload.amchamBenefit = ql.amcham + ': +' + extra + ' ' + ql.additional + ' (' + (selectedRetouches + extra) + ' ' + ql.total + ').';
+    } else if (payload.amchamMember && category !== 'event') {
+      payload.amchamBenefit = ql.amcham + ': ' + ql.pending;
+    } else if (payload.amchamMember && category === 'event') {
+      payload.amchamBenefit = lang==='hu'?'AmCham eseményprojektnél: a kedvezmény részletei a végleges ajánlatban kerülnek meghatározásra.':lang==='de'?'AmCham-Eventprojekt: Der konkrete Vorteil wird im finalen Angebot festgelegt.':'AmCham event project: the specific benefit is defined in the final offer.';
     }
     return payload;
   }
@@ -499,16 +576,22 @@
     if (!box) return;
     var lang = normalizeUiLanguage(form.getAttribute('data-lang') || document.documentElement.lang || 'en');
     var labels = {
-      en: {service:'Service', location:'Location', date:'Preferred date', photographers:'Photographer(s)', retouch:'Retouched images', budget:'Budget', amcham:'AmCham member', yes:'Yes — Professional Network Benefit applies', no:'No / not specified'},
-      hu: {service:'Szolgáltatás', location:'Helyszín', date:'Időpontpreferencia', photographers:'Fotósok száma', retouch:'Retusált képek száma', budget:'Költségkeret', amcham:'AmCham-tagság', yes:'Igen — szakmai hálózati kedvezmény figyelembe véve', no:'Nem / nincs megadva'},
-      de: {service:'Leistung', location:'Ort', date:'Wunschtermin', photographers:'Fotograf:innen', retouch:'Retuschierte Bilder', budget:'Budgetrahmen', amcham:'AmCham-Mitgliedschaft', yes:'Ja — Netzwerkvorteil berücksichtigt', no:'Nein / nicht angegeben'}
+      en: {service:'Service', location:'Location', date:'Preferred date', photographers:'Photographer(s)', retouch:'Retouched images / person and total', budget:'Budget', amcham:'AmCham member', yes:'Yes — Professional Network Benefit applies', no:'No / not specified'},
+      hu: {service:'Szolgáltatás', location:'Helyszín', date:'Időpontpreferencia', photographers:'Fotósok száma', retouch:'Retusált képek / fő és összesen', budget:'Költségkeret', amcham:'AmCham-tagság', yes:'Igen — szakmai hálózati kedvezmény figyelembe véve', no:'Nem / nincs megadva'},
+      de: {service:'Leistung', location:'Ort', date:'Wunschtermin', photographers:'Fotograf:innen', retouch:'Retuschierte Bilder / Person und gesamt', budget:'Budgetrahmen', amcham:'AmCham-Mitgliedschaft', yes:'Ja — Netzwerkvorteil berücksichtigt', no:'Nein / nicht angegeben'}
     };
     var l = labels[lang] || labels.en;
     var service = categoryLabel(readRadio(form, 'category') || 'individual', lang);
-    var location = readField(form, 'specific_location') || selectedOptionText(form, 'location') || '—';
-    var date = selectedOptionText(form, 'timeframe') || '—';
-    var photographers = readField(form, 'photographer_team') || readField(form, 'photographers') || '—';
-    var retouches = readField(form, 'retouched_images') || '—';
+    var locationType = selectedOptionText(form, 'location');
+    var exactLocation = readField(form, 'specific_location');
+    var location = exactLocation ? [locationType, exactLocation].filter(Boolean).join(' — ') : (locationType || '—');
+    var date = [1,2,3].map(function(i){ var d=readField(form,'preferred_date_'+i), t=selectedOptionText(form,'preferred_daypart_'+i); return d?{date:d,label:d+' ('+(t||'')+')'}:null; }).filter(Boolean).sort(function(a,b){return a.date.localeCompare(b.date);}).map(function(x){return x.label;}).join(', ') || (form.querySelector('[name="date_coordination_requested"]:checked') ? (lang==='hu'?'Egyeztetést kérek':lang==='de'?'Terminabstimmung':'Please coordinate') : '—');
+    var est = window.BANHALMI_QUOTE && window.BANHALMI_QUOTE.calculate ? window.BANHALMI_QUOTE.calculate(form) : null;
+    var photographers = est ? String(est.photographerCount || 1) : '1';
+    var retouchesPerPerson = readField(form, 'retouched_images') || '—';
+    var summaryCategory=readRadio(form,'category');
+    var retouches = est && (summaryCategory==='group' || summaryCategory==='brand') ? (retouchesPerPerson + (lang==='hu'?' kép / fő, összesen ':lang==='de'?' Bilder / Person, insgesamt ':' images / person, total ') + est.retouchedImagesTotal) : (summaryCategory==='event'?(retouchesPerPerson+(lang==='hu'?' becsült átadott kép':lang==='de'?' voraussichtlich gelieferte Bilder':' estimated delivered images')):retouchesPerPerson);
+    if(est && est.instantRetouchHours){retouches += (lang==='hu'?' · azonnali retus: ':lang==='de'?' · Sofortretusche: ':' · immediate retouch: ')+est.instantRetouchHours+(lang==='hu'?' megkezdett óra':lang==='de'?' angefangene Stunde(n)':' started hour(s)');}
     var budget = readField(form, 'budget') || '—';
     var amcham = form.querySelector('[name="amcham_member"]:checked')? l.yes: l.no;
     function set(sel, text) { var el = box.querySelector(sel); if (el) el.textContent = text; }
@@ -535,6 +618,9 @@
   document.querySelectorAll("[data-contact-form]").forEach(function (form) {
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
+      var quoteEngine = window.BANHALMI_QUOTE;
+      if ((form.getAttribute('data-form-kind') === 'quote' || (form.elements.form_type && form.elements.form_type.value === 'quote')) && quoteEngine && typeof quoteEngine.isPricingReady === 'function' && !quoteEngine.isPricingReady()) { var pricingNote=form.querySelector('[data-pricing-status]'); if(pricingNote){pricingNote.hidden=false;pricingNote.scrollIntoView({behavior:'smooth',block:'center'});} return; }
+      if ((form.getAttribute('data-form-kind') === 'quote' || (form.elements.form_type && form.elements.form_type.value === 'quote')) && quoteEngine && typeof quoteEngine.validate === 'function' && !quoteEngine.validate(form, true)) { return; }
       if (!form.checkValidity()) { form.reportValidity(); return; }
       if (form.elements.website && form.elements.website.value) { form.elements.website.value = ""; } /* clear accidental autofill instead of silently dropping the submission; the backend honeypot still catches direct bot POSTs */
       var isQuote = form.getAttribute('data-form-kind') === 'quote' || (form.elements.form_type && form.elements.form_type.value === 'quote');
@@ -647,7 +733,7 @@
           showNote(message(data && data.unverified? 'successUnverified': 'success') + (data && data.submissionId? ' ID: ' + data.submissionId: ''), false);
           form.reset();
           if (window.turnstile) { try { window.turnstile.reset(); } catch (e) {} }
-          if (isQuote && window.BANHALMI_QUOTE && typeof window.BANHALMI_QUOTE.paint === 'function') { window.BANHALMI_QUOTE.paint(form); }
+          if (isQuote && window.BANHALMI_QUOTE && typeof window.BANHALMI_QUOTE.paint === 'function') { window.BANHALMI_QUOTE.paint(form); updateProjectSummary(form); }
         }).catch(function(error){
           if (window.turnstile) { try { window.turnstile.reset(); } catch (e) {} }
           var text = String(error && error.message || '');

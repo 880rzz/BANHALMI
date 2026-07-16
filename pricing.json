@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "schemaVersion": "2026-07-07-v2",
-  "dateModified": "2026-07-15T23:30:00+02:00",
+  "schemaVersion": "2026-07-16-v5-final-tax-event-audit",
+  "dateModified": "2026-07-16T20:30:00+02:00",
   "publisher": {
     "@id": "https://www.norbertbanhalmi.com/#organization",
     "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
@@ -27,7 +27,7 @@
   "vat": {
     "austriaRatePercent": 20,
     "includedInDisplayedPrices": true,
-    "euB2BOutsideAustria": "A valid non-Austrian EU VAT ID may qualify for reverse-charge estimation; final tax treatment is confirmed in writing."
+    "euB2BOutsideAustria": "Displayed orientation prices retain 20% Austrian VAT. A 0% treatment becomes valid only after verification of the company, VAT ID and applicable legal requirements, if the business qualifies."
   },
   "bindingStatus": "Non-binding orientation estimate. The final written offer follows review of purpose, scope, location, travel, production requirements, usage rights, deadlines and tax status.",
   "priceComponentsGrossEUR": {
@@ -36,13 +36,10 @@
     "individualGuided120": 690,
     "groupSetupLaterRetouching": 390,
     "groupPerPersonLaterRetouching": 45,
-    "groupInstantBaseMax6People": 690,
-    "groupInstantPerPerson": 55,
     "brandFastOneHour": 499,
     "brandTwoHours": 790,
     "brandThreeHours": 1090,
     "brandFourHours": 1390,
-    "fineArtBase": 690,
     "fineArtOneHour": 690,
     "fineArtTwoHours": 990,
     "fineArtThreeHours": 1290,
@@ -61,7 +58,10 @@
     "mobileStudio": 240,
     "artDirection": 260,
     "additionalPhotographer": 390,
-    "additionalPhotographerEventPerHour": 120
+    "additionalPhotographerEventPerHour": 120,
+    "headshotCvGross": 120,
+    "instantRetouchingPerStartedHourGross": 360,
+    "travelPerVehicleGross": 240
   },
   "services": [
     {
@@ -209,7 +209,9 @@
         "en": "Event assignments are led by Norbert Banhalmi and delivered with a coordinated photography team. Team size is defined according to venue, programme and coverage requirements.",
         "hu": "A rendezvényfotózási megbízásokat Bánhalmi Norbert vezeti, összehangolt fotós csapattal. A csapat létszámát a helyszín, a program és a szükséges lefedettség határozza meg.",
         "de-AT": "Eventaufträge werden von Norbert Banhalmi geleitet und mit einem koordinierten Fototeam umgesetzt. Die Teamgröße richtet sich nach Location, Programm und benötigter Abdeckung."
-      }
+      },
+      "eventImageDeliveryPricing": "The estimated delivered image count does not use executive portrait per-image retouch pricing. Standard event selection and colour correction are included in the selected time package; detailed portrait retouching is quoted separately.",
+      "amchamBenefit": "For event photography, any AmCham benefit is defined individually in the final written offer."
     }
   ],
   "finalOfferFactors": [
