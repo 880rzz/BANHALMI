@@ -85,5 +85,23 @@ for(const file of htmlFiles()){
 }
 const sitemap=read('sitemap.xml');
 for(const route of ['/portrait/','/lifestyle/','/event-photography/','/glamour/','/hu/portre/','/hu/brand/','/hu/rendezvenyfotozas/','/hu/muveszi-fotografia/','/de-at/portrait/','/de-at/brand/','/de-at/eventfotografie/','/de-at/fine-art/']) assert(sitemap.includes(`https://www.norbertbanhalmi.com${route}`), `sitemap missing ${route}`);
+
+// Machine-readable pricing and quote strategy invariants.
+assert(pricing.currency==='EUR', 'pricing.json must declare EUR currency');
+assert(pricing.priceBasis==='gross consumer-facing orientation prices', 'pricing.json must identify displayed values as gross orientation prices');
+assert(pricing.pricingSemantics&&pricing.pricingSemantics.monetaryConvention.includes('gross EUR'), 'pricing.json must explain gross monetary semantics for machines');
+assert(pricing.calculationRules&&pricing.calculationRules.tax&&pricing.calculationRules.tax.netFormula, 'pricing.json must publish explicit tax calculation rules');
+for(const rule of ['individualPortrait','groupPortrait','brandPhotography','fineArtPhotography','cLevelEventPhotography']) assert(pricing.calculationRules&&pricing.calculationRules[rule]&&pricing.calculationRules[rule].formula, `pricing.json missing machine-readable formula: ${rule}`);
+assert(Array.isArray(pricing.services)&&pricing.services.length===4, 'pricing.json must retain exactly four principal service groups');
+const portraitPricing=pricing.services.find(x=>x.id==='portrait');
+assert(portraitPricing&&portraitPricing.packages.some(x=>x.code==='headshotcv'&&x.grossEUR===pricing.priceComponentsGrossEUR.headshotCvGross), 'headshot package must map to canonical gross component');
+assert(portraitPricing&&portraitPricing.groupPortraitPricing&&portraitPricing.groupPortraitPricing.setupGrossEUR===pricing.priceComponentsGrossEUR.groupSetupLaterRetouching, 'group portrait formula must map to canonical setup component');
+const eventPricing=pricing.services.find(x=>x.id==='event');
+assert(eventPricing&&eventPricing.name.en==='C-Level Event Photography', 'pricing event service must align with the four-service architecture');
+const qjsMirror=read('js/quote-calculator.js');
+assert(qjs===qjsMirror, 'quote calculator source mirrors must remain identical');
+assert(qjs.includes("root.querySelector('[data-estimate-vat-note]')||root.querySelector('[data-vat-note]')"), 'quote calculator must update the rendered VAT note with backwards-compatible selectors');
+for(const p of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/anfrage/index.html']) assert(read(p).includes('data-vat-note'), `${p}: visible VAT note is missing`);
+
 if(fail.length){ console.error(fail.map(x=>'✗ '+x).join('\n')); process.exit(1); }
 console.log('Production audit regression checks passed.');
