@@ -79,3 +79,15 @@ Because of this environment limitation, the PR must still receive a real browser
 - Production-domain Google Analytics / review-widget consent network behaviour.
 - Browser-native PDF rendering in Chromium, Safari and Firefox, including Hungarian and German characters.
 - Real mobile Safari visual verification for form controls, dropdowns, lightbox and sticky quote summary.
+
+## Final production release audit — 2026-07-17
+
+### Release blocker fixed in final audit
+
+| Finding | Severity | Root cause | Fix | Verification |
+| --- | --- | --- | --- | --- |
+| English quote calculator VAT wording could imply that entering an EU VAT ID changes the displayed estimate to reverse charge automatically. | P1 trust / tax-communication risk | The English pricing-logic copy said a valid non-Austrian EU VAT ID “may change the estimate to reverse charge,” while the calculator intentionally keeps 20% Austrian VAT until human verification. | Reworded the English quote page to state that displayed gross orientation prices include 20% Austrian VAT until company details, VAT ID and reverse-charge conditions are verified in the final written offer. | Static regression, JSON/JSON-LD validation, JavaScript syntax checks and relative link audit passed after the copy change. |
+
+### Final audit outcome
+
+No further local release-blocking issues were found in the static production audit for SEO-critical metadata, hreflang/canonical presence, local links/assets, JSON-LD syntax, quote-calculator syntax, no-blur regression rules, gallery schema/dimensions, services-menu parity, process-block placement or checkbox positioning. Browser-driven Chromium/Safari/Firefox verification and live backend tests remain external environment requirements documented above.
