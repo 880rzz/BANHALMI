@@ -1,8 +1,12 @@
 name: Production audit checks
 on:
   pull_request:
+    branches:
+      - main
   push:
-    branches: [codex/simplify-four-services-and-fix-quote]
+    branches:
+      - main
+      - codex/vegezz-teljes-production-auditot-es-javitasokat-m51ql6
 jobs:
   audit:
     runs-on: ubuntu-latest
