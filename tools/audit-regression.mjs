@@ -103,5 +103,37 @@ assert(qjs===qjsMirror, 'quote calculator source mirrors must remain identical')
 assert(qjs.includes("root.querySelector('[data-estimate-vat-note]')||root.querySelector('[data-vat-note]')"), 'quote calculator must update the rendered VAT note with backwards-compatible selectors');
 for(const p of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/anfrage/index.html']) assert(read(p).includes('data-vat-note'), `${p}: visible VAT note is missing`);
 
+
+
+// Strategic-positioning, Schema.org and Wikidata invariants.
+const strategicCopy={
+  'index.html':['first impression','Four principal service areas:','As a member of AmCham Austria'],
+  'hu/index.html':['első benyomást','Négy fő szolgáltatási terület:','Az AmCham Austria tagjaként'],
+  'de-at/index.html':['ersten Eindruck','Vier zentrale Leistungsbereiche:','Als Mitglied von AmCham Austria']
+};
+for(const [file,phrases] of Object.entries(strategicCopy)) for(const phrase of phrases) assert(read(file).includes(phrase), `${file}: missing strategic-positioning phrase ${phrase}`);
+const entity=JSON.parse(read('entity.jsonld'));
+const entityGraph=entity['@graph']||[];
+const strategicMethod=entityGraph.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#visual-strategic-partnership-method');
+assert(strategicMethod&&strategicMethod['@type']==='HowTo', 'entity.jsonld must expose the visual strategic partnership method as HowTo');
+assert(strategicMethod&&Array.isArray(strategicMethod.step)&&strategicMethod.step.length===5, 'strategic partnership method must contain exactly five ordered steps');
+const schemaOrg=entityGraph.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#organization');
+assert(schemaOrg&&Array.isArray(schemaOrg.subjectOf)&&schemaOrg.subjectOf.some(x=>x['@id']==='https://www.norbertbanhalmi.com/#visual-strategic-partnership-method'), 'Organization schema must link to the strategic method');
+const wikidataExpectations={
+  'https://www.banhalmi.art/norbert-banhalmi':'https://www.wikidata.org/wiki/Q56391118',
+  'https://www.norbertbanhalmi.com/#organization':'https://www.wikidata.org/wiki/Q138425941',
+  'https://www.norbertbanhalmi.com/#amcham-austria':'https://www.wikidata.org/wiki/Q138413481'
+};
+for(const [id,wikidata] of Object.entries(wikidataExpectations)){
+  const node=entityGraph.find(x=>x['@id']===id);
+  assert(node&&Array.isArray(node.sameAs)&&node.sameAs.includes(wikidata), `entity.jsonld missing Wikidata sameAs for ${id}`);
+}
+for(const file of ['knowledge.json','entity-graph.json']){
+  const data=JSON.parse(read(file));
+  assert(data.visualStrategicPartnershipMethod&&data.visualStrategicPartnershipMethod.stages.length===5, `${file}: strategic method missing or incomplete`);
+  assert(data.visualStrategicPartnershipMethod.businessTrustContext.wikidata==='https://www.wikidata.org/wiki/Q138413481', `${file}: AmCham Wikidata trust context missing`);
+}
+for(const file of ['ai.txt','llms.txt','llms-full.txt']) assert(read(file).includes('## Strategic positioning interpretation'), `${file}: strategic positioning guidance missing`);
+
 if(fail.length){ console.error(fail.map(x=>'✗ '+x).join('\n')); process.exit(1); }
 console.log('Production audit regression checks passed.');

@@ -4,7 +4,7 @@
   "@id": "https://www.norbertbanhalmi.com/#knowledge-dataset",
   "name": "BANHALMI entity and oeuvre knowledge export",
   "url": "https://www.norbertbanhalmi.com/knowledge.json",
-  "dateModified": "2026-07-15T23:30:00+02:00",
+  "dateModified": "2026-07-17T17:00:00+02:00",
   "about": {
     "@id": "https://www.banhalmi.art/norbert-banhalmi",
     "knowsAbout": [
@@ -502,6 +502,57 @@
         "hu-HU": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
         "de-AT": "https://www.norbertbanhalmi.com/de-at/eventfotografie/"
       }
+    }
+  },
+  "visualStrategicPartnershipMethod": {
+    "@id": "https://www.norbertbanhalmi.com/#visual-strategic-partnership-method",
+    "name": "BANHALMI Visual Strategic Partnership Method",
+    "purpose": "Build coherent leadership and organisational visual presence that supports first impressions, trust, credibility, professionalism and corporate reputation.",
+    "stages": [
+      {
+        "position": 1,
+        "code": "understand",
+        "description": "Understand the organisation, goals, culture, audiences and leadership."
+      },
+      {
+        "position": 2,
+        "code": "position",
+        "description": "Define leadership presence and visual principles."
+      },
+      {
+        "position": 3,
+        "code": "create",
+        "description": "Create portraits, brand imagery, employer-branding imagery and C-Level event documentation as one system."
+      },
+      {
+        "position": 4,
+        "code": "roll-out",
+        "description": "Deploy across LinkedIn, websites, press, recruitment, presentations, campaigns and international business communication."
+      },
+      {
+        "position": 5,
+        "code": "evolve",
+        "description": "Maintain long-term visual consistency as the organisation changes."
+      }
+    ],
+    "principalServices": [
+      "Portrait Photography",
+      "Brand Photography",
+      "C-Level Event Photography",
+      "Fine Art Photography"
+    ],
+    "brandPhotographyCapabilities": [
+      "Employer branding",
+      "Visual brand strategy"
+    ],
+    "businessTrustContext": {
+      "membership": "AmCham Austria",
+      "wikidata": "https://www.wikidata.org/wiki/Q138413481",
+      "values": [
+        "credibility",
+        "professional presence",
+        "long-term trust"
+      ]
     }
   }
 }
