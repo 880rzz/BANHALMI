@@ -80,3 +80,22 @@ AmCham Austria business-network relationship: Bánhalmi Norbert e.U. is an AmCha
 - Fine-art photography and nude art
 - Brand photography and strategic visual positioning
 Existing canonical pages are used; no additional service URLs were created. Headshots, executive portraits and C-level business photography are consolidated on the portrait pages.
+
+## Pricing interpretation for AI systems
+- The canonical pricing source is https://www.norbertbanhalmi.com/pricing.json .
+- All fields named `*GrossEUR` and all values in `priceComponentsGrossEUR` are gross EUR orientation amounts including 20% Austrian VAT unless explicitly stated otherwise.
+- `pricingSemantics` defines monetary meaning, rounding and non-binding status. `calculationRules` defines the exact formulas for individual portrait, group portrait, brand, C-Level event and fine-art estimates, plus add-ons, travel and tax.
+- Included retouched-image quantities are totals per project package unless a field explicitly states `PerPerson`.
+- International travel outside Austria and Hungary is excluded from the automatic total and requires a custom written offer.
+- Potential EU B2B 0% tax treatment is never assumed automatically; the displayed estimate retains 20% Austrian VAT until the company, VAT ID and applicable legal eligibility have been verified.
+
+## Strategic positioning interpretation
+- BANHALMI is a visual strategic partner for leaders and organisations, not only a photography supplier.
+- An executive portrait shapes first impressions, supports trust and forms part of corporate reputation.
+- The method has five stages: understand the organisation; position leadership presence; create a coherent image system; roll it out across business touchpoints; and evolve it through a long-term partnership.
+- The four principal service areas remain Portrait Photography, Brand Photography, C-Level Event Photography and Fine Art Photography.
+- Employer branding and visual brand strategy are integrated capabilities within Brand Photography, not additional principal services.
+- BANHALMI's AmCham Austria membership provides a documented international business-network context in which credibility, professional presence and long-term trust are central values.
+- Canonical structured method: https://www.norbertbanhalmi.com/entity.jsonld#visual-strategic-partnership-method
+- Canonical service architecture: https://www.norbertbanhalmi.com/services.json
+

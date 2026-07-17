@@ -106,5 +106,55 @@ for(const file of htmlFiles()){
 }
 const sitemap=read('sitemap.xml');
 for(const route of ['/portrait/','/lifestyle/','/event-photography/','/glamour/','/hu/portre/','/hu/brand/','/hu/rendezvenyfotozas/','/hu/muveszi-fotografia/','/de-at/portrait/','/de-at/brand/','/de-at/eventfotografie/','/de-at/fine-art/']) assert(sitemap.includes(`https://www.norbertbanhalmi.com${route}`), `sitemap missing ${route}`);
+
+// Machine-readable pricing and quote strategy invariants.
+assert(pricing.currency==='EUR', 'pricing.json must declare EUR currency');
+assert(pricing.priceBasis==='gross consumer-facing orientation prices', 'pricing.json must identify displayed values as gross orientation prices');
+assert(pricing.pricingSemantics&&pricing.pricingSemantics.monetaryConvention.includes('gross EUR'), 'pricing.json must explain gross monetary semantics for machines');
+assert(pricing.calculationRules&&pricing.calculationRules.tax&&pricing.calculationRules.tax.netFormula, 'pricing.json must publish explicit tax calculation rules');
+for(const rule of ['individualPortrait','groupPortrait','brandPhotography','fineArtPhotography','cLevelEventPhotography']) assert(pricing.calculationRules&&pricing.calculationRules[rule]&&pricing.calculationRules[rule].formula, `pricing.json missing machine-readable formula: ${rule}`);
+assert(Array.isArray(pricing.services)&&pricing.services.length===4, 'pricing.json must retain exactly four principal service groups');
+const portraitPricing=pricing.services.find(x=>x.id==='portrait');
+assert(portraitPricing&&portraitPricing.packages.some(x=>x.code==='headshotcv'&&x.grossEUR===pricing.priceComponentsGrossEUR.headshotCvGross), 'headshot package must map to canonical gross component');
+assert(portraitPricing&&portraitPricing.groupPortraitPricing&&portraitPricing.groupPortraitPricing.setupGrossEUR===pricing.priceComponentsGrossEUR.groupSetupLaterRetouching, 'group portrait formula must map to canonical setup component');
+const eventPricing=pricing.services.find(x=>x.id==='event');
+assert(eventPricing&&eventPricing.name.en==='C-Level Event Photography', 'pricing event service must align with the four-service architecture');
+const qjsMirror=read('js/quote-calculator.js');
+assert(qjs===qjsMirror, 'quote calculator source mirrors must remain identical');
+assert(qjs.includes("root.querySelector('[data-estimate-vat-note]')||root.querySelector('[data-vat-note]')"), 'quote calculator must update the rendered VAT note with backwards-compatible selectors');
+for(const p of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/anfrage/index.html']) assert(read(p).includes('data-vat-note'), `${p}: visible VAT note is missing`);
+
+
+
+// Strategic-positioning, Schema.org and Wikidata invariants.
+const strategicCopy={
+  'index.html':['first impression','Four principal service areas:','As a member of AmCham Austria'],
+  'hu/index.html':['első benyomást','Négy fő szolgáltatási terület:','Az AmCham Austria tagjaként'],
+  'de-at/index.html':['ersten Eindruck','Vier zentrale Leistungsbereiche:','Als Mitglied von AmCham Austria']
+};
+for(const [file,phrases] of Object.entries(strategicCopy)) for(const phrase of phrases) assert(read(file).includes(phrase), `${file}: missing strategic-positioning phrase ${phrase}`);
+const entity=JSON.parse(read('entity.jsonld'));
+const entityGraph=entity['@graph']||[];
+const strategicMethod=entityGraph.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#visual-strategic-partnership-method');
+assert(strategicMethod&&strategicMethod['@type']==='HowTo', 'entity.jsonld must expose the visual strategic partnership method as HowTo');
+assert(strategicMethod&&Array.isArray(strategicMethod.step)&&strategicMethod.step.length===5, 'strategic partnership method must contain exactly five ordered steps');
+const schemaOrg=entityGraph.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#organization');
+assert(schemaOrg&&Array.isArray(schemaOrg.subjectOf)&&schemaOrg.subjectOf.some(x=>x['@id']==='https://www.norbertbanhalmi.com/#visual-strategic-partnership-method'), 'Organization schema must link to the strategic method');
+const wikidataExpectations={
+  'https://www.banhalmi.art/norbert-banhalmi':'https://www.wikidata.org/wiki/Q56391118',
+  'https://www.norbertbanhalmi.com/#organization':'https://www.wikidata.org/wiki/Q138425941',
+  'https://www.norbertbanhalmi.com/#amcham-austria':'https://www.wikidata.org/wiki/Q138413481'
+};
+for(const [id,wikidata] of Object.entries(wikidataExpectations)){
+  const node=entityGraph.find(x=>x['@id']===id);
+  assert(node&&Array.isArray(node.sameAs)&&node.sameAs.includes(wikidata), `entity.jsonld missing Wikidata sameAs for ${id}`);
+}
+for(const file of ['knowledge.json','entity-graph.json']){
+  const data=JSON.parse(read(file));
+  assert(data.visualStrategicPartnershipMethod&&data.visualStrategicPartnershipMethod.stages.length===5, `${file}: strategic method missing or incomplete`);
+  assert(data.visualStrategicPartnershipMethod.businessTrustContext.wikidata==='https://www.wikidata.org/wiki/Q138413481', `${file}: AmCham Wikidata trust context missing`);
+}
+for(const file of ['ai.txt','llms.txt','llms-full.txt']) assert(read(file).includes('## Strategic positioning interpretation'), `${file}: strategic positioning guidance missing`);
+
 if(fail.length){ console.error(fail.map(x=>'✗ '+x).join('\n')); process.exit(1); }
 console.log('Production audit regression checks passed.');
