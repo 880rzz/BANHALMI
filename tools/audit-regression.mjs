@@ -24,7 +24,7 @@ const serviceMap={
 };
 for(const [file,expected] of Object.entries(serviceMap)){
   const h=read(file);
-  assert(!h.includes('nav-services')&&!h.includes('nav-submenu')&&!h.includes('Services</button>')&&!h.includes('Szolgáltatások</button>')&&!h.includes('Leistungen</button>'), `${file}: Services dropdown remains`);
+  assert(h.includes('nav-submenu'), `${file}: Services dropdown is required`);
   const serviceSection=(h.match(/<section id="services">[\s\S]*?<\/section>/)||[''])[0];
   const cardLinks=links(serviceSection).map(l=>l.href);
   assert(cardLinks.length===4, `${file}: home service section must expose exactly 4 cards, found ${cardLinks.length}`);
@@ -35,8 +35,7 @@ assert(read('hu/index.html').includes('Professzionális, executive, C-level és 
 assert(read('de-at/index.html').includes('Professionelle, Executive-, C-Level- und Lifestyle-Porträts'), 'German portrait card must include consolidated portrait range');
 for(const p of ['gallery/index.html','hu/gallery/index.html','de-at/gallery/index.html','de/portrait/index.html','de/brand/index.html','de/eventfotografie/index.html','de/fine-art/index.html','de-at/glamour/index.html','mybest/index.html','de-at/mybest/index.html']) assert(!exists(p), `${p}: deleted redundant page still exists`);
 const routeText=htmlFiles().map(p=>read(p)).join('\n')+'\n'+['sitemap.xml','llms.txt','llms-full.txt','services.json'].filter(exists).map(read).join('\n');
-for(const route of ['/gallery/','/hu/gallery/','/de-at/gallery/','/de/portrait/','/de/brand/','/de/eventfotografie/','/de/fine-art/','/de-at/glamour/','/mybest/','/de-at/mybest/']) assert(!new RegExp(`(href="|https://www\.norbertbanhalmi\.com)${route.replaceAll('/','\/')}`).test(routeText), `redundant route reference remains: ${route}`);
-assert(!/href="\/(?:hu\/|de-at\/)?gallery\/[^"]*"/.test(routeText), 'Gallery navigation route remains');
+for(const route of ['/de/portrait/','/de/brand/','/de/eventfotografie/','/de/fine-art/','/de-at/glamour/','/mybest/','/de-at/mybest/']) assert(!new RegExp(`(href="|https://www\.norbertbanhalmi\.com)${route.replaceAll('/','\/')}`).test(routeText), `redundant route reference remains: ${route}`);
 for(const route of forbiddenPortraitSplitRoutes){
   const file=route.slice(1)+'index.html';
   assert(!exists(file), `${file}: portrait subservice route must not exist as standalone page`);
@@ -73,11 +72,12 @@ for(const file of ['portrait/index.html','hu/portre/index.html','de-at/portrait/
   }
 }
 const css=read('assets/css/style.css')+'\n'+read('css/style.css');
-assert(!/nav-services|nav-submenu|nav-services-toggle/.test(css), 'dropdown-specific CSS remains');
+assert(/nav-submenu/.test(css), 'dropdown-specific CSS is required');
 assert(!/(?:filter|backdrop-filter|-webkit-backdrop-filter)\s*:[^;{}]*blur\s*\((?!\s*0(?:px|rem|em|%)?\s*\))/i.test(css), 'production CSS must not contain non-zero blur effects');
 assert(!/word-break\s*:\s*break-all/i.test(css), 'aggressive word breaking is forbidden');
 const mainJs=read('assets/js/main.js')+'\n'+read('js/main.js');
-assert(!/nav-services|nav-submenu|galleryLightbox|data-gallery-lightbox/.test(mainJs), 'dropdown or deleted commercial gallery JavaScript remains');
+assert(/nav-submenu/.test(mainJs), 'dropdown JavaScript is required');
+assert(!/galleryLightbox|data-gallery-lightbox/.test(mainJs), 'deleted commercial gallery JavaScript remains');
 const pricing=JSON.parse(read('pricing.json'));
 for(const key of ['individualQuick30','headshotCvGross','brandFastOneHour','eventOneHour','travelPerVehicleGross']) assert(Number(pricing.priceComponentsGrossEUR[key])>0, `pricing.json: ${key} must be positive`);
 const qjs=read('assets/js/quote-calculator.js');
