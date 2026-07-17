@@ -39,3 +39,43 @@ Automated regression covers load, default non-zero total, service/category chang
 - Google Apps Script / Cloudflare Worker: static and local frontend checks only; live success/error handling requires endpoint access and mailbox/spreadsheet confirmation.
 - Analytics / reviews: static consent-code review only; third-party scripts intentionally load after consent.
 - Bookipi / other embeds: not changed; human legal review recommended for processor lists.
+
+## Second production verification pass — 2026-07-17
+
+### Independent-review findings addressed
+
+| Finding | Root cause | Fix | Regression guard |
+| --- | --- | --- | --- |
+| Forbidden blur effects | Several production CSS rules still used `filter: blur(...)` or `backdrop-filter: blur(...)` on header, lightbox, age-gate, sticky controls and reveal states. | Removed non-zero blur/backdrop-filter use from production CSS and retained solid/semi-transparent backgrounds, borders, shadows and opacity transitions only. | `tools/audit-regression.mjs` now fails on non-zero blur/backdrop-filter blur in `assets/css/style.css`. |
+| Quote info modal unstyled | `main.js` still generated `.info-modal` markup, but the matching modal CSS was missing. | Restored full no-blur `.info-modal`, panel, header, close-button and content styles with fixed overlay, responsive centred panel, scrollable content and focus-visible states. | Regression script now verifies required info-modal CSS classes when JS references the modal. |
+| Gallery lightbox keyboard support | The gallery-specific lightbox only opened, closed and handled Escape. | Added dialog attributes, previous/next buttons, focus movement, focus trap, Escape close, ArrowLeft/ArrowRight navigation, outside-click close, body scroll lock and focus restoration. | Gallery pages and regression checks require accessible lightbox controls. |
+| Gallery image dimensions | Gallery HTML used `width="1200" height="800"` for every asset. | Replaced gallery width/height attributes with intrinsic WEBP dimensions from repository assets for all EN/HU/DE gallery images. | Regression script parses WEBP headers and compares declared dimensions with source dimensions, rejecting duplicate or missing images. |
+| Missing gallery structured data | New gallery pages had canonical/hreflang but no gallery JSON-LD. | Added valid JSON-LD containing `CollectionPage`, `BreadcrumbList`, maintainable `ImageGallery`/`ImageObject` entries, `creator`, `copyrightHolder`, `inLanguage`, `isPartOf`, and consistent Person/Brand references. | JSON-LD validation and gallery schema checks now run locally. |
+
+### Browser-driven verification status
+
+Required Chromium/Playwright verification was attempted but could not be completed in this container because external package and browser installation endpoints returned HTTP 403 via the configured proxy:
+
+- `npm install --save-dev @playwright/test` failed with `403 Forbidden` from `registry.npmjs.org`.
+- `apt-get update && apt-get install -y chromium` failed with `403 Forbidden` from Ubuntu package repositories.
+- No existing `chromium`, `chromium-browser`, `google-chrome`, or Playwright browser binary was present in the filesystem.
+
+Because of this environment limitation, the PR must still receive a real browser pass before production readiness is declared. The required live-browser matrix remains:
+
+- Routes: `/`, `/hu/`, `/de-at/`, `/requestaquote/`, `/hu/ajanlatkeres/`, `/de-at/anfrage/`, `/gallery/`, `/hu/gallery/`, `/de-at/gallery/`.
+- Viewports: 320, 375, 390, 768, 1024, 1440 and 1920 px widths.
+- Interactions: quote service/quantity/duration/location/extras changes, PDF download, submit payload interception, Services submenu click/hover/keyboard/Escape/mobile accordion, all checkbox/radio rows, info modal, gallery lightbox Escape/arrows/focus trap/focus restoration, consent accept/necessary-only/withdraw flows.
+
+### Verification completed locally after second-pass fixes
+
+- Static JavaScript syntax checks for `assets/js/main.js`, `js/main.js`, and `assets/js/quote-calculator.js` passed.
+- `pricing.json` validation passed.
+- Repository HTML JSON-LD parsing passed after adding gallery structured data.
+- `tools/audit-regression.mjs` passed with the new no-blur, info-modal, gallery-dimension and gallery-schema assertions.
+
+### External production verification still required
+
+- Google Apps Script and/or Cloudflare Worker quote submission success path with real production CORS and response bodies.
+- Production-domain Google Analytics / review-widget consent network behaviour.
+- Browser-native PDF rendering in Chromium, Safari and Firefox, including Hungarian and German characters.
+- Real mobile Safari visual verification for form controls, dropdowns, lightbox and sticky quote summary.
