@@ -44,6 +44,10 @@
 
 
 
+
+
+  // Production audit: accessible Services submenu and gallery lightbox.
+
   // Desktop footer columns stay open like Apple's information architecture;
   // on small screens they return to compact native accordions.
   var footerMedia = window.matchMedia("(min-width: 681px)");

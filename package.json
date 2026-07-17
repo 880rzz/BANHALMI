@@ -1,0 +1,12 @@
+{
+  "name": "banhalmi-production-audit",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "audit": "node tools/audit-regression.mjs",
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.46.0"
+  }
+}

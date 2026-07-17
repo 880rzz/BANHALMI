@@ -1,313 +1,85 @@
-/* BANHALMI guided quote calculator — pricing.json is the canonical machine-readable price source. */
+/* BANHALMI guided quote calculator — capacity-based, multilingual estimate logic. */
 (function(){
-  "use strict";
-  var VAT = 0.20;
-  var EU_COUNTRIES = {
-    AT:{prefix:'AT', label:{en:'Austria',hu:'Ausztria',de:'Österreich'}},
-    BE:{prefix:'BE', label:{en:'Belgium',hu:'Belgium',de:'Belgien'}},
-    BG:{prefix:'BG', label:{en:'Bulgaria',hu:'Bulgária',de:'Bulgarien'}},
-    HR:{prefix:'HR', label:{en:'Croatia',hu:'Horvátország',de:'Kroatien'}},
-    CY:{prefix:'CY', label:{en:'Cyprus',hu:'Ciprus',de:'Zypern'}},
-    CZ:{prefix:'CZ', label:{en:'Czechia',hu:'Csehország',de:'Tschechien'}},
-    DK:{prefix:'DK', label:{en:'Denmark',hu:'Dánia',de:'Dänemark'}},
-    EE:{prefix:'EE', label:{en:'Estonia',hu:'Észtország',de:'Estland'}},
-    FI:{prefix:'FI', label:{en:'Finland',hu:'Finnország',de:'Finnland'}},
-    FR:{prefix:'FR', label:{en:'France',hu:'Franciaország',de:'Frankreich'}},
-    DE:{prefix:'DE', label:{en:'Germany',hu:'Németország',de:'Deutschland'}},
-    GR:{prefix:'EL', label:{en:'Greece',hu:'Görögország',de:'Griechenland'}},
-    HU:{prefix:'HU', label:{en:'Hungary',hu:'Magyarország',de:'Ungarn'}},
-    IE:{prefix:'IE', label:{en:'Ireland',hu:'Írország',de:'Irland'}},
-    IT:{prefix:'IT', label:{en:'Italy',hu:'Olaszország',de:'Italien'}},
-    LV:{prefix:'LV', label:{en:'Latvia',hu:'Lettország',de:'Lettland'}},
-    LT:{prefix:'LT', label:{en:'Lithuania',hu:'Litvánia',de:'Litauen'}},
-    LU:{prefix:'LU', label:{en:'Luxembourg',hu:'Luxemburg',de:'Luxemburg'}},
-    MT:{prefix:'MT', label:{en:'Malta',hu:'Málta',de:'Malta'}},
-    NL:{prefix:'NL', label:{en:'Netherlands',hu:'Hollandia',de:'Niederlande'}},
-    PL:{prefix:'PL', label:{en:'Poland',hu:'Lengyelország',de:'Polen'}},
-    PT:{prefix:'PT', label:{en:'Portugal',hu:'Portugália',de:'Portugal'}},
-    RO:{prefix:'RO', label:{en:'Romania',hu:'Románia',de:'Rumänien'}},
-    SK:{prefix:'SK', label:{en:'Slovakia',hu:'Szlovákia',de:'Slowakei'}},
-    SI:{prefix:'SI', label:{en:'Slovenia',hu:'Szlovénia',de:'Slowenien'}},
-    ES:{prefix:'ES', label:{en:'Spain',hu:'Spanyolország',de:'Spanien'}},
-    SE:{prefix:'SE', label:{en:'Sweden',hu:'Svédország',de:'Schweden'}}
+  'use strict';
+  var VAT=0.20;
+  var pricesGross={};
+  var pricingLoaded=false,pricingReady=false,pricingError='',pricingMeta={brandIncluded:0,artIncluded:0};
+  var packageNames={en:{headshotcv:'Headshot CV',quick30:'30-minute headshot',guided60:'60-minute guided portrait',guided120:'120-minute guided portrait'},hu:{headshotcv:'Headshot CV',quick30:'30 perces headshot',guided60:'60 perces vezetett portré',guided120:'120 perces vezetett portré'},de:{headshotcv:'Headshot CV',quick30:'30-Minuten-Headshot',guided60:'60-Minuten-Porträt',guided120:'120-Minuten-Porträt'}};
+  var copy={
+    en:{net:'Net',vat:'VAT',gross:'Gross',vat20:'The orientation estimate includes 20% Austrian VAT. A 0% VAT treatment may apply only after verification of the company, VAT ID and applicable legal requirements.',reverse:'The orientation estimate continues to include 20% Austrian VAT. A 0% VAT treatment becomes valid only after the company, VAT ID and applicable legal requirements have been verified.',individual:'individual portrait',group:'group portrait',brand:'brand photography',art:'fine-art photography',event:'event photography',people:'people',person:'person',photographers:'photographer station(s)',retouches:'retouched images',perPerson:'per person',travel:'travel',vehicles:'vehicle(s)',instant:'immediate on-site retouching',hours:'started hour(s)',coordination:'date coordination requested',included:'included in package',mobileStudio:'mobile studio',crew:'crew members',addons:{stylist:'stylist',hair:'hair stylist',makeup:'make-up artist',express:'express delivery',artdirection:'art direction'}},
+    hu:{net:'Nettó',vat:'ÁFA',gross:'Bruttó',vat20:'Az előzetes kalkuláció 20% osztrák ÁFÁ-val számol. A 0%-os ÁFA csak a cég, a közösségi adószám és a vonatkozó jogszabályi feltételek ellenőrzése után válhat érvényessé.',reverse:'Az előzetes kalkuláció továbbra is 20% osztrák ÁFÁ-t tartalmaz. A 0%-os ÁFA kizárólag a cég, a közösségi adószám és a vonatkozó jogszabályi feltételek ellenőrzése után lesz érvényes.',individual:'egyéni portré',group:'csoportos portré',brand:'brand fotózás',art:'művészi fotózás',event:'rendezvényfotózás',people:'fő',person:'fő',photographers:'fotósállomás',retouches:'retusált kép',perPerson:'személyenként',travel:'kiszállás',vehicles:'gépjármű',instant:'azonnali helyszíni retusálás',hours:'megkezdett óra',coordination:'időpont-egyeztetés kérése',included:'a csomagban foglalt',mobileStudio:'mobil stúdió',crew:'stábtag',addons:{stylist:'stylist',hair:'fodrász',makeup:'sminkes',express:'expressz átadás',artdirection:'művészeti irányítás'}},
+    de:{net:'Netto',vat:'USt.',gross:'Brutto',vat20:'Die vorläufige Kalkulation enthält 20% österreichische USt. Eine 0%-Behandlung kann erst nach Prüfung des Unternehmens, der UID und der anwendbaren gesetzlichen Voraussetzungen gültig werden.',reverse:'Die vorläufige Kalkulation enthält weiterhin 20% österreichische USt. Die 0%-Behandlung wird erst nach Prüfung des Unternehmens, der UID und der anwendbaren gesetzlichen Voraussetzungen gültig.',individual:'Einzelporträt',group:'Gruppenporträt',brand:'Brand-Fotografie',art:'Fine-Art-Fotografie',event:'Eventfotografie',people:'Personen',person:'Person',photographers:'Fotostation(en)',retouches:'retuschierte Bilder',perPerson:'pro Person',travel:'Anfahrt',vehicles:'Fahrzeug(e)',instant:'sofortige Retusche vor Ort',hours:'begonnene Stunde(n)',coordination:'Terminabstimmung gewünscht',included:'im Paket enthalten',mobileStudio:'mobiles Studio',crew:'Teammitglieder',addons:{stylist:'Styling',hair:'Hair-Styling',makeup:'Make-up',express:'Expresslieferung',artdirection:'Art Direction'}}
   };
-  var VAT_PATTERNS = {
-    AT:/^ATU\d{8}$/, BE:/^BE0?\d{9}$/, BG:/^BG\d{9,10}$/, HR:/^HR\d{11}$/,
-    CY:/^CY\d{8}[A-Z]$/, CZ:/^CZ\d{8,10}$/, DE:/^DE\d{9}$/, DK:/^DK\d{8}$/,
-    EE:/^EE\d{9}$/, EL:/^EL\d{9}$/, ES:/^ES[A-Z0-9]\d{7}[A-Z0-9]$/,
-    FI:/^FI\d{8}$/, FR:/^FR[A-HJ-NP-Z0-9]{2}\d{9}$/, HU:/^HU\d{8}$/,
-    IE:/^IE(?:\d{7}[A-W][A-I]?|[7-9][A-Z*+]\d{5}[A-W])$/, IT:/^IT\d{11}$/,
-    LT:/^LT(?:\d{9}|\d{12})$/, LU:/^LU\d{8}$/, LV:/^LV\d{11}$/,
-    MT:/^MT\d{8}$/, NL:/^NL\d{9}B\d{2}$/, PL:/^PL\d{10}$/,
-    PT:/^PT\d{9}$/, RO:/^RO\d{2,10}$/, SE:/^SE\d{12}$/,
-    SI:/^SI\d{8}$/, SK:/^SK\d{10}$/
-  };
-  var labels = {
-    en:{
-      net:'Net',vat:'VAT',gross:'Gross',vat20:'20% Austrian VAT included.',
-      reverse:'EU B2B outside Austria: 0% Austrian VAT estimate (reverse charge), subject to VAT ID and place-of-supply validation.',
-      customerType:'Customer type',privateClient:'Private client',businessClient:'Business',billingCountry:'Billing country',
-      taxHelp:'0% is estimated only for a business established in another EU Member State with a formally valid VAT ID matching that country. Final VAT treatment is confirmed after validation.',
-      taxEligible:'Reverse-charge estimate active. The VAT ID and place of supply must still be validated before invoicing.',
-      taxNotEligible:'20% Austrian VAT remains in the estimate until all reverse-charge conditions are met.'
-    },
-    hu:{
-      net:'Nettó',vat:'ÁFA',gross:'Bruttó',vat20:'20% osztrák ÁFA-val számolva.',
-      reverse:'Ausztrián kívüli EU-s vállalkozás: fordított adózás / 0% osztrák ÁFA becslés, az adószám és a teljesítési hely ellenőrzésével.',
-      customerType:'Ügyféltípus',privateClient:'Magánszemély',businessClient:'Vállalkozás',billingCountry:'Számlázási ország',
-      taxHelp:'A kalkulátor csak akkor becsül 0%-ot, ha a megrendelő más EU-tagállamban letelepedett vállalkozás, és az országhoz illeszkedő, formailag megfelelő EU-adószámot ad meg. A végleges adókezelés ellenőrzés után állapítható meg.',
-      taxEligible:'A fordított adózás becslése aktív. Számlázás előtt az EU-adószámot és a teljesítési helyet ellenőrizni kell.',
-      taxNotEligible:'A becslésben 20% osztrák ÁFA marad, amíg a fordított adózás minden feltétele nem teljesül.'
-    },
-    de:{
-      net:'Netto',vat:'USt.',gross:'Brutto',vat20:'Inklusive 20% österreichischer USt.',
-      reverse:'EU-Unternehmen außerhalb Österreichs: Reverse Charge / 0% österreichische USt.-Schätzung, vorbehaltlich UID- und Leistungsortprüfung.',
-      customerType:'Kundentyp',privateClient:'Privatkunde',businessClient:'Unternehmen',billingCountry:'Rechnungsland',
-      taxHelp:'0% werden nur geschätzt, wenn der Auftraggeber ein in einem anderen EU-Mitgliedstaat ansässiges Unternehmen ist und eine zum Land passende, formal gültige UID angibt. Die endgültige steuerliche Behandlung wird nach Prüfung bestätigt.',
-      taxEligible:'Reverse-Charge-Schätzung aktiv. UID und Leistungsort müssen vor der Rechnungsstellung noch geprüft werden.',
-      taxNotEligible:'Die Schätzung enthält weiterhin 20% österreichische USt., bis alle Reverse-Charge-Voraussetzungen erfüllt sind.'
+  function applyPricingJson(data){var p=data&&data.priceComponentsGrossEUR;if(!p)throw new Error('priceComponentsGrossEUR missing');var map={headshotcv:'headshotCvGross',quick30:'individualQuick30',guided60:'individualGuided60',guided120:'individualGuided120',groupSetup:'groupSetupLaterRetouching',groupPerson:'groupPerPersonLaterRetouching',brand60:'brandFastOneHour',brand120:'brandTwoHours',brand180:'brandThreeHours',brand240:'brandFourHours',art60:'fineArtOneHour',art120:'fineArtTwoHours',art180:'fineArtThreeHours',event60:'eventOneHour',event120:'eventTwoHours',event180:'eventThreeHours',event240:'eventFourHours',eventFullDay:'eventFullDay',retouchPortrait:'retouchedImagePortrait',retouchGroup:'retouchedImageGroup',retouchArt:'retouchedImageFineArt',stylist:'stylist',hair:'hair',makeup:'makeup',express:'expressDelivery',mobile:'mobileStudio',artdirection:'artDirection',instantretouch:'instantRetouchingPerStartedHourGross',travelVehicle:'travelPerVehicleGross',extraPhotographer:'additionalPhotographer',extraPhotographerEventHour:'additionalPhotographerEventPerHour'};var missing=[];Object.keys(map).forEach(function(k){var n=Number(p[map[k]]);if(!isFinite(n)||n<0)missing.push(map[k]);});if(missing.length)throw new Error('Missing/invalid price keys: '+missing.join(', '));Object.keys(map).forEach(function(k){pricesGross[k]=Number(p[map[k]]);});var services=Array.isArray(data.services)?data.services:[];var brand=services.find(function(x){return x&&x.id==='brand-visual-positioning';});var art=services.find(function(x){return x&&x.id==='fine-art';});pricingMeta.brandIncluded=Number(brand&&brand.includedRetouchedImages);pricingMeta.artIncluded=Number(art&&art.includedRetouchedImages);if(!isFinite(pricingMeta.brandIncluded)||pricingMeta.brandIncluded<0||!isFinite(pricingMeta.artIncluded)||pricingMeta.artIncluded<0)throw new Error('Missing included-retouch metadata');pricingLoaded=true;pricingReady=true;pricingError='';}
+  function pricingUiError(f){var l=lang(f);return l==='hu'?'Az árlista jelenleg nem tölthető be. Az ajánlat letöltése és elküldése átmenetileg nem lehetséges.':l==='de'?'Die Preisliste kann derzeit nicht geladen werden. Download und Versand des Angebots sind vorübergehend nicht möglich.':'The price list cannot be loaded right now. Quote download and submission are temporarily unavailable.';}function quoteRoot(f){return f.closest('[data-quote-root]')||f.closest('.smart-quote-layout')||f.parentElement;}function setPricingUi(ready,message){document.querySelectorAll('[data-download-quote-pdf]').forEach(function(b){b.disabled=!ready;b.setAttribute('aria-disabled',ready?'false':'true');});document.querySelectorAll('[data-smart-quote]').forEach(function(f){f.setAttribute('data-pricing-ready',ready?'true':'false');f.querySelectorAll('[type=submit]').forEach(function(b){b.disabled=!ready;});var scope=quoteRoot(f);var n=f.querySelector('[data-pricing-status]')||(scope&&scope.querySelector('[data-pricing-status]'));if(n){n.hidden=ready;n.textContent=ready?'':(message==='pricing-error'?pricingUiError(f):(message||n.getAttribute('data-loading-message')||n.textContent||''));}});}function loadPricing(){
+    setPricingUi(false,'');
+    var embedded=window.BANHALMI_PRICING_DATA;
+    if(embedded){
+      try{
+        applyPricingJson(embedded);
+        document.querySelectorAll('[data-smart-quote]').forEach(paint);
+        setPricingUi(true,'');
+      }catch(embeddedError){
+        pricingReady=false;
+        pricingError=String(embeddedError&&embeddedError.message||embeddedError);
+        console.error('[BANHALMI quote] embedded pricing data is invalid.',embeddedError);
+      }
     }
-  };
-  var pricesGross = {
-    quick30:220, guided60:420, guided120:690,
-    groupSetup:390, groupPerson:45, groupInstantBase:690, groupInstantPerson:55,
-    brand60:499, brand120:790, brand180:1090, brand240:1390,
-    art60:690, art120:990, art180:1290,
-    event60:590, event120:890, event180:1190, event240:1490, eventFullDay:2490,
-    retouchPortrait:35, retouchGroup:29, retouchArt:45,
-    stylist:220, hair:220, makeup:220, express:120, mobile:240, artdirection:260,
-    extraPhotographer:390, extraPhotographerEventHour:120
-  };
-  var pricingLoaded = false;
-  function applyPricingJson(data){
-    if(!data ||!data.priceComponentsGrossEUR) return;
-    var p = data.priceComponentsGrossEUR;
-    pricesGross.quick30 = Number(p.individualQuick30 || pricesGross.quick30);
-    pricesGross.guided60 = Number(p.individualGuided60 || pricesGross.guided60);
-    pricesGross.guided120 = Number(p.individualGuided120 || pricesGross.guided120);
-    pricesGross.groupSetup = Number(p.groupSetupLaterRetouching || pricesGross.groupSetup);
-    pricesGross.groupPerson = Number(p.groupPerPersonLaterRetouching || pricesGross.groupPerson);
-    pricesGross.groupInstantBase = Number(p.groupInstantBaseMax6People || pricesGross.groupInstantBase);
-    pricesGross.groupInstantPerson = Number(p.groupInstantPerPerson || pricesGross.groupInstantPerson);
-    pricesGross.brand60 = Number(p.brandFastOneHour || pricesGross.brand60);
-    pricesGross.brand120 = Number(p.brandTwoHours || pricesGross.brand120);
-    pricesGross.brand180 = Number(p.brandThreeHours || pricesGross.brand180);
-    pricesGross.brand240 = Number(p.brandFourHours || pricesGross.brand240);
-    var fineArtBase = Number(p.fineArtBase || pricesGross.art60);
-    pricesGross.art60 = Number(p.fineArtOneHour || fineArtBase);
-    pricesGross.art120 = Number(p.fineArtTwoHours || pricesGross.art120 || fineArtBase);
-    pricesGross.art180 = Number(p.fineArtThreeHours || pricesGross.art180 || fineArtBase);
-    pricesGross.retouchPortrait = Number(p.retouchedImagePortrait || pricesGross.retouchPortrait);
-    pricesGross.retouchGroup = Number(p.retouchedImageGroup || pricesGross.retouchGroup);
-    pricesGross.retouchArt = Number(p.retouchedImageFineArt || pricesGross.retouchArt);
-    pricesGross.stylist = Number(p.stylist || pricesGross.stylist);
-    pricesGross.hair = Number(p.hair || pricesGross.hair);
-    pricesGross.makeup = Number(p.makeup || pricesGross.makeup);
-    pricesGross.express = Number(p.expressDelivery || pricesGross.express);
-    pricesGross.mobile = Number(p.mobileStudio || pricesGross.mobile);
-    pricesGross.artdirection = Number(p.artDirection || pricesGross.artdirection);
-    pricesGross.extraPhotographer = Number(p.additionalPhotographer || pricesGross.extraPhotographer);
-    pricesGross.extraPhotographerEventHour = Number(p.additionalPhotographerEventPerHour || pricesGross.extraPhotographerEventHour);
-    pricesGross.event60 = Number(p.eventOneHour || pricesGross.event60);
-    pricesGross.event120 = Number(p.eventTwoHours || pricesGross.event120);
-    pricesGross.event180 = Number(p.eventThreeHours || pricesGross.event180);
-    pricesGross.event240 = Number(p.eventFourHours || pricesGross.event240);
-    pricesGross.eventFullDay = Number(p.eventFullDay || pricesGross.eventFullDay);
-    pricingLoaded = true;
-  }
-  function loadPricing(){
-    if (!window.fetch) return Promise.resolve(false);
-    return fetch('/pricing.json', {cache:'no-store'}).then(function(resp){
-      if(!resp ||!resp.ok) throw new Error('pricing unavailable');
-      return resp.json();
-    }).then(function(data){
-      applyPricingJson(data);
-      document.querySelectorAll('[data-smart-quote]').forEach(function(form){ paint(form); });
+    var protocol=String(window.location&&window.location.protocol||'');
+    if(!window.fetch||protocol==='file:'){
+      if(pricingReady)return Promise.resolve(true);
+      setPricingUi(false,'pricing-error');
+      return Promise.resolve(false);
+    }
+    return fetch('/pricing.json',{cache:'no-store'}).then(function(r){
+      if(!r.ok)throw new Error('pricing.json unavailable');
+      return r.json();
+    }).then(function(d){
+      applyPricingJson(d);
+      document.querySelectorAll('[data-smart-quote]').forEach(paint);
+      setPricingUi(true,'');
       return true;
-    }).catch(function(){ pricingLoaded = false; return false; });
-  }
-  function money(v){ return '€' + Math.round(v).toLocaleString('de-DE'); }
-  function checked(form,name){ return Array.prototype.slice.call(form.querySelectorAll('[name="'+name+'"]:checked')).map(function(i){return i.value;}); }
-  function val(form,name, fallback){ var el=form.querySelector('[name="'+name+'"]:checked')||form.querySelector('[name="'+name+'"]'); return el? el.value: fallback; }
-  function num(form,name,fallback){ var el=form.querySelector('[name="'+name+'"]'); var n=el?parseInt(el.value,10):fallback; return isNaN(n)?fallback:n; }
-  function numericSelect(form,name,fallback){ var el=form.querySelector('[name="'+name+'"]'); var n=el?parseInt(el.value,10):fallback; return isNaN(n)?fallback:n; }
-  function extraPhotographerCost(form, cat, durationHours){
-    var team = cat === 'group'? numericSelect(form,'photographers',1): numericSelect(form,'photographer_team',1);
-    var extra = Math.max(0, team-1);
-    if(!extra) return {cost:0, count:0};
-    if(cat === 'event') return {cost: extra * pricesGross.extraPhotographerEventHour * Math.max(1,durationHours || 1), count: extra};
-    return {cost: extra * pricesGross.extraPhotographer, count: extra};
-  }
-  function normalizeVatId(value){
-    return String(value || '').toUpperCase().replace(/[^A-Z0-9]/g,'');
-  }
-  function isVatIdFormallyValid(vatId, billingCountry){
-    var raw = normalizeVatId(vatId);
-    var country = EU_COUNTRIES[billingCountry];
-    if(!country || !raw) return false;
-    if(raw.slice(0, country.prefix.length) !== country.prefix) return false;
-    var pattern = VAT_PATTERNS[country.prefix];
-    return pattern? pattern.test(raw): false;
-  }
-  function getTaxProfile(form){
-    var customerType = val(form,'customer_type','private');
-    var billingCountry = val(form,'billing_country','AT');
-    var company = (form.querySelector('[name="company"]')||{}).value||'';
-    var vatId = (form.querySelector('[data-vat-id]')||{}).value||'';
-    var euCountry = !!EU_COUNTRIES[billingCountry];
-    var formalVatValid = isVatIdFormallyValid(vatId, billingCountry);
-    var eligible = customerType === 'business' && !!company.trim() && euCountry && billingCountry !== 'AT' && formalVatValid;
-    return {
-      eligible: eligible,
-      customerType: customerType,
-      billingCountry: billingCountry,
-      vatId: normalizeVatId(vatId),
-      formalVatValid: formalVatValid,
-      reason: eligible? 'eu-b2b-non-at-formal-vat-match': 'austrian-vat-default'
-    };
-  }
-  function createField(tag, attrs, text){
-    var el = document.createElement(tag);
-    Object.keys(attrs || {}).forEach(function(key){
-      if(key === 'className') el.className = attrs[key];
-      else el.setAttribute(key, attrs[key]);
+    }).catch(function(err){
+      pricingError=String(err&&err.message||err);
+      if(pricingReady){
+        console.warn('[BANHALMI quote] network pricing refresh failed; verified embedded pricing remains active.',err);
+        setPricingUi(true,'');
+        return true;
+      }
+      pricingReady=false;
+      console.error('[BANHALMI quote] pricing unavailable; quote submission is blocked.',err);
+      setPricingUi(false,'pricing-error');
+      return false;
     });
-    if(text != null) el.textContent = text;
-    return el;
   }
-  function ensureTaxFields(form){
-    if(form.querySelector('[name="customer_type"]')) return;
-    var lang=form.getAttribute('data-lang')||'en';
-    var l=labels[lang]||labels.en;
-    var vatField=form.querySelector('[data-vat-id]');
-    var anchor=vatField && vatField.closest('.grid-2');
-    if(!anchor || !anchor.parentNode) return;
-
-    var grid=createField('div',{className:'grid-2','data-tax-profile-fields':''});
-    var typeWrap=createField('div',{className:'field'});
-    var typeLabel=createField('label',{'for':'customer_type'},l.customerType);
-    var typeSelect=createField('select',{'id':'customer_type','name':'customer_type','required':''});
-    typeSelect.appendChild(createField('option',{'value':'private'},l.privateClient));
-    typeSelect.appendChild(createField('option',{'value':'business'},l.businessClient));
-    typeWrap.appendChild(typeLabel); typeWrap.appendChild(typeSelect);
-
-    var countryWrap=createField('div',{className:'field'});
-    var countryLabel=createField('label',{'for':'billing_country'},l.billingCountry);
-    var countrySelect=createField('select',{'id':'billing_country','name':'billing_country','required':''});
-    Object.keys(EU_COUNTRIES).forEach(function(code){
-      var option=createField('option',{'value':code},EU_COUNTRIES[code].label[lang]||EU_COUNTRIES[code].label.en);
-      if(code==='AT') option.selected=true;
-      countrySelect.appendChild(option);
-    });
-    var outside=createField('option',{'value':'NON_EU'},lang==='hu'?'EU-n kívüli ország':(lang==='de'?'Land außerhalb der EU':'Country outside the EU'));
-    countrySelect.appendChild(outside);
-    countryWrap.appendChild(countryLabel); countryWrap.appendChild(countrySelect);
-    grid.appendChild(typeWrap); grid.appendChild(countryWrap);
-    anchor.parentNode.insertBefore(grid, anchor);
-
-    var help=createField('p',{className:'field-help','data-tax-help':''},l.taxHelp);
-    anchor.parentNode.insertBefore(help, anchor.nextSibling);
-    var status=createField('p',{className:'field-help','data-tax-status':'','aria-live':'polite'},l.taxNotEligible);
-    help.parentNode.insertBefore(status, help.nextSibling);
-  }
-  function updateTaxUi(form, profile){
-    var lang=form.getAttribute('data-lang')||'en';
-    var l=labels[lang]||labels.en;
-    var status=form.querySelector('[data-tax-status]');
-    if(status) status.textContent=profile.eligible?l.taxEligible:l.taxNotEligible;
-    var vat=form.querySelector('[data-vat-id]');
-    if(vat){
-      vat.setAttribute('aria-invalid', profile.customerType==='business' && profile.billingCountry!=='AT' && !profile.formalVatValid? 'true':'false');
-    }
-  }
-  function updatePanels(form){
-    var cat=val(form,'category','individual');
-    form.querySelectorAll('[data-panel]').forEach(function(p){ p.hidden = p.getAttribute('data-panel')!== cat; });
-    var delivery=val(form,'group_delivery','later');
-    var people=form.querySelector('[name="people_count"]');
-    if(cat==='group' && delivery==='instant' && people && parseInt(people.value,10)>6){ people.value=6; }
-    if(people){ people.max = (cat==='group' && delivery==='instant')? 6: 200; }
-  }
-  function calc(form){
-    updatePanels(form);
-    var cat=val(form,'category','individual');
-    var gross=0, parts=[];
-    var retouches=Math.max(1,num(form,'retouched_images',1));
-    if(cat==='individual'){
-      var m=val(form,'individual_mode','quick30'); gross += pricesGross[m] || pricesGross.quick30; parts.push(m.replace(/[0-9]+$/, '').replace('quick', 'quick portrait').replace('guided', 'guided portrait'));
-      if(retouches>1){ gross += (retouches-1)*pricesGross.retouchPortrait; parts.push('extra retouched images: '+(retouches-1)); }
-    } else if(cat==='group'){
-      var people=Math.max(1,num(form,'people_count',6)); var delivery=val(form,'group_delivery','later');
-      if(delivery==='instant'){ people=Math.min(people,6); gross += pricesGross.groupInstantBase + people*pricesGross.groupInstantPerson; parts.push('instant retouching, '+people+' people'); }
-      else { gross += pricesGross.groupSetup + people*pricesGross.groupPerson + retouches*pricesGross.retouchGroup; parts.push('later retouching, '+people+' people'); }
-      var groupExtra = extraPhotographerCost(form, cat, 1);
-      if(groupExtra.count>0){ gross += groupExtra.cost; parts.push('additional photographers: '+groupExtra.count); }
-    } else if(cat==='brand'){
-      var b=val(form,'brand_duration','brand60'); gross += pricesGross[b] || pricesGross.brand60; parts.push(b.replace('brand', 'brand session '));
-      gross += Math.max(0,retouches-3)*pricesGross.retouchPortrait; parts.push('retouched images: '+retouches);
-      var brandExtra = extraPhotographerCost(form, cat, 1); if(brandExtra.count>0){ gross += brandExtra.cost; parts.push('additional photographers: '+brandExtra.count); }
-    } else if(cat==='art'){
-      var a=val(form,'art_duration','art60'); gross += pricesGross[a] || pricesGross.art60; parts.push(val(form,'art_type','artportrait')); parts.push(a + ' — final fine-art scope confirmed in writing');
-      gross += Math.max(0,retouches-2)*pricesGross.retouchArt; parts.push('retouched images: '+retouches);
-      var artExtra = extraPhotographerCost(form, cat, 1); if(artExtra.count>0){ gross += artExtra.cost; parts.push('additional photographers: '+artExtra.count); }
-    } else if(cat==='event'){
-      var ev=val(form,'event_duration','event60'); gross += pricesGross[ev] || pricesGross.event60; parts.push(ev.replace('event', 'event coverage '));
-      var eventHours = ({event60:1,event120:2,event180:3,event240:4,eventFullDay:8})[ev] || 1;
-      gross += Math.max(0,retouches-3)*pricesGross.retouchPortrait; parts.push('retouched images: '+retouches);
-      var eventExtra = extraPhotographerCost(form, cat, eventHours); if(eventExtra.count>0){ gross += eventExtra.cost; parts.push('additional event photographers: '+eventExtra.count+' x '+eventHours+'h'); }
-    }
-    checked(form,'addons').forEach(function(ad){ gross += pricesGross[ad] || 0; parts.push(ad); });
-    var taxProfile=getTaxProfile(form);
-    var reverse=taxProfile.eligible;
-    updateTaxUi(form, taxProfile);
-    var grossRounded = Math.round(gross);
-    var net = Math.round(gross/(1+VAT));
-    var vat = reverse? 0: grossRounded-net; /* VAT derived from rounded values so net + VAT always equals gross */
-    var total = reverse? net: grossRounded;
-    return {
-      gross: total,
-      grossBeforeVatMode: grossRounded,
-      net: net,
-      vat: vat,
-      reverse: reverse,
-      vatMode: reverse? 'reverse-charge-0-vat': 'austrian-vat-20',
-      parts: parts.join(', '),
-      category: cat,
-      pricingSource: pricingLoaded? 'pricing.json': 'pricing.json fallback',
-      prices: pricesGross,
-      customerType: taxProfile.customerType,
-      billingCountry: taxProfile.billingCountry,
-      euVatNumber: taxProfile.vatId,
-      vatIdFormallyValid: taxProfile.formalVatValid,
-      reverseChargeReason: taxProfile.reason
-    };
-  }
-  function paint(form){
-    var lang=form.getAttribute('data-lang')||'en'; var l=labels[lang]||labels.en; var c=calc(form);
-    var box=document.querySelector('[data-quote-summary]'); if(!box) return c;
-    box.classList.toggle('reverse', c.reverse);
-    var total=box.querySelector('[data-total]'), net=box.querySelector('[data-net]'), vat=box.querySelector('[data-vat]'), note=box.querySelector('[data-vat-note]');
-    if(total) total.textContent=money(c.gross); if(net) net.textContent=money(c.net); if(vat) vat.textContent=money(c.vat); if(note) note.textContent=c.reverse?l.reverse:l.vat20;
-    var hNet=form.querySelector('[data-estimate-net]'), hVat=form.querySelector('[data-estimate-vat]'), hGross=form.querySelector('[data-estimate-gross]'), hMode=form.querySelector('[data-estimate-vat-mode]'), hSummary=form.querySelector('[data-estimate-summary]');
-    if(hNet) hNet.value=c.net; if(hVat) hVat.value=c.vat; if(hGross) hGross.value=c.gross; if(hMode) hMode.value=c.vatMode; if(hSummary) hSummary.value=c.parts;
-    return c;
-  }
-  function initForm(form){
-    ensureTaxFields(form);
-    form.addEventListener('input', function(){ paint(form); });
-    form.addEventListener('change', function(){ paint(form); });
-    form.addEventListener('submit', function(){ paint(form); });
-    return paint(form);
-  }
-  window.BANHALMI_QUOTE = window.BANHALMI_QUOTE || {};
-  window.BANHALMI_QUOTE.calculate = calc;
-  window.BANHALMI_QUOTE.paint = paint;
-  window.BANHALMI_QUOTE.updatePanels = updatePanels;
-  window.BANHALMI_QUOTE.loadPricing = loadPricing;
-  window.BANHALMI_QUOTE.applyPricingJson = applyPricingJson;
-  window.BANHALMI_QUOTE.getPrices = function(){ return JSON.parse(JSON.stringify(pricesGross)); };
-  window.BANHALMI_QUOTE.money = money;
-  window.BANHALMI_QUOTE.labels = labels;
-  document.querySelectorAll('[data-smart-quote]').forEach(initForm);
-  loadPricing();
+  function val(f,n,d){var e=f.querySelector('[name="'+n+'"]:checked')||f.querySelector('[name="'+n+'"]');return e?e.value:d;}
+  function num(f,n,d){var e=f.querySelector('[name="'+n+'"]'),x=e?parseFloat(e.value):d;return isFinite(x)?x:d;}
+  function checked(f,n){return Array.prototype.map.call(f.querySelectorAll('[name="'+n+'"]:checked'),function(e){return e.value;});}
+  function money(v){var n=Number(v);if(!isFinite(n))n=0;return new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2}).format(n);}
+  function lang(f){var l=(f.getAttribute('data-lang')||'en').toLowerCase();return l.indexOf('hu')===0?'hu':l.indexOf('de')===0?'de':'en';}
+  function selectedHours(f,cat){if(cat==='group')return Math.max(1,num(f,'group_hours',1));if(cat==='brand')return({brand60:1,brand120:2,brand180:3,brand240:4})[val(f,'brand_duration','brand60')]||1;if(cat==='event')return({event60:1,event120:2,event180:3,event240:4,eventFullDay:8})[val(f,'event_duration','event60')]||1;if(cat==='art')return({art60:1,art120:2,art180:3})[val(f,'art_duration','art60')]||1;return({headshotcv:1/6,quick30:.5,guided60:1,guided120:2})[val(f,'individual_mode','quick30')]||1;}
+  function peopleCount(f,cat){if(cat==='group')return Math.max(1,num(f,'people_count',1));if(cat==='brand')return Math.max(1,num(f,'brand_people_count',1));return 1;}
+  function requiredPhotographers(f,cat){if(cat==='group')return Math.max(1,Math.ceil(peopleCount(f,cat)/(6*selectedHours(f,cat))));if(cat==='event'){var guests=Math.max(1,num(f,'event_guest_count',1)),tracks=Math.max(1,num(f,'event_parallel_tracks',1)),manual=Math.max(0,Math.floor(num(f,'event_extra_photographers',0))),recommended=Math.max(0,tracks-1,Math.ceil(guests/250)-1);return 1+Math.max(manual,recommended);}return 1;}
+  function instantAllowed(cat,mode){return cat==='group'||cat==='brand'||(cat==='individual'&&mode!=='headshotcv');}
+  function requiredInstantHours(f,cat,retouchesPerPerson){if(!instantAllowed(cat,val(f,'individual_mode','quick30')))return 0;var people=peopleCount(f,cat),capacityPeople=cat==='brand'?2:5,capacityImages=cat==='brand'?5:2;var byPeople=Math.ceil(people/capacityPeople),byImagesPerPerson=Math.ceil(retouchesPerPerson/capacityImages);return Math.max(1,byPeople,byImagesPerPerson);}
+  function setAddonState(f,code,enabled){f.querySelectorAll('[name="addons"][value="'+code+'"]').forEach(function(el){if(!enabled)el.checked=false;el.disabled=!enabled;var wrap=el.closest('label,[data-option]');if(wrap)wrap.setAttribute('aria-disabled',enabled?'false':'true');});}
+  function updatePanels(f){var cat=val(f,'category','individual');f.querySelectorAll('[data-panel]').forEach(function(p){p.hidden=p.getAttribute('data-panel')!==cat;});var ev=f.querySelector('[data-event-details]');if(ev)ev.hidden=cat!=='event';updateHeadshotUi(f);updateAddonAvailability(f);updateLocationUi(f);updateRetouchUi(f);updateBillingUi(f);updateDateCoordinationUi(f);}
+  function updateLocationUi(f){var loc=val(f,'location','vienna'),needs=loc!=='vienna'&&loc!=='budapest',w=f.querySelector('[data-exact-location]'),i=f.querySelector('[name="specific_location"]'),cw=f.querySelector('[data-travel-country]'),c=f.querySelector('[name="travel_country"]');if(w)w.hidden=!needs;if(cw)cw.hidden=!needs;if(i){i.required=needs;i.setAttribute('aria-required',needs?'true':'false');if(!needs){i.setCustomValidity('');}}if(c){c.required=needs;c.setAttribute('aria-required',needs?'true':'false');if(!needs){c.value='';c.setCustomValidity('');}}}
+  function updateHeadshotUi(f){var is=val(f,'category','individual')==='individual'&&val(f,'individual_mode','quick30')==='headshotcv',locations=f.querySelectorAll('[name="location"]'),ret=f.querySelector('[name="retouched_images"]');if(ret&&is){ret.value='1';ret.min='1';ret.max='1';ret.readOnly=true;}else if(ret){ret.max='300';ret.readOnly=false;}if(is&&locations.length){var current=val(f,'location','vienna');if(current!=='vienna'&&current!=='budapest'){var vienna=f.querySelector('[name="location"][value="vienna"]');if(vienna){if(vienna.type==='radio'||vienna.type==='checkbox')vienna.checked=true;else vienna.value='vienna';}else if(locations[0].tagName==='SELECT'){locations[0].value='vienna';}}}}
+  function updateAddonAvailability(f){var cat=val(f,'category','individual'),mode=val(f,'individual_mode','quick30');setAddonState(f,'instantretouch',instantAllowed(cat,mode));if(cat==='individual'&&mode==='headshotcv'){setAddonState(f,'mobile',false);setAddonState(f,'express',false);setAddonState(f,'artdirection',false);}else{setAddonState(f,'mobile',true);setAddonState(f,'express',true);setAddonState(f,'artdirection',true);}}
+  function updateRetouchUi(f){var cat=val(f,'category','individual'),label=f.querySelector('[data-retouch-label]'),input=f.querySelector('[name="retouched_images"]');if(label){label.textContent=label.getAttribute('data-label-'+cat)||label.textContent;}if(input){var limits={individual:20,group:5,brand:20,art:20,event:500};input.max=String(limits[cat]||20);if(Number(input.value)>Number(input.max))input.value=input.max;}}
+  function updateBillingUi(f){var business=val(f,'customer_type','')==='business',country=String(val(f,'billing_country','')).toUpperCase(),eu=['BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE'];var company=f.querySelector('[name="company"]'),vat=f.querySelector('[name="vat_id"]');if(company){company.required=business;if(!business)company.value='';}if(vat){vat.required=business&&country!=='AT'&&eu.indexOf(country)>=0;if(!business)vat.value='';}}
+  function updateDateCoordinationUi(f){var checked=!!f.querySelector('[name="date_coordination_requested"]:checked');f.querySelectorAll('[name^="preferred_date_"],[name^="preferred_daypart_"]').forEach(function(e){e.disabled=checked;if(checked)e.value=e.name.indexOf('preferred_daypart_')===0?'any':'';});}
+  function validate(f,report){updatePanels(f);var ok=pricingReady,cat=val(f,'category','individual'),loc=val(f,'location','vienna'),exact=f.querySelector('[name="specific_location"]');if(exact){var bad=loc!=='vienna'&&loc!=='budapest'&&!exact.value.trim();exact.setCustomValidity(bad?(f.getAttribute('data-location-error')||'Enter the exact location.'):'');ok=ok&&!bad;}var travel=f.querySelector('[name="travel_country"]');if(travel){var travelBad=loc!=='vienna'&&loc!=='budapest'&&!travel.value;travel.setCustomValidity(travelBad?(f.getAttribute('data-travel-country-error')||'Select the travel country.'):'');ok=ok&&!travelBad;}
+    var coordination=!!f.querySelector('[name="date_coordination_requested"]:checked');var dateEls=[1,2,3].map(function(i){return f.querySelector('[name="preferred_date_'+i+'"]');}).filter(Boolean);var dates=dateEls.map(function(e){return e.value;}).filter(Boolean).sort();var today=new Date();today.setHours(0,0,0,0);var seen={};var dateInvalid=false;dateEls.forEach(function(e){if(!e.value){e.setCustomValidity('');return;}var d=new Date(e.value+'T00:00:00');var duplicate=!!seen[e.value];seen[e.value]=true;var bad=isNaN(d.getTime())||d<today||duplicate;e.setCustomValidity(bad?(f.getAttribute('data-date-invalid-error')||'Use unique future dates.'):'');dateInvalid=dateInvalid||bad;});var err=f.querySelector('[data-availability-error]'),dateBad=!coordination&&!dates.length;if(err){err.hidden=!(dateBad||dateInvalid);err.textContent=dateBad?(f.getAttribute('data-date-error')||'Enter a date or request coordination.'):(dateInvalid?(f.getAttribute('data-date-invalid-error')||'Use unique future dates.'):'');}ok=ok&&!dateBad&&!dateInvalid;
+    if(cat==='individual'&&val(f,'individual_mode','quick30')==='headshotcv'&&(loc!=='vienna'&&loc!=='budapest'))ok=false;if(report&&!ok){var invalid=f.querySelector(':invalid');if(invalid&&invalid.reportValidity)invalid.reportValidity();else if(err)err.scrollIntoView({behavior:'smooth',block:'center'});}return ok;}
+  function setDateMins(f){var today=new Date(),min=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');f.querySelectorAll('input[type="date"]').forEach(function(e){e.min=min;});}
+  function tax(f,gross){var customer=val(f,'customer_type',''),country=String(val(f,'billing_country','AT')).toUpperCase(),vat=((f.querySelector('[name="vat_id"]')||{}).value||'').toUpperCase().replace(/[^A-Z0-9]/g,''),company=((f.querySelector('[name="company"]')||{}).value||'').trim();var eu=['BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE'];var prefix=vat.slice(0,2),eligible=customer==='business'&&country!=='AT'&&eu.indexOf(country)>=0&&company&&vat.length>=6&&(prefix===country||(country==='GR'&&prefix==='EL'));var total=Math.round(gross*100)/100,net=Math.round((total/(1+VAT))*100)/100,vat=Math.round((total-net)*100)/100;return{net:net,vat:vat,total:total,reverse:false,reverseEligible:!!eligible,mode:eligible?'at-vat-20-potential-zero-after-verification':'at-vat-20'};}
+  function calculate(f){if(!pricingReady)return{gross:0,grossBeforeVatMode:0,net:0,vat:0,reverse:false,vatMode:'pricing-unavailable',parts:'',category:val(f,'category','individual'),photographerCount:1,peopleCount:1,retouchedImagesPerPerson:Math.max(1,num(f,'retouched_images',1)),retouchedImagesTotal:Math.max(1,num(f,'retouched_images',1)),instantRetouchHours:0,pricingSource:'unavailable',pricingReady:false,customTravel:false,travelCountry:''};var cat=val(f,'category','individual'),l=copy[lang(f)],gross=0,parts=[],ret=Math.max(1,num(f,'retouched_images',1)),people=peopleCount(f,cat),photographers=requiredPhotographers(f,cat),mode=val(f,'individual_mode','quick30');if(cat==='individual'){gross+=pricesGross[mode]||pricesGross.quick30;if(mode!=='headshotcv')gross+=Math.max(0,ret-1)*pricesGross.retouchPortrait;parts.push(l.individual+' — '+((packageNames[lang(f)]||packageNames.en)[mode]||mode));}else if(cat==='group'){gross+=pricesGross.groupSetup+people*pricesGross.groupPerson+people*Math.max(0,ret-1)*pricesGross.retouchGroup;if(photographers>1)gross+=(photographers-1)*pricesGross.extraPhotographer;parts.push(l.group+': '+people+' '+l.people+', '+photographers+' '+l.photographers+', '+ret+' '+l.retouches+' '+l.perPerson);}else if(cat==='brand'){var bd=val(f,'brand_duration','brand60');gross+=pricesGross[bd];var brandTotal=people*ret;gross+=Math.max(0,brandTotal-pricingMeta.brandIncluded)*pricesGross.retouchPortrait;parts.push(l.brand+': '+people+' '+l.people+', '+ret+' '+l.retouches+' '+l.perPerson+'; '+pricingMeta.brandIncluded+' '+l.included);}else if(cat==='art'){var ad=val(f,'art_duration','art60');gross+=pricesGross[ad];gross+=Math.max(0,ret-pricingMeta.artIncluded)*pricesGross.retouchArt;parts.push(l.art+': '+ret+' '+l.retouches+'; '+pricingMeta.artIncluded+' '+l.included);}else{var ed=val(f,'event_duration','event60');gross+=pricesGross[ed];photographers=requiredPhotographers(f,cat);var extraEvent=photographers-1;gross+=extraEvent*selectedHours(f,cat)*pricesGross.extraPhotographerEventHour;parts.push(l.event+': '+ret+' '+(lang(f)==='hu'?'becsült átadott kép':lang(f)==='de'?'voraussichtlich gelieferte Bilder':'estimated delivered images')+', '+photographers+' '+l.photographers+' ('+(lang(f)==='hu'?'előzetesen ajánlott minimum':lang(f)==='de'?'vorläufig empfohlenes Minimum':'preliminarily recommended minimum')+')');}
+    var addons=checked(f,'addons').filter(function(code){return code!=='instantretouch'||instantAllowed(cat,mode);});if(cat==='individual'&&mode==='headshotcv')addons=addons.filter(function(code){return ['stylist','hair','makeup'].indexOf(code)>=0;});addons.forEach(function(ad){if(ad==='instantretouch'){var ih=requiredInstantHours(f,cat,ret);gross+=ih*pricesGross.instantretouch;parts.push(l.instant+': '+ih+' '+l.hours);}else if(ad==='mobile'){var studios=Math.max(1,photographers);gross+=studios*pricesGross.mobile;parts.push(l.mobileStudio+': '+studios);}else{gross+=pricesGross[ad]||0;parts.push((l.addons&&l.addons[ad])||ad);}});
+    var location=val(f,'location','vienna'),travelCountry=String(val(f,'travel_country','')).toUpperCase(),crew=photographers+(addons.indexOf('stylist')>=0?1:0)+(addons.indexOf('hair')>=0?1:0)+(addons.indexOf('makeup')>=0?1:0)+(addons.indexOf('instantretouch')>=0?1:0);var customTravel=false;if(location!=='vienna'&&location!=='budapest'){if(travelCountry==='AT'||travelCountry==='HU'){var vehicles=Math.max(1,Math.ceil(crew/4));gross+=vehicles*pricesGross.travelVehicle;parts.push(l.travel+': '+vehicles+' '+l.vehicles+', '+crew+' '+l.crew);}else{customTravel=true;parts.push(lang(f)==='hu'?'Nemzetközi utazás: egyedi ajánlat':lang(f)==='de'?'Internationale Anreise: individuelles Angebot':'International travel: custom quote required');}}
+    var totalRetouched=(cat==='group'||cat==='brand')?people*ret:ret,t=tax(f,gross);return{gross:t.total,grossBeforeVatMode:Math.round(gross*100)/100,net:t.net,vat:t.vat,reverse:false,reverseEligible:t.reverseEligible,vatMode:t.mode,parts:parts.join('; '),category:cat,photographerCount:photographers,peopleCount:people,retouchedImagesPerPerson:ret,retouchedImagesTotal:totalRetouched,instantRetouchHours:addons.indexOf('instantretouch')>=0?requiredInstantHours(f,cat,ret):0,pricingSource:pricingLoaded?'pricing.json':'unavailable',pricingReady:pricingReady,customTravel:customTravel,travelCountry:travelCountry,eventRecommendedPhotographers:cat==='event'?photographers:0,eventDeliveredImagesEstimate:cat==='event'?ret:0};}
+  function paint(f){updatePanels(f);var e=calculate(f),l=copy[lang(f)],root=quoteRoot(f),summary=f.querySelector('[data-estimate-summary]');if(summary)summary.value=e.parts;[['estimate_net',e.net],['estimate_vat',e.vat],['estimate_gross',e.gross],['estimate_vat_mode',e.vatMode],['estimate_summary',e.parts]].forEach(function(pair){var x=f.querySelector('[name="'+pair[0]+'"]');if(x)x.value=pair[1];});var net=root.querySelector('[data-estimate-net]'),vat=root.querySelector('[data-estimate-vat]'),gross=root.querySelector('[data-estimate-gross]'),note=root.querySelector('[data-estimate-vat-note]');if(net)net.textContent=e.pricingReady?money(e.net):(pricingError?pricingUiError(f):(lang(f)==='hu'?'Számítás…':lang(f)==='de'?'Berechnung…':'Calculating…'));if(vat)vat.textContent=e.pricingReady?money(e.vat):(pricingError?'—':(lang(f)==='hu'?'Számítás…':lang(f)==='de'?'Berechnung…':'Calculating…'));if(gross)gross.textContent=e.pricingReady?money(e.gross):(pricingError?'—':(lang(f)==='hu'?'Számítás…':lang(f)==='de'?'Berechnung…':'Calculating…'));if(note)note.textContent=e.reverseEligible?l.reverse:l.vat20;var cw=f.querySelector('[data-custom-travel-warning]');if(cw)cw.hidden=!e.customTravel;return e;}
+  function init(f){setDateMins(f);updatePanels(f);f.addEventListener('change',function(){updatePanels(f);paint(f);});f.addEventListener('input',function(){paint(f);});paint(f);}
+  document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-smart-quote]').forEach(init);loadPricing();});window.BANHALMI_QUOTE={calculate:calculate,paint:paint,validate:validate,requiredPhotographers:requiredPhotographers,requiredInstantHours:requiredInstantHours,pricesGross:pricesGross,isPricingReady:function(){return pricingReady;},pricingError:function(){return pricingError;}};
 })();
