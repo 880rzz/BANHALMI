@@ -1209,9 +1209,10 @@ section{padding:72px 0;}
 }
 .nav-submenu-list a{
   padding:10px 0 10px 2.25rem;
-  font-size:clamp(1.02rem,1.55vw,1.18rem);
+  font-size:clamp(.96rem,1.35vw,1.06rem);
   font-weight:400;
-  letter-spacing:-.02em;
+  letter-spacing:-.01em;
+  color:#8A681F;
 }
 .nav-submenu-list li:last-child a{
   border-bottom:1px solid rgba(32,37,48,.08);
@@ -1268,7 +1269,7 @@ section{padding:72px 0;}
   .nav-links{top:58px;padding:22px 0;}
   .nav-links a{font-size:clamp(1.08rem,6vw,1.5rem);padding:14px 0;}
   .nav-submenu summary{font-size:clamp(1.08rem,6vw,1.5rem);padding:14px 0;}
-  .nav-submenu-list a{font-size:clamp(.98rem,5vw,1.2rem);padding:11px 0 11px 1.75rem;}
+  .nav-submenu-list a{font-size:clamp(.92rem,4.7vw,1.06rem);padding:11px 0 11px 1.75rem;color:#8A681F;}
 }
 @media(prefers-reduced-motion:reduce){
   .menu-btn,.menu-btn span,.nav-links,.nav-links a{transition:none;transform:none;}
