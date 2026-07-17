@@ -2836,9 +2836,37 @@ h1{font-size:clamp(2.35rem,3.45vw,2.95rem);}
 /* 2026-07 production audit: stable controls and readable cards. */
 .strategy-process-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));}
 .strategy-process-card,.card,.service-card,.option-row,.category-card{word-break:normal;overflow-wrap:normal;hyphens:manual;}
-.option-row,.category-card{display:grid;grid-template-columns:auto 1fr;align-items:flex-start;gap:.75rem;min-height:44px;}
+.option-row,.category-card{position:relative;display:grid;grid-template-columns:auto 1fr;align-items:flex-start;gap:.75rem;min-height:56px;padding-right:58px;padding-bottom:52px;}
 .option-row input,.category-card input{position:static!important;margin:.18rem 0 0 0!important;transform:none!important;inline-size:1.05rem;block-size:1.05rem;}
 .option-row span,.category-card span{min-width:0;line-height:1.42;}
-.info-tip{margin-left:.35rem;vertical-align:baseline;}
+.info-tip{position:absolute;right:10px;bottom:10px;display:grid;place-items:center;width:44px;height:44px;margin:0;padding:0;border:1px solid rgba(22,24,29,.22);border-radius:50%;background:#fff;color:var(--ink);font-family:Georgia,serif;font-size:1rem;font-style:italic;line-height:1;cursor:pointer;transition:border-color .15s ease,background .15s ease,transform .15s ease;}
+.info-tip:hover{border-color:var(--gold-deep);background:#f7f3e9;transform:translateY(-1px);}
+.info-tip:focus-visible{outline:3px solid rgba(177,135,45,.35);outline-offset:2px;}
+.info-modal[hidden]{display:none;}
+.info-modal{position:fixed;inset:0;z-index:10040;display:flex;align-items:center;justify-content:center;padding:clamp(18px,4vw,48px);background:rgba(10,11,14,.72);opacity:0;transition:opacity .18s ease;}
+.info-modal.is-open{opacity:1;}
+.info-modal-panel{width:min(100%,560px);max-height:min(78vh,680px);overflow:auto;border:1px solid rgba(177,135,45,.34);border-radius:10px;background:#fff;color:var(--ink);box-shadow:0 28px 80px rgba(0,0,0,.28);transform:translateY(10px) scale(.985);transition:transform .18s ease;}
+.info-modal.is-open .info-modal-panel{transform:translateY(0) scale(1);}
+.info-modal-header{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:22px 24px 18px;border-bottom:1px solid rgba(22,24,29,.1);}
+.info-modal-symbol{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--gold-deep);color:#fff;font-family:Georgia,serif;font-size:1.05rem;font-style:italic;}
+.info-modal-header h2{margin:0;font-size:clamp(1.18rem,2.8vw,1.42rem);line-height:1.2;}
+.info-modal-close{display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid rgba(22,24,29,.14);border-radius:50%;background:#fff;color:var(--ink);font-size:1.55rem;line-height:1;cursor:pointer;transition:border-color .15s ease,background .15s ease,transform .15s ease;}
+.info-modal-close:hover{border-color:var(--gold-deep);background:#f7f3e9;transform:scale(1.04);}
+.info-modal-close:focus-visible{outline:3px solid rgba(177,135,45,.35);outline-offset:3px;}
+.info-modal-content{padding:22px 24px 26px;color:var(--muted);font-size:1rem;line-height:1.7;}
+body.info-modal-open{overflow:hidden;}
+@media(max-width:560px){.info-modal{align-items:flex-end;padding:14px}.info-modal-panel{width:100%;max-height:82vh;border-radius:10px}.info-modal-header{padding:18px 18px 15px}.info-modal-content{padding:18px 18px 22px}}
+@media(prefers-reduced-motion:reduce){.info-modal,.info-modal-panel{transition:none;}}
 .field.consent{display:flex;align-items:flex-start;gap:.75rem;}
 .field.consent input{position:static!important;margin:.2rem 0 0!important;}
+
+/* 2026-07 Apple-inspired responsive UX baseline. */
+body{font-size:17px;line-height:1.55;}
+h1,.hero.hero-image-first h1{letter-spacing:-.02em;}
+input,select,textarea,button{font-size:max(16px,1rem);}
+.menu-toggle,.lang-switch a{min-width:44px;min-height:44px;}
+@media(max-width:760px){
+  .site-footer a{display:inline-flex;align-items:center;min-height:44px;}
+  .footer-accordion summary{min-height:44px;display:flex;align-items:center;}
+  .category-grid{grid-template-columns:1fr;}
+}
