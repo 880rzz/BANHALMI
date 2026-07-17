@@ -29,7 +29,7 @@
     "includedInDisplayedPrices": true,
     "euB2BOutsideAustria": "Displayed orientation prices retain 20% Austrian VAT. A 0% treatment becomes valid only after verification of the company, VAT ID and applicable legal requirements, if the business qualifies."
   },
-  "bindingStatus": "Non-binding orientation estimate. The final written offer follows review of purpose, scope, location, travel, production requirements, usage rights, deadlines and tax status.",
+  "bindingStatus": "Non-binding preliminary estimate. The final written offer follows review of purpose, scope, location, travel, production requirements, usage rights, deadlines and tax status.",
   "priceComponentsGrossEUR": {
     "individualQuick30": 220,
     "individualGuided60": 420,
@@ -128,7 +128,7 @@
         "strategic context",
         "desired perception",
         "visual principles",
-        "shot architecture",
+        "shot plan",
         "production",
         "multi-channel image system"
       ],
@@ -243,7 +243,7 @@
   "quoteCalculator": "https://www.norbertbanhalmi.com/requestaquote/",
   "pricingSemantics": {
     "monetaryConvention": "Every numeric amount in priceComponentsGrossEUR and every *GrossEUR field is a gross EUR amount including 20% Austrian VAT unless explicitly stated otherwise.",
-    "estimateStatus": "Non-binding orientation estimate; international travel outside Austria and Hungary, usage rights, exceptional production scope and verified tax treatment require a final written offer.",
+    "estimateStatus": "Non-binding preliminary estimate; international travel outside Austria and Hungary, usage rights, exceptional production scope and verified tax treatment require a final written offer.",
     "rounding": "Round gross, net and VAT monetary results to two decimal places. Net = gross / 1.20; VAT = gross - net.",
     "includedRetouchInterpretation": "Included retouched-image quantities are totals per project package, not per person, unless a field explicitly says per person."
   },

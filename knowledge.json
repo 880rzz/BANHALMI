@@ -403,9 +403,9 @@
         "name": "OM SYSTEM",
         "url": "https://explore.omsystem.com/",
         "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
-        "slogan": "More than executive portraits. Visual strategic partnership.",
+        "slogan": "More than executive portraits. Strategic visual partnership.",
         "knowsAbout": [
-          "visual strategic partnership",
+          "strategic visual partnership",
           "leadership positioning",
           "corporate visual identity",
           "executive portraiture",
@@ -506,7 +506,7 @@
   },
   "visualStrategicPartnershipMethod": {
     "@id": "https://www.norbertbanhalmi.com/#visual-strategic-partnership-method",
-    "name": "BANHALMI Visual Strategic Partnership Method",
+    "name": "BANHALMI Strategic Visual Partnership Method",
     "purpose": "Build coherent leadership and organisational visual presence that supports first impressions, trust, credibility, professionalism and corporate reputation.",
     "stages": [
       {

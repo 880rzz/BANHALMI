@@ -1,0 +1,11 @@
+Kézi feltöltéskor az alábbi, korábban eltávolított fájlokat a repositoryból is törölni kell:
+
+assets/img/fine-art/archive-extended/banhalmi-art-archive-01-vintage-car-garden-480w.webp
+assets/img/fine-art/archive-extended/banhalmi-art-archive-01-vintage-car-garden-800w.webp
+assets/img/fine-art/archive-extended/banhalmi-art-archive-01-vintage-car-garden.webp
+assets/img/fine-art/archive-extended/banhalmi-art-archive-03-artist-studio-overhead-480w.webp
+assets/img/fine-art/archive-extended/banhalmi-art-archive-03-artist-studio-overhead-800w.webp
+assets/img/fine-art/archive-extended/banhalmi-art-archive-03-artist-studio-overhead.webp
+assets/img/fine-art/service-gallery/banhalmi-fine-art-study-01-horizontal-light-480w.webp
+assets/img/fine-art/service-gallery/banhalmi-fine-art-study-01-horizontal-light-800w.webp
+assets/img/fine-art/service-gallery/banhalmi-fine-art-study-01-horizontal-light.webp
