@@ -1,8 +1,12 @@
 name: Production audit checks
 on:
   pull_request:
+    branches:
+      - main
   push:
-    branches: [codex/production-audit-fixes]
+    branches:
+      - main
+      - codex/vegezz-teljes-production-auditot-es-javitasokat-m51ql6
 jobs:
   audit:
     runs-on: ubuntu-latest
@@ -11,4 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm install
+      - run: npx playwright install --with-deps chromium
       - run: node tools/audit-regression.mjs
+      - run: npm run test:browser

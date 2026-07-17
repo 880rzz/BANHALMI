@@ -22,7 +22,6 @@ Production readiness improved for the screenshot-confirmed P0/P1 quote, navigati
 | Overall production readiness | 6 | 8 | P0/P1 screenshot issues fixed with regression checks. |
 
 ## Baseline and changed IA
-Baseline found process blocks on: contact/index.html, event-photography/index.html, glamour/index.html, portrait/index.html, de-at/kontakt/index.html, de-at/eventfotografie/index.html, de-at/portrait/index.html, de-at/werk/index.html, de-at/fine-art/index.html, hu/portre/index.html, hu/eletmu/index.html, hu/rendezvenyfotozas/index.html, hu/muveszi-fotografia/index.html, hu/kapcsolat/index.html, about/index.html, de-at/brand/index.html, de-at/index.html, hu/brand/index.html, hu/index.html, index.html, lifestyle/index.html. Removed from non-core pages: contact/index.html, event-photography/index.html, glamour/index.html, portrait/index.html, de-at/kontakt/index.html, de-at/eventfotografie/index.html, de-at/portrait/index.html, de-at/werk/index.html, de-at/fine-art/index.html, hu/portre/index.html, hu/eletmu/index.html, hu/rendezvenyfotozas/index.html, hu/muveszi-fotografia/index.html, hu/kapcsolat/index.html. URL filenames were preserved except the requested gallery pages: `/gallery/`, `/hu/gallery/`, `/de-at/gallery/`.
 
 ## Screenshot-confirmed UX and functional defects
 - **SC-01 / P1 / repeated process block**: Root cause was repeated static section markup across service, contact and profile pages. Fix removed non-essential `strategic-partnership-section` instances from HTML, not by CSS hiding. Test: `node tools/audit-regression.mjs`. Status: fixed.
@@ -30,7 +29,6 @@ Baseline found process blocks on: contact/index.html, event-photography/index.ht
 - **SC-03 / P0 / quote total stayed €0**: Root cause was `paint()` searching for `[data-estimate-*]` totals only inside the form while the summary card is outside the form. Fix scopes quote summary lookup to the closest quote section/document and fails visibly when pricing is unavailable. Test: `node tools/audit-regression.mjs`. Status: fixed.
 - **SC-04 / P1 / checkbox/radio alignment**: Root cause was block labels with inline inputs and inconsistent control alignment. Fix makes `.option-row`, `.category-card`, and consent fields stable grid/flex rows with full-label click targets. Test: CSS static check rejects absolute-positioned checkbox rules. Status: fixed.
 - **SC-05 / P1 / six services vs four nav items**: Root cause was flattened main navigation. Fix adds a single Services/ Szolgáltatások / Leistungen disclosure containing the six service links that match home cards. Test: `node tools/audit-regression.mjs`. Status: fixed.
-- **SC-06 / P2 / missing selected gallery**: Root cause was `/gallery/` redirecting away and no localized selected-work page. Fix creates three gallery pages from existing assets, adds nav and sitemap entries, and documents curation. Test: gallery image existence and duplicate check. Status: fixed.
 
 ## Quote calculator test matrix
 Automated regression covers load, default non-zero total, service/category changes, add-on changes, VAT math, hidden payload values, no NaN/negative result, and pricing config availability. Manual live backend success remains not testable without production service verification.
@@ -62,7 +60,6 @@ Required Chromium/Playwright verification was attempted but could not be complet
 
 Because of this environment limitation, the PR must still receive a real browser pass before production readiness is declared. The required live-browser matrix remains:
 
-- Routes: `/`, `/hu/`, `/de-at/`, `/requestaquote/`, `/hu/ajanlatkeres/`, `/de-at/anfrage/`, `/gallery/`, `/hu/gallery/`, `/de-at/gallery/`.
 - Viewports: 320, 375, 390, 768, 1024, 1440 and 1920 px widths.
 - Interactions: quote service/quantity/duration/location/extras changes, PDF download, submit payload interception, Services submenu click/hover/keyboard/Escape/mobile accordion, all checkbox/radio rows, info modal, gallery lightbox Escape/arrows/focus trap/focus restoration, consent accept/necessary-only/withdraw flows.
 
@@ -91,3 +88,26 @@ Because of this environment limitation, the PR must still receive a real browser
 ### Final audit outcome
 
 No further local release-blocking issues were found in the static production audit for SEO-critical metadata, hreflang/canonical presence, local links/assets, JSON-LD syntax, quote-calculator syntax, no-blur regression rules, gallery schema/dimensions, services-menu parity, process-block placement or checkbox positioning. Browser-driven Chromium/Safari/Firefox verification and live backend tests remain external environment requirements documented above.
+
+## Four-service simplification and quote root fix — 2026-07-17
+
+### Architectural simplification
+
+The commercial website was simplified back to four principal service areas in English, Hungarian and German:
+
+1. Portrait Photography / Portréfotózás / Porträtfotografie
+2. Brand Photography / Brandfotózás / Brandfotografie
+3. C-Level Event Photography / C-level eseményfotózás / C-Level-Eventfotografie
+4. Fine Art Photography / Művészi fotózás / Fine-Art-Fotografie
+
+The over-engineered six-service dropdown and standalone curated gallery routes were removed. The existing service pages remain the canonical presentation layer for work examples and service-specific imagery.
+
+### Quote calculator root cause and fix
+
+Root cause: the quote pages exposed the visible gross/net/VAT summary with legacy attributes (`data-total`, `data-net`, `data-vat`) while the calculator painted only `[data-estimate-*]` elements. The hidden form fields also carried `data-estimate-*`, so the script updated hidden inputs but did not update the visible price box. The pages also lacked an explicit shared `[data-quote-root]` wrapper around the form and visible estimate.
+
+Fix: each quote page now wraps the estimate and form in one `[data-quote-root]`, the visible summary uses exactly one `data-estimate-gross`, `data-estimate-net` and `data-estimate-vat`, hidden fields are updated by `name`, and the calculator resolves a deterministic quote root rather than falling back to `document`.
+
+### Browser test coverage added
+
+Playwright tests were added for `/requestaquote/`, `/hu/ajanlatkeres/` and `/de-at/anfrage/` at 375 px, 768 px and 1440 px. They wait for pricing readiness, verify visible non-zero totals, change a priced option, compare hidden form totals with visible totals and fail on console errors or `NaN`/`undefined` text.
