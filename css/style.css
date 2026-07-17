@@ -2502,9 +2502,15 @@ h3{
   width:calc(100% - 1.85rem);
   margin-left:1.85rem;
   padding:9px 0;
-  font-size:clamp(.9rem,1.05vw,1rem);
+  font-size:clamp(1rem,1.18vw,1.08rem);
   line-height:1.34;
   color:#8A681F !important;
+}
+.nav-submenu-list a::before{
+  content:"•";
+  display:inline-block;
+  margin-right:.55rem;
+  color:inherit;
 }
 html.nav-open,html.nav-open body{overflow:hidden;}
 
@@ -2745,7 +2751,7 @@ section{padding:clamp(64px,7.5vw,104px) 0;}
     width:calc(100% - 1.35rem);
     margin-left:1.35rem;
     padding:10px 0;
-    font-size:clamp(.88rem,4.2vw,.96rem);
+    font-size:clamp(1rem,4.5vw,1.08rem);
     line-height:1.35;
     color:#8A681F !important;
   }
