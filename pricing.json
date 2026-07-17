@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "schemaVersion": "2026-07-16-v5-final-tax-event-audit",
-  "dateModified": "2026-07-16T20:30:00+02:00",
+  "schemaVersion": "2026-07-17-v6-machine-readable-calculation-rules",
+  "dateModified": "2026-07-17T16:00:00+02:00",
   "publisher": {
     "@id": "https://www.norbertbanhalmi.com/#organization",
     "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
@@ -86,6 +86,12 @@
       ],
       "packages": [
         {
+          "code": "headshotcv",
+          "durationMinutes": 10,
+          "grossEUR": 120,
+          "includedRetouchedImages": 1
+        },
+        {
           "code": "quick30",
           "durationMinutes": 30,
           "grossEUR": 220
@@ -101,7 +107,15 @@
           "grossEUR": 690
         }
       ],
-      "extraRetouchedImageGrossEUR": 35
+      "extraRetouchedImageGrossEUR": 35,
+      "groupPortraitPricing": {
+        "setupGrossEUR": 390,
+        "perPersonGrossEUR": 45,
+        "includedRetouchedImagesPerPerson": 1,
+        "extraRetouchedImagePerPersonGrossEUR": 29,
+        "capacityPerPhotographerPerHour": 6,
+        "additionalPhotographerGrossEUR": 390
+      }
     },
     {
       "id": "brand-visual-positioning",
@@ -141,7 +155,8 @@
         }
       ],
       "includedRetouchedImages": 3,
-      "extraRetouchedImageGrossEUR": 35
+      "extraRetouchedImageGrossEUR": 35,
+      "includedRetouchedImagesScope": "total per project package"
     },
     {
       "id": "fine-art",
@@ -173,9 +188,9 @@
     {
       "id": "event",
       "name": {
-        "en": "Event photography",
-        "hu": "Rendezvényfotózás",
-        "de-AT": "Eventfotografie"
+        "en": "C-Level Event Photography",
+        "hu": "C-Level rendezvényfotózás",
+        "de-AT": "C-Level-Eventfotografie"
       },
       "packages": [
         {
@@ -225,5 +240,45 @@
     "valid VAT status"
   ],
   "machineReadableSource": "https://www.norbertbanhalmi.com/pricing.json",
-  "quoteCalculator": "https://www.norbertbanhalmi.com/requestaquote/"
+  "quoteCalculator": "https://www.norbertbanhalmi.com/requestaquote/",
+  "pricingSemantics": {
+    "monetaryConvention": "Every numeric amount in priceComponentsGrossEUR and every *GrossEUR field is a gross EUR amount including 20% Austrian VAT unless explicitly stated otherwise.",
+    "estimateStatus": "Non-binding orientation estimate; international travel outside Austria and Hungary, usage rights, exceptional production scope and verified tax treatment require a final written offer.",
+    "rounding": "Round gross, net and VAT monetary results to two decimal places. Net = gross / 1.20; VAT = gross - net.",
+    "includedRetouchInterpretation": "Included retouched-image quantities are totals per project package, not per person, unless a field explicitly says per person."
+  },
+  "calculationRules": {
+    "individualPortrait": {
+      "formula": "packageGrossEUR + max(0, selectedRetouchedImages - 1) * retouchedImagePortraitGrossEUR",
+      "exception": "headshotCvGross includes exactly one retouched image and does not allow additional automatic options."
+    },
+    "groupPortrait": {
+      "formula": "groupSetupGrossEUR + people * groupPerPersonGrossEUR + people * max(0, retouchedImagesPerPerson - 1) * retouchedImageGroupGrossEUR + max(0, photographerCount - 1) * additionalPhotographerGrossEUR",
+      "photographerCount": "ceil(people / (6 * selectedHours)), minimum 1"
+    },
+    "brandPhotography": {
+      "formula": "packageGrossEUR + max(0, people * retouchedImagesPerPerson - 3) * retouchedImagePortraitGrossEUR",
+      "includedRetouchedImagesTotalPerProject": 3
+    },
+    "fineArtPhotography": {
+      "formula": "packageGrossEUR + max(0, selectedRetouchedImages - 2) * retouchedImageFineArtGrossEUR",
+      "includedRetouchedImagesTotalPerProject": 2
+    },
+    "cLevelEventPhotography": {
+      "formula": "packageGrossEUR + max(0, photographerCount - 1) * selectedHours * additionalPhotographerEventPerHourGrossEUR",
+      "photographerCount": "1 + max(manualAdditionalPhotographers, parallelTracks - 1, ceil(guestCount / 250) - 1)",
+      "deliveredImages": "The estimated delivered image count does not add per-image pricing. Standard event selection and colour correction are included."
+    },
+    "addOns": "Add the selected gross component prices. Immediate retouching is billed per started required hour.",
+    "travel": {
+      "austriaAndHungary": "ceil(crewMembers / 4) * travelPerVehicleGrossEUR",
+      "otherCountries": "Custom quote required; excluded from the displayed orientation total."
+    },
+    "tax": {
+      "displayedGrossIncludesAustrianVatPercent": 20,
+      "netFormula": "round(gross / 1.20, 2)",
+      "vatFormula": "round(gross - net, 2)",
+      "euB2BOutsideAustria": "Continue displaying 20% Austrian VAT until company, VAT ID and legal eligibility have been verified."
+    }
+  }
 }
