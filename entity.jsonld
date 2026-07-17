@@ -570,7 +570,7 @@
           "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
         }
       ],
-      "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+      "description": "BANHALMI is a visual strategic partner for leaders and organisations. Executive portraits shape first impressions, trust and corporate reputation within coherent visual systems spanning brand photography, employer branding, C-Level event communication and long-term visual consistency between Vienna and Budapest.",
       "slogan": "More than executive portraits. Visual strategic partnership.",
       "knowsAbout": [
         "portrait photography",
@@ -593,7 +593,11 @@
         "corporate visual identity",
         "employer branding",
         "event communication",
-        "visual reputation"
+        "visual reputation",
+        "first impression management",
+        "corporate reputation",
+        "leadership trust",
+        "long-term visual partnership"
       ],
       "headquarters": {
         "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
@@ -683,6 +687,9 @@
           ],
           "url": "https://amcham.at/members-list/",
           "description": "Bánhalmi Norbert e.U. is an AmCham Austria member. Viko Speier is the designated community contact and company representative, and BANHALMI supports selected AmCham Austria and member events with photography."
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#visual-strategic-partnership-method"
         }
       ],
       "employee": [
@@ -2180,6 +2187,76 @@
         "event communication",
         "visual reputation"
       ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://www.norbertbanhalmi.com/#visual-strategic-partnership-method",
+      "name": [
+        {
+          "@value": "BANHALMI Visual Strategic Partnership Method",
+          "@language": "en"
+        },
+        {
+          "@value": "A BANHALMI vizuális stratégiai partnerség módszere",
+          "@language": "hu"
+        },
+        {
+          "@value": "Methode der strategischen visuellen Partnerschaft von BANHALMI",
+          "@language": "de"
+        }
+      ],
+      "description": "A five-stage strategic process that begins with understanding the organisation and develops leadership presence into a coherent, long-term corporate visual system.",
+      "inLanguage": [
+        "en",
+        "hu-HU",
+        "de-AT"
+      ],
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://www.norbertbanhalmi.com/#website"
+      },
+      "mentions": [
+        {
+          "@id": "https://www.norbertbanhalmi.com/services.json#services"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#amcham-austria"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Understand",
+          "text": "Understand the organisation, its goals, culture, audiences, leadership and business situations."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Position",
+          "text": "Define the leadership presence and visual principles that communicate trust, credibility and professionalism."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Create",
+          "text": "Produce executive portraits, brand photography, employer-branding imagery and C-Level event documentation as one coherent system."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Roll out",
+          "text": "Adapt the visual system for LinkedIn, websites, press, presentations, recruitment, campaigns and international business communication."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Evolve",
+          "text": "Maintain and develop the visual language as leadership, teams and communication needs change."
+        }
+      ]
     }
   ],
   "officialPositioning": {
@@ -2189,7 +2266,7 @@
   },
   "serviceDefinitions": "https://www.norbertbanhalmi.com/services.json",
   "pricing": "https://www.norbertbanhalmi.com/pricing.json",
-  "dateModified": "2026-07-15T23:30:00+02:00",
+  "dateModified": "2026-07-17T17:00:00+02:00",
   "sourceReferences": [
     "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
     "https://www.wikidata.org/wiki/Q56391118",
@@ -2217,5 +2294,24 @@
     "professionalPurpose": "Current multilingual services, pricing, enquiries and professional context.",
     "artisticArchive": "https://www.banhalmi.art/",
     "artisticArchivePurpose": "Official artistic oeuvre and source archive for books, exhibitions, projects, media records, curatorial documentation and selected works."
+  },
+  "strategicMethod": {
+    "@id": "https://www.norbertbanhalmi.com/#visual-strategic-partnership-method",
+    "stages": 5,
+    "principalServiceCount": 4,
+    "brandCapabilities": [
+      "Employer branding",
+      "Visual brand strategy"
+    ],
+    "trustContext": {
+      "memberOf": {
+        "@id": "https://www.norbertbanhalmi.com/#amcham-austria"
+      },
+      "values": [
+        "credibility",
+        "professional presence",
+        "long-term trust"
+      ]
+    }
   }
 }
