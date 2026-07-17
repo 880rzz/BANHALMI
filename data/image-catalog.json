@@ -7,7 +7,7 @@
   "creator": {
     "@id": "https://www.banhalmi.art/norbert-banhalmi"
   },
-  "dateModified": "2026-07-12",
+  "dateModified": "2026-07-17T22:40:00+02:00",
   "dataFeedElement": [
     {
       "@type": "DataFeedItem",
@@ -3934,6 +3934,249 @@
         "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
         "license": "https://creativecommons.org/licenses/by-sa/4.0/",
         "copyrightNotice": "© Norbert Banhalmi. Licensed under CC BY-SA 4.0."
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T22:40:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-40-dark-minimal-threshold.avif#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-40-dark-minimal-threshold.avif",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-40-dark-minimal-threshold.avif",
+        "description": "Dark vertical fine-art study with a narrow luminous band near the top; the stripped composition reads as an abstract meditation on threshold, absence and silence.",
+        "caption": "Dark vertical fine-art study with a narrow luminous band near the top; the stripped composition reads as an abstract meditation on threshold, absence and silence.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T22:40:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-32-vienna-ferris-wheel-night.jpg#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-32-vienna-ferris-wheel-night.jpg",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-32-vienna-ferris-wheel-night.jpg",
+        "description": "Night study of a Ferris wheel cabin suspended between illuminated steel spokes; violet light and industrial geometry turn a familiar city icon into a cinematic urban scene.",
+        "caption": "Night study of a Ferris wheel cabin suspended between illuminated steel spokes; violet light and industrial geometry turn a familiar city icon into a cinematic urban scene.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T22:40:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-33-equestrian-portrait-sunset.jpg#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-33-equestrian-portrait-sunset.jpg",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-33-equestrian-portrait-sunset.jpg",
+        "description": "Equestrian portrait of a rider on horseback under a rose-coloured sunset sky; still posture, open field and warm atmosphere create a narrative of poise, trust and independence.",
+        "caption": "Equestrian portrait of a rider on horseback under a rose-coloured sunset sky; still posture, open field and warm atmosphere create a narrative of poise, trust and independence.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T22:40:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-34-monochrome-wind-portrait.jpg#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-34-monochrome-wind-portrait.jpg",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-34-monochrome-wind-portrait.jpg",
+        "description": "Close monochrome portrait with windblown hair partially veiling the face; softness, motion and near-silence shift the image toward intimacy and interior reflection.",
+        "caption": "Close monochrome portrait with windblown hair partially veiling the face; softness, motion and near-silence shift the image toward intimacy and interior reflection.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T22:40:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-35-rooftop-dusk-portrait.jpg#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-35-rooftop-dusk-portrait.jpg",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-35-rooftop-dusk-portrait.jpg",
+        "description": "Rooftop portrait of a seated woman above the evening city; suspended pose, blurred lights and architectural edges create a fragile balance between exposure and freedom.",
+        "caption": "Rooftop portrait of a seated woman above the evening city; suspended pose, blurred lights and architectural edges create a fragile balance between exposure and freedom.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T22:40:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-36-black-dress-stone-window.jpg#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-36-black-dress-stone-window.jpg",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-36-black-dress-stone-window.jpg",
+        "description": "Portrait of a woman in a black dress framed by a stone window opening; vertical stillness, pale masonry and distant sky create a quiet study of elegance and restraint.",
+        "caption": "Portrait of a woman in a black dress framed by a stone window opening; vertical stillness, pale masonry and distant sky create a quiet study of elegance and restraint.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T22:40:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-37-red-corridor-silhouette.jpg#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-37-red-corridor-silhouette.jpg",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-37-red-corridor-silhouette.jpg",
+        "description": "Silhouette portrait of a woman in a red corridor beside a bright arched window; monochrome colour dominance and architectural light create a theatrical scene of control and desire.",
+        "caption": "Silhouette portrait of a woman in a red corridor beside a bright arched window; monochrome colour dominance and architectural light create a theatrical scene of control and desire.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T22:40:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-38-reading-on-rocks.jpg#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-38-reading-on-rocks.jpg",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-38-reading-on-rocks.jpg",
+        "description": "Overhead documentary-style image of two people reading together on a rock ledge; shared posture and autumn colour turn an ordinary pause into a study of intimacy and attention.",
+        "caption": "Overhead documentary-style image of two people reading together on a rock ledge; shared posture and autumn colour turn an ordinary pause into a study of intimacy and attention.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T22:40:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-39-horses-monochrome-field.jpg#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-39-horses-monochrome-field.jpg",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-39-horses-monochrome-field.jpg",
+        "description": "Monochrome landscape of two horses moving across an open field; distance, grain and quiet motion give the scene the character of memory rather than reportage.",
+        "caption": "Monochrome landscape of two horses moving across an open field; distance, grain and quiet motion give the scene the character of memory rather than reportage.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
       }
     }
   ]

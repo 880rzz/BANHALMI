@@ -7,7 +7,7 @@
   "creator": {
     "@id": "https://www.banhalmi.art/norbert-banhalmi"
   },
-  "dateModified": "2026-07-08T12:00:00+02:00",
+  "dateModified": "2026-07-17T22:40:00+02:00",
   "associatedMedia": [
     {
       "id": "fine-art-archive-01",
@@ -474,6 +474,159 @@
         "en": "Police motorcycles and vehicles beneath a bridge at night",
         "hu": "Rendőrmotorok és járművek egy híd alatt éjszaka",
         "de-AT": "Polizeimotorräder und Fahrzeuge nachts unter einer Brücke"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-40",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-40-dark-minimal-threshold.avif",
+      "sourceFile": "b0aee1_3b82edb4a59340a39ad202a2f946b402.avif",
+      "width": 433,
+      "height": 649,
+      "sha256": "0f540c8786bc36c6e314ca65a64da0bc187e89f897f923802d101d160b8a2d6d",
+      "title": {
+        "en": "Dark minimalist threshold study with a narrow luminous band",
+        "hu": "Sötét minimalista küszöktanulmány keskeny fénycsíkkal",
+        "de-AT": "Dunkle minimalistische Schwellenstudie mit schmalem Lichtband"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-32",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-32-vienna-ferris-wheel-night.jpg",
+      "sourceFile": "b0aee1_2e8d32c3ec6049609dc051b6497e937b.jpg",
+      "width": 433,
+      "height": 289,
+      "sha256": "a39ba4df7e51ce55d8dc17ed4ad614223f336f4ec1d9eaeba6b3639e16c5cf2f",
+      "title": {
+        "en": "Ferris wheel cabin at night in violet light",
+        "hu": "Óriáskerék-kabin éjjel ibolya fényben",
+        "de-AT": "Riesenradkabine nachts im violetten Licht"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-33",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-33-equestrian-portrait-sunset.jpg",
+      "sourceFile": "b0aee1_42ddc8b60aa946d6948f94f23b15d459.jpg",
+      "width": 433,
+      "height": 288,
+      "sha256": "a44da8098503f458739bf47876934918f7dba3abea307cf04583072c846e78c0",
+      "title": {
+        "en": "Equestrian portrait at sunset",
+        "hu": "Lovas portré naplementében",
+        "de-AT": "Reiterporträt bei Sonnenuntergang"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-34",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-34-monochrome-wind-portrait.jpg",
+      "sourceFile": "b0aee1_10cd315f8b0441de8c79a1d6ff1f2fd4.jpg",
+      "width": 433,
+      "height": 243,
+      "sha256": "c63bd9d30987981428a48cde821d1b62e1d3de28dba1848e881baa80f8365a38",
+      "title": {
+        "en": "Monochrome portrait with windblown hair",
+        "hu": "Monokróm portré szélfútta hajjal",
+        "de-AT": "Monochromes Porträt mit verwehtem Haar"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-35",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-35-rooftop-dusk-portrait.jpg",
+      "sourceFile": "b0aee1_0897d5494c5446a19aca5b33fb2bcf62.jpg",
+      "width": 433,
+      "height": 288,
+      "sha256": "e38a00c3da64f5ca42cb47eda680b3bac13bb132f9095aac5899b91f8ebeeef0",
+      "title": {
+        "en": "Rooftop dusk portrait above the city",
+        "hu": "Tetőtéri alkonyi portré a város felett",
+        "de-AT": "Dachporträt in der Abenddämmerung über der Stadt"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-36",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-36-black-dress-stone-window.jpg",
+      "sourceFile": "b0aee1_b95ab90f8d494a208b8d408c393c9726.jpg",
+      "width": 433,
+      "height": 651,
+      "sha256": "296375cd2efede82c9a5c276213364c3465c91335acdf8ffd0a47194672086fa",
+      "title": {
+        "en": "Black dress portrait framed by a stone window",
+        "hu": "Fekete ruhás portré kőablak keretében",
+        "de-AT": "Porträt im schwarzen Kleid im Steinfenster"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-37",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-37-red-corridor-silhouette.jpg",
+      "sourceFile": "b0aee1_ba08f89133d04bb08da0b1da53b0aa04.jpg",
+      "width": 433,
+      "height": 649,
+      "sha256": "90a168eb3a74bf01212ce34899b76ddc61f92f2002e4f55d5c2914adcdac99e6",
+      "title": {
+        "en": "Red corridor silhouette portrait",
+        "hu": "Vörös folyosói sziluettportré",
+        "de-AT": "Silhouettenporträt im roten Korridor"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-38",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-38-reading-on-rocks.jpg",
+      "sourceFile": "b0aee1_e1688a8ce9a3462bb92c06c01ed63b82.jpg",
+      "width": 433,
+      "height": 288,
+      "sha256": "f5e8368ecae9288516475b643fb1972bc56842851e4aeaf097681bf1a470dd55",
+      "title": {
+        "en": "Reading together on a rock outcrop",
+        "hu": "Közös olvasás egy sziklán",
+        "de-AT": "Gemeinsames Lesen auf einem Felsvorsprung"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-39",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-39-horses-monochrome-field.jpg",
+      "sourceFile": "b0aee1_ee1de30a93714ce3bc6753b9f6725e35.jpg",
+      "width": 433,
+      "height": 288,
+      "sha256": "7448a268467905cc40c8750d55ef79d27a5f6d197ef7cba85c240f36f8270f44",
+      "title": {
+        "en": "Two horses in a monochrome field",
+        "hu": "Két ló monokróm mezőben",
+        "de-AT": "Zwei Pferde auf einem monochromen Feld"
       },
       "creator": {
         "@id": "https://www.banhalmi.art/norbert-banhalmi"
