@@ -195,10 +195,8 @@ test.describe('complete quote calculation strategy', () => {
   test('produces a PDF and submits the same calculated monetary payload', async ({ page }) => {
     const form = page.locator('[data-smart-quote]');
     await expect(page.locator('[data-download-quote-pdf]')).toBeEnabled();
-    const downloadPromise = page.waitForEvent('download');
     await page.locator('[data-download-quote-pdf]').click();
-    const download = await downloadPromise;
-    expect(download.suggestedFilename()).toMatch(/\.pdf$/i);
+    await expect(form.locator('[name="name"]')).toBeFocused();
 
     await form.locator('[name="name"]').fill('Automated Test');
     await form.locator('[name="email"]').fill('test@example.com');
@@ -207,6 +205,11 @@ test.describe('complete quote calculation strategy', () => {
     await form.locator('[name="message"]').fill('Automated quote-flow verification.');
     await form.locator('[name="date_coordination_requested"]').check();
     await form.locator('[name="privacy_acknowledged"]').check();
+
+    const downloadPromise = page.waitForEvent('download');
+    await page.locator('[data-download-quote-pdf]').click();
+    const download = await downloadPromise;
+    expect(download.suggestedFilename()).toMatch(/\.pdf$/i);
 
     let submittedPayload;
     await page.route('**/*', async (route) => {
