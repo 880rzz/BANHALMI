@@ -293,5 +293,10 @@
     "creditText": "Photograph by Norbert Banhalmi",
     "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
     "copyrightNotice": "© Norbert Banhalmi. Licensed under CC BY-SA 4.0."
+  },
+  "positioning": {
+    "en": "Visual strategic partnership for leaders and organisations. Photography is the production layer of a process spanning understanding, positioning, creation, rollout and long-term consistency.",
+    "hu": "Vizuális stratégiai partnerség vezetőknek és szervezeteknek. A fotózás a megértéstől és pozicionálástól a megvalósításon és kiterjesztésen át a hosszú távú következetességig tartó folyamat produkciós rétege.",
+    "de": "Strategische visuelle Partnerschaft für Führungskräfte und Organisationen. Fotografie ist die Produktionsebene eines Prozesses von Verständnis und Positionierung über Umsetzung und Rollout bis zur langfristigen Konsistenz."
   }
 }

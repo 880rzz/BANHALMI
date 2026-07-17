@@ -2954,3 +2954,11 @@ body.info-modal-open{overflow:hidden;}
   .info-modal-content{padding:20px 20px 24px;}
 }
 @media(prefers-reduced-motion:reduce){.info-modal,.info-modal-panel,.info-tip{transition:none!important;}}
+
+/* Strategic partnership positioning */
+.strategic-partnership-section .strategy-process-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(14px,2vw,28px);margin-top:clamp(24px,4vw,48px)}
+.strategic-partnership-section .strategy-process-card{border-top:1px solid currentColor;padding-top:18px;background:transparent}
+.strategic-partnership-section .strategy-process-card h3{font-size:clamp(1rem,1.4vw,1.2rem);margin-bottom:.65rem}
+.strategic-partnership-section .strategy-process-card p{font-size:.96rem;line-height:1.65}
+@media(max-width:980px){.strategic-partnership-section .strategy-process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.strategic-partnership-section .strategy-process-grid{grid-template-columns:1fr}}

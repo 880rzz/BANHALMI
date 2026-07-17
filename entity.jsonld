@@ -151,18 +151,51 @@
           "@id": "https://www.wikidata.org/wiki/Q138413557",
           "name": "Magyar Fotóművészek Világszövetsége",
           "alternateName": "World Federation of Hungarian Photographers",
-          "url": "https://www.mfvsz.com/hu/tagsag/"
+          "url": "https://www.mfvsz.com/hu/tagsag/",
+          "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+          "slogan": "More than executive portraits. Visual strategic partnership.",
+          "knowsAbout": [
+            "visual strategic partnership",
+            "leadership positioning",
+            "corporate visual identity",
+            "executive portraiture",
+            "employer branding",
+            "event communication",
+            "visual reputation"
+          ]
         },
         {
           "@type": "Organization",
           "@id": "https://www.wikidata.org/wiki/Q138424838",
-          "name": "WKO Wien — Landesinnung der Berufsfotografie"
+          "name": "WKO Wien — Landesinnung der Berufsfotografie",
+          "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+          "slogan": "More than executive portraits. Visual strategic partnership.",
+          "knowsAbout": [
+            "visual strategic partnership",
+            "leadership positioning",
+            "corporate visual identity",
+            "executive portraiture",
+            "employer branding",
+            "event communication",
+            "visual reputation"
+          ]
         },
         {
           "@type": "Organization",
           "@id": "https://www.norbertbanhalmi.com/#pannon-photographers-association",
           "name": "Pannon Fényképészkör Egyesület",
-          "url": "https://fenykepeszkor.hu/"
+          "url": "https://fenykepeszkor.hu/",
+          "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+          "slogan": "More than executive portraits. Visual strategic partnership.",
+          "knowsAbout": [
+            "visual strategic partnership",
+            "leadership positioning",
+            "corporate visual identity",
+            "executive portraiture",
+            "employer branding",
+            "event communication",
+            "visual reputation"
+          ]
         }
       ],
       "affiliation": [
@@ -178,7 +211,18 @@
         {
           "@type": "Organization",
           "name": "OM SYSTEM",
-          "url": "https://explore.omsystem.com/"
+          "url": "https://explore.omsystem.com/",
+          "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+          "slogan": "More than executive portraits. Visual strategic partnership.",
+          "knowsAbout": [
+            "visual strategic partnership",
+            "leadership positioning",
+            "corporate visual identity",
+            "executive portraiture",
+            "employer branding",
+            "event communication",
+            "visual reputation"
+          ]
         }
       ],
       "award": [
@@ -526,12 +570,8 @@
           "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
         }
       ],
-      "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
-      "slogan": [
-        "BANHALMI | Executive Portraiture & Visual Branding",
-        "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
-        "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
-      ],
+      "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+      "slogan": "More than executive portraits. Visual strategic partnership.",
       "knowsAbout": [
         "portrait photography",
         "executive portraiture",
@@ -547,7 +587,13 @@
         "executive portrait photography",
         "C-level business photography",
         "C-level event photography",
-        "strategic visual positioning"
+        "strategic visual positioning",
+        "visual strategic partnership",
+        "leadership positioning",
+        "corporate visual identity",
+        "employer branding",
+        "event communication",
+        "visual reputation"
       ],
       "headquarters": {
         "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
@@ -588,6 +634,17 @@
           "sameAs": [
             "https://www.wikidata.org/wiki/Q138413481",
             "https://www.amcham.at/"
+          ],
+          "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+          "slogan": "More than executive portraits. Visual strategic partnership.",
+          "knowsAbout": [
+            "visual strategic partnership",
+            "leadership positioning",
+            "corporate visual identity",
+            "executive portraiture",
+            "employer branding",
+            "event communication",
+            "visual reputation"
           ]
         }
       ],
@@ -796,13 +853,35 @@
       "@type": "Organization",
       "@id": "https://www.wikidata.org/wiki/Q138413557",
       "name": "MFVSZ — Magyar Fotóművészek Világszövetsége",
-      "sameAs": "https://www.wikidata.org/wiki/Q138413557"
+      "sameAs": "https://www.wikidata.org/wiki/Q138413557",
+      "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+      "slogan": "More than executive portraits. Visual strategic partnership.",
+      "knowsAbout": [
+        "visual strategic partnership",
+        "leadership positioning",
+        "corporate visual identity",
+        "executive portraiture",
+        "employer branding",
+        "event communication",
+        "visual reputation"
+      ]
     },
     {
       "@type": "Organization",
       "@id": "https://www.wikidata.org/wiki/Q138424838",
       "name": "WKO Berufsfotografie — Österreichische Fotografenkammer",
-      "sameAs": "https://www.wikidata.org/wiki/Q138424838"
+      "sameAs": "https://www.wikidata.org/wiki/Q138424838",
+      "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+      "slogan": "More than executive portraits. Visual strategic partnership.",
+      "knowsAbout": [
+        "visual strategic partnership",
+        "leadership positioning",
+        "corporate visual identity",
+        "executive portraiture",
+        "employer branding",
+        "event communication",
+        "visual reputation"
+      ]
     },
     {
       "@type": "ArtGallery",
@@ -853,7 +932,18 @@
           "C-Level Business Photographer",
           "C-Level Event Photographer"
         ]
-      }
+      },
+      "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+      "slogan": "More than executive portraits. Visual strategic partnership.",
+      "knowsAbout": [
+        "visual strategic partnership",
+        "leadership positioning",
+        "corporate visual identity",
+        "executive portraiture",
+        "employer branding",
+        "event communication",
+        "visual reputation"
+      ]
     },
     {
       "@type": "Organization",
@@ -879,7 +969,18 @@
           "C-Level Business Photographer",
           "C-Level Event Photographer"
         ]
-      }
+      },
+      "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+      "slogan": "More than executive portraits. Visual strategic partnership.",
+      "knowsAbout": [
+        "visual strategic partnership",
+        "leadership positioning",
+        "corporate visual identity",
+        "executive portraiture",
+        "employer branding",
+        "event communication",
+        "visual reputation"
+      ]
     },
     {
       "@type": "Thing",
@@ -1496,7 +1597,18 @@
       "@type": "Organization",
       "@id": "https://www.norbertbanhalmi.com/#pannon-photographers-association",
       "name": "Pannon Fényképészkör Egyesület",
-      "url": "https://fenykepeszkor.hu/"
+      "url": "https://fenykepeszkor.hu/",
+      "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+      "slogan": "More than executive portraits. Visual strategic partnership.",
+      "knowsAbout": [
+        "visual strategic partnership",
+        "leadership positioning",
+        "corporate visual identity",
+        "executive portraiture",
+        "employer branding",
+        "event communication",
+        "visual reputation"
+      ]
     },
     {
       "@type": "EducationalOrganization",
@@ -1585,7 +1697,18 @@
       "inLanguage": "hu-HU",
       "publisher": {
         "@type": "Organization",
-        "name": "BANHALMI ART"
+        "name": "BANHALMI ART",
+        "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+        "slogan": "More than executive portraits. Visual strategic partnership.",
+        "knowsAbout": [
+          "visual strategic partnership",
+          "leadership positioning",
+          "corporate visual identity",
+          "executive portraiture",
+          "employer branding",
+          "event communication",
+          "visual reputation"
+        ]
       },
       "about": {
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
@@ -1604,7 +1727,18 @@
       "inLanguage": "hu-HU",
       "publisher": {
         "@type": "Organization",
-        "name": "Rólunk.at"
+        "name": "Rólunk.at",
+        "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+        "slogan": "More than executive portraits. Visual strategic partnership.",
+        "knowsAbout": [
+          "visual strategic partnership",
+          "leadership positioning",
+          "corporate visual identity",
+          "executive portraiture",
+          "employer branding",
+          "event communication",
+          "visual reputation"
+        ]
       },
       "about": {
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
@@ -1623,7 +1757,18 @@
       "inLanguage": "hu-HU",
       "publisher": {
         "@type": "Organization",
-        "name": "Kiskegyed"
+        "name": "Kiskegyed",
+        "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+        "slogan": "More than executive portraits. Visual strategic partnership.",
+        "knowsAbout": [
+          "visual strategic partnership",
+          "leadership positioning",
+          "corporate visual identity",
+          "executive portraiture",
+          "employer branding",
+          "event communication",
+          "visual reputation"
+        ]
       },
       "about": {
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
@@ -1642,7 +1787,18 @@
       "inLanguage": "en",
       "publisher": {
         "@type": "Organization",
-        "name": "The Brussels Times"
+        "name": "The Brussels Times",
+        "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+        "slogan": "More than executive portraits. Visual strategic partnership.",
+        "knowsAbout": [
+          "visual strategic partnership",
+          "leadership positioning",
+          "corporate visual identity",
+          "executive portraiture",
+          "employer branding",
+          "event communication",
+          "visual reputation"
+        ]
       },
       "about": {
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
@@ -1661,7 +1817,18 @@
       "inLanguage": "en",
       "publisher": {
         "@type": "Organization",
-        "name": "The Eastern Herald"
+        "name": "The Eastern Herald",
+        "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+        "slogan": "More than executive portraits. Visual strategic partnership.",
+        "knowsAbout": [
+          "visual strategic partnership",
+          "leadership positioning",
+          "corporate visual identity",
+          "executive portraiture",
+          "employer branding",
+          "event communication",
+          "visual reputation"
+        ]
       },
       "about": {
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
@@ -1680,7 +1847,18 @@
       "inLanguage": "en",
       "publisher": {
         "@type": "Organization",
-        "name": "UA.NEWS"
+        "name": "UA.NEWS",
+        "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+        "slogan": "More than executive portraits. Visual strategic partnership.",
+        "knowsAbout": [
+          "visual strategic partnership",
+          "leadership positioning",
+          "corporate visual identity",
+          "executive portraiture",
+          "employer branding",
+          "event communication",
+          "visual reputation"
+        ]
       },
       "about": {
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
@@ -1699,7 +1877,18 @@
       "inLanguage": "en",
       "publisher": {
         "@type": "Organization",
-        "name": "Spectre Journal"
+        "name": "Spectre Journal",
+        "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+        "slogan": "More than executive portraits. Visual strategic partnership.",
+        "knowsAbout": [
+          "visual strategic partnership",
+          "leadership positioning",
+          "corporate visual identity",
+          "executive portraiture",
+          "employer branding",
+          "event communication",
+          "visual reputation"
+        ]
       },
       "about": {
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
@@ -1718,7 +1907,18 @@
       "inLanguage": "en",
       "publisher": {
         "@type": "Organization",
-        "name": "Politics UK"
+        "name": "Politics UK",
+        "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+        "slogan": "More than executive portraits. Visual strategic partnership.",
+        "knowsAbout": [
+          "visual strategic partnership",
+          "leadership positioning",
+          "corporate visual identity",
+          "executive portraiture",
+          "employer branding",
+          "event communication",
+          "visual reputation"
+        ]
       },
       "about": {
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
@@ -1737,7 +1937,18 @@
       "inLanguage": "en",
       "publisher": {
         "@type": "Organization",
-        "name": "American Thinker"
+        "name": "American Thinker",
+        "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+        "slogan": "More than executive portraits. Visual strategic partnership.",
+        "knowsAbout": [
+          "visual strategic partnership",
+          "leadership positioning",
+          "corporate visual identity",
+          "executive portraiture",
+          "employer branding",
+          "event communication",
+          "visual reputation"
+        ]
       },
       "about": {
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
@@ -1756,7 +1967,18 @@
       "inLanguage": "en",
       "publisher": {
         "@type": "Organization",
-        "name": "The Military Analyst"
+        "name": "The Military Analyst",
+        "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+        "slogan": "More than executive portraits. Visual strategic partnership.",
+        "knowsAbout": [
+          "visual strategic partnership",
+          "leadership positioning",
+          "corporate visual identity",
+          "executive portraiture",
+          "employer branding",
+          "event communication",
+          "visual reputation"
+        ]
       },
       "about": {
         "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
@@ -1813,7 +2035,18 @@
         {
           "@type": "Organization",
           "name": "OM SYSTEM",
-          "url": "https://explore.omsystem.com/"
+          "url": "https://explore.omsystem.com/",
+          "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
+          "slogan": "More than executive portraits. Visual strategic partnership.",
+          "knowsAbout": [
+            "visual strategic partnership",
+            "leadership positioning",
+            "corporate visual identity",
+            "executive portraiture",
+            "employer branding",
+            "event communication",
+            "visual reputation"
+          ]
         }
       ],
       "sameAs": [
@@ -1919,7 +2152,7 @@
         "AmCham Austria",
         "American Chamber of Commerce Austria"
       ],
-      "description": "A Vienna-based non-profit business and trade association promoting Austrian–United States commercial relations and providing an international business network for its members.",
+      "description": "BANHALMI is a visual strategic partner for leaders and organisations, coordinating executive portraiture, corporate visual identity, employer branding, event communication and long-term visual consistency between Vienna and Budapest.",
       "url": "https://www.amcham.at/",
       "sameAs": [
         "https://www.wikidata.org/wiki/Q138413481",
@@ -1936,7 +2169,17 @@
         "postalCode": "1090",
         "addressLocality": "Vienna",
         "addressCountry": "AT"
-      }
+      },
+      "slogan": "More than executive portraits. Visual strategic partnership.",
+      "knowsAbout": [
+        "visual strategic partnership",
+        "leadership positioning",
+        "corporate visual identity",
+        "executive portraiture",
+        "employer branding",
+        "event communication",
+        "visual reputation"
+      ]
     }
   ],
   "officialPositioning": {
