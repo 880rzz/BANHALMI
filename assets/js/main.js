@@ -44,6 +44,64 @@
 
 
 
+
+
+  // Production audit: accessible Services submenu and gallery lightbox.
+  document.querySelectorAll(".nav-services").forEach(function (item) {
+    var toggle = item.querySelector(".nav-services-toggle");
+    var submenu = item.querySelector(".nav-submenu");
+    if (!toggle || !submenu) return;
+    function setOpen(open) {
+      item.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    toggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      setOpen(!item.classList.contains("open"));
+    });
+    item.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    submenu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () { setOpen(false); });
+    });
+    document.addEventListener("click", function (event) {
+      if (!item.contains(event.target)) setOpen(false);
+    });
+  });
+
+  var galleryLightbox = document.querySelector("[data-gallery-lightbox]");
+  if (galleryLightbox) {
+    var lightboxImg = galleryLightbox.querySelector("img");
+    var lightboxClose = galleryLightbox.querySelector(".lightbox-close");
+    var lastLightboxTrigger = null;
+    function closeGalleryLightbox() {
+      galleryLightbox.hidden = true;
+      if (lightboxImg) lightboxImg.removeAttribute("src");
+      if (lastLightboxTrigger) lastLightboxTrigger.focus();
+    }
+    document.querySelectorAll(".gallery-lightbox-trigger").forEach(function (trigger) {
+      trigger.addEventListener("click", function () {
+        lastLightboxTrigger = trigger;
+        if (lightboxImg) {
+          lightboxImg.src = trigger.getAttribute("data-lightbox-src");
+          lightboxImg.alt = trigger.getAttribute("data-lightbox-alt") || "";
+        }
+        galleryLightbox.hidden = false;
+        if (lightboxClose) lightboxClose.focus();
+      });
+    });
+    if (lightboxClose) lightboxClose.addEventListener("click", closeGalleryLightbox);
+    galleryLightbox.addEventListener("click", function (event) { if (event.target === galleryLightbox) closeGalleryLightbox(); });
+    document.addEventListener("keydown", function (event) {
+      if (!galleryLightbox.hidden && event.key === "Escape") closeGalleryLightbox();
+    });
+  }
+
+
   // Desktop footer columns stay open like Apple's information architecture;
   // on small screens they return to compact native accordions.
   var footerMedia = window.matchMedia("(min-width: 681px)");
