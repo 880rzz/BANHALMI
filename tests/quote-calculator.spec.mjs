@@ -45,3 +45,35 @@ for (const route of routes) {
     });
   }
 }
+
+
+for (const route of routes) {
+  test(`quote information opens in an accessible modal on ${route.path}`, async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto(route.path);
+
+    const option = page.locator('.option-row:has(.info-tip)').first();
+    const trigger = option.locator('.info-tip');
+    await expect(trigger).toHaveAttribute('aria-haspopup', 'dialog');
+
+    const optionBox = await option.boundingBox();
+    const triggerBox = await trigger.boundingBox();
+    expect(optionBox).not.toBeNull();
+    expect(triggerBox).not.toBeNull();
+    expect(Math.abs((optionBox.x + optionBox.width) - (triggerBox.x + triggerBox.width))).toBeLessThan(24);
+    expect(Math.abs((optionBox.y + optionBox.height) - (triggerBox.y + triggerBox.height))).toBeLessThan(24);
+
+    await trigger.click();
+    const modal = page.locator('.info-modal');
+    const panel = modal.locator('.info-modal-panel');
+    await expect(modal).toBeVisible();
+    await expect(modal).toHaveAttribute('role', 'dialog');
+    await expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    await expect(panel).toHaveCSS('border-radius', '10px');
+    await expect(modal.locator('[data-info-modal-content]')).not.toBeEmpty();
+
+    await modal.locator('.info-modal-close').click();
+    await expect(modal).toBeHidden();
+    await expect(trigger).toHaveAttribute('aria-expanded', 'false');
+  });
+}
