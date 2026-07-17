@@ -7,7 +7,7 @@
   "creator": {
     "@id": "https://www.banhalmi.art/norbert-banhalmi"
   },
-  "dateModified": "2026-07-17T22:40:00+02:00",
+  "dateModified": "2026-07-17T23:55:00+02:00",
   "dataFeedElement": [
     {
       "@type": "DataFeedItem",
@@ -4491,6 +4491,151 @@
         "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
         "license": "https://www.norbertbanhalmi.com/terms-conditions/",
         "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T23:55:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-41-abstract-archive-study.avif#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-41-abstract-archive-study.avif",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-41-abstract-archive-study.avif",
+        "description": "Abstract fine-art archive study built from restrained form, tonal contrast and visual ambiguity.",
+        "caption": "Abstract fine-art archive study built from restrained form, tonal contrast and visual ambiguity.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved.",
+        "width": 433,
+        "height": 324
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T23:55:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-42-monochrome-profile-light.jpg#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-42-monochrome-profile-light.jpg",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-42-monochrome-profile-light.jpg",
+        "description": "Close monochrome profile portrait shaped by a narrow diagonal beam; light, shadow and closed eyes turn the face into a quiet sculptural study.",
+        "caption": "Close monochrome profile portrait shaped by a narrow diagonal beam; light, shadow and closed eyes turn the face into a quiet sculptural study.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved.",
+        "width": 433,
+        "height": 433
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T23:55:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-43-beach-movement-study.jpg#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-43-beach-movement-study.jpg",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-43-beach-movement-study.jpg",
+        "description": "Monochrome movement study of a dancer beside a fallen branch on the shore; the arched body, wind and sea create tension between fragility and release.",
+        "caption": "Monochrome movement study of a dancer beside a fallen branch on the shore; the arched body, wind and sea create tension between fragility and release.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved.",
+        "width": 432,
+        "height": 292
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T23:55:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-44-child-new-york-waterfront.jpg#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-44-child-new-york-waterfront.jpg",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-44-child-new-york-waterfront.jpg",
+        "description": "A child stands at the waterfront facing Brooklyn Bridge and Lower Manhattan; the small figure against the city turns the view into a meditation on scale, future and possibility.",
+        "caption": "A child stands at the waterfront facing Brooklyn Bridge and Lower Manhattan; the small figure against the city turns the view into a meditation on scale, future and possibility.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved.",
+        "width": 432,
+        "height": 649
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-07-17T23:55:00+02:00",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-45-brick-arch-shadow-portrait.jpg#image",
+        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-45-brick-arch-shadow-portrait.jpg",
+        "url": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-45-brick-arch-shadow-portrait.jpg",
+        "description": "A woman stands beneath a dark brick arch while a second human shadow crosses the sunlit wall; architecture and doubled presence turn the portrait into a narrative scene.",
+        "caption": "A woman stands beneath a dark brick arch while a second human shadow crosses the sunlit wall; architecture and doubled presence turn the portrait into a narrative scene.",
+        "genre": "fine-art archive",
+        "keywords": [
+          "fine-art archive",
+          "artistic photography",
+          "BANHALMI"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Norbert Banhalmi / BANHALMI",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved.",
+        "width": 433,
+        "height": 288
       }
     }
   ]

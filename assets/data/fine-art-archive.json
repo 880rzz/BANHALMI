@@ -7,7 +7,7 @@
   "creator": {
     "@id": "https://www.banhalmi.art/norbert-banhalmi"
   },
-  "dateModified": "2026-07-17T22:40:00+02:00",
+  "dateModified": "2026-07-17T23:55:00+02:00",
   "associatedMedia": [
     {
       "id": "fine-art-archive-01",
@@ -627,6 +627,91 @@
         "en": "Two horses in a monochrome field",
         "hu": "Két ló monokróm mezőben",
         "de-AT": "Zwei Pferde auf einem monochromen Feld"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-41",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-41-abstract-archive-study.avif",
+      "sourceFile": "b0aee1_e8e59192a00d4179aef196de722b772e.avif",
+      "width": 433,
+      "height": 324,
+      "sha256": "a930fcd740897bd25ae9542671fa92dae831d37c3a3cb0dd6f4cc2f9be5d1bd2",
+      "title": {
+        "en": "Abstract archive study",
+        "hu": "Absztrakt archív tanulmány",
+        "de-AT": "Abstrakte Archivstudie"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-42",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-42-monochrome-profile-light.jpg",
+      "sourceFile": "b0aee1_b78756dc78094a2b91d67306540f26b7.jpg",
+      "width": 433,
+      "height": 433,
+      "sha256": "ada4a3269f977c07721524648089f58b3a64fc6fe4a35960ac89152564d61a73",
+      "title": {
+        "en": "Monochrome profile in sculpted light",
+        "hu": "Monokróm profil formált fényben",
+        "de-AT": "Monochromes Profil in geformtem Licht"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-43",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-43-beach-movement-study.jpg",
+      "sourceFile": "b0aee1_d381b1fcdf9e4441b6a63f225c8d2351.jpg",
+      "width": 432,
+      "height": 292,
+      "sha256": "bbfebdfbbf40044120d1500837ca87ae7f526a0445e7b175253e93cab79b27f3",
+      "title": {
+        "en": "Monochrome movement study by the sea",
+        "hu": "Monokróm mozdulattanulmány a tengerparton",
+        "de-AT": "Monochrome Bewegungsstudie am Meer"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-44",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-44-child-new-york-waterfront.jpg",
+      "sourceFile": "b0aee1_c8b3db67835d4a99b4291c9ceef77afc.jpg",
+      "width": 432,
+      "height": 649,
+      "sha256": "f22875c3a2842ddc469a64a9e5f8f39f8f55a56783d54590fef2ee836c407740",
+      "title": {
+        "en": "Child facing New York from the waterfront",
+        "hu": "Gyermek New York látképe előtt",
+        "de-AT": "Kind vor der New Yorker Skyline"
+      },
+      "creator": {
+        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+      },
+      "copyrightNotice": "© Norbert Banhalmi / BANHALMI. All rights reserved."
+    },
+    {
+      "id": "fine-art-archive-45",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-45-brick-arch-shadow-portrait.jpg",
+      "sourceFile": "b0aee1_0036106f199d40f1b283e0df75676a8e.jpg",
+      "width": 433,
+      "height": 288,
+      "sha256": "ffb266b9aa4b90c0f4a2e97ea75d8544b2e65a7fc00fe2dda82605c9d3e7d0ba",
+      "title": {
+        "en": "Portrait and shadow beneath a brick arch",
+        "hu": "Portré és árnyék egy téglaív alatt",
+        "de-AT": "Porträt und Schatten unter einem Ziegelbogen"
       },
       "creator": {
         "@id": "https://www.banhalmi.art/norbert-banhalmi"
