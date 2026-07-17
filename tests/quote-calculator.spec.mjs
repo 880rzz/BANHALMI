@@ -40,9 +40,15 @@ for (const route of routes) {
     await expect(modal.locator('[data-info-modal-content]')).not.toBeEmpty();
     await expect(page.locator('body')).toHaveClass(/info-modal-open/);
     await expect(modal.locator('.info-modal-close')).toBeFocused();
-    const closeBox = await modal.locator('.info-modal-close').boundingBox();
-    expect(closeBox.width).toBeGreaterThanOrEqual(44);
-    expect(closeBox.height).toBeGreaterThanOrEqual(44);
+    const closeSize = await modal.locator('.info-modal-close').evaluate((node) => {
+      const style = window.getComputedStyle(node);
+      return {
+        width: Number.parseFloat(style.width),
+        height: Number.parseFloat(style.height)
+      };
+    });
+    expect(closeSize.width).toBeGreaterThanOrEqual(44);
+    expect(closeSize.height).toBeGreaterThanOrEqual(44);
     const box = await panel.boundingBox();
     expect(box).not.toBeNull();
     expect(box.y).toBeGreaterThanOrEqual(0);
