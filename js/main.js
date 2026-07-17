@@ -1092,8 +1092,13 @@
   function close(){
     modal.classList.remove('is-open');
     document.body.classList.remove('info-modal-open');
-    window.setTimeout(function(){modal.hidden=true;content.textContent='';titleNode.textContent=labels.title;},180);
-    if(lastTrigger){lastTrigger.setAttribute('aria-expanded','false');lastTrigger.focus();}
+    if(lastTrigger)lastTrigger.setAttribute('aria-expanded','false');
+    window.setTimeout(function(){
+      modal.hidden=true;
+      content.textContent='';
+      titleNode.textContent=labels.title;
+      if(lastTrigger)lastTrigger.focus();
+    },180);
   }
   document.addEventListener('click',function(event){
     var trigger=event.target.closest('.info-tip[data-tooltip]');

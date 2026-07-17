@@ -17,6 +17,49 @@ function amount(text) {
 }
 
 for (const route of routes) {
+  test(`quote information opens as a modal on ${route.path}`, async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 900 });
+    await page.goto(route.path);
+    const trigger = page.locator('.info-tip[data-tooltip]').first();
+    const triggerBox = await trigger.boundingBox();
+    expect(triggerBox).not.toBeNull();
+    expect(triggerBox.width).toBeGreaterThanOrEqual(44);
+    expect(triggerBox.height).toBeGreaterThanOrEqual(44);
+    const optionBox = await trigger.locator('xpath=ancestor::label[1]').boundingBox();
+    expect(optionBox).not.toBeNull();
+    expect(Math.abs((optionBox.x + optionBox.width) - (triggerBox.x + triggerBox.width) - 10)).toBeLessThanOrEqual(1);
+    expect(Math.abs((optionBox.y + optionBox.height) - (triggerBox.y + triggerBox.height) - 10)).toBeLessThanOrEqual(1);
+    await trigger.click();
+    const modal = page.locator('.info-modal');
+    const panel = modal.locator('.info-modal-panel');
+    await expect(modal).toBeVisible();
+    await expect(modal).toHaveCSS('position', 'fixed');
+    await expect(modal).toHaveCSS('z-index', '10040');
+    await expect(panel).toBeVisible();
+    await expect(panel).toHaveCSS('border-radius', '10px');
+    await expect(modal.locator('[data-info-modal-content]')).not.toBeEmpty();
+    await expect(page.locator('body')).toHaveClass(/info-modal-open/);
+    await expect(modal.locator('.info-modal-close')).toBeFocused();
+    const closeSize = await modal.locator('.info-modal-close').evaluate((node) => {
+      const style = window.getComputedStyle(node);
+      return {
+        width: Number.parseFloat(style.width),
+        height: Number.parseFloat(style.height)
+      };
+    });
+    expect(closeSize.width).toBeGreaterThanOrEqual(44);
+    expect(closeSize.height).toBeGreaterThanOrEqual(44);
+    const box = await panel.boundingBox();
+    expect(box).not.toBeNull();
+    expect(box.y).toBeGreaterThanOrEqual(0);
+    expect(box.y + box.height).toBeLessThanOrEqual(900);
+    await page.keyboard.press('Escape');
+    await expect(modal).toBeHidden();
+    await expect(trigger).toBeFocused();
+  });
+}
+
+for (const route of routes) {
   for (const viewport of viewports) {
     test(`quote estimate updates on ${route.path} at ${viewport.width}px`, async ({ page }) => {
       const errors = [];

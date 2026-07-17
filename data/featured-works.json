@@ -33,7 +33,19 @@
         "@id": "https://www.banhalmi.art/post/euforia#article",
         "url": "https://www.banhalmi.art/post/euforia",
         "name": "EUFÓRIA – a Jelenlét anatómiája",
-        "inLanguage": "hu-HU"
+        "headline": "EUFÓRIA – a Jelenlét anatómiája",
+        "datePublished": "2026-03-15",
+        "dateModified": "2026-07-17",
+        "inLanguage": "hu-HU",
+        "publisher": {
+          "@id": "https://www.norbertbanhalmi.com/#organization",
+          "name": "Bánhalmi Norbert e.U."
+        },
+        "author": {
+          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "The article documents the authorship, depicted person, EUFÓRIA project context and Wikimedia Commons publication of the portrait; it is supporting editorial evidence, not a political endorsement."
       },
       "keywords": [
         "executive portrait photography",
@@ -95,5 +107,5 @@
       ]
     }
   ],
-  "dateModified": "2026-07-09"
+  "dateModified": "2026-07-17"
 }

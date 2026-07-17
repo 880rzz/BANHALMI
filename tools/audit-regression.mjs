@@ -51,6 +51,27 @@ const services=JSON.parse(read('services.json'));
 assert(services.numberOfItems===4, 'services.json must declare four principal services');
 assert(Array.isArray(services.itemListElement)&&services.itemListElement.length===4, 'services.json must contain exactly four Service nodes');
 for(const name of ['Portrait Photography','Brand Photography','C-Level Event Photography','Fine Art Photography']) assert(JSON.stringify(services).includes(name), `services.json missing ${name}`);
+const featuredWorks=JSON.parse(read('data/featured-works.json'));
+const peterMagyarWork=featuredWorks.featuredWorks?.find(work=>work['@id']==='https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026');
+assert(Boolean(peterMagyarWork), 'featured work must include the verified Péter Magyar portrait');
+if(peterMagyarWork){
+  assert(peterMagyarWork.contentUrl==='https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp', 'Péter Magyar portrait must retain the production image URL');
+  assert(peterMagyarWork.url==='https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg', 'Péter Magyar portrait must retain the Wikimedia Commons source');
+  assert(peterMagyarWork.creator?.['@id']==='https://www.banhalmi.art/norbert-banhalmi', 'Péter Magyar portrait must identify Bánhalmi Norbert as creator');
+  assert(peterMagyarWork.about?.['@id']==='https://www.wikidata.org/wiki/Q124488292', 'Péter Magyar portrait must identify Péter Magyar through Wikidata Q124488292');
+  assert(peterMagyarWork.isPartOf?.some(item=>item['@id']==='https://www.wikidata.org/wiki/Q138717398'), 'Péter Magyar portrait must remain linked to the EUFÓRIA Wikidata entity');
+  assert(peterMagyarWork.identifier?.some(item=>item.propertyID==='Creator Wikidata'&&item.value==='Q56391118'), 'Péter Magyar portrait must retain Bánhalmi Norbert Wikidata Q56391118');
+  const referenceArticle=peterMagyarWork.subjectOf;
+  assert(['Article','NewsArticle'].includes(referenceArticle?.['@type']), 'verified reference must expose a separate Article or NewsArticle entity');
+  for(const field of ['name','headline','datePublished','inLanguage','publisher','creditText']) assert(Boolean(referenceArticle?.[field]), `verified reference Article missing ${field}`);
+}
+for(const file of ['portrait/index.html','hu/portre/index.html','de-at/portrait/index.html']){
+  const h=read(file);
+  assert(h.includes('\"@type\":\"Article\",\"@id\":\"https://www.banhalmi.art/post/euforia#article\"'), `${file}: missing standalone EUFÓRIA Article schema entity`);
+  for(const invariant of ['Q124488292','Q56391118','Q138717398','Peter-Magyar-portrait-2026.jpg','peter-magyar-portrait-2026-by-norbert-banhalmi.webp','supporting editorial evidence, not a political endorsement']){
+    assert(h.includes(invariant), `${file}: Péter Magyar reference schema invariant missing ${invariant}`);
+  }
+}
 const css=read('assets/css/style.css')+'\n'+read('css/style.css');
 assert(!/nav-services|nav-submenu|nav-services-toggle/.test(css), 'dropdown-specific CSS remains');
 assert(!/(?:filter|backdrop-filter|-webkit-backdrop-filter)\s*:[^;{}]*blur\s*\((?!\s*0(?:px|rem|em|%)?\s*\))/i.test(css), 'production CSS must not contain non-zero blur effects');
