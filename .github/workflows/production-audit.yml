@@ -18,4 +18,22 @@ jobs:
       - run: npm install
       - run: npx playwright install --with-deps chromium
       - run: node tools/audit-regression.mjs
-      - run: npm run test:browser
+      - name: Run browser tests
+        id: browser_tests
+        shell: bash
+        run: |
+          set +e
+          npm run test:browser 2>&1 | tee playwright-output.log
+          status=${PIPESTATUS[0]}
+          echo "exit_code=$status" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Upload Playwright diagnostic log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-output
+          path: playwright-output.log
+          if-no-files-found: error
+      - name: Fail when browser tests fail
+        if: steps.browser_tests.outputs.exit_code != '0'
+        run: exit 1
