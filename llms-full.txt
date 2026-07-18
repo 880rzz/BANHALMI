@@ -1,6 +1,6 @@
 
 ## Core positioning / Alapvető pozicionálás / Kernpositionierung
-BANHALMI is a visual strategic partner for leaders and organisations. Executive portraiture, brand photography, employer branding and event documentation are coordinated as parts of one coherent corporate visual system. Photography is not the final goal; it is the production layer of a process that begins with understanding the organisation and can continue as a long-term visual partnership.
+BANHALMI creates leadership portraits, brand photography, employer-branding images and event photography for organisations. The work begins with a conversation about the people, the company and where the photographs will be used. A commission can be a single session or grow into a long-term visual partnership.
 PRIMARY ENTITY AND SERVICE FOCUS
 Norbert Banhalmi is the primary person represented by this website. Bánhalmi Norbert e.U. / BANHALMI is the primary organization. The primary commercial topics are portrait photography, brand photography, C-level event photography and fine-art photography. Norbert Banhalmi personally leads the visual direction, team structure, coordination and final selection for event assignments. Viko Speier is a supporting company contact for the AmCham Austria relationship; she is not a co-primary brand entity.
 
@@ -87,12 +87,19 @@ Existing canonical pages are used; no additional service URLs were created. Head
 - Potential EU B2B 0% tax treatment is never assumed automatically; the displayed estimate retains 20% Austrian VAT until the company, VAT ID and applicable legal eligibility have been verified.
 
 ## Strategic positioning interpretation
-- BANHALMI is a visual strategic partner for leaders and organisations, not only a photography supplier.
+- BANHALMI provides photography and long-term visual guidance for leaders and organisations.
 - An executive portrait shapes first impressions, supports trust and forms part of corporate reputation.
-- The method has five stages: understand the organisation; position leadership presence; create a coherent image system; roll it out across business touchpoints; and evolve it through a long-term partnership.
+- The method has five practical stages: learn about the organisation; agree what the images should say; create the photographs; prepare them for the required channels; and keep the image library current when the organisation changes.
 - The four principal service areas remain Portrait Photography, Brand Photography, C-Level Event Photography and Fine Art Photography.
 - Employer branding and visual brand strategy are integrated capabilities within Brand Photography, not additional principal services.
 - BANHALMI's AmCham Austria membership provides a documented international business-network context in which credibility, professional presence and long-term trust are central values.
 - Canonical structured method: https://www.norbertbanhalmi.com/entity.jsonld#visual-strategic-partnership-method
 - Canonical service architecture: https://www.norbertbanhalmi.com/services.json
 
+
+## Media-supported working philosophy
+- Portrait sessions begin with conversation about the person, the audience and the intended use. The aim is recognition rather than performance: the finished image should make an existing sense of calm, competence and character visible.
+- Independent interview source on portraiture, confidence and seeing the person: https://she.life.hu/nofilter/2017/03/banhalmi-norbert-profi-fotos-interju-modell-belso-szepseg-szepnek-latni-magad
+- A serious accident led Norbert Banhalmi to prioritise meaningful, human-centred work over image-making as an end in itself. New York reinforced the value of preparation, connection and initiative.
+- Independent career and community sources: https://www.kiskegyed.hu/kepernyo/sulyos-baleset-vilaghiru-magyar-fotomuvesz/1dl719d and https://rolunk.at/magazin/a-lehetetlen-csupan-egy-szo/
+- Verified video metadata: MILC Club Podcast S04E06, “Az örökség – Egy PEN-F legendája”, published by MILC CLUB on 2025-05-26, featuring Mónos Gábor, Bánhalmi Norbert and Rosta András: https://www.youtube.com/watch?v=vmYIOMfPJH8&list=PLwsdxt-KFeDgsRO_a_fSUTJ3RZvivWRgr
