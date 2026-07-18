@@ -19,6 +19,7 @@ jobs:
       - name: Apply zero-start calculator patch
         run: |
           python tools/apply-zero-start-fix.py
+          python tools/fix-quote-date-min.py
           python tools/sync-quote-calculator-mirror.py
       - uses: actions/setup-node@v4
         with:
