@@ -32,6 +32,10 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     return storagePrefix + (form.getAttribute('data-lang') || document.documentElement.lang || 'en');
   }
 
+  function hasDraft(form){
+    try { return !!localStorage.getItem(draftKey(form)); } catch(e) { return false; }
+  }
+
   function serializeDraft(form){
     var values = {};
     Array.prototype.forEach.call(form.elements || [], function(field){
@@ -99,6 +103,18 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     form.querySelectorAll('input[type="date"]').forEach(function(input){ input.min = min; });
   }
 
+  function applyBasicPackageDefault(form){
+    if(hasDraft(form)) return;
+    var individualCategory = form.querySelector('input[type="radio"][value="individual"]');
+    var basicPackage = form.querySelector('input[type="radio"][value="headshotcv"]');
+    if(individualCategory) individualCategory.checked = true;
+    if(basicPackage) basicPackage.checked = true;
+    if(individualCategory || basicPackage){
+      form.dispatchEvent(new Event('change', {bubbles:true}));
+      form.dispatchEvent(new Event('input', {bubbles:true}));
+    }
+  }
+
   function placePdfAction(form){
     var submitActions = form.querySelector('.quote-submit-actions');
     var root = form.closest('[data-quote-root], .smart-quote-layout') || form.parentElement;
@@ -115,6 +131,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
       if(!verifiedDelivery) return;
       clearDraft(form);
       nativeReset();
+      applyBasicPackageDefault(form);
       addIdempotency(form);
       verifiedDelivery = false;
     };
@@ -124,6 +141,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     placePdfAction(form);
     prepareStatus(form);
     prepareDates(form);
+    applyBasicPackageDefault(form);
     addIdempotency(form);
     protectReset(form);
     restoreDraft(form);
