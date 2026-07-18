@@ -10,7 +10,9 @@ for (const path of routes) {
     await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 10000 });
     await expect(form.locator('input[type="radio"][name="category"]:checked')).toHaveCount(0);
     await expect(form.locator('input[type="radio"][value="headshotcv"]')).not.toBeChecked();
-    await expect(page.locator('[data-estimate-gross]')).toContainText('0');
+    await expect(form.locator('[name="estimate_gross"]')).toHaveValue('0');
+    await expect(form.locator('[name="estimate_net"]')).toHaveValue('0');
+    await expect(form.locator('[name="estimate_vat"]')).toHaveValue('0');
     await expect(form.locator('[data-form-note]')).toHaveAttribute('role', 'status');
     await expect(form.locator('[data-form-note]')).toHaveAttribute('aria-live', 'polite');
     const today = await page.evaluate(() => {
@@ -33,10 +35,10 @@ test('quote amount grows only after a package is selected', async ({ page }) => 
   await page.goto('/requestaquote/');
   const form = page.locator('[data-smart-quote]');
   await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 10000 });
-  await expect(page.locator('[data-estimate-gross]')).toContainText('0');
+  await expect(form.locator('[name="estimate_gross"]')).toHaveValue('0');
   await form.locator('input[type="radio"][value="individual"]').check();
   await form.locator('input[type="radio"][value="headshotcv"]').check();
-  await expect(page.locator('[data-estimate-gross]')).toContainText('120');
+  await expect(form.locator('[name="estimate_gross"]')).toHaveValue('120');
 });
 
 test('preserves entered quote data when delivery is not explicitly verified', async ({ page }) => {
@@ -87,6 +89,8 @@ test('clears quote data only when both email deliveries are explicitly verified'
   await expect(form.locator('[name="email"]')).toHaveValue('');
   await expect(form.locator('input[type="radio"][name="category"]:checked')).toHaveCount(0);
   await expect(form.locator('input[type="radio"][value="headshotcv"]')).not.toBeChecked();
-  await expect(page.locator('[data-estimate-gross]')).toContainText('0');
+  await expect(form.locator('[name="estimate_gross"]')).toHaveValue('0');
+  await expect(form.locator('[name="estimate_net"]')).toHaveValue('0');
+  await expect(form.locator('[name="estimate_vat"]')).toHaveValue('0');
   await expect(form.locator('[name="submission_key"]')).not.toHaveValue('');
 });
