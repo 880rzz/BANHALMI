@@ -103,11 +103,16 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     form.querySelectorAll('input[type="date"]').forEach(function(input){ input.min = min; });
   }
 
-  function hasSelectedCategory(form){
-    return !!form.querySelector('input[type="radio"][name="category"]:checked');
+  function hasBillableSelection(form){
+    return !!form.querySelector([
+      'input[type="radio"][name="category"]:checked',
+      'input[type="radio"][name="individual_mode"]:checked',
+      'input[type="radio"][name="brand_duration"]:checked',
+      'input[type="radio"][name="event_duration"]:checked'
+    ].join(','));
   }
 
-  function zeroEstimate(form){
+  function zeroEstimate(){
     return {
       gross:0,
       grossBeforeVatMode:0,
@@ -133,7 +138,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   }
 
   function renderZeroEstimate(form){
-    if(hasSelectedCategory(form)) return null;
+    if(hasBillableSelection(form)) return null;
     var root = form.closest('[data-quote-root], .smart-quote-layout') || form.parentElement;
     var formatted = new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2}).format(0);
     [['estimate_net','0'],['estimate_vat','0'],['estimate_gross','0'],['estimate_vat_mode','at-vat-20'],['estimate_summary','']].forEach(function(pair){
@@ -146,7 +151,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     });
     var summary = form.querySelector('[data-estimate-summary]');
     if(summary) summary.value = '';
-    return zeroEstimate(form);
+    return zeroEstimate();
   }
 
   function installZeroPriceGuard(form){
@@ -163,10 +168,10 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
         var nativeCalculate = api.calculate;
         var nativePaint = api.paint;
         api.calculate = function(target){
-          return hasSelectedCategory(target) ? nativeCalculate(target) : zeroEstimate(target);
+          return hasBillableSelection(target) ? nativeCalculate(target) : zeroEstimate();
         };
         api.paint = function(target){
-          return hasSelectedCategory(target) ? nativePaint(target) : renderZeroEstimate(target);
+          return hasBillableSelection(target) ? nativePaint(target) : renderZeroEstimate(target);
         };
         api.__zeroStartGuardInstalled = true;
         window.clearInterval(timer);
