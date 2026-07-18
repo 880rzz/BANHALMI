@@ -3,10 +3,14 @@ import { test, expect } from '@playwright/test';
 const routes = ['/requestaquote/', '/hu/ajanlatkeres/', '/de-at/anfrage/'];
 
 for (const path of routes) {
-  test(`hardens quote dates, status and PDF placement on ${path}`, async ({ page }) => {
+  test(`hardens quote dates, status, PDF placement and default price on ${path}`, async ({ page }) => {
     await page.goto(path);
     const form = page.locator('[data-smart-quote]');
     await expect(form).toHaveCount(1);
+    await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 10000 });
+    await expect(form.locator('input[type="radio"][value="individual"]')).toBeChecked();
+    await expect(form.locator('input[type="radio"][value="headshotcv"]')).toBeChecked();
+    await expect(page.locator('[data-estimate-gross]')).toContainText('120');
     await expect(form.locator('[data-form-note]')).toHaveAttribute('role', 'status');
     await expect(form.locator('[data-form-note]')).toHaveAttribute('aria-live', 'polite');
     const today = await page.evaluate(() => {
@@ -67,5 +71,7 @@ test('clears quote data only when both email deliveries are explicitly verified'
   await expect(form.locator('[data-form-note]')).toContainText('VERIFIED-1');
   await expect(form.locator('[name="name"]')).toHaveValue('');
   await expect(form.locator('[name="email"]')).toHaveValue('');
+  await expect(form.locator('input[type="radio"][value="headshotcv"]')).toBeChecked();
+  await expect(page.locator('[data-estimate-gross]')).toContainText('120');
   await expect(form.locator('[name="submission_key"]')).not.toHaveValue('');
 });
