@@ -17,7 +17,9 @@ jobs:
         with:
           ref: ${{ github.head_ref || github.ref_name }}
       - name: Apply zero-start calculator patch
-        run: python tools/apply-zero-start-fix.py
+        run: |
+          python tools/apply-zero-start-fix.py
+          python tools/sync-quote-calculator-mirror.py
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -34,6 +36,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/js/quote-calculator.js assets/js/site-config.js tests/quote-calculator.spec.mjs
+          git add assets/js/quote-calculator.js js/quote-calculator.js assets/js/site-config.js tests/quote-calculator.spec.mjs
           git commit -m "Fix zero-euro calculator start natively"
           git push origin HEAD:${{ github.head_ref }}
