@@ -27,12 +27,17 @@ jobs:
           status=${PIPESTATUS[0]}
           echo "exit_code=$status" >> "$GITHUB_OUTPUT"
           exit 0
-      - name: Upload Playwright diagnostic log
+      - name: Upload Playwright diagnostic bundle
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-output
-          path: playwright-output.log
+          name: playwright-diagnostics
+          path: |
+            playwright-output.log
+            tests/quote-calculator.spec.mjs
+            tests/quote-hardening.spec.mjs
+            assets/js/quote-calculator.js
+            assets/js/site-config.js
           if-no-files-found: error
       - name: Fail when browser tests fail
         if: steps.browser_tests.outputs.exit_code != '0'
