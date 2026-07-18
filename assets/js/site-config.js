@@ -103,86 +103,6 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     form.querySelectorAll('input[type="date"]').forEach(function(input){ input.min = min; });
   }
 
-  function hasBillableSelection(form){
-    return !!form.querySelector([
-      'input[type="radio"][name="category"]:checked',
-      'input[type="radio"][name="individual_mode"]:checked',
-      'input[type="radio"][name="brand_duration"]:checked',
-      'input[type="radio"][name="event_duration"]:checked'
-    ].join(','));
-  }
-
-  function zeroEstimate(){
-    return {
-      gross:0,
-      grossBeforeVatMode:0,
-      net:0,
-      vat:0,
-      reverse:false,
-      reverseEligible:false,
-      vatMode:'at-vat-20',
-      parts:'',
-      category:'',
-      photographerCount:0,
-      peopleCount:0,
-      retouchedImagesPerPerson:0,
-      retouchedImagesTotal:0,
-      instantRetouchHours:0,
-      pricingSource:'pricing.json',
-      pricingReady:true,
-      customTravel:false,
-      travelCountry:'',
-      eventRecommendedPhotographers:0,
-      eventDeliveredImagesEstimate:0
-    };
-  }
-
-  function renderZeroEstimate(form){
-    if(hasBillableSelection(form)) return null;
-    var root = form.closest('[data-quote-root], .smart-quote-layout') || form.parentElement;
-    var formatted = new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2}).format(0);
-    [['estimate_net','0'],['estimate_vat','0'],['estimate_gross','0'],['estimate_vat_mode','at-vat-20'],['estimate_summary','']].forEach(function(pair){
-      var field = form.querySelector('[name="'+pair[0]+'"]');
-      if(field) field.value = pair[1];
-    });
-    ['net','vat','gross'].forEach(function(key){
-      var node = root && root.querySelector('[data-estimate-'+key+']');
-      if(node) node.textContent = formatted;
-    });
-    var summary = form.querySelector('[data-estimate-summary]');
-    if(summary) summary.value = '';
-    return zeroEstimate();
-  }
-
-  function installZeroPriceGuard(form){
-    function enforceAfterCalculator(){
-      window.setTimeout(function(){ renderZeroEstimate(form); },0);
-    }
-    form.addEventListener('input', enforceAfterCalculator);
-    form.addEventListener('change', enforceAfterCalculator);
-    var attempts = 0;
-    var timer = window.setInterval(function(){
-      attempts += 1;
-      var api = window.BANHALMI_QUOTE;
-      if(api && !api.__zeroStartGuardInstalled){
-        var nativeCalculate = api.calculate;
-        var nativePaint = api.paint;
-        api.calculate = function(target){
-          return hasBillableSelection(target) ? nativeCalculate(target) : zeroEstimate();
-        };
-        api.paint = function(target){
-          return hasBillableSelection(target) ? nativePaint(target) : renderZeroEstimate(target);
-        };
-        api.__zeroStartGuardInstalled = true;
-        window.clearInterval(timer);
-        renderZeroEstimate(form);
-      } else if(attempts > 100){
-        window.clearInterval(timer);
-      }
-    },25);
-    enforceAfterCalculator();
-  }
-
   function applyZeroPriceDefault(form){
     if(hasDraft(form)) return;
     form.querySelectorAll('input[type="radio"][name="category"], input[type="radio"][name="individual_mode"], input[type="radio"][name="brand_duration"], input[type="radio"][name="event_duration"]').forEach(function(input){
@@ -212,7 +132,6 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
       clearDraft(form);
       nativeReset();
       applyZeroPriceDefault(form);
-      renderZeroEstimate(form);
       addIdempotency(form);
       verifiedDelivery = false;
     };
@@ -226,7 +145,6 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     addIdempotency(form);
     protectReset(form);
     restoreDraft(form);
-    installZeroPriceGuard(form);
     var saveTimer;
     function scheduleSave(){
       window.clearTimeout(saveTimer);

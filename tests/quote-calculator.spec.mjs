@@ -69,6 +69,8 @@ for (const route of routes) {
       const root = page.locator('[data-quote-root]');
       await expect(root).toHaveCount(1);
       await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 10000 });
+      await page.locator('input[name="category"][value="individual"]').check();
+      await page.locator('input[name="individual_mode"][value="quick30"]').check();
       const gross = root.locator('[data-estimate-gross]');
       const net = root.locator('[data-estimate-net]');
       const vat = root.locator('[data-estimate-vat]');
@@ -126,6 +128,8 @@ test.describe('complete quote calculation strategy', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/requestaquote/');
     await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 10000 });
+    await page.locator('input[name="category"][value="individual"]').check();
+    await page.locator('input[name="individual_mode"][value="quick30"]').check();
   });
 
   test('calculates every principal service and group portrait formula exactly', async ({ page }) => {
@@ -278,6 +282,8 @@ for (const route of routes) {
     await page.goto(route.path);
     const form = page.locator('[data-smart-quote]');
     await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 10000 });
+    await form.locator('input[name="category"][value="individual"]').check();
+    await form.locator('input[name="individual_mode"][value="quick30"]').check();
     await form.locator('[name="customer_type"]').selectOption('business');
     await form.locator('[name="billing_country"]').selectOption('HU');
     await form.locator('[name="company"]').fill('Example Kft.');
