@@ -3,14 +3,14 @@ import { test, expect } from '@playwright/test';
 const routes = ['/requestaquote/', '/hu/ajanlatkeres/', '/de-at/anfrage/'];
 
 for (const path of routes) {
-  test(`hardens quote dates, status, PDF placement and default price on ${path}`, async ({ page }) => {
+  test(`hardens quote dates, status, PDF placement and zero starting price on ${path}`, async ({ page }) => {
     await page.goto(path);
     const form = page.locator('[data-smart-quote]');
     await expect(form).toHaveCount(1);
     await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 10000 });
-    await expect(form.locator('input[type="radio"][value="individual"]')).toBeChecked();
-    await expect(form.locator('input[type="radio"][value="headshotcv"]')).toBeChecked();
-    await expect(page.locator('[data-estimate-gross]')).toContainText('120');
+    await expect(form.locator('input[type="radio"][name="category"]:checked')).toHaveCount(0);
+    await expect(form.locator('input[type="radio"][value="headshotcv"]')).not.toBeChecked();
+    await expect(page.locator('[data-estimate-gross]')).toContainText('0');
     await expect(form.locator('[data-form-note]')).toHaveAttribute('role', 'status');
     await expect(form.locator('[data-form-note]')).toHaveAttribute('aria-live', 'polite');
     const today = await page.evaluate(() => {
@@ -29,10 +29,22 @@ for (const path of routes) {
   });
 }
 
+test('quote amount grows only after a package is selected', async ({ page }) => {
+  await page.goto('/requestaquote/');
+  const form = page.locator('[data-smart-quote]');
+  await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 10000 });
+  await expect(page.locator('[data-estimate-gross]')).toContainText('0');
+  await form.locator('input[type="radio"][value="individual"]').check();
+  await form.locator('input[type="radio"][value="headshotcv"]').check();
+  await expect(page.locator('[data-estimate-gross]')).toContainText('120');
+});
+
 test('preserves entered quote data when delivery is not explicitly verified', async ({ page }) => {
   await page.goto('/requestaquote/');
   const form = page.locator('[data-smart-quote]');
   await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 10000 });
+  await form.locator('input[type="radio"][value="individual"]').check();
+  await form.locator('input[type="radio"][value="headshotcv"]').check();
   await form.locator('[name="name"]').fill('Preserved Client');
   await form.locator('[name="email"]').fill('client@example.com');
   await form.locator('[name="customer_type"]').selectOption('private');
@@ -55,6 +67,8 @@ test('clears quote data only when both email deliveries are explicitly verified'
   await page.goto('/requestaquote/');
   const form = page.locator('[data-smart-quote]');
   await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 10000 });
+  await form.locator('input[type="radio"][value="individual"]').check();
+  await form.locator('input[type="radio"][value="headshotcv"]').check();
   await form.locator('[name="name"]').fill('Verified Client');
   await form.locator('[name="email"]').fill('verified@example.com');
   await form.locator('[name="customer_type"]').selectOption('private');
@@ -71,7 +85,8 @@ test('clears quote data only when both email deliveries are explicitly verified'
   await expect(form.locator('[data-form-note]')).toContainText('VERIFIED-1');
   await expect(form.locator('[name="name"]')).toHaveValue('');
   await expect(form.locator('[name="email"]')).toHaveValue('');
-  await expect(form.locator('input[type="radio"][value="headshotcv"]')).toBeChecked();
-  await expect(page.locator('[data-estimate-gross]')).toContainText('120');
+  await expect(form.locator('input[type="radio"][name="category"]:checked')).toHaveCount(0);
+  await expect(form.locator('input[type="radio"][value="headshotcv"]')).not.toBeChecked();
+  await expect(page.locator('[data-estimate-gross]')).toContainText('0');
   await expect(form.locator('[name="submission_key"]')).not.toHaveValue('');
 });

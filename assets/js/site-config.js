@@ -103,16 +103,16 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     form.querySelectorAll('input[type="date"]').forEach(function(input){ input.min = min; });
   }
 
-  function applyBasicPackageDefault(form){
+  function applyZeroPriceDefault(form){
     if(hasDraft(form)) return;
-    var individualCategory = form.querySelector('input[type="radio"][value="individual"]');
-    var basicPackage = form.querySelector('input[type="radio"][value="headshotcv"]');
-    if(individualCategory) individualCategory.checked = true;
-    if(basicPackage) basicPackage.checked = true;
-    if(individualCategory || basicPackage){
-      form.dispatchEvent(new Event('change', {bubbles:true}));
-      form.dispatchEvent(new Event('input', {bubbles:true}));
-    }
+    form.querySelectorAll('input[type="radio"][name="category"], input[type="radio"][name="individual_mode"], input[type="radio"][name="brand_duration"], input[type="radio"][name="event_duration"]').forEach(function(input){
+      input.checked = false;
+    });
+    form.querySelectorAll('input[type="checkbox"][name="addons"]').forEach(function(input){
+      input.checked = false;
+    });
+    form.dispatchEvent(new Event('change', {bubbles:true}));
+    form.dispatchEvent(new Event('input', {bubbles:true}));
   }
 
   function placePdfAction(form){
@@ -131,7 +131,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
       if(!verifiedDelivery) return;
       clearDraft(form);
       nativeReset();
-      applyBasicPackageDefault(form);
+      applyZeroPriceDefault(form);
       addIdempotency(form);
       verifiedDelivery = false;
     };
@@ -141,7 +141,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     placePdfAction(form);
     prepareStatus(form);
     prepareDates(form);
-    applyBasicPackageDefault(form);
+    applyZeroPriceDefault(form);
     addIdempotency(form);
     protectReset(form);
     restoreDraft(form);
