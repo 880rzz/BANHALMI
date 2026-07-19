@@ -8,6 +8,25 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   analyticsMeasurementId: "G-90C452LJKQ"
 });
 
+/* Load the shared ART-inspired descriptive navigation on every page. */
+(function loadDescriptiveMenu(){
+  'use strict';
+  if(!document.querySelector('link[data-banhalmi-mega-menu]')){
+    var style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = '/assets/css/mega-menu.css?v=20260719-art-menu1';
+    style.setAttribute('data-banhalmi-mega-menu','');
+    document.head.appendChild(style);
+  }
+  if(!document.querySelector('script[data-banhalmi-mega-menu]')){
+    var script = document.createElement('script');
+    script.src = '/assets/js/mega-menu.js?v=20260719-art-menu1';
+    script.defer = true;
+    script.setAttribute('data-banhalmi-mega-menu','');
+    document.head.appendChild(script);
+  }
+})();
+
 /* Quote-system hardening shared by every language version. */
 (function hardenQuoteSystem(){
   'use strict';
