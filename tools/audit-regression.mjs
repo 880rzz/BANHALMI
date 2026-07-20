@@ -137,6 +137,12 @@ for(const route of ['/partners/','/de-at/partner/','/hu/partnerek/']) assert(rea
 const megaMenuJs=read('assets/js/mega-menu.js');
 assert(megaMenuJs.includes('https://www.banhalmi.art/'), 'mega menu BANHALMI ART link must use www.banhalmi.art');
 assert(!megaMenuJs.includes('art.norbertbanhalmi.com'), 'mega menu must not point BANHALMI ART to art.norbertbanhalmi.com');
+for(const file of ['about/index.html','hu/eletmu/index.html','de-at/werk/index.html']){
+  const articleCards=read(file).match(/<article\b[^>]*?(?:book-card|exhibition-entry)[\s\S]*?<\/article>/g)||[];
+  for(const card of articleCards){
+    assert(!/href="https:\/\/www\.banhalmi\.art\/[^"]*#(?:books|exhibitions)"/.test(card), `${file}: book and exhibition cards must link to concrete BANHALMI ART records`);
+  }
+}
 
 // BANHALMI ART moved from Wix-style query routes to stable localized paths.
 const linkCorpus=htmlFiles().map(read).join('\n')+'\n'+[
