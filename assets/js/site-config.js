@@ -156,6 +156,173 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     };
   }
 
+  function validationCopy(form){
+    var lang = languageOf(form);
+    return {
+      en:{title:'Please complete the highlighted fields',intro:'The quote request cannot be sent yet. Check the marked section(s) below.',field:'This field is required or contains an invalid value.',choice:'Please select an option.',email:'Please enter a valid email address.',privacy:'Please accept the privacy notice before sending.',button:'Go to the first error'},
+      hu:{title:'Kérjük, javítsa a kiemelt mezőket',intro:'Az ajánlatkérés még nem küldhető el. Ellenőrizze az alább megjelölt részeket.',field:'Ez a mező kötelező, vagy a megadott érték nem megfelelő.',choice:'Kérjük, válasszon egy lehetőséget.',email:'Kérjük, adjon meg érvényes e-mail-címet.',privacy:'Kérjük, küldés előtt fogadja el az adatvédelmi tájékoztatót.',button:'Ugrás az első hibához'},
+      de:{title:'Bitte korrigieren Sie die markierten Felder',intro:'Die Anfrage kann noch nicht gesendet werden. Prüfen Sie die unten markierten Bereiche.',field:'Dieses Feld ist erforderlich oder enthält einen ungültigen Wert.',choice:'Bitte wählen Sie eine Option aus.',email:'Bitte geben Sie eine gültige E-Mail-Adresse ein.',privacy:'Bitte akzeptieren Sie vor dem Senden die Datenschutzhinweise.',button:'Zum ersten Fehler'}
+    }[lang];
+  }
+
+  function injectValidationStyles(){
+    if(document.getElementById('banhalmi-validation-styles')) return;
+    var style = document.createElement('style');
+    style.id = 'banhalmi-validation-styles';
+    style.textContent = [
+      '.quote-validation-summary{margin:0 0 28px;padding:20px 22px;border:2px solid #a32020;border-radius:14px;background:#fff4f3;color:#541010;box-shadow:0 10px 30px rgba(112,16,16,.12)}',
+      '.quote-validation-summary[hidden]{display:none!important}',
+      '.quote-validation-summary h2{margin:0 0 8px;font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.25;color:#7b1111}',
+      '.quote-validation-summary p{margin:0 0 12px;color:#541010}',
+      '.quote-validation-summary ul{margin:0 0 14px;padding-left:1.25rem}',
+      '.quote-validation-summary a{color:#7b1111;font-weight:700;text-decoration:underline;text-underline-offset:3px}',
+      '.quote-validation-summary button{min-height:44px}',
+      '[data-smart-quote] .is-invalid-field{border-color:#a32020!important;outline:3px solid rgba(163,32,32,.18)!important;outline-offset:2px;background-color:#fff8f7!important}',
+      '[data-smart-quote] .is-invalid-group{border:2px solid #a32020!important;border-radius:14px!important;box-shadow:0 0 0 4px rgba(163,32,32,.10)!important}',
+      '[data-smart-quote] .field-error-message{display:block;margin-top:8px;color:#7b1111;font-size:.95rem;font-weight:700;line-height:1.4}',
+      '[data-smart-quote] [aria-invalid="true"]+label,[data-smart-quote] .is-invalid-group legend{color:#7b1111!important}',
+      '@media(max-width:680px){.quote-validation-summary{padding:18px 16px;margin-bottom:22px}.quote-validation-summary button{width:100%}}'
+    ].join('');
+    document.head.appendChild(style);
+  }
+
+  function fieldContainer(field){
+    return field.closest('fieldset, .quote-field, .form-field, .field, .form-group, .choice-grid, .option-grid, .quote-section, label') || field.parentElement;
+  }
+
+  function fieldLabel(field){
+    var form = field.form;
+    var label = field.id && form ? form.querySelector('label[for="' + field.id.replace(/"/g,'\\"') + '"]') : null;
+    if(!label) label = field.closest('label');
+    if(!label && fieldContainer(field)) label = fieldContainer(field).querySelector('legend, label, h2, h3, h4');
+    return label ? String(label.textContent || '').replace(/\s+/g,' ').trim().replace(/[*:]\s*$/,'') : (field.name || 'Field');
+  }
+
+  function clearFieldError(field){
+    field.removeAttribute('aria-invalid');
+    field.classList.remove('is-invalid-field');
+    var container = fieldContainer(field);
+    if(container){
+      container.classList.remove('is-invalid-group');
+      container.querySelectorAll('.field-error-message[data-for="' + (field.name || field.id || '') + '"]').forEach(function(message){ message.remove(); });
+    }
+  }
+
+  function errorMessage(field, copy){
+    if(field.name === 'privacy_acknowledged') return copy.privacy;
+    if(field.type === 'email' && field.validity && field.validity.typeMismatch) return copy.email;
+    if(field.type === 'radio' || field.type === 'checkbox') return copy.choice;
+    return field.validationMessage || copy.field;
+  }
+
+  function markFieldError(field, copy){
+    var groupFields = (field.type === 'radio' || field.type === 'checkbox') && field.name ? field.form.querySelectorAll('[name="' + CSS.escape(field.name) + '"]') : [field];
+    Array.prototype.forEach.call(groupFields, function(item){
+      item.setAttribute('aria-invalid','true');
+      item.classList.add('is-invalid-field');
+    });
+    var container = fieldContainer(field);
+    if(container){
+      container.classList.add('is-invalid-group');
+      var key = field.name || field.id || 'field';
+      if(!container.querySelector('.field-error-message[data-for="' + key + '"]')){
+        var message = document.createElement('span');
+        message.className = 'field-error-message';
+        message.setAttribute('data-for',key);
+        message.setAttribute('role','alert');
+        message.textContent = errorMessage(field, copy);
+        container.appendChild(message);
+      }
+    }
+  }
+
+  function invalidFields(form){
+    return Array.prototype.slice.call(form.elements || []).filter(function(field){
+      return field && field.willValidate && !field.validity.valid && !field.disabled && field.offsetParent !== null;
+    });
+  }
+
+  function renderValidationSummary(form, fields){
+    var copy = validationCopy(form);
+    var summary = form.querySelector('[data-validation-summary]');
+    if(!summary){
+      summary = document.createElement('section');
+      summary.className = 'quote-validation-summary';
+      summary.setAttribute('data-validation-summary','');
+      summary.setAttribute('role','alert');
+      summary.setAttribute('aria-live','assertive');
+      summary.setAttribute('tabindex','-1');
+      form.insertBefore(summary, form.firstChild);
+    }
+    var unique = [];
+    var seen = {};
+    fields.forEach(function(field){
+      var key = field.name || field.id || String(unique.length);
+      if(seen[key]) return;
+      seen[key] = true;
+      unique.push(field);
+    });
+    summary.innerHTML = '';
+    var title = document.createElement('h2'); title.textContent = copy.title; summary.appendChild(title);
+    var intro = document.createElement('p'); intro.textContent = copy.intro; summary.appendChild(intro);
+    var list = document.createElement('ul');
+    unique.forEach(function(field, index){
+      if(!field.id) field.id = 'quote-error-field-' + index + '-' + Date.now();
+      var item = document.createElement('li');
+      var link = document.createElement('a');
+      link.href = '#' + field.id;
+      link.textContent = fieldLabel(field) + ': ' + errorMessage(field, copy);
+      link.addEventListener('click', function(event){ event.preventDefault(); focusError(field); });
+      item.appendChild(link); list.appendChild(item);
+    });
+    summary.appendChild(list);
+    var button = document.createElement('button');
+    button.type = 'button'; button.className = 'btn btn-primary'; button.textContent = copy.button;
+    button.addEventListener('click', function(){ focusError(unique[0]); });
+    summary.appendChild(button);
+    summary.hidden = false;
+    summary.focus({preventScroll:true});
+    summary.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  function focusError(field){
+    if(!field) return;
+    var target = fieldContainer(field) || field;
+    target.scrollIntoView({behavior:'smooth',block:'center'});
+    window.setTimeout(function(){ try { field.focus({preventScroll:true}); } catch(e) { field.focus(); } }, 320);
+  }
+
+  function clearValidationSummary(form){
+    var summary = form.querySelector('[data-validation-summary]');
+    if(summary) summary.hidden = true;
+  }
+
+  function prepareVisibleValidation(form){
+    injectValidationStyles();
+    form.setAttribute('novalidate','novalidate');
+    form.addEventListener('input', function(event){
+      if(event.target && event.target.willValidate && event.target.validity.valid) clearFieldError(event.target);
+      if(!invalidFields(form).length) clearValidationSummary(form);
+    });
+    form.addEventListener('change', function(event){
+      if(event.target && event.target.willValidate && event.target.validity.valid) clearFieldError(event.target);
+      if(!invalidFields(form).length) clearValidationSummary(form);
+    });
+    form.addEventListener('submit', function(event){
+      Array.prototype.forEach.call(form.elements || [], clearFieldError);
+      var fields = invalidFields(form);
+      if(fields.length){
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        var copy = validationCopy(form);
+        fields.forEach(function(field){ markFieldError(field, copy); });
+        renderValidationSummary(form, fields);
+      } else {
+        clearValidationSummary(form);
+      }
+    }, true);
+  }
+
   function initForm(form){
     placePdfAction(form);
     prepareStatus(form);
@@ -164,6 +331,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     addIdempotency(form);
     protectReset(form);
     restoreDraft(form);
+    prepareVisibleValidation(form);
     var saveTimer;
     function scheduleSave(){
       window.clearTimeout(saveTimer);
