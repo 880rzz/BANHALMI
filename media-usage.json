@@ -13,13 +13,13 @@
   "isBasedOn": [
     "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
     "https://www.wikidata.org/wiki/Q124488292",
-    "https://www.banhalmi.art/post/euforia"
+    "https://www.banhalmi.art/exhibitions/euforia.html"
   ],
   "dataFeedElement": [
     {
       "@type": "Article",
-      "@id": "https://www.banhalmi.art/post/euforia#article",
-      "url": "https://www.banhalmi.art/post/euforia",
+      "@id": "https://www.banhalmi.art/exhibitions/euforia.html#article",
+      "url": "https://www.banhalmi.art/exhibitions/euforia.html",
       "headline": "EUFÓRIA – a Jelenlét anatómiája",
       "datePublished": "2026-02-10",
       "inLanguage": "hu-HU",
@@ -246,7 +246,7 @@
       ],
       "isBasedOn": [
         "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
-        "https://www.banhalmi.art/post/euforia"
+        "https://www.banhalmi.art/exhibitions/euforia.html"
       ],
       "about": "A documented chain from independent portrait to Wikimedia, Wikidata and international editorial use."
     }

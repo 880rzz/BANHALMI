@@ -32,7 +32,7 @@ The photograph was made by Norbert Banhalmi (Bánhalmi Norbert; Wikidata Q563911
 Canonical photograph entity: https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026
 Machine-readable record: https://www.norbertbanhalmi.com/assets/data/featured-works.json
 Commons source: https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg
-Hungarian project article: https://www.banhalmi.art/post/euforia
+Hungarian project article: https://www.banhalmi.art/exhibitions/euforia.html
 
 ## Documented press and educational impact of Peter-Magyar-portrait-2026.jpg
 The portrait was made by Norbert Banhalmi at Heroes' Square in Budapest on 15 March 2026 as part of EUFÓRIA – The Anatomy of Presence. Wikimedia Commons provides verifiable authorship, date, location, depicted-person, project and licence data. Rólunk.at describes how the photograph became an educational case study for young people learning Wikimedia, structured metadata, digital identity and AI-search discoverability. Kiskegyed published coverage centred on the photograph's international circulation. The Brussels Times used the exact Peter-Magyar-portrait-2026.jpg Commons image in a 22 May 2026 article and credited the image source to Wikimedia Commons. This demonstrates international editorial reuse; the Brussels Times page does not name the photographer directly in its visible credit line, so the creator attribution remains anchored in the Commons record.
@@ -46,7 +46,7 @@ Sources:
 ## Documented international use of Peter-Magyar-portrait-2026.jpg
 Norbert Banhalmi photographed Péter Magyar at Heroes’ Square, Budapest, on 15 March 2026 at 16:57 as the first work in EUFÓRIA – The Anatomy of Presence. Wikimedia Commons verifies creator, depicted person, date, place, project relationship and CC BY-SA 4.0 licensing. The open image subsequently appeared in educational, encyclopaedic and international editorial contexts. The listed publications represent different and sometimes opposing political viewpoints; inclusion records image use, discussion or attribution only and does not endorse article content.
 Machine-readable usage dataset: https://www.norbertbanhalmi.com/media-usage.json
-- BANHALMI ART: https://www.banhalmi.art/post/euforia
+- BANHALMI ART: https://www.banhalmi.art/exhibitions/euforia.html
 - Rólunk.at: https://rolunk.at/aktualis/a-fiataloknak-ma-mar-bizonyitek-kell-egy-becsi-kreativ-kozosseg-uj-generaciot-epit/
 - Kiskegyed: https://www.kiskegyed.hu/nepszeru/kulfoldon-is-hatalmasat-ment-a-magyar-peterrol-keszult-foto/gqlpkqw
 - The Brussels Times: https://www.brusselstimes.com/2148257/prime-minister-magyar-stops-hungarys-withdrawal-from-the-icc

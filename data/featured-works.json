@@ -11,7 +11,7 @@
       "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
       "url": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
       "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        "@id": "https://www.norbertbanhalmi.com/about/"
       },
       "dateCreated": "2026-03-15T16:57:25+01:00",
       "contentLocation": {
@@ -22,7 +22,7 @@
       "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
       "isPartOf": [
         {
-          "@id": "https://www.banhalmi.art/post/euforia#artwork"
+          "@id": "https://www.banhalmi.art/exhibitions/euforia.html#artwork"
         },
         {
           "@id": "https://www.wikidata.org/wiki/Q138717398"
@@ -30,8 +30,8 @@
       ],
       "subjectOf": {
         "@type": "Article",
-        "@id": "https://www.banhalmi.art/post/euforia#article",
-        "url": "https://www.banhalmi.art/post/euforia",
+        "@id": "https://www.banhalmi.art/exhibitions/euforia.html#article",
+        "url": "https://www.banhalmi.art/exhibitions/euforia.html",
         "name": "EUFÓRIA – a Jelenlét anatómiája",
         "headline": "EUFÓRIA – a Jelenlét anatómiája",
         "datePublished": "2026-03-15",
@@ -42,7 +42,7 @@
           "name": "Bánhalmi Norbert e.U."
         },
         "author": {
-          "@id": "https://www.banhalmi.art/norbert-banhalmi",
+          "@id": "https://www.norbertbanhalmi.com/about/",
           "name": "Bánhalmi Norbert"
         },
         "creditText": "The article documents the authorship, depicted person, EUFÓRIA project context and Wikimedia Commons publication of the portrait; it is supporting editorial evidence, not a political endorsement."
@@ -73,7 +73,7 @@
       "height": 1800,
       "creditText": "Photograph by Norbert Banhalmi",
       "copyrightHolder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi"
+        "@id": "https://www.norbertbanhalmi.com/about/"
       },
       "copyrightNotice": "© Norbert Banhalmi. Licensed under CC BY-SA 4.0.",
       "about": {
