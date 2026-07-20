@@ -134,6 +134,9 @@ for(const [file,route] of Object.entries(partnerPages)){
   assert(sitemap.includes(`https://www.norbertbanhalmi.com${route}`), `sitemap missing partner route ${route}`);
 }
 for(const route of ['/partners/','/de-at/partner/','/hu/partnerek/']) assert(read('assets/js/mega-menu.js').includes(route), `mega menu missing partner route ${route}`);
+const megaMenuJs=read('assets/js/mega-menu.js');
+assert(megaMenuJs.includes('https://www.banhalmi.art/'), 'mega menu BANHALMI ART link must use www.banhalmi.art');
+assert(!megaMenuJs.includes('art.norbertbanhalmi.com'), 'mega menu must not point BANHALMI ART to art.norbertbanhalmi.com');
 
 // BANHALMI ART moved from Wix-style query routes to stable localized paths.
 const linkCorpus=htmlFiles().map(read).join('\n')+'\n'+[
