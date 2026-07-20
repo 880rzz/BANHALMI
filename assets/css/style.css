@@ -3573,6 +3573,12 @@ input,select,textarea,button{font-size:max(16px,1rem);}
 .partner-card:hover,.partner-card:focus-visible{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 14px 34px rgba(0,0,0,.08)}
 .partner-logo{display:flex;width:100%;height:112px;align-items:center;justify-content:center}
 .partner-logo img{display:block;max-width:82%;max-height:100%;width:auto;height:auto;object-fit:contain;filter:grayscale(1) brightness(1.35);opacity:.88}
+.partner-logo img[src$="/red-bull.png"],
+.partner-logo img[src$="/ferrari.png"],
+.partner-logo img[src$="/gumball-3000.png"],
+.partner-logo img[src$="/oreo.png"],
+.partner-logo img[src$="/hell-energy.png"],
+.partner-logo img[src$="/the-voice.png"]{filter:none;opacity:1}
 .partner-name{font-size:.78rem;font-weight:650;line-height:1.35;letter-spacing:.04em;text-transform:uppercase}
 .partner-memberships{padding:clamp(4rem,8vw,7rem) 0;background:#f4f3ef}
 .partner-grid-memberships{grid-template-columns:repeat(5,minmax(0,1fr))}

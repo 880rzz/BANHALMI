@@ -117,6 +117,10 @@ assert(partnerData['@type']==='ItemList'&&partnerData.numberOfItems===29, 'partn
 assert(Array.isArray(partnerData.itemListElement)&&partnerData.itemListElement.length===29, 'partners.json item count must equal 29');
 const partnerLogos=fs.readdirSync('assets/img/partners').filter(x=>x.endsWith('.png'));
 assert(partnerLogos.length===29, `expected 29 local partner logos, found ${partnerLogos.length}`);
+const styleCss=read('assets/css/style.css');
+for(const logo of ['red-bull.png','ferrari.png','gumball-3000.png','oreo.png','hell-energy.png','the-voice.png']){
+  assert(styleCss.includes(`img[src$="/${logo}"]`), `detail-rich partner logo must keep original rendering: ${logo}`);
+}
 for(const item of partnerData.itemListElement){
   const logo=new URL(item.item.logo).pathname.replace(/^\//,'');
   assert(exists(logo), `partner logo missing: ${logo}`);
