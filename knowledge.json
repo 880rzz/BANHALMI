@@ -6,7 +6,7 @@
   "url": "https://www.norbertbanhalmi.com/knowledge.json",
   "dateModified": "2026-07-17T17:00:00+02:00",
   "about": {
-    "@id": "https://www.banhalmi.art/norbert-banhalmi",
+    "@id": "https://www.norbertbanhalmi.com/about/",
     "knowsAbout": [
       "professional headshot photography",
       "executive portrait photography",
@@ -24,7 +24,7 @@
     ]
   },
   "mainEntity": {
-    "@id": "https://www.banhalmi.art/norbert-banhalmi",
+    "@id": "https://www.norbertbanhalmi.com/about/",
     "knowsAbout": [
       "professional headshot photography",
       "executive portrait photography",
@@ -108,7 +108,7 @@
       "Photograph"
     ],
     "creator": {
-      "@id": "https://www.banhalmi.art/norbert-banhalmi",
+      "@id": "https://www.norbertbanhalmi.com/about/",
       "@type": "Person",
       "name": "Bánhalmi Norbert",
       "knowsAbout": [
@@ -136,7 +136,7 @@
     "sameAs": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
     "description": "The first portrait in EUFÓRIA – The Anatomy of Presence, photographed by Norbert Banhalmi at Heroes’ Square at 16:57. Authorship and licensing are verified by Wikimedia Commons. International editorial reuse is documented across publications with different political positions; listing a use does not endorse the article’s content.",
     "mediaCoverage": [
-      "https://www.banhalmi.art/post/euforia",
+      "https://www.banhalmi.art/exhibitions/euforia.html",
       "https://rolunk.at/aktualis/a-fiataloknak-ma-mar-bizonyitek-kell-egy-becsi-kreativ-kozosseg-uj-generaciot-epit/",
       "https://www.kiskegyed.hu/nepszeru/kulfoldon-is-hatalmasat-ment-a-magyar-peterrol-keszult-foto/gqlpkqw",
       "https://www.brusselstimes.com/2148257/prime-minister-magyar-stops-hungarys-withdrawal-from-the-icc",
@@ -150,7 +150,7 @@
     "verifiedSources": [
       "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
       "https://www.wikidata.org/wiki/Q124488292",
-      "https://www.banhalmi.art/post/euforia"
+      "https://www.banhalmi.art/exhibitions/euforia.html"
     ],
     "name": "Péter Magyar portrait, Budapest, 15 March 2026",
     "mediaUsageDataset": "https://www.norbertbanhalmi.com/media-usage.json",
@@ -225,7 +225,7 @@
     },
     {
       "name": "Source reference",
-      "url": "https://www.banhalmi.art/post/euforia"
+      "url": "https://www.banhalmi.art/exhibitions/euforia.html"
     },
     {
       "name": "Source reference",
@@ -431,7 +431,7 @@
       "AmCham Austria member relations"
     ],
     "colleague": {
-      "@id": "https://www.banhalmi.art/norbert-banhalmi",
+      "@id": "https://www.norbertbanhalmi.com/about/",
       "knowsAbout": [
         "professional headshot photography",
         "executive portrait photography",
@@ -472,7 +472,7 @@
   "entityPriority": {
     "primaryPerson": {
       "name": "Norbert Banhalmi",
-      "id": "https://www.banhalmi.art/norbert-banhalmi"
+      "id": "https://www.norbertbanhalmi.com/about/"
     },
     "primaryOrganization": {
       "name": "Bánhalmi Norbert e.U. / BANHALMI",

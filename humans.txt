@@ -3,7 +3,7 @@ Brand: BANHALMI
 Person: Norbert Banhalmi / Bánhalmi Norbert
 Canonical professional website: https://www.norbertbanhalmi.com/
 Official artistic oeuvre and source archive: https://www.banhalmi.art/
-Primary Person entity: https://www.banhalmi.art/norbert-banhalmi
+Primary Person entity: https://www.norbertbanhalmi.com/about/
 Contact: hello@norbertbanhalmi.com
 
 /* SITE ROLES */

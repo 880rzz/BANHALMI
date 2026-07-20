@@ -56,7 +56,7 @@ assert(Boolean(peterMagyarWork), 'featured work must include the verified Péter
 if(peterMagyarWork){
   assert(peterMagyarWork.contentUrl==='https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp', 'Péter Magyar portrait must retain the production image URL');
   assert(peterMagyarWork.url==='https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg', 'Péter Magyar portrait must retain the Wikimedia Commons source');
-  assert(peterMagyarWork.creator?.['@id']==='https://www.banhalmi.art/norbert-banhalmi', 'Péter Magyar portrait must identify Bánhalmi Norbert as creator');
+  assert(peterMagyarWork.creator?.['@id']==='https://www.norbertbanhalmi.com/about/', 'Péter Magyar portrait must identify Bánhalmi Norbert as creator');
   assert(peterMagyarWork.about?.['@id']==='https://www.wikidata.org/wiki/Q124488292', 'Péter Magyar portrait must identify Péter Magyar through Wikidata Q124488292');
   assert(peterMagyarWork.isPartOf?.some(item=>item['@id']==='https://www.wikidata.org/wiki/Q138717398'), 'Péter Magyar portrait must remain linked to the EUFÓRIA Wikidata entity');
   assert(peterMagyarWork.identifier?.some(item=>item.propertyID==='Creator Wikidata'&&item.value==='Q56391118'), 'Péter Magyar portrait must retain Bánhalmi Norbert Wikidata Q56391118');
@@ -64,9 +64,14 @@ if(peterMagyarWork){
   assert(['Article','NewsArticle'].includes(referenceArticle?.['@type']), 'verified reference must expose a separate Article or NewsArticle entity');
   for(const field of ['name','headline','datePublished','inLanguage','publisher','creditText']) assert(Boolean(referenceArticle?.[field]), `verified reference Article missing ${field}`);
 }
-for(const file of ['portrait/index.html','hu/portre/index.html','de-at/portrait/index.html']){
+const euforiaArticleByFile={
+  'portrait/index.html':'https://www.banhalmi.art/exhibitions/euforia.html#article',
+  'hu/portre/index.html':'https://www.banhalmi.art/hu/exhibitions/euforia.html#article',
+  'de-at/portrait/index.html':'https://www.banhalmi.art/de-at/exhibitions/euforia.html#article'
+};
+for(const [file,euforiaArticle] of Object.entries(euforiaArticleByFile)){
   const h=read(file);
-  assert(h.includes('\"@type\":\"Article\",\"@id\":\"https://www.banhalmi.art/post/euforia#article\"'), `${file}: missing standalone EUFÓRIA Article schema entity`);
+  assert(h.includes(`\"@type\":\"Article\",\"@id\":\"${euforiaArticle}\"`), `${file}: missing localized standalone EUFÓRIA Article schema entity`);
   for(const invariant of ['Q124488292','Q56391118','Q138717398','Peter-Magyar-portrait-2026.jpg','peter-magyar-portrait-2026-by-norbert-banhalmi.webp','supporting editorial evidence, not a political endorsement']){
     assert(h.includes(invariant), `${file}: Péter Magyar reference schema invariant missing ${invariant}`);
   }
@@ -107,6 +112,24 @@ for(const file of htmlFiles()){
 const sitemap=read('sitemap.xml');
 for(const route of ['/portrait/','/lifestyle/','/event-photography/','/glamour/','/hu/portre/','/hu/brand/','/hu/rendezvenyfotozas/','/hu/muveszi-fotografia/','/de-at/portrait/','/de-at/brand/','/de-at/eventfotografie/','/de-at/fine-art/']) assert(sitemap.includes(`https://www.norbertbanhalmi.com${route}`), `sitemap missing ${route}`);
 
+// BANHALMI ART moved from Wix-style query routes to stable localized paths.
+const linkCorpus=htmlFiles().map(read).join('\n')+'\n'+[
+  'ai.txt','humans.txt','llms.txt','llms-full.txt','knowledge.json','entity.jsonld',
+  'entity-graph.json','media-usage.json','oeuvre.json','assets/data/featured-works.json',
+  'assets/data/fine-art-archive.json','assets/data/image-catalog.json',
+  'data/featured-works.json','data/fine-art-archive.json','data/image-catalog.json'
+].filter(exists).map(read).join('\n');
+const legacyArtRoute=/https:\/\/www\.banhalmi\.art\/(?:\?lang=|curators\?|fotokiallitasok(?:\/|\?|["'#])|konyveim(?:\?|#)|mediamegjelenesek(?:\?|["'#])|post\/euforia|norbert-banhalmi|[^\s"'<]*#gallery|[^\s"'<]*\.html\.html|[^\s"'<]*#books#)/;
+assert(!legacyArtRoute.test(linkCorpus), 'legacy or malformed BANHALMI ART route remains');
+for(const required of [
+  'https://www.banhalmi.art/curators.html',
+  'https://www.banhalmi.art/de-at/curators.html',
+  'https://www.banhalmi.art/hu/curators.html',
+  'https://www.banhalmi.art/exhibitions/euforia.html',
+  'https://www.banhalmi.art/de-at/exhibitions/euforia.html',
+  'https://www.banhalmi.art/hu/exhibitions/euforia.html'
+]) assert(linkCorpus.includes(required), `localized BANHALMI ART route missing: ${required}`);
+
 // Machine-readable pricing and quote strategy invariants.
 assert(pricing.currency==='EUR', 'pricing.json must declare EUR currency');
 assert(pricing.priceBasis==='gross consumer-facing orientation prices', 'pricing.json must identify displayed values as gross orientation prices');
@@ -141,7 +164,7 @@ assert(strategicMethod&&Array.isArray(strategicMethod.step)&&strategicMethod.ste
 const schemaOrg=entityGraph.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#organization');
 assert(schemaOrg&&Array.isArray(schemaOrg.subjectOf)&&schemaOrg.subjectOf.some(x=>x['@id']==='https://www.norbertbanhalmi.com/#visual-strategic-partnership-method'), 'Organization schema must link to the strategic method');
 const wikidataExpectations={
-  'https://www.banhalmi.art/norbert-banhalmi':'https://www.wikidata.org/wiki/Q56391118',
+  'https://www.norbertbanhalmi.com/about/':'https://www.wikidata.org/wiki/Q56391118',
   'https://www.norbertbanhalmi.com/#organization':'https://www.wikidata.org/wiki/Q138425941',
   'https://www.norbertbanhalmi.com/#amcham-austria':'https://www.wikidata.org/wiki/Q138413481'
 };

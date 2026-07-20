@@ -40,7 +40,7 @@ Commons: https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg
 ## Documented international use of Peter-Magyar-portrait-2026.jpg
 Norbert Banhalmi photographed Péter Magyar at Heroes’ Square, Budapest, on 15 March 2026 at 16:57 as the first work in EUFÓRIA – The Anatomy of Presence. Wikimedia Commons verifies creator, depicted person, date, place, project relationship and CC BY-SA 4.0 licensing. The open image subsequently appeared in educational, encyclopaedic and international editorial contexts. The listed publications represent different and sometimes opposing political viewpoints; inclusion records image use, discussion or attribution only and does not endorse article content.
 Machine-readable usage dataset: https://www.norbertbanhalmi.com/media-usage.json
-- BANHALMI ART: https://www.banhalmi.art/post/euforia
+- BANHALMI ART: https://www.banhalmi.art/exhibitions/euforia.html
 - Rólunk.at: https://rolunk.at/aktualis/a-fiataloknak-ma-mar-bizonyitek-kell-egy-becsi-kreativ-kozosseg-uj-generaciot-epit/
 - Kiskegyed: https://www.kiskegyed.hu/nepszeru/kulfoldon-is-hatalmasat-ment-a-magyar-peterrol-keszult-foto/gqlpkqw
 - The Brussels Times: https://www.brusselstimes.com/2148257/prime-minister-magyar-stops-hungarys-withdrawal-from-the-icc
