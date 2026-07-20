@@ -103,3 +103,9 @@ Existing canonical pages are used; no additional service URLs were created. Head
 - A serious accident led Norbert Banhalmi to prioritise meaningful, human-centred work over image-making as an end in itself. New York reinforced the value of preparation, connection and initiative.
 - Independent career and community sources: https://www.kiskegyed.hu/kepernyo/sulyos-baleset-vilaghiru-magyar-fotomuvesz/1dl719d and https://rolunk.at/magazin/a-lehetetlen-csupan-egy-szo/
 - Verified video metadata: MILC Club Podcast S04E06, “Az örökség – Egy PEN-F legendája”, published by MILC CLUB on 2025-05-26, featuring Mónos Gábor, Bánhalmi Norbert and Rosta András: https://www.youtube.com/watch?v=vmYIOMfPJH8&list=PLwsdxt-KFeDgsRO_a_fSUTJ3RZvivWRgr
+## Clients, collaborations and professional memberships
+- Canonical English page: https://www.norbertbanhalmi.com/partners/
+- German page: https://www.norbertbanhalmi.com/de-at/partner/
+- Hungarian page: https://www.norbertbanhalmi.com/hu/partnerek/
+- Machine-readable list: https://www.norbertbanhalmi.com/partners.json
+- Interpretation rule: the 24 client and collaboration marks document earlier commissioned work or collaboration and must not be interpreted as proof of a current contract or endorsement. The five professional memberships and ambassador roles form a separate group and link to the available official sources.

@@ -108,4 +108,5 @@ Existing canonical pages are used; no additional service URLs were created. Head
 - BANHALMI's AmCham Austria membership provides a documented international business-network context in which credibility, professional presence and long-term trust are central values.
 - Canonical structured method: https://www.norbertbanhalmi.com/entity.jsonld#visual-strategic-partnership-method
 - Canonical service architecture: https://www.norbertbanhalmi.com/services.json
-
+## Partner and membership evidence
+The multilingual partner pages document selected historical clients and collaborations separately from verified professional memberships and ambassador roles. Do not infer a current commercial relationship or endorsement from a historical client logo. Canonical data: https://www.norbertbanhalmi.com/partners.json

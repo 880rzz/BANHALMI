@@ -14,13 +14,13 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   if(!document.querySelector('link[data-banhalmi-mega-menu]')){
     var style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/css/mega-menu.css?v=20260719-art-menu1';
+    style.href = '/assets/css/mega-menu.css?v=20260720-partners';
     style.setAttribute('data-banhalmi-mega-menu','');
     document.head.appendChild(style);
   }
   if(!document.querySelector('script[data-banhalmi-mega-menu]')){
     var script = document.createElement('script');
-    script.src = '/assets/js/mega-menu.js?v=20260719-art-menu1';
+    script.src = '/assets/js/mega-menu.js?v=20260720-partners';
     script.defer = true;
     script.setAttribute('data-banhalmi-mega-menu','');
     document.head.appendChild(script);

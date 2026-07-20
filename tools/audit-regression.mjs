@@ -111,6 +111,25 @@ for(const file of htmlFiles()){
 }
 const sitemap=read('sitemap.xml');
 for(const route of ['/portrait/','/lifestyle/','/event-photography/','/glamour/','/hu/portre/','/hu/brand/','/hu/rendezvenyfotozas/','/hu/muveszi-fotografia/','/de-at/portrait/','/de-at/brand/','/de-at/eventfotografie/','/de-at/fine-art/']) assert(sitemap.includes(`https://www.norbertbanhalmi.com${route}`), `sitemap missing ${route}`);
+const partnerPages={'partners/index.html':'/partners/','de-at/partner/index.html':'/de-at/partner/','hu/partnerek/index.html':'/hu/partnerek/'};
+const partnerData=JSON.parse(read('partners.json'));
+assert(partnerData['@type']==='ItemList'&&partnerData.numberOfItems===29, 'partners.json must expose all 29 documented organizations');
+assert(Array.isArray(partnerData.itemListElement)&&partnerData.itemListElement.length===29, 'partners.json item count must equal 29');
+const partnerLogos=fs.readdirSync('assets/img/partners').filter(x=>x.endsWith('.png'));
+assert(partnerLogos.length===29, `expected 29 local partner logos, found ${partnerLogos.length}`);
+for(const item of partnerData.itemListElement){
+  const logo=new URL(item.item.logo).pathname.replace(/^\//,'');
+  assert(exists(logo), `partner logo missing: ${logo}`);
+}
+for(const [file,route] of Object.entries(partnerPages)){
+  const h=read(file);
+  assert(h.includes(`rel="canonical"`)&&h.includes(`https://www.norbertbanhalmi.com${route}`), `${file}: partner canonical missing`);
+  assert((h.match(/class="partner-card"/g)||[]).length===29, `${file}: must render 29 partner cards`);
+  assert((h.match(/hreflang=/g)||[]).length>=7, `${file}: localized partner hreflang links missing`);
+  assert(h.includes('https://www.norbertbanhalmi.com/partners/#organizations'), `${file}: partner ItemList schema missing`);
+  assert(sitemap.includes(`https://www.norbertbanhalmi.com${route}`), `sitemap missing partner route ${route}`);
+}
+for(const route of ['/partners/','/de-at/partner/','/hu/partnerek/']) assert(read('assets/js/mega-menu.js').includes(route), `mega menu missing partner route ${route}`);
 
 // BANHALMI ART moved from Wix-style query routes to stable localized paths.
 const linkCorpus=htmlFiles().map(read).join('\n')+'\n'+[
