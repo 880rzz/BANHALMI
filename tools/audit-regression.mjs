@@ -164,7 +164,12 @@ assert(eventPricing&&eventPricing.name.en==='C-Level Event Photography', 'pricin
 const qjsMirror=read('js/quote-calculator.js');
 assert(qjs===qjsMirror, 'quote calculator source mirrors must remain identical');
 assert(qjs.includes("root.querySelector('[data-estimate-vat-note]')||root.querySelector('[data-vat-note]')"), 'quote calculator must update the rendered VAT note with backwards-compatible selectors');
-for(const p of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/anfrage/index.html']) assert(read(p).includes('data-vat-note'), `${p}: visible VAT note is missing`);
+for(const p of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/anfrage/index.html']) {
+  const quotePage=read(p);
+  assert(quotePage.includes('data-vat-note'), `${p}: visible VAT note is missing`);
+  assert((quotePage.match(/class="quote-disclaimer"/g)||[]).length===1, `${p}: must retain exactly one complete estimate disclaimer`);
+  assert(!quotePage.includes('preliminary-quote-warning'), `${p}: duplicate preliminary estimate warning must not return`);
+}
 
 
 
