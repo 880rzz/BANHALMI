@@ -151,6 +151,14 @@ const linkCorpus=htmlFiles().map(read).join('\n')+'\n'+[
   'assets/data/fine-art-archive.json','assets/data/image-catalog.json',
   'data/featured-works.json','data/fine-art-archive.json','data/image-catalog.json'
 ].filter(exists).map(read).join('\n');
+const wkoProfileUrl='https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-für-führungskräfte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40';
+const normalizedWkoCorpus=linkCorpus.replaceAll('&amp;','&');
+const wkoProfileMatches=[...normalizedWkoCorpus.matchAll(/https:\/\/firmen\.wko\.at\/norbert-banhalmi[^"'\s<>\\)]+/g)].map(m=>m[0]);
+assert(wkoProfileMatches.length>0, 'WKO company profile link is missing');
+assert(wkoProfileMatches.every(url=>url===wkoProfileUrl), 'outdated or inconsistent WKO company profile link remains');
+for(const legacyWkoMarker of ['norbert-banhalmi-executive-portr','standortid=1','suchbegriff=norbert%20banhalmi%20executive','visuelle-positionieru']) {
+  assert(!normalizedWkoCorpus.includes(legacyWkoMarker), `legacy WKO company profile marker remains: ${legacyWkoMarker}`);
+}
 const legacyArtRoute=/https:\/\/www\.banhalmi\.art\/(?:\?lang=|curators\?|fotokiallitasok(?:\/|\?|["'#])|konyveim(?:\?|#)|mediamegjelenesek(?:\?|["'#])|post\/euforia|norbert-banhalmi|[^\s"'<]*#gallery|[^\s"'<]*\.html\.html|[^\s"'<]*#books#)/;
 assert(!legacyArtRoute.test(linkCorpus), 'legacy or malformed BANHALMI ART route remains');
 for(const required of [
