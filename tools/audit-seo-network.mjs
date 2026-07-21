@@ -120,7 +120,9 @@ async function runNetworkAudit() {
     while (queue.length) results.push(await checkUrl(queue.shift()));
   });
   await Promise.all(workers);
-  for (const result of results.sort((a, b) => a.url.localeCompare(b.url))) {
+  results.sort((a, b) => a.url.localeCompare(b.url));
+  fs.writeFileSync('link-audit-results.json', JSON.stringify({ generatedAt: new Date().toISOString(), checked: results.length, results }, null, 2) + '\n');
+  for (const result of results) {
     if (!result.reachable) failures.push(`unreachable external URL: ${result.url} (${result.status || result.error})`);
     else if (result.status >= 300) warnings.push(`external URL returned ${result.status}: ${result.url}`);
   }
