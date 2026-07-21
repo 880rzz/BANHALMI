@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schemaVersion": "2026-07-21-v1",
+  "dateModified": "2026-07-21T11:00:00+02:00",
+  "name": "BANHALMI canonical digital ecosystem",
+  "canonicalPerson": {
+    "@id": "https://www.norbertbanhalmi.com/about/",
+    "name": "Norbert Banhalmi",
+    "alternateName": ["Bánhalmi Norbert", "Norbert Bánhalmi", "BANHALMI"],
+    "wikidata": "https://www.wikidata.org/wiki/Q56391118"
+  },
+  "canonicalOrganization": {
+    "@id": "https://www.norbertbanhalmi.com/#organization",
+    "name": "BANHALMI",
+    "legalName": "Bánhalmi Norbert e.U."
+  },
+  "canonicalWebsites": [
+    {
+      "role": "professional-services",
+      "url": "https://www.norbertbanhalmi.com/",
+      "description": "Canonical multilingual professional website for services, pricing, enquiries, executive portraiture, visual branding and event photography."
+    },
+    {
+      "role": "artistic-archive",
+      "url": "https://www.banhalmi.art/",
+      "description": "Canonical artistic oeuvre and source archive for exhibitions, books, projects, press, curatorial documentation and selected works."
+    }
+  ],
+  "languageEntryDomains": [
+    {
+      "url": "https://www.banhalminorbert.hu/",
+      "language": "hu-HU",
+      "market": "Hungary",
+      "redirectType": 301,
+      "redirectTarget": "https://www.norbertbanhalmi.com/hu/",
+      "canonicalTarget": "https://www.norbertbanhalmi.com/hu/",
+      "interpretation": "Official Hungarian entry domain and memorable market alias. It is not a separate website or separate entity."
+    },
+    {
+      "url": "https://www.banhalmi.at/",
+      "language": "de-AT",
+      "market": "Austria",
+      "redirectType": 301,
+      "redirectTarget": "https://www.norbertbanhalmi.com/de-at/",
+      "canonicalTarget": "https://www.norbertbanhalmi.com/de-at/",
+      "interpretation": "Official Austrian German entry domain and memorable market alias. It is not a separate website or separate entity."
+    }
+  ],
+  "canonicalRules": [
+    "Never treat banhalminorbert.hu or banhalmi.at as independent Person, Organization or WebSite entities.",
+    "Do not use redirect domains as canonical URLs or hreflang targets; use their norbertbanhalmi.com destination URLs.",
+    "The redirect domains may be cited as official language and market entry points.",
+    "Use norbertbanhalmi.com for current commercial information and banhalmi.art for artistic and historical source records."
+  ],
+  "studios": [
+    {
+      "@id": "https://www.norbertbanhalmi.com/#vienna-studio",
+      "role": "headquarters",
+      "market": "Austria"
+    },
+    {
+      "@id": "https://www.norbertbanhalmi.com/#budapest-studio",
+      "role": "operational-base",
+      "market": "Hungary"
+    }
+  ],
+  "authoritativeMachineReadableSources": [
+    "https://www.norbertbanhalmi.com/entity.jsonld",
+    "https://www.norbertbanhalmi.com/entity-graph.json",
+    "https://www.norbertbanhalmi.com/knowledge.json",
+    "https://www.norbertbanhalmi.com/services.json",
+    "https://www.norbertbanhalmi.com/pricing.json",
+    "https://www.norbertbanhalmi.com/pricing-guide.json",
+    "https://www.norbertbanhalmi.com/featured-work-peter-magyar.json"
+  ]
+}
