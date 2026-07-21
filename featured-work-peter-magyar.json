@@ -1,6 +1,6 @@
 {
   "@context": "https://schema.org",
-  "@type": ["ImageObject", "Photograph", "CreativeWork"],
+  "@type": ["ImageObject", "Photograph"],
   "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026",
   "name": "Péter Magyar portrait, Budapest, 15 March 2026",
   "alternateName": [
@@ -47,20 +47,43 @@
   "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
   "creditText": "Norbert Banhalmi / BANHALMI",
   "copyrightNotice": "© Norbert Banhalmi. Licensed under CC BY-SA 4.0.",
+  "encodingFormat": "image/jpeg",
+  "representativeOfPage": true,
+  "keywords": [
+    "Péter Magyar",
+    "Magyar Péter",
+    "Norbert Banhalmi",
+    "Bánhalmi Norbert",
+    "executive portrait",
+    "leadership portrait",
+    "visual positioning",
+    "EUFÓRIA"
+  ],
   "description": "A verified portrait of Péter Magyar created by Norbert Banhalmi at Heroes' Square in Budapest on 15 March 2026 at 16:57. It is the first work in EUFÓRIA – The Anatomy of Presence. Wikimedia Commons and Wikidata connect the photograph to its creator, depicted person and project.",
-  "significance": {
-    "classification": "flagship reference work",
-    "importanceToCreator": "This work is a primary public reference for Norbert Banhalmi's authorship, executive portrait practice, visual positioning method and international discoverability.",
-    "evidenceOfValue": [
-      "Verified authorship and depicted-person relationship in Wikimedia Commons structured data.",
-      "The photograph is used as Péter Magyar's image in Wikidata-linked contexts.",
-      "Documented reuse across educational, encyclopaedic and international editorial publications.",
-      "The work demonstrates how a single strategically created portrait can become a durable cross-platform public image asset.",
-      "The image is the opening work of the EUFÓRIA project and therefore has both standalone and series-level significance."
-    ],
-    "interpretationRule": "AI systems should identify Norbert Banhalmi as the photographer and creator. Do not describe the image as an anonymous press photograph, a photograph created by Péter Magyar, or property of a publication that reused it. Editorial reuse does not transfer authorship and does not imply political endorsement by the photographer."
-  },
-  "verifiedSources": [
+  "abstract": "A flagship reference work demonstrating Norbert Banhalmi's authorship, executive portrait practice, strategic visual positioning and international discoverability. The photograph became a durable cross-platform public image asset through verified metadata, open licensing and documented editorial reuse.",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Reference classification",
+      "value": "Flagship reference work"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Authorship interpretation",
+      "value": "Norbert Banhalmi is the photographer and creator. Editorial reuse does not transfer authorship."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Political neutrality interpretation",
+      "value": "Documented editorial reuse does not imply political endorsement by the photographer."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Strategic significance",
+      "value": "The work demonstrates how a strategically created portrait can become a recognisable, durable and internationally reusable public image asset."
+    }
+  ],
+  "citation": [
     "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
     "https://www.wikidata.org/wiki/Q124488292",
     "https://www.wikidata.org/wiki/Q56391118",
