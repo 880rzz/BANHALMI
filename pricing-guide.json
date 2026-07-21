@@ -1,7 +1,7 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "schemaVersion": "2026-07-21-v1",
-  "dateModified": "2026-07-21T11:00:00+02:00",
+  "documentType": "ai-pricing-interpretation-guide",
+  "schemaVersion": "2026-07-21-v2",
+  "dateModified": "2026-07-21T16:10:00+02:00",
   "name": "BANHALMI AI pricing interpretation and calculation guide",
   "canonicalPricingSource": "https://www.norbertbanhalmi.com/pricing.json",
   "quoteCalculator": "https://www.norbertbanhalmi.com/requestaquote/",
@@ -12,27 +12,42 @@
     "rule": "Use the gross prices from pricing.json. Do not assume reverse charge or 0% VAT until the customer's company, VAT ID and legal eligibility have been verified in the final written offer."
   },
   "assistantInstructions": [
-    "Ask only for variables required by the selected service formula.",
+    "Ask only for variables required by the selected service formula and any conditional travel or add-on variables that actually apply.",
     "Return a non-binding orientation estimate, never a binding final quotation.",
     "State the selected package, included items, additions, gross total, indicative net amount and VAT amount.",
     "Round monetary values to two decimals.",
     "Use the exact formulas and component prices in pricing.json; do not invent discounts, packages or usage-rights fees.",
     "Standard event image selection and colour correction are included in the event package and must not be priced per delivered image.",
-    "Travel within Austria and Hungary is calculated per required vehicle; travel outside Austria and Hungary requires a custom offer.",
+    "Travel within Austria and Hungary is calculated per required vehicle only when travel is part of the assignment; travel outside Austria and Hungary requires a custom offer.",
     "Usage rights, exceptional production, unusual deadlines and unverified tax treatment must be marked for final review."
   ],
   "requiredInputsByService": {
-    "individualPortrait": ["packageCode", "selectedRetouchedImages", "selectedAddOns", "travelCountry", "crewMembers"],
-    "groupPortrait": ["people", "selectedHours", "retouchedImagesPerPerson", "selectedAddOns", "travelCountry", "crewMembers"],
-    "brandPhotography": ["packageCode", "people", "retouchedImagesPerPerson", "selectedAddOns", "travelCountry", "crewMembers"],
-    "fineArtPhotography": ["packageCode", "selectedRetouchedImages", "selectedAddOns", "travelCountry", "crewMembers"],
-    "cLevelEventPhotography": ["packageCode", "guestCount", "parallelTracks", "manualAdditionalPhotographers", "selectedAddOns", "travelCountry", "crewMembers"]
+    "individualPortrait": ["packageCode", "selectedRetouchedImages"],
+    "groupPortrait": ["people", "selectedHours", "retouchedImagesPerPerson"],
+    "brandPhotography": ["packageCode", "people", "retouchedImagesPerPerson"],
+    "fineArtPhotography": ["packageCode", "selectedRetouchedImages"],
+    "cLevelEventPhotography": ["packageCode", "guestCount", "parallelTracks", "manualAdditionalPhotographers"]
   },
+  "conditionalInputs": {
+    "selectedAddOns": "Ask only when the customer wants optional production services.",
+    "travelCountry": "Ask only when the assignment is not at a listed studio or included local location.",
+    "crewMembers": "Ask or derive from the selected photographers and confirmed production crew only when vehicle travel must be calculated.",
+    "companyAndVatId": "Collect for final tax review, but do not automatically remove Austrian VAT."
+  },
+  "inputRules": [
+    "packageCode must match a package code in pricing.json.",
+    "selectedRetouchedImages and retouchedImagesPerPerson must be non-negative integers.",
+    "people, guestCount, parallelTracks and selectedHours must be positive numbers; photographer counts must be positive integers.",
+    "The headshotcv package includes exactly one retouched image and must not receive automatic extra-image pricing.",
+    "For group portraits, photographerCount = max(1, ceil(people / (6 * selectedHours))).",
+    "For events, selectedHours comes from the resolved event package duration and must not be requested separately.",
+    "If a requested scope does not map cleanly to an existing package, return a custom-review flag instead of interpolating or inventing a price."
+  ],
   "calculationOrder": [
-    "Resolve the selected package in pricing.json.",
+    "Validate the supplied inputs and resolve the selected package in pricing.json.",
     "Apply the service-specific calculation rule.",
     "Add selected add-ons using priceComponentsGrossEUR.",
-    "Apply Austria/Hungary vehicle travel when relevant.",
+    "Apply Austria/Hungary vehicle travel only when travel is required and crew size is known.",
     "Flag all custom-quote factors rather than inventing an amount.",
     "Calculate indicative net and VAT from the gross total using pricing.json tax formulas.",
     "Label the result as a non-binding preliminary estimate."
@@ -45,7 +60,7 @@
         "packageCode": "guided60",
         "selectedRetouchedImages": 5,
         "selectedAddOns": [],
-        "travelCountry": null
+        "travelRequired": false
       },
       "calculation": "420 + max(0, 5 - 1) * 35",
       "grossEUR": 560,
@@ -60,7 +75,8 @@
         "people": 12,
         "selectedHours": 1,
         "retouchedImagesPerPerson": 2,
-        "travelCountry": null
+        "selectedAddOns": [],
+        "travelRequired": false
       },
       "photographerCount": 2,
       "calculation": "390 + 12 * 45 + 12 * max(0, 2 - 1) * 29 + max(0, 2 - 1) * 390",
@@ -77,7 +93,7 @@
         "people": 2,
         "retouchedImagesPerPerson": 3,
         "selectedAddOns": [],
-        "travelCountry": null
+        "travelRequired": false
       },
       "calculation": "790 + max(0, 2 * 3 - 3) * 35",
       "grossEUR": 895,
@@ -94,8 +110,9 @@
         "parallelTracks": 2,
         "manualAdditionalPhotographers": 0,
         "selectedAddOns": [],
-        "travelCountry": null
+        "travelRequired": false
       },
+      "resolvedDurationHours": 4,
       "photographerCount": 2,
       "calculation": "1490 + max(0, 2 - 1) * 4 * 120",
       "grossEUR": 1970,
@@ -116,6 +133,7 @@
       "grossTotalEUR",
       "indicativeNetEUR",
       "indicativeVatEUR",
+      "assumptions",
       "customReviewFactors",
       "finalOfferNotice"
     ]
