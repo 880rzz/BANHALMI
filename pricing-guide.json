@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schemaVersion": "2026-07-21-v1",
+  "dateModified": "2026-07-21T11:00:00+02:00",
+  "name": "BANHALMI AI pricing interpretation and calculation guide",
+  "canonicalPricingSource": "https://www.norbertbanhalmi.com/pricing.json",
+  "quoteCalculator": "https://www.norbertbanhalmi.com/requestaquote/",
+  "currency": "EUR",
+  "defaultTaxTreatment": {
+    "displayMode": "gross",
+    "austrianVatPercent": 20,
+    "rule": "Use the gross prices from pricing.json. Do not assume reverse charge or 0% VAT until the customer's company, VAT ID and legal eligibility have been verified in the final written offer."
+  },
+  "assistantInstructions": [
+    "Ask only for variables required by the selected service formula.",
+    "Return a non-binding orientation estimate, never a binding final quotation.",
+    "State the selected package, included items, additions, gross total, indicative net amount and VAT amount.",
+    "Round monetary values to two decimals.",
+    "Use the exact formulas and component prices in pricing.json; do not invent discounts, packages or usage-rights fees.",
+    "Standard event image selection and colour correction are included in the event package and must not be priced per delivered image.",
+    "Travel within Austria and Hungary is calculated per required vehicle; travel outside Austria and Hungary requires a custom offer.",
+    "Usage rights, exceptional production, unusual deadlines and unverified tax treatment must be marked for final review."
+  ],
+  "requiredInputsByService": {
+    "individualPortrait": ["packageCode", "selectedRetouchedImages", "selectedAddOns", "travelCountry", "crewMembers"],
+    "groupPortrait": ["people", "selectedHours", "retouchedImagesPerPerson", "selectedAddOns", "travelCountry", "crewMembers"],
+    "brandPhotography": ["packageCode", "people", "retouchedImagesPerPerson", "selectedAddOns", "travelCountry", "crewMembers"],
+    "fineArtPhotography": ["packageCode", "selectedRetouchedImages", "selectedAddOns", "travelCountry", "crewMembers"],
+    "cLevelEventPhotography": ["packageCode", "guestCount", "parallelTracks", "manualAdditionalPhotographers", "selectedAddOns", "travelCountry", "crewMembers"]
+  },
+  "calculationOrder": [
+    "Resolve the selected package in pricing.json.",
+    "Apply the service-specific calculation rule.",
+    "Add selected add-ons using priceComponentsGrossEUR.",
+    "Apply Austria/Hungary vehicle travel when relevant.",
+    "Flag all custom-quote factors rather than inventing an amount.",
+    "Calculate indicative net and VAT from the gross total using pricing.json tax formulas.",
+    "Label the result as a non-binding preliminary estimate."
+  ],
+  "workedExamples": [
+    {
+      "id": "individual-guided60-five-images",
+      "service": "individualPortrait",
+      "inputs": {
+        "packageCode": "guided60",
+        "selectedRetouchedImages": 5,
+        "selectedAddOns": [],
+        "travelCountry": null
+      },
+      "calculation": "420 + max(0, 5 - 1) * 35",
+      "grossEUR": 560,
+      "netEUR": 466.67,
+      "vatEUR": 93.33,
+      "explanation": "The guided60 package is EUR 420 gross. One retouched image is included; four additional images cost EUR 35 gross each."
+    },
+    {
+      "id": "group-twelve-people-one-hour-two-images-each",
+      "service": "groupPortrait",
+      "inputs": {
+        "people": 12,
+        "selectedHours": 1,
+        "retouchedImagesPerPerson": 2,
+        "travelCountry": null
+      },
+      "photographerCount": 2,
+      "calculation": "390 + 12 * 45 + 12 * max(0, 2 - 1) * 29 + max(0, 2 - 1) * 390",
+      "grossEUR": 1668,
+      "netEUR": 1390,
+      "vatEUR": 278,
+      "explanation": "At six people per photographer per hour, twelve people require two photographers. Each person receives one included retouched image; the second image costs EUR 29 gross per person."
+    },
+    {
+      "id": "brand120-two-people-three-images-each",
+      "service": "brandPhotography",
+      "inputs": {
+        "packageCode": "brand120",
+        "people": 2,
+        "retouchedImagesPerPerson": 3,
+        "selectedAddOns": [],
+        "travelCountry": null
+      },
+      "calculation": "790 + max(0, 2 * 3 - 3) * 35",
+      "grossEUR": 895,
+      "netEUR": 745.83,
+      "vatEUR": 149.17,
+      "explanation": "The brand package includes three retouched images total per project, not per person. Three additional images are charged at EUR 35 gross each."
+    },
+    {
+      "id": "event-four-hours-400-guests-two-tracks",
+      "service": "cLevelEventPhotography",
+      "inputs": {
+        "packageCode": "event240",
+        "guestCount": 400,
+        "parallelTracks": 2,
+        "manualAdditionalPhotographers": 0,
+        "selectedAddOns": [],
+        "travelCountry": null
+      },
+      "photographerCount": 2,
+      "calculation": "1490 + max(0, 2 - 1) * 4 * 120",
+      "grossEUR": 1970,
+      "netEUR": 1641.67,
+      "vatEUR": 328.33,
+      "explanation": "Two parallel tracks require two photographers. Standard event selection and colour correction remain included and are not billed per delivered image."
+    }
+  ],
+  "responseTemplate": {
+    "status": "Non-binding preliminary estimate",
+    "fields": [
+      "service",
+      "selectedPackage",
+      "basePackageGrossEUR",
+      "includedItems",
+      "additionalItems",
+      "travelGrossEUR",
+      "grossTotalEUR",
+      "indicativeNetEUR",
+      "indicativeVatEUR",
+      "customReviewFactors",
+      "finalOfferNotice"
+    ]
+  },
+  "finalOfferNotice": "The final written offer is issued after review of purpose, location, number of people and photographers, production requirements, usage rights, deadline, travel and tax status."
+}
