@@ -27,6 +27,8 @@ jobs:
       - run: npm install
       - name: Run deterministic audit
         run: npm run audit
+      - name: Check live endpoints and external links
+        run: npm run audit:live
       - name: Commit normalized compliance text
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         shell: bash
