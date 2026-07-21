@@ -21,6 +21,12 @@ function extract(html, pattern) {
   return [...html.matchAll(pattern)].map((match) => match[1]);
 }
 
+function parseAttributes(tag) {
+  const attrs = {};
+  for (const match of tag.matchAll(/([:\w-]+)\s*=\s*["']([^"']*)["']/g)) attrs[match[1].toLowerCase()] = match[2];
+  return attrs;
+}
+
 for (const required of ['robots.txt', 'sitemap.xml', 'llms.txt', 'knowledge.json', 'services.json', 'partners.json']) {
   assert(exists(required), `missing required machine-readable file: ${required}`);
 }
@@ -58,11 +64,12 @@ for (const url of sitemapUrls) {
   assert(exists(file), `sitemap URL has no local HTML file: ${url} -> ${file}`);
   if (!exists(file)) continue;
   const html = read(file);
-  const canonical = html.match(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/i)?.[1]
-    || html.match(/<link\b[^>]*href=["']([^"']+)["'][^>]*rel=["']canonical["']/i)?.[1];
+  const linkTags = [...html.matchAll(/<link\b[^>]*>/gi)].map((m) => parseAttributes(m[0]));
+  const canonical = linkTags.find((attrs) => (attrs.rel || '').toLowerCase().split(/\s+/).includes('canonical'))?.href;
   assert(canonical === url, `${file}: canonical mismatch (${canonical || 'missing'} != ${url})`);
-  const alternates = [...html.matchAll(/<link\b[^>]*hreflang=["']([^"']+)["'][^>]*href=["']([^"']+)["']/gi)]
-    .map((m) => ({ lang: m[1], href: m[2] }));
+  const alternates = linkTags
+    .filter((attrs) => attrs.hreflang && attrs.href && (attrs.rel || '').toLowerCase().split(/\s+/).includes('alternate'))
+    .map((attrs) => ({ lang: attrs.hreflang, href: attrs.href }));
   assert(alternates.some((item) => item.lang.toLowerCase() === 'x-default'), `${file}: missing x-default hreflang`);
   const duplicateLangs = alternates.map((item) => item.lang.toLowerCase()).filter((lang, i, all) => all.indexOf(lang) !== i);
   assert(!duplicateLangs.length, `${file}: duplicate hreflang values ${[...new Set(duplicateLangs)].join(', ')}`);
