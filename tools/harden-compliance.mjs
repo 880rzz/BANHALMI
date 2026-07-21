@@ -25,6 +25,10 @@ const replacements = [
   [
     'Ich habe die Datenschutzerklärung gelesen und stimme zu, dass meine Angaben zur Beantwortung meiner Anfrage verwendet werden.',
     'Ich habe die Datenschutzerklärung gelesen und zur Kenntnis genommen.'
+  ],
+  [
+    'https://www.milcclub.com/post/amikor-csak-egy-t%C3%A1ncpartnered-van-eg%C3%A9sz-est%C3%A9reambassadors',
+    'https://www.milcclub.com/post/amikor-csak-egy-t%C3%A1ncpartnered-van-eg%C3%A9sz-est%C3%A9re'
   ]
 ];
 
@@ -40,4 +44,4 @@ for (const file of htmlFiles) {
   }
 }
 
-console.log(`Compliance wording normalized in ${changed} HTML file(s).`);
+console.log(`Compliance and known-link hardening applied to ${changed} HTML file(s).`);
