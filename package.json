@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "audit": "node tools/audit-regression.mjs && node tests/quote-pdf-content.test.mjs",
+    "audit": "node tools/harden-compliance.mjs && node tools/audit-regression.mjs && node tools/audit-seo-network.mjs && node tests/quote-pdf-content.test.mjs",
+    "audit:live": "LIVE_AUDIT=1 node tools/audit-seo-network.mjs || node tools/classify-link-report.mjs",
     "test:browser": "playwright test"
   },
   "devDependencies": {
