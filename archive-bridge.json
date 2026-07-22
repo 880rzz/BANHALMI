@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "updated": "2026-07-22",
+  "professionalSite": "https://www.norbertbanhalmi.com/",
+  "authoritativeArtArchive": "https://www.banhalmi.art/",
+  "purpose": "Machine-readable bridge between current professional case studies and authoritative oeuvre records.",
+  "featuredNodes": [
+    {
+      "identifier": "banhalmi:work:peter-magyar-portrait-2026",
+      "professionalUrl": "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
+      "archiveUrl": "https://www.banhalmi.art/works/peter-magyar-portrait-2026.html",
+      "localized": {
+        "hu": {"professional":"https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/","archive":"https://www.banhalmi.art/hu/works/magyar-peter-portre-2026.html"},
+        "de-AT": {"professional":"https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/","archive":"https://www.banhalmi.art/de-at/works/peter-magyar-portraet-2026.html"}
+      }
+    },
+    {
+      "identifier": "banhalmi:exhibition:milestones-1956-new-york-2016",
+      "archiveUrl": "https://www.banhalmi.art/exhibitions/merfoldkovek1956.html",
+      "localized": {
+        "hu":"https://www.banhalmi.art/hu/exhibitions/merfoldkovek1956.html",
+        "de-AT":"https://www.banhalmi.art/de-at/exhibitions/merfoldkovek1956.html"
+      }
+    },
+    {
+      "identifier": "banhalmi:exhibition:awakening-2017-2018",
+      "archiveUrl": "https://www.banhalmi.art/exhibitions/ebredes.html",
+      "localized": {
+        "hu":"https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+        "de-AT":"https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
+      }
+    }
+  ]
+}
