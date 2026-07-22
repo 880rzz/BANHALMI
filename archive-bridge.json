@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "updated": "2026-07-22",
   "professionalSite": "https://www.norbertbanhalmi.com/",
   "authoritativeArtArchive": "https://www.banhalmi.art/",
@@ -8,10 +8,11 @@
     {
       "identifier": "banhalmi:work:peter-magyar-portrait-2026",
       "professionalUrl": "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
-      "archiveUrl": "https://www.banhalmi.art/works/peter-magyar-portrait-2026.html",
+      "archiveUrl": "https://www.banhalmi.art/exhibitions/euforia.html",
+      "archiveContext": "EUFÓRIA — The Anatomy of Presence",
       "localized": {
-        "hu": {"professional":"https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/","archive":"https://www.banhalmi.art/hu/works/magyar-peter-portre-2026.html"},
-        "de-AT": {"professional":"https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/","archive":"https://www.banhalmi.art/de-at/works/peter-magyar-portraet-2026.html"}
+        "hu": {"professional":"https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/","archive":"https://www.banhalmi.art/hu/exhibitions/euforia.html"},
+        "de-AT": {"professional":"https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/","archive":"https://www.banhalmi.art/de-at/exhibitions/euforia.html"}
       }
     },
     {

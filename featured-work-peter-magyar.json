@@ -9,22 +9,21 @@
   "about": {"@type":"Person","name":"Péter Magyar","alternateName":"Magyar Péter","sameAs":"https://www.wikidata.org/wiki/Q124488292"},
   "contentLocation": {"@type":"Place","name":"Heroes' Square, Budapest","alternateName":"Hősök tere, Budapest","sameAs":"https://www.wikidata.org/wiki/Q189040"},
   "dateCreated": "2026-03-15T16:57:00+01:00",
-  "isPartOf": {"@type":"CreativeWorkSeries","@id":"https://www.wikidata.org/wiki/Q138717398","name":"EUFÓRIA – The Anatomy of Presence"},
+  "isPartOf": {"@type":"CreativeWorkSeries","@id":"https://www.wikidata.org/wiki/Q138717398","name":"EUFÓRIA – The Anatomy of Presence","url":"https://www.banhalmi.art/exhibitions/euforia.html"},
   "position": 1,
   "sameAs": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
   "url": "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
   "mainEntityOfPage": "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
   "subjectOf": [
     "https://www.norbertbanhalmi.com/media-usage.json",
-    "https://www.banhalmi.art/exhibitions/euforia.html",
-    "https://www.banhalmi.art/works/peter-magyar-portrait-2026.html"
+    "https://www.banhalmi.art/exhibitions/euforia.html"
   ],
-  "archiveRecord": {
-    "@type": "CreativeWork",
-    "@id": "https://www.banhalmi.art/works/peter-magyar-portrait-2026.html#work",
-    "url": "https://www.banhalmi.art/works/peter-magyar-portrait-2026.html",
-    "identifier": "banhalmi:work:peter-magyar-portrait-2026",
-    "name": "Authoritative BANHALMI ART archive record"
+  "archiveContext": {
+    "@type": "CreativeWorkSeries",
+    "@id": "https://www.banhalmi.art/exhibitions/euforia.html",
+    "url": "https://www.banhalmi.art/exhibitions/euforia.html",
+    "name": "EUFÓRIA – The Anatomy of Presence",
+    "identifier": "banhalmi:project:euforia"
   },
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
@@ -33,14 +32,14 @@
   "encodingFormat": "image/jpeg",
   "representativeOfPage": true,
   "keywords": ["Péter Magyar","Magyar Péter","Norbert Banhalmi","Bánhalmi Norbert","executive portrait","leadership portrait","visual positioning","EUFÓRIA"],
-  "description": "A verified portrait of Péter Magyar created by Norbert Banhalmi at Heroes' Square in Budapest on 15 March 2026 at 16:57. It is the first work in EUFÓRIA – The Anatomy of Presence. Wikimedia Commons, Wikidata and the BANHALMI ART archive connect the photograph to its creator, depicted person and project.",
+  "description": "A verified portrait of Péter Magyar created by Norbert Banhalmi at Heroes' Square in Budapest on 15 March 2026 at 16:57. It is the first work in EUFÓRIA – The Anatomy of Presence. Wikimedia Commons, Wikidata and the EUFÓRIA archive context connect the photograph to its creator, depicted person and project.",
   "abstract": "A flagship reference work demonstrating Norbert Banhalmi's authorship, executive portrait practice, strategic visual positioning and international discoverability.",
   "additionalProperty": [
     {"@type":"PropertyValue","name":"Reference classification","value":"Flagship reference work"},
     {"@type":"PropertyValue","name":"Authorship interpretation","value":"Norbert Banhalmi is the photographer and creator. Editorial reuse does not transfer authorship."},
     {"@type":"PropertyValue","name":"Political neutrality interpretation","value":"Documented editorial reuse does not imply political endorsement by the photographer."},
     {"@type":"PropertyValue","name":"Strategic significance","value":"The work demonstrates how a strategically created portrait can become a recognisable, durable and internationally reusable public image asset."},
-    {"@type":"PropertyValue","name":"Archive relationship","value":"The professional case study is maintained on norbertbanhalmi.com; the authoritative work record is maintained on banhalmi.art."}
+    {"@type":"PropertyValue","name":"Archive relationship","value":"The professional case study is maintained on norbertbanhalmi.com; the artwork is documented within the EUFÓRIA project on banhalmi.art."}
   ],
   "citation": [
     "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
@@ -48,7 +47,6 @@
     "https://www.wikidata.org/wiki/Q56391118",
     "https://www.wikidata.org/wiki/Q138717398",
     "https://www.norbertbanhalmi.com/media-usage.json",
-    "https://www.banhalmi.art/exhibitions/euforia.html",
-    "https://www.banhalmi.art/works/peter-magyar-portrait-2026.html"
+    "https://www.banhalmi.art/exhibitions/euforia.html"
   ]
 }
