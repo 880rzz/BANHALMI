@@ -24,10 +24,10 @@ jobs:
         with:
           node-version: '20'
       - run: node tools/finalize-visual-trust-copy.mjs
-      - run: node tools/audit-regression.mjs
       - run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add index.html hu/index.html de-at/index.html
           git diff --cached --quiet || git commit -m 'Preserve first-impression positioning in visual trust copy'
           git push
+      - run: node tools/audit-regression.mjs
