@@ -56,14 +56,15 @@ jobs:
 
           regression = Path('tools/audit-regression.mjs')
           r = regression.read_text()
-          r = r.replace(
-            "Professzionális, executive, C-level és lifestyle portrék a pontos headshottól a személyes vizuális pozicionálásig.",
-            "Executive, üzleti és lifestyle portrék a pontos headshottól egy vezető teljes nyilvános vizuális pozicionálásáig."
-          )
-          r = r.replace(
-            "Professionelle, Executive-, C-Level- und Lifestyle-Porträts",
-            "Executive-, Business- und Lifestyle-Porträts – vom präzisen Headshot bis zur vollständigen öffentlichen visuellen Positionierung einer Führungspersönlichkeit."
-          )
+          replacements = {
+            "Professzionális, executive, C-level és lifestyle portrék a pontos headshottól a személyes vizuális pozicionálásig.": "Executive, üzleti és lifestyle portrék a pontos headshottól egy vezető teljes nyilvános vizuális pozicionálásáig.",
+            "Professionelle, Executive-, C-Level- und Lifestyle-Porträts": "Executive-, Business- und Lifestyle-Porträts – vom präzisen Headshot bis zur vollständigen öffentlichen visuellen Positionierung einer Führungspersönlichkeit.",
+            "'hu/index.html':['Vizuális bizalomstratégia','vizuális bizalmat épít','Négy fő szolgáltatási terület:','Az AmCham Austria tagjaként']": "'hu/index.html':['Vizuális bizalomstratégia','A fénykép már az első találkozás előtt megszólal.','Négy fő szolgáltatási terület:','Az AmCham Austria tagjaként']",
+            "'de-at/index.html':['Strategie für visuelles Vertrauen','visuelles Vertrauen aufbaut','Vier zentrale Leistungsbereiche:','Als Mitglied von AmCham Austria']": "'de-at/index.html':['Strategie für visuelles Vertrauen','Das Bild spricht, bevor die Begegnung beginnt.','Vier zentrale Leistungsbereiche:','Als Mitglied von AmCham Austria']"
+          }
+          for old, new in replacements.items():
+              if old in r:
+                  r = r.replace(old, new)
           regression.write_text(r)
           PY
       - name: Install dependencies
