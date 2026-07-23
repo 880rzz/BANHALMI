@@ -1,0 +1,56 @@
+name: Apply multilingual human voice services
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/human-voice-services-round
+          fetch-depth: 0
+      - name: Apply reviewed service copy
+        run: |
+          base64 --decode .human-voice/services-rewrite.py.gz.b64 | gunzip > /tmp/rewrite_services.py
+          python3 /tmp/rewrite_services.py
+      - name: Install dependencies
+        run: npm install --silent
+      - name: Run complete deterministic audit
+        run: npm run audit
+      - name: Run human voice audit
+        run: node tools/audit-human-voice.mjs > /tmp/human-voice-after.txt
+      - name: Verify intended scope
+        run: |
+          git diff --name-only | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          de-at/brand/index.html
+          de-at/eventfotografie/index.html
+          de-at/fine-art/index.html
+          de-at/portrait/index.html
+          event-photography/index.html
+          glamour/index.html
+          hu/brand/index.html
+          hu/muveszi-fotografia/index.html
+          hu/portre/index.html
+          hu/rendezvenyfotozas/index.html
+          lifestyle/index.html
+          portrait/index.html
+          EOF
+          sort -o /tmp/expected.txt /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+      - name: Commit audited service pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add de-at/brand/index.html de-at/eventfotografie/index.html de-at/fine-art/index.html de-at/portrait/index.html event-photography/index.html glamour/index.html hu/brand/index.html hu/muveszi-fotografia/index.html hu/portre/index.html hu/rendezvenyfotozas/index.html lifestyle/index.html portrait/index.html
+          git rm -r .human-voice .github/workflows/apply-human-voice-services.yml
+          git commit -m "Rewrite multilingual service copy in a human voice"
+          git push
