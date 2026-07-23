@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   audit:
@@ -25,11 +25,10 @@ jobs:
         with:
           node-version: 22
       - run: npm install
-      - name: Apply final visual trust hardening
-        if: github.actor != 'github-actions[bot]'
-        run: node tools/final-visual-trust-hardening.mjs
       - name: Run deterministic audit
         run: npm run audit
+      - name: Verify audit did not modify tracked files
+        run: git diff --exit-code
       - name: Check live endpoints and external links
         run: npm run audit:live
       - name: Upload external link report
@@ -39,13 +38,3 @@ jobs:
           name: external-link-audit
           path: link-audit-results.json
           if-no-files-found: ignore
-      - name: Commit validated production changes
-        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.actor != 'github-actions[bot]'
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html hu/index.html de-at/index.html entity.jsonld package.json tools/audit-regression.mjs .github/workflows/production-audit.yml
-          git rm -f tools/run-current-positioning-audit.mjs 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "Apply validated visual trust hardening"
-          git push
