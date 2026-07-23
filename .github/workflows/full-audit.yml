@@ -35,6 +35,18 @@ jobs:
           name: banhalmi-human-voice-audit
           path: human-voice-audit.json
           if-no-files-found: error
+      - name: Create full repository archive
+        run: |
+          mkdir -p /tmp/banhalmi-export/BANHALMI
+          rsync -a --exclude='.git' --exclude='node_modules' --exclude='human-voice-audit.json' --exclude='link-audit-results.json' ./ /tmp/banhalmi-export/BANHALMI/
+          cd /tmp/banhalmi-export
+          zip -r BANHALMI-main.zip BANHALMI
+      - name: Upload full repository archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: banhalmi-full-repository
+          path: /tmp/banhalmi-export/BANHALMI-main.zip
+          if-no-files-found: error
       - name: Verify audit did not modify tracked files
         run: git diff --exit-code
       - name: Check live endpoints and external links
