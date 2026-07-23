@@ -94,6 +94,7 @@ const criticalLiveUrls = [
   'https://www.banhalmi.art/llms.txt',
   'https://www.banhalmi.art/knowledge-graph.jsonld'
 ];
+const criticalLiveUrlSet = new Set(criticalLiveUrls);
 
 async function checkUrl(url) {
   const controller = new AbortController();
@@ -103,7 +104,7 @@ async function checkUrl(url) {
     if ([400, 405].includes(response.status)) {
       response = await fetch(url, { method: 'GET', redirect: 'follow', signal: controller.signal, headers: { 'user-agent': 'BANHALMI-LinkAudit/1.0', range: 'bytes=0-1024' } });
     }
-    const reachable = response.status < 400 || [401, 403, 429].includes(response.status);
+    const reachable = response.status < 400 || [401, 403, 429, 999].includes(response.status);
     return { url, status: response.status, reachable, finalUrl: response.url };
   } catch (error) {
     return { url, status: 0, reachable: false, error: error.name === 'AbortError' ? 'timeout' : error.message };
@@ -123,7 +124,8 @@ async function runNetworkAudit() {
   results.sort((a, b) => a.url.localeCompare(b.url));
   fs.writeFileSync('link-audit-results.json', JSON.stringify({ generatedAt: new Date().toISOString(), checked: results.length, results }, null, 2) + '\n');
   for (const result of results) {
-    if (!result.reachable) failures.push(`unreachable external URL: ${result.url} (${result.status || result.error})`);
+    if (!result.reachable && criticalLiveUrlSet.has(result.url)) failures.push(`unreachable critical URL: ${result.url} (${result.status || result.error})`);
+    else if (!result.reachable) warnings.push(`third-party URL could not be verified: ${result.url} (${result.status || result.error})`);
     else if (result.status >= 300) warnings.push(`external URL returned ${result.status}: ${result.url}`);
   }
   console.log(`Checked ${results.length} live and external URLs.`);

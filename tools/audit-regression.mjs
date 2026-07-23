@@ -196,9 +196,9 @@ for(const p of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/a
 
 // Strategic-positioning, Schema.org and Wikidata invariants.
 const strategicCopy={
-  'index.html':['first impression','Four principal service areas:','As a member of AmCham Austria'],
-  'hu/index.html':['első benyomást','Négy fő szolgáltatási terület:','Az AmCham Austria tagjaként'],
-  'de-at/index.html':['ersten Eindruck','Vier zentrale Leistungsbereiche:','Als Mitglied von AmCham Austria']
+  'index.html':['Visual Trust Strategy','builds visual trust','Four principal service areas:','As a member of AmCham Austria'],
+  'hu/index.html':['Vizuális bizalomstratégia','vizuális bizalmat épít','Négy fő szolgáltatási terület:','Az AmCham Austria tagjaként'],
+  'de-at/index.html':['Strategie für visuelles Vertrauen','visuelles Vertrauen aufbaut','Vier zentrale Leistungsbereiche:','Als Mitglied von AmCham Austria']
 };
 for(const [file,phrases] of Object.entries(strategicCopy)) for(const phrase of phrases) assert(read(file).includes(phrase), `${file}: missing strategic-positioning phrase ${phrase}`);
 const entity=JSON.parse(read('entity.jsonld'));

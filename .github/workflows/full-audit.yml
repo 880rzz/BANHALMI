@@ -25,6 +25,9 @@ jobs:
         with:
           node-version: 22
       - run: npm install
+      - name: Apply final visual trust hardening
+        if: github.actor != 'github-actions[bot]'
+        run: node tools/final-visual-trust-hardening.mjs
       - name: Run deterministic audit
         run: npm run audit
       - name: Check live endpoints and external links
@@ -36,16 +39,13 @@ jobs:
           name: external-link-audit
           path: link-audit-results.json
           if-no-files-found: ignore
-      - name: Commit normalized production HTML
-        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      - name: Commit validated production changes
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.actor != 'github-actions[bot]'
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git diff --name-only -- '*.html' | while IFS= read -r file; do
-            [ -n "$file" ] && git add -- "$file"
-          done
-          if ! git diff --cached --quiet; then
-            git commit -m "Normalize compliance wording and verified links"
-            git push
-          fi
+          git add index.html hu/index.html de-at/index.html entity.jsonld package.json tools/audit-regression.mjs .github/workflows/production-audit.yml
+          git rm -f tools/run-current-positioning-audit.mjs 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Apply validated visual trust hardening"
+          git push
