@@ -1,0 +1,24 @@
+name: Production routing audit
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-production:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install
+      - name: Wait for Pages and Vercel propagation
+        run: sleep 45
+      - name: Verify live pages and language redirects
+        run: npm run audit:production
