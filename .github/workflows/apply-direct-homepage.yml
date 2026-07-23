@@ -17,15 +17,23 @@ jobs:
         with:
           ref: agent/human-voice-pages-direct
           fetch-depth: 0
-      - name: Decode and validate reviewed homepage
+      - name: Decode and validate reviewed homepage block
         run: |
-          base64 --decode .human-voice/main/index.b64 > /tmp/index.html
-          test "$(head -c 15 /tmp/index.html)" = '<!DOCTYPE html>'
-          grep -q '<html lang="en"' /tmp/index.html
-          grep -q '<main id="main">' /tmp/index.html
-          grep -q 'The photograph speaks before the meeting begins.' /tmp/index.html
-          grep -q '</html>' /tmp/index.html
-          mv /tmp/index.html index.html
+          base64 --decode .human-voice/main/index.b64 > /tmp/main.html
+          grep -q '^<main id="main">' /tmp/main.html
+          grep -q 'The photograph speaks before the meeting begins.' /tmp/main.html
+          grep -q '</main>$' /tmp/main.html
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          target = Path('index.html')
+          html = target.read_text()
+          block = Path('/tmp/main.html').read_text()
+          updated, count = re.subn(r'<main id="main">[\s\S]*?</main>', lambda _: block, html, count=1)
+          if count != 1:
+              raise SystemExit(f'Expected one main block, replaced {count}')
+          target.write_text(updated)
+          PY
       - name: Update immutable copy expectation
         run: |
           python3 - <<'PY'
