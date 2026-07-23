@@ -34,16 +34,24 @@ jobs:
               raise SystemExit(f'Expected one main block, replaced {count}')
           target.write_text(updated)
           PY
-      - name: Update immutable copy expectation
+      - name: Update immutable copy expectations
         run: |
           python3 - <<'PY'
           from pathlib import Path
           p = Path('tools/audit-static-integrity.mjs')
           s = p.read_text()
-          old = "'index.html': ['Visual Trust Strategy', 'We build visual trust before the meeting begins.']"
-          new = "'index.html': ['Visual Trust Strategy', 'The photograph speaks before the meeting begins.']"
-          if old in s:
-              s = s.replace(old, new)
+          s = s.replace(
+              "'index.html': ['Visual Trust Strategy', 'We build visual trust before the meeting begins.']",
+              "'index.html': ['Visual Trust Strategy', 'The photograph speaks before the meeting begins.']"
+          )
+          p.write_text(s)
+
+          p = Path('tools/audit-regression.mjs')
+          s = p.read_text()
+          s = s.replace(
+              "assert(read('index.html').includes('Professional, executive, C-level and lifestyle portraits, from precise headshots to strategic personal visual positioning.'), 'English portrait card must include consolidated portrait range');",
+              "assert(read('index.html').includes('Executive, professional and lifestyle portraits—from a precise headshot to a complete visual position for a leader in public life.'), 'English portrait card must include consolidated portrait range');"
+          )
           p.write_text(s)
           PY
       - name: Install dependencies
@@ -55,6 +63,7 @@ jobs:
           git diff --name-only | sort > /tmp/changed.txt
           cat > /tmp/expected.txt <<'EOF'
           index.html
+          tools/audit-regression.mjs
           tools/audit-static-integrity.mjs
           EOF
           sort -o /tmp/expected.txt /tmp/expected.txt
@@ -63,7 +72,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html tools/audit-static-integrity.mjs
+          git add index.html tools/audit-regression.mjs tools/audit-static-integrity.mjs
           git rm -r .human-voice .github/workflows/apply-direct-homepage.yml
           git commit -m "Apply reviewed English homepage copy"
           git push
