@@ -1,0 +1,60 @@
+name: Apply reviewed profile contact partner copy
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/human-voice-profiles-contact-partners
+          fetch-depth: 0
+      - name: Decode reviewed files
+        run: |
+          base64 --decode .human-voice/profile-contact-partners.tar.gz.b64 > /tmp/profile-contact-partners.tar.gz
+          tar -xzf /tmp/profile-contact-partners.tar.gz
+          grep -q 'strategy that can be seen' speier-viko/index.html
+          grep -q 'stratégia, amely a képen is látszik' hu/speier-viko/index.html
+          grep -q 'Strategie, die im Bild sichtbar wird' de-at/speier-viko/index.html
+          grep -q 'The right team for the assignment' contact/index.html
+          grep -q 'A feladathoz illő csapat' hu/kapcsolat/index.html
+          grep -q 'Das passende Team für den Auftrag' de-at/kontakt/index.html
+          grep -q 'developed since 1999' partners/index.html
+          grep -q '1999 óta végzett' hu/partnerek/index.html
+          grep -q 'seit 1999' de-at/partner/index.html
+      - name: Install dependencies
+        run: npm install --silent
+      - name: Run complete audit
+        run: npm run audit
+      - name: Verify exact scope
+        run: |
+          git diff --name-only | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          contact/index.html
+          de-at/kontakt/index.html
+          de-at/partner/index.html
+          de-at/speier-viko/index.html
+          hu/kapcsolat/index.html
+          hu/partnerek/index.html
+          hu/speier-viko/index.html
+          partners/index.html
+          speier-viko/index.html
+          EOF
+          sort -o /tmp/expected.txt /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+      - name: Commit audited pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add contact/index.html de-at/kontakt/index.html de-at/partner/index.html de-at/speier-viko/index.html hu/kapcsolat/index.html hu/partnerek/index.html hu/speier-viko/index.html partners/index.html speier-viko/index.html
+          git rm .human-voice/profile-contact-partners.tar.gz.b64 .github/workflows/apply-profile-contact-partners.yml
+          rmdir .human-voice 2>/dev/null || true
+          git commit -m "Rewrite profile contact and partner copy"
+          git push
