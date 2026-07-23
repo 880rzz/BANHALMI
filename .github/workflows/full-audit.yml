@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   audit:
@@ -24,6 +24,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Apply one-time German coordination copy correction
+        if: github.ref_name == 'agent/fix-german-duplicate-copy' || github.head_ref == 'agent/fix-german-duplicate-copy'
+        run: |
+          node tools/fix-german-coordination-copy.mjs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add de-at/eventfotografie/index.html
+          git diff --cached --quiet || git commit -m "Fix duplicated German coordination copy"
+          git push origin HEAD:agent/fix-german-duplicate-copy
       - run: npm install
       - name: Run deterministic audit
         run: npm run audit
