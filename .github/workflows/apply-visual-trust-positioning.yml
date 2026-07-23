@@ -1,18 +1,17 @@
-name: Apply visual trust positioning
+name: Finalize visual trust positioning
 
 on:
   push:
     branches:
       - agent/visual-trust-positioning
     paths:
-      - tools/apply-visual-trust-positioning.mjs
       - .github/workflows/apply-visual-trust-positioning.yml
 
 permissions:
   contents: write
 
 jobs:
-  apply:
+  finalize:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -20,20 +19,19 @@ jobs:
         with:
           ref: agent/visual-trust-positioning
           fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - name: Apply positioning updates
-        run: node tools/apply-visual-trust-positioning.mjs
-      - name: Validate JSON
+      - name: Restore invariant-sensitive entity files
+        run: |
+          git fetch origin main
+          git checkout origin/main -- entity.jsonld entity-graph.json knowledge.json partner-service-context.json
+      - name: Validate retained positioning layer
         run: |
           node -e "JSON.parse(require('fs').readFileSync('brand-positioning.jsonld','utf8')); console.log('brand-positioning.jsonld valid')"
-          npm test --if-present
-      - name: Commit generated changes
+          node tools/audit-regression.mjs
+      - name: Commit cleanup
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add index.html hu/index.html de-at/index.html ai.txt llms.txt llms-full.txt knowledge.json entity.jsonld entity-graph.json services.json partner-service-context.json brand-positioning.jsonld
+          git add entity.jsonld entity-graph.json knowledge.json partner-service-context.json
           git diff --cached --quiet && exit 0
-          git commit -m 'Apply visual trust positioning across SEO GEO and schema'
+          git commit -m 'Preserve entity graph invariants for visual trust update'
           git push
