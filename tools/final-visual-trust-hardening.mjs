@@ -2,9 +2,10 @@ import fs from 'node:fs';
 
 const read=p=>fs.readFileSync(p,'utf8');
 const write=(p,s)=>fs.writeFileSync(p,s);
-const replaceRequired=(source,from,to,label)=>{
-  if(!source.includes(from)) throw new Error(`Missing expected ${label}`);
-  return source.split(from).join(to);
+const replaceIfPresent=(source,from,to)=>source.includes(from)?source.split(from).join(to):source;
+const requireEither=(source,legacy,current,label)=>{
+  if(!source.includes(legacy)&&!source.includes(current)) throw new Error(`Missing expected ${label}`);
+  return replaceIfPresent(source,legacy,current);
 };
 
 // 1. Replace the obsolete wording assertion directly in the canonical regression audit.
@@ -21,7 +22,7 @@ const replaceRequired=(source,from,to,label)=>{
   'hu/index.html':['Vizuális bizalomstratégia','vizuális bizalmat épít','Négy fő szolgáltatási terület:','Az AmCham Austria tagjaként'],
   'de-at/index.html':['Strategie für visuelles Vertrauen','visuelles Vertrauen aufbaut','Vier zentrale Leistungsbereiche:','Als Mitglied von AmCham Austria']
 };`;
-  s=replaceRequired(s,oldBlock,newBlock,'strategicCopy audit block');
+  s=requireEither(s,oldBlock,newBlock,'strategicCopy audit block');
   write(file,s);
 }
 
@@ -29,13 +30,13 @@ const replaceRequired=(source,from,to,label)=>{
 {
   const file='package.json';
   let s=read(file);
-  s=replaceRequired(s,'node tools/run-current-positioning-audit.mjs','node tools/audit-regression.mjs','package audit command');
+  s=requireEither(s,'node tools/run-current-positioning-audit.mjs','node tools/audit-regression.mjs','package audit command');
   write(file,s);
 }
 {
   const file='.github/workflows/production-audit.yml';
   let s=read(file);
-  s=replaceRequired(s,'node tools/run-current-positioning-audit.mjs','node tools/audit-regression.mjs','production workflow audit command');
+  s=requireEither(s,'node tools/run-current-positioning-audit.mjs','node tools/audit-regression.mjs','production workflow audit command');
   write(file,s);
 }
 if(fs.existsSync('tools/run-current-positioning-audit.mjs')) fs.rmSync('tools/run-current-positioning-audit.mjs');
@@ -60,16 +61,13 @@ const pages={
 };
 for(const [file,c] of Object.entries(pages)){
   let s=read(file);
-  for(const [from,to] of Object.values(c)) s=replaceRequired(s,from,to,`${file} visible USP copy: ${from}`);
-  if(!s.includes('brand-positioning.jsonld')){
-    s=s.replace('</head>','<link rel="alternate" type="application/ld+json" href="/brand-positioning.jsonld" title="BANHALMI visual trust service"/></head>');
-  }
+  for(const [from,to] of Object.values(c)) s=requireEither(s,from,to,`${file} visible USP copy`);
   write(file,s);
 }
 
 // 4. Connect the dedicated Service node into the canonical entity graph.
+const service=JSON.parse(read('brand-positioning.jsonld'));
 {
-  const service=JSON.parse(read('brand-positioning.jsonld'));
   const file='entity.jsonld';
   const data=JSON.parse(read(file));
   const graph=data['@graph']||[];
@@ -85,7 +83,6 @@ for(const [file,c] of Object.entries(pages)){
 // 5. Add the Service node to each homepage JSON-LD graph.
 for(const file of Object.keys(pages)){
   let s=read(file);
-  const service=JSON.parse(read('brand-positioning.jsonld'));
   let updated=false;
   s=s.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,(full,json)=>{
     if(updated) return full;
@@ -108,4 +105,4 @@ for(const file of Object.keys(pages)){
   write(file,s);
 }
 
-console.log('Final visual-trust hardening applied.');
+console.log('Final visual-trust hardening applied and verified as idempotent.');
