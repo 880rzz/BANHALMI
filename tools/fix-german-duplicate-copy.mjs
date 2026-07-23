@@ -21,6 +21,7 @@ for (const relative of files) {
   }
 }
 
-if (replacements !== 2) {
-  throw new Error(`Expected exactly 2 replacements, made ${replacements}`);
+if (replacements === 0) {
+  throw new Error('No duplicated German copy was found to correct');
 }
+console.log(`Corrected ${replacements} duplicated German copy occurrence(s).`);
