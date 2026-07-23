@@ -43,7 +43,7 @@ assert(corpus.includes(canonicalPersonId), `canonical Person ID missing: ${canon
 assert(!corpus.includes('https://www.banhalmi.art/norbert-banhalmi'), 'obsolete BANHALMI ART Person ID remains');
 
 const requiredHomepageCopy = {
-  'index.html': ['Visual Trust Strategy', 'We build visual trust before the meeting begins.'],
+  'index.html': ['Visual Trust Strategy', 'The photograph speaks before the meeting begins.'],
   'hu/index.html': ['Vizuális bizalomstratégia', 'Vizuális bizalmat építünk már az első találkozás előtt.'],
   'de-at/index.html': ['Strategie für visuelles Vertrauen', 'Wir schaffen visuelles Vertrauen vor der ersten Begegnung.']
 };
