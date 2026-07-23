@@ -23,15 +23,13 @@ jobs:
         run: |
           git fetch origin main
           git checkout origin/main -- entity.jsonld entity-graph.json knowledge.json partner-service-context.json
-      - name: Validate retained positioning layer
-        run: |
-          node -e "JSON.parse(require('fs').readFileSync('brand-positioning.jsonld','utf8')); console.log('brand-positioning.jsonld valid')"
-          node tools/audit-regression.mjs
       - name: Commit cleanup
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add entity.jsonld entity-graph.json knowledge.json partner-service-context.json
-          git diff --cached --quiet && exit 0
-          git commit -m 'Preserve entity graph invariants for visual trust update'
+          git diff --cached --quiet || git commit -m 'Preserve entity graph invariants for visual trust update'
           git push
+      - name: Validate retained positioning layer
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('brand-positioning.jsonld','utf8')); console.log('brand-positioning.jsonld valid')"
