@@ -16,6 +16,14 @@ function htmlFiles(dir = '.') {
   return out;
 }
 
+function visibleBody(html) {
+  const body = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '';
+  return body
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
+    .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, '');
+}
+
 const corpusFiles = [
   ...htmlFiles(),
   'entity.jsonld',
@@ -40,8 +48,18 @@ const requiredHomepageCopy = {
   'de-at/index.html': ['Strategie für visuelles Vertrauen', 'Wir schaffen visuelles Vertrauen vor der ersten Begegnung.']
 };
 for (const [file, phrases] of Object.entries(requiredHomepageCopy)) {
-  const html = read(file);
-  for (const phrase of phrases) assert(html.includes(phrase), `${file}: required positioning copy missing: ${phrase}`);
+  const body = visibleBody(read(file));
+  for (const phrase of phrases) assert(body.includes(phrase), `${file}: required visible positioning copy missing: ${phrase}`);
+}
+
+const forbiddenVisibleCopy = {
+  'index.html': ['Two roles. One visual language.', 'A strong portrait speaks before the meeting begins.'],
+  'hu/index.html': ['Két szerep. Egy vizuális nyelv.', 'A jó portré már az első találkozás előtt beszél.'],
+  'de-at/index.html': ['Zwei Rollen. Eine visuelle Sprache.', 'Ein starkes Porträt spricht schon vor der ersten Begegnung.', 'diplomatische geschäftliche und diplomatische Situationen']
+};
+for (const [file, phrases] of Object.entries(forbiddenVisibleCopy)) {
+  const body = visibleBody(read(file));
+  for (const phrase of phrases) assert(!body.includes(phrase), `${file}: obsolete or malformed visible copy remains: ${phrase}`);
 }
 
 const forbiddenLegacyText = [
