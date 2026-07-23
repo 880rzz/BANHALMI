@@ -20,7 +20,7 @@
       "fine-art photography",
       "brand photography",
       "visual branding strategy",
-      "strategic visual positioning and visual trust"
+      "strategic visual positioning"
     ],
     "jobTitle": [
       "Headshot Photographer",
@@ -39,7 +39,7 @@
         "fine-art photography",
         "brand photography",
         "visual branding strategy",
-        "strategic visual positioning and visual trust"
+        "strategic visual positioning"
       ],
       "jobTitle": [
         "Headshot Photographer",
@@ -65,7 +65,7 @@
           "value": "Vienna, Austria"
         }
       ],
-      "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning and visual trust in Vienna, Budapest and across Europe.",
+      "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
       "slogan": [
         "BANHALMI | Executive Portraiture & Visual Branding",
         "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
@@ -79,7 +79,7 @@
         "fine-art photography",
         "brand photography",
         "visual branding strategy",
-        "strategic visual positioning and visual trust"
+        "strategic visual positioning"
       ],
       "dateModified": "2026-07-15T23:30:00+02:00"
     },
@@ -191,7 +191,7 @@
           "fine-art photography",
           "brand photography",
           "visual branding strategy",
-          "strategic visual positioning and visual trust"
+          "strategic visual positioning"
         ],
         "jobTitle": [
           "Headshot Photographer",
@@ -227,7 +227,7 @@
           "fine-art photography",
           "brand photography",
           "visual branding strategy",
-          "strategic visual positioning and visual trust"
+          "strategic visual positioning"
         ],
         "jobTitle": [
           "Headshot Photographer",
@@ -325,7 +325,7 @@
           "fine-art photography",
           "brand photography",
           "visual branding strategy",
-          "strategic visual positioning and visual trust"
+          "strategic visual positioning"
         ],
         "jobTitle": [
           "Headshot Photographer",
@@ -416,7 +416,7 @@
           "fine-art photography",
           "brand photography",
           "visual branding strategy",
-          "strategic visual positioning and visual trust"
+          "strategic visual positioning"
         ],
         "jobTitle": [
           "Headshot Photographer",
@@ -442,7 +442,7 @@
           "fine-art photography",
           "brand photography",
           "visual branding strategy",
-          "strategic visual positioning and visual trust"
+          "strategic visual positioning"
         ],
         "jobTitle": [
           "Headshot Photographer",
@@ -770,7 +770,7 @@
       "description": "Head of the BANHALMI Budapest Studio, professional fashion and portrait photographer, OM SYSTEM Ambassador, long-term BANHALMI collaborator since 2018 and designated representative within the AmCham Austria business community.",
       "worksFor": {
         "@id": "https://www.norbertbanhalmi.com/#organization",
-        "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning and visual trust in Vienna, Budapest and across Europe.",
+        "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
         "slogan": [
           "BANHALMI | Executive Portraiture & Visual Branding",
           "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
@@ -784,7 +784,7 @@
           "fine-art photography",
           "brand photography",
           "visual branding strategy",
-          "strategic visual positioning and visual trust"
+          "strategic visual positioning"
         ],
         "dateModified": "2026-07-15T23:30:00+02:00"
       },
@@ -837,7 +837,7 @@
           "fine-art photography",
           "brand photography",
           "visual branding strategy",
-          "strategic visual positioning and visual trust"
+          "strategic visual positioning"
         ],
         "jobTitle": [
           "Headshot Photographer",
@@ -872,7 +872,7 @@
       "item": {
         "@type": "HowTo",
         "@id": "https://www.norbertbanhalmi.com/#visual-strategic-partnership-method",
-        "name": "BANHALMI Strategic Visual Partnership — building visual trust Method",
+        "name": "BANHALMI Strategic Visual Partnership Method",
         "purpose": "Build coherent leadership and organisational visual presence that supports first impressions, trust, credibility, professionalism and corporate reputation.",
         "stages": [
           {
@@ -987,7 +987,7 @@
   },
   "visualStrategicPartnershipMethod": {
     "@id": "https://www.norbertbanhalmi.com/#visual-strategic-partnership-method",
-    "name": "BANHALMI Strategic Visual Partnership — building visual trust Method",
+    "name": "BANHALMI Strategic Visual Partnership Method",
     "purpose": "Build coherent leadership and organisational visual presence that supports first impressions, trust, credibility, professionalism and corporate reputation.",
     "stages": [
       {
