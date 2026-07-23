@@ -56,15 +56,16 @@ jobs:
           PY
       - name: Install dependencies
         run: npm install --silent
-      - name: Run complete deterministic audit
-        shell: bash
-        run: |
-          if ! npm run audit > /tmp/audit.log 2>&1; then
-            echo 'Audit failed; diagnostic tail follows:'
-            tail -n 100 /tmp/audit.log
-            exit 1
-          fi
-          tail -n 20 /tmp/audit.log
+      - name: Audit static integrity
+        run: node tools/audit-static-integrity.mjs
+      - name: Audit regression
+        run: node tools/audit-regression.mjs
+      - name: Audit SEO network
+        run: node tools/audit-seo-network.mjs
+      - name: Audit redirect configuration
+        run: node tools/audit-redirect-config.mjs
+      - name: Audit quote PDF content
+        run: node tests/quote-pdf-content.test.mjs
       - name: Verify exact scope
         run: |
           git diff --name-only | sort > /tmp/changed.txt
