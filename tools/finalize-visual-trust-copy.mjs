@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+// Execute once on the visual-trust positioning branch.
 const updates={
 'index.html':['Strategic visual partnership for leaders and organisations. Executive portraiture, brand photography and C-level event imagery designed as one coherent system that builds visual trust.','Strategic visual partnership for leaders and organisations. Executive portraiture, brand photography and C-level event imagery form one coherent system that builds visual trust and turns the first impression into a lasting business asset.'],
 'hu/index.html':['Stratégiai vizuális partnerség vezetőknek és szervezeteknek. Executive portré, brandfotózás és C-level eseményfotózás egy koherens rendszerben, amely vizuális bizalmat épít.','Stratégiai vizuális partnerség vezetőknek és szervezeteknek. Az executive portré, a brandfotózás és a C-level eseményfotózás egy koherens rendszerben építi a vizuális bizalmat, és az első benyomást tartós üzleti értékké alakítja.'],
