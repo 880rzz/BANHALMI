@@ -29,3 +29,4 @@ for (const [file, pairs] of Object.entries(replacements)) {
 }
 
 console.log('Visible Visual Trust positioning applied to all localized homepages.');
+// Synchronization trigger for the one-time verified migration workflow.
