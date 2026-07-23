@@ -39,12 +39,12 @@ jobs:
                   raise SystemExit(f'{target_name}: expected one main block, replaced {count}')
               target.write_text(updated)
           PY
-      - name: Update immutable localized copy expectations
+      - name: Update localized audit expectations
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          p = Path('tools/audit-static-integrity.mjs')
-          s = p.read_text()
+          static = Path('tools/audit-static-integrity.mjs')
+          s = static.read_text()
           replacements = {
             "'hu/index.html': ['Vizuális bizalomstratégia', 'Vizuális bizalmat építünk már az első találkozás előtt.']": "'hu/index.html': ['Vizuális bizalomstratégia', 'A fénykép már az első találkozás előtt megszólal.']",
             "'de-at/index.html': ['Strategie für visuelles Vertrauen', 'Wir schaffen visuelles Vertrauen vor der ersten Begegnung.']": "'de-at/index.html': ['Strategie für visuelles Vertrauen', 'Das Bild spricht, bevor die Begegnung beginnt.']"
@@ -52,7 +52,19 @@ jobs:
           for old, new in replacements.items():
               if old in s:
                   s = s.replace(old, new)
-          p.write_text(s)
+          static.write_text(s)
+
+          regression = Path('tools/audit-regression.mjs')
+          r = regression.read_text()
+          r = r.replace(
+            "Professzionális, executive, C-level és lifestyle portrék a pontos headshottól a személyes vizuális pozicionálásig.",
+            "Executive, üzleti és lifestyle portrék a pontos headshottól egy vezető teljes nyilvános vizuális pozicionálásáig."
+          )
+          r = r.replace(
+            "Professionelle, Executive-, C-Level- und Lifestyle-Porträts",
+            "Executive-, Business- und Lifestyle-Porträts – vom präzisen Headshot bis zur vollständigen öffentlichen visuellen Positionierung einer Führungspersönlichkeit."
+          )
+          regression.write_text(r)
           PY
       - name: Install dependencies
         run: npm install --silent
@@ -72,6 +84,7 @@ jobs:
           cat > /tmp/expected.txt <<'EOF'
           de-at/index.html
           hu/index.html
+          tools/audit-regression.mjs
           tools/audit-static-integrity.mjs
           EOF
           sort -o /tmp/expected.txt /tmp/expected.txt
@@ -80,7 +93,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add hu/index.html de-at/index.html tools/audit-static-integrity.mjs
+          git add hu/index.html de-at/index.html tools/audit-regression.mjs tools/audit-static-integrity.mjs
           git rm -r .human-voice/home .github/workflows/apply-hu-de-homepages.yml
           rmdir .human-voice 2>/dev/null || true
           git commit -m "Apply reviewed Hungarian and German homepage copy"
