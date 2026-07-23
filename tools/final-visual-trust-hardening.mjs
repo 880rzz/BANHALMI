@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 
-// CI synchronization marker: PR #32 validates this exact idempotent migration.
 const read=p=>fs.readFileSync(p,'utf8');
 const write=(p,s)=>fs.writeFileSync(p,s);
 const replaceIfPresent=(source,from,to)=>source.includes(from)?source.split(from).join(to):source;
@@ -42,22 +41,22 @@ const requireEither=(source,legacy,current,label)=>{
 }
 if(fs.existsSync('tools/run-current-positioning-audit.mjs')) fs.rmSync('tools/run-current-positioning-audit.mjs');
 
-// 3. Make the USP unmistakably visible on every homepage.
+// 3. Make the USP unmistakably visible on every homepage while preserving the current narrative structure.
 const pages={
   'index.html':{
-    eyebrow:['Two roles. One visual language.','Visual Trust Strategy'],
-    heading:['Executive Portraiture & Visual Branding','We build visual trust.'],
-    intro:['Every meaningful portrait begins with attention.','BANHALMI is a strategic visual partner for leaders and organisations. Executive portraiture, brand photography, C-level event imagery and fine-art authorship form one coherent visual system that builds trust. Every meaningful portrait begins with attention.']
+    signature:['One visual system. Built for trust.','Visual Trust Strategy'],
+    heading:['A strong portrait speaks before the meeting begins.','We build visual trust before the meeting begins.'],
+    intro:['A photograph can say a great deal about you. That you can be trusted. That you know where you are going. And that there are real people behind the company name. I create leadership portraits, brand photography and event images that tell the same story wherever they appear.','BANHALMI is a strategic visual partner for leaders and organisations. Executive portraiture, brand photography, C-level event imagery and fine-art authorship form one coherent system that builds visual trust wherever the images appear.']
   },
   'hu/index.html':{
-    eyebrow:['Két szerep. Egy vizuális nyelv.','Vizuális bizalomstratégia'],
-    heading:['Executive portréfotózás és vizuális brandstratégia','Vizuális bizalmat építünk.'],
-    intro:['Minden jelentős portré figyelemmel kezdődik.','A BANHALMI stratégiai vizuális partner vezetőknek és szervezeteknek. Az executive portré, a brandfotózás, a C-level eseményfotózás és a képzőművészeti szerzőség egyetlen koherens vizuális rendszerben épít bizalmat. Minden jelentős portré figyelemmel kezdődik.']
+    signature:['Egy vizuális rendszer. Bizalomra építve.','Vizuális bizalomstratégia'],
+    heading:['A jó portré már az első találkozás előtt beszél.','Vizuális bizalmat építünk már az első találkozás előtt.'],
+    intro:['Egy kép sok mindent elmondhat Önről. Azt, hogy lehet Önben bízni. Azt, hogy tudja, merre tart. És azt is, hogy milyen emberek állnak a vállalat mögött. Vezetői portrékat, brandfotókat és rendezvényképeket készítek, amelyek együtt is ugyanazt a történetet mesélik.','A BANHALMI stratégiai vizuális partner vezetőknek és szervezeteknek. Az executive portré, a brandfotózás, a C-level eseményfotózás és a képzőművészeti szerzőség egyetlen koherens rendszerben vizuális bizalmat épít minden megjelenési felületen.']
   },
   'de-at/index.html':{
-    eyebrow:['Zwei Rollen. Eine visuelle Sprache.','Strategie für visuelles Vertrauen'],
-    heading:['Executive-Porträts & visuelle Markenpositionierung','Wir schaffen visuelles Vertrauen.'],
-    intro:['Jedes bedeutende Porträt beginnt mit Aufmerksamkeit.','BANHALMI ist strategischer visueller Partner für Führungskräfte und Organisationen. Executive-Porträts, Markenfotografie, C-Level-Eventbilder und künstlerische Autorenschaft bilden ein kohärentes visuelles System, das Vertrauen schafft. Jedes bedeutende Porträt beginnt mit Aufmerksamkeit.']
+    signature:['Ein visuelles System. Für Vertrauen gebaut.','Strategie für visuelles Vertrauen'],
+    heading:['Ein starkes Porträt spricht schon vor der ersten Begegnung.','Wir schaffen visuelles Vertrauen vor der ersten Begegnung.'],
+    intro:['Ein Bild kann viel über Sie erzählen. Dass man Ihnen vertrauen kann. Dass Sie wissen, wohin Sie wollen. Und dass hinter einem Unternehmen echte Menschen stehen. Ich fotografiere Führungskräfte, Marken und Veranstaltungen so, dass überall dieselbe Geschichte spürbar wird.','BANHALMI ist strategischer visueller Partner für Führungskräfte und Organisationen. Executive-Porträts, Markenfotografie, C-Level-Eventbilder und künstlerische Autorenschaft bilden ein kohärentes System, das an jedem Kontaktpunkt visuelles Vertrauen aufbaut.']
   }
 };
 for(const [file,c] of Object.entries(pages)){
