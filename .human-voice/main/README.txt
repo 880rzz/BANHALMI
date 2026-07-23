@@ -1,0 +1,1 @@
+The sibling index.b64 file is an exact Base64 encoding of the reviewed English homepage. The pull-request workflow validates and removes this temporary transport before merge.
