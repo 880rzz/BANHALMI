@@ -30,6 +30,7 @@ const corpusFiles = [
 const corpus = corpusFiles.map(read).join('\n');
 
 const canonicalPersonId = 'https://www.norbertbanhalmi.com/about/';
+const canonicalServiceId = 'https://www.norbertbanhalmi.com/#visual-trust-partnership';
 assert(corpus.includes(canonicalPersonId), `canonical Person ID missing: ${canonicalPersonId}`);
 assert(!corpus.includes('https://www.banhalmi.art/norbert-banhalmi'), 'obsolete BANHALMI ART Person ID remains');
 
@@ -55,18 +56,18 @@ const entity = JSON.parse(read('entity.jsonld'));
 const graph = entity['@graph'] || [];
 const person = graph.find((node) => node['@id'] === canonicalPersonId);
 const organization = graph.find((node) => node['@id'] === 'https://www.norbertbanhalmi.com/#organization');
-const service = graph.find((node) => node['@id'] === 'https://www.norbertbanhalmi.com/#visual-trust-strategy');
+const service = graph.find((node) => node['@id'] === canonicalServiceId);
 assert(person?.['@type'] === 'Person', 'canonical Person node missing from entity.jsonld');
 assert(organization?.['@type'] === 'Organization', 'Organization node missing from entity.jsonld');
 assert(service?.['@type'] === 'Service', 'Visual Trust Strategy Service node missing from entity.jsonld');
-assert(Array.isArray(organization?.subjectOf) && organization.subjectOf.some((item) => item?.['@id'] === service?.['@id']), 'Organization must link to Visual Trust Strategy Service');
+assert(Array.isArray(organization?.subjectOf) && organization.subjectOf.some((item) => item?.['@id'] === canonicalServiceId), 'Organization must link to Visual Trust Strategy Service');
 
 for (const file of ['index.html', 'hu/index.html', 'de-at/index.html']) {
   const html = read(file);
   const jsonLdBlocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((match) => JSON.parse(match[1]));
   const homepageGraph = jsonLdBlocks.find((block) => Array.isArray(block['@graph']))?.['@graph'] || [];
   assert(homepageGraph.some((node) => node['@id'] === canonicalPersonId), `${file}: canonical Person node/reference missing from homepage graph`);
-  assert(homepageGraph.some((node) => node['@id'] === service?.['@id']), `${file}: Visual Trust Strategy Service missing from homepage graph`);
+  assert(homepageGraph.some((node) => node['@id'] === canonicalServiceId), `${file}: Visual Trust Strategy Service missing from homepage graph`);
 }
 
 if (failures.length) {
