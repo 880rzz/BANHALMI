@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 
+// CI synchronization marker: PR #32 validates this exact idempotent migration.
 const read=p=>fs.readFileSync(p,'utf8');
 const write=(p,s)=>fs.writeFileSync(p,s);
 const replaceIfPresent=(source,from,to)=>source.includes(from)?source.split(from).join(to):source;
