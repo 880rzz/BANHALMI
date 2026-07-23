@@ -1,0 +1,29 @@
+name: Export repository
+
+on:
+  push:
+    branches:
+      - agent/export-repository
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Create clean repository archive
+        run: |
+          mkdir -p export
+          rsync -a --exclude='.git' --exclude='export' ./ export/BANHALMI/
+          cd export
+          zip -r BANHALMI-main.zip BANHALMI
+      - name: Upload repository archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: banhalmi-full-repository
+          path: export/BANHALMI-main.zip
+          if-no-files-found: error
