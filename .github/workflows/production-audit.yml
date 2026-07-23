@@ -17,5 +17,5 @@ jobs:
           node-version: '22'
       - run: npm install
       - run: npx playwright install --with-deps chromium
-      - run: node tools/audit-regression.mjs
+      - run: node tools/run-current-positioning-audit.mjs
       - run: npm run test:browser
