@@ -30,9 +30,9 @@ for(const [file,expected] of Object.entries(serviceMap)){
   assert(cardLinks.length===4, `${file}: home service section must expose exactly 4 cards, found ${cardLinks.length}`);
   for(const href of expected) assert(cardLinks.includes(href), `${file}: missing four-service card link ${href}`);
 }
-assert(read('index.html').includes('Professional, executive, C-level and lifestyle portraits, from precise headshots to strategic personal visual positioning.'), 'English portrait card must include consolidated portrait range');
-assert(read('hu/index.html').includes('Professzionális, executive, C-level és lifestyle portrék a pontos headshottól a személyes vizuális pozicionálásig.'), 'Hungarian portrait card must include consolidated portrait range');
-assert(read('de-at/index.html').includes('Professionelle, Executive-, C-Level- und Lifestyle-Porträts'), 'German portrait card must include consolidated portrait range');
+assert(read('index.html').includes('Executive, professional and lifestyle portraits—from a precise headshot to a complete visual position for a leader in public life.'), 'English portrait card must include consolidated portrait range');
+assert(read('hu/index.html').includes('Executive, üzleti és lifestyle portrék a pontos headshottól egy vezető teljes nyilvános vizuális pozicionálásáig.'), 'Hungarian portrait card must include consolidated portrait range');
+assert(read('de-at/index.html').includes('Executive-, Business- und Lifestyle-Porträts – vom präzisen Headshot bis zur vollständigen öffentlichen visuellen Positionierung einer Führungspersönlichkeit.'), 'German portrait card must include consolidated portrait range');
 for(const p of ['gallery/index.html','hu/gallery/index.html','de-at/gallery/index.html','de/portrait/index.html','de/brand/index.html','de/eventfotografie/index.html','de/fine-art/index.html','de-at/glamour/index.html','mybest/index.html','de-at/mybest/index.html']) assert(!exists(p), `${p}: deleted redundant page still exists`);
 const routeText=htmlFiles().map(p=>read(p)).join('\n')+'\n'+['sitemap.xml','llms.txt','llms-full.txt','services.json'].filter(exists).map(read).join('\n');
 for(const route of ['/de/portrait/','/de/brand/','/de/eventfotografie/','/de/fine-art/','/de-at/glamour/','/mybest/','/de-at/mybest/']) assert(!new RegExp(`(href="|https://www\.norbertbanhalmi\.com)${route.replaceAll('/','\/')}`).test(routeText), `redundant route reference remains: ${route}`);
@@ -197,8 +197,8 @@ for(const p of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/a
 // Strategic-positioning, Schema.org and Wikidata invariants.
 const strategicCopy={
   'index.html':['Visual Trust Strategy','builds visual trust','Four principal service areas:','As a member of AmCham Austria'],
-  'hu/index.html':['Vizuális bizalomstratégia','vizuális bizalmat épít','Négy fő szolgáltatási terület:','Az AmCham Austria tagjaként'],
-  'de-at/index.html':['Strategie für visuelles Vertrauen','visuelles Vertrauen aufbaut','Vier zentrale Leistungsbereiche:','Als Mitglied von AmCham Austria']
+  'hu/index.html':['Vizuális bizalomstratégia','A fénykép már az első találkozás előtt megszólal.','Négy fő szolgáltatási terület:','Az AmCham Austria tagjaként'],
+  'de-at/index.html':['Strategie für visuelles Vertrauen','Das Bild spricht, bevor die Begegnung beginnt.','Vier zentrale Leistungsbereiche:','Als Mitglied von AmCham Austria']
 };
 for(const [file,phrases] of Object.entries(strategicCopy)) for(const phrase of phrases) assert(read(file).includes(phrase), `${file}: missing strategic-positioning phrase ${phrase}`);
 const entity=JSON.parse(read('entity.jsonld'));
