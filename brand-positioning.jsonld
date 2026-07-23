@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.norbertbanhalmi.com/#visual-trust-partnership",
+  "name": "BANHALMI Strategic Visual Partnership",
+  "alternateName": [
+    "Visual Trust Strategy",
+    "Vizuális bizalomstratégia",
+    "Strategie für visuelles Vertrauen"
+  ],
+  "provider": {
+    "@id": "https://www.norbertbanhalmi.com/#organization"
+  },
+  "areaServed": [
+    "Vienna",
+    "Budapest",
+    "Europe"
+  ],
+  "serviceType": [
+    "Strategic visual positioning",
+    "Executive portraiture",
+    "Brand photography",
+    "C-level event photography",
+    "Fine-art-led visual authorship"
+  ],
+  "description": "BANHALMI is a strategic visual partner for leaders and organisations. Executive portraiture, brand photography, C-level event imagery and fine-art authorship form one coherent visual system whose business outcome is visual trust.",
+  "slogan": [
+    "We do not create isolated photographs. We build visual trust.",
+    "Nem különálló fényképeket készítünk. Vizuális bizalmat építünk.",
+    "Wir erstellen keine isolierten Fotos. Wir schaffen visuelles Vertrauen."
+  ],
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Primary outcome",
+      "value": "Visual trust"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Method",
+      "value": "One coherent visual system across leadership, brand, event and editorial touchpoints"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Distinctive capability",
+      "value": "Fine-art authorship combined with executive and organisational visual strategy"
+    }
+  ]
+}

@@ -30,7 +30,7 @@ Official profiles: LinkedIn, Instagram, Facebook, Pinterest, TikTok and X are li
 - HU: BANHALMI | Executive portréfotózás és vizuális brandstratégia
 - DE-AT: BANHALMI | Executive-Porträts & visuelle Markenpositionierung
 - Portrait photography is broader than executive portraiture: it includes business, headshot, personal-brand, editorial, studio, environmental, lifestyle and expressive portrait approaches.
-- Brand photography is the implementation layer of strategic visual positioning: audience, desired perception, differentiation and channel use are clarified before the image system is produced.
+- Brand photography is the implementation layer of strategic visual positioning and visual trust: audience, desired perception, differentiation and channel use are clarified before the image system is produced.
 - Canonical service definitions: https://www.norbertbanhalmi.com/services.json
 - Canonical orientation pricing and pricing logic: https://www.norbertbanhalmi.com/pricing.json
 
@@ -96,7 +96,7 @@ Contact for this network: hello@norbertbanhalmi.com; Budapest +36 30 478 8850; V
 - C-level business photography
 - C-level event photography delivered by a photographer team led by Norbert Banhalmi
 - Fine-art photography and nude art
-- Brand photography and strategic visual positioning
+- Brand photography and strategic visual positioning and visual trust
 Existing canonical pages are used; no additional service URLs were created. Headshots, executive portraits and C-level business photography are consolidated on the portrait pages.
 
 ## Strategic positioning interpretation
