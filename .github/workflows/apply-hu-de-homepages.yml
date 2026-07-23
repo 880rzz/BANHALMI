@@ -55,9 +55,16 @@ jobs:
           p.write_text(s)
           PY
       - name: Install dependencies
-        run: npm install
+        run: npm install --silent
       - name: Run complete deterministic audit
-        run: npm run audit
+        shell: bash
+        run: |
+          if ! npm run audit > /tmp/audit.log 2>&1; then
+            echo 'Audit failed; diagnostic tail follows:'
+            tail -n 100 /tmp/audit.log
+            exit 1
+          fi
+          tail -n 20 /tmp/audit.log
       - name: Verify exact scope
         run: |
           git diff --name-only | sort > /tmp/changed.txt
