@@ -1,0 +1,36 @@
+name: Apply archive human voice rewrite
+
+on:
+  push:
+    branches:
+      - agent/human-voice-archive-round
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/human-voice-archive-round
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Apply reviewed copy
+        run: python3 tools/apply-archive-human-voice.py
+      - name: Install dependencies
+        run: npm install
+      - name: Run complete audit
+        run: npm run audit
+      - name: Remove one-time tooling
+        run: rm tools/apply-archive-human-voice.py .github/workflows/apply-archive-human-voice.yml
+      - name: Commit verified pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive/index.html hu/archivum/index.html de-at/archiv/index.html tools/apply-archive-human-voice.py .github/workflows/apply-archive-human-voice.yml
+          git commit -m "Rewrite multilingual archive copy [skip ci]"
+          git push
