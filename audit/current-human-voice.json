@@ -1,0 +1,1097 @@
+{
+  "generatedAt": "2026-07-23T20:25:11.605Z",
+  "highestRisk": [
+    {
+      "file": "/hu/akadalymentesseg/index.html",
+      "words": 338,
+      "score": 5.92,
+      "cliches": {
+        "egyedi": 1,
+        "minden": 1
+      },
+      "sentenceAverage": 24.1,
+      "sentenceSpread": 23.7,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/index.html",
+      "words": 770,
+      "score": 4.6,
+      "cliches": {
+        "több-mint": 1,
+        "minden": 1
+      },
+      "sentenceAverage": 17.5,
+      "sentenceSpread": 17.2,
+      "repeatedStarts": [
+        [
+          "a megközelítés ›",
+          4
+        ]
+      ]
+    },
+    {
+      "file": "/index.html",
+      "words": 856,
+      "score": 4.34,
+      "cliches": {
+        "more-than": 1,
+        "every": 1
+      },
+      "sentenceAverage": 19.9,
+      "sentenceSpread": 17.9,
+      "repeatedStarts": [
+        [
+          "read the approach",
+          4
+        ]
+      ]
+    },
+    {
+      "file": "/hu/ajanlatkeres/index.html",
+      "words": 1358,
+      "score": 3.68,
+      "cliches": {
+        "egyedi": 4,
+        "minden": 1
+      },
+      "sentenceAverage": 23.4,
+      "sentenceSpread": 49.6,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/rendezvenyfotozas/index.html",
+      "words": 878,
+      "score": 3.42,
+      "cliches": {
+        "nem-csak": 1,
+        "minden": 2
+      },
+      "sentenceAverage": 22.5,
+      "sentenceSpread": 17.6,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/partner/index.html",
+      "words": 299,
+      "score": 3.34,
+      "cliches": {
+        "Mehr-als": 1
+      },
+      "sentenceAverage": 33.2,
+      "sentenceSpread": 28.9,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/speier-viko/index.html",
+      "words": 903,
+      "score": 3.32,
+      "cliches": {
+        "more-than": 1,
+        "every": 2
+      },
+      "sentenceAverage": 23.8,
+      "sentenceSpread": 20.5,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/index.html",
+      "words": 786,
+      "score": 3.27,
+      "cliches": {
+        "Mehr-als": 1
+      },
+      "sentenceAverage": 17.5,
+      "sentenceSpread": 16.8,
+      "repeatedStarts": [
+        [
+          "zur arbeitsweise ›",
+          4
+        ]
+      ]
+    },
+    {
+      "file": "/hu/partnerek/index.html",
+      "words": 313,
+      "score": 3.19,
+      "cliches": {
+        "több-mint": 1
+      },
+      "sentenceAverage": 34.8,
+      "sentenceSpread": 30.1,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/partners/index.html",
+      "words": 328,
+      "score": 3.05,
+      "cliches": {
+        "more-than": 1
+      },
+      "sentenceAverage": 36.4,
+      "sentenceSpread": 31,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/aszf/index.html",
+      "words": 720,
+      "score": 2.78,
+      "cliches": {
+        "egyedi": 2
+      },
+      "sentenceAverage": 15.3,
+      "sentenceSpread": 14.6,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/about/index.html",
+      "words": 2817,
+      "score": 2.48,
+      "cliches": {
+        "more-than": 2,
+        "not-just": 1,
+        "every": 3,
+        "discover": 1
+      },
+      "sentenceAverage": 38,
+      "sentenceSpread": 61.4,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/portrait/index.html",
+      "words": 2138,
+      "score": 2.4,
+      "cliches": {
+        "more-than": 1,
+        "every": 1,
+        "timeless": 1
+      },
+      "sentenceAverage": 22.9,
+      "sentenceSpread": 12.7,
+      "repeatedStarts": [
+        [
+          "environmental portrait of",
+          3
+        ]
+      ]
+    },
+    {
+      "file": "/hu/eletmu/index.html",
+      "words": 2541,
+      "score": 2.36,
+      "cliches": {
+        "több-mint": 1,
+        "minden": 5
+      },
+      "sentenceAverage": 34.2,
+      "sentenceSpread": 56.2,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/glamour/index.html",
+      "words": 1702,
+      "score": 2.35,
+      "cliches": {
+        "every": 3,
+        "elevate": 1
+      },
+      "sentenceAverage": 32.7,
+      "sentenceSpread": 42.9,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/lifestyle/index.html",
+      "words": 1706,
+      "score": 2.34,
+      "cliches": {
+        "every": 2,
+        "journey": 1,
+        "authentic": 1
+      },
+      "sentenceAverage": 26.9,
+      "sentenceSpread": 19,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/archive/index.html",
+      "words": 357,
+      "score": 2,
+      "cliches": {},
+      "sentenceAverage": 27.5,
+      "sentenceSpread": 24.8,
+      "repeatedStarts": [
+        [
+          "open ↗ banhalmi.art",
+          4
+        ]
+      ]
+    },
+    {
+      "file": "/hu/archivum/index.html",
+      "words": 329,
+      "score": 2,
+      "cliches": {},
+      "sentenceAverage": 25.3,
+      "sentenceSpread": 23.9,
+      "repeatedStarts": [
+        [
+          "megnyitás ↗ banhalmi.art",
+          4
+        ]
+      ]
+    },
+    {
+      "file": "/de-at/archiv/index.html",
+      "words": 327,
+      "score": 2,
+      "cliches": {},
+      "sentenceAverage": 25.2,
+      "sentenceSpread": 23,
+      "repeatedStarts": [
+        [
+          "öffnen ↗ banhalmi.art",
+          4
+        ]
+      ]
+    },
+    {
+      "file": "/hu/portre/index.html",
+      "words": 2059,
+      "score": 1.97,
+      "cliches": {
+        "nem-csak": 1,
+        "minden": 1
+      },
+      "sentenceAverage": 22.1,
+      "sentenceSpread": 12.4,
+      "repeatedStarts": [
+        [
+          "környezeti portré egy",
+          3
+        ]
+      ]
+    },
+    {
+      "file": "/hu/esettanulmanyok/magyar-peter-portre-2026/index.html",
+      "words": 645,
+      "score": 1.55,
+      "cliches": {
+        "minden": 1
+      },
+      "sentenceAverage": 21.5,
+      "sentenceSpread": 25.4,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/kapcsolat/index.html",
+      "words": 657,
+      "score": 1.52,
+      "cliches": {
+        "minden": 1
+      },
+      "sentenceAverage": 15.6,
+      "sentenceSpread": 16.2,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/contact/index.html",
+      "words": 736,
+      "score": 1.36,
+      "cliches": {
+        "every": 1
+      },
+      "sentenceAverage": 17.9,
+      "sentenceSpread": 16.8,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/faq/index.html",
+      "words": 742,
+      "score": 1.35,
+      "cliches": {
+        "more-than": 1
+      },
+      "sentenceAverage": 13.6,
+      "sentenceSpread": 14.2,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/brand/index.html",
+      "words": 1610,
+      "score": 1.24,
+      "cliches": {
+        "minden": 2
+      },
+      "sentenceAverage": 25.1,
+      "sentenceSpread": 19.3,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/speier-viko/index.html",
+      "words": 828,
+      "score": 1.21,
+      "cliches": {
+        "nicht-nur": 1
+      },
+      "sentenceAverage": 21.2,
+      "sentenceSpread": 19.2,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/speier-viko/index.html",
+      "words": 840,
+      "score": 1.19,
+      "cliches": {
+        "minden": 1
+      },
+      "sentenceAverage": 21.5,
+      "sentenceSpread": 20.1,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/muveszi-fotografia/index.html",
+      "words": 1710,
+      "score": 1.17,
+      "cliches": {
+        "minden": 2
+      },
+      "sentenceAverage": 32.8,
+      "sentenceSpread": 44,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/werk/index.html",
+      "words": 2618,
+      "score": 1.15,
+      "cliches": {
+        "Mehr-als": 2,
+        "nicht-nur": 1
+      },
+      "sentenceAverage": 33.5,
+      "sentenceSpread": 63.3,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/event-photography/index.html",
+      "words": 914,
+      "score": 1.09,
+      "cliches": {
+        "every": 1
+      },
+      "sentenceAverage": 23.4,
+      "sentenceSpread": 18.3,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/adatvedelem/index.html",
+      "words": 902,
+      "score": 1,
+      "cliches": {},
+      "sentenceAverage": 17.3,
+      "sentenceSpread": 14.5,
+      "repeatedStarts": [
+        [
+          "a google analytics",
+          3
+        ]
+      ]
+    },
+    {
+      "file": "/de-at/brand/index.html",
+      "words": 1554,
+      "score": 0.64,
+      "cliches": {
+        "authentisch": 1
+      },
+      "sentenceAverage": 23.9,
+      "sentenceSpread": 17.9,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/fine-art/index.html",
+      "words": 1602,
+      "score": 0.62,
+      "cliches": {
+        "nicht-nur": 1
+      },
+      "sentenceAverage": 30.8,
+      "sentenceSpread": 40.6,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/portrait/index.html",
+      "words": 1923,
+      "score": 0.52,
+      "cliches": {
+        "Mehr-als": 1
+      },
+      "sentenceAverage": 20.4,
+      "sentenceSpread": 11.5,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/requestaquote/index.html",
+      "words": 1455,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 25.9,
+      "sentenceSpread": 52.1,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/anfrage/index.html",
+      "words": 1337,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 23.4,
+      "sentenceSpread": 47.7,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/privacy-policy/index.html",
+      "words": 996,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 19.2,
+      "sentenceSpread": 14.8,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/datenschutz/index.html",
+      "words": 897,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 17.3,
+      "sentenceSpread": 13.4,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/eventfotografie/index.html",
+      "words": 829,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 23,
+      "sentenceSpread": 16.9,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/terms-conditions/index.html",
+      "words": 809,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 16.5,
+      "sentenceSpread": 14.7,
+      "repeatedStarts": []
+    }
+  ],
+  "pages": [
+    {
+      "file": "/hu/akadalymentesseg/index.html",
+      "words": 338,
+      "score": 5.92,
+      "cliches": {
+        "egyedi": 1,
+        "minden": 1
+      },
+      "sentenceAverage": 24.1,
+      "sentenceSpread": 23.7,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/index.html",
+      "words": 770,
+      "score": 4.6,
+      "cliches": {
+        "több-mint": 1,
+        "minden": 1
+      },
+      "sentenceAverage": 17.5,
+      "sentenceSpread": 17.2,
+      "repeatedStarts": [
+        [
+          "a megközelítés ›",
+          4
+        ]
+      ]
+    },
+    {
+      "file": "/index.html",
+      "words": 856,
+      "score": 4.34,
+      "cliches": {
+        "more-than": 1,
+        "every": 1
+      },
+      "sentenceAverage": 19.9,
+      "sentenceSpread": 17.9,
+      "repeatedStarts": [
+        [
+          "read the approach",
+          4
+        ]
+      ]
+    },
+    {
+      "file": "/hu/ajanlatkeres/index.html",
+      "words": 1358,
+      "score": 3.68,
+      "cliches": {
+        "egyedi": 4,
+        "minden": 1
+      },
+      "sentenceAverage": 23.4,
+      "sentenceSpread": 49.6,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/rendezvenyfotozas/index.html",
+      "words": 878,
+      "score": 3.42,
+      "cliches": {
+        "nem-csak": 1,
+        "minden": 2
+      },
+      "sentenceAverage": 22.5,
+      "sentenceSpread": 17.6,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/partner/index.html",
+      "words": 299,
+      "score": 3.34,
+      "cliches": {
+        "Mehr-als": 1
+      },
+      "sentenceAverage": 33.2,
+      "sentenceSpread": 28.9,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/speier-viko/index.html",
+      "words": 903,
+      "score": 3.32,
+      "cliches": {
+        "more-than": 1,
+        "every": 2
+      },
+      "sentenceAverage": 23.8,
+      "sentenceSpread": 20.5,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/index.html",
+      "words": 786,
+      "score": 3.27,
+      "cliches": {
+        "Mehr-als": 1
+      },
+      "sentenceAverage": 17.5,
+      "sentenceSpread": 16.8,
+      "repeatedStarts": [
+        [
+          "zur arbeitsweise ›",
+          4
+        ]
+      ]
+    },
+    {
+      "file": "/hu/partnerek/index.html",
+      "words": 313,
+      "score": 3.19,
+      "cliches": {
+        "több-mint": 1
+      },
+      "sentenceAverage": 34.8,
+      "sentenceSpread": 30.1,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/partners/index.html",
+      "words": 328,
+      "score": 3.05,
+      "cliches": {
+        "more-than": 1
+      },
+      "sentenceAverage": 36.4,
+      "sentenceSpread": 31,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/aszf/index.html",
+      "words": 720,
+      "score": 2.78,
+      "cliches": {
+        "egyedi": 2
+      },
+      "sentenceAverage": 15.3,
+      "sentenceSpread": 14.6,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/about/index.html",
+      "words": 2817,
+      "score": 2.48,
+      "cliches": {
+        "more-than": 2,
+        "not-just": 1,
+        "every": 3,
+        "discover": 1
+      },
+      "sentenceAverage": 38,
+      "sentenceSpread": 61.4,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/portrait/index.html",
+      "words": 2138,
+      "score": 2.4,
+      "cliches": {
+        "more-than": 1,
+        "every": 1,
+        "timeless": 1
+      },
+      "sentenceAverage": 22.9,
+      "sentenceSpread": 12.7,
+      "repeatedStarts": [
+        [
+          "environmental portrait of",
+          3
+        ]
+      ]
+    },
+    {
+      "file": "/hu/eletmu/index.html",
+      "words": 2541,
+      "score": 2.36,
+      "cliches": {
+        "több-mint": 1,
+        "minden": 5
+      },
+      "sentenceAverage": 34.2,
+      "sentenceSpread": 56.2,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/glamour/index.html",
+      "words": 1702,
+      "score": 2.35,
+      "cliches": {
+        "every": 3,
+        "elevate": 1
+      },
+      "sentenceAverage": 32.7,
+      "sentenceSpread": 42.9,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/lifestyle/index.html",
+      "words": 1706,
+      "score": 2.34,
+      "cliches": {
+        "every": 2,
+        "journey": 1,
+        "authentic": 1
+      },
+      "sentenceAverage": 26.9,
+      "sentenceSpread": 19,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/archive/index.html",
+      "words": 357,
+      "score": 2,
+      "cliches": {},
+      "sentenceAverage": 27.5,
+      "sentenceSpread": 24.8,
+      "repeatedStarts": [
+        [
+          "open ↗ banhalmi.art",
+          4
+        ]
+      ]
+    },
+    {
+      "file": "/hu/archivum/index.html",
+      "words": 329,
+      "score": 2,
+      "cliches": {},
+      "sentenceAverage": 25.3,
+      "sentenceSpread": 23.9,
+      "repeatedStarts": [
+        [
+          "megnyitás ↗ banhalmi.art",
+          4
+        ]
+      ]
+    },
+    {
+      "file": "/de-at/archiv/index.html",
+      "words": 327,
+      "score": 2,
+      "cliches": {},
+      "sentenceAverage": 25.2,
+      "sentenceSpread": 23,
+      "repeatedStarts": [
+        [
+          "öffnen ↗ banhalmi.art",
+          4
+        ]
+      ]
+    },
+    {
+      "file": "/hu/portre/index.html",
+      "words": 2059,
+      "score": 1.97,
+      "cliches": {
+        "nem-csak": 1,
+        "minden": 1
+      },
+      "sentenceAverage": 22.1,
+      "sentenceSpread": 12.4,
+      "repeatedStarts": [
+        [
+          "környezeti portré egy",
+          3
+        ]
+      ]
+    },
+    {
+      "file": "/hu/esettanulmanyok/magyar-peter-portre-2026/index.html",
+      "words": 645,
+      "score": 1.55,
+      "cliches": {
+        "minden": 1
+      },
+      "sentenceAverage": 21.5,
+      "sentenceSpread": 25.4,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/kapcsolat/index.html",
+      "words": 657,
+      "score": 1.52,
+      "cliches": {
+        "minden": 1
+      },
+      "sentenceAverage": 15.6,
+      "sentenceSpread": 16.2,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/contact/index.html",
+      "words": 736,
+      "score": 1.36,
+      "cliches": {
+        "every": 1
+      },
+      "sentenceAverage": 17.9,
+      "sentenceSpread": 16.8,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/faq/index.html",
+      "words": 742,
+      "score": 1.35,
+      "cliches": {
+        "more-than": 1
+      },
+      "sentenceAverage": 13.6,
+      "sentenceSpread": 14.2,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/brand/index.html",
+      "words": 1610,
+      "score": 1.24,
+      "cliches": {
+        "minden": 2
+      },
+      "sentenceAverage": 25.1,
+      "sentenceSpread": 19.3,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/speier-viko/index.html",
+      "words": 828,
+      "score": 1.21,
+      "cliches": {
+        "nicht-nur": 1
+      },
+      "sentenceAverage": 21.2,
+      "sentenceSpread": 19.2,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/speier-viko/index.html",
+      "words": 840,
+      "score": 1.19,
+      "cliches": {
+        "minden": 1
+      },
+      "sentenceAverage": 21.5,
+      "sentenceSpread": 20.1,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/muveszi-fotografia/index.html",
+      "words": 1710,
+      "score": 1.17,
+      "cliches": {
+        "minden": 2
+      },
+      "sentenceAverage": 32.8,
+      "sentenceSpread": 44,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/werk/index.html",
+      "words": 2618,
+      "score": 1.15,
+      "cliches": {
+        "Mehr-als": 2,
+        "nicht-nur": 1
+      },
+      "sentenceAverage": 33.5,
+      "sentenceSpread": 63.3,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/event-photography/index.html",
+      "words": 914,
+      "score": 1.09,
+      "cliches": {
+        "every": 1
+      },
+      "sentenceAverage": 23.4,
+      "sentenceSpread": 18.3,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/adatvedelem/index.html",
+      "words": 902,
+      "score": 1,
+      "cliches": {},
+      "sentenceAverage": 17.3,
+      "sentenceSpread": 14.5,
+      "repeatedStarts": [
+        [
+          "a google analytics",
+          3
+        ]
+      ]
+    },
+    {
+      "file": "/de-at/brand/index.html",
+      "words": 1554,
+      "score": 0.64,
+      "cliches": {
+        "authentisch": 1
+      },
+      "sentenceAverage": 23.9,
+      "sentenceSpread": 17.9,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/fine-art/index.html",
+      "words": 1602,
+      "score": 0.62,
+      "cliches": {
+        "nicht-nur": 1
+      },
+      "sentenceAverage": 30.8,
+      "sentenceSpread": 40.6,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/portrait/index.html",
+      "words": 1923,
+      "score": 0.52,
+      "cliches": {
+        "Mehr-als": 1
+      },
+      "sentenceAverage": 20.4,
+      "sentenceSpread": 11.5,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/requestaquote/index.html",
+      "words": 1455,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 25.9,
+      "sentenceSpread": 52.1,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/anfrage/index.html",
+      "words": 1337,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 23.4,
+      "sentenceSpread": 47.7,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/privacy-policy/index.html",
+      "words": 996,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 19.2,
+      "sentenceSpread": 14.8,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/datenschutz/index.html",
+      "words": 897,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 17.3,
+      "sentenceSpread": 13.4,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/eventfotografie/index.html",
+      "words": 829,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 23,
+      "sentenceSpread": 16.9,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/terms-conditions/index.html",
+      "words": 809,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 16.5,
+      "sentenceSpread": 14.7,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/agb/index.html",
+      "words": 703,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 14.6,
+      "sentenceSpread": 13.9,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/faq/index.html",
+      "words": 689,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 12.6,
+      "sentenceSpread": 12.9,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/case-studies/peter-magyar-portrait-2026/index.html",
+      "words": 680,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 23.4,
+      "sentenceSpread": 26.8,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/kontakt/index.html",
+      "words": 679,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 15.8,
+      "sentenceSpread": 15.5,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/gyik/index.html",
+      "words": 659,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 12,
+      "sentenceSpread": 13.8,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/fallstudien/peter-magyar-portraet-2026/index.html",
+      "words": 652,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 21,
+      "sentenceSpread": 24.4,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/impressum/index.html",
+      "words": 583,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 22.4,
+      "sentenceSpread": 22.9,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/impresszum/index.html",
+      "words": 551,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 21.2,
+      "sentenceSpread": 22.5,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/impressum/index.html",
+      "words": 523,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 19.4,
+      "sentenceSpread": 20.6,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/cookie-policy/index.html",
+      "words": 404,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 20.2,
+      "sentenceSpread": 21.3,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/hu/sutik/index.html",
+      "words": 398,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 19.9,
+      "sentenceSpread": 20.6,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/cookies/index.html",
+      "words": 387,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 20.4,
+      "sentenceSpread": 20.4,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/accessibility/index.html",
+      "words": 362,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 25.9,
+      "sentenceSpread": 24.2,
+      "repeatedStarts": []
+    },
+    {
+      "file": "/de-at/barrierefreiheit/index.html",
+      "words": 329,
+      "score": 0,
+      "cliches": {},
+      "sentenceAverage": 23.5,
+      "sentenceSpread": 23,
+      "repeatedStarts": []
+    }
+  ]
+}
