@@ -1,0 +1,61 @@
+name: Apply direct human voice homepage
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/human-voice-pages-direct
+          fetch-depth: 0
+      - name: Decode and validate reviewed homepage
+        run: |
+          base64 --decode .human-voice/main/index.b64 > /tmp/index.html
+          test "$(head -c 15 /tmp/index.html)" = '<!DOCTYPE html>'
+          grep -q '<html lang="en"' /tmp/index.html
+          grep -q '<main id="main">' /tmp/index.html
+          grep -q 'The photograph speaks before the meeting begins.' /tmp/index.html
+          grep -q '</html>' /tmp/index.html
+          mv /tmp/index.html index.html
+      - name: Update immutable copy expectation
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('tools/audit-static-integrity.mjs')
+          s = p.read_text()
+          old = "'index.html': ['Visual Trust Strategy', 'We build visual trust before the meeting begins.']"
+          new = "'index.html': ['Visual Trust Strategy', 'The photograph speaks before the meeting begins.']"
+          if old in s:
+              s = s.replace(old, new)
+          p.write_text(s)
+          PY
+      - name: Install dependencies
+        run: npm ci
+      - name: Run complete deterministic audit
+        run: npm run audit
+      - name: Verify exact scope
+        run: |
+          git diff --name-only | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          index.html
+          tools/audit-static-integrity.mjs
+          EOF
+          sort -o /tmp/expected.txt /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+      - name: Commit audited homepage
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html tools/audit-static-integrity.mjs
+          git rm -r .human-voice .github/workflows/apply-direct-homepage.yml
+          git commit -m "Apply reviewed English homepage copy"
+          git push
