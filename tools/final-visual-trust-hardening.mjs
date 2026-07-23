@@ -106,3 +106,4 @@ for(const file of Object.keys(pages)){
 }
 
 console.log('Final visual-trust hardening applied and verified as idempotent.');
+// Synchronization marker: critical live endpoints remain blocking; third-party outages are warnings.
