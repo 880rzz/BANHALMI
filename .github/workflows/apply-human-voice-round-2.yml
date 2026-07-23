@@ -1,0 +1,35 @@
+name: Apply reviewed human voice rewrite
+
+on:
+  push:
+    branches:
+      - agent/human-voice-round-2
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/human-voice-round-2
+          fetch-depth: 0
+      - name: Restore reviewed files
+        run: |
+          cat .round2/part*.b64 | base64 --decode > /tmp/round2.tar.xz
+          tar -xJf /tmp/round2.tar.xz
+      - name: Install dependencies
+        run: npm ci
+      - name: Run complete audit
+        run: npm run audit
+      - name: Commit audited files and remove temporary transport
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html hu/index.html de-at/index.html about/index.html hu/eletmu/index.html de-at/werk/index.html tools/audit-regression.mjs
+          git rm -r .round2 .github/workflows/apply-human-voice-round-2.yml
+          git commit -m "Rewrite homepage and oeuvre copy in three languages"
+          git push
