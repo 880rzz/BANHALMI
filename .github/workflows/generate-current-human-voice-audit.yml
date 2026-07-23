@@ -1,0 +1,33 @@
+name: Generate current human voice audit
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/current-human-voice-audit
+          fetch-depth: 0
+      - name: Generate current report
+        run: |
+          mkdir -p audit
+          node tools/audit-human-voice.mjs > /tmp/raw-report.txt
+          tail -n +2 /tmp/raw-report.txt > audit/current-human-voice.json
+          node -e "JSON.parse(require('fs').readFileSync('audit/current-human-voice.json','utf8')); console.log('valid report')"
+      - name: Commit report and remove workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audit/current-human-voice.json
+          git rm .github/workflows/generate-current-human-voice-audit.yml
+          git commit -m "Generate current human voice audit report"
+          git push
