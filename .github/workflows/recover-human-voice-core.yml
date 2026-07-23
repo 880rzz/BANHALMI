@@ -1,0 +1,74 @@
+name: Recover reviewed human voice core
+
+on:
+  push:
+    branches:
+      - agent/full-human-voice-recovery
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fetch verified transport source
+        run: git fetch origin agent/human-voice-round-2-final
+      - name: Reconstruct and validate archive
+        run: |
+          rm -rf /tmp/round2-parts /tmp/round2-extract
+          mkdir -p /tmp/round2-parts /tmp/round2-extract
+          for part in 00 01 02 03 04 05 06; do
+            git show origin/agent/human-voice-round-2-final:.round2/part${part}.b64 > /tmp/round2-parts/part${part}.b64
+          done
+          cat /tmp/round2-parts/part*.b64 | tr -d '\r\n' | base64 --decode > /tmp/round2.tar.xz
+          xz --test /tmp/round2.tar.xz
+          tar -tJf /tmp/round2.tar.xz > /tmp/round2-files.txt
+          for required in index.html hu/index.html de-at/index.html about/index.html hu/eletmu/index.html de-at/werk/index.html; do
+            grep -qx "${required}" /tmp/round2-files.txt
+          done
+          tar -xJf /tmp/round2.tar.xz -C /tmp/round2-extract
+      - name: Apply only reviewed production files
+        run: |
+          for file in index.html hu/index.html de-at/index.html about/index.html hu/eletmu/index.html de-at/werk/index.html; do
+            cp "/tmp/round2-extract/${file}" "${file}"
+          done
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('tools/audit-static-integrity.mjs')
+          s = p.read_text()
+          s = s.replace("'index.html': ['Visual Trust Strategy', 'We build visual trust before the meeting begins.']", "'index.html': ['Visual Trust Strategy', 'The photograph speaks before the meeting begins.']")
+          s = s.replace("'hu/index.html': ['Vizuális bizalomstratégia', 'Vizuális bizalmat építünk már az első találkozás előtt.']", "'hu/index.html': ['Vizuális bizalomstratégia', 'A fénykép már az első találkozás előtt megszólal.']")
+          s = s.replace("'de-at/index.html': ['Strategie für visuelles Vertrauen', 'Wir schaffen visuelles Vertrauen vor der ersten Begegnung.']", "'de-at/index.html': ['Strategie für visuelles Vertrauen', 'Das Bild spricht, bevor die Begegnung beginnt.']")
+          p.write_text(s)
+          PY
+      - name: Install dependencies
+        run: npm ci
+      - name: Run complete deterministic audit
+        run: npm run audit
+      - name: Verify intended scope
+        run: |
+          git diff --name-only | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          about/index.html
+          de-at/index.html
+          de-at/werk/index.html
+          hu/eletmu/index.html
+          hu/index.html
+          index.html
+          tools/audit-static-integrity.mjs
+          EOF
+          sort -o /tmp/expected.txt /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+      - name: Commit recovered core pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html hu/index.html de-at/index.html about/index.html hu/eletmu/index.html de-at/werk/index.html tools/audit-static-integrity.mjs
+          git rm .github/workflows/recover-human-voice-core.yml
+          git commit -m "Recover reviewed homepage and oeuvre copy"
+          git push
