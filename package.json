@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "audit": "node tools/audit-static-integrity.mjs && node tools/audit-regression.mjs && node tools/audit-seo-network.mjs && node tests/quote-pdf-content.test.mjs",
+    "audit": "node tools/audit-static-integrity.mjs && node tools/audit-regression.mjs && node tools/audit-seo-network.mjs && node tools/audit-redirect-config.mjs && node tests/quote-pdf-content.test.mjs",
     "audit:live": "LIVE_AUDIT=1 node tools/audit-seo-network.mjs || node tools/classify-link-report.mjs",
     "audit:production": "node tools/audit-production-routing.mjs",
     "test:browser": "playwright test"
