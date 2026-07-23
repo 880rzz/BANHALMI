@@ -1,0 +1,39 @@
+name: Apply visual trust positioning
+
+on:
+  push:
+    branches:
+      - agent/visual-trust-positioning
+    paths:
+      - tools/apply-visual-trust-positioning.mjs
+      - .github/workflows/apply-visual-trust-positioning.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/visual-trust-positioning
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Apply positioning updates
+        run: node tools/apply-visual-trust-positioning.mjs
+      - name: Validate JSON
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('brand-positioning.jsonld','utf8')); console.log('brand-positioning.jsonld valid')"
+          npm test --if-present
+      - name: Commit generated changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html hu/index.html de-at/index.html ai.txt llms.txt llms-full.txt knowledge.json entity.jsonld entity-graph.json services.json partner-service-context.json brand-positioning.jsonld
+          git diff --cached --quiet && exit 0
+          git commit -m 'Apply visual trust positioning across SEO GEO and schema'
+          git push
