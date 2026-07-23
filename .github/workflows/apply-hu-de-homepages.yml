@@ -1,0 +1,79 @@
+name: Apply reviewed HU DE homepages
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/human-voice-pages-direct
+          fetch-depth: 0
+      - name: Decode and validate localized homepage blocks
+        run: |
+          base64 --decode .human-voice/home/hu-main.html.gz.b64 | gunzip > /tmp/hu-main.html
+          base64 --decode .human-voice/home/de-main.html.gz.b64 | gunzip > /tmp/de-main.html
+          grep -q '^<main id="main">' /tmp/hu-main.html
+          grep -q 'A fénykép már az első találkozás előtt megszólal.' /tmp/hu-main.html
+          grep -q '</main>$' /tmp/hu-main.html
+          grep -q '^<main id="main">' /tmp/de-main.html
+          grep -q 'Das Bild spricht, bevor die Begegnung beginnt.' /tmp/de-main.html
+          grep -q '</main>$' /tmp/de-main.html
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          for target_name, block_name in [('hu/index.html', '/tmp/hu-main.html'), ('de-at/index.html', '/tmp/de-main.html')]:
+              target = Path(target_name)
+              html = target.read_text()
+              block = Path(block_name).read_text()
+              updated, count = re.subn(r'<main id="main">[\s\S]*?</main>', lambda _: block, html, count=1)
+              if count != 1:
+                  raise SystemExit(f'{target_name}: expected one main block, replaced {count}')
+              target.write_text(updated)
+          PY
+      - name: Update immutable localized copy expectations
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('tools/audit-static-integrity.mjs')
+          s = p.read_text()
+          replacements = {
+            "'hu/index.html': ['Vizuális bizalomstratégia', 'Vizuális bizalmat építünk már az első találkozás előtt.']": "'hu/index.html': ['Vizuális bizalomstratégia', 'A fénykép már az első találkozás előtt megszólal.']",
+            "'de-at/index.html': ['Strategie für visuelles Vertrauen', 'Wir schaffen visuelles Vertrauen vor der ersten Begegnung.']": "'de-at/index.html': ['Strategie für visuelles Vertrauen', 'Das Bild spricht, bevor die Begegnung beginnt.']"
+          }
+          for old, new in replacements.items():
+              if old in s:
+                  s = s.replace(old, new)
+          p.write_text(s)
+          PY
+      - name: Install dependencies
+        run: npm install
+      - name: Run complete deterministic audit
+        run: npm run audit
+      - name: Verify exact scope
+        run: |
+          git diff --name-only | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          de-at/index.html
+          hu/index.html
+          tools/audit-static-integrity.mjs
+          EOF
+          sort -o /tmp/expected.txt /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+      - name: Commit audited localized homepages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hu/index.html de-at/index.html tools/audit-static-integrity.mjs
+          git rm -r .human-voice/home .github/workflows/apply-hu-de-homepages.yml
+          rmdir .human-voice 2>/dev/null || true
+          git commit -m "Apply reviewed Hungarian and German homepage copy"
+          git push
