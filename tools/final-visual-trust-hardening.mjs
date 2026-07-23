@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 
+// PR #33 validation marker; no production behavior depends on this comment.
 const read=p=>fs.readFileSync(p,'utf8');
 const write=(p,s)=>fs.writeFileSync(p,s);
 const replaceIfPresent=(source,from,to)=>source.includes(from)?source.split(from).join(to):source;
