@@ -16,19 +16,28 @@ jobs:
         with:
           ref: agent/human-voice-profiles-contact-partners
           fetch-depth: 0
-      - name: Decode reviewed files
+      - name: Decode and extract reviewed files
         run: |
+          set -euxo pipefail
+          wc -c .human-voice/profile-contact-partners.tar.gz.b64
           base64 --decode .human-voice/profile-contact-partners.tar.gz.b64 > /tmp/profile-contact-partners.tar.gz
+          tar -tzf /tmp/profile-contact-partners.tar.gz
           tar -xzf /tmp/profile-contact-partners.tar.gz
-          grep -q 'strategy that can be seen' speier-viko/index.html
-          grep -q 'stratégia, amely a képen is látszik' hu/speier-viko/index.html
-          grep -q 'Strategie, die im Bild sichtbar wird' de-at/speier-viko/index.html
-          grep -q 'The right team for the assignment' contact/index.html
-          grep -q 'A feladathoz illő csapat' hu/kapcsolat/index.html
-          grep -q 'Das passende Team für den Auftrag' de-at/kontakt/index.html
-          grep -q 'developed since 1999' partners/index.html
-          grep -q '1999 óta végzett' hu/partnerek/index.html
-          grep -q 'seit 1999' de-at/partner/index.html
+      - name: Validate Viko profiles
+        run: |
+          grep -Fq 'strategy that can be seen' speier-viko/index.html
+          grep -Fq 'stratégia, amely a képen is látszik' hu/speier-viko/index.html
+          grep -Fq 'Strategie, die im Bild sichtbar wird' de-at/speier-viko/index.html
+      - name: Validate contact pages
+        run: |
+          grep -Fq 'The right team for the assignment' contact/index.html
+          grep -Fq 'A feladathoz illő csapat' hu/kapcsolat/index.html
+          grep -Fq 'Das passende Team für den Auftrag' de-at/kontakt/index.html
+      - name: Validate partner pages
+        run: |
+          grep -Fq 'developed since 1999' partners/index.html
+          grep -Fq '1999 óta végzett' hu/partnerek/index.html
+          grep -Fq 'seit 1999' de-at/partner/index.html
       - name: Install dependencies
         run: npm install --silent
       - name: Run complete audit
