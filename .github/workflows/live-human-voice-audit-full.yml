@@ -1,0 +1,57 @@
+name: Live full human voice audit
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Crawl live sitemap and audit visible copy
+        run: |
+          cat > /tmp/live-audit.mjs <<'JS'
+          import fs from 'node:fs';
+          const base='https://www.norbertbanhalmi.com';
+          const decode=s=>s.replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&ndash;/g,'–').replace(/&mdash;/g,'—').replace(/&hellip;/g,'…').replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n)));
+          const visible=html=>decode(html.replace(/<script\b[\s\S]*?<\/script>/gi,' ').replace(/<style\b[\s\S]*?<\/style>/gi,' ').replace(/<noscript\b[\s\S]*?<\/noscript>/gi,' ').replace(/<!--([\s\S]*?)-->/g,' ').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim());
+          const patterns=[['more-than',/\bmore than\b/gi],['not-just',/\bnot just\b/gi],['not-only',/\bnot only\b/gi],['every',/\bevery\b/gi],['journey',/\bjourney\b/gi],['timeless',/\btimeless\b/gi],['authentic',/\bauthentic\b/gi],['unique',/\bunique\b/gi],['discover',/\bdiscover\b/gi],['seamless',/\bseamless\b/gi],['elevate',/\belevat(?:e|es|ed|ing)\b/gi],['Mehr-als',/\bmehr als\b/gi],['nicht-nur',/\bnicht nur\b/gi],['authentisch',/\bauthentisch\w*\b/gi],['einzigartig',/\beinzigartig\w*\b/gi],['több-mint',/\btöbb mint\b/gi],['nem-csak',/\bnem csak\b/gi],['autentikus',/\bautentikus\w*\b/gi],['egyedi',/\begyedi\w*\b/gi],['minden',/\bminden\b/gi]];
+          function stats(text){const ss=text.split(/(?<=[.!?…])\s+(?=[A-ZÁÉÍÓÖŐÚÜŰÄÖÜ])/u).map(x=>x.trim()).filter(x=>x.length>=18);const ls=ss.map(x=>x.split(/\s+/).length);if(!ls.length)return{count:0,average:0,spread:0,starts:[]};const avg=ls.reduce((a,b)=>a+b,0)/ls.length;const spread=Math.sqrt(ls.reduce((s,n)=>s+(n-avg)**2,0)/ls.length);const m=new Map();for(const s of ss){const k=s.toLocaleLowerCase().split(/\s+/).slice(0,3).join(' ');m.set(k,(m.get(k)||0)+1)}return{count:ss.length,average:+avg.toFixed(1),spread:+spread.toFixed(1),starts:[...m].filter(([,c])=>c>=3).sort((a,b)=>b[1]-a[1]).slice(0,6)}}
+          const get=async url=>{const r=await fetch(url,{redirect:'follow',headers:{'user-agent':'BANHALMI-live-human-voice-audit/1.0'}});if(!r.ok)throw new Error(`${url} HTTP ${r.status}`);return{url:r.url,text:await r.text(),status:r.status}};
+          const sm=await get(base+'/sitemap.xml');
+          let urls=[...sm.text.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1].trim()).filter(u=>u.startsWith(base));
+          urls=[...new Set(urls)];
+          const pages=[]; const errors=[];
+          for(const url of urls){try{const r=await get(url);const text=visible(r.text);if(text.length<120)continue;const matches={};let cc=0;for(const [n,re] of patterns){const c=(text.match(re)||[]).length;if(c)matches[n]=c;cc+=c}const st=stats(text);const words=text.split(/\s+/).length;const density=words?cc/words*1000:0;const monotony=st.count>=8&&st.spread<6?3:st.count>=8&&st.spread<9?1:0;const repeated=st.starts.reduce((s,[,c])=>s+c-2,0);const score=+(density+monotony+repeated).toFixed(2);const lang=url.includes('/hu/')?'hu':url.includes('/de-at/')?'de':'en';pages.push({url,path:new URL(url).pathname,lang,status:r.status,words,score,cliches:matches,sentenceAverage:st.average,sentenceSpread:st.spread,repeatedStarts:st.starts});}catch(e){errors.push({url,error:String(e.message||e)})}}
+          pages.sort((a,b)=>b.score-a.score||b.words-a.words);
+          const markers={
+            '/':['A strong portrait speaks before the meeting begins.'],
+            '/hu/':['A fénykép már az első találkozás előtt megszólal.'],
+            '/de-at/':['Das Bild spricht, bevor die Begegnung beginnt.'],
+            '/contact/':['The right team for the assignment'],
+            '/hu/kapcsolat/':['A feladathoz illő csapat'],
+            '/de-at/kontakt/':['Das passende Team für den Auftrag'],
+            '/speier-viko/':['strategy that can be seen'],
+            '/hu/speier-viko/':['stratégia, amely a képen is látszik'],
+            '/de-at/speier-viko/':['Strategie, die im Bild sichtbar wird']
+          };
+          const deployment=[];for(const [p,ms] of Object.entries(markers)){try{const h=(await get(base+p)).text;deployment.push({path:p,ok:ms.every(m=>h.includes(m)),markers:ms});}catch(e){deployment.push({path:p,ok:false,error:String(e.message||e)})}}
+          const report={generatedAt:new Date().toISOString(),sitemapUrl:sm.url,totalUrls:urls.length,auditedPages:pages.length,errors,deployment,summary:{en:pages.filter(x=>x.lang==='en').length,hu:pages.filter(x=>x.lang==='hu').length,de:pages.filter(x=>x.lang==='de').length},highestRisk:pages.slice(0,50),pages};
+          fs.writeFileSync('live-human-voice-report.json',JSON.stringify(report,null,2));
+          console.log(JSON.stringify({totalUrls:report.totalUrls,auditedPages:report.auditedPages,errors:errors.length,deployment,highestRisk:pages.slice(0,30)},null,2));
+          if(errors.length) process.exitCode=1;
+          JS
+          node /tmp/live-audit.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-human-voice-report
+          path: live-human-voice-report.json
+          if-no-files-found: error
