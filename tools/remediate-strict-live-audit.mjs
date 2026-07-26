@@ -13,12 +13,18 @@ async function walk(dir) {
 }
 
 const replacements = [
-  [/1999 óta épülő?/giu, '1999 óta épülő'],
-  [/1999 óta épülő?/giu, '1999 óta épülő'],
-  [/more than twenty[- ]five years/giu, 'since 1999'],
-  [/twenty[- ]five years/giu, 'since 1999'],
-  [/einer seit 1999 aufgebauten Praxis/giu, 'seit 1999'],
-  [/seit einer seit 1999 aufgebauten Praxis/giu, 'seit 1999'],
+  [/for\s+more\s+than\s+since\s+1999/giu, 'since 1999'],
+  [/more\s+than\s+since\s+1999/giu, 'since 1999'],
+  [/more\s+than\s+twenty[\s\u2010-\u2015-]*five\s+years/giu, 'since 1999'],
+  [/twenty[\s\u2010-\u2015-]*five\s+years/giu, 'since 1999'],
+  [/több\s+mint\s+1999\s+óta/giu, '1999 óta'],
+  [/több\s+mint\s+huszonöt\s+év(?:es|e)?/giu, '1999 óta épülő'],
+  [/huszonöt\s+év(?:es|e)?/giu, '1999 óta épülő'],
+  [/seit\s+seit\s+1999/giu, 'seit 1999'],
+  [/seit\s+einer\s+seit\s+1999\s+aufgebauten\s+Praxis/giu, 'seit 1999'],
+  [/einer\s+seit\s+1999\s+aufgebauten\s+Praxis/giu, 'seit 1999'],
+  [/mehr\s+als\s+fünfundzwanzig\s+Jahren/giu, 'seit 1999'],
+  [/fünfundzwanzig\s+Jahren/giu, 'seit 1999'],
   [/Norbert Banhalmi e\.U\./g, 'Bánhalmi Norbert e.U.'],
   [/banhalmi_consent_v2/g, 'banhalmi_consent_v3'],
   [/Technikai megfelelőségi tervezet[^<.]*(?:\.|<)/giu, 'A tájékoztató a weboldal jelenlegi adatkezelési működését írja le.<'],
@@ -36,7 +42,6 @@ for (const file of files) {
     content = content
       .replace(/<label([^>]*for=["']name["'][^>]*)>\s*Name\s*<\/label>/i, '<label$1>Name <span aria-hidden="true">*</span></label>')
       .replace(/<label([^>]*for=["']name["'][^>]*)>\s*Név\s*<\/label>/i, '<label$1>Név <span aria-hidden="true">*</span></label>')
-      .replace(/<label([^>]*for=["']name["'][^>]*)>\s*Name\s*<\/label>/i, '<label$1>Name <span aria-hidden="true">*</span></label>')
       .replace(/<input([^>]*\bname=["']name["'][^>]*)>/i, (m, attrs) => /\brequired\b/i.test(attrs) ? m : `<input${attrs} required>`);
   }
 
