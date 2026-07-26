@@ -14,12 +14,15 @@ async function walk(dir) {
 }
 
 const replacements = [
-  [/more\s+than\s+twenty[\s\u2010-\u2015-]*five\s+years/giu, 'a professional practice built since 1999'],
-  [/twenty[\s\u2010-\u2015-]*five\s+years/giu, 'a professional practice built since 1999'],
-  [/több\s+mint\s+huszonöt\s+év(?:es|e)?/giu, '1999 óta épülő'],
-  [/huszonöt\s+év(?:es|e)?/giu, '1999 óta épülő'],
-  [/mehr\s+als\s+fünfundzwanzig\s+Jahren/giu, 'einer seit 1999 aufgebauten Praxis'],
-  [/fünfundzwanzig\s+Jahren/giu, 'einer seit 1999 aufgebauten Praxis']
+  [/For more than since 1999/giu, 'Since 1999'],
+  [/Több mint 1999 óta/giu, '1999 óta'],
+  [/Seit seit 1999/giu, 'Seit 1999'],
+  [/more\s+than\s+twenty[\s\u2010-\u2015-]*five\s+years/giu, 'since 1999'],
+  [/twenty[\s\u2010-\u2015-]*five\s+years/giu, 'since 1999'],
+  [/több\s+mint\s+huszonöt\s+év(?:es|e)?/giu, '1999 óta'],
+  [/huszonöt\s+év(?:es|e)?/giu, '1999 óta'],
+  [/mehr\s+als\s+fünfundzwanzig\s+Jahren/giu, 'seit 1999'],
+  [/fünfundzwanzig\s+Jahren/giu, 'seit 1999']
 ];
 
 await walk(root);
@@ -36,8 +39,8 @@ for (const file of files) {
 
 for (const route of ['index.html', 'hu/index.html', 'de-at/index.html']) {
   const content = await readFile(path.join(root, route), 'utf8');
-  if (/twenty[\s\u2010-\u2015-]*five\s+years|huszonöt\s+év|fünfundzwanzig\s+Jahren/iu.test(content)) {
-    throw new Error(`${route}: stale duration copy remains`);
+  if (/twenty[\s\u2010-\u2015-]*five\s+years|huszonöt\s+év|fünfundzwanzig\s+Jahren|more than since 1999|Több mint 1999 óta|Seit seit 1999/iu.test(content)) {
+    throw new Error(`${route}: stale or malformed duration copy remains`);
   }
 }
 
