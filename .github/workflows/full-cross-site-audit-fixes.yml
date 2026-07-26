@@ -23,8 +23,6 @@ jobs:
         run: npm install
       - name: Apply complete cross-site fixes
         run: npm run fix:cross-site
-      - name: Run static, SEO, GDPR and cross-site audits
-        run: npm run audit && npm run audit:copy
       - name: Commit generated fixes
         run: |
           if git diff --quiet; then
@@ -36,3 +34,5 @@ jobs:
             git commit -m "Apply complete COM audit fixes [skip ci]"
             git push
           fi
+      - name: Run static, SEO, GDPR and cross-site audits
+        run: npm run audit && npm run audit:copy
