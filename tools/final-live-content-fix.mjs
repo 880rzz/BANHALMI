@@ -14,9 +14,9 @@ async function walk(dir) {
 }
 
 const replacements = [
-  [/For more than since 1999/giu, 'Since 1999'],
-  [/Több mint 1999 óta/giu, '1999 óta'],
-  [/Seit seit 1999/giu, 'Seit 1999'],
+  [/Since 1999/giu, 'Since 1999'],
+  [/1999 óta/giu, '1999 óta'],
+  [/Seit 1999/giu, 'Seit 1999'],
   [/more\s+than\s+twenty[\s\u2010-\u2015-]*five\s+years/giu, 'since 1999'],
   [/twenty[\s\u2010-\u2015-]*five\s+years/giu, 'since 1999'],
   [/több\s+mint\s+huszonöt\s+év(?:es|e)?/giu, '1999 óta'],
@@ -39,7 +39,7 @@ for (const file of files) {
 
 for (const route of ['index.html', 'hu/index.html', 'de-at/index.html']) {
   const content = await readFile(path.join(root, route), 'utf8');
-  if (/twenty[\s\u2010-\u2015-]*five\s+years|huszonöt\s+év|fünfundzwanzig\s+Jahren|more than since 1999|Több mint 1999 óta|Seit seit 1999/iu.test(content)) {
+  if (/twenty[\s\u2010-\u2015-]*five\s+years|huszonöt\s+év|fünfundzwanzig\s+Jahren|more than since 1999|1999 óta|Seit 1999/iu.test(content)) {
     throw new Error(`${route}: stale or malformed duration copy remains`);
   }
 }
