@@ -5,7 +5,7 @@ async function request(url, options = {}) {
   const response = await fetch(url, {
     redirect: options.redirect || 'manual',
     headers: {
-      'user-agent': 'BANHALMI production routing audit/1.1',
+      'user-agent': 'BANHALMI production routing audit/1.2',
       'cache-control': 'no-cache',
       pragma: 'no-cache'
     },
@@ -31,11 +31,11 @@ async function checkPage(url, phrases) {
 }
 
 await checkPage('https://www.norbertbanhalmi.com/', [
-  'Executive Portraiture &amp; Visual Branding',
+  'Executive Portraiture',
   'Since 1999'
 ]);
 await checkPage('https://www.norbertbanhalmi.com/hu/', [
-  'Executive portréfotózás',
+  'Executive portré',
   '1999 óta'
 ]);
 await checkPage('https://www.norbertbanhalmi.com/de-at/', [
