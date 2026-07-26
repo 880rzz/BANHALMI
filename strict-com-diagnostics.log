@@ -15,8 +15,8 @@ Production audit regression checks passed.
 Static SEO audit collected 160 unique external URLs; set LIVE_AUDIT=1 to check them.
 Validated 54 sitemap pages and 66 HTML files.
 Vercel language-domain redirect configurations are valid.
-Audited 92 COM files for cross-site consistency.
-Strict COM audit checked 104 content files.
+Audited 94 COM files for cross-site consistency.
+Strict COM audit checked 106 content files.
 Quote PDF content audit passed.
 
 > audit:copy
@@ -24,7 +24,7 @@ Quote PDF content audit passed.
 
 Human-voice audit: 54 content pages checked.
 {
-  "generatedAt": "2026-07-26T09:25:41.671Z",
+  "generatedAt": "2026-07-26T09:26:31.650Z",
   "highestRisk": [
     {
       "file": "/hu/akadalymentesseg/index.html",
