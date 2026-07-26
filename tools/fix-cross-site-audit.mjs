@@ -88,7 +88,7 @@ for (const file of files) {
     .replace(/zwanzig dokumentierte Ausstellungen(?: und langfristige Projekte)?/gi, 'neunzehn realisierte Ausstellungen und ein Projekt in Entwicklung')
     .replace(/twenty[- ]five years/gi, 'since 1999')
     .replace(/25 years/gi, 'since 1999')
-    .replace(/huszonöt éve/gi, '1999 óta')
+    .replace(/1999 óta épülő/gi, '1999 óta')
     .replace(/25 éve/gi, '1999 óta')
     .replace(/seit 25 Jahren/gi, 'seit 1999');
 
