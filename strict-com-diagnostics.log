@@ -24,7 +24,7 @@ Quote PDF content audit passed.
 
 Human-voice audit: 54 content pages checked.
 {
-  "generatedAt": "2026-07-26T09:26:31.650Z",
+  "generatedAt": "2026-07-26T09:27:00.101Z",
   "highestRisk": [
     {
       "file": "/hu/akadalymentesseg/index.html",
