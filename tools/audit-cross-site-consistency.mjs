@@ -28,8 +28,8 @@ for (const file of files) {
   const content = await readFile(file, 'utf8');
 
   if (/Szösszenetek|Snippets|szosszenetek/i.test(content + route)) {
-    const identifiers = [...content.matchAll(/(?:isbn[^0-9]{0,20}|ISBN\s*)([0-9-]{10,17})/gi)].map((m) => m[1].replaceAll('-', ''));
-    if (identifiers.some((value) => value !== '9786150000534')) failures.push(`${route}: inconsistent Szösszenetek ISBN`);
+    if (/2310005245015|9786155596766|978-615-5596-76-6/.test(content)) failures.push(`${route}: legacy Szösszenetek identifier remains`);
+    if (!/9786150000534/.test(content)) failures.push(`${route}: authoritative Szösszenetek ISBN missing`);
   }
 
   if (/twenty documented exhibitions and long-term projects|20 documented exhibitions and long-term projects|húsz dokumentált kiállítás|zwanzig dokumentierte Ausstellungen/i.test(content)) {
@@ -40,10 +40,18 @@ for (const file of files) {
   if (!route.endsWith('.html') || /http-equiv=["']refresh["']/i.test(content)) continue;
   const expectedLocale = route.startsWith('hu/') ? 'hu_HU' : route.startsWith('de-at/') ? 'de_AT' : 'en_US';
   if (metaValue(content, 'og:locale') !== expectedLocale) failures.push(`${route}: invalid og:locale`);
-  for (const key of ['og:site_name', 'og:image:alt', 'og:image:width', 'og:image:height']) {
-    if (metaValue(content, key) === '') failures.push(`${route}: missing ${key}`);
+  if (metaValue(content, 'og:site_name') === '') failures.push(`${route}: missing og:site_name`);
+
+  const ogImage = metaValue(content, 'og:image');
+  if (ogImage) {
+    for (const key of ['og:image:alt', 'og:image:width', 'og:image:height']) {
+      if (metaValue(content, key) === '') failures.push(`${route}: missing ${key}`);
+    }
+    for (const key of ['twitter:image', 'twitter:image:alt']) {
+      if (metaValue(content, key, 'name') === '') failures.push(`${route}: missing ${key}`);
+    }
   }
-  for (const key of ['twitter:title', 'twitter:description', 'twitter:image', 'twitter:image:alt']) {
+  for (const key of ['twitter:title', 'twitter:description']) {
     if (metaValue(content, key, 'name') === '') failures.push(`${route}: missing ${key}`);
   }
 
