@@ -15,8 +15,8 @@ Production audit regression checks passed.
 Static SEO audit collected 160 unique external URLs; set LIVE_AUDIT=1 to check them.
 Validated 54 sitemap pages and 66 HTML files.
 Vercel language-domain redirect configurations are valid.
-Audited 91 COM files for cross-site consistency.
-Strict COM audit checked 103 content files.
+Audited 92 COM files for cross-site consistency.
+Strict COM audit checked 104 content files.
 Quote PDF content audit passed.
 
 > audit:copy
@@ -24,7 +24,7 @@ Quote PDF content audit passed.
 
 Human-voice audit: 54 content pages checked.
 {
-  "generatedAt": "2026-07-26T09:22:44.580Z",
+  "generatedAt": "2026-07-26T09:25:41.671Z",
   "highestRisk": [
     {
       "file": "/hu/akadalymentesseg/index.html",
@@ -1074,16 +1074,4 @@ https://www.norbertbanhalmi.com/ -> 200
 https://www.norbertbanhalmi.com/hu/ -> 200
 https://www.norbertbanhalmi.com/de-at/ -> 200
 https://www.banhalmi.art/ -> 200
-https://banhalmi.at/ -> 308 https://www.banhalmi.at/?audit=1785057765441
-https://www.banhalmi.at/ -> 404 
-https://banhalminorbert.hu/ -> 308 https://www.banhalminorbert.hu/?audit=1785057765969
-https://www.banhalminorbert.hu/ -> 404 
-FAIL https://www.norbertbanhalmi.com/: live body missing required phrase: We build visual trust before the meeting begins.
-FAIL https://www.norbertbanhalmi.com/hu/: live body missing required phrase: Vizuális bizalmat építünk már az első találkozás előtt.
-FAIL https://www.norbertbanhalmi.com/de-at/: live body missing required phrase: Wir schaffen visuelles Vertrauen vor der ersten Begegnung.
-FAIL https://banhalmi.at/: expected target beginning https://www.norbertbanhalmi.com/de-at/, received https://www.banhalmi.at/?audit=1785057765441
-FAIL https://www.banhalmi.at/: expected HTTP redirect, received 404
-FAIL https://www.banhalmi.at/: expected target beginning https://www.norbertbanhalmi.com/de-at/, received (none)
-FAIL https://banhalminorbert.hu/: expected target beginning https://www.norbertbanhalmi.com/hu/, received https://www.banhalminorbert.hu/?audit=1785057765969
-FAIL https://www.banhalminorbert.hu/: expected HTTP redirect, received 404
-FAIL https://www.banhalminorbert.hu/: expected target beginning https://www.norbertbanhalmi.com/hu/, received (none)
+FAIL https://www.norbertbanhalmi.com/: live body missing required phrase: Executive Portraiture &amp; Visual Branding
