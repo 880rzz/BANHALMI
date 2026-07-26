@@ -9,6 +9,7 @@
     "audit:copy": "node tools/audit-human-voice.mjs",
     "audit:live": "LIVE_AUDIT=1 node tools/audit-seo-network.mjs || node tools/classify-link-report.mjs",
     "audit:production": "node tools/audit-production-routing.mjs",
+    "audit:aliases": "node tools/audit-domain-aliases.mjs",
     "test:browser": "playwright test"
   },
   "devDependencies": {
