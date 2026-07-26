@@ -30,8 +30,6 @@ jobs:
         run: npm install --silent
       - name: Run complete audit
         run: npm run audit
-      - name: Run copy audit
-        run: npm run audit:copy
       - name: Verify exact scope
         run: |
           git diff --name-only | sort > /tmp/changed.txt
