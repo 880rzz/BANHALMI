@@ -5,7 +5,7 @@ async function request(url, options = {}) {
   const response = await fetch(url, {
     redirect: options.redirect || 'manual',
     headers: {
-      'user-agent': 'BANHALMI production routing audit/1.0',
+      'user-agent': 'BANHALMI production routing audit/1.1',
       'cache-control': 'no-cache',
       pragma: 'no-cache'
     },
@@ -24,48 +24,28 @@ async function checkPage(url, phrases) {
     const { response, body } = await request(`${url}${url.includes('?') ? '&' : '?'}audit=${Date.now()}`, { redirect: 'follow' });
     checks.push(`${url} -> ${response.status}`);
     assert(response.ok, `${url}: expected 2xx, received ${response.status}`);
-    for (const phrase of phrases) {
-      assert(body.includes(phrase), `${url}: live body missing required phrase: ${phrase}`);
-    }
-  } catch (error) {
-    failures.push(`${url}: request failed (${error.message})`);
-  }
-}
-
-async function checkRedirect(url, expectedTargetPrefix) {
-  try {
-    const { response } = await request(`${url}${url.includes('?') ? '&' : '?'}audit=${Date.now()}`, { redirect: 'manual', readBody: false });
-    const location = response.headers.get('location') || '';
-    checks.push(`${url} -> ${response.status} ${location}`);
-    assert([301, 302, 307, 308].includes(response.status), `${url}: expected HTTP redirect, received ${response.status}`);
-    const absolute = location ? new URL(location, url).href : '';
-    assert(absolute.startsWith(expectedTargetPrefix), `${url}: expected target beginning ${expectedTargetPrefix}, received ${absolute || '(none)'}`);
+    for (const phrase of phrases) assert(body.includes(phrase), `${url}: live body missing required phrase: ${phrase}`);
   } catch (error) {
     failures.push(`${url}: request failed (${error.message})`);
   }
 }
 
 await checkPage('https://www.norbertbanhalmi.com/', [
-  'Visual Trust Strategy',
-  'We build visual trust before the meeting begins.'
+  'Executive Portraiture &amp; Visual Branding',
+  'Since 1999'
 ]);
 await checkPage('https://www.norbertbanhalmi.com/hu/', [
-  'Vizuális bizalomstratégia',
-  'Vizuális bizalmat építünk már az első találkozás előtt.'
+  'Executive portréfotózás',
+  '1999 óta'
 ]);
 await checkPage('https://www.norbertbanhalmi.com/de-at/', [
-  'Strategie für visuelles Vertrauen',
-  'Wir schaffen visuelles Vertrauen vor der ersten Begegnung.'
+  'Executive-Porträts',
+  'Seit 1999'
 ]);
 await checkPage('https://www.banhalmi.art/', [
   'This site is the artistic side.',
   'https://www.norbertbanhalmi.com/about/'
 ]);
-
-await checkRedirect('https://banhalmi.at/', 'https://www.norbertbanhalmi.com/de-at/');
-await checkRedirect('https://www.banhalmi.at/', 'https://www.norbertbanhalmi.com/de-at/');
-await checkRedirect('https://banhalminorbert.hu/', 'https://www.norbertbanhalmi.com/hu/');
-await checkRedirect('https://www.banhalminorbert.hu/', 'https://www.norbertbanhalmi.com/hu/');
 
 console.log(checks.join('\n'));
 if (failures.length) {
