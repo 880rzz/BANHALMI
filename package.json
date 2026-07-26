@@ -4,10 +4,12 @@
   "type": "module",
   "scripts": {
     "fix:cross-site": "node tools/fix-cross-site-audit.mjs",
-    "audit": "node tools/audit-static-integrity.mjs && node tools/audit-regression.mjs && node tools/audit-seo-network.mjs && node tools/audit-redirect-config.mjs && node tools/audit-cross-site-consistency.mjs && node tests/quote-pdf-content.test.mjs",
+    "fix:strict-live": "node tools/remediate-strict-live-audit.mjs",
+    "audit": "node tools/audit-static-integrity.mjs && node tools/audit-regression.mjs && node tools/audit-seo-network.mjs && node tools/audit-redirect-config.mjs && node tools/audit-cross-site-consistency.mjs && node tools/audit-strict-live-remediation.mjs && node tests/quote-pdf-content.test.mjs",
     "audit:copy": "node tools/audit-human-voice.mjs",
     "audit:live": "LIVE_AUDIT=1 node tools/audit-seo-network.mjs || node tools/classify-link-report.mjs",
     "audit:production": "node tools/audit-production-routing.mjs",
+    "audit:aliases": "node tools/audit-domain-aliases.mjs",
     "test:browser": "playwright test"
   },
   "devDependencies": {
