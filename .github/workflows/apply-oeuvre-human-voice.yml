@@ -1,0 +1,53 @@
+name: Apply reviewed oeuvre copy
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/human-voice-oeuvre-round-v2
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Apply exact reviewed replacements
+        run: python .human-voice/oeuvre-rewrite.py
+      - name: Validate new copy
+        run: |
+          grep -q 'Some moments change the reason you work' about/index.html
+          grep -q 'A munkának annak is jelentenie kell valamit' hu/eletmu/index.html
+          grep -q 'Die Arbeit muss auch für den Menschen vor der Kamera Bedeutung haben' de-at/werk/index.html
+      - name: Install dependencies
+        run: npm install --silent
+      - name: Run complete audit
+        run: npm run audit
+      - name: Run copy audit
+        run: npm run audit:copy
+      - name: Verify exact scope
+        run: |
+          git diff --name-only | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          about/index.html
+          de-at/werk/index.html
+          hu/eletmu/index.html
+          EOF
+          sort -o /tmp/expected.txt /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+      - name: Commit audited pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add about/index.html hu/eletmu/index.html de-at/werk/index.html
+          git rm .human-voice/oeuvre-rewrite.py .github/workflows/apply-oeuvre-human-voice.yml
+          rmdir .human-voice 2>/dev/null || true
+          git commit -m "Refine multilingual oeuvre copy"
+          git push
