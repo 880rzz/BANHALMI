@@ -1,0 +1,61 @@
+name: Zero-defect COM final audit
+
+on:
+  push:
+    branches:
+      - agent/zero-defect-final-audit
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/zero-defect-final-audit
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: Apply deterministic remediation
+        run: npm run fix:strict-live
+      - name: Commit generated remediation
+        run: |
+          if git diff --quiet; then
+            echo "No remediation changes"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Apply zero-defect COM remediation [skip ci]"
+            git push
+          fi
+      - name: Run complete COM audit suite
+        shell: bash
+        run: |
+          set +e
+          npm run audit 2>&1 | tee zero-defect-com.log
+          s1=${PIPESTATUS[0]}
+          npm run audit:copy 2>&1 | tee -a zero-defect-com.log
+          s2=${PIPESTATUS[0]}
+          printf '{"audit":%s,"copy":%s}\n' "$s1" "$s2" > zero-defect-com-status.json
+          exit $((s1 || s2))
+      - name: Verify remediation is idempotent
+        run: |
+          npm run fix:strict-live
+          git diff --exit-code -- ':!zero-defect-com.log' ':!zero-defect-com-status.json'
+      - name: Record diagnostics
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add zero-defect-com.log zero-defect-com-status.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record zero-defect COM diagnostics [skip ci]"
+          git push
