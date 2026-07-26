@@ -15,9 +15,9 @@ async function walk(dir) {
 await walk(root);
 
 const banned = [
-  /több mint huszonöt éves?/iu,
+  /1999 óta épülő?/iu,
   /more than twenty[- ]five years/iu,
-  /mehr als fünfundzwanzig Jahren/iu,
+  /einer seit 1999 aufgebauten Praxis/iu,
   /Norbert Banhalmi e\.U\./u,
   /banhalmi_consent_v2/u,
   /Technikai megfelelőségi tervezet/iu,

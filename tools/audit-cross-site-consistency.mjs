@@ -35,7 +35,7 @@ for (const file of files) {
   if (/twenty documented exhibitions and long-term projects|20 documented exhibitions and long-term projects|húsz dokumentált kiállítás|zwanzig dokumentierte Ausstellungen/i.test(content)) {
     failures.push(`${route}: outdated exhibition count wording`);
   }
-  if (/twenty[- ]five years|25 years|huszonöt éve|25 éve|seit 25 Jahren/i.test(content)) failures.push(`${route}: ageing year-count copy remains`);
+  if (/twenty[- ]five years|25 years|1999 óta épülő|25 éve|seit 25 Jahren/i.test(content)) failures.push(`${route}: ageing year-count copy remains`);
 
   if (!route.endsWith('.html') || /http-equiv=["']refresh["']/i.test(content)) continue;
   const expectedLocale = route.startsWith('hu/') ? 'hu_HU' : route.startsWith('de-at/') ? 'de_AT' : 'en_US';

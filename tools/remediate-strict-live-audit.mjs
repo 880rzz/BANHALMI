@@ -13,12 +13,12 @@ async function walk(dir) {
 }
 
 const replacements = [
-  [/több mint huszonöt éves?/giu, '1999 óta épülő'],
-  [/huszonöt éves?/giu, '1999 óta épülő'],
+  [/1999 óta épülő?/giu, '1999 óta épülő'],
+  [/1999 óta épülő?/giu, '1999 óta épülő'],
   [/more than twenty[- ]five years/giu, 'since 1999'],
   [/twenty[- ]five years/giu, 'since 1999'],
-  [/mehr als fünfundzwanzig Jahren/giu, 'seit 1999'],
-  [/seit fünfundzwanzig Jahren/giu, 'seit 1999'],
+  [/einer seit 1999 aufgebauten Praxis/giu, 'seit 1999'],
+  [/seit einer seit 1999 aufgebauten Praxis/giu, 'seit 1999'],
   [/Norbert Banhalmi e\.U\./g, 'Bánhalmi Norbert e.U.'],
   [/banhalmi_consent_v2/g, 'banhalmi_consent_v3'],
   [/Technikai megfelelőségi tervezet[^<.]*(?:\.|<)/giu, 'A tájékoztató a weboldal jelenlegi adatkezelési működését írja le.<'],
