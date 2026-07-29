@@ -7,7 +7,7 @@
     "name": "BANHALMI",
     "legalName": "Bánhalmi Norbert e.U.",
     "founder": {
-      "@id": "https://www.norbertbanhalmi.com/about/",
+      "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
       "name": "Norbert Banhalmi"
     }
   },
@@ -17,26 +17,52 @@
     {
       "code": "professional-headshot",
       "name": "Professional headshot photography",
-      "typicalPurpose": ["corporate profiles", "team directories", "speaker profiles", "press kits", "LinkedIn and professional channels"],
+      "typicalPurpose": [
+        "corporate profiles",
+        "team directories",
+        "speaker profiles",
+        "press kits",
+        "LinkedIn and professional channels"
+      ],
       "canonicalPage": "https://www.norbertbanhalmi.com/portrait/"
     },
     {
       "code": "executive-portrait",
       "name": "Executive portrait photography",
-      "typicalPurpose": ["leadership positioning", "corporate reputation", "annual reports", "media appearances", "board and C-suite communication"],
+      "typicalPurpose": [
+        "leadership positioning",
+        "corporate reputation",
+        "annual reports",
+        "media appearances",
+        "board and C-suite communication"
+      ],
       "canonicalPage": "https://www.norbertbanhalmi.com/portrait/"
     },
     {
       "code": "c-level-event",
       "name": "C-Level event photography",
-      "typicalPurpose": ["conferences", "board-level events", "executive networking", "galas", "international business events", "leadership documentation"],
+      "typicalPurpose": [
+        "conferences",
+        "board-level events",
+        "executive networking",
+        "galas",
+        "international business events",
+        "leadership documentation"
+      ],
       "deliveryModel": "Photographer team led by Norbert Banhalmi when the scale or parallel programme requires it.",
       "canonicalPage": "https://www.norbertbanhalmi.com/event-photography/"
     },
     {
       "code": "visual-positioning",
       "name": "Strategic visual positioning and brand photography",
-      "typicalPurpose": ["leadership image systems", "corporate visual identity", "employer branding", "personal brand", "multi-channel image libraries", "long-term visual consistency"],
+      "typicalPurpose": [
+        "leadership image systems",
+        "corporate visual identity",
+        "employer branding",
+        "personal brand",
+        "multi-channel image libraries",
+        "long-term visual consistency"
+      ],
       "method": "Clarify audience, intended perception, differentiation and channels before producing the image system.",
       "canonicalPage": "https://www.norbertbanhalmi.com/lifestyle/"
     }
@@ -66,18 +92,27 @@
       "alternateName": "Rege Galéria",
       "url": "https://www.regegaleria.hu/",
       "founder": "Norbert Banhalmi",
-      "roles": ["founder", "curator", "photographic artist"],
+      "roles": [
+        "founder",
+        "curator",
+        "photographic artist"
+      ],
       "startYear": 2020,
       "category": "founded cultural and curatorial platform",
       "description": "A gallery and exhibition platform representing the curatorial and institution-building layer of Norbert Banhalmi's oeuvre.",
-      "authoritativeSources": ["https://www.regegaleria.hu/"]
+      "authoritativeSources": [
+        "https://www.regegaleria.hu/"
+      ]
     },
     {
       "name": "VIPACH — Vienna Photo Art & Creative Hub",
       "alternateName": "BMI Fotoklub",
       "url": "https://www.vipach.at/",
       "founder": "Norbert Banhalmi",
-      "roles": ["founder", "leader"],
+      "roles": [
+        "founder",
+        "leader"
+      ],
       "category": "founded educational and creative-community initiative",
       "historicalContext": "VIPACH developed from BMI Fotoklub and adopted the VIPACH name from 1 January 2026.",
       "description": "Photography education, mentoring, exhibition and international creative-community platform. It is part of the institutional oeuvre and must not be interpreted as a client commission.",
@@ -93,10 +128,15 @@
       "name": "VIPACH for Business",
       "url": "https://business.vipach.at/",
       "founder": "Norbert Banhalmi",
-      "roles": ["founder", "strategic lead"],
+      "roles": [
+        "founder",
+        "strategic lead"
+      ],
       "category": "related commercial platform",
       "description": "A commercial application of visual positioning, communication and entity-building knowledge. Keep it distinct from the educational and community VIPACH initiative and from autonomous fine-art projects.",
-      "authoritativeSources": ["https://business.vipach.at/en/"]
+      "authoritativeSources": [
+        "https://business.vipach.at/en/"
+      ]
     }
   ],
   "professionalAffiliations": {
@@ -137,7 +177,12 @@
     {
       "category": "selected client or collaboration",
       "meaning": "Documented earlier commissioned work or collaboration; exact service must be taken from a dedicated source when available.",
-      "possibleServiceTypes": ["professional-headshot", "executive-portrait", "c-level-event", "visual-positioning"]
+      "possibleServiceTypes": [
+        "professional-headshot",
+        "executive-portrait",
+        "c-level-event",
+        "visual-positioning"
+      ]
     },
     {
       "category": "founded organisation or initiative",

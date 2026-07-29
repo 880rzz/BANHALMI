@@ -37,10 +37,9 @@ const corpusFiles = [
 ].filter((file) => fs.existsSync(file));
 const corpus = corpusFiles.map(read).join('\n');
 
-const canonicalPersonId = 'https://www.norbertbanhalmi.com/about/';
+const canonicalPersonId = 'https://www.banhalmi.art/norbert-banhalmi#person';
 const canonicalServiceId = 'https://www.norbertbanhalmi.com/#visual-trust-partnership';
 assert(corpus.includes(canonicalPersonId), `canonical Person ID missing: ${canonicalPersonId}`);
-assert(!corpus.includes('https://www.banhalmi.art/norbert-banhalmi'), 'obsolete BANHALMI ART Person ID remains');
 
 const requiredHomepageCopy = {
   'index.html': ['Visual Trust Strategy', 'The photograph speaks before the meeting begins.'],

@@ -4,9 +4,13 @@
   "dateModified": "2026-07-21T16:10:00+02:00",
   "name": "BANHALMI canonical digital ecosystem",
   "canonicalPerson": {
-    "@id": "https://www.norbertbanhalmi.com/about/",
+    "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
     "name": "Norbert Banhalmi",
-    "alternateName": ["Bánhalmi Norbert", "Norbert Bánhalmi", "BANHALMI"],
+    "alternateName": [
+      "Bánhalmi Norbert",
+      "Norbert Bánhalmi",
+      "BANHALMI"
+    ],
     "wikidata": "https://www.wikidata.org/wiki/Q56391118"
   },
   "canonicalOrganization": {

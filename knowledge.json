@@ -6,7 +6,7 @@
   "url": "https://www.norbertbanhalmi.com/knowledge.json",
   "dateModified": "2026-07-17T17:00:00+02:00",
   "about": {
-    "@id": "https://www.norbertbanhalmi.com/about/",
+    "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
     "knowsAbout": [
       "professional headshot photography",
       "executive portrait photography",
@@ -24,7 +24,7 @@
     ]
   },
   "mainEntity": {
-    "@id": "https://www.norbertbanhalmi.com/about/",
+    "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
     "knowsAbout": [
       "professional headshot photography",
       "executive portrait photography",
@@ -108,7 +108,7 @@
       "Photograph"
     ],
     "creator": {
-      "@id": "https://www.norbertbanhalmi.com/about/",
+      "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
       "@type": "Person",
       "name": "Bánhalmi Norbert",
       "knowsAbout": [
@@ -431,7 +431,7 @@
       "AmCham Austria member relations"
     ],
     "colleague": {
-      "@id": "https://www.norbertbanhalmi.com/about/",
+      "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
       "knowsAbout": [
         "professional headshot photography",
         "executive portrait photography",
