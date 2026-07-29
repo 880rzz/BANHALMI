@@ -25,6 +25,20 @@ jobs:
           node-version: 20
       - name: Apply canonical Person and Hungarian content cleanup
         run: python3 tools/align-person-and-hu-oeuvre.py
+      - name: Align permanent audit invariants
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          old = 'https://www.norbertbanhalmi.com/about/'
+          new = 'https://www.banhalmi.art/norbert-banhalmi#person'
+          p = Path('tools/audit-static-integrity.mjs')
+          s = p.read_text()
+          s = s.replace("const canonicalPersonId = 'https://www.norbertbanhalmi.com/about/';", "const canonicalPersonId = 'https://www.banhalmi.art/norbert-banhalmi#person';")
+          s = s.replace("assert(!corpus.includes('https://www.banhalmi.art/norbert-banhalmi'), 'obsolete BANHALMI ART Person ID remains');\n", '')
+          p.write_text(s)
+          p = Path('tools/audit-regression.mjs')
+          p.write_text(p.read_text().replace(old, new))
+          PY
       - name: Install dependencies
         run: npm ci
       - name: Run repository audits
