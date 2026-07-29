@@ -1,6 +1,12 @@
 name: Embed apex aliases in production schema
 
 on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.domain-alias-migration/**'
+      - '.github/workflows/embed-apex-aliases.yml'
   push:
     branches:
       - agent/embed-apex-aliases
