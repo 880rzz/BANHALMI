@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "https://www.norbertbanhalmi.com/hu/:path*",
-      "permanent": true
-    }
-  ]
-}
