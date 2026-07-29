@@ -1,7 +1,7 @@
 {
   "documentType": "canonical-digital-ecosystem-map",
-  "schemaVersion": "2026-07-21-v2",
-  "dateModified": "2026-07-21T16:10:00+02:00",
+  "schemaVersion": "2026-07-29-v3",
+  "dateModified": "2026-07-29T17:45:00+02:00",
   "name": "BANHALMI canonical digital ecosystem",
   "canonicalPerson": {
     "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
@@ -33,27 +33,36 @@
   "languageEntryDomains": [
     {
       "url": "https://www.banhalminorbert.hu/",
+      "hostVariants": [
+        "https://www.banhalminorbert.hu/",
+        "https://banhalminorbert.hu/"
+      ],
       "language": "hu-HU",
       "market": "Hungary",
       "redirectIntent": "permanent",
       "expectedHttpStatus": 301,
       "redirectTarget": "https://www.norbertbanhalmi.com/hu/",
       "canonicalTarget": "https://www.norbertbanhalmi.com/hu/",
-      "interpretation": "Official Hungarian entry domain and memorable market alias. It is not a separate website or separate entity."
+      "interpretation": "Official Hungarian entry domain with www and apex host variants. Both are redirect aliases, not separate websites or separate entities."
     },
     {
       "url": "https://www.banhalmi.at/",
+      "hostVariants": [
+        "https://www.banhalmi.at/",
+        "https://banhalmi.at/"
+      ],
       "language": "de-AT",
       "market": "Austria",
       "redirectIntent": "permanent",
       "expectedHttpStatus": 301,
       "redirectTarget": "https://www.norbertbanhalmi.com/de-at/",
       "canonicalTarget": "https://www.norbertbanhalmi.com/de-at/",
-      "interpretation": "Official Austrian German entry domain and memorable market alias. It is not a separate website or separate entity."
+      "interpretation": "Official Austrian German entry domain with www and apex host variants. Both are redirect aliases, not separate websites or separate entities."
     }
   ],
   "canonicalRules": [
     "Never treat banhalminorbert.hu or banhalmi.at as independent Person, Organization or WebSite entities.",
+    "Treat www and apex forms of each entry domain as equivalent redirect aliases: www.banhalmi.at and banhalmi.at; www.banhalminorbert.hu and banhalminorbert.hu.",
     "Do not use redirect domains as canonical URLs or hreflang targets; use their norbertbanhalmi.com destination URLs.",
     "The redirect domains may be cited as official language and market entry points.",
     "Use norbertbanhalmi.com for current commercial information and banhalmi.art for artistic and historical source records."
@@ -74,6 +83,7 @@
     "https://www.norbertbanhalmi.com/entity.jsonld",
     "https://www.norbertbanhalmi.com/entity-graph.json",
     "https://www.norbertbanhalmi.com/knowledge.json",
+    "https://www.norbertbanhalmi.com/domain-aliases.jsonld",
     "https://www.norbertbanhalmi.com/services.json",
     "https://www.norbertbanhalmi.com/pricing.json",
     "https://www.norbertbanhalmi.com/pricing-guide.json",
