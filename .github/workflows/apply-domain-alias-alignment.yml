@@ -1,0 +1,54 @@
+name: Apply domain alias SEO GEO schema alignment
+
+on:
+  push:
+    branches:
+      - agent/domain-alias-seo-geo-schema
+    paths:
+      - '.domain-alias-fix/**'
+      - '.github/workflows/apply-domain-alias-alignment.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  align-and-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/domain-alias-seo-geo-schema
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Apply alias alignment
+        run: python3 .domain-alias-fix/apply.py
+
+      - name: Install audit dependencies
+        run: npm ci
+
+      - name: Run repository audits
+        run: npm run audit
+
+      - name: Verify alias configuration statically
+        run: |
+          node --check tools/audit-domain-aliases.mjs
+          python3 .domain-alias-fix/apply.py
+
+      - name: Remove temporary migration tooling
+        run: |
+          rm -rf .domain-alias-fix
+          rm -f .github/workflows/apply-domain-alias-alignment.yml
+
+      - name: Commit aligned production files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add entity.jsonld entity-graph.json knowledge.json ecosystem.json ai.txt llms.txt llms-full.txt .domain-alias-fix .github/workflows/apply-domain-alias-alignment.yml
+          git diff --cached --quiet && exit 0
+          git commit -m "Align www and apex aliases across SEO GEO and schema"
+          git push origin HEAD:agent/domain-alias-seo-geo-schema
