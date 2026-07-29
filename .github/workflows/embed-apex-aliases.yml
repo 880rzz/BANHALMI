@@ -1,0 +1,53 @@
+name: Embed apex aliases in production schema
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.domain-alias-migration/**'
+      - '.github/workflows/embed-apex-aliases.yml'
+  push:
+    branches:
+      - agent/embed-apex-aliases
+    paths:
+      - '.domain-alias-migration/**'
+      - '.github/workflows/embed-apex-aliases.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate-audit-clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/embed-apex-aliases
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Apply embedded schema alignment
+        run: node .domain-alias-migration/embed-apex-aliases.mjs
+      - name: Remove ageing Hungarian year-count wording
+        run: find hu -name '*.html' -type f -exec sed -i 's/1999 óta épülő/1999 óta folyamatosan bővülő/g' {} +
+      - name: Correct stale English founding copy
+        run: find about -name '*.html' -type f -exec sed -i -E 's/[Mm]ore than since 1999/[Ss]ince 1999/g' {} +
+      - name: Install dependencies
+        run: npm ci
+      - name: Run complete audit
+        run: npm run audit
+      - name: Remove one-time migration tooling
+        run: |
+          rm -rf .domain-alias-migration
+          rm -f .github/workflows/embed-apex-aliases.yml
+      - name: Commit audited production files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "Embed www and apex aliases across production schema"
+          git push origin HEAD:agent/embed-apex-aliases
