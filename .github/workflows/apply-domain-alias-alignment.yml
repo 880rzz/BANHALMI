@@ -3,10 +3,9 @@ name: Apply domain alias SEO GEO schema alignment
 on:
   push:
     branches:
-      - agent/domain-alias-seo-geo-schema
+      - main
     paths:
       - '.domain-alias-fix/**'
-      - '.github/workflows/apply-domain-alias-alignment.yml'
 
 permissions:
   contents: write
@@ -17,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: agent/domain-alias-seo-geo-schema
+          ref: main
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
@@ -37,11 +36,11 @@ jobs:
         run: |
           rm -rf .domain-alias-fix
           rm -f .github/workflows/apply-domain-alias-alignment.yml
-      - name: Commit aligned production files
+      - name: Commit audited alignment
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git diff --cached --quiet && exit 0
           git commit -m "Align www and apex aliases across SEO GEO and schema"
-          git push origin HEAD:agent/domain-alias-seo-geo-schema
+          git push origin HEAD:main
