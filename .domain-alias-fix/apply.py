@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+# One-time migration for canonical www/apex entry-domain alignment.
 import json
 from pathlib import Path
 
