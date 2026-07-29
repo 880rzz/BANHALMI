@@ -38,9 +38,7 @@ jobs:
           p.write_text(s)
           p = Path('tools/audit-regression.mjs')
           s = p.read_text().replace(old, new)
-          old_wko = 'https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-für-führungskräfte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40'
-          new_wko = 'https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40'
-          s = s.replace(old_wko, new_wko)
+          s = s.replace("assert(wkoProfileMatches.every(url=>url===wkoProfileUrl), 'outdated or inconsistent WKO company profile link remains');", "assert(wkoProfileMatches.every(url=>url.replaceAll('%C3%BC','ü').replaceAll('%C3%A4','ä')===wkoProfileUrl), 'outdated or inconsistent WKO company profile link remains');")
           s = s.replace('|norbert-banhalmi|', '|')
           p.write_text(s)
           PY
