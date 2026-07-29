@@ -56,7 +56,7 @@ assert(Boolean(peterMagyarWork), 'featured work must include the verified Péter
 if(peterMagyarWork){
   assert(peterMagyarWork.contentUrl==='https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp', 'Péter Magyar portrait must retain the production image URL');
   assert(peterMagyarWork.url==='https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg', 'Péter Magyar portrait must retain the Wikimedia Commons source');
-  assert(peterMagyarWork.creator?.['@id']==='https://www.norbertbanhalmi.com/about/', 'Péter Magyar portrait must identify Bánhalmi Norbert as creator');
+  assert(peterMagyarWork.creator?.['@id']==='https://www.banhalmi.art/norbert-banhalmi#person', 'Péter Magyar portrait must identify Bánhalmi Norbert as creator');
   assert(peterMagyarWork.about?.['@id']==='https://www.wikidata.org/wiki/Q124488292', 'Péter Magyar portrait must identify Péter Magyar through Wikidata Q124488292');
   assert(peterMagyarWork.isPartOf?.some(item=>item['@id']==='https://www.wikidata.org/wiki/Q138717398'), 'Péter Magyar portrait must remain linked to the EUFÓRIA Wikidata entity');
   assert(peterMagyarWork.identifier?.some(item=>item.propertyID==='Creator Wikidata'&&item.value==='Q56391118'), 'Péter Magyar portrait must retain Bánhalmi Norbert Wikidata Q56391118');
@@ -155,11 +155,11 @@ const wkoProfileUrl='https://firmen.wko.at/norbert-banhalmi-visuelle-strategisch
 const normalizedWkoCorpus=linkCorpus.replaceAll('&amp;','&');
 const wkoProfileMatches=[...normalizedWkoCorpus.matchAll(/https:\/\/firmen\.wko\.at\/norbert-banhalmi[^"'\s<>\\)]+/g)].map(m=>m[0]);
 assert(wkoProfileMatches.length>0, 'WKO company profile link is missing');
-assert(wkoProfileMatches.every(url=>url===wkoProfileUrl), 'outdated or inconsistent WKO company profile link remains');
+assert(wkoProfileMatches.every(url=>url.replaceAll('%C3%BC','ü').replaceAll('%C3%A4','ä')===wkoProfileUrl), 'outdated or inconsistent WKO company profile link remains');
 for(const legacyWkoMarker of ['norbert-banhalmi-executive-portr','standortid=1','suchbegriff=norbert%20banhalmi%20executive','visuelle-positionieru']) {
   assert(!normalizedWkoCorpus.includes(legacyWkoMarker), `legacy WKO company profile marker remains: ${legacyWkoMarker}`);
 }
-const legacyArtRoute=/https:\/\/www\.banhalmi\.art\/(?:\?lang=|curators\?|fotokiallitasok(?:\/|\?|["'#])|konyveim(?:\?|#)|mediamegjelenesek(?:\?|["'#])|post\/euforia|norbert-banhalmi|[^\s"'<]*#gallery|[^\s"'<]*\.html\.html|[^\s"'<]*#books#)/;
+const legacyArtRoute=/https:\/\/www\.banhalmi\.art\/(?:\?lang=|curators\?|fotokiallitasok(?:\/|\?|["'#])|konyveim(?:\?|#)|mediamegjelenesek(?:\?|["'#])|post\/euforia|[^\s"'<]*#gallery|[^\s"'<]*\.html\.html|[^\s"'<]*#books#)/;
 assert(!legacyArtRoute.test(linkCorpus), 'legacy or malformed BANHALMI ART route remains');
 for(const required of [
   'https://www.banhalmi.art/curators.html',
@@ -209,7 +209,7 @@ assert(strategicMethod&&Array.isArray(strategicMethod.step)&&strategicMethod.ste
 const schemaOrg=entityGraph.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#organization');
 assert(schemaOrg&&Array.isArray(schemaOrg.subjectOf)&&schemaOrg.subjectOf.some(x=>x['@id']==='https://www.norbertbanhalmi.com/#visual-strategic-partnership-method'), 'Organization schema must link to the strategic method');
 const wikidataExpectations={
-  'https://www.norbertbanhalmi.com/about/':'https://www.wikidata.org/wiki/Q56391118',
+  'https://www.banhalmi.art/norbert-banhalmi#person':'https://www.wikidata.org/wiki/Q56391118',
   'https://www.norbertbanhalmi.com/#organization':'https://www.wikidata.org/wiki/Q138425941',
   'https://www.norbertbanhalmi.com/#amcham-austria':'https://www.wikidata.org/wiki/Q138413481'
 };

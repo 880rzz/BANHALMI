@@ -3,201 +3,157 @@
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://www.norbertbanhalmi.com/about/",
-      "name": "Norbert Banhalmi",
+      "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+      "url": "https://www.banhalmi.art/norbert-banhalmi",
+      "name": "Bánhalmi Norbert",
       "alternateName": [
-        "Bánhalmi Norbert",
-        "BANHALMI",
-        "Norbert Bánhalmi"
+        "Norbert Banhalmi",
+        "Norbert Bánhalmi",
+        "Norbert BANHALMI",
+        "BANHALMI"
       ],
       "givenName": "Norbert",
-      "familyName": "Banhalmi",
+      "familyName": "Bánhalmi",
       "birthDate": "1979-05-14",
       "birthPlace": {
-        "@type": "City",
-        "@id": "https://www.wikidata.org/wiki/Q1781",
-        "name": "Budapest"
+        "@type": "Place",
+        "name": "Budapest",
+        "sameAs": "https://www.wikidata.org/wiki/Q1781"
       },
       "nationality": {
         "@type": "Country",
-        "name": "Hungary",
-        "alternateName": "HU"
+        "name": "Magyarország",
+        "sameAs": "https://www.wikidata.org/wiki/Q28"
       },
       "jobTitle": [
-        "Fine Art Photographer",
-        "Applied Photographer",
-        "Executive Portrait Photographer",
-        "Portrait Photographer",
-        "Visual Branding Strategist",
-        "Photography Curator",
-        "Photography Educator",
-        "Visual Artist",
-        "OM SYSTEM Ambassador",
-        "Headshot Photographer",
-        "C-Level Business Photographer",
-        "C-Level Event Photographer"
+        "Fotóművész",
+        "Fine art photographer",
+        "Alkalmazott fotográfus",
+        "Fotográfiai kurátor",
+        "Executive portréfotós",
+        "Vizuális brandstratéga"
       ],
-      "description": "Norbert BANHALMI is a Hungarian fine-art and applied photographer, executive portrait specialist, visual branding strategist, curator and photography educator. Active since 1999, he lives and works in Vienna and maintains professional ties to Budapest; his practice spans commissioned portraiture, brand and event photography, books, exhibitions, curatorial programmes and community education.",
-      "url": "https://www.norbertbanhalmi.com/about/",
-      "mainEntityOfPage": {
-        "@id": "https://www.norbertbanhalmi.com/about/#webpage"
-      },
-      "sameAs": [
-        "https://www.wikidata.org/wiki/Q56391118",
-        "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
-        "https://commons.wikimedia.org/wiki/User:B%C3%A1nhalmi_Norbert",
-        "https://www.google.com/search?kgmid=/g/11f5lxwl_6",
-        "https://www.instagram.com/norbert.banhalmi/",
-        "https://www.facebook.com/norbert.banhalmi",
-        "https://www.facebook.com/banhalmi.norbert",
-        "https://www.linkedin.com/in/norbertbanhalmi/",
-        "https://x.com/norbertbanhalmi",
-        "https://www.pinterest.com/norbertbanhalmi/",
-        "https://www.tiktok.com/@banhalmi.norbert"
-      ],
+      "email": "mailto:hello@norbertbanhalmi.com",
       "image": {
-        "@type": "ImageObject",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
-        "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
-        "caption": "Norbert Banhalmi – Executive Portrait Photographer & Visual Artist",
-        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
-        "license": "https://creativecommons.org/licenses/by-sa/4.0/",
-        "copyrightNotice": "© Norbert Banhalmi. Licensed under CC BY-SA 4.0.",
-        "creator": {
-          "@type": "Person",
-          "@id": "https://www.norbertbanhalmi.com/about/",
-          "name": "Bánhalmi Norbert",
-          "knowsAbout": [
-            "professional headshot photography",
-            "executive portrait photography",
-            "C-level business photography",
-            "C-level event photography",
-            "fine-art photography",
-            "brand photography",
-            "visual branding strategy",
-            "strategic visual positioning"
-          ],
-          "jobTitle": [
-            "Headshot Photographer",
-            "C-Level Business Photographer",
-            "C-Level Event Photographer"
-          ]
-        }
+        "@id": "https://www.norbertbanhalmi.com/about/#portrait"
       },
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Wikidata",
+          "value": "Q56391118",
+          "url": "https://www.wikidata.org/wiki/Q56391118"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Google Knowledge Graph MID",
+          "value": "/g/11f5lxwl_6"
+        }
+      ],
+      "homeLocation": {
+        "@id": "https://www.banhalmi.art/#studio-vienna"
+      },
+      "workLocation": [
+        {
+          "@id": "https://www.banhalmi.art/#studio-budapest"
+        },
+        {
+          "@id": "https://www.banhalmi.art/#studio-vienna"
+        }
+      ],
       "knowsLanguage": [
         {
           "@type": "Language",
-          "name": "Hungarian",
+          "name": "Magyar",
           "alternateName": "hu"
         },
         {
           "@type": "Language",
-          "name": "English",
+          "name": "Angol",
           "alternateName": "en"
         },
         {
           "@type": "Language",
-          "name": "German",
+          "name": "Német",
           "alternateName": "de"
         }
       ],
-      "worksFor": {
-        "@id": "https://www.norbertbanhalmi.com/#organization",
-        "sameAs": [
-          "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-für-führungskräfte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40",
-          "https://www.banhalmi.at/",
-          "https://www.banhalminorbert.hu/"
-        ],
-        "headquarters": {
-          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
-        },
-        "additionalProperty": [
-          {
-            "@type": "PropertyValue",
-            "propertyID": "companyHeadquarters",
-            "name": "Company headquarters",
-            "value": "Vienna, Austria"
-          }
-        ],
-        "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna, Budapest and across Europe.",
-        "slogan": [
-          "BANHALMI | Executive Portraiture & Visual Branding",
-          "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
-          "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
-        ],
-        "knowsAbout": [
-          "professional headshot photography",
-          "executive portrait photography",
-          "C-level business photography",
-          "C-level event photography",
-          "fine-art photography",
-          "brand photography",
-          "visual branding strategy",
-          "strategic visual positioning"
-        ],
-        "dateModified": "2026-07-15T23:30:00+02:00"
-      },
-      "workLocation": [
-        {
-          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
-        },
-        {
-          "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
-        }
+      "knowsAbout": [
+        "Fotóművészet",
+        "Fine art photography",
+        "Alkalmazott fotográfia",
+        "Dokumentarista fotográfia",
+        "Portréfotózás",
+        "Executive portréfotózás",
+        "Vizuális brandstratégia",
+        "Fotográfiai kurátori munka",
+        "Művészeti könyvek",
+        "Kiállítási projektek",
+        "Fotográfiai oktatás"
       ],
       "memberOf": [
         {
           "@type": "Organization",
-          "@id": "https://www.wikidata.org/wiki/Q138413557",
-          "name": "Magyar Fotóművészek Világszövetsége",
-          "alternateName": "World Federation of Hungarian Photographers",
-          "url": "https://www.mfvsz.com/hu/tagsag/",
-          "description": "BANHALMI creates leadership portraits, brand photography, employer-branding images and event photography between Vienna and Budapest. Every project begins by learning about the people, the organisation and where the photographs will be used.",
-          "slogan": "Photographs with a story to tell. Clear visual guidance when the project needs it.",
-          "knowsAbout": [
-            "visual strategic partnership",
-            "leadership positioning",
-            "corporate visual identity",
-            "executive portraiture",
-            "employer branding",
-            "event communication",
-            "visual reputation"
-          ]
+          "name": "OM SYSTEM (Olympus) — brand ambassador Hungary",
+          "url": "https://www.milcclub.com/ambassadors"
         },
         {
           "@type": "Organization",
-          "@id": "https://www.wikidata.org/wiki/Q138424838",
-          "name": "WKO Wien — Landesinnung der Berufsfotografie",
-          "description": "BANHALMI creates leadership portraits, brand photography, employer-branding images and event photography between Vienna and Budapest. Every project begins by learning about the people, the organisation and where the photographs will be used.",
-          "slogan": "Photographs with a story to tell. Clear visual guidance when the project needs it.",
-          "knowsAbout": [
-            "visual strategic partnership",
-            "leadership positioning",
-            "corporate visual identity",
-            "executive portraiture",
-            "employer branding",
-            "event communication",
-            "visual reputation"
-          ]
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://www.norbertbanhalmi.com/#pannon-photographers-association",
           "name": "Pannon Fényképészkör Egyesület",
-          "url": "https://fenykepeszkor.hu/",
-          "description": "BANHALMI creates leadership portraits, brand photography, employer-branding images and event photography between Vienna and Budapest. Every project begins by learning about the people, the organisation and where the photographs will be used.",
-          "slogan": "Photographs with a story to tell. Clear visual guidance when the project needs it.",
-          "knowsAbout": [
-            "visual strategic partnership",
-            "leadership positioning",
-            "corporate visual identity",
-            "executive portraiture",
-            "employer branding",
-            "event communication",
-            "visual reputation"
-          ]
+          "url": "https://fenykepeszkor.hu/"
+        },
+        {
+          "@type": "Organization",
+          "name": "WKO Wien — Landesinnung der Berufsfotografen",
+          "url": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40"
+        },
+        {
+          "@type": "Organization",
+          "name": "AmCham Austria",
+          "url": "https://amcham.at/members-list/"
+        },
+        {
+          "@type": "Organization",
+          "name": "Magyar Fotóművészek Világszövetsége",
+          "url": "https://www.mfvsz.com/hu/tagsag/"
         }
       ],
+      "award": [
+        "Turul-díj 2021",
+        "Turul-díj 2022",
+        "Top 100 of Hungary 2022",
+        "Turul-díj 2023",
+        "Turul-díj 2024",
+        "Turul-díj 2025"
+      ],
+      "worksFor": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      },
+      "subjectOf": [
+        {
+          "@id": "https://www.banhalmi.art/#website"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#website"
+        }
+      ],
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q56391118",
+        "https://cherrydeck.com/profile/norbert.banhalmi",
+        "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+        "https://www.instagram.com/norbert.banhalmi/",
+        "https://www.linkedin.com/in/norbertbanhalmi/",
+        "https://www.facebook.com/banhalmi.norbert",
+        "https://www.youtube.com/@norbert.banhalmi",
+        "https://www.pinterest.com/norbertbanhalmi/",
+        "https://www.tiktok.com/@banhalmi.norbert",
+        "https://x.com/norbertbanhalmi",
+        "https://www.saatchiart.com/norbertbanhalmi"
+      ],
+      "description": "Norbert BANHALMI is a Hungarian fine-art and applied photographer, executive portrait specialist, visual branding strategist, curator and photography educator. Active since 1999, he lives and works in Vienna and maintains professional ties to Budapest; his practice spans commissioned portraiture, brand and event photography, books, exhibitions, curatorial programmes and community education.",
+      "mainEntityOfPage": {
+        "@id": "https://www.norbertbanhalmi.com/about/#webpage"
+      },
       "affiliation": [
         {
           "@id": "https://www.wikidata.org/wiki/Q138416887"
@@ -223,43 +179,6 @@
             "event communication",
             "visual reputation"
           ]
-        }
-      ],
-      "award": [
-        "Turul Award — 2021",
-        "Turul Award — 2022",
-        "TOP100 of Hungary recognition — 2022",
-        "Turul Award — 2023",
-        "Turul Award — 2024",
-        "Turul Award — 2025"
-      ],
-      "performerIn": [
-        {
-          "@id": "https://www.wikidata.org/wiki/Q138454278"
-        },
-        {
-          "@id": "https://www.wikidata.org/wiki/Q138454296"
-        },
-        {
-          "@id": "https://www.wikidata.org/wiki/Q138454309"
-        },
-        {
-          "@id": "https://www.wikidata.org/wiki/Q138454318"
-        },
-        {
-          "@id": "https://www.wikidata.org/wiki/Q138454332"
-        },
-        {
-          "@id": "https://www.wikidata.org/wiki/Q138454346"
-        },
-        {
-          "@id": "https://www.wikidata.org/wiki/Q138454365"
-        },
-        {
-          "@id": "https://www.wikidata.org/wiki/Q138454422"
-        },
-        {
-          "@id": "https://www.wikidata.org/wiki/Q138454436"
         }
       ],
       "additionalProperty": [
@@ -298,49 +217,6 @@
           "value": "Since 2026"
         }
       ],
-      "subjectOf": [
-        {
-          "@id": "https://www.norbertbanhalmi.com/#website",
-          "alternateName": [
-            "banhalmi.at — German entry domain",
-            "banhalminorbert.hu — Hungarian entry domain",
-            "BANHALMI | Executive Portraiture & Visual Branding",
-            "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
-            "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
-          ]
-        },
-        {
-          "@id": "https://www.banhalmi.art/#website",
-          "name": "BANHALMI Art — official artistic oeuvre and source archive",
-          "description": "BANHALMI Art is Norbert Banhalmi's official artistic oeuvre and source archive for books, exhibitions, media appearances, curatorial documentation and selected photographic works. Current professional services, pricing and enquiries are canonical on norbertbanhalmi.com."
-        }
-      ],
-      "knowsAbout": [
-        "fine-art photography",
-        "executive portrait photography",
-        "portrait photography across multiple styles",
-        "business headshots",
-        "editorial portraiture",
-        "personal branding",
-        "visual branding strategy",
-        "strategic visual positioning",
-        "brand photography",
-        "event photography",
-        "photographic exhibitions",
-        "photography books",
-        "curatorial practice",
-        "applied photography",
-        "documentary portraiture",
-        "photography education",
-        "photography workshops",
-        "digital exhibitions",
-        "community arts",
-        "visual media literacy",
-        "artificial intelligence and image culture",
-        "professional headshot photography",
-        "C-level business photography",
-        "C-level event photography"
-      ],
       "hasOccupation": [
         {
           "@type": "Occupation",
@@ -371,16 +247,6 @@
           "name": "Photography Educator"
         }
       ],
-      "creatorOf": [
-        {
-          "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
-        }
-      ],
-      "homeLocation": {
-        "@type": "City",
-        "@id": "https://www.wikidata.org/wiki/Q1741",
-        "name": "Vienna"
-      },
       "alumniOf": [
         {
           "@type": "EducationalOrganization",
@@ -443,7 +309,7 @@
       "legalName": "Bánhalmi Norbert e.U.",
       "url": "https://www.norbertbanhalmi.com/",
       "founder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -496,7 +362,7 @@
         "copyrightNotice": "© BANHALMI. All rights reserved.",
         "creator": {
           "@type": "Person",
-          "@id": "https://www.norbertbanhalmi.com/about/",
+          "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
           "name": "Bánhalmi Norbert",
           "knowsAbout": [
             "professional headshot photography",
@@ -744,7 +610,7 @@
         "dateModified": "2026-07-15T23:30:00+02:00"
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -781,7 +647,7 @@
       "name": "BANHALMI Art — official artistic oeuvre and source archive",
       "description": "BANHALMI Art is Norbert Banhalmi's official artistic oeuvre and source archive for books, exhibitions, media appearances, curatorial documentation and selected photographic works. Current professional services, pricing and enquiries are canonical on norbertbanhalmi.com.",
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -900,7 +766,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138414682",
       "foundingDate": "2020",
       "founder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -926,7 +792,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138416887",
       "foundingDate": "2024-09-01",
       "founder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -963,7 +829,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138482177",
       "foundingDate": "2006-03-15",
       "founder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1014,7 +880,7 @@
       "datePublished": "2017",
       "inLanguage": "hu",
       "author": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1043,7 +909,7 @@
       "datePublished": "2018",
       "inLanguage": "hu",
       "author": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1086,7 +952,7 @@
         }
       ],
       "illustrator": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1114,7 +980,7 @@
       "datePublished": "2017",
       "inLanguage": "hu",
       "author": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1142,7 +1008,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454278",
       "startDate": "2016",
       "performer": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1169,7 +1035,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454296",
       "startDate": "2014",
       "performer": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1196,7 +1062,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454309",
       "startDate": "2017",
       "performer": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1223,7 +1089,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454318",
       "startDate": "2018",
       "performer": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1249,7 +1115,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454332",
       "startDate": "2022",
       "performer": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1275,7 +1141,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454346",
       "startDate": "2021",
       "performer": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1301,7 +1167,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454365",
       "startDate": "2024",
       "performer": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1328,7 +1194,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454422",
       "startDate": "2025",
       "performer": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1355,7 +1221,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454436",
       "startDate": "2016",
       "performer": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1380,7 +1246,7 @@
       "url": "https://www.banhalmi.art/exhibitions/euforia.html",
       "sameAs": "https://www.wikidata.org/wiki/Q138717398",
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1419,7 +1285,7 @@
       "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
       "url": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "@type": "Person",
         "name": "Bánhalmi Norbert",
         "knowsAbout": [
@@ -1511,7 +1377,7 @@
       "height": 1800,
       "creditText": "Photograph by Norbert Banhalmi",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1654,7 +1520,7 @@
       },
       "url": "https://www.veol.hu/vezeto-hirek/2018/03/csolnoky-ferenc-korhaz-onkologiai-centrum-rak-kiallitas",
       "contributor": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1680,7 +1546,7 @@
       "dateModified": "2026-06-18T12:00:00+02:00",
       "inLanguage": "hu-HU",
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -2075,7 +1941,7 @@
         "AmCham Austria member relations"
       ],
       "colleague": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
