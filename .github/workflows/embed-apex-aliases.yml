@@ -7,12 +7,6 @@ on:
     paths:
       - '.domain-alias-migration/**'
       - '.github/workflows/embed-apex-aliases.yml'
-  push:
-    branches:
-      - agent/embed-apex-aliases
-    paths:
-      - '.domain-alias-migration/**'
-      - '.github/workflows/embed-apex-aliases.yml'
 
 permissions:
   contents: write
