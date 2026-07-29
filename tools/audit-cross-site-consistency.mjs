@@ -8,6 +8,7 @@ const failures = [];
 async function walk(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     if (entry.name === '.git' || entry.name === 'node_modules' || entry.name === 'test-results' || entry.name === 'playwright-report') continue;
+    if (entry.name === 'link-audit-results.json') continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) await walk(full);
     else if (/\.(?:html|json|jsonld|xml)$/i.test(entry.name)) files.push(full);

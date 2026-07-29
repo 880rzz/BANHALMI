@@ -7,6 +7,7 @@ const files = [];
 async function walk(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     if (entry.name === '.git' || entry.name === 'node_modules' || entry.name === 'test-results' || entry.name === 'playwright-report') continue;
+    if (entry.name === 'link-audit-results.json') continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) await walk(full);
     else if (/\.(?:html|json|jsonld|xml|js)$/i.test(entry.name)) files.push(full);
@@ -82,12 +83,17 @@ for (const file of files) {
   }
 
   content = content
+    .replace(/1999 — a documented photographic practice since 1999 of photographic practice\./gi, 'A documented photographic practice since 1999.')
+    .replace(/1999 óta — 1999 óta fotográfiai gyakorlat\./gi, '1999 óta dokumentált fotográfiai gyakorlat.')
+    .replace(/1999 — mehr als fünfundzwanzig Jahre fotografische Praxis\./gi, 'Seit 1999 dokumentierte fotografische Praxis.')
     .replace(/twenty documented exhibitions and long-term projects/gi, 'nineteen completed exhibitions and one project in development')
     .replace(/20 documented exhibitions and long-term projects/gi, '19 completed exhibitions and 1 project in development')
     .replace(/húsz dokumentált kiállítás(?: és hosszú távú projekt)?/gi, 'tizenkilenc megvalósult kiállítás és egy fejlesztés alatt álló projekt')
     .replace(/zwanzig dokumentierte Ausstellungen(?: und langfristige Projekte)?/gi, 'neunzehn realisierte Ausstellungen und ein Projekt in Entwicklung')
     .replace(/twenty[- ]five years/gi, 'since 1999')
     .replace(/25 years/gi, 'since 1999')
+    .replace(/more than since 1999/gi, 'a documented photographic practice since 1999')
+    .replace(/1999 ótas/gi, '1999 óta dokumentált')
     .replace(/1999 óta épülő/gi, '1999 óta')
     .replace(/25 éve/gi, '1999 óta')
     .replace(/seit 25 Jahren/gi, 'seit 1999');
