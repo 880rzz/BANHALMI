@@ -51,7 +51,7 @@ function updateHtmlFile(file) {
   if (jsonLdCount && updated !== original) fs.writeFileSync(file, updated);
 }
 
-for (const name of ['entity.jsonld', 'entity-graph.json', 'knowledge.json']) {
+for (const name of ['entity.jsonld', 'entity-graph.json']) {
   updateJsonFile(path.join(ROOT, name));
 }
 
@@ -84,7 +84,7 @@ function assertLanding(file, language, canonical) {
 assertLanding('de-at/index.html', 'de-AT', 'https://www.norbertbanhalmi.com/de-at/');
 assertLanding('hu/index.html', 'hu-HU', 'https://www.norbertbanhalmi.com/hu/');
 
-for (const name of ['entity.jsonld', 'entity-graph.json', 'knowledge.json']) {
+for (const name of ['entity.jsonld', 'entity-graph.json']) {
   const text = fs.readFileSync(path.join(ROOT, name), 'utf8');
   JSON.parse(text);
   for (const alias of ALIASES) {
