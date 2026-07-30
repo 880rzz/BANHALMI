@@ -2,9 +2,21 @@
 """Apply natural human-voice rewrites to the three homepages."""
 from pathlib import Path
 import json
+import base64
 
 HERE = Path(__file__).resolve().parent
-pairs = json.loads((HERE / "homepage-voice-pairs.json").read_text(encoding="utf-8"))
+
+def load_pairs():
+    json_path = HERE / "homepage-voice-pairs.json"
+    b64_path = HERE / "homepage-voice-pairs.b64"
+    if json_path.exists():
+        return json.loads(json_path.read_text(encoding="utf-8"))
+    if b64_path.exists():
+        raw = base64.b64decode(b64_path.read_text(encoding="ascii").strip())
+        return json.loads(raw.decode("utf-8"))
+    raise SystemExit("Missing homepage-voice-pairs.json or .b64")
+
+pairs = load_pairs()
 
 FILES = {
     "index.html": pairs["en"],
