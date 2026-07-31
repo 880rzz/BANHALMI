@@ -928,6 +928,11 @@
 
     textNodes.forEach(function (element) { textObserver.observe(element); });
     mediaNodes.forEach(function (element) { mediaObserver.observe(element); });
+
+    // Safety net: if an observer callback is ever missed (fast programmatic
+    // scroll, tab throttling, browser quirk), force full visibility so
+    // content can never be left stuck below full opacity.
+    setTimeout(revealImmediately, 1800);
   })();
 
   // Very light hero depth on pointer devices only; no mobile parallax and no layout movement.
