@@ -42,9 +42,9 @@ const canonicalServiceId = 'https://www.norbertbanhalmi.com/#visual-trust-partne
 assert(corpus.includes(canonicalPersonId), `canonical Person ID missing: ${canonicalPersonId}`);
 
 const requiredHomepageCopy = {
-  'index.html': ['Visual Trust Strategy', 'The photograph speaks before the meeting begins.'],
-  'hu/index.html': ['Vizuális bizalomstratégia', 'A fénykép már az első találkozás előtt megszólal.'],
-  'de-at/index.html': ['Strategie für visuelles Vertrauen', 'Das Bild spricht, bevor die Begegnung beginnt.']
+  'index.html': ['Visual Trust Strategy', 'The photograph often speaks before you do.'],
+  'hu/index.html': ['Vizuális bizalomstratégia', 'A fénykép gyakran előbb beszél, mint Ön.'],
+  'de-at/index.html': ['Strategie für visuelles Vertrauen', 'Das Bild spricht oft, bevor Sie es tun.']
 };
 for (const [file, phrases] of Object.entries(requiredHomepageCopy)) {
   const body = visibleBody(read(file));

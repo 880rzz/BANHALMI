@@ -52,7 +52,7 @@ for (const route of ['privacy-policy/index.html','hu/adatvedelem/index.html','de
   if (!/2026/.test(html)) failures.push(`${route}: review date missing`);
 }
 
-for (const file of ['js/main.js','assets/js/main.js','js/analytics.js','assets/js/analytics.js']) {
+for (const file of ['assets/js/main.js','assets/js/analytics.js']) {
   const content = await readFile(path.join(root, file), 'utf8');
   if (!content.includes('banhalmi_consent_v3')) failures.push(`${file}: consent key v3 missing`);
 }

@@ -76,11 +76,11 @@ for(const [file,euforiaArticle] of Object.entries(euforiaArticleByFile)){
     assert(h.includes(invariant), `${file}: Péter Magyar reference schema invariant missing ${invariant}`);
   }
 }
-const css=read('assets/css/style.css')+'\n'+read('css/style.css');
+const css=read('assets/css/style.css');
 assert(/nav-submenu/.test(css), 'dropdown-specific CSS is required');
 assert(!/(?:filter|backdrop-filter|-webkit-backdrop-filter)\s*:[^;{}]*blur\s*\((?!\s*0(?:px|rem|em|%)?\s*\))/i.test(css), 'production CSS must not contain non-zero blur effects');
 assert(!/word-break\s*:\s*break-all/i.test(css), 'aggressive word breaking is forbidden');
-const mainJs=read('assets/js/main.js')+'\n'+read('js/main.js');
+const mainJs=read('assets/js/main.js');
 assert(/nav-submenu/.test(mainJs), 'dropdown JavaScript is required');
 assert(!/galleryLightbox|data-gallery-lightbox/.test(mainJs), 'deleted commercial gallery JavaScript remains');
 const pricing=JSON.parse(read('pricing.json'));
@@ -182,8 +182,6 @@ assert(portraitPricing&&portraitPricing.packages.some(x=>x.code==='headshotcv'&&
 assert(portraitPricing&&portraitPricing.groupPortraitPricing&&portraitPricing.groupPortraitPricing.setupGrossEUR===pricing.priceComponentsGrossEUR.groupSetupLaterRetouching, 'group portrait formula must map to canonical setup component');
 const eventPricing=pricing.services.find(x=>x.id==='event');
 assert(eventPricing&&eventPricing.name.en==='C-Level Event Photography', 'pricing event service must align with the four-service architecture');
-const qjsMirror=read('js/quote-calculator.js');
-assert(qjs===qjsMirror, 'quote calculator source mirrors must remain identical');
 assert(qjs.includes("root.querySelector('[data-estimate-vat-note]')||root.querySelector('[data-vat-note]')"), 'quote calculator must update the rendered VAT note with backwards-compatible selectors');
 for(const p of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/anfrage/index.html']) {
   const quotePage=read(p);
@@ -197,8 +195,8 @@ for(const p of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/a
 // Strategic-positioning, Schema.org and Wikidata invariants.
 const strategicCopy={
   'index.html':['Visual Trust Strategy','builds visual trust','Four principal service areas:','As a member of AmCham Austria'],
-  'hu/index.html':['Vizuális bizalomstratégia','A fénykép már az első találkozás előtt megszólal.','Négy fő szolgáltatási terület:','Az AmCham Austria tagjaként'],
-  'de-at/index.html':['Strategie für visuelles Vertrauen','Das Bild spricht, bevor die Begegnung beginnt.','Vier zentrale Leistungsbereiche:','Als Mitglied von AmCham Austria']
+  'hu/index.html':['Vizuális bizalomstratégia','A fénykép gyakran előbb beszél, mint Ön.','Négy fő szolgáltatási terület:','Az AmCham Austria tagjaként'],
+  'de-at/index.html':['Strategie für visuelles Vertrauen','Das Bild spricht oft, bevor Sie es tun.','Vier zentrale Leistungsbereiche:','Als Mitglied von AmCham Austria']
 };
 for(const [file,phrases] of Object.entries(strategicCopy)) for(const phrase of phrases) assert(read(file).includes(phrase), `${file}: missing strategic-positioning phrase ${phrase}`);
 const entity=JSON.parse(read('entity.jsonld'));
