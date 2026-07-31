@@ -27,8 +27,10 @@
 .bn-mega-cta{background:linear-gradient(135deg,rgba(183,156,68,.16),#111)!important}
 .bn-mega-art{background:linear-gradient(135deg,#111,rgba(255,255,255,.035))!important}
 body.bn-mega-open{overflow:hidden}
-body.bn-mega-open .site-header{z-index:1001;background:transparent!important;box-shadow:none!important}
+body.bn-mega-open .site-header{z-index:1001;background:var(--bn-menu-bg)!important;box-shadow:none!important}
 body.bn-mega-open .site-header .nav{background:transparent!important}
+body.bn-mega-open .site-header .brand-word{color:var(--bn-menu-ink)!important}
+body.bn-mega-open .site-header .brand-logo{filter:brightness(0) invert(1)}
 body.bn-mega-open .menu-btn span{background:var(--bn-menu-ink)!important}
 body.bn-mega-open .menu-btn span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 body.bn-mega-open .menu-btn span:nth-child(2){opacity:0}
