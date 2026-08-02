@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+// Permanent read-only gate for the concrete strategic-partnership contract.
 const root=path.resolve(import.meta.dirname,'..');
 const errors=[];
 const pages=[
