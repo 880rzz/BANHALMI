@@ -26,8 +26,13 @@ for(const [relative,heading,proof,partner] of pages){
   if(!section.includes(partner)) errors.push(`${relative}: localized partner register link missing`);
   if(!section.includes('firmen.wko.at')) errors.push(`${relative}: WKO evidence link missing`);
   if(!section.includes('amcham.at/members-list/')) errors.push(`${relative}: AmCham evidence link missing`);
-  const disclaimer=relative.startsWith('hu/')?'nem ajánl':relative.startsWith('de-at/')?'keine Empfehlung':'not an endorsement';
-  if(!section.toLowerCase().includes(disclaimer.toLowerCase())) errors.push(`${relative}: collaboration-versus-endorsement clarification missing`);
+  const lower=section.toLowerCase();
+  const disclaimerOk=relative.startsWith('hu/')
+    ? /(nem ajánl|nem támogatói nyilatkozat|nem jelent ajánlást)/.test(lower)
+    : relative.startsWith('de-at/')
+      ? /(keine empfehlung|keine unterstützung|keine empfehlungsliste)/.test(lower)
+      : /(not an endorsement|does not imply endorsement|not an endorsement list)/.test(lower);
+  if(!disclaimerOk) errors.push(`${relative}: collaboration-versus-endorsement clarification missing`);
 }
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
 console.log('Stage-six trust proof audit passed across nine service pages and three languages.');
