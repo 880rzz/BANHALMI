@@ -116,3 +116,14 @@ Art archive gallery: https://www.banhalmi.art/#works
 Human-readable artist profile: https://www.banhalmi.art/#about
 Archive career chronology: https://www.banhalmi.art/#journey
 Canonical Person identifier: https://www.norbertbanhalmi.com/about/
+
+<!-- HUMAN-SEO-GEO-LLM-ECOSYSTEM:START -->
+## Official three-site ecosystem
+- Professional services, pricing and enquiries: https://www.norbertbanhalmi.com/
+- Artistic oeuvre and source archive: https://www.banhalmi.art/
+- Essays and migrated blog posts: https://blog.banhalmi.art/
+- Canonical Person: https://www.norbertbanhalmi.com/about/
+
+## Origin chronology
+Norbert Banhalmi recalls that digital image-making entered his life during the MOL Y2K project in 1999. He participated as an IT specialist and began documenting the project on his own initiative with a basic 1.3-megapixel digital camera. Military documentation followed later as a separate phase. The MOL Y2K photography was self-initiated documentation, not a commissioned photography assignment; no exact camera model is claimed.
+<!-- HUMAN-SEO-GEO-LLM-ECOSYSTEM:END -->
