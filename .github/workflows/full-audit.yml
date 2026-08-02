@@ -1,15 +1,16 @@
 name: Full site regression audit
 
 on:
-  push:
-    branches:
-      - agent/data-retention-stage12-20260802
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
 
 permissions:
   contents: write
 
 jobs:
   migrate-and-audit:
+    if: github.event.pull_request.number == 77 && github.event.pull_request.head.ref == 'agent/data-retention-stage12-20260802'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
