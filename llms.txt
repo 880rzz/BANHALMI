@@ -10,7 +10,7 @@ Artistic source archive: https://www.banhalmi.art/
 Art archive gallery: https://www.banhalmi.art/#works
 Human-readable artist profile: https://www.banhalmi.art/#about
 Archive career chronology: https://www.banhalmi.art/#journey
-Canonical Person identifier: https://www.banhalmi.art/norbert-banhalmi#person
+Canonical Person identifier: https://www.norbertbanhalmi.com/about/
 
 Canonical entity graph:
 - https://www.norbertbanhalmi.com/entity.jsonld

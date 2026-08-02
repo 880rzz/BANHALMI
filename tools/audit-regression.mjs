@@ -56,7 +56,7 @@ assert(Boolean(peterMagyarWork), 'featured work must include the verified Péter
 if(peterMagyarWork){
   assert(peterMagyarWork.contentUrl==='https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp', 'Péter Magyar portrait must retain the production image URL');
   assert(peterMagyarWork.url==='https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg', 'Péter Magyar portrait must retain the Wikimedia Commons source');
-  assert(peterMagyarWork.creator?.['@id']==='https://www.banhalmi.art/norbert-banhalmi#person', 'Péter Magyar portrait must identify Bánhalmi Norbert as creator');
+  assert(peterMagyarWork.creator?.['@id']==='https://www.norbertbanhalmi.com/about/', 'Péter Magyar portrait must identify Bánhalmi Norbert as creator');
   assert(peterMagyarWork.about?.['@id']==='https://www.wikidata.org/wiki/Q124488292', 'Péter Magyar portrait must identify Péter Magyar through Wikidata Q124488292');
   assert(peterMagyarWork.isPartOf?.some(item=>item['@id']==='https://www.wikidata.org/wiki/Q138717398'), 'Péter Magyar portrait must remain linked to the EUFÓRIA Wikidata entity');
   assert(peterMagyarWork.identifier?.some(item=>item.propertyID==='Creator Wikidata'&&item.value==='Q56391118'), 'Péter Magyar portrait must retain Bánhalmi Norbert Wikidata Q56391118');
@@ -207,7 +207,7 @@ assert(strategicMethod&&Array.isArray(strategicMethod.step)&&strategicMethod.ste
 const schemaOrg=entityGraph.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#organization');
 assert(schemaOrg&&Array.isArray(schemaOrg.subjectOf)&&schemaOrg.subjectOf.some(x=>x['@id']==='https://www.norbertbanhalmi.com/#visual-strategic-partnership-method'), 'Organization schema must link to the strategic method');
 const wikidataExpectations={
-  'https://www.banhalmi.art/norbert-banhalmi#person':'https://www.wikidata.org/wiki/Q56391118',
+  'https://www.norbertbanhalmi.com/about/':'https://www.wikidata.org/wiki/Q56391118',
   'https://www.norbertbanhalmi.com/#organization':'https://www.wikidata.org/wiki/Q138425941',
   'https://www.norbertbanhalmi.com/#amcham-austria':'https://www.wikidata.org/wiki/Q138413481'
 };

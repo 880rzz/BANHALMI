@@ -3,8 +3,8 @@
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
-      "url": "https://www.banhalmi.art/norbert-banhalmi",
+      "@id": "https://www.norbertbanhalmi.com/about/",
+      "url": "https://www.norbertbanhalmi.com/about/",
       "name": "Bánhalmi Norbert",
       "alternateName": [
         "Norbert Banhalmi",
@@ -309,7 +309,7 @@
       "legalName": "Bánhalmi Norbert e.U.",
       "url": "https://www.norbertbanhalmi.com/",
       "founder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -362,7 +362,7 @@
         "copyrightNotice": "© BANHALMI. All rights reserved.",
         "creator": {
           "@type": "Person",
-          "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+          "@id": "https://www.norbertbanhalmi.com/about/",
           "name": "Bánhalmi Norbert",
           "knowsAbout": [
             "professional headshot photography",
@@ -610,7 +610,7 @@
         "dateModified": "2026-07-15T23:30:00+02:00"
       },
       "about": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -647,7 +647,7 @@
       "name": "BANHALMI Art — official artistic oeuvre and source archive",
       "description": "BANHALMI Art is Norbert Banhalmi's official artistic oeuvre and source archive for books, exhibitions, media appearances, curatorial documentation and selected photographic works. Current professional services, pricing and enquiries are canonical on norbertbanhalmi.com.",
       "about": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -766,7 +766,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138414682",
       "foundingDate": "2020",
       "founder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -792,7 +792,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138416887",
       "foundingDate": "2024-09-01",
       "founder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -829,7 +829,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138482177",
       "foundingDate": "2006-03-15",
       "founder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -880,7 +880,7 @@
       "datePublished": "2017",
       "inLanguage": "hu",
       "author": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -909,7 +909,7 @@
       "datePublished": "2018",
       "inLanguage": "hu",
       "author": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -952,7 +952,7 @@
         }
       ],
       "illustrator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -980,7 +980,7 @@
       "datePublished": "2017",
       "inLanguage": "hu",
       "author": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1008,7 +1008,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454278",
       "startDate": "2016",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1035,7 +1035,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454296",
       "startDate": "2014",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1062,7 +1062,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454309",
       "startDate": "2017",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1089,7 +1089,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454318",
       "startDate": "2018",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1115,7 +1115,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454332",
       "startDate": "2022",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1141,7 +1141,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454346",
       "startDate": "2021",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1167,7 +1167,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454365",
       "startDate": "2024",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1194,7 +1194,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454422",
       "startDate": "2025",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1221,7 +1221,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138454436",
       "startDate": "2016",
       "performer": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1246,7 +1246,7 @@
       "url": "https://www.banhalmi.art/exhibitions/euforia.html",
       "sameAs": "https://www.wikidata.org/wiki/Q138717398",
       "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1285,7 +1285,7 @@
       "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
       "url": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
       "creator": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "@type": "Person",
         "name": "Bánhalmi Norbert",
         "knowsAbout": [
@@ -1377,7 +1377,7 @@
       "height": 1800,
       "creditText": "Photograph by Norbert Banhalmi",
       "copyrightHolder": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1520,7 +1520,7 @@
       },
       "url": "https://www.veol.hu/vezeto-hirek/2018/03/csolnoky-ferenc-korhaz-onkologiai-centrum-rak-kiallitas",
       "contributor": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1546,7 +1546,7 @@
       "dateModified": "2026-06-18T12:00:00+02:00",
       "inLanguage": "hu-HU",
       "about": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -1941,7 +1941,7 @@
         "AmCham Austria member relations"
       ],
       "colleague": {
-        "@id": "https://www.banhalmi.art/norbert-banhalmi#person",
+        "@id": "https://www.norbertbanhalmi.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
