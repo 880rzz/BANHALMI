@@ -1,40 +1,48 @@
-name: One-time stage-five conversion path migration
+name: Full site regression audit
 
 on:
+  push:
+    branches:
+      - main
+      - 'agent/**'
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  migrate:
-    if: github.head_ref == 'agent/conversion-path-stage5-20260802'
+  audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: agent/conversion-path-stage5-20260802
+          ref: ${{ github.head_ref || github.ref_name }}
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm install
-      - name: Apply conversion path
-        run: node tools/apply-conversion-path-stage5.mjs
-      - name: Remove one-time migration helper
-        run: rm -f tools/apply-conversion-path-stage5.mjs
       - name: Run deterministic audit
         run: npm run audit
-      - name: Generate human voice report
-        run: npm run audit:copy > /tmp/banhalmi-human-voice-audit.json
-      - name: Verify audit does not modify unrelated tracked files
-        run: git diff --exit-code -- . ':!portrait/index.html' ':!lifestyle/index.html' ':!event-photography/index.html' ':!hu/portre/index.html' ':!hu/brand/index.html' ':!hu/rendezvenyfotozas/index.html' ':!de-at/portrait/index.html' ':!de-at/brand/index.html' ':!de-at/eventfotografie/index.html' ':!contact/index.html' ':!hu/kapcsolat/index.html' ':!de-at/kontakt/index.html' ':!tools/apply-conversion-path-stage5.mjs'
-      - name: Commit audited stage
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Simplify contact and quote conversion paths"
-          git push origin HEAD:agent/conversion-path-stage5-20260802
+      - name: Generate human voice copy report
+        run: npm run audit:copy > human-voice-audit.json
+      - name: Upload human voice copy report
+        uses: actions/upload-artifact@v4
+        with:
+          name: banhalmi-human-voice-audit
+          path: human-voice-audit.json
+          if-no-files-found: error
+      - name: Verify audit did not modify tracked files
+        run: git diff --exit-code
+      - name: Check live endpoints and external links
+        run: npm run audit:live
+      - name: Upload external link report
+        if: always() && hashFiles('link-audit-results.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-link-audit
+          path: link-audit-results.json
+          if-no-files-found: ignore
