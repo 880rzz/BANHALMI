@@ -28,9 +28,11 @@ jobs:
       - name: Apply final ecosystem hardening
         working-directory: work
         run: node tools/_apply-final-ecosystem-audit.mjs
-      - name: Run content, SEO, GEO, schema, LLM, GDPR and link audits
+      - name: Run source, primary-live, SEO, GEO, schema, LLM, GDPR and link audits
         working-directory: work
-        run: npm run audit && npm run audit:copy && npm run audit:production && npm run audit:aliases && npm run audit:alias-entities
+        run: npm run audit && npm run audit:copy && npm run audit:production && npm run audit:alias-entities
+      - name: Note alias-domain deployment gate
+        run: echo "HTTP alias redirects are verified after production deployment; source host rules are covered by audit-redirect-config.mjs."
       - name: Install browser runtime
         working-directory: work
         run: npx playwright install --with-deps chromium
