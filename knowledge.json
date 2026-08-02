@@ -554,5 +554,10 @@
         "long-term trust"
       ]
     }
+  },
+  "officialSites": {
+    "professional": "https://www.norbertbanhalmi.com/",
+    "archive": "https://www.banhalmi.art/",
+    "blog": "https://blog.banhalmi.art/"
   }
 }

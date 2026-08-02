@@ -88,5 +88,10 @@
     "https://www.norbertbanhalmi.com/pricing.json",
     "https://www.norbertbanhalmi.com/pricing-guide.json",
     "https://www.norbertbanhalmi.com/featured-work-peter-magyar.json"
-  ]
+  ],
+  "officialSites": {
+    "professional": "https://www.norbertbanhalmi.com/",
+    "archive": "https://www.banhalmi.art/",
+    "blog": "https://blog.banhalmi.art/"
+  }
 }
