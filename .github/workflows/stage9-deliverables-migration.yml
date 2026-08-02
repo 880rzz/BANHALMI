@@ -1,0 +1,40 @@
+name: One-time stage-nine deliverables migration
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: github.head_ref == 'agent/deliverables-stage9-20260802'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/deliverables-stage9-20260802
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: Apply delivery-system blocks
+        run: node tools/apply-deliverables-stage9.mjs
+      - name: Remove one-time migration files
+        run: rm -f tools/apply-deliverables-stage9.mjs .github/workflows/stage9-deliverables-migration.yml
+      - name: Run deterministic audit
+        run: npm run audit
+      - name: Generate human voice report
+        run: npm run audit:copy > /tmp/banhalmi-human-voice-audit.json
+      - name: Verify audit does not modify unrelated tracked files
+        run: git diff --exit-code -- . ':!portrait/index.html' ':!lifestyle/index.html' ':!event-photography/index.html' ':!faq/index.html' ':!hu/portre/index.html' ':!hu/brand/index.html' ':!hu/rendezvenyfotozas/index.html' ':!hu/gyik/index.html' ':!de-at/portrait/index.html' ':!de-at/brand/index.html' ':!de-at/eventfotografie/index.html' ':!de-at/faq/index.html' ':!tools/apply-deliverables-stage9.mjs' ':!.github/workflows/stage9-deliverables-migration.yml'
+      - name: Commit audited stage
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add verified deliverables and timing system"
+          git push origin HEAD:agent/deliverables-stage9-20260802
