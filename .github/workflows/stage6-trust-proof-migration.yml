@@ -1,0 +1,40 @@
+name: One-time stage-six trust proof migration
+
+on:
+  push:
+    branches:
+      - agent/trust-proof-stage6-20260802
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/trust-proof-stage6-20260802
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: Apply trust proof blocks
+        run: node tools/apply-trust-proof-stage6.mjs
+      - name: Remove one-time migration files
+        run: rm -f tools/apply-trust-proof-stage6.mjs .github/workflows/stage6-trust-proof-migration.yml
+      - name: Run deterministic audit
+        run: npm run audit
+      - name: Generate human voice report
+        run: npm run audit:copy > /tmp/banhalmi-human-voice-audit.json
+      - name: Verify audit does not modify unrelated tracked files
+        run: git diff --exit-code -- . ':!portrait/index.html' ':!lifestyle/index.html' ':!event-photography/index.html' ':!hu/portre/index.html' ':!hu/brand/index.html' ':!hu/rendezvenyfotozas/index.html' ':!de-at/portrait/index.html' ':!de-at/brand/index.html' ':!de-at/eventfotografie/index.html' ':!tools/apply-trust-proof-stage6.mjs' ':!.github/workflows/stage6-trust-proof-migration.yml'
+      - name: Commit audited stage
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add verified trust evidence to service pages"
+          git push origin HEAD:agent/trust-proof-stage6-20260802
