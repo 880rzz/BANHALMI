@@ -1,0 +1,27 @@
+.banhalmi-ecosystem{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:.55rem 1.2rem;
+  width:min(100%,72rem);
+  margin:clamp(1.75rem,3vw,2.75rem) auto 0;
+  padding-top:clamp(1.25rem,2vw,1.75rem);
+  border-top:1px solid rgba(17,17,17,.14);
+  font-size:.78rem;
+  line-height:1.4;
+}
+.banhalmi-ecosystem a{
+  color:inherit;
+  opacity:.72;
+  text-decoration:none;
+  text-underline-offset:.2em;
+}
+.banhalmi-ecosystem a:hover,
+.banhalmi-ecosystem a:focus-visible{
+  opacity:1;
+  text-decoration:underline;
+}
+.banhalmi-ecosystem a[aria-current="page"]{
+  color:#8a6f20;
+  opacity:1;
+}
