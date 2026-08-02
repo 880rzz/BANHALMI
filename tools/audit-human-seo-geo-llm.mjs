@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+// Permanent read-only gate for human voice, biography chronology and the three-site entity ecosystem.
 const root = path.resolve(import.meta.dirname, '..');
 const errors = [];
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
