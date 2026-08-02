@@ -89,3 +89,5 @@ The automated audit must fail when:
 - a visible key page exceeds the agreed generic-marketing phrase threshold;
 - schema and visible biography disagree;
 - an alias domain becomes canonical or hreflang.
+
+This contract is applied in the 2026-08-02 professional human and entity audit release.
