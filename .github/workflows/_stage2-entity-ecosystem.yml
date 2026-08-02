@@ -1,0 +1,42 @@
+name: Stage-two entity ecosystem migration
+
+on:
+  push:
+    branches:
+      - agent/entity-ecosystem-stage2-20260802
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/entity-ecosystem-stage2-20260802
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: Apply canonical studio IDs and visible ecosystem links
+        run: node tools/apply-entity-ecosystem-stage2.mjs
+      - name: Remove one-time migration files
+        run: |
+          rm tools/apply-entity-ecosystem-stage2.mjs
+          rm .github/workflows/_stage2-entity-ecosystem.yml
+      - name: Run deterministic audit
+        run: npm run audit
+      - name: Generate human voice report
+        run: npm run audit:copy > /tmp/banhalmi-human-voice-stage2.json
+      - name: Verify audit is read-only
+        run: |
+          git diff --check
+      - name: Commit audited stage
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Apply professional entity ecosystem stage"
+          git push origin HEAD:agent/entity-ecosystem-stage2-20260802
