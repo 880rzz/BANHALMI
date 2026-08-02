@@ -115,4 +115,4 @@ The multilingual partner pages document selected historical clients and collabor
 Art archive gallery: https://www.banhalmi.art/#works
 Human-readable artist profile: https://www.banhalmi.art/#about
 Archive career chronology: https://www.banhalmi.art/#journey
-Canonical Person identifier: https://www.banhalmi.art/norbert-banhalmi#person
+Canonical Person identifier: https://www.norbertbanhalmi.com/about/

@@ -37,7 +37,7 @@ const corpusFiles = [
 ].filter((file) => fs.existsSync(file));
 const corpus = corpusFiles.map(read).join('\n');
 
-const canonicalPersonId = 'https://www.banhalmi.art/norbert-banhalmi#person';
+const canonicalPersonId = 'https://www.norbertbanhalmi.com/about/';
 const canonicalServiceId = 'https://www.norbertbanhalmi.com/#visual-trust-partnership';
 assert(corpus.includes(canonicalPersonId), `canonical Person ID missing: ${canonicalPersonId}`);
 

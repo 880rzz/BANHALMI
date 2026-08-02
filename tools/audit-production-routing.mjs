@@ -59,7 +59,7 @@ await checkPage('https://www.norbertbanhalmi.com/de-at/', {
 // by freezing one historic marketing sentence into CI.
 await checkPage('https://www.banhalmi.art/', {
   all: [
-    'https://www.banhalmi.art/norbert-banhalmi#person',
+    'https://www.norbertbanhalmi.com/about/',
     'https://www.norbertbanhalmi.com/'
   ],
   any: [

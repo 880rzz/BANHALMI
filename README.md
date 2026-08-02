@@ -16,5 +16,5 @@ Vienna is the company headquarters. Vienna and Budapest are equal active service
 - `norbertbanhalmi.com` is the professional service and enquiry site.
 - `banhalmi.art` is the artistic source archive.
 - The professional Oeuvre page remains a commercial-context overview; Gallery links directly to the language-matched `banhalmi.art/#works` destination.
-- The canonical Person identifier is `https://www.banhalmi.art/norbert-banhalmi#person`; its human-readable profile is `https://www.banhalmi.art/#about`.
+- The canonical Person identifier is `https://www.norbertbanhalmi.com/about/`; its human-readable profile is `https://www.banhalmi.art/#about`.
 - Permanent GitHub Actions are read-only. Historical rewrite/remediation workflows and broad source-mutating fixers were removed to prevent audited corrections from being reverted.
