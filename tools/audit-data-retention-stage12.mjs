@@ -8,7 +8,7 @@ const pages=[
   ['lifestyle/index.html','Storage, access and deletion','Controlled access','Delivered files and working files','Retention and backup','Deletion requests'],
   ['event-photography/index.html','Storage, access and deletion','Controlled access','Delivered files and working files','Retention and backup','Deletion requests'],
   ['faq/index.html','Storage, access and deletion','Controlled access','Delivered files and working files','Retention and backup','Deletion requests'],
-  ['privacy/index.html','Storage, access and deletion','Controlled access','Delivered files and working files','Retention and backup','Deletion requests'],
+  ['privacy-policy/index.html','Storage, access and deletion','Controlled access','Delivered files and working files','Retention and backup','Deletion requests'],
   ['terms-conditions/index.html','Storage, access and deletion','Controlled access','Delivered files and working files','Retention and backup','Deletion requests'],
   ['hu/portre/index.html','Tárolás, hozzáférés és törlés','Szabályozott hozzáférés','Átadott és munkafájlok','Megőrzés és biztonsági mentés','Törlési kérelem'],
   ['hu/brand/index.html','Tárolás, hozzáférés és törlés','Szabályozott hozzáférés','Átadott és munkafájlok','Megőrzés és biztonsági mentés','Törlési kérelem'],
