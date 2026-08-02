@@ -1,5 +1,5 @@
 {
-  "version": "2026-07-11-peter-magyar-media-expanded-v2",
+  "version": "2026-08-02-human-origin-v3",
   "person": {
     "name": "Norbert Banhalmi",
     "alternateName": [
@@ -76,12 +76,13 @@
       "Turul Award — 2024",
       "Turul Award — 2025"
     ],
-    "source": "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
+    "source": "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+    "canonicalId": "https://www.norbertbanhalmi.com/about/"
   },
   "timeline": [
     [
       "1999",
-      "Photography begins as a sustained personal and professional practice."
+      "While working as an IT specialist on the MOL Y2K project, Norbert Banhalmi began documenting the project on his own initiative with a basic 1.3-megapixel digital camera."
     ],
     [
       "2005–2006",
@@ -729,5 +730,14 @@
       "image": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
       "evidence": "https://www.norbertbanhalmi.com/media-usage.json"
     }
-  ]
+  ],
+  "origin": {
+    "year": 1999,
+    "context": "MOL Y2K project",
+    "role": "IT specialist",
+    "action": "Self-initiated documentation of the project",
+    "equipment": "Basic 1.3-megapixel digital camera; exact model not claimed",
+    "evidenceStatus": "Artist recollection",
+    "chronology": "Military documentation followed later as a separate phase."
+  }
 }
