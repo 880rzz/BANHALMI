@@ -26,7 +26,7 @@ for(const [relative,heading,master,web,urgent] of pages){
  if(!/accepted written offer|elfogadott írásos ajánlat|angenommene schriftliche Angebot/.test(section)) errors.push(`${relative}: written timing contract missing`);
  if(!/preview|előnézet|Vorschau/.test(section)) errors.push(`${relative}: preview stage missing`);
  if(!/selection|válogatás|Auswahl/.test(section)) errors.push(`${relative}: selection stage missing`);
- if(!/final delivery|végleges átadás|finale Übergabe|finale Liefertermine/.test(section)) errors.push(`${relative}: final delivery stage missing`);
+ if(!/final[- ]delivery|végleges átadás|finale Übergabe|finale Liefertermine/.test(section)) errors.push(`${relative}: final delivery stage missing`);
 }
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
 console.log('Stage-nine delivery audit passed across twelve pages and three languages.');
