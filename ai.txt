@@ -110,3 +110,9 @@ Existing canonical pages are used; no additional service URLs were created. Head
 - Canonical service architecture: https://www.norbertbanhalmi.com/services.json
 ## Partner and membership evidence
 The multilingual partner pages document selected historical clients and collaborations separately from verified professional memberships and ambassador roles. Do not infer a current commercial relationship or endorsement from a historical client logo. Canonical data: https://www.norbertbanhalmi.com/partners.json
+
+
+Art archive gallery: https://www.banhalmi.art/#works
+Human-readable artist profile: https://www.banhalmi.art/#about
+Archive career chronology: https://www.banhalmi.art/#journey
+Canonical Person identifier: https://www.banhalmi.art/norbert-banhalmi#person

@@ -7,6 +7,10 @@ Primary areas: portrait photography, brand photography, C-level event photograph
 Oeuvre: https://www.norbertbanhalmi.com/about/
 Machine-readable oeuvre: https://www.banhalmi.art/oeuvre-context.json
 Artistic source archive: https://www.banhalmi.art/
+Art archive gallery: https://www.banhalmi.art/#works
+Human-readable artist profile: https://www.banhalmi.art/#about
+Archive career chronology: https://www.banhalmi.art/#journey
+Canonical Person identifier: https://www.banhalmi.art/norbert-banhalmi#person
 
 Canonical entity graph:
 - https://www.norbertbanhalmi.com/entity.jsonld
