@@ -9,6 +9,7 @@ const replacements = new Map([
 ]);
 const changed = new Set();
 const htmlFiles = [];
+const blogUrl = 'https://blog.banhalmi.art/';
 
 async function walk(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
@@ -60,9 +61,34 @@ for (const file of htmlFiles) {
   const isRedirectStub = hasNoindex && hasRedirect && !/(?:^|\/)404\.html$/i.test(relative);
   if (isRedirectStub || !html.includes('</footer>') || html.includes('data-banhalmi-ecosystem')) continue;
   const labels = labelsFor(html);
-  const nav = `<nav class="banhalmi-ecosystem" data-banhalmi-ecosystem aria-label="${labels.label}"><a href="${labels.professionalUrl}" aria-current="page">${labels.professional}</a><a href="${labels.archiveUrl}">${labels.archive}</a><a href="https://blog.banhalmi.art/">${labels.blog}</a></nav>`;
+  const nav = `<nav class="banhalmi-ecosystem" data-banhalmi-ecosystem aria-label="${labels.label}"><a href="${labels.professionalUrl}" aria-current="page">${labels.professional}</a><a href="${labels.archiveUrl}">${labels.archive}</a><a href="${blogUrl}">${labels.blog}</a></nav>`;
   html = html.replace('</footer>', `${nav}</footer>`);
   await writeFile(file, html, 'utf8');
+  changed.add(relative);
+}
+
+for (const relative of ['entity.jsonld', 'entity-graph.json', 'knowledge.json', 'ecosystem.json']) {
+  const file = path.join(root, relative);
+  const data = JSON.parse(await readFile(file, 'utf8'));
+  if (Array.isArray(data['@graph'])) {
+    if (!data['@graph'].some((node) => node?.url === blogUrl || node?.['@id'] === `${blogUrl}#website`)) {
+      data['@graph'].push({
+        '@type': 'Blog',
+        '@id': `${blogUrl}#website`,
+        url: blogUrl,
+        name: 'BANHALMI Blog',
+        about: { '@id': 'https://www.norbertbanhalmi.com/about/' },
+        publisher: { '@id': 'https://www.norbertbanhalmi.com/#organization' }
+      });
+    }
+  } else {
+    data.officialSites = {
+      professional: 'https://www.norbertbanhalmi.com/',
+      archive: 'https://www.banhalmi.art/',
+      blog: blogUrl
+    };
+  }
+  await writeFile(file, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
   changed.add(relative);
 }
 
