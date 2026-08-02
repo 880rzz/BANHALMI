@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+// Permanent read-only regression contract for delivery scope, approvals and timing.
 const root=path.resolve(import.meta.dirname,'..');
 const errors=[];
 const pages=[
