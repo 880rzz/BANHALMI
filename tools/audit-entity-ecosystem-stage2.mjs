@@ -1,6 +1,7 @@
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 
+// Permanent protected stage-two gate for the professional entity ecosystem.
 const root = path.resolve(import.meta.dirname, '..');
 const errors = [];
 const legacyArchiveOrigin = ['https://www.', 'banhalmi.art', '/#studio-'].join('');
