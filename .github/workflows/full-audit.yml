@@ -20,96 +20,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Replace the Person identifier in every affected file
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-
-          canonical = 'https://www.norbertbanhalmi.com/about/'
-          old_values = [
-              'https://www.banhalmi.art/norbert-banhalmi#person',
-              'https://banhalmi.art/norbert-banhalmi#person',
-              'http://www.banhalmi.art/norbert-banhalmi#person',
-              'http://banhalmi.art/norbert-banhalmi#person',
-              'https://www.banhalmi.art/norbert-banhalmi/',
-              'https://banhalmi.art/norbert-banhalmi/',
-              'https://www.banhalmi.art/norbert-banhalmi',
-              'https://banhalmi.art/norbert-banhalmi',
-          ]
-          extensions = {'.html','.htm','.json','.jsonld','.txt','.md','.mjs','.js','.cjs','.xml','.yaml','.yml','.css','.svg','.webmanifest','.csv'}
-          special = {'_redirects','robots.txt','CNAME','vercel.json'}
-          changed = []
-          for file in Path('.').rglob('*'):
-              if not file.is_file() or any(part in {'.git','node_modules','playwright-report','test-results'} for part in file.parts):
-                  continue
-              if file.suffix.lower() not in extensions and file.name not in special:
-                  continue
-              try:
-                  text = file.read_text(encoding='utf-8')
-              except UnicodeDecodeError:
-                  continue
-              original = text
-              for old in old_values:
-                  text = text.replace(old, canonical)
-              if text != original:
-                  file.write_text(text, encoding='utf-8')
-                  changed.append(str(file))
-          Path('.canonical-person-migration').unlink(missing_ok=True)
-          print(f'Migrated {len(changed)} existing files')
-          PY
-      - name: Restore the permanent branch audit
-        run: |
-          cat > .github/workflows/full-audit.yml <<'YAML'
-          name: Full site regression audit
-
-          on:
-            push:
-              branches:
-                - main
-                - 'agent/**'
-            pull_request:
-              branches:
-                - main
-            workflow_dispatch:
-
-          permissions:
-            contents: read
-
-          jobs:
-            audit:
-              runs-on: ubuntu-latest
-              steps:
-                - uses: actions/checkout@v4
-                  with:
-                    ref: ${{ github.head_ref || github.ref_name }}
-                    fetch-depth: 0
-                - uses: actions/setup-node@v4
-                  with:
-                    node-version: 22
-                - run: npm install
-                - name: Run deterministic audit
-                  run: npm run audit
-                - name: Generate human voice copy report
-                  run: npm run audit:copy > human-voice-audit.json
-                - name: Upload human voice copy report
-                  uses: actions/upload-artifact@v4
-                  with:
-                    name: banhalmi-human-voice-audit
-                    path: human-voice-audit.json
-                    if-no-files-found: error
-                - name: Verify audit did not modify tracked files
-                  run: git diff --exit-code
-                - name: Check live endpoints and external links
-                  run: npm run audit:live
-                - name: Upload external link report
-                  if: always() && hashFiles('link-audit-results.json') != ''
-                  uses: actions/upload-artifact@v4
-                  with:
-                    name: external-link-audit
-                    path: link-audit-results.json
-                    if-no-files-found: ignore
-          YAML
-      - name: Audit and commit
+      - name: Migrate every affected BANHALMI file
+        run: python3 tools/migrate-canonical-person.py
+      - name: Run complete audit and commit
         run: |
           npm install
           npm run audit
@@ -128,7 +41,7 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - name: Restore the permanent main audit
+      - name: Restore the permanent read-only full audit
         run: |
           cat > .github/workflows/full-audit.yml <<'YAML'
           name: Full site regression audit
