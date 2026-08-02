@@ -1,6 +1,6 @@
 import {execSync} from 'node:child_process';
 import fs from 'node:fs';
-// Temporary compatibility runner: removed by the audited migration.
+// Temporary compatibility runner for PR 77; removed by the audited migration.
 await import('./apply-data-retention-stage12.mjs');
 execSync('git checkout origin/main^ -- .github/workflows/full-audit.yml',{stdio:'inherit'});
 for(const file of ['tools/apply-data-retention-stage12.mjs','tools/apply-deliverables-stage9.mjs']){
