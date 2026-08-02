@@ -1,48 +1,109 @@
-name: Full site regression audit
+name: One-time branch Person migration
 
 on:
   push:
-    branches:
-      - main
-      - 'agent/**'
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+    branches: [agent/canonical-person-audit-20260802]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  audit:
+  migrate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref || github.ref_name }}
+          ref: agent/canonical-person-audit-20260802
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install
-      - name: Run deterministic audit
-        run: npm run audit
-      - name: Generate human voice copy report
-        run: npm run audit:copy > human-voice-audit.json
-      - name: Upload human voice copy report
-        uses: actions/upload-artifact@v4
-        with:
-          name: banhalmi-human-voice-audit
-          path: human-voice-audit.json
-          if-no-files-found: error
-      - name: Verify audit did not modify tracked files
-        run: git diff --exit-code
-      - name: Check live endpoints and external links
-        run: npm run audit:live
-      - name: Upload external link report
-        if: always() && hashFiles('link-audit-results.json') != ''
-        uses: actions/upload-artifact@v4
-        with:
-          name: external-link-audit
-          path: link-audit-results.json
-          if-no-files-found: ignore
+      - name: Migrate all Person references and restore read-only audit
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          canonical='https://www.norbertbanhalmi.com/about/'
+          old_values=['https://www.banhalmi.art/norbert-banhalmi#person','https://banhalmi.art/norbert-banhalmi#person','http://www.banhalmi.art/norbert-banhalmi#person','http://banhalmi.art/norbert-banhalmi#person','https://www.banhalmi.art/norbert-banhalmi/','https://banhalmi.art/norbert-banhalmi/','https://www.banhalmi.art/norbert-banhalmi','https://banhalmi.art/norbert-banhalmi']
+          exts={'.html','.htm','.json','.jsonld','.txt','.md','.mjs','.js','.cjs','.xml','.yaml','.yml','.css','.svg','.webmanifest','.csv'}
+          special={'_redirects','robots.txt','CNAME','vercel.json'}
+          changed=[]
+          for p in Path('.').rglob('*'):
+            if not p.is_file() or any(x in {'.git','node_modules','playwright-report','test-results'} for x in p.parts): continue
+            if p.suffix.lower() not in exts and p.name not in special: continue
+            try: text=p.read_text(encoding='utf-8')
+            except UnicodeDecodeError: continue
+            original=text
+            for old in old_values: text=text.replace(old,canonical)
+            if text!=original: p.write_text(text,encoding='utf-8'); changed.append(str(p))
+          Path('tools/audit-canonical-person.mjs').write_text("""import { readdir, readFile } from 'node:fs/promises';
+import path from 'node:path';
+const root=path.resolve(import.meta.dirname,'..');const canonical='https://www.norbertbanhalmi.com/about/';
+const forbidden=['https://www.banhalmi.art/norbert-banhalmi#person','https://banhalmi.art/norbert-banhalmi#person','https://www.banhalmi.art/norbert-banhalmi','https://banhalmi.art/norbert-banhalmi'];
+const exts=new Set(['.html','.htm','.json','.jsonld','.txt','.md','.mjs','.js','.cjs','.xml','.yaml','.yml','.css','.svg','.webmanifest','.csv']);const special=new Set(['_redirects','robots.txt','CNAME','vercel.json']);const files=[];
+async function walk(dir){for(const e of await readdir(dir,{withFileTypes:true})){if(['.git','node_modules','playwright-report','test-results'].includes(e.name))continue;const f=path.join(dir,e.name);if(e.isDirectory())await walk(f);else if(exts.has(path.extname(e.name).toLowerCase())||special.has(e.name))files.push(f)}}
+await walk(root);let hits=0;const errors=[];for(const f of files){const t=await readFile(f,'utf8');hits+=t.split(canonical).length-1;for(const value of forbidden)if(t.includes(value))errors.push(`${path.relative(root,f)}: legacy Person identifier ${value}`)}
+if(!hits)errors.push('Canonical Person identifier is not present.');if(errors.length){console.error(errors.join('\n'));process.exit(1)}console.log(`Canonical Person audit passed across ${files.length} files with ${hits} references.`);
+""",encoding='utf-8')
+          pkg=Path('package.json'); data=json.loads(pkg.read_text()); guard='node tools/audit-canonical-person.mjs';
+          if guard not in data['scripts']['audit']: data['scripts']['audit'] += ' && '+guard; pkg.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+          Path('.canonical-person-migration').unlink(missing_ok=True)
+          print(f'Migrated {len(changed)} existing files')
+          PY
+          cat > .github/workflows/full-audit.yml <<'YAML'
+          name: Full site regression audit
+
+          on:
+            push:
+              branches:
+                - main
+                - 'agent/**'
+            pull_request:
+              branches:
+                - main
+            workflow_dispatch:
+
+          permissions:
+            contents: read
+
+          jobs:
+            audit:
+              runs-on: ubuntu-latest
+              steps:
+                - uses: actions/checkout@v4
+                  with:
+                    ref: ${{ github.head_ref || github.ref_name }}
+                    fetch-depth: 0
+                - uses: actions/setup-node@v4
+                  with:
+                    node-version: 22
+                - run: npm install
+                - name: Run deterministic audit
+                  run: npm run audit
+                - name: Generate human voice copy report
+                  run: npm run audit:copy > human-voice-audit.json
+                - name: Upload human voice copy report
+                  uses: actions/upload-artifact@v4
+                  with:
+                    name: banhalmi-human-voice-audit
+                    path: human-voice-audit.json
+                    if-no-files-found: error
+                - name: Verify audit did not modify tracked files
+                  run: git diff --exit-code
+                - name: Check live endpoints and external links
+                  run: npm run audit:live
+                - name: Upload external link report
+                  if: always() && hashFiles('link-audit-results.json') != ''
+                  uses: actions/upload-artifact@v4
+                  with:
+                    name: external-link-audit
+                    path: link-audit-results.json
+                    if-no-files-found: ignore
+          YAML
+          npm install
+          npm run audit
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Unify canonical Person across BANHALMI"
+          git push origin HEAD:agent/canonical-person-audit-20260802
