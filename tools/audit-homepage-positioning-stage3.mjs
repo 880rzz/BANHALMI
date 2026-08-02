@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-// Permanent read-only gate for the three-language homepage positioning contract.
+// Permanent read-only gate for the final three-language homepage positioning contract.
 const root=path.resolve(import.meta.dirname,'..');
 const errors=[];
 const pages={
