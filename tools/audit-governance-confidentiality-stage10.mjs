@@ -14,11 +14,11 @@ const pages=[
  ['hu/rendezvenyfotozas/index.html','Jóváhagyás, titoktartás és publikálás','jóváhagyásra jogosult személy','alapértelmezetten bizalmas','írásos engedély'],
  ['hu/gyik/index.html','Jóváhagyás, titoktartás és publikálás','jóváhagyásra jogosult személy','alapértelmezetten bizalmas','írásos engedély'],
  ['hu/aszf/index.html','Jóváhagyás, titoktartás és publikálás','jóváhagyásra jogosult személy','alapértelmezetten bizalmas','írásos engedély'],
- ['de-at/portrait/index.html','Freigabe, Vertraulichkeit und Veröffentlichung','freigabeberechtigte Person','standardmäßig vertraulich','schriftliche Genehmigung'],
- ['de-at/brand/index.html','Freigabe, Vertraulichkeit und Veröffentlichung','freigabeberechtigte Person','standardmäßig vertraulich','schriftliche Genehmigung'],
- ['de-at/eventfotografie/index.html','Freigabe, Vertraulichkeit und Veröffentlichung','freigabeberechtigte Person','standardmäßig vertraulich','schriftliche Genehmigung'],
- ['de-at/faq/index.html','Freigabe, Vertraulichkeit und Veröffentlichung','freigabeberechtigte Person','standardmäßig vertraulich','schriftliche Genehmigung'],
- ['de-at/agb/index.html','Freigabe, Vertraulichkeit und Veröffentlichung','freigabeberechtigte Person','standardmäßig vertraulich','schriftliche Genehmigung']
+ ['de-at/portrait/index.html','Freigabe, Vertraulichkeit und Veröffentlichung','freigabeberechtigte Person','standardmäßig vertraulich','schriftlich'],
+ ['de-at/brand/index.html','Freigabe, Vertraulichkeit und Veröffentlichung','freigabeberechtigte Person','standardmäßig vertraulich','schriftlich'],
+ ['de-at/eventfotografie/index.html','Freigabe, Vertraulichkeit und Veröffentlichung','freigabeberechtigte Person','standardmäßig vertraulich','schriftlich'],
+ ['de-at/faq/index.html','Freigabe, Vertraulichkeit und Veröffentlichung','freigabeberechtigte Person','standardmäßig vertraulich','schriftlich'],
+ ['de-at/agb/index.html','Freigabe, Vertraulichkeit und Veröffentlichung','freigabeberechtigte Person','standardmäßig vertraulich','schriftlich']
 ];
 for(const [relative,heading,approver,confidential,permission] of pages){
  const file=path.join(root,relative);
