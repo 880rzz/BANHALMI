@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+// Permanent read-only contract for localized, verifiable trust evidence.
 const root=path.resolve(import.meta.dirname,'..');
 const errors=[];
 const pages=[
