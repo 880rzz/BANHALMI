@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+// Permanent read-only contract for pricing, scope, tax and usage-right clarity.
 const root=path.resolve(import.meta.dirname,'..');
 const errors=[];
 const pages=[
