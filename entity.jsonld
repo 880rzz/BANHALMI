@@ -51,14 +51,14 @@
         }
       ],
       "homeLocation": {
-        "@id": "https://www.banhalmi.art/#studio-vienna"
+        "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
       },
       "workLocation": [
         {
-          "@id": "https://www.banhalmi.art/#studio-budapest"
+          "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
         },
         {
-          "@id": "https://www.banhalmi.art/#studio-vienna"
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
         }
       ],
       "knowsLanguage": [
@@ -2175,6 +2175,18 @@
           "value": "Fine-art authorship combined with executive and organisational visual strategy"
         }
       ]
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://blog.banhalmi.art/#website",
+      "url": "https://blog.banhalmi.art/",
+      "name": "BANHALMI Blog",
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "publisher": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      }
     }
   ],
   "officialPositioning": {

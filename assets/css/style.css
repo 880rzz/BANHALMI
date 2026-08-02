@@ -3570,3 +3570,6 @@ input,select,textarea,button{font-size:max(16px,1rem);}
 @media (max-width:620px){.partner-grid,.partner-grid-memberships{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.partner-card{min-height:150px;padding:.8rem}.partner-logo{height:84px}.partner-name{font-size:.7rem}}
 @media (max-width:380px){.partner-grid,.partner-grid-memberships{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.partner-card{transition:none}.partner-card:hover,.partner-card:focus-visible{transform:none}}
+
+/* BANHALMI_OFFICIAL_ECOSYSTEM */
+.banhalmi-ecosystem{display:flex;flex-wrap:wrap;justify-content:center;gap:.65rem 1.25rem;margin:1.6rem auto 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.16);font-size:.78rem;line-height:1.5}.banhalmi-ecosystem a{color:inherit;text-decoration:none;opacity:.76}.banhalmi-ecosystem a:hover,.banhalmi-ecosystem a:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:.2em}.banhalmi-ecosystem a[aria-current="page"]{opacity:1;font-weight:600}@media(max-width:640px){.banhalmi-ecosystem{align-items:center;flex-direction:column;gap:.55rem}}
