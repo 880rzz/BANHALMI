@@ -3,39 +3,46 @@ name: Full site regression audit
 on:
   push:
     branches:
-      - agent/booking-contingency-stage11-20260802
+      - main
+      - 'agent/**'
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  migrate-and-audit:
+  audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: agent/booking-contingency-stage11-20260802
+          ref: ${{ github.head_ref || github.ref_name }}
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm install
-      - name: Apply booking and contingency blocks
-        run: node tools/apply-booking-contingency-stage11.mjs
-      - name: Restore permanent workflow and remove migration helper
-        run: |
-          git checkout origin/main -- .github/workflows/full-audit.yml
-          rm -f tools/apply-booking-contingency-stage11.mjs
       - name: Run deterministic audit
         run: npm run audit
-      - name: Generate human voice report
+      - name: Generate human voice copy report
         run: npm run audit:copy > human-voice-audit.json
-      - name: Remove generated report
-        run: rm -f human-voice-audit.json
-      - name: Commit audited stage
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Apply stage eleven booking and contingency clarity"
-          git push origin HEAD:agent/booking-contingency-stage11-20260802
+      - name: Upload human voice copy report
+        uses: actions/upload-artifact@v4
+        with:
+          name: banhalmi-human-voice-audit
+          path: human-voice-audit.json
+          if-no-files-found: error
+      - name: Verify audit did not modify tracked files
+        run: git diff --exit-code
+      - name: Check live endpoints and external links
+        run: npm run audit:live
+      - name: Upload external link report
+        if: always() && hashFiles('link-audit-results.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-link-audit
+          path: link-audit-results.json
+          if-no-files-found: ignore
