@@ -3573,3 +3573,22 @@ input,select,textarea,button{font-size:max(16px,1rem);}
 
 /* BANHALMI_OFFICIAL_ECOSYSTEM */
 .banhalmi-ecosystem{display:flex;flex-wrap:wrap;justify-content:center;gap:.65rem 1.25rem;margin:1.6rem auto 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.16);font-size:.78rem;line-height:1.5}.banhalmi-ecosystem a{color:inherit;text-decoration:none;opacity:.76}.banhalmi-ecosystem a:hover,.banhalmi-ecosystem a:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:.2em}.banhalmi-ecosystem a[aria-current="page"]{opacity:1;font-weight:600}@media(max-width:640px){.banhalmi-ecosystem{align-items:center;flex-direction:column;gap:.55rem}}
+
+/* Trust Center and legacy layout normalization — 2026-08-03.
+   Some audited pages use the newer container/card-grid names. Keep both
+   naming conventions on the same responsive design-system primitives. */
+.container{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:28px}
+.card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.4vw,26px);align-items:stretch}
+.card-grid>.card{min-width:0;height:100%}
+.pricing-licensing-clarity .section-head{max-width:var(--wide-textw)}
+.pricing-licensing-clarity .button-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:clamp(26px,3.5vw,42px)}
+.trust-hero{padding:clamp(64px,9vw,108px) 0 clamp(48px,7vw,78px)}
+.trust-hero .lead{max-width:66ch}
+.trust-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.trust-card{display:flex;flex-direction:column;gap:12px}
+.trust-card p{flex:1}
+.trust-card .more{margin-top:auto}
+.trust-note{max-width:var(--wide-textw);padding:24px;border:1px solid var(--gold-line);border-radius:14px;background:var(--gold-soft)}
+@media(max-width:900px){.trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.card-grid,.trust-grid{grid-template-columns:1fr}.pricing-licensing-clarity .button-row{align-items:stretch;flex-direction:column}.pricing-licensing-clarity .button-row .button,.pricing-licensing-clarity .button-row .btn{width:100%;justify-content:center;text-align:center}}
+@media(max-width:480px){.container{padding-inline:20px}}
