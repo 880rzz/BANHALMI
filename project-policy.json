@@ -77,18 +77,21 @@
   },
   "authoritativeHumanPages": {
     "en": {
+      "trustCenter": "https://www.norbertbanhalmi.com/trust/",
       "faq": "https://www.norbertbanhalmi.com/faq/",
       "privacy": "https://www.norbertbanhalmi.com/privacy-policy/",
       "terms": "https://www.norbertbanhalmi.com/terms-conditions/",
       "quote": "https://www.norbertbanhalmi.com/requestaquote/"
     },
     "hu-HU": {
+      "trustCenter": "https://www.norbertbanhalmi.com/hu/bizalom/",
       "faq": "https://www.norbertbanhalmi.com/hu/gyik/",
       "privacy": "https://www.norbertbanhalmi.com/hu/adatvedelem/",
       "terms": "https://www.norbertbanhalmi.com/hu/aszf/",
       "quote": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/"
     },
     "de-AT": {
+      "trustCenter": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
       "faq": "https://www.norbertbanhalmi.com/de-at/faq/",
       "privacy": "https://www.norbertbanhalmi.com/de-at/datenschutz/",
       "terms": "https://www.norbertbanhalmi.com/de-at/agb/",
