@@ -9,7 +9,7 @@
 .bn-mega-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--bn-menu-line)}
 .bn-mega-eyebrow{font-size:.76rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--bn-menu-gold)}
 .bn-mega-intro p{margin:0;color:var(--bn-menu-soft);font-size:.9rem;letter-spacing:.02em}
-.bn-mega-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(2.5rem,6vw,6rem);padding:clamp(2.3rem,5vw,4rem) 0}
+.bn-mega-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(2rem,4vw,4.5rem);padding:clamp(2.3rem,5vw,4rem) 0}
 .bn-mega-column{min-width:0}
 .bn-mega-item{padding:.45rem 0 1.05rem}
 .bn-mega-link{display:inline-block;color:var(--bn-menu-ink)!important;font-size:clamp(1.55rem,3.2vw,2.75rem);font-weight:620;line-height:1.06;letter-spacing:-.035em;text-decoration:none;transition:color .2s ease,transform .2s ease}
@@ -20,12 +20,11 @@
 .bn-mega-section-head p{margin:.35rem 0 0;color:var(--bn-menu-soft);font-size:.96rem}
 .bn-mega-service{padding:.2rem 0 1.05rem}
 .bn-mega-service .bn-mega-link{font-size:clamp(1.28rem,2.25vw,2rem)}
-.bn-mega-footer{display:grid;grid-template-columns:1fr 1fr;gap:1px;border-top:1px solid var(--bn-menu-line);border-bottom:1px solid var(--bn-menu-line);background:var(--bn-menu-line)}
-.bn-mega-footer .bn-mega-item{margin:0;padding:1.45rem 1.4rem 1.55rem;background:#111}
+.bn-mega-footer{display:block;min-width:0}
+.bn-mega-footer .bn-mega-item{margin:0;padding:.2rem 0 1.05rem;background:transparent}
 .bn-mega-footer .bn-mega-link{font-size:clamp(1.12rem,1.8vw,1.45rem)}
 .bn-mega-footer .bn-mega-desc{font-size:.9rem}
-.bn-mega-cta{background:linear-gradient(135deg,rgba(183,156,68,.16),#111)!important}
-.bn-mega-art{background:linear-gradient(135deg,#111,rgba(255,255,255,.035))!important}
+.bn-mega-cta,.bn-mega-art{margin-top:.75rem!important;padding:1rem!important;border:1px solid var(--bn-menu-line);border-radius:14px;background:linear-gradient(135deg,rgba(183,156,68,.14),rgba(255,255,255,.025))!important}
 body.bn-mega-open{overflow:hidden}
 body.bn-mega-open .site-header{z-index:1001;background:var(--bn-menu-bg)!important;box-shadow:none!important}
 body.bn-mega-open .site-header .nav{background:transparent!important}
@@ -52,16 +51,17 @@ body.bn-mega-open .lang-switch a.active{color:var(--bn-menu-gold)!important}
   .bn-mega-section-head p{margin-top:.2rem;font-size:clamp(.72rem,1.2vh,.86rem)}
   .bn-mega-service{padding:.05rem 0 clamp(.35rem,.8vh,.62rem)}
   .bn-mega-service .bn-mega-link{font-size:clamp(1.08rem,1.8vh,1.55rem)}
-  .bn-mega-footer .bn-mega-item{padding:clamp(.65rem,1.25vh,.9rem) clamp(1rem,2vw,1.35rem)}
+  .bn-mega-footer .bn-mega-item{padding:.05rem 0 clamp(.35rem,.8vh,.62rem)}
   .bn-mega-footer .bn-mega-link{font-size:clamp(.95rem,1.45vh,1.2rem)}
   .bn-mega-footer .bn-mega-desc{font-size:clamp(.68rem,1.12vh,.8rem)}
 }
 @media(max-width:860px){
   .bn-mega-panel{padding-top:6.6rem}
   .bn-mega-intro{align-items:flex-start;flex-direction:column;gap:.4rem}
-  .bn-mega-grid{grid-template-columns:1fr;gap:2.15rem;padding:2rem 0 2.4rem}
-  .bn-mega-primary{display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem}
-  .bn-mega-services{border-top:1px solid var(--bn-menu-line);padding-top:1.8rem}
+  .bn-mega-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:2.15rem;padding:2rem 0 2.4rem}
+  .bn-mega-primary{display:block}
+  .bn-mega-footer{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1.5rem;border-top:1px solid var(--bn-menu-line);padding-top:1.8rem}
+  .bn-mega-footer .bn-mega-section-head{grid-column:1/-1}
   .bn-mega-service .bn-mega-link{font-size:1.45rem}
 }
 @media(max-width:620px){
@@ -69,10 +69,11 @@ body.bn-mega-open .lang-switch a.active{color:var(--bn-menu-gold)!important}
   .bn-mega-panel{padding:5.9rem 1.15rem 2.5rem}
   .bn-mega-intro p{font-size:.82rem}
   .bn-mega-primary{grid-template-columns:1fr}
+  .bn-mega-grid{grid-template-columns:1fr}
+  .bn-mega-footer{grid-column:auto;display:block}
   .bn-mega-item{padding:.2rem 0 .92rem}
   .bn-mega-link{font-size:clamp(1.55rem,8vw,2.15rem)}
   .bn-mega-desc{font-size:.91rem;line-height:1.42}
-  .bn-mega-footer{grid-template-columns:1fr}
   .bn-mega-footer .bn-mega-item{padding:1.15rem 1rem 1.25rem}
 }
 @media(prefers-reduced-motion:reduce){.bn-mega-menu{animation:none;opacity:1}.bn-mega-link{transition:none}}

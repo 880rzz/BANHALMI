@@ -44,3 +44,22 @@ test('legacy container and card-grid markup uses the shared constrained grid', a
     }
   }
 });
+
+for (const route of ['/', '/hu/', '/de-at/']) {
+  test(`ART-inspired editorial menu works on ${route}`, async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto(route);
+    const button = page.locator('.menu-btn');
+    await button.click();
+    await expect(page.locator('#bn-mega-menu')).toBeVisible();
+    await expect(button).toHaveAttribute('aria-expanded', 'true');
+    const desktopColumns = await page.locator('.bn-mega-grid').evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(' ').length);
+    expect(desktopColumns).toBe(3);
+    await page.keyboard.press('Escape');
+    await expect(page.locator('#bn-mega-menu')).toBeHidden();
+    await page.setViewportSize({ width: 375, height: 812 });
+    await button.click();
+    const mobileColumns = await page.locator('.bn-mega-grid').evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(' ').length);
+    expect(mobileColumns).toBe(1);
+  });
+}
