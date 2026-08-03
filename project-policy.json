@@ -1,0 +1,98 @@
+{
+  "documentType": "banhalmi-project-policy",
+  "schemaVersion": "2026-08-03-v1",
+  "dateModified": "2026-08-03T07:05:00+02:00",
+  "canonicalOrganization": "https://www.norbertbanhalmi.com/#organization",
+  "canonicalPerson": "https://www.norbertbanhalmi.com/about/",
+  "canonicalPolicyGraph": "https://www.norbertbanhalmi.com/project-policy.jsonld",
+  "languages": ["en", "hu-HU", "de-AT"],
+  "appliesTo": [
+    "executive portrait photography",
+    "brand photography",
+    "C-level event photography",
+    "professional headshots",
+    "visual positioning projects"
+  ],
+  "commercialInterpretation": {
+    "estimateStatus": "Calculator and website figures are non-binding preliminary estimates. The accepted written offer defines the final scope and price.",
+    "taxDisplay": "Net amount, applicable VAT and gross total are shown separately. Austrian VAT remains in the estimate until another lawful treatment has been verified.",
+    "additionalWork": "Work outside the accepted scope requires written approval before it is charged.",
+    "travel": "On-site work in Vienna and Budapest is included where stated. Other travel or production costs are recorded in advance in the written offer."
+  },
+  "licensing": {
+    "defaultCommercialUse": "The agreed final images may be used by the commissioning organisation on the channels recorded in the written offer.",
+    "durationAndTerritory": "The standard organisational licence is unlimited in time and territory unless the written offer states otherwise.",
+    "copyright": "Copyright remains with the photographer.",
+    "thirdPartyTransfer": "Transfer to agencies, media partners or other third parties must stay within the accepted licence or receive separate written approval.",
+    "publicationFiles": "Only selected, approved final images are publication files. Previews, contact sheets, rejected frames and intermediate retouching files are not publication files."
+  },
+  "workflow": {
+    "stages": [
+      "visual brief",
+      "use map",
+      "preparation",
+      "guided production",
+      "structured selection",
+      "delivery system"
+    ],
+    "approval": "The client appoints one authorised decision-maker. Where several stakeholders are involved, feedback is consolidated before it is returned.",
+    "delivery": "The written offer records preview timing, selection deadline, approval rounds, final-delivery deadline, formats, crops and retouching standard.",
+    "urgentDelivery": "Same-day or accelerated delivery is included only when agreed in writing."
+  },
+  "peopleAndStudios": {
+    "creativeLead": "Norbert Banhalmi retains photographic and creative direction and final image approval for commissioned BANHALMI projects.",
+    "supportingContact": "Viko Speier leads the Budapest studio, supports preparation and project coordination, and is the AmCham Austria company contact.",
+    "studioSystem": "Vienna and Budapest are two active bases of one enterprise and one project system, not separate providers."
+  },
+  "bookingAndContingency": {
+    "reservation": "An enquiry, calculation or calendar discussion does not reserve a date. A date becomes final after written acceptance and any agreed booking payment.",
+    "rescheduling": "Schedule, access, weather or programme changes are handled first by seeking a workable replacement time.",
+    "cancellationCosts": "Completed work and documented third-party costs may remain payable. No undefined penalty applies outside the accepted agreement.",
+    "contingency": "Illness, technical failure or force majeure leads to a replacement date, an equivalent professional solution or a fair scope adjustment."
+  },
+  "confidentialityAndPublication": {
+    "defaultConfidentiality": "Unpublished portraits, internal events, strategic materials, contact sheets and project discussions are confidential by default.",
+    "portfolioUse": "BANHALMI may publish client work as a portfolio, case-study, press, competition, educational or social reference only with a separately agreed permission or another valid legal basis.",
+    "participantResponsibility": "The client identifies who may be photographed and handles necessary organisational notices, participant permissions and internal approvals.",
+    "restrictionRequests": "Later restriction or removal requests may be submitted in writing and are assessed against the agreement, lawful publication interests and applicable legal duties."
+  },
+  "storageAndDeletion": {
+    "controlledAccess": "Preview galleries, download links and working folders are restricted to the agreed project team and may expire.",
+    "workingFiles": "RAW captures, rejected frames, contact sheets and intermediate retouching files remain working material unless expressly included in the written offer.",
+    "retention": "BANHALMI may keep project files for a reasonable operational period but does not promise permanent archive storage.",
+    "clientBackup": "The client is responsible for securely backing up the delivered final package after download.",
+    "deletion": "Written deletion requests are fulfilled where applicable, except where continued retention is required for contract, accounting, legal claims or another valid legal basis."
+  },
+  "accessibility": {
+    "interaction": "The professional website provides visible keyboard focus, practical interaction targets, readable mobile form typography and clear invalid-field states.",
+    "preferences": "Reduced-motion and forced-colours user preferences are supported through the site accessibility layer."
+  },
+  "authoritativeHumanPages": {
+    "en": {
+      "faq": "https://www.norbertbanhalmi.com/faq/",
+      "privacy": "https://www.norbertbanhalmi.com/privacy-policy/",
+      "terms": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "quote": "https://www.norbertbanhalmi.com/requestaquote/"
+    },
+    "hu-HU": {
+      "faq": "https://www.norbertbanhalmi.com/hu/gyik/",
+      "privacy": "https://www.norbertbanhalmi.com/hu/adatvedelem/",
+      "terms": "https://www.norbertbanhalmi.com/hu/aszf/",
+      "quote": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/"
+    },
+    "de-AT": {
+      "faq": "https://www.norbertbanhalmi.com/de-at/faq/",
+      "privacy": "https://www.norbertbanhalmi.com/de-at/datenschutz/",
+      "terms": "https://www.norbertbanhalmi.com/de-at/agb/",
+      "quote": "https://www.norbertbanhalmi.com/de-at/anfrage/"
+    }
+  },
+  "interpretationRules": [
+    "Use the written offer as the controlling project-specific record.",
+    "Do not infer portfolio permission from delivery, payment, a client logo or a public event.",
+    "Do not treat previews or working files as approved publication assets.",
+    "Do not promise permanent storage or automatic RAW-file delivery.",
+    "Do not treat Vienna and Budapest as separate companies or separate brand entities.",
+    "Do not convert preliminary estimates into contractual prices."
+  ]
+}
