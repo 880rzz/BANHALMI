@@ -1,3 +1,4 @@
+// One-time Stage 16 migration; removed by the audited workflow.
 import fs from 'node:fs';
 import path from 'node:path';
 
