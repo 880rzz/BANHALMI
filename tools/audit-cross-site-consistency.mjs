@@ -10,6 +10,12 @@ async function walk(dir) {
     if (entry.name === '.git' || entry.name === 'node_modules' || entry.name === 'test-results' || entry.name === 'playwright-report') continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) await walk(full);
+    // link-audit-results.json is a gitignored, machine-generated live-link-check
+    // report (see tools/audit-seo-network.mjs). It lists checked URLs verbatim,
+    // including ones containing "szosszenetek", but is not editorial content and
+    // was never meant to carry the book's ISBN. Scanning it here produced a false
+    // positive; it is intentionally excluded from the editorial-consistency scan.
+    else if (entry.name === 'link-audit-results.json') continue;
     else if (/\.(?:html|json|jsonld|xml)$/i.test(entry.name)) files.push(full);
   }
 }
