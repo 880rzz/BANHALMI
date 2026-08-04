@@ -44,6 +44,62 @@
           "value": "www.banhalminorbert.hu"
         }
       ]
+    },
+    {
+      "source": "/",
+      "destination": "/index.html",
+      "permanent": false,
+      "has": [
+        {
+          "type": "header",
+          "key": "referer",
+          "value": {
+            "pre": "https://www.norbertbanhalmi.com/hu/"
+          }
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/index.html",
+      "permanent": false,
+      "has": [
+        {
+          "type": "header",
+          "key": "referer",
+          "value": {
+            "pre": "https://www.norbertbanhalmi.com/de-at/"
+          }
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/hu/",
+      "permanent": false,
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": {
+            "pre": "hu"
+          }
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/de-at/",
+      "permanent": false,
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": {
+            "pre": "de"
+          }
+        }
+      ]
     }
   ]
 }
