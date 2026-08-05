@@ -1,3 +1,4 @@
+// Permanent regression guard for the localized Fine Art press and blog buttons.
 import fs from 'node:fs';
 import path from 'node:path';
 
