@@ -1,0 +1,259 @@
+name: One-time hero video parity and performance migration
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-time-hero-video-parity-performance.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Add lazy hero video to all language homepages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import re
+
+          homepages = [Path('index.html'), Path('hu/index.html'), Path('de-at/index.html')]
+          video_markup = ('<video aria-hidden="true" class="hero-video" loop muted playsinline preload="none">'
+                          '<source data-src="/assets/video/hero-signature.webm" type="video/webm"/>'
+                          '<source data-src="/assets/video/hero-signature.mp4" type="video/mp4"/>'
+                          '</video>')
+
+          figure_pattern = re.compile(r'(<figure class="hero-figure editorial-hero reveal">.*?</figure>)', re.S)
+          video_pattern = re.compile(r'<video\b[^>]*class="hero-video"[^>]*>.*?</video>', re.S)
+
+          for page in homepages:
+              html = page.read_text(encoding='utf-8')
+              matches = figure_pattern.findall(html)
+              if len(matches) != 1:
+                  raise SystemExit(f'{page}: expected exactly one homepage hero figure, found {len(matches)}')
+              figure = matches[0]
+              if video_pattern.search(figure):
+                  updated_figure, count = video_pattern.subn(video_markup, figure, count=1)
+                  if count != 1:
+                      raise SystemExit(f'{page}: existing hero video replacement failed')
+              else:
+                  if figure.count('</picture>') != 1:
+                      raise SystemExit(f'{page}: expected one hero picture closing tag')
+                  updated_figure = figure.replace('</picture>', '</picture>' + video_markup, 1)
+              html = html.replace(figure, updated_figure, 1)
+              page.write_text(html, encoding='utf-8')
+
+          js_path = Path('assets/js/main.js')
+          js = js_path.read_text(encoding='utf-8')
+          old_block = '''/* Hero hover-to-play video, with a tap-to-play fallback for touch.
+             On hover-capable pointers the crossfade is CSS-only (hover:hover, see
+             style.css) and this just starts/stops playback on mouseenter/mouseleave.
+             On touch, there is no hover, so a tap toggles a .is-tapped class that
+             CSS fades in the same way, and JS starts/pauses the video to match. A
+             second tap, or a tap anywhere outside the figure, stops it again. */
+          (function(){
+            var figure=document.querySelector('.hero.hero-image-first .hero-figure');
+            if(!figure)return;
+            var video=figure.querySelector('.hero-video');
+            if(!video)return;
+            var canHover=!window.matchMedia||window.matchMedia('(hover:hover)').matches;
+            var reducedMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if(reducedMotion)return;
+
+            function play(){
+              try{video.currentTime=0;}catch(e){}
+              var playPromise=video.play();
+              if(playPromise&&playPromise.catch)playPromise.catch(function(){});
+            }
+            function stop(){
+              video.pause();
+            }
+
+            if(canHover){
+              figure.addEventListener('mouseenter',play);
+              figure.addEventListener('mouseleave',stop);
+              return;
+            }
+
+            figure.addEventListener('click',function(event){
+              event.preventDefault();
+              var isPlaying=figure.classList.contains('is-tapped');
+              if(isPlaying){
+                figure.classList.remove('is-tapped');
+                stop();
+              }else{
+                figure.classList.add('is-tapped');
+                play();
+              }
+            });
+            document.addEventListener('click',function(event){
+              if(figure.classList.contains('is-tapped')&&!figure.contains(event.target)){
+                figure.classList.remove('is-tapped');
+                stop();
+              }
+            });
+          })();'''
+          new_block = '''/* Hero video: identical on EN/HU/DE, but deliberately absent from the
+             critical loading path. The still image remains the LCP element. Video source
+             URLs live in data-src and are attached only after real pointer intent or a
+             tap. Reduced-motion visitors never download the video. */
+          (function(){
+            var figure=document.querySelector('.hero.hero-image-first .hero-figure');
+            if(!figure)return;
+            var video=figure.querySelector('.hero-video');
+            if(!video)return;
+            var canHover=!window.matchMedia||window.matchMedia('(hover:hover)').matches;
+            var reducedMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if(reducedMotion)return;
+            var sourcesBound=false;
+
+            function bindSources(){
+              if(sourcesBound)return;
+              var sources=video.querySelectorAll('source[data-src]');
+              sources.forEach(function(source){
+                source.src=source.getAttribute('data-src');
+                source.removeAttribute('data-src');
+              });
+              sourcesBound=true;
+              video.load();
+            }
+            function play(){
+              bindSources();
+              if(video.readyState>0){try{video.currentTime=0;}catch(e){}}
+              var playPromise=video.play();
+              if(playPromise&&playPromise.catch)playPromise.catch(function(){});
+            }
+            function stop(){
+              video.pause();
+            }
+
+            if(canHover){
+              figure.addEventListener('mouseenter',play,{passive:true});
+              figure.addEventListener('mouseleave',stop,{passive:true});
+              return;
+            }
+
+            figure.addEventListener('click',function(event){
+              event.preventDefault();
+              var isPlaying=figure.classList.contains('is-tapped');
+              if(isPlaying){
+                figure.classList.remove('is-tapped');
+                stop();
+              }else{
+                figure.classList.add('is-tapped');
+                play();
+              }
+            });
+            document.addEventListener('click',function(event){
+              if(figure.classList.contains('is-tapped')&&!figure.contains(event.target)){
+                figure.classList.remove('is-tapped');
+                stop();
+              }
+            });
+          })();'''
+          if js.count(old_block) != 1:
+              raise SystemExit(f'Expected one existing hero-video JS block, found {js.count(old_block)}')
+          js = js.replace(old_block, new_block, 1)
+          js_path.write_text(js, encoding='utf-8')
+
+          css_path = Path('assets/css/style.css')
+          css = css_path.read_text(encoding='utf-8')
+          old_comment = '''/* Hover-to-play hero video. Sits over the still image, stays invisible and
+             paused until the visitor hovers the figure (hover-capable pointers only —
+             there is no hover on touch, so the still image is the whole experience
+             there). Playback itself is started/stopped by main.js; this layer only
+             owns the crossfade. */'''
+          new_comment = '''/* Interaction-loaded hero video. The still image remains visible and is the
+             LCP element; main.js attaches video sources only on hover or tap. This layer
+             owns the desktop-hover and touch-tap crossfade without affecting layout. */'''
+          if old_comment in css:
+              css = css.replace(old_comment, new_comment)
+          css_path.write_text(css, encoding='utf-8')
+
+          audit_path = Path('tools/audit-hero-video-parity.mjs')
+          audit_path.write_text(r'''import fs from 'node:fs';
+          import path from 'node:path';
+          import process from 'node:process';
+
+          const root = process.cwd();
+          const pages = ['index.html', 'hu/index.html', 'de-at/index.html'];
+          const failures = [];
+
+          for (const relative of pages) {
+            const html = fs.readFileSync(path.join(root, relative), 'utf8');
+            const videos = html.match(/<video\b[^>]*class="hero-video"[^>]*>[\s\S]*?<\/video>/g) || [];
+            if (videos.length !== 1) {
+              failures.push(`${relative}: expected one hero video, found ${videos.length}`);
+              continue;
+            }
+            const video = videos[0];
+            if (!/preload="none"/.test(video)) failures.push(`${relative}: hero video must use preload="none"`);
+            if (/\sautoplay(?:\s|=|>)/.test(video)) failures.push(`${relative}: hero video must not autoplay`);
+            if (/\sposter=/.test(video)) failures.push(`${relative}: duplicate poster request must not be present`);
+            if (!/muted/.test(video) || !/playsinline/.test(video) || !/loop/.test(video)) failures.push(`${relative}: muted, playsinline and loop are required`);
+            if (!/data-src="\/assets\/video\/hero-signature\.webm"/.test(video)) failures.push(`${relative}: lazy WebM source missing`);
+            if (!/data-src="\/assets\/video\/hero-signature\.mp4"/.test(video)) failures.push(`${relative}: lazy MP4 source missing`);
+            if (/<source\s+src=/.test(video)) failures.push(`${relative}: video sources must not have eager src attributes`);
+            if (video.indexOf('hero-signature.webm') > video.indexOf('hero-signature.mp4')) failures.push(`${relative}: WebM must precede MP4`);
+            if (!html.includes('data-banhalmi-lcp-preload')) failures.push(`${relative}: responsive hero image preload missing`);
+            if (!html.includes('hero-signature-640.avif')) failures.push(`${relative}: responsive AVIF hero source missing`);
+          }
+
+          for (const asset of ['assets/video/hero-signature.webm', 'assets/video/hero-signature.mp4']) {
+            const full = path.join(root, asset);
+            if (!fs.existsSync(full)) failures.push(`${asset}: file missing`);
+          }
+
+          const js = fs.readFileSync(path.join(root, 'assets/js/main.js'), 'utf8');
+          for (const token of ["source[data-src]", "source.src=source.getAttribute('data-src')", 'video.load()', "prefers-reduced-motion: reduce", "mouseenter", "is-tapped"]) {
+            if (!js.includes(token)) failures.push(`assets/js/main.js: lazy hero-video token missing: ${token}`);
+          }
+          const css = fs.readFileSync(path.join(root, 'assets/css/style.css'), 'utf8');
+          if (!css.includes('@media (hover:hover) and (prefers-reduced-motion: no-preference)')) failures.push('assets/css/style.css: desktop hover rule missing');
+          if (!css.includes('@media (hover:none) and (prefers-reduced-motion: no-preference)')) failures.push('assets/css/style.css: touch interaction rule missing');
+
+          if (failures.length) {
+            console.error(failures.join('\n'));
+            process.exit(1);
+          }
+          console.log('Hero video parity and performance audit passed for EN, HU and DE homepages.');
+          ''', encoding='utf-8')
+
+          package_path = Path('package.json')
+          package = json.loads(package_path.read_text(encoding='utf-8'))
+          scripts = package.setdefault('scripts', {})
+          audit_command = scripts['audit']
+          hero_command = 'node tools/audit-hero-video-parity.mjs'
+          if hero_command not in audit_command:
+              marker = 'node tools/audit-hungarian-copy.mjs'
+              if marker not in audit_command:
+                  raise SystemExit('package.json audit insertion marker missing')
+              audit_command = audit_command.replace(marker, marker + ' && ' + hero_command, 1)
+          scripts['audit'] = audit_command
+          scripts['audit:hero-video'] = hero_command
+          package_path.write_text(json.dumps(package, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+      - name: Remove one-time workflow before audits
+        run: rm -f .github/workflows/one-time-hero-video-parity-performance.yml
+      - name: Install dependencies
+        run: npm install
+      - name: Run hero video audit
+        run: npm run audit:hero-video
+      - name: Run complete deterministic audit
+        run: npm run audit
+      - name: Commit and publish
+        run: |
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add fast hero video to all language homepages"
+          git push
