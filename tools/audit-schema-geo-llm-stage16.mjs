@@ -18,7 +18,10 @@ if (fs.existsSync(policyPath)) {
   const policy = JSON.parse(fs.readFileSync(policyPath, 'utf8'));
   const requiredTop = ['commercialInterpretation','paymentAndInvoicing','licensing','workflow','peopleAndStudios','bookingAndContingency','confidentialityAndPublication','storageAndDeletion','accessibility','authoritativeHumanPages','interpretationRules'];
   for (const key of requiredTop) if (!policy[key]) errors.push(`project-policy.json missing ${key}`);
-  if (policy.schemaVersion !== '2026-08-03-v2') errors.push('project-policy.json schemaVersion mismatch');
+  const expectedPolicyVersion = policy.commercialInterpretation?.hungarianOrientationCurrency
+    ? '2026-08-05-v3-eur-huf'
+    : '2026-08-03-v2';
+  if (policy.schemaVersion !== expectedPolicyVersion) errors.push(`project-policy.json schemaVersion mismatch: expected ${expectedPolicyVersion}`);
   for (const lang of ['en','hu-HU','de-AT']) if (!policy.languages?.includes(lang)) errors.push(`project-policy.json missing language ${lang}`);
   for (const lang of ['en','hu-HU','de-AT']) {
     const pages = policy.authoritativeHumanPages?.[lang];
@@ -35,6 +38,11 @@ if (fs.existsSync(policyPath)) {
     'does not promise permanent archive storage',
     'visible keyboard focus'
   ]) if (!policyText.includes(token)) errors.push(`project-policy.json missing policy token: ${token}`);
+  if (policy.commercialInterpretation?.hungarianOrientationCurrency) {
+    for (const token of ['1 EUR = 400 HUF','canonical base price','contractual currency']) {
+      if (!policy.commercialInterpretation.hungarianOrientationCurrency.includes(token)) errors.push(`project-policy.json HUF interpretation missing ${token}`);
+    }
+  }
 }
 
 if (fs.existsSync(schemaPath)) {
