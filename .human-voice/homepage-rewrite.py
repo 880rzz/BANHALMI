@@ -63,7 +63,7 @@ replacements = {
         ),
         (
             "Az eredm\u00e9ny lehet pontos executive headshot, egy vezet\u0151 teljes vizu\u00e1lis pozicion\u00e1l\u00e1sa, v\u00e1llalati k\u00e9prendszer, egy fontos tal\u00e1lkoz\u00e1s dokumentuma vagy k\u00f6nyvbe \u00e9s ki\u00e1ll\u00edt\u00e1sra sz\u00e1nt szem\u00e9lyes munka. A helyzet v\u00e1ltozik. A figyelem mindig az emberen marad, \u00e9s azon, mi igaz bel\u0151le abban a pillanatban.",
-            "N\u00e9ha egy pontos vezet\u0151i portr\u00e9 lesz bel\u0151le. N\u00e9ha egy eg\u00e9sz vezet\u0151 k\u00e9pi vil\u00e1ga. N\u00e9ha egy vezet\u0151i esem\u00e9ny csendes dokumentuma, vagy egy sorozat, ami k\u00e9s\u0151bb k\u00f6nyvbe ker\u00fcl. A helyzet v\u00e1ltozik. A figyelem nem.",
+            "Az eredm\u00e9ny lehet pontos \u00fczleti portr\u00e9, egy vezet\u0151 teljes k\u00e9pi vil\u00e1ga, egy vezet\u0151i \u00fcl\u00e9s visszafogott dokument\u00e1ci\u00f3ja vagy k\u00e9s\u0151bb k\u00f6nyvbe ker\u00fcl\u0151 sorozat. A helyzet v\u00e1ltozik, a figyelem az emberen marad.",
         ),
         (
             "Egy alkot\u00f3i gyakorlat, k\u00e9t forma",
@@ -71,7 +71,7 @@ replacements = {
         ),
         (
             "K\u00e9tf\u00e9le munka. Ugyanaz a figyelem.",
-            "K\u00e9tf\u00e9le munka. Ugyanaz a n\u00e9z\u00e9s.",
+            "K\u00e9tf\u00e9le munka. Ugyanaz a figyelem.",
         ),
         (
             "A megb\u00edz\u00e1sos munk\u00e1imban azt a k\u00e9pet keresem, amely m\u00e1r az els\u0151 k\u00e9zfog\u00e1s el\u0151tt \u00e9rthet\u0151v\u00e9 tesz egy embert vagy egy szervezetet.",
@@ -79,11 +79,11 @@ replacements = {
         ),
         (
             "A szem\u00e9lyes sorozatokn\u00e1l lelass\u00edtom a folyamatot. Ezek a munk\u00e1k eml\u00e9kezetb\u0151l, testb\u0151l, \u00e9letrajzb\u00f3l \u00e9s olyan tapasztalatokb\u00f3l \u00e9p\u00fclnek, amelyek nem mindig f\u00e9rnek bele egy mondatba.",
-            "A saj\u00e1t sorozatokn\u00e1l lass\u00edtok. Eml\u00e9k, test, t\u00f6rt\u00e9net \u2014 olyan dolgok, amiket nem mindig lehet sz\u00e9pen elmondani.",
+            "A saj\u00e1t sorozatokn\u00e1l lelass\u00edtom a folyamatot. Eml\u00e9kekb\u0151l, testb\u0151l \u00e9s \u00e9lett\u00f6rt\u00e9netekb\u0151l dolgozom \u2014 olyan tapasztalatokb\u00f3l, amelyek nem mindig f\u00e9rnek bele a szavakba.",
         ),
         (
             "A k\u00e9t ter\u00fclet m\u00e1sk\u00e9pp m\u0171k\u00f6dik, de ugyanaz a k\u00e9rd\u00e9s d\u00f6nti el, hogy elk\u00e9sz\u00fclt-e a k\u00e9p: van benne val\u00f3di jelenl\u00e9t, vagy csak sz\u00e9pen elrendezt\u00fck?",
-            "A k\u00e9rd\u00e9s mindkett\u0151n\u00e9l ugyanaz: van-e a k\u00e9pen jelenl\u00e9t, vagy csak elrendez\u00e9s?",
+            "Mindk\u00e9t ter\u00fcleten ugyanaz a k\u00e9rd\u00e9s: val\u00f3di jelenl\u00e9tet l\u00e1tunk, vagy csup\u00e1n gondosan elrendezett form\u00e1t?",
         ),
     ],
     "de-at/index.html": [

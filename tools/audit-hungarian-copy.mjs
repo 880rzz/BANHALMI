@@ -29,6 +29,9 @@ const banned = [
   /\bmeeting\b/i,
   /\bboard meeting/i,
   /\bheadshot\b/i,
+  /\bBest of\b/i,
+  /\bA üzleti portré\b/i,
+  /\baz munkáltatói márkaépítés\b/i,
   /\bexecutive\b/i,
   /\bC[-‑ ]?level\b/i,
   /\bemployer branding\b/i,
@@ -50,6 +53,16 @@ for (const file of pages) {
   for (const pattern of banned) if (pattern.test(text)) failures.push(`${path.relative(root, file)}: non-Hungarian or obsolete visible phrase remains: ${pattern}`);
 }
 
+const homepage = read('hu/index.html');
+for (const phrase of [
+  'Olyan képeket készítek, amelyek már az első találkozás előtt érzékeltetik egy vezető vagy egy szervezet karakterét.',
+  'Az eredmény lehet pontos üzleti portré, egy vezető teljes képi világa, egy vezetői ülés visszafogott dokumentációja vagy később könyvbe kerülő sorozat.',
+  'Az üzleti portré, a munkáltatói márkaépítés, a sajtóportré és a vizuális márkastratégia egymást kiegészítő eszközök.',
+  '<h3>Felsővezetői eseményfotózás</h3>',
+  '<h3>Válogatás</h3>'
+]) if (!homepage.includes(phrase)) failures.push(`homepage: approved Hungarian copy missing: ${phrase}`);
+if (!read('hu/archivum/index.html').includes('Válogatott galéria')) failures.push('archive: approved Hungarian gallery title missing');
+if (!read('hu/gyik/index.html').includes('Az üzleti portré gyorsan és pontosan megmutatja, ki Ön.')) failures.push('FAQ: corrected Hungarian article is missing');
 const menu = read('assets/js/mega-menu.js');
 const approvedMenu = [
   'Szakmai pálya, alkotói fordulópontok és közösségi munka 1999 óta.',
