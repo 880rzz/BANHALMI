@@ -21,6 +21,19 @@ jobs:
           node-version: '24'
       - name: Apply synchronized EUR and HUF pricing migration
         run: node tools/_fix-pricing-huf.mjs
+      - name: Repair generated audit escape
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('tools/audit-pricing-huf.mjs')
+          text = path.read_text()
+          broken = """match(/window\\.BANHALMI_PRICING_DATA=(.*);
+          window\\.BANHALMI_PRICING_VERSION=/s)"""
+          fixed = r"match(/window\.BANHALMI_PRICING_DATA=(.*);\nwindow\.BANHALMI_PRICING_VERSION=/s)"
+          if broken not in text:
+              raise SystemExit('Generated pricing audit escape target was not found')
+          path.write_text(text.replace(broken, fixed))
+          PY
       - name: Run deterministic audits
         run: |
           npm install --ignore-scripts
