@@ -1,0 +1,188 @@
+name: One-time humanize English and German copy
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-time-humanize-en-de-copy.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  humanize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Humanize visible English and German copy
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, json
+
+          root=Path('.')
+          changed=[]
+
+          EN={
+            'Visual Trust Strategy':'Photography for clear communication',
+            'Executive portraits and visual positioning for leaders and organisations.':'I photograph leaders and organisations for the places where their images actually need to work.',
+            'Four photographic services':'Four ways we can work together',
+            'Four fields, connected by one visual language':'Portraits, brand work, events and fine art — approached with the same care.',
+            'This is not only for companies. Executives building a public presence, entrepreneurs launching something new, artists positioning their practice and anyone building a personal brand come to me for the same reason: a visual identity that actually works where it needs to.':'The same approach also works for individuals. Executives building a public presence, entrepreneurs launching something new and artists presenting their work all need images that function in real situations.',
+            'The result is not simply a folder of photographs, but a usable visual system for leadership, brand and communication teams.':'You receive a practical image system that leadership, brand and communication teams can use without having to reinterpret it later.',
+            'The final set is chosen by role and use, not only by which frame looks strongest in isolation.':'The final set is chosen by role and use, rather than by a single frame in isolation.',
+            'Strategic Visual Partnership':'Long-term visual partnership',
+            'We define the leadership presence and visual principles that should communicate trust, credibility and professionalism.':'We agree on how the people and the organisation should come across, then turn that into a clear visual direction.',
+            'The partnership continues as leadership, teams and communication needs change, keeping the visual language consistent over time.':'When leaders, teams or communication needs change, the visual language can be updated without starting again.',
+            'Most questions are completely natural.':'It is normal to have practical questions before a photography project.',
+            'Viko Speier — strategy that can be seen':'Viko Speier — where strategy meets photography',
+            'Viko Speier connects photography, economics, marketing research and communication strategy within the BANHALMI visual partnership model.':'Viko Speier brings photography, economics, research and communication strategy together in her work with BANHALMI.',
+            'A portrait is not only a photograph of your face.':'A portrait shows more than appearance: it also carries role, mood and context.',
+            'The work may take different forms':'The work can take several forms',
+            'Recovery and transformation narrative':'A personal story of recovery or change',
+            'The real story is not always happening on stage.':'The real story is not always happening on stage.',
+            'Trust should rest on verifiable work, professional standing and documented collaborations—not on adjectives.':'Trust should rest on verifiable work, professional standing and documented collaborations — not on promotional language.',
+            'A comprehensive overview of Norbert Banhalmi’s 25+ year photographic oeuvre: biography, curatorial context, exhibitions, books, media and commissioned practice.':'Norbert Banhalmi’s work since 1999: biography, exhibitions, books, media, commissioned photography and the artistic projects that shaped the practice.',
+            'A comprehensive overview of Norbert Banhalmi’s 25+ year photographic oeuvre: biography, curatorial context, exhibitions, books, media and commissioned practice.':'Norbert Banhalmi’s work since 1999: biography, exhibitions, books, media, commissioned photography and the artistic projects that shaped the practice.',
+            'This is more than a portrait session.':'The portrait session is one part of a wider visual process.',
+            'More than a portrait.':'A portrait with a clear purpose.',
+            'timeless portrait':'portrait built to remain useful',
+            'timeless image':'image built to remain useful',
+            'authentic urban narrative':'observed urban scene',
+            'a sense of journey':'a shared sense of movement',
+            'elevate your':'strengthen your',
+            'transform your':'change your',
+          }
+          DE={
+            'Strategie für visuelles Vertrauen':'Fotografie für klare Kommunikation',
+            'Executive-Porträts und visuelle Positionierung für Führungskräfte und Organisationen.':'Ich fotografiere Führungskräfte und Organisationen für die Situationen, in denen ihre Bilder tatsächlich funktionieren müssen.',
+            'Vier fotografische Leistungen':'Vier Formen der Zusammenarbeit',
+            'Vier Bereiche, verbunden durch eine Bildsprache':'Porträt, Brand, Events und Fine Art — mit derselben Sorgfalt fotografiert.',
+            'im Modell der strategischen visuellen Partnerschaft von BANHALMI':'in ihrer Arbeit mit BANHALMI',
+            'Strategische visuelle Partnerschaft':'Langfristige visuelle Zusammenarbeit',
+            'Die finalen Bilder werden nach Rolle und Einsatz ausgewählt, nicht nur danach, welches einzelne Bild isoliert am stärksten wirkt.':'Die finalen Bilder werden nach Rolle und Einsatz ausgewählt, nicht nach der Wirkung eines einzelnen Bildes.',
+            'Die Partnerschaft entwickelt sich mit Führung, Teams und Kommunikationsbedarf weiter und hält die visuelle Sprache langfristig konsistent.':'Wenn sich Führung, Teams oder Kommunikation verändern, wird die Bildsprache weiterentwickelt, ohne wieder bei null zu beginnen.',
+            'Wir definieren Führungspräsenz und visuelle Prinzipien, die Vertrauen, Glaubwürdigkeit und Professionalität vermitteln sollen.':'Wir klären, wie Menschen und Organisation wahrgenommen werden sollen, und übersetzen das in eine klare Bildrichtung.',
+            'Die meisten Fragen sind ganz normal.':'Praktische Fragen vor einem Fotoprojekt sind völlig normal.',
+            'Viko Speier — Strategie, die im Bild sichtbar wird':'Viko Speier — wo Strategie und Fotografie zusammenkommen',
+            'Viko Speier verbindet Fotografie, Wirtschaft, Marketingforschung und Kommunikationsstrategie in ihrer Arbeit mit BANHALMI.':'Viko Speier verbindet Fotografie, Wirtschaft, Forschung und Kommunikationsstrategie in ihrer Arbeit mit BANHALMI.',
+            'Ein Porträt ist nicht nur ein Bild Ihres Gesichts.':'Ein Porträt zeigt nicht nur das Äußere, sondern auch Rolle, Haltung und Kontext.',
+            'Die Arbeit kann unterschiedliche Formen annehmen':'Die Arbeit kann verschiedene Formen annehmen',
+            'Erzählung von Genesung und Veränderung':'Eine persönliche Geschichte von Genesung oder Veränderung',
+            'Vertrauen sollte auf überprüfbarer Arbeit, beruflichem Status und dokumentierten Kooperationen beruhen – nicht auf werblichen Adjektiven.':'Vertrauen sollte auf überprüfbarer Arbeit, beruflichem Status und dokumentierten Kooperationen beruhen — nicht auf Werbesprache.',
+            'Mehr als ein Porträt.':'Ein Porträt mit klarem Zweck.',
+            'Das ist mehr als ein Porträttermin.':'Der Porträttermin ist ein Teil eines umfassenderen visuellen Prozesses.',
+            'zeitloses Porträt':'langfristig nutzbares Porträt',
+            'zeitloses Bild':'langfristig nutzbares Bild',
+            'authentische urbane Erzählung':'beobachtete urbane Szene',
+          }
+
+          def visible_transform(html, replacements):
+              parts=re.split(r'(<(?:script|style|noscript)\b[\s\S]*?</(?:script|style|noscript)>)',html,flags=re.I)
+              for i in range(0,len(parts),2):
+                  for old,new in replacements.items():
+                      parts[i]=parts[i].replace(old,new)
+              return ''.join(parts)
+
+          en_files=[p for p in root.rglob('*.html') if not p.as_posix().startswith(('de-at/','hu/','redirects/','.git/','node_modules/'))]
+          de_files=list((root/'de-at').rglob('*.html'))
+          for files,repls in ((en_files,EN),(de_files,DE)):
+              for p in files:
+                  old=p.read_text(encoding='utf-8')
+                  new=visible_transform(old,repls)
+                  if new!=old:
+                      p.write_text(new,encoding='utf-8')
+                      changed.append(p.as_posix())
+
+          # Keep source generators aligned so old phrases cannot be regenerated.
+          for p in (root/'.human-voice').glob('*'):
+              if not p.is_file(): continue
+              try: old=p.read_text(encoding='utf-8')
+              except UnicodeDecodeError: continue
+              new=old
+              for old_s,new_s in {**EN,**DE}.items(): new=new.replace(old_s,new_s)
+              if new!=old:
+                  p.write_text(new,encoding='utf-8')
+                  changed.append(p.as_posix())
+
+          audit=root/'tools/audit-human-voice-en-de.mjs'
+          audit.write_text(r'''import fs from 'node:fs';
+          import path from 'node:path';
+          import process from 'node:process';
+
+          const root=process.cwd();
+          const failures=[];
+          const priority=[
+            'index.html','about/index.html','portrait/index.html','lifestyle/index.html','event-photography/index.html','glamour/index.html','contact/index.html','faq/index.html','speier-viko/index.html',
+            'de-at/index.html','de-at/werk/index.html','de-at/portrait/index.html','de-at/brand/index.html','de-at/eventfotografie/index.html','de-at/fine-art/index.html','de-at/kontakt/index.html','de-at/faq/index.html','de-at/speier-viko/index.html'
+          ];
+          const banned=[
+            'This is not only for companies.',
+            'The result is not simply a folder of photographs',
+            'not only by which frame looks strongest',
+            'Strategic Visual Partnership',
+            'Viko Speier — strategy that can be seen',
+            'im Modell der strategischen visuellen Partnerschaft von BANHALMI',
+            'Strategie für visuelles Vertrauen',
+            'Vier fotografische Leistungen',
+            'Vier Bereiche, verbunden durch eine Bildsprache'
+          ];
+          function visible(h){return h.replace(/<script\b[\s\S]*?<\/script>/gi,' ').replace(/<style\b[\s\S]*?<\/style>/gi,' ').replace(/<noscript\b[\s\S]*?<\/noscript>/gi,' ').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ')}
+          for(const rel of priority){
+            const file=path.join(root,rel);
+            if(!fs.existsSync(file)){failures.push(`${rel}: missing`);continue;}
+            const text=visible(fs.readFileSync(file,'utf8'));
+            for(const phrase of banned) if(text.includes(phrase)) failures.push(`${rel}: old templated phrase remains: ${phrase}`);
+          }
+          const required=[
+            ['index.html','Photography for clear communication'],
+            ['index.html','Four ways we can work together'],
+            ['lifestyle/index.html','The same approach also works for individuals.'],
+            ['speier-viko/index.html','Viko Speier — where strategy meets photography'],
+            ['de-at/index.html','Fotografie für klare Kommunikation'],
+            ['de-at/index.html','Vier Formen der Zusammenarbeit'],
+            ['de-at/speier-viko/index.html','Viko Speier — wo Strategie und Fotografie zusammenkommen']
+          ];
+          for(const [rel,phrase] of required){const h=fs.readFileSync(path.join(root,rel),'utf8');if(!h.includes(phrase))failures.push(`${rel}: approved human copy missing: ${phrase}`)}
+          for(const rel of ['.human-voice/homepage-rewrite.py','.human-voice/oeuvre-rewrite.py']){
+            if(!fs.existsSync(path.join(root,rel))) continue;
+            const src=fs.readFileSync(path.join(root,rel),'utf8');
+            for(const phrase of banned) if(src.includes(phrase)) failures.push(`${rel}: old phrase remains in generator: ${phrase}`);
+          }
+          if(failures.length){console.error(failures.join('\n'));process.exit(1)}
+          console.log(`English/German human-voice audit passed across ${priority.length} priority pages and source generators.`);
+          ''',encoding='utf-8')
+
+          pkg_path=root/'package.json'
+          pkg=json.loads(pkg_path.read_text(encoding='utf-8'))
+          cmd='node tools/audit-human-voice-en-de.mjs'
+          if cmd not in pkg['scripts']['audit']:
+              pkg['scripts']['audit']=cmd+' && '+pkg['scripts']['audit']
+          pkg['scripts']['audit:en-de-copy']=cmd
+          pkg_path.write_text(json.dumps(pkg,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+
+          (root/'docs/HUMAN_VOICE_EN_DE.md').write_text('# English and German human-voice revision\n\nVisible English and German copy was revised while preserving SEO terms, facts, links, schema and page structure.\n\nChanged files: **%d**\n\n%s\n'%(len(changed),'\n'.join(f'- `{p}`' for p in sorted(set(changed)))),encoding='utf-8')
+          print(f'Changed {len(set(changed))} files')
+          PY
+      - name: Remove temporary audit workflows
+        run: |
+          rm -f .github/workflows/one-time-audit-human-voice-en-de.yml
+          rm -f .github/workflows/one-time-humanize-en-de-copy.yml
+      - name: Install dependencies
+        run: npm install
+      - name: Run focused human voice audit
+        run: npm run audit:en-de-copy
+      - name: Run complete repository audit
+        run: npm run audit
+      - name: Commit and publish
+        run: |
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Humanize English and German website copy"
+          git push
