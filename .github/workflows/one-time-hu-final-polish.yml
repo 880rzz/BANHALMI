@@ -1,0 +1,110 @@
+name: Final Hungarian copy polish
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-time-hu-final-polish.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Correct the final visible-language issues
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          replacements = {
+              'hu/index.html': {
+                  'Olyan fényképeket készítek, amelyek már az első beszélgetés előtt érthetővé tesznek egy vezetőt vagy egy szervezetet. A munka a pontos vezetői portrétól az egységes márkaképeken és a diszkrét felsővezetői eseményfotózáson át a szerzői művészi fotográfiáig terjed.': 'Olyan képeket készítek, amelyek már az első találkozás előtt érzékeltetik egy vezető vagy egy szervezet karakterét. A vezetői portrétól az egységes márkaanyagokon és a visszafogott felsővezetői eseményfotózáson át a szerzői művészeti sorozatokig ugyanazt a vizuális következetességet képviselem.',
+                  'Néha egy pontos üzleti portré lesz belőle. Néha egy egész vezető képi világa. Néha egy vezetői ülés csendes dokumentuma, vagy egy sorozat, ami később könyvbe kerül. A helyzet változik. A figyelem nem.': 'Az eredmény lehet pontos üzleti portré, egy vezető teljes képi világa, egy vezetői ülés visszafogott dokumentációja vagy később könyvbe kerülő sorozat. A helyzet változik, a figyelem az emberen marad.',
+                  'Az üzleti portré, az munkáltatói márkaépítés, a sajtóportré és a vizuális márkastratégia ezeket a területeket támogatja. Nem különálló, egymással versengő szolgáltatások.': 'Az üzleti portré, a munkáltatói márkaépítés, a sajtóportré és a vizuális márkastratégia egymást kiegészítő eszközök. Együtt teremtenek következetes képi jelenlétet.',
+                  '<h3>felsővezetői eseményfotózás</h3>': '<h3>Felsővezetői eseményfotózás</h3>',
+                  '>Best of galéria megnyitása<': '>Válogatott galéria megnyitása<',
+                  '<h3>Best of</h3>': '<h3>Válogatás</h3>',
+              },
+              'hu/archivum/index.html': {
+                  'Best of galéria': 'Válogatott galéria',
+              },
+              'hu/gyik/index.html': {
+                  'A üzleti portré gyorsan és pontosan megmutatja, ki Ön.': 'Az üzleti portré gyorsan és pontosan megmutatja, ki Ön.',
+              },
+          }
+
+          for relative, mapping in replacements.items():
+              path = Path(relative)
+              text = path.read_text(encoding='utf-8')
+              for old, new in mapping.items():
+                  count = text.count(old)
+                  if count != 1:
+                      raise SystemExit(f'{relative}: expected one occurrence of {old!r}, found {count}')
+                  text = text.replace(old, new)
+              path.write_text(text, encoding='utf-8')
+
+          generator = Path('.human-voice/homepage-rewrite.py')
+          source = generator.read_text(encoding='utf-8')
+          source_map = {
+              'N\\u00e9ha egy pontos vezet\\u0151i portr\\u00e9 lesz bel\\u0151le. N\\u00e9ha egy eg\\u00e9sz vezet\\u0151 k\\u00e9pi vil\\u00e1ga. N\\u00e9ha egy vezet\\u0151i esem\\u00e9ny csendes dokumentuma, vagy egy sorozat, ami k\\u00e9s\\u0151bb k\\u00f6nyvbe ker\\u00fcl. A helyzet v\\u00e1ltozik. A figyelem nem.': 'Az eredm\\u00e9ny lehet pontos \\u00fczleti portr\\u00e9, egy vezet\\u0151 teljes k\\u00e9pi vil\\u00e1ga, egy vezet\\u0151i \\u00fcl\\u00e9s visszafogott dokument\\u00e1ci\\u00f3ja vagy k\\u00e9s\\u0151bb k\\u00f6nyvbe ker\\u00fcl\\u0151 sorozat. A helyzet v\\u00e1ltozik, a figyelem az emberen marad.',
+              'K\\u00e9tf\\u00e9le munka. Ugyanaz a n\\u00e9z\\u00e9s.': 'K\\u00e9tf\\u00e9le munka. Ugyanaz a figyelem.',
+              'A saj\\u00e1t sorozatokn\\u00e1l lass\\u00edtok. Eml\\u00e9k, test, t\\u00f6rt\\u00e9net \\u2014 olyan dolgok, amiket nem mindig lehet sz\\u00e9pen elmondani.': 'A saj\\u00e1t sorozatokn\\u00e1l lelass\\u00edtom a folyamatot. Eml\\u00e9kekb\\u0151l, testb\\u0151l \\u00e9s \\u00e9lett\\u00f6rt\\u00e9netekb\\u0151l dolgozom \\u2014 olyan tapasztalatokb\\u00f3l, amelyek nem mindig f\\u00e9rnek bele a szavakba.',
+              'A k\\u00e9rd\\u00e9s mindkett\\u0151n\\u00e9l ugyanaz: van-e a k\\u00e9pen jelenl\\u00e9t, vagy csak elrendez\\u00e9s?': 'Mindk\\u00e9t ter\\u00fcleten ugyanaz a k\\u00e9rd\\u00e9s: val\\u00f3di jelenl\\u00e9tet l\\u00e1tunk, vagy csup\\u00e1n gondosan elrendezett form\\u00e1t?',
+          }
+          for old, new in source_map.items():
+              count = source.count(old)
+              if count != 1:
+                  raise SystemExit(f'homepage generator: expected one occurrence of {old!r}, found {count}')
+              source = source.replace(old, new)
+          generator.write_text(source, encoding='utf-8')
+
+          audit_path = Path('tools/audit-hungarian-copy.mjs')
+          audit = audit_path.read_text(encoding='utf-8')
+          needle = '  /\\bheadshot\\b/i,\n'
+          if audit.count(needle) != 1:
+              raise SystemExit('Hungarian audit insertion point missing')
+          audit = audit.replace(needle, needle + '  /\\bBest of\\b/i,\n  /\\bA üzleti portré\\b/i,\n  /\\baz munkáltatói márkaépítés\\b/i,\n')
+          guard_anchor = "const menu = read('assets/js/mega-menu.js');\n"
+          guard = """const homepage = read('hu/index.html');
+          for (const phrase of [
+            'Olyan képeket készítek, amelyek már az első találkozás előtt érzékeltetik egy vezető vagy egy szervezet karakterét.',
+            'Az eredmény lehet pontos üzleti portré, egy vezető teljes képi világa, egy vezetői ülés visszafogott dokumentációja vagy később könyvbe kerülő sorozat.',
+            'Az üzleti portré, a munkáltatói márkaépítés, a sajtóportré és a vizuális márkastratégia egymást kiegészítő eszközök.',
+            '<h3>Felsővezetői eseményfotózás</h3>',
+            '<h3>Válogatás</h3>'
+          ]) if (!homepage.includes(phrase)) failures.push(`homepage: approved Hungarian copy missing: ${phrase}`);
+          if (!read('hu/archivum/index.html').includes('Válogatott galéria')) failures.push('archive: approved Hungarian gallery title missing');
+          if (!read('hu/gyik/index.html').includes('Az üzleti portré gyorsan és pontosan megmutatja, ki Ön.')) failures.push('FAQ: corrected Hungarian article is missing');
+
+          """
+          guard = '\n'.join(line[10:] if line.startswith('          ') else line for line in guard.splitlines())
+          if audit.count(guard_anchor) != 1:
+              raise SystemExit('Hungarian audit guard anchor missing')
+          audit = audit.replace(guard_anchor, guard + guard_anchor)
+          audit_path.write_text(audit, encoding='utf-8')
+          PY
+      - name: Remove temporary QA workflows
+        run: |
+          rm -f .github/workflows/one-time-hu-visible-copy-qa.yml
+          rm -f .github/workflows/one-time-hu-final-polish.yml
+      - name: Install dependencies
+        run: npm install
+      - name: Run Hungarian language guard
+        run: npm run audit:hu-copy
+      - name: Run full deterministic audit
+        run: npm run audit
+      - name: Commit final Hungarian polish
+        run: |
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Polish final Hungarian copy details"
+          git push
