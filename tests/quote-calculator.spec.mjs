@@ -84,7 +84,8 @@ for (const route of routes) {
       await expect.poll(async () => page.locator('input[name="estimate_gross"]').inputValue()).not.toBe(beforeHidden);
       const after = amount(await gross.textContent());
       expect(after).toBeGreaterThan(0);
-      expect(amount(await page.locator('input[name="estimate_gross"]').inputValue())).toBeCloseTo(after, 1);
+      const visibleAmountField = route.lang === 'hu' ? 'estimate_display_gross' : 'estimate_gross';
+      expect(amount(await page.locator(`input[name="${visibleAmountField}"]`).inputValue())).toBeCloseTo(after, 1);
       await expect(page.locator('body')).not.toContainText(/NaN|undefined/);
       expect(errors).toEqual([]);
     });
@@ -299,7 +300,7 @@ test('Hungarian quote displays fixed-rate HUF while preserving canonical EUR', a
   await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 10000 });
   await page.locator('input[name="category"][value="individual"]').check();
   await page.locator('input[name="individual_mode"][value="quick30"]').check();
-  await expect(page.locator('[data-estimate-gross]')).toContainText(/88[ .]?000/);
+  await expect(page.locator('[data-estimate-gross]')).toContainText(/88[\s\u00a0]?000/);
   await expect(page.locator('[data-estimate-gross]')).toContainText(/Ft|HUF/);
   await expect(page.locator('input[name="estimate_gross"]')).toHaveValue('220');
   await expect(page.locator('input[name="estimate_display_currency"]')).toHaveValue('HUF');
