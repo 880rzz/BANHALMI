@@ -8,9 +8,9 @@ const pages=[
   ['portrait/index.html','What the partnership includes','Visual brief','Use map','Structured selection'],
   ['lifestyle/index.html','What the partnership includes','Visual brief','Use map','Structured selection'],
   ['event-photography/index.html','What the partnership includes','Visual brief','Use map','Structured selection'],
-  ['hu/portre/index.html','Mit jelent a partnerség a gyakorlatban?','Vizuális brief','Felhasználási térkép','Strukturált válogatás'],
-  ['hu/brand/index.html','Mit jelent a partnerség a gyakorlatban?','Vizuális brief','Felhasználási térkép','Strukturált válogatás'],
-  ['hu/rendezvenyfotozas/index.html','Mit jelent a partnerség a gyakorlatban?','Vizuális brief','Felhasználási térkép','Strukturált válogatás'],
+  ['hu/portre/index.html','Mit jelent a partnerség a gyakorlatban?','Vizuális projektleírás','Felhasználási térkép','Strukturált válogatás'],
+  ['hu/brand/index.html','Mit jelent a partnerség a gyakorlatban?','Vizuális projektleírás','Felhasználási térkép','Strukturált válogatás'],
+  ['hu/rendezvenyfotozas/index.html','Mit jelent a partnerség a gyakorlatban?','Vizuális projektleírás','Felhasználási térkép','Strukturált válogatás'],
   ['de-at/portrait/index.html','Was die Partnerschaft konkret umfasst','Visuelles Briefing','Einsatzplan','Strukturierte Auswahl'],
   ['de-at/brand/index.html','Was die Partnerschaft konkret umfasst','Visuelles Briefing','Einsatzplan','Strukturierte Auswahl'],
   ['de-at/eventfotografie/index.html','Was die Partnerschaft konkret umfasst','Visuelles Briefing','Einsatzplan','Strukturierte Auswahl']

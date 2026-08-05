@@ -43,7 +43,7 @@ assert(corpus.includes(canonicalPersonId), `canonical Person ID missing: ${canon
 
 const requiredHomepageCopy = {
   'index.html': ['Visual Trust Strategy', 'Executive portraits and visual positioning for leaders and organisations.'],
-  'hu/index.html': ['Vizuális bizalomstratégia', 'Executive portrék és vizuális pozicionálás vezetőknek és szervezeteknek.'],
+  'hu/index.html': ['Vizuális bizalomstratégia', 'Vezetői portrék és vizuális pozicionálás vezetőknek és szervezeteknek.'],
   'de-at/index.html': ['Strategie für visuelles Vertrauen', 'Executive-Porträts und visuelle Positionierung für Führungskräfte und Organisationen.']
 };
 for (const [file, phrases] of Object.entries(requiredHomepageCopy)) {

@@ -1,0 +1,80 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root = path.resolve(import.meta.dirname, '..');
+const failures = [];
+const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
+const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+  const target = path.join(dir, entry.name);
+  return entry.isDirectory() ? walk(target) : [target];
+});
+const pages = walk(path.join(root, 'hu')).filter((file) => file.endsWith('index.html'));
+if (pages.length !== 19) failures.push(`Expected 19 Hungarian pages, found ${pages.length}`);
+
+function visibleBody(html) {
+  const body = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '';
+  return body
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, ' ')
+    .replace(/<!--([\s\S]*?)-->/g, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;|&#160;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+const banned = [
+  /\bmeeting\b/i,
+  /\bboard meeting/i,
+  /\bheadshot\b/i,
+  /\bexecutive\b/i,
+  /\bC[-‑ ]?level\b/i,
+  /\bemployer branding\b/i,
+  /\bpersonal branding\b/i,
+  /\bthought leadership\b/i,
+  /Art direction/i,
+  /International Business Network Benefit/i,
+  /BANHALMI team/i,
+  /since 1999/i,
+  /shared-secret/i,
+  /inputvalidáció/i,
+  /retenciós kontroll/i,
+  /\bbackend\b/i,
+  /\bwidgetek\b/i,
+  /\bhoneypot\b/i
+];
+for (const file of pages) {
+  const text = visibleBody(fs.readFileSync(file, 'utf8'));
+  for (const pattern of banned) if (pattern.test(text)) failures.push(`${path.relative(root, file)}: non-Hungarian or obsolete visible phrase remains: ${pattern}`);
+}
+
+const menu = read('assets/js/mega-menu.js');
+const approvedMenu = [
+  'Szakmai pálya, alkotói fordulópontok és közösségi munka 1999 óta.',
+  'Válogatás megbízásos sorozatokból és a művészeti archívumból.',
+  'Könyvek, kiállítások, projektek és ellenőrizhető háttéranyagok.',
+  'Milyen képi feladatra keres megoldást?',
+  'Üzleti portré, vezetői portré és személyes vizuális pozicionálás.',
+  'Egységes képi rendszer vezetőknek, csapatoknak és szervezeteknek.',
+  'Visszafogott, helyzetérzékeny fotózás vezetői és vállalati eseményeken.',
+  'Válaszok az előkészítésről, a fotózásról, az átadásról és a felhasználási jogokról.',
+  "cta:'Projekt összeállítása'"
+];
+for (const phrase of approvedMenu) if (!menu.includes(phrase)) failures.push(`mega-menu: approved Hungarian copy missing: ${phrase}`);
+for (const obsolete of ['Headshot, executive portré', 'C-Level események', "cta:'Csomag összeállítása'", 'kontextusérzékeny dokumentáció']) {
+  if (menu.includes(obsolete)) failures.push(`mega-menu: obsolete Hungarian copy remains: ${obsolete}`);
+}
+
+const homepageGenerator = read('.human-voice/homepage-rewrite.py');
+const huSource = homepageGenerator.split("'hu/index.html'")[1]?.split("'de-at/index.html'")[0] || homepageGenerator;
+for (const obsolete of ['meeting el\\u0151tt', 'board meeting', 'headshot lesz bel\\u0151le']) {
+  if (huSource.includes(obsolete)) failures.push(`homepage generator: obsolete Hungarian source remains: ${obsolete}`);
+}
+
+if (failures.length) {
+  console.error(failures.map((failure) => `✗ ${failure}`).join('\n'));
+  process.exit(1);
+}
+console.log(`Hungarian copy audit passed: ${pages.length} pages, shared menu and regeneration sources checked.`);

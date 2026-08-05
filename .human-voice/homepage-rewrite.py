@@ -51,7 +51,7 @@ replacements = {
         ),
         (
             "Olyan vezet\u0151kkel \u00e9s szervezetekkel dolgozom, akikn\u00e9l a k\u00e9peknek val\u00f3di feladatuk van. Egy executive portr\u00e9 m\u00e9g a szem\u00e9lyes tal\u00e1lkoz\u00e1s el\u0151tt bemutat valakit. Egy brandfot\u00f3-sorozat meghat\u00e1rozza, hogyan \u00e9rtik meg a c\u00e9get. Egy C-level esem\u00e9ny k\u00e9pei k\u00e9s\u0151bb annak k\u00f6z\u00f6s eml\u00e9kezet\u00e9v\u00e9 v\u00e1lhatnak. Ezeket nem k\u00fcl\u00f6n\u00e1ll\u00f3 m\u0171fajokk\u00e9nt, hanem egyetlen vizu\u00e1lis nyelv r\u00e9szek\u00e9nt kezelem: legyen vil\u00e1gos, hiteles \u00e9s emberi.",
-            "Olyan vezet\u0151kkel \u00e9s c\u00e9gekkel dolgozom, akikn\u00e9l a k\u00e9pnek t\u00e9nyleg van dolga. Bemutatni valakit egy meeting el\u0151tt. Megmutatni, milyen a c\u00e9g. Meg\u0151rizni egy fontos napot. Nem k\u00fcl\u00f6n m\u0171fajok ezek nekem. Egy nyelv.",
+            "Olyan vezet\u0151kkel \u00e9s c\u00e9gekkel dolgozom, akikn\u00e9l a k\u00e9pnek t\u00e9nyleg van dolga. Bemutatni valakit egy tal\u00e1lkoz\u00e1s el\u0151tt. Megmutatni, milyen a c\u00e9g. Meg\u0151rizni egy fontos napot. Nem k\u00fcl\u00f6n m\u0171fajok ezek nekem. Egy nyelv.",
         ),
         (
             "A t\u00f6k\u00e9letes p\u00f3z \u00f6nmag\u00e1ban sosem \u00e9rdekelt. Ink\u00e1bb az ut\u00e1na k\u00f6vetkez\u0151 csendesebb pillanatot figyelem: amikor valaki m\u00e1r nem a kamer\u00e1t pr\u00f3b\u00e1lja kezelni, hanem egyszer\u0171en jelen van. T\u00f6bbnyire ott kezd\u0151dik el a portr\u00e9.",
@@ -63,7 +63,7 @@ replacements = {
         ),
         (
             "Az eredm\u00e9ny lehet pontos executive headshot, egy vezet\u0151 teljes vizu\u00e1lis pozicion\u00e1l\u00e1sa, v\u00e1llalati k\u00e9prendszer, egy fontos tal\u00e1lkoz\u00e1s dokumentuma vagy k\u00f6nyvbe \u00e9s ki\u00e1ll\u00edt\u00e1sra sz\u00e1nt szem\u00e9lyes munka. A helyzet v\u00e1ltozik. A figyelem mindig az emberen marad, \u00e9s azon, mi igaz bel\u0151le abban a pillanatban.",
-            "N\u00e9ha egy pontos headshot lesz bel\u0151le. N\u00e9ha egy eg\u00e9sz vezet\u0151 k\u00e9pi vil\u00e1ga. N\u00e9ha egy board meeting csendes dokumentuma, vagy egy sorozat, ami k\u00e9s\u0151bb k\u00f6nyvbe ker\u00fcl. A helyzet v\u00e1ltozik. A figyelem nem.",
+            "N\u00e9ha egy pontos vezet\u0151i portr\u00e9 lesz bel\u0151le. N\u00e9ha egy eg\u00e9sz vezet\u0151 k\u00e9pi vil\u00e1ga. N\u00e9ha egy vezet\u0151i esem\u00e9ny csendes dokumentuma, vagy egy sorozat, ami k\u00e9s\u0151bb k\u00f6nyvbe ker\u00fcl. A helyzet v\u00e1ltozik. A figyelem nem.",
         ),
         (
             "Egy alkot\u00f3i gyakorlat, k\u00e9t forma",

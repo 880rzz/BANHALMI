@@ -31,7 +31,7 @@ for(const [file,expected] of Object.entries(serviceMap)){
   for(const href of expected) assert(cardLinks.includes(href), `${file}: missing four-service card link ${href}`);
 }
 assert(read('index.html').includes('Executive, professional and lifestyle portraits—from a precise headshot to a complete visual position for a leader in public life.'), 'English portrait card must include consolidated portrait range');
-assert(read('hu/index.html').includes('Executive, üzleti és lifestyle portrék a pontos headshottól egy vezető teljes nyilvános vizuális pozicionálásáig.'), 'Hungarian portrait card must include consolidated portrait range');
+assert(read('hu/index.html').includes('Vezetői, üzleti és életmódportrék az egységes profilképtől egy vezető teljes nyilvános vizuális megjelenéséig.'), 'Hungarian portrait card must include consolidated portrait range');
 assert(read('de-at/index.html').includes('Executive-, Business- und Lifestyle-Porträts – vom präzisen Headshot bis zur vollständigen öffentlichen visuellen Positionierung einer Führungspersönlichkeit.'), 'German portrait card must include consolidated portrait range');
 for(const p of ['gallery/index.html','hu/gallery/index.html','de-at/gallery/index.html','de/portrait/index.html','de/brand/index.html','de/eventfotografie/index.html','de/fine-art/index.html','de-at/glamour/index.html','mybest/index.html','de-at/mybest/index.html']) assert(!exists(p), `${p}: deleted redundant page still exists`);
 const routeText=htmlFiles().map(p=>read(p)).join('\n')+'\n'+['sitemap.xml','llms.txt','llms-full.txt','services.json'].filter(exists).map(read).join('\n');
@@ -195,7 +195,7 @@ for(const p of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/a
 // Strategic-positioning, Schema.org and Wikidata invariants.
 const strategicCopy={
   'index.html':['Visual Trust Strategy','builds visual trust','Four principal services:','As a member of AmCham Austria'],
-  'hu/index.html':['Vizuális bizalomstratégia','Executive portrék és vizuális pozicionálás vezetőknek és szervezeteknek.','Négy fő szolgáltatás:','Az AmCham Austria tagjaként'],
+  'hu/index.html':['Vizuális bizalomstratégia','Vezetői portrék és vizuális pozicionálás vezetőknek és szervezeteknek.','Négy fő szolgáltatás:','Az AmCham Austria tagjaként'],
   'de-at/index.html':['Strategie für visuelles Vertrauen','Executive-Porträts und visuelle Positionierung für Führungskräfte und Organisationen.','Vier Hauptleistungen:','Als Mitglied von AmCham Austria']
 };
 for(const [file,phrases] of Object.entries(strategicCopy)) for(const phrase of phrases) assert(read(file).includes(phrase), `${file}: missing strategic-positioning phrase ${phrase}`);
