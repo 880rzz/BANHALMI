@@ -5,9 +5,9 @@ import path from 'node:path';
 const root=path.resolve(import.meta.dirname,'..');
 const errors=[];
 const pages={
-'index.html':{h1:'Executive portraits and visual positioning for leaders and organisations.',services:['Executive Portraiture','Brand Photography','C-Level Event Photography','Fine Art Photography'],ctas:['See portrait work ›','See brand photography ›','See event coverage ›','Explore fine-art work ›']},
+'index.html':{h1:'I photograph leaders and organisations for the places where their images actually need to work.',services:['Executive Portraiture','Brand Photography','C-Level Event Photography','Fine Art Photography'],ctas:['See portrait work ›','See brand photography ›','See event coverage ›','Explore fine-art work ›']},
 'hu/index.html':{h1:'Vezetői portrék és vizuális pozicionálás vezetőknek és szervezeteknek.',services:['vezetői portréfotózás','brandfotózás','felsővezetői eseményfotózás','művészi fotográfia'],ctas:['Portrémunkák megtekintése ›','Brandfotózás megtekintése ›','Eseményfotózás megtekintése ›','Művészi munkák megtekintése ›']},
-'de-at/index.html':{h1:'Executive-Porträts und visuelle Positionierung für Führungskräfte und Organisationen.',services:['Executive-Porträts','Brandfotografie','C-Level-Eventfotografie','Fine-Art-Fotografie'],ctas:['Porträtarbeiten ansehen ›','Brandfotografie ansehen ›','Eventreportagen ansehen ›','Fine-Art-Arbeiten ansehen ›']}
+'de-at/index.html':{h1:'Ich fotografiere Führungskräfte und Organisationen für die Situationen, in denen ihre Bilder tatsächlich funktionieren müssen.',services:['Executive-Porträts','Brandfotografie','C-Level-Eventfotografie','Fine-Art-Fotografie'],ctas:['Porträtarbeiten ansehen ›','Brandfotografie ansehen ›','Eventreportagen ansehen ›','Fine-Art-Arbeiten ansehen ›']}
 };
 for(const [relative,c] of Object.entries(pages)){
  const html=fs.readFileSync(path.join(root,relative),'utf8');

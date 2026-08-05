@@ -42,9 +42,9 @@ const canonicalServiceId = 'https://www.norbertbanhalmi.com/#visual-trust-partne
 assert(corpus.includes(canonicalPersonId), `canonical Person ID missing: ${canonicalPersonId}`);
 
 const requiredHomepageCopy = {
-  'index.html': ['Visual Trust Strategy', 'Executive portraits and visual positioning for leaders and organisations.'],
+  'index.html': ['Photography for clear communication', 'I photograph leaders and organisations for the places where their images actually need to work.'],
   'hu/index.html': ['Vizuális bizalomstratégia', 'Vezetői portrék és vizuális pozicionálás vezetőknek és szervezeteknek.'],
-  'de-at/index.html': ['Strategie für visuelles Vertrauen', 'Executive-Porträts und visuelle Positionierung für Führungskräfte und Organisationen.']
+  'de-at/index.html': ['Fotografie für klare Kommunikation', 'Ich fotografiere Führungskräfte und Organisationen für die Situationen, in denen ihre Bilder tatsächlich funktionieren müssen.']
 };
 for (const [file, phrases] of Object.entries(requiredHomepageCopy)) {
   const body = visibleBody(read(file));
