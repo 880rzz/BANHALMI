@@ -1139,3 +1139,25 @@
     button.setAttribute('aria-expanded','false');
   });
 })();
+
+/* Hero hover-to-play video.
+   CSS owns the crossfade opacity (hover:hover + reduced-motion already
+   scoped there); this only starts and stops playback, and only on pointers
+   that actually support hover, so touch never triggers an unwanted fetch. */
+(function(){
+  var figure=document.querySelector('.hero.hero-image-first .hero-figure');
+  if(!figure)return;
+  var video=figure.querySelector('.hero-video');
+  if(!video)return;
+  var canHover=!window.matchMedia||window.matchMedia('(hover:hover)').matches;
+  var reducedMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!canHover||reducedMotion)return;
+  figure.addEventListener('mouseenter',function(){
+    try{video.currentTime=0;}catch(e){}
+    var playPromise=video.play();
+    if(playPromise&&playPromise.catch)playPromise.catch(function(){});
+  });
+  figure.addEventListener('mouseleave',function(){
+    video.pause();
+  });
+})();
