@@ -53,9 +53,7 @@
         {
           "type": "header",
           "key": "referer",
-          "value": {
-            "pre": "https://www.norbertbanhalmi.com/hu/"
-          }
+          "value": "^https://www\\.norbertbanhalmi\\.com/hu/.*"
         }
       ]
     },
@@ -67,9 +65,7 @@
         {
           "type": "header",
           "key": "referer",
-          "value": {
-            "pre": "https://www.norbertbanhalmi.com/de-at/"
-          }
+          "value": "^https://www\\.norbertbanhalmi\\.com/de-at/.*"
         }
       ]
     },
@@ -81,9 +77,7 @@
         {
           "type": "header",
           "key": "accept-language",
-          "value": {
-            "pre": "hu"
-          }
+          "value": "^hu.*"
         }
       ]
     },
@@ -95,9 +89,7 @@
         {
           "type": "header",
           "key": "accept-language",
-          "value": {
-            "pre": "de"
-          }
+          "value": "^de.*"
         }
       ]
     }
