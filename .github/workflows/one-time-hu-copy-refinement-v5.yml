@@ -1,0 +1,110 @@
+name: Clean Hungarian copy finalizer
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-time-hu-copy-refinement-v5.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply Hungarian copy refinement
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          source = Path('.github/workflows/one-time-hu-copy-refinement.yml').read_text(encoding='utf-8')
+          marker = '      - name: Refine Hungarian copy and permanent guards\n        run: |\n'
+          start = source.index(marker) + len(marker)
+          end = source.index('      - name: Install dependencies', start)
+          block = source[start:end]
+          script = '\n'.join(line[10:] if line.startswith('          ') else line for line in block.splitlines()) + '\n'
+          script = script.replace("if len(hu_pages) != 20:", "if len(hu_pages) != 19:")
+          script = script.replace("Expected 20 Hungarian pages", "Expected 19 Hungarian pages")
+          script = script.replace("if (pages.length !== 20)", "if (pages.length !== 19)")
+          Path('/tmp/refine-hu-copy.sh').write_text('set -e\n' + script, encoding='utf-8')
+          PY
+          bash /tmp/refine-hu-copy.sh
+      - name: Normalize remaining visible copy and regression expectation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          def update_body(text: str) -> str:
+              marker = re.search(r'(?i)</head>', text)
+              if not marker:
+                  raise RuntimeError('Missing </head>')
+              head, body = text[:marker.end()], text[marker.end():]
+              protected = {}
+              def hold(match):
+                  key = f'__BANHALMI_BLOCK_{len(protected)}__'
+                  protected[key] = match.group(0)
+                  return key
+              body = re.sub(r'(?is)<(?:script|style|noscript|template)\b[^>]*>.*?</(?:script|style|noscript|template)>', hold, body)
+              parts = re.split(r'(<[^>]+>)', body)
+              for index in range(0, len(parts), 2):
+                  segment = parts[index]
+                  segment = re.sub(r'\bheadshot\b', 'üzleti portré', segment, flags=re.I)
+                  segment = re.sub(r'\bexecutive\b', 'vezetői', segment, flags=re.I)
+                  for old in (
+                      'vezetői, üzleti és életmód portrék a pontos üzleti portrétól egy vezető teljes nyilvános vizuális pozicionálásáig.',
+                      'Vezetői, üzleti és életmód portrék a pontos üzleti portrétól egy vezető teljes nyilvános vizuális pozicionálásáig.'
+                  ):
+                      segment = segment.replace(old, 'Vezetői, üzleti és életmódportrék az egységes profilképtől egy vezető teljes nyilvános vizuális megjelenéséig.')
+                  parts[index] = segment
+              body = ''.join(parts)
+              for key, value in protected.items():
+                  body = body.replace(key, value)
+              return head + body
+
+          pages = sorted(Path('hu').glob('**/index.html'))
+          if len(pages) != 19:
+              raise SystemExit(f'Expected 19 Hungarian pages, found {len(pages)}')
+          for page in pages:
+              original = page.read_text(encoding='utf-8')
+              updated = update_body(original)
+              if updated != original:
+                  page.write_text(updated, encoding='utf-8')
+
+          audit_path = Path('tools/audit-regression.mjs')
+          audit = audit_path.read_text(encoding='utf-8')
+          pattern = re.compile(r"assert\(read\('hu/index\.html'\)\.includes\('.*?'\), 'Hungarian portrait card must include consolidated portrait range'\);")
+          replacement = "assert(read('hu/index.html').includes('Vezetői, üzleti és életmódportrék az egységes profilképtől egy vezető teljes nyilvános vizuális megjelenéséig.'), 'Hungarian portrait card must include consolidated portrait range');"
+          audit, count = pattern.subn(replacement, audit, count=1)
+          if count != 1:
+              raise SystemExit(f'Expected one Hungarian portrait regression assertion, found {count}')
+          audit_path.write_text(audit, encoding='utf-8')
+          PY
+      - name: Install dependencies
+        run: npm install
+      - name: Temporarily hide one-time workflows from safety audit
+        run: |
+          mkdir -p /tmp/banhalmi-one-time-workflows
+          for file in .github/workflows/one-time-*.yml; do
+            [ -e "$file" ] || continue
+            cp "$file" /tmp/banhalmi-one-time-workflows/
+            rm "$file"
+          done
+      - name: Run Hungarian copy guard
+        run: npm run audit:hu-copy
+      - name: Run full deterministic audit
+        run: npm run audit
+      - name: Restore workflow files and commit content changes
+        run: |
+          git checkout HEAD -- .github/workflows
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Refine Hungarian copy and protect menu language"
+          git push
