@@ -862,11 +862,9 @@ section{padding:72px 0;}
   width:clamp(72px,10vw,150px);
   opacity:.24;
 }
-/* Hover-to-play hero video. Sits over the still image, stays invisible and
-   paused until the visitor hovers the figure (hover-capable pointers only —
-   there is no hover on touch, so the still image is the whole experience
-   there). Playback itself is started/stopped by main.js; this layer only
-   owns the crossfade. */
+/* Interaction-loaded hero video. The still image remains visible and is the
+   LCP element; main.js attaches video sources only on hover or tap. This layer
+   owns the desktop-hover and touch-tap crossfade without affecting layout. */
 .hero.hero-image-first .hero-figure .hero-video{
   position:absolute;
   left:0;
@@ -1462,11 +1460,9 @@ section{padding:72px 0;}
   width:clamp(72px,10vw,150px);
   opacity:.24;
 }
-/* Hover-to-play hero video. Sits over the still image, stays invisible and
-   paused until the visitor hovers the figure (hover-capable pointers only —
-   there is no hover on touch, so the still image is the whole experience
-   there). Playback itself is started/stopped by main.js; this layer only
-   owns the crossfade. */
+/* Interaction-loaded hero video. The still image remains visible and is the
+   LCP element; main.js attaches video sources only on hover or tap. This layer
+   owns the desktop-hover and touch-tap crossfade without affecting layout. */
 .hero.hero-image-first .hero-figure .hero-video{
   position:absolute;
   left:0;

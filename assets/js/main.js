@@ -1140,12 +1140,10 @@
   });
 })();
 
-/* Hero hover-to-play video, with a tap-to-play fallback for touch.
-   On hover-capable pointers the crossfade is CSS-only (hover:hover, see
-   style.css) and this just starts/stops playback on mouseenter/mouseleave.
-   On touch, there is no hover, so a tap toggles a .is-tapped class that
-   CSS fades in the same way, and JS starts/pauses the video to match. A
-   second tap, or a tap anywhere outside the figure, stops it again. */
+/* Hero video: identical on EN/HU/DE, but deliberately absent from the
+   critical loading path. The still image remains the LCP element. Video source
+   URLs live in data-src and are attached only after real pointer intent or a
+   tap. Reduced-motion visitors never download the video. */
 (function(){
   var figure=document.querySelector('.hero.hero-image-first .hero-figure');
   if(!figure)return;
@@ -1154,9 +1152,21 @@
   var canHover=!window.matchMedia||window.matchMedia('(hover:hover)').matches;
   var reducedMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reducedMotion)return;
+  var sourcesBound=false;
 
+  function bindSources(){
+    if(sourcesBound)return;
+    var sources=video.querySelectorAll('source[data-src]');
+    sources.forEach(function(source){
+      source.src=source.getAttribute('data-src');
+      source.removeAttribute('data-src');
+    });
+    sourcesBound=true;
+    video.load();
+  }
   function play(){
-    try{video.currentTime=0;}catch(e){}
+    bindSources();
+    if(video.readyState>0){try{video.currentTime=0;}catch(e){}}
     var playPromise=video.play();
     if(playPromise&&playPromise.catch)playPromise.catch(function(){});
   }
@@ -1165,8 +1175,8 @@
   }
 
   if(canHover){
-    figure.addEventListener('mouseenter',play);
-    figure.addEventListener('mouseleave',stop);
+    figure.addEventListener('mouseenter',play,{passive:true});
+    figure.addEventListener('mouseleave',stop,{passive:true});
     return;
   }
 
