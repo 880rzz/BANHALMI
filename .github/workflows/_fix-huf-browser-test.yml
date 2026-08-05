@@ -1,0 +1,38 @@
+name: One-time HUF browser regression
+
+on:
+  push:
+    paths:
+      - '.github/workflows/_fix-huf-browser-test.yml'
+      - 'tools/_fix-huf-browser-test.mjs'
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Align browser assertion with localized display currency
+        run: node tools/_fix-huf-browser-test.mjs
+      - name: Install test dependencies
+        run: |
+          npm install --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Run deterministic and browser audits
+        run: |
+          npm run audit
+          npm run test:browser
+      - name: Commit verified regression fix
+        run: |
+          git config user.name 'BANHALMI maintenance bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Align browser tests with Hungarian HUF display'
+          git push
