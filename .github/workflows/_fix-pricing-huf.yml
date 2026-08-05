@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
       - name: Apply synchronized EUR and HUF pricing migration
         run: node tools/_fix-pricing-huf.mjs
       - name: Run deterministic audits
