@@ -10,7 +10,7 @@ const after=`      const after = amount(await gross.textContent());
       const visibleAmountField = route.lang === 'hu' ? 'estimate_display_gross' : 'estimate_gross';
       expect(amount(await page.locator(\`input[name="\${visibleAmountField}"]\`).inputValue())).toBeCloseTo(after, 1);`;
 const count=source.split(before).length-1;
-if(count!==1)throw new Error(\`Expected one legacy visible/canonical currency assertion, found \${count}\`);
+if(count!==1)throw new Error('Expected one legacy visible/canonical currency assertion, found '+count);
 source=source.replace(before,after);
 fs.writeFileSync(path,source);
 fs.rmSync('tools/_fix-huf-browser-test.mjs');
