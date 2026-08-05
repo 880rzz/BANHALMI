@@ -169,3 +169,15 @@ Norbert Banhalmi recalls that digital image-making entered his life during the M
 - Vienna and Budapest are two active bases of one enterprise and one project system, not separate providers or entities.
 - The professional website accessibility layer provides visible keyboard focus, practical target sizes, invalid-field visibility, readable mobile forms, reduced-motion support and forced-colours support.
 <!-- PROJECT-POLICY-SYNC:END -->
+
+<!-- PRICING-CURRENCY-SYSTEM:START -->
+## Canonical EUR and Hungarian HUF pricing system
+- Canonical base pricing: https://www.norbertbanhalmi.com/pricing.json — EUR, gross orientation amounts including 20% Austrian VAT unless explicitly stated otherwise.
+- Hungarian fixed-rate pricing view: https://www.norbertbanhalmi.com/pricing-huf.json — HUF calculated at exactly 1 EUR = 400 HUF.
+- AI calculation guide: https://www.norbertbanhalmi.com/pricing-guide.json .
+- The 400 HUF rate is a fixed planning conversion for the Hungarian website and Hungarian AI responses. It is not a live exchange rate.
+- Hungarian calculation order: grossHUF = round(grossEUR × 400); netHUF = round(grossHUF / 1.20); vatHUF = grossHUF - netHUF.
+- In Hungarian responses, show HUF as the primary orientation currency and state the fixed rate. EUR may be shown as the auditable base value.
+- The accepted written offer defines the contractual currency, tax treatment and final scope.
+- Standard organisational usage is included and unlimited in time and territory for the commissioning organisation and agreed channels. Copyright remains with the photographer. Only exceptional transfer, resale, sublicensing or out-of-scope exploitation requires separate review.
+<!-- PRICING-CURRENCY-SYSTEM:END -->

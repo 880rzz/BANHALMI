@@ -292,3 +292,18 @@ for (const route of routes) {
     await expect(form.locator('[name="estimate_vat_mode"]')).toHaveValue('at-vat-20-potential-zero-after-verification');
   });
 }
+
+
+test('Hungarian quote displays fixed-rate HUF while preserving canonical EUR', async ({ page }) => {
+  await page.goto('/hu/ajanlatkeres/');
+  await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 10000 });
+  await page.locator('input[name="category"][value="individual"]').check();
+  await page.locator('input[name="individual_mode"][value="quick30"]').check();
+  await expect(page.locator('[data-estimate-gross]')).toContainText(/88[ .]?000/);
+  await expect(page.locator('[data-estimate-gross]')).toContainText(/Ft|HUF/);
+  await expect(page.locator('input[name="estimate_gross"]')).toHaveValue('220');
+  await expect(page.locator('input[name="estimate_display_currency"]')).toHaveValue('HUF');
+  await expect(page.locator('input[name="estimate_display_rate"]')).toHaveValue('400');
+  await expect(page.locator('input[name="estimate_display_gross"]')).toHaveValue('88000');
+  await expect(page.locator('[data-vat-note]')).toContainText('1 EUR = 400 HUF');
+});

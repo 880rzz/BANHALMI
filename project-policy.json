@@ -1,11 +1,15 @@
 {
   "documentType": "banhalmi-project-policy",
-  "schemaVersion": "2026-08-03-v2",
-  "dateModified": "2026-08-03T07:05:00+02:00",
+  "schemaVersion": "2026-08-05-v3-eur-huf",
+  "dateModified": "2026-08-05T23:48:00+02:00",
   "canonicalOrganization": "https://www.norbertbanhalmi.com/#organization",
   "canonicalPerson": "https://www.norbertbanhalmi.com/about/",
   "canonicalPolicyGraph": "https://www.norbertbanhalmi.com/project-policy.jsonld",
-  "languages": ["en", "hu-HU", "de-AT"],
+  "languages": [
+    "en",
+    "hu-HU",
+    "de-AT"
+  ],
   "appliesTo": [
     "executive portrait photography",
     "brand photography",
@@ -17,7 +21,8 @@
     "estimateStatus": "Calculator and website figures are non-binding preliminary estimates. The accepted written offer defines the final scope and price.",
     "taxDisplay": "Net amount, applicable VAT and gross total are shown separately. Austrian VAT remains in the estimate until another lawful treatment has been verified.",
     "additionalWork": "Work outside the accepted scope requires written approval before it is charged.",
-    "travel": "On-site work in Vienna and Budapest is included where stated. Other travel or production costs are recorded in advance in the written offer."
+    "travel": "On-site work in Vienna and Budapest is included where stated. Other travel or production costs are recorded in advance in the written offer.",
+    "hungarianOrientationCurrency": "The Hungarian calculator displays HUF at a fixed planning conversion of 1 EUR = 400 HUF. EUR remains the canonical base price; the accepted written offer records the contractual currency."
   },
   "paymentAndInvoicing": {
     "bookingPayment": "A booking payment applies only where the accepted written offer specifies one; no universal percentage is inferred.",
@@ -105,6 +110,7 @@
     "Do not treat previews or working files as approved publication assets.",
     "Do not promise permanent storage or automatic RAW-file delivery.",
     "Do not treat Vienna and Budapest as separate companies or separate brand entities.",
-    "Do not convert preliminary estimates into contractual prices."
+    "Do not convert preliminary estimates into contractual prices.",
+    "Do not treat the fixed 1 EUR = 400 HUF Hungarian planning conversion as a live exchange rate or as an automatic promise of invoice currency."
   ]
 }

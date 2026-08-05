@@ -21,7 +21,8 @@ for (const required of [
   'Auftraggeberdaten',
   'előzetes, nem kötelező érvényű kalkuláció',
   'preliminary, non-binding estimate',
-  'vorläufige, unverbindliche Kalkulation'
+  'vorläufige, unverbindliche Kalkulation',
+  'Fix tervezési árfolyam: 1 EUR = 400 HUF'
 ]) {
   assert.ok(source.includes(required), `Missing required PDF content: ${required}`);
 }
