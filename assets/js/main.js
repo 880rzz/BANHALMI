@@ -1140,10 +1140,12 @@
   });
 })();
 
-/* Hero hover-to-play video.
-   CSS owns the crossfade opacity (hover:hover + reduced-motion already
-   scoped there); this only starts and stops playback, and only on pointers
-   that actually support hover, so touch never triggers an unwanted fetch. */
+/* Hero hover-to-play video, with a tap-to-play fallback for touch.
+   On hover-capable pointers the crossfade is CSS-only (hover:hover, see
+   style.css) and this just starts/stops playback on mouseenter/mouseleave.
+   On touch, there is no hover, so a tap toggles a .is-tapped class that
+   CSS fades in the same way, and JS starts/pauses the video to match. A
+   second tap, or a tap anywhere outside the figure, stops it again. */
 (function(){
   var figure=document.querySelector('.hero.hero-image-first .hero-figure');
   if(!figure)return;
@@ -1151,13 +1153,38 @@
   if(!video)return;
   var canHover=!window.matchMedia||window.matchMedia('(hover:hover)').matches;
   var reducedMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!canHover||reducedMotion)return;
-  figure.addEventListener('mouseenter',function(){
+  if(reducedMotion)return;
+
+  function play(){
     try{video.currentTime=0;}catch(e){}
     var playPromise=video.play();
     if(playPromise&&playPromise.catch)playPromise.catch(function(){});
-  });
-  figure.addEventListener('mouseleave',function(){
+  }
+  function stop(){
     video.pause();
+  }
+
+  if(canHover){
+    figure.addEventListener('mouseenter',play);
+    figure.addEventListener('mouseleave',stop);
+    return;
+  }
+
+  figure.addEventListener('click',function(event){
+    event.preventDefault();
+    var isPlaying=figure.classList.contains('is-tapped');
+    if(isPlaying){
+      figure.classList.remove('is-tapped');
+      stop();
+    }else{
+      figure.classList.add('is-tapped');
+      play();
+    }
+  });
+  document.addEventListener('click',function(event){
+    if(figure.classList.contains('is-tapped')&&!figure.contains(event.target)){
+      figure.classList.remove('is-tapped');
+      stop();
+    }
   });
 })();
