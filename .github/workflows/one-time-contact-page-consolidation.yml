@@ -1,0 +1,155 @@
+name: One-time contact page consolidation
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-time-contact-page-consolidation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  consolidate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Consolidate contact pathways in all languages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import re
+
+          pages = {
+              Path('contact/index.html'): 'Vienna and Budapest — one project system',
+              Path('hu/kapcsolat/index.html'): 'Bécs és Budapest — egyetlen projektrendszer',
+              Path('de-at/kontakt/index.html'): 'Wien und Budapest — ein Projektsystem',
+          }
+
+          upper_pattern = re.compile(
+              r'<section class="contact-quote-entry section-band contact-pathways">.*?</section>',
+              re.S,
+          )
+          selector_pattern = re.compile(
+              r'<section class="section-band next-step-selector" data-conversion-path="stage5">.*?</section>',
+              re.S,
+          )
+
+          for page, removed_title in pages.items():
+              html = page.read_text(encoding='utf-8')
+              upper_matches = upper_pattern.findall(html)
+              selector_matches = selector_pattern.findall(html)
+              if len(upper_matches) != 1:
+                  raise SystemExit(f'{page}: expected one upper contact-pathways block, found {len(upper_matches)}')
+              if len(selector_matches) != 1:
+                  raise SystemExit(f'{page}: expected one lower next-step selector, found {len(selector_matches)}')
+
+              upper = upper_matches[0]
+              selector = selector_matches[0]
+              upper_pos = html.index(upper)
+              selector_pos = html.index(selector)
+              if selector_pos <= upper_pos:
+                  raise SystemExit(f'{page}: lower selector is not below the upper duplicate')
+
+              # Keep the preferred lower design/content, move it to the upper location,
+              # then remove its original lower occurrence.
+              html = html[:upper_pos] + selector + html[upper_pos + len(upper):]
+              second_selector_pos = html.find(selector, upper_pos + len(selector))
+              if second_selector_pos == -1:
+                  raise SystemExit(f'{page}: duplicated selector not found after moving preferred block')
+              html = html[:second_selector_pos] + html[second_selector_pos + len(selector):]
+
+              # Remove the redundant third responsibility card only; preserve the two
+              # named team-role cards and the surrounding section.
+              card_pattern = re.compile(
+                  r'<article class="card reveal"><h3>' + re.escape(removed_title) + r'</h3>.*?</article>',
+                  re.S,
+              )
+              html, card_count = card_pattern.subn('', html, count=1)
+              if card_count != 1:
+                  raise SystemExit(f'{page}: expected one redundant project-system card, found {card_count}')
+
+              page.write_text(html, encoding='utf-8')
+
+          audit_path = Path('tools/audit-contact-page-consolidation.mjs')
+          audit_path.write_text(r'''import fs from 'node:fs';
+          import path from 'node:path';
+          import process from 'node:process';
+
+          const root = process.cwd();
+          const pages = [
+            { file: 'contact/index.html', removedTitle: 'Vienna and Budapest — one project system' },
+            { file: 'hu/kapcsolat/index.html', removedTitle: 'Bécs és Budapest — egyetlen projektrendszer' },
+            { file: 'de-at/kontakt/index.html', removedTitle: 'Wien und Budapest — ein Projektsystem' }
+          ];
+          const failures = [];
+
+          for (const item of pages) {
+            const html = fs.readFileSync(path.join(root, item.file), 'utf8');
+            const selectors = html.match(/<section class="section-band next-step-selector" data-conversion-path="stage5">[\s\S]*?<\/section>/g) || [];
+            if (selectors.length !== 1) failures.push(`${item.file}: expected one next-step selector, found ${selectors.length}`);
+            if (html.includes('contact-quote-entry section-band contact-pathways')) failures.push(`${item.file}: obsolete duplicate contact-pathways block remains`);
+            if (html.includes(item.removedTitle)) failures.push(`${item.file}: redundant Vienna/Budapest project-system card remains`);
+
+            if (selectors.length === 1) {
+              const cardCount = (selectors[0].match(/<article class="card">/g) || []).length;
+              if (cardCount !== 3) failures.push(`${item.file}: next-step selector must contain three route cards, found ${cardCount}`);
+              const selectorPosition = html.indexOf(selectors[0]);
+              const teamPosition = html.indexOf('<section class="section project-team"');
+              const formPosition = html.indexOf('<section class="contact-form-section"');
+              if (selectorPosition === -1 || teamPosition === -1 || formPosition === -1 || selectorPosition > teamPosition || selectorPosition > formPosition) {
+                failures.push(`${item.file}: preferred selector is not in the upper contact position`);
+              }
+            }
+
+            const teamMatch = html.match(/<section class="section-band team-role-clarity" data-team-roles="stage8">[\s\S]*?<\/section>/);
+            if (!teamMatch) {
+              failures.push(`${item.file}: team-role section missing`);
+            } else {
+              const teamCards = (teamMatch[0].match(/<article class="card reveal">/g) || []).length;
+              if (teamCards !== 2) failures.push(`${item.file}: team-role section must contain two named responsibility cards, found ${teamCards}`);
+            }
+          }
+
+          if (failures.length) {
+            console.error(failures.join('\n'));
+            process.exit(1);
+          }
+          console.log('Contact page consolidation audit passed for EN, HU and DE.');
+          ''', encoding='utf-8')
+
+          package_path = Path('package.json')
+          package = json.loads(package_path.read_text(encoding='utf-8'))
+          scripts = package.setdefault('scripts', {})
+          command = 'node tools/audit-contact-page-consolidation.mjs'
+          audit = scripts['audit']
+          if command not in audit:
+              marker = 'node tools/audit-hero-video-parity.mjs'
+              if marker not in audit:
+                  raise SystemExit('package.json audit insertion marker missing')
+              audit = audit.replace(marker, marker + ' && ' + command, 1)
+          scripts['audit'] = audit
+          scripts['audit:contact-consolidation'] = command
+          package_path.write_text(json.dumps(package, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+      - name: Remove one-time workflow before audits
+        run: rm -f .github/workflows/one-time-contact-page-consolidation.yml
+      - name: Install dependencies
+        run: npm install
+      - name: Run contact consolidation audit
+        run: npm run audit:contact-consolidation
+      - name: Run complete deterministic audit
+        run: npm run audit
+      - name: Commit and publish
+        run: |
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Consolidate contact pathways in all languages"
+          git push
