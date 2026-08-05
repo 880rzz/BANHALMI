@@ -53,6 +53,18 @@ for (const file of pages) {
   for (const pattern of banned) if (pattern.test(text)) failures.push(`${path.relative(root, file)}: non-Hungarian or obsolete visible phrase remains: ${pattern}`);
 }
 
+for (const file of pages) {
+  const html = fs.readFileSync(file, 'utf8');
+  const hasServiceFooter = html.includes('<summary>Szolgáltatások</summary>');
+  if (hasServiceFooter && !html.includes('>Üzleti és vezetői portré<')) failures.push(`${path.relative(root, file)}: approved Hungarian portrait footer label missing`);
+  if (hasServiceFooter && !html.includes('>Brandfotózás és vizuális pozicionálás<')) failures.push(`${path.relative(root, file)}: approved Hungarian brand footer label missing`);
+  if (html.includes('>üzleti portré &amp; vezetői portré<')) failures.push(`${path.relative(root, file)}: obsolete portrait footer label remains`);
+  if (html.includes('>Brand &amp; vizuális pozicionálás<')) failures.push(`${path.relative(root, file)}: obsolete brand footer label remains`);
+}
+const archiveHtml = read('hu/archivum/index.html');
+if (archiveHtml.includes('Best of')) failures.push('archive metadata: obsolete English Best of phrase remains');
+if (!archiveHtml.includes('Könyvek, kiállítások, média és válogatás')) failures.push('archive metadata: approved Hungarian title phrase missing');
+
 const homepage = read('hu/index.html');
 for (const phrase of [
   'Olyan képeket készítek, amelyek már az első találkozás előtt érzékeltetik egy vezető vagy egy szervezet karakterét.',
