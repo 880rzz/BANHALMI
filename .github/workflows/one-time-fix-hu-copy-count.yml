@@ -1,0 +1,32 @@
+name: One-time Hungarian page-count fix
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-time-fix-hu-copy-count.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Correct page count and retrigger refinement
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('.github/workflows/one-time-hu-copy-refinement.yml')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace("if len(hu_pages) != 20:", "if len(hu_pages) != 19:")
+          text = text.replace("Expected 20 Hungarian pages", "Expected 19 Hungarian pages")
+          text = text.replace("if (pages.length !== 20)", "if (pages.length !== 19)")
+          path.write_text(text, encoding='utf-8')
+          PY
+          rm -f .github/workflows/one-time-fix-hu-copy-count.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Correct Hungarian page count for copy refinement"
+          git push
