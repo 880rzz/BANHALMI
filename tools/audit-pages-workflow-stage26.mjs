@@ -74,6 +74,7 @@ for (const token of [
   'ACTIONS_ID_TOKEN_REQUEST_TOKEN',
   '/pages/deployments',
   'artifact_id: artifactId',
+  'const buildVersion = sha;',
   'pages_build_version: buildVersion',
   'oidc_token: oidcToken',
   "currentStatus === 'succeed'",
@@ -89,18 +90,19 @@ assert(
   `${clientFile}: JavaScript syntax check failed: ${syntaxCheck.stderr || syntaxCheck.stdout}`
 );
 
+assert(!client.includes('`${sha}-${runId}-${runAttempt}`'), `${clientFile}: Pages build version must be the real commit SHA`);
 assert(!/contents:\s*write/i.test(workflow), `${workflowFile}: source write permission is forbidden`);
 assert(!/git\s+(push|commit)/i.test(workflow), `${workflowFile}: source mutation command is forbidden`);
 assert(!/cancel-in-progress:\s*true/i.test(workflow), `${workflowFile}: active production deployment must not be cancelled by a newer run`);
 assert(!workflow.includes('actions/deploy-pages@'), `${workflowFile}: capped deploy-pages action must not be used`);
 assert(!client.includes('/cancel'), `${clientFile}: deployment cancellation endpoint is forbidden`);
-assert(!client.includes('pages/deployments/${deploymentId}/cancel'), `${clientFile}: deployment cancellation call is forbidden`);
 assert(workflow.includes('Symbolic links are forbidden in the Pages artifact.'), `${workflowFile}: symlink rejection is missing`);
 
 for (const token of [
   'deployment_queued',
   '600000',
   'direct Pages API client',
+  'verified commit SHA',
   'does not cancel',
   'GitHub Actions'
 ]) {
@@ -113,4 +115,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('Stage 26 Pages API deployment contract passed: audited, read-only and non-cancelling.');
+console.log('Stage 26 Pages API deployment contract passed: audited, SHA-bound and non-cancelling.');
