@@ -92,14 +92,12 @@ for (const obsolete of ['Headshot, executive portré', 'C-Level események', "ct
   if (menu.includes(obsolete)) failures.push(`mega-menu: obsolete Hungarian copy remains: ${obsolete}`);
 }
 
-const homepageGenerator = read('.human-voice/homepage-rewrite.py');
-const huSource = homepageGenerator.split("'hu/index.html'")[1]?.split("'de-at/index.html'")[0] || homepageGenerator;
-for (const obsolete of ['meeting el\\u0151tt', 'board meeting', 'headshot lesz bel\\u0151le']) {
-  if (huSource.includes(obsolete)) failures.push(`homepage generator: obsolete Hungarian source remains: ${obsolete}`);
+for (const obsolete of ['meeting előtt', 'board meeting', 'headshot lesz belőle']) {
+  if (visibleBody(homepage).includes(obsolete)) failures.push(`homepage: obsolete Hungarian visible source remains: ${obsolete}`);
 }
 
 if (failures.length) {
   console.error(failures.map((failure) => `✗ ${failure}`).join('\n'));
   process.exit(1);
 }
-console.log(`Hungarian copy audit passed: ${pages.length} pages, shared menu and regeneration sources checked.`);
+console.log(`Hungarian copy audit passed: ${pages.length} published pages and the shared menu checked.`);
