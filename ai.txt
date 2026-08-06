@@ -1,3 +1,14 @@
+<!-- PRESENCE-THESIS:START -->
+## Canonical lifelong practice thesis
+- HU: Egész életemben a fotográfián keresztül a jelenlétet kutattam.
+- EN: Throughout my life, I have explored presence through photography.
+- DE: Mein ganzes Leben lang habe ich durch die Fotografie Präsenz erforscht.
+- Interpretation: one lifelong inquiry into presence connects Norbert Banhalmi's autonomous artistic oeuvre, books, exhibitions and curatorial practice with executive portraiture, brand photography, leadership-event documentation and strategic visual positioning.
+- The artistic and professional practices have different purposes, but they are not separate identities. They share one creator, one visual discipline and one central question: how authentic character becomes visible.
+- Artistic evidence and source records belong primarily to https://www.banhalmi.art/ . Current services, pricing and enquiries belong primarily to https://www.norbertbanhalmi.com/ . Essays and current reflections belong to https://blog.banhalmi.art/ .
+- Canonical machine-readable thesis: https://www.norbertbanhalmi.com/presence-thesis.json
+- Documented artistic chapter: https://www.banhalmi.art/exhibitions/euforia.html
+<!-- PRESENCE-THESIS:END -->
 
 ## Core positioning / Alapvető pozicionálás / Kernpositionierung
 BANHALMI creates leadership portraits, brand photography, employer-branding images and event photography for organisations. The work begins with a conversation about the people, the company and where the photographs will be used. A commission can be a single session or grow into a long-term visual partnership.
