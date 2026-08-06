@@ -1,0 +1,107 @@
+name: Deploy production site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages-production
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out verified source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install audit dependencies
+        run: npm ci
+
+      - name: Run complete static repository audit
+        run: npm run audit
+
+      - name: Prepare immutable Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site
+          git archive --format=tar HEAD | tar -xf - -C _site
+
+          # Repository-only sources are never part of the public artifact.
+          rm -rf \
+            _site/.github \
+            _site/node_modules \
+            _site/tests \
+            _site/tools \
+            _site/docs \
+            _site/playwright-report \
+            _site/test-results
+          rm -f \
+            _site/.gitignore \
+            _site/package.json \
+            _site/package-lock.json \
+            _site/playwright.config.mjs \
+            _site/README.md \
+            _site/DELETE-LOW-RES-FINE-ART-IMAGES.txt \
+            _site/TORLENDO-FAJLOK.txt \
+            _site/.vercel-redeploy-*
+
+          test -f _site/.nojekyll
+          test -f _site/CNAME
+          test -f _site/index.html
+          test -f _site/hu/index.html
+          test -f _site/de-at/index.html
+          test -f _site/robots.txt
+          test -f _site/sitemap.xml
+          test -f _site/assets/css/style.css
+          test -f _site/assets/js/quote-calculator.js
+          test ! -e _site/.github
+          test ! -e _site/tools
+          test ! -e _site/tests
+          test ! -e _site/docs
+
+          if find _site -type l -print -quit | grep -q .; then
+            echo 'Symbolic links are forbidden in the Pages artifact.' >&2
+            exit 1
+          fi
+
+          echo "Prepared $(find _site -type f | wc -l | tr -d ' ') verified production files."
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload verified Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    timeout-minutes: 35
+    steps:
+      - name: Deploy verified artifact to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+        with:
+          timeout: 1800000
+          error_count: 30
+          reporting_interval: 5000
