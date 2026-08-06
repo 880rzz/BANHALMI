@@ -192,5 +192,34 @@
         "result": "Personal fine-art work created with respectful direction, consent and discretion"
       }
     ]
+  },
+  "servicePageFramework": {
+    "appliesTo": [
+      "Portrait Photography",
+      "Brand Photography",
+      "C-Level Event Photography"
+    ],
+    "presentation": "Commercial project terms remain fully available in one initially collapsed native details disclosure on each service page.",
+    "includes": [
+      "project fee and licensing",
+      "delivery system",
+      "file retention",
+      "image rights",
+      "governance and confidentiality",
+      "booking and contingency"
+    ],
+    "accessibility": "Native details and summary semantics support keyboard and assistive-technology access.",
+    "fineArtBoundary": "Fine Art Photography keeps its separate consent, privacy and artistic-process model rather than inheriting the corporate framework drawer.",
+    "semanticRepairs": {
+      "pages": [
+        "faq/index.html",
+        "terms-conditions/index.html",
+        "hu/gyik/index.html",
+        "hu/aszf/index.html",
+        "de-at/faq/index.html",
+        "de-at/agb/index.html"
+      ],
+      "rule": "Governance and booking sections remain inside the main content element on service, FAQ and terms pages."
+    }
   }
 }

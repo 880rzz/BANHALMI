@@ -30,6 +30,9 @@ for(const [relative,heading,approver,confidential,permission] of pages){
  if((section.match(/<article class="card reveal">/g)||[]).length!==4) errors.push(`${relative}: expected four governance cards`);
  if(!/single consolidated feedback|egyetlen összevont visszajelzés|gebündelte Rückmeldung/.test(section)) errors.push(`${relative}: consolidated feedback rule missing`);
  if(!/third part|harmadik fél|Dritte/.test(section)) errors.push(`${relative}: third-party rule missing`);
+ const marker=html.indexOf('data-governance-confidentiality="stage10"');
+ const mainClose=html.lastIndexOf('</main>');
+ if(marker<0 || marker>mainClose) errors.push(`${relative}: block must stay inside main`);
 }
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
 console.log('Stage-ten governance and confidentiality audit passed across fifteen pages and three languages.');
