@@ -1,0 +1,72 @@
+name: One-time service-card decisions stage 4
+
+on:
+  push:
+    branches:
+      - agent/service-card-decisions-stage4
+    paths:
+      - scripts/_migrate-service-card-decisions-stage4.mjs
+      - .github/workflows/_service-card-decisions-stage4.yml
+
+permissions:
+  contents: write
+
+jobs:
+  migrate-audit-and-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Check out protected branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/service-card-decisions-stage4
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Apply focused service-card migration
+        run: node scripts/_migrate-service-card-decisions-stage4.mjs
+
+      - name: Install audit dependencies
+        run: npm ci
+
+      - name: Run complete repository audit
+        run: npm run audit
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run browser regression suite
+        run: npm run test:browser
+
+      - name: Verify rendered multilingual cards and structured data
+        shell: bash
+        run: |
+          python3 -m http.server 4173 >/tmp/banhalmi-stage4-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          sleep 2
+          curl -fsS http://127.0.0.1:4173/ | grep -F 'For leaders, founders and experts who need one credible visual identity'
+          curl -fsS http://127.0.0.1:4173/hu/ | grep -F 'Vezetőknek, alapítóknak és szakértőknek'
+          curl -fsS http://127.0.0.1:4173/de-at/ | grep -F 'Für Führungskräfte, Gründer:innen und Expert:innen'
+          curl -fsS http://127.0.0.1:4173/services.json | grep -F 'serviceOutput'
+          curl -fsS http://127.0.0.1:4173/ecosystem.json | grep -F 'serviceDecisionModel'
+
+      - name: Verify temporary writers are gone
+        run: |
+          test ! -e scripts/_migrate-service-card-decisions-stage4.mjs
+          test ! -e .github/workflows/_service-card-decisions-stage4.yml
+          git diff --check
+
+      - name: Commit verified stage
+        shell: bash
+        run: |
+          git config user.name "BANHALMI audit automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Make service cards answer who, when and why"
+          git push origin HEAD:agent/service-card-decisions-stage4
