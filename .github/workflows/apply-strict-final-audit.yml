@@ -2,7 +2,7 @@ name: Apply strict final web audit fixes
 
 on:
   push:
-    branches: [agent/strict-final-web-audit]
+    branches: [main]
 
 permissions:
   contents: write
@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: agent/strict-final-web-audit
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -39,6 +39,8 @@ jobs:
           for a in ['node tools/audit-static-legacy-routes-stage27.mjs','node tools/audit-first-principles-stage28.mjs']:
               if a not in cmd: cmd+=' && '+a
           pkg['scripts']['audit']=cmd; pkg['scripts']['audit:legacy-routes']='node tools/audit-static-legacy-routes-stage27.mjs'; pkg['scripts']['audit:first-principles']='node tools/audit-first-principles-stage28.mjs'; Path('package.json').write_text(json.dumps(pkg,ensure_ascii=False,indent=2)+'\n')
+          for f in ['docs/strict-final-audit-placeholder.md','docs/strict-final-audit-placeholder-2.md','docs/strict-final-audit-placeholder-3.md','docs/DO-NOT-USE.md','docs/STOP.md','docs/FINAL-TEMP.md','docs/TEMP-LAST.md','docs/TEMP-RECOVERY.md']:
+              Path(f).unlink(missing_ok=True)
           Path('.github/workflows/apply-strict-final-audit.yml').unlink()
           PY
       - run: npm install --ignore-scripts
@@ -50,4 +52,4 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -A
           git commit -m "Close legacy routes and enforce first-principles clarity"
-          git push origin HEAD:agent/strict-final-web-audit
+          git push origin HEAD:main
