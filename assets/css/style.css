@@ -3710,3 +3710,24 @@ html[lang^="hu"] .quote-total{font-variant-numeric:tabular-nums;font-size:clamp(
 #selected-work,#next-step{scroll-margin-top:92px;}
 @media (max-width:640px){.service-hero-actions{align-items:flex-start;margin-top:24px;margin-bottom:28px;}}
 /* SERVICE-CONVERSION-PATH:END */
+
+/* FINE-ART-PRIVATE-JOURNEY:START */
+.fine-art-private-actions{margin:28px 0 32px;}
+#fine-art-selected-work,#private-conversation{scroll-margin-top:92px;}
+.fine-art-archive-drawer{margin:42px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.fine-art-archive-drawer > summary{list-style:none;cursor:pointer;padding:25px 0;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:18px;}
+.fine-art-archive-drawer > summary::-webkit-details-marker{display:none;}
+.fine-art-archive-summary-copy{display:grid;gap:4px;min-width:0;}
+.fine-art-archive-summary-copy small{color:var(--gold-deep);font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+.fine-art-archive-summary-copy strong{color:var(--navy);font-family:var(--font-display);font-size:clamp(1.08rem,2vw,1.34rem);line-height:1.22;letter-spacing:-.014em;}
+.fine-art-archive-action{color:var(--muted);font-size:.9rem;white-space:nowrap;}
+.fine-art-archive-toggle{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--navy);font-size:1.35rem;line-height:1;transition:transform .2s ease,border-color .2s ease;}
+.fine-art-archive-drawer > summary:hover .fine-art-archive-toggle{border-color:var(--gold-deep);}
+.fine-art-archive-drawer[open] > summary{border-bottom:1px solid var(--line);}
+.fine-art-archive-drawer[open] .fine-art-archive-toggle{transform:rotate(45deg);}
+.fine-art-archive-content{padding:34px 0 8px;}
+.fine-art-extended-grid{margin-top:0;}
+#archive-references .fine-art-resource-actions{margin-top:30px;}
+@media (max-width:720px){.fine-art-archive-drawer > summary{grid-template-columns:minmax(0,1fr) auto;}.fine-art-archive-action{display:none;}}
+@media (max-width:640px){.fine-art-private-actions{align-items:flex-start;margin-top:24px;margin-bottom:28px;}}
+/* FINE-ART-PRIVATE-JOURNEY:END */

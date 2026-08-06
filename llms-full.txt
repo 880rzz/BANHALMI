@@ -1,3 +1,13 @@
+<!-- FINE-ART-PRIVATE-JOURNEY:START -->
+## Fine Art private-client journey
+- Fine Art Photography is a separate consent-led service path for personal work about identity, biography and the body.
+- The hero first offers the existing private-conversation route and a link to selected personal work.
+- Fine-art portraits and body studies remain visible; the broader urban, architectural and travel archive remains complete inside an initially collapsed native archive section.
+- Every original gallery image, description, order, 18+ preview and lightbox function is preserved.
+- Localized Press and Blog links remain exact supporting archive resources inside the archive-reference section, not substitutes for private contact.
+- Publication is never automatic; boundaries, consent, privacy and image selection remain part of the process.
+<!-- FINE-ART-PRIVATE-JOURNEY:END -->
+
 <!-- SERVICE-PAGE-FRAMEWORK:START -->
 ## Service-page project framework
 - Portrait, Brand and C-Level Event service pages keep fee, delivery, file-retention, image-rights, confidentiality and contingency information fully available in one initially collapsed native details section.

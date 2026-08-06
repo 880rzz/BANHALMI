@@ -244,5 +244,27 @@
     ],
     "duplicateCtaRemoved": true,
     "principle": "The page invites orientation early, provides evidence before commitment and asks for one final decision only."
+  },
+  "fineArtPrivateJourney": {
+    "appliesTo": "Fine Art Photography",
+    "principle": "A consent-led private commission is the primary service path; public archive resources remain available as supporting context rather than replacing the enquiry route.",
+    "heroChoice": {
+      "primary": "Anchor to the existing private-conversation CTA",
+      "secondary": "Anchor to selected personal work"
+    },
+    "visibleSelection": "Fine-art portraits and studies of identity, biography and the body remain visible.",
+    "extendedArchive": "Existing urban, architectural and travel studies remain complete, searchable and lightbox-enabled inside one initially closed native disclosure.",
+    "archiveResources": [
+      "localized Press archive",
+      "localized BANHALMI journal"
+    ],
+    "safeguards": [
+      "clear boundaries",
+      "consent",
+      "privacy",
+      "joint image selection",
+      "18+ self-declaration gate for intimate previews"
+    ],
+    "commercialFrameworkBoundary": "Fine Art retains its own privacy and consent path rather than inheriting the corporate three-way selector or project-framework drawer."
   }
 }
