@@ -213,7 +213,7 @@ for(const [file,cards] of Object.entries(expected)){
   if(!section)errors.push(file+': service section missing');
   if((section.match(/<a class="card reveal"/g)||[]).length!==4)errors.push(file+': card count changed');
   cards.forEach((card,index)=>{
-    const exact=`<a class="card reveal" href="${card.href}"><h3>${card.title}</h3><p>${card.description}</p><span class="more">${card.cta}</span></a>`;
+    const exact='<a class="card reveal" href="'+card.href+'"><h3>'+card.title+'</h3><p>'+card.description+'</p><span class="more">'+card.cta+'</span></a>';
     if(!section.includes(exact))errors.push(file+': exact card contract missing at position '+(index+1)+' '+card.title);
     for(const signal of card.signals)if(!card.description.includes(signal))errors.push(file+': decision signal missing from '+card.title+' '+signal);
   });
