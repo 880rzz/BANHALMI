@@ -1,0 +1,78 @@
+name: One-time Fine Art private journey stage 7
+
+on:
+  push:
+    branches:
+      - agent/fine-art-private-journey-stage7
+    paths:
+      - scripts/_migrate-fine-art-private-journey-stage7.mjs
+      - .github/workflows/_fine-art-private-journey-stage7.yml
+
+permissions:
+  contents: write
+
+jobs:
+  migrate-audit-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out protected branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/fine-art-private-journey-stage7
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Verify migration syntax
+        run: node --check scripts/_migrate-fine-art-private-journey-stage7.mjs
+
+      - name: Apply focused Fine Art migration
+        run: node scripts/_migrate-fine-art-private-journey-stage7.mjs
+
+      - name: Verify generated JavaScript syntax
+        run: |
+          node --check tools/audit-fine-art-press-blog-ctas.mjs
+          node --check tools/audit-fine-art-private-journey-stage23.mjs
+          node --check tests/fine-art-private-journey.spec.mjs
+
+      - name: Install audit dependencies
+        run: npm install
+
+      - name: Run complete repository audit
+        run: npm run audit
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run full browser regression suite
+        run: npm run test:browser
+
+      - name: Verify Fine Art contract directly
+        run: |
+          node tools/audit-fine-art-press-blog-ctas.mjs
+          node tools/audit-fine-art-private-journey-stage23.mjs
+
+      - name: Remove temporary writers
+        run: |
+          rm scripts/_migrate-fine-art-private-journey-stage7.mjs
+          rm .github/workflows/_fine-art-private-journey-stage7.yml
+
+      - name: Verify temporary writers are gone
+        run: |
+          test ! -e scripts/_migrate-fine-art-private-journey-stage7.mjs
+          test ! -e .github/workflows/_fine-art-private-journey-stage7.yml
+          test "$(find .github/workflows -maxdepth 1 -type f | wc -l)" -eq 4
+          git diff --check
+
+      - name: Commit verified stage
+        run: |
+          git config user.name "BANHALMI audit automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && { echo "No verified changes to commit"; exit 1; }
+          git commit -m "Clarify the Fine Art private journey"
+          git push origin HEAD:agent/fine-art-private-journey-stage7
