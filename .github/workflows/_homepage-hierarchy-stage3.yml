@@ -1,0 +1,71 @@
+name: One-time homepage hierarchy stage 3
+
+on:
+  push:
+    branches:
+      - agent/homepage-hierarchy-stage3
+    paths:
+      - scripts/_migrate-homepage-hierarchy-stage3.mjs
+      - .github/workflows/_homepage-hierarchy-stage3.yml
+
+permissions:
+  contents: write
+
+jobs:
+  migrate-audit-and-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Check out protected branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/homepage-hierarchy-stage3
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Apply focused hierarchy migration
+        run: node scripts/_migrate-homepage-hierarchy-stage3.mjs
+
+      - name: Install audit dependencies
+        run: npm ci
+
+      - name: Run complete repository audit
+        run: npm run audit
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run browser regression suite
+        run: npm run test:browser
+
+      - name: Verify the rendered multilingual decision path
+        shell: bash
+        run: |
+          python3 -m http.server 4173 >/tmp/banhalmi-stage3-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          sleep 2
+          curl -fsS http://127.0.0.1:4173/ | grep -F 'One visual discipline, four clear ways to work together.'
+          curl -fsS http://127.0.0.1:4173/hu/ | grep -F 'Egy vizuális szemlélet, négy egyértelmű együttműködési terület.'
+          curl -fsS http://127.0.0.1:4173/de-at/ | grep -F 'Eine visuelle Disziplin, vier klare Formen der Zusammenarbeit.'
+          curl -fsS http://127.0.0.1:4173/ecosystem.json | grep -F 'homepageDecisionPath'
+
+      - name: Verify temporary writers are gone
+        run: |
+          test ! -e scripts/_migrate-homepage-hierarchy-stage3.mjs
+          test ! -e .github/workflows/_homepage-hierarchy-stage3.yml
+          git diff --check
+
+      - name: Commit verified stage
+        shell: bash
+        run: |
+          git config user.name "BANHALMI audit automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Clarify the multilingual homepage decision path"
+          git push origin HEAD:agent/homepage-hierarchy-stage3
