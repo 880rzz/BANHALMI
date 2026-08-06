@@ -6,6 +6,7 @@ on:
       - agent/service-framework-stage5
     paths:
       - scripts/_migrate-service-framework-stage5.mjs
+      - scripts/_repair-main-semantics-stage5.mjs
       - .github/workflows/_service-framework-stage5.yml
 
 permissions:
@@ -28,7 +29,9 @@ jobs:
           cache: npm
 
       - name: Apply focused service framework migration
-        run: node scripts/_migrate-service-framework-stage5.mjs
+        run: |
+          node scripts/_migrate-service-framework-stage5.mjs
+          node scripts/_repair-main-semantics-stage5.mjs
 
       - name: Install audit dependencies
         run: npm install
@@ -45,7 +48,9 @@ jobs:
       - name: Verify framework contract directly
         run: |
           node tools/audit-service-framework-stage20.mjs
+          node tools/audit-main-semantics-stage21.mjs
           node --check tools/audit-service-framework-stage20.mjs
+          node --check tools/audit-main-semantics-stage21.mjs
           node --check tests/service-framework.spec.mjs
           node --check tools/audit-governance-confidentiality-stage10.mjs
           node --check tools/audit-booking-contingency-stage11.mjs
@@ -53,11 +58,13 @@ jobs:
       - name: Remove temporary writers
         run: |
           rm scripts/_migrate-service-framework-stage5.mjs
+          rm scripts/_repair-main-semantics-stage5.mjs
           rm .github/workflows/_service-framework-stage5.yml
 
       - name: Verify temporary writers are gone
         run: |
           test ! -e scripts/_migrate-service-framework-stage5.mjs
+          test ! -e scripts/_repair-main-semantics-stage5.mjs
           test ! -e .github/workflows/_service-framework-stage5.yml
           test "$(find .github/workflows -maxdepth 1 -type f | wc -l)" -eq 4
           git diff --check
