@@ -20,7 +20,7 @@ The repository includes a custom GitHub Actions workflow at `.github/workflows/p
 6. uploads the verified artifact through the official Pages artifact action;
 7. passes the exact uploaded `artifact_id` to a repository-owned direct Pages API client;
 8. obtains the same GitHub Actions OIDC token required by Pages;
-9. creates a unique deployment version for every run and rerun;
+9. binds `pages_build_version` to the verified commit SHA, matching the official Pages action;
 10. polls the deployment status for up to 45 minutes; and
 11. does not cancel a deployment when the local polling window expires.
 
@@ -39,4 +39,5 @@ The repository-owned client separates local monitoring from server-side cancella
 - Do not repeatedly create no-op commits to force new deployments.
 - Do not add `actions/deploy-pages` back while its hard maximum remains `600000` milliseconds.
 - Keep the previously successful production version active until a newer deployment reports `succeed`.
+- Every deployment must use the verified commit SHA as its `pages_build_version`.
 - If the API polling window expires, inspect the existing deployment before starting another run; the workflow intentionally does not cancel it.
