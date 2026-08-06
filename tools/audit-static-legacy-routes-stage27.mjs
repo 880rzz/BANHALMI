@@ -27,7 +27,13 @@ for (const [route, target] of Object.entries(redirects)) {
     continue;
   }
   const html = fs.readFileSync(file, 'utf8');
-  for (const required of ['noindex,follow', `href="${target}"`, `content="0;url=${target}"`, 'window.location.replace']) {
+  for (const required of [
+    'noindex,follow',
+    `href="${target}"`,
+    `content="0;url=${target}"`,
+    'window.location.replace',
+    '/assets/css/accessibility-stage14.css'
+  ]) {
     if (!html.includes(required)) errors.push(`${file}: missing ${required}`);
   }
 }
@@ -44,4 +50,4 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log(`Static redirect, canonical oeuvre and footer audit passed (${Object.keys(redirects).length} aliases).`);
+console.log(`Static redirect, accessibility, canonical oeuvre and footer audit passed (${Object.keys(redirects).length} aliases).`);
