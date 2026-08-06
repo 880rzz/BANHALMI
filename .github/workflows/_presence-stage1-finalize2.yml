@@ -1,0 +1,78 @@
+name: One-time presence thesis stage 1 verified finalization
+
+on:
+  push:
+    branches:
+      - agent/presence-stage1-banhalmi
+    paths:
+      - '.github/workflows/_presence-stage1-finalize2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate-verify-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/presence-stage1-banhalmi
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Align copy and audit generators
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          migration=Path('tools/_migrate-presence-stage1.mjs')
+          text=migration.read_text()
+
+          hu_old='az executive portrékkal'
+          hu_new='a vezetői portrékkal'
+          if text.count(hu_old) != 1:
+              raise SystemExit(f'Expected one Hungarian wording occurrence, found {text.count(hu_old)}')
+          text=text.replace(hu_old,hu_new)
+
+          join_old=r"errors.join('\n')"
+          join_new='errors.join(String.fromCharCode(10))'
+          if text.count(join_old) != 1:
+              raise SystemExit(f'Expected one generated newline join occurrence, found {text.count(join_old)}')
+          text=text.replace(join_old,join_new)
+          migration.write_text(text)
+
+          audit=Path('tools/audit-schema-geo-llm-stage16.mjs')
+          source=audit.read_text()
+          old_line="if (ecosystem.schemaVersion !== '2026-08-03-v4') errors.push('ecosystem.json schemaVersion not updated');"
+          new_lines='\n'.join([
+              "if (ecosystem.schemaVersion !== '2026-08-06-v5') errors.push('ecosystem.json schemaVersion not updated');",
+              "if (ecosystem.corePracticeThesis?.canonicalSource !== 'https://www.norbertbanhalmi.com/presence-thesis.json') errors.push('ecosystem.json canonical presence thesis missing');",
+              "if (!ecosystem.authoritativeMachineReadableSources?.includes('https://www.norbertbanhalmi.com/presence-thesis.json')) errors.push('ecosystem.json presence thesis source missing');"
+          ])
+          if source.count(old_line) != 1:
+              raise SystemExit(f'Expected one legacy ecosystem version assertion, found {source.count(old_line)}')
+          audit.write_text(source.replace(old_line,new_lines))
+          PY
+      - name: Apply additive presence-thesis migration
+        run: node tools/_migrate-presence-stage1.mjs
+      - name: Remove all temporary workflows before audit
+        run: |
+          rm -f .github/workflows/_presence-stage1-fix.yml
+          rm -f .github/workflows/_presence-stage1-finalize.yml
+          rm -f .github/workflows/_presence-stage1-finalize2.yml
+      - name: Install audit dependencies
+        run: npm install --ignore-scripts
+      - name: Run deterministic repository audit
+        run: npm run audit
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run browser regression suite
+        run: npm run test:browser
+      - name: Commit verified stage
+        run: |
+          git config user.name 'BANHALMI maintenance bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Establish presence as the core practice thesis'
+          git push origin HEAD:agent/presence-stage1-banhalmi
