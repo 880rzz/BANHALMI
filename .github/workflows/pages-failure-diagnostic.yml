@@ -1,0 +1,40 @@
+name: Read failed Pages deployment details
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/pages-failure-diagnostic.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read failed Pages deployment JSON
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          DEPLOYMENT_ID: 98570c3643652c0370ae160adbd6c7b7cc458637
+        shell: bash
+        run: |
+          set -euo pipefail
+          response_file="$(mktemp)"
+          status="$({ curl --silent --show-error \
+            --output "$response_file" \
+            --write-out '%{http_code}' \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/$REPOSITORY/pages/deployments/$DEPLOYMENT_ID"; } || true)"
+
+          echo "HTTP status: $status"
+          python -m json.tool "$response_file" || cat "$response_file"
+
+          if [[ "$status" != "200" ]]; then
+            echo "::error::Could not read the Pages deployment status endpoint."
+            exit 1
+          fi
