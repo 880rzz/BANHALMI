@@ -266,5 +266,36 @@
       "18+ self-declaration gate for intimate previews"
     ],
     "commercialFrameworkBoundary": "Fine Art retains its own privacy and consent path rather than inheriting the corporate three-way selector or project-framework drawer."
+  },
+  "quoteServiceContext": {
+    "publicParameter": "service",
+    "allowlist": {
+      "portrait": "individual",
+      "brand": "brand",
+      "event": "event",
+      "fine-art": "art"
+    },
+    "sourcePages": [
+      "portrait/index.html",
+      "lifestyle/index.html",
+      "event-photography/index.html",
+      "hu/portre/index.html",
+      "hu/brand/index.html",
+      "hu/rendezvenyfotozas/index.html",
+      "de-at/portrait/index.html",
+      "de-at/brand/index.html",
+      "de-at/eventfotografie/index.html",
+      "glamour/index.html",
+      "hu/muveszi-fotografia/index.html",
+      "de-at/fine-art/index.html"
+    ],
+    "scopedLinks": 21,
+    "behavior": "The allowlisted service context selects the matching existing quote category before the first calculator paint. Unknown or missing values leave the existing individual-portrait default unchanged.",
+    "continuity": [
+      "localized quote-page language switching",
+      "explicit category changes",
+      "submitted service_context field"
+    ],
+    "seoBoundary": "Canonical, hreflang, source language-switch and generic navigation/footer URLs remain query-free."
   }
 }

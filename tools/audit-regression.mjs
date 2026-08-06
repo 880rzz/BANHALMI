@@ -93,7 +93,7 @@ for(const file of ['/requestaquote/index.html','/hu/ajanlatkeres/index.html','/d
   const p=file.slice(1); const h=read(p);
   assert((h.match(/data-quote-root/g)||[]).length===1, `${p}: must have exactly one shared data-quote-root`);
   for(const sel of ['data-estimate-gross','data-estimate-net','data-estimate-vat']) assert((h.match(new RegExp(sel+'=\"\"','g'))||[]).length===1, `${p}: ${sel} must exist exactly once in visible summary`);
-  assert(h.includes('/assets/js/quote-calculator.js?v=20260717-four-services-root'), `${p}: quote calculator script must use current cache-busted asset`);
+  assert(h.includes('/assets/js/quote-calculator.js?v=20260806-service-context'), `${p}: quote calculator script must use current cache-busted asset`);
 }
 for(const file of htmlFiles()){
   const h=read(file);
