@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - 'agent/**'
+      - 'fix/**'
   pull_request:
     branches:
       - main
@@ -24,9 +25,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install
+          cache: npm
+      - run: npm ci
+      - name: Install Chromium for browser regressions
+        run: npx playwright install --with-deps chromium
       - name: Run deterministic audit
         run: npm run audit
+      - name: Run browser regression suite
+        run: npm run test:browser
       - name: Generate human voice copy report
         run: npm run audit:copy > human-voice-audit.json
       - name: Upload human voice copy report
