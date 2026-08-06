@@ -1,0 +1,406 @@
+{
+  "migration": "BANHALMI service-to-quote context — stage 24",
+  "executedAt": "2026-08-06T11:12:00+02:00",
+  "method": "Add an allowlisted public service query to only the service-specific quote links, map it to the existing internal quote category before the first calculator paint, preserve it across quote-page language switching and explicit category changes, and leave generic navigation, footer, canonical and hreflang URLs query-free.",
+  "publicToInternal": {
+    "portrait": "individual",
+    "brand": "brand",
+    "event": "event",
+    "fine-art": "art"
+  },
+  "pages": [
+    {
+      "file": "portrait/index.html",
+      "service": "portrait",
+      "category": "individual",
+      "quote": "/requestaquote/",
+      "kind": "commercial",
+      "contextualHref": "/requestaquote/?service=portrait",
+      "beforeSha256": "139916f2d4a46a163781c5c7af7f092e036e685f039423b7176ce454eb4d6997",
+      "afterSha256": "8cd7c1210f06572cc671242dc0b4775d3eddd9e995340ef60e3c30eff1c7a44c",
+      "beforeBytes": 223558,
+      "afterBytes": 223592,
+      "mutations": [
+        {
+          "location": "final three-way selector",
+          "oldHref": "/requestaquote/",
+          "newHref": "/requestaquote/?service=portrait",
+          "beforeSha256": "a125b49d023fb9137923723b4935c59341ae97d3eb39e974c769f9e555c66336",
+          "afterSha256": "d52914e0ab7cf99dbcee08e10351b25bd8953e6a861ac44e5466ebcde790ee6a"
+        },
+        {
+          "location": "project framework",
+          "oldHref": "/requestaquote/",
+          "newHref": "/requestaquote/?service=portrait",
+          "beforeSha256": "3fb7bfe5d3ba75cc573a5662144d4a5e3708cc893f90607aad724858ecc4e99a",
+          "afterSha256": "513c34b93b7ea52eb5b72871e6c43cd61cdf7c3c2a83f9a8f660f6139eb19ed2"
+        }
+      ],
+      "genericFooterLinkPreserved": true,
+      "metadataQueryFree": true
+    },
+    {
+      "file": "lifestyle/index.html",
+      "service": "brand",
+      "category": "brand",
+      "quote": "/requestaquote/",
+      "kind": "commercial",
+      "contextualHref": "/requestaquote/?service=brand",
+      "beforeSha256": "eb37773ee54e6e6cb333ff598cd6849fd108d05dd8cd801dea9ac10dbb6348c0",
+      "afterSha256": "f2b45044b368c82402df88959ee567c3470ccfce930249581b3116c32ff32f49",
+      "beforeBytes": 156111,
+      "afterBytes": 156139,
+      "mutations": [
+        {
+          "location": "final three-way selector",
+          "oldHref": "/requestaquote/",
+          "newHref": "/requestaquote/?service=brand",
+          "beforeSha256": "a125b49d023fb9137923723b4935c59341ae97d3eb39e974c769f9e555c66336",
+          "afterSha256": "00a144d58507f539ff931ef9f4b0c22e11d46c975941e33a5e82e58ef86ce420"
+        },
+        {
+          "location": "project framework",
+          "oldHref": "/requestaquote/",
+          "newHref": "/requestaquote/?service=brand",
+          "beforeSha256": "3fb7bfe5d3ba75cc573a5662144d4a5e3708cc893f90607aad724858ecc4e99a",
+          "afterSha256": "5f55ca8614057f8f5acd04be33b25f2f45f128df3b54f727187441ff1a893915"
+        }
+      ],
+      "genericFooterLinkPreserved": true,
+      "metadataQueryFree": true
+    },
+    {
+      "file": "event-photography/index.html",
+      "service": "event",
+      "category": "event",
+      "quote": "/requestaquote/",
+      "kind": "commercial",
+      "contextualHref": "/requestaquote/?service=event",
+      "beforeSha256": "7c2626f2d2d24814a0ae939fc6f9df0a6121f5b8927f69296fa381936d62e1ef",
+      "afterSha256": "ec15a7af6fdb7598e078668a5b6d3600da22abc04e5ef350b359f0a92be02b22",
+      "beforeBytes": 87781,
+      "afterBytes": 87809,
+      "mutations": [
+        {
+          "location": "final three-way selector",
+          "oldHref": "/requestaquote/",
+          "newHref": "/requestaquote/?service=event",
+          "beforeSha256": "a125b49d023fb9137923723b4935c59341ae97d3eb39e974c769f9e555c66336",
+          "afterSha256": "2c5d035fbbf764ea77aaca04a2ec7086b4bb1cce643bc6bebeb8fdd5db4561a7"
+        },
+        {
+          "location": "project framework",
+          "oldHref": "/requestaquote/",
+          "newHref": "/requestaquote/?service=event",
+          "beforeSha256": "3fb7bfe5d3ba75cc573a5662144d4a5e3708cc893f90607aad724858ecc4e99a",
+          "afterSha256": "52fd44522fd6fc805496157061b03b8c27a58cb14b661ecf90d36687bbd377fa"
+        }
+      ],
+      "genericFooterLinkPreserved": true,
+      "metadataQueryFree": true
+    },
+    {
+      "file": "hu/portre/index.html",
+      "service": "portrait",
+      "category": "individual",
+      "quote": "/hu/ajanlatkeres/",
+      "kind": "commercial",
+      "contextualHref": "/hu/ajanlatkeres/?service=portrait",
+      "beforeSha256": "b73e2d7d37dc26236d2668ad7df62592b0b40fc5b73a5bf64465e44b2ba96919",
+      "afterSha256": "d91bcb6d004401ce602ed150c10f3b73492a2d17954050cfc255cbcc0a407d97",
+      "beforeBytes": 237064,
+      "afterBytes": 237098,
+      "mutations": [
+        {
+          "location": "final three-way selector",
+          "oldHref": "/hu/ajanlatkeres/",
+          "newHref": "/hu/ajanlatkeres/?service=portrait",
+          "beforeSha256": "595d4af0dda93bc480f3beae0fa2f5ab30f6d93b09330b9ab4472720b71d79d3",
+          "afterSha256": "0054b23176b037515f1b4ba0e9d311a473712d43a1362eed4821bd28cb32cb94"
+        },
+        {
+          "location": "project framework",
+          "oldHref": "/hu/ajanlatkeres/",
+          "newHref": "/hu/ajanlatkeres/?service=portrait",
+          "beforeSha256": "3376cf6b8cdd34033a904ed9983a1e07b8e7e78463b120b152eb72dc6d4c12bc",
+          "afterSha256": "efeacd79cf46875873f27865ee8c5e259c05cf694951904d4285381bf1c54bd5"
+        }
+      ],
+      "genericFooterLinkPreserved": true,
+      "metadataQueryFree": true
+    },
+    {
+      "file": "hu/brand/index.html",
+      "service": "brand",
+      "category": "brand",
+      "quote": "/hu/ajanlatkeres/",
+      "kind": "commercial",
+      "contextualHref": "/hu/ajanlatkeres/?service=brand",
+      "beforeSha256": "5119e8ec63353913c52ab154228bed70627b300519330c32c13d894bb6ed5626",
+      "afterSha256": "c900b79951c55ffcae406eb8e3862cf54a766bc577270cb1f246ed8f5a5a8774",
+      "beforeBytes": 166170,
+      "afterBytes": 166198,
+      "mutations": [
+        {
+          "location": "final three-way selector",
+          "oldHref": "/hu/ajanlatkeres/",
+          "newHref": "/hu/ajanlatkeres/?service=brand",
+          "beforeSha256": "595d4af0dda93bc480f3beae0fa2f5ab30f6d93b09330b9ab4472720b71d79d3",
+          "afterSha256": "3890065cbc2dff5f1d7eb59008dcbd983d826a30fbd47d0f5b22207609b47047"
+        },
+        {
+          "location": "project framework",
+          "oldHref": "/hu/ajanlatkeres/",
+          "newHref": "/hu/ajanlatkeres/?service=brand",
+          "beforeSha256": "3376cf6b8cdd34033a904ed9983a1e07b8e7e78463b120b152eb72dc6d4c12bc",
+          "afterSha256": "65d1f5adf5a984b036050c9d1dc9747f0b98e4572b8ac516e1e4cef3d9eb4a79"
+        }
+      ],
+      "genericFooterLinkPreserved": true,
+      "metadataQueryFree": true
+    },
+    {
+      "file": "hu/rendezvenyfotozas/index.html",
+      "service": "event",
+      "category": "event",
+      "quote": "/hu/ajanlatkeres/",
+      "kind": "commercial",
+      "contextualHref": "/hu/ajanlatkeres/?service=event",
+      "beforeSha256": "c174294d1dec2d932124507cfe005f3b21bad3ae05b0e374380b9c65cdaa39dc",
+      "afterSha256": "f5267d64ab108c39d0d123b0e0be2b25aeb0b177507b42715f500011eb4d5a8e",
+      "beforeBytes": 92798,
+      "afterBytes": 92826,
+      "mutations": [
+        {
+          "location": "final three-way selector",
+          "oldHref": "/hu/ajanlatkeres/",
+          "newHref": "/hu/ajanlatkeres/?service=event",
+          "beforeSha256": "595d4af0dda93bc480f3beae0fa2f5ab30f6d93b09330b9ab4472720b71d79d3",
+          "afterSha256": "1f7c6fcf20c3100f038dacc294faecf6cccecb8c74795c5043c0a8d59c57802f"
+        },
+        {
+          "location": "project framework",
+          "oldHref": "/hu/ajanlatkeres/",
+          "newHref": "/hu/ajanlatkeres/?service=event",
+          "beforeSha256": "3376cf6b8cdd34033a904ed9983a1e07b8e7e78463b120b152eb72dc6d4c12bc",
+          "afterSha256": "cdb3c9ec0ff5338429be768583b5e7abd8c295dd964189f4bbd1bde20f785474"
+        }
+      ],
+      "genericFooterLinkPreserved": true,
+      "metadataQueryFree": true
+    },
+    {
+      "file": "de-at/portrait/index.html",
+      "service": "portrait",
+      "category": "individual",
+      "quote": "/de-at/anfrage/",
+      "kind": "commercial",
+      "contextualHref": "/de-at/anfrage/?service=portrait",
+      "beforeSha256": "29adbcab4a00a1fb62fe027452f8670ab23c5e3aa3ca9fb58acff432c079b7cf",
+      "afterSha256": "560440cd5d3b18f9830d4661792154f33d24611ed0cb4d83d675d0d2b855726e",
+      "beforeBytes": 231516,
+      "afterBytes": 231550,
+      "mutations": [
+        {
+          "location": "final three-way selector",
+          "oldHref": "/de-at/anfrage/",
+          "newHref": "/de-at/anfrage/?service=portrait",
+          "beforeSha256": "bbd48751e2b98cf66e86fac05de62c57c955185e2ddf567aee5aa4af28f9ed77",
+          "afterSha256": "db2190656b202f24b57c6c7373aba44045fdedf271293b419c73875f9ffa4cc9"
+        },
+        {
+          "location": "project framework",
+          "oldHref": "/de-at/anfrage/",
+          "newHref": "/de-at/anfrage/?service=portrait",
+          "beforeSha256": "4de901f5714438dc076cd40f3998302d097c95acb0f569ca0fefeb644336dd08",
+          "afterSha256": "faaac8e9f6ad08d92e355873d3a697c7c5191b24f42ff81ea7568875498363e3"
+        }
+      ],
+      "genericFooterLinkPreserved": true,
+      "metadataQueryFree": true
+    },
+    {
+      "file": "de-at/brand/index.html",
+      "service": "brand",
+      "category": "brand",
+      "quote": "/de-at/anfrage/",
+      "kind": "commercial",
+      "contextualHref": "/de-at/anfrage/?service=brand",
+      "beforeSha256": "f6216374481969e078a59ebc8f137c31831e637fffc1dc948e6d98fc1753c467",
+      "afterSha256": "4df629a97891c075c0c9f9269607acb17d531b37a216bb09b51d7c09a793b54e",
+      "beforeBytes": 162542,
+      "afterBytes": 162570,
+      "mutations": [
+        {
+          "location": "final three-way selector",
+          "oldHref": "/de-at/anfrage/",
+          "newHref": "/de-at/anfrage/?service=brand",
+          "beforeSha256": "bbd48751e2b98cf66e86fac05de62c57c955185e2ddf567aee5aa4af28f9ed77",
+          "afterSha256": "984c2ffa4dda0c4cfa02c45e327ff594ad593914c0e0ca285001b21d84d276b0"
+        },
+        {
+          "location": "project framework",
+          "oldHref": "/de-at/anfrage/",
+          "newHref": "/de-at/anfrage/?service=brand",
+          "beforeSha256": "4de901f5714438dc076cd40f3998302d097c95acb0f569ca0fefeb644336dd08",
+          "afterSha256": "48088932ee8ac680facf095780b3a6e715d40701cbc345b5eca9a47cead18959"
+        }
+      ],
+      "genericFooterLinkPreserved": true,
+      "metadataQueryFree": true
+    },
+    {
+      "file": "de-at/eventfotografie/index.html",
+      "service": "event",
+      "category": "event",
+      "quote": "/de-at/anfrage/",
+      "kind": "commercial",
+      "contextualHref": "/de-at/anfrage/?service=event",
+      "beforeSha256": "ac1e724000586b53d6b64d667a29e8841b5b7fe663e13081e57d0bd1acba8007",
+      "afterSha256": "4fe0c98743076622ca2112bb2105d097dc0e2bd22647916f1249cc007d22ee9c",
+      "beforeBytes": 91275,
+      "afterBytes": 91303,
+      "mutations": [
+        {
+          "location": "final three-way selector",
+          "oldHref": "/de-at/anfrage/",
+          "newHref": "/de-at/anfrage/?service=event",
+          "beforeSha256": "bbd48751e2b98cf66e86fac05de62c57c955185e2ddf567aee5aa4af28f9ed77",
+          "afterSha256": "2ff472457c349987cb098cce3491cdf0cc73d25cb228dcfc3c757f45bd0de50e"
+        },
+        {
+          "location": "project framework",
+          "oldHref": "/de-at/anfrage/",
+          "newHref": "/de-at/anfrage/?service=event",
+          "beforeSha256": "4de901f5714438dc076cd40f3998302d097c95acb0f569ca0fefeb644336dd08",
+          "afterSha256": "80123a07b0dd6a30ab9bb2517a371b07cb45a67ba5d38c22f739da3e24200650"
+        }
+      ],
+      "genericFooterLinkPreserved": true,
+      "metadataQueryFree": true
+    },
+    {
+      "file": "glamour/index.html",
+      "service": "fine-art",
+      "category": "art",
+      "quote": "/requestaquote/",
+      "kind": "fine-art",
+      "contextualHref": "/requestaquote/?service=fine-art",
+      "beforeSha256": "ecdaa5fea7efff9a02dc72265cc6e0b21cffe6c8269d3f02a9255d50b63cbea7",
+      "afterSha256": "cc824a692be0205cb0777e230a9f15ca42531d436be15a33f2435fd57bf4da94",
+      "beforeBytes": 193798,
+      "afterBytes": 193815,
+      "mutations": [
+        {
+          "location": "private conversation CTA",
+          "oldHref": "/requestaquote/",
+          "newHref": "/requestaquote/?service=fine-art",
+          "beforeSha256": "a088d6d786878099a8ec822c76484b65c2d6eebbd351dd970577ec72f130f1a4",
+          "afterSha256": "40edfdc84d120bedaae22fd641da4b848550a087799ab6ff531980f2374e13f3"
+        }
+      ],
+      "genericFooterLinkPreserved": true,
+      "metadataQueryFree": true
+    },
+    {
+      "file": "hu/muveszi-fotografia/index.html",
+      "service": "fine-art",
+      "category": "art",
+      "quote": "/hu/ajanlatkeres/",
+      "kind": "fine-art",
+      "contextualHref": "/hu/ajanlatkeres/?service=fine-art",
+      "beforeSha256": "e8762e2ea056fb389b32a87bb0b870a61efcecca4293a6368af7d799b1f3e93d",
+      "afterSha256": "0f0048e06ab66763b0ddb98fc0e5bd891ba2c3997973b6ab4c52cec0df7e5a2c",
+      "beforeBytes": 205051,
+      "afterBytes": 205068,
+      "mutations": [
+        {
+          "location": "private conversation CTA",
+          "oldHref": "/hu/ajanlatkeres/",
+          "newHref": "/hu/ajanlatkeres/?service=fine-art",
+          "beforeSha256": "1f89322955bc512c31b37d5c5a6a949464dd2004ec20aaad83de7e8bc560e03c",
+          "afterSha256": "ce6ce641dcd13f8d0bd0b1a1ca313f13c04a054144f54b0b4d93f25023b2c662"
+        }
+      ],
+      "genericFooterLinkPreserved": true,
+      "metadataQueryFree": true
+    },
+    {
+      "file": "de-at/fine-art/index.html",
+      "service": "fine-art",
+      "category": "art",
+      "quote": "/de-at/anfrage/",
+      "kind": "fine-art",
+      "contextualHref": "/de-at/anfrage/?service=fine-art",
+      "beforeSha256": "b058f5cfa2354de31443439fa3ef4382344a0cd7bb139a8f34b0e05c8abb4add",
+      "afterSha256": "a52bac3d56950b1d8680ac2579237af4a35d5f01424334abbb034bfaa7dad1f5",
+      "beforeBytes": 200407,
+      "afterBytes": 200424,
+      "mutations": [
+        {
+          "location": "private conversation CTA",
+          "oldHref": "/de-at/anfrage/",
+          "newHref": "/de-at/anfrage/?service=fine-art",
+          "beforeSha256": "99fff6f9d05f6a3783b8d64ce61e7df99ff84e579934d3f9e754b580f43ff0ef",
+          "afterSha256": "1e3543862ff641dfa3c37f7ddfedadd0d93c04224b54e18e39fbe17eb41012c6"
+        }
+      ],
+      "genericFooterLinkPreserved": true,
+      "metadataQueryFree": true
+    }
+  ],
+  "quotePages": [
+    {
+      "file": "requestaquote/index.html",
+      "beforeSha256": "d637e81e522b391c334c8f539159383f9e3fe8bb485184a5abc684a51fec7600",
+      "afterSha256": "d8b54b5d11d3b016a7dbfb33403916151e9967ebadaa03ea21be85561e38a99d",
+      "assetBefore": "/assets/js/quote-calculator.js?v=20260717-four-services-root",
+      "assetAfter": "/assets/js/quote-calculator.js?v=20260806-service-context",
+      "sourceMetadataQueryFree": true,
+      "sourceLanguageSwitchQueryFree": true
+    },
+    {
+      "file": "hu/ajanlatkeres/index.html",
+      "beforeSha256": "b12147e4972d5281006e7d479f19d587f863d8d032837bfc2331629d2024cd62",
+      "afterSha256": "0ed8662a63c7379748f8c2dfb437f07e76687fd53eb55ee9b0693cc9b02d243d",
+      "assetBefore": "/assets/js/quote-calculator.js?v=20260717-four-services-root",
+      "assetAfter": "/assets/js/quote-calculator.js?v=20260806-service-context",
+      "sourceMetadataQueryFree": true,
+      "sourceLanguageSwitchQueryFree": true
+    },
+    {
+      "file": "de-at/anfrage/index.html",
+      "beforeSha256": "73b9d51d073cbb4cc38cb3377d024501b25e2d62d4162c3d0929b358e09df50f",
+      "afterSha256": "f92a8f2ec067a0e967c33adfebf2ee1e6425a7bc95c193c9ffa9ccaf6502619c",
+      "assetBefore": "/assets/js/quote-calculator.js?v=20260717-four-services-root",
+      "assetAfter": "/assets/js/quote-calculator.js?v=20260806-service-context",
+      "sourceMetadataQueryFree": true,
+      "sourceLanguageSwitchQueryFree": true
+    }
+  ],
+  "quoteEngine": {
+    "file": "assets/js/quote-calculator.js",
+    "beforeSha256": "e97fc7316003c56bb5119cd36e1e0423152756f34d80d242e9fdea1aeb49b81c",
+    "afterSha256": "4503f8bd286d6c812ab7c5bb6d631c5c9ac29e8b622a5555baa4e20ce16301d2",
+    "beforeBytes": 25845,
+    "afterBytes": 28490,
+    "allowlist": {
+      "portrait": "individual",
+      "brand": "brand",
+      "event": "event",
+      "fine-art": "art"
+    },
+    "missingOrUnknownFallback": "Existing checked individual portrait category remains unchanged.",
+    "languageSwitchPreservesValidContext": true,
+    "manualCategoryChangeSynchronizesUrl": true,
+    "submissionField": "service_context"
+  },
+  "permanentAudit": "tools/audit-quote-service-context-stage24.mjs",
+  "browserRegression": "tests/quote-service-context.spec.mjs",
+  "machineReadable": [
+    "ecosystem.json",
+    "ai.txt",
+    "llms.txt",
+    "llms-full.txt"
+  ]
+}

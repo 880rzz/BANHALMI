@@ -1,3 +1,12 @@
+<!-- QUOTE-SERVICE-CONTEXT:START -->
+## Service-to-quote context
+- Service-specific quote links use one allowlisted public query parameter: portrait, brand, event or fine-art.
+- The quote engine maps these values before its first calculation: portrait → individual, brand → brand, event → event and fine-art → art.
+- Missing or unsupported values do not override the existing individual-portrait default.
+- Valid context is preserved across quote-page language switching, explicit category changes and the submitted service_context field.
+- Only scoped service-page links carry the parameter. Generic navigation and footer links, canonical URLs, hreflang URLs and source language-switch links remain query-free.
+<!-- QUOTE-SERVICE-CONTEXT:END -->
+
 <!-- FINE-ART-PRIVATE-JOURNEY:START -->
 ## Fine Art private-client journey
 - Fine Art Photography is a separate consent-led service path for personal work about identity, biography and the body.
