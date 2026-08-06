@@ -1,0 +1,54 @@
+name: One-time presence thesis stage 1 correction
+
+on:
+  push:
+    branches:
+      - agent/presence-stage1-banhalmi
+    paths:
+      - '.github/workflows/_presence-stage1-fix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  correct-migrate-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/presence-stage1-banhalmi
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Correct Hungarian wording
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path=Path('tools/_migrate-presence-stage1.mjs')
+          text=path.read_text()
+          old='az executive portrékkal'
+          new='a vezetői portrékkal'
+          if text.count(old) != 1:
+              raise SystemExit(f'Expected one Hungarian wording occurrence, found {text.count(old)}')
+          path.write_text(text.replace(old,new))
+          PY
+      - name: Apply additive presence-thesis migration
+        run: node tools/_migrate-presence-stage1.mjs
+      - name: Remove temporary correction workflow before audit
+        run: rm .github/workflows/_presence-stage1-fix.yml
+      - name: Install audit dependencies
+        run: npm install --ignore-scripts
+      - name: Run deterministic repository audit
+        run: npm run audit
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run browser regression suite
+        run: npm run test:browser
+      - name: Commit verified stage
+        run: |
+          git config user.name 'BANHALMI maintenance bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Establish presence as the core practice thesis'
+          git push origin HEAD:agent/presence-stage1-banhalmi
