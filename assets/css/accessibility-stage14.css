@@ -8,5 +8,18 @@ input[type="checkbox"],input[type="radio"]{min-width:24px;min-height:24px;}
 [aria-disabled="true"],button:disabled,input:disabled,select:disabled,textarea:disabled{cursor:not-allowed;opacity:.62;}
 .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;}
 @media (max-width:680px){body{font-size:17px;line-height:1.6}.btn,button,input,select,textarea{font-size:16px}.nav-links a,.footer-accordion summary{min-height:44px;display:flex;align-items:center}}
+@media (max-width:680px) and (hover:none) and (pointer:coarse){
+  .nav-links a[aria-current="page"],
+  .nav-links a.active,
+  .nav-links .active>a{
+    color:#B79C44!important;
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+    outline:0!important;
+    outline-offset:0!important;
+    border-radius:0!important;
+  }
+}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 @media (forced-colors:active){:focus-visible{outline:3px solid Highlight}.btn,.card,input,select,textarea{forced-color-adjust:auto}}
