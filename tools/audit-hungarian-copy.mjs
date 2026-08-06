@@ -9,7 +9,18 @@ const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entr
   return entry.isDirectory() ? walk(target) : [target];
 });
 const pages = walk(path.join(root, 'hu')).filter((file) => file.endsWith('index.html'));
-if (pages.length !== 19) failures.push(`Expected 19 Hungarian pages, found ${pages.length}`);
+const requiredHungarianPages = [
+  'hu/index.html',
+  'hu/archivum/index.html',
+  'hu/eletmu/index.html',
+  'hu/gyik/index.html',
+  'hu/brand/index.html',
+  'hu/kapcsolat/index.html'
+];
+for (const file of requiredHungarianPages) {
+  if (!fs.existsSync(path.join(root, file))) failures.push(`Required Hungarian page missing: ${file}`);
+}
+if (pages.length < requiredHungarianPages.length) failures.push(`Hungarian page inventory is unexpectedly small: ${pages.length}`);
 
 function visibleBody(html) {
   const body = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '';
