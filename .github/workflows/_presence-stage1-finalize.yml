@@ -37,9 +37,11 @@ jobs:
           audit=Path('tools/audit-schema-geo-llm-stage16.mjs')
           source=audit.read_text()
           old_line="if (ecosystem.schemaVersion !== '2026-08-03-v4') errors.push('ecosystem.json schemaVersion not updated');"
-          new_lines="""if (ecosystem.schemaVersion !== '2026-08-06-v5') errors.push('ecosystem.json schemaVersion not updated');
-if (ecosystem.corePracticeThesis?.canonicalSource !== 'https://www.norbertbanhalmi.com/presence-thesis.json') errors.push('ecosystem.json canonical presence thesis missing');
-if (!ecosystem.authoritativeMachineReadableSources?.includes('https://www.norbertbanhalmi.com/presence-thesis.json')) errors.push('ecosystem.json presence thesis source missing');"""
+          new_lines='\n'.join([
+              "if (ecosystem.schemaVersion !== '2026-08-06-v5') errors.push('ecosystem.json schemaVersion not updated');",
+              "if (ecosystem.corePracticeThesis?.canonicalSource !== 'https://www.norbertbanhalmi.com/presence-thesis.json') errors.push('ecosystem.json canonical presence thesis missing');",
+              "if (!ecosystem.authoritativeMachineReadableSources?.includes('https://www.norbertbanhalmi.com/presence-thesis.json')) errors.push('ecosystem.json presence thesis source missing');"
+          ])
           if source.count(old_line) != 1:
               raise SystemExit(f'Expected one legacy ecosystem version assertion, found {source.count(old_line)}')
           audit.write_text(source.replace(old_line,new_lines))
