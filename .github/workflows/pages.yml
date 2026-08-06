@@ -33,8 +33,14 @@ jobs:
       - name: Install audit dependencies
         run: npm ci
 
+      - name: Install Chromium for browser regressions
+        run: npx playwright install --with-deps chromium
+
       - name: Run complete static repository audit
         run: npm run audit
+
+      - name: Run browser regression suite
+        run: npm run test:browser
 
       - name: Prepare immutable Pages artifact
         shell: bash
@@ -44,7 +50,6 @@ jobs:
           mkdir -p _site
           git archive --format=tar HEAD | tar -xf - -C _site
 
-          # Repository-only sources are never part of the public artifact.
           rm -rf \
             _site/.github \
             _site/node_modules \
@@ -63,6 +68,8 @@ jobs:
             _site/TORLENDO-FAJLOK.txt \
             _site/.vercel-redeploy-*
 
+          printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
+
           test -f _site/.nojekyll
           test -f _site/CNAME
           test -f _site/index.html
@@ -72,6 +79,7 @@ jobs:
           test -f _site/sitemap.xml
           test -f _site/assets/css/style.css
           test -f _site/assets/js/quote-calculator.js
+          test -f _site/deployment-sha.txt
           test ! -e _site/.github
           test ! -e _site/tools
           test ! -e _site/tests
@@ -112,3 +120,25 @@ jobs:
           PAGES_POLL_INTERVAL_MS: '10000'
           PAGES_POLL_TIMEOUT_MS: '2700000'
         run: node tools/deploy-pages-api.mjs
+
+      - name: Verify exact commit is live on the custom domain
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected="$GITHUB_SHA"
+          for attempt in $(seq 1 30); do
+            actual="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/deployment-sha.txt' || true)"
+            if [ "$actual" = "$expected" ]; then
+              break
+            fi
+            if [ "$attempt" -eq 30 ]; then
+              echo "Expected live SHA $expected but received ${actual:-nothing}." >&2
+              exit 1
+            fi
+            sleep 10
+          done
+
+          curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/' | grep -q 'BANHALMI'
+          curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/hu/' | grep -q 'BANHALMI'
+          curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/de-at/' | grep -q 'BANHALMI'
+          curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/assets/css/accessibility-stage14.css' | grep -q 'background:transparent!important'
