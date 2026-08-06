@@ -76,7 +76,9 @@ for (const relative of ['llms.txt','ai.txt']) {
 const ecosystem = JSON.parse(fs.readFileSync(path.join(root, 'ecosystem.json'), 'utf8'));
 for (const url of ['https://www.norbertbanhalmi.com/project-policy.json','https://www.norbertbanhalmi.com/project-policy.jsonld']) if (!ecosystem.authoritativeMachineReadableSources?.includes(url)) errors.push(`ecosystem.json missing ${url}`);
 if (ecosystem.operationalPolicy?.canonicalData !== 'https://www.norbertbanhalmi.com/project-policy.json') errors.push('ecosystem.json operationalPolicy canonicalData mismatch');
-if (ecosystem.schemaVersion !== '2026-08-03-v4') errors.push('ecosystem.json schemaVersion not updated');
+if (ecosystem.schemaVersion !== '2026-08-06-v5') errors.push('ecosystem.json schemaVersion not updated');
+if (ecosystem.corePracticeThesis?.canonicalSource !== 'https://www.norbertbanhalmi.com/presence-thesis.json') errors.push('ecosystem.json canonical presence thesis missing');
+if (!ecosystem.authoritativeMachineReadableSources?.includes('https://www.norbertbanhalmi.com/presence-thesis.json')) errors.push('ecosystem.json presence thesis source missing');
 if (!ecosystem.operationalPolicy?.controllingRecord?.includes('payment schedule')) errors.push('ecosystem.json payment schedule interpretation missing');
 
 if (errors.length) {
