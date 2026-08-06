@@ -1,0 +1,82 @@
+name: One-time oeuvre human voice cleanup stage 25
+
+on:
+  push:
+    branches:
+      - agent/cleanup-orphan-human-voice
+    paths:
+      - 'tools/apply-oeuvre-human-voice-stage25.mjs'
+      - '.github/workflows/_oeuvre-human-voice-stage25.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oeuvre-human-voice-stage25
+  cancel-in-progress: false
+
+jobs:
+  migrate-audit-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out protected branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/cleanup-orphan-human-voice
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Verify migration syntax
+        run: node --check tools/apply-oeuvre-human-voice-stage25.mjs
+
+      - name: Apply reviewed multilingual copy
+        run: node tools/apply-oeuvre-human-voice-stage25.mjs
+
+      - name: Remove one-time writers before audit
+        run: |
+          rm -f tools/apply-oeuvre-human-voice-stage25.mjs
+          rm -f .github/workflows/_oeuvre-human-voice-stage25.yml
+
+      - name: Install audit dependencies
+        run: npm ci
+
+      - name: Run complete repository audit
+        run: npm run audit
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run complete browser regression suite
+        run: npm run test:browser
+
+      - name: Verify exact generated scope
+        run: |
+          git diff --name-only | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/_oeuvre-human-voice-stage25.yml
+          .human-voice/oeuvre-rewrite.py
+          about/index.html
+          de-at/werk/index.html
+          docs/content-migrations/2026-08-06-oeuvre-human-voice-stage25.json
+          hu/eletmu/index.html
+          tools/apply-oeuvre-human-voice-stage25.mjs
+          EOF
+          sort -o /tmp/expected.txt /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+          test ! -e .human-voice
+          test ! -e tools/apply-oeuvre-human-voice-stage25.mjs
+          test ! -e .github/workflows/_oeuvre-human-voice-stage25.yml
+
+      - name: Commit verified cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "Refine multilingual oeuvre copy and remove orphan writer"
+          git push origin HEAD:agent/cleanup-orphan-human-voice
