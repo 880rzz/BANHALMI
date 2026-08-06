@@ -30,8 +30,8 @@ for(const [file,expected] of Object.entries(pages)){
     if(!html.includes('href="'+url+'"'))errors.push(file+': '+label+' link missing');
   }
   const presenceIndex=html.indexOf('class="section-band presence-thesis"');
-  const strategyIndex=html.indexOf('class="section-band strategic-positioning-summary"');
-  if(presenceIndex<0||strategyIndex<0||presenceIndex>strategyIndex)errors.push(file+': presence thesis must precede strategic summary');
+  const strategyIndex=html.indexOf('class="section-band client-decision-bridge"');
+  if(presenceIndex<0||strategyIndex<0||presenceIndex>strategyIndex)errors.push(file+': presence thesis must precede client decision bridge');
   if((html.match(/<section /g)||[]).length<2)errors.push(file+': page structure unexpectedly reduced');
 }
 const thesis=JSON.parse(fs.readFileSync('presence-thesis.json','utf8'));

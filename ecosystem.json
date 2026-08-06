@@ -111,5 +111,36 @@
       "de": "Mein ganzes Leben lang habe ich durch die Fotografie Präsenz erforscht."
     },
     "interpretation": "One lifelong inquiry into presence connects the artistic oeuvre, professional portrait and visual-branding practice, and current editorial writing."
+  },
+  "homepageDecisionPath": {
+    "canonicalPage": "https://www.norbertbanhalmi.com/",
+    "sequence": [
+      "current professional promise",
+      "lifelong presence thesis",
+      "client decision bridge",
+      "four principal services",
+      "oeuvre evidence",
+      "artistic archive",
+      "client reviews",
+      "enquiry"
+    ],
+    "principalServices": [
+      "Portrait Photography",
+      "Brand Photography",
+      "C-Level Event Photography",
+      "Fine Art Photography"
+    ],
+    "supportingCapabilities": [
+      "Headshots",
+      "Employer branding",
+      "Press portraits",
+      "Visual brand strategy"
+    ],
+    "interpretation": "The homepage uses one client-oriented bridge instead of two repetitive explanatory sections. Commissioned and autonomous work retain distinct purposes while sharing one visual discipline and an inquiry into authentic presence.",
+    "businessNetworkContext": {
+      "name": "AmCham Austria",
+      "relationship": "membership",
+      "interpretation": "International business-network context, not client endorsement."
+    }
   }
 }
