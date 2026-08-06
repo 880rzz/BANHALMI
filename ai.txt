@@ -1,3 +1,11 @@
+<!-- SERVICE-PAGE-FRAMEWORK:START -->
+## Service-page project framework
+- Portrait, Brand and C-Level Event service pages keep fee, delivery, file-retention, image-rights, confidentiality and contingency information fully available in one initially collapsed native details section.
+- Collapsing the framework is a presentation choice to reduce decision fatigue; it does not remove or weaken any contractual, licensing, privacy or governance statement.
+- All framework content remains inside the main page content and is readable by users, search engines and assistive technologies.
+- Fine Art Photography retains a separate consent-led privacy and artistic-process model.
+<!-- SERVICE-PAGE-FRAMEWORK:END -->
+
 <!-- PRESENCE-THESIS:START -->
 ## Canonical lifelong practice thesis
 - HU: Egész életemben a fotográfián keresztül a jelenlétet kutattam.

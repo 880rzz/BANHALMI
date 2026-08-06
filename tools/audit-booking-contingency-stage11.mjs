@@ -29,6 +29,9 @@ for(const [relative,heading,reservation,cancellation,contingency] of pages){
  if(!/written acceptance|írásos elfogadás|schriftlicher Annahme/.test(section)) errors.push(`${relative}: written booking rule missing`);
  if(!/external costs|külső költség|Fremdkosten/.test(section)) errors.push(`${relative}: external-cost rule missing`);
  if(!/replacement date|új időpont|Ersatztermin/.test(section)) errors.push(`${relative}: replacement-date rule missing`);
+ const marker=html.indexOf('data-booking-contingency="stage11"');
+ const mainClose=html.lastIndexOf('</main>');
+ if(marker<0 || marker>mainClose) errors.push(`${relative}: block must stay inside main`);
 }
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
 console.log('Stage-eleven booking and contingency audit passed across fifteen pages and three languages.');

@@ -1,0 +1,140 @@
+{
+  "migration": "BANHALMI main-element semantic repair — stage 5 continuation",
+  "executedAt": "2026-08-06T10:05:00+02:00",
+  "method": "Move the existing closing main tag after the governance and booking sections on localized FAQ and terms pages. Preserve every moved section and all footer/trailing content byte-for-byte.",
+  "pages": [
+    {
+      "file": "faq/index.html",
+      "beforeSha256": "b6b1850067f9e5848f8f845b44b016a7abbee1a91b0f8850fe0e9c821ec2ff12",
+      "afterSha256": "721a6d1ac9659d893ccd4d71ba436a2c67b6a7464c19ee6d1ce53733e5d72d21",
+      "beforeBytes": 46554,
+      "afterBytes": 46554,
+      "movedSections": [
+        {
+          "marker": "data-governance-confidentiality=\"stage10\"",
+          "sha256": "ee121026f1685a516723c324e7baf3aa8e5fa540621c526609c607c83210934b",
+          "bytes": 1533
+        },
+        {
+          "marker": "data-booking-contingency=\"stage11\"",
+          "sha256": "4c06d0f400714b6280a0f7611302620ced8647eb6f0995e2d1e5437ae03b41b2",
+          "bytes": 1561
+        }
+      ],
+      "movedContentPreservedExactly": true,
+      "footerAndTrailingContentPreservedExactly": true,
+      "allGovernanceAndBookingContentInsideMain": true
+    },
+    {
+      "file": "terms-conditions/index.html",
+      "beforeSha256": "ffa5484c06fccf3ee008e220b29d62ee8a7d18eea082044cd2c324ef80e45f27",
+      "afterSha256": "3d23abee2f3d67bb463f2a75953bdae55a1aaf2dce4ec0b9702fdd538e733777",
+      "beforeBytes": 40494,
+      "afterBytes": 40494,
+      "movedSections": [
+        {
+          "marker": "data-governance-confidentiality=\"stage10\"",
+          "sha256": "ee121026f1685a516723c324e7baf3aa8e5fa540621c526609c607c83210934b",
+          "bytes": 1533
+        },
+        {
+          "marker": "data-booking-contingency=\"stage11\"",
+          "sha256": "4c06d0f400714b6280a0f7611302620ced8647eb6f0995e2d1e5437ae03b41b2",
+          "bytes": 1561
+        }
+      ],
+      "movedContentPreservedExactly": true,
+      "footerAndTrailingContentPreservedExactly": true,
+      "allGovernanceAndBookingContentInsideMain": true
+    },
+    {
+      "file": "hu/gyik/index.html",
+      "beforeSha256": "5e00fed778cc48e649a13050657266e21cdf4545a1eb254e0d20301c277f345e",
+      "afterSha256": "5885e4c21b4cf8db6c526e73a64080e4b621ea9264163bd73102d363506c19b4",
+      "beforeBytes": 49065,
+      "afterBytes": 49065,
+      "movedSections": [
+        {
+          "marker": "data-governance-confidentiality=\"stage10\"",
+          "sha256": "04f59ad49b946a929bc31513307adc31957791263ad8e2c3c5cd25bc9fc13932",
+          "bytes": 1667
+        },
+        {
+          "marker": "data-booking-contingency=\"stage11\"",
+          "sha256": "15f5a84f1387e9ef975ddc2ffc56c46de649fb0b0faf8392f67fe66f875f4234",
+          "bytes": 1776
+        }
+      ],
+      "movedContentPreservedExactly": true,
+      "footerAndTrailingContentPreservedExactly": true,
+      "allGovernanceAndBookingContentInsideMain": true
+    },
+    {
+      "file": "hu/aszf/index.html",
+      "beforeSha256": "8580caf82a117619155103fde479a310bf956b4213ea170ca0fd26259e22d701",
+      "afterSha256": "1b16863e0f2e17be9477abaf7405ac1c3165208b768fe98648afdb0b66c189a4",
+      "beforeBytes": 42314,
+      "afterBytes": 42314,
+      "movedSections": [
+        {
+          "marker": "data-governance-confidentiality=\"stage10\"",
+          "sha256": "04f59ad49b946a929bc31513307adc31957791263ad8e2c3c5cd25bc9fc13932",
+          "bytes": 1667
+        },
+        {
+          "marker": "data-booking-contingency=\"stage11\"",
+          "sha256": "15f5a84f1387e9ef975ddc2ffc56c46de649fb0b0faf8392f67fe66f875f4234",
+          "bytes": 1776
+        }
+      ],
+      "movedContentPreservedExactly": true,
+      "footerAndTrailingContentPreservedExactly": true,
+      "allGovernanceAndBookingContentInsideMain": true
+    },
+    {
+      "file": "de-at/faq/index.html",
+      "beforeSha256": "2e3c23326e7438ffd6d4f578df7a4a7c0521557a447a6fbe9e7b37e6893f1250",
+      "afterSha256": "0ccd3824045c600774deedbc8f87bded19995ca7c8df1f34dc7c0eae451d4109",
+      "beforeBytes": 48803,
+      "afterBytes": 48803,
+      "movedSections": [
+        {
+          "marker": "data-governance-confidentiality=\"stage10\"",
+          "sha256": "a286c4c7c5c9f295e4bcd4122597cf0804db0061febecc5c76702d85eb3321d8",
+          "bytes": 1649
+        },
+        {
+          "marker": "data-booking-contingency=\"stage11\"",
+          "sha256": "45deadae373112a674cba2142517e78fb7f804df373b0f4653f775afc8fa3463",
+          "bytes": 1737
+        }
+      ],
+      "movedContentPreservedExactly": true,
+      "footerAndTrailingContentPreservedExactly": true,
+      "allGovernanceAndBookingContentInsideMain": true
+    },
+    {
+      "file": "de-at/agb/index.html",
+      "beforeSha256": "9f5b75ae60c3cf65ba86bbbd5a668b7e8c58901793ecf57f90d26f7975e4d975",
+      "afterSha256": "7645002939d6a13e35204199a4e096b37d4ffea4bc1082a0c0804965be419ca2",
+      "beforeBytes": 41925,
+      "afterBytes": 41925,
+      "movedSections": [
+        {
+          "marker": "data-governance-confidentiality=\"stage10\"",
+          "sha256": "a286c4c7c5c9f295e4bcd4122597cf0804db0061febecc5c76702d85eb3321d8",
+          "bytes": 1649
+        },
+        {
+          "marker": "data-booking-contingency=\"stage11\"",
+          "sha256": "45deadae373112a674cba2142517e78fb7f804df373b0f4653f775afc8fa3463",
+          "bytes": 1737
+        }
+      ],
+      "movedContentPreservedExactly": true,
+      "footerAndTrailingContentPreservedExactly": true,
+      "allGovernanceAndBookingContentInsideMain": true
+    }
+  ],
+  "permanentAudit": "tools/audit-main-semantics-stage21.mjs"
+}
