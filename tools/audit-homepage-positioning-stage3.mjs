@@ -18,7 +18,8 @@ for(const [relative,c] of Object.entries(pages)){
  if(old.length) errors.push(`${relative}: repeated generic service CTA remains`);
  const cards=(html.match(/<section id="services">[\s\S]*?<\/section>/)||[''])[0];
  if((cards.match(/<a class="card reveal"/g)||[]).length!==4) errors.push(`${relative}: service card count is not four`);
- if(!html.includes('strategic-positioning-summary')) errors.push(`${relative}: service hierarchy summary missing`);
+ if(!html.includes('client-decision-bridge')) errors.push(`${relative}: client decision bridge missing`);
+ if(html.includes('strategic-positioning-summary')) errors.push(`${relative}: obsolete strategic summary remains`);
 }
 const services=JSON.parse(fs.readFileSync(path.join(root,'services.json'),'utf8'));
 if(services.numberOfItems!==4 || services.itemListElement?.length!==4) errors.push('services.json: principal service count is not four');
