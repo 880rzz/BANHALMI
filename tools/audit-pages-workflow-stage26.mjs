@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { spawnSync } from 'node:child_process';
 
 const workflowFile = '.github/workflows/pages.yml';
 const clientFile = 'tools/deploy-pages-api.mjs';
@@ -81,6 +82,12 @@ for (const token of [
 ]) {
   assert(client.includes(token), `${clientFile}: required deployment-client token missing: ${token}`);
 }
+
+const syntaxCheck = spawnSync(process.execPath, ['--check', clientFile], { encoding: 'utf8' });
+assert(
+  syntaxCheck.status === 0,
+  `${clientFile}: JavaScript syntax check failed: ${syntaxCheck.stderr || syntaxCheck.stdout}`
+);
 
 assert(!/contents:\s*write/i.test(workflow), `${workflowFile}: source write permission is forbidden`);
 assert(!/git\s+(push|commit)/i.test(workflow), `${workflowFile}: source mutation command is forbidden`);
