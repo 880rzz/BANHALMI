@@ -1,17 +1,19 @@
 import fs from 'node:fs';
 
 const workflowFile = '.github/workflows/pages.yml';
+const clientFile = 'tools/deploy-pages-api.mjs';
 const recoveryFile = 'docs/github-pages-recovery.md';
 const failures = [];
 const assert = (condition, message) => {
   if (!condition) failures.push(message);
 };
-const count = (text, value) => text.split(value).length - 1;
 
-assert(fs.existsSync(workflowFile), `${workflowFile} is missing`);
-assert(fs.existsSync(recoveryFile), `${recoveryFile} is missing`);
+for (const file of [workflowFile, clientFile, recoveryFile]) {
+  assert(fs.existsSync(file), `${file} is missing`);
+}
 
 const workflow = fs.readFileSync(workflowFile, 'utf8');
+const client = fs.readFileSync(clientFile, 'utf8');
 const recovery = fs.readFileSync(recoveryFile, 'utf8');
 
 for (const token of [
@@ -25,14 +27,17 @@ for (const token of [
   'cancel-in-progress: false',
   'run: npm run audit',
   'git archive --format=tar HEAD',
+  'outputs:\n      artifact_id:',
+  'id: upload',
+  'steps.upload.outputs.artifact_id',
   'actions/configure-pages@v5',
   'actions/upload-pages-artifact@v4',
   'path: _site',
-  'actions/deploy-pages@v5',
-  'timeout-minutes: 35',
-  'timeout: 1800000',
-  'error_count: 30',
-  'reporting_interval: 5000'
+  'timeout-minutes: 50',
+  'PAGES_ARTIFACT_ID: ${{ needs.build.outputs.artifact_id }}',
+  "PAGES_POLL_INTERVAL_MS: '10000'",
+  "PAGES_POLL_TIMEOUT_MS: '2700000'",
+  'run: node tools/deploy-pages-api.mjs'
 ]) {
   assert(workflow.includes(token), `${workflowFile}: required contract token missing: ${token}`);
 }
@@ -63,26 +68,42 @@ for (const requiredArtifact of [
   assert(workflow.includes(`test -f ${requiredArtifact}`), `${workflowFile}: artifact assertion missing: ${requiredArtifact}`);
 }
 
+for (const token of [
+  'ACTIONS_ID_TOKEN_REQUEST_URL',
+  'ACTIONS_ID_TOKEN_REQUEST_TOKEN',
+  '/pages/deployments',
+  'artifact_id: artifactId',
+  'pages_build_version: buildVersion',
+  'oidc_token: oidcToken',
+  "currentStatus === 'succeed'",
+  'PAGES_POLL_TIMEOUT_MS',
+  'The deployment was intentionally left active and was not cancelled.'
+]) {
+  assert(client.includes(token), `${clientFile}: required deployment-client token missing: ${token}`);
+}
+
 assert(!/contents:\s*write/i.test(workflow), `${workflowFile}: source write permission is forbidden`);
 assert(!/git\s+(push|commit)/i.test(workflow), `${workflowFile}: source mutation command is forbidden`);
 assert(!/cancel-in-progress:\s*true/i.test(workflow), `${workflowFile}: active production deployment must not be cancelled by a newer run`);
-assert(count(workflow, 'actions/deploy-pages@v5') === 1, `${workflowFile}: exactly one deploy-pages step is required`);
+assert(!workflow.includes('actions/deploy-pages@'), `${workflowFile}: capped deploy-pages action must not be used`);
+assert(!client.includes('/cancel'), `${clientFile}: deployment cancellation endpoint is forbidden`);
+assert(!client.includes('pages/deployments/${deploymentId}/cancel'), `${clientFile}: deployment cancellation call is forbidden`);
 assert(workflow.includes('Symbolic links are forbidden in the Pages artifact.'), `${workflowFile}: symlink rejection is missing`);
 
 for (const token of [
   'deployment_queued',
-  'GitHub Actions',
-  '30-minute',
-  'Settings → Pages',
-  'Source'
+  '600000',
+  'direct Pages API client',
+  'does not cancel',
+  'GitHub Actions'
 ]) {
-  assert(recovery.includes(token), `${recoveryFile}: activation or recovery guidance missing: ${token}`);
+  assert(recovery.includes(token), `${recoveryFile}: recovery architecture guidance missing: ${token}`);
 }
 
 if (failures.length) {
-  console.error(`Stage 26 custom Pages workflow audit failed (${failures.length}):`);
+  console.error(`Stage 26 Pages API workflow audit failed (${failures.length}):`);
   for (const failure of failures) console.error(`- ${failure}`);
   process.exit(1);
 }
 
-console.log('Stage 26 custom GitHub Pages workflow contract passed.');
+console.log('Stage 26 Pages API deployment contract passed: audited, read-only and non-cancelling.');
