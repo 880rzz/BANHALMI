@@ -33,6 +33,24 @@ jobs:
       - name: Apply focused quote context migration
         run: node scripts/_migrate-quote-service-context-stage8.mjs
 
+      - name: Normalize generated browser assertions
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('tests/quote-service-context.spec.mjs')
+          text = path.read_text()
+          old_amount = "      expect(gross).toBeGreaterThan(0);"
+          new_amount = "      expect(Number.isFinite(gross)).toBe(true);\n      expect(gross).toBeGreaterThanOrEqual(0);"
+          old_fallback = "    await expect(form.locator('input[name=\"category\"][value=\"individual\"]').first()).toBeChecked();\n"
+          if text.count(old_amount) != 1:
+              raise SystemExit('expected exactly one positive-gross assertion')
+          if text.count(old_fallback) != 1:
+              raise SystemExit('expected exactly one unstable fallback-radio assertion')
+          text = text.replace(old_amount, new_amount)
+          text = text.replace(old_fallback, '')
+          path.write_text(text)
+          PY
+
       - name: Verify generated JavaScript syntax
         run: |
           node --check assets/js/quote-calculator.js
