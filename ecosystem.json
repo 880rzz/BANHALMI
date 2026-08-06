@@ -142,5 +142,55 @@
       "relationship": "membership",
       "interpretation": "International business-network context, not client endorsement."
     }
+  },
+  "serviceDecisionModel": {
+    "canonicalSource": "https://www.norbertbanhalmi.com/services.json",
+    "preservesFourPrincipalServices": true,
+    "homepageCardContract": "The four homepage cards retain their routes, titles, order and calls to action. Each description states audience, use situation and intended output.",
+    "services": [
+      {
+        "name": "Portrait Photography",
+        "bestFor": "Leaders, founders and experts",
+        "useContexts": [
+          "LinkedIn",
+          "corporate website",
+          "press",
+          "speaking",
+          "internal communication"
+        ],
+        "result": "Reusable public portrait system"
+      },
+      {
+        "name": "Brand Photography",
+        "bestFor": "Organisations and leadership teams",
+        "useContexts": [
+          "recruitment",
+          "sales",
+          "media",
+          "corporate communication"
+        ],
+        "result": "Coherent organisational image library"
+      },
+      {
+        "name": "C-Level Event Photography",
+        "bestFor": "Boards, leadership teams, conferences and institutions",
+        "useContexts": [
+          "press",
+          "internal communication",
+          "institutional archive"
+        ],
+        "result": "Discreet editorial and institutional documentation"
+      },
+      {
+        "name": "Fine Art Photography",
+        "bestFor": "Private individuals seeking author-led personal work",
+        "useContexts": [
+          "fine-art portraiture",
+          "nude art",
+          "personal artistic series"
+        ],
+        "result": "Personal fine-art work created with respectful direction, consent and discretion"
+      }
+    ]
   }
 }

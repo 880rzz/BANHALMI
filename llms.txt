@@ -20,6 +20,17 @@
 - AmCham Austria membership supplies documented international business-network context; it is not presented as a client endorsement.
 <!-- HOMEPAGE-DECISION-PATH:END -->
 
+<!-- SERVICE-DECISION-CARDS:START -->
+## Four-service decision model
+- Homepage service cards keep the same four routes, order, titles and calls to action; only their decision value is strengthened.
+- Portrait Photography is the starting point for leaders, founders and experts who need a reusable public visual identity across profile, corporate, press, speaking and internal channels.
+- Brand Photography is the starting point for organisations that need leadership, teams, workplaces and campaigns to communicate as one recognisable visual system.
+- C-Level Event Photography is the starting point for discreet documentation of board, leadership, conference and diplomatic settings for press, internal communication and institutional archives.
+- Fine Art Photography is the starting point for private, author-led personal work about identity, biography and the body, including fine-art portraiture and nude art created with consent and discretion.
+- These decision criteria explain fit and intended use; they do not create additional service categories.
+- Canonical structured service list: https://www.norbertbanhalmi.com/services.json
+<!-- SERVICE-DECISION-CARDS:END -->
+
 ## Core positioning / Alapvető pozicionálás / Kernpositionierung
 BANHALMI creates leadership portraits, brand photography, employer-branding images and event photography for organisations. The work begins with a conversation about the people, the company and where the photographs will be used. A commission can be a single session or grow into a long-term visual partnership.
 # BANHALMI / Norbert Banhalmi
