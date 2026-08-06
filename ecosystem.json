@@ -221,5 +221,28 @@
       ],
       "rule": "Governance and booking sections remain inside the main content element on service, FAQ and terms pages."
     }
+  },
+  "serviceConversionPath": {
+    "appliesTo": [
+      "Portrait Photography",
+      "Brand Photography",
+      "C-Level Event Photography"
+    ],
+    "earlyChoice": {
+      "primary": "Service-specific invitation linking to the final three-way next-step selector.",
+      "secondary": "Anchor link to selected work on the same page."
+    },
+    "evidenceSequence": [
+      "selected work",
+      "client reviews",
+      "verified professional context"
+    ],
+    "finalDecision": [
+      "configure a non-binding package",
+      "send a message",
+      "book a 30-minute video call"
+    ],
+    "duplicateCtaRemoved": true,
+    "principle": "The page invites orientation early, provides evidence before commitment and asks for one final decision only."
   }
 }

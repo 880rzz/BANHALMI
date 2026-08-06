@@ -3704,3 +3704,9 @@ html[lang^="hu"] .quote-total{font-variant-numeric:tabular-nums;font-size:clamp(
   .project-framework-summary-copy strong{font-size:1.05rem;}
 }
 /* PROJECT-FRAMEWORK-DRAWER:END */
+
+/* SERVICE-CONVERSION-PATH:START */
+.service-hero-actions{margin:28px 0 32px;}
+#selected-work,#next-step{scroll-margin-top:92px;}
+@media (max-width:640px){.service-hero-actions{align-items:flex-start;margin-top:24px;margin-bottom:28px;}}
+/* SERVICE-CONVERSION-PATH:END */
