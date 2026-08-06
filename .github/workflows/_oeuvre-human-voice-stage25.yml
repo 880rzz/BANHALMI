@@ -56,7 +56,8 @@ jobs:
 
       - name: Verify exact generated scope
         run: |
-          git diff --name-only | sort > /tmp/changed.txt
+          git add -A
+          git diff --cached --name-only | sort > /tmp/changed.txt
           cat > /tmp/expected.txt <<'EOF'
           .github/workflows/_oeuvre-human-voice-stage25.yml
           .human-voice/homepage-rewrite.p0
@@ -69,7 +70,13 @@ jobs:
           tools/apply-oeuvre-human-voice-stage25.mjs
           EOF
           sort -o /tmp/expected.txt /tmp/expected.txt
+          echo 'Expected generated scope:'
+          cat /tmp/expected.txt
+          echo 'Actual generated scope:'
+          cat /tmp/changed.txt
           diff -u /tmp/expected.txt /tmp/changed.txt
+          git diff --quiet
+          test -z "$(git ls-files --others --exclude-standard)"
           test ! -e .human-voice
           test ! -e tools/apply-oeuvre-human-voice-stage25.mjs
           test ! -e .github/workflows/_oeuvre-human-voice-stage25.yml
@@ -78,7 +85,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
           git diff --cached --quiet && exit 0
           git commit -m "Refine multilingual oeuvre copy and remove orphan writers"
           git push origin HEAD:agent/cleanup-orphan-human-voice
