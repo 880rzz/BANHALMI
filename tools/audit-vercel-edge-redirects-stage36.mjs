@@ -49,9 +49,20 @@ auditMiddleware('redirects/hu/middleware.js', [
   "'X-Robots-Tag': 'noindex'"
 ]);
 
+const vercel = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
+const ignore = vercel.ignoreCommand || '';
+for (const redundantProjectId of [
+  'prj_S6QfYbMXaV7mCI9rr47asrzyKdYX',
+  'prj_2oUW8R7jfNrPC9LLo86VjyBsUBgm'
+]) {
+  if (!ignore.includes(redundantProjectId)) failures.push(`vercel.json ignoreCommand must skip redundant domainless project ${redundantProjectId}`);
+}
+if (!ignore.includes('$VERCEL_PROJECT_ID')) failures.push('vercel.json ignoreCommand must key build suppression from VERCEL_PROJECT_ID');
+if (!ignore.includes('else exit 1')) failures.push('vercel.json ignoreCommand must allow all non-redundant Vercel projects to continue building');
+
 if (failures.length) {
   for (const failure of failures) console.error(`FAIL ${failure}`);
   process.exit(1);
 }
 
-console.log('Stage 36 Vercel hostname-aware edge redirect audit passed for repository and project roots.');
+console.log('Stage 36 Vercel hostname-aware redirects and redundant-project build suppression audit passed.');
