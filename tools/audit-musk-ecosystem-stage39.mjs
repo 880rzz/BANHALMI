@@ -32,11 +32,9 @@ const requiredByFile={
     'commissioned photography based in Vienna and Budapest, with a significant New York chapter in the artistic oeuvre'
   ],
   'hu/adatvedelem/index.html':[
-    'aktív szolgáltatói és technikai beállításokat írja le',
     'bécsi és budapesti működési bázissal, a művészeti életmű jelentős New York-i fejezetével'
   ],
   'de-at/datenschutz/index.html':[
-    'aktiven Dienstleister- und technischen Einstellungen',
     'operativen Standorten in Wien und Budapest und einem bedeutenden New-York-Kapitel'
   ],
   'entity.jsonld':[
@@ -56,6 +54,7 @@ for(const file of ['llms.txt','ai.txt']){
   if(clarity<0 || low<0 || low<clarity) throw new Error(`${file}: LLM priority ordering is not preserved`);
   for(const id of ['QUOTE-SERVICE-CONTEXT','FINE-ART-PRIVATE-JOURNEY','SERVICE-PAGE-FRAMEWORK','SERVICE-CONVERSION-PATH','HOMEPAGE-DECISION-PATH','SERVICE-DECISION-CARDS']){
     const pos=text.indexOf(`<!-- ${id}:START -->`);
+    if(pos<0) throw new Error(`${file}: required implementation block ${id} is missing`);
     if(pos<low) throw new Error(`${file}: low-priority implementation block ${id} leaked above the reference boundary`);
   }
 }
