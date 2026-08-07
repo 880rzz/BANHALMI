@@ -1,0 +1,33 @@
+name: One-time stage49 blue palette
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/migrate-blue-palette-stage49.mjs'
+      - '.github/workflows/one-time-stage49-blue-palette.yml'
+permissions:
+  contents: write
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply BANHALMI blue palette
+        run: node tools/migrate-blue-palette-stage49.mjs
+      - name: Guard palette
+        run: |
+          grep -q -- '--navy:#202530' assets/css/style.css
+          grep -q -- '--ink:#202530' assets/css/style.css
+          grep -q '.site-footer{background:#202530' assets/css/style.css
+      - name: Commit migration
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/css/style.css
+          git commit -m 'fix(design): unify BANHALMI on deep blue palette'
+          git push
