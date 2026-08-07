@@ -41,7 +41,7 @@ body{
   line-height:1.55;
   letter-spacing:-0.012em;          /* apple.com body tracking */
   font-weight:400;
-  -webkit-font-smoothing:antialiased;
+font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
 }
@@ -1074,9 +1074,7 @@ section{padding:72px 0;}
    never compete with the hero or break the header rhythm. */
 .site-header{
   background:rgba(255,255,255,.86);
-
-  -webkit-
-  border-bottom:1px solid rgba(180,144,72,.18);
+border-bottom:1px solid rgba(180,144,72,.18);
   z-index:999;
 }
 .site-header .wrap{max-width:1200px;}
@@ -1672,9 +1670,7 @@ section{padding:72px 0;}
    never compete with the hero or break the header rhythm. */
 .site-header{
   background:rgba(255,255,255,.86);
-
-  -webkit-
-  border-bottom:1px solid rgba(180,144,72,.18);
+border-bottom:1px solid rgba(180,144,72,.18);
   z-index:999;
 }
 .site-header .wrap{max-width:1200px;}
@@ -2113,7 +2109,7 @@ h1,h2{max-width:none;}
   flex:0 0 22px;
   justify-self:start;
   appearance:auto;
-  -webkit-appearance:checkbox;
+appearance:checkbox;
 }
 .smart-quote-layout .field.consent label{
   display:block;
@@ -2221,7 +2217,7 @@ h1,h2{max-width:none;}
   flex:0 0 22px;
   justify-self:start;
   appearance:auto;
-  -webkit-appearance:checkbox;
+appearance:checkbox;
 }
 .smart-quote-layout .field.consent label{
   display:block;
@@ -2458,7 +2454,7 @@ body{
   font-weight:400;
   font-synthesis:none;
   text-rendering:auto;
-  -webkit-font-smoothing:antialiased;
+font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
 img{max-inline-size:100%;block-size:auto;}
@@ -2831,9 +2827,7 @@ section{padding:clamp(64px,7.5vw,104px) 0;}
   top:72px;
   z-index:20;
   background:rgba(255,255,255,.96);
-  -webkit-
-
-  box-shadow:0 18px 48px rgba(0,0,0,.10);
+box-shadow:0 18px 48px rgba(0,0,0,.10);
 }
 
 @media (max-width:900px){
@@ -2900,7 +2894,7 @@ body{padding-top:var(--header-h);}
   width:100%;
   z-index:9999;
   transform:translateZ(0);
-  -webkit-transform:translateZ(0);
+transform:translateZ(0);
 }
 
 /* Safari can temporarily drop composited reveal/content-visibility layers while
@@ -3184,7 +3178,7 @@ main > section:not(.hero){
 .universal-lightbox{
   overflow-y:auto;
   overscroll-behavior:contain;
-  -webkit-overflow-scrolling:touch;
+overflow-scrolling:touch;
   align-items:flex-start;
   padding:clamp(22px,3.2vw,52px) clamp(72px,6vw,112px) clamp(30px,4vw,64px);
 }
@@ -3231,9 +3225,7 @@ main > section:not(.hero){
   border-radius:18px;
   background:rgba(20,21,25,.84);
   box-shadow:0 18px 54px rgba(0,0,0,.34);
-
-  -webkit-
-  scrollbar-width:thin;
+scrollbar-width:thin;
   scrollbar-color:rgba(138,104,31,.72) rgba(255,255,255,.08);
 }
 .universal-lightbox-links::-webkit-scrollbar{width:8px;height:8px}
