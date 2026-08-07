@@ -41,7 +41,7 @@ body{
   line-height:1.55;
   letter-spacing:-0.012em;          /* apple.com body tracking */
   font-weight:400;
-font-smoothing:antialiased;
+-webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
 }
@@ -2109,7 +2109,7 @@ h1,h2{max-width:none;}
   flex:0 0 22px;
   justify-self:start;
   appearance:auto;
-appearance:checkbox;
+-webkit-appearance:checkbox;
 }
 .smart-quote-layout .field.consent label{
   display:block;
@@ -2217,7 +2217,7 @@ appearance:checkbox;
   flex:0 0 22px;
   justify-self:start;
   appearance:auto;
-appearance:checkbox;
+-webkit-appearance:checkbox;
 }
 .smart-quote-layout .field.consent label{
   display:block;
@@ -2454,7 +2454,7 @@ body{
   font-weight:400;
   font-synthesis:none;
   text-rendering:auto;
-font-smoothing:antialiased;
+-webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
 img{max-inline-size:100%;block-size:auto;}
@@ -2894,7 +2894,7 @@ body{padding-top:var(--header-h);}
   width:100%;
   z-index:9999;
   transform:translateZ(0);
-transform:translateZ(0);
+  -webkit-transform:translateZ(0);
 }
 
 /* Safari can temporarily drop composited reveal/content-visibility layers while
@@ -3178,7 +3178,7 @@ main > section:not(.hero){
 .universal-lightbox{
   overflow-y:auto;
   overscroll-behavior:contain;
-overflow-scrolling:touch;
+-webkit-overflow-scrolling:touch;
   align-items:flex-start;
   padding:clamp(22px,3.2vw,52px) clamp(72px,6vw,112px) clamp(30px,4vw,64px);
 }
