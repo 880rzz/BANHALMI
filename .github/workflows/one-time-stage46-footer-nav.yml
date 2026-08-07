@@ -1,0 +1,33 @@
+name: One-time stage46 footer and navigation migration
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/migrate-footer-nav-stage46.mjs'
+      - '.github/workflows/one-time-stage46-footer-nav.yml'
+permissions:
+  contents: write
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run guarded migration
+        run: node tools/migrate-footer-nav-stage46.mjs
+      - name: Commit migration
+        run: |
+          if git diff --quiet; then
+            echo 'No changes required'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -u
+          git add assets/css/style.css
+          git commit -m 'fix(design): anchor footer to viewport and clarify pricing navigation'
+          git push
