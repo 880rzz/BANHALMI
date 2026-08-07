@@ -8,7 +8,7 @@
       "has": [
         {
           "type": "header",
-          "key": "host",
+          "key": "Host",
           "value": "banhalmi.at"
         }
       ]
@@ -20,7 +20,7 @@
       "has": [
         {
           "type": "header",
-          "key": "host",
+          "key": "Host",
           "value": "www.banhalmi.at"
         }
       ]
@@ -32,7 +32,7 @@
       "has": [
         {
           "type": "header",
-          "key": "host",
+          "key": "Host",
           "value": "banhalminorbert.hu"
         }
       ]
@@ -44,7 +44,7 @@
       "has": [
         {
           "type": "header",
-          "key": "host",
+          "key": "Host",
           "value": "www.banhalminorbert.hu"
         }
       ]
