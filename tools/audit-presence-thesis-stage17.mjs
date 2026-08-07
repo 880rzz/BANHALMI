@@ -21,11 +21,16 @@ const pages={
     euforia:'https://www.banhalmi.art/de-at/exhibitions/euforia.html'
   }
 };
+function textContent(fragment){
+  return fragment.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').replace(/&nbsp;/g,' ').replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/\s+/g,' ').trim();
+}
 for(const [file,expected] of Object.entries(pages)){
   const html=fs.readFileSync(file,'utf8');
   const sectionCount=html.split('class="section-band presence-thesis"').length-1;
   if(sectionCount!==1)errors.push(file+': expected one presence thesis section, found '+sectionCount);
-  if(!html.includes('<h2>'+expected.heading+'</h2>'))errors.push(file+': canonical heading missing');
+  const presenceSection=(html.match(/<section\b[^>]*class="[^"]*section-band presence-thesis[^"]*"[^>]*>[\s\S]*?<\/section>/i)||[''])[0];
+  const heading=(presenceSection.match(/<h2\b[^>]*>[\s\S]*?<\/h2>/i)||[''])[0];
+  if(textContent(heading)!==expected.heading)errors.push(file+': canonical heading missing or changed');
   for(const [label,url] of Object.entries({archive:expected.archive,journal:expected.journal,euforia:expected.euforia})){
     if(!html.includes('href="'+url+'"'))errors.push(file+': '+label+' link missing');
   }
@@ -48,4 +53,4 @@ for(const file of ['ai.txt','llms.txt','llms-full.txt']){
 const manifest=JSON.parse(fs.readFileSync('docs/content-migrations/2026-08-06-presence-stage1.json','utf8'));
 if(manifest.pages?.length!==3||manifest.pages.some(item=>item.originalContentPreservedExactly!==true))errors.push('migration manifest: preservation evidence incomplete');
 if(errors.length){console.error(errors.join(String.fromCharCode(10)));process.exit(1)}
-console.log('Presence thesis stage-one audit passed: three languages, machine sources and exact content preservation are aligned.');
+console.log('Presence thesis stage-one audit passed: three languages, exact visible heading text, machine sources and content preservation are aligned.');
