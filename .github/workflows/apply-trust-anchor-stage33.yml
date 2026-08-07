@@ -1,0 +1,34 @@
+name: Apply Trust stage 33
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-trust-anchor-stage33.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply Trust cleanup
+        run: node tools/apply-trust-anchor-stage33.mjs
+      - name: Remove one-time migration files
+        run: git rm .github/workflows/apply-trust-anchor-stage33.yml tools/apply-trust-anchor-stage33.mjs
+      - name: Commit cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'BANHALMI Trust migration'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'fix(trust): close fragment and geography inconsistencies'
+          git push origin HEAD:main
