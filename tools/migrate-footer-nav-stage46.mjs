@@ -9,7 +9,7 @@ if(css.includes(marker)) throw new Error('Stage 46 CSS marker already exists');
 const replacements=[
   ['Build Your Package','Pricing & quote'],
   ['Projekt összeállítása','Árak és ajánlat'],
-  ['Projekt zusammenstellen','Preise & Angebot']
+  ['Paket zusammenstellen','Preise & Angebot']
 ];
 
 function walk(dir,out=[]){
