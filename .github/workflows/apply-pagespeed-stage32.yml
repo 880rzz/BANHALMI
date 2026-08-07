@@ -1,0 +1,123 @@
+name: Apply PageSpeed stage 32
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-pagespeed-stage32.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply accessibility, footer and positioning fixes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          root=Path('.')
+          style=root/'assets/css/style.css'
+          css=style.read_text()
+          marker='/* PAGESPEED-STAGE32:START */'
+          block='''\n/* PAGESPEED-STAGE32:START */
+/* Footer-only accessible gold: deliberately lighter than the global brand gold.
+   #CBB45F on #202530 is ~7.5:1, meeting WCAG AAA for normal text. */
+.site-footer{--footer-gold:#CBB45F;}
+.site-footer h3,
+.site-footer .footer-accordion summary{
+  color:var(--footer-gold)!important;
+  opacity:1!important;
+  font-weight:650!important;
+}
+.site-footer .footer-accordion summary:hover,
+.site-footer .footer-accordion summary:focus-visible{
+  color:#fff!important;
+}
+.site-footer .footer-bottom{color:#AEB4C2!important;}
+.site-footer .footer-bottom a,
+.site-footer .footer-bottom button{color:#D2D2D7!important;}
+.site-footer .footer-bottom a:hover,
+.site-footer .footer-bottom a:focus-visible,
+.site-footer .footer-bottom button:hover,
+.site-footer .footer-bottom button:focus-visible{color:#fff!important;}
+/* PAGESPEED-STAGE32:END */
+'''
+          if marker not in css:
+              style.write_text(css+block)
+
+          a11y=root/'assets/css/accessibility-stage14.css'
+          text=a11y.read_text()
+          amarker='/* PAGESPEED-STAGE32-TARGETS:START */'
+          ablock='''\n/* PAGESPEED-STAGE32-TARGETS:START */
+@media (max-width:680px), (pointer:coarse){
+  .lang-switch a,
+  .site-footer a,
+  .site-footer button,
+  .banhalmi-ecosystem a{
+    min-height:44px;
+    display:inline-flex;
+    align-items:center;
+  }
+  .lang-switch a{min-width:44px;justify-content:center;padding-inline:8px;}
+  .site-footer li>a{padding-block:7px;}
+  .banhalmi-ecosystem a{padding-block:8px;}
+}
+/* PAGESPEED-STAGE32-TARGETS:END */
+'''
+          if amarker not in text:
+              a11y.write_text(text+ablock)
+
+          replacements={
+            'BANHALMI — executive portraiture, brand photography and visual communication between Vienna and Budapest.':'BANHALMI — executive portraiture, brand photography and visual communication from Vienna and Budapest, with a substantial New York reference archive.',
+            'BANHALMI — vezetői portré, brandfotózás és vizuális kommunikáció Bécs és Budapest között.':'BANHALMI — vezetői portré, brandfotózás és vizuális kommunikáció bécsi és budapesti bázissal, jelentős New York-i referenciaanyaggal.',
+            'BANHALMI — Führungskräfteporträts, Brandfotografie und visuelle Kommunikation zwischen Wien und Budapest.':'BANHALMI — Führungskräfteporträts, Brandfotografie und visuelle Kommunikation mit Standorten in Wien und Budapest und einem umfangreichen New-York-Referenzarchiv.'
+          }
+          counts={k:0 for k in replacements}
+          for p in root.rglob('*.html'):
+              if '.git' in p.parts or 'node_modules' in p.parts or '_site' in p.parts: continue
+              s=p.read_text()
+              old=s
+              for a,b in replacements.items():
+                  n=s.count(a); counts[a]+=n; s=s.replace(a,b)
+              if s!=old: p.write_text(s)
+          for k,v in counts.items():
+              if v<10: raise SystemExit(f'Footer positioning replacement coverage unexpectedly low: {v} for {k}')
+
+          ll=root/'llms.txt'
+          s=ll.read_text()
+          if not s.startswith('# BANHALMI\n\n>'):
+              s=s.replace('# BANHALMI / Norbert Banhalmi','## BANHALMI / Norbert Banhalmi')
+              intro='''# BANHALMI\n\n> Professional photography and visual positioning by Norbert Bánhalmi for leaders and organisations. Vienna and Budapest are two active operational bases; a substantial New York chapter in the photographic archive provides international reference. New York is not presented as a studio or operational base.\n\n'''
+              ll.write_text(intro+s)
+          PY
+
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const p=JSON.parse(fs.readFileSync('package.json','utf8'));
+          if(!p.scripts.audit.includes('audit-internal-anchor-targets-stage31.mjs')){
+            p.scripts.audit += ' && node tools/audit-internal-anchor-targets-stage31.mjs';
+          }
+          p.scripts['audit:internal-anchors']='node tools/audit-internal-anchor-targets-stage31.mjs';
+          fs.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');
+          NODE
+      - name: Remove one-time workflow
+        run: git rm .github/workflows/apply-pagespeed-stage32.yml
+      - name: Commit migration
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'BANHALMI PageSpeed migration'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'fix(ui): close PageSpeed accessibility and positioning gaps'
+          git push origin HEAD:main
