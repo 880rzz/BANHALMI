@@ -57,6 +57,13 @@
     },
     "contractRule": "All website and AI-calculated prices are non-binding orientation estimates. The accepted written offer defines the contractual price, currency, scope and tax treatment."
   },
+  "trustAndGovernance": {
+    "humanTrustCenter": "https://www.norbertbanhalmi.com/trust/",
+    "privacyNotice": "https://www.norbertbanhalmi.com/privacy-policy/",
+    "cookiePolicy": "https://www.norbertbanhalmi.com/cookie-policy/",
+    "machineReadableProviderRegistry": "https://www.norbertbanhalmi.com/processors.json",
+    "rule": "Human-readable legal notices remain authoritative for users; processors.json is the machine-readable operational registry of disclosed service providers and consent gating."
+  },
   "lifelongThesis": {
     "en": "Throughout my life, I have explored presence through photography.",
     "hu": "Egész életemben a fotográfián keresztül a jelenlétet kutattam.",
