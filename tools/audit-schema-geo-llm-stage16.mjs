@@ -58,20 +58,29 @@ if (fs.existsSync(schemaPath)) {
   }
 }
 
-for (const relative of ['llms.txt','ai.txt']) {
-  const text = fs.readFileSync(path.join(root, relative), 'utf8');
-  if ((text.match(/<!-- PROJECT-POLICY-SYNC:START -->/g) || []).length !== 1) errors.push(`${relative} policy marker must appear once`);
-  if ((text.match(/<!-- PROJECT-POLICY-SYNC:END -->/g) || []).length !== 1) errors.push(`${relative} policy end marker must appear once`);
-  for (const token of [
-    'project-policy.json',
-    'project-policy.jsonld',
-    'non-binding preliminary estimates',
-    'Do not infer a universal percentage',
-    'Each invoice states its payment deadline',
-    'not automatically grant BANHALMI portfolio',
-    'Vienna and Budapest are two active bases'
-  ]) if (!text.includes(token)) errors.push(`${relative} missing ${token}`);
-}
+// llms.txt is intentionally a concise agent-entry index. It must route agents to
+// the detailed AI layer and preserve the key geography distinction, but it must
+// not be forced to duplicate the full operational policy knowledge dump.
+const llms = fs.readFileSync(path.join(root, 'llms.txt'), 'utf8');
+if (!llms.includes('[AI reference](https://www.norbertbanhalmi.com/ai.txt)')) errors.push('llms.txt missing detailed AI reference link');
+for (const token of [
+  'Vienna and Budapest are two active operational bases',
+  'New York is a major international reference and oeuvre chapter'
+]) if (!llms.includes(token)) errors.push(`llms.txt missing geography routing token: ${token}`);
+
+// Detailed policy synchronization belongs in ai.txt and the canonical JSON layers.
+const ai = fs.readFileSync(path.join(root, 'ai.txt'), 'utf8');
+if ((ai.match(/<!-- PROJECT-POLICY-SYNC:START -->/g) || []).length !== 1) errors.push('ai.txt policy marker must appear once');
+if ((ai.match(/<!-- PROJECT-POLICY-SYNC:END -->/g) || []).length !== 1) errors.push('ai.txt policy end marker must appear once');
+for (const token of [
+  'project-policy.json',
+  'project-policy.jsonld',
+  'non-binding preliminary estimates',
+  'Do not infer a universal percentage',
+  'Each invoice states its payment deadline',
+  'not automatically grant BANHALMI portfolio',
+  'Vienna and Budapest are two active bases'
+]) if (!ai.includes(token)) errors.push(`ai.txt missing ${token}`);
 
 const ecosystem = JSON.parse(fs.readFileSync(path.join(root, 'ecosystem.json'), 'utf8'));
 for (const url of ['https://www.norbertbanhalmi.com/project-policy.json','https://www.norbertbanhalmi.com/project-policy.jsonld']) if (!ecosystem.authoritativeMachineReadableSources?.includes(url)) errors.push(`ecosystem.json missing ${url}`);
@@ -85,4 +94,4 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log('Stage sixteen schema, GEO and LLM synchronization audit passed.');
+console.log('Stage sixteen schema, GEO and LLM synchronization audit passed: llms is concise; detailed policy evidence remains canonical in ai.txt and project-policy.*.');
