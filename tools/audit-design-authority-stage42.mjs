@@ -9,14 +9,19 @@ if(js.includes("document.createElement('style')")||js.includes('banhalmi-validat
 for(const token of ['STAGE42-STATIC-VALIDATION:START','.quote-validation-summary','[data-smart-quote] .is-invalid-field','STAGE42-STATIC-VALIDATION:END']){
   if(!a11y.includes(token)) errors.push(`accessibility-stage14.css missing static validation contract: ${token}`);
 }
-for(const forbidden of ['.card{','.cards{','.hero{','.split{','.wrap{','section{','h1{','h2{','h3{']){
-  if(a11y.includes(forbidden)) errors.push(`accessibility-stage14.css must not own base layout selector ${forbidden}`);
+
+/* Accessibility may style descendants inside its own components (for example
+   .quote-validation-summary h2), but it must never become the owner of global
+   layout/type selectors. Match only complete selector heads, not substrings. */
+const forbiddenGlobalSelectors=['.card','.cards','.hero','.split','.wrap','section','h1','h2','h3'];
+for(const selector of forbiddenGlobalSelectors){
+  const escaped=selector.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  const re=new RegExp(`(?:^|})\\s*${escaped}\\s*\\{`,'m');
+  if(re.test(a11y)) errors.push(`accessibility-stage14.css must not own global selector ${selector}`);
 }
+
 for(const required of ['.bn-mega-menu','.bn-mega-panel','.bn-mega-grid','.site-header .nav-links']){
   if(!menu.includes(required)) errors.push(`mega-menu.css missing scoped navigation contract: ${required}`);
-}
-if(/(^|\n)(?!:root|\.site-header|\.bn-|body\.bn-|@)/m.test(menu)){
-  // Informational scope is enforced by the explicit required/forbidden contracts above.
 }
 
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
