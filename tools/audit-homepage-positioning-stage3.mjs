@@ -9,9 +9,13 @@ const pages={
 'hu/index.html':{h1:'Vezetői portrék és vizuális pozicionálás vezetőknek és szervezeteknek.',services:['vezetői portréfotózás','brandfotózás','felsővezetői eseményfotózás','művészi fotográfia'],ctas:['Portrémunkák megtekintése ›','Brandfotózás megtekintése ›','Eseményfotózás megtekintése ›','Művészi munkák megtekintése ›']},
 'de-at/index.html':{h1:'Ich fotografiere Führungskräfte und Organisationen für die Situationen, in denen ihre Bilder tatsächlich funktionieren müssen.',services:['Executive-Porträts','Brandfotografie','C-Level-Eventfotografie','Fine-Art-Fotografie'],ctas:['Porträtarbeiten ansehen ›','Brandfotografie ansehen ›','Eventreportagen ansehen ›','Fine-Art-Arbeiten ansehen ›']}
 };
+function textContent(fragment){
+ return fragment.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').replace(/&nbsp;/g,' ').replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/\s+/g,' ').trim();
+}
 for(const [relative,c] of Object.entries(pages)){
  const html=fs.readFileSync(path.join(root,relative),'utf8');
- if(!html.includes(`<h1>${c.h1}</h1>`)) errors.push(`${relative}: clear homepage H1 missing`);
+ const h1=(html.match(/<h1\b[^>]*>[\s\S]*?<\/h1>/i)||[''])[0];
+ if(textContent(h1)!==c.h1) errors.push(`${relative}: clear homepage H1 missing or changed`);
  for(const s of c.services) if(!html.includes(s)) errors.push(`${relative}: principal service missing ${s}`);
  for(const t of c.ctas) if(!html.includes(t)) errors.push(`${relative}: unique CTA missing ${t}`);
  const old=[...html.matchAll(/<span class="more">(?:Read the approach|A megközelítés|Zur Arbeitsweise) ›<\/span>/g)];
@@ -24,4 +28,4 @@ for(const [relative,c] of Object.entries(pages)){
 const services=JSON.parse(fs.readFileSync(path.join(root,'services.json'),'utf8'));
 if(services.numberOfItems!==4 || services.itemListElement?.length!==4) errors.push('services.json: principal service count is not four');
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
-console.log('Stage-three homepage positioning audit passed: three languages, four principal services and unique service CTAs are aligned.');
+console.log('Stage-three homepage positioning audit passed: three languages, four principal services, exact visible H1 text and unique service CTAs are aligned.');
