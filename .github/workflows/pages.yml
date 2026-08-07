@@ -138,7 +138,12 @@ jobs:
             sleep 10
           done
 
-          curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/' | grep -q 'BANHALMI'
-          curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/hu/' | grep -q 'BANHALMI'
-          curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/de-at/' | grep -q 'BANHALMI'
-          curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/assets/css/accessibility-stage14.css' | grep -q 'background:transparent!important'
+          en_html="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/')"
+          hu_html="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/hu/')"
+          de_html="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/de-at/')"
+          a11y_css="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/assets/css/accessibility-stage14.css')"
+
+          grep -q 'BANHALMI' <<< "$en_html"
+          grep -q 'BANHALMI' <<< "$hu_html"
+          grep -q 'BANHALMI' <<< "$de_html"
+          grep -q 'background:transparent!important' <<< "$a11y_css"
