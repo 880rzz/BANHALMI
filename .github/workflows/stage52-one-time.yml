@@ -33,3 +33,4 @@ jobs:
           git diff --cached --quiet && exit 1
           git commit -m "fix(ai): standardize llms agent entry index"
           git push origin main
+# rerun: standards-shaped llms index with regression expectations moved to detailed AI layer
