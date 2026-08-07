@@ -19,9 +19,16 @@ function htmlFiles(dir = '.') {
 function visibleBody(html) {
   const body = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '';
   return body
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
-    .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, '');
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 const corpusFiles = [
@@ -91,4 +98,4 @@ if (failures.length) {
   console.error(failures.map((failure) => `✗ ${failure}`).join('\n'));
   process.exit(1);
 }
-console.log(`Static source integrity audit passed for ${corpusFiles.length} files.`);
+console.log(`Static source integrity audit passed for ${corpusFiles.length} files; visible copy checks are markup-agnostic.`);
