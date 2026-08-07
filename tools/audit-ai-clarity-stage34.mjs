@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 
+// Stage 52: llms.txt is intentionally a concise agent entry index; detailed knowledge remains in ai.txt and canonical JSON resources.
 const ai=fs.readFileSync('ai.txt','utf8');
 const llms=fs.readFileSync('llms.txt','utf8');
 const required=['Primary person: Norbert Bánhalmi','Professional website: https://www.norbertbanhalmi.com/','Artistic archive: https://www.banhalmi.art/','Vienna and Budapest are the two active operational bases','New York is a major international reference and oeuvre chapter','New York is not a studio, office, headquarters or operational base','Viko Speier is a supporting company contact','Never infer a New York business location'];
