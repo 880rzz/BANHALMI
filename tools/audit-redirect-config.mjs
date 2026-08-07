@@ -57,9 +57,13 @@ if (!fs.existsSync(rootConfigPath)) {
         candidate.destination === destination &&
         candidate.permanent === true &&
         Array.isArray(candidate.has) &&
-        candidate.has.some((condition) => condition.type === 'host' && condition.value === host)
+        candidate.has.some((condition) =>
+          condition.type === 'header' &&
+          String(condition.key || '').toLowerCase() === 'host' &&
+          condition.value === host
+        )
       );
-      if (!rule) failures.push(`vercel.json: missing permanent host redirect for ${host} -> ${destination}`);
+      if (!rule) failures.push(`vercel.json: missing permanent Host-header redirect for ${host} -> ${destination}`);
     }
   }
 }
