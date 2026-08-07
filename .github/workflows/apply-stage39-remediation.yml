@@ -1,0 +1,53 @@
+name: Apply stage 39 ecosystem remediation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/apply-musk-ecosystem-remediation-stage39.mjs'
+      - '.github/workflows/apply-stage39-remediation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Apply deterministic stage 39 remediation
+        run: node tools/apply-musk-ecosystem-remediation-stage39.mjs
+
+      - name: Verify expected changes exist
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          test -n "$(git status --porcelain)"
+          ! grep -R --include='*.html' -F 'banhalmi.art is hosted on Wix' .
+          ! grep -R --include='*.html' -F 'developed between Vienna, Budapest and New York' .
+          ! grep -R --include='*.html' -F 'Bécs, Budapest és New York tengelyén' .
+          ! grep -R --include='*.html' -F 'zwischen Wien, Budapest und New York' .
+          ! grep -R --include='*.html' -F 'technischer Compliance-Entwurf' .
+          ! grep -R --include='*.html' -F 'Technikai megfelelőségi tervezet' .
+
+      - name: Commit remediation
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'BANHALMI release bot'
+          git config user.email '107166660+880rzz@users.noreply.github.com'
+          git add -A
+          git commit -m 'fix(ecosystem): apply stage 39 trust schema and LLM remediation'
+          git push origin HEAD:main
