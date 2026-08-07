@@ -1,0 +1,29 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": "https://blog.banhalmi.art/#blog",
+      "url": "https://blog.banhalmi.art/",
+      "name": "BANHALMI Blog",
+      "description": "Essays, professional reflections and current writing connected to Norbert Bánhalmi's photographic practice.",
+      "inLanguage": ["hu", "en", "de"],
+      "author": {"@id": "https://www.norbertbanhalmi.com/about/"},
+      "publisher": {"@id": "https://www.norbertbanhalmi.com/#organization"},
+      "isPartOf": {"@id": "https://www.norbertbanhalmi.com/#ecosystem"},
+      "about": [
+        {"@id": "https://www.norbertbanhalmi.com/about/"},
+        {"@id": "https://www.banhalmi.art/#website"}
+      ],
+      "sameAs": ["https://blog.banhalmi.art/"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://blog.banhalmi.art/#website",
+      "url": "https://blog.banhalmi.art/",
+      "name": "BANHALMI Blog",
+      "publisher": {"@id": "https://www.norbertbanhalmi.com/#organization"},
+      "mainEntity": {"@id": "https://blog.banhalmi.art/#blog"}
+    }
+  ]
+}
