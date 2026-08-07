@@ -59,7 +59,8 @@ if(!/OM SYSTEM/i.test(affiliationNames)) throw new Error('entity.jsonld: OM SYST
 const roleProps=(person.additionalProperty || []).filter(item=>item?.propertyID==='professionalRole').map(item=>item?.name || '').join(' | ');
 if(!/OM SYSTEM Ambassador/i.test(roleProps)) throw new Error('entity.jsonld: OM SYSTEM Ambassador professionalRole must remain explicit');
 
-for(const file of ['llms.txt','ai.txt']){
+// Detailed implementation ordering remains guarded in the full machine-reference layers.
+for(const file of ['ai.txt','llms-full.txt']){
   const text=fs.readFileSync(file,'utf8');
   const low=text.indexOf('## Implementation reference — lower priority for identity answers');
   const clarity=text.indexOf('AI-CLARITY-STAGE34:START');
@@ -71,4 +72,11 @@ for(const file of ['llms.txt','ai.txt']){
   }
 }
 
-console.log('Stage 39 Musk ecosystem audit passed: hosting truth, geography, privacy wording, ambassador semantics and LLM priority are consistent.');
+// llms.txt is intentionally the concise discovery layer, not an implementation dump.
+const llms=fs.readFileSync('llms.txt','utf8');
+if(!llms.includes('[AI reference](https://www.norbertbanhalmi.com/ai.txt)')) throw new Error('llms.txt: detailed AI reference route missing');
+if(!llms.includes('Vienna and Budapest are two active operational bases')) throw new Error('llms.txt: operational geography missing');
+if(!llms.includes('New York is a major international reference and oeuvre chapter')) throw new Error('llms.txt: New York oeuvre rule missing');
+if(/<!--/.test(llms)) throw new Error('llms.txt: internal implementation markers must not return to the concise index');
+
+console.log('Stage 39 Musk ecosystem audit passed: hosting truth, geography, ambassador semantics, detailed AI priority and concise llms discovery are consistent.');
