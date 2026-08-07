@@ -1,0 +1,33 @@
+name: Apply AI clarity stage 34
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/apply-ai-clarity-stage34.mjs'
+      - '.github/workflows/apply-ai-clarity-stage34.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply AI clarity migration
+        run: node tools/apply-ai-clarity-stage34.mjs
+      - name: Verify Stage 34 before commit
+        run: node tools/audit-ai-clarity-stage34.mjs
+      - name: Commit migration result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "fix(ai): clarify canonical entity and domain roles" || exit 0
+          git push
