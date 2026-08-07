@@ -45,12 +45,19 @@ if(thesis.canonicalStatement?.en!=='Throughout my life, I have explored presence
 if(thesis.canonicalStatement?.de!=='Mein ganzes Leben lang habe ich durch die Fotografie Präsenz erforscht.')errors.push('presence-thesis.json: German statement mismatch');
 const ecosystem=JSON.parse(fs.readFileSync('ecosystem.json','utf8'));
 if(ecosystem.corePracticeThesis?.canonicalSource!=='https://www.norbertbanhalmi.com/presence-thesis.json')errors.push('ecosystem.json: canonical thesis source missing');
-for(const file of ['ai.txt','llms.txt','llms-full.txt']){
+
+// The full machine thesis remains mandatory in the detailed machine layers.
+for(const file of ['ai.txt','llms-full.txt']){
   const text=fs.readFileSync(file,'utf8');
   if((text.split('<!-- PRESENCE-THESIS:START -->').length-1)!==1)errors.push(file+': presence thesis machine block missing or duplicated');
   if(!text.includes('https://www.norbertbanhalmi.com/presence-thesis.json'))errors.push(file+': canonical thesis URL missing');
 }
+// llms.txt is intentionally the concise entry index: it must route to the canonical thesis without duplicating its full block.
+const llms=fs.readFileSync('llms.txt','utf8');
+if(!llms.includes('[Presence thesis](https://www.norbertbanhalmi.com/presence-thesis.json)'))errors.push('llms.txt: canonical presence thesis route missing');
+if(!llms.includes('Throughout my life, I have explored presence through photography.'))errors.push('llms.txt: concise canonical thesis statement missing');
+
 const manifest=JSON.parse(fs.readFileSync('docs/content-migrations/2026-08-06-presence-stage1.json','utf8'));
 if(manifest.pages?.length!==3||manifest.pages.some(item=>item.originalContentPreservedExactly!==true))errors.push('migration manifest: preservation evidence incomplete');
 if(errors.length){console.error(errors.join(String.fromCharCode(10)));process.exit(1)}
-console.log('Presence thesis stage-one audit passed: three languages, exact visible heading text, machine sources and content preservation are aligned.');
+console.log('Presence thesis stage-one audit passed: three languages, exact visible heading text, detailed machine evidence and concise llms routing are aligned.');
