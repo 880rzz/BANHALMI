@@ -165,27 +165,6 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     }[lang];
   }
 
-  function injectValidationStyles(){
-    if(document.getElementById('banhalmi-validation-styles')) return;
-    var style = document.createElement('style');
-    style.id = 'banhalmi-validation-styles';
-    style.textContent = [
-      '.quote-validation-summary{margin:0 0 28px;padding:20px 22px;border:2px solid #a32020;border-radius:14px;background:#fff4f3;color:#541010;box-shadow:0 10px 30px rgba(112,16,16,.12)}',
-      '.quote-validation-summary[hidden]{display:none!important}',
-      '.quote-validation-summary h2{margin:0 0 8px;font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.25;color:#7b1111}',
-      '.quote-validation-summary p{margin:0 0 12px;color:#541010}',
-      '.quote-validation-summary ul{margin:0 0 14px;padding-left:1.25rem}',
-      '.quote-validation-summary a{color:#7b1111;font-weight:700;text-decoration:underline;text-underline-offset:3px}',
-      '.quote-validation-summary button{min-height:44px}',
-      '[data-smart-quote] .is-invalid-field{border-color:#a32020!important;outline:3px solid rgba(163,32,32,.18)!important;outline-offset:2px;background-color:#fff8f7!important}',
-      '[data-smart-quote] .is-invalid-group{border:2px solid #a32020!important;border-radius:14px!important;box-shadow:0 0 0 4px rgba(163,32,32,.10)!important}',
-      '[data-smart-quote] .field-error-message{display:block;margin-top:8px;color:#7b1111;font-size:.95rem;font-weight:700;line-height:1.4}',
-      '[data-smart-quote] [aria-invalid="true"]+label,[data-smart-quote] .is-invalid-group legend{color:#7b1111!important}',
-      '@media(max-width:680px){.quote-validation-summary{padding:18px 16px;margin-bottom:22px}.quote-validation-summary button{width:100%}}'
-    ].join('');
-    document.head.appendChild(style);
-  }
-
   function fieldContainer(field){
     return field.closest('fieldset, .quote-field, .form-field, .field, .form-group, .choice-grid, .option-grid, .quote-section, label') || field.parentElement;
   }
@@ -298,7 +277,6 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   }
 
   function prepareVisibleValidation(form){
-    injectValidationStyles();
     form.setAttribute('novalidate','novalidate');
     form.addEventListener('input', function(event){
       if(event.target && event.target.willValidate && event.target.validity.valid) clearFieldError(event.target);
