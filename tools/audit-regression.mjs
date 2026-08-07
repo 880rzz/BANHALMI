@@ -221,7 +221,8 @@ for(const file of ['knowledge.json','entity-graph.json']){
   assert(data.visualStrategicPartnershipMethod&&data.visualStrategicPartnershipMethod.stages.length===5, `${file}: strategic method missing or incomplete`);
   assert(data.visualStrategicPartnershipMethod.businessTrustContext.wikidata==='https://www.wikidata.org/wiki/Q138413481', `${file}: AmCham Wikidata trust context missing`);
 }
-for(const file of ['ai.txt','llms.txt','llms-full.txt']) assert(read(file).includes('## Strategic positioning interpretation'), `${file}: strategic positioning guidance missing`);
+for(const file of ['ai.txt','llms-full.txt']) assert(read(file).includes('## Strategic positioning interpretation'), `${file}: strategic positioning guidance missing`);
+assert(read('llms.txt').includes('[AI reference](https://www.norbertbanhalmi.com/ai.txt)'), 'llms.txt: concise agent index must link to detailed AI reference');
 
 if(fail.length){ console.error(fail.map(x=>'✗ '+x).join('\n')); process.exit(1); }
 console.log('Production audit regression checks passed.');
