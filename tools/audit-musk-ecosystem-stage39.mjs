@@ -21,8 +21,7 @@ const forbidden=[
   'zwischen Wien, Budapest und New York',
   'Technikai megfelelőségi tervezet',
   'technischer Compliance-Entwurf',
-  'lives and works in Vienna and maintains professional ties to Budapest',
-  '{"@type":"Organization","name":"OM SYSTEM (Olympus) — brand ambassador Hungary","url":"https://www.milcclub.com/ambassadors"},'
+  'lives and works in Vienna and maintains professional ties to Budapest'
 ];
 for(const s of forbidden){ if(corpus.includes(s)) throw new Error(`Stage 39 forbidden legacy signal remains: ${s}`); }
 
@@ -38,14 +37,27 @@ const requiredByFile={
     'operativen Standorten in Wien und Budapest und einem bedeutenden New-York-Kapitel'
   ],
   'entity.jsonld':[
-    'active operational bases in Vienna and Budapest',
-    '"name":"OM SYSTEM","url":"https://explore.omsystem.com/"'
+    'active operational bases in Vienna and Budapest'
   ]
 };
 for(const [file,phrases] of Object.entries(requiredByFile)){
   const text=fs.readFileSync(file,'utf8');
   for(const p of phrases) if(!text.includes(p)) throw new Error(`${file}: missing Stage 39 canonical phrase: ${p}`);
 }
+
+const entity=JSON.parse(fs.readFileSync('entity.jsonld','utf8'));
+const graph=Array.isArray(entity['@graph']) ? entity['@graph'] : [];
+const person=graph.find(node=>{
+  const t=node?.['@type'];
+  return t==='Person' || (Array.isArray(t) && t.includes('Person'));
+});
+if(!person) throw new Error('entity.jsonld: canonical Person node missing');
+const memberNames=(person.memberOf || []).map(item=>typeof item==='string' ? item : item?.name || item?.['@id'] || '').join(' | ');
+if(/OM SYSTEM|Olympus/i.test(memberNames)) throw new Error('entity.jsonld: OM SYSTEM ambassador relationship must not be represented as memberOf');
+const affiliationNames=(person.affiliation || []).map(item=>typeof item==='string' ? item : item?.name || item?.['@id'] || '').join(' | ');
+if(!/OM SYSTEM/i.test(affiliationNames)) throw new Error('entity.jsonld: OM SYSTEM must remain represented as an affiliation/professional relationship');
+const roleProps=(person.additionalProperty || []).filter(item=>item?.propertyID==='professionalRole').map(item=>item?.name || '').join(' | ');
+if(!/OM SYSTEM Ambassador/i.test(roleProps)) throw new Error('entity.jsonld: OM SYSTEM Ambassador professionalRole must remain explicit');
 
 for(const file of ['llms.txt','ai.txt']){
   const text=fs.readFileSync(file,'utf8');
