@@ -24,21 +24,20 @@ const ecosystem=JSON.parse(fs.readFileSync('ecosystem.json','utf8'));
 if(ecosystem.homepageDecisionPath?.sequence?.length!==8)errors.push('ecosystem.json: decision sequence missing');
 if(ecosystem.homepageDecisionPath?.principalServices?.length!==4)errors.push('ecosystem.json: principal services missing');
 
-// Detailed migration blocks remain guarded in the full AI/reference layers.
 for(const file of ['ai.txt','llms-full.txt']){
   const text=fs.readFileSync(file,'utf8');
   if((text.split('<!-- HOMEPAGE-DECISION-PATH:START -->').length-1)!==1)errors.push(file+': homepage decision block missing or duplicated');
 }
-// The concise llms index must expose the four principal service routes without carrying implementation blocks.
 const llms=fs.readFileSync('llms.txt','utf8');
 for(const route of [
   '[Portrait photography](https://www.norbertbanhalmi.com/portrait/)',
-  '[Brand photography](https://www.norbertbanhalmi.com/brand-photography/)',
-  '[C-Level event photography](https://www.norbertbanhalmi.com/c-level-event-photography/)',
-  '[Fine-art photography](https://www.norbertbanhalmi.com/fine-art-photography/)'
+  '[Brand photography](https://www.norbertbanhalmi.com/lifestyle/)',
+  '[C-Level event photography](https://www.norbertbanhalmi.com/event-photography/)',
+  '[Fine-art photography](https://www.norbertbanhalmi.com/glamour/)'
 ]) if(!llms.includes(route)) errors.push('llms.txt: principal service route missing '+route);
+for(const invented of ['/brand-photography/','/c-level-event-photography/','/fine-art-photography/']) if(llms.includes(invented)) errors.push('llms.txt: invented/noncanonical service route remains '+invented);
 
 const manifest=JSON.parse(fs.readFileSync('docs/content-migrations/2026-08-06-homepage-hierarchy-stage3.json','utf8'));
 if(manifest.pages?.length!==3||manifest.pages.some(page=>page.nonTargetContentPreservedExactly!==true||!page.oldRegion||!page.newRegion))errors.push('migration manifest: preservation evidence incomplete');
 if(errors.length){console.error(errors.join(String.fromCharCode(10)));process.exit(1)}
-console.log('Homepage hierarchy stage-three audit passed: one decision bridge, four services, detailed AI evidence and concise llms service routing are aligned.');
+console.log('Homepage hierarchy stage-three audit passed: one decision bridge, four services, detailed AI evidence and canonical existing llms service routing are aligned.');
