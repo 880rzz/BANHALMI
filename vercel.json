@@ -7,7 +7,8 @@
       "permanent": true,
       "has": [
         {
-          "type": "host",
+          "type": "header",
+          "key": "host",
           "value": "banhalmi.at"
         }
       ]
@@ -18,7 +19,8 @@
       "permanent": true,
       "has": [
         {
-          "type": "host",
+          "type": "header",
+          "key": "host",
           "value": "www.banhalmi.at"
         }
       ]
@@ -29,7 +31,8 @@
       "permanent": true,
       "has": [
         {
-          "type": "host",
+          "type": "header",
+          "key": "host",
           "value": "banhalminorbert.hu"
         }
       ]
@@ -40,7 +43,8 @@
       "permanent": true,
       "has": [
         {
-          "type": "host",
+          "type": "header",
+          "key": "host",
           "value": "www.banhalminorbert.hu"
         }
       ]
