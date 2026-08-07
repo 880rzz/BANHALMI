@@ -10,9 +10,9 @@
 
 ## Services
 - [Portrait photography](https://www.norbertbanhalmi.com/portrait/): Principal professional services: Portrait Photography; executive portraits, headshots, business portraits, editorial portraits and personal-brand portraits.
-- [Brand photography](https://www.norbertbanhalmi.com/brand-photography/): Brand Photography and strategic visual positioning for leaders and organisations.
-- [C-Level event photography](https://www.norbertbanhalmi.com/c-level-event-photography/): C-Level Event Photography delivered by a coordinated photography team led by Norbert Bánhalmi.
-- [Fine-art photography](https://www.norbertbanhalmi.com/fine-art-photography/): Fine Art Photography connected to the documented artistic oeuvre.
+- [Brand photography](https://www.norbertbanhalmi.com/lifestyle/): Brand Photography and strategic visual positioning for leaders and organisations.
+- [C-Level event photography](https://www.norbertbanhalmi.com/event-photography/): C-Level Event Photography delivered by a coordinated photography team led by Norbert Bánhalmi.
+- [Fine-art photography](https://www.norbertbanhalmi.com/glamour/): Fine Art Photography connected to the documented artistic oeuvre.
 
 ## Pricing and enquiries
 - [Pricing](https://www.norbertbanhalmi.com/pricing.json): Canonical orientation pricing. EUR is the canonical price currency; HUF is a Hungarian planning display using the documented fixed planning rate, not live FX.
