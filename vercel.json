@@ -1,102 +1,54 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "if [ \"$VERCEL_PROJECT_ID\" = \"prj_S6QfYbMXaV7mCI9rr47asrzyKdYX\" ] || [ \"$VERCEL_PROJECT_ID\" = \"prj_2oUW8R7jfNrPC9LLo86VjyBsUBgm\" ]; then exit 0; else exit 1; fi",
+  "ignoreCommand": "if [ \"$VERCEL_PROJECT_ID\" = \"prj_ZNb7R5KI1MDAQNhoz8Alkwtguydf\" ] || [ \"$VERCEL_PROJECT_ID\" = \"prj_2oUW8R7jfNrPC9LLo86VjyBsUBgm\" ]; then exit 0; else exit 1; fi",
   "redirects": [
     {
       "source": "/:path*",
       "destination": "https://www.norbertbanhalmi.com/de-at/:path*",
       "permanent": true,
-      "has": [
-        {
-          "type": "header",
-          "key": "Host",
-          "value": "banhalmi.at"
-        }
-      ]
+      "has": [{"type":"header","key":"Host","value":"banhalmi.at"}]
     },
     {
       "source": "/:path*",
       "destination": "https://www.norbertbanhalmi.com/de-at/:path*",
       "permanent": true,
-      "has": [
-        {
-          "type": "header",
-          "key": "Host",
-          "value": "www.banhalmi.at"
-        }
-      ]
+      "has": [{"type":"header","key":"Host","value":"www.banhalmi.at"}]
     },
     {
       "source": "/:path*",
       "destination": "https://www.norbertbanhalmi.com/hu/:path*",
       "permanent": true,
-      "has": [
-        {
-          "type": "header",
-          "key": "Host",
-          "value": "banhalminorbert.hu"
-        }
-      ]
+      "has": [{"type":"header","key":"Host","value":"banhalminorbert.hu"}]
     },
     {
       "source": "/:path*",
       "destination": "https://www.norbertbanhalmi.com/hu/:path*",
       "permanent": true,
-      "has": [
-        {
-          "type": "header",
-          "key": "Host",
-          "value": "www.banhalminorbert.hu"
-        }
-      ]
+      "has": [{"type":"header","key":"Host","value":"www.banhalminorbert.hu"}]
     },
     {
       "source": "/",
       "destination": "/index.html",
       "permanent": false,
-      "has": [
-        {
-          "type": "header",
-          "key": "referer",
-          "value": "^https://www\\.norbertbanhalmi\\.com/hu/.*"
-        }
-      ]
+      "has": [{"type":"header","key":"referer","value":"^https://www\\.norbertbanhalmi\\.com/hu/.*"}]
     },
     {
       "source": "/",
       "destination": "/index.html",
       "permanent": false,
-      "has": [
-        {
-          "type": "header",
-          "key": "referer",
-          "value": "^https://www\\.norbertbanhalmi\\.com/de-at/.*"
-        }
-      ]
+      "has": [{"type":"header","key":"referer","value":"^https://www\\.norbertbanhalmi\\.com/de-at/.*"}]
     },
     {
       "source": "/",
       "destination": "/hu/",
       "permanent": false,
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^hu.*"
-        }
-      ]
+      "has": [{"type":"header","key":"accept-language","value":"^hu.*"}]
     },
     {
       "source": "/",
       "destination": "/de-at/",
       "permanent": false,
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^de.*"
-        }
-      ]
+      "has": [{"type":"header","key":"accept-language","value":"^de.*"}]
     }
   ]
 }
