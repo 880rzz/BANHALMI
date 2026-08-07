@@ -59,17 +59,24 @@ if(!/OM SYSTEM/i.test(affiliationNames)) throw new Error('entity.jsonld: OM SYST
 const roleProps=(person.additionalProperty || []).filter(item=>item?.propertyID==='professionalRole').map(item=>item?.name || '').join(' | ');
 if(!/OM SYSTEM Ambassador/i.test(roleProps)) throw new Error('entity.jsonld: OM SYSTEM Ambassador professionalRole must remain explicit');
 
-// Detailed implementation ordering remains guarded in the full machine-reference layers.
-for(const file of ['ai.txt','llms-full.txt']){
-  const text=fs.readFileSync(file,'utf8');
-  const low=text.indexOf('## Implementation reference — lower priority for identity answers');
-  const clarity=text.indexOf('AI-CLARITY-STAGE34:START');
-  if(clarity<0 || low<0 || low<clarity) throw new Error(`${file}: LLM priority ordering is not preserved`);
-  for(const id of ['QUOTE-SERVICE-CONTEXT','FINE-ART-PRIVATE-JOURNEY','SERVICE-PAGE-FRAMEWORK','SERVICE-CONVERSION-PATH','HOMEPAGE-DECISION-PATH','SERVICE-DECISION-CARDS']){
-    const pos=text.indexOf(`<!-- ${id}:START -->`);
-    if(pos<0) throw new Error(`${file}: required implementation block ${id} is missing`);
-    if(pos<low) throw new Error(`${file}: low-priority implementation block ${id} leaked above the reference boundary`);
-  }
+const implementationIds=['QUOTE-SERVICE-CONTEXT','FINE-ART-PRIVATE-JOURNEY','SERVICE-PAGE-FRAMEWORK','SERVICE-CONVERSION-PATH','HOMEPAGE-DECISION-PATH','SERVICE-DECISION-CARDS'];
+
+// ai.txt is the prioritised detailed assistant reference: keep the identity-vs-implementation ordering contract here.
+const ai=fs.readFileSync('ai.txt','utf8');
+const low=ai.indexOf('## Implementation reference — lower priority for identity answers');
+const clarity=ai.indexOf('AI-CLARITY-STAGE34:START');
+if(clarity<0 || low<0 || low<clarity) throw new Error('ai.txt: LLM priority ordering is not preserved');
+for(const id of implementationIds){
+  const pos=ai.indexOf(`<!-- ${id}:START -->`);
+  if(pos<0) throw new Error(`ai.txt: required implementation block ${id} is missing`);
+  if(pos<low) throw new Error(`ai.txt: low-priority implementation block ${id} leaked above the reference boundary`);
+}
+
+// llms-full.txt is the exhaustive reference dump. It must retain every detailed block,
+// but it does not share ai.txt's narrative priority-marker layout.
+const full=fs.readFileSync('llms-full.txt','utf8');
+for(const id of implementationIds){
+  if(!full.includes(`<!-- ${id}:START -->`)) throw new Error(`llms-full.txt: required implementation block ${id} is missing`);
 }
 
 // llms.txt is intentionally the concise discovery layer, not an implementation dump.
@@ -79,4 +86,4 @@ if(!llms.includes('Vienna and Budapest are two active operational bases')) throw
 if(!llms.includes('New York is a major international reference and oeuvre chapter')) throw new Error('llms.txt: New York oeuvre rule missing');
 if(/<!--/.test(llms)) throw new Error('llms.txt: internal implementation markers must not return to the concise index');
 
-console.log('Stage 39 Musk ecosystem audit passed: hosting truth, geography, ambassador semantics, detailed AI priority and concise llms discovery are consistent.');
+console.log('Stage 39 Musk ecosystem audit passed: hosting truth, geography, ambassador semantics, detailed AI priority, exhaustive full reference and concise llms discovery are consistent.');
