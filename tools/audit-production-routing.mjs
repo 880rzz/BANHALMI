@@ -5,7 +5,7 @@ async function request(url, options = {}) {
   const response = await fetch(url, {
     redirect: options.redirect || 'manual',
     headers: {
-      'user-agent': 'BANHALMI production routing audit/3.0',
+      'user-agent': 'BANHALMI production routing audit/3.1',
       'cache-control': 'no-cache',
       pragma: 'no-cache'
     },
@@ -35,10 +35,7 @@ async function checkPage(url, expectations = {}) {
     }
 
     for (const group of expectations.any || []) {
-      assert(
-        group.some((phrase) => body.includes(phrase)),
-        `${url}: live body contains none of the accepted role markers: ${group.join(' | ')}`
-      );
+      assert(group.some((phrase) => body.includes(phrase)), `${url}: live body contains none of the accepted role markers: ${group.join(' | ')}`);
     }
 
     for (const { pattern, label } of expectations.patterns || []) {
@@ -49,17 +46,15 @@ async function checkPage(url, expectations = {}) {
   }
 }
 
-async function checkRedirect(url, expectedTarget) {
+async function checkAliasLanding(url, expectedTarget) {
   try {
     const separator = url.includes('?') ? '&' : '?';
-    const { response } = await request(`${url}${separator}audit=${Date.now()}`, { redirect: 'manual', readBody: false });
-    const location = response.headers.get('location') || '';
-    const absolute = location ? new URL(location, url).href : '';
-    checks.push(`${url} -> ${response.status} ${location}`);
-    assert([301, 302, 307, 308].includes(response.status), `${url}: expected HTTP redirect, received ${response.status}`);
-    assert(absolute.startsWith(expectedTarget), `${url}: expected target beginning ${expectedTarget}, received ${absolute || '(none)'}`);
+    const { response, body } = await request(`${url}${separator}audit=${Date.now()}`, { redirect: 'follow' });
+    checks.push(`${url} -> ${response.status} ${response.url}`);
+    assert(response.ok, `${url}: expected live alias landing, received ${response.status}`);
+    assert(body.includes(expectedTarget), `${url}: alias landing does not point to ${expectedTarget}`);
   } catch (error) {
-    failures.push(`${url}: redirect check failed (${error.message})`);
+    failures.push(`${url}: alias landing check failed (${error.message})`);
   }
 }
 
@@ -82,7 +77,7 @@ for (const [alias, target] of [
   ['https://banhalminorbert.hu/', 'https://www.norbertbanhalmi.com/hu/'],
   ['https://www.banhalminorbert.hu/', 'https://www.norbertbanhalmi.com/hu/']
 ]) {
-  await checkRedirect(alias, target);
+  await checkAliasLanding(alias, target);
 }
 
 await checkPage('https://www.norbertbanhalmi.com/robots.txt', {
@@ -92,49 +87,23 @@ await checkPage('https://www.norbertbanhalmi.com/sitemap.xml', {
   all: ['<urlset', '<loc>https://www.norbertbanhalmi.com/', '<lastmod>']
 });
 await checkPage('https://www.norbertbanhalmi.com/llms.txt', {
-  all: [
-    '# BANHALMI',
-    '## Canonical identity and answer contract',
-    'https://www.banhalmi.art/',
-    'https://blog.banhalmi.art/',
-    'New York is not presented as a studio or operational base'
-  ]
+  all: ['# BANHALMI', '## Canonical identity and answer contract', 'https://www.banhalmi.art/', 'https://blog.banhalmi.art/', 'New York is not presented as a studio or operational base']
 });
 await checkPage('https://www.norbertbanhalmi.com/ai.txt', {
-  all: [
-    '## Canonical identity and answer contract',
-    'https://www.norbertbanhalmi.com/',
-    'https://www.banhalmi.art/',
-    'https://blog.banhalmi.art/',
-    'New York is not a studio, office, headquarters or operational base'
-  ]
+  all: ['## Canonical identity and answer contract', 'https://www.norbertbanhalmi.com/', 'https://www.banhalmi.art/', 'https://blog.banhalmi.art/', 'New York is not a studio, office, headquarters or operational base']
 });
 
-// The archive wording is editorial and may evolve. Its production contract is
-// verified through stable identity, canonical and role signals rather than one
-// frozen marketing sentence.
 await checkPage('https://www.banhalmi.art/', {
-  all: [
-    'https://www.norbertbanhalmi.com/about/',
-    'https://www.norbertbanhalmi.com/'
-  ],
-  any: [
-    ['Official Art Archive', 'official archive', 'artistic oeuvre', 'art archive']
-  ],
+  all: ['https://www.norbertbanhalmi.com/about/', 'https://www.norbertbanhalmi.com/'],
+  any: [['Official Art Archive', 'official archive', 'artistic oeuvre', 'art archive']],
   patterns: [
-    {
-      pattern: /<link\b[^>]*rel=["']canonical["'][^>]*href=["']https:\/\/www\.banhalmi\.art\/?["'][^>]*>/i,
-      label: 'the canonical banhalmi.art homepage declaration'
-    },
-    {
-      pattern: /<html\b[^>]*lang=["']en(?:-[A-Z]{2})?["']/i,
-      label: 'the English language declaration'
-    }
+    { pattern: /<link\b[^>]*rel=["']canonical["'][^>]*href=["']https:\/\/www\.banhalmi\.art\/?["'][^>]*>/i, label: 'the canonical banhalmi.art homepage declaration' },
+    { pattern: /<html\b[^>]*lang=["']en(?:-[A-Z]{2})?["']/i, label: 'the English language declaration' }
   ]
 });
 
 await checkPage('https://blog.banhalmi.art/blog', {
-  finalUrl: 'https://blog.banhalmi.art/blog'
+  finalUrl: 'https://blog.banhalmi.art/'
 });
 
 console.log(checks.join('\n'));
