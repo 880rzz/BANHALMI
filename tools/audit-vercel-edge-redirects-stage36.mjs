@@ -52,10 +52,16 @@ auditMiddleware('redirects/hu/middleware.js', [
 const vercel = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
 const ignore = vercel.ignoreCommand || '';
 for (const redundantProjectId of [
-  'prj_S6QfYbMXaV7mCI9rr47asrzyKdYX',
+  'prj_ZNb7R5KI1MDAQNhoz8Alkwtguydf',
   'prj_2oUW8R7jfNrPC9LLo86VjyBsUBgm'
 ]) {
   if (!ignore.includes(redundantProjectId)) failures.push(`vercel.json ignoreCommand must skip redundant domainless project ${redundantProjectId}`);
+}
+for (const requiredProjectId of [
+  'prj_S6QfYbMXaV7mCI9rr47asrzyKdYX',
+  'prj_orfR5hrA2p6bbZDyJ7ZHhyxRIcVL'
+]) {
+  if (ignore.includes(requiredProjectId)) failures.push(`vercel.json must not skip required redirect project ${requiredProjectId}`);
 }
 if (!ignore.includes('$VERCEL_PROJECT_ID')) failures.push('vercel.json ignoreCommand must key build suppression from VERCEL_PROJECT_ID');
 if (!ignore.includes('else exit 1')) failures.push('vercel.json ignoreCommand must allow all non-redundant Vercel projects to continue building');
@@ -65,4 +71,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('Stage 36 Vercel hostname-aware redirects and redundant-project build suppression audit passed.');
+console.log('Stage 36 Vercel hostname-aware redirects and verified redundant-project build suppression audit passed.');
