@@ -20,7 +20,11 @@ for(const token of ['.lang-switch a','.site-footer a','.banhalmi-ecosystem a','m
 }
 
 if(!llms.startsWith('# BANHALMI\n\n>')) errors.push('llms.txt must begin with H1 then blockquote summary for agent discovery');
-for(const token of ['Vienna and Budapest are two active operational bases','substantial New York chapter','New York is not presented as a studio or operational base']){
+for(const token of [
+  'Vienna and Budapest are the two active operational bases',
+  'New York is a major international reference and oeuvre chapter',
+  'New York is not a studio, office, headquarters or operational base'
+]){
   if(!llms.includes(token)) errors.push(`llms.txt missing geography distinction: ${token}`);
 }
 if(!pkg.scripts.audit.includes('audit-internal-anchor-targets-stage31.mjs')) errors.push('Stage 31 internal-fragment audit is not wired into the main audit chain');
@@ -37,4 +41,4 @@ for(const [file,token] of Object.entries(home)){
 }
 
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
-console.log('Stage 32 PageSpeed audit passed: footer contrast/hierarchy, mobile touch targets, agent entry format, fragment auditing and New York reference geography are guarded.');
+console.log('Stage 32 PageSpeed audit passed: footer contrast/hierarchy, mobile touch targets, concise agent entry format, fragment auditing and New York reference geography are guarded.');
