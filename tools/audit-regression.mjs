@@ -195,7 +195,7 @@ for(const p of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/a
 
 // Strategic-positioning, Schema.org and Wikidata invariants.
 const strategicCopy={
-  'index.html':['Photography for clear communication','builds visual trust','Four principal services:','As a member of AmCham Austria'],
+  'index.html':['Photography for clear communication','I photograph leaders and organisations for the places where their images actually need to work.','Four principal services:','As a member of AmCham Austria'],
   'hu/index.html':['Vizuális bizalomstratégia','Vezetői portrék és vizuális pozicionálás vezetőknek és szervezeteknek.','Négy fő szolgáltatás:','Az AmCham Austria tagjaként'],
   'de-at/index.html':['Fotografie für klare Kommunikation','Ich fotografiere Führungskräfte und Organisationen für die Situationen, in denen ihre Bilder tatsächlich funktionieren müssen.','Vier Hauptleistungen:','Als Mitglied von AmCham Austria']
 };
