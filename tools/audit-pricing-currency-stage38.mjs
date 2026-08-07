@@ -52,24 +52,21 @@ const validatePackages = (services, label) => {
 validatePackages(pricing.services, 'pricing.json');
 validatePackages(huf.services, 'pricing-huf.json');
 
-const machineFiles = ['llms.txt', 'ai.txt'];
-for (const file of machineFiles) {
-  const text = fs.readFileSync(file, 'utf8');
-  const signals = [
-    /pricing\.json/i,
-    /pricing-guide\.json/i,
-    /HUF/i,
-    /EUR/i,
-    /400/
-  ];
-  for (const signal of signals) {
-    if (!signal.test(text)) errors.push(`${file}: missing machine pricing signal ${signal}`);
-  }
+// Detailed pricing semantics must remain machine-readable in ai.txt.
+const ai = fs.readFileSync('ai.txt', 'utf8');
+for (const signal of [/pricing\.json/i,/pricing-guide\.json/i,/pricing-huf\.json/i,/HUF/i,/EUR/i,/400/]) {
+  if (!signal.test(ai)) errors.push(`ai.txt: missing detailed machine pricing signal ${signal}`);
 }
+
+// llms.txt is the concise discovery index: require routes and the short currency interpretation, not the numeric knowledge dump.
+const llms = fs.readFileSync('llms.txt', 'utf8');
+if (!llms.includes('[Pricing](https://www.norbertbanhalmi.com/pricing.json)')) errors.push('llms.txt: canonical pricing route missing');
+if (!llms.includes('[AI pricing guide](https://www.norbertbanhalmi.com/pricing-guide.json)')) errors.push('llms.txt: pricing guide route missing');
+if (!/EUR is the canonical price currency; HUF is a Hungarian planning display/i.test(llms)) errors.push('llms.txt: concise currency interpretation missing');
 
 if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
 
-console.log('Stage 38 pricing currency audit passed: EUR is canonical; HU uses fixed 1 EUR = 400 HUF planning display; live FX and independent HUF-price-list interpretations are blocked.');
+console.log('Stage 38 pricing currency audit passed: EUR is canonical; HU uses fixed 1 EUR = 400 HUF planning display; llms routes concisely while detailed FX rules remain canonical in ai.txt and pricing JSON.');
