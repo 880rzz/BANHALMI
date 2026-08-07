@@ -6,11 +6,18 @@ test.use({
   isMobile: true
 });
 
-const routes = ['/', '/hu/', '/de-at/'];
+const cases = [
+  { route: '/about/', label: 'Oeuvre' },
+  { route: '/hu/eletmu/', label: 'Életmű' },
+  { route: '/de-at/werk/', label: 'Werk' }
+];
 
-for (const route of routes) {
-  test(`mobile active menu state is text-only on ${route}`, async ({ page }) => {
-    await page.goto(route);
+for (const entry of cases) {
+  test(`production mega menu exposes the active oeuvre route on ${entry.route}`, async ({ page }) => {
+    const jsErrors = [];
+    page.on('pageerror', error => jsErrors.push(error.message));
+
+    await page.goto(entry.route, { waitUntil: 'domcontentloaded' });
 
     const menuButton = page.locator('.menu-btn');
     await expect(menuButton).toBeVisible();
@@ -18,40 +25,27 @@ for (const route of routes) {
     await menuButton.click();
     await expect(menuButton).toHaveAttribute('aria-expanded', 'true');
 
-    const nav = page.locator('.nav-links');
-    await expect(nav).toBeVisible();
+    const menu = page.locator('#bn-mega-menu[aria-hidden="false"]');
+    await expect(menu).toBeVisible();
 
-    const link = nav.locator('[data-nav-role="oeuvre"]').first();
-    await expect(link).toBeVisible();
+    const active = menu.locator('a.bn-mega-link[aria-current="page"]');
+    await expect(active).toHaveCount(1);
+    await expect(active).toBeVisible();
+    await expect(active).toHaveText(entry.label);
+    await expect(active).toHaveClass(/\bactive\b/);
 
-    // Force the same active/current state used by the navigation logic so this
-    // regression test isolates the visual contract from route-specific labels.
-    await link.evaluate((element) => {
-      element.classList.add('active');
-      element.setAttribute('aria-current', 'page');
-    });
-
-    const styles = await link.evaluate((element) => {
+    const styles = await active.evaluate((element) => {
       const style = getComputedStyle(element);
       return {
         color: style.color,
-        backgroundColor: style.backgroundColor,
-        borderTopWidth: style.borderTopWidth,
-        borderTopStyle: style.borderTopStyle,
-        boxShadow: style.boxShadow,
-        outlineStyle: style.outlineStyle,
-        outlineWidth: style.outlineWidth,
-        borderRadius: style.borderRadius
+        textDecorationLine: style.textDecorationLine,
+        textDecorationColor: style.textDecorationColor
       };
     });
 
     expect(styles.color).toBe('rgb(183, 156, 68)');
-    expect(styles.backgroundColor).toBe('rgba(0, 0, 0, 0)');
-    expect(styles.borderTopWidth).toBe('0px');
-    expect(styles.borderTopStyle).toBe('none');
-    expect(styles.boxShadow).toBe('none');
-    expect(styles.outlineStyle).toBe('none');
-    expect(styles.outlineWidth).toBe('0px');
-    expect(styles.borderRadius).toBe('0px');
+    expect(styles.textDecorationLine).toContain('underline');
+    expect(styles.textDecorationColor).toBe('rgb(183, 156, 68)');
+    expect(jsErrors).toEqual([]);
   });
 }
