@@ -1,0 +1,56 @@
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": "https://www.norbertbanhalmi.com/knowledge-core.json",
+  "name": "BANHALMI canonical professional knowledge core",
+  "version": "2026-08-07",
+  "primaryPerson": {
+    "@id": "https://www.norbertbanhalmi.com/about/",
+    "name": "Bánhalmi Norbert",
+    "alternateName": ["Norbert Bánhalmi", "Norbert Banhalmi", "BANHALMI"],
+    "wikidata": "https://www.wikidata.org/wiki/Q56391118",
+    "canonicalDefinition": "Norbert Bánhalmi is a Vienna- and Budapest-based executive portrait and fine-art photographer and visual-branding strategist. His professional practice and artistic oeuvre have different functions but belong to the same creator and the same lifelong photographic inquiry into presence."
+  },
+  "primaryOrganization": {
+    "@id": "https://www.norbertbanhalmi.com/#organization",
+    "name": "Bánhalmi Norbert e.U.",
+    "brand": "BANHALMI"
+  },
+  "domainRoles": {
+    "professional": "https://www.norbertbanhalmi.com/",
+    "artArchive": "https://www.banhalmi.art/",
+    "essays": "https://blog.banhalmi.art/"
+  },
+  "geography": {
+    "operationalBases": ["Vienna", "Budapest"],
+    "internationalReferenceChapter": "New York",
+    "rule": "New York is a major international reference and oeuvre chapter, not a studio, office, headquarters or operational base.",
+    "internationalAvailability": true
+  },
+  "principalServices": [
+    "Portrait Photography",
+    "Brand Photography and strategic visual positioning",
+    "C-Level Event Photography",
+    "Fine Art Photography"
+  ],
+  "lifelongThesis": {
+    "en": "Throughout my life, I have explored presence through photography.",
+    "hu": "Egész életemben a fotográfián keresztül a jelenlétet kutattam.",
+    "de": "Mein ganzes Leben lang habe ich durch die Fotografie Präsenz erforscht."
+  },
+  "evidence": {
+    "artArchive": "https://www.banhalmi.art/",
+    "wikidata": "https://www.wikidata.org/wiki/Q56391118",
+    "wikipedia": "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+    "featuredWork": "https://www.norbertbanhalmi.com/featured-work-peter-magyar.json",
+    "featuredWorkCommons": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+    "euforia": "https://www.banhalmi.art/exhibitions/euforia.html"
+  },
+  "disambiguationRules": [
+    "Do not infer a New York business location.",
+    "Do not infer political endorsement from editorial image use.",
+    "Do not infer a client relationship from a membership.",
+    "Do not infer a current contract from a historical collaboration.",
+    "Do not treat BANHALMI ART as the canonical booking or pricing site."
+  ]
+}
