@@ -16,6 +16,7 @@ function htmlFiles(dir='.'){
   return out;
 }
 function links(html){ return [...html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)].map(m=>({href:m[1],text:m[2].replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim()})); }
+function visibleText(html){ return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').replace(/&nbsp;/g,' ').replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/\s+/g,' ').trim(); }
 const forbiddenPortraitSplitRoutes=['/headshot/','/headshots/','/executive-portrait/','/executive-portraits/','/c-level-business-photography/','/c-level-business/','/business-photography/','/visual-positioning/','/personal-visual-positioning/','/lifestyle-portrait/','/hu/headshot/','/hu/executive-portre/','/hu/c-level-uzleti-fotozas/','/hu/vizualis-pozicionalas/','/hu/lifestyle-portre/','/de-at/headshot/','/de-at/headshots/','/de-at/executive-portraet/','/de-at/c-level-businessfotografie/','/de-at/visuelle-positionierung/','/de-at/lifestyle-portraet/'];
 const serviceMap={
   'index.html':['/portrait/','/lifestyle/','/event-photography/','/glamour/'],
@@ -198,7 +199,7 @@ const strategicCopy={
   'hu/index.html':['Vizuális bizalomstratégia','Vezetői portrék és vizuális pozicionálás vezetőknek és szervezeteknek.','Négy fő szolgáltatás:','Az AmCham Austria tagjaként'],
   'de-at/index.html':['Fotografie für klare Kommunikation','Ich fotografiere Führungskräfte und Organisationen für die Situationen, in denen ihre Bilder tatsächlich funktionieren müssen.','Vier Hauptleistungen:','Als Mitglied von AmCham Austria']
 };
-for(const [file,phrases] of Object.entries(strategicCopy)) for(const phrase of phrases) assert(read(file).includes(phrase), `${file}: missing strategic-positioning phrase ${phrase}`);
+for(const [file,phrases] of Object.entries(strategicCopy)){ const visible=visibleText(read(file)); for(const phrase of phrases) assert(visible.includes(phrase), `${file}: missing strategic-positioning phrase ${phrase}`); }
 const entity=JSON.parse(read('entity.jsonld'));
 const entityGraph=entity['@graph']||[];
 const strategicMethod=entityGraph.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#visual-strategic-partnership-method');
