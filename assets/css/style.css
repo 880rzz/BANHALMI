@@ -3533,3 +3533,15 @@ body>.site-footer{margin-top:auto;width:100%}
 /* Editorial width: long-form copy should not become a wall of text. */
 .prose,.legal,.structural-prose{max-width:var(--ui-reading-max)}
 /* STAGE47-UI-DESIGN-CONTRACT:END */
+
+
+/* STAGE48-LAYOUT-CACHE-CONTRACT:START */
+/* Safari-safe document floor + verified trust-card rhythm. */
+html{min-height:100%;background:#202530!important}
+body{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+body>main,#main{flex:1 0 auto;width:100%;min-width:0}
+body>.site-footer,.site-footer{flex:0 0 auto;width:100%}
+.trust-proof .grid-3{gap:24px!important;row-gap:24px!important}
+.trust-proof .grid-3>.card{margin:0!important;border-radius:12px}
+@media(max-width:760px){.trust-proof .grid-3{gap:16px!important;row-gap:16px!important}}
+/* STAGE48-LAYOUT-CACHE-CONTRACT:END */
