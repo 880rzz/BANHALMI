@@ -6,6 +6,7 @@
   --bg-alt:#f5f5f7;      /* soft white band */
   --navy:#202530;        /* near-black text/ink */
   --navy-soft:#2D3444;
+  --title-accent:#2F6F78; /* WCAG AA on #fff and #f5f5f7; reserved for sparse display emphasis */
   --graphite:#202530;
   --ink:#202530;         /* black text */
   --muted:#6e6e73;       /* secondary text */
@@ -3545,3 +3546,9 @@ body>.site-footer,.site-footer{flex:0 0 auto;width:100%}
 .trust-proof .grid-3>.card{margin:0!important;border-radius:12px}
 @media(max-width:760px){.trust-proof .grid-3{gap:16px!important;row-gap:16px!important}}
 /* STAGE48-LAYOUT-CACHE-CONTRACT:END */
+
+
+/* STAGE52-TYPE-ACCENT:START — sparse Apple-like semantic emphasis */
+.title-accent{color:var(--title-accent)}
+.title-accent--block{display:block}
+/* STAGE52-TYPE-ACCENT:END */
