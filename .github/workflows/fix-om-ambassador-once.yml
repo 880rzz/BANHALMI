@@ -1,0 +1,32 @@
+name: Fix OM ambassador relation once
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/fix-om-ambassador-relation.mjs'
+      - '.github/workflows/fix-om-ambassador-once.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node tools/fix-om-ambassador-relation.mjs
+      - run: |
+          set -euo pipefail
+          git diff --check
+          test -n "$(git status --porcelain entity.jsonld)"
+      - run: |
+          set -euo pipefail
+          git config user.name 'BANHALMI release bot'
+          git config user.email '107166660+880rzz@users.noreply.github.com'
+          git add entity.jsonld
+          git commit -m 'fix(schema): model OM SYSTEM ambassador as affiliation'
+          git push origin HEAD:main
