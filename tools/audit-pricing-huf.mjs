@@ -72,12 +72,18 @@ const hu = read('hu/ajanlatkeres/index.html');
 for (const token of ['1 EUR = 400 HUF','/pricing-huf.json','forintban','48 000 Ft','144 000 Ft','96 000 Ft']) {
   expect(hu.includes(token), `Hungarian quote page missing ${token}`);
 }
-for (const file of ['ai.txt','llms.txt']) {
-  const text = read(file);
-  for (const token of ['pricing-huf.json','1 EUR = 400 HUF','not a live exchange rate','grossHUF']) {
-    expect(text.includes(token), `${file} missing ${token}`);
-  }
+
+// Detailed HUF conversion semantics belong in ai.txt and canonical pricing JSON.
+const ai = read('ai.txt');
+for (const token of ['pricing-huf.json','1 EUR = 400 HUF','not a live exchange rate','grossHUF']) {
+  expect(ai.includes(token), `ai.txt missing ${token}`);
 }
+// llms.txt stays a concise agent-entry index and only needs to route to canonical pricing resources.
+const llms = read('llms.txt');
+expect(llms.includes('[Pricing](https://www.norbertbanhalmi.com/pricing.json)'), 'llms.txt missing canonical pricing route');
+expect(llms.includes('[AI pricing guide](https://www.norbertbanhalmi.com/pricing-guide.json)'), 'llms.txt missing pricing-guide route');
+expect(/EUR is the canonical price currency; HUF is a Hungarian planning display/i.test(llms), 'llms.txt missing concise EUR/HUF interpretation');
+
 expect(guide.fixedCurrencyConversion?.rate === rate, 'pricing guide fixed rate missing');
 expect(guide.workedExamples.every((item) => item.hungarianDisplay?.fixedRateHUFPerEUR === rate), 'worked example HUF conversion missing');
 expect(/fixed planning conversion/.test(policy.commercialInterpretation?.hungarianOrientationCurrency || ''), 'project policy HUF interpretation missing');
@@ -86,4 +92,4 @@ if (failures.length) {
   console.error(failures.join('\n'));
   process.exit(1);
 }
-console.log('EUR/HUF pricing, OfferCatalog, PDF and LLM audit passed.');
+console.log('EUR/HUF pricing, OfferCatalog, PDF and machine-layer audit passed: llms stays concise; detailed HUF semantics remain in ai.txt and pricing JSON.');
