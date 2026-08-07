@@ -3731,3 +3731,22 @@ html[lang^="hu"] .quote-total{font-variant-numeric:tabular-nums;font-size:clamp(
 @media (max-width:720px){.fine-art-archive-drawer > summary{grid-template-columns:minmax(0,1fr) auto;}.fine-art-archive-action{display:none;}}
 @media (max-width:640px){.fine-art-private-actions{align-items:flex-start;margin-top:24px;margin-bottom:28px;}}
 /* FINE-ART-PRIVATE-JOURNEY:END */
+/* PAGESPEED-STAGE32:START */
+/* Footer-only accessible gold: #CBB45F on #202530 is ~7.5:1 (WCAG AAA). */
+.site-footer{--footer-gold:#CBB45F;}
+.site-footer h3,
+.site-footer .footer-accordion summary{
+  color:var(--footer-gold)!important;
+  opacity:1!important;
+  font-weight:650!important;
+}
+.site-footer .footer-accordion summary:hover,
+.site-footer .footer-accordion summary:focus-visible{color:#fff!important;}
+.site-footer .footer-bottom{color:#AEB4C2!important;}
+.site-footer .footer-bottom a,
+.site-footer .footer-bottom button{color:#D2D2D7!important;}
+.site-footer .footer-bottom a:hover,
+.site-footer .footer-bottom a:focus-visible,
+.site-footer .footer-bottom button:hover,
+.site-footer .footer-bottom button:focus-visible{color:#fff!important;}
+/* PAGESPEED-STAGE32:END */

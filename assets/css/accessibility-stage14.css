@@ -23,3 +23,19 @@ input[type="checkbox"],input[type="radio"]{min-width:24px;min-height:24px;}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 @media (forced-colors:active){:focus-visible{outline:3px solid Highlight}.btn,.card,input,select,textarea{forced-color-adjust:auto}}
+
+/* PAGESPEED-STAGE32-TARGETS:START */
+@media (max-width:680px), (pointer:coarse){
+  .lang-switch a,
+  .site-footer a,
+  .site-footer button,
+  .banhalmi-ecosystem a{
+    min-height:44px;
+    display:inline-flex;
+    align-items:center;
+  }
+  .lang-switch a{min-width:44px;justify-content:center;padding-inline:8px;}
+  .site-footer li>a{padding-block:7px;}
+  .banhalmi-ecosystem a{padding-block:8px;}
+}
+/* PAGESPEED-STAGE32-TARGETS:END */

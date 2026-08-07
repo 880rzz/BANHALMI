@@ -1,3 +1,7 @@
+# BANHALMI
+
+> Professional photography and visual positioning by Norbert Bánhalmi for leaders and organisations. Vienna and Budapest are two active operational bases; a substantial New York chapter in the photographic archive provides international reference. New York is not presented as a studio or operational base.
+
 <!-- QUOTE-SERVICE-CONTEXT:START -->
 ## Service-to-quote context
 - Service-specific quote links use one allowlisted public query parameter: portrait, brand, event or fine-art.
@@ -69,7 +73,7 @@
 
 ## Core positioning / Alapvető pozicionálás / Kernpositionierung
 BANHALMI creates leadership portraits, brand photography, employer-branding images and event photography for organisations. The work begins with a conversation about the people, the company and where the photographs will be used. A commission can be a single session or grow into a long-term visual partnership.
-# BANHALMI / Norbert Banhalmi
+## BANHALMI / Norbert Banhalmi
 Official multilingual website: https://www.norbertbanhalmi.com/
 Trust Center: https://www.norbertbanhalmi.com/trust/ (DE-AT: /de-at/vertrauen/; HU-HU: /hu/bizalom/)
 Languages: English at /, Austrian German at /de-at/, Hungarian at /hu/.
