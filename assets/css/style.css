@@ -3750,3 +3750,11 @@ html[lang^="hu"] .quote-total{font-variant-numeric:tabular-nums;font-size:clamp(
 .site-footer .footer-bottom button:hover,
 .site-footer .footer-bottom button:focus-visible{color:#fff!important;}
 /* PAGESPEED-STAGE32:END */
+
+
+/* STAGE43-INLINE-PRESENTATION:START */
+/* Reusable form/contact presentation belongs to the design system, never HTML attributes. */
+.smart-quote-layout .location-cards{margin-top:28px;}
+.smart-quote-layout .field.consent label{font-weight:400;}
+.form [data-form-note]{margin-top:16px;color:var(--gold-deep);}
+/* STAGE43-INLINE-PRESENTATION:END */
