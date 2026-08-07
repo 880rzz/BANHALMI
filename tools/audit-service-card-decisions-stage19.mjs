@@ -40,11 +40,22 @@ for(const service of services.itemListElement){
 }
 const ecosystem=JSON.parse(fs.readFileSync('ecosystem.json','utf8'));
 if(ecosystem.serviceDecisionModel?.services?.length!==4||ecosystem.serviceDecisionModel?.preservesFourPrincipalServices!==true)errors.push('ecosystem.json: service decision model incomplete');
-for(const file of ['ai.txt','llms.txt','llms-full.txt']){
+
+// Full migration detail belongs in the detailed AI/reference layers.
+for(const file of ['ai.txt','llms-full.txt']){
   const text=fs.readFileSync(file,'utf8');
   if((text.split('<!-- SERVICE-DECISION-CARDS:START -->').length-1)!==1)errors.push(file+': service decision block missing or duplicated');
 }
+// llms.txt is a concise resource index; preserve the four canonical service routes instead of duplicating implementation blocks.
+const llms=fs.readFileSync('llms.txt','utf8');
+for(const route of [
+  'https://www.norbertbanhalmi.com/portrait/',
+  'https://www.norbertbanhalmi.com/brand-photography/',
+  'https://www.norbertbanhalmi.com/c-level-event-photography/',
+  'https://www.norbertbanhalmi.com/fine-art-photography/'
+]) if(!llms.includes(route)) errors.push('llms.txt: service route missing '+route);
+
 const manifest=JSON.parse(fs.readFileSync('docs/content-migrations/2026-08-06-service-card-decisions-stage4.json','utf8'));
 if(manifest.pages?.length!==3||manifest.pages.some(page=>page.cards?.length!==4||page.nonDescriptionContentPreservedExactly!==true))errors.push('migration manifest: service-card preservation evidence incomplete');
 if(errors.length){console.error(errors.join(String.fromCharCode(10)));process.exit(1)}
-console.log('Service-card decision audit passed: three languages, four unchanged routes and audience-use-result copy are aligned.');
+console.log('Service-card decision audit passed: three languages, four unchanged routes, detailed AI evidence and concise llms discovery are aligned.');
