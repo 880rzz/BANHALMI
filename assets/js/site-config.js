@@ -14,13 +14,13 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   if(!document.querySelector('link[data-banhalmi-mega-menu]')){
     var style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/css/mega-menu.css?v=20260807-blue-palette-v49';
+    style.href = '/assets/css/mega-menu.css?v=20260807-type-accent-v50';
     style.setAttribute('data-banhalmi-mega-menu','');
     document.head.appendChild(style);
   }
   if(!document.querySelector('script[data-banhalmi-mega-menu]')){
     var script = document.createElement('script');
-    script.src = '/assets/js/mega-menu.js?v=20260807-blue-palette-v49';
+    script.src = '/assets/js/mega-menu.js?v=20260807-type-accent-v50';
     script.defer = true;
     script.setAttribute('data-banhalmi-mega-menu','');
     document.head.appendChild(script);
@@ -78,12 +78,14 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     Object.keys(values || {}).forEach(function(name){
       var fields = form.querySelectorAll('[name="' + CSS.escape(name) + '"]');
       Array.prototype.forEach.call(fields, function(field){
-        if(field.type === 'checkbox' || field.type === 'radio') field.checked = Array.isArray(values[name]) && values[name].indexOf(field.value) >= 0;
-        else if(typeof values[name] === 'string') field.value = values[name];
+        var value = values[name];
+        if(field.type === 'checkbox' || field.type === 'radio'){
+          field.checked = Array.isArray(value) && value.indexOf(field.value) !== -1;
+        } else if(typeof value === 'string'){
+          field.value = value;
+        }
       });
     });
-    form.dispatchEvent(new Event('change', {bubbles:true}));
-    form.dispatchEvent(new Event('input', {bubbles:true}));
   }
 
   function saveDraft(form){
@@ -94,258 +96,200 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     try { localStorage.removeItem(draftKey(form)); } catch(e) {}
   }
 
-  function addIdempotency(form){
-    var field = form.querySelector('[name="submission_key"]');
-    if(!field){
-      field = document.createElement('input');
-      field.type = 'hidden';
-      field.name = 'submission_key';
-      form.appendChild(field);
-    }
-    if(!field.value){
-      var random = (window.crypto && window.crypto.randomUUID) ? window.crypto.randomUUID() : (Date.now().toString(36) + '-' + Math.random().toString(36).slice(2));
-      field.value = 'BQ-' + random;
-    }
-  }
-
-  function prepareStatus(form){
-    var note = form.querySelector('[data-form-note]');
-    if(note){
-      note.setAttribute('role','status');
-      note.setAttribute('aria-live','polite');
-      note.setAttribute('aria-atomic','true');
-    }
-  }
-
-  function prepareDates(form){
-    var min = tomorrowIso();
-    form.querySelectorAll('input[type="date"]').forEach(function(input){ input.min = min; });
-  }
-
-  function applyZeroPriceDefault(form){
-    if(hasDraft(form)) return;
-    form.querySelectorAll('input[type="radio"][name="category"], input[type="radio"][name="individual_mode"], input[type="radio"][name="brand_duration"], input[type="radio"][name="event_duration"]').forEach(function(input){
-      input.checked = false;
-    });
-    form.querySelectorAll('input[type="checkbox"][name="addons"]').forEach(function(input){
-      input.checked = false;
-    });
-    form.dispatchEvent(new Event('change', {bubbles:true}));
-    form.dispatchEvent(new Event('input', {bubbles:true}));
-  }
-
-  function placePdfAction(form){
-    var submitActions = form.querySelector('.quote-submit-actions');
-    var root = form.closest('[data-quote-root], .smart-quote-layout') || form.parentElement;
-    var pdfButton = root && root.querySelector('[data-download-quote-pdf]');
-    var pdfActions = pdfButton && pdfButton.closest('.quote-actions');
-    if(!submitActions || !pdfActions) return;
-    submitActions.insertAdjacentElement('afterend', pdfActions);
-    pdfActions.classList.add('quote-submit-pdf-actions');
-  }
-
-  function protectReset(form){
-    var nativeReset = form.reset.bind(form);
-    form.reset = function(){
-      if(!verifiedDelivery) return;
-      clearDraft(form);
-      nativeReset();
-      applyZeroPriceDefault(form);
-      addIdempotency(form);
-      verifiedDelivery = false;
+  function messageFor(lang, key){
+    var messages = {
+      en: {
+        invalid:'Please check the highlighted fields.',
+        required:'This field is required.',
+        email:'Please enter a valid email address.',
+        phone:'Please enter a valid phone number.',
+        consent:'Please confirm the required consent.',
+        date:'Please choose a future date.',
+        sending:'Sending…',
+        sent:'Thank you. Your request has been sent.',
+        failed:'The request could not be sent. Please try again or email hello@norbertbanhalmi.com.'
+      },
+      hu: {
+        invalid:'Kérlek ellenőrizd a kiemelt mezőket.',
+        required:'A mező kitöltése kötelező.',
+        email:'Kérlek adj meg érvényes e-mail címet.',
+        phone:'Kérlek adj meg érvényes telefonszámot.',
+        consent:'Kérlek erősítsd meg a szükséges hozzájárulást.',
+        date:'Kérlek jövőbeli dátumot válassz.',
+        sending:'Küldés…',
+        sent:'Köszönöm. Az ajánlatkérésed megérkezett.',
+        failed:'Az ajánlatkérés nem küldhető el. Próbáld újra, vagy írj a hello@norbertbanhalmi.com címre.'
+      },
+      de: {
+        invalid:'Bitte prüfen Sie die markierten Felder.',
+        required:'Dieses Feld ist erforderlich.',
+        email:'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+        phone:'Bitte geben Sie eine gültige Telefonnummer ein.',
+        consent:'Bitte bestätigen Sie die erforderliche Einwilligung.',
+        date:'Bitte wählen Sie ein zukünftiges Datum.',
+        sending:'Wird gesendet…',
+        sent:'Vielen Dank. Ihre Anfrage wurde gesendet.',
+        failed:'Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an hello@norbertbanhalmi.com.'
+      }
     };
+    return messages[lang][key];
   }
 
-  function validationCopy(form){
-    var lang = languageOf(form);
-    return {
-      en:{title:'Please complete the highlighted fields',intro:'The quote request cannot be sent yet. Check the marked section(s) below.',field:'This field is required or contains an invalid value.',choice:'Please select an option.',email:'Please enter a valid email address.',privacy:'Please accept the privacy notice before sending.',button:'Go to the first error'},
-      hu:{title:'Kérjük, javítsa a kiemelt mezőket',intro:'Az ajánlatkérés még nem küldhető el. Ellenőrizze az alább megjelölt részeket.',field:'Ez a mező kötelező, vagy a megadott érték nem megfelelő.',choice:'Kérjük, válasszon egy lehetőséget.',email:'Kérjük, adjon meg érvényes e-mail-címet.',privacy:'Kérjük, küldés előtt fogadja el az adatvédelmi tájékoztatót.',button:'Ugrás az első hibához'},
-      de:{title:'Bitte korrigieren Sie die markierten Felder',intro:'Die Anfrage kann noch nicht gesendet werden. Prüfen Sie die unten markierten Bereiche.',field:'Dieses Feld ist erforderlich oder enthält einen ungültigen Wert.',choice:'Bitte wählen Sie eine Option aus.',email:'Bitte geben Sie eine gültige E-Mail-Adresse ein.',privacy:'Bitte akzeptieren Sie vor dem Senden die Datenschutzhinweise.',button:'Zum ersten Fehler'}
-    }[lang];
+  function setError(field, message){
+    field.setAttribute('aria-invalid','true');
+    field.classList.add('is-invalid');
+    var id = field.id || field.name;
+    var errorId = id + '-error';
+    var error = document.getElementById(errorId);
+    if(!error){
+      error = document.createElement('span');
+      error.id = errorId;
+      error.className = 'field-error';
+      error.setAttribute('role','alert');
+      field.insertAdjacentElement('afterend', error);
+    }
+    error.textContent = message;
+    var described = (field.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean);
+    if(described.indexOf(errorId) === -1) described.push(errorId);
+    field.setAttribute('aria-describedby', described.join(' '));
   }
 
-  function fieldContainer(field){
-    return field.closest('fieldset, .quote-field, .form-field, .field, .form-group, .choice-grid, .option-grid, .quote-section, label') || field.parentElement;
-  }
-
-  function fieldLabel(field){
-    var form = field.form;
-    var label = field.id && form ? form.querySelector('label[for="' + field.id.replace(/"/g,'\\"') + '"]') : null;
-    if(!label) label = field.closest('label');
-    if(!label && fieldContainer(field)) label = fieldContainer(field).querySelector('legend, label, h2, h3, h4');
-    return label ? String(label.textContent || '').replace(/\s+/g,' ').trim().replace(/[*:]\s*$/,'') : (field.name || 'Field');
-  }
-
-  function clearFieldError(field){
+  function clearError(field){
     field.removeAttribute('aria-invalid');
-    field.classList.remove('is-invalid-field');
-    var container = fieldContainer(field);
-    if(container){
-      container.classList.remove('is-invalid-group');
-      container.querySelectorAll('.field-error-message[data-for="' + (field.name || field.id || '') + '"]').forEach(function(message){ message.remove(); });
+    field.classList.remove('is-invalid');
+    var id = field.id || field.name;
+    var error = document.getElementById(id + '-error');
+    if(error) error.remove();
+    var described = (field.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean).filter(function(x){ return x !== id + '-error'; });
+    if(described.length) field.setAttribute('aria-describedby', described.join(' '));
+    else field.removeAttribute('aria-describedby');
+  }
+
+  function validateField(field, lang){
+    if(field.disabled || field.type === 'hidden' || field.name === 'website') return true;
+    var value = String(field.value || '').trim();
+    if(field.required){
+      if(field.type === 'checkbox' && !field.checked){ setError(field, messageFor(lang,'consent')); return false; }
+      if(field.type !== 'checkbox' && !value){ setError(field, messageFor(lang,'required')); return false; }
     }
+    if(value && field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)){ setError(field, messageFor(lang,'email')); return false; }
+    if(value && field.type === 'tel' && value.replace(/[^0-9+]/g,'').length < 7){ setError(field, messageFor(lang,'phone')); return false; }
+    if(value && field.type === 'date' && value < tomorrowIso()){ setError(field, messageFor(lang,'date')); return false; }
+    clearError(field);
+    return true;
   }
 
-  function errorMessage(field, copy){
-    if(field.name === 'privacy_acknowledged') return copy.privacy;
-    if(field.type === 'email' && field.validity && field.validity.typeMismatch) return copy.email;
-    if(field.type === 'radio' || field.type === 'checkbox') return copy.choice;
-    return field.validationMessage || copy.field;
-  }
-
-  function markFieldError(field, copy){
-    var groupFields = (field.type === 'radio' || field.type === 'checkbox') && field.name ? field.form.querySelectorAll('[name="' + CSS.escape(field.name) + '"]') : [field];
-    Array.prototype.forEach.call(groupFields, function(item){
-      item.setAttribute('aria-invalid','true');
-      item.classList.add('is-invalid-field');
+  function validateForm(form){
+    var lang = languageOf(form);
+    var firstInvalid = null;
+    Array.prototype.forEach.call(form.elements || [], function(field){
+      if(!validateField(field,lang) && !firstInvalid) firstInvalid = field;
     });
-    var container = fieldContainer(field);
-    if(container){
-      container.classList.add('is-invalid-group');
-      var key = field.name || field.id || 'field';
-      if(!container.querySelector('.field-error-message[data-for="' + key + '"]')){
-        var message = document.createElement('span');
-        message.className = 'field-error-message';
-        message.setAttribute('data-for',key);
-        message.setAttribute('role','alert');
-        message.textContent = errorMessage(field, copy);
-        container.appendChild(message);
+    if(firstInvalid){
+      var summary = form.querySelector('.quote-validation-summary');
+      if(!summary){
+        summary = document.createElement('div');
+        summary.className = 'quote-validation-summary';
+        summary.setAttribute('role','alert');
+        summary.setAttribute('aria-live','assertive');
+        form.insertBefore(summary, form.firstChild);
       }
+      summary.textContent = messageFor(lang,'invalid');
+      summary.hidden = false;
+      firstInvalid.focus({preventScroll:true});
+      firstInvalid.scrollIntoView({behavior:'smooth',block:'center'});
+      return false;
     }
+    var summaryOk = form.querySelector('.quote-validation-summary');
+    if(summaryOk) summaryOk.hidden = true;
+    return true;
   }
 
-  function invalidFields(form){
-    return Array.prototype.slice.call(form.elements || []).filter(function(field){
-      return field && field.willValidate && !field.validity.valid && !field.disabled && field.offsetParent !== null;
-    });
+  function statusNode(form){
+    return form.querySelector('[data-form-status], .form-status, #form-status');
   }
 
-  function renderValidationSummary(form, fields){
-    var copy = validationCopy(form);
-    var summary = form.querySelector('[data-validation-summary]');
-    if(!summary){
-      summary = document.createElement('section');
-      summary.className = 'quote-validation-summary';
-      summary.setAttribute('data-validation-summary','');
-      summary.setAttribute('role','alert');
-      summary.setAttribute('aria-live','assertive');
-      summary.setAttribute('tabindex','-1');
-      form.insertBefore(summary, form.firstChild);
+  function setStatus(form, text, state){
+    var node = statusNode(form);
+    if(!node){
+      node = document.createElement('p');
+      node.className = 'form-status';
+      node.setAttribute('data-form-status','');
+      node.setAttribute('role','status');
+      node.setAttribute('aria-live','polite');
+      form.appendChild(node);
     }
-    var unique = [];
-    var seen = {};
-    fields.forEach(function(field){
-      var key = field.name || field.id || String(unique.length);
-      if(seen[key]) return;
-      seen[key] = true;
-      unique.push(field);
-    });
-    summary.innerHTML = '';
-    var title = document.createElement('h2'); title.textContent = copy.title; summary.appendChild(title);
-    var intro = document.createElement('p'); intro.textContent = copy.intro; summary.appendChild(intro);
-    var list = document.createElement('ul');
-    unique.forEach(function(field, index){
-      if(!field.id) field.id = 'quote-error-field-' + index + '-' + Date.now();
-      var item = document.createElement('li');
-      var link = document.createElement('a');
-      link.href = '#' + field.id;
-      link.textContent = fieldLabel(field) + ': ' + errorMessage(field, copy);
-      link.addEventListener('click', function(event){ event.preventDefault(); focusError(field); });
-      item.appendChild(link); list.appendChild(item);
-    });
-    summary.appendChild(list);
-    var button = document.createElement('button');
-    button.type = 'button'; button.className = 'btn btn-primary'; button.textContent = copy.button;
-    button.addEventListener('click', function(){ focusError(unique[0]); });
-    summary.appendChild(button);
-    summary.hidden = false;
-    summary.focus({preventScroll:true});
-    summary.scrollIntoView({behavior:'smooth',block:'start'});
+    node.textContent = text;
+    node.dataset.state = state || '';
   }
 
-  function focusError(field){
-    if(!field) return;
-    var target = fieldContainer(field) || field;
-    target.scrollIntoView({behavior:'smooth',block:'center'});
-    window.setTimeout(function(){ try { field.focus({preventScroll:true}); } catch(e) { field.focus(); } }, 320);
+  function payloadFromForm(form){
+    var data = {};
+    var fd = new FormData(form);
+    fd.forEach(function(value,key){
+      if(key === 'website') return;
+      if(Object.prototype.hasOwnProperty.call(data,key)){
+        if(!Array.isArray(data[key])) data[key] = [data[key]];
+        data[key].push(value);
+      } else data[key] = value;
+    });
+    data.page_language = languageOf(form);
+    data.page_url = location.href;
+    data.submitted_at = new Date().toISOString();
+    return data;
   }
 
-  function clearValidationSummary(form){
-    var summary = form.querySelector('[data-validation-summary]');
-    if(summary) summary.hidden = true;
-  }
-
-  function prepareVisibleValidation(form){
-    form.setAttribute('novalidate','novalidate');
-    form.addEventListener('input', function(event){
-      if(event.target && event.target.willValidate && event.target.validity.valid) clearFieldError(event.target);
-      if(!invalidFields(form).length) clearValidationSummary(form);
-    });
-    form.addEventListener('change', function(event){
-      if(event.target && event.target.willValidate && event.target.validity.valid) clearFieldError(event.target);
-      if(!invalidFields(form).length) clearValidationSummary(form);
-    });
-    form.addEventListener('submit', function(event){
-      Array.prototype.forEach.call(form.elements || [], clearFieldError);
-      var fields = invalidFields(form);
-      if(fields.length){
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        var copy = validationCopy(form);
-        fields.forEach(function(field){ markFieldError(field, copy); });
-        renderValidationSummary(form, fields);
-      } else {
-        clearValidationSummary(form);
-      }
-    }, true);
+  async function submitForm(form){
+    var lang = languageOf(form);
+    var button = form.querySelector('[type="submit"]');
+    if(button) button.disabled = true;
+    setStatus(form,messageFor(lang,'sending'),'sending');
+    try{
+      var response = await fetch(endpoint,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(payloadFromForm(form))
+      });
+      var body = null;
+      try { body = await response.json(); } catch(e) {}
+      if(!response.ok || !body || body.ok !== true) throw new Error('delivery failed');
+      verifiedDelivery = true;
+      clearDraft(form);
+      form.reset();
+      setStatus(form,messageFor(lang,'sent'),'success');
+    }catch(error){
+      setStatus(form,messageFor(lang,'failed'),'error');
+    }finally{
+      if(button) button.disabled = false;
+    }
   }
 
   function initForm(form){
-    placePdfAction(form);
-    prepareStatus(form);
-    prepareDates(form);
-    applyZeroPriceDefault(form);
-    addIdempotency(form);
-    protectReset(form);
+    if(form.dataset.banhalmiHardened === 'true') return;
+    form.dataset.banhalmiHardened = 'true';
     restoreDraft(form);
-    prepareVisibleValidation(form);
-    var saveTimer;
-    function scheduleSave(){
-      window.clearTimeout(saveTimer);
-      saveTimer = window.setTimeout(function(){ saveDraft(form); }, 180);
-    }
-    form.addEventListener('input', scheduleSave);
-    form.addEventListener('change', scheduleSave);
-  }
-
-  /* Preserve entered data unless the backend explicitly confirms both email deliveries. */
-  if(window.fetch){
-    var nativeFetch = window.fetch.bind(window);
-    window.fetch = function(resource, options){
-      var url = typeof resource === 'string' ? resource : (resource && resource.url) || '';
-      return nativeFetch(resource, options).then(function(response){
-        if(url !== endpoint) return response;
-        return response.clone().text().then(function(text){
-          var data = {};
-          try { data = text ? JSON.parse(text) : {}; } catch(e) { data = {}; }
-          var explicitDelivery = data.adminEmailSent === true && data.customerEmailSent === true;
-          verifiedDelivery = explicitDelivery;
-          if(!explicitDelivery && data.ok !== false) data.unverified = true;
-          var headers = new Headers(response.headers);
-          headers.set('Content-Type','application/json;charset=utf-8');
-          return new Response(JSON.stringify(data), {status:response.status,statusText:response.statusText,headers:headers});
-        }).catch(function(){
-          verifiedDelivery = false;
-          return response;
-        });
-      });
-    };
+    Array.prototype.forEach.call(form.elements || [], function(field){
+      if(field.type === 'date') field.min = tomorrowIso();
+      field.addEventListener('input',function(){ clearError(field); saveDraft(form); });
+      field.addEventListener('change',function(){ clearError(field); saveDraft(form); });
+      field.addEventListener('blur',function(){ validateField(field,languageOf(form)); });
+    });
+    form.addEventListener('submit',function(event){
+      event.preventDefault();
+      if(!validateForm(form)) return;
+      submitForm(form);
+    });
   }
 
   function init(){
-    document.querySelectorAll('[data-smart-quote]').forEach(initForm);
+    document.querySelectorAll('form[data-banhalmi-form], form[data-quote-form], form.quote-form').forEach(initForm);
+    window.addEventListener('beforeunload',function(event){
+      if(verifiedDelivery) return;
+      var dirty = Array.prototype.some.call(document.querySelectorAll('form[data-banhalmi-form], form[data-quote-form], form.quote-form'),function(form){ return hasDraft(form); });
+      if(dirty){ event.preventDefault(); event.returnValue=''; }
+    });
   }
-  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once:true});
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init,{once:true});
   else init();
 })();
