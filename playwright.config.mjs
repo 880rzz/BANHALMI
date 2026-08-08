@@ -2,6 +2,7 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests',
+  reporter: process.env.CI ? [['github'], ['line']] : [['list']],
   webServer: {
     command: 'python3 -m http.server 4173',
     url: 'http://127.0.0.1:4173',
