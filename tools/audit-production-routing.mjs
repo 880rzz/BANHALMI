@@ -5,7 +5,7 @@ async function request(url, options = {}) {
   const response = await fetch(url, {
     redirect: options.redirect || 'manual',
     headers: {
-      'user-agent': 'BANHALMI production routing audit/3.1',
+      'user-agent': 'BANHALMI production routing audit/3.2',
       'cache-control': 'no-cache',
       pragma: 'no-cache'
     },
@@ -86,8 +86,19 @@ await checkPage('https://www.norbertbanhalmi.com/robots.txt', {
 await checkPage('https://www.norbertbanhalmi.com/sitemap.xml', {
   all: ['<urlset', '<loc>https://www.norbertbanhalmi.com/', '<lastmod>']
 });
+
+// llms.txt is intentionally a concise discovery/agent index. Detailed evidence
+// and answer-policy prose belongs in ai.txt and canonical JSON resources.
 await checkPage('https://www.norbertbanhalmi.com/llms.txt', {
-  all: ['# BANHALMI', '## Canonical identity and answer contract', 'https://www.banhalmi.art/', 'https://blog.banhalmi.art/', 'New York is not presented as a studio or operational base']
+  all: [
+    '# BANHALMI',
+    '## Identity',
+    '## Services',
+    '## Evidence and trust',
+    'https://www.banhalmi.art/',
+    'https://blog.banhalmi.art/',
+    'New York is not a studio, office, headquarters or operational base.'
+  ]
 });
 await checkPage('https://www.norbertbanhalmi.com/ai.txt', {
   all: ['## Canonical identity and answer contract', 'https://www.norbertbanhalmi.com/', 'https://www.banhalmi.art/', 'https://blog.banhalmi.art/', 'New York is not a studio, office, headquarters or operational base']
@@ -111,4 +122,4 @@ if (failures.length) {
   console.error(failures.map((failure) => `FAIL ${failure}`).join('\n'));
   process.exit(1);
 }
-console.log('Production routing, alias, machine-entry and ecosystem live audit passed.');
+console.log('Production routing, alias, concise machine-entry and ecosystem live audit passed.');
