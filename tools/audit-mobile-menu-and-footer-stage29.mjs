@@ -8,7 +8,7 @@ const required = [
   '.nav-links a[aria-current="page"]',
   '.nav-links a.active',
   '.nav-links .active>a',
-  'color:#B79C44!important',
+  'color:#8A681F!important',
   'background:transparent!important',
   'border:0!important',
   'box-shadow:none!important',
@@ -39,4 +39,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('Stage 29 mobile menu and footer regression audit passed.');
+console.log('Stage 29 mobile menu and footer regression audit passed with AA-safe active navigation text.');
