@@ -31,6 +31,9 @@ jobs:
       - name: Apply Stage 52 hardening
         run: node tools/apply-pagespeed-hardening-stage52.mjs
 
+      - name: Remove temporary staging workflow from audited tree
+        run: rm -f .github/workflows/stage52-pagespeed-staging.yml
+
       - name: Verify static audit chain
         run: npm run audit
 
@@ -40,13 +43,13 @@ jobs:
       - name: Verify full browser regression suite
         run: npm run test:browser
 
-      - name: Commit verified staging result
+      - name: Commit verified staging result and remove temporary gate
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'BANHALMI CI'
           git config user.email 'actions@users.noreply.github.com'
-          git add assets/js/main.js assets/css/accessibility-stage14.css index.html hu/index.html de-at/index.html package.json tools/audit-pagespeed-runtime-stage52.mjs
+          git add -A
           if git diff --cached --quiet; then
             echo 'No staged changes to commit.'
             exit 0
