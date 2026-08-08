@@ -11,3 +11,4 @@ for(const page of pages){
   fs.writeFileSync(page,html);
 }
 console.log('Applied lean homepage runtime to EN/HU/DE.');
+// trigger: v1
