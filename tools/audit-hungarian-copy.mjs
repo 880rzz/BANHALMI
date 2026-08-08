@@ -86,7 +86,9 @@ for (const phrase of [
 ]) if (!homepage.includes(phrase)) failures.push(`homepage: approved Hungarian copy missing: ${phrase}`);
 if (!read('hu/archivum/index.html').includes('Válogatott galéria')) failures.push('archive: approved Hungarian gallery title missing');
 if (!read('hu/gyik/index.html').includes('Az üzleti portré gyorsan és pontosan megmutatja, ki Ön.')) failures.push('FAQ: corrected Hungarian article is missing');
-const menu = read('assets/js/mega-menu.js');
+const menuLoader = read('assets/js/mega-menu.js');
+const menu = read('assets/js/mega-menu-full.js');
+if (!menuLoader.includes('/assets/js/mega-menu-full.js')) failures.push('mega-menu: interaction loader must reference the full menu implementation');
 const approvedMenu = [
   'Szakmai pálya, alkotói fordulópontok és közösségi munka 1999 óta.',
   'Válogatás megbízásos sorozatokból és a művészeti archívumból.',
