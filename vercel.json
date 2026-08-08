@@ -1,6 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "if [ \"$VERCEL_PROJECT_ID\" = \"prj_ZNb7R5KI1MDAQNhoz8Alkwtguydf\" ] || [ \"$VERCEL_PROJECT_ID\" = \"prj_2oUW8R7jfNrPC9LLo86VjyBsUBgm\" ]; then exit 0; else exit 1; fi",
+  "git": {
+    "deploymentEnabled": false
+  },
   "redirects": [
     {
       "source": "/:path*",
