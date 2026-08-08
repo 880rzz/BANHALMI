@@ -100,3 +100,13 @@ input[type="checkbox"],input[type="radio"]{min-width:24px;min-height:24px;}
   .nav-links .active>a{color:#8A681F!important;}
 }
 /* STAGE52-PAGESPEED-RUNTIME:END */
+
+/* PAGESPEED-STAGE57-MOBILE-HERO-VIDEO:START */
+/* Mobile/touch visitors get the optimized still hero only. The video remains
+   lazy for desktop hover, but cannot be painted or activated on touch devices,
+   so its data-src sources are never promoted to network requests on mobile. */
+@media (hover:none), (pointer:coarse), (max-width:680px){
+  .hero.hero-image-first .hero-video{display:none!important;}
+  .hero.hero-image-first .hero-figure{pointer-events:none;}
+}
+/* PAGESPEED-STAGE57-MOBILE-HERO-VIDEO:END */
