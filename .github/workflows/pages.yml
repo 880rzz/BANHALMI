@@ -93,7 +93,7 @@ jobs:
 
           echo "Prepared $(find _site -type f | wc -l | tr -d ' ') verified production files."
 
-      - name: Minify production CSS and JavaScript
+      - name: Minify production CSS
         shell: bash
         run: |
           set -euo pipefail
@@ -107,19 +107,9 @@ jobs:
             mv "$css.tmp" "$css"
           done
 
-          for js in \
-            _site/assets/js/main.js \
-            _site/assets/js/site-config.js \
-            _site/assets/js/mega-menu.js \
-            _site/assets/js/analytics.js; do
-            test -f "$js"
-            npx --yes --package terser@5.43.1 terser "$js" --compress --mangle --output "$js.tmp"
-            mv "$js.tmp" "$js"
-          done
+          echo 'Verified production CSS minification completed. JavaScript is intentionally left unminified after production Lighthouse showed Terser increased main-thread blocking.'
 
-          echo 'Verified production CSS and JavaScript minification completed.'
-
-      - name: Run browser regressions against minified artifact
+      - name: Run browser regressions against optimized artifact
         run: npx playwright test --config=playwright.production.config.mjs
 
       - name: Configure GitHub Pages
