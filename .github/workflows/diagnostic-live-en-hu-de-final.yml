@@ -39,7 +39,7 @@ jobs:
             --only-categories=performance,accessibility,best-practices,seo \
             --output=json \
             --output-path='lh-${{ matrix.lang }}.json'
-      - name: Print final metrics
+      - name: Print final metrics and attribution
         run: |
           LANG_CODE='${{ matrix.lang }}' node <<'NODE'
           const fs=require('fs');
@@ -49,7 +49,13 @@ jobs:
           const value=id=>r.audits[id]?.displayValue||'';
           console.log(`RESULT ${lang.toUpperCase()} PERFORMANCE=${score('performance')} ACCESSIBILITY=${score('accessibility')} BEST_PRACTICES=${score('best-practices')} SEO=${score('seo')}`);
           console.log(`METRICS ${lang.toUpperCase()} FCP=${value('first-contentful-paint')} LCP=${value('largest-contentful-paint')} SI=${value('speed-index')} TBT=${value('total-blocking-time')} CLS=${value('cumulative-layout-shift')} TTI=${value('interactive')}`);
-          console.log(`MAINTHREAD ${lang.toUpperCase()} ${value('mainthread-work-breakdown')}`);
+          const mt=r.audits['mainthread-work-breakdown'];
+          console.log(`MAINTHREAD ${lang.toUpperCase()} ${mt?.displayValue||''}`);
+          for(const item of (mt?.details?.items||[]).sort((a,b)=>(b.duration||0)-(a.duration||0))) console.log(`MAINTHREAD_ITEM ${lang.toUpperCase()} ${item.groupLabel||item.group||''} ${Math.round(item.duration||0)}ms`);
+          const boot=r.audits['bootup-time'];
+          for(const item of (boot?.details?.items||[]).sort((a,b)=>(b.total||0)-(a.total||0)).slice(0,15)) console.log(`BOOT ${lang.toUpperCase()} total=${Math.round(item.total||0)}ms scripting=${Math.round(item.scripting||0)}ms parse=${Math.round(item.scriptParseCompile||0)}ms url=${item.url||''}`);
+          const longs=r.audits['long-tasks'];
+          for(const item of (longs?.details?.items||[]).sort((a,b)=>(b.duration||0)-(a.duration||0)).slice(0,20)) console.log(`LONG ${lang.toUpperCase()} duration=${Math.round(item.duration||0)}ms start=${Math.round(item.startTime||0)}ms url=${item.url||''}`);
           for (const id of ['render-blocking-insight','cache-insight','image-delivery-insight','third-parties-insight','unused-css-rules','unminified-css','unminified-javascript']) {
             const a=r.audits[id];
             if (a) console.log(`AUDIT ${lang.toUpperCase()} ${id} score=${a.score} value=${a.displayValue||''}`);
@@ -61,4 +67,4 @@ jobs:
           path: lh-${{ matrix.lang }}.json
           retention-days: 3
 
-# rerun: 2026-08-08-homepage-runtime-optimized
+# rerun: 2026-08-08-live-long-task-attribution
