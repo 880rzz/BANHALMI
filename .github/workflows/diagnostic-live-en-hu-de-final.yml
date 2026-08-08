@@ -1,0 +1,62 @@
+name: Final live Lighthouse EN HU DE
+
+on:
+  push:
+    branches:
+      - diagnostics/lighthouse-live-20260808
+    paths:
+      - .github/workflows/diagnostic-live-en-hu-de-final.yml
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - lang: en
+            url: https://www.norbertbanhalmi.com/
+          - lang: hu
+            url: https://www.norbertbanhalmi.com/hu/
+          - lang: de
+            url: https://www.norbertbanhalmi.com/de-at/
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Lighthouse live mobile
+        run: |
+          npx --yes lighthouse@latest '${{ matrix.url }}' \
+            --quiet \
+            --chrome-flags='--headless --no-sandbox --disable-dev-shm-usage' \
+            --form-factor=mobile \
+            --screenEmulation.mobile=true \
+            --throttling-method=simulate \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json \
+            --output-path='lh-${{ matrix.lang }}.json'
+      - name: Print final metrics
+        run: |
+          LANG_CODE='${{ matrix.lang }}' node <<'NODE'
+          const fs=require('fs');
+          const lang=process.env.LANG_CODE;
+          const r=JSON.parse(fs.readFileSync(`lh-${lang}.json`,'utf8'));
+          const score=id=>Math.round((r.categories[id]?.score||0)*100);
+          const value=id=>r.audits[id]?.displayValue||'';
+          console.log(`RESULT ${lang.toUpperCase()} PERFORMANCE=${score('performance')} ACCESSIBILITY=${score('accessibility')} BEST_PRACTICES=${score('best-practices')} SEO=${score('seo')}`);
+          console.log(`METRICS ${lang.toUpperCase()} FCP=${value('first-contentful-paint')} LCP=${value('largest-contentful-paint')} SI=${value('speed-index')} TBT=${value('total-blocking-time')} CLS=${value('cumulative-layout-shift')} TTI=${value('interactive')}`);
+          console.log(`MAINTHREAD ${lang.toUpperCase()} ${value('mainthread-work-breakdown')}`);
+          for (const id of ['render-blocking-insight','cache-insight','image-delivery-insight','third-parties-insight','unused-css-rules','unminified-css','unminified-javascript']) {
+            const a=r.audits[id];
+            if (a) console.log(`AUDIT ${lang.toUpperCase()} ${id} score=${a.score} value=${a.displayValue||''}`);
+          }
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-final-${{ matrix.lang }}
+          path: lh-${{ matrix.lang }}.json
+          retention-days: 3
