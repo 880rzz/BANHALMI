@@ -23,15 +23,59 @@ for(const required of [
   if(!css.includes(required)) errors.push(`style.css missing Stage 45 retained design contract: ${required}`);
 }
 
-// The removed duplicate began at the second Production-v3 marker and repeated
-// a long navigation/form/editorial sequence byte-for-byte. A second marker is
-// therefore a deterministic regression, not an intentional override layer.
 if(css.indexOf(marker)!==css.lastIndexOf(marker)){
   errors.push('style.css reintroduced the exact historical Production-v3 duplicate layer');
 }
+
+// Catch byte-equivalent rule resurrection even when somebody copies an old
+// block without its historical marker. Context matters: the same rule may be
+// valid under two different @media/@supports branches, so only duplicates in
+// the same cascade context are rejected.
+const source=css.replace(/\/\*[\s\S]*?\*\//g,'');
+const seen=new Map();
+
+function matchingBrace(text,open){
+  let depth=1,quote='';
+  for(let i=open+1;i<text.length;i++){
+    const ch=text[i];
+    if(quote){
+      if(ch==='\\'){i++;continue;}
+      if(ch===quote) quote='';
+      continue;
+    }
+    if(ch==='"'||ch==="'"){quote=ch;continue;}
+    if(ch==='{') depth++;
+    else if(ch==='}'&&!--depth) return i;
+  }
+  return -1;
+}
+function norm(value){return value.replace(/\s+/g,' ').replace(/\s*([:;,>+~{}])\s*/g,'$1').trim();}
+function parseRegion(text,context='root'){
+  let cursor=0;
+  while(cursor<text.length){
+    const open=text.indexOf('{',cursor);
+    if(open<0) break;
+    const prelude=text.slice(cursor,open).trim();
+    const close=matchingBrace(text,open);
+    if(close<0){errors.push('style.css contains an unbalanced rule block');return;}
+    const body=text.slice(open+1,close);
+    const cleanPrelude=norm(prelude.replace(/^;+/,''));
+    if(cleanPrelude){
+      if(body.includes('{')||cleanPrelude.startsWith('@')){
+        parseRegion(body,`${context}>${cleanPrelude}`);
+      }else{
+        const key=`${context}|${cleanPrelude}|${norm(body)}`;
+        if(seen.has(key)) errors.push(`style.css exact duplicate rule returned in ${context}: ${cleanPrelude}`);
+        else seen.set(key,true);
+      }
+    }
+    cursor=close+1;
+  }
+}
+parseRegion(source);
 
 if(errors.length){
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log('Stage 45 CSS deduplication audit passed: one authoritative Production-v3 block remains and retained design contracts are present.');
+console.log(`Stage 45 CSS deduplication audit passed: one authoritative Production-v3 block remains and ${seen.size} normalized leaf rules contain no exact same-context duplicates.`);
