@@ -1,0 +1,32 @@
+name: Apply homepage runtime v1
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - fix/pagespeed-100-home-runtime-20260808
+    paths:
+      - tools/apply-home-runtime-v1.mjs
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/pagespeed-100-home-runtime-20260808
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node tools/apply-home-runtime-v1.mjs
+      - name: Commit migration
+        run: |
+          if git diff --quiet -- index.html hu/index.html de-at/index.html; then
+            echo "No migration changes needed"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html hu/index.html de-at/index.html
+          git commit -m "perf: load lean runtime on EN HU DE homepages"
+          git push origin HEAD:fix/pagespeed-100-home-runtime-20260808
