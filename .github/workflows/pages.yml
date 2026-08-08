@@ -63,6 +63,7 @@ jobs:
             _site/package.json \
             _site/package-lock.json \
             _site/playwright.config.mjs \
+            _site/playwright.production.config.mjs \
             _site/README.md \
             _site/DELETE-LOW-RES-FINE-ART-IMAGES.txt \
             _site/TORLENDO-FAJLOK.txt \
@@ -91,6 +92,35 @@ jobs:
           fi
 
           echo "Prepared $(find _site -type f | wc -l | tr -d ' ') verified production files."
+
+      - name: Minify production CSS and JavaScript
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          for css in \
+            _site/assets/css/style.css \
+            _site/assets/css/accessibility-stage14.css \
+            _site/assets/css/mega-menu.css; do
+            test -f "$css"
+            npx --yes --package clean-css-cli@5.6.3 cleancss -o "$css.tmp" "$css"
+            mv "$css.tmp" "$css"
+          done
+
+          for js in \
+            _site/assets/js/main.js \
+            _site/assets/js/site-config.js \
+            _site/assets/js/mega-menu.js \
+            _site/assets/js/analytics.js; do
+            test -f "$js"
+            npx --yes --package terser@5.43.1 terser "$js" --compress --mangle --output "$js.tmp"
+            mv "$js.tmp" "$js"
+          done
+
+          echo 'Verified production CSS and JavaScript minification completed.'
+
+      - name: Run browser regressions against minified artifact
+        run: npx playwright test --config=playwright.production.config.mjs
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
