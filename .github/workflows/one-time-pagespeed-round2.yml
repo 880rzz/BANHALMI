@@ -1,0 +1,66 @@
+name: One-time PageSpeed round 2 remediation
+
+on:
+  push:
+    branches:
+      - fix/pagespeed-round2-20260808
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    if: ${{ !contains(github.event.head_commit.message, '[pagespeed-round2-done]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/pagespeed-round2-20260808
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Remove eager third-party review loading and add regression audit
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const homes = ['index.html','hu/index.html','de-at/index.html'];
+          const staticTrustindex = /\s*<script\b(?=[^>]*\bid=["']trustindex-richsnippet["'])(?=[^>]*\bsrc=["']https:\/\/cdn\.trustindex\.io\/assets\/js\/richsnippet\.js\?c307c9433572g62e["'])[^>]*><\/script>\s*/gi;
+          for (const file of homes) {
+            let html = fs.readFileSync(file, 'utf8');
+            const before = html;
+            html = html.replace(staticTrustindex, '\n');
+            if (html === before) throw new Error(`${file}: expected eager Trustindex script was not found`);
+            if (/cdn\.trustindex\.io\/assets\/js\/richsnippet\.js/i.test(html)) throw new Error(`${file}: eager Trustindex script still present`);
+            fs.writeFileSync(file, html);
+          }
+
+          const auditPath = 'tools/audit-third-party-performance-stage56.mjs';
+          fs.writeFileSync(auditPath, `import fs from 'node:fs';\nimport path from 'node:path';\n\nconst root=path.resolve(import.meta.dirname,'..');\nconst failures=[];\nconst homes=['index.html','hu/index.html','de-at/index.html'];\nfor(const file of homes){\n  const html=fs.readFileSync(path.join(root,file),'utf8');\n  if(/<script\\b[^>]*src=[\\\"']https:\\/\\/(?:cdn\\.trustindex\\.io|elfsightcdn\\.com)\\//i.test(html)) failures.push(file+': third-party review script must not load from static HTML');\n}\nconst main=fs.readFileSync(path.join(root,'assets/js/main.js'),'utf8');\nfor(const token of ['readChoice() === \\\"all\\\"','details && !details.open','cdn.trustindex.io/assets/js/richsnippet.js','elfsightcdn.com/platform.js']){\n  if(!main.includes(token)) failures.push('main.js missing gated review-loader contract: '+token);\n}\nif(failures.length){for(const failure of failures) console.error('FAIL '+failure);process.exit(1);}\nconsole.log('Stage 56 third-party performance audit passed: Trustindex and Elfsight are absent from static HTML and remain consent-plus-interaction gated.');\n`);
+
+          const pkg = JSON.parse(fs.readFileSync('package.json','utf8'));
+          const stage = 'node tools/audit-third-party-performance-stage56.mjs';
+          if (!pkg.scripts.audit.includes(stage)) pkg.scripts.audit += ' && ' + stage;
+          fs.writeFileSync('package.json', JSON.stringify(pkg,null,2)+'\n');
+          NODE
+
+          rm .github/workflows/one-time-pagespeed-round2.yml
+
+      - name: Install dependencies
+        run: npm ci
+      - name: Run full audit
+        run: npm run audit
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run browser regressions
+        run: npm run test:browser
+      - name: Commit verified remediation
+        shell: bash
+        run: |
+          git config user.name 'BANHALMI CI'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'perf: defer review third parties until consent and interaction [pagespeed-round2-done]'
+          git push origin HEAD:fix/pagespeed-round2-20260808
