@@ -176,4 +176,6 @@ jobs:
           grep -q 'BANHALMI' <<< "$en_html"
           grep -q 'BANHALMI' <<< "$hu_html"
           grep -q 'BANHALMI' <<< "$de_html"
-          grep -q 'background:transparent!important' <<< "$a11y_css"
+          test -n "$a11y_css"
+          grep -q '.visually-hidden' <<< "$a11y_css"
+          grep -q 'prefers-reduced-motion' <<< "$a11y_css"
