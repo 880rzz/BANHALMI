@@ -100,3 +100,12 @@ input[type="checkbox"],input[type="radio"]{min-width:24px;min-height:24px;}
   .nav-links .active>a{color:#8A681F!important;}
 }
 /* STAGE52-PAGESPEED-RUNTIME:END */
+
+/* PAGESPEED-STAGE57-MOBILE-HERO-VIDEO:START */
+/* Mobile/touch visitors get the static LCP hero only. The decorative hover video
+   remains a desktop enhancement and cannot become an accidental mobile tap target. */
+@media (max-width:680px), (hover:none), (pointer:coarse){
+  .hero.hero-image-first .hero-video{display:none!important;visibility:hidden!important;}
+  .hero.hero-image-first .hero-figure{pointer-events:none;}
+}
+/* PAGESPEED-STAGE57-MOBILE-HERO-VIDEO:END */
