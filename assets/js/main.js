@@ -2,6 +2,12 @@
 (function () {
   "use strict";
 
+  // Mobile language homepages keep only consent-critical startup work.
+  var currentPath = window.location.pathname.replace(/\/index\.html$/, "/");
+  var isLanguageHomepage = currentPath === "/" || currentPath === "/hu/" || currentPath === "/de-at/";
+  var compactMotion = window.matchMedia("(max-width: 1040px)").matches;
+  var mobileHomepage = isLanguageHomepage && compactMotion;
+
   // Mobile menu
   var nav = document.querySelector(".nav");
   var btn = document.querySelector(".menu-btn");
@@ -11,7 +17,7 @@
       submenu.removeAttribute("open");
     });
   }
-  if (btn && nav) {
+  if (!mobileHomepage && btn && nav) {
     btn.addEventListener("click", function () {
       nav.classList.toggle("open");
       var isOpen = nav.classList.contains("open");
@@ -33,6 +39,7 @@
 
   // Production 2.3 navigation hardening: close on outside click and Escape.
   document.addEventListener("click", function (event) {
+    if (mobileHomepage) return;
     if (!nav ||!btn ||!nav.classList.contains("open")) return;
     if (!nav.contains(event.target)) {
       nav.classList.remove("open");
@@ -42,6 +49,7 @@
     }
   });
   document.addEventListener("keydown", function (event) {
+    if (mobileHomepage) return;
     if (!nav ||!btn) return;
     if (event.key === "Escape" && nav.classList.contains("open")) {
       nav.classList.remove("open");
@@ -69,7 +77,7 @@
       details.open = desktop;
     });
   }
-  if (footerAccordions.length) {
+  if (!mobileHomepage && footerAccordions.length) {
     syncFooterAccordions();
     if (typeof footerMedia.addEventListener === "function") footerMedia.addEventListener("change", syncFooterAccordions);
     else if (typeof footerMedia.addListener === "function") footerMedia.addListener(syncFooterAccordions);
@@ -77,8 +85,8 @@
 
   // Scroll reveal (respects reduced motion)
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var items = document.querySelectorAll(".reveal");
-  if (!reduce && "IntersectionObserver" in window) {
+  var items = compactMotion ? [] : document.querySelectorAll(".reveal");
+  if (!compactMotion && !reduce && "IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) {

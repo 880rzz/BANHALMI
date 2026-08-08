@@ -3355,3 +3355,9 @@ body>.site-footer,.site-footer{flex:0 0 auto;width:100%}
 .title-accent{color:var(--title-accent)}
 .title-accent--block{display:block}
 /* STAGE52-TYPE-ACCENT:END */
+
+
+/* STAGE-PAGESPEED-MOBILE-STATIC-REVEAL: mobile content is immediately visible; no reveal observer is required. */
+@media (max-width:1040px){
+  .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+}
