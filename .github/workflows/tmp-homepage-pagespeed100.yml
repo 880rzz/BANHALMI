@@ -1,0 +1,27 @@
+name: Temporary homepage PageSpeed migration
+on:
+  push:
+    branches:
+      - fix/pagespeed-100-final-en-hu-de-20260808
+    paths:
+      - .github/workflows/tmp-homepage-pagespeed100.yml
+permissions:
+  contents: write
+jobs:
+  migrate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/pagespeed-100-final-en-hu-de-20260808
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node tools/tmp-homepage-pagespeed100.mjs
+      - name: Commit migration
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html hu/index.html de-at/index.html
+          git commit -m 'perf: remove homepage noncritical runtimes from startup'
+          git push origin HEAD:fix/pagespeed-100-final-en-hu-de-20260808
