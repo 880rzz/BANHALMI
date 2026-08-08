@@ -12,7 +12,7 @@ input[type="checkbox"],input[type="radio"]{min-width:24px;min-height:24px;}
   .nav-links a[aria-current="page"],
   .nav-links a.active,
   .nav-links .active>a{
-    color:#B79C44!important;
+    color:#8A681F!important;
     background:transparent!important;
     border:0!important;
     box-shadow:none!important;
@@ -55,3 +55,18 @@ input[type="checkbox"],input[type="radio"]{min-width:24px;min-height:24px;}
 [data-smart-quote] [aria-invalid="true"]+label,[data-smart-quote] .is-invalid-group legend{color:#7b1111!important}
 @media(max-width:680px){.quote-validation-summary{padding:18px 16px;margin-bottom:22px}.quote-validation-summary button{width:100%}}
 /* STAGE42-STATIC-VALIDATION:END */
+
+
+/* STAGE52-PAGESPEED-RUNTIME:START */
+/* Avoid layout animations in the mobile navigation; transform/opacity remain available elsewhere. */
+@media (max-width:1040px){
+  .nav-links{transition:none!important;}
+}
+/* Text use of the brand gold must meet AA on the light navigation surface. */
+@media (max-width:680px), (pointer:coarse){
+  .lang-switch a.active,
+  .nav-links a[aria-current="page"],
+  .nav-links a.active,
+  .nav-links .active>a{color:#8A681F!important;}
+}
+/* STAGE52-PAGESPEED-RUNTIME:END */

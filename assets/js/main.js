@@ -941,32 +941,7 @@
     setTimeout(revealImmediately, 1800);
   })();
 
-  // Very light hero depth on pointer devices only; no mobile parallax and no layout movement.
-  (function () {
-    var heroImage = document.querySelector(".hero.hero-image-first .hero-figure img:not(.hero-center-logo), .editorial-hero img:not(.hero-center-logo)");
-    if (!heroImage) return;
-    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (window.matchMedia && window.matchMedia("(max-width: 900px)").matches) return;
-    var figure = heroImage.closest(".hero-figure, .editorial-hero, .service-hero-image");
-    if (!figure) return;
-    var ticking = false;
-    function update() {
-      ticking = false;
-      var rect = figure.getBoundingClientRect();
-      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-      var progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-      var shift = Math.max(-5, Math.min(5, (progress - 0.5) * 10));
-      heroImage.style.setProperty("--hero-scroll-y", shift.toFixed(2) + "px");
-    }
-    function requestUpdate() {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(update);
-    }
-    requestUpdate();
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate, { passive: true });
-  })();
+  // Hero remains static by design: no scroll-linked layout reads or parallax writes.
 
   // Service lower galleries — progressive reveal for performance without removing SEO-visible HTML when JavaScript is disabled.
   document.querySelectorAll('.service-lower-gallery-grid').forEach(function(grid){
