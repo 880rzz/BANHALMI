@@ -249,3 +249,127 @@ The following blocks describe internal service and conversion behaviour. They ar
 - These decision criteria explain fit and intended use; they do not create additional service categories.
 - Canonical structured service list: https://www.norbertbanhalmi.com/services.json
 <!-- SERVICE-DECISION-CARDS:END -->
+
+## CANONICAL FAQ MIRROR — generated verbatim from FAQPage JSON-LD
+For legal, licensing, privacy and pricing interpretation, these answers mirror the public FAQ schema word for word. Project-specific written offers and contracts prevail where they add specific terms.
+
+### EN FAQ (19)
+1. Q: Who is a leadership portrait for?
+   A: For founders, leaders, consultants, experts and anyone a client is likely to meet in a photograph before meeting in person.
+2. Q: What is the difference between a headshot and a leadership portrait?
+   A: A headshot shows clearly who you are. A leadership portrait says more about your personality, your role and the way you want to meet the world.
+3. Q: How should I prepare for the session?
+   A: You receive practical guidance on wardrobe, grooming, image goals and intended usage before the session.
+4. Q: Can you help with posing?
+   A: Yes. Direction is calm and precise, with attention to posture, expression, hands and the way the image will be used.
+5. Q: Do you work on location?
+   A: Yes. Sessions can take place in the Vienna or Budapest studio, at your office, at an event venue or at another agreed location.
+6. Q: Can you provide styling, hair and make-up?
+   A: Yes. A stylist, hair professional and make-up artist can be arranged when the project benefits from them.
+7. Q: Can several people be photographed in one production?
+   A: Yes. Executive teams, boards, founders and departments can be photographed with a consistent visual system.
+8. Q: Can you provide more than one photographer?
+   A: Yes. Larger productions and C-level events can be covered by a coordinated multi-photographer team.
+9. Q: Is on-site immediate retouching available?
+   A: Yes. For selected executive, event and press productions, images can be selected, professionally retouched and delivered on location during the assignment.
+10. Q: Can you deliver print-ready files?
+   A: Yes. On request, final images are delivered in print-ready resolution and colour profile, alongside web-optimised versions for digital use.
+11. Q: How are the final images selected?
+   A: Selection can be guided together during or after the session, depending on the production format.
+12. Q: How quickly are images delivered?
+   A: Delivery timing is defined in the written offer. Accelerated and same-day workflows can be arranged for selected projects.
+13. Q: What does visual brand positioning include?
+   A: It aligns image language, portrait style, visual hierarchy and usage across website, LinkedIn, press, campaigns and institutional communication.
+14. Q: Do you photograph C-level events?
+   A: Yes. Executive meetings, conferences, leadership events, award ceremonies and high-level institutional occasions are documented discreetly.
+15. Q: Is fine-art or intimate photography possible?
+   A: Yes, only within a respectful artistic framework, with clear consent, privacy and boundaries agreed in advance.
+16. Q: Is the calculated price final?
+   A: No. It is a non-binding preliminary estimate. The final written offer depends on scope, location, timing, usage rights, production complexity and tax status.
+17. Q: How are usage rights handled?
+   A: Usage rights depend on the project, media, duration and territory and are confirmed in the written offer.
+18. Q: Do you support EU reverse charge?
+   A: Yes. Eligible EU businesses outside Austria may receive a reverse-charge estimate after business and VAT details are provided and verified.
+19. Q: What happens to my images under GDPR?
+   A: Images and personal data are handled confidentially and only for the agreed purpose. Publication takes place only with permission.
+
+### HU FAQ (19)
+1. Q: Kinek készül vezetői portré?
+   A: Vezetőknek, alapítóknak, tanácsadóknak, szakértőknek és mindenkinek, akivel az ügyfelek gyakran előbb találkoznak egy fényképen, mint személyesen.
+2. Q: Mi a különbség a headshot és a vezetői portré között?
+   A: A headshot gyorsan és pontosan megmutatja, ki Ön. A vezetői portré ennél többet mesél: a személyiségről, a szerepről és arról, hogyan szeretne jelen lenni mások előtt.
+3. Q: Hogyan készüljön a fotózásra?
+   A: A fotózás előtt gyakorlati útmutatást kap az öltözékről, megjelenésről, képi célokról és a tervezett felhasználásról.
+4. Q: Segítenek a beállításokban?
+   A: Igen. A vezetés nyugodt és pontos, külön figyelemmel a testtartásra, arckifejezésre, kéztartásra és a kép későbbi szerepére.
+5. Q: Dolgoznak helyszínen is?
+   A: Igen. A fotózás történhet a bécsi vagy budapesti stúdióban, az Ön irodájában, rendezvényhelyszínen vagy más egyeztetett helyszínen.
+6. Q: Biztosítható stylist, haj és smink?
+   A: Igen. Igény esetén stylist, fodrász és sminkes is bevonható a produkcióba.
+7. Q: Fotózható több munkatárs egy produkcióban?
+   A: Igen. Vezetői csapatok, boardtagok, alapítók és szervezeti egységek egységes vizuális rendszerben fotózhatók.
+8. Q: Biztosítható több fotós?
+   A: Igen. Nagyobb produkciókhoz és C-level eseményekhez koordinált többfotós csapat állítható össze.
+9. Q: Elérhető helyszíni azonnali retusálás?
+   A: Igen. Kiválasztott executive, rendezvény- és sajtóprodukcióknál a képek már a helyszínen kiválaszthatók, professzionálisan retusálhatók és átadhatók.
+10. Q: Kérhető nyomdakész átadás?
+   A: Igen. Igény esetén a végleges képek nyomdakész felbontásban és megfelelő színprofillal, valamint külön webre optimalizált változatban is átadásra kerülnek.
+11. Q: Hogyan történik a végleges képek kiválasztása?
+   A: A produkció formátumától függően a válogatás történhet közösen a helyszínen vagy a fotózás után.
+12. Q: Mennyi idő alatt készülnek el a képek?
+   A: Az átadási határidő az írásos ajánlatban szerepel. Kiválasztott projektekhez gyorsított vagy aznapi munkafolyamat is kérhető.
+13. Q: Mit tartalmaz a vizuális brandpozicionálás?
+   A: Összehangolja a képi nyelvet, a portréstílust, a vizuális hierarchiát és a felhasználást a weboldalon, LinkedInen, sajtóban, kampányokban és intézményi kommunikációban.
+14. Q: Vállalnak C-level eseményfotózást?
+   A: Igen. Vezetői találkozók, konferenciák, díjátadók és magas szintű intézményi események diszkrét dokumentálása is elérhető.
+15. Q: Lehetséges művészi vagy intim fotózás?
+   A: Igen, kizárólag tiszteletteljes művészeti keretben, előre rögzített beleegyezéssel, diszkrécióval és határokkal.
+16. Q: Végleges a kalkulátorban megjelenő ár?
+   A: Nem. Ez nem kötelező érvényű tájékoztató becslés. A végleges írásos ajánlat a terjedelem, helyszín, időzítés, felhasználási jog, produkciós összetettség és adózási státusz alapján készül.
+17. Q: Hogyan kezelik a felhasználási jogokat?
+   A: A felhasználási jogok a projekttől, médiától, időtartamtól és területtől függenek, és az írásos ajánlatban kerülnek rögzítésre.
+18. Q: Alkalmazható EU-s fordított adózás?
+   A: Igen. Az Ausztrián kívüli jogosult EU-s vállalkozásoknál a vállalkozási és áfaadatok megadása és ellenőrzése után fordított adózás alkalmazható.
+19. Q: Mi történik a képekkel a GDPR alapján?
+   A: A képek és személyes adatok bizalmasan, kizárólag az egyeztetett célra kerülnek kezelésre. Publikálás csak engedéllyel történik.
+
+### DE FAQ (19)
+1. Q: Für wen ist ein Führungskräfteporträt gedacht?
+   A: Für Gründer:innen, Führungskräfte, Berater:innen, Expert:innen und alle, denen Kund:innen oft zuerst auf einem Foto begegnen.
+2. Q: Was ist der Unterschied zwischen Headshot und Führungskräfteporträt?
+   A: Ein Headshot zeigt klar, wer Sie sind. Ein Führungskräfteporträt erzählt zusätzlich etwas über Ihre Persönlichkeit, Ihre Aufgabe und darüber, wie Sie anderen begegnen möchten.
+3. Q: Wie bereiten Sie sich auf das Shooting vor?
+   A: Vor dem Termin erhalten Sie praktische Hinweise zu Kleidung, Erscheinungsbild, Bildzielen und vorgesehener Nutzung.
+4. Q: Erhalten Sie Unterstützung bei Haltung und Ausdruck?
+   A: Ja. Die Anleitung ist ruhig und präzise und berücksichtigt Haltung, Ausdruck, Hände und den späteren Einsatz des Bildes.
+5. Q: Arbeiten Sie auch vor Ort?
+   A: Ja. Das Shooting kann im Wiener oder Budapester Studio, in Ihrem Unternehmen, an einer Eventlocation oder an einem anderen vereinbarten Ort stattfinden.
+6. Q: Können Styling, Hair und Make-up organisiert werden?
+   A: Ja. Stylist:in, Hair Professional und Make-up Artist können bei Bedarf in die Produktion eingebunden werden.
+7. Q: Können mehrere Personen in einer Produktion fotografiert werden?
+   A: Ja. Führungsteams, Boards, Gründer:innen und Abteilungen können in einem konsistenten visuellen System fotografiert werden.
+8. Q: Kann ein Team aus mehreren Fotograf:innen eingesetzt werden?
+   A: Ja. Größere Produktionen und C-Level-Events können durch ein koordiniertes Team abgedeckt werden.
+9. Q: Ist eine sofortige Retusche vor Ort möglich?
+   A: Ja. Bei ausgewählten Executive-, Event- und Presseproduktionen können Bilder noch während des Einsatzes ausgewählt, professionell retuschiert und vor Ort übergeben werden.
+10. Q: Ist eine druckfertige Übergabe möglich?
+   A: Ja. Auf Wunsch werden finale Dateien druckfertig in geeigneter Auflösung und mit passendem Farbprofil sowie zusätzlich weboptimiert geliefert.
+11. Q: Wie werden die finalen Bilder ausgewählt?
+   A: Je nach Produktionsformat kann die Auswahl gemeinsam vor Ort oder nach dem Shooting erfolgen.
+12. Q: Wie schnell werden die Bilder geliefert?
+   A: Die Lieferfrist wird im schriftlichen Angebot festgelegt. Für ausgewählte Projekte sind beschleunigte oder taggleiche Workflows möglich.
+13. Q: Was umfasst strategische visuelle Markenpositionierung?
+   A: Sie verbindet Bildsprache, Porträtstil, visuelle Hierarchie und Nutzung über Website, LinkedIn, Presse, Kampagnen und institutionelle Kommunikation hinweg.
+14. Q: Fotografieren Sie C-Level-Events?
+   A: Ja. Executive Meetings, Konferenzen, Preisverleihungen und hochrangige institutionelle Veranstaltungen werden diskret dokumentiert.
+15. Q: Sind Fine-Art- oder intime Aufnahmen möglich?
+   A: Ja, ausschließlich in einem respektvollen künstlerischen Rahmen mit vorab vereinbarter Einwilligung, Privatsphäre und klaren Grenzen.
+16. Q: Ist der kalkulierte Preis endgültig?
+   A: Nein. Er ist eine unverbindliche Orientierung. Das schriftliche Angebot richtet sich nach Umfang, Ort, Timing, Nutzungsrechten, Produktionskomplexität und steuerlichem Status.
+17. Q: Wie werden Nutzungsrechte geregelt?
+   A: Nutzungsrechte richten sich nach Projekt, Medien, Dauer und Gebiet und werden im schriftlichen Angebot festgehalten.
+18. Q: Ist Reverse Charge innerhalb der EU möglich?
+   A: Ja. Berechtigte Unternehmen außerhalb Österreichs können nach Angabe und Prüfung der Unternehmens- und UID-Daten im Reverse-Charge-Verfahren abgerechnet werden.
+19. Q: Wie werden Bilder nach der DSGVO behandelt?
+   A: Bilder und personenbezogene Daten werden vertraulich und nur für den vereinbarten Zweck verarbeitet. Eine Veröffentlichung erfolgt ausschließlich mit Zustimmung.
+## END CANONICAL FAQ MIRROR
