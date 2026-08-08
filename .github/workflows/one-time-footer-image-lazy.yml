@@ -1,0 +1,76 @@
+name: One-time footer image loading remediation
+
+on:
+  push:
+    branches:
+      - fix/pagespeed-round3-footer-image-20260808
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    if: ${{ !contains(github.event.head_commit.message, '[footer-image-lazy-done]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/pagespeed-round3-footer-image-20260808
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Deprioritize below-fold WKO footer image and add guard
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs=require('fs');
+          const path=require('path');
+          const root=process.cwd();
+          const skip=new Set(['.git','node_modules','.github']);
+          const files=[];
+          function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){if(skip.has(e.name))continue;const p=path.join(dir,e.name);if(e.isDirectory())walk(p);else if(e.name.endsWith('.html'))files.push(p)}}
+          walk(root);
+          let changed=0, found=0;
+          for(const file of files){
+            let html=fs.readFileSync(file,'utf8');
+            if(!html.includes('wko-wien-profile-transparent.png')) continue;
+            found++;
+            const before=html;
+            html=html.replace(/<img\b[^>]*src=["'][^"']*wko-wien-profile-transparent\.png[^"']*["'][^>]*>/gi,(tag)=>{
+              let out=tag;
+              if(/\bloading=["'][^"']*["']/i.test(out)) out=out.replace(/\bloading=["'][^"']*["']/i,'loading="lazy"');
+              else out=out.replace(/<img\b/i,'<img loading="lazy"');
+              if(/\bfetchpriority=["'][^"']*["']/i.test(out)) out=out.replace(/\bfetchpriority=["'][^"']*["']/i,'fetchpriority="low"');
+              else out=out.replace(/<img\b/i,'<img fetchpriority="low"');
+              return out;
+            });
+            if(html!==before){fs.writeFileSync(file,html);changed++;}
+          }
+          if(!found) throw new Error('No WKO footer image references found');
+          if(!changed) throw new Error('WKO footer images were already optimized; no files changed');
+
+          fs.writeFileSync('tools/audit-footer-image-loading-stage58.mjs',`import fs from 'node:fs';\nimport path from 'node:path';\nconst root=path.resolve(import.meta.dirname,'..');\nconst failures=[];\nconst skip=new Set(['.git','node_modules','.github']);\nlet refs=0;\nfunction walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){if(skip.has(e.name))continue;const p=path.join(dir,e.name);if(e.isDirectory())walk(p);else if(e.name.endsWith('.html')){const html=fs.readFileSync(p,'utf8');for(const m of html.matchAll(/<img\\b[^>]*src=[\\\"'][^\\\"']*wko-wien-profile-transparent\\.png[^\\\"']*[\\\"'][^>]*>/gi)){refs++;const tag=m[0];const rel=path.relative(root,p).replaceAll('\\\\','/');if(!/loading=[\\\"']lazy[\\\"']/i.test(tag))failures.push(rel+': WKO footer image must be lazy-loaded');if(!/fetchpriority=[\\\"']low[\\\"']/i.test(tag))failures.push(rel+': WKO footer image must use low fetch priority');}}}}\nwalk(root);\nif(!refs)failures.push('No WKO footer image references found');\nif(failures.length){for(const f of failures)console.error('FAIL '+f);process.exit(1)}\nconsole.log('Stage 58 footer image loading audit passed for '+refs+' WKO image references: all are lazy and low priority.');\n`);
+          const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
+          const stage='node tools/audit-footer-image-loading-stage58.mjs';
+          if(!pkg.scripts.audit.includes(stage))pkg.scripts.audit+=' && '+stage;
+          fs.writeFileSync('package.json',JSON.stringify(pkg,null,2)+'\n');
+          NODE
+          rm .github/workflows/one-time-footer-image-lazy.yml
+      - name: Install dependencies
+        run: npm ci
+      - name: Run full audit
+        run: npm run audit
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run browser regressions
+        run: npm run test:browser
+      - name: Commit verified remediation
+        shell: bash
+        run: |
+          git config user.name 'BANHALMI CI'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'perf: lazy-load below-fold WKO footer image [footer-image-lazy-done]'
+          git push origin HEAD:fix/pagespeed-round3-footer-image-20260808
