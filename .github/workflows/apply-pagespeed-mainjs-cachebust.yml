@@ -1,0 +1,43 @@
+name: One-time main.js startup cache bust
+
+on:
+  push:
+    branches:
+      - fix/pagespeed-startup-mainjs-20260808
+    paths:
+      - .github/workflows/apply-pagespeed-mainjs-cachebust.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Propagate main.js cache key
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          old='main.js?v=20260716-trustindex-home-only'
+          new='main.js?v=20260808-startup-v1'
+          changed=0
+          for p in Path('.').rglob('*.html'):
+              s=p.read_text(encoding='utf-8')
+              if old in s:
+                  p.write_text(s.replace(old,new),encoding='utf-8')
+                  changed+=1
+          if not changed:
+              raise SystemExit('No main.js cache references found')
+          print(f'Updated {changed} HTML files')
+          PY
+          git diff --check
+      - name: Commit cache bust
+        run: |
+          git config user.name 'BANHALMI CI'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -- '*.html' '**/*.html' || true
+          git commit -m 'chore: cache-bust optimized main.js [startup-cache-done]'
+          git push origin HEAD:fix/pagespeed-startup-mainjs-20260808
