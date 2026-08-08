@@ -1,0 +1,42 @@
+name: Diagnostic mobile100 EN HU DE
+
+on:
+  push:
+    branches:
+      - fix/pagespeed-100-round2-20260808
+    paths:
+      - .github/workflows/diagnostic-mobile100-three-languages.yml
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Start local production server
+        run: |
+          npx --yes http-server . -p 4173 -c-1 > /tmp/http-server.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/ >/dev/null && exit 0; sleep 1; done
+          cat /tmp/http-server.log
+          exit 1
+      - name: Lighthouse EN HU DE mobile
+        run: |
+          for entry in 'en:http://127.0.0.1:4173/' 'hu:http://127.0.0.1:4173/hu/' 'de:http://127.0.0.1:4173/de-at/'; do
+            lang="${entry%%:*}"
+            url="${entry#*:}"
+            npx --yes lighthouse@latest "$url" --quiet --chrome-flags='--headless --no-sandbox --disable-dev-shm-usage' --form-factor=mobile --screenEmulation.mobile=true --throttling-method=simulate --only-categories=performance,accessibility --output=json --output-path="lh-$lang.json"
+            LANG_CODE="$lang" node <<'NODE'
+          const fs=require('fs');
+          const lang=process.env.LANG_CODE;
+          const r=JSON.parse(fs.readFileSync(`lh-${lang}.json`,'utf8'));
+          const score=id=>Math.round((r.categories[id]?.score||0)*100);
+          const value=id=>r.audits[id]?.displayValue||'';
+          console.log(`RESULT ${lang.toUpperCase()} PERFORMANCE=${score('performance')} ACCESSIBILITY=${score('accessibility')} FCP=${value('first-contentful-paint')} LCP=${value('largest-contentful-paint')} SI=${value('speed-index')} TBT=${value('total-blocking-time')} CLS=${value('cumulative-layout-shift')}`);
+          console.log(`MAINTHREAD ${lang.toUpperCase()} ${value('mainthread-work-breakdown')}`);
+          NODE
+          done
