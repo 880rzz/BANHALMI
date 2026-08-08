@@ -27,8 +27,8 @@ for (const [route, target] of Object.entries(redirects)) {
     continue;
   }
   const html = fs.readFileSync(file, 'utf8');
+  if (/noindex/i.test(html)) errors.push(`${file}: redirect alias must not carry noindex; redirect and canonical are the consolidation signals`);
   for (const required of [
-    'noindex,follow',
     `href="${target}"`,
     `content="0;url=${target}"`,
     'window.location.replace',
