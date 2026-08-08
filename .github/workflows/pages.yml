@@ -93,23 +93,7 @@ jobs:
 
           echo "Prepared $(find _site -type f | wc -l | tr -d ' ') verified production files."
 
-      - name: Minify production CSS
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          for css in \
-            _site/assets/css/style.css \
-            _site/assets/css/accessibility-stage14.css \
-            _site/assets/css/mega-menu.css; do
-            test -f "$css"
-            npx --yes --package clean-css-cli@5.6.3 cleancss -o "$css.tmp" "$css"
-            mv "$css.tmp" "$css"
-          done
-
-          echo 'Verified production CSS minification completed. JavaScript is intentionally left unminified after production Lighthouse showed Terser increased main-thread blocking.'
-
-      - name: Run browser regressions against optimized artifact
+      - name: Run browser regressions against production artifact
         run: npx playwright test --config=playwright.production.config.mjs
 
       - name: Configure GitHub Pages
