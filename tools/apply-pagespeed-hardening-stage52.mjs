@@ -35,7 +35,23 @@ const write = (p, s) => fs.writeFileSync(path.join(root, p), s);
   write(file, css);
 }
 
-// 3) Remove competing high fetch priority from the decorative/brand mark while
+// 3) Stage 29 originally locked the decorative brand gold into a text role.
+// Update that regression contract to require the darker AA-safe text gold.
+{
+  const file = 'tools/audit-mobile-menu-and-footer-stage29.mjs';
+  let src = read(file);
+  if (!src.includes("'color:#B79C44!important'")) {
+    throw new Error('Stage 29 legacy navigation-gold contract not found.');
+  }
+  src = src.replace("'color:#B79C44!important'", "'color:#8A681F!important'");
+  src = src.replace(
+    "console.log('Stage 29 mobile menu and footer regression audit passed.');",
+    "console.log('Stage 29 mobile menu and footer regression audit passed with AA-safe active navigation text.');"
+  );
+  write(file, src);
+}
+
+// 4) Remove competing high fetch priority from the decorative/brand mark while
 // keeping the photographic hero as the sole high-priority LCP candidate.
 for (const file of ['index.html', 'hu/index.html', 'de-at/index.html']) {
   let html = read(file);
@@ -47,10 +63,10 @@ for (const file of ['index.html', 'hu/index.html', 'de-at/index.html']) {
   write(file, html);
 }
 
-// 4) Add a permanent regression audit and wire it into npm run audit.
+// 5) Add a permanent regression audit and wire it into npm run audit.
 {
   const auditFile = 'tools/audit-pagespeed-runtime-stage52.mjs';
-  const auditSource = `import fs from 'node:fs';\nimport path from 'node:path';\n\nconst root=path.resolve(import.meta.dirname,'..');\nconst read=(p)=>fs.readFileSync(path.join(root,p),'utf8');\nconst errors=[];\nconst main=read('assets/js/main.js');\nconst a11y=read('assets/css/accessibility-stage14.css');\n\nif(main.includes('getBoundingClientRect()') && main.includes('--hero-scroll-y')) errors.push('main.js still contains the legacy scroll-linked hero layout read/write loop');\nif(main.includes('window.addEventListener(\\"scroll\\", requestUpdate')) errors.push('main.js still registers the legacy hero scroll requestUpdate handler');\nif(!main.includes('Hero remains static by design: no scroll-linked layout reads or parallax writes.')) errors.push('main.js missing the static-hero performance contract');\nif(!a11y.includes('/* STAGE52-PAGESPEED-RUNTIME:START */')) errors.push('accessibility-stage14.css missing Stage 52 runtime hardening');\nif(!a11y.includes('.nav-links{transition:none!important;}')) errors.push('mobile navigation still lacks the no-layout-transition guard');\nif(/color:#B79C44!important;[\\s\\S]{0,160}background:transparent!important;/.test(a11y)) errors.push('brand gold #B79C44 is still used as active mobile text on a light background');\nfor(const file of ['index.html','hu/index.html','de-at/index.html']){\n  const html=read(file);\n  if(!/class=\\"hero-center-logo\\"[^>]*fetchpriority=\\"low\\"|fetchpriority=\\"low\\"[^>]*class=\\"hero-center-logo\\"/.test(html)) errors.push(file+': decorative hero logo must use low fetch priority');\n  if(!/data-banhalmi-lcp-preload=\\"\\"[^>]*fetchpriority=\\"high\\"|fetchpriority=\\"high\\"[^>]*data-banhalmi-lcp-preload=\\"\\"/.test(html)) errors.push(file+': photographic LCP preload must remain high priority');\n}\nif(errors.length){console.error(errors.join('\\n'));process.exit(1);}\nconsole.log('Stage 52 PageSpeed runtime audit passed: no scroll-linked hero reflow, no mobile layout transition, AA active navigation gold, and one high-priority LCP candidate.');\n`;
+  const auditSource = `import fs from 'node:fs';\nimport path from 'node:path';\n\nconst root=path.resolve(import.meta.dirname,'..');\nconst read=(p)=>fs.readFileSync(path.join(root,p),'utf8');\nconst errors=[];\nconst main=read('assets/js/main.js');\nconst a11y=read('assets/css/accessibility-stage14.css');\nconst stage29=read('tools/audit-mobile-menu-and-footer-stage29.mjs');\n\nif(main.includes('getBoundingClientRect()') && main.includes('--hero-scroll-y')) errors.push('main.js still contains the legacy scroll-linked hero layout read/write loop');\nif(main.includes('window.addEventListener(\\"scroll\\", requestUpdate')) errors.push('main.js still registers the legacy hero scroll requestUpdate handler');\nif(!main.includes('Hero remains static by design: no scroll-linked layout reads or parallax writes.')) errors.push('main.js missing the static-hero performance contract');\nif(!a11y.includes('/* STAGE52-PAGESPEED-RUNTIME:START */')) errors.push('accessibility-stage14.css missing Stage 52 runtime hardening');\nif(!a11y.includes('.nav-links{transition:none!important;}')) errors.push('mobile navigation still lacks the no-layout-transition guard');\nif(/color:#B79C44!important;[\\s\\S]{0,160}background:transparent!important;/.test(a11y)) errors.push('brand gold #B79C44 is still used as active mobile text on a light background');\nif(!stage29.includes("'color:#8A681F!important'")) errors.push('Stage 29 must guard the AA-safe active navigation text color');\nfor(const file of ['index.html','hu/index.html','de-at/index.html']){\n  const html=read(file);\n  if(!/class=\\"hero-center-logo\\"[^>]*fetchpriority=\\"low\\"|fetchpriority=\\"low\\"[^>]*class=\\"hero-center-logo\\"/.test(html)) errors.push(file+': decorative hero logo must use low fetch priority');\n  if(!/data-banhalmi-lcp-preload=\\"\\"[^>]*fetchpriority=\\"high\\"|fetchpriority=\\"high\\"[^>]*data-banhalmi-lcp-preload=\\"\\"/.test(html)) errors.push(file+': photographic LCP preload must remain high priority');\n}\nif(errors.length){console.error(errors.join('\\n'));process.exit(1);}\nconsole.log('Stage 52 PageSpeed runtime audit passed: no scroll-linked hero reflow, no mobile layout transition, AA active navigation gold, and one high-priority LCP candidate.');\n`;
   write(auditFile, auditSource);
 
   const pkgFile = 'package.json';
