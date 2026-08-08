@@ -62,9 +62,6 @@
   // on small screens they return to compact native accordions.
   var footerMedia = window.matchMedia("(min-width: 681px)");
   var footerAccordions = Array.prototype.slice.call(document.querySelectorAll("details.footer-accordion"));
-  footerAccordions.forEach(function (details) {
-    details.open = false;
-  });
 
   function syncFooterAccordions(event) {
     var desktop = event && typeof event.matches === "boolean" ? event.matches : footerMedia.matches;
@@ -90,7 +87,19 @@
         }
       });
     }, { threshold: 0.12 });
-    items.forEach(function (el) { io.observe(el); });
+    // Register below-fold reveal targets in small frame batches instead of
+    // one startup loop. This preserves the visual behavior while keeping the
+    // initial main-thread task short on mobile CPUs.
+    var revealIndex = 0;
+    function observeRevealBatch() {
+      var end = Math.min(revealIndex + 8, items.length);
+      while (revealIndex < end) {
+        io.observe(items[revealIndex]);
+        revealIndex += 1;
+      }
+      if (revealIndex < items.length) window.requestAnimationFrame(observeRevealBatch);
+    }
+    if (items.length) window.requestAnimationFrame(observeRevealBatch);
   } else {
     items.forEach(function (el) { el.classList.add("in"); });
   }
