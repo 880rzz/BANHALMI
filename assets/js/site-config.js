@@ -305,6 +305,34 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     return document.querySelectorAll('form[data-smart-quote]');
   }
 
+  function createSubmissionKey(){
+    if(window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+    if(window.crypto && typeof window.crypto.getRandomValues === 'function'){
+      var bytes = new Uint8Array(16);
+      window.crypto.getRandomValues(bytes);
+      bytes[6] = (bytes[6] & 15) | 64;
+      bytes[8] = (bytes[8] & 63) | 128;
+      var hex = Array.prototype.map.call(bytes,function(value){ return value.toString(16).padStart(2,'0'); }).join('');
+      return hex.slice(0,8)+'-'+hex.slice(8,12)+'-'+hex.slice(12,16)+'-'+hex.slice(16,20)+'-'+hex.slice(20);
+    }
+    return 'quote-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,12);
+  }
+
+  function ensureSubmissionKey(form, forceNew){
+    var field = form.querySelector('input[name="submission_key"]');
+    if(!field){
+      field = document.createElement('input');
+      field.type = 'hidden';
+      field.name = 'submission_key';
+      form.appendChild(field);
+    }
+    if(forceNew || !field.value){
+      field.value = createSubmissionKey();
+      field.defaultValue = field.value;
+    }
+    return field.value;
+  }
+
   function markDeliveryState(data){
     var verified = !!(data && data.adminEmailSent === true && data.customerEmailSent === true);
     quoteForms().forEach(function(form){
@@ -316,7 +344,20 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     window.__BANHALMI_QUOTE_DELIVERY_FETCH_GUARD__ = true;
     window.fetch = function(input, init){
       var requestUrl = typeof input === 'string' ? input : (input && input.url) || '';
-      return nativeFetch.call(this, input, init).then(function(response){
+      var requestInit = init;
+      if(String(requestUrl).indexOf('/api/banhalmi-form') !== -1 && init && typeof init.body === 'string'){
+        try{
+          var payload = JSON.parse(init.body);
+          var form = quoteForms()[0];
+          if(form){
+            var submissionKey = ensureSubmissionKey(form, false);
+            payload.submission_key = payload.submission_key || submissionKey;
+            payload.submissionKey = payload.submissionKey || submissionKey;
+            requestInit = Object.assign({}, init, {body:JSON.stringify(payload)});
+          }
+        }catch(e){}
+      }
+      return nativeFetch.call(this, input, requestInit).then(function(response){
         if(String(requestUrl).indexOf('/api/banhalmi-form') === -1) return response;
         return response.clone().text().then(function(text){
           var data = {};
@@ -332,6 +373,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   }
 
   function initForm(form){
+    ensureSubmissionKey(form, false);
     form.querySelectorAll('input[type="radio"][name="category"]').forEach(function(input){
       input.checked = false;
     });
@@ -343,6 +385,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
       form.querySelectorAll('input[type="radio"][name="category"]').forEach(function(input){
         input.checked = false;
       });
+      ensureSubmissionKey(form, true);
       delete form.dataset.deliveryVerified;
     };
   }
