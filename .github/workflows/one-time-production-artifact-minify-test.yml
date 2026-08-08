@@ -1,0 +1,65 @@
+name: One-time production artifact minification verification
+
+on:
+  push:
+    branches:
+      - fix/pagespeed-round4-production-minify-20260808
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out candidate source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run source audit and browser regressions
+        run: |
+          npm run audit
+          npm run test:browser
+
+      - name: Prepare production artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site
+          git archive --format=tar HEAD | tar -xf - -C _site
+          rm -rf _site/.github _site/node_modules _site/tests _site/tools _site/docs _site/playwright-report _site/test-results
+          rm -f _site/.gitignore _site/package.json _site/package-lock.json _site/playwright.config.mjs _site/playwright.production.config.mjs _site/README.md _site/DELETE-LOW-RES-FINE-ART-IMAGES.txt _site/TORLENDO-FAJLOK.txt _site/.vercel-redeploy-*
+          printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
+          test -f _site/index.html
+          test -f _site/hu/index.html
+          test -f _site/de-at/index.html
+          test -f _site/assets/css/style.css
+          test -f _site/assets/js/main.js
+
+      - name: Minify candidate production artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          for css in _site/assets/css/style.css _site/assets/css/accessibility-stage14.css _site/assets/css/mega-menu.css; do
+            npx --yes --package clean-css-cli@5.6.3 cleancss -o "$css.tmp" "$css"
+            mv "$css.tmp" "$css"
+          done
+          for js in _site/assets/js/main.js _site/assets/js/site-config.js _site/assets/js/mega-menu.js _site/assets/js/analytics.js; do
+            npx --yes --package terser@5.43.1 terser "$js" --compress --mangle --output "$js.tmp"
+            mv "$js.tmp" "$js"
+          done
+
+      - name: Run full browser regressions against minified artifact
+        run: npx playwright test --config=playwright.production.config.mjs
