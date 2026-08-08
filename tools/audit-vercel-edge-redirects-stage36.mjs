@@ -59,26 +59,23 @@ for (const relative of ['redirects/at/vercel.json', 'redirects/hu/vercel.json'])
   }
 }
 
+/* The root repo is attached to several legacy Vercel redirect projects. Those
+   deployments are static redirect infrastructure and must not consume a build
+   for every BANHALMI commit. Vercel's current project configuration contract
+   disables Git-triggered deployments before a build is queued; this is
+   stronger than the retired ignoreCommand approach, which still consumed the
+   account's build-rate budget before deciding to skip. */
 const vercel = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
-const ignore = vercel.ignoreCommand || '';
-for (const redundantProjectId of [
-  'prj_ZNb7R5KI1MDAQNhoz8Alkwtguydf',
-  'prj_2oUW8R7jfNrPC9LLo86VjyBsUBgm'
-]) {
-  if (!ignore.includes(redundantProjectId)) failures.push(`vercel.json ignoreCommand must skip redundant domainless project ${redundantProjectId}`);
+if (!vercel.git || vercel.git.deploymentEnabled !== false) {
+  failures.push('vercel.json must disable redundant Git-triggered Vercel deployments with git.deploymentEnabled=false');
 }
-for (const requiredProjectId of [
-  'prj_S6QfYbMXaV7mCI9rr47asrzyKdYX',
-  'prj_orfR5hrA2p6bbZDyJ7ZHhyxRIcVL'
-]) {
-  if (ignore.includes(requiredProjectId)) failures.push(`vercel.json must not skip required redirect project ${requiredProjectId}`);
+if (Object.prototype.hasOwnProperty.call(vercel, 'ignoreCommand')) {
+  failures.push('vercel.json must not retain the legacy ignoreCommand build-suppression path');
 }
-if (!ignore.includes('$VERCEL_PROJECT_ID')) failures.push('vercel.json ignoreCommand must key build suppression from VERCEL_PROJECT_ID');
-if (!ignore.includes('else exit 1')) failures.push('vercel.json ignoreCommand must allow all non-redundant Vercel projects to continue building');
 
 if (failures.length) {
   for (const failure of failures) console.error(`FAIL ${failure}`);
   process.exit(1);
 }
 
-console.log('Stage 36 Vercel redirect audit passed: hostname routing, permanent redirects, clean canonical signals and redundant-project suppression are consistent.');
+console.log('Stage 36 Vercel redirect audit passed: hostname routing, permanent redirects, clean canonical signals and pre-build Git deployment suppression are consistent.');
