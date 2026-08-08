@@ -21,6 +21,10 @@ function auditMiddleware(relativePath, required) {
   if (!source.includes('target.search = incoming.search')) {
     failures.push(`${relativePath} must preserve query strings`);
   }
+  const redirectBlock = source.split('status: 308')[1] || '';
+  if (/x-robots-tag|X-Robots-Tag/i.test(redirectBlock)) {
+    failures.push(`${relativePath} permanent 308 redirect must not carry noindex/X-Robots-Tag`);
+  }
 }
 
 auditMiddleware('middleware.js', [
@@ -31,23 +35,29 @@ auditMiddleware('middleware.js', [
   "host.includes('banhalmi-at-redirect')",
   "languageBase = 'https://www.norbertbanhalmi.com/hu/'",
   "languageBase = 'https://www.norbertbanhalmi.com/de-at/'",
-  'status: 308',
-  "'X-Robots-Tag': 'noindex'"
+  'status: 308'
 ]);
 
 auditMiddleware('redirects/at/middleware.js', [
   "matcher: '/:path*'",
   "new URL(cleanPath, 'https://www.norbertbanhalmi.com/de-at/')",
-  'status: 308',
-  "'X-Robots-Tag': 'noindex'"
+  'status: 308'
 ]);
 
 auditMiddleware('redirects/hu/middleware.js', [
   "matcher: '/:path*'",
   "new URL(cleanPath, 'https://www.norbertbanhalmi.com/hu/')",
-  'status: 308',
-  "'X-Robots-Tag': 'noindex'"
+  'status: 308'
 ]);
+
+for (const relative of ['redirects/at/vercel.json', 'redirects/hu/vercel.json']) {
+  const config = fs.readFileSync(path.join(root, relative), 'utf8');
+  if (/X-Robots-Tag|noindex/i.test(config)) failures.push(`${relative} permanent redirect config must not emit noindex`);
+  const json = JSON.parse(config);
+  if (!Array.isArray(json.redirects) || json.redirects.length !== 1 || json.redirects[0].permanent !== true) {
+    failures.push(`${relative} must contain one permanent language redirect`);
+  }
+}
 
 const vercel = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
 const ignore = vercel.ignoreCommand || '';
@@ -71,4 +81,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('Stage 36 Vercel hostname-aware redirects and verified redundant-project build suppression audit passed.');
+console.log('Stage 36 Vercel redirect audit passed: hostname routing, permanent redirects, clean canonical signals and redundant-project suppression are consistent.');

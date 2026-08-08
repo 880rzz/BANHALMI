@@ -12,8 +12,7 @@ export default function middleware(request) {
     status: 308,
     headers: {
       Location: target.href,
-      'Cache-Control': 'public, max-age=0, s-maxage=86400',
-      'X-Robots-Tag': 'noindex'
+      'Cache-Control': 'public, max-age=0, s-maxage=86400'
     }
   });
 }
