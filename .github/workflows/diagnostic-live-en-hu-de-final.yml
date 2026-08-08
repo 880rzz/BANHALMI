@@ -60,3 +60,5 @@ jobs:
           name: lighthouse-final-${{ matrix.lang }}
           path: lh-${{ matrix.lang }}.json
           retention-days: 3
+
+# rerun: 2026-08-08-mobile-hero-off
