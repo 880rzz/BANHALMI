@@ -333,6 +333,17 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     return field.value;
   }
 
+  function placePdfAction(form){
+    var submitActions = form.querySelector('.quote-submit-actions');
+    if(!submitActions) return;
+    var button = document.querySelector('[data-download-quote-pdf]');
+    if(!button) return;
+    var actions = button.closest('.quote-submit-pdf-actions, .quote-actions');
+    if(!actions) return;
+    actions.classList.add('quote-submit-pdf-actions');
+    submitActions.insertAdjacentElement('afterend', actions);
+  }
+
   function markDeliveryState(data){
     var verified = !!(data && data.adminEmailSent === true && data.customerEmailSent === true);
     quoteForms().forEach(function(form){
@@ -374,6 +385,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
 
   function initForm(form){
     ensureSubmissionKey(form, false);
+    placePdfAction(form);
     form.querySelectorAll('input[type="radio"][name="category"]').forEach(function(input){
       input.checked = false;
     });
