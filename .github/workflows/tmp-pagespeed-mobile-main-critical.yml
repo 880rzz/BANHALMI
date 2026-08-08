@@ -1,0 +1,89 @@
+name: Apply mobile main critical-path optimization
+
+on:
+  push:
+    branches:
+      - fix/pagespeed-mobile-main-critical-20260808
+    paths:
+      - .github/workflows/tmp-pagespeed-mobile-main-critical.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/pagespeed-mobile-main-critical-20260808
+      - name: Apply deterministic optimization
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          main = Path('assets/js/main.js')
+          s = main.read_text()
+          marker = 'var mobileHomepage = isLanguageHomepage && compactMotion;'
+          if marker not in s:
+              needle = '  "use strict";\n'
+              insert = '''  "use strict";\n\n  // Mobile language homepages keep only consent-critical startup work.\n  var currentPath = window.location.pathname.replace(/\\/index\\.html$/, "/");\n  var isLanguageHomepage = currentPath === "/" || currentPath === "/hu/" || currentPath === "/de-at/";\n  var compactMotion = window.matchMedia("(max-width: 1040px)").matches;\n  var mobileHomepage = isLanguageHomepage && compactMotion;\n'''
+              assert needle in s
+              s = s.replace(needle, insert, 1)
+
+          old = '  if (btn && nav) {'
+          if old in s:
+              s = s.replace(old, '  if (!mobileHomepage && btn && nav) {', 1)
+
+          old = '  document.addEventListener("click", function (event) {\n    if (!nav ||!btn ||!nav.classList.contains("open")) return;'
+          new = '  document.addEventListener("click", function (event) {\n    if (mobileHomepage) return;\n    if (!nav ||!btn ||!nav.classList.contains("open")) return;'
+          if old in s:
+              s = s.replace(old, new, 1)
+
+          old = '  document.addEventListener("keydown", function (event) {\n    if (!nav ||!btn) return;'
+          new = '  document.addEventListener("keydown", function (event) {\n    if (mobileHomepage) return;\n    if (!nav ||!btn) return;'
+          if old in s:
+              s = s.replace(old, new, 1)
+
+          old = '  if (footerAccordions.length) {'
+          if old in s:
+              s = s.replace(old, '  if (!mobileHomepage && footerAccordions.length) {', 1)
+
+          old = '  var items = document.querySelectorAll(".reveal");'
+          if old in s:
+              s = s.replace(old, '  var items = compactMotion ? [] : document.querySelectorAll(".reveal");', 1)
+
+          old = '  if (!reduce && "IntersectionObserver" in window) {'
+          if old in s:
+              s = s.replace(old, '  if (!compactMotion && !reduce && "IntersectionObserver" in window) {', 1)
+
+          assert marker in s
+          assert 'if (!mobileHomepage && btn && nav)' in s
+          assert 'var items = compactMotion ? []' in s
+          main.write_text(s)
+
+          css = Path('assets/css/style.css')
+          c = css.read_text()
+          css_marker = 'STAGE-PAGESPEED-MOBILE-STATIC-REVEAL'
+          if css_marker not in c:
+              c += '''\n\n/* STAGE-PAGESPEED-MOBILE-STATIC-REVEAL: mobile content is immediately visible; no reveal observer is required. */\n@media (max-width:1040px){\n  .reveal{opacity:1!important;transform:none!important;transition:none!important;}\n}\n'''
+          css.write_text(c)
+
+          old_token = '20260808-mobile100-v2'
+          new_token = '20260808-mobile100-v3'
+          changed = 0
+          for p in Path('.').rglob('*.html'):
+              text = p.read_text(errors='strict')
+              if old_token in text:
+                  p.write_text(text.replace(old_token, new_token))
+                  changed += 1
+          print('HTML cache-token files updated:', changed)
+          assert changed > 0
+          PY
+      - name: Commit migration
+        run: |
+          git config user.name 'BANHALMI maintenance bot'
+          git config user.email '107166660+880rzz@users.noreply.github.com'
+          git add assets/js/main.js assets/css/style.css '**/*.html' '*.html'
+          git commit -m 'perf: remove noncritical mobile homepage startup work'
+          git push origin HEAD:fix/pagespeed-mobile-main-critical-20260808
