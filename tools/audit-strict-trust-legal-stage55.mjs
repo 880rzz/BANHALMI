@@ -39,9 +39,10 @@ const privacy = {
   hu: read('hu/adatvedelem/index.html')
 };
 for (const [lang, text] of Object.entries(privacy)) {
-  for (const token of ['Bánhalmi Norbert e.U.','Art. 6','Cloudflare','Google','GitHub','180']) {
+  for (const token of ['Bánhalmi Norbert e.U.','Cloudflare','Google','GitHub','180']) {
     if (!text.includes(token)) errors.push(`${lang} privacy notice missing ${token}`);
   }
+  if (!/(?:Art(?:icle)?\.?\s*6|Artikel\s*6|6\.\s*cikk)/i.test(text)) errors.push(`${lang} privacy notice missing GDPR Article 6 legal-basis reference`);
   if (!/Datenschutzbehörde|Data Protection Authority|Adatvédelmi Hatóság/i.test(text)) errors.push(`${lang} privacy notice missing supervisory-authority route`);
   if (!/automated|automatisiert|automatizált/i.test(text)) errors.push(`${lang} privacy notice missing automated-decision transparency`);
 }
@@ -88,7 +89,7 @@ const trustPages = {
 for (const [lang, text] of Object.entries(trustPages)) {
   if (!/Article 50|Artikel 50|50\. cikk/i.test(text)) errors.push(`${lang} Trust Center missing EU AI Act Article 50 transparency statement`);
   if (!/synthetic|synthetisch|szintetikus/i.test(text)) errors.push(`${lang} Trust Center missing synthetic-content disclosure rule`);
-  if (!/human editorial|menschliche redaktionelle|emberi szerkesztői/i.test(text)) errors.push(`${lang} Trust Center missing human editorial-control rule`);
+  if (!/human editorial|menschlich\w*\s+redaktionell\w*|emberi szerkesztői/i.test(text)) errors.push(`${lang} Trust Center missing human editorial-control rule`);
 }
 
 const trustIndex = JSON.parse(read('trust-center.json'));
