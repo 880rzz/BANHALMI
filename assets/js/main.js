@@ -863,6 +863,11 @@
 
   // Apple-inspired motion system — restrained, accessible and performance-safe.
   (function () {
+    // Mobile visitors get the finished content immediately. The editorial motion
+    // layer is decorative and its full-DOM scan is not worth blocking the main
+    // thread on compact/mobile CPUs. Desktop keeps the original motion system.
+    var compactViewport = window.matchMedia && window.matchMedia("(max-width: 680px)").matches;
+    if (compactViewport) return;
     var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var canObserve = "IntersectionObserver" in window;
     var rootElement = document.documentElement;
@@ -1016,10 +1021,13 @@
     d.addEventListener('click',function(e){if(e.target===d){pendingIndex=null;closeAgeDialog(true);}});
     document.body.appendChild(d); return d;
   }
-  var ageDialog=buildAgeDialog();
-  ageDialog.inert=true;
-  function showAgeDialog(index,trigger){pendingIndex=index;lastTrigger=trigger||null;ageDialog.inert=false;ageDialog.classList.add('open');ageDialog.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';ageDialog.querySelector('[data-age-accept]').focus();}
-  function closeAgeDialog(restore){ageDialog.classList.remove('open');ageDialog.setAttribute('aria-hidden','true');ageDialog.inert=true;document.body.style.overflow='';if(restore&&lastTrigger)lastTrigger.focus();}
+  var ageDialog=null;
+  function ensureAgeDialog(){
+    if(!ageDialog){ageDialog=buildAgeDialog();ageDialog.inert=true;}
+    return ageDialog;
+  }
+  function showAgeDialog(index,trigger){pendingIndex=index;lastTrigger=trigger||null;var dialog=ensureAgeDialog();dialog.inert=false;dialog.classList.add('open');dialog.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';dialog.querySelector('[data-age-accept]').focus();}
+  function closeAgeDialog(restore){if(!ageDialog)return;ageDialog.classList.remove('open');ageDialog.setAttribute('aria-hidden','true');ageDialog.inert=true;document.body.style.overflow='';if(restore&&lastTrigger)lastTrigger.focus();}
   function requestOpen(index,trigger){collect();if(!items.length)return;index=(index+items.length)%items.length;if(isRestricted(items[index])&&!ageVerified){showAgeDialog(index,trigger||items[index]);return;}openAt(index);}
   function openAt(index){collect();if(!items.length)return;lb.inert=false;current=(index+items.length)%items.length;var el=items[current];img.src=el.getAttribute('data-lightbox-src');img.alt=el.getAttribute('data-lightbox-cap')||'';cap.textContent=el.getAttribute('data-lightbox-cap')||'';linkBox.innerHTML='';for(var n=1;n<=12;n++){var href=el.getAttribute('data-lightbox-link-'+n);var label=el.getAttribute('data-lightbox-link-'+n+'-label');if(href&&label){var a=document.createElement('a');a.href=href;if(/^https?:\/\//i.test(href)){a.target='_blank';a.rel='noopener noreferrer';}a.textContent=label+' ↗';linkBox.appendChild(a);}}linkBox.hidden=!linkBox.children.length;lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';lb.querySelector('.universal-lightbox-close').focus();}
   function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');lb.inert=true;document.body.style.overflow='';img.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';img.alt='';if(lastTrigger){lastTrigger.setAttribute('aria-expanded','false');lastTrigger.focus();}}
@@ -1029,7 +1037,7 @@
   lb.querySelector('.universal-lightbox-prev').addEventListener('click',function(){requestOpen(current-1);});
   lb.addEventListener('click',function(e){if(e.target===lb)close();});
   document.addEventListener('keydown',function(e){
-    if(ageDialog.classList.contains('open')){if(e.key==='Escape'){pendingIndex=null;closeAgeDialog(true);}return;}
+    if(ageDialog&&ageDialog.classList.contains('open')){if(e.key==='Escape'){pendingIndex=null;closeAgeDialog(true);}return;}
     if(!lb.classList.contains('open'))return;
     if(e.key==='Escape')close(); if(e.key==='ArrowRight')requestOpen(current+1); if(e.key==='ArrowLeft')requestOpen(current-1);
   });
