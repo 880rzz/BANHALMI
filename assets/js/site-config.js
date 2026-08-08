@@ -253,9 +253,11 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
       var body = null;
       try { body = await response.json(); } catch(e) {}
       if(!response.ok || !body || body.ok !== true) throw new Error('delivery failed');
-      verifiedDelivery = true;
-      clearDraft(form);
-      form.reset();
+      verifiedDelivery = body.adminEmailSent === true && body.customerEmailSent === true;
+      if(verifiedDelivery){
+        clearDraft(form);
+        form.reset();
+      }
       setStatus(form,messageFor(lang,'sent'),'success');
     }catch(error){
       setStatus(form,messageFor(lang,'failed'),'error');
@@ -288,6 +290,65 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
       var dirty = Array.prototype.some.call(document.querySelectorAll('form[data-banhalmi-form], form[data-quote-form], form.quote-form'),function(form){ return hasDraft(form); });
       if(dirty){ event.preventDefault(); event.returnValue=''; }
     });
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init,{once:true});
+  else init();
+})();
+
+/* Guided quote state contract: start from zero and clear only after both deliveries are verified. */
+(function hardenGuidedQuoteState(){
+  'use strict';
+  var nativeFetch = window.fetch;
+
+  function quoteForms(){
+    return document.querySelectorAll('form[data-smart-quote]');
+  }
+
+  function markDeliveryState(data){
+    var verified = !!(data && data.adminEmailSent === true && data.customerEmailSent === true);
+    quoteForms().forEach(function(form){
+      form.dataset.deliveryVerified = verified ? 'true' : 'false';
+    });
+  }
+
+  if(nativeFetch && !window.__BANHALMI_QUOTE_DELIVERY_FETCH_GUARD__){
+    window.__BANHALMI_QUOTE_DELIVERY_FETCH_GUARD__ = true;
+    window.fetch = function(input, init){
+      var requestUrl = typeof input === 'string' ? input : (input && input.url) || '';
+      return nativeFetch.call(this, input, init).then(function(response){
+        if(String(requestUrl).indexOf('/api/banhalmi-form') === -1) return response;
+        return response.clone().text().then(function(text){
+          var data = {};
+          try { data = text ? JSON.parse(text) : {}; } catch(e) {}
+          markDeliveryState(data);
+          return response;
+        }).catch(function(){
+          markDeliveryState(null);
+          return response;
+        });
+      });
+    };
+  }
+
+  function initForm(form){
+    form.querySelectorAll('input[type="radio"][name="category"]').forEach(function(input){
+      input.checked = false;
+    });
+
+    var nativeReset = form.reset.bind(form);
+    form.reset = function(){
+      if(form.dataset.deliveryVerified !== 'true') return;
+      nativeReset();
+      form.querySelectorAll('input[type="radio"][name="category"]').forEach(function(input){
+        input.checked = false;
+      });
+      delete form.dataset.deliveryVerified;
+    };
+  }
+
+  function init(){
+    quoteForms().forEach(initForm);
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init,{once:true});
