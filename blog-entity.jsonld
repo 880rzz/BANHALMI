@@ -7,10 +7,15 @@
       "url": "https://blog.banhalmi.art/",
       "name": "BANHALMI Blog",
       "description": "Essays, professional reflections and current writing connected to Norbert Bánhalmi's photographic practice.",
-      "inLanguage": ["hu", "en", "de"],
+      "inLanguage": ["hu-HU", "en-GB", "de-AT"],
       "author": {"@id": "https://www.norbertbanhalmi.com/about/"},
+      "creator": {"@id": "https://www.norbertbanhalmi.com/about/"},
       "publisher": {"@id": "https://www.norbertbanhalmi.com/#organization"},
-      "isPartOf": {"@id": "https://www.norbertbanhalmi.com/#ecosystem"},
+      "isPartOf": {"@id": "https://blog.banhalmi.art/#website"},
+      "isRelatedTo": [
+        {"@id": "https://www.norbertbanhalmi.com/#website"},
+        {"@id": "https://www.banhalmi.art/#website"}
+      ],
       "about": [
         {"@id": "https://www.norbertbanhalmi.com/about/"},
         {"@id": "https://www.banhalmi.art/#website"}
@@ -36,8 +41,15 @@
       "@id": "https://blog.banhalmi.art/#website",
       "url": "https://blog.banhalmi.art/",
       "name": "BANHALMI Blog",
+      "inLanguage": ["hu-HU", "en-GB", "de-AT"],
       "publisher": {"@id": "https://www.norbertbanhalmi.com/#organization"},
-      "mainEntity": {"@id": "https://blog.banhalmi.art/#blog"}
+      "creator": {"@id": "https://www.norbertbanhalmi.com/about/"},
+      "about": {"@id": "https://www.norbertbanhalmi.com/about/"},
+      "mainEntity": {"@id": "https://blog.banhalmi.art/#blog"},
+      "isRelatedTo": [
+        {"@id": "https://www.norbertbanhalmi.com/#website"},
+        {"@id": "https://www.banhalmi.art/#website"}
+      ]
     },
     {
       "@type": "CollectionPage",
