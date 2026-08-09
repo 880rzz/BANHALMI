@@ -29,7 +29,7 @@
 ## Commercial service conversion path
 - Portrait, Brand and C-Level Event pages offer two early orientation links: the service-specific conversation label opens the final next-step selector, while the second link jumps to selected work.
 - The reader sees selected work, client reviews and verified professional context before the final decision block.
-- The final selector retains three routes: configure a non-binding package, send a message, or book a 30-minute video call.
+- The final selector retains three routes: configure a non-binding package, send a message, or book a 15-minute video call.
 - The former one-button CTA below each gallery was removed because it duplicated and pre-empted the more precise three-way selector.
 - Fine Art Photography retains its separate consent-led enquiry path.
 <!-- SERVICE-CONVERSION-PATH:END -->
