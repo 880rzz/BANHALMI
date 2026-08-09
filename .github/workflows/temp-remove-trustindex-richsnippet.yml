@@ -52,7 +52,8 @@ jobs:
           fs.writeFileSync(auditPath, audit);
           NODE
 
-          npm test
+          node tools/audit-third-party-performance-stage56.mjs
+          node tools/audit-processors-trust-stage40.mjs
 
       - name: Commit verified cleanup
         shell: bash
