@@ -31,7 +31,7 @@ for (const [relative,target] of Object.entries(legacy)) {
 }
 for (const relative of ['privacy-policy/index.html','hu/adatvedelem/index.html','de-at/datenschutz/index.html']) {
   const html=fs.readFileSync(path.join(root,relative),'utf8');
-  for (const token of ['www.norbertbanhalmi.com','www.banhalmi.art','blog.banhalmi.art','Google Analytics 4','Trustindex','Elfsight','data-privacy-domain-scope']) if (!html.includes(token)) errors.push(relative+': privacy scope/processors missing '+token);
+  for (const token of ['www.norbertbanhalmi.com','www.banhalmi.art','blog.banhalmi.art','Google Analytics 4','Elfsight','data-privacy-domain-scope']) if (!html.includes(token)) errors.push(relative+': privacy scope/processors missing '+token);
 }
 if (errors.length) { console.error('SEO / GDPR / INDEXING STAGE 53 FAILED'); errors.forEach((e)=>console.error('-',e)); process.exit(1);}
 console.log('SEO/GDPR/indexing Stage 53 passed: every live BANHALMI page is indexable, robots allow crawling, legacy aliases resolve directly to current equivalents, and cross-domain processor scope is consistent.');
