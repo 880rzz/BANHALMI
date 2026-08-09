@@ -29,13 +29,14 @@ jobs:
 
           const mainPath = 'assets/js/main.js';
           let main = fs.readFileSync(mainPath, 'utf8');
-          const before = main;
-
-          main = main.replace(/\n\s*var pathName = window\.location\.pathname\.replace\(\/\\\/index\\\.html\$\/, "\\\/"\);\n\s*var isLanguageHomepage = pathName === "\\\/" \|\| pathName === "\\\/hu\\\/" \|\| pathName === "\\\/de-at\\\/";\n\s*if \(isLanguageHomepage && !hasScriptSource\("cdn\.trustindex\.io\/assets\/js\/richsnippet\.js"\)\) \{\n\s*var ti = document\.createElement\("script"\);\n\s*ti\.id = "trustindex-richsnippet";\n\s*ti\.defer = true;\n\s*ti\.async = true;\n\s*ti\.src = "https:\/\/cdn\.trustindex\.io\/assets\/js\/richsnippet\.js\?c307c9433572g62e";\n\s*document\.head\.appendChild\(ti\);\n\s*\}\n/, '\n');
+          const startNeedle = '        var pathName = window.location.pathname.replace(/\\/index\\.html$/, "/");';
+          const endNeedle = '        if (document.querySelector(\'[class*="elfsight-app-"]\') && !hasScriptSource("elfsightcdn.com/platform.js")) {';
+          const start = main.indexOf(startNeedle);
+          const end = main.indexOf(endNeedle, start);
+          if (start < 0 || end < 0) throw new Error('Could not locate Trustindex rich-snippet block boundaries in main.js');
+          main = main.slice(0, start) + main.slice(end);
           main = main.replace('["trustindex-richsnippet", "elfsight-platform"]', '["elfsight-platform"]');
           main = main.replace('iframe[src*="trustindex"],iframe[src*="elfsight"],script[src*="trustindex"],script[src*="elfsight"]', 'iframe[src*="elfsight"],script[src*="elfsight"]');
-
-          if (main === before) throw new Error('main.js Trustindex block was not changed');
           if (main.includes('cdn.trustindex.io/assets/js/richsnippet.js') || main.includes('trustindex-richsnippet')) {
             throw new Error('Trustindex rich-snippet runtime still present in main.js');
           }
@@ -43,9 +44,11 @@ jobs:
 
           const auditPath = 'tools/audit-third-party-performance-stage56.mjs';
           let audit = fs.readFileSync(auditPath, 'utf8');
-          audit = audit.replace("for(const token of ['readChoice() === \\\"all\\\"','details && !details.open','cdn.trustindex.io/assets/js/richsnippet.js','elfsightcdn.com/platform.js']){", "for(const token of ['readChoice() === \\\"all\\\"','details && !details.open','elfsightcdn.com/platform.js']){");
-          audit = audit.replace("if(failures.length){for(const failure of failures) console.error('FAIL '+failure);process.exit(1);}", "if(main.includes('cdn.trustindex.io') || main.includes('trustindex-richsnippet')) failures.push('main.js: Trustindex rich-snippet generator must remain absent; self-serving LocalBusiness/Organization ratings are not an eligible Google review rich-result strategy');\nif(failures.length){for(const failure of failures) console.error('FAIL '+failure);process.exit(1);}");
-          audit = audit.replace("Stage 56 third-party performance audit passed: Trustindex and Elfsight are absent from static HTML and remain consent-plus-interaction gated.", "Stage 56 third-party performance audit passed: Trustindex rich-snippet generation is absent, while Elfsight remains consent-plus-interaction gated and absent from static HTML.");
+          audit = audit.replace("'cdn.trustindex.io/assets/js/richsnippet.js',", '');
+          const failAnchor = "if(failures.length){for(const failure of failures) console.error('FAIL '+failure);process.exit(1);}";
+          if (!audit.includes(failAnchor)) throw new Error('Stage56 fail anchor not found');
+          audit = audit.replace(failAnchor, "if(main.includes('cdn.trustindex.io') || main.includes('trustindex-richsnippet')) failures.push('main.js: Trustindex rich-snippet generator must remain absent; self-serving LocalBusiness/Organization ratings are not an eligible Google review rich-result strategy');\n" + failAnchor);
+          audit = audit.replace('Stage 56 third-party performance audit passed: Trustindex and Elfsight are absent from static HTML and remain consent-plus-interaction gated.', 'Stage 56 third-party performance audit passed: Trustindex rich-snippet generation is absent, while Elfsight remains consent-plus-interaction gated and absent from static HTML.');
           fs.writeFileSync(auditPath, audit);
           NODE
 
