@@ -1,0 +1,31 @@
+name: Production CSS artifact check
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'assets/css/**'
+      - 'tools/minify-pages-css.mjs'
+      - 'tools/test-pages-css-minifier.mjs'
+      - '.github/workflows/pages.yml'
+      - '.github/workflows/pages-css-minifier-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  css-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out proposed source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Exercise production CSS minifier on a temporary artifact copy
+        run: node tools/test-pages-css-minifier.mjs
