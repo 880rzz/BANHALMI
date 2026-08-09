@@ -1,7 +1,7 @@
 {
   "documentType": "BANHALMI service-provider and processor registry",
-  "schemaVersion": "2026-08-08-v2",
-  "dateModified": "2026-08-08",
+  "schemaVersion": "2026-08-09-v3",
+  "dateModified": "2026-08-09",
   "controller": {
     "name": "Bánhalmi Norbert e.U.",
     "url": "https://www.norbertbanhalmi.com/",
@@ -104,22 +104,6 @@
         "analytics storage only after consent",
         "personalization storage disabled"
       ]
-    },
-    {
-      "id": "trustindex",
-      "provider": "Trustindex Ltd",
-      "service": "optional review content",
-      "purpose": [
-        "display client review content"
-      ],
-      "scope": [
-        "review widgets"
-      ],
-      "dataCategories": [
-        "technical request data generated when optional content is activated"
-      ],
-      "activation": "only after optional-content consent or explicit activation",
-      "consentRequired": true
     },
     {
       "id": "elfsight",
