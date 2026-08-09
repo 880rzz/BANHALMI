@@ -54,7 +54,6 @@ jobs:
             _site/.github \
             _site/node_modules \
             _site/tests \
-            _site/tools \
             _site/docs \
             _site/playwright-report \
             _site/test-results
@@ -82,7 +81,6 @@ jobs:
           test -f _site/assets/js/quote-calculator.js
           test -f _site/deployment-sha.txt
           test ! -e _site/.github
-          test ! -e _site/tools
           test ! -e _site/tests
           test ! -e _site/docs
 
@@ -92,6 +90,16 @@ jobs:
           fi
 
           echo "Prepared $(find _site -type f | wc -l | tr -d ' ') verified production files."
+
+      - name: Minify production CSS conservatively
+        run: node tools/minify-pages-css.mjs _site/assets/css
+
+      - name: Remove source-only tooling from Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site/tools
+          test ! -e _site/tools
 
       - name: Run browser regressions against production artifact
         run: npx playwright test --config=playwright.production.config.mjs
