@@ -29,12 +29,55 @@ function stripComments(css) {
     if (ch === '/' && next === '*') {
       i += 2;
       while (i < css.length && !(css[i] === '*' && css[i + 1] === '/')) i++;
+      if (i >= css.length) throw new Error('Unterminated CSS comment');
       i++;
       continue;
     }
     out += ch;
   }
+  if (quote) throw new Error('Unterminated CSS string');
   return out;
+}
+
+function structuralBraces(css) {
+  let quote = '';
+  let escaped = false;
+  let inComment = false;
+  let open = 0;
+  let close = 0;
+
+  for (let i = 0; i < css.length; i++) {
+    const ch = css[i];
+    const next = css[i + 1];
+    if (inComment) {
+      if (ch === '*' && next === '/') {
+        inComment = false;
+        i++;
+      }
+      continue;
+    }
+    if (quote) {
+      if (escaped) escaped = false;
+      else if (ch === '\\') escaped = true;
+      else if (ch === quote) quote = '';
+      continue;
+    }
+    if (ch === '/' && next === '*') {
+      inComment = true;
+      i++;
+      continue;
+    }
+    if (ch === '"' || ch === "'") {
+      quote = ch;
+      continue;
+    }
+    if (ch === '{') open++;
+    else if (ch === '}') close++;
+  }
+
+  if (inComment) throw new Error('Unterminated CSS comment');
+  if (quote) throw new Error('Unterminated CSS string');
+  return { open, close };
 }
 
 function minify(css) {
@@ -76,7 +119,7 @@ function minify(css) {
     out += ch;
   }
 
-  return out.replace(/;}+/g, '}').trim();
+  return out.trim();
 }
 
 function walk(dir, files = []) {
@@ -88,27 +131,46 @@ function walk(dir, files = []) {
   return files;
 }
 
+const files = walk(root);
+if (!files.length) {
+  console.error(`No CSS files found under ${root}`);
+  process.exit(1);
+}
+
 let beforeTotal = 0;
 let afterTotal = 0;
-for (const file of walk(root)) {
-  const before = fs.readFileSync(file, 'utf8');
-  const after = minify(before);
-  const openBefore = (before.match(/{/g) || []).length;
-  const closeBefore = (before.match(/}/g) || []).length;
-  const openAfter = (after.match(/{/g) || []).length;
-  const closeAfter = (after.match(/}/g) || []).length;
-  if (!after || openBefore !== closeBefore || openAfter !== closeAfter || openBefore !== openAfter) {
-    console.error(`Refusing unsafe CSS output for ${file}`);
+for (const file of files) {
+  try {
+    const before = fs.readFileSync(file, 'utf8');
+    const beforeStructure = structuralBraces(before);
+    if (beforeStructure.open !== beforeStructure.close) {
+      throw new Error(`Source CSS has unbalanced structural braces (${beforeStructure.open}/${beforeStructure.close})`);
+    }
+
+    const after = minify(before);
+    const afterStructure = structuralBraces(after);
+    if (!after) throw new Error('Minified CSS is empty');
+    if (afterStructure.open !== afterStructure.close) {
+      throw new Error(`Minified CSS has unbalanced structural braces (${afterStructure.open}/${afterStructure.close})`);
+    }
+    if (beforeStructure.open !== afterStructure.open || beforeStructure.close !== afterStructure.close) {
+      throw new Error(`Structural block count changed (${beforeStructure.open}/${beforeStructure.close} -> ${afterStructure.open}/${afterStructure.close})`);
+    }
+
+    const output = after + '\n';
+    fs.writeFileSync(file, output);
+    beforeTotal += Buffer.byteLength(before);
+    afterTotal += Buffer.byteLength(output);
+    console.log(`${path.relative(root, file)}: ${Buffer.byteLength(before)} -> ${Buffer.byteLength(output)} bytes`);
+  } catch (error) {
+    console.error(`Refusing unsafe CSS output for ${file}: ${error.message}`);
     process.exit(1);
   }
-  fs.writeFileSync(file, after + '\n');
-  beforeTotal += Buffer.byteLength(before);
-  afterTotal += Buffer.byteLength(after + '\n');
-  console.log(`${path.relative(root, file)}: ${Buffer.byteLength(before)} -> ${Buffer.byteLength(after + '\n')} bytes`);
 }
 
 const saved = beforeTotal - afterTotal;
-console.log(`Production CSS: ${beforeTotal} -> ${afterTotal} bytes; saved ${saved} bytes (${(saved / beforeTotal * 100).toFixed(1)}%).`);
+const percent = beforeTotal ? saved / beforeTotal * 100 : 0;
+console.log(`Production CSS: ${beforeTotal} -> ${afterTotal} bytes; saved ${saved} bytes (${percent.toFixed(1)}%).`);
 if (saved < 1024) {
   console.error('CSS minification saved less than 1 KiB; refusing ineffective production step.');
   process.exit(1);
