@@ -25,7 +25,7 @@ for (const token of [
   'pages: write',
   'id-token: write',
   'group: github-pages-production',
-  'cancel-in-progress: false',
+  'cancel-in-progress: true',
   'run: npm run audit',
   'git archive --format=tar HEAD',
   'outputs:\n      artifact_id:',
@@ -38,7 +38,10 @@ for (const token of [
   'PAGES_ARTIFACT_ID: ${{ needs.build.outputs.artifact_id }}',
   "PAGES_POLL_INTERVAL_MS: '10000'",
   "PAGES_POLL_TIMEOUT_MS: '2700000'",
-  'run: node tools/deploy-pages-api.mjs'
+  'run: node tools/deploy-pages-api.mjs',
+  'Verify exact commit is live on the custom domain',
+  'expected="$GITHUB_SHA"',
+  'deployment-sha.txt'
 ]) {
   assert(workflow.includes(token), `${workflowFile}: required contract token missing: ${token}`);
 }
@@ -93,9 +96,9 @@ assert(
 assert(!client.includes('`${sha}-${runId}-${runAttempt}`'), `${clientFile}: Pages build version must be the real commit SHA`);
 assert(!/contents:\s*write/i.test(workflow), `${workflowFile}: source write permission is forbidden`);
 assert(!/git\s+(push|commit)/i.test(workflow), `${workflowFile}: source mutation command is forbidden`);
-assert(!/cancel-in-progress:\s*true/i.test(workflow), `${workflowFile}: active production deployment must not be cancelled by a newer run`);
+assert(!/cancel-in-progress:\s*false/i.test(workflow), `${workflowFile}: stale Actions runs must not indefinitely block the latest verified main release`);
 assert(!workflow.includes('actions/deploy-pages@'), `${workflowFile}: capped deploy-pages action must not be used`);
-assert(!client.includes('/cancel'), `${clientFile}: deployment cancellation endpoint is forbidden`);
+assert(!client.includes('/cancel'), `${clientFile}: server-side Pages deployment cancellation endpoint is forbidden`);
 assert(workflow.includes('Symbolic links are forbidden in the Pages artifact.'), `${workflowFile}: symlink rejection is missing`);
 
 for (const token of [
@@ -104,7 +107,10 @@ for (const token of [
   'direct Pages API client',
   'verified commit SHA',
   'does not cancel',
-  'GitHub Actions'
+  'GitHub Actions',
+  'supersede',
+  'server-side deployment remains active',
+  'exact-live SHA verification'
 ]) {
   assert(recovery.includes(token), `${recoveryFile}: recovery architecture guidance missing: ${token}`);
 }
@@ -115,4 +121,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('Stage 26 Pages API deployment contract passed: audited, SHA-bound and non-cancelling.');
+console.log('Stage 26 Pages API deployment contract passed: audited, SHA-bound, latest-run superseding and server-side non-cancelling.');
