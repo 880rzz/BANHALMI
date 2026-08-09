@@ -5,6 +5,36 @@
   },
   "redirects": [
     {
+      "source": "/oneletrajz-cv-fotozas",
+      "destination": "/hu/portre/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-fotozas",
+      "destination": "/hu/portre/",
+      "permanent": true
+    },
+    {
+      "source": "/muveszi-aktfotozas",
+      "destination": "/hu/muveszi-fotografia/",
+      "permanent": true
+    },
+    {
+      "source": "/reklam-fotozas",
+      "destination": "/hu/brand/",
+      "permanent": true
+    },
+    {
+      "source": "/post/amikor-csak-egy-táncpartnered-van-egész-estére",
+      "destination": "https://blog.banhalmi.art/post/amikor-csak-egy-táncpartnered-van-egész-estére",
+      "permanent": true
+    },
+    {
+      "source": "/blog/tags/filter-nélkül-a-testem-története",
+      "destination": "https://blog.banhalmi.art/blog/tags/nofilter",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "destination": "https://www.norbertbanhalmi.com/de-at/:path*",
       "permanent": true,
