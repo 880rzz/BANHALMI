@@ -1,0 +1,61 @@
+name: Homepage critical-path audit
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  critical-path:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out immutable source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Build isolated EN HU DE homepage fixture
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/banhalmi-critical-path
+          mkdir -p /tmp/banhalmi-critical-path/hu /tmp/banhalmi-critical-path/de-at
+          cp index.html /tmp/banhalmi-critical-path/index.html
+          cp hu/index.html /tmp/banhalmi-critical-path/hu/index.html
+          cp de-at/index.html /tmp/banhalmi-critical-path/de-at/index.html
+
+      - name: Run fail-closed critical-path optimizer
+        run: node tools/optimize-homepage-critical-path.mjs /tmp/banhalmi-critical-path
+
+      - name: Verify schema remains valid and outside critical head
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, re
+          root=Path('/tmp/banhalmi-critical-path')
+          for rel in ('index.html','hu/index.html','de-at/index.html'):
+              html=(root/rel).read_text(encoding='utf-8')
+              head=html.split('</head>',1)[0]
+              if 'application/ld+json' in head:
+                  raise SystemExit(f'{rel}: JSON-LD remains in critical head')
+              blocks=re.findall(r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>',html,re.I)
+              if not blocks:
+                  raise SystemExit(f'{rel}: JSON-LD disappeared')
+              for block in blocks:
+                  json.loads(block)
+              body_close=html.rfind('</body>')
+              last_schema=html.rfind('application/ld+json')
+              if last_schema < html.find('<body') or last_schema > body_close:
+                  raise SystemExit(f'{rel}: JSON-LD is not inside body')
+              print(f'{rel}: {len(blocks)} valid JSON-LD block(s), outside critical head')
+          PY
