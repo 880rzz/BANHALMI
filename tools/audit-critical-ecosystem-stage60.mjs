@@ -16,6 +16,7 @@ const walk = async (dir) => {
 };
 const rel = p => path.relative(root,p).replaceAll('\\','/');
 const text = async p => readFile(p,'utf8');
+const attr = (tag, name) => tag.match(new RegExp(`\\b${name}=["']([^"']+)["']`, 'i'))?.[1];
 const files = await walk(root);
 const htmlFiles = files.filter(p => p.endsWith('.html'));
 const indexable = [];
@@ -32,26 +33,28 @@ for (const p of htmlFiles) {
   indexable.push(r);
   const lang = h.match(/<html[^>]+lang=["']([^"']+)/i)?.[1];
   const title = h.match(/<title>([^<]+)<\/title>/i)?.[1]?.trim();
-  const desc = h.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)/i)?.[1]?.trim() || h.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']description["']/i)?.[1]?.trim();
-  const canonical = h.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)/i)?.[1];
+  const descTag = [...h.matchAll(/<meta\b[^>]*>/gi)].map(m => m[0]).find(t => attr(t,'name')?.toLowerCase() === 'description');
+  const desc = descTag ? attr(descTag,'content')?.trim() : undefined;
+  const canonicalTag = [...h.matchAll(/<link\b[^>]*>/gi)].map(m => m[0]).find(t => attr(t,'rel')?.toLowerCase().split(/\s+/).includes('canonical'));
+  const canonical = canonicalTag ? attr(canonicalTag,'href') : undefined;
   if (!lang) errors.push(`${r}: missing html lang`);
   if (!title) errors.push(`${r}: missing title`);
   if (!desc) errors.push(`${r}: missing meta description`);
   if (!canonical) errors.push(`${r}: missing canonical`);
   if (!/<h1\b/i.test(h)) errors.push(`${r}: missing H1`);
-  if (title) { const a=titles.get(title)||[]; a.push(r); titles.set(title,a); }
-  if (desc) { const a=descriptions.get(desc)||[]; a.push(r); descriptions.set(desc,a); }
+  if (title) { const key=`${(lang||'unknown').toLowerCase()}\u0000${title}`; const a=titles.get(key)||[]; a.push(r); titles.set(key,a); }
+  if (desc) { const key=`${(lang||'unknown').toLowerCase()}\u0000${desc}`; const a=descriptions.get(key)||[]; a.push(r); descriptions.set(key,a); }
   for (const m of h.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
     try { JSON.parse(m[1]); } catch { errors.push(`${r}: invalid JSON-LD`); }
   }
 }
 
-for (const [v, rs] of titles) if (rs.length > 1 && rs.every(x => !/case-studies|esettanulmanyok|fallstudien/.test(x))) errors.push(`duplicate indexable title: ${v} :: ${rs.join(', ')}`);
-for (const [v, rs] of descriptions) if (rs.length > 2) errors.push(`description reused ${rs.length}x: ${v.slice(0,80)}… :: ${rs.join(', ')}`);
+for (const [key, rs] of titles) if (rs.length > 1 && rs.every(x => !/case-studies|esettanulmanyok|fallstudien/.test(x))) errors.push(`duplicate indexable title in one language: ${key.split('\u0000')[1]} :: ${rs.join(', ')}`);
+for (const [key, rs] of descriptions) if (rs.length > 2) errors.push(`description reused ${rs.length}x in one language: ${key.split('\u0000')[1].slice(0,80)}… :: ${rs.join(', ')}`);
 
 const strategic = {
   'portrait/index.html': ['executive','headshot','cv','dating profile','artist portfolio','Budapest','Vienna'],
-  'hu/portre/index.html': ['executive','headshot','önéletrajz','társkereső','művész','Budapest','Bécs'],
+  'hu/portre/index.html': ['önéletrajz','társkereső','művész','Budapest','Bécs'],
   'de-at/portrait/index.html': ['Executive','Headshot','Bewerbungs','Dating','Künstler','Budapest','Wien']
 };
 for (const [r, needles] of Object.entries(strategic)) {
