@@ -77,4 +77,17 @@ body.bn-mega-open .lang-switch a.active{color:var(--bn-menu-gold)!important}
   .bn-mega-desc{font-size:.91rem;line-height:1.42}
   .bn-mega-footer .bn-mega-item{padding:1.15rem 1rem 1.25rem}
 }
+/* Touch Safari can retain :focus-visible after tapping a mega-menu link. Keep a
+   visible accessibility cue without restoring the old rounded/pill frame. */
+@media (hover:none) and (pointer:coarse){
+  .bn-mega-link:focus-visible{
+    outline:0!important;
+    outline-offset:0!important;
+    border-radius:0!important;
+    text-decoration-line:underline;
+    text-decoration-thickness:2px;
+    text-underline-offset:.22em;
+    text-decoration-color:currentColor;
+  }
+}
 @media(prefers-reduced-motion:reduce){.bn-mega-menu{animation:none;opacity:1}.bn-mega-link{transition:none}}
