@@ -76,10 +76,44 @@ const ai = await text(path.join(root,'ai.txt'));
 for (const n of ['Executive portrait','Headshot','CV / resume','dating profile','artist portfolio','Budapest','Vienna','Q56391118']) if (!ai.toLowerCase().includes(n.toLowerCase())) errors.push(`ai.txt: missing intent/entity “${n}”`);
 const llms = await text(path.join(root,'llms.txt'));
 if (!/ai\.txt|knowledge|services/i.test(llms)) errors.push('llms.txt: missing machine-readable discovery bridge');
+if (!llms.includes('blog-collections.json')) errors.push('llms.txt: missing multilingual service-related editorial collection bridge');
+
+const menu = await text(path.join(root,'assets/js/mega-menu.js'));
+const blogTags = ['portfolio-fotozas','fotozas-stylisttal','portrefotozas','muveszi-akt-fotozas','szakmai-blogok'];
+for (const tag of blogTags) {
+  const base = `https://blog.banhalmi.art/blog/tags/${tag}`;
+  if (!menu.includes(`'${base}'`)) errors.push(`mega-menu.js: missing HU blog collection ${tag}`);
+  if (!menu.includes(`'${base}?lang=en-GB'`)) errors.push(`mega-menu.js: missing EN blog collection ${tag}`);
+  if (!menu.includes(`'${base}?lang=de'`)) errors.push(`mega-menu.js: missing DE blog collection ${tag}`);
+}
+for (const label of ['Journal & expert guides','Szakmai tudástár','Wissen & Journal']) if (!menu.includes(label)) errors.push(`mega-menu.js: missing localized editorial navigation label “${label}”`);
+for (const heading of ['Further reading from the BANHALMI journal','Kapcsolódó írások a BANHALMI szakmai blogból','Weiterführende Beiträge aus dem BANHALMI Journal']) if (!menu.includes(heading)) errors.push(`mega-menu.js: missing localized contextual editorial heading “${heading}”`);
+for (const route of ['/portrait','/hu/portre','/de-at/portrait','/lifestyle','/hu/brand','/de-at/brand','/glamour','/hu/muveszi-fotografia','/de-at/fine-art']) if (!menu.includes(`'${route}'`)) errors.push(`mega-menu.js: missing contextual editorial service route ${route}`);
+if (!menu.includes("section.id='service-editorial'")) errors.push('mega-menu.js: contextual service editorial section is not created');
+if (!menu.includes("portrait:[2,4]") || !menu.includes("brand:[0,1,4]") || !menu.includes("fine:[3,4]")) errors.push('mega-menu.js: service-to-editorial topic mapping is incomplete');
+
+let collections;
+try { collections = JSON.parse(await text(path.join(root,'blog-collections.json'))); }
+catch { collections = null; errors.push('blog-collections.json: invalid or unreadable JSON'); }
+if (collections) {
+  const items = Array.isArray(collections.itemListElement) ? collections.itemListElement : [];
+  if (items.length !== 15) errors.push(`blog-collections.json: expected 15 localized collection records, found ${items.length}`);
+  const urls = items.map(x => x?.item?.url).filter(Boolean);
+  for (const tag of blogTags) {
+    const base = `https://blog.banhalmi.art/blog/tags/${tag}`;
+    for (const suffix of ['', '?lang=en-GB', '?lang=de']) if (!urls.includes(base + suffix)) errors.push(`blog-collections.json: missing ${base + suffix}`);
+  }
+  const person = collections.author || {};
+  if (person['@id'] !== 'https://www.norbertbanhalmi.com/about/' || person.sameAs !== 'https://www.wikidata.org/wiki/Q56391118') errors.push('blog-collections.json: Wikidata-first author contract incomplete');
+}
+
+const blogEntity = await text(path.join(root,'blog-entity.jsonld'));
+for (const tag of blogTags) if (!blogEntity.includes(`https://blog.banhalmi.art/blog/tags/${tag}#collection`)) errors.push(`blog-entity.jsonld: missing collection entity ${tag}`);
+if (!blogEntity.includes('blog-collections.json')) errors.push('blog-entity.jsonld: missing machine-readable collection dataset link');
 
 if (errors.length) {
   console.error(`Stage60 critical ecosystem audit failed with ${errors.length} issue(s):`);
   for (const e of errors) console.error(` - ${e}`);
   process.exit(1);
 }
-console.log(`Stage60 critical ecosystem audit passed: ${htmlFiles.length} HTML, ${indexable.length} indexable candidates, ${redirects.length} redirect surfaces inventoried; canonical redirect behavior remains enforced by the dedicated redirect/routing audits; all JSON parseable, strategic EN/HU/DE intent and Wikidata-first evidence locked.`);
+console.log(`Stage60 critical ecosystem audit passed: ${htmlFiles.length} HTML, ${indexable.length} indexable candidates, ${redirects.length} redirect surfaces inventoried; canonical redirect behavior remains enforced by the dedicated redirect/routing audits; all JSON parseable, strategic EN/HU/DE intent, Wikidata-first evidence and multilingual service-to-blog editorial mapping locked.`);
