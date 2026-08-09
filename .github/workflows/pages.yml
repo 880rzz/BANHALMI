@@ -96,6 +96,9 @@ jobs:
       - name: Minify production CSS conservatively
         run: node tools/minify-pages-css.mjs _site/assets/css
 
+      - name: Harden EN HU DE homepage critical path
+        run: node tools/optimize-homepage-critical-path.mjs _site
+
       - name: Remove source-only tooling from Pages artifact
         shell: bash
         run: |
@@ -152,14 +155,26 @@ jobs:
             sleep 10
           done
 
-          en_html="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/')"
-          hu_html="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/hu/')"
-          de_html="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/de-at/')"
+          curl -fsSL --max-time 20 -o /tmp/banhalmi-en.html 'https://www.norbertbanhalmi.com/'
+          curl -fsSL --max-time 20 -o /tmp/banhalmi-hu.html 'https://www.norbertbanhalmi.com/hu/'
+          curl -fsSL --max-time 20 -o /tmp/banhalmi-de.html 'https://www.norbertbanhalmi.com/de-at/'
           a11y_css="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/assets/css/accessibility-stage14.css')"
 
-          grep -q 'BANHALMI' <<< "$en_html"
-          grep -q 'BANHALMI' <<< "$hu_html"
-          grep -q 'BANHALMI' <<< "$de_html"
+          grep -q 'BANHALMI' /tmp/banhalmi-en.html
+          grep -q 'BANHALMI' /tmp/banhalmi-hu.html
+          grep -q 'BANHALMI' /tmp/banhalmi-de.html
           test -n "$a11y_css"
           grep -q '.visually-hidden' <<< "$a11y_css"
           grep -q 'prefers-reduced-motion' <<< "$a11y_css"
+
+          python3 - <<'PY'
+          from pathlib import Path
+          for file in ('/tmp/banhalmi-en.html','/tmp/banhalmi-hu.html','/tmp/banhalmi-de.html'):
+              html=Path(file).read_text(encoding='utf-8')
+              head=html.split('</head>',1)[0]
+              if 'application/ld+json' in head:
+                  raise SystemExit(f'{file}: JSON-LD leaked back into critical head')
+              if 'application/ld+json' not in html:
+                  raise SystemExit(f'{file}: JSON-LD missing from live document')
+          print('Live EN/HU/DE critical-path schema placement verified.')
+          PY
