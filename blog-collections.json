@@ -3,6 +3,7 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "@id": "https://www.norbertbanhalmi.com/blog-collections.json#service-editorial-collections",
+  "url": "https://www.norbertbanhalmi.com/blog-collections.json",
   "name": "BANHALMI service-related editorial collections",
   "description": "Multilingual editorial collections on blog.banhalmi.art connected to the professional service journeys on norbertbanhalmi.com. The professional site remains canonical for current services, pricing and enquiries; the blog provides explanatory, educational and narrative context.",
   "publisher": {
@@ -13,7 +14,7 @@
     "sameAs": "https://www.wikidata.org/wiki/Q56391118"
   },
   "isPartOf": {
-    "@id": "https://www.norbertbanhalmi.com/#ecosystem"
+    "@id": "https://www.norbertbanhalmi.com/#website"
   },
   "itemListElement": [
     {

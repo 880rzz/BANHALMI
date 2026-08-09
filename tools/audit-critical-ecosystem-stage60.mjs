@@ -105,15 +105,33 @@ if (collections) {
   }
   const person = collections.author || {};
   if (person['@id'] !== 'https://www.norbertbanhalmi.com/about/' || person.sameAs !== 'https://www.wikidata.org/wiki/Q56391118') errors.push('blog-collections.json: Wikidata-first author contract incomplete');
+  if (collections.isPartOf?.['@id'] !== 'https://www.norbertbanhalmi.com/#website') errors.push('blog-collections.json: collection map must belong to the professional WebSite that hosts it');
+  if (JSON.stringify(collections).includes('https://www.norbertbanhalmi.com/#ecosystem')) errors.push('blog-collections.json: undefined #ecosystem node must not be referenced');
 }
 
-const blogEntity = await text(path.join(root,'blog-entity.jsonld'));
-for (const tag of blogTags) if (!blogEntity.includes(`https://blog.banhalmi.art/blog/tags/${tag}#collection`)) errors.push(`blog-entity.jsonld: missing collection entity ${tag}`);
-if (!blogEntity.includes('blog-collections.json')) errors.push('blog-entity.jsonld: missing machine-readable collection dataset link');
+let blogEntity;
+try { blogEntity = JSON.parse(await text(path.join(root,'blog-entity.jsonld'))); }
+catch { blogEntity = null; errors.push('blog-entity.jsonld: invalid or unreadable JSON-LD'); }
+if (blogEntity) {
+  const graph = Array.isArray(blogEntity['@graph']) ? blogEntity['@graph'] : [];
+  const blog = graph.find(x => x?.['@id'] === 'https://blog.banhalmi.art/#blog');
+  const website = graph.find(x => x?.['@id'] === 'https://blog.banhalmi.art/#website');
+  if (!blog || blog['@type'] !== 'Blog') errors.push('blog-entity.jsonld: #blog must be the single Blog identity');
+  if (!website || website['@type'] !== 'WebSite') errors.push('blog-entity.jsonld: #website must be WebSite only');
+  if (blog?.isPartOf?.['@id'] !== 'https://blog.banhalmi.art/#website') errors.push('blog-entity.jsonld: Blog must be part of the blog WebSite');
+  if (website?.mainEntity?.['@id'] !== 'https://blog.banhalmi.art/#blog') errors.push('blog-entity.jsonld: blog WebSite must point to #blog as mainEntity');
+  const languages = JSON.stringify(['hu-HU','en-GB','de-AT']);
+  if (JSON.stringify(blog?.inLanguage) !== languages || JSON.stringify(website?.inLanguage) !== languages) errors.push('blog-entity.jsonld: Blog and WebSite language contract must be hu-HU/en-GB/de-AT');
+  const related = new Set((blog?.isRelatedTo || []).map(x => x?.['@id']));
+  for (const id of ['https://www.norbertbanhalmi.com/#website','https://www.banhalmi.art/#website']) if (!related.has(id)) errors.push(`blog-entity.jsonld: Blog missing reciprocal ecosystem relation ${id}`);
+  if (JSON.stringify(blogEntity).includes('https://www.norbertbanhalmi.com/#ecosystem')) errors.push('blog-entity.jsonld: undefined #ecosystem node must not be referenced');
+  for (const tag of blogTags) if (!JSON.stringify(blogEntity).includes(`https://blog.banhalmi.art/blog/tags/${tag}#collection`)) errors.push(`blog-entity.jsonld: missing collection entity ${tag}`);
+  if (!JSON.stringify(blogEntity).includes('blog-collections.json')) errors.push('blog-entity.jsonld: missing machine-readable collection dataset link');
+}
 
 if (errors.length) {
   console.error(`Stage60 critical ecosystem audit failed with ${errors.length} issue(s):`);
   for (const e of errors) console.error(` - ${e}`);
   process.exit(1);
 }
-console.log(`Stage60 critical ecosystem audit passed: ${htmlFiles.length} HTML, ${indexable.length} indexable candidates, ${redirects.length} redirect surfaces inventoried; canonical redirect behavior remains enforced by the dedicated redirect/routing audits; all JSON parseable, strategic EN/HU/DE intent, Wikidata-first evidence and multilingual service-to-blog editorial mapping locked.`);
+console.log(`Stage60 critical ecosystem audit passed: ${htmlFiles.length} HTML, ${indexable.length} indexable candidates, ${redirects.length} redirect surfaces inventoried; canonical redirect behavior remains enforced by the dedicated redirect/routing audits; all JSON parseable, strategic EN/HU/DE intent, Wikidata-first evidence, clean Blog/WebSite identity and multilingual service-to-blog editorial mapping locked.`);
