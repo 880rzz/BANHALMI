@@ -7,6 +7,7 @@
 - [BANHALMI](https://www.norbertbanhalmi.com/): Primary organisation: BANHALMI / Bánhalmi Norbert e.U. Professional website: https://www.norbertbanhalmi.com/ for current services, pricing, enquiries and professional context.
 - [BANHALMI ART](https://www.banhalmi.art/): Artistic archive: https://www.banhalmi.art/ for the official oeuvre, exhibitions, books, projects, press, curatorial documentation and artistic evidence.
 - [Essays and blog](https://blog.banhalmi.art/): Essays, reflections and migrated editorial material.
+- [Service-related editorial collections](https://www.norbertbanhalmi.com/blog-collections.json): Multilingual HU/EN/DE map connecting portrait, portfolio/fashion, stylist-led, artistic-nude and professional-article blog collections to the relevant BANHALMI service journeys.
 
 ## Services
 - [Portrait photography](https://www.norbertbanhalmi.com/portrait/): Principal professional services: Portrait Photography; executive portraits, headshots, business portraits, editorial portraits and personal-brand portraits.
@@ -36,4 +37,5 @@
 - [Services data](https://www.norbertbanhalmi.com/services.json): Canonical service definitions.
 - [Featured work](https://www.norbertbanhalmi.com/featured-work-peter-magyar.json): Verified authorship and context for the 2026 Péter Magyar portrait.
 - [Media usage](https://www.norbertbanhalmi.com/media-usage.json): Documented third-party editorial reuse; reuse does not imply political endorsement.
+- [Blog entity](https://www.norbertbanhalmi.com/blog-entity.jsonld): Blog and editorial-collection schema graph linked to the canonical BANHALMI organisation and Norbert Bánhalmi Person entity.
 - [Sitemap](https://www.norbertbanhalmi.com/sitemap.xml): Crawlable professional-site URL inventory.
