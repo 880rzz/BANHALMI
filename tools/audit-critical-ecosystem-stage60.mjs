@@ -87,6 +87,10 @@ for (const tag of blogTags) {
   if (!menu.includes(`'${base}?lang=de'`)) errors.push(`mega-menu.js: missing DE blog collection ${tag}`);
 }
 for (const label of ['Journal & expert guides','Szakmai tudástár','Wissen & Journal']) if (!menu.includes(label)) errors.push(`mega-menu.js: missing localized editorial navigation label “${label}”`);
+for (const heading of ['Further reading from the BANHALMI journal','Kapcsolódó írások a BANHALMI szakmai blogból','Weiterführende Beiträge aus dem BANHALMI Journal']) if (!menu.includes(heading)) errors.push(`mega-menu.js: missing localized contextual editorial heading “${heading}”`);
+for (const route of ['/portrait','/hu/portre','/de-at/portrait','/lifestyle','/hu/brand','/de-at/brand','/glamour','/hu/muveszi-fotografia','/de-at/fine-art']) if (!menu.includes(`'${route}'`)) errors.push(`mega-menu.js: missing contextual editorial service route ${route}`);
+if (!menu.includes("section.id='service-editorial'")) errors.push('mega-menu.js: contextual service editorial section is not created');
+if (!menu.includes("portrait:[2,4]") || !menu.includes("brand:[0,1,4]") || !menu.includes("fine:[3,4]")) errors.push('mega-menu.js: service-to-editorial topic mapping is incomplete');
 
 let collections;
 try { collections = JSON.parse(await text(path.join(root,'blog-collections.json'))); }
