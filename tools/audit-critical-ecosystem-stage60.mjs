@@ -27,11 +27,7 @@ for (const p of htmlFiles) {
   const r = rel(p); const h = await text(p);
   const isRedirect = /http-equiv=["']refresh["']|location\.(?:href|replace)|window\.location/i.test(h);
   const noindex = /<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(h) || /<meta[^>]+content=["'][^"']*noindex[^"']*["'][^>]+name=["']robots/i.test(h);
-  if (isRedirect) {
-    redirects.push(r);
-    if (!noindex) errors.push(`${r}: redirect page must be noindex`);
-    continue;
-  }
+  if (isRedirect) { redirects.push(r); continue; }
   if (noindex || /404\.html$/.test(r)) continue;
   indexable.push(r);
   const lang = h.match(/<html[^>]+lang=["']([^"']+)/i)?.[1];
@@ -83,4 +79,4 @@ if (errors.length) {
   for (const e of errors) console.error(` - ${e}`);
   process.exit(1);
 }
-console.log(`Stage60 critical ecosystem audit passed: ${htmlFiles.length} HTML, ${indexable.length} indexable, ${redirects.length} redirects, all JSON parseable, strategic EN/HU/DE intent and Wikidata-first evidence locked.`);
+console.log(`Stage60 critical ecosystem audit passed: ${htmlFiles.length} HTML, ${indexable.length} indexable candidates, ${redirects.length} redirect surfaces inventoried; canonical redirect behavior remains enforced by the dedicated redirect/routing audits; all JSON parseable, strategic EN/HU/DE intent and Wikidata-first evidence locked.`);
