@@ -1,0 +1,62 @@
+name: Temporary Trustindex rich-snippet cleanup
+
+on:
+  push:
+    branches:
+      - fix/remove-ineligible-trustindex-richsnippet-20260809
+    paths:
+      - .github/workflows/temp-remove-trustindex-richsnippet.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/remove-ineligible-trustindex-richsnippet-20260809
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Remove Trustindex rich-snippet runtime and harden audit
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+
+          const mainPath = 'assets/js/main.js';
+          let main = fs.readFileSync(mainPath, 'utf8');
+          const before = main;
+
+          main = main.replace(/\n\s*var pathName = window\.location\.pathname\.replace\(\/\\\/index\\\.html\$\/, "\\\/"\);\n\s*var isLanguageHomepage = pathName === "\\\/" \|\| pathName === "\\\/hu\\\/" \|\| pathName === "\\\/de-at\\\/";\n\s*if \(isLanguageHomepage && !hasScriptSource\("cdn\.trustindex\.io\/assets\/js\/richsnippet\.js"\)\) \{\n\s*var ti = document\.createElement\("script"\);\n\s*ti\.id = "trustindex-richsnippet";\n\s*ti\.defer = true;\n\s*ti\.async = true;\n\s*ti\.src = "https:\/\/cdn\.trustindex\.io\/assets\/js\/richsnippet\.js\?c307c9433572g62e";\n\s*document\.head\.appendChild\(ti\);\n\s*\}\n/, '\n');
+          main = main.replace('["trustindex-richsnippet", "elfsight-platform"]', '["elfsight-platform"]');
+          main = main.replace('iframe[src*="trustindex"],iframe[src*="elfsight"],script[src*="trustindex"],script[src*="elfsight"]', 'iframe[src*="elfsight"],script[src*="elfsight"]');
+
+          if (main === before) throw new Error('main.js Trustindex block was not changed');
+          if (main.includes('cdn.trustindex.io/assets/js/richsnippet.js') || main.includes('trustindex-richsnippet')) {
+            throw new Error('Trustindex rich-snippet runtime still present in main.js');
+          }
+          fs.writeFileSync(mainPath, main);
+
+          const auditPath = 'tools/audit-third-party-performance-stage56.mjs';
+          let audit = fs.readFileSync(auditPath, 'utf8');
+          audit = audit.replace("for(const token of ['readChoice() === \\\"all\\\"','details && !details.open','cdn.trustindex.io/assets/js/richsnippet.js','elfsightcdn.com/platform.js']){", "for(const token of ['readChoice() === \\\"all\\\"','details && !details.open','elfsightcdn.com/platform.js']){");
+          audit = audit.replace("if(failures.length){for(const failure of failures) console.error('FAIL '+failure);process.exit(1);}", "if(main.includes('cdn.trustindex.io') || main.includes('trustindex-richsnippet')) failures.push('main.js: Trustindex rich-snippet generator must remain absent; self-serving LocalBusiness/Organization ratings are not an eligible Google review rich-result strategy');\nif(failures.length){for(const failure of failures) console.error('FAIL '+failure);process.exit(1);}");
+          audit = audit.replace("Stage 56 third-party performance audit passed: Trustindex and Elfsight are absent from static HTML and remain consent-plus-interaction gated.", "Stage 56 third-party performance audit passed: Trustindex rich-snippet generation is absent, while Elfsight remains consent-plus-interaction gated and absent from static HTML.");
+          fs.writeFileSync(auditPath, audit);
+          NODE
+
+          npm test
+
+      - name: Commit verified cleanup
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/js/main.js tools/audit-third-party-performance-stage56.mjs
+          git diff --cached --quiet && exit 1
+          git commit -m "fix(seo): remove ineligible Trustindex rich-snippet runtime"
+          git push origin HEAD:fix/remove-ineligible-trustindex-richsnippet-20260809
