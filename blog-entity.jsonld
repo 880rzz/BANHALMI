@@ -15,6 +15,20 @@
         {"@id": "https://www.norbertbanhalmi.com/about/"},
         {"@id": "https://www.banhalmi.art/#website"}
       ],
+      "hasPart": [
+        {"@id": "https://blog.banhalmi.art/blog/tags/portfolio-fotozas#collection"},
+        {"@id": "https://blog.banhalmi.art/blog/tags/fotozas-stylisttal#collection"},
+        {"@id": "https://blog.banhalmi.art/blog/tags/portrefotozas#collection"},
+        {"@id": "https://blog.banhalmi.art/blog/tags/muveszi-akt-fotozas#collection"},
+        {"@id": "https://blog.banhalmi.art/blog/tags/szakmai-blogok#collection"}
+      ],
+      "subjectOf": {
+        "@type": "DataDownload",
+        "@id": "https://www.norbertbanhalmi.com/blog-collections.json#service-editorial-collections",
+        "contentUrl": "https://www.norbertbanhalmi.com/blog-collections.json",
+        "encodingFormat": "application/json",
+        "name": "BANHALMI multilingual service-related editorial collection map"
+      },
       "sameAs": ["https://blog.banhalmi.art/"]
     },
     {
@@ -24,6 +38,70 @@
       "name": "BANHALMI Blog",
       "publisher": {"@id": "https://www.norbertbanhalmi.com/#organization"},
       "mainEntity": {"@id": "https://blog.banhalmi.art/#blog"}
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/blog/tags/portfolio-fotozas#collection",
+      "url": "https://blog.banhalmi.art/blog/tags/portfolio-fotozas",
+      "name": "Portfolio and fashion photography editorial collection",
+      "about": ["portfolio photography", "fashion photography", "brand photography", "artist portfolio"],
+      "isPartOf": {"@id": "https://blog.banhalmi.art/#blog"},
+      "isRelatedTo": [
+        {"@id": "https://www.norbertbanhalmi.com/lifestyle/"},
+        {"@id": "https://www.norbertbanhalmi.com/hu/brand/"},
+        {"@id": "https://www.norbertbanhalmi.com/de-at/brand/"}
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/blog/tags/fotozas-stylisttal#collection",
+      "url": "https://blog.banhalmi.art/blog/tags/fotozas-stylisttal",
+      "name": "Photography with a stylist editorial collection",
+      "about": ["photography with stylist", "fashion photography", "brand photography", "visual positioning"],
+      "isPartOf": {"@id": "https://blog.banhalmi.art/#blog"},
+      "isRelatedTo": [
+        {"@id": "https://www.norbertbanhalmi.com/lifestyle/"},
+        {"@id": "https://www.norbertbanhalmi.com/hu/brand/"},
+        {"@id": "https://www.norbertbanhalmi.com/de-at/brand/"}
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/blog/tags/portrefotozas#collection",
+      "url": "https://blog.banhalmi.art/blog/tags/portrefotozas",
+      "name": "Portrait photography editorial collection",
+      "about": ["portrait photography", "executive portrait", "headshot", "CV photography", "dating profile photography"],
+      "isPartOf": {"@id": "https://blog.banhalmi.art/#blog"},
+      "isRelatedTo": [
+        {"@id": "https://www.norbertbanhalmi.com/portrait/"},
+        {"@id": "https://www.norbertbanhalmi.com/hu/portre/"},
+        {"@id": "https://www.norbertbanhalmi.com/de-at/portrait/"}
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/blog/tags/muveszi-akt-fotozas#collection",
+      "url": "https://blog.banhalmi.art/blog/tags/muveszi-akt-fotozas",
+      "name": "Artistic nude photography editorial collection",
+      "about": ["artistic nude photography", "fine-art photography", "body", "identity", "author-led photography"],
+      "isPartOf": {"@id": "https://blog.banhalmi.art/#blog"},
+      "isRelatedTo": [
+        {"@id": "https://www.norbertbanhalmi.com/glamour/"},
+        {"@id": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/"},
+        {"@id": "https://www.norbertbanhalmi.com/de-at/fine-art/"}
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/blog/tags/szakmai-blogok#collection",
+      "url": "https://blog.banhalmi.art/blog/tags/szakmai-blogok",
+      "name": "Professional photography and visual-positioning articles",
+      "about": ["photography", "visual positioning", "brand strategy", "professional methodology"],
+      "isPartOf": {"@id": "https://blog.banhalmi.art/#blog"},
+      "isRelatedTo": [
+        {"@id": "https://www.norbertbanhalmi.com/#website"},
+        {"@id": "https://www.norbertbanhalmi.com/about/"}
+      ]
     }
   ]
 }
