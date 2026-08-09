@@ -3,7 +3,7 @@
   "@type": "ItemList",
   "@id": "https://www.norbertbanhalmi.com/services.json#services",
   "name": "BANHALMI four principal service areas",
-  "dateModified": "2026-08-06T08:48:00+02:00",
+  "dateModified": "2026-08-09T01:45:00+02:00",
   "numberOfItems": 4,
   "itemListElement": [
     {
@@ -18,7 +18,13 @@
         "C-level business portrait photography",
         "Lifestyle portrait photography",
         "Editorial portrait photography",
-        "Personal visual positioning"
+        "Personal visual positioning",
+        "CEO portré",
+        "board of directors fotózás",
+        "PR headshot",
+        "Vorstandsporträt",
+        "Geschäftsführer Headshot",
+        "Pressefoto Führungskräfte"
       ],
       "serviceType": "Portrait Photography",
       "description": "Portrait photography for leaders, founders and experts who need a credible and reusable visual identity across LinkedIn, corporate websites, press, speaking and internal communication.",
@@ -50,7 +56,9 @@
         "Organisational visual systems",
         "Campaign photography",
         "Visual brand strategy",
-        "Strategic visual positioning"
+        "Strategic visual positioning",
+        "sajtószoba vizuális tartalom",
+        "PR-Fotografie"
       ],
       "serviceType": "Brand Photography",
       "description": "Brand photography for organisations that need founders, teams, workplaces and campaigns to communicate as one recognisable brand across recruitment, sales, media and corporate communication.",

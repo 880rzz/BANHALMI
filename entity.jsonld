@@ -419,7 +419,7 @@
       ],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q138425941",
-        "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-für-führungskräfte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40",
+        "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40",
         "https://www.banhalmi.at/",
         "https://www.banhalminorbert.hu/"
       ],
@@ -571,7 +571,7 @@
       "publisher": {
         "@id": "https://www.norbertbanhalmi.com/#organization",
         "sameAs": [
-          "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-für-führungskräfte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40",
+          "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40",
           "https://www.banhalmi.at/",
           "https://www.banhalminorbert.hu/"
         ],
