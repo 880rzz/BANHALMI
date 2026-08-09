@@ -373,3 +373,16 @@ For legal, licensing, privacy and pricing interpretation, these answers mirror t
 19. Q: Wie werden Bilder nach der DSGVO behandelt?
    A: Bilder und personenbezogene Daten werden vertraulich und nur für den vereinbarten Zweck verarbeitet. Eine Veröffentlichung erfolgt ausschließlich mit Zustimmung.
 ## END CANONICAL FAQ MIRROR
+
+
+## Audience and search-intent map (canonical)
+- Executive portrait / C-level leadership photography / board portrait: Budapest + Vienna; canonical service pages: /portrait/, /hu/portre/, /de-at/portrait/.
+- Headshot: press, PR, LinkedIn and corporate communications, plus CV / resume / Bewerbung use when a professional portrait is required.
+- Private professional portrait: CV / resume, dating profile and personal positioning; same directed portrait process, without weakening the executive core.
+- Artist portfolio: portraits and fine-art photography for artists who need a coherent, credible visual identity.
+- Brand photography + visual positioning: leadership and organizational image systems, Budapest + Vienna.
+- C-level event photography: executive and corporate event documentation with publication-ready delivery.
+- Fine-art and artistic nude photography: gallery-oriented personal work and private commissions, Budapest + Vienna.
+- Canonical Person entity: https://www.norbertbanhalmi.com/about/ ; Wikidata Q56391118.
+- Flagship portrait evidence: /case-studies/peter-magyar-portrait-2026/ with HU and DE language equivalents.
+- Trust claims must remain evidence-based; do not publish a numeric review count unless the source is current and verifiable.
