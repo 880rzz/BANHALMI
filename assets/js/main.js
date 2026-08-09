@@ -223,17 +223,6 @@
     // Elfsight scans the widget container.
     window.requestAnimationFrame(function () {
       window.requestAnimationFrame(function () {
-        var pathName = window.location.pathname.replace(/\/index\.html$/, "/");
-        var isLanguageHomepage = pathName === "/" || pathName === "/hu/" || pathName === "/de-at/";
-        if (isLanguageHomepage && !hasScriptSource("cdn.trustindex.io/assets/js/richsnippet.js")) {
-          var ti = document.createElement("script");
-          ti.id = "trustindex-richsnippet";
-          ti.defer = true;
-          ti.async = true;
-          ti.src = "https://cdn.trustindex.io/assets/js/richsnippet.js?c307c9433572g62e";
-          document.head.appendChild(ti);
-        }
-
         if (document.querySelector('[class*="elfsight-app-"]') && !hasScriptSource("elfsightcdn.com/platform.js")) {
           var ef = document.createElement("script");
           ef.id = "elfsight-platform";
@@ -286,11 +275,11 @@
   function revokeThirdPartyScripts() {
     if (window.BANHALMI_ANALYTICS && typeof window.BANHALMI_ANALYTICS.revoke === "function") window.BANHALMI_ANALYTICS.revoke();
     reviewScriptsLoading = false;
-    ["trustindex-richsnippet", "elfsight-platform"].forEach(function (id) {
+    ["elfsight-platform"].forEach(function (id) {
       var el = document.getElementById(id);
       if (el && el.parentNode) el.parentNode.removeChild(el);
     });
-    document.querySelectorAll('iframe[src*="trustindex"],iframe[src*="elfsight"],script[src*="trustindex"],script[src*="elfsight"]').forEach(function (el) { el.remove(); });
+    document.querySelectorAll('iframe[src*="elfsight"],script[src*="elfsight"]').forEach(function (el) { el.remove(); });
     document.querySelectorAll('[class*="elfsight-app-"]').forEach(function (widget) {
       widget.innerHTML = "";
       widget.removeAttribute("aria-busy");
