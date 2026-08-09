@@ -13,7 +13,9 @@ permissions:
 
 concurrency:
   group: github-pages-production
-  cancel-in-progress: false
+  # A newer main commit supersedes an older Pages deployment. Do not let a
+  # stale queued/deploying run permanently block the current production SHA.
+  cancel-in-progress: true
 
 jobs:
   build:
