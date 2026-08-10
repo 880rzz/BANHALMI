@@ -1,0 +1,23 @@
+name: Temporary Stage 63 menu/footer
+on: push
+permissions:
+  contents: write
+jobs:
+  apply:
+    if: github.actor != 'actions'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/apply-stage63-menu-footer.mjs
+      - run: rm .github/workflows/temp-stage63-menu-footer.yml scripts/apply-stage63-menu-footer.mjs
+      - run: |
+          git config user.name "BANHALMI Release Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "fix: restore one-screen menu and blue footer"
+      - run: npm ci
+      - run: npm run audit
+      - run: git push
