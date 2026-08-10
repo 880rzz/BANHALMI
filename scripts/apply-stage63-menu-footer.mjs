@@ -1,12 +1,15 @@
 import fs from 'node:fs';
+import path from 'node:path';
 
 const cssPath='assets/css/mega-menu.css';
 const jsPath='assets/js/mega-menu.js';
 const configPath='assets/js/site-config.js';
 const auditPath='tools/audit-menu-footer-stage63.mjs';
 const huAuditPath='tools/audit-hungarian-copy.mjs';
+const blueAuditPath='tools/audit-blue-palette-contrast-stage51.mjs';
 const packagePath='package.json';
 const token='20260810-menu-footer-v63';
+const oldToken='20260807-type-accent-v50';
 
 let css=fs.readFileSync(cssPath,'utf8');
 if(!css.includes('STAGE63-DESKTOP-MENU-FOOTER:START')){
@@ -25,12 +28,31 @@ config=config.replace(/mega-menu\.css\?v=[^'\"]+/g,`mega-menu.css?v=${token}`)
              .replace(/mega-menu\.js\?v=[^'\"]+/g,`mega-menu.js?v=${token}`);
 fs.writeFileSync(configPath,config);
 
+function walk(dir){
+  for(const e of fs.readdirSync(dir,{withFileTypes:true})){
+    if(['.git','node_modules','.github'].includes(e.name)) continue;
+    const p=path.join(dir,e.name);
+    if(e.isDirectory()) walk(p);
+    else if(e.name.endsWith('.html')){
+      let h=fs.readFileSync(p,'utf8');
+      h=h.replaceAll(`style.css?v=${oldToken}`,`style.css?v=${token}`)
+         .replaceAll(`site-config.js?v=${oldToken}`,`site-config.js?v=${token}`);
+      fs.writeFileSync(p,h);
+    }
+  }
+}
+walk('.');
+
 let huAudit=fs.readFileSync(huAuditPath,'utf8');
 huAudit=huAudit.replace("\"cta:'Projekt összeállítása'\"","\"cta:'Árak és csomagajánlatok'\"");
 if(!huAudit.includes("cta:'Projekt összeállítása'\", 'kontextusérzékeny")){
   huAudit=huAudit.replace("\"cta:'Csomag összeállítása'\", 'kontextusérzékeny dokumentáció'","\"cta:'Csomag összeállítása'\", \"cta:'Projekt összeállítása'\", 'kontextusérzékeny dokumentáció'");
 }
 fs.writeFileSync(huAuditPath,huAudit);
+
+let blueAudit=fs.readFileSync(blueAuditPath,'utf8');
+blueAudit=blueAudit.replaceAll(oldToken,token).replace('v50 type accent cache token missing','Stage 63 cache token missing');
+fs.writeFileSync(blueAuditPath,blueAudit);
 
 const audit=`import fs from 'node:fs';\nconst errors=[];\nconst css=fs.readFileSync('assets/css/mega-menu.css','utf8');\nconst js=fs.readFileSync('assets/js/mega-menu.js','utf8');\nconst config=fs.readFileSync('assets/js/site-config.js','utf8');\nfor(const t of ['STAGE63-DESKTOP-MENU-FOOTER:START','height:100dvh','grid-template-columns:repeat(2,minmax(0,1fr))','max-height:760px','linear-gradient(145deg,#2D3444 0%,#29303F 46%,#202530 100%)'])if(!css.includes(t))errors.push('mega-menu.css missing '+t);\nfor(const t of ['Pricing & packages','Árak és csomagajánlatok','Preise & Pakete'])if(!js.includes(t))errors.push('mega-menu.js missing '+t);\nfor(const t of ['mega-menu.css?v=${token}','mega-menu.js?v=${token}'])if(!config.includes(t))errors.push('site-config.js missing '+t);\nif(errors.length){console.error(errors.join('\\n'));process.exit(1)}\nconsole.log('Stage 63 passed: desktop menu is single-viewport, multilingual pricing labels are semantic, and footer uses the blue gradient authority.');\n`;
 fs.writeFileSync(auditPath,audit);
