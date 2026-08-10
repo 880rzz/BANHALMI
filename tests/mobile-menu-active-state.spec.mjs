@@ -38,14 +38,31 @@ for (const entry of cases) {
       const style = getComputedStyle(element);
       return {
         color: style.color,
+        backgroundColor: style.backgroundColor,
+        borderTopWidth: style.borderTopWidth,
+        borderRightWidth: style.borderRightWidth,
+        borderBottomWidth: style.borderBottomWidth,
+        borderLeftWidth: style.borderLeftWidth,
+        borderRadius: style.borderRadius,
+        boxShadow: style.boxShadow,
         textDecorationLine: style.textDecorationLine,
         textDecorationColor: style.textDecorationColor
       };
     });
 
-    expect(styles.color).toBe('rgb(183, 156, 68)');
+    // Stage 65: active/current is indicated by a vivid accessible gold underline,
+    // never by the old rounded/pill frame. Keep this regression guard aligned
+    // with the production design token --bn-menu-gold: #D3B85A.
+    expect(styles.color).toBe('rgb(211, 184, 90)');
+    expect(styles.backgroundColor).toBe('rgba(0, 0, 0, 0)');
+    expect(styles.borderTopWidth).toBe('0px');
+    expect(styles.borderRightWidth).toBe('0px');
+    expect(styles.borderBottomWidth).toBe('0px');
+    expect(styles.borderLeftWidth).toBe('0px');
+    expect(styles.borderRadius).toBe('0px');
+    expect(styles.boxShadow).toBe('none');
     expect(styles.textDecorationLine).toContain('underline');
-    expect(styles.textDecorationColor).toBe('rgb(183, 156, 68)');
+    expect(styles.textDecorationColor).toBe('rgb(211, 184, 90)');
     expect(jsErrors).toEqual([]);
   });
 }
