@@ -1,0 +1,36 @@
+name: Stage68 human + Apple design scan
+
+on:
+  push:
+    branches: [fix/human-editorial-apple-audit-20260810]
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Human voice risk scan
+        run: npm run audit:copy
+      - name: Existing full static audit
+        run: npm run audit
+      - name: Design drift inventory
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const ignored=new Set(['.git','node_modules','dist','build','redirects']);
+          const files=[];
+          function walk(d){for(const e of fs.readdirSync(d,{withFileTypes:true})){if(ignored.has(e.name))continue;const p=path.join(d,e.name);if(e.isDirectory())walk(p);else if(e.name.endsWith('.html'))files.push(p)}}
+          walk('.');
+          let inline=0, tiny=0, nowrap=0, hardBreak=0;
+          const offenders=[];
+          for(const f of files){const h=fs.readFileSync(f,'utf8');const styles=[...h.matchAll(/style="([^"]+)"/gi)].map(m=>m[1]);const i=styles.length;const t=styles.filter(s=>/font-size\s*:\s*(?:[0-9](?:\.[0-9]+)?px|0\.[0-7][0-9]*rem)/i.test(s)).length;const n=styles.filter(s=>/white-space\s*:\s*nowrap/i.test(s)).length;const b=(h.match(/<br\s*\/?\s*>/gi)||[]).length;inline+=i;tiny+=t;nowrap+=n;hardBreak+=b;if(i+t+n+b>15)offenders.push({file:f,inline:i,tiny:t,nowrap:n,br:b});}
+          offenders.sort((a,b)=>(b.inline+b.tiny+b.nowrap+b.br)-(a.inline+a.tiny+a.nowrap+a.br));
+          console.log(JSON.stringify({htmlFiles:files.length,inlineStyles:inline,tinyInlineText:tiny,nowrapInline:nowrap,hardBreaks:hardBreak,highestRisk:offenders.slice(0,50)},null,2));
+          NODE
