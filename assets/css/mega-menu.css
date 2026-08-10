@@ -250,3 +250,17 @@ html body a.nav-cta::after{font-size:.85rem!important;font-weight:500;line-heigh
   .bn-mega-cta,.bn-mega-primary .bn-mega-art{padding:clamp(.82rem,1.4vh,1.05rem) clamp(1rem,1.7vw,1.3rem)!important}
 }
 /* STAGE65-MENU-POLISH:END */
+
+
+/* STAGE66-MENU-FRAME-HOTFIX:START
+   PR142 intentionally made the mega menu frameless. Keep that invariant at the
+   final cascade layer as a defensive guard against legacy CTA/ART class names. */
+.bn-mega-menu :is(.bn-mega-cta,.bn-mega-art,.bn-mega-pricing){
+  border:0!important;outline:0!important;box-shadow:none!important;
+  background:transparent!important;border-radius:0!important;
+  margin-left:0!important;margin-right:0!important;
+}
+.bn-mega-menu :is(.bn-mega-cta,.bn-mega-art,.bn-mega-pricing) .bn-mega-link{
+  border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;border-radius:0!important;
+}
+/* STAGE66-MENU-FRAME-HOTFIX:END */
