@@ -32,6 +32,8 @@ jobs:
           git commit -m "Fix mega-menu frame regression and cache bust"
       - name: Run full static audit
         run: npm run audit
+      - name: Install project dependencies
+        run: npm ci
       - name: Install browser for regression
         run: npx playwright install --with-deps chromium
       - name: Run browser regression
