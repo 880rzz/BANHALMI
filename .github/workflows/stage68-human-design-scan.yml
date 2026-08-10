@@ -17,6 +17,18 @@ jobs:
           node-version: 22
       - name: Human voice risk scan
         run: npm run audit:copy
+      - name: Human voice phrase context
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const files=[]; const ignored=new Set(['.git','node_modules','redirects']);
+          function walk(d){for(const e of fs.readdirSync(d,{withFileTypes:true})){if(ignored.has(e.name))continue;const p=path.join(d,e.name);if(e.isDirectory())walk(p);else if(e.name.endsWith('.html'))files.push(p)}} walk('.');
+          const re=/(more than|not just|not only|timeless|authentic|unique|seamless|elevat\w*|mehr als|nicht nur|authentisch\w*|einzigartig\w*|több mint|nem csak|autentikus\w*|egyedi\w*)/i;
+          const priority=files.filter(f=>/^(index\.html|contact\/|portrait\/|brand\/|event-photography\/|glamour\/|about\/|trust\/|hu\/(index|kapcsolat|portre|brand|rendezvenyfotozas|muveszi-fotografia|bizalom)\/|de-at\/(index|kontakt|portrait|brand|eventfotografie|fine-art|vertrauen|speier-viko)\/)/.test(f.replaceAll('\\','/')));
+          function text(h){return h.replace(/<script\b[\s\S]*?<\/script>/gi,' ').replace(/<style\b[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/\s+/g,' ').trim()}
+          for(const f of priority){const t=text(fs.readFileSync(f,'utf8'));const sentences=t.split(/(?<=[.!?…])\s+/);const hits=sentences.filter(s=>re.test(s));if(hits.length){console.log('\n### '+f);for(const s of hits)console.log('- '+s.slice(0,520));}}
+          NODE
       - name: Existing full static audit
         run: npm run audit
       - name: Design drift inventory
