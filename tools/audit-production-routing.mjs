@@ -5,7 +5,7 @@ async function request(url, options = {}) {
   const response = await fetch(url, {
     redirect: options.redirect || 'manual',
     headers: {
-      'user-agent': 'BANHALMI production routing audit/3.2',
+      'user-agent': 'BANHALMI production routing audit/3.3',
       'cache-control': 'no-cache',
       pragma: 'no-cache'
     },
@@ -103,6 +103,9 @@ await checkPage('https://www.norbertbanhalmi.com/llms.txt', {
 await checkPage('https://www.norbertbanhalmi.com/ai.txt', {
   all: ['## Canonical identity and answer contract', 'https://www.norbertbanhalmi.com/', 'https://www.banhalmi.art/', 'https://blog.banhalmi.art/', 'New York is not a studio, office, headquarters or operational base']
 });
+await checkPage('https://www.norbertbanhalmi.com/ecosystem.json', {
+  all: ['canonical-digital-ecosystem-map', 'professional-services', 'artistic-archive', 'editorial-knowledge-layer', 'Q56391118', 'https://meet.bookipi.com/zk5ly35r']
+});
 
 await checkPage('https://www.banhalmi.art/', {
   all: ['https://www.norbertbanhalmi.com/about/', 'https://www.norbertbanhalmi.com/'],
@@ -112,14 +115,25 @@ await checkPage('https://www.banhalmi.art/', {
     { pattern: /<html\b[^>]*lang=["']en(?:-[A-Z]{2})?["']/i, label: 'the English language declaration' }
   ]
 });
+await checkPage('https://www.banhalmi.art/ecosystem-bridge.json', {
+  all: ['BANHALMI ART ecosystem bridge', 'professional-services', 'artistic-archive', 'editorial-knowledge-layer', 'Q56391118']
+});
+await checkPage('https://www.banhalmi.art/ecosystem-bridge.jsonld', {
+  all: ['https://www.norbertbanhalmi.com/about/', 'https://www.norbertbanhalmi.com/#website', 'https://www.banhalmi.art/#website', 'https://blog.banhalmi.art/#website']
+});
 
+await checkPage('https://blog.banhalmi.art/', {
+  finalUrl: 'https://blog.banhalmi.art/'
+});
 await checkPage('https://blog.banhalmi.art/blog', {
   finalUrl: 'https://blog.banhalmi.art/'
 });
+await checkPage('https://blog.banhalmi.art/blog-posts-sitemap.xml');
+await checkPage('https://blog.banhalmi.art/blog-categories-sitemap.xml');
 
 console.log(checks.join('\n'));
 if (failures.length) {
   console.error(failures.map((failure) => `FAIL ${failure}`).join('\n'));
   process.exit(1);
 }
-console.log('Production routing, alias, concise machine-entry and ecosystem live audit passed.');
+console.log('Production routing, aliases and all three ecosystem machine layers passed the live closure audit.');
