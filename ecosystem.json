@@ -1,7 +1,7 @@
 {
   "documentType": "canonical-digital-ecosystem-map",
-  "schemaVersion": "2026-08-06-v5",
-  "dateModified": "2026-08-09T09:47:00+02:00",
+  "schemaVersion": "2026-08-10-v6",
+  "dateModified": "2026-08-10T19:39:00+02:00",
   "name": "BANHALMI canonical digital ecosystem",
   "canonicalPerson": {
     "@id": "https://www.norbertbanhalmi.com/about/",
@@ -31,6 +31,7 @@
     {"@id":"https://www.norbertbanhalmi.com/#budapest-studio","role":"operational-base","market":"Hungary"}
   ],
   "authoritativeMachineReadableSources": [
+    "https://www.norbertbanhalmi.com/ecosystem.json",
     "https://www.norbertbanhalmi.com/entity.jsonld",
     "https://www.norbertbanhalmi.com/entity-graph.json",
     "https://www.norbertbanhalmi.com/knowledge.json",

@@ -90,9 +90,15 @@ const criticalLiveUrls = [
   'https://www.norbertbanhalmi.com/sitemap.xml',
   'https://www.norbertbanhalmi.com/llms.txt',
   'https://www.norbertbanhalmi.com/knowledge.json',
+  'https://www.norbertbanhalmi.com/ecosystem.json',
   'https://www.banhalmi.art/',
   'https://www.banhalmi.art/llms.txt',
-  'https://www.banhalmi.art/knowledge-graph.jsonld'
+  'https://www.banhalmi.art/knowledge-graph.jsonld',
+  'https://www.banhalmi.art/ecosystem-bridge.json',
+  'https://www.banhalmi.art/ecosystem-bridge.jsonld',
+  'https://blog.banhalmi.art/',
+  'https://blog.banhalmi.art/blog-posts-sitemap.xml',
+  'https://blog.banhalmi.art/blog-categories-sitemap.xml'
 ];
 const criticalLiveUrlSet = new Set(criticalLiveUrls);
 
