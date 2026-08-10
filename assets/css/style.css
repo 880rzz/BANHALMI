@@ -3355,3 +3355,46 @@ body>.site-footer,.site-footer{flex:0 0 auto;width:100%}
 .title-accent{color:var(--title-accent)}
 .title-accent--block{display:block}
 /* STAGE52-TYPE-ACCENT:END */
+
+
+/* STAGE68-HUMAN-EDITORIAL-DESIGN:START */
+/* Final editorial resilience: quiet Apple-like rhythm without changing the BANHALMI information architecture. */
+:root{
+  --editorial-reading:68ch;
+  --editorial-reading-wide:76ch;
+  --editorial-gutter:clamp(20px,4.2vw,64px);
+  --editorial-section:clamp(72px,9vw,132px);
+  --editorial-card-pad:clamp(22px,2.6vw,34px);
+}
+main p,main li,main dd,main blockquote{overflow-wrap:anywhere;hyphens:auto}
+main .lead,main .section-head>p,main .prose,main .legal,main .structural-prose,
+main .trust-note>p,main .faq-answer,main .project-framework p{max-width:var(--editorial-reading)}
+main h1,main h2,main h3{text-wrap:balance}
+main p,main li{text-wrap:pretty}
+main :is(.grid,.grid-2,.grid-3,.card-grid,.contact-grid,.location-cards,.service-grid,.trust-grid,
+.project-grid,.quote-grid,.decision-grid,.footer-grid)>*,
+main :is(.card,.trust-card,.service-card,.contact-card,.location-card,.project-card,.decision-card){min-width:0}
+main :is(.card,.trust-card,.service-card,.contact-card,.location-card,.project-card,.decision-card){padding:var(--editorial-card-pad)}
+main :is(.card,.trust-card,.service-card,.contact-card,.location-card,.project-card,.decision-card)>:first-child{margin-top:0}
+main :is(.card,.trust-card,.service-card,.contact-card,.location-card,.project-card,.decision-card)>:last-child{margin-bottom:0}
+main :is(.table-wrap,.pricing-table-wrap,.comparison-table-wrap){max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+main table{max-width:100%}
+main th,main td{padding:14px 16px;vertical-align:top;overflow-wrap:anywhere}
+main>section{padding-top:var(--editorial-section);padding-bottom:var(--editorial-section)}
+main>section.hero,main>section.editorial-hero,main>section.trust-hero{padding-top:clamp(88px,11vw,156px)}
+main .section-head{margin-bottom:clamp(30px,4.5vw,56px)}
+main .section-head h2{margin-bottom:clamp(12px,1.6vw,20px)}
+@media(max-width:900px){
+  :root{--editorial-gutter:clamp(20px,5vw,42px);--editorial-section:clamp(64px,9vw,96px)}
+  main :is(.card,.trust-card,.service-card,.contact-card,.location-card,.project-card,.decision-card){padding:clamp(20px,3.5vw,28px)}
+}
+@media(max-width:680px){
+  :root{--editorial-gutter:20px;--editorial-section:58px;--editorial-card-pad:20px}
+  main h1{line-height:1.04;letter-spacing:-.035em}
+  main h2{line-height:1.1;letter-spacing:-.025em}
+  main h3{line-height:1.18}
+  main p,main li{line-height:1.62}
+  main th,main td{padding:12px 14px}
+  main>section.hero,main>section.editorial-hero,main>section.trust-hero{padding-top:82px}
+}
+/* STAGE68-HUMAN-EDITORIAL-DESIGN:END */
