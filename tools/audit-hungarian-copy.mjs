@@ -96,10 +96,10 @@ const approvedMenu = [
   'Egységes képi rendszer vezetőknek, csapatoknak és szervezeteknek.',
   'Visszafogott, helyzetérzékeny fotózás vezetői és vállalati eseményeken.',
   'Válaszok az előkészítésről, a fotózásról, az átadásról és a felhasználási jogokról.',
-  "cta:'Projekt összeállítása'"
+  "cta:'Árak és csomagajánlatok'"
 ];
 for (const phrase of approvedMenu) if (!menu.includes(phrase)) failures.push(`mega-menu: approved Hungarian copy missing: ${phrase}`);
-for (const obsolete of ['Headshot, executive portré', 'C-Level események', "cta:'Csomag összeállítása'", 'kontextusérzékeny dokumentáció']) {
+for (const obsolete of ['Headshot, executive portré', 'C-Level események', "cta:'Csomag összeállítása'", "cta:'Projekt összeállítása'", 'kontextusérzékeny dokumentáció']) {
   if (menu.includes(obsolete)) failures.push(`mega-menu: obsolete Hungarian copy remains: ${obsolete}`);
 }
 
