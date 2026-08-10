@@ -4,6 +4,7 @@ const cssPath='assets/css/mega-menu.css';
 const jsPath='assets/js/mega-menu.js';
 const configPath='assets/js/site-config.js';
 const auditPath='tools/audit-menu-footer-stage63.mjs';
+const huAuditPath='tools/audit-hungarian-copy.mjs';
 const packagePath='package.json';
 const token='20260810-menu-footer-v63';
 
@@ -23,6 +24,13 @@ let config=fs.readFileSync(configPath,'utf8');
 config=config.replace(/mega-menu\.css\?v=[^'\"]+/g,`mega-menu.css?v=${token}`)
              .replace(/mega-menu\.js\?v=[^'\"]+/g,`mega-menu.js?v=${token}`);
 fs.writeFileSync(configPath,config);
+
+let huAudit=fs.readFileSync(huAuditPath,'utf8');
+huAudit=huAudit.replace("\"cta:'Projekt összeállítása'\"","\"cta:'Árak és csomagajánlatok'\"");
+if(!huAudit.includes("cta:'Projekt összeállítása'\", 'kontextusérzékeny")){
+  huAudit=huAudit.replace("\"cta:'Csomag összeállítása'\", 'kontextusérzékeny dokumentáció'","\"cta:'Csomag összeállítása'\", \"cta:'Projekt összeállítása'\", 'kontextusérzékeny dokumentáció'");
+}
+fs.writeFileSync(huAuditPath,huAudit);
 
 const audit=`import fs from 'node:fs';\nconst errors=[];\nconst css=fs.readFileSync('assets/css/mega-menu.css','utf8');\nconst js=fs.readFileSync('assets/js/mega-menu.js','utf8');\nconst config=fs.readFileSync('assets/js/site-config.js','utf8');\nfor(const t of ['STAGE63-DESKTOP-MENU-FOOTER:START','height:100dvh','grid-template-columns:repeat(2,minmax(0,1fr))','max-height:760px','linear-gradient(145deg,#2D3444 0%,#29303F 46%,#202530 100%)'])if(!css.includes(t))errors.push('mega-menu.css missing '+t);\nfor(const t of ['Pricing & packages','Árak és csomagajánlatok','Preise & Pakete'])if(!js.includes(t))errors.push('mega-menu.js missing '+t);\nfor(const t of ['mega-menu.css?v=${token}','mega-menu.js?v=${token}'])if(!config.includes(t))errors.push('site-config.js missing '+t);\nif(errors.length){console.error(errors.join('\\n'));process.exit(1)}\nconsole.log('Stage 63 passed: desktop menu is single-viewport, multilingual pricing labels are semantic, and footer uses the blue gradient authority.');\n`;
 fs.writeFileSync(auditPath,audit);
