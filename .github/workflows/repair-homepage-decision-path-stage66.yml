@@ -1,0 +1,58 @@
+name: Repair homepage decision path Stage66
+on:
+  push:
+    branches:
+      - fix/homepage-decision-path-stage66-20260810
+    paths:
+      - .github/workflows/repair-homepage-decision-path-stage66.yml
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/homepage-decision-path-stage66-20260810
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Add localized direct-consultation path to homepages
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile, writeFile } from 'node:fs/promises';
+          const booking='https://meet.bookipi.com/zk5ly35r';
+          const pages=[
+            {file:'index.html',label:'Book a 15-minute video call',note:'Booking interface in English.'},
+            {file:'hu/index.html',label:'Foglalj 15 perces videóhívást',note:'A foglalási felület angol nyelvű.'},
+            {file:'de-at/index.html',label:'15-minütiges Videogespräch buchen',note:'Die Buchungsoberfläche ist auf Englisch.'}
+          ];
+          for(const p of pages){
+            let html=await readFile(p.file,'utf8');
+            if(html.includes('data-home-decision-path="consultation"')) continue;
+            const re=/<div class="hero-actions">([\s\S]*?)<\/div>/;
+            const m=html.match(re);
+            if(!m) throw new Error(`${p.file}: hero-actions not found`);
+            const enhanced=`<div class="hero-actions">${m[1]}<a class="btn-link" data-home-decision-path="consultation" href="${booking}" target="_blank" rel="noopener noreferrer">${p.label}</a></div><p class="hero-booking-note">${p.note}</p>`;
+            html=html.replace(re,enhanced);
+            await writeFile(p.file,html);
+          }
+          const pkgPath='package.json';
+          const pkg=JSON.parse(await readFile(pkgPath,'utf8'));
+          const audit='node tools/audit-homepage-decision-path-stage66.mjs';
+          if(!pkg.scripts.audit.includes(audit)) pkg.scripts.audit += ' && ' + audit;
+          pkg.scripts['audit:homepage-decision-path']=audit;
+          await writeFile(pkgPath,JSON.stringify(pkg,null,2)+'\n');
+          NODE
+      - name: Run Stage66 audit
+        run: node tools/audit-homepage-decision-path-stage66.mjs
+      - name: Run complete production audit
+        run: npm run audit
+      - name: Commit repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html hu/index.html de-at/index.html package.json
+          git commit -m "feat: expose direct homepage consultation path"
+          git push origin HEAD:fix/homepage-decision-path-stage66-20260810
