@@ -76,37 +76,24 @@ if marker not in css:
   --editorial-section:clamp(72px,9vw,132px);
   --editorial-card-pad:clamp(22px,2.6vw,34px);
 }
-
-/* Long text should read like editorial copy, not fill the whole canvas. */
 main p,main li,main dd,main blockquote{overflow-wrap:anywhere;hyphens:auto}
 main .lead,main .section-head>p,main .prose,main .legal,main .structural-prose,
 main .trust-note>p,main .faq-answer,main .project-framework p{max-width:var(--editorial-reading)}
 main h1,main h2,main h3{text-wrap:balance}
 main p,main li{text-wrap:pretty}
-
-/* Flex/grid children may shrink instead of pushing text into cell edges or outside the viewport. */
 main :is(.grid,.grid-2,.grid-3,.card-grid,.contact-grid,.location-cards,.service-grid,.trust-grid,
 .project-grid,.quote-grid,.decision-grid,.footer-grid)>*,
 main :is(.card,.trust-card,.service-card,.contact-card,.location-card,.project-card,.decision-card){min-width:0}
-
-/* Consistent internal breathing room for card-like content. */
-main :is(.card,.trust-card,.service-card,.contact-card,.location-card,.project-card,.decision-card){
-  padding:var(--editorial-card-pad);
-}
+main :is(.card,.trust-card,.service-card,.contact-card,.location-card,.project-card,.decision-card){padding:var(--editorial-card-pad)}
 main :is(.card,.trust-card,.service-card,.contact-card,.location-card,.project-card,.decision-card)>:first-child{margin-top:0}
 main :is(.card,.trust-card,.service-card,.contact-card,.location-card,.project-card,.decision-card)>:last-child{margin-bottom:0}
-
-/* Tables and dense commercial data remain usable on narrow screens. */
 main :is(.table-wrap,.pricing-table-wrap,.comparison-table-wrap){max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
 main table{max-width:100%}
 main th,main td{padding:14px 16px;vertical-align:top;overflow-wrap:anywhere}
-
-/* Keep hero and section rhythm calm and predictable across viewport families. */
 main>section{padding-top:var(--editorial-section);padding-bottom:var(--editorial-section)}
 main>section.hero,main>section.editorial-hero,main>section.trust-hero{padding-top:clamp(88px,11vw,156px)}
 main .section-head{margin-bottom:clamp(30px,4.5vw,56px)}
 main .section-head h2{margin-bottom:clamp(12px,1.6vw,20px)}
-
 @media(max-width:900px){
   :root{--editorial-gutter:clamp(20px,5vw,42px);--editorial-section:clamp(64px,9vw,96px)}
   main :is(.card,.trust-card,.service-card,.contact-card,.location-card,.project-card,.decision-card){padding:clamp(20px,3.5vw,28px)}
@@ -124,13 +111,11 @@ main .section-head h2{margin-bottom:clamp(12px,1.6vw,20px)}
 '''
 css_path.write_text(css, encoding='utf-8')
 
-# Bump the shared presentation cache token across actual runtime references and audits that lock it.
 for p in list(ROOT.rglob('*.html')) + [ROOT/'assets/js/site-config.js'] + list((ROOT/'tools').glob('audit-*.mjs')):
     text = p.read_text(encoding='utf-8')
     if OLD in text:
         p.write_text(text.replace(OLD, NEW), encoding='utf-8')
 
-# Permanent Stage68 regression guard.
 audit = ROOT / 'tools/audit-human-editorial-design-stage68.mjs'
 audit.write_text(r'''import fs from 'node:fs';
 import path from 'node:path';
@@ -160,7 +145,7 @@ const banned=[
  ['de-at/speier-viko/index.html','nicht nur eine Botschaft dekorieren']
 ];
 for(const [f,s] of banned)if(fs.readFileSync(f,'utf8').includes(s))errors.push(f+': mechanical wording returned: '+s);
-for(const f of ['index.html','hu/index.html','de-at/index.html','portrait/index.html','hu/portre/index.html','de-at/portrait/index.html','brand/index.html','hu/brand/index.html','de-at/brand/index.html','event-photography/index.html','hu/rendezvenyfotozas/index.html','de-at/eventfotografie/index.html']){const h=fs.readFileSync(f,'utf8');if(!h.includes('/assets/css/style.css?v='+token))errors.push(f+': missing Stage68 style token');}
+for(const f of ['index.html','hu/index.html','de-at/index.html','portrait/index.html','hu/portre/index.html','de-at/portrait/index.html','lifestyle/index.html','hu/brand/index.html','de-at/brand/index.html','event-photography/index.html','hu/rendezvenyfotozas/index.html','de-at/eventfotografie/index.html']){const h=fs.readFileSync(f,'utf8');if(!h.includes('/assets/css/style.css?v='+token))errors.push(f+': missing Stage68 style token');}
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
 console.log(`Stage68 human editorial + Apple design audit passed across ${files.length} HTML files (${indexed} canonical/indexable surfaces): responsive text safety, shared cache authority and reviewed HU/EN/DE copy are locked.`);
 ''',encoding='utf-8')
@@ -175,5 +160,4 @@ if 'audit-human-editorial-design-stage68.mjs' not in cmd:
 pkg['scripts']['audit']=cmd
 pkg['scripts']['audit:human-design']='node tools/audit-human-editorial-design-stage68.mjs'
 pkg_path.write_text(json.dumps(pkg,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-
 print('Stage68 migration prepared: curated copy, responsive editorial CSS, cache token, permanent audit.')
