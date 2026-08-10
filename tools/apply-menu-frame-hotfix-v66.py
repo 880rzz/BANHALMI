@@ -2,14 +2,16 @@ from pathlib import Path
 ROOT=Path('.')
 old='20260810-menu-polish-v65'
 new='20260810-menu-frame-hotfix-v66'
-# Cache-bust site-config on every HTML page so browsers cannot keep the old
-# loader that still points at the pre-PR142 mega-menu bundle.
+# Cache-bust both the site config loader and the canonical stylesheet on every
+# HTML page. Stage 48 intentionally requires one shared release token so stale
+# menu JS/CSS cannot survive while the page shell advances.
 count=0
 for p in ROOT.rglob('*.html'):
     if any(x in p.parts for x in ('.git','node_modules')): continue
     s=p.read_text(encoding='utf-8')
     before=s
     s=s.replace('/assets/js/site-config.js?v='+old,'/assets/js/site-config.js?v='+new)
+    s=s.replace('/assets/css/style.css?v='+old,'/assets/css/style.css?v='+new)
     if s!=before:
         p.write_text(s,encoding='utf-8');count+=1
 
@@ -45,7 +47,7 @@ if(!js.includes("'bn-mega-pricing'"))errors.push('pricing entry is not frameless
 if(js.includes("'bn-mega-cta'"))errors.push('legacy framed pricing class is still emitted');
 if(!css.includes('STAGE66-MENU-FRAME-HOTFIX:START'))errors.push('final frameless CSS guard missing');
 const files=[];function walk(d){for(const e of fs.readdirSync(d,{withFileTypes:true})){if(['.git','node_modules'].includes(e.name))continue;const p=path.join(d,e.name);if(e.isDirectory())walk(p);else if(e.name.endsWith('.html'))files.push(p)}}walk(root);
-let checked=0;for(const f of files){const h=fs.readFileSync(f,'utf8');if(!h.includes('/assets/js/site-config.js'))continue;checked++;if(!h.includes('/assets/js/site-config.js?v='+fresh))errors.push(path.relative(root,f)+': stale site-config cache token');if(h.includes('/assets/js/site-config.js?v='+old))errors.push(path.relative(root,f)+': old v65 site-config reference remains');}
+let checked=0;for(const f of files){const h=fs.readFileSync(f,'utf8');if(!h.includes('/assets/js/site-config.js'))continue;checked++;if(!h.includes('/assets/js/site-config.js?v='+fresh))errors.push(path.relative(root,f)+': stale site-config cache token');if(!h.includes('/assets/css/style.css?v='+fresh))errors.push(path.relative(root,f)+': stale style cache token');if(h.includes('/assets/js/site-config.js?v='+old)||h.includes('/assets/css/style.css?v='+old))errors.push(path.relative(root,f)+': old v65 release reference remains');}
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}console.log(`Stage 68 menu frame/cache hotfix passed across ${checked} production HTML pages.`);
 ''',encoding='utf-8')
 
