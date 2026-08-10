@@ -32,6 +32,10 @@ for (const entry of cases) {
   if (!html.includes(booking)) errors.push(`${entry.file}: canonical Bookipi booking URL missing`);
   if (!html.includes(entry.label)) errors.push(`${entry.file}: localized 15-minute call label missing`);
   if (!html.includes(entry.note)) errors.push(`${entry.file}: localized English-interface note missing`);
+  const escapedLabel = entry.label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const escapedNote = entry.note.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const bookingOption = new RegExp(`<span class="hero-booking-option"><a[^>]+>${escapedLabel}</a><small class="hero-booking-note">${escapedNote}</small></span>`);
+  if (!bookingOption.test(html)) errors.push(`${entry.file}: booking note must remain attached to its consultation action`);
   if (!html.includes(`href="${entry.quote}"`)) errors.push(`${entry.file}: pricing/quote path missing`);
   if (!html.includes(entry.gallery)) errors.push(`${entry.file}: ART gallery bridge missing`);
   const bookingCount = html.split(booking).length - 1;

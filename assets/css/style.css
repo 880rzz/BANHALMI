@@ -3355,3 +3355,28 @@ body>.site-footer,.site-footer{flex:0 0 auto;width:100%}
 .title-accent{color:var(--title-accent)}
 .title-accent--block{display:block}
 /* STAGE52-TYPE-ACCENT:END */
+
+/* STAGE68-EDITORIAL-MICROCOPY:START
+   Keep supporting information attached to the action it qualifies. The small
+   type is intentionally quiet, but remains above the 14 px reading floor. */
+.hero-booking-option{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+  min-width:0;
+}
+.hero-booking-option .btn-link{margin:0}
+.hero-booking-note{
+  margin:0;
+  max-width:32ch;
+  color:var(--muted);
+  font-size:max(.82rem,14px);
+  line-height:1.4;
+  letter-spacing:-.006em;
+}
+@media(max-width:620px){
+  .hero-booking-option{width:100%}
+  .hero-booking-note{max-width:none}
+}
+/* STAGE68-EDITORIAL-MICROCOPY:END */
