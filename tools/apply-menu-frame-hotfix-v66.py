@@ -8,12 +8,21 @@ new='20260810-menu-frame-hotfix-v66'
 count=0
 for p in ROOT.rglob('*.html'):
     if any(x in p.parts for x in ('.git','node_modules')): continue
-    s=p.read_text(encoding='utf-8')
-    before=s
+    s=p.read_text(encoding='utf-8');before=s
     s=s.replace('/assets/js/site-config.js?v='+old,'/assets/js/site-config.js?v='+new)
     s=s.replace('/assets/css/style.css?v='+old,'/assets/css/style.css?v='+new)
-    if s!=before:
-        p.write_text(s,encoding='utf-8');count+=1
+    if s!=before:p.write_text(s,encoding='utf-8');count+=1
+
+# Existing permanent regression tests that name the shared release token must
+# advance with the same cache release. The new Stage 68 test is created below
+# and deliberately retains `old` only as the stale-token sentinel.
+for folder in ('tools','tests'):
+    base=ROOT/folder
+    if not base.exists(): continue
+    for p in base.rglob('*.mjs'):
+        if p.name=='audit-menu-cache-hotfix-stage68.mjs': continue
+        s=p.read_text(encoding='utf-8')
+        if old in s:p.write_text(s.replace(old,new),encoding='utf-8')
 
 # The loader itself must request fresh menu assets.
 p=ROOT/'assets/js/site-config.js';s=p.read_text(encoding='utf-8')
@@ -29,9 +38,8 @@ if marker not in s:
     s += '''\n\n/* STAGE66-MENU-FRAME-HOTFIX:START\n   PR142 intentionally made the mega menu frameless. Keep that invariant at the\n   final cascade layer as a defensive guard against legacy CTA/ART class names. */\n.bn-mega-menu :is(.bn-mega-cta,.bn-mega-art,.bn-mega-pricing){\n  border:0!important;outline:0!important;box-shadow:none!important;\n  background:transparent!important;border-radius:0!important;\n  margin-left:0!important;margin-right:0!important;\n}\n.bn-mega-menu :is(.bn-mega-cta,.bn-mega-art,.bn-mega-pricing) .bn-mega-link{\n  border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;border-radius:0!important;\n}\n/* STAGE66-MENU-FRAME-HOTFIX:END */\n'''
 p.write_text(s,encoding='utf-8')
 
-# Strengthen the permanent audit and move its expected cache token forward.
+# Strengthen Stage 65's permanent frameless contract.
 p=ROOT/'tools/audit-menu-polish-stage65.mjs';s=p.read_text(encoding='utf-8')
-s=s.replace("'mega-menu.css?v=20260810-menu-polish-v65','mega-menu.js?v=20260810-menu-polish-v65'","'mega-menu.css?v=20260810-menu-frame-hotfix-v66','mega-menu.js?v=20260810-menu-frame-hotfix-v66'")
 insert="""\nfor(const t of ['STAGE66-MENU-FRAME-HOTFIX:START','.bn-mega-pricing','border:0!important;outline:0!important;box-shadow:none!important'])if(!css.includes(t))errors.push('missing frameless hotfix '+t);\nif(config.includes('mega-menu.js?v=20260810-menu-polish-v65')||config.includes('mega-menu.css?v=20260810-menu-polish-v65'))errors.push('stale v65 mega-menu asset token remains in site-config');\n"""
 pos=s.find("function ch(v)")
 if pos!=-1 and 'missing frameless hotfix' not in s:s=s[:pos]+insert+s[pos:]
