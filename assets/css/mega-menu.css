@@ -91,3 +91,60 @@ body.bn-mega-open .lang-switch a.active{color:var(--bn-menu-gold)!important}
   }
 }
 @media(prefers-reduced-motion:reduce){.bn-mega-menu{animation:none;opacity:1}.bn-mega-link{transition:none}}
+
+/* Stage 53 — Apple-like editorial colour emphasis across the business site.
+   The business palette stays lighter and more restrained than ART: cool teal/navy
+   resolves into BANHALMI gold on light surfaces; dark CTA areas use a soft white/
+   blue/gold version. Existing semantic spans keep their meaning and readable
+   solid-colour fallback when text clipping is unavailable. */
+:root{--bn-text-accent:#2F6F78;--bn-text-accent-soft:#6F93A2;--bn-text-accent-gold:#8A681F}
+html body :is(.title-accent,.semantic-emphasis){color:var(--bn-text-accent)!important;font-weight:inherit}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  html body :is(h1,h2,h3) :is(.title-accent,.semantic-emphasis),
+  html body .hero :is(h1,h2) .title-accent{
+    background:linear-gradient(90deg,#202530 0%,#2F6F78 58%,#8A681F 100%)!important;
+    -webkit-background-clip:text!important;background-clip:text!important;
+    -webkit-text-fill-color:transparent!important;color:transparent!important;
+  }
+  html body :is(.cta-band,.dark-band,.section-dark) :is(h1,h2,h3) :is(.title-accent,.semantic-emphasis){
+    background:linear-gradient(90deg,#F5F5F7 0%,#AFC4D9 62%,#B79C44 100%)!important;
+    -webkit-background-clip:text!important;background-clip:text!important;
+    -webkit-text-fill-color:transparent!important;color:transparent!important;
+  }
+}
+
+/* When a page has no author-marked span in its hero, the hero title itself gets
+   the same restrained three-stop treatment. This keeps all language versions
+   visually coherent without rewriting heading text or changing SEO semantics. */
+html body .hero h1:not(:has(.title-accent,.semantic-emphasis)){color:#202530!important}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  html body .hero h1:not(:has(.title-accent,.semantic-emphasis)){
+    background:linear-gradient(90deg,#202530 0%,#2F6F78 72%,#8A681F 100%)!important;
+    -webkit-background-clip:text!important;background-clip:text!important;
+    -webkit-text-fill-color:transparent!important;color:transparent!important;
+  }
+}
+
+/* Pricing/package vocabulary authority. The site now presents the quote builder
+   consistently as a pricing-and-packages destination in HU / EN / DE. */
+html[lang^="hu"] .bn-mega-cta .bn-mega-link,
+html[lang^="hu"] .next-step-selector .card:first-child h3,
+html[lang^="hu"] a.nav-cta{font-size:0!important}
+html[lang^="hu"] .bn-mega-cta .bn-mega-link::after,
+html[lang^="hu"] .next-step-selector .card:first-child h3::after,
+html[lang^="hu"] a.nav-cta::after{content:"Árak és csomagajánlatok";font-size:initial}
+html[lang^="en"] .bn-mega-cta .bn-mega-link,
+html[lang^="en"] .next-step-selector .card:first-child h3,
+html[lang^="en"] a.nav-cta{font-size:0!important}
+html[lang^="en"] .bn-mega-cta .bn-mega-link::after,
+html[lang^="en"] .next-step-selector .card:first-child h3::after,
+html[lang^="en"] a.nav-cta::after{content:"Pricing & packages";font-size:initial}
+html[lang^="de"] .bn-mega-cta .bn-mega-link,
+html[lang^="de"] .next-step-selector .card:first-child h3,
+html[lang^="de"] a.nav-cta{font-size:0!important}
+html[lang^="de"] .bn-mega-cta .bn-mega-link::after,
+html[lang^="de"] .next-step-selector .card:first-child h3::after,
+html[lang^="de"] a.nav-cta::after{content:"Preise & Pakete";font-size:initial}
+html body .bn-mega-cta .bn-mega-link::after{font-size:clamp(.95rem,1.45vh,1.2rem)!important;line-height:1.08;letter-spacing:-.02em}
+html body .next-step-selector .card:first-child h3::after{font-size:1.2rem!important;font-weight:600;line-height:1.2;letter-spacing:-.014em}
+html body a.nav-cta::after{font-size:.85rem!important;font-weight:500;line-height:1.3;letter-spacing:-.006em}
