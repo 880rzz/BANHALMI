@@ -224,3 +224,29 @@ html body a.nav-cta::after{font-size:.85rem!important;font-weight:500;line-heigh
 }
 @media(max-width:860px){.bn-mega-journal-head,.bn-mega-journal{display:none!important}}
 /* STAGE64-ART-LIKE-FULLSCREEN-MENU:END */
+
+
+/* STAGE65-MENU-POLISH:START
+   Desktop menu refinement: active state has no pill/frame, typography is easier
+   to read, CTA labels have breathing room, and BANHALMI ART belongs with the
+   oeuvre/archive group instead of the support column. */
+:root{--bn-menu-gold:#D3B85A;--bn-menu-soft:#C4CFDA;--bn-menu-line:rgba(211,184,90,.28)}
+.bn-mega-link.active,.bn-mega-link[aria-current="page"]{
+  border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;
+  border-radius:0!important;padding-left:0!important;padding-right:0!important;
+  text-decoration-line:underline!important;text-decoration-thickness:1px!important;text-underline-offset:.22em!important;
+}
+.bn-mega-cta,.bn-mega-art{box-sizing:border-box!important;padding:1rem 1.15rem!important}
+.bn-mega-primary .bn-mega-art{margin-top:.55rem!important}
+@media(min-width:861px){
+  .bn-mega-grid{grid-template-columns:minmax(210px,.9fr) minmax(270px,1.08fr) minmax(420px,1.58fr)!important;gap:clamp(1.8rem,3.4vw,4rem)!important}
+  .bn-mega-link{font-size:clamp(1.16rem,1.95vh,1.58rem)!important;line-height:1.07!important}
+  .bn-mega-desc{font-size:clamp(.79rem,1.34vh,.95rem)!important;line-height:1.38!important;margin-top:.28rem!important}
+  .bn-mega-service .bn-mega-link{font-size:clamp(1.14rem,1.82vh,1.48rem)!important}
+  .bn-mega-footer .bn-mega-link{font-size:clamp(1.05rem,1.64vh,1.34rem)!important}
+  .bn-mega-footer .bn-mega-desc{font-size:clamp(.77rem,1.28vh,.91rem)!important}
+  .bn-mega-section-head>span{font-size:clamp(.72rem,1.22vh,.84rem)!important}
+  .bn-mega-section-head p{font-size:clamp(.78rem,1.28vh,.92rem)!important}
+  .bn-mega-cta,.bn-mega-primary .bn-mega-art{padding:clamp(.82rem,1.4vh,1.05rem) clamp(1rem,1.7vw,1.3rem)!important}
+}
+/* STAGE65-MENU-POLISH:END */
