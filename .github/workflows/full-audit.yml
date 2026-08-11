@@ -37,6 +37,7 @@ jobs:
       - name: Generate human voice copy report
         run: npm run audit:copy > human-voice-audit.json
       - name: Upload human voice copy report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: banhalmi-human-voice-audit
