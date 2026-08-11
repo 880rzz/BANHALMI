@@ -92,7 +92,7 @@ const eurLex = 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj';
 for (const [lang, text] of Object.entries(trustPages)) {
   if (!/Article 50|Artikel 50|50\. cikk/i.test(text)) errors.push(`${lang} Trust Center missing EU AI Act Article 50 transparency statement`);
   if (!/2 August 2026|2\. August 2026|2026\. augusztus 2/i.test(text)) errors.push(`${lang} Trust Center missing Article 50 applicability date`);
-  if (!/synthetic|synthetisch|szintetikus/i.test(text)) errors.push(`${lang} Trust Center missing synthetic-content disclosure rule`);
+  if (!/AI-generated or manipulated|KI-erzeugte oder KI-manipulierte|AI által létrehozott vagy módosított/i.test(text)) errors.push(`${lang} Trust Center missing AI-generated/manipulated-content disclosure rule`);
   if (!/human editorial|menschlich\w*\s+redaktionell\w*|emberi szerkesztői/i.test(text)) errors.push(`${lang} Trust Center missing human editorial-control rule`);
   if (!text.includes(commissionGuidelines)) errors.push(`${lang} Trust Center missing 2026 Commission Article 50 guidelines source`);
   if (!text.includes(commissionCode)) errors.push(`${lang} Trust Center missing Commission AI-generated-content Code source`);
