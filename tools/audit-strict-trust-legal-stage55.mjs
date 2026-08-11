@@ -86,16 +86,30 @@ const trustPages = {
   de: read('de-at/vertrauen/index.html'),
   hu: read('hu/bizalom/index.html')
 };
+const commissionGuidelines = 'https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems';
+const commissionCode = 'https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content';
+const eurLex = 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj';
 for (const [lang, text] of Object.entries(trustPages)) {
   if (!/Article 50|Artikel 50|50\. cikk/i.test(text)) errors.push(`${lang} Trust Center missing EU AI Act Article 50 transparency statement`);
+  if (!/2 August 2026|2\. August 2026|2026\. augusztus 2/i.test(text)) errors.push(`${lang} Trust Center missing Article 50 applicability date`);
   if (!/synthetic|synthetisch|szintetikus/i.test(text)) errors.push(`${lang} Trust Center missing synthetic-content disclosure rule`);
   if (!/human editorial|menschlich\w*\s+redaktionell\w*|emberi szerkesztői/i.test(text)) errors.push(`${lang} Trust Center missing human editorial-control rule`);
+  if (!text.includes(commissionGuidelines)) errors.push(`${lang} Trust Center missing 2026 Commission Article 50 guidelines source`);
+  if (!text.includes(commissionCode)) errors.push(`${lang} Trust Center missing Commission AI-generated-content Code source`);
+  if (!text.includes(eurLex)) errors.push(`${lang} Trust Center missing EUR-Lex AI Act source`);
+  if (/could be mistaken for authentic content|mit authentischen Inhalten verwechselt werden könnten|hiteles tartalommal összetéveszthető/i.test(text)) {
+    errors.push(`${lang} Trust Center retains pre-guidelines ambiguity instead of Article 50 scope`);
+  }
 }
 
 const trustIndex = JSON.parse(read('trust-center.json'));
-if (trustIndex.dateModified !== '2026-08-08') errors.push('trust-center.json dateModified must match strict trust release');
+if (trustIndex.dateModified !== '2026-08-11') errors.push('trust-center.json dateModified must match final trust release');
 const principles = (trustIndex.principles || []).join(' | ');
 if (!/AI Act Article 50/i.test(principles)) errors.push('trust-center.json missing AI Act Article 50 principle');
+if (!/2 August 2026/i.test(principles)) errors.push('trust-center.json missing Article 50 applicability date');
+for (const source of [commissionGuidelines, commissionCode, eurLex]) {
+  if (!(trustIndex.policySources || []).includes(source)) errors.push(`trust-center.json missing authoritative policy source ${source}`);
+}
 
 const processors = JSON.parse(read('processors.json'));
 const ga = (processors.providers || []).find(p => p.id === 'google-analytics-4');
