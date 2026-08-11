@@ -21,7 +21,7 @@ const legal = {
   hu: read('hu/impresszum/index.html')
 };
 const legalRequired = [
-  'Bánhalmi Norbert e.U.',
+  'Norbert Banhalmi e.U.',
   '36592951',
   'ATU80445314',
   'Magistratisches Bezirksamt des I. Bezirkes'
@@ -39,7 +39,7 @@ const privacy = {
   hu: read('hu/adatvedelem/index.html')
 };
 for (const [lang, text] of Object.entries(privacy)) {
-  for (const token of ['Bánhalmi Norbert e.U.','Cloudflare','Google','GitHub','180']) {
+  for (const token of ['Norbert Banhalmi e.U.','Cloudflare','Google','GitHub','180']) {
     if (!text.includes(token)) errors.push(`${lang} privacy notice missing ${token}`);
   }
   if (!/(?:Art(?:icle)?\.?\s*6|Artikel\s*6|6\.\s*cikk)/i.test(text)) errors.push(`${lang} privacy notice missing GDPR Article 6 legal-basis reference`);

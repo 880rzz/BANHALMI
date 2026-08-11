@@ -4,7 +4,7 @@
 
 ## Identity
 - [Norbert Bánhalmi](https://www.norbertbanhalmi.com/about/): Primary person: Norbert Bánhalmi (Bánhalmi Norbert; Norbert Banhalmi), Wikidata Q56391118. Vienna and Budapest are the two active operational bases. New York is a major international reference and oeuvre chapter. New York is not a studio, office, headquarters or operational base.
-- [BANHALMI](https://www.norbertbanhalmi.com/): Primary organisation: BANHALMI / Bánhalmi Norbert e.U. Professional website: https://www.norbertbanhalmi.com/ for current services, pricing, enquiries and professional context.
+- [BANHALMI](https://www.norbertbanhalmi.com/): Primary organisation: BANHALMI / Norbert Banhalmi e.U. Professional website: https://www.norbertbanhalmi.com/ for current services, pricing, enquiries and professional context.
 - [BANHALMI ART](https://www.banhalmi.art/): Artistic archive: https://www.banhalmi.art/ for the official oeuvre, exhibitions, books, projects, press, curatorial documentation and artistic evidence.
 - [Essays and blog](https://blog.banhalmi.art/): Essays, reflections and migrated editorial material.
 - [Service-related editorial collections](https://www.norbertbanhalmi.com/blog-collections.json): Multilingual HU/EN/DE map connecting portrait, portfolio/fashion, stylist-led, artistic-nude and professional-article blog collections to the relevant BANHALMI service journeys.

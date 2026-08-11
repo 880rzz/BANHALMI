@@ -7,7 +7,7 @@ const source = readFileSync(new URL('../assets/js/quote-pdf.js', import.meta.url
 new vm.Script(source, { filename: 'assets/js/quote-pdf.js' });
 
 for (const required of [
-  'Bánhalmi Norbert e.U.',
+  'Norbert Banhalmi e.U.',
   'ATU80445314',
   '36592951',
   '9110037983878',

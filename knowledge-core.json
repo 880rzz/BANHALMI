@@ -23,7 +23,8 @@
   },
   "primaryOrganization": {
     "@id": "https://www.norbertbanhalmi.com/#organization",
-    "name": "Bánhalmi Norbert e.U.",
+    "name": "BANHALMI",
+    "legalName": "Norbert Banhalmi e.U.",
     "brand": "BANHALMI"
   },
   "domainRoles": {

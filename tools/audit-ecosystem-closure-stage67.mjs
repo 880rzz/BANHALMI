@@ -18,7 +18,7 @@ assert(ecosystem.documentType === 'canonical-digital-ecosystem-map', 'ecosystem.
 assert(ecosystem.canonicalPerson?.['@id'] === 'https://www.norbertbanhalmi.com/about/', 'ecosystem.json: canonical Person @id drifted');
 assert(ecosystem.canonicalPerson?.wikidata === 'https://www.wikidata.org/wiki/Q56391118', 'ecosystem.json: Wikidata identity drifted');
 assert(ecosystem.canonicalOrganization?.['@id'] === 'https://www.norbertbanhalmi.com/#organization', 'ecosystem.json: canonical Organization @id drifted');
-assert(ecosystem.canonicalOrganization?.legalName === 'Bánhalmi Norbert e.U.', 'ecosystem.json: legal organization name drifted');
+assert(ecosystem.canonicalOrganization?.legalName === 'Norbert Banhalmi e.U.', 'ecosystem.json: legal organization name drifted');
 
 const expectedRoles = new Map([
   ['professional-services', 'https://www.norbertbanhalmi.com/'],

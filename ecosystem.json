@@ -9,7 +9,7 @@
     "alternateName": ["Bánhalmi Norbert", "Norbert Bánhalmi", "BANHALMI"],
     "wikidata": "https://www.wikidata.org/wiki/Q56391118"
   },
-  "canonicalOrganization": {"@id":"https://www.norbertbanhalmi.com/#organization","name":"BANHALMI","legalName":"Bánhalmi Norbert e.U."},
+  "canonicalOrganization": {"@id":"https://www.norbertbanhalmi.com/#organization","name":"BANHALMI","legalName":"Norbert Banhalmi e.U."},
   "canonicalWebsites": [
     {"role":"professional-services","url":"https://www.norbertbanhalmi.com/","description":"Canonical multilingual professional website for services, pricing, enquiries, executive portraiture, visual branding and event photography."},
     {"role":"artistic-archive","url":"https://www.banhalmi.art/","description":"Canonical artistic oeuvre and source archive for exhibitions, books, projects, press, curatorial documentation and selected works."},

@@ -27,7 +27,7 @@ const banned = [
   /einer\s+seit\s+1999\s+aufgebauten\s+Praxis/iu,
   /mehr\s+als\s+fünfundzwanzig\s+Jahren/iu,
   /fünfundzwanzig\s+Jahren/iu,
-  /Norbert Banhalmi e\.U\./u,
+  /Bánhalmi Norbert e\.U\./u,
   /banhalmi_consent_v2/u,
   /Technikai megfelelőségi tervezet/iu,
 ];

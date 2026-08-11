@@ -56,7 +56,7 @@ The digital beginning is the MOL Y2K project, where Norbert participated as an I
 ## 6. Schema audit
 
 - canonical Person: `https://www.norbertbanhalmi.com/about/`;
-- Organization: Bánhalmi Norbert e.U. / BANHALMI;
+- Organization: Norbert Banhalmi e.U. / BANHALMI;
 - Brand, WebSite, WebPage, Service, Offer / pricing context, LocalBusiness or ProfessionalService where justified;
 - Vienna and Budapest Place nodes use stable IDs and consistent addresses;
 - Viko Speier remains a supporting contact, not a co-primary entity;

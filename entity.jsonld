@@ -300,8 +300,8 @@
     {
       "@type": "Organization",
       "@id": "https://www.norbertbanhalmi.com/#organization",
-      "name": "Bánhalmi Norbert e.U.",
-      "legalName": "Bánhalmi Norbert e.U.",
+      "name": "BANHALMI",
+      "legalName": "Norbert Banhalmi e.U.",
       "url": "https://www.norbertbanhalmi.com/",
       "founder": {
         "@id": "https://www.norbertbanhalmi.com/about/",
@@ -339,7 +339,7 @@
       ],
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Schwedenplatz 2 / Laurenzerberg 5",
+        "streetAddress": "Schwedenplatz 2, Top 8–9",
         "postalCode": "1010",
         "addressLocality": "Wien",
         "addressCountry": "AT"
@@ -410,7 +410,7 @@
             "German",
             "Hungarian"
           ],
-          "description": "Designated company contact for Bánhalmi Norbert e.U. within the AmCham Austria business community.",
+          "description": "Designated company contact for Norbert Banhalmi e.U. within the AmCham Austria business community.",
           "sameAs": [
             "https://www.vikospeier.com/hu/about",
             "https://www.linkedin.com/in/vikospeier/"
@@ -474,7 +474,7 @@
           "@type": "PropertyValue",
           "propertyID": "amchamAustriaMembership",
           "name": "AmCham Austria membership",
-          "value": "Bánhalmi Norbert e.U. is a member of AmCham Austria since 2026. Official members directory: https://amcham.at/members-list/"
+          "value": "Norbert Banhalmi e.U. is a member of AmCham Austria since 2026. Official members directory: https://amcham.at/members-list/"
         },
         {
           "@type": "PropertyValue",
@@ -486,7 +486,7 @@
           "@type": "PropertyValue",
           "propertyID": "amchamAustriaRepresentative",
           "name": "AmCham Austria company representative",
-          "value": "Viko Speier is the designated contact and representative of Bánhalmi Norbert e.U. within the AmCham Austria business community."
+          "value": "Viko Speier is the designated contact and representative of Norbert Banhalmi e.U. within the AmCham Austria business community."
         }
       ],
       "memberOf": [
@@ -547,7 +547,7 @@
             }
           ],
           "url": "https://amcham.at/members-list/",
-          "description": "Bánhalmi Norbert e.U. is an AmCham Austria member. Viko Speier is the designated community contact and company representative, and BANHALMI supports selected AmCham Austria and member events with photography."
+          "description": "Norbert Banhalmi e.U. is an AmCham Austria member. Viko Speier is the designated community contact and company representative, and BANHALMI supports selected AmCham Austria and member events with photography."
         },
         {
           "@id": "https://www.norbertbanhalmi.com/#visual-strategic-partnership-method"
@@ -684,7 +684,7 @@
       "sameAs": "https://www.wikidata.org/wiki/Q138426506",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Schwedenplatz 2 / Laurenzerberg 5",
+        "streetAddress": "Schwedenplatz 2, Top 8–9",
         "postalCode": "1010",
         "addressLocality": "Wien",
         "addressCountry": "AT"
@@ -1970,7 +1970,7 @@
           "@type": "PropertyValue",
           "propertyID": "communityRepresentation",
           "name": "AmCham Austria representation",
-          "value": "Designated liaison and company representative for Bánhalmi Norbert e.U."
+          "value": "Designated liaison and company representative for Norbert Banhalmi e.U."
         }
       ]
     },
@@ -2009,7 +2009,7 @@
         "name": "Austria"
       },
       "url": "https://www.norbertbanhalmi.com/contact/",
-      "description": "Bánhalmi Norbert e.U. supports selected AmCham Austria and member-community events with professional photography and visual documentation.",
+      "description": "Norbert Banhalmi e.U. supports selected AmCham Austria and member-community events with professional photography and visual documentation.",
       "about": {
         "@id": "https://www.norbertbanhalmi.com/#amcham-austria"
       }
