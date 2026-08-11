@@ -39,9 +39,9 @@ function extractHrefs(html) {
 async function exists(p) { try { return (await stat(p)).isFile(); } catch { return false; } }
 
 async function resolveTarget(fromFile, pathname) {
+  if (!pathname || pathname === '.') return fromFile;
   let rel;
-  if (!pathname || pathname === '.') rel = path.relative(root, fromFile);
-  else if (pathname.startsWith('/')) rel = pathname.replace(/^\/+/, '');
+  if (pathname.startsWith('/')) rel = pathname.replace(/^\/+/, '');
   else rel = path.normalize(path.join(path.dirname(path.relative(root, fromFile)), pathname));
   rel = rel.replace(/\\/g,'/');
   const candidates = [];
@@ -89,7 +89,7 @@ for (const file of files) {
     if (!hash && rawHref.includes('#')) hash = '#' + rawHref.split('#').slice(1).join('#').split('?')[0];
     if (!hash) continue;
     fragmentCount++;
-    const target = await resolveTarget(file, pathname || path.relative(root, file));
+    const target = await resolveTarget(file, pathname);
     const sourceRel = path.relative(root, file).replace(/\\/g,'/');
     if (!target) {
       failures.push(`${sourceRel}: ${rawHref} -> target HTML not found`);
