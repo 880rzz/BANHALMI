@@ -32,6 +32,7 @@ function visibleText(html) {
     .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
     .replace(/<noscript\b[\s\S]*?<\/noscript>/gi, ' ')
+    .replace(/<([a-z][\w:-]*)\b(?=[^>]*\bclass=(["'])[^"']*\bsr-only\b[^"']*\2)[^>]*>[\s\S]*?<\/\1>/gi, ' ')
     .replace(/<!--([\s\S]*?)-->/g, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/\s+/g, ' ')
