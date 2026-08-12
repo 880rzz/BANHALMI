@@ -27,6 +27,10 @@ const patches = [
   [
     "s = rx1(s, /Brandfotografie · Visuelle[^<]+/, 'Personal-Branding-Fotografie · Business-Brand-Fotografie · Visuelle Positionierung · Wien · Budapest', 'DE brand eyebrow');",
     "s = rx1(s, /Brandfotografie · Strategische visuelle Markenpositionierung/, 'Personal-Branding-Fotografie · Business-Brand-Fotografie · Visuelle Positionierung · Wien · Budapest', 'DE brand eyebrow');"
+  ],
+  [
+    "s = rx1(s, /Eine Marke wird glaubwürdig, wenn die Menschen darin sichtbar bleiben\\.[^<]+/, 'Eine Marke wird glaubwürdig, wenn die Menschen darin sichtbar bleiben. Personal-Branding-Fotografie erweitert eine Führungsperson über den Headshot hinaus zu einem wiedererkennbaren öffentlichen Bildsystem; Business-Brand-Fotografie verbindet Führung, Teams, Arbeitswelten, Produkte und Kampagnen zu einer visuellen Identität. In Wien und Budapest beginnt beides mit Positionierung und endet mit Bildern für reale Kommunikation.', 'DE brand intro');",
+    "s = rx1(s, /Brandfotografie ist die sichtbare Umsetzung einer Positionierungsentscheidung\\.[^<]+/, 'Personal-Branding-Fotografie erweitert eine Führungsperson über den Headshot hinaus zu einem wiedererkennbaren öffentlichen Bildsystem; Business-Brand-Fotografie verbindet Führung, Teams, Arbeitswelten, Produkte und Kampagnen zu einer visuellen Identität. In Wien und Budapest beginnt beides mit Positionierung und endet mit Bildern für reale Kommunikation.', 'DE brand intro');"
   ]
 ];
 
