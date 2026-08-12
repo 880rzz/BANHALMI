@@ -39,11 +39,9 @@ function visibleBody(html) {
 const banned = [
   /\bmeeting\b/i,
   /\bboard meeting/i,
-  /\bheadshot\b/i,
   /\bBest of\b/i,
   /\bA üzleti portré\b/i,
   /\baz munkáltatói márkaépítés\b/i,
-  /\bexecutive\b/i,
   /\bC[-‑ ]?level\b/i,
   /\bemployer branding\b/i,
   /\bpersonal branding\b/i,
@@ -59,9 +57,24 @@ const banned = [
   /\bwidgetek\b/i,
   /\bhoneypot\b/i
 ];
+
+// "Headshot" and "executive" are intentional industry/search terms on the
+// Hungarian commercial pillar pages. Keep them constrained to those pages so
+// this exception cannot turn into site-wide English copy drift.
+const industryTermPages = new Set([
+  'hu/index.html',
+  'hu/portre/index.html',
+  'hu/brand/index.html'
+]);
+const industryTerms = [/\bheadshot\b/i, /\bexecutive\b/i];
+
 for (const file of pages) {
+  const relative = path.relative(root, file);
   const text = visibleBody(fs.readFileSync(file, 'utf8'));
-  for (const pattern of banned) if (pattern.test(text)) failures.push(`${path.relative(root, file)}: non-Hungarian or obsolete visible phrase remains: ${pattern}`);
+  for (const pattern of banned) if (pattern.test(text)) failures.push(`${relative}: non-Hungarian or obsolete visible phrase remains: ${pattern}`);
+  if (!industryTermPages.has(relative)) {
+    for (const pattern of industryTerms) if (pattern.test(text)) failures.push(`${relative}: industry/search term escaped the approved Hungarian commercial pages: ${pattern}`);
+  }
 }
 
 for (const file of pages) {
@@ -80,10 +93,21 @@ const homepage = read('hu/index.html');
 for (const phrase of [
   'Olyan képeket készítek, amelyek már az első találkozás előtt érzékeltetik egy vezető vagy egy szervezet karakterét.',
   'Az eredmény lehet pontos üzleti portré, egy vezető teljes képi világa, egy vezetői ülés visszafogott dokumentációja vagy később könyvbe kerülő sorozat.',
-  'Az üzleti portré, a munkáltatói márkaépítés, a sajtóportré és a vizuális márkastratégia egymást kiegészítő eszközök.',
+  'Az üzleti területen egy összefüggő rendszer épül: üzleti headshot → üzleti portré → executive és vezetői portré → személyes brand fotózás → üzleti és vállalati brandfotózás → stratégiai vizuális pozicionálás.',
   '<h3>Felsővezetői eseményfotózás</h3>',
   '<h3>Válogatás</h3>'
 ]) if (!homepage.includes(phrase)) failures.push(`homepage: approved Hungarian copy missing: ${phrase}`);
+
+// Protect the intentional search vocabulary and its Hungarian context.
+for (const [file, phrases] of Object.entries({
+  'hu/index.html': ['üzleti headshot', 'executive és vezetői portré', 'személyes brand fotózás', 'üzleti és vállalati brandfotózás'],
+  'hu/portre/index.html': ['Üzleti headshot', 'executive portré', 'Személyes brand fotózás'],
+  'hu/brand/index.html': ['Személyes brand fotózás', 'Üzleti brand fotózás']
+})) {
+  const html = read(file);
+  for (const phrase of phrases) if (!html.includes(phrase)) failures.push(`${file}: approved portrait/brand search phrase missing: ${phrase}`);
+}
+
 if (!read('hu/archivum/index.html').includes('Válogatott galéria')) failures.push('archive: approved Hungarian gallery title missing');
 if (!read('hu/gyik/index.html').includes('Az üzleti portré gyorsan és pontosan megmutatja, ki Ön.')) failures.push('FAQ: corrected Hungarian article is missing');
 const menu = read('assets/js/mega-menu.js');
