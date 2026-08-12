@@ -15,6 +15,14 @@ const patches = [
   [
     "s = rx1(s, /Vier Hauptleistungen:[^<]+/, 'Die vier Hauptleistungen bleiben Porträtfotografie, Brandfotografie, C-Level-Eventfotografie und Fine-Art-Fotografie. Im Business-Bereich bilden sie eine klare Kette: Business-Headshot → Business-Porträt → Executive-Porträt → Personal Branding → Unternehmens- und Brandfotografie → strategische visuelle Positionierung.', 'DE home hierarchy');",
     "s = rx1(s, /<strong>Vier Hauptleistungen:<\\/strong>[^<]+/, '<strong>Vier Hauptleistungen:</strong> Porträtfotografie, Brandfotografie, C-Level-Eventfotografie und Fine-Art-Fotografie bleiben die Struktur. Im Business-Bereich bilden sie eine klare Kette: Business-Headshot → Business-Porträt → Executive-Porträt → Personal Branding → Unternehmens- und Brandfotografie → strategische visuelle Positionierung.', 'DE home hierarchy');"
+  ],
+  [
+    "s = lit1(s, 'Brand Photography &amp; Visual Positioning', 'Personal &amp; Business Brand Photography', 'EN brand H1');",
+    "s = lit1(s, '<h1>Brand Photography &amp; Visual Positioning</h1>', '<h1>Personal &amp; Business Brand Photography</h1>', 'EN brand H1');"
+  ],
+  [
+    "s = rx1(s, /Brandfotografie &amp; visuelle Markenpositionierung|Brandfotografie &amp; Visuelle Markenpositionierung/, 'Personal Branding &amp; Unternehmensfotografie', 'DE brand H1');",
+    "s = rx1(s, /<h1>Brandfotografie &amp; (?:visuelle Markenpositionierung|Visuelle Markenpositionierung|visuelle Positionierung)<\\/h1>/, '<h1>Personal Branding &amp; Unternehmensfotografie</h1>', 'DE brand H1');"
   ]
 ];
 
