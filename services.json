@@ -3,14 +3,14 @@
   "@type": "ItemList",
   "@id": "https://www.norbertbanhalmi.com/services.json#services",
   "name": "BANHALMI four principal service areas",
-  "dateModified": "2026-08-09T01:45:00+02:00",
+  "dateModified": "2026-08-12T23:25:00+02:00",
   "numberOfItems": 4,
   "itemListElement": [
     {
       "@type": "Service",
       "position": 1,
       "@id": "https://www.norbertbanhalmi.com/portrait/#service",
-      "name": "Portrait Photography",
+      "name": "Headshot, Business & Executive Portrait Photography",
       "alternateName": [
         "Professional portrait photography",
         "Professional headshot photography",
@@ -24,10 +24,21 @@
         "PR headshot",
         "Vorstandsporträt",
         "Geschäftsführer Headshot",
-        "Pressefoto Führungskräfte"
+        "Pressefoto Führungskräfte",
+        "Business headshot photography",
+        "Business portrait photography",
+        "Personal brand portrait photography",
+        "Üzleti headshot fotózás",
+        "Üzleti portréfotózás",
+        "Executive portréfotózás",
+        "Személyes brand portréfotózás",
+        "Business-Headshot-Fotografie",
+        "Business-Porträtfotografie",
+        "Executive-Porträtfotografie",
+        "Personal-Branding-Porträtfotografie"
       ],
       "serviceType": "Portrait Photography",
-      "description": "Portrait photography for leaders, founders and experts who need a credible and reusable visual identity across LinkedIn, corporate websites, press, speaking and internal communication.",
+      "description": "Business headshots, business portraits and executive portrait photography for leaders, founders and experts in Vienna and Budapest, designed to scale from one precise profile image into a complete personal-brand portrait system.",
       "provider": {
         "@id": "https://www.norbertbanhalmi.com/#organization"
       },
@@ -43,13 +54,13 @@
         "@type": "Audience",
         "audienceType": "Leaders, founders and experts"
       },
-      "serviceOutput": "A reusable portrait system, from a precise headshot to a complete public visual identity."
+      "serviceOutput": "A connected portrait system: headshot → business portrait → executive portrait → personal-brand imagery."
     },
     {
       "@type": "Service",
       "position": 2,
       "@id": "https://www.norbertbanhalmi.com/lifestyle/#service",
-      "name": "Brand Photography",
+      "name": "Personal & Business Brand Photography",
       "alternateName": [
         "Corporate brand photography",
         "Employer branding photography",
@@ -58,10 +69,20 @@
         "Visual brand strategy",
         "Strategic visual positioning",
         "sajtószoba vizuális tartalom",
-        "PR-Fotografie"
+        "PR-Fotografie",
+        "Personal brand photography",
+        "Business brand photography",
+        "Personal branding photography",
+        "Business branding photography",
+        "Személyes brand fotózás",
+        "Üzleti brand fotózás",
+        "Vállalati brandfotózás",
+        "Personal-Branding-Fotografie",
+        "Business-Brand-Fotografie",
+        "Unternehmensfotografie"
       ],
       "serviceType": "Brand Photography",
-      "description": "Brand photography for organisations that need founders, teams, workplaces and campaigns to communicate as one recognisable brand across recruitment, sales, media and corporate communication.",
+      "description": "Personal brand photography and business brand photography for leaders, experts and organisations in Vienna and Budapest, connecting portraits, teams, workplaces and campaigns through strategic visual positioning.",
       "provider": {
         "@id": "https://www.norbertbanhalmi.com/#organization"
       },
@@ -75,9 +96,9 @@
       "url": "https://www.norbertbanhalmi.com/lifestyle/",
       "audience": {
         "@type": "Audience",
-        "audienceType": "Organisations, leadership teams and employer-branding teams"
+        "audienceType": "Leaders, founders, experts, personal brands, organisations and employer-branding teams"
       },
-      "serviceOutput": "A coherent organisational image library for recruitment, sales, media and corporate communication."
+      "serviceOutput": "A coherent visual brand system spanning personal brand, leadership, team, workplace, campaign and employer-brand imagery."
     },
     {
       "@type": "Service",
