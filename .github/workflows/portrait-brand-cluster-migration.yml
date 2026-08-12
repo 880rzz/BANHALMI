@@ -5,7 +5,7 @@ on:
     branches: [seo/portrait-brand-cluster-vienna-budapest-20260812]
     paths:
       - '.github/workflows/portrait-brand-cluster-migration.yml'
-      - 'tools/migrate-portrait-brand-cluster-20260812-v2.mjs'
+      - 'tools/migrate-portrait-brand-cluster-20260812-v3.mjs'
 
 permissions:
   contents: write
@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run guarded migration
-        run: node tools/migrate-portrait-brand-cluster-20260812-v2.mjs
+        run: node tools/migrate-portrait-brand-cluster-20260812-v3.mjs
 
       - name: Validate JSON
         run: |
