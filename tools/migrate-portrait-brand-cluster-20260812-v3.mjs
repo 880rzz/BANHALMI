@@ -29,8 +29,12 @@ const patches = [
     "s = rx1(s, /Brandfotografie · Strategische visuelle Markenpositionierung/, 'Personal-Branding-Fotografie · Business-Brand-Fotografie · Visuelle Positionierung · Wien · Budapest', 'DE brand eyebrow');"
   ],
   [
+    "s = rx1(s, /A brand becomes credible when the people inside it remain visible\\.[^<]+/, 'A brand becomes credible when the people inside it remain visible. Personal brand photography extends a leader beyond the headshot into a recognisable public image system; business brand photography connects leaders, teams, workplaces, products and campaigns into one visual identity. In Vienna and Budapest, both start with positioning and end with photographs built for real communication.', 'EN brand intro');",
+    "s = rx1(s, /<p class=\"lead\">A company has a face too\\.[^<]+<\\/p>/, '<p class=\"lead\">Personal brand photography extends a leader beyond the headshot into a recognisable public image system; business brand photography connects leaders, teams, workplaces, products and campaigns into one visual identity. In Vienna and Budapest, both start with positioning and end with photographs built for real communication.</p>', 'EN brand intro');"
+  ],
+  [
     "s = rx1(s, /Eine Marke wird glaubwürdig, wenn die Menschen darin sichtbar bleiben\\.[^<]+/, 'Eine Marke wird glaubwürdig, wenn die Menschen darin sichtbar bleiben. Personal-Branding-Fotografie erweitert eine Führungsperson über den Headshot hinaus zu einem wiedererkennbaren öffentlichen Bildsystem; Business-Brand-Fotografie verbindet Führung, Teams, Arbeitswelten, Produkte und Kampagnen zu einer visuellen Identität. In Wien und Budapest beginnt beides mit Positionierung und endet mit Bildern für reale Kommunikation.', 'DE brand intro');",
-    "s = rx1(s, /Brandfotografie ist die sichtbare Umsetzung einer Positionierungsentscheidung\\.[^<]+/, 'Personal-Branding-Fotografie erweitert eine Führungsperson über den Headshot hinaus zu einem wiedererkennbaren öffentlichen Bildsystem; Business-Brand-Fotografie verbindet Führung, Teams, Arbeitswelten, Produkte und Kampagnen zu einer visuellen Identität. In Wien und Budapest beginnt beides mit Positionierung und endet mit Bildern für reale Kommunikation.', 'DE brand intro');"
+    "s = rx1(s, /<p class=\"lead\">Auch ein Unternehmen hat ein Gesicht\\.[^<]+<\\/p>/, '<p class=\"lead\">Personal-Branding-Fotografie erweitert eine Führungsperson über den Headshot hinaus zu einem wiedererkennbaren öffentlichen Bildsystem; Business-Brand-Fotografie verbindet Führung, Teams, Arbeitswelten, Produkte und Kampagnen zu einer visuellen Identität. In Wien und Budapest beginnt beides mit Positionierung und endet mit Bildern für reale Kommunikation.</p>', 'DE brand intro');"
   ]
 ];
 
