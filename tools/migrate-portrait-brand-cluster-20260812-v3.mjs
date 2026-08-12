@@ -23,6 +23,10 @@ const patches = [
   [
     "s = rx1(s, /Brandfotografie &amp; visuelle Markenpositionierung|Brandfotografie &amp; Visuelle Markenpositionierung/, 'Personal Branding &amp; Unternehmensfotografie', 'DE brand H1');",
     "s = s; // Preserve the human-facing DE brand H1; search intent is carried by metadata, eyebrow, lead, lists and service schema."
+  ],
+  [
+    "s = rx1(s, /Brandfotografie · Visuelle[^<]+/, 'Personal-Branding-Fotografie · Business-Brand-Fotografie · Visuelle Positionierung · Wien · Budapest', 'DE brand eyebrow');",
+    "s = rx1(s, /Brandfotografie · Strategische visuelle Markenpositionierung/, 'Personal-Branding-Fotografie · Business-Brand-Fotografie · Visuelle Positionierung · Wien · Budapest', 'DE brand eyebrow');"
   ]
 ];
 
