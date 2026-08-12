@@ -12,28 +12,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: seo/portrait-brand-cluster-vienna-budapest-20260812
-      - name: Print guarded source contexts
+      - name: Print exact brand hero markup
         run: |
           node <<'NODE'
           const fs=require('fs');
-          const checks=[
-            ['index.html',['Four principal services','For leaders, founders and experts','For organisations that need founders']],
-            ['hu/index.html',['Négy fő szolgáltatás','Vezetőknek, alapítóknak és szakértőknek','Szervezeteknek, amelyek']],
-            ['de-at/index.html',['Vier Hauptleistungen','Für Führungskräfte, Gründer:innen','Für Organisationen, deren']],
-            ['portrait/index.html',['Three core business services','Personal branding and professional websites']],
-            ['hu/portre/index.html',['Három fő üzleti szolgáltatás','Személyes márkaépítés és szakmai weboldalak']],
-            ['de-at/portrait/index.html',['Drei zentrale Businessleistungen','Personal Branding und professionelle Websites']],
-            ['lifestyle/index.html',['Brand Photography &amp; Visual Positioning','Personal brands and thought leadership']],
-            ['hu/brand/index.html',['Képek, amelyekről felismerik a vállalatot.','Személyes márka és szakmai véleményformálás']],
-            ['de-at/brand/index.html',['Brandfotografie','Personal Brands']]
-          ];
-          for(const [file,terms] of checks){
+          for(const file of ['lifestyle/index.html','hu/brand/index.html','de-at/brand/index.html']){
             const s=fs.readFileSync(file,'utf8');
             console.log('\n### '+file);
-            for(const term of terms){
-              const i=s.indexOf(term);
-              console.log('\nTERM',JSON.stringify(term),'INDEX',i);
-              if(i>=0) console.log(s.slice(Math.max(0,i-180),Math.min(s.length,i+term.length+650)).replace(/\n/g,'\\n'));
+            for(const re of [/<p class="eyebrow">[^<]*<\/p>/g,/<h1[^>]*>[\s\S]*?<\/h1>/g,/<p class="lead">[\s\S]*?<\/p>/g]){
+              const arr=[...s.matchAll(re)].slice(0,4).map(m=>m[0]);
+              console.log(arr.join('\n'));
             }
           }
           NODE
