@@ -18,11 +18,11 @@ const patches = [
   ],
   [
     "s = lit1(s, 'Brand Photography &amp; Visual Positioning', 'Personal &amp; Business Brand Photography', 'EN brand H1');",
-    "s = lit1(s, '<h1>Brand Photography &amp; Visual Positioning</h1>', '<h1>Personal &amp; Business Brand Photography</h1>', 'EN brand H1');"
+    "s = s; // Preserve the human-facing EN brand H1; search intent is carried by metadata, eyebrow, lead, lists and service schema."
   ],
   [
     "s = rx1(s, /Brandfotografie &amp; visuelle Markenpositionierung|Brandfotografie &amp; Visuelle Markenpositionierung/, 'Personal Branding &amp; Unternehmensfotografie', 'DE brand H1');",
-    "s = rx1(s, /<h1>Brandfotografie &amp; (?:visuelle Markenpositionierung|Visuelle Markenpositionierung|visuelle Positionierung)<\\/h1>/, '<h1>Personal Branding &amp; Unternehmensfotografie</h1>', 'DE brand H1');"
+    "s = s; // Preserve the human-facing DE brand H1; search intent is carried by metadata, eyebrow, lead, lists and service schema."
   ]
 ];
 
