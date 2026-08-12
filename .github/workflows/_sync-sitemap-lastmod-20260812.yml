@@ -1,4 +1,4 @@
-name: Sync sitemap lastmod from real page changes
+name: Sync sitemap lastmod from real page history
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
   sync-lastmod:
     runs-on: ubuntu-24.04
     steps:
-      - name: Check out repository
+      - name: Check out repository with full history
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -23,87 +23,17 @@ jobs:
         with:
           node-version: 22
 
-      - name: Update lastmod only for pages materially changed on 2026-08-11
-        shell: bash
-        run: |
-          set -euo pipefail
-          node <<'NODE'
-          const fs = require('fs');
-          const { execFileSync } = require('child_process');
+      - name: Synchronize sitemap lastmod from each canonical source page
+        run: npm run sync:sitemap-lastmod
 
-          const sourceCommit = '3da31054921dac0e07ef59bdf89959067b850713';
-          const date = '2026-08-11';
-          const origin = 'https://www.norbertbanhalmi.com';
-          const sitemapPath = 'sitemap.xml';
+      - name: Verify sitemap freshness contract
+        run: npm run audit:sitemap-freshness
 
-          const changed = execFileSync('git', ['show', '--pretty=format:', '--name-only', sourceCommit], {encoding:'utf8'})
-            .split(/\r?\n/)
-            .map(s => s.trim())
-            .filter(Boolean)
-            .filter(p => p === 'index.html' || p.endsWith('/index.html'));
+      - name: Remove one-shot workflow before audit
+        run: rm -f .github/workflows/_sync-sitemap-lastmod-20260812.yml
 
-          const changedUrls = new Set(changed.map(p => {
-            if (p === 'index.html') return origin + '/';
-            return origin + '/' + p.replace(/index\.html$/, '');
-          }));
-
-          const xml = fs.readFileSync(sitemapPath, 'utf8');
-          const allLocs = new Set([...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1].trim()));
-          const applicable = new Set([...changedUrls].filter(u => allLocs.has(u)));
-
-          let updated = 0;
-          const next = xml.replace(/<url>([\s\S]*?)<\/url>/g, (block, inner) => {
-            const loc = inner.match(/<loc>([^<]+)<\/loc>/)?.[1]?.trim();
-            if (!loc || !applicable.has(loc)) return block;
-            if (/<lastmod>[^<]*<\/lastmod>/.test(block)) {
-              const replaced = block.replace(/<lastmod>[^<]*<\/lastmod>/, `<lastmod>${date}</lastmod>`);
-              if (replaced !== block) updated++;
-              return replaced;
-            }
-            updated++;
-            return block.replace(/(<loc>[^<]+<\/loc>)/, `$1\n    <lastmod>${date}</lastmod>`);
-          });
-
-          if (!applicable.size) throw new Error('No materially changed HTML pages from the source commit are present in sitemap.xml');
-          if (!updated) throw new Error('No sitemap lastmod values required synchronization');
-
-          fs.writeFileSync(sitemapPath, next);
-
-          const verify = fs.readFileSync(sitemapPath, 'utf8');
-          for (const url of applicable) {
-            const escaped = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const re = new RegExp(`<url>[\\s\\S]*?<loc>${escaped}<\\/loc>[\\s\\S]*?<lastmod>${date}<\\/lastmod>[\\s\\S]*?<\\/url>`);
-            if (!re.test(verify)) throw new Error(`Sitemap verification failed for ${url}`);
-          }
-
-          console.log(`Changed HTML files in ${sourceCommit}: ${changed.length}`);
-          console.log(`Changed canonical pages present in sitemap: ${applicable.size}`);
-          console.log(`lastmod entries synchronized to ${date}: ${updated}`);
-          NODE
-
-          rm -f .github/workflows/_sync-sitemap-lastmod-20260812.yml
-
-      - name: Verify sitemap XML and URLs
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          import xml.etree.ElementTree as ET
-          from urllib.parse import urlparse
-          tree = ET.parse('sitemap.xml')
-          root = tree.getroot()
-          ns = {'sm':'http://www.sitemaps.org/schemas/sitemap/0.9'}
-          locs = [e.text.strip() for e in root.findall('sm:url/sm:loc', ns)]
-          assert locs, 'sitemap has no URLs'
-          assert len(locs) == len(set(locs)), 'duplicate sitemap URLs'
-          for u in locs:
-              p=urlparse(u)
-              assert p.scheme == 'https' and p.netloc == 'www.norbertbanhalmi.com', f'noncanonical sitemap URL: {u}'
-          print(f'Validated {len(locs)} canonical sitemap URLs')
-          PY
-
-      - name: Run repository audit
-        run: npm test
+      - name: Run complete repository audit
+        run: npm run audit
 
       - name: Commit audited sitemap metadata
         shell: bash
@@ -113,5 +43,5 @@ jobs:
           git config user.email '107166660+880rzz@users.noreply.github.com'
           git add -A
           git diff --cached --quiet && exit 0
-          git commit -m 'Sync sitemap lastmod with material page updates'
+          git commit -m 'Sync sitemap lastmod with canonical page history'
           git push origin HEAD:main
