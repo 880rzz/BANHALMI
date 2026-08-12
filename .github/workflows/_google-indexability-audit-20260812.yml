@@ -1,0 +1,109 @@
+name: Strict Google indexability audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/_google-indexability-audit-20260812.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm ci
+      - name: Run repository audit
+        run: npm run audit
+      - name: Strict static Google SEO GEO schema indexability audit
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os,re,json,sys,xml.etree.ElementTree as ET
+          from urllib.parse import urlparse, unquote
+          DOMAIN='www.norbertbanhalmi.com'; ORIGIN='https://www.norbertbanhalmi.com'
+          errors=[]; warnings=[]
+          root=ET.parse('sitemap.xml').getroot(); ns={'sm':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          entries=[]
+          for u in root.findall('sm:url',ns):
+            loc=u.find('sm:loc',ns)
+            if loc is not None and loc.text: entries.append(loc.text.strip())
+          if len(entries)!=len(set(entries)): errors.append('Duplicate URLs in sitemap')
+          def path_for(url):
+            p=unquote(urlparse(url).path)
+            if p=='/': return 'index.html'
+            p=p.lstrip('/'); return p+'index.html' if p.endswith('/') else p
+          def metas(html,name):
+            vals=[]
+            for m in re.finditer(r'<meta\b[^>]*>',html,re.I):
+              tag=m.group(0)
+              if re.search(r'\bname=["\']'+re.escape(name)+r'["\']',tag,re.I):
+                c=re.search(r'\bcontent=["\']([^"\']*)["\']',tag,re.I); vals.append(c.group(1).strip() if c else '')
+            return vals
+          checked=0
+          for url in entries:
+            p=urlparse(url)
+            if p.scheme!='https' or p.netloc!=DOMAIN: errors.append(f'Noncanonical sitemap origin: {url}'); continue
+            path=path_for(url)
+            if not os.path.isfile(path): errors.append(f'Missing source file for sitemap URL: {url} -> {path}'); continue
+            html=open(path,encoding='utf-8').read(); low=html.lower(); checked+=1
+            if '<meta http-equiv="refresh"' in low or "<meta http-equiv='refresh'" in low: errors.append(f'Sitemap URL is a meta-refresh redirect: {url}')
+            robots=' '.join(metas(html,'robots')+metas(html,'googlebot')).lower()
+            if 'noindex' in robots: errors.append(f'INDEX BLOCKER noindex on sitemap URL: {url}')
+            if 'nofollow' in robots: warnings.append(f'nofollow on sitemap URL: {url}')
+            if not re.search(r'<title>\s*.+?\s*</title>',html,re.I|re.S): errors.append(f'Missing title: {url}')
+            desc=metas(html,'description')
+            if not desc or not desc[0]: errors.append(f'Missing meta description: {url}')
+            tags=re.findall(r'<link\b[^>]*>',html,re.I)
+            canon=[]
+            for tag in tags:
+              if re.search(r'\brel=["\']canonical["\']',tag,re.I):
+                hm=re.search(r'\bhref=["\']([^"\']+)["\']',tag,re.I)
+                if hm: canon.append(hm.group(1))
+            if len(canon)!=1: errors.append(f'Canonical count {len(canon)}: {url}')
+            elif canon[0].rstrip('/')!=url.rstrip('/'): errors.append(f'Canonical mismatch: {url} -> {canon[0]}')
+            if not re.search(r'<html\b[^>]*\blang=["\']([^"\']+)["\']',html,re.I): errors.append(f'Missing html lang: {url}')
+            langs={}
+            for tag in tags:
+              if re.search(r'\brel=["\']alternate["\']',tag,re.I) and re.search(r'\bhreflang=',tag,re.I):
+                lm=re.search(r'\bhreflang=["\']([^"\']+)["\']',tag,re.I); hm=re.search(r'\bhref=["\']([^"\']+)["\']',tag,re.I)
+                if lm and hm: langs[lm.group(1).lower()]=hm.group(1)
+            if not langs: warnings.append(f'No hreflang alternates: {url}')
+            elif 'x-default' not in langs: warnings.append(f'No x-default hreflang: {url}')
+            blocks=re.findall(r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',html,re.I|re.S)
+            if not blocks: errors.append(f'Missing JSON-LD: {url}')
+            for i,b in enumerate(blocks,1):
+              try: json.loads(b)
+              except Exception as e: errors.append(f'Invalid JSON-LD {i}: {url}: {e}')
+            for prop in ['og:title','og:description','og:url']:
+              if prop not in low: warnings.append(f'Missing {prop}: {url}')
+          for dp,_,fs in os.walk('.'):
+            if any(x in dp.split(os.sep) for x in ['.git','node_modules','reports']): continue
+            for fn in fs:
+              if not fn.endswith('.html'): continue
+              path=os.path.join(dp,fn).lstrip('./'); html=open(path,encoding='utf-8',errors='ignore').read(); low=html.lower()
+              robots=' '.join(metas(html,'robots')+metas(html,'googlebot')).lower()
+              if 'noindex' not in robots: continue
+              is404=fn=='404.html' or '/404.html' in path
+              refresh=('http-equiv="refresh"' in low or "http-equiv='refresh'" in low)
+              if is404 or refresh: continue
+              tags=re.findall(r'<link\b[^>]*>',html,re.I); cm=None
+              for tag in tags:
+                if re.search(r'\brel=["\']canonical["\']',tag,re.I):
+                  hm=re.search(r'\bhref=["\']([^"\']+)["\']',tag,re.I)
+                  if hm: cm=hm.group(1); break
+              if cm and urlparse(cm).netloc==DOMAIN: warnings.append(f'REVIEW noindex content page outside sitemap: {path} canonical={cm}')
+          print(f'Checked {checked} sitemap URLs and all HTML files.')
+          for x in warnings: print('WARN:',x)
+          for x in errors: print('ERROR:',x)
+          if errors: sys.exit(1)
+          print(f'PASS: no Google indexability blockers on {checked} canonical sitemap pages; JSON-LD parses and core SEO metadata are present.')
+          PY
