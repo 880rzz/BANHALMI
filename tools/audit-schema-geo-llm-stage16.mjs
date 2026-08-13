@@ -58,15 +58,29 @@ if (fs.existsSync(schemaPath)) {
   }
 }
 
-// llms.txt is intentionally a concise agent-entry index. It must route agents to
-// the detailed AI layer and preserve the key geography distinction, but it must
-// not be forced to duplicate the full operational policy knowledge dump.
+// llms.txt stays concise; geography is validated semantically from the canonical
+// structured layer instead of freezing an editorial sentence.
 const llms = fs.readFileSync(path.join(root, 'llms.txt'), 'utf8');
+const entry = JSON.parse(fs.readFileSync(path.join(root, 'ai-entry.json'), 'utf8'));
+const core = JSON.parse(fs.readFileSync(path.join(root, 'knowledge-core.json'), 'utf8'));
 if (!llms.includes('[AI reference](https://www.norbertbanhalmi.com/ai.txt)')) errors.push('llms.txt missing detailed AI reference link');
 for (const token of [
-  'Vienna and Budapest are two active operational bases',
-  'New York is a major international reference and oeuvre chapter'
+  'New York is a major international reference and oeuvre chapter',
+  'Gersthofer Straße 150–154/6/2',
+  'This location is not a studio',
+  'Worldwide:'
 ]) if (!llms.includes(token)) errors.push(`llms.txt missing geography routing token: ${token}`);
+const locations = entry.identity?.locations || [];
+const viennaStudio = locations.find(x => x['@id'] === 'https://www.norbertbanhalmi.com/#vienna-studio');
+const viennaOffice = locations.find(x => x['@id'] === 'https://www.norbertbanhalmi.com/#vienna-gersthofer-office');
+const budapestStudio = locations.find(x => x['@id'] === 'https://www.norbertbanhalmi.com/#budapest-studio');
+if (!viennaStudio || viennaStudio.locationType !== 'physical studio base' || viennaStudio.postalCode !== '1010') errors.push('ai-entry.json Vienna studio role drifted');
+if (!budapestStudio || budapestStudio.locationType !== 'physical studio base' || !String(budapestStudio.district || '').includes('District 11')) errors.push('ai-entry.json Budapest studio role drifted');
+if (!viennaOffice || viennaOffice.isStudio !== false || viennaOffice.postalCode !== '1180') errors.push('ai-entry.json Gersthofer office role drifted');
+if (viennaOffice?.organizationWikidata !== 'https://www.wikidata.org/wiki/Q138425941') errors.push('ai-entry.json Gersthofer Wikidata evidence missing');
+if (viennaOffice?.googleBusinessProfile !== 'https://g.page/r/CdO4Kej3jIkfEBM') errors.push('ai-entry.json Gersthofer Google Business Profile evidence missing');
+if (entry.identity?.geographicServiceModel?.worldwideAvailability !== true) errors.push('ai-entry.json worldwide availability missing');
+if (!core.geography?.locationInterpretationRule?.includes('must not be called a studio')) errors.push('knowledge-core.json office/studio disambiguation missing');
 
 // Detailed policy synchronization belongs in ai.txt and the canonical JSON layers.
 const ai = fs.readFileSync(path.join(root, 'ai.txt'), 'utf8');
@@ -94,4 +108,4 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log('Stage sixteen schema, GEO and LLM synchronization audit passed: llms is concise; detailed policy evidence remains canonical in ai.txt and project-policy.*; ecosystem schema v6 is synchronized.');
+console.log('Stage sixteen schema, GEO and LLM synchronization audit passed: role-aware studio/office/worldwide geography is canonical; detailed policy evidence remains in ai.txt and project-policy.*; ecosystem schema v6 is synchronized.');
