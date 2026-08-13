@@ -8,6 +8,7 @@ const repoRoot = process.cwd();
 const sourceRoot = path.join(repoRoot, 'assets', 'css');
 const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'banhalmi-css-minify-'));
 const tempCss = path.join(tempRoot, 'assets', 'css');
+const buildOnly = new Set(['apple-authority-stage70.css']);
 
 function walk(dir, files = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -29,8 +30,15 @@ try {
 
   const sourceFiles = walk(sourceRoot);
   if (!sourceFiles.length) throw new Error('No source CSS files found.');
+  const publishableSourceFiles = sourceFiles.filter(file => !buildOnly.has(path.relative(sourceRoot, file)));
   const sourceHashes = new Map(sourceFiles.map(file => [path.relative(sourceRoot, file), hash(file)]));
   const beforeBytes = sourceFiles.reduce((sum, file) => sum + fs.statSync(file).size, 0);
+
+  for (const required of buildOnly) {
+    if (!sourceFiles.some(file => path.relative(sourceRoot, file) === required)) {
+      throw new Error(`Missing build-only CSS authority source: ${required}`);
+    }
+  }
 
   const result = spawnSync(process.execPath, [path.join(repoRoot, 'tools', 'minify-pages-css.mjs'), tempCss], {
     cwd: repoRoot,
@@ -44,9 +52,19 @@ try {
   }
 
   const outputFiles = walk(tempCss);
-  if (outputFiles.length !== sourceFiles.length) {
-    throw new Error(`CSS file count changed (${sourceFiles.length} -> ${outputFiles.length}).`);
+  if (outputFiles.length !== publishableSourceFiles.length) {
+    throw new Error(`Published CSS file count changed (${publishableSourceFiles.length} expected -> ${outputFiles.length}).`);
   }
+  for (const required of buildOnly) {
+    if (fs.existsSync(path.join(tempCss, required))) {
+      throw new Error(`Build-only CSS leaked into production artifact: ${required}`);
+    }
+  }
+  const finalStyle = fs.readFileSync(path.join(tempCss, 'style.css'), 'utf8');
+  for (const token of ['--bn-section-space', '.hero-visual-only', '.hero-copy-only']) {
+    if (!finalStyle.includes(token)) throw new Error(`Composed Stage70 authority missing from production style.css: ${token}`);
+  }
+
   const afterBytes = outputFiles.reduce((sum, file) => sum + fs.statSync(file).size, 0);
   if (afterBytes >= beforeBytes) {
     throw new Error(`Minified CSS is not smaller (${beforeBytes} -> ${afterBytes}).`);
@@ -60,6 +78,7 @@ try {
     if (hash(file) !== sourceHashes.get(rel)) {
       throw new Error(`Source CSS was modified during artifact test: ${rel}`);
     }
+    if (buildOnly.has(rel)) continue;
     const output = path.join(tempCss, rel);
     if (!fs.existsSync(output) || fs.statSync(output).size === 0) {
       throw new Error(`Missing or empty minified output: ${rel}`);
@@ -67,7 +86,7 @@ try {
   }
 
   console.log(result.stdout.trim());
-  console.log(`✓ Production CSS minifier contract passed on ${sourceFiles.length} files; source tree remained immutable.`);
+  console.log(`✓ Production CSS minifier contract passed on ${outputFiles.length} published files; build-only authority was composed and source tree remained immutable.`);
 } finally {
   fs.rmSync(tempRoot, { recursive: true, force: true });
 }
