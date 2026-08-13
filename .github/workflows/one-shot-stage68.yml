@@ -1,0 +1,94 @@
+name: One-shot Stage 68 transformer
+on:
+  push:
+    branches: [agent/first-principles-apple-20260813-v3]
+permissions:
+  contents: write
+jobs:
+  transform:
+    if: github.event.head_commit.message != 'Apply Stage 68 first-principles Apple UX'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/first-principles-apple-20260813-v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply shared design authority and homepage decision layer
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+
+          css_path=Path('assets/css/style.css')
+          css=css_path.read_text()
+          marker='/* STAGE68-FIRST-PRINCIPLES-APPLE:START */'
+          if marker not in css:
+              css += r'''
+
+/* STAGE68-FIRST-PRINCIPLES-APPLE:START */
+/* Apple-inspired discipline, BANHALMI identity: one idea per block, restrained surfaces,
+   readable measures, balanced display type and an obvious next action. */
+main h1,main h2,main h3{text-wrap:balance;}
+main p,main li{overflow-wrap:anywhere;}
+main p{max-width:68ch;}
+main .btn,main a.btn,.next-step-selector a,.fp-decision-system .fp-primary-action{border-radius:999px;}
+main .card,.next-step-selector .card,main details{box-shadow:none;}
+.next-step-selector{max-width:1180px;margin-inline:auto;}
+.next-step-selector .card{border-radius:28px;padding:clamp(1.4rem,2.7vw,2.25rem);border:1px solid rgba(32,37,48,.10);}
+.next-step-selector .card h2,.next-step-selector .card h3{letter-spacing:-.025em;line-height:1.08;}
+.fp-decision-system{background:#f5f5f7;color:#1d1d1f;padding:clamp(4.75rem,8vw,8.5rem) clamp(1.25rem,5vw,4rem);}
+.fp-decision-inner{width:min(1180px,100%);margin:0 auto;}
+.fp-decision-eyebrow{margin:0 0 .75rem;color:#8A681F;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;}
+.fp-decision-system h2{margin:0;max-width:15ch;font-size:clamp(2.45rem,5.5vw,5.25rem);line-height:.96;letter-spacing:-.055em;font-weight:700;}
+.fp-decision-lead{margin:clamp(1.2rem,2.3vw,1.8rem) 0 0;max-width:58ch!important;color:#5b616c;font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.5;}
+.fp-decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.8rem,1.5vw,1.15rem);margin-top:clamp(2.2rem,4vw,3.75rem);}
+.fp-choice{display:flex;flex-direction:column;justify-content:space-between;min-height:190px;padding:clamp(1.4rem,2.4vw,2rem);border:1px solid rgba(32,37,48,.09);border-radius:28px;background:#fff;color:#1d1d1f;text-decoration:none;transition:transform .22s ease,border-color .22s ease;}
+.fp-choice:hover{transform:translateY(-2px);border-color:rgba(138,104,31,.35);}
+.fp-choice:focus-visible{outline:3px solid #8A681F;outline-offset:3px;}
+.fp-choice strong{display:block;max-width:17ch;font-size:clamp(1.18rem,1.8vw,1.5rem);line-height:1.08;letter-spacing:-.03em;}
+.fp-choice span{display:block;margin-top:1rem;max-width:31ch;color:#6e7480;font-size:.96rem;line-height:1.45;}
+.fp-choice em{display:block;margin-top:1.35rem;color:#8A681F;font-style:normal;font-weight:650;font-size:.92rem;}
+.fp-decision-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.1rem;margin-top:clamp(1.7rem,3vw,2.4rem);}
+.fp-decision-actions .btn{margin:0;}
+.fp-decision-actions .fp-text-action{color:#1d1d1f;font-weight:600;text-underline-offset:.2em;}
+@media(max-width:900px){.fp-decision-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.fp-choice{min-height:172px;}}
+@media(max-width:620px){.fp-decision-system{padding:4rem 1.15rem;}.fp-decision-system h2{font-size:clamp(2.35rem,12vw,3.7rem);}.fp-decision-grid{grid-template-columns:1fr;gap:.72rem;margin-top:2rem;}.fp-choice{min-height:0;padding:1.35rem 1.25rem;border-radius:22px;}.fp-choice strong{max-width:none;font-size:1.2rem;}.fp-choice span{margin-top:.55rem;}.fp-choice em{margin-top:.9rem;}.fp-decision-actions{align-items:stretch;flex-direction:column;}.fp-decision-actions .btn,.fp-decision-actions .fp-text-action{width:100%;justify-content:center;text-align:center;min-height:48px;display:inline-flex;align-items:center;}}
+@media(prefers-reduced-motion:reduce){.fp-choice{transition:none;}.fp-choice:hover{transform:none;}}
+/* STAGE68-FIRST-PRINCIPLES-APPLE:END */
+'''
+              css_path.write_text(css)
+
+          pages={
+            'index.html': '''<section class="fp-decision-system" data-first-principles-path="stage68" aria-labelledby="fp-decision-title"><div class="fp-decision-inner"><p class="fp-decision-eyebrow">Start with the situation</p><h2 id="fp-decision-title">What do you need right now?</h2><p class="fp-decision-lead">You do not need to know the name of the photography service. Choose the situation that is closest to yours; we will show the shortest path to the result.</p><div class="fp-decision-grid"><a class="fp-choice" href="/portrait/"><strong>New executive portrait</strong><span>For a new role, LinkedIn, press, website or speaker profile.</span><em>Executive portrait →</em></a><a class="fp-choice" href="/portrait/"><strong>Consistent leadership portraits</strong><span>For management teams that need one credible visual standard across people and channels.</span><em>Leadership portrait system →</em></a><a class="fp-choice" href="/lifestyle/"><strong>Stronger personal brand</strong><span>When your expertise is stronger than your current visual presence.</span><em>Personal brand photography →</em></a><a class="fp-choice" href="/lifestyle/"><strong>Brand photography for a company or campaign</strong><span>For websites, launches and communication that need a coherent image library.</span><em>Brand photography →</em></a><a class="fp-choice" href="/event-photography/"><strong>C-level event coverage</strong><span>For leadership events where reputation, discretion and fast delivery matter.</span><em>Executive event photography →</em></a><a class="fp-choice" href="https://meet.bookipi.com/zk5ly35r" target="_blank" rel="noopener"><strong>I am not sure yet</strong><span>Tell us the situation in a 15-minute video call and we will identify the simplest next step.</span><em>Book 15 minutes →</em></a></div><div class="fp-decision-actions"><a class="btn fp-primary-action" href="/requestaquote/">See pricing & build your project</a><a class="fp-text-action" href="/contact/">Or write to us</a></div></div></section>''',
+            'hu/index.html': '''<section class="fp-decision-system" data-first-principles-path="stage68" aria-labelledby="fp-decision-title"><div class="fp-decision-inner"><p class="fp-decision-eyebrow">Induljon a helyzetből</p><h2 id="fp-decision-title">Mire van most szüksége?</h2><p class="fp-decision-lead">Nem kell tudnia, szakmailag minek hívjuk a fotózást. Válassza ki azt a helyzetet, amelyik a legközelebb áll Önhöz; megmutatjuk a legrövidebb utat az eredményhez.</p><div class="fp-decision-grid"><a class="fp-choice" href="/hu/portre/"><strong>Új vezetői portréra</strong><span>Új pozícióhoz, LinkedInhez, sajtóhoz, weboldalhoz vagy előadói profilhoz.</span><em>Executive portré →</em></a><a class="fp-choice" href="/hu/portre/"><strong>Egységes vezetői portrékra</strong><span>Ha a menedzsment képei különböznek, és egy hiteles vizuális standardra van szükség.</span><em>Vezetői portrérendszer →</em></a><a class="fp-choice" href="/hu/brand/"><strong>Erősebb személyes márkára</strong><span>Ha a szakmai súlya erősebb annál, mint amit a jelenlegi képei közvetítenek.</span><em>Személyes brandfotózás →</em></a><a class="fp-choice" href="/hu/brand/"><strong>Céges vagy kampány brandfotókra</strong><span>Weboldalhoz, bevezetéshez vagy kommunikációhoz egységes képanyaggal.</span><em>Brandfotózás →</em></a><a class="fp-choice" href="/hu/rendezvenyfotozas/"><strong>Vezetői esemény dokumentálására</strong><span>Amikor a reputáció, a diszkréció és a gyors átadás egyaránt fontos.</span><em>Vezetői eseményfotózás →</em></a><a class="fp-choice" href="https://meet.bookipi.com/zk5ly35r" target="_blank" rel="noopener"><strong>Még nem vagyok biztos benne</strong><span>15 percben mondja el a helyzetet, és megmutatjuk a legegyszerűbb következő lépést. A foglalási felület angol nyelvű.</span><em>15 perces beszélgetés →</em></a></div><div class="fp-decision-actions"><a class="btn fp-primary-action" href="/hu/ajanlatkeres/">Árak és projekt összeállítása</a><a class="fp-text-action" href="/hu/kapcsolat/">Vagy írjon nekünk</a></div></div></section>''',
+            'de-at/index.html': '''<section class="fp-decision-system" data-first-principles-path="stage68" aria-labelledby="fp-decision-title"><div class="fp-decision-inner"><p class="fp-decision-eyebrow">Beginnen Sie mit Ihrer Situation</p><h2 id="fp-decision-title">Was brauchen Sie jetzt?</h2><p class="fp-decision-lead">Sie müssen den Fachbegriff für die fotografische Leistung nicht kennen. Wählen Sie die Situation, die Ihrer am nächsten kommt; wir zeigen Ihnen den kürzesten Weg zum Ergebnis.</p><div class="fp-decision-grid"><a class="fp-choice" href="/de-at/portrait/"><strong>Ein neues Executive-Porträt</strong><span>Für eine neue Position, LinkedIn, Presse, Website oder Speaker-Profil.</span><em>Executive-Porträt →</em></a><a class="fp-choice" href="/de-at/portrait/"><strong>Einheitliche Führungskräfteporträts</strong><span>Wenn das Management einen glaubwürdigen gemeinsamen visuellen Standard braucht.</span><em>Porträtsystem für Führungskräfte →</em></a><a class="fp-choice" href="/de-at/brand/"><strong>Eine stärkere persönliche Marke</strong><span>Wenn Ihre fachliche Position stärker ist als Ihr derzeitiger visueller Auftritt.</span><em>Personal-Brand-Fotografie →</em></a><a class="fp-choice" href="/de-at/brand/"><strong>Brandfotografie für Unternehmen oder Kampagnen</strong><span>Für Websites, Launches und Kommunikation mit einem konsistenten Bildbestand.</span><em>Brandfotografie →</em></a><a class="fp-choice" href="/de-at/eventfotografie/"><strong>Dokumentation eines Führungskräfte-Events</strong><span>Wenn Reputation, Diskretion und schnelle Bereitstellung gleichermaßen zählen.</span><em>Executive-Eventfotografie →</em></a><a class="fp-choice" href="https://meet.bookipi.com/zk5ly35r" target="_blank" rel="noopener"><strong>Ich bin noch nicht sicher</strong><span>Schildern Sie uns Ihre Situation in 15 Minuten; wir zeigen den einfachsten nächsten Schritt. Die Buchungsoberfläche ist auf Englisch.</span><em>15 Minuten buchen →</em></a></div><div class="fp-decision-actions"><a class="btn fp-primary-action" href="/de-at/anfrage/">Preise ansehen & Projekt zusammenstellen</a><a class="fp-text-action" href="/de-at/kontakt/">Oder schreiben Sie uns</a></div></div></section>'''
+          }
+          for file,section in pages.items():
+              p=Path(file); text=p.read_text()
+              if 'data-first-principles-path="stage68"' in text: continue
+              needle='data-home-decision-path="consultation"'
+              idx=text.find(needle)
+              if idx<0: raise SystemExit(f'{file}: consultation decision path not found')
+              start=text.rfind('<section',0,idx)
+              if start<0: raise SystemExit(f'{file}: consultation section start not found')
+              p.write_text(text[:start]+section+text[start:])
+
+          pkg=Path('package.json')
+          data=json.loads(pkg.read_text())
+          stage='node tools/audit-first-principles-apple-stage68.mjs'
+          if stage not in data['scripts']['audit']:
+              data['scripts']['audit'] += ' && '+stage
+          data['scripts']['audit:first-principles-apple']=stage
+          pkg.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+          PY
+      - name: Verify Stage 68 before commit
+        run: node tools/audit-first-principles-apple-stage68.mjs
+      - name: Commit generated changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/css/style.css index.html hu/index.html de-at/index.html package.json
+          git commit -m "Apply Stage 68 first-principles Apple UX"
+          git push origin HEAD:agent/first-principles-apple-20260813-v3
