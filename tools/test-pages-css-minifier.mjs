@@ -8,7 +8,7 @@ const repoRoot = process.cwd();
 const sourceRoot = path.join(repoRoot, 'assets', 'css');
 const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'banhalmi-css-minify-'));
 const tempCss = path.join(tempRoot, 'assets', 'css');
-const buildOnly = new Set(['apple-authority-stage70.css']);
+const buildOnly = new Set(['apple-authority-stage70.css','surface-authority-stage75.css']);
 
 function walk(dir, files = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -61,9 +61,10 @@ try {
     }
   }
   const finalStyle = fs.readFileSync(path.join(tempCss, 'style.css'), 'utf8');
-  for (const token of ['--bn-section-space', '.hero-visual-only', '.hero-copy-only']) {
-    if (!finalStyle.includes(token)) throw new Error(`Composed Stage70 authority missing from production style.css: ${token}`);
+  for (const token of ['--bn-section-space','.hero-visual-only','.hero-copy-only','--bn-surface-dark:#0d1b2e','STAGE75-THREE-SURFACE-AUTHORITY:START','data-surface']) {
+    if (!finalStyle.includes(token)) throw new Error(`Composed Stage70/75 authority missing from production style.css: ${token}`);
   }
+  if (/main>section:nth-(?:child|of-type)/.test(finalStyle)) throw new Error('Positional section colouring leaked into production CSS.');
 
   const afterBytes = outputFiles.reduce((sum, file) => sum + fs.statSync(file).size, 0);
   if (afterBytes >= beforeBytes) {
@@ -86,7 +87,7 @@ try {
   }
 
   console.log(result.stdout.trim());
-  console.log(`✓ Production CSS minifier contract passed on ${outputFiles.length} published files; build-only authority was composed and source tree remained immutable.`);
+  console.log(`✓ Production CSS minifier contract passed on ${outputFiles.length} published files; Stage70/75 authorities were composed and source tree remained immutable.`);
 } finally {
   fs.rmSync(tempRoot, { recursive: true, force: true });
 }
