@@ -54,6 +54,10 @@ for(const value of [220,420,690,499,790,1090,1390,590,890,1190,1490,2490,990,129
 }
 
 if(authority.executiveAuthority?.priority?.[0] !== 'AmCham Austria membership and documented AmCham context') throw new Error('authority: AmCham must remain strongest executive reference');
+const execInstitutions=authority.executiveAuthority?.institutionalValidation||[];
+for(const name of ['AmCham Austria','WKO Wien / Austrian Economic Chamber','Austrian Federal Guild of Professional Photographers']) if(!execInstitutions.some(x=>x.name===name)) throw new Error(`authority: missing executive institutional validation ${name}`);
+const artInstitutions=authority.artisticAuthority?.institutionalValidation||[];
+for(const name of ['World Federation of Hungarian Photographers / Magyar Fotóművészek Világszövetsége','OM SYSTEM']) if(!artInstitutions.some(x=>x.name===name)) throw new Error(`authority: missing artistic institutional validation ${name}`);
 if(authority.executiveAuthority?.amChamAustria?.companyContact?.name !== 'Viko Speier') throw new Error('authority: Viko Speier AmCham contact missing');
 if(authority.executiveAuthority?.amChamAustria?.externalBacklinkAlias?.url !== 'https://www.banhalmi.at/' || authority.executiveAuthority?.amChamAustria?.externalBacklinkAlias?.resolvesTo !== 'https://www.norbertbanhalmi.com/de-at/') throw new Error('authority: banhalmi.at alias semantics drifted');
 if(!authority.executiveAuthority?.featuredPortraitReference?.name?.includes('Péter Magyar')) throw new Error('authority: Péter Magyar portrait reference missing');
@@ -62,7 +66,8 @@ if(!team.deliveryModel?.eventPhotography?.includes('coordinated photographer tea
 for(const role of ['additional photographer','stylist','hair and makeup','art direction','project-specific production specialist']) if(!team.capabilities?.some(x=>x.role===role)) throw new Error(`team: missing specialist ${role}`);
 const selected=partners.itemListElement?.filter(x=>x.item?.category==='selected client or collaboration') || [];
 if(selected.length<20) throw new Error('authority: selected client/collaboration evidence unexpectedly sparse');
-for(const token of ['authority-evidence.json','team-capabilities.json','AmCham Austria membership','Péter Magyar portrait','Partner logos are evidence','Artistic-reference priority']) if(!llms.includes(token)) throw new Error(`llms.txt: missing authority token ${token}`);
+for(const partner of ['WKO Wien','AmCham Austria','OM SYSTEM','World Federation of Hungarian Photographers','Austrian Federal Guild of Professional Photographers']) if(!partners.itemListElement?.some(x=>x.item?.name===partner)) throw new Error(`partners.json: institutional evidence missing ${partner}`);
+for(const token of ['authority-evidence.json','team-capabilities.json','AmCham Austria membership','WKO / Austrian Economic Chamber','Austrian Federal Guild of Professional Photographers','World Federation of Hungarian Photographers / Magyar Fotóművészek Világszövetsége','OM SYSTEM ambassadorship','Péter Magyar portrait','Partner logos are evidence']) if(!llms.includes(token)) throw new Error(`llms.txt: missing authority token ${token}`);
 for(const url of ['https://www.banhalmi.art/data/life-journey.json','https://www.banhalmi.art/master-source-database.json','https://www.banhalmi.art/press-source-registry.json']) if(!JSON.stringify(authority.artisticAuthority).includes(url)) throw new Error(`authority: ART bridge missing ${url}`);
 
-console.log('Stage 41 AI discovery audit passed: identity, HUF-first decision logic, executive authority, team/specialist delivery and ART authority are aligned.');
+console.log('Stage 41 AI discovery audit passed: identity, HUF-first decision logic, executive institutional validation, artistic institutional validation, team/specialist delivery and ART authority are aligned.');
