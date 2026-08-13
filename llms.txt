@@ -30,7 +30,7 @@
 - `banhalmi.at` is an alternate Austrian/German entry domain for the same BANHALMI professional entity and resolves to the canonical `/de-at/` experience.
 
 ## Pricing and contact
-- [Pricing](https://www.norbertbanhalmi.com/pricing.json): Canonical non-binding orientation prices; Hungarian HUF values derive from the documented fixed planning conversion.
+- [Pricing](https://www.norbertbanhalmi.com/pricing.json): EUR is the canonical price currency; HUF is a Hungarian planning display using the documented fixed planning rate, not live FX.
 - [AI pricing guide](https://www.norbertbanhalmi.com/pricing-guide.json): Calculation and caveat rules.
 - [Contact](https://www.norbertbanhalmi.com/contact/): Booking, written offers and project enquiries.
 
