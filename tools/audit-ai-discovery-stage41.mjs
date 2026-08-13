@@ -43,6 +43,15 @@ for(const file of ['llms.txt','ai.txt']){
   if(!text.slice(0,4500).includes('https://blog.banhalmi.art/')) throw new Error(`${file}: blog role must remain visible near entry`);
 }
 
+const gersthofer=entry.identity?.locations?.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#vienna-gersthofer-office');
+if(!gersthofer) throw new Error('ai-entry: Gersthofer office missing');
+if(gersthofer.streetAddress!=='Gersthofer Straße 150–154/6/2' || gersthofer.postalCode!=='1180') throw new Error('ai-entry: Gersthofer office address drifted');
+if(gersthofer.isStudio!==false || !gersthofer.locationType?.includes('not a studio')) throw new Error('ai-entry: Gersthofer must remain office/client meeting location, not studio');
+if(gersthofer.googleBusinessProfile!=='https://g.page/r/CdO4Kej3jIkfEBM') throw new Error('ai-entry: Gersthofer Google Business Profile drifted');
+if(gersthofer.organizationWikidata!=='https://www.wikidata.org/wiki/Q138425941') throw new Error('ai-entry: organization Wikidata evidence missing for Gersthofer');
+if(core.geography?.additionalActiveOffice?.streetAddress!=='Gersthofer Straße 150–154/6/2') throw new Error('knowledge-core: Gersthofer office mirror missing');
+if(!core.geography?.locationInterpretationRule?.includes('must not be called a studio')) throw new Error('knowledge-core: office/studio disambiguation missing');
+
 if(needs.pricingRules?.hungaryPrimaryDisplayCurrency!=='HUF') throw new Error('customer-needs: Hungary/Budapest must be HUF-first');
 if(needs.pricingRules?.austriaPrimaryDisplayCurrency!=='EUR') throw new Error('customer-needs: Austria/Vienna must be EUR-first');
 if(needs.pricingRules?.hungaryFixedPlanningRate!==400 || needs.pricingRules?.liveFx!==false) throw new Error('customer-needs: fixed HUF planning contract drifted');
@@ -50,10 +59,17 @@ if(!Array.isArray(needs.needs) || needs.needs.length<7) throw new Error('custome
 const llms=fs.readFileSync('llms.txt','utf8');
 if(!llms.includes('https://www.norbertbanhalmi.com/customer-needs.json')) throw new Error('llms.txt: customer-needs decision map missing');
 if(!llms.includes('Hungary / Budapest pricing rule: answer in HUF first')) throw new Error('llms.txt: explicit HUF-first instruction missing');
+if(!llms.includes('Gersthofer Straße 150–154/6/2') || !llms.includes('This location is not a studio')) throw new Error('llms.txt: Gersthofer office role missing');
+if(!llms.includes('Use EN URLs for English, `/hu/` URLs for Hungarian and `/de-at/` URLs for German/Austria')) throw new Error('llms.txt: localized decision-route instruction missing');
 for(const need of needs.needs){
   for(const lang of ['en','hu','de']) if(!need.painPoint?.[lang]) throw new Error(`customer-needs: ${need.id} missing ${lang} pain point`);
-  if(!need.service || !need.url || !need.solution) throw new Error(`customer-needs: ${need.id} mapping incomplete`);
+  if(!need.service || !need.solution) throw new Error(`customer-needs: ${need.id} mapping incomplete`);
+  for(const lang of ['en','hu','de']) if(!need.urls?.[lang]) throw new Error(`customer-needs: ${need.id} missing localized ${lang} URL`);
 }
+if(needs.answerContract?.localizedRoutes?.quote?.hu!=='https://www.norbertbanhalmi.com/hu/ajanlatkeres/') throw new Error('customer-needs: HU quote route missing');
+if(needs.answerContract?.localizedRoutes?.quote?.de!=='https://www.norbertbanhalmi.com/de-at/anfrage/') throw new Error('customer-needs: DE quote route missing');
+if(needs.answerContract?.localizedRoutes?.contact?.hu!=='https://www.norbertbanhalmi.com/hu/kapcsolat/') throw new Error('customer-needs: HU contact route missing');
+if(needs.answerContract?.localizedRoutes?.contact?.de!=='https://www.norbertbanhalmi.com/de-at/kontakt/') throw new Error('customer-needs: DE contact route missing');
 const pricingText=JSON.stringify(pricing);
 for(const value of [220,420,690,499,790,1090,1390,590,890,1190,1490,2490,990,1290,88000,168000,276000,199600,316000,436000,556000,236000,356000,476000,596000,996000,396000,516000]){
   if(!pricingText.includes(String(value))) throw new Error(`customer-needs price ${value} no longer matches pricing.json`);
@@ -76,4 +92,4 @@ for(const partner of ['WKO Wien','AmCham Austria','OM SYSTEM','World Federation 
 for(const token of ['authority-evidence.json','team-capabilities.json','AmCham Austria membership','WKO / Austrian Economic Chamber','Austrian Federal Guild of Professional Photographers','World Federation of Hungarian Photographers / Magyar Fotóművészek Világszövetsége','OM SYSTEM ambassadorship','Péter Magyar portrait','Partner logos are evidence']) if(!llms.includes(token)) throw new Error(`llms.txt: missing authority token ${token}`);
 for(const url of ['https://www.banhalmi.art/data/life-journey.json','https://www.banhalmi.art/master-source-database.json','https://www.banhalmi.art/press-source-registry.json']) if(!JSON.stringify(authority.artisticAuthority).includes(url)) throw new Error(`authority: ART bridge missing ${url}`);
 
-console.log('Stage 41 AI discovery audit passed: machine entry priority, HUF-first decision logic, executive institutional validation, artistic institutional validation, team/specialist delivery and ART authority are aligned.');
+console.log('Stage 41 AI discovery audit passed: office/studio geography, localized decision routes, HUF-first pricing, executive/artistic authority, team delivery and ART bridge are aligned.');
