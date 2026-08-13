@@ -3433,3 +3433,35 @@ body>.site-footer,.site-footer{flex:0 0 auto;width:100%}
     overflow-wrap:anywhere;
   }
 }
+
+
+/* STAGE68-FIRST-PRINCIPLES-APPLE:START */
+/* Apple-inspired discipline, BANHALMI identity: one idea per block, restrained surfaces,
+   readable measures, balanced display type and an obvious next action. */
+main h1,main h2,main h3{text-wrap:balance;}
+main p,main li{overflow-wrap:anywhere;}
+main p{max-width:68ch;}
+main .btn,main a.btn,.next-step-selector a,.fp-decision-system .fp-primary-action{border-radius:999px;}
+main .card,.next-step-selector .card,main details{box-shadow:none;}
+.next-step-selector{max-width:1180px;margin-inline:auto;}
+.next-step-selector .card{border-radius:28px;padding:clamp(1.4rem,2.7vw,2.25rem);border:1px solid rgba(32,37,48,.10);}
+.next-step-selector .card h2,.next-step-selector .card h3{letter-spacing:-.025em;line-height:1.08;}
+.fp-decision-system{background:#f5f5f7;color:#1d1d1f;padding:clamp(4.75rem,8vw,8.5rem) clamp(1.25rem,5vw,4rem);}
+.fp-decision-inner{width:min(1180px,100%);margin:0 auto;}
+.fp-decision-eyebrow{margin:0 0 .75rem;color:#8A681F;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;}
+.fp-decision-system h2{margin:0;max-width:15ch;font-size:clamp(2.45rem,5.5vw,5.25rem);line-height:.96;letter-spacing:-.055em;font-weight:700;}
+.fp-decision-lead{margin:clamp(1.2rem,2.3vw,1.8rem) 0 0;max-width:58ch!important;color:#5b616c;font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.5;}
+.fp-decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.8rem,1.5vw,1.15rem);margin-top:clamp(2.2rem,4vw,3.75rem);}
+.fp-choice{display:flex;flex-direction:column;justify-content:space-between;min-height:190px;padding:clamp(1.4rem,2.4vw,2rem);border:1px solid rgba(32,37,48,.09);border-radius:28px;background:#fff;color:#1d1d1f;text-decoration:none;transition:transform .22s ease,border-color .22s ease;}
+.fp-choice:hover{transform:translateY(-2px);border-color:rgba(138,104,31,.35);}
+.fp-choice:focus-visible{outline:3px solid #8A681F;outline-offset:3px;}
+.fp-choice strong{display:block;max-width:17ch;font-size:clamp(1.18rem,1.8vw,1.5rem);line-height:1.08;letter-spacing:-.03em;}
+.fp-choice span{display:block;margin-top:1rem;max-width:31ch;color:#6e7480;font-size:.96rem;line-height:1.45;}
+.fp-choice em{display:block;margin-top:1.35rem;color:#8A681F;font-style:normal;font-weight:650;font-size:.92rem;}
+.fp-decision-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.1rem;margin-top:clamp(1.7rem,3vw,2.4rem);}
+.fp-decision-actions .btn{margin:0;}
+.fp-decision-actions .fp-text-action{color:#1d1d1f;font-weight:600;text-underline-offset:.2em;}
+@media(max-width:900px){.fp-decision-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.fp-choice{min-height:172px;}}
+@media(max-width:620px){.fp-decision-system{padding:4rem 1.15rem;}.fp-decision-system h2{font-size:clamp(2.35rem,12vw,3.7rem);}.fp-decision-grid{grid-template-columns:1fr;gap:.72rem;margin-top:2rem;}.fp-choice{min-height:0;padding:1.35rem 1.25rem;border-radius:22px;}.fp-choice strong{max-width:none;font-size:1.2rem;}.fp-choice span{margin-top:.55rem;}.fp-choice em{margin-top:.9rem;}.fp-decision-actions{align-items:stretch;flex-direction:column;}.fp-decision-actions .btn,.fp-decision-actions .fp-text-action{width:100%;justify-content:center;text-align:center;min-height:48px;display:inline-flex;align-items:center;}}
+@media(prefers-reduced-motion:reduce){.fp-choice{transition:none;}.fp-choice:hover{transform:none;}}
+/* STAGE68-FIRST-PRINCIPLES-APPLE:END */
