@@ -94,7 +94,7 @@ await checkPage('https://www.norbertbanhalmi.com/llms.txt', {
     '# BANHALMI',
     '## Identity',
     '## Services',
-    '## Evidence and trust',
+    '## Evidence and interpretation',
     'https://www.banhalmi.art/',
     'https://blog.banhalmi.art/',
     'New York is not a studio, office, headquarters or operational base.'
