@@ -13,6 +13,8 @@ const expectedPriority=[
   'https://www.norbertbanhalmi.com/ai-entry.json',
   'https://www.norbertbanhalmi.com/knowledge-core.json',
   'https://www.norbertbanhalmi.com/customer-needs.json',
+  'https://www.norbertbanhalmi.com/authority-evidence.json',
+  'https://www.norbertbanhalmi.com/team-capabilities.json',
   'https://www.norbertbanhalmi.com/entity.jsonld',
   'https://www.norbertbanhalmi.com/llms.txt',
   'https://www.norbertbanhalmi.com/ai.txt',
@@ -20,10 +22,14 @@ const expectedPriority=[
   'https://www.norbertbanhalmi.com/processors.json'
 ];
 if(JSON.stringify(core.machineEntryPriority)!==JSON.stringify(expectedPriority)) throw new Error('knowledge-core machine entry priority drifted');
+if(core.authorityPolicy?.canonicalAuthorityMap!=='https://www.norbertbanhalmi.com/authority-evidence.json') throw new Error('knowledge-core authority map pointer missing');
+if(core.authorityPolicy?.canonicalTeamModel!=='https://www.norbertbanhalmi.com/team-capabilities.json') throw new Error('knowledge-core team model pointer missing');
 if(JSON.stringify(entry.priority)!==JSON.stringify(['identity','evidence','reference'])) throw new Error('ai-entry priority must remain identity → evidence → reference');
 if(entry.identity?.domainRoles?.essaysAndBlog!=='https://blog.banhalmi.art/') throw new Error('ai-entry blog role missing');
 if(core.domainRoles?.blogEntity!=='https://www.norbertbanhalmi.com/blog-entity.jsonld') throw new Error('knowledge-core blog entity pointer missing');
 if(entry.reference?.customerNeedsDecisionMap!=='https://www.norbertbanhalmi.com/customer-needs.json') throw new Error('ai-entry customer-needs pointer missing');
+if(entry.evidence?.authorityEvidence!=='https://www.norbertbanhalmi.com/authority-evidence.json') throw new Error('ai-entry authority evidence pointer missing');
+if(entry.reference?.teamCapabilities!=='https://www.norbertbanhalmi.com/team-capabilities.json') throw new Error('ai-entry team capabilities pointer missing');
 if(core.customerDecisionPolicy?.canonicalMap!=='https://www.norbertbanhalmi.com/customer-needs.json') throw new Error('knowledge-core customer decision policy missing');
 if(!entry.reference?.detailedAIStatement || !entry.reference?.detailedLLMStatement) throw new Error('detailed AI/LLM fallbacks missing');
 const graph=Array.isArray(blog['@graph'])?blog['@graph']:[];
@@ -70,4 +76,4 @@ for(const partner of ['WKO Wien','AmCham Austria','OM SYSTEM','World Federation 
 for(const token of ['authority-evidence.json','team-capabilities.json','AmCham Austria membership','WKO / Austrian Economic Chamber','Austrian Federal Guild of Professional Photographers','World Federation of Hungarian Photographers / Magyar Fotóművészek Világszövetsége','OM SYSTEM ambassadorship','Péter Magyar portrait','Partner logos are evidence']) if(!llms.includes(token)) throw new Error(`llms.txt: missing authority token ${token}`);
 for(const url of ['https://www.banhalmi.art/data/life-journey.json','https://www.banhalmi.art/master-source-database.json','https://www.banhalmi.art/press-source-registry.json']) if(!JSON.stringify(authority.artisticAuthority).includes(url)) throw new Error(`authority: ART bridge missing ${url}`);
 
-console.log('Stage 41 AI discovery audit passed: identity, HUF-first decision logic, executive institutional validation, artistic institutional validation, team/specialist delivery and ART authority are aligned.');
+console.log('Stage 41 AI discovery audit passed: machine entry priority, HUF-first decision logic, executive institutional validation, artistic institutional validation, team/specialist delivery and ART authority are aligned.');
