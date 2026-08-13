@@ -3,30 +3,9 @@ import { readFile } from 'node:fs/promises';
 const booking = 'https://meet.bookipi.com/zk5ly35r';
 const viennaAddress = 'Schwedenplatz 2, Top 8–9, 1010 Wien';
 const cases = [
-  {
-    file: 'index.html',
-    quote: '/requestaquote/',
-    gallery: 'https://www.banhalmi.art/#works',
-    decision: 'What do you need right now?',
-    label: 'Book a 15-minute video call',
-    note: 'Booking interface in English.'
-  },
-  {
-    file: 'hu/index.html',
-    quote: '/hu/ajanlatkeres/',
-    gallery: 'https://www.banhalmi.art/hu/#works',
-    decision: 'Mire van most szüksége?',
-    label: 'Foglalj 15 perces videóhívást',
-    note: 'A foglalási felület angol nyelvű.'
-  },
-  {
-    file: 'de-at/index.html',
-    quote: '/de-at/anfrage/',
-    gallery: 'https://www.banhalmi.art/de-at/#works',
-    decision: 'Was brauchen Sie jetzt?',
-    label: '15-minütiges Videogespräch buchen',
-    note: 'Die Buchungsoberfläche ist auf Englisch.'
-  }
+  {file:'index.html',quote:'/requestaquote/',gallery:'https://www.banhalmi.art/#works',decision:'What do you need right now?',label:'Book a 15-minute video call',note:'Booking interface in English.'},
+  {file:'hu/index.html',quote:'/hu/ajanlatkeres/',gallery:'https://www.banhalmi.art/hu/#works',decision:'Mire van most szüksége?',label:'Foglalj 15 perces videóhívást',note:'A foglalási felület angol nyelvű.'},
+  {file:'de-at/index.html',quote:'/de-at/anfrage/',gallery:'https://www.banhalmi.art/de-at/#works',decision:'Was brauchen Sie jetzt?',label:'15-minütiges Videogespräch buchen',note:'Die Buchungsoberfläche ist auf Englisch.'}
 ];
 
 const errors = [];
@@ -50,17 +29,23 @@ for (const entry of cases) {
 }
 
 const optimizer = await readFile('tools/optimize-homepage-critical-path.mjs', 'utf8');
-for (const token of ['data-hero-position="header-first"','data-first-principles-path="stage68"','data-hero-copy="stage70"','header -> hero visual -> decision -> hero copy contract']) {
-  if (!optimizer.includes(token)) errors.push(`production homepage compositor missing hierarchy guard: ${token}`);
-}
+for (const token of [
+  'data-hero-position="header-first"',
+  'data-hero-copy="stage76"',
+  'data-first-principles-path="stage68"',
+  'data-homepage-redesign="stage76"',
+  'header -> hero visual -> hero statement -> decision contract',
+  'homepage redesign changed an existing id or internal #anchor contract',
+  'style.css?v=20260813-stage75-first-principles'
+]) if (!optimizer.includes(token)) errors.push(`production homepage compositor missing hierarchy/anchor guard: ${token}`);
 
 const ecosystem = JSON.parse(await readFile('ecosystem.json', 'utf8'));
 if (ecosystem?.canonicalConsultation?.bookingUrl !== booking) errors.push('ecosystem.json: canonical consultation URL drifted');
 if (ecosystem?.canonicalConsultation?.durationMinutes !== 15) errors.push('ecosystem.json: canonical consultation duration must remain 15 minutes');
 
 if (errors.length) {
-  console.error('Stage66/73 homepage parity audit failed:');
+  console.error('Stage66/73/76 homepage parity audit failed:');
   for (const error of errors) console.error(' - ' + error);
   process.exit(1);
 }
-console.log('Stage66/73 passed: EN/HU/DE pain-point paths, 15-minute consultation, canonical Vienna studio address, clean footer separators and production hero-first composition remain in parity.');
+console.log('Stage66/73/76 passed: EN/HU/DE pain-point paths, consultation, Vienna address, clean footer, hero statement-first production order and homepage anchor preservation remain in parity.');

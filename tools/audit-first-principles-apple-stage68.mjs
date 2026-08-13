@@ -32,40 +32,51 @@ if(!css.includes('max-width:68ch')) errors.push('style.css: readable text measur
 const apple=fs.readFileSync('assets/css/apple-authority-stage70.css','utf8');
 for(const token of [
   'STAGE70-APPLE-DESIGN-AUTHORITY:START','STAGE70-APPLE-DESIGN-AUTHORITY:END','--bn-section-space',
-  '.hero-visual-only','.hero-copy-only','.hero-visual-only+.fp-decision-system','.fp-decision-system+.hero-copy-only','box-shadow:none',
+  '.hero-visual-only','.hero-copy-only','.hero-visual-only+.fp-decision-system','box-shadow:none',
   'main .prose{max-width:var(--bn-reading);text-align:left','main .section-head{max-width:var(--bn-reading);margin:0 0 44px;text-align:left',
   '.next-step-selector{max-width:none;margin-inline:0;text-align:left}',
   '.next-step-selector .cards{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}',
   '.trust-proof .grid-3{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch',
   '.review-drawer{padding:0;border:0;border-radius:0;background:transparent;text-align:left}',
-  '.fp-decision-actions .fp-primary-action','.fp-decision-actions .fp-text-action'
-]){
-  if(!apple.includes(token)) errors.push(`Stage70/71/72 Apple authority missing ${token}`);
-}
+  '.fp-decision-actions .fp-primary-action','.fp-decision-actions .fp-text-action',
+  '.bn-mega-menu .bn-mega-cta','.bn-mega-menu .bn-mega-art'
+]) if(!apple.includes(token)) errors.push(`Stage70/74 Apple authority missing ${token}`);
 for(const forbidden of ['main>section:nth-of-type(even)', '.card,.next-step-selector,main details', 'main .section-head{margin-inline:auto;text-align:center}']){
-  if(apple.includes(forbidden)) errors.push(`Stage72 visual layout regression: broad global selector must not return: ${forbidden}`);
+  if(apple.includes(forbidden)) errors.push(`Stage74 visual layout regression: broad global selector must not return: ${forbidden}`);
 }
 
+const surface=fs.readFileSync('assets/css/surface-authority-stage75.css','utf8');
+for(const token of [
+  'STAGE75-THREE-SURFACE-AUTHORITY:START','STAGE75-THREE-SURFACE-AUTHORITY:END',
+  '--bn-surface-dark:#0d1b2e','--bn-surface-white:#ffffff','--bn-surface-soft:#f5f5f7',
+  'main>.presence-thesis','main>.trust-proof','main>.cta-band','main>.section-band','main>.surface-white','main>.surface-soft','main>.surface-dark',
+  '.fp-art-path{color:#4f5663}'
+]) if(!surface.includes(token)) errors.push(`Stage75 global surface authority missing ${token}`);
+if(/nth-(?:child|of-type)/.test(surface)) errors.push('Stage75 surface authority must not use positional nth-child/nth-of-type colouring');
+
 const minifier=fs.readFileSync('tools/minify-pages-css.mjs','utf8');
-for(const token of ['apple-authority-stage70.css','STAGE70-APPLE-DESIGN-AUTHORITY:START','fs.writeFileSync(sharedStyle','fs.unlinkSync(authority)','Stage70 authority did not survive production CSS composition/minification']){
+for(const token of ['apple-authority-stage70.css','surface-authority-stage75.css','STAGE70-APPLE-DESIGN-AUTHORITY:START','STAGE75-THREE-SURFACE-AUTHORITY:START','fs.writeFileSync(sharedStyle','fs.unlinkSync(authority)','fs.unlinkSync(surfaceAuthority)']){
   if(!minifier.includes(token)) errors.push(`production CSS composer missing ${token}`);
 }
 const optimizer=fs.readFileSync('tools/optimize-homepage-critical-path.mjs','utf8');
-for(const token of ['data-hero-position="header-first"','data-hero-copy="stage70"','hero-visual-only','hero-copy-only','style.css?v=20260813-apple-authority-v70','header -> hero visual -> decision -> hero copy']){
-  if(!optimizer.includes(token)) errors.push(`production homepage authority missing ${token}`);
-}
+for(const token of [
+  'data-hero-position="header-first"','data-hero-copy="stage76"','data-homepage-redesign="stage76"','hero-visual-only','hero-copy-only',
+  'style.css?v=20260813-stage75-first-principles','header -> hero visual -> hero statement -> decision contract',
+  'homepage redesign changed an existing id or internal #anchor contract','data-surface="dark"','data-surface="soft"','data-surface="white"'
+]) if(!optimizer.includes(token)) errors.push(`production homepage authority missing ${token}`);
+
 const pagesWorkflow=fs.readFileSync('.github/workflows/pages.yml','utf8');
 const minifyPos=pagesWorkflow.indexOf('Minify production CSS conservatively');
 const hardenPos=pagesWorkflow.indexOf('Harden EN HU DE homepage critical path');
 const productionBrowserPos=pagesWorkflow.indexOf('Run browser regressions against production artifact');
-if(!(minifyPos>=0&&hardenPos>minifyPos&&productionBrowserPos>hardenPos)) errors.push('Pages workflow must compose CSS, harden hero hierarchy, then browser-test the exact artifact');
+if(!(minifyPos>=0&&hardenPos>minifyPos&&productionBrowserPos>hardenPos)) errors.push('Pages workflow must compose CSS, harden homepage hierarchy, then browser-test the exact artifact');
 
 const runtime=fs.readFileSync('assets/js/main.js','utf8')+fs.readFileSync('assets/js/site-config.js','utf8');
-if(runtime.includes('hero-visual-only')||runtime.includes('data-hero-position="header-first"')) errors.push('Stage70 hierarchy must be build-time, not runtime self-healing JavaScript');
+if(runtime.includes('hero-visual-only')||runtime.includes('data-homepage-redesign="stage76"')) errors.push('Homepage hierarchy must be build-time, not runtime self-healing JavaScript');
 
 if(errors.length){
-  console.error('Stage68/70/71/72 first-principles Apple audit failed:');
+  console.error('Stage68/70/74/75/76 first-principles audit failed:');
   for(const e of errors) console.error(' - '+e);
   process.exit(1);
 }
-console.log('Stage68/70/71/72 passed: hero-first production hierarchy is deterministic; reading content stays left aligned; trust proof and next-step use deliberate 3-column desktop grids; review content is not wrapped in an accidental giant card; and the shared authority cannot globally repaint the page.');
+console.log('Stage68/70/74/75/76 passed: anchor-safe hero statement-first homepage composition, global dark-blue/white/soft-grey surface authority, left-aligned reading flow, deliberate grids and unboxed mega-menu actions are protected.');
