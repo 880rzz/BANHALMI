@@ -3465,3 +3465,12 @@ main .card,.next-step-selector .card,main details{box-shadow:none;}
 @media(max-width:620px){.fp-decision-system{padding:4rem 1.15rem;}.fp-decision-system h2{font-size:clamp(2.35rem,12vw,3.7rem);}.fp-decision-grid{grid-template-columns:1fr;gap:.72rem;margin-top:2rem;}.fp-choice{min-height:0;padding:1.35rem 1.25rem;border-radius:22px;}.fp-choice strong{max-width:none;font-size:1.2rem;}.fp-choice span{margin-top:.55rem;}.fp-choice em{margin-top:.9rem;}.fp-decision-actions{align-items:stretch;flex-direction:column;}.fp-decision-actions .btn,.fp-decision-actions .fp-text-action{width:100%;justify-content:center;text-align:center;min-height:48px;display:inline-flex;align-items:center;}}
 @media(prefers-reduced-motion:reduce){.fp-choice{transition:none;}.fp-choice:hover{transform:none;}}
 /* STAGE68-FIRST-PRINCIPLES-APPLE:END */
+
+
+/* STAGE69-FINE-ART-PATH:START */
+.fp-art-path{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem .75rem;margin-top:1.35rem;color:#6e7480;font-size:.95rem;line-height:1.45;}
+.fp-art-path a{color:#1d1d1f;font-weight:650;text-decoration:none;text-underline-offset:.2em;}
+.fp-art-path a:hover{text-decoration:underline;}
+.fp-art-path a:focus-visible{outline:3px solid #8A681F;outline-offset:3px;border-radius:6px;}
+@media(max-width:620px){.fp-art-path{display:block;margin-top:1.15rem;}.fp-art-path span{display:block;margin-bottom:.35rem;}.fp-art-path a{display:inline-block;min-height:44px;padding-block:.65rem;}}
+/* STAGE69-FINE-ART-PATH:END */
