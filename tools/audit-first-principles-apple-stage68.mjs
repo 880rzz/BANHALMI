@@ -30,8 +30,20 @@ if(!css.includes('border-radius:999px')) errors.push('style.css: pill CTA author
 if(!css.includes('max-width:68ch')) errors.push('style.css: readable text measure guard missing');
 
 const apple=fs.readFileSync('assets/css/apple-authority-stage70.css','utf8');
-for(const token of ['STAGE70-APPLE-DESIGN-AUTHORITY:START','STAGE70-APPLE-DESIGN-AUTHORITY:END','--bn-section-space','.hero-visual-only','.hero-copy-only','.hero-visual-only+.fp-decision-system','.fp-decision-system+.hero-copy-only','box-shadow:none']){
-  if(!apple.includes(token)) errors.push(`Stage70 Apple authority missing ${token}`);
+for(const token of [
+  'STAGE70-APPLE-DESIGN-AUTHORITY:START','STAGE70-APPLE-DESIGN-AUTHORITY:END','--bn-section-space',
+  '.hero-visual-only','.hero-copy-only','.hero-visual-only+.fp-decision-system','.fp-decision-system+.hero-copy-only','box-shadow:none',
+  'main .prose{max-width:var(--bn-reading);text-align:left','main .section-head{max-width:var(--bn-reading);margin:0 0 44px;text-align:left',
+  '.next-step-selector{max-width:none;margin-inline:0;text-align:left}',
+  '.next-step-selector .cards{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}',
+  '.trust-proof .grid-3{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch',
+  '.review-drawer{padding:0;border:0;border-radius:0;background:transparent;text-align:left}',
+  '.fp-decision-actions .fp-primary-action','.fp-decision-actions .fp-text-action'
+]){
+  if(!apple.includes(token)) errors.push(`Stage70/71/72 Apple authority missing ${token}`);
+}
+for(const forbidden of ['main>section:nth-of-type(even)', '.card,.next-step-selector,main details', 'main .section-head{margin-inline:auto;text-align:center}']){
+  if(apple.includes(forbidden)) errors.push(`Stage72 visual layout regression: broad global selector must not return: ${forbidden}`);
 }
 
 const minifier=fs.readFileSync('tools/minify-pages-css.mjs','utf8');
@@ -52,8 +64,8 @@ const runtime=fs.readFileSync('assets/js/main.js','utf8')+fs.readFileSync('asset
 if(runtime.includes('hero-visual-only')||runtime.includes('data-hero-position="header-first"')) errors.push('Stage70 hierarchy must be build-time, not runtime self-healing JavaScript');
 
 if(errors.length){
-  console.error('Stage68/70 first-principles Apple audit failed:');
+  console.error('Stage68/70/71/72 first-principles Apple audit failed:');
   for(const e of errors) console.error(' - '+e);
   process.exit(1);
 }
-console.log('Stage68/70 passed: the six-choice decision system remains intact; production deterministically renders header -> signature hero visual -> decision layer -> hero copy, composes the shared Apple authority last in style.css, and runtime JS cannot rewrite the hierarchy.');
+console.log('Stage68/70/71/72 passed: hero-first production hierarchy is deterministic; reading content stays left aligned; trust proof and next-step use deliberate 3-column desktop grids; review content is not wrapped in an accidental giant card; and the shared authority cannot globally repaint the page.');
