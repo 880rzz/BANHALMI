@@ -18,6 +18,7 @@ for(const page of homepages){
   if(!section.includes('class="fp-art-path"')) errors.push(`${page.file}: fine-art secondary path missing`);
   if(!section.includes(`href="${page.fineArt}"`)) errors.push(`${page.file}: canonical fine-art route missing from decision layer`);
   if(!section.includes(page.fineArtLabel)) errors.push(`${page.file}: localized fine-art decision label missing`);
+  if(!html.includes('<section class="hero hero-image-first"><div class="wrap"><figure class="hero-figure editorial-hero reveal">')) errors.push(`${page.file}: canonical source hero visual missing`);
 }
 
 const css=fs.readFileSync('assets/css/style.css','utf8');
@@ -28,9 +29,31 @@ if(!css.includes('text-wrap:balance')) errors.push('style.css: balanced display 
 if(!css.includes('border-radius:999px')) errors.push('style.css: pill CTA authority missing');
 if(!css.includes('max-width:68ch')) errors.push('style.css: readable text measure guard missing');
 
+const apple=fs.readFileSync('assets/css/apple-authority-stage70.css','utf8');
+for(const token of ['STAGE70-APPLE-DESIGN-AUTHORITY:START','STAGE70-APPLE-DESIGN-AUTHORITY:END','--bn-section-space','.hero-visual-only','.hero-copy-only','.hero-visual-only+.fp-decision-system','.fp-decision-system+.hero-copy-only','box-shadow:none']){
+  if(!apple.includes(token)) errors.push(`Stage70 Apple authority missing ${token}`);
+}
+
+const minifier=fs.readFileSync('tools/minify-pages-css.mjs','utf8');
+for(const token of ['apple-authority-stage70.css','STAGE70-APPLE-DESIGN-AUTHORITY:START','fs.writeFileSync(sharedStyle','fs.unlinkSync(authority)','Stage70 authority did not survive production CSS composition/minification']){
+  if(!minifier.includes(token)) errors.push(`production CSS composer missing ${token}`);
+}
+const optimizer=fs.readFileSync('tools/optimize-homepage-critical-path.mjs','utf8');
+for(const token of ['data-hero-position="header-first"','data-hero-copy="stage70"','hero-visual-only','hero-copy-only','style.css?v=20260813-apple-authority-v70','header -> hero visual -> decision -> hero copy']){
+  if(!optimizer.includes(token)) errors.push(`production homepage authority missing ${token}`);
+}
+const pagesWorkflow=fs.readFileSync('.github/workflows/pages.yml','utf8');
+const minifyPos=pagesWorkflow.indexOf('Minify production CSS conservatively');
+const hardenPos=pagesWorkflow.indexOf('Harden EN HU DE homepage critical path');
+const productionBrowserPos=pagesWorkflow.indexOf('Run browser regressions against production artifact');
+if(!(minifyPos>=0&&hardenPos>minifyPos&&productionBrowserPos>hardenPos)) errors.push('Pages workflow must compose CSS, harden hero hierarchy, then browser-test the exact artifact');
+
+const runtime=fs.readFileSync('assets/js/main.js','utf8')+fs.readFileSync('assets/js/site-config.js','utf8');
+if(runtime.includes('hero-visual-only')||runtime.includes('data-hero-position="header-first"')) errors.push('Stage70 hierarchy must be build-time, not runtime self-healing JavaScript');
+
 if(errors.length){
-  console.error('Stage68 first-principles Apple audit failed:');
+  console.error('Stage68/70 first-principles Apple audit failed:');
   for(const e of errors) console.error(' - '+e);
   process.exit(1);
 }
-console.log('Stage68 passed: EN/HU/DE homepages start from customer problems, keep exactly six primary choices, preserve contact/booking discipline, expose fine-art photography as a secondary path, and retain the shared Apple-style hierarchy.');
+console.log('Stage68/70 passed: the six-choice decision system remains intact; production deterministically renders header -> signature hero visual -> decision layer -> hero copy, composes the shared Apple authority last in style.css, and runtime JS cannot rewrite the hierarchy.');
