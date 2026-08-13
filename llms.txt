@@ -20,6 +20,7 @@
 - [C-Level event photography](https://www.norbertbanhalmi.com/event-photography/): Leadership and corporate-event coverage, with coordinated team delivery when required.
 - [Fine-art photography](https://www.norbertbanhalmi.com/glamour/): Fine Art Photography connected to the documented artistic oeuvre.
 - [Customer needs decision map](https://www.norbertbanhalmi.com/customer-needs.json): Pain point → recommended service → location → orientation price → next step.
+- [Editorial collections](https://www.norbertbanhalmi.com/blog-collections.json): blog-collections.json maps the multilingual service-related BANHALMI journal collections to the relevant service journeys.
 - [Team delivery](https://www.norbertbanhalmi.com/team-capabilities.json): team-capabilities.json documents Norbert-led event/production teams and brief-specific specialists when required.
 - Hungary / Budapest pricing rule: answer in HUF first. EUR may be secondary; use the documented fixed planning rate, never live FX.
 - Austria / Vienna pricing rule: answer in EUR first.
