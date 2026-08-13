@@ -7,7 +7,10 @@ if(core.domainRoles?.professional!=='https://www.norbertbanhalmi.com/') fail('kn
 if(core.domainRoles?.artArchive!=='https://www.banhalmi.art/') fail('knowledge-core: ART domain mismatch');
 if(core.domainRoles?.essays!=='https://blog.banhalmi.art/') fail('knowledge-core: blog domain mismatch');
 if(JSON.stringify(core.geography?.operationalBases)!==JSON.stringify(['Vienna','Budapest'])) fail('knowledge-core: operational bases must be Vienna + Budapest');
-if(!/not a studio, office, headquarters or operational base/i.test(core.geography?.rule||'')) fail('knowledge-core: New York disambiguation missing');
+if(!/not a studio, office, headquarters or operational base/i.test(core.geography?.newYorkRule||core.geography?.rule||'')) fail('knowledge-core: New York disambiguation missing');
+if(core.geography?.worldwideAvailability!==true) fail('knowledge-core: worldwide project availability missing');
+if(!/Gersthofer Straße 150–154\/6\/2/.test(JSON.stringify(core.geography?.additionalActiveOffice||''))) fail('knowledge-core: Gersthofer office missing');
+if(!/not a studio/i.test(JSON.stringify(core.geography?.additionalActiveOffice||''))) fail('knowledge-core: Gersthofer office/studio role drifted');
 if((core.principalServices||[]).length!==4) fail('knowledge-core: exactly four principal services required');
 
 const shared=[
@@ -27,4 +30,4 @@ for(const file of ['llms.txt','ai.txt']){
 const entity=fs.readFileSync('entity.jsonld','utf8');
 if(!/"hasOccupation"/.test(entity)||!/"knowsAbout"/.test(entity)) fail('entity.jsonld: hasOccupation/knowsAbout missing');
 if(!/Executive Portrait Photographer/i.test(entity)||!/Visual Branding Strategist/i.test(entity)) fail('entity.jsonld: core occupations missing');
-console.log('Stage 37 knowledge-core audit passed: person, domain roles, geography, services, entity semantics and AI disambiguation are aligned.');
+console.log('Stage 37 knowledge-core audit passed: person, domain roles, studio/office/worldwide geography, services, entity semantics and AI disambiguation are aligned.');
