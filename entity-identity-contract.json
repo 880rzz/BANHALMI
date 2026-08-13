@@ -1,79 +1,65 @@
 {
-  "documentType": "BANHALMI canonical entity identity contract",
-  "version": "2026-08-12-v2",
-  "dateModified": "2026-08-12T18:29:00+02:00",
-  "canonicalPerson": {
-    "@type": "Person",
-    "@id": "https://www.norbertbanhalmi.com/about/",
-    "name": "Bánhalmi Norbert",
-    "alternateName": ["Norbert Banhalmi", "Norbert Bánhalmi", "Norbert BANHALMI"],
-    "wikidata": "https://www.wikidata.org/wiki/Q56391118"
-  },
-  "canonicalOrganization": {
-    "@type": "Organization",
-    "@id": "https://www.norbertbanhalmi.com/#organization",
-    "name": "Norbert Banhalmi e.U.",
-    "legalName": "Norbert Banhalmi e.U.",
-    "wikidata": "https://www.wikidata.org/wiki/Q138425941",
-    "brand": "https://www.norbertbanhalmi.com/#brand"
-  },
-  "canonicalBrand": {
-    "@type": "Brand",
-    "@id": "https://www.norbertbanhalmi.com/#brand",
-    "name": "BANHALMI",
-    "owner": "https://www.norbertbanhalmi.com/#organization",
-    "founder": "https://www.norbertbanhalmi.com/about/",
-    "wikidata": null
-  },
-  "locations": [
+  "documentType":"BANHALMI canonical entity identity contract",
+  "version":"2026-08-13-v3",
+  "dateModified":"2026-08-13T18:23:00+02:00",
+  "canonicalPerson":{"@type":"Person","@id":"https://www.norbertbanhalmi.com/about/","name":"Bánhalmi Norbert","alternateName":["Norbert Banhalmi","Norbert Bánhalmi","Norbert BANHALMI"],"wikidata":"https://www.wikidata.org/wiki/Q56391118"},
+  "canonicalOrganization":{"@type":"Organization","@id":"https://www.norbertbanhalmi.com/#organization","name":"Norbert Banhalmi e.U.","legalName":"Norbert Banhalmi e.U.","wikidata":"https://www.wikidata.org/wiki/Q138425941","brand":"https://www.norbertbanhalmi.com/#brand"},
+  "canonicalBrand":{"@type":"Brand","@id":"https://www.norbertbanhalmi.com/#brand","name":"BANHALMI","owner":"https://www.norbertbanhalmi.com/#organization","founder":"https://www.norbertbanhalmi.com/about/","wikidata":null},
+  "locations":[
     {
-      "@id": "https://www.norbertbanhalmi.com/#vienna-studio",
-      "name": "BANHALMI Vienna",
-      "city": "Vienna",
-      "cityWikidata": "https://www.wikidata.org/wiki/Q1741",
-      "market": "Austria",
-      "googleBusinessProfile": "https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8",
-      "preferredLandingPage": "https://www.norbertbanhalmi.com/de-at/",
-      "areaServed": [
-        {"@type": "City", "name": "Vienna", "sameAs": "https://www.wikidata.org/wiki/Q1741"},
-        {"@type": "AdministrativeArea", "name": "Innere Stadt", "postalCode": "1010", "addressCountry": "AT", "gbpStatus": "confirmed"},
-        {"@type": "AdministrativeArea", "name": "Währing", "postalCode": "1180", "addressCountry": "AT", "gbpStatus": "confirmed"},
-        {"@type": "AdministrativeArea", "name": "Döbling", "postalCode": "1190", "addressCountry": "AT", "gbpStatus": "confirmed"}
-      ],
-      "googleBusinessProfilePendingChange": {
-        "area": "Vienna, Austria",
-        "status": "pending-review",
-        "observedAt": "2026-08-12"
-      }
+      "@id":"https://www.norbertbanhalmi.com/#vienna-studio",
+      "name":"BANHALMI Vienna Studio",
+      "city":"Vienna",
+      "cityWikidata":"https://www.wikidata.org/wiki/Q1741",
+      "market":"Austria",
+      "locationRole":"physical photography studio and client location",
+      "address":{"streetAddress":"Schwedenplatz 2, Top 8–9","postalCode":"1010","district":"Innere Stadt","addressCountry":"AT"},
+      "googleBusinessProfile":"https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8",
+      "preferredLandingPage":"https://www.norbertbanhalmi.com/de-at/",
+      "areaServed":[{"@type":"City","name":"Vienna","sameAs":"https://www.wikidata.org/wiki/Q1741"},{"@type":"AdministrativeArea","name":"Vienna and surrounding area","addressCountry":"AT"}],
+      "isStudio":true,
+      "clientAccess":"Photography and meetings by arrangement."
     },
     {
-      "@id": "https://www.norbertbanhalmi.com/#budapest-studio",
-      "name": "BANHALMI Budapest",
-      "city": "Budapest",
-      "cityWikidata": "https://www.wikidata.org/wiki/Q1781",
-      "market": "Hungary",
-      "googleBusinessProfile": "https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA",
-      "preferredLandingPage": "https://www.norbertbanhalmi.com/hu/",
-      "areaServed": [
-        {"@type": "City", "name": "Budapest", "sameAs": "https://www.wikidata.org/wiki/Q1781", "gbpStatus": "confirmed"},
-        {"@type": "City", "name": "Budaörs", "addressCountry": "HU", "gbpStatus": "confirmed"},
-        {"@type": "City", "name": "Páty", "postalCode": "2071", "addressCountry": "HU", "gbpStatus": "confirmed"},
-        {"@type": "AdministrativeArea", "name": "Budapest I. kerület", "addressCountry": "HU", "gbpStatus": "confirmed"},
-        {"@type": "AdministrativeArea", "name": "Budapest II. kerület", "addressCountry": "HU", "gbpStatus": "confirmed"},
-        {"@type": "AdministrativeArea", "name": "Budapest V. kerület", "addressCountry": "HU", "gbpStatus": "confirmed"},
-        {"@type": "AdministrativeArea", "name": "Budapest XI. kerület", "addressCountry": "HU", "gbpStatus": "confirmed"},
-        {"@type": "AdministrativeArea", "name": "Budapest XII. kerület", "addressCountry": "HU", "gbpStatus": "confirmed"}
-      ]
+      "@id":"https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
+      "name":"BANHALMI Vienna Office — Gersthofer Straße",
+      "city":"Vienna",
+      "cityWikidata":"https://www.wikidata.org/wiki/Q1741",
+      "market":"Austria",
+      "locationRole":"active office and client meeting location; not a photography studio",
+      "address":{"streetAddress":"Gersthofer Straße 150–154/6/2","postalCode":"1180","district":"Währing","addressCountry":"AT"},
+      "googleBusinessProfile":"https://g.page/r/CdO4Kej3jIkfEBM",
+      "organizationWikidata":"https://www.wikidata.org/wiki/Q138425941",
+      "wkoSource":"https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=2ac00da5-198a-4840-9678-3b5719ce154e",
+      "preferredLandingPage":"https://www.norbertbanhalmi.com/de-at/",
+      "isStudio":false,
+      "clientAccess":"Clients are received by arrangement.",
+      "interpretationRule":"This is a real active business location belonging to Norbert Banhalmi e.U.; it must be represented as an office/client meeting location, not as a studio or merely as areaServed."
+    },
+    {
+      "@id":"https://www.norbertbanhalmi.com/#budapest-studio",
+      "name":"BANHALMI Budapest Studio",
+      "city":"Budapest",
+      "cityWikidata":"https://www.wikidata.org/wiki/Q1781",
+      "market":"Hungary",
+      "locationRole":"physical photography studio and client location",
+      "address":{"district":"Budapest XI. kerület","addressCountry":"HU"},
+      "googleBusinessProfile":"https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA",
+      "preferredLandingPage":"https://www.norbertbanhalmi.com/hu/",
+      "areaServed":[{"@type":"City","name":"Budapest","sameAs":"https://www.wikidata.org/wiki/Q1781"},{"@type":"AdministrativeArea","name":"Budapest and surrounding area","addressCountry":"HU"}],
+      "isStudio":true,
+      "clientAccess":"Photography and meetings by arrangement."
     }
   ],
-  "rules": [
+  "serviceGeography":{"primaryLocalCoverage":["Vienna and surrounding area","Budapest and surrounding area"],"worldwideAvailability":true,"rule":"Agreed projects may be undertaken worldwide by travel. Worldwide project locations do not become permanent studios or offices."},
+  "rules":[
     "Q56391118 identifies the Person only.",
-    "Q138425941 identifies Norbert Banhalmi e.U. only.",
+    "Q138425941 identifies Norbert Banhalmi e.U. only and may be used as organization evidence for the documented Gersthofer office location.",
     "BANHALMI is a Brand and currently has no dedicated Wikidata item.",
     "Do not use Q56391118 or Q138425941 as Brand sameAs values.",
     "Google Business Profile URLs belong to their respective local location entity and must not identify the Person.",
-    "Google Business Profile service areas are areaServed signals only; they are not additional studios, offices, addresses or LocalBusiness entities.",
-    "A pending Google Business Profile service-area edit must not be represented as confirmed GBP evidence until Google approves it.",
+    "Schwedenplatz 2, 1010 Wien is the Vienna studio; Gersthofer Straße 150–154/6/2, 1180 Wien is a separate active office/client meeting location and is not a studio.",
+    "Service areas are areaServed signals only and must not be confused with the explicitly documented studio and office entities.",
     "banhalmi.art is the artistic archive and Person/oeuvre evidence layer; norbertbanhalmi.com is the professional service and local-business layer."
   ]
 }
