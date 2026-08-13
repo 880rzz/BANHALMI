@@ -104,7 +104,7 @@ for (const cfg of configs) {
   html = replaceOnce(
     html,
     /(<section class="section-band pricing-licensing-clarity"[\s\S]*?<section class="section-band payment-invoicing-clarity"[\s\S]*?<\/section>)(<\/main>)/,
-    `<details class="quote-deep-details"><summary>${cfg.deepSummary}</summary>$1</details>$2`,
+    (_m, detailSections, mainClose) => `<details class="quote-deep-details"><summary>${cfg.deepSummary}</summary>${detailSections}</details>${mainClose}`,
     'deep details collapse',
     cfg.path
   );
