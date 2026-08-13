@@ -1,7 +1,7 @@
 /* STAGE75-THREE-SURFACE-AUTHORITY:START
    BANHALMI global visual rhythm for every public EN/HU/DE page: semantic dark blue,
-   white and soft-grey surfaces. Never use positional nth-child colouring; section
-   roles must remain stable when content is inserted, removed or reordered. */
+   white and soft-grey surfaces. Surface colour is assigned by explicit semantic role,
+   so inserting, removing or reordering sections cannot shift the palette. */
 :root{
   --bn-surface-white:#ffffff;
   --bn-surface-soft:#f5f5f7;
