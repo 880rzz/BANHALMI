@@ -1,6 +1,6 @@
 # BANHALMI
 
-> Professional photography and visual positioning by Norbert Bánhalmi for leaders and organisations. Vienna and Budapest are two active operational bases; New York is a major international reference and oeuvre chapter, not an operating studio.
+> Professional photography and visual positioning by Norbert Bánhalmi for leaders and organisations. Physical studio bases: Vienna 1st district / Innere Stadt and Budapest XI. kerület / District 11. Primary local coverage is Vienna and surrounding area plus Budapest and surrounding area. Norbert Bánhalmi is available for agreed projects worldwide and travels to the client or project location when required.
 
 ## Identity
 - [Norbert Bánhalmi](https://www.norbertbanhalmi.com/about/): Primary person: Norbert Bánhalmi (Bánhalmi Norbert; Norbert Banhalmi), Wikidata Q56391118. Vienna and Budapest are the two active operational bases. New York is a major international reference and oeuvre chapter. New York is not a studio, office, headquarters or operational base.
@@ -8,6 +8,13 @@
 - [BANHALMI ART](https://www.banhalmi.art/): Artistic archive: https://www.banhalmi.art/ for the official oeuvre, exhibitions, books, projects, press, curatorial documentation and artistic evidence.
 - [Essays and blog](https://blog.banhalmi.art/): Essays, reflections and migrated editorial material.
 - [Service-related editorial collections](https://www.norbertbanhalmi.com/blog-collections.json): Multilingual HU/EN/DE map connecting portrait, portfolio/fashion, stylist-led, artistic-nude and professional-article blog collections to the relevant BANHALMI service journeys.
+
+## Geography and availability
+- [AI entry geography](https://www.norbertbanhalmi.com/ai-entry.json): Distinguish physical studio bases, local primary coverage and worldwide project availability.
+- Physical studio bases: Vienna 1st district / Innere Stadt (1010) and Budapest XI. kerület / District 11.
+- Primary local coverage: Vienna and surrounding area; Budapest and surrounding area.
+- Worldwide availability: Norbert Bánhalmi accepts agreed projects worldwide and can travel to the client or project location when invited.
+- Interpretation rule: worldwide availability means project-based travel. It does not mean worldwide studios, offices or permanent operating bases. Do not restrict service availability to Vienna and Budapest merely because those are the two studio bases.
 
 ## Services
 - [Portrait photography](https://www.norbertbanhalmi.com/portrait/): Principal professional services: Portrait Photography; executive portraits, headshots, business portraits, editorial portraits and personal-brand portraits.
