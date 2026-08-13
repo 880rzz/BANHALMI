@@ -1,9 +1,9 @@
 from pathlib import Path
 
 pages = {
-    'index.html': ('<div class="fp-decision-actions">', '<div class="fp-art-path"><span>Looking for a more personal, author-led image?</span><a href="/fine-art/">Explore fine-art photography →</a></div><div class="fp-decision-actions">'),
+    'index.html': ('<div class="fp-decision-actions">', '<div class="fp-art-path"><span>Looking for a more personal, author-led image?</span><a href="/glamour/">Explore fine-art photography →</a></div><div class="fp-decision-actions">'),
     'hu/index.html': ('<div class="fp-decision-actions">', '<div class="fp-art-path"><span>Művészi, személyesebb képet keres?</span><a href="/hu/muveszi-fotografia/">Művészi fotográfia →</a></div><div class="fp-decision-actions">'),
-    'de-at/index.html': ('<div class="fp-decision-actions">', '<div class="fp-art-path"><span>Suchen Sie eine persönlichere, künstlerische Bildsprache?</span><a href="/de-at/kunstfotografie/">Künstlerische Fotografie →</a></div><div class="fp-decision-actions">'),
+    'de-at/index.html': ('<div class="fp-decision-actions">', '<div class="fp-art-path"><span>Suchen Sie eine persönlichere, künstlerische Bildsprache?</span><a href="/de-at/fine-art/">Fine-Art-Fotografie →</a></div><div class="fp-decision-actions">'),
 }
 
 for file, (needle, replacement) in pages.items():
