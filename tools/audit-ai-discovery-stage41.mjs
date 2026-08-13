@@ -9,6 +9,7 @@ const pricing=JSON.parse(fs.readFileSync('pricing.json','utf8'));
 const expectedPriority=[
   'https://www.norbertbanhalmi.com/ai-entry.json',
   'https://www.norbertbanhalmi.com/knowledge-core.json',
+  'https://www.norbertbanhalmi.com/customer-needs.json',
   'https://www.norbertbanhalmi.com/entity.jsonld',
   'https://www.norbertbanhalmi.com/llms.txt',
   'https://www.norbertbanhalmi.com/ai.txt',
@@ -19,6 +20,8 @@ if(JSON.stringify(core.machineEntryPriority)!==JSON.stringify(expectedPriority))
 if(JSON.stringify(entry.priority)!==JSON.stringify(['identity','evidence','reference'])) throw new Error('ai-entry priority must remain identity → evidence → reference');
 if(entry.identity?.domainRoles?.essaysAndBlog!=='https://blog.banhalmi.art/') throw new Error('ai-entry blog role missing');
 if(core.domainRoles?.blogEntity!=='https://www.norbertbanhalmi.com/blog-entity.jsonld') throw new Error('knowledge-core blog entity pointer missing');
+if(entry.reference?.customerNeedsDecisionMap!=='https://www.norbertbanhalmi.com/customer-needs.json') throw new Error('ai-entry customer-needs pointer missing');
+if(core.customerDecisionPolicy?.canonicalMap!=='https://www.norbertbanhalmi.com/customer-needs.json') throw new Error('knowledge-core customer decision policy missing');
 if(!entry.reference?.detailedAIStatement || !entry.reference?.detailedLLMStatement) throw new Error('detailed AI/LLM fallbacks missing');
 const graph=Array.isArray(blog['@graph'])?blog['@graph']:[];
 const blogNode=graph.find(n=>n['@type']==='Blog');
