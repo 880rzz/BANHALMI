@@ -19,12 +19,17 @@ const banned=[
   'Vier fotografische Leistungen',
   'Vier Bereiche, verbunden durch eine Bildsprache'
 ];
-function visible(h){return h.replace(/<script\b[\s\S]*?<\/script>/gi,' ').replace(/<style\b[\s\S]*?<\/style>/gi,' ').replace(/<noscript\b[\s\S]*?<\/noscript>/gi,' ').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ')}
+const genericUi={en:new Set(['learn more','read more','discover','explore','view more','see more','click here','next step','next steps','project framework']),de:new Set(['mehr erfahren','weiterlesen','entdecken','mehr anzeigen','mehr sehen','hier klicken','nächster schritt','nächste schritte','projektrahmen'])};
+function visible(h){return h.replace(/<script\b[\s\S]*?<\/script>/gi,' ').replace(/<style\b[\s\S]*?<\/style>/gi,' ').replace(/<noscript\b[\s\S]*?<\/noscript>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/&mdash;/gi,'—').replace(/&ndash;/gi,'–').replace(/\s+/g,' ').trim()}
+function uiText(h){const out=[];for(const m of h.matchAll(/<(h1|h2|summary|button)\b[^>]*>([\s\S]*?)<\/\1>/gi))out.push([m[1].toLowerCase(),visible(m[2])]);for(const m of h.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi))if(/\b(?:class|role)=["'][^"']*(?:btn|button|cta)[^"']*["']/i.test(m[1]))out.push(['cta',visible(m[2])]);return out}
 for(const rel of priority){
   const file=path.join(root,rel);
   if(!fs.existsSync(file)){failures.push(`${rel}: missing`);continue;}
-  const text=visible(fs.readFileSync(file,'utf8'));
+  const html=fs.readFileSync(file,'utf8');
+  const text=visible(html);
   for(const phrase of banned) if(text.includes(phrase)) failures.push(`${rel}: old templated phrase remains: ${phrase}`);
+  const lang=rel.startsWith('de-at/')?'de':'en';
+  for(const[type,label]of uiText(html)){const normalized=label.toLocaleLowerCase(lang).replace(/[.!?:;–—→+]+$/u,'').trim();if(genericUi[lang].has(normalized))failures.push(`${rel}: generic ${type} UI copy "${label}" — /human also covers H1/H2 and controls`)}
 }
 const required=[
   ['index.html','Photography for clear communication'],
@@ -37,4 +42,4 @@ const required=[
 ];
 for(const [rel,phrase] of required){const h=fs.readFileSync(path.join(root,rel),'utf8');if(!h.includes(phrase))failures.push(`${rel}: approved human copy missing: ${phrase}`)}
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
-console.log(`English/German human-voice audit passed across ${priority.length} published priority pages.`);
+console.log(`English/German human-voice audit passed across ${priority.length} priority pages, including H1/H2/CTA/summary labels.`);
