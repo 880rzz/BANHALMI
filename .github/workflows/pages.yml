@@ -1,9 +1,10 @@
-name: Deploy production site to GitHub Pages
+name: Clean architecture verification and production deploy
 
 on:
   push:
     branches:
       - main
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -12,133 +13,73 @@ permissions:
   id-token: write
 
 concurrency:
-  group: github-pages-production
-  # A newer main commit supersedes an older Pages deployment. Do not let a
-  # stale queued/deploying run permanently block the current production SHA.
+  group: banhalmi-clean-pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
-    outputs:
-      artifact_id: ${{ steps.upload.outputs.artifact_id }}
     steps:
-      - name: Check out verified source
+      - name: Check out source
         uses: actions/checkout@v4
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: npm
+      - name: Verify single-authority architecture
+        run: npm test
 
-      - name: Install audit dependencies
-        run: npm ci
-
-      - name: Install Chromium for browser regressions
-        run: npx playwright install --with-deps chromium
-
-      - name: Run complete static repository audit
-        run: npm run audit
-
-      - name: Run browser regression suite
-        run: npm run test:browser
-
-      - name: Prepare immutable Pages artifact
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: verify
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out verified source
+        uses: actions/checkout@v4
+      - name: Prepare immutable static artifact
         shell: bash
         run: |
           set -euo pipefail
           rm -rf _site
           mkdir -p _site
-          git archive --format=tar HEAD | tar -xf - -C _site
-
-          rm -rf \
-            _site/.github \
-            _site/node_modules \
-            _site/tests \
-            _site/docs \
-            _site/playwright-report \
-            _site/test-results
-          rm -f \
-            _site/.gitignore \
-            _site/package.json \
-            _site/package-lock.json \
-            _site/playwright.config.mjs \
-            _site/playwright.production.config.mjs \
-            _site/README.md \
-            _site/DELETE-LOW-RES-FINE-ART-IMAGES.txt \
-            _site/TORLENDO-FAJLOK.txt \
-            _site/.vercel-redeploy-*
-
+          tar \
+            --exclude=.git \
+            --exclude=.github \
+            --exclude=tools \
+            --exclude=node_modules \
+            --exclude=package.json \
+            -cf - . | tar -xf - -C _site
           printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
-
-          test -f _site/.nojekyll
-          test -f _site/CNAME
           test -f _site/index.html
           test -f _site/hu/index.html
           test -f _site/de-at/index.html
+          test -f _site/assets/css/site.css
+          test -f _site/.well-known/agent.json
+          test -f _site/api/v1/identity.json
           test -f _site/robots.txt
           test -f _site/sitemap.xml
-          test -f _site/assets/css/style.css
-          test -f _site/assets/js/quote-calculator.js
-          test -f _site/deployment-sha.txt
-          test ! -e _site/.github
-          test ! -e _site/tests
-          test ! -e _site/docs
-
-          if find _site -type l -print -quit | grep -q .; then
-            echo 'Symbolic links are forbidden in the Pages artifact.' >&2
-            exit 1
-          fi
-
-          echo "Prepared $(find _site -type f | wc -l | tr -d ' ') verified production files."
-
-      - name: Minify production CSS conservatively
-        run: node tools/minify-pages-css.mjs _site/assets/css
-
-      - name: Harden EN HU DE homepage critical path
-        run: node tools/optimize-homepage-critical-path.mjs _site
-
-      - name: Remove source-only tooling from Pages artifact
-        shell: bash
-        run: |
-          set -euo pipefail
-          rm -rf _site/tools
-          test ! -e _site/tools
-
-      - name: Run browser regressions against production artifact
-        run: npx playwright test --config=playwright.production.config.mjs
-
+          test -f _site/llms.txt
+          test -f _site/ai.txt
+          test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "1"
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-
       - name: Upload verified Pages artifact
-        id: upload
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    timeout-minutes: 50
-    steps:
-      - name: Check out deployment client
-        uses: actions/checkout@v4
-
-      - name: Deploy through Pages API without automatic cancellation
+      - name: Deploy GitHub Pages
         id: deployment
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PAGES_ARTIFACT_ID: ${{ needs.build.outputs.artifact_id }}
-          PAGES_POLL_INTERVAL_MS: '10000'
-          PAGES_POLL_TIMEOUT_MS: '2700000'
-        run: node tools/deploy-pages-api.mjs
+        uses: actions/deploy-pages@v4
 
-      - name: Verify exact commit is live on the custom domain
+  exact-live:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify exact BANHALMI commit is live on custom domain
         shell: bash
         run: |
           set -euo pipefail
@@ -146,35 +87,10 @@ jobs:
           for attempt in $(seq 1 30); do
             actual="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/deployment-sha.txt' || true)"
             if [ "$actual" = "$expected" ]; then
-              break
-            fi
-            if [ "$attempt" -eq 30 ]; then
-              echo "Expected live SHA $expected but received ${actual:-nothing}." >&2
-              exit 1
+              echo "Exact live SHA verified: $actual"
+              exit 0
             fi
             sleep 10
           done
-
-          curl -fsSL --max-time 20 -o /tmp/banhalmi-en.html 'https://www.norbertbanhalmi.com/'
-          curl -fsSL --max-time 20 -o /tmp/banhalmi-hu.html 'https://www.norbertbanhalmi.com/hu/'
-          curl -fsSL --max-time 20 -o /tmp/banhalmi-de.html 'https://www.norbertbanhalmi.com/de-at/'
-          a11y_css="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/assets/css/accessibility-stage14.css')"
-
-          grep -q 'BANHALMI' /tmp/banhalmi-en.html
-          grep -q 'BANHALMI' /tmp/banhalmi-hu.html
-          grep -q 'BANHALMI' /tmp/banhalmi-de.html
-          test -n "$a11y_css"
-          grep -q '.visually-hidden' <<< "$a11y_css"
-          grep -q 'prefers-reduced-motion' <<< "$a11y_css"
-
-          python3 - <<'PY'
-          from pathlib import Path
-          for file in ('/tmp/banhalmi-en.html','/tmp/banhalmi-hu.html','/tmp/banhalmi-de.html'):
-              html=Path(file).read_text(encoding='utf-8')
-              head=html.split('</head>',1)[0]
-              if 'application/ld+json' in head:
-                  raise SystemExit(f'{file}: JSON-LD leaked back into critical head')
-              if 'application/ld+json' not in html:
-                  raise SystemExit(f'{file}: JSON-LD missing from live document')
-          print('Live EN/HU/DE critical-path schema placement verified.')
-          PY
+          echo "Expected live SHA $expected but received ${actual:-nothing}." >&2
+          exit 1
