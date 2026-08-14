@@ -3904,3 +3904,152 @@ input[type="checkbox"],input[type="radio"]{min-width:24px;min-height:24px;}
 /* === CLEAN FINAL AUTHORITY === */
 .smart-quote-layout .quote-summary-card{box-shadow:none!important;text-shadow:none!important;filter:none!important}
 .fine-art-archive-continuation,.fine-art-archive-continuation .fine-art-archive-content{margin:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+
+
+/* APPLE-RESPONSIVE-CONTRACT-V1:START */
+/* Final visual authority: Apple-like optical rhythm, explicit alignment semantics,
+   WCAG-safe contrast, and one predictable desktop/tablet/mobile geometry. */
+:root{
+  --apple-page-max:1200px;
+  --apple-reading-max:760px;
+  --apple-wide-reading-max:900px;
+  --apple-gutter:clamp(20px,4.2vw,56px);
+  --apple-section-space:clamp(64px,7.2vw,104px);
+  --apple-block-gap:clamp(24px,3vw,40px);
+  --apple-card-gap:clamp(16px,2vw,24px);
+  --apple-radius:22px;
+  --apple-radius-small:16px;
+  --apple-text:#202530;
+  --apple-muted:#6E6E73;
+  --apple-surface:#FFFFFF;
+  --apple-surface-soft:#F5F5F7;
+  --apple-gold-text:#8A681F;
+}
+html,body{overflow-x:clip;}
+body{background:var(--apple-surface);color:var(--apple-text);}
+.wrap{
+  width:min(100%,var(--apple-page-max))!important;
+  max-width:var(--apple-page-max)!important;
+  margin-inline:auto!important;
+  padding-inline:var(--apple-gutter)!important;
+}
+main>section,body>main>section{padding-block:var(--apple-section-space)!important;}
+section>p,section>h2{
+  width:min(100%,var(--apple-page-max));
+  max-width:var(--apple-page-max)!important;
+  margin-inline:auto!important;
+  padding-inline:var(--apple-gutter)!important;
+}
+h1{font-size:clamp(2.55rem,5.4vw,4.7rem)!important;line-height:1.02!important;letter-spacing:-.035em!important;}
+h2{font-size:clamp(1.85rem,3.3vw,3rem)!important;line-height:1.08!important;letter-spacing:-.028em!important;}
+h3{font-size:clamp(1.12rem,1.55vw,1.35rem)!important;line-height:1.2!important;letter-spacing:-.018em!important;}
+p,li{line-height:1.58;}
+.lead{font-size:clamp(1.18rem,1.8vw,1.52rem)!important;line-height:1.42!important;}
+
+/* Reading blocks are left aligned unless the component is semantically declarative. */
+:is(.section-head,.prose,.legal,.form,.quote-intro,.quote-builder,.quote-step,.card,.step,
+.timeline,.timeline-item,.project-summary,.amcham-benefit-box,.service-context-lead,
+.about-longform,.professional-network,.contact-custom-quote,.budget-result,.custom-brief){
+  text-align:left!important;
+}
+:is(.section-head,.prose,.legal,.form,.quote-intro,.service-context-lead,.about-longform){
+  margin-left:0!important;
+  margin-right:auto!important;
+}
+.section-head{width:min(100%,var(--apple-reading-max));max-width:var(--apple-reading-max)!important;margin-bottom:var(--apple-block-gap)!important;}
+.prose,.legal,.form,.quote-intro,.about-longform{width:min(100%,var(--apple-reading-max));max-width:var(--apple-reading-max)!important;}
+.service-context-lead,.professional-network .prose{width:min(100%,var(--apple-wide-reading-max));max-width:var(--apple-wide-reading-max)!important;}
+:is(.card,.step,.quote-step,.project-summary,.amcham-benefit-box) :is(h2,h3,h4,p,li,dt,dd){text-align:left!important;}
+
+/* Hero: editorial text uses the left reading axis, never accidental centering. */
+.hero .wrap,.pf-intro .wrap{text-align:left!important;}
+.hero :is(h1,.lead,.eyebrow){margin-left:0!important;margin-right:auto!important;text-align:left!important;}
+.hero h1{max-width:16ch!important;}
+.hero .lead{max-width:50ch!important;}
+.hero-actions,.service-actions{justify-content:flex-start!important;}
+
+/* Intentional centred components only. */
+:is(.cta-band,.statement,.editorial-statement,.text-center){text-align:center!important;}
+:is(.cta-band,.statement,.editorial-statement,.text-center) :is(h1,h2,h3,p,.lead,.section-head,.prose){
+  margin-left:auto!important;margin-right:auto!important;text-align:center!important;
+}
+.cta-band .wrap{display:flex;flex-direction:column;align-items:center;}
+
+/* Layout families. */
+:is(.cards,.steps,.gallery,.split,.service-info-cards,.smart-quote-layout,.quote-layout,.grid-2,
+.category-grid,.legal-grid){gap:var(--apple-card-gap)!important;}
+:is(.cards,.steps,.service-info-cards,.legal-grid){align-items:stretch!important;}
+.card,.quote-step,.quote-summary-card,.amcham-benefit-box,.project-summary{
+  border-radius:var(--apple-radius)!important;
+  box-shadow:none!important;
+}
+.card{padding:clamp(22px,2.7vw,32px)!important;}
+.card:hover{transform:none!important;box-shadow:none!important;}
+.split{column-gap:clamp(32px,5vw,72px)!important;}
+.timeline,.timeline-item,.steps,.ticks,.faq{width:100%;}
+.timeline-item,.step{min-width:0;}
+.faq summary{min-height:52px;display:flex;align-items:center;}
+
+/* Contrast contract: #B79C44 is decorative on light surfaces; readable gold text is #8A681F. */
+:is(.section-head .eyebrow,.price-card .price,.price-line,.card .more,.map-card-link,.brand-word,
+.location-card-linkable .map-card-link){color:var(--apple-gold-text)!important;}
+.section-band{background:var(--apple-surface-soft)!important;}
+:is(.card,.quote-builder,.quote-step,.quote-summary-card,.amcham-benefit-box,.project-summary){background:var(--apple-surface)!important;}
+.card p,.step p,.microcopy,.custom-brief p,.amcham-copy{color:var(--apple-muted)!important;}
+
+/* Form and interactive geometry. */
+:is(.btn,.nav-cta,.pf-filter,.menu-btn,button,input,select,textarea,summary){min-height:44px;}
+.field input,.field select,.field textarea{font-size:16px;}
+.form,.quote-builder{min-width:0;}
+.check-grid,.category-grid,.option-stack{min-width:0;}
+
+/* Executive footer: information is left aligned; brand block may breathe but does not float. */
+.site-footer{background:#202530!important;color:#AEB4C2!important;}
+.site-footer .wrap{width:min(100%,var(--apple-page-max))!important;max-width:var(--apple-page-max)!important;}
+.footer-grid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr))!important;
+  gap:clamp(32px,4vw,56px)!important;
+  align-items:start!important;
+  text-align:left!important;
+}
+.footer-brand-col{grid-column:span 2;max-width:360px!important;text-align:left!important;}
+.site-footer :is(h3,li,p,a){text-align:left;}
+.footer-bottom{justify-content:flex-start!important;gap:12px 24px!important;text-align:left!important;}
+
+@media (max-width:1024px){
+  :root{--apple-section-space:clamp(60px,7vw,84px);--apple-gutter:clamp(22px,4.5vw,44px);}
+  .footer-brand-col{grid-column:span 1;}
+  .smart-quote-layout,.quote-layout{grid-template-columns:1fr!important;}
+  .quote-intro{position:static!important;}
+}
+@media (max-width:768px){
+  :root{--apple-section-space:60px;--apple-gutter:24px;--apple-card-gap:18px;}
+  h1{font-size:clamp(2.35rem,9vw,3.4rem)!important;}
+  h2{font-size:clamp(1.75rem,7vw,2.35rem)!important;}
+  .hero{padding:68px 0 52px!important;}
+  :is(.cards,.steps,.split,.service-info-cards,.smart-quote-layout,.quote-layout,.grid-2,
+  .category-grid,.legal-grid){grid-template-columns:1fr!important;}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .ticks{columns:1!important;}
+  .section-head,.prose,.legal,.form,.quote-intro,.about-longform,.service-context-lead{max-width:100%!important;}
+  .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media (max-width:560px){
+  :root{--apple-section-space:52px;--apple-gutter:20px;--apple-card-gap:16px;}
+  body{font-size:16px;line-height:1.55;}
+  h1{font-size:clamp(2.15rem,11vw,3rem)!important;}
+  h2{font-size:clamp(1.65rem,8vw,2.1rem)!important;}
+  .hero{padding:60px 0 44px!important;}
+  .hero-actions,.service-actions{display:grid!important;grid-template-columns:1fr!important;width:100%;}
+  .hero-actions .btn,.service-actions .btn{width:100%;text-align:center;}
+  .gallery{grid-template-columns:1fr!important;}
+  .card,.quote-step,.quote-summary-card,.amcham-benefit-box,.project-summary{border-radius:var(--apple-radius-small)!important;}
+  .footer-grid{grid-template-columns:1fr!important;}
+  .footer-brand-col{grid-column:auto;}
+  .footer-bottom{display:grid!important;grid-template-columns:1fr!important;}
+}
+@media (prefers-reduced-motion:reduce){
+  .card,.btn,.menu-btn,.nav-links{transition:none!important;transform:none!important;}
+}
+/* APPLE-RESPONSIVE-CONTRACT-V1:END */
