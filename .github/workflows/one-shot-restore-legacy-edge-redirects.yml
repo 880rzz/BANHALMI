@@ -1,0 +1,58 @@
+name: One-shot restore legacy edge redirects
+
+on:
+  push:
+    branches: [audit/legacy-redirect-preservation-20260814]
+    paths:
+      - .github/workflows/one-shot-restore-legacy-edge-redirects.yml
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/legacy-redirect-preservation-20260814
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Restore historical permanent Vercel rules
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('vercel.json')
+          data=json.loads(p.read_text(encoding='utf-8'))
+          wanted={
+            '/en/work':'https://www.banhalmi.art/',
+            '/about/norbert-banhalmi':'/about/',
+            '/hu/rolam/banhalmi-norbert':'/about/',
+            '/de/ueber-mich/norbert-banhalmi':'/about/',
+            '/press':'https://www.banhalmi.art/press.html',
+            '/old-print':'https://www.banhalmi.art/press.html',
+            '/hu/sajto/megjelenesek':'https://www.banhalmi.art/hu/press.html',
+            '/hu/sajto/nyomtatott':'https://www.banhalmi.art/hu/press.html',
+            '/de/presse/presseauftritte':'https://www.banhalmi.art/de-at/press.html',
+            '/de/presse/print':'https://www.banhalmi.art/de-at/press.html'
+          }
+          redirects=data.setdefault('redirects',[])
+          existing={r.get('source') for r in redirects if not r.get('has')}
+          additions=[{'source':s,'destination':d,'permanent':True} for s,d in wanted.items() if s not in existing]
+          data['redirects']=additions+redirects
+          p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print(f'restored {len(additions)} historical Vercel redirects')
+          PY
+          npm test
+      - name: Commit restored redirect parity
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add vercel.json
+          git diff --cached --check
+          git commit -m 'Restore historical Vercel redirect parity'
+          git push origin HEAD:audit/legacy-redirect-preservation-20260814
