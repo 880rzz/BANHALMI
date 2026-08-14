@@ -1,0 +1,7 @@
+{
+  "version": "2026-08-14-clean-v1",
+  "cssAuthority": "/assets/css/site.css",
+  "runtimeCssInjection": false,
+  "inlineStyles": false,
+  "agentEntry": "/.well-known/agent.json"
+}
