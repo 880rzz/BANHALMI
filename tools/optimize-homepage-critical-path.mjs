@@ -242,3 +242,5 @@ for (const rel of pages) {
   await writeFile(file, html, 'utf8');
   console.log(`${rel}: first-principles hero hierarchy and Stage77 copy locked; anchor contract preserved; moved ${scripts.length} JSON-LD block(s); head reduced by ${reduction} bytes.`);
 }
+
+await import('./apply-service-design-stage77.mjs');
