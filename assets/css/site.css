@@ -4079,6 +4079,7 @@ p,li{line-height:1.58;}
 /* QUOTE-DENSITY-REMEDIATION-20260814:END */
 
 
+
 /* DESKTOP-A11Y-REMEDIATION-20260814:START */
 /* Lighthouse/browser-confirmed contrast, touch-target, wrapping and link distinctions. */
 html body [data-surface="dark"] .section-head :is(h1,h2,h3){color:#F5F5F7!important;}
