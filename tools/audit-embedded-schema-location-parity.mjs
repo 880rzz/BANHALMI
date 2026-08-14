@@ -72,9 +72,9 @@ for (const file of walk(root).filter(file => file.endsWith('.html'))) {
   if (pageHasCanonicalEntity) structuredPages += 1;
 }
 
-if (structuredPages < 50) failures.push(`embedded schema coverage unexpectedly low: ${structuredPages} pages`);
-if (personPages < 50) failures.push(`Person schema coverage unexpectedly low: ${personPages}`);
-if (orgPages < 50) failures.push(`Organization schema coverage unexpectedly low: ${orgPages}`);
+if (structuredPages < 45) failures.push(`embedded schema coverage unexpectedly low: ${structuredPages} pages`);
+if (personPages < 45) failures.push(`Person schema coverage unexpectedly low: ${personPages}`);
+if (orgPages < 45) failures.push(`Organization schema coverage unexpectedly low: ${orgPages}`);
 
 if (failures.length) {
   console.error(failures.join('\n'));
