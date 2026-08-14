@@ -34,6 +34,8 @@ jobs:
         run: node tools/remediate-desktop-a11y-20260814.mjs
       - name: Run complete source contract
         run: npm test
+      - name: Verify first-principles post-migration state
+        run: node tools/audit-postmigration-first-principles-20260814.mjs
       - name: Commit complete remediation
         run: |
           set -euo pipefail
