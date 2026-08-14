@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test": "node tools/audit-clean-architecture.mjs && node tools/audit-legacy-redirect-preservation.mjs && node tools/audit-embedded-schema-location-parity.mjs && node tools/audit-apple-responsive-contract.mjs && node tools/audit-homepage-meta-parity.mjs",
+    "test": "node tools/audit-clean-architecture.mjs && node tools/audit-legacy-redirect-preservation.mjs && node tools/audit-embedded-schema-location-parity.mjs && node tools/audit-apple-responsive-contract.mjs && node tools/audit-homepage-meta-parity.mjs && node tools/audit-content-structure-first-principles.mjs",
     "audit": "npm test"
   }
 }
