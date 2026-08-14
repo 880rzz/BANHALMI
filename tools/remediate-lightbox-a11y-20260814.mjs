@@ -14,12 +14,19 @@ function walk(dir,rel=''){
     else if(entry.isFile()&&entry.name.endsWith('.html')) migrate(abs,next);
   }
 }
+function labelControl(tag,className,label){
+  if(!new RegExp(`\\bclass=["'][^"']*${className}[^"']*["']`,'i').test(tag)) return tag;
+  if(/\baria-label=["'][^"']*["']/i.test(tag)) return tag.replace(/\baria-label=(["'])[^"']*\1/i,`aria-label="${label}"`);
+  return tag.replace(/<button\b/i,`<button aria-label="${label}"`);
+}
 function migrate(file,rel){
   let html=fs.readFileSync(file,'utf8');
   const before=html;
-  html=html
-    .replace(/(<button\b[^>]*class=["'][^"']*universal-lightbox-prev[^"']*["'][^>]*aria-label=["'])Previous(["'][^>]*>)/gi,'$1Previous image$2')
-    .replace(/(<button\b[^>]*class=["'][^"']*universal-lightbox-next[^"']*["'][^>]*aria-label=["'])Next(["'][^>]*>)/gi,'$1Next image$2');
+  html=html.replace(/<button\b[^>]*>/gi,tag=>{
+    tag=labelControl(tag,'universal-lightbox-prev','Previous image');
+    tag=labelControl(tag,'universal-lightbox-next','Next image');
+    return tag;
+  });
   if(html!==before){fs.writeFileSync(file,html);changed++;console.log(`Updated ${rel}`)}
 }
 walk(root);
