@@ -33,7 +33,10 @@ for(const [route,label,isEvent] of routes){
       await expect(drawer.locator('.project-framework-content > .section-band')).toHaveCount(4);
       await expect(drawer.locator('a').filter({hasText:/Terms|feltételek|Vertragsbedingungen/i})).toHaveCount(1);
       await expect(drawer.locator('a').filter({hasText:/Privacy|Adatvédelem|Datenschutz/i})).toHaveCount(1);
-      if(isEvent)await expect(page.locator('main')).not.toContainText(/Private and family occasions|Privát és családi alkalmak|Private und familiäre Anlässe/i);
+      if(isEvent){
+        await expect(page.locator('main')).not.toContainText(/Private and family occasions|Privát és családi alkalmak|Private und familiäre Anlässe/i);
+        await expect(page.locator('.service-hero .eyebrow')).not.toContainText(/Private events|Privát események|Private Anlässe/i);
+      }
     }
     expect(await drawer.evaluate(node=>Boolean(node.closest('main')))).toBe(true);
   });
