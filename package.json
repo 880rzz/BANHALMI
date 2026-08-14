@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test": "node tools/audit-clean-architecture.mjs && node tools/audit-legacy-redirect-preservation.mjs",
+    "test": "node tools/audit-clean-architecture.mjs && node tools/audit-legacy-redirect-preservation.mjs && node tools/audit-embedded-schema-location-parity.mjs",
     "audit": "npm test"
   }
 }
