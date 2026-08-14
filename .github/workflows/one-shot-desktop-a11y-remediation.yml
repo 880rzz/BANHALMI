@@ -1,0 +1,32 @@
+name: One-shot BANHALMI desktop accessibility remediation
+
+on:
+  push:
+    branches: [audit/full-remediation-20260814]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/full-remediation-20260814
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/remediate-desktop-a11y-20260814.mjs
+      - run: npm test
+      - name: Commit CSS remediation
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/css/site.css
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Fix BANHALMI desktop accessibility contrast'
+          git push origin HEAD:audit/full-remediation-20260814
