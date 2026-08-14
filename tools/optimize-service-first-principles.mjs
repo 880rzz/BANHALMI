@@ -3,6 +3,10 @@ import path from 'node:path';
 
 export function optimizeServicePages(rootInput='_site') {
   const root=path.resolve(rootInput);
+  if(!fs.existsSync(path.join(root,'portrait/index.html'))){
+    console.log('Service first-principles optimization skipped: no complete site artifact detected.');
+    return;
+  }
   const commercial={
     'portrait/index.html':'en','lifestyle/index.html':'en','event-photography/index.html':'en',
     'hu/portre/index.html':'hu','hu/brand/index.html':'hu','hu/rendezvenyfotozas/index.html':'hu',
