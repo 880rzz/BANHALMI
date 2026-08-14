@@ -38,7 +38,7 @@ const required = [
   '.well-known/agent.json',
   'api/v1/identity.json', 'api/v1/services.json', 'api/v1/locations.json', 'api/v1/actions.json',
   'entity.jsonld', 'vercel.json',
-  'assets/js/site-config.js',
+  'assets/js/site-config.js', 'assets/js/main.js',
   'requestaquote/index.html', 'hu/ajanlatkeres/index.html', 'de-at/anfrage/index.html',
   'contact/index.html', 'hu/kapcsolat/index.html', 'de-at/kontakt/index.html',
   'redirects/at/middleware.js', 'redirects/hu/middleware.js'
@@ -54,20 +54,35 @@ if (exists('assets/js/site-config.js')) {
     ['language payload', 'data.page_language = languageOf(form)'],
     ['admin delivery verification', 'body.adminEmailSent === true'],
     ['customer delivery verification', 'body.customerEmailSent === true'],
-    ['submission key', 'submission_key'],
-    ['quote form selector', 'form[data-quote-form]'],
-    ['contact form selector', 'form[data-banhalmi-form]']
+    ['submission key', 'submission_key']
   ];
-  for (const [name, token] of runtimeContracts) if (!runtime.includes(token)) fail.push(`form runtime: ${name} contract missing`);
+  for (const [name, token] of runtimeContracts) if (!runtime.includes(token)) fail.push(`quote runtime: ${name} contract missing`);
+}
+if (exists('assets/js/main.js')) {
+  const runtime = read('assets/js/main.js');
+  const contactContracts = [
+    ['contact selector', 'document.querySelectorAll("[data-contact-form]")'],
+    ['shared endpoint lookup', 'config.formEndpoint'],
+    ['verified POST', 'function submitVerified()'],
+    ['JSON payload', 'JSON.stringify(payload)'],
+    ['mail fallback', 'openMailFallback()']
+  ];
+  for (const [name, token] of contactContracts) if (!runtime.includes(token)) fail.push(`contact runtime: ${name} contract missing`);
 }
 
 for (const p of ['requestaquote/index.html', 'hu/ajanlatkeres/index.html', 'de-at/anfrage/index.html']) {
-  if (exists(p) && !/data-smart-quote|data-quote-form|class=["'][^"']*quote-form/i.test(read(p))) {
+  if (exists(p) && !/data-smart-quote|data-form-kind=["']quote["']/i.test(read(p))) {
     fail.push(`${p}: quote form contract missing`);
   }
 }
 for (const p of ['contact/index.html', 'hu/kapcsolat/index.html', 'de-at/kontakt/index.html']) {
-  if (exists(p) && !/data-banhalmi-form/i.test(read(p))) fail.push(`${p}: contact submission contract missing`);
+  if (exists(p)) {
+    const h = read(p);
+    if (!/data-contact-form/i.test(h)) fail.push(`${p}: contact submission selector missing`);
+    if (!/data-form-kind=["']contact["']/i.test(h)) fail.push(`${p}: contact form-kind contract missing`);
+    if (!/name=["']website["']/i.test(h)) fail.push(`${p}: honeypot field missing`);
+    if (!/assets\/js\/site-config\.js/i.test(h) || !/assets\/js\/main\.js/i.test(h)) fail.push(`${p}: form runtime scripts missing`);
+  }
 }
 
 // LLM/agent layer must know the user-facing action routes without exposing the form backend as an autonomous agent API.
@@ -105,6 +120,7 @@ for (const [p, expected] of [
     const m = read(p);
     if (!m.includes('const ROUTES =')) fail.push(`${p}: explicit localized route map missing`);
     if (!m.includes(expected)) fail.push(`${p}: portrait localization mapping missing`);
+    if (!m.includes('function lookupPath(pathname)')) fail.push(`${p}: slashless-path normalization missing`);
     if (/CANONICAL_PREFIX\s*\+\s*pathname/.test(m)) fail.push(`${p}: blind path-prefix routing returned`);
   }
 }
@@ -113,4 +129,4 @@ if (fail.length) {
   console.error(fail.join('\n'));
   process.exit(1);
 }
-console.log(`Clean BANHALMI architecture passed: ${files.filter(f => f.endsWith('.html')).length} HTML pages, one CSS authority, critical forms/LLM/entity/alias contracts preserved.`);
+console.log(`Clean BANHALMI architecture passed: ${files.filter(f => f.endsWith('.html')).length} HTML pages, one CSS authority, critical quote/contact/LLM/entity/alias contracts preserved.`);
