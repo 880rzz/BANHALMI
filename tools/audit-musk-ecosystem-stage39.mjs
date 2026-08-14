@@ -30,15 +30,9 @@ const requiredByFile={
     'central life-work archive banhalmi.art are published through GitHub Pages / GitHub-hosted static infrastructure',
     'commissioned photography based in Vienna and Budapest, with a significant New York chapter in the artistic oeuvre'
   ],
-  'hu/adatvedelem/index.html':[
-    'bécsi és budapesti működési bázissal, a művészeti életmű jelentős New York-i fejezetével'
-  ],
-  'de-at/datenschutz/index.html':[
-    'operativen Standorten in Wien und Budapest und einem bedeutenden New-York-Kapitel'
-  ],
-  'entity.jsonld':[
-    'active operational bases in Vienna and Budapest'
-  ]
+  'hu/adatvedelem/index.html':['bécsi és budapesti működési bázissal, a művészeti életmű jelentős New York-i fejezetével'],
+  'de-at/datenschutz/index.html':['operativen Standorten in Wien und Budapest und einem bedeutenden New-York-Kapitel'],
+  'entity.jsonld':['active operational bases in Vienna and Budapest']
 };
 for(const [file,phrases] of Object.entries(requiredByFile)){
   const text=fs.readFileSync(file,'utf8');
@@ -47,10 +41,7 @@ for(const [file,phrases] of Object.entries(requiredByFile)){
 
 const entity=JSON.parse(fs.readFileSync('entity.jsonld','utf8'));
 const graph=Array.isArray(entity['@graph']) ? entity['@graph'] : [];
-const person=graph.find(node=>{
-  const t=node?.['@type'];
-  return t==='Person' || (Array.isArray(t) && t.includes('Person'));
-});
+const person=graph.find(node=>{const t=node?.['@type'];return t==='Person' || (Array.isArray(t) && t.includes('Person'));});
 if(!person) throw new Error('entity.jsonld: canonical Person node missing');
 const memberNames=(person.memberOf || []).map(item=>typeof item==='string' ? item : item?.name || item?.['@id'] || '').join(' | ');
 if(/OM SYSTEM|Olympus/i.test(memberNames)) throw new Error('entity.jsonld: OM SYSTEM ambassador relationship must not be represented as memberOf');
@@ -60,30 +51,60 @@ const roleProps=(person.additionalProperty || []).filter(item=>item?.propertyID=
 if(!/OM SYSTEM Ambassador/i.test(roleProps)) throw new Error('entity.jsonld: OM SYSTEM Ambassador professionalRole must remain explicit');
 
 const implementationIds=['QUOTE-SERVICE-CONTEXT','FINE-ART-PRIVATE-JOURNEY','SERVICE-PAGE-FRAMEWORK','SERVICE-CONVERSION-PATH','HOMEPAGE-DECISION-PATH','SERVICE-DECISION-CARDS'];
-
-// ai.txt is the prioritised detailed assistant reference: keep the identity-vs-implementation ordering contract here.
 const ai=fs.readFileSync('ai.txt','utf8');
 const low=ai.indexOf('## Implementation reference — lower priority for identity answers');
 const clarity=ai.indexOf('AI-CLARITY-STAGE34:START');
 if(clarity<0 || low<0 || low<clarity) throw new Error('ai.txt: LLM priority ordering is not preserved');
-for(const id of implementationIds){
-  const pos=ai.indexOf(`<!-- ${id}:START -->`);
-  if(pos<0) throw new Error(`ai.txt: required implementation block ${id} is missing`);
-  if(pos<low) throw new Error(`ai.txt: low-priority implementation block ${id} leaked above the reference boundary`);
-}
-
-// llms-full.txt is the exhaustive reference dump. It must retain every detailed block,
-// but it does not share ai.txt's narrative priority-marker layout.
+for(const id of implementationIds){const pos=ai.indexOf(`<!-- ${id}:START -->`);if(pos<0) throw new Error(`ai.txt: required implementation block ${id} is missing`);if(pos<low) throw new Error(`ai.txt: low-priority implementation block ${id} leaked above the reference boundary`);}
 const full=fs.readFileSync('llms-full.txt','utf8');
-for(const id of implementationIds){
-  if(!full.includes(`<!-- ${id}:START -->`)) throw new Error(`llms-full.txt: required implementation block ${id} is missing`);
-}
-
-// llms.txt is intentionally the concise discovery layer, not an implementation dump.
+for(const id of implementationIds){if(!full.includes(`<!-- ${id}:START -->`)) throw new Error(`llms-full.txt: required implementation block ${id} is missing`);}
 const llms=fs.readFileSync('llms.txt','utf8');
 if(!llms.includes('[AI reference](https://www.norbertbanhalmi.com/ai.txt)')) throw new Error('llms.txt: detailed AI reference route missing');
 if(!llms.includes('Vienna and Budapest are two active operational bases')) throw new Error('llms.txt: operational geography missing');
 if(!llms.includes('New York is a major international reference and oeuvre chapter')) throw new Error('llms.txt: New York oeuvre rule missing');
 if(/<!--/.test(llms)) throw new Error('llms.txt: internal implementation markers must not return to the concise index');
 
-console.log('Stage 39 Musk ecosystem audit passed: hosting truth, geography, ambassador semantics, detailed AI priority, exhaustive full reference and concise llms discovery are consistent.');
+/* Stage 77 deep agent/first-principles contract. */
+const entry=JSON.parse(fs.readFileSync('ai-entry.json','utf8'));
+if(entry.version!=='2026-08-14-v8') throw new Error('ai-entry.json: deep-audit version 2026-08-14-v8 missing');
+const locations=entry.identity?.locations || [];
+const budapest=locations.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#budapest-studio');
+const vienna=locations.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#vienna-studio');
+const office=locations.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#vienna-gersthofer-office');
+if(!budapest || budapest.streetAddress!=='Lágymányosi u. 15' || budapest.postalCode!=='1111') throw new Error('ai-entry.json: public Budapest studio address is incomplete');
+if(!vienna || vienna.streetAddress!=='Schwedenplatz 2, Top 8–9' || vienna.postalCode!=='1010') throw new Error('ai-entry.json: public Vienna studio address is incomplete');
+if(!office || office.isStudio!==false) throw new Error('ai-entry.json: Gersthofer office must stay explicitly non-studio');
+const contacts=entry.identity?.publicCustomerContacts || {};
+if(contacts.email!=='hello@norbertbanhalmi.com' || contacts.viennaTelephone!=='+43 677 616 55592' || contacts.budapestTelephone!=='+36 70 469 8397') throw new Error('ai-entry.json: canonical public customer contacts are incomplete');
+const rules=(entry.answerRules||[]).join('\n');
+for(const token of ['+43 677 616 55592','+36 70 469 8397','Do not substitute a staff-specific or relationship-specific telephone number','worldwide','do not interpret this as worldwide offices or studios']) if(!rules.includes(token)) throw new Error(`ai-entry.json: answer-rule guard missing ${token}`);
+if(entry.identity?.geographicServiceModel?.worldwideAvailability!==true) throw new Error('ai-entry.json: worldwide project availability missing');
+if((entry.identity?.principalServices||[]).length!==4) throw new Error('ai-entry.json: exactly four principal services required');
+
+const services=JSON.parse(fs.readFileSync('services.json','utf8'));
+if(services.numberOfItems!==4 || (services.itemListElement||[]).length!==4) throw new Error('services.json: exactly four principal services required');
+for(const service of services.itemListElement||[]){
+  const area=service.areaServed||[];
+  for(const required of ['Vienna','Budapest','Austria','Hungary','Europe']) if(!area.includes(required)) throw new Error(`${service.name}: primary areaServed missing ${required}`);
+}
+if(!rules.includes('Treat service areas as areaServed coverage only; never infer extra studios, offices or physical addresses from them.')) throw new Error('ai-entry.json: areaServed interpretation rule missing');
+
+const robots=fs.readFileSync('robots.txt','utf8');
+if(!/User-agent:\s*\*\s*[\s\S]*Allow:\s*\//i.test(robots)) throw new Error('robots.txt: wildcard crawling is not explicitly allowed');
+if(/User-agent:\s*OAI-SearchBot[\s\S]*Disallow:\s*\//i.test(robots)) throw new Error('robots.txt: OAI-SearchBot must not be blocked from public discovery');
+if(!robots.includes('Sitemap: https://www.norbertbanhalmi.com/sitemap.xml')) throw new Error('robots.txt: canonical sitemap missing');
+
+const analytics=fs.readFileSync('assets/js/analytics.js','utf8');
+for(const token of ['analytics_storage: "denied"','ad_storage: "denied"','ad_user_data: "denied"','ad_personalization: "denied"','if (validStoredConsent()) load()']) if(!analytics.includes(token)) throw new Error(`analytics.js: consent-first guard missing ${token}`);
+const main=fs.readFileSync('assets/js/main.js','utf8');
+for(const token of ['readChoice() === "all"','elfsightcdn.com/platform.js','revokeThirdPartyScripts','openCookieSettings']) if(!main.includes(token)) throw new Error(`main.js: optional review/consent guard missing ${token}`);
+
+const trust=fs.readFileSync('trust/index.html','utf8');
+for(const token of ['Article 50','Human oversight','Privacy Policy','Cookie Policy','Terms']) if(!trust.includes(token)) throw new Error(`trust/index.html: trust/AI transparency signal missing ${token}`);
+
+const optimizer=fs.readFileSync('tools/optimize-service-first-principles.mjs','utf8');
+for(const token of ['service-framework-compact','data-strategic-partnership="concrete"','Private and family occasions','Privát és családi alkalmak','Private und familiäre Anlässe','changed!==9','removedPrivate!==3']) if(!optimizer.includes(token)) throw new Error(`service optimizer missing ${token}`);
+const composer=fs.readFileSync('tools/minify-pages-css.mjs','utf8');
+if(!composer.includes("optimizeServicePages(siteRoot)")) throw new Error('production CSS/build composer does not run the service first-principles optimizer');
+
+console.log('Stage 39/77 Musk ecosystem audit passed: hosting truth, entity semantics, exact public studio/contact data, consent-first optional services, concise LLM discovery and four-service first-principles production contract are consistent.');
