@@ -50,9 +50,6 @@
           "value": "/g/11f5lxwl_6"
         }
       ],
-      "homeLocation": {
-        "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
-      },
       "workLocation": [
         {
           "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
