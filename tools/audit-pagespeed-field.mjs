@@ -43,7 +43,10 @@ for (const target of targets) {
   for (const [name, value] of available) if (value > thresholds[name]) failures.push(`${target}: ${name} ${value} exceeds good threshold ${thresholds[name]}`);
 }
 
-if (!measured) console.log('No URL had sufficient CrUX field data in this run.');
+if (!measured) {
+  console.error('No URL had sufficient CrUX field data in this run; the field gate is not green.');
+  process.exit(1);
+}
 if (failures.length) {
   console.error('\nCore Web Vitals field gate failed:');
   for (const failure of failures) console.error(`✗ ${failure}`);
