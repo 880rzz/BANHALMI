@@ -17,6 +17,8 @@ const descriptions={
  'de-at/portrait/index.html':'Executive-Porträt- und Headshot-Fotografie in Wien und Budapest für Führungskräfte, Unternehmer und persönliche Marken mit professionellem Einsatzfokus.',
  'de-at/eventfotografie/index.html':'C-Level-Eventfotografie mit Fototeam in Wien und Budapest für schnell nutzbare Presse-, Unternehmens- und langfristige Kommunikationsbilder.'
 };
+const trustPages=['trust/index.html','hu/bizalom/index.html','de-at/vertrauen/index.html'];
+const socialImage='https://www.norbertbanhalmi.com/assets/img/og/banhalmi-og.webp';
 const escRe=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 const attr=s=>s.replaceAll('&','&amp;').replaceAll('"','&quot;');
 function setMeta(html,key,value){
@@ -27,10 +29,25 @@ function setMeta(html,key,value){
  else tag=tag.replace(/\s*\/?>(?=$)/,` content="${attr(value)}"/>`);
  return html.slice(0,m.index)+tag+html.slice(m.index+m[0].length);
 }
+function ensureMeta(html,key,value,property=false){
+ const re=new RegExp(`<meta\\b(?=[^>]*(?:name|property)=["']${escRe(key)}["'])[^>]*>`,'i');
+ if(re.test(html))return setMeta(html,key,value);
+ if(!/<\/head>/i.test(html))throw new Error(`cannot add ${key}: closing head missing`);
+ const field=property?'property':'name';
+ return html.replace(/<\/head>/i,`<meta ${field}="${key}" content="${attr(value)}">\n</head>`);
+}
 for(const [file,description] of Object.entries(descriptions)){
  let html=fs.readFileSync(file,'utf8');
  for(const key of ['description','og:description','twitter:description'])html=setMeta(html,key,description);
  fs.writeFileSync(file,html);
  console.log(`${file}: synchronized complete meta/OG/Twitter description.`);
 }
-console.log(`Updated ${Object.keys(descriptions).length} subpages; homepage and biography metadata remain owned by their dedicated contracts.`);
+for(const file of trustPages){
+ let html=fs.readFileSync(file,'utf8');
+ html=ensureMeta(html,'og:image',socialImage,true);
+ html=ensureMeta(html,'twitter:card','summary_large_image');
+ html=ensureMeta(html,'twitter:image',socialImage);
+ fs.writeFileSync(file,html);
+ console.log(`${file}: completed Trust Center social image/card metadata.`);
+}
+console.log(`Updated ${Object.keys(descriptions).length} subpages and completed EN/HU/DE Trust Center social metadata; homepage and biography metadata remain owned by their dedicated contracts.`);
