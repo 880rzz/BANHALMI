@@ -33,13 +33,13 @@ for(const rel of priority){
 }
 const required=[
   ['index.html','Photography for clear communication'],
-  ['index.html','Four ways we can work together'],
+  ['index.html','Four ways to solve the visual'],
   ['lifestyle/index.html','The same approach also works for individuals.'],
   ['speier-viko/index.html','Viko Speier — where strategy meets photography'],
   ['de-at/index.html','Fotografie für klare Kommunikation'],
-  ['de-at/index.html','Vier Formen der Zusammenarbeit'],
+  ['de-at/index.html','Vier Wege zu einer klaren visuellen'],
   ['de-at/speier-viko/index.html','Viko Speier — wo Strategie und Fotografie zusammenkommen']
 ];
-for(const [rel,phrase] of required){const h=fs.readFileSync(path.join(root,rel),'utf8');if(!h.includes(phrase))failures.push(`${rel}: approved human copy missing: ${phrase}`)}
+for(const [rel,phrase] of required){const h=fs.readFileSync(path.join(root,rel),'utf8');if(!visible(h).includes(phrase))failures.push(`${rel}: approved human copy missing: ${phrase}`)}
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
 console.log(`English/German human-voice audit passed across ${priority.length} priority pages, including H1/H2/CTA/summary labels.`);

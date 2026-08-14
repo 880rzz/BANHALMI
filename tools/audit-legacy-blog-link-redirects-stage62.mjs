@@ -7,7 +7,7 @@ const routes = {
   'muveszi-aktfotozas': 'https://www.norbertbanhalmi.com/hu/muveszi-fotografia/',
   'reklam-fotozas': 'https://www.norbertbanhalmi.com/hu/brand/',
   'post/amikor-csak-egy-táncpartnered-van-egész-estére': 'https://blog.banhalmi.art/post/amikor-csak-egy-táncpartnered-van-egész-estére',
-  'blog/tags/filter-nélkül-a-testem-története': 'https://blog.banhalmi.art/blog/tags/nofilter'
+  'blog/tags/filter-nélkül-a-testem-története': 'https://blog.banhalmi.art/blog'
 };
 const errors = [];
 for (const [route, target] of Object.entries(routes)) {

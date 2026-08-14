@@ -4113,8 +4113,20 @@ html body .presence-thesis[data-surface="dark"] .btn-link:focus-visible{color:#D
    screens; ordinary prose remains unaffected because overflow-wrap only acts
    when a token cannot otherwise fit. */
 @media (max-width:480px){
-  html body main :is(p,li,a,strong,span,code){overflow-wrap:anywhere;}
+  html body main :is(h1,h2,h3,p,li,a,strong,span,code){overflow-wrap:anywhere;}
   html body main :is(.legal,.prose,.card,.split,.grid-2,.grid-3){min-width:0;}
 }
+/* FIRST-PRINCIPLES-DESKTOP-GUARD-20260814:START */
+@media(min-width:769px){
+  html body main h1,
+  html body header h1{
+    font-size:min(4.375rem,7vw)!important;
+  }
+}
+html body main .trust-hero p.lead{
+  width:min(100%,52rem)!important;
+  max-width:52rem!important;
+}
+/* FIRST-PRINCIPLES-DESKTOP-GUARD-20260814:END */
 /* DESKTOP-A11Y-REMEDIATION-20260814:END */
 /* APPLE-RESPONSIVE-CONTRACT-V1:END */
