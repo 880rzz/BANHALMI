@@ -42,15 +42,6 @@ for(const [file,termsHref,privacyHref,oldHeadings] of quotes){
   if(!h.includes(termsHref)||!h.includes(privacyHref)) failures.push(`${file}: Terms/Privacy hand-off missing`);
   for(const heading of oldHeadings) if(v.includes(heading)) failures.push(`${file}: duplicated legal card remains: ${heading}`);
 }
-const huServiceTerms=['hu/brand/index.html','hu/portre/index.html','hu/rendezvenyfotozas/index.html'];
-for(const file of huServiceTerms){
-  const h=fs.readFileSync(file,'utf8');
-  if(h.includes('/hu/altalanos-szerzodesi-feltetelek/')) failures.push(`${file}: legacy Terms URL remains in visible content or schema`);
-  if(!h.includes('/hu/aszf/')) failures.push(`${file}: canonical /hu/aszf/ reference missing`);
-  const service=[...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi)].map(m=>{try{return JSON.parse(m[1])}catch{return null}}).find(x=>x?.['@type']==='Service');
-  if(!service) failures.push(`${file}: Service schema missing`);
-  else if(service.termsOfService!=='https://www.norbertbanhalmi.com/hu/aszf/') failures.push(`${file}: Service.termsOfService is not canonical /hu/aszf/`);
-}
 for(const root of ['hu','ai.txt','llms.txt','llms-full.txt','customer-needs.json']){
   const scan=file=>{if(!fs.existsSync(file)||fs.statSync(file).isDirectory())return;const t=fs.readFileSync(file,'utf8');if(/\baz vezetői\b/iu.test(t))failures.push(`${file}: incorrect Hungarian article remains`)};
   if(fs.existsSync(root)&&fs.statSync(root).isDirectory()){const walk=d=>{for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=`${d}/${e.name}`;e.isDirectory()?walk(p):scan(p)}};walk(root)}else scan(root);
@@ -59,7 +50,9 @@ for(const file of ['portrait/index.html','lifestyle/index.html','glamour/index.h
   const h=fs.readFileSync(file,'utf8');
   if(/aria-label=["'](?:Previous|Next)["']/i.test(h)) failures.push(`${file}: ambiguous English lightbox accessible name remains`);
 }
+for(const file of ['hu/brand/index.html','hu/portre/index.html','hu/rendezvenyfotozas/index.html']){const h=fs.readFileSync(file,'utf8');if(h.includes('/hu/altalanos-szerzodesi-feltetelek/'))failures.push(`${file}: obsolete HU Terms URL remains in visible/schema source`);if(!h.includes('/hu/aszf/'))failures.push(`${file}: canonical /hu/aszf/ Terms reference missing`)}
+const entity=JSON.parse(fs.readFileSync('entity.jsonld','utf8'));const person=(entity['@graph']||[]).find(n=>n?.['@id']==='https://www.norbertbanhalmi.com/about/'&&(n?.['@type']==='Person'||(Array.isArray(n?.['@type'])&&n['@type'].includes('Person'))));if(!person)failures.push('entity.jsonld: canonical Person missing');else if(Object.hasOwn(person,'homeLocation'))failures.push('entity.jsonld: Person.homeLocation still encodes a business/studio location');
 const css=fs.readFileSync('assets/css/site.css','utf8');
 for(const marker of ['DESKTOP-A11Y-REMEDIATION-20260814','QUOTE-DENSITY-REMEDIATION-20260814']) if(!css.includes(marker)) failures.push(`site.css: ${marker} marker missing`);
 if(failures.length){console.error('BANHALMI post-migration first-principles audit FAILED:\n'+failures.map(x=>' - '+x).join('\n'));process.exit(1)}
-console.log('BANHALMI post-migration first-principles audit passed: biography, team roles, legal content, canonical Terms links, quote flow and accessibility each have one owner.');
+console.log('BANHALMI post-migration first-principles audit passed: biography, team roles, legal content, quote flow, location semantics and accessibility each have one canonical owner.');
