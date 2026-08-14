@@ -21,6 +21,8 @@ jobs:
           node-version: 22
       - name: Consolidate artistic archive ownership
         run: node tools/simplify-about-art-ownership-20260814.mjs
+      - name: Consolidate team-role ownership
+        run: node tools/simplify-team-role-ownership-20260814.mjs
       - name: Consolidate legal content ownership
         run: node tools/simplify-legal-content-ownership-20260814.mjs
       - name: Remove duplicated quote legal chapters
