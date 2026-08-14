@@ -12,6 +12,18 @@ for(const file of bios){
   if(words>2000) failures.push(`${file}: still too dense after ownership simplification (${words} words)`);
   if((html.match(/<h1\b/gi)||[]).length!==1) failures.push(`${file}: H1 invariant failed`);
 }
+const legal=[
+ ['privacy-policy/index.html','faq/index.html','Booking fees, invoices and payment','/terms-conditions/','/privacy-policy/'],
+ ['hu/adatvedelem/index.html','hu/gyik/index.html','Foglalási díj, számlázás és fizetés','/hu/aszf/','/hu/adatvedelem/'],
+ ['de-at/datenschutz/index.html','de-at/faq/index.html','Reservierungsentgelt, Rechnung und Zahlung','/de-at/agb/','/de-at/datenschutz/']
+];
+for(const [privacy,faq,booking,termsHref,privacyHref] of legal){
+  const p=fs.readFileSync(privacy,'utf8'),f=fs.readFileSync(faq,'utf8');
+  if(visible(p).includes(booking)) failures.push(`${privacy}: commercial booking/payment chapter still lives in privacy notice`);
+  if(!/class=["'][^"']*legal-navigation/i.test(f)) failures.push(`${faq}: canonical legal-navigation bridge missing`);
+  if(!f.includes(termsHref)||!f.includes(privacyHref)) failures.push(`${faq}: canonical Terms/Privacy links missing`);
+  for(const duplicate of ['Storage, access and deletion','Tárolás, hozzáférés és törlés','Speicherung, Zugriff und Löschung','Image use, approvals and reference rights','Képfelhasználás, jóváhagyás és referenciajog','Bildnutzung, Freigaben und Referenzrechte']) if(visible(f).includes(duplicate)) failures.push(`${faq}: full legal chapter still duplicated: ${duplicate}`);
+}
 for(const root of ['hu','ai.txt','llms.txt','llms-full.txt','customer-needs.json']){
   const scan=file=>{if(!fs.existsSync(file)||fs.statSync(file).isDirectory())return;const t=fs.readFileSync(file,'utf8');if(/\baz vezetői\b/iu.test(t))failures.push(`${file}: incorrect Hungarian article remains`)};
   if(fs.existsSync(root)&&fs.statSync(root).isDirectory()){const walk=d=>{for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=`${d}/${e.name}`;e.isDirectory()?walk(p):scan(p)}};walk(root)}else scan(root);
