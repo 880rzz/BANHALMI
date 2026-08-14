@@ -59,6 +59,9 @@
         },
         {
           "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"
         }
       ],
       "knowsLanguage": [
@@ -429,6 +432,9 @@
         },
         {
           "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"
         }
       ],
       "description": "BANHALMI is a visual strategic partner for leaders and organisations. Executive portraits shape first impressions, trust and corporate reputation within coherent visual systems spanning brand photography, employer branding, C-Level event communication and long-term visual consistency between Vienna and Budapest.",
@@ -2181,6 +2187,24 @@
       },
       "publisher": {
         "@id": "https://www.norbertbanhalmi.com/#organization"
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
+      "name": "BANHALMI Vienna — Gersthofer office & client meeting location",
+      "description": "Active Vienna office and client meeting location. This is not a photographic studio.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gersthofer Straße 150–154/6/2",
+        "postalCode": "1180",
+        "addressLocality": "Wien",
+        "addressCountry": "AT"
+      },
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Wien",
+        "sameAs": "https://www.wikidata.org/wiki/Q1741"
       }
     }
   ],
