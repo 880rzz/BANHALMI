@@ -8,10 +8,16 @@ for(const file of bios){
   const html=fs.readFileSync(file,'utf8');
   if(!/id=["']artistic-archive["']/i.test(html)) failures.push(`${file}: canonical ART bridge missing`);
   for(const id of removed) if(new RegExp(`id=["']${id}["']`,'i').test(html)) failures.push(`${file}: ART-owned detail #${id} still duplicated`);
+  if(!/data-team-role-owner=["']speier["']/i.test(html)) failures.push(`${file}: compact team-role bridge missing`);
+  if(/team-role-clarity/i.test(html)) failures.push(`${file}: full repeated team-role block remains`);
   const words=visible(html.match(/<main\b[\s\S]*?<\/main>/i)?.[0]||html).split(/\s+/).filter(Boolean).length;
   if(words>2000) failures.push(`${file}: still too dense after ownership simplification (${words} words)`);
   if((html.match(/<h1\b/gi)||[]).length!==1) failures.push(`${file}: H1 invariant failed`);
 }
+const contacts=[['contact/index.html','/about/','/speier-viko/'],['hu/kapcsolat/index.html','/hu/eletmu/','/hu/speier-viko/'],['de-at/kontakt/index.html','/de-at/werk/','/de-at/speier-viko/']];
+for(const [file,norbert,viko] of contacts){const h=fs.readFileSync(file,'utf8');if(!/data-team-role-owner=["']contact["']/i.test(h))failures.push(`${file}: concise contact routing missing`);if(/team-role-clarity/i.test(h))failures.push(`${file}: full team-role block remains`);if(!h.includes(norbert)||!h.includes(viko))failures.push(`${file}: Norbert/Viko routing links incomplete`)}
+for(const file of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/anfrage/index.html']){const h=fs.readFileSync(file,'utf8');if(/team-role-clarity|data-team-role-owner=/i.test(h))failures.push(`${file}: team biography interrupts quote decision flow`)}
+for(const file of ['speier-viko/index.html','hu/speier-viko/index.html','de-at/speier-viko/index.html']){const h=fs.readFileSync(file,'utf8');if(!/team-role-clarity/i.test(h))failures.push(`${file}: canonical detailed team context missing from Viko profile`)}
 const legal=[
  ['privacy-policy/index.html','faq/index.html','Booking fees, invoices and payment','/terms-conditions/','/privacy-policy/'],
  ['hu/adatvedelem/index.html','hu/gyik/index.html','Foglalási díj, számlázás és fizetés','/hu/aszf/','/hu/adatvedelem/'],
@@ -47,4 +53,4 @@ for(const file of ['portrait/index.html','lifestyle/index.html','glamour/index.h
 const css=fs.readFileSync('assets/css/site.css','utf8');
 for(const marker of ['DESKTOP-A11Y-REMEDIATION-20260814','QUOTE-DENSITY-REMEDIATION-20260814']) if(!css.includes(marker)) failures.push(`site.css: ${marker} marker missing`);
 if(failures.length){console.error('BANHALMI post-migration first-principles audit FAILED:\n'+failures.map(x=>' - '+x).join('\n'));process.exit(1)}
-console.log('BANHALMI post-migration first-principles audit passed: content ownership, legal hand-offs, quote density and accessibility are consistent.');
+console.log('BANHALMI post-migration first-principles audit passed: biography, team roles, legal content, quote flow and accessibility each have one canonical owner.');
