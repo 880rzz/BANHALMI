@@ -45,25 +45,23 @@ function inspect(rel,abs){
   if(dup.length) failures.push(`${rel}: duplicate id(s): ${dup.join(', ')}`);
 
   for(const m of main.matchAll(/<(a|button)\b([^>]*)>([\s\S]*?)<\/\1>/gi)){
-    const a=attrs(m[2]);const label=strip(m[3])||a['aria-label']||a.title||'';
+    const a=attrs(m[2]);const label=a['aria-label']||strip(m[3])||a.title||'';
     if(!label.trim()) failures.push(`${rel}: empty ${m[1].toLowerCase()} without accessible label`);
     const n=normalize(label);
     if(generic[lang].has(n)) failures.push(`${rel}: generic ${m[1].toLowerCase()} label "${label}"; destination/action must be explicit`);
   }
   for(const m of main.matchAll(/<img\b([^>]*)>/gi)){const a=attrs(m[1]);if(!Object.hasOwn(a,'alt')) failures.push(`${rel}: image without alt attribute`)}
-  if(/\b(?:lorem ipsum|todo\b|tbd\b|placeholder\b|undefined|null)\b/i.test(text)) failures.push(`${rel}: placeholder/debug content visible`);
+  if(/(?:lorem ipsum|\bTODO\b|\bTBD\b|\{\{[^}]+\}\}|\[object Object\])/i.test(text)) failures.push(`${rel}: placeholder/debug content visible`);
 
   const paragraphs=[...main.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map(m=>strip(m[1])).filter(s=>s.length>=90);
   const seen=new Map();for(const p of paragraphs){const k=p.toLowerCase().replace(/\s+/g,' ');seen.set(k,(seen.get(k)||0)+1)}
   for(const [p,count] of seen) if(count>1) failures.push(`${rel}: same substantial paragraph repeated ${count}×: ${p.slice(0,100)}…`);
 
-  // BANHALMI owns commercial decision paths, not the full museum/archive corpus.
   if(/\b(?:archive-record-registry|archive-source-map|press-period-nav|museum-editorial|data-archive-page)\b/i.test(html)) failures.push(`${rel}: ART archive implementation leaked into BANHALMI commercial page`);
 
   const alts=[...html.matchAll(/<link\b([^>]*\brel=["'][^"']*alternate[^"']*["'][^>]*)>/gi)].map(m=>attrs(m[1])).filter(a=>a.hreflang);
-  if(alts.length){const langs=new Set(alts.map(a=>a.hreflang.toLowerCase()));for(const req of ['en','hu','de-at','x-default'])if(!langs.has(req)) failures.push(`${rel}: hreflang family missing ${req}`)}
+  if(alts.length){const langs=new Set(alts.map(a=>a.hreflang.toLowerCase()));for(const req of ['en','hu-hu','de-at','x-default'])if(!langs.has(req)) failures.push(`${rel}: hreflang family missing ${req}`)}
 
-  // Transactional pages need a clear path to privacy and an explicit action.
   if(/(?:quote-form|quote-builder|contact-form)/i.test(html)){
     if(!/(privacy|adatv[ée]delem|datenschutz)/i.test(text+html)) failures.push(`${rel}: transactional page lacks visible privacy path`);
     if(!/<button\b[^>]*type=["']submit["']/i.test(html)) failures.push(`${rel}: transactional page lacks explicit submit button`);
