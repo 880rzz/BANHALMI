@@ -33,6 +33,8 @@ jobs:
         run: node tools/fix-hungarian-article-vezetoi-20260814.mjs
       - name: Complete truncated subpage metadata
         run: node tools/fix-meta-description-quality-20260814.mjs
+      - name: Harden browser autofill semantics
+        run: node tools/remediate-form-autocomplete-20260814.mjs
       - name: Fix English lightbox accessible names
         run: node tools/remediate-lightbox-a11y-20260814.mjs
       - name: Compact quote decision geometry
