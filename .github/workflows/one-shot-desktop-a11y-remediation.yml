@@ -2,11 +2,6 @@ name: One-shot BANHALMI complete remediation
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - audit/full-remediation-20260814
-    paths:
-      - .github/workflows/one-shot-desktop-a11y-remediation.yml
 
 permissions:
   contents: write
@@ -66,5 +61,3 @@ jobs:
           fi
           git commit -m 'Simplify BANHALMI ownership and fix audited UI defects'
           git push origin HEAD:audit/full-remediation-20260814
-
-# remediation trigger 2026-08-14-4
