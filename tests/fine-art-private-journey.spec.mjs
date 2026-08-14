@@ -24,12 +24,25 @@ for(const route of routes){
     await expect(page).toHaveURL(/#private-conversation$/);
     await expect(page.locator('#private-conversation')).toBeVisible();
     await page.goto(route);
-    const drawer=page.locator('details[data-fine-art-archive="stage23"]');
-    await expect(drawer).toHaveCount(1);
-    await expect(drawer).not.toHaveAttribute('open','');
+
+    const legacyDrawer=page.locator('details[data-fine-art-archive="stage23"]');
+    const continuous=page.locator('[data-fine-art-archive="stage79"]');
+    const drawerCount=await legacyDrawer.count();
+    const continuousCount=await continuous.count();
+    expect(drawerCount+continuousCount).toBe(1);
+
     const extendedCount=await page.locator('[data-archive-extended]').count();
     expect(extendedCount).toBeGreaterThan(0);
-    await expect(drawer.locator('[data-archive-extended]')).toHaveCount(extendedCount);
+    const archiveRoot=continuousCount?continuous:legacyDrawer;
+    await expect(archiveRoot.locator('[data-archive-extended]')).toHaveCount(extendedCount);
+
+    if(continuousCount){
+      await expect(page.locator('.fine-art-archive-summary-copy,.fine-art-archive-action,.fine-art-archive-toggle')).toHaveCount(0);
+      await expect(page.getByText(/Extended artistic archive|Bővített művészeti archívum|Erweitertes Kunstarchiv/i)).toHaveCount(0);
+    }else{
+      await expect(legacyDrawer).not.toHaveAttribute('open','');
+    }
+
     const restrictedCount=await page.locator('figure[data-age-restricted="true"]').count();
     expect(restrictedCount).toBeGreaterThan(0);
     await expect(page.locator('figure[data-age-restricted="true"] img.age-restricted-preview')).toHaveCount(restrictedCount);
@@ -37,9 +50,9 @@ for(const route of routes){
     await coreButton.click({force:true});
     await expect(page.locator('[data-universal-lightbox]')).toHaveClass(/open/);
     await page.locator('.universal-lightbox-close').click({force:true});
-    await drawer.locator('summary').click({force:true});
-    await expect(drawer).toHaveAttribute('open','');
-    const archiveButton=drawer.locator('figure:not([data-age-restricted]) button[data-lightbox-src]').first();
+    if(!continuousCount)await legacyDrawer.locator('summary').click({force:true});
+    if(!continuousCount)await expect(legacyDrawer).toHaveAttribute('open','');
+    const archiveButton=archiveRoot.locator('figure:not([data-age-restricted]) button[data-lightbox-src]').first();
     await archiveButton.click({force:true});
     await expect(page.locator('[data-universal-lightbox]')).toHaveClass(/open/);
     await expect(page.locator('[data-universal-lightbox]')).toHaveAttribute('aria-hidden','false');
