@@ -5,6 +5,56 @@
   },
   "redirects": [
     {
+      "source": "/en/work",
+      "destination": "https://www.banhalmi.art/",
+      "permanent": true
+    },
+    {
+      "source": "/about/norbert-banhalmi",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/hu/rolam/banhalmi-norbert",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/de/ueber-mich/norbert-banhalmi",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/press",
+      "destination": "https://www.banhalmi.art/press.html",
+      "permanent": true
+    },
+    {
+      "source": "/old-print",
+      "destination": "https://www.banhalmi.art/press.html",
+      "permanent": true
+    },
+    {
+      "source": "/hu/sajto/megjelenesek",
+      "destination": "https://www.banhalmi.art/hu/press.html",
+      "permanent": true
+    },
+    {
+      "source": "/hu/sajto/nyomtatott",
+      "destination": "https://www.banhalmi.art/hu/press.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/presse/presseauftritte",
+      "destination": "https://www.banhalmi.art/de-at/press.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/presse/print",
+      "destination": "https://www.banhalmi.art/de-at/press.html",
+      "permanent": true
+    },
+    {
       "source": "/",
       "destination": "https://www.norbertbanhalmi.com/de-at/",
       "permanent": true,
