@@ -51,6 +51,7 @@ jobs:
             --exclude=tools \
             --exclude=node_modules \
             --exclude=package.json \
+            --exclude=_site \
             -cf - . | tar -xf - -C _site
           printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
           test -f _site/index.html
