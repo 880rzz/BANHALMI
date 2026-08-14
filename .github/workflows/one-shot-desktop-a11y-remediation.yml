@@ -27,8 +27,12 @@ jobs:
         run: node tools/simplify-legal-content-ownership-20260814.mjs
       - name: Remove duplicated quote legal chapters
         run: node tools/simplify-quote-legal-ownership-20260814.mjs
+      - name: Correct canonical HU Terms references
+        run: node tools/fix-hu-terms-links-20260814.mjs
       - name: Correct Hungarian copy globally
         run: node tools/fix-hungarian-article-vezetoi-20260814.mjs
+      - name: Complete truncated subpage metadata
+        run: node tools/fix-meta-description-quality-20260814.mjs
       - name: Fix English lightbox accessible names
         run: node tools/remediate-lightbox-a11y-20260814.mjs
       - name: Compact quote decision geometry
