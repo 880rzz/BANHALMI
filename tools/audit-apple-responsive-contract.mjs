@@ -10,8 +10,9 @@ if (a < 0 || b <= a) failures.push('Apple responsive contract marker missing');
 if (a >= 0 && css.indexOf(start) !== a) failures.push('Apple responsive contract START marker must appear exactly once');
 if (b >= 0 && css.indexOf(end) !== b) failures.push('Apple responsive contract END marker must appear exactly once');
 if (b >= 0) {
-  const after = css.slice(b + end.length).replace(/\*\/[\s\S]*$/,'').trim();
-  if (after) failures.push('Apple responsive contract must be the final CSS authority; rules found after END marker');
+  const markerClose = css.indexOf('*/', b + end.length);
+  if (markerClose < 0) failures.push('Apple responsive contract END comment is not closed');
+  else if (css.slice(markerClose + 2).trim()) failures.push('Apple responsive contract must be the final CSS authority; rules found after END marker');
 }
 const contract = a >= 0 && b > a ? css.slice(a,b) : '';
 
