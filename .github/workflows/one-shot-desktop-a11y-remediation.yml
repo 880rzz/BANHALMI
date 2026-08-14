@@ -29,6 +29,8 @@ jobs:
         run: node tools/simplify-legal-content-ownership-20260814.mjs
       - name: Remove duplicated quote legal chapters
         run: node tools/simplify-quote-legal-ownership-20260814.mjs
+      - name: Remove Person homeLocation business-location misuse
+        run: node tools/remove-person-home-location-20260814.mjs
       - name: Correct canonical HU Terms references
         run: node tools/fix-hu-terms-links-20260814.mjs
       - name: Correct Hungarian copy globally
