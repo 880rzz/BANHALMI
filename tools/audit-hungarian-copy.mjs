@@ -32,9 +32,13 @@ function visibleBody(html) {
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;|&#160;/g, ' ')
     .replace(/&amp;/g, '&')
+    .replace(/&mdash;/g, '—')
+    .replace(/&ndash;/g, '–')
     .replace(/\s+/g, ' ')
     .trim();
 }
+function visibleFragment(html){return html.replace(/<[^>]+>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/&amp;/g,'&').replace(/&mdash;/g,'—').replace(/&ndash;/g,'–').replace(/\s+/g,' ').trim()}
+function uiText(html){const out=[];for(const m of html.matchAll(/<(h1|h2|summary|button)\b[^>]*>([\s\S]*?)<\/\1>/gi))out.push([m[1].toLowerCase(),visibleFragment(m[2])]);for(const m of html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi))if(/\b(?:class|role)=["'][^"']*(?:btn|button|cta)[^"']*["']/i.test(m[1]))out.push(['cta',visibleFragment(m[2])]);return out}
 
 const banned = [
   /\bmeeting\b/i,
@@ -59,9 +63,12 @@ const banned = [
   /\bwidgetek\b/i,
   /\bhoneypot\b/i
 ];
+const genericUi=new Set(['tudj meg többet','tovább','fedezd fel','részletek','további részletek','kattints ide','következő lépés','következő lépések','projektkeretek','szakmai cikkek']);
 for (const file of pages) {
-  const text = visibleBody(fs.readFileSync(file, 'utf8'));
+  const html=fs.readFileSync(file, 'utf8');
+  const text = visibleBody(html);
   for (const pattern of banned) if (pattern.test(text)) failures.push(`${path.relative(root, file)}: non-Hungarian or obsolete visible phrase remains: ${pattern}`);
+  for(const[type,label]of uiText(html)){const normalized=label.toLocaleLowerCase('hu').replace(/[.!?:;–—→+]+$/u,'').trim();if(genericUi.has(normalized))failures.push(`${path.relative(root,file)}: generic ${type} UI copy "${label}" — a /human a H1/H2 és gombszövegekre is vonatkozik`)}
 }
 
 for (const file of pages) {
@@ -111,4 +118,4 @@ if (failures.length) {
   console.error(failures.map((failure) => `✗ ${failure}`).join('\n'));
   process.exit(1);
 }
-console.log(`Hungarian copy audit passed: ${pages.length} published pages and the shared menu checked.`);
+console.log(`Hungarian copy audit passed: ${pages.length} published pages, including H1/H2/CTA/summary labels, and the shared menu checked.`);
