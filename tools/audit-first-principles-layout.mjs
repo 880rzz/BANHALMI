@@ -26,13 +26,11 @@ for(const width of widths){
       const name=el=>`${el.tagName.toLowerCase()}${el.id?'#'+el.id:''}${el.className?'.'+String(el.className).trim().replace(/\s+/g,'.').slice(0,90):''}`;
       const w=innerWidth;
 
-      // Long-form reading width: information should be scan-friendly, not billboard-wide.
       for(const el of document.querySelectorAll('main p,main li')){
         if(!visible(el)||(el.innerText||'').trim().length<140)continue;
         const r=el.getBoundingClientRect();if(w>=1024&&r.width>860)out.push(`${name(el)} long-form width ${r.width.toFixed(0)}px`);
       }
 
-      // Empty-space efficiency: large regular sections require content or media justification.
       for(const el of document.querySelectorAll('main section')){
         if(!visible(el)||el.matches('.hero,.statement,.cta-band')||el.closest('.gallery'))continue;
         const r=el.getBoundingClientRect(),text=(el.innerText||'').replace(/\s+/g,' ').trim(),media=el.querySelectorAll('img,video,figure,.gallery').length;
@@ -44,9 +42,16 @@ for(const width of widths){
         if(!visible(h))continue;const fs=px(getComputedStyle(h).fontSize),max=w<=430?50:w<=768?58:70;if(fs>max)out.push(`${name(h)} display size ${fs.toFixed(1)}px > ${max}px`);
       }
 
-      // Quote builder: decision density beats decorative card inflation on desktop.
       const quote=document.querySelector('[data-smart-quote],#build-package,.smart-quote-layout');
       if(quote&&visible(quote)&&w>=1024){
+        const layout=document.querySelector('.smart-quote-layout');
+        const intro=document.querySelector('.smart-quote-layout>.quote-intro');
+        const form=document.querySelector('.smart-quote-layout>.form');
+        if(layout&&intro&&form&&visible(intro)&&visible(form)){
+          const ir=intro.getBoundingClientRect(),fr=form.getBoundingClientRect();
+          if(fr.width<ir.width*1.45)out.push(`quote workspace too narrow: form ${fr.width.toFixed(0)}px vs intro ${ir.width.toFixed(0)}px`);
+          if(w>=1280&&fr.width<690)out.push(`quote form desktop width ${fr.width.toFixed(0)}px < 690px`);
+        }
         for(const step of document.querySelectorAll('.quote-step')){
           if(!visible(step))continue;const s=getComputedStyle(step),r=step.getBoundingClientRect();
           const pads=[px(s.paddingTop),px(s.paddingRight),px(s.paddingBottom),px(s.paddingLeft)];
@@ -64,7 +69,6 @@ for(const width of widths){
         }
       }
 
-      // Generic card sanity: no tiny content floating in giant ornamental boxes.
       for(const card of document.querySelectorAll('.card,.service-card,.case-card,.fact-card,.quote-summary-card')){
         if(!visible(card))continue;const r=card.getBoundingClientRect(),text=(card.innerText||'').replace(/\s+/g,' ').trim(),media=card.querySelectorAll('img,video,figure').length;
         if(w>=1024&&r.height>700&&text.length<260&&media===0)out.push(`${name(card)} oversized card ${r.height.toFixed(0)}px/${text.length} chars`);
