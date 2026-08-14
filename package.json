@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test": "node tools/audit-clean-architecture.mjs && node tools/audit-legacy-redirect-preservation.mjs && node tools/audit-embedded-schema-location-parity.mjs && node tools/audit-apple-responsive-contract.mjs && node tools/audit-homepage-meta-parity.mjs && node tools/audit-content-structure-first-principles.mjs && node tools/audit-internal-fragment-targets.mjs && node tools/audit-about-ownership.mjs && node tools/audit-meta-description-quality.mjs && node tools/audit-form-autocomplete.mjs && node tools/audit-image-priority.mjs && node tools/audit-navigation-cta-contract.mjs && node tools/audit-seo-network.mjs && node tools/audit-pricing-huf.mjs",
+    "test": "node tools/audit-clean-architecture.mjs && node tools/audit-legacy-redirect-preservation.mjs && node tools/audit-embedded-schema-location-parity.mjs && node tools/audit-apple-responsive-contract.mjs && node tools/audit-homepage-meta-parity.mjs && node tools/audit-content-structure-first-principles.mjs && node tools/audit-internal-fragment-targets.mjs && node tools/audit-about-ownership.mjs && node tools/audit-meta-description-quality.mjs && node tools/audit-form-autocomplete.mjs && node tools/audit-image-priority.mjs && node tools/audit-navigation-cta-contract.mjs && node tools/audit-page-head-contract.mjs && node tools/audit-seo-network.mjs && node tools/audit-pricing-huf.mjs",
     "audit": "npm test"
   }
 }
