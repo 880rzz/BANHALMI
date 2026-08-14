@@ -1,4 +1,4 @@
-import { readFile, writeFile, readdir } from 'node:fs/promises';
+import { readFile, writeFile, readdir, access, unlink } from 'node:fs/promises';
 import path from 'node:path';
 
 const root=path.resolve(process.argv[2]||'_site');
@@ -12,12 +12,17 @@ const commercial=new Set([
 const fineArt=new Set(['glamour/index.html','hu/muveszi-fotografia/index.html','de-at/fine-art/index.html']);
 const stop=new Set('a an and or the of to for in on with from by at is are be as that this it its your you one egy az és vagy hogy aki ami amire mit der die das ein eine einer einen und oder von für mit ist sind zu im in den dem des'.split(/\s+/));
 
+async function exists(file){try{await access(file);return true}catch{return false}}
 function compactCss(css){return css.replace(/\/\*[\s\S]*?\*\//g,'').replace(/\s+/g,' ').replace(/\s*([{}:;,])\s*/g,'$1').trim()}
-const css=await readFile(sourceCss,'utf8');
-let built=await readFile(productionCss,'utf8');
-if(!built.includes('STAGE77-DESIGN-FIRST-PRINCIPLES:START')){
-  built=built.trimEnd()+'\n'+compactCss(css)+'\n';
-  await writeFile(productionCss,built,'utf8');
+if(await exists(productionCss)){
+  const css=await readFile(sourceCss,'utf8');
+  let built=await readFile(productionCss,'utf8');
+  if(!built.includes('STAGE77-DESIGN-FIRST-PRINCIPLES:START')){
+    built=built.trimEnd()+'\n'+compactCss(css)+'\n';
+    await writeFile(productionCss,built,'utf8');
+  }
+  const artifactAuthority=path.join(root,'assets/css/design-authority-stage77.css');
+  if(await exists(artifactAuthority)) await unlink(artifactAuthority);
 }
 
 function textOnly(inner){return inner.replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim()}
