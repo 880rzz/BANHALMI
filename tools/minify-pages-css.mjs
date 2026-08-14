@@ -1,5 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { optimizeServicePages } from './optimize-service-first-principles.mjs';
+
 const root=path.resolve(process.argv[2]||'_site/assets/css');
 if(!fs.existsSync(root)){console.error(`CSS directory not found: ${root}`);process.exit(1)}
 function stripComments(css){let out='',quote='',escaped=false;for(let i=0;i<css.length;i++){const ch=css[i],next=css[i+1];if(quote){out+=ch;if(escaped)escaped=false;else if(ch==='\\')escaped=true;else if(ch===quote)quote='';continue}if(ch==='"'||ch==="'"){quote=ch;out+=ch;continue}if(ch==='/'&&next==='*'){i+=2;while(i<css.length&&!(css[i]==='*'&&css[i+1]==='/'))i++;if(i>=css.length)throw new Error('Unterminated CSS comment');i++;continue}out+=ch}if(quote)throw new Error('Unterminated CSS string');return out}
@@ -24,3 +26,9 @@ const files=walk(root);if(!files.length){console.error(`No CSS files found under
 const finalStyle=fs.readFileSync(sharedStyle,'utf8');
 if(!finalStyle.includes('--bn-section-space')||!finalStyle.includes('.hero-visual-only')||!finalStyle.includes('--bn-surface-dark:#0d1b2e')||!finalStyle.includes('STAGE75-THREE-SURFACE-AUTHORITY:START')){console.error('Stage70/75 authorities did not survive production CSS composition/minification.');process.exit(1)}
 const saved=beforeTotal-afterTotal;const percent=beforeTotal?saved/beforeTotal*100:0;console.log(`Production CSS: ${beforeTotal} -> ${afterTotal} bytes; saved ${saved} bytes (${percent.toFixed(1)}%).`);if(saved<1024){console.error('CSS minification saved less than 1 KiB; refusing ineffective production step.');process.exit(1)}
+
+/* Build-time service simplification. This runs after source audits and before
+   browser/Pages verification, so the indexable production HTML is the same
+   concise decision surface that users and agents receive. */
+const siteRoot=path.resolve(root,'../..');
+optimizeServicePages(siteRoot);
