@@ -4,9 +4,15 @@ const ROUTES = {"/":"/hu/","/about/":"/hu/eletmu/","/accessibility/":"/hu/akadal
 const CANONICAL = "https://www.norbertbanhalmi.com";
 const FALLBACK = "/hu/";
 
+function lookupPath(pathname) {
+  if (ROUTES[pathname]) return ROUTES[pathname];
+  if (pathname !== '/' && !pathname.endsWith('/')) return ROUTES[pathname + '/'] || null;
+  return null;
+}
+
 export default function middleware(request) {
   const incoming = new URL(request.url);
-  const targetPath = ROUTES[incoming.pathname] || FALLBACK;
+  const targetPath = lookupPath(incoming.pathname) || FALLBACK;
   const target = new URL(targetPath, CANONICAL);
   target.search = incoming.search;
   return new Response(null, {
