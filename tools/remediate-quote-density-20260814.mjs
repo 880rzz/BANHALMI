@@ -6,6 +6,13 @@ if(!css.includes(end)) throw new Error('Apple responsive contract END marker mis
 const patch=`
 /* QUOTE-DENSITY-REMEDIATION-20260814:START */
 @media(min-width:1024px){
+  html body .smart-quote-layout{
+    grid-template-columns:minmax(250px,.58fr) minmax(0,1.42fr)!important;
+    gap:clamp(28px,3.6vw,48px)!important;
+    align-items:start!important;
+  }
+  html body .smart-quote-layout>.form{max-width:none!important;width:100%!important;min-width:0!important}
+  html body .quote-intro{max-width:34ch!important}
   html body .quote-step{padding:18px 20px!important;margin-bottom:14px!important;border-radius:14px!important}
   html body .quote-step h3{margin-bottom:13px!important;font-size:1.04rem!important}
   html body .category-grid{gap:9px!important}
