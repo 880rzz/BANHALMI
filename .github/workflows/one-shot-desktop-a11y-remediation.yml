@@ -1,4 +1,4 @@
-name: One-shot BANHALMI desktop accessibility remediation
+name: One-shot BANHALMI complete remediation
 
 on:
   push:
@@ -22,15 +22,25 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node tools/remediate-desktop-a11y-20260814.mjs
-      - run: node tools/remediate-quote-density-20260814.mjs
-      - run: npm test
-      - name: Commit CSS remediation
+      - name: Consolidate artistic archive ownership
+        run: node tools/simplify-about-art-ownership-20260814.mjs
+      - name: Fix English lightbox accessible names
+        run: node tools/remediate-lightbox-a11y-20260814.mjs
+      - name: Compact quote decision geometry
+        run: node tools/remediate-quote-density-20260814.mjs
+      - name: Fix desktop contrast and link accessibility
+        run: node tools/remediate-desktop-a11y-20260814.mjs
+      - name: Run complete source contract
+        run: npm test
+      - name: Commit complete remediation
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+880rzz@users.noreply.github.com'
-          git add assets/css/site.css
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'Fix BANHALMI desktop accessibility and quote density'
+          git add assets/css/site.css about/index.html hu/eletmu/index.html de-at/werk/index.html portrait/index.html lifestyle/index.html glamour/index.html event-photography/index.html
+          if git diff --cached --quiet; then
+            echo 'No remediation changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Simplify BANHALMI ownership and fix audited UI defects'
           git push origin HEAD:audit/full-remediation-20260814
