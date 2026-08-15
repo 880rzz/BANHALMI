@@ -29,6 +29,7 @@ jobs:
       - name: Phase 1 source fix and source audit
         run: |
           set -euo pipefail
+          rm -rf _site
           python3 .github/remediate-layout-authority.py phase1
           ! grep -Eq '(^|[,{[:space:]])section\{padding:(72|56)px 0;\}' assets/css/site.css
           npm test
@@ -38,16 +39,20 @@ jobs:
           set -euo pipefail
           rm -rf _site && mkdir _site
           git ls-files -z | rsync -a --from0 --files-from=- ./ _site/
+          cp assets/css/site.css _site/assets/css/site.css
           node tools/perf-static-server.mjs _site 4173 >/tmp/layout-phase1.log 2>&1 &
-          PID=$!; trap 'kill $PID || true' EXIT
+          PID=$!; trap 'kill $PID || true; rm -rf _site' EXIT
           for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep .25; done
           AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site LAYOUT_AUDIT_SCOPE=faq node tools/audit-layout-authority-browser.mjs
           AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site LAYOUT_AUDIT_SCOPE=hero node tools/audit-layout-authority-browser.mjs
-          kill $PID || true; trap - EXIT
+          kill $PID || true
+          rm -rf _site
+          trap - EXIT
 
       - name: Phase 2 quote geometry fix and source audit
         run: |
           set -euo pipefail
+          rm -rf _site
           python3 .github/remediate-layout-authority.py phase2
           ! grep -Fq 'padding-bottom:52px' assets/css/site.css
           ! grep -Fq 'padding-right:58px' assets/css/site.css
@@ -58,15 +63,19 @@ jobs:
           set -euo pipefail
           rm -rf _site && mkdir _site
           git ls-files -z | rsync -a --from0 --files-from=- ./ _site/
+          cp assets/css/site.css _site/assets/css/site.css
           node tools/perf-static-server.mjs _site 4173 >/tmp/layout-phase2.log 2>&1 &
-          PID=$!; trap 'kill $PID || true' EXIT
+          PID=$!; trap 'kill $PID || true; rm -rf _site' EXIT
           for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep .25; done
           AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site LAYOUT_AUDIT_SCOPE=quote node tools/audit-layout-authority-browser.mjs
-          kill $PID || true; trap - EXIT
+          kill $PID || true
+          rm -rf _site
+          trap - EXIT
 
       - name: Phase 3 permanent regression guards
         run: |
           set -euo pipefail
+          rm -rf _site
           python3 .github/remediate-layout-authority.py phase3
           npm test
 
@@ -75,21 +84,26 @@ jobs:
           set -euo pipefail
           rm -rf _site artifacts/browser-layout && mkdir _site
           git ls-files -z | rsync -a --from0 --files-from=- ./ _site/
+          cp assets/css/site.css _site/assets/css/site.css
           cp package.json _site/package.json
           cp tools/audit-layout-authority.mjs _site/tools/audit-layout-authority.mjs
+          cp tools/audit-layout-authority-browser.mjs _site/tools/audit-layout-authority-browser.mjs
           cp .github/workflows/desktop-regression.yml _site/.github/workflows/desktop-regression.yml
           node tools/perf-static-server.mjs _site 4173 >/tmp/layout-final.log 2>&1 &
-          PID=$!; trap 'kill $PID || true' EXIT
+          PID=$!; trap 'kill $PID || true; rm -rf _site' EXIT
           for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep .25; done
           npm run test:e2e
           AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-browser-layout.mjs
           AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-first-principles-layout.mjs
           AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-layout-authority-browser.mjs
-          kill $PID || true; trap - EXIT
+          kill $PID || true
+          rm -rf _site
+          trap - EXIT
 
       - name: Commit only after all gates pass
         run: |
           set -euo pipefail
+          rm -rf _site
           rm -f .github/remediate-layout-authority.py .github/workflows/one-shot-layout-authority-v2.yml
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
