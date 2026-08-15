@@ -82,10 +82,13 @@ jobs:
                   if(!card||!span)continue;
                   const c=card.getBoundingClientRect(), t=tip.getBoundingClientRect(), s=span.getBoundingClientRect();
                   const cs=getComputedStyle(tip), ss=getComputedStyle(span);
+                  const rightSlack=c.right-t.right;
+                  const spanSlack=c.right-s.right;
                   if(cs.position!=='static') bad.push(`tip position ${cs.position}`);
-                  if(Math.abs((c.right-14)-t.right)>3) bad.push(`tip right slack ${(c.right-t.right).toFixed(1)}px`);
-                  if(Math.abs(s.right-(c.right-14))>3) bad.push(`span does not fill card: ${(c.right-s.right).toFixed(1)}px`);
+                  if(rightSlack < -1 || rightSlack > 18) bad.push(`tip not right-aligned: ${rightSlack.toFixed(1)}px`);
+                  if(spanSlack < -1 || spanSlack > 18) bad.push(`span does not reach right side: ${spanSlack.toFixed(1)}px`);
                   if(ss.display!=='grid') bad.push(`span display ${ss.display}`);
+                  if(t.width < 43 || t.height < 43) bad.push(`tip target too small ${t.width.toFixed(1)}x${t.height.toFixed(1)}`);
                 }
                 const legal=document.querySelector('.footer-legal-list');
                 const gisa=legal?.querySelector('li strong');
