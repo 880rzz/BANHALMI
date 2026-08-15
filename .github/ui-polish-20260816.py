@@ -21,6 +21,12 @@ html body main > section.hero.hero-image-first.hero-visual-only > .wrap{
   padding-top:0!important;
 }
 
+/* PageSpeed/Lighthouse contrast: the author-led fine-art prompt is secondary
+   copy, but it must still meet normal-text WCAG contrast on the soft surface. */
+html body .fp-decision-system.surface-soft .fp-art-path > span{
+  color:#3f4147!important;
+}
+
 /* Quote cards keep the 44px accessible info target in normal flow while the
    copy wrapper owns the full second grid column. This pins every info control
    to the card's right edge instead of letting it follow the label text. */
@@ -107,6 +113,8 @@ check = CSS.read_text(encoding='utf-8')
 assert check.count(start) == 1 and check.count(end) == 1
 assert check.rstrip().endswith(marker)
 assert 'main > section.hero.hero-image-first.hero-visual-only' in check
+assert '.fp-decision-system.surface-soft .fp-art-path > span' in check
+assert 'color:#3f4147!important' in check
 assert 'grid-template-columns:minmax(0,1fr) 44px!important' in check
 assert '.site-footer .footer-legal-list li{' in check
 assert 'grid-template-columns:max-content minmax(0,1fr)!important' in check
