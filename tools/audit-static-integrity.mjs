@@ -49,9 +49,9 @@ const canonicalServiceId = 'https://www.norbertbanhalmi.com/#visual-trust-partne
 assert(corpus.includes(canonicalPersonId), `canonical Person ID missing: ${canonicalPersonId}`);
 
 const requiredHomepageCopy = {
-  'index.html': ['Photography for clear communication', 'I photograph leaders and organisations for the places where their images actually need to work.'],
-  'hu/index.html': ['Vizuális bizalomstratégia', 'Vezetői portrék és vizuális pozicionálás vezetőknek és szervezeteknek.'],
-  'de-at/index.html': ['Fotografie für klare Kommunikation', 'Ich fotografiere Führungskräfte und Organisationen für die Situationen, in denen ihre Bilder tatsächlich funktionieren müssen.']
+  'index.html': ['Photography for clear communication', 'A portrait is not a picture.', 'Four ways to solve the visual problem'],
+  'hu/index.html': ['A vezető portréja nem kép.', 'Négy út ugyanahhoz: tiszta vizuális jelenléthez'],
+  'de-at/index.html': ['Fotografie für klare Kommunikation', 'Ein Führungsporträt ist kein Bild.', 'Vier Wege zu einer klaren visuellen Präsenz']
 };
 for (const [file, phrases] of Object.entries(requiredHomepageCopy)) {
   const body = visibleBody(read(file));

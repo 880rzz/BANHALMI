@@ -21,7 +21,9 @@ for (const needle of [
   '--apple-section-space:','text-align:left','min-height:44px',
   '@media (max-width:1024px)','@media (max-width:768px)','@media (max-width:560px)',
   '.section-head','.prose','.cards','.steps','.timeline','.faq','.form','.legal',
-  '.quote-step','.cta-band','.site-footer'
+  '.quote-step','.cta-band','.site-footer',
+  'DESKTOP-A11Y-REMEDIATION-20260814:START','QUOTE-DENSITY-REMEDIATION-20260814:START',
+  '.category-card','.option-row','.quote-summary-card','text-decoration:underline'
 ]) if (!contract.includes(needle)) failures.push(`contract missing: ${needle}`);
 
 function rgb(hex){const v=hex.replace('#','');return [0,2,4].map(i=>parseInt(v.slice(i,i+2),16)/255)}
@@ -32,7 +34,8 @@ for (const [fg,bg,min,label] of [
   ['#202530','#FFFFFF',7,'primary text / light'],
   ['#6E6E73','#FFFFFF',4.5,'muted text / light'],
   ['#8A681F','#FFFFFF',4.5,'gold text / light'],
-  ['#FFFFFF','#202530',7,'white text / dark']
+  ['#FFFFFF','#202530',7,'white text / dark'],
+  ['#DCC56B','#202530',4.5,'light gold / dark']
 ]) if (contrast(fg,bg) < min) failures.push(`${label} contrast ${contrast(fg,bg).toFixed(2)} < ${min}`);
 if (contrast('#B79C44','#FFFFFF') >= 4.5) failures.push('brand gold contrast assumption changed; review accent policy');
 if (/color\s*:\s*#?B79C44/i.test(contract)) failures.push('#B79C44 may not be used as light-background text in the final contract');
@@ -44,4 +47,4 @@ const realPages = htmlFiles.filter(p=>!p.startsWith('redirects/'));
 if (realPages.length < 50) failures.push(`unexpectedly low HTML coverage: ${realPages.length}`);
 
 if (failures.length){console.error(failures.join('\n'));process.exit(1)}
-console.log(`Apple responsive contract passed for BANHALMI: ${realPages.length} HTML files; single final CSS authority, AA/AAA palette checks and desktop/tablet/mobile layout guards active.`);
+console.log(`Apple responsive contract passed for BANHALMI: ${realPages.length} HTML files; final CSS authority includes quote density, accessibility, palette and desktop/tablet/mobile guards.`);

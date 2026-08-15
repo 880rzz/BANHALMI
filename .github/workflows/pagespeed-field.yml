@@ -1,0 +1,22 @@
+name: PageSpeed field data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 4 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  psi-crux-field:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check live mobile PSI and CrUX field data
+        env:
+          PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+        run: node tools/audit-pagespeed-field.mjs

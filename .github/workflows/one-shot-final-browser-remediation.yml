@@ -1,0 +1,46 @@
+name: One-shot BANHALMI final browser remediation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - audit/full-remediation-20260814
+    paths:
+      - .github/workflows/one-shot-final-browser-remediation.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: banhalmi-final-browser-remediation
+  cancel-in-progress: true
+
+jobs:
+  remediate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/full-remediation-20260814
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply final browser remediation
+        run: node tools/remediate-desktop-a11y-20260814.mjs
+      - name: Run complete source contract
+        run: npm test
+      - name: Commit final browser remediation
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+880rzz@users.noreply.github.com'
+          git add assets/css/site.css assets/js/site-config.js
+          if git diff --cached --quiet; then
+            echo 'No final browser remediation changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Fix audited browser layout and runtime defects'
+          git push origin HEAD:audit/full-remediation-20260814
+
+# trigger 2026-08-14-final-browser-1
