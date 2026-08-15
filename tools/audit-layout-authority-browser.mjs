@@ -94,11 +94,26 @@ for(const width of widths){
         const header=document.querySelector('.site-header');
         const hero=document.querySelector('main .hero, main>section.hero, .hero');
         if(!header||!hero) return null;
-        const gap=hero.getBoundingClientRect().top-header.getBoundingClientRect().bottom;
-        return {gap,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
+        const headerBottom=header.getBoundingClientRect().bottom;
+        const heroTop=hero.getBoundingClientRect().top;
+        const gap=heroTop-headerBottom;
+        const crumb=document.querySelector('main .crumb');
+        let visibleCrumb=false;
+        let crumbOccupiesGap=false;
+        if(crumb){
+          const cs=getComputedStyle(crumb);
+          const cr=crumb.getBoundingClientRect();
+          visibleCrumb=cs.display!=='none'&&cs.visibility!=='hidden'&&Number(cs.opacity)!==0&&cr.width>0&&cr.height>0&&crumb.textContent.trim().length>0;
+          crumbOccupiesGap=visibleCrumb&&cr.top>=headerBottom-1&&cr.bottom<=heroTop+1;
+        }
+        return {gap,visibleCrumb,crumbOccupiesGap,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
       });
-      if(result&&result.gap>4) failures.push(`${file} @${width}: header-to-hero box gap ${result.gap.toFixed(1)}px`);
-      if(result&&result.overflow>1) failures.push(`${file} @${width}: horizontal overflow ${result.overflow}px`);
+      if(result){
+        const maxGap=result.crumbOccupiesGap?72:4;
+        if(result.gap>maxGap) failures.push(`${file} @${width}: unexplained header-to-hero box gap ${result.gap.toFixed(1)}px (visible breadcrumb=${result.visibleCrumb})`);
+        if(result.gap>4&&!result.crumbOccupiesGap) failures.push(`${file} @${width}: gap is not occupied by visible navigation content`);
+        if(result.overflow>1) failures.push(`${file} @${width}: horizontal overflow ${result.overflow}px`);
+      }
       checks++;
     }
   }
