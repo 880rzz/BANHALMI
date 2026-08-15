@@ -170,7 +170,7 @@ p{margin:0 0 1.05em;}
 .btn-link:hover::after{transform:translateX(2px);}
 
 /* ---------- Sections ---------- */
-section{padding:72px 0;}
+main>section{padding:72px 0;}
 .section-band{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .section-head{max-width:58ch;margin-bottom:44px;}
 .section-head .eyebrow{color:var(--muted);font-size:0.8rem;font-weight:500;letter-spacing:0.01em;margin-bottom:12px;display:block;}
@@ -368,7 +368,7 @@ section{padding:72px 0;}
 @media (max-width:480px){
   .wrap{padding:0 20px;}
   .hero{padding:72px 0 52px;}
-  section{padding:56px 0;}
+  main>section{padding:56px 0;}
   .cookie{left:10px;right:10px;bottom:10px;}
   .cookie-actions{flex-direction:column;}
   .cookie .btn{width:100%;text-align:center;}
@@ -1552,7 +1552,7 @@ button.card:hover,
   --jony-gap:clamp(20px,2.8vw,38px);
   --jony-radius:clamp(18px,2vw,28px);
 }
-section{padding:var(--jony-air) 0;}
+main>section{padding:var(--jony-air) 0;}
 .section-band{background:#FAFAF8;border-top:1px solid rgba(32,37,48,.07);border-bottom:1px solid rgba(32,37,48,.07);}
 .hero:not(.hero-image-first){padding:clamp(78px,8.2vw,132px) 0 var(--jony-air-tight);}
 .hero .lead,.section-head,.prose{max-width:760px;}
@@ -1593,7 +1593,7 @@ h2{max-width:20ch;}
 .jony-gallery-section .section-head{margin-bottom:0;}
 .jony-gallery-section .lead{font-size:clamp(1.05rem,1.4vw,1.34rem);}
 @media (max-width:920px){.jony-gallery-grid{column-count:2}.nav-links a{font-size:clamp(1.06rem,4vw,1.42rem)}}
-@media (max-width:620px){section{padding:56px 0}.hero:not(.hero-image-first){padding:64px 0 44px}.jony-gallery-grid{column-count:1}.service-hero-image{margin-top:30px}.hero-actions,.service-actions{width:100%;}.hero-actions .btn,.service-actions .btn{width:100%;text-align:center;}.btn-link{min-height:44px;align-items:center;}}
+@media (max-width:620px){main>section{padding:56px 0}.hero:not(.hero-image-first){padding:64px 0 44px}.jony-gallery-grid{column-count:1}.service-hero-image{margin-top:30px}.hero-actions,.service-actions{width:100%;}.hero-actions .btn,.service-actions .btn{width:100%;text-align:center;}.btn-link{min-height:44px;align-items:center;}}
 
 /* Jony Ive portrait archive expansion — quiet large-image rhythm */
 .portrait-archive-item{background:#f6f2eb;}
@@ -2146,7 +2146,7 @@ html.nav-open,html.nav-open body{overflow:hidden;}
 }
 
 /* Whitespace and readable measure. */
-section{padding:clamp(64px,7.5vw,104px) 0;}
+main>section{padding:clamp(64px,7.5vw,104px) 0;}
 .section-head{max-width:var(--wide-textw);margin-bottom:clamp(30px,4vw,46px);}
 .prose{max-width:var(--textw);}
 .prose p,.about-longform p,.structural-prose p{line-height:1.65;}
@@ -2281,7 +2281,7 @@ section{padding:clamp(64px,7.5vw,104px) 0;}
   h3{font-size:1.25rem;}
   .lead{font-size:1.2rem;line-height:1.43;}
   .hero > .wrap > p:not(.eyebrow):not(.lead):not(.hero-location-line){font-size:1rem;line-height:1.58;}
-  section{padding:56px 0;}
+  main>section{padding:56px 0;}
   .section-head{margin-bottom:28px;}
   .service-hero-image{margin-top:28px;border-radius:18px;}
   .service-hero-image img{border-radius:18px;}
@@ -3085,9 +3085,12 @@ h1{font-size:clamp(2.35rem,3.45vw,2.95rem);}
 /* 2026-07 production audit: stable controls and readable cards. */
 .strategy-process-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));}
 .strategy-process-card,.card,.service-card,.option-row,.category-card{word-break:normal;overflow-wrap:normal;hyphens:manual;}
-.option-row,.category-card{position:relative;display:grid;grid-template-columns:auto 1fr;align-items:flex-start;gap:.75rem;min-height:56px;padding-right:58px;padding-bottom:52px;}
+.option-row,.category-card{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:flex-start;gap:.75rem;min-height:0;padding:12px 14px;}
 .option-row input,.category-card input{position:static!important;margin:.18rem 0 0 0!important;transform:none!important;inline-size:1.05rem;block-size:1.05rem;}
 .option-row span,.category-card span{min-width:0;line-height:1.42;}
+.option-row>span,.category-card>span{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:start;}
+.option-row>span>strong,.category-card>span>strong,.option-row>span>em,.category-card>span>em{grid-column:1;min-width:0;}
+.option-row>span>.info-tip,.category-card>span>.info-tip{position:static!important;grid-column:2;grid-row:1 / span 2;align-self:center;justify-self:end;margin:0!important;}
 .info-tip{position:absolute;right:10px;bottom:10px;display:grid;place-items:center;width:44px;height:44px;margin:0;padding:0;border:1px solid rgba(22,24,29,.22);border-radius:50%;background:#fff;color:var(--ink);font-family:Georgia,serif;font-size:1rem;font-style:italic;line-height:1;cursor:pointer;transition:border-color .15s ease,background .15s ease,transform .15s ease;}
 .info-tip:hover{border-color:var(--gold-deep);background:#f7f3e9;transform:translateY(-1px);}
 .info-tip:focus-visible{outline:3px solid rgba(177,135,45,.35);outline-offset:2px;}
@@ -4064,9 +4067,9 @@ p,li{line-height:1.58;}
   html body .smart-quote-layout .quote-intro{max-width:34ch!important}
   html body .smart-quote-layout .quote-step{padding:18px 20px!important;margin-bottom:14px!important;border-radius:14px!important}
   html body .smart-quote-layout .quote-step h3{margin-bottom:13px!important;font-size:1.04rem!important}
-  html body .smart-quote-layout .category-grid{gap:9px!important}
+  html body .smart-quote-layout .category-grid{gap:9px!important;align-items:start!important}
   html body .smart-quote-layout .option-stack{gap:8px!important;margin-bottom:12px!important}
-  html body .smart-quote-layout :is(.category-card,.option-row){padding:11px 13px!important;border-radius:12px!important}
+  html body .smart-quote-layout :is(.category-card,.option-row){padding:12px 14px!important;border-radius:12px!important;align-self:start!important}
   html body .smart-quote-layout .quote-summary-card{padding:20px 22px!important;margin-top:22px!important;border-radius:16px!important}
   html body .smart-quote-layout .quote-decision-guide{margin-bottom:14px!important;padding:14px 16px!important}
   html body .smart-quote-layout :is(.grid-2,.grid-3,.check-grid,.production-grid){row-gap:12px!important}
@@ -4074,7 +4077,7 @@ p,li{line-height:1.58;}
 }
 @media(max-width:1023px){
   html body .smart-quote-layout .quote-step{padding:18px!important;border-radius:16px!important}
-  html body .smart-quote-layout :is(.category-card,.option-row){padding:13px!important;border-radius:13px!important}
+  html body .smart-quote-layout :is(.category-card,.option-row){padding:13px 14px!important;border-radius:13px!important;align-self:start!important}
 }
 /* QUOTE-DENSITY-REMEDIATION-20260814:END */
 

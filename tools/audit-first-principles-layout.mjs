@@ -84,3 +84,4 @@ for(const width of widths){
 await browser.close();
 if(failures.length){console.error(`First-principles BANHALMI layout audit found ${failures.length} failing page/viewport combinations.`);console.error(failures.join('\n'));process.exit(1)}
 console.log(`First-principles BANHALMI layout audit passed: ${pages.length} pages across ${widths.length} widths; density, hierarchy and quote-builder geometry are within contract.`);
+await import('./audit-layout-authority-browser.mjs');
