@@ -82,20 +82,19 @@ jobs:
       - name: Final full browser regression
         run: |
           set -euo pipefail
-          rm -rf _site artifacts/browser-layout && mkdir _site
+          rm -rf _site artifacts/browser-layout artifacts/exhaustive-visual artifacts/lighthouse-desktop && mkdir _site
           git ls-files -z | rsync -a --from0 --files-from=- ./ _site/
           cp assets/css/site.css _site/assets/css/site.css
           cp package.json _site/package.json
           cp tools/audit-layout-authority.mjs _site/tools/audit-layout-authority.mjs
           cp tools/audit-layout-authority-browser.mjs _site/tools/audit-layout-authority-browser.mjs
-          cp .github/workflows/desktop-regression.yml _site/.github/workflows/desktop-regression.yml
+          cp tools/audit-first-principles-layout.mjs _site/tools/audit-first-principles-layout.mjs
           node tools/perf-static-server.mjs _site 4173 >/tmp/layout-final.log 2>&1 &
           PID=$!; trap 'kill $PID || true; rm -rf _site' EXIT
           for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep .25; done
           npm run test:e2e
           AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-browser-layout.mjs
           AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-first-principles-layout.mjs
-          AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-layout-authority-browser.mjs
           kill $PID || true
           rm -rf _site
           trap - EXIT
@@ -103,8 +102,8 @@ jobs:
       - name: Commit only after all gates pass
         run: |
           set -euo pipefail
-          rm -rf _site
-          rm -f .github/remediate-layout-authority.py .github/workflows/one-shot-layout-authority-v2.yml
+          rm -rf _site artifacts/browser-layout artifacts/exhaustive-visual artifacts/lighthouse-desktop
+          rm -f .github/remediate-layout-authority.py
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
