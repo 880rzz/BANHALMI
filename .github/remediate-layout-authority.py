@@ -38,6 +38,32 @@ elif phase=='phase2':
     css_path.write_text(s)
 
 elif phase=='phase3':
+    # The legacy browser regression asserted a 10px absolute bottom/right offset
+    # for the info control. The new density contract deliberately flow-positions
+    # the 44x44 control. Replace that obsolete coordinate assertion with the
+    # invariant we actually need: static positioning, inside-card containment,
+    # and no overlap with the primary option copy.
+    quote_test=Path('tests/quote-calculator.spec.mjs')
+    qs=quote_test.read_text()
+    old_test="""    const optionBox = await trigger.locator('xpath=ancestor::label[1]').boundingBox();
+    expect(optionBox).not.toBeNull();
+    expect(Math.abs((optionBox.x + optionBox.width) - (triggerBox.x + triggerBox.width) - 10)).toBeLessThanOrEqual(1);
+    expect(Math.abs((optionBox.y + optionBox.height) - (triggerBox.y + triggerBox.height) - 10)).toBeLessThanOrEqual(1);
+"""
+    new_test="""    const option = trigger.locator('xpath=ancestor::label[1]');
+    const optionBox = await option.boundingBox();
+    expect(optionBox).not.toBeNull();
+    await expect(trigger).toHaveCSS('position', 'static');
+    expect(triggerBox.x).toBeGreaterThanOrEqual(optionBox.x - 1);
+    expect(triggerBox.y).toBeGreaterThanOrEqual(optionBox.y - 1);
+    expect(triggerBox.x + triggerBox.width).toBeLessThanOrEqual(optionBox.x + optionBox.width + 1);
+    expect(triggerBox.y + triggerBox.height).toBeLessThanOrEqual(optionBox.y + optionBox.height + 1);
+    const copyBox = await option.locator('strong').first().boundingBox();
+    if (copyBox) expect(triggerBox.x).toBeGreaterThanOrEqual(copyBox.x + copyBox.width - 1);
+"""
+    qs=replace_exact(qs,old_test,new_test,1,'stale quote info-position regression')
+    quote_test.write_text(qs)
+
     audit=Path('tools/audit-layout-authority.mjs')
     audit.write_text(r"""import fs from 'node:fs';
 const css=fs.readFileSync('assets/css/site.css','utf8');
