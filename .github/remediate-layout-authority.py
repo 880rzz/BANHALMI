@@ -1,0 +1,64 @@
+from pathlib import Path
+import json, sys
+
+phase=sys.argv[1]
+css_path=Path('assets/css/site.css')
+
+def replace_exact(s, old, new, count, label):
+    found=s.count(old)
+    if found!=count:
+        raise SystemExit(f'{label}: expected {count}, found {found}')
+    return s.replace(old,new)
+
+if phase=='phase1':
+    s=css_path.read_text()
+    s=replace_exact(s,'section{padding:72px 0;}','main>section{padding:72px 0;}',1,'desktop naked section rule')
+    s=replace_exact(s,'section{padding:56px 0;}','main>section{padding:56px 0;}',2,'mobile naked section rules')
+    css_path.write_text(s)
+
+elif phase=='phase2':
+    s=css_path.read_text()
+    old='.option-row,.category-card{position:relative;display:grid;grid-template-columns:auto 1fr;align-items:flex-start;gap:.75rem;min-height:56px;padding-right:58px;padding-bottom:52px;}'
+    new='.option-row,.category-card{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:flex-start;gap:.75rem;min-height:0;padding:12px 14px;}'
+    s=replace_exact(s,old,new,1,'legacy quote geometry')
+    anchor='.option-row span,.category-card span{min-width:0;line-height:1.42;}'
+    replacement=anchor+'\n.option-row>span,.category-card>span{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:start;}\n.option-row>span>strong,.category-card>span>strong,.option-row>span>em,.category-card>span>em{grid-column:1;min-width:0;}\n.option-row>span>.info-tip,.category-card>span>.info-tip{position:static!important;grid-column:2;grid-row:1 / span 2;align-self:center;justify-self:end;margin:0!important;}'
+    s=replace_exact(s,anchor,replacement,1,'quote span anchor')
+    s=replace_exact(s,'html body .smart-quote-layout .category-grid{gap:9px!important}','html body .smart-quote-layout .category-grid{gap:9px!important;align-items:start!important}',1,'quote grid density rule')
+    s=replace_exact(s,'html body .smart-quote-layout :is(.category-card,.option-row){padding:11px 13px!important;border-radius:12px!important}','html body .smart-quote-layout :is(.category-card,.option-row){padding:12px 14px!important;border-radius:12px!important;align-self:start!important}',1,'desktop quote density override')
+    s=replace_exact(s,'html body .smart-quote-layout :is(.category-card,.option-row){padding:13px!important;border-radius:13px!important}','html body .smart-quote-layout :is(.category-card,.option-row){padding:13px 14px!important;border-radius:13px!important;align-self:start!important}',1,'mobile quote density override')
+    css_path.write_text(s)
+
+elif phase=='phase3':
+    audit=Path('tools/audit-layout-authority.mjs')
+    audit.write_text("""import fs from 'node:fs';
+const css=fs.readFileSync('assets/css/site.css','utf8');
+const fail=[];
+if(/(^|[,{\\s])section\\{padding:(?:72|56)px 0;\\}/m.test(css)) fail.push('naked global section padding returned');
+if(!css.includes('main>section{padding:72px 0;}')) fail.push('desktop page-section rhythm missing');
+if((css.match(/main>section\\{padding:56px 0;\\}/g)||[]).length!==2) fail.push('mobile page-section rhythm authority drifted');
+if(css.includes('padding-bottom:52px')||css.includes('padding-right:58px')) fail.push('legacy quote-card reserved whitespace returned');
+if(!css.includes('.option-row>span>.info-tip,.category-card>span>.info-tip{position:static!important;')) fail.push('quote info control is not flow-positioned');
+if(!css.includes('.smart-quote-layout .category-grid{gap:9px!important;align-items:start!important}')) fail.push('quote grid may stretch cards again');
+if((css.match(/html body \\.smart-quote-layout :is\\(\\.category-card,\\.option-row\\)\\{/g)||[]).length!==2) fail.push('quote density authority count drifted');
+if(fail.length){console.error('Layout authority audit failed:\\n- '+fail.join('\\n- '));process.exit(1)}
+console.log('Layout authority audit passed.');
+""")
+    package=Path('package.json')
+    p=json.loads(package.read_text())
+    cmd='node tools/audit-layout-authority.mjs'
+    if cmd not in p['scripts']['test']:
+        p['scripts']['test'] += ' && '+cmd
+    package.write_text(json.dumps(p,indent=2)+'\n')
+    wf=Path('.github/workflows/desktop-regression.yml')
+    s=wf.read_text()
+    anchor='          AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-first-principles-layout.mjs\n'
+    addition=anchor+'          AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-layout-authority-browser.mjs\n'
+    if 'audit-layout-authority-browser.mjs' not in s:
+        if s.count(anchor)!=1:
+            raise SystemExit(f'desktop workflow anchor count {s.count(anchor)}')
+        s=s.replace(anchor,addition)
+        wf.write_text(s)
+
+else:
+    raise SystemExit('usage: remediate-layout-authority.py phase1|phase2|phase3')
