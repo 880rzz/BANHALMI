@@ -12,9 +12,6 @@ def replace_exact(s, old, new, count, label):
 
 if phase=='phase1':
     s=css_path.read_text()
-    # Scope every naked global section-padding authority. The negative lookbehind
-    # excludes class/id/combinator-prefixed selectors, so only literal global
-    # `section{padding:...}` authorities are rewritten.
     pattern=r'(?<![A-Za-z0-9_.>:=-])section\{padding:'
     found=len(re.findall(pattern,s))
     if found!=6:
@@ -38,11 +35,6 @@ elif phase=='phase2':
     css_path.write_text(s)
 
 elif phase=='phase3':
-    # The legacy browser regression asserted a 10px absolute bottom/right offset
-    # for the info control. The new density contract deliberately flow-positions
-    # the 44x44 control. Replace that obsolete coordinate assertion with the
-    # invariant we actually need: static positioning, inside-card containment,
-    # and no overlap with the primary option copy.
     quote_test=Path('tests/quote-calculator.spec.mjs')
     qs=quote_test.read_text()
     old_test="""    const optionBox = await trigger.locator('xpath=ancestor::label[1]').boundingBox();
@@ -80,21 +72,26 @@ if((css.match(/html body \.smart-quote-layout :is\(\.category-card,\.option-row\
 if(fail.length){console.error('Layout authority audit failed:\n- '+fail.join('\n- '));process.exit(1)}
 console.log('Layout authority audit passed.');
 """)
+
     package=Path('package.json')
     p=json.loads(package.read_text())
     cmd='node tools/audit-layout-authority.mjs'
     if cmd not in p['scripts']['test']:
         p['scripts']['test'] += ' && '+cmd
     package.write_text(json.dumps(p,indent=2)+'\n')
-    wf=Path('.github/workflows/desktop-regression.yml')
-    s=wf.read_text()
-    anchor='          AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-first-principles-layout.mjs\n'
-    addition=anchor+'          AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-layout-authority-browser.mjs\n'
-    if 'audit-layout-authority-browser.mjs' not in s:
-        if s.count(anchor)!=1:
-            raise SystemExit(f'desktop workflow anchor count {s.count(anchor)}')
-        s=s.replace(anchor,addition)
-        wf.write_text(s)
+
+    # Keep the computed-browser guard permanent without editing workflow YAML.
+    # desktop-regression.yml already invokes audit-first-principles-layout.mjs,
+    # so that audit becomes the stable integration point for this guard.
+    fp=Path('tools/audit-first-principles-layout.mjs')
+    fps=fp.read_text()
+    guard="await import('./audit-layout-authority-browser.mjs');"
+    if guard not in fps:
+        marker="console.log(`First-principles BANHALMI layout audit passed: ${pages.length} pages across ${widths.length} widths; density, hierarchy and quote-builder geometry are within contract.`);"
+        if fps.count(marker)!=1:
+            raise SystemExit(f'first-principles guard anchor count {fps.count(marker)}')
+        fps=fps.replace(marker,marker+'\n'+guard)
+        fp.write_text(fps)
 
 else:
     raise SystemExit('usage: remediate-layout-authority.py phase1|phase2|phase3')
