@@ -76,11 +76,15 @@ jobs:
                 const cards=[...document.querySelectorAll('.smart-quote-layout .option-row, .smart-quote-layout .category-card')];
                 const tips=[...document.querySelectorAll('.smart-quote-layout .info-tip')];
                 const bad=[];
+                let visibleTipCount=0;
                 for(const tip of tips){
                   const card=tip.closest('.option-row,.category-card');
                   const span=tip.parentElement;
                   if(!card||!span)continue;
-                  const c=card.getBoundingClientRect(), t=tip.getBoundingClientRect(), s=span.getBoundingClientRect();
+                  const t=tip.getBoundingClientRect();
+                  if(t.width===0 || t.height===0) continue;
+                  visibleTipCount += 1;
+                  const c=card.getBoundingClientRect(), s=span.getBoundingClientRect();
                   const cs=getComputedStyle(tip), ss=getComputedStyle(span);
                   const rightSlack=c.right-t.right;
                   const spanSlack=c.right-s.right;
@@ -94,9 +98,9 @@ jobs:
                 const gisa=legal?.querySelector('li strong');
                 const bottom=document.querySelector('.footer-bottom');
                 const lg=gisa?.getBoundingClientRect(), bg=bottom?.getBoundingClientRect();
-                return {cardCount:cards.length,tipCount:tips.length,bad,gisaHeight:lg?.height??0,bottomHeight:bg?.height??0,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
+                return {cardCount:cards.length,tipCount:tips.length,visibleTipCount,bad,gisaHeight:lg?.height??0,bottomHeight:bg?.height??0,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
               });
-              if(r.cardCount===0||r.tipCount===0) failures.push(`${path} ${vp.width}: quote controls missing`);
+              if(r.cardCount===0||r.tipCount===0||r.visibleTipCount===0) failures.push(`${path} ${vp.width}: quote controls missing`);
               for(const x of r.bad) failures.push(`${path} ${vp.width}: ${x}`);
               if(vp.width>=1440 && r.gisaHeight>28) failures.push(`${path} ${vp.width}: GISA wraps (${r.gisaHeight.toFixed(1)}px)`);
               if(vp.width>=1440 && r.bottomHeight>64) failures.push(`${path} ${vp.width}: footer meta too tall (${r.bottomHeight.toFixed(1)}px)`);
