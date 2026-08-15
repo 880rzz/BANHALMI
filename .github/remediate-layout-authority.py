@@ -1,5 +1,5 @@
 from pathlib import Path
-import json, sys
+import json, re, sys
 
 phase=sys.argv[1]
 css_path=Path('assets/css/site.css')
@@ -12,8 +12,16 @@ def replace_exact(s, old, new, count, label):
 
 if phase=='phase1':
     s=css_path.read_text()
-    s=replace_exact(s,'section{padding:72px 0;}','main>section{padding:72px 0;}',1,'desktop naked section rule')
-    s=replace_exact(s,'section{padding:56px 0;}','main>section{padding:56px 0;}',2,'mobile naked section rules')
+    # Scope every naked global section-padding authority, not just the earliest
+    # declarations. This is deliberately selector-based so class selectors such
+    # as .pf-section or .service-lower-gallery-section are left untouched.
+    pattern=r'(?<![A-Za-z0-9_.-])section\{padding:'
+    found=len(re.findall(pattern,s))
+    if found!=6:
+        raise SystemExit(f'naked section padding authority count: expected 6, found {found}')
+    s=re.sub(pattern,'main>section{padding:',s)
+    if re.search(pattern,s):
+        raise SystemExit('naked section padding authority survived scoping')
     css_path.write_text(s)
 
 elif phase=='phase2':
@@ -34,14 +42,16 @@ elif phase=='phase3':
     audit.write_text("""import fs from 'node:fs';
 const css=fs.readFileSync('assets/css/site.css','utf8');
 const fail=[];
-if(/(^|[,{\\s])section\\{padding:(?:72|56)px 0;\\}/m.test(css)) fail.push('naked global section padding returned');
-if(!css.includes('main>section{padding:72px 0;}')) fail.push('desktop page-section rhythm missing');
-if((css.match(/main>section\\{padding:56px 0;\\}/g)||[]).length!==2) fail.push('mobile page-section rhythm authority drifted');
+if(/(^|[}\s])section\{padding:/m.test(css)) fail.push('naked global section padding returned');
+if(!css.includes('main>section{padding:72px 0;}')) fail.push('desktop base page-section rhythm missing');
+if(!css.includes('main>section{padding:var(--jony-air) 0;}')) fail.push('Jony page-section rhythm is not scoped');
+if(!css.includes('main>section{padding:clamp(64px,7.5vw,104px) 0;}')) fail.push('readability page-section rhythm is not scoped');
+if((css.match(/main>section\{padding:56px 0;\}/g)||[]).length<2) fail.push('mobile page-section rhythm authority drifted');
 if(css.includes('padding-bottom:52px')||css.includes('padding-right:58px')) fail.push('legacy quote-card reserved whitespace returned');
 if(!css.includes('.option-row>span>.info-tip,.category-card>span>.info-tip{position:static!important;')) fail.push('quote info control is not flow-positioned');
 if(!css.includes('.smart-quote-layout .category-grid{gap:9px!important;align-items:start!important}')) fail.push('quote grid may stretch cards again');
-if((css.match(/html body \\.smart-quote-layout :is\\(\\.category-card,\\.option-row\\)\\{/g)||[]).length!==2) fail.push('quote density authority count drifted');
-if(fail.length){console.error('Layout authority audit failed:\\n- '+fail.join('\\n- '));process.exit(1)}
+if((css.match(/html body \.smart-quote-layout :is\(\.category-card,\.option-row\)\{/g)||[]).length!==2) fail.push('quote density authority count drifted');
+if(fail.length){console.error('Layout authority audit failed:\n- '+fail.join('\n- '));process.exit(1)}
 console.log('Layout authority audit passed.');
 """)
     package=Path('package.json')
