@@ -30,7 +30,7 @@ jobs:
           set -euo pipefail
           python3 .github/ui-polish-20260816.py
           npm test
-      - name: Browser geometry audit
+      - name: Browser geometry and contrast audit
         run: |
           set -euo pipefail
           rm -rf _site && mkdir _site
@@ -57,16 +57,43 @@ jobs:
             for (const path of homes) {
               await page.goto('http://127.0.0.1:4173'+path,{waitUntil:'networkidle'});
               const g = await page.evaluate(() => {
+                const parseRgb = (value) => {
+                  const m=value.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
+                  return m ? [Number(m[1]),Number(m[2]),Number(m[3])] : null;
+                };
+                const lum = (rgb) => {
+                  const v=rgb.map(x=>{const c=x/255;return c<=0.04045?c/12.92:((c+0.055)/1.055)**2.4;});
+                  return 0.2126*v[0]+0.7152*v[1]+0.0722*v[2];
+                };
+                const contrast = (a,b) => {const x=lum(a),y=lum(b);return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05);};
                 const h=document.querySelector('.site-header');
                 const hero=document.querySelector('main > section.hero.hero-image-first.hero-visual-only');
-                if(!h||!hero)return null;
+                const art=document.querySelector('.fp-decision-system .fp-art-path > span');
+                if(!h||!hero||!art)return null;
                 const hr=h.getBoundingClientRect(), rr=hero.getBoundingClientRect();
-                return {gap:rr.top-hr.bottom, topPadding:getComputedStyle(hero).paddingTop, overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
+                const ac=getComputedStyle(art);
+                let bgEl=art.parentElement;
+                let bg='rgba(0, 0, 0, 0)';
+                while(bgEl){
+                  bg=getComputedStyle(bgEl).backgroundColor;
+                  if(bg && bg!=='rgba(0, 0, 0, 0)' && bg!=='transparent') break;
+                  bgEl=bgEl.parentElement;
+                }
+                const fgRgb=parseRgb(ac.color), bgRgb=parseRgb(bg);
+                return {
+                  gap:rr.top-hr.bottom,
+                  topPadding:getComputedStyle(hero).paddingTop,
+                  overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
+                  artContrast:fgRgb&&bgRgb?contrast(fgRgb,bgRgb):0,
+                  artColor:ac.color,
+                  artBg:bg
+                };
               });
-              if(!g) failures.push(`${path} ${vp.width}: missing header/visual hero`);
+              if(!g) failures.push(`${path} ${vp.width}: missing header/visual hero/art prompt`);
               else {
                 if(Math.abs(g.gap)>2) failures.push(`${path} ${vp.width}: header→hero gap ${g.gap.toFixed(2)}px`);
                 if(parseFloat(g.topPadding)>1) failures.push(`${path} ${vp.width}: hero padding-top ${g.topPadding}`);
+                if(g.artContrast < 4.5) failures.push(`${path} ${vp.width}: art prompt contrast ${g.artContrast.toFixed(2)} (${g.artColor} on ${g.artBg})`);
                 if(g.overflow>1) failures.push(`${path} ${vp.width}: horizontal overflow ${g.overflow}px`);
               }
             }
@@ -110,7 +137,7 @@ jobs:
           }
           await browser.close();
           if(failures.length){ console.error(failures.join('\n')); process.exit(1); }
-          console.log('UI polish browser geometry audit passed: 3 home + 3 quote routes × 4 viewports.');
+          console.log('UI polish browser audit passed: hero, contrast, footer and quote info alignment across 3 locales × 4 viewports.');
           NODE
           kill $PID || true
           rm -rf _site
@@ -140,5 +167,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add assets/css/site.css .github/ui-polish-20260816.py
           git diff --cached --check
-          git commit -m 'Fix homepage hero, footer metadata and quote info alignment'
+          git commit -m 'Fix homepage hero, contrast, footer metadata and quote info alignment'
           git push origin HEAD:fix/ui-polish-hero-footer-info-20260816
