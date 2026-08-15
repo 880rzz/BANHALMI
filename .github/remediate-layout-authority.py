@@ -12,10 +12,10 @@ def replace_exact(s, old, new, count, label):
 
 if phase=='phase1':
     s=css_path.read_text()
-    # Scope every naked global section-padding authority, not just the earliest
-    # declarations. This is deliberately selector-based so class selectors such
-    # as .pf-section or .service-lower-gallery-section are left untouched.
-    pattern=r'(?<![A-Za-z0-9_.-])section\{padding:'
+    # Scope every naked global section-padding authority. The negative lookbehind
+    # excludes class/id/combinator-prefixed selectors, so only literal global
+    # `section{padding:...}` authorities are rewritten.
+    pattern=r'(?<![A-Za-z0-9_.>:=-])section\{padding:'
     found=len(re.findall(pattern,s))
     if found!=6:
         raise SystemExit(f'naked section padding authority count: expected 6, found {found}')
@@ -39,7 +39,7 @@ elif phase=='phase2':
 
 elif phase=='phase3':
     audit=Path('tools/audit-layout-authority.mjs')
-    audit.write_text("""import fs from 'node:fs';
+    audit.write_text(r"""import fs from 'node:fs';
 const css=fs.readFileSync('assets/css/site.css','utf8');
 const fail=[];
 if(/(^|[}\s])section\{padding:/m.test(css)) fail.push('naked global section padding returned');
