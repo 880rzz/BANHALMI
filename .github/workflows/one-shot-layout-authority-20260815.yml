@@ -1,0 +1,241 @@
+name: One-shot layout authority remediation 2026-08-15
+
+on:
+  push:
+    branches: [fix/layout-authority-quote-faq-20260815]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/layout-authority-quote-faq-20260815
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install audit runtime
+        run: |
+          set -euo pipefail
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Phase 1 — scope page section rhythm
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('assets/css/site.css')
+          s=p.read_text()
+          old='section{padding:72px 0;}'
+          new='main>section{padding:72px 0;}'
+          assert s.count(old)==1, f'expected one desktop naked section rule, found {s.count(old)}'
+          s=s.replace(old,new)
+          old='section{padding:56px 0;}'
+          new='main>section{padding:56px 0;}'
+          assert s.count(old)==1, f'expected one mobile naked section rule, found {s.count(old)}'
+          s=s.replace(old,new)
+          p.write_text(s)
+          PY
+          ! grep -Eq '(^|[,{[:space:]])section\{padding:(72|56)px 0;\}' assets/css/site.css
+          npm test
+
+      - name: Phase 1 browser gate — nested sections cannot inherit page bands
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          git ls-files -z | rsync -a --from0 --files-from=- ./ _site/
+          cp assets/css/site.css _site/assets/css/site.css
+          node tools/perf-static-server.mjs _site 4173 >/tmp/phase1-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep .25; done
+          node --input-type=module <<'NODE'
+          import { chromium } from 'playwright';
+          import fs from 'node:fs';
+          import path from 'node:path';
+          const root='_site';
+          const html=[];
+          const walk=d=>{for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,e.name);if(e.isDirectory())walk(p);else if(e.name.endsWith('.html'))html.push(p)}};
+          walk(root);
+          const faqFiles=html.filter(f=>fs.readFileSync(f,'utf8').includes('faq-topic'));
+          if(!faqFiles.length) throw new Error('No FAQ topic pages discovered');
+          const toUrl=f=>{let r=f.slice(root.length).replace(/\\/g,'/');r=r.replace(/index\.html$/,'');return 'http://127.0.0.1:4173'+r};
+          const browser=await chromium.launch({headless:true});
+          for(const width of [375,390,430,768,1024,1440]){
+            const page=await browser.newPage({viewport:{width,height:1100}});
+            for(const file of faqFiles){
+              await page.goto(toUrl(file),{waitUntil:'networkidle'});
+              const result=await page.evaluate(()=>{
+                const topics=[...document.querySelectorAll('section.faq-topic')];
+                const bad=topics.map(el=>{const c=getComputedStyle(el);return {pt:parseFloat(c.paddingTop),pb:parseFloat(c.paddingBottom)}}).filter(x=>x.pt>=50||x.pb>=50);
+                const overflow=document.documentElement.scrollWidth-document.documentElement.clientWidth;
+                const header=document.querySelector('.site-header,header');
+                const main=document.querySelector('main');
+                const first=main?.querySelector('h1,h2');
+                const gap=header&&first?first.getBoundingClientRect().top-header.getBoundingClientRect().bottom:null;
+                return {bad,overflow,gap};
+              });
+              if(result.bad.length) throw new Error(`${file} @${width}: nested FAQ topic retained page-band padding ${JSON.stringify(result.bad)}`);
+              if(result.overflow>1) throw new Error(`${file} @${width}: horizontal overflow ${result.overflow}px`);
+              if(result.gap!=null && result.gap>190) throw new Error(`${file} @${width}: header-to-first-heading gap remains excessive (${result.gap}px)`);
+            }
+            await page.close();
+          }
+          await browser.close();
+          console.log(`Phase 1 browser gate passed on ${faqFiles.length} FAQ page(s).`);
+          NODE
+          kill $SERVER_PID || true
+          trap - EXIT
+
+      - name: Phase 2 — establish one quote-card geometry authority
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('assets/css/site.css')
+          s=p.read_text()
+          old='.option-row,.category-card{position:relative;display:grid;grid-template-columns:auto 1fr;align-items:flex-start;gap:.75rem;min-height:56px;padding-right:58px;padding-bottom:52px;}'
+          new='.option-row,.category-card{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:flex-start;gap:.75rem;min-height:0;padding:12px 14px;}'
+          assert s.count(old)==1, f'legacy quote geometry block count={s.count(old)}'
+          s=s.replace(old,new)
+          anchor='.option-row span,.category-card span{min-width:0;line-height:1.42;}'
+          replacement=anchor+'\n.option-row>span,.category-card>span{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:start;}\n.option-row>span>strong,.category-card>span>strong,.option-row>span>em,.category-card>span>em{grid-column:1;min-width:0;}\n.option-row>span>.info-tip,.category-card>span>.info-tip{position:static!important;grid-column:2;grid-row:1 / span 2;align-self:center;justify-self:end;margin:0!important;}'
+          assert s.count(anchor)==1, f'quote span anchor count={s.count(anchor)}'
+          s=s.replace(anchor,replacement)
+          old='html body .smart-quote-layout .category-grid{gap:9px!important}'
+          new='html body .smart-quote-layout .category-grid{gap:9px!important;align-items:start!important}'
+          assert s.count(old)==1, f'quote grid density rule count={s.count(old)}'
+          s=s.replace(old,new)
+          old='html body .smart-quote-layout :is(.category-card,.option-row){padding:11px 13px!important;border-radius:12px!important}'
+          new='html body .smart-quote-layout :is(.category-card,.option-row){padding:12px 14px!important;border-radius:12px!important;align-self:start!important}'
+          assert s.count(old)==1, f'desktop quote density override count={s.count(old)}'
+          s=s.replace(old,new)
+          old='html body .smart-quote-layout :is(.category-card,.option-row){padding:13px!important;border-radius:13px!important}'
+          new='html body .smart-quote-layout :is(.category-card,.option-row){padding:13px 14px!important;border-radius:13px!important;align-self:start!important}'
+          assert s.count(old)==1, f'mobile quote density override count={s.count(old)}'
+          s=s.replace(old,new)
+          p.write_text(s)
+          PY
+          ! grep -Fq 'padding-bottom:52px' assets/css/site.css
+          ! grep -Fq 'padding-right:58px' assets/css/site.css
+          npm test
+
+      - name: Phase 2 browser gate — compact quote cards, no late override
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          git ls-files -z | rsync -a --from0 --files-from=- ./ _site/
+          cp assets/css/site.css _site/assets/css/site.css
+          node tools/perf-static-server.mjs _site 4173 >/tmp/phase2-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep .25; done
+          node --input-type=module <<'NODE'
+          import { chromium } from 'playwright';
+          import fs from 'node:fs';
+          import path from 'node:path';
+          const root='_site'; const html=[];
+          const walk=d=>{for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,e.name);if(e.isDirectory())walk(p);else if(e.name.endsWith('.html'))html.push(p)}}; walk(root);
+          const quoteFiles=html.filter(f=>{const s=fs.readFileSync(f,'utf8');return s.includes('smart-quote-layout')&&s.includes('category-card')});
+          if(!quoteFiles.length) throw new Error('No smart quote pages discovered');
+          const toUrl=f=>{let r=f.slice(root.length).replace(/\\/g,'/');r=r.replace(/index\.html$/,'');return 'http://127.0.0.1:4173'+r};
+          const browser=await chromium.launch({headless:true});
+          for(const width of [375,390,430,768,1024,1440]){
+            const page=await browser.newPage({viewport:{width,height:1200}});
+            for(const file of quoteFiles){
+              await page.goto(toUrl(file),{waitUntil:'networkidle'});
+              const result=await page.evaluate(()=>{
+                const cards=[...document.querySelectorAll('.smart-quote-layout .category-card')];
+                if(!cards.length)return {missing:true};
+                const failures=[];
+                for(const card of cards){
+                  const cr=card.getBoundingClientRect();
+                  const info=card.querySelector('.info-tip');
+                  const desc=card.querySelector('em');
+                  const title=card.querySelector('strong');
+                  const input=card.querySelector('input');
+                  const nodes=[info,desc,title,input].filter(Boolean);
+                  const bottoms=nodes.map(n=>n.getBoundingClientRect().bottom);
+                  const slack=cr.bottom-Math.max(...bottoms);
+                  const pos=info?getComputedStyle(info).position:null;
+                  const ir=info?.getBoundingClientRect();
+                  if(pos!=='static')failures.push(`info position=${pos}`);
+                  if(slack>34)failures.push(`bottom slack=${slack.toFixed(1)}`);
+                  if(cr.height>180)failures.push(`card height=${cr.height.toFixed(1)}`);
+                  if(ir&&(ir.left<cr.left-1||ir.right>cr.right+1||ir.top<cr.top-1||ir.bottom>cr.bottom+1))failures.push('info outside card');
+                }
+                return {missing:false,failures,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
+              });
+              if(result.missing) throw new Error(`${file} @${width}: no category cards rendered`);
+              if(result.failures.length) throw new Error(`${file} @${width}: ${result.failures.join('; ')}`);
+              if(result.overflow>1) throw new Error(`${file} @${width}: horizontal overflow ${result.overflow}px`);
+            }
+            await page.close();
+          }
+          await browser.close();
+          console.log(`Phase 2 browser gate passed on ${quoteFiles.length} quote page(s).`);
+          NODE
+          kill $SERVER_PID || true
+          trap - EXIT
+
+      - name: Phase 3 — add permanent layout authority source audit
+        run: |
+          set -euo pipefail
+          cat > tools/audit-layout-authority.mjs <<'EOF'
+          import fs from 'node:fs';
+          const css=fs.readFileSync('assets/css/site.css','utf8');
+          const fail=[];
+          if(/(^|[,{\s])section\{padding:(?:72|56)px 0;\}/m.test(css)) fail.push('naked global section padding returned');
+          if(!css.includes('main>section{padding:72px 0;}')) fail.push('desktop page-section rhythm missing');
+          if(!css.includes('main>section{padding:56px 0;}')) fail.push('mobile page-section rhythm missing');
+          if(css.includes('padding-bottom:52px')||css.includes('padding-right:58px')) fail.push('legacy quote-card reserved whitespace returned');
+          if(!css.includes('.option-row>span>.info-tip,.category-card>span>.info-tip{position:static!important;')) fail.push('quote info control is not flow-positioned');
+          if(!css.includes('.smart-quote-layout .category-grid{gap:9px!important;align-items:start!important}')) fail.push('quote grid may stretch cards again');
+          if(fail.length){console.error('Layout authority audit failed:\n- '+fail.join('\n- '));process.exit(1)}
+          console.log('Layout authority audit passed.');
+          EOF
+          node - <<'NODE'
+          const fs=require('fs'); const p=JSON.parse(fs.readFileSync('package.json','utf8'));
+          if(!p.scripts.test.includes('audit-layout-authority.mjs')) p.scripts.test += ' && node tools/audit-layout-authority.mjs';
+          fs.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');
+          NODE
+          npm test
+
+      - name: Final full browser regression on remediated tree
+        run: |
+          set -euo pipefail
+          rm -rf _site artifacts/browser-layout artifacts/exhaustive-visual
+          mkdir _site
+          git ls-files -z | rsync -a --from0 --files-from=- ./ _site/
+          cp assets/css/site.css _site/assets/css/site.css
+          cp package.json _site/package.json
+          cp tools/audit-layout-authority.mjs _site/tools/audit-layout-authority.mjs
+          node tools/perf-static-server.mjs _site 4173 >/tmp/final-layout-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep .25; done
+          npm run test:e2e
+          AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-browser-layout.mjs
+          AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-first-principles-layout.mjs
+          kill $SERVER_PID || true
+          trap - EXIT
+
+      - name: Commit only after every sequential gate is green
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/one-shot-layout-authority-20260815.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/css/site.css package.json tools/audit-layout-authority.mjs .github/workflows/one-shot-layout-authority-20260815.yml
+          git diff --cached --check
+          git commit -m 'Fix BANHALMI layout authority and quote density'
+          git push origin HEAD:fix/layout-authority-quote-faq-20260815
