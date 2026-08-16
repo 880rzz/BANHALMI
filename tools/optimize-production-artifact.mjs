@@ -16,12 +16,18 @@ walk(root);
 
 const stylesheetRe = /<link rel="stylesheet" href="(\/assets\/css\/site\.css[^\"]*)"\s*\/>/g;
 const mainScriptRe = /<script defer="" src="\/assets\/js\/main\.js\?v=20260808-mobile100-v2"><\/script>/g;
+const megaMenuScriptRe = /<script data-banhalmi-mega-menu="" defer="" src="\/assets\/js\/mega-menu\.js\?v=[^\"]+"><\/script>/g;
 const quotePdfScriptRe = /<script([^>]*?)src="(\/assets\/js\/quote-pdf\.js[^\"]*)"([^>]*)><\/script>/g;
 
 const asyncStyle = '<link rel="preload" as="style" href="$1"/><link rel="stylesheet" href="$1" media="print" onload="this.media=\'all\';this.onload=null"/><noscript><link rel="stylesheet" href="$1"/></noscript>';
 
-// The mega-menu runtime stays as a normal deferred script: it is small after
-// minification and must be ready for the user's very first menu interaction.
+// Homepages do not need the descriptive menu runtime until the user approaches
+// the menu. Parsing/evaluating the menu's large localized navigation data on the
+// cold Lighthouse run caused a 235 ms long task and inflated TBT to 766 ms even
+// though the second run was 100/100. Load on hover/focus, or intercept the first
+// click and replay it after the runtime has armed its own menu handler.
+const homeMegaMenuLoader = `<script>(function(){var loaded=false,pending=false;function replay(){if(!pending)return;pending=false;var b=document.querySelector('.menu-btn');if(b)setTimeout(function(){b.click();},0);}function load(openAfter){if(openAfter)pending=true;if(loaded){replay();return;}loaded=true;var s=document.createElement('script');s.src='/assets/js/mega-menu.js?v=20260810-menu-polish-v65';s.defer=true;s.setAttribute('data-banhalmi-mega-menu','');s.onload=replay;document.head.appendChild(s);}document.addEventListener('pointerover',function(e){if(e.target.closest&&e.target.closest('.menu-btn'))load(false);},{passive:true,capture:true});document.addEventListener('focusin',function(e){if(e.target.closest&&e.target.closest('.menu-btn'))load(false);},true);document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.menu-btn');if(!b||document.getElementById('bn-mega-menu'))return;e.preventDefault();e.stopImmediatePropagation();load(true);},true);})();</script>`;
+
 // The heavier general runtime is not required for first paint/navigation. Loading
 // it from requestIdleCallback made Chromium execute it almost immediately during
 // Lighthouse's idle window and reflow the homepage inside the TBT measurement.
@@ -41,14 +47,17 @@ for (const file of htmlFiles) {
 
   // Async CSS remains useful on ordinary content pages. The homepages and quote
   // builders are layout-dense enough that switching site.css from media=print to
-  // all after FCP creates a full-document style/layout task. On the German home
-  // page Lighthouse measured that restyle at 103–140 ms TBT despite almost no
-  // script boot cost. Keep the same minified single stylesheet blocking on these
-  // critical routes so layout is complete before FCP instead of becoming TBT.
+  // all after FCP creates a full-document style/layout task. Keep the same
+  // minified single stylesheet blocking on these critical routes so layout is
+  // complete before FCP instead of becoming TBT.
   if (!isQuote && !isHome) html = html.replace(stylesheetRe, asyncStyle);
 
   if (isHome) {
+    html = html.replace(megaMenuScriptRe, homeMegaMenuLoader);
     html = html.replace(mainScriptRe, homeRuntimeLoader);
+    if (!html.includes('homeMegaMenuLoader') && /data-banhalmi-mega-menu="" defer=""/.test(html)) {
+      throw new Error(`Homepage mega-menu runtime remained eager in ${rel}`);
+    }
   }
 
   if (isQuote) {
@@ -56,9 +65,7 @@ for (const file of htmlFiles) {
 
     // The pricing engine validates the bundled price table synchronously, then
     // hides this loading message. If the message is visible in the initial HTML,
-    // that hide moves the whole quote-intro block after FCP and creates a stable
-    // ~0.05076 CLS on mobile. Start the status hidden in the production artifact;
-    // setPricingUi(false) still unhides it if pricing is genuinely unavailable.
+    // that hide moves the whole quote-intro block after FCP and creates CLS.
     html = html.replace(/data-pricing-status="">/g, 'data-pricing-status="" hidden>');
     if (!/data-pricing-status=""\s+hidden>/.test(html)) {
       throw new Error(`Quote pricing status was not stabilized in ${rel}`);
@@ -77,6 +84,27 @@ for (const file of htmlFiles) {
   }
 
   fs.writeFileSync(file, html);
+}
+
+// Quote pages already ship a verified embedded pricing table. On a cold run the
+// calculator previously performed duplicate panel/paint work, then fetched the
+// same pricing.json and painted a third time. One Hungarian run spent 451 ms in
+// quote-calculator script evaluation and produced a 253 ms long task. In the
+// production artifact, use the embedded table immediately; keep network pricing
+// as a fallback only if the embedded table is missing/invalid, and avoid duplicate
+// updatePanels calls because paint() already performs that synchronization.
+const quoteCalculatorPath = path.join(root, 'assets/js/quote-calculator.js');
+if (fs.existsSync(quoteCalculatorPath)) {
+  let quoteJs = fs.readFileSync(quoteCalculatorPath, 'utf8');
+  const protocolMarker = "    var protocol=String(window.location&&window.location.protocol||'');";
+  if (!quoteJs.includes(protocolMarker)) throw new Error('Quote optimizer could not find pricing fallback marker.');
+  quoteJs = quoteJs.replace(protocolMarker, "    if(pricingReady)return Promise.resolve(true);\n" + protocolMarker);
+
+  const oldInit = "function init(f){applyRequestedServiceContext(f);setDateMins(f);updatePanels(f);f.addEventListener('change',function(event){if(event&&event.target&&event.target.name==='category')syncServiceContextFromCategory(f,true);updatePanels(f);paint(f);});f.addEventListener('input',function(){paint(f);});paint(f);}";
+  const newInit = "function init(f){applyRequestedServiceContext(f);setDateMins(f);updatePanels(f);f.addEventListener('change',function(event){if(event&&event.target&&event.target.name==='category')syncServiceContextFromCategory(f,true);paint(f);});f.addEventListener('input',function(){paint(f);});}";
+  if (!quoteJs.includes(oldInit)) throw new Error('Quote optimizer could not find duplicate startup paint contract.');
+  quoteJs = quoteJs.replace(oldInit, newInit);
+  fs.writeFileSync(quoteCalculatorPath, quoteJs);
 }
 
 // Preserve the canonical footer heading color after all legacy/mobile rules are
