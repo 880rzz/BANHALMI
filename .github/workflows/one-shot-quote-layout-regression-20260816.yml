@@ -28,7 +28,9 @@ jobs:
       - name: Apply fix and source audits
         run: |
           set -euo pipefail
-          python3 .github/quote-layout-regression-20260816.py
+          if [ -f .github/quote-layout-regression-20260816.py ]; then
+            python3 .github/quote-layout-regression-20260816.py
+          fi
           npm test
       - name: Browser geometry audit
         run: |
@@ -54,9 +56,18 @@ jobs:
                 const grid=document.querySelector('.smart-quote-layout .category-grid');
                 const cards=[...document.querySelectorAll('.smart-quote-layout .category-grid .category-card')].filter(e=>e.getBoundingClientRect().width>0);
                 const rows=[...document.querySelectorAll('.smart-quote-layout .option-row')].filter(e=>e.getBoundingClientRect().width>0);
+                const steps=[...document.querySelectorAll('.smart-quote-layout .quote-step')].filter(e=>e.getBoundingClientRect().width>0);
+                const footer=document.querySelector('.site-footer .footer-bottom');
+                const first=footer?.querySelector(':scope > span:first-child');
+                const last=footer?.querySelector(':scope > span:last-child');
                 const bad=[];
                 const tops=[...new Set(cards.map(c=>Math.round(c.getBoundingClientRect().top)))].sort((a,b)=>a-b);
-                for(let i=1;i<tops.length;i++) if(tops[i]-tops[i-1]>180) bad.push(`category row gap ${tops[i]-tops[i-1]}px`);
+                for(let i=1;i<tops.length;i++) if(tops[i]-tops[i-1]>170) bad.push(`category row pitch ${tops[i]-tops[i-1]}px`);
+                for(let i=1;i<steps.length;i++){
+                  const prev=steps[i-1].getBoundingClientRect(), cur=steps[i].getBoundingClientRect();
+                  const gap=cur.top-prev.bottom;
+                  if(gap>20) bad.push(`quote-step gap ${gap.toFixed(1)}px`);
+                }
                 for(const row of rows){
                   const input=row.querySelector(':scope > input[type="radio"]');
                   const span=row.querySelector(':scope > span');
@@ -72,7 +83,14 @@ jobs:
                   if(sr.right<rr.right-24) bad.push('content span does not reach right side');
                   if(ir.width<23||ir.height<23||tr.width<43||tr.height<43) bad.push('target too small');
                 }
-                return {bad,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,gridHeight:grid?.getBoundingClientRect().height??0,cardCount:cards.length,rowCount:rows.length};
+                if(footer&&first&&last&&innerWidth>=1440){
+                  const fr=footer.getBoundingClientRect(), ar=first.getBoundingClientRect(), br=last.getBoundingClientRect();
+                  if(Math.abs(ar.left-fr.left)>2) bad.push(`footer copyright left offset ${(ar.left-fr.left).toFixed(1)}px`);
+                  if(Math.abs(fr.right-br.right)>2) bad.push(`footer utility right offset ${(fr.right-br.right).toFixed(1)}px`);
+                  if(Math.abs((ar.top+ar.height/2)-(br.top+br.height/2))>5) bad.push('footer metadata not on shared row');
+                  if(br.height>48) bad.push(`footer utilities wrap ${br.height.toFixed(1)}px`);
+                }
+                return {bad,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,cardCount:cards.length,rowCount:rows.length};
               });
               if(r.cardCount<5) failures.push(`${route} ${vp.width}: category cards missing`);
               if(r.rowCount<1) failures.push(`${route} ${vp.width}: option rows missing`);
@@ -83,7 +101,7 @@ jobs:
           }
           await browser.close();
           if(failures.length){console.error(failures.join('\n'));process.exit(1)}
-          console.log('Quote layout geometry passed across 3 locales × 4 viewports.');
+          console.log('Quote spacing, choice alignment and footer metadata geometry passed across 3 locales × 4 viewports.');
           NODE
           kill $PID || true
           rm -rf _site
@@ -108,10 +126,12 @@ jobs:
         run: |
           set -euo pipefail
           rm -rf _site artifacts/browser-layout artifacts/exhaustive-visual artifacts/lighthouse-desktop
-          rm -f .github/quote-layout-regression-20260816.py
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/css/site.css .github/quote-layout-regression-20260816.py
+          if [ -f .github/quote-layout-regression-20260816.py ]; then rm .github/quote-layout-regression-20260816.py; fi
+          git add assets/css/site.css .github/quote-layout-regression-20260816.py || true
           git diff --cached --check
-          git commit -m 'Fix quote choice alignment and vertical spacing'
-          git push origin HEAD:fix/quote-layout-regression-20260816
+          if ! git diff --cached --quiet; then
+            git commit -m 'Fix quote spacing, choice alignment and footer metadata row'
+            git push origin HEAD:fix/quote-layout-regression-20260816
+          fi
