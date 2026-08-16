@@ -19,11 +19,12 @@
   "serviceType": [
     "Strategic visual positioning",
     "Executive portraiture",
+    "Professional headshot photography",
     "Brand photography",
     "C-level event photography",
     "Fine-art-led visual authorship"
   ],
-  "description": "BANHALMI is a strategic visual partner for leaders and organisations. Executive portraiture, brand photography, C-level event imagery and fine-art authorship form one coherent visual system whose business outcome is visual trust.",
+  "description": "BANHALMI is a strategic visual partner for executives, founders, experts, professionals, artists, actors, creative professionals, teams and organisations. Executive portraiture, professional headshots, brand photography, C-level event imagery and fine-art authorship are tools for building one credible, coherent visual presence across the places where a person, team or organisation is seen.",
   "slogan": [
     "We do not create isolated photographs. We build visual trust.",
     "Nem különálló fényképeket készítünk. Vizuális bizalmat építünk.",
@@ -38,12 +39,16 @@
     {
       "@type": "PropertyValue",
       "name": "Method",
-      "value": "One coherent visual system across leadership, brand, event and editorial touchpoints"
+      "value": "One coherent visual presence across executive portrait/headshot, personal brand, brand communication, press, campaigns, team imagery and C-level event touchpoints"
     },
     {
       "@type": "PropertyValue",
       "name": "Distinctive capability",
       "value": "Fine-art authorship combined with executive and organisational visual strategy"
     }
-  ]
+  ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Executives and C-level leaders, founders, entrepreneurs, experts, professionals, artists, actors, creative professionals, teams and organisations"
+  }
 }

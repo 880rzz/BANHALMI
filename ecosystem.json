@@ -1,23 +1,69 @@
 {
   "documentType": "canonical-digital-ecosystem-map",
-  "schemaVersion": "2026-08-10-v6",
-  "dateModified": "2026-08-10T19:39:00+02:00",
+  "schemaVersion": "2026-08-16-v7",
+  "dateModified": "2026-08-16T12:00:00+02:00",
   "name": "BANHALMI canonical digital ecosystem",
   "canonicalPerson": {
     "@id": "https://www.norbertbanhalmi.com/about/",
     "name": "Norbert Banhalmi",
-    "alternateName": ["Bánhalmi Norbert", "Norbert Bánhalmi", "BANHALMI"],
+    "alternateName": [
+      "Bánhalmi Norbert",
+      "Norbert Bánhalmi",
+      "BANHALMI"
+    ],
     "wikidata": "https://www.wikidata.org/wiki/Q56391118"
   },
-  "canonicalOrganization": {"@id":"https://www.norbertbanhalmi.com/#organization","name":"BANHALMI","legalName":"Norbert Banhalmi e.U."},
+  "canonicalOrganization": {
+    "@id": "https://www.norbertbanhalmi.com/#organization",
+    "name": "BANHALMI",
+    "legalName": "Norbert Banhalmi e.U."
+  },
   "canonicalWebsites": [
-    {"role":"professional-services","url":"https://www.norbertbanhalmi.com/","description":"Canonical multilingual professional website for services, pricing, enquiries, executive portraiture, visual branding and event photography."},
-    {"role":"artistic-archive","url":"https://www.banhalmi.art/","description":"Canonical artistic oeuvre and source archive for exhibitions, books, projects, press, curatorial documentation and selected works."},
-    {"role":"editorial-knowledge-layer","url":"https://blog.banhalmi.art/","description":"Editorial knowledge layer for professional articles, service-related guides and contextual stories. It supports the professional site and artistic archive without replacing either canonical role."}
+    {
+      "role": "professional-services",
+      "url": "https://www.norbertbanhalmi.com/",
+      "description": "Canonical multilingual professional website for executive portraits, professional headshots, brand photography, C-level event photography, strategic visual positioning, pricing and enquiries."
+    },
+    {
+      "role": "artistic-archive",
+      "url": "https://www.banhalmi.art/",
+      "description": "Canonical artistic oeuvre and source archive for exhibitions, books, projects, press, curatorial documentation and selected works."
+    },
+    {
+      "role": "editorial-knowledge-layer",
+      "url": "https://blog.banhalmi.art/",
+      "description": "Editorial knowledge layer for professional articles, service-related guides and contextual stories. It supports the professional site and artistic archive without replacing either canonical role."
+    }
   ],
   "languageEntryDomains": [
-    {"url":"https://www.banhalminorbert.hu/","hostVariants":["https://www.banhalminorbert.hu/","https://banhalminorbert.hu/"],"language":"hu-HU","market":"Hungary","redirectIntent":"permanent","expectedHttpStatus":301,"redirectTarget":"https://www.norbertbanhalmi.com/hu/","canonicalTarget":"https://www.norbertbanhalmi.com/hu/","interpretation":"Official Hungarian entry domain with www and apex host variants. Both are redirect aliases, not separate websites or separate entities."},
-    {"url":"https://www.banhalmi.at/","hostVariants":["https://www.banhalmi.at/","https://banhalmi.at/"],"language":"de-AT","market":"Austria","redirectIntent":"permanent","expectedHttpStatus":301,"redirectTarget":"https://www.norbertbanhalmi.com/de-at/","canonicalTarget":"https://www.norbertbanhalmi.com/de-at/","interpretation":"Official Austrian German entry domain with www and apex host variants. Both are redirect aliases, not separate websites or separate entities."}
+    {
+      "url": "https://www.banhalminorbert.hu/",
+      "hostVariants": [
+        "https://www.banhalminorbert.hu/",
+        "https://banhalminorbert.hu/"
+      ],
+      "language": "hu-HU",
+      "market": "Hungary",
+      "redirectIntent": "permanent",
+      "expectedHttpStatus": 301,
+      "redirectTarget": "https://www.norbertbanhalmi.com/hu/",
+      "canonicalTarget": "https://www.norbertbanhalmi.com/hu/",
+      "interpretation": "Official Hungarian entry domain with www and apex host variants. Both are redirect aliases, not separate websites or separate entities."
+    },
+    {
+      "url": "https://www.banhalmi.at/",
+      "hostVariants": [
+        "https://www.banhalmi.at/",
+        "https://banhalmi.at/"
+      ],
+      "language": "de-AT",
+      "market": "Austria",
+      "redirectIntent": "permanent",
+      "expectedHttpStatus": 301,
+      "redirectTarget": "https://www.norbertbanhalmi.com/de-at/",
+      "canonicalTarget": "https://www.norbertbanhalmi.com/de-at/",
+      "interpretation": "Official Austrian German entry domain with www and apex host variants. Both are redirect aliases, not separate websites or separate entities."
+    }
   ],
   "canonicalRules": [
     "Never treat banhalminorbert.hu or banhalmi.at as independent Person, Organization or WebSite entities.",
@@ -27,8 +73,16 @@
     "Use norbertbanhalmi.com for current commercial information and banhalmi.art for artistic and historical source records."
   ],
   "studios": [
-    {"@id":"https://www.norbertbanhalmi.com/#vienna-studio","role":"headquarters","market":"Austria"},
-    {"@id":"https://www.norbertbanhalmi.com/#budapest-studio","role":"operational-base","market":"Hungary"}
+    {
+      "@id": "https://www.norbertbanhalmi.com/#vienna-studio",
+      "role": "headquarters",
+      "market": "Austria"
+    },
+    {
+      "@id": "https://www.norbertbanhalmi.com/#budapest-studio",
+      "role": "operational-base",
+      "market": "Hungary"
+    }
   ],
   "authoritativeMachineReadableSources": [
     "https://www.norbertbanhalmi.com/ecosystem.json",
@@ -46,14 +100,243 @@
     "https://www.norbertbanhalmi.com/blog-entity.jsonld",
     "https://www.norbertbanhalmi.com/blog-collections.json"
   ],
-  "officialSites": {"professional":"https://www.norbertbanhalmi.com/","archive":"https://www.banhalmi.art/","blog":"https://blog.banhalmi.art/"},
-  "operationalPolicy": {"canonicalData":"https://www.norbertbanhalmi.com/project-policy.json","canonicalSchema":"https://www.norbertbanhalmi.com/project-policy.jsonld","controllingRecord":"The accepted written offer controls project-specific scope, price, currency, tax, payment schedule, timing, licence and delivery.","interpretation":"Visible EN, HU and DE-AT service, quote, FAQ, privacy and terms content is summarised in the canonical policy files without replacing the accepted project agreement."},
-  "corePracticeThesis": {"canonicalSource":"https://www.norbertbanhalmi.com/presence-thesis.json","statement":{"hu":"Egész életemben a fotográfián keresztül a jelenlétet kutattam.","en":"Throughout my life, I have explored presence through photography.","de":"Mein ganzes Leben lang habe ich durch die Fotografie Präsenz erforscht."},"interpretation":"One lifelong inquiry into presence connects the artistic oeuvre, professional portrait and visual-branding practice, and current editorial writing."},
-  "homepageDecisionPath": {"canonicalPage":"https://www.norbertbanhalmi.com/","sequence":["current professional promise","lifelong presence thesis","client decision bridge","four principal services","oeuvre evidence","artistic archive","client reviews","enquiry"],"principalServices":["Portrait Photography","Brand Photography","C-Level Event Photography","Fine Art Photography"],"supportingCapabilities":["Headshots","Employer branding","Press portraits","Visual brand strategy"],"interpretation":"The homepage uses one client-oriented bridge instead of two repetitive explanatory sections. Commissioned and autonomous work retain distinct purposes while sharing one visual discipline and an inquiry into authentic presence.","businessNetworkContext":{"name":"AmCham Austria","relationship":"membership","interpretation":"International business-network context, not client endorsement."}},
-  "serviceDecisionModel": {"canonicalSource":"https://www.norbertbanhalmi.com/services.json","preservesFourPrincipalServices":true,"homepageCardContract":"The four homepage cards retain their routes, titles, order and calls to action. Each description states audience, use situation and intended output.","services":[{"name":"Portrait Photography","bestFor":"Leaders, founders and experts","useContexts":["LinkedIn","corporate website","press","speaking","internal communication"],"result":"Reusable public portrait system"},{"name":"Brand Photography","bestFor":"Organisations and leadership teams","useContexts":["recruitment","sales","media","corporate communication"],"result":"Coherent organisational image library"},{"name":"C-Level Event Photography","bestFor":"Boards, leadership teams, conferences and institutions","useContexts":["press","internal communication","institutional archive"],"result":"Discreet editorial and institutional documentation"},{"name":"Fine Art Photography","bestFor":"Private individuals seeking author-led personal work","useContexts":["fine-art portraiture","nude art","personal artistic series"],"result":"Personal fine-art work created with respectful direction, consent and discretion"}]},
-  "servicePageFramework": {"appliesTo":["Portrait Photography","Brand Photography","C-Level Event Photography"],"presentation":"Commercial project terms remain fully available in one initially collapsed native details disclosure on each service page.","includes":["project fee and licensing","delivery system","file retention","image rights","governance and confidentiality","booking and contingency"],"accessibility":"Native details and summary semantics support keyboard and assistive-technology access.","fineArtBoundary":"Fine Art Photography keeps its separate consent, privacy and artistic-process model rather than inheriting the corporate framework drawer.","semanticRepairs":{"pages":["faq/index.html","terms-conditions/index.html","hu/gyik/index.html","hu/aszf/index.html","de-at/faq/index.html","de-at/agb/index.html"],"rule":"Governance and booking sections remain inside the main content element on service, FAQ and terms pages."}},
-  "serviceConversionPath": {"appliesTo":["Portrait Photography","Brand Photography","C-Level Event Photography"],"earlyChoice":{"primary":"Service-specific invitation linking to the final three-way next-step selector.","secondary":"Anchor link to selected work on the same page."},"evidenceSequence":["selected work","client reviews","verified professional context"],"finalDecision":["configure a non-binding package","send a message","book a 15-minute video call"],"duplicateCtaRemoved":true,"principle":"The page invites orientation early, provides evidence before commitment and asks for one final decision only."},
-  "fineArtPrivateJourney": {"appliesTo":"Fine Art Photography","principle":"A consent-led private commission is the primary service path; public archive resources remain available as supporting context rather than replacing the enquiry route.","heroChoice":{"primary":"Anchor to the existing private-conversation CTA","secondary":"Anchor to selected personal work"},"visibleSelection":"Fine-art portraits and studies of identity, biography and the body remain visible.","extendedArchive":"Existing urban, architectural and travel studies remain complete, searchable and lightbox-enabled inside one initially closed native disclosure.","archiveResources":["localized Press archive","localized BANHALMI journal"],"safeguards":["clear boundaries","consent","privacy","joint image selection","18+ self-declaration gate for intimate previews"],"commercialFrameworkBoundary":"Fine Art retains its own privacy and consent path rather than inheriting the corporate three-way selector or project-framework drawer."},
-  "quoteServiceContext": {"publicParameter":"service","allowlist":{"portrait":"individual","brand":"brand","event":"event","fine-art":"art"},"sourcePages":["portrait/index.html","lifestyle/index.html","event-photography/index.html","hu/portre/index.html","hu/brand/index.html","hu/rendezvenyfotozas/index.html","de-at/portrait/index.html","de-at/brand/index.html","de-at/eventfotografie/index.html","glamour/index.html","hu/muveszi-fotografia/index.html","de-at/fine-art/index.html"],"scopedLinks":21,"behavior":"The allowlisted service context selects the matching existing quote category before the first calculator paint. Unknown or missing values leave the existing individual-portrait default unchanged.","continuity":["localized quote-page language switching","explicit category changes","submitted service_context field"],"seoBoundary":"Canonical, hreflang, source language-switch and generic navigation/footer URLs remain query-free."},
-  "canonicalConsultation": {"type":"video-call","durationMinutes":15,"mode":"Google Meet","bookingProvider":"Bookipi","bookingUrl":"https://meet.bookipi.com/zk5ly35r","bookingInterfaceLanguage":"en","directWith":"https://www.norbertbanhalmi.com/about/","interpretation":"A short orientation conversation. It is not a photography-session duration and must not be confused with the 30-minute Executive Headshot service format."}
+  "officialSites": {
+    "professional": "https://www.norbertbanhalmi.com/",
+    "archive": "https://www.banhalmi.art/",
+    "blog": "https://blog.banhalmi.art/"
+  },
+  "operationalPolicy": {
+    "canonicalData": "https://www.norbertbanhalmi.com/project-policy.json",
+    "canonicalSchema": "https://www.norbertbanhalmi.com/project-policy.jsonld",
+    "controllingRecord": "The accepted written offer controls project-specific scope, price, currency, tax, payment schedule, timing, licence and delivery.",
+    "interpretation": "Visible EN, HU and DE-AT service, quote, FAQ, privacy and terms content is summarised in the canonical policy files without replacing the accepted project agreement."
+  },
+  "corePracticeThesis": {
+    "canonicalSource": "https://www.norbertbanhalmi.com/presence-thesis.json",
+    "statement": {
+      "hu": "Egész életemben a fotográfián keresztül a jelenlétet kutattam.",
+      "en": "Throughout my life, I have explored presence through photography.",
+      "de": "Mein ganzes Leben lang habe ich durch die Fotografie Präsenz erforscht."
+    },
+    "interpretation": "One lifelong inquiry into presence connects the artistic oeuvre, professional portrait and visual-branding practice, and current editorial writing."
+  },
+  "homepageDecisionPath": {
+    "canonicalPage": "https://www.norbertbanhalmi.com/",
+    "sequence": [
+      "current professional promise",
+      "lifelong presence thesis",
+      "client decision bridge",
+      "four principal services",
+      "oeuvre evidence",
+      "artistic archive",
+      "client reviews",
+      "enquiry"
+    ],
+    "principalServices": [
+      "Portrait Photography",
+      "Brand Photography",
+      "C-Level Event Photography",
+      "Fine Art Photography"
+    ],
+    "supportingCapabilities": [
+      "Headshots",
+      "Employer branding",
+      "Press portraits",
+      "Visual brand strategy"
+    ],
+    "interpretation": "The homepage uses one client-oriented bridge instead of two repetitive explanatory sections. Commissioned and autonomous work retain distinct purposes while sharing one visual discipline and an inquiry into authentic presence.",
+    "businessNetworkContext": {
+      "name": "AmCham Austria",
+      "relationship": "membership",
+      "interpretation": "International business-network context, not client endorsement."
+    }
+  },
+  "serviceDecisionModel": {
+    "canonicalSource": "https://www.norbertbanhalmi.com/services.json",
+    "preservesFourPrincipalServices": true,
+    "homepageCardContract": "The four homepage cards retain their routes, titles, order and calls to action. Each description states audience, use situation and intended output.",
+    "services": [
+      {
+        "name": "Portrait Photography",
+        "bestFor": "Executives and C-level leaders, founders, entrepreneurs, experts, professionals, artists, actors and creative professionals",
+        "useContexts": [
+          "LinkedIn",
+          "professional headshot",
+          "corporate website",
+          "press",
+          "portfolio",
+          "speaking",
+          "personal brand",
+          "internal communication"
+        ],
+        "result": "Reusable executive portrait and professional headshot system that can anchor a complete personal visual presence"
+      },
+      {
+        "name": "Brand Photography",
+        "bestFor": "Organisations and leadership teams",
+        "useContexts": [
+          "recruitment",
+          "sales",
+          "media",
+          "corporate communication"
+        ],
+        "result": "Coherent organisational image library"
+      },
+      {
+        "name": "C-Level Event Photography",
+        "bestFor": "Boards, leadership teams, conferences and institutions",
+        "useContexts": [
+          "press",
+          "internal communication",
+          "institutional archive"
+        ],
+        "result": "Discreet editorial and institutional documentation"
+      },
+      {
+        "name": "Fine Art Photography",
+        "bestFor": "Private individuals seeking author-led personal work",
+        "useContexts": [
+          "fine-art portraiture",
+          "nude art",
+          "personal artistic series"
+        ],
+        "result": "Personal fine-art work created with respectful direction, consent and discretion"
+      }
+    ]
+  },
+  "servicePageFramework": {
+    "appliesTo": [
+      "Portrait Photography",
+      "Brand Photography",
+      "C-Level Event Photography"
+    ],
+    "presentation": "Commercial project terms remain fully available in one initially collapsed native details disclosure on each service page.",
+    "includes": [
+      "project fee and licensing",
+      "delivery system",
+      "file retention",
+      "image rights",
+      "governance and confidentiality",
+      "booking and contingency"
+    ],
+    "accessibility": "Native details and summary semantics support keyboard and assistive-technology access.",
+    "fineArtBoundary": "Fine Art Photography keeps its separate consent, privacy and artistic-process model rather than inheriting the corporate framework drawer.",
+    "semanticRepairs": {
+      "pages": [
+        "faq/index.html",
+        "terms-conditions/index.html",
+        "hu/gyik/index.html",
+        "hu/aszf/index.html",
+        "de-at/faq/index.html",
+        "de-at/agb/index.html"
+      ],
+      "rule": "Governance and booking sections remain inside the main content element on service, FAQ and terms pages."
+    }
+  },
+  "serviceConversionPath": {
+    "appliesTo": [
+      "Portrait Photography",
+      "Brand Photography",
+      "C-Level Event Photography"
+    ],
+    "earlyChoice": {
+      "primary": "Service-specific invitation linking to the final three-way next-step selector.",
+      "secondary": "Anchor link to selected work on the same page."
+    },
+    "evidenceSequence": [
+      "selected work",
+      "client reviews",
+      "verified professional context"
+    ],
+    "finalDecision": [
+      "configure a non-binding package",
+      "send a message",
+      "book a 15-minute video call"
+    ],
+    "duplicateCtaRemoved": true,
+    "principle": "The page invites orientation early, provides evidence before commitment and asks for one final decision only."
+  },
+  "fineArtPrivateJourney": {
+    "appliesTo": "Fine Art Photography",
+    "principle": "A consent-led private commission is the primary service path; public archive resources remain available as supporting context rather than replacing the enquiry route.",
+    "heroChoice": {
+      "primary": "Anchor to the existing private-conversation CTA",
+      "secondary": "Anchor to selected personal work"
+    },
+    "visibleSelection": "Fine-art portraits and studies of identity, biography and the body remain visible.",
+    "extendedArchive": "Existing urban, architectural and travel studies remain complete, searchable and lightbox-enabled inside one initially closed native disclosure.",
+    "archiveResources": [
+      "localized Press archive",
+      "localized BANHALMI journal"
+    ],
+    "safeguards": [
+      "clear boundaries",
+      "consent",
+      "privacy",
+      "joint image selection",
+      "18+ self-declaration gate for intimate previews"
+    ],
+    "commercialFrameworkBoundary": "Fine Art retains its own privacy and consent path rather than inheriting the corporate three-way selector or project-framework drawer."
+  },
+  "quoteServiceContext": {
+    "publicParameter": "service",
+    "allowlist": {
+      "portrait": "individual",
+      "brand": "brand",
+      "event": "event",
+      "fine-art": "art"
+    },
+    "sourcePages": [
+      "portrait/index.html",
+      "lifestyle/index.html",
+      "event-photography/index.html",
+      "hu/portre/index.html",
+      "hu/brand/index.html",
+      "hu/rendezvenyfotozas/index.html",
+      "de-at/portrait/index.html",
+      "de-at/brand/index.html",
+      "de-at/eventfotografie/index.html",
+      "glamour/index.html",
+      "hu/muveszi-fotografia/index.html",
+      "de-at/fine-art/index.html"
+    ],
+    "scopedLinks": 21,
+    "behavior": "The allowlisted service context selects the matching existing quote category before the first calculator paint. Unknown or missing values leave the existing individual-portrait default unchanged.",
+    "continuity": [
+      "localized quote-page language switching",
+      "explicit category changes",
+      "submitted service_context field"
+    ],
+    "seoBoundary": "Canonical, hreflang, source language-switch and generic navigation/footer URLs remain query-free."
+  },
+  "canonicalConsultation": {
+    "type": "video-call",
+    "durationMinutes": 15,
+    "mode": "Google Meet",
+    "bookingProvider": "Bookipi",
+    "bookingUrl": "https://meet.bookipi.com/zk5ly35r",
+    "bookingInterfaceLanguage": "en",
+    "directWith": "https://www.norbertbanhalmi.com/about/",
+    "interpretation": "A short orientation conversation. It is not a photography-session duration and must not be confused with the 30-minute Executive Headshot service format."
+  },
+  "audienceAndVisualPresence": {
+    "audiences": [
+      "executives and C-level leaders",
+      "founders and entrepreneurs",
+      "experts and professionals",
+      "artists",
+      "actors",
+      "creative professionals",
+      "teams",
+      "organisations"
+    ],
+    "commercialAnchors": [
+      "Executive Portrait",
+      "Professional Headshot",
+      "Brand Photography",
+      "C-Level Event Photography"
+    ],
+    "outcome": "A credible, coherent and premium visual presence across personal, professional, team and organisational touchpoints.",
+    "rule": "Do not interpret BANHALMI as executive-only. Preserve Executive Portrait, Headshot, Brand and C-Level as primary commercial intent terms while routing the wider audience by visual need."
+  }
 }
