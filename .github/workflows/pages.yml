@@ -1,10 +1,9 @@
-name: Clean architecture verification and production deploy
+name: Full quality gate and production deploy
 
 on:
   push:
     branches:
       - main
-  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -13,41 +12,31 @@ permissions:
   id-token: write
 
 concurrency:
-  group: banhalmi-clean-pages-${{ github.ref }}
+  group: banhalmi-production-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  verify:
-    runs-on: ubuntu-latest
+  quality-gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
     steps:
       - name: Check out source
         uses: actions/checkout@v4
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
-      - name: Verify single-authority architecture
+          node-version: 22
+      - name: Run source contract audits
         run: npm test
-
-  deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: verify
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Check out verified source
-        uses: actions/checkout@v4
-      - name: Set up Node.js for production optimization
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-      - name: Prepare immutable static artifact
+      - name: Run PSI and CrUX field audit
+        env:
+          PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+        run: node tools/audit-pagespeed-field.mjs
+      - name: Prepare exact production artifact
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf _site
+          rm -rf _site artifacts/browser-layout artifacts/exhaustive-visual artifacts/lighthouse-desktop artifacts/lighthouse-mobile
           mkdir -p _site
           tar \
             --exclude=.git \
@@ -55,7 +44,9 @@ jobs:
             --exclude=tools \
             --exclude=node_modules \
             --exclude=package.json \
+            --exclude=package-lock.json \
             --exclude=_site \
+            --exclude=artifacts \
             -cf - . | tar -xf - -C _site
           printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
           test -f _site/index.html
@@ -79,13 +70,60 @@ jobs:
           test -f _site/llms.txt
           test -f _site/ai.txt
           test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "1"
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-      - name: Upload verified Pages artifact
+      - name: Install Chromium audit runtime
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Run exhaustive browser QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/perf-static-server.mjs _site 4173 > /tmp/banhalmi-browser-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep 0.25; done
+          npm run test:e2e
+          AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-browser-layout.mjs
+          AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-first-principles-layout.mjs
+          AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/capture-exhaustive-visual.mjs
+          kill $SERVER_PID || true
+          trap - EXIT
+      - name: Run mobile Lighthouse strict 100 gate
+        run: |
+          npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.mobile.cjs
+          node tools/audit-lighthouse-all-runs.mjs artifacts/lighthouse-mobile
+      - name: Run desktop Lighthouse strict 100 gate
+        run: |
+          npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.desktop.cjs
+          node tools/audit-lighthouse-all-runs.mjs artifacts/lighthouse-desktop
+      - name: Upload browser and Lighthouse evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-quality-${{ github.sha }}
+          path: |
+            artifacts/browser-layout
+            artifacts/exhaustive-visual
+            artifacts/lighthouse-mobile
+            artifacts/lighthouse-desktop
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Upload the exact audited Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
-      - name: Deploy GitHub Pages
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: quality-gate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Deploy exact audited artifact
         id: deployment
         uses: actions/deploy-pages@v4
 
