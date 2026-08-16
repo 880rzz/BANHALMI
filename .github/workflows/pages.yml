@@ -39,7 +39,7 @@ jobs:
     steps:
       - name: Check out verified source
         uses: actions/checkout@v4
-      - name: Set up Node.js for production minification
+      - name: Set up Node.js for production optimization
         uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -62,8 +62,15 @@ jobs:
           test -f _site/hu/index.html
           test -f _site/de-at/index.html
           test -f _site/assets/css/site.css
+          node tools/optimize-production-artifact.mjs _site
           npx --yes esbuild@0.25.9 _site/assets/css/site.css --minify --outfile=/tmp/site.min.css
           mv /tmp/site.min.css _site/assets/css/site.css
+          for js in _site/assets/js/main.js _site/assets/js/mega-menu.js _site/assets/js/analytics.js; do
+            if [ -f "$js" ]; then
+              npx --yes esbuild@0.25.9 "$js" --minify --outfile=/tmp/runtime.min.js
+              mv /tmp/runtime.min.js "$js"
+            fi
+          done
           test -s _site/assets/css/site.css
           test -f _site/.well-known/agent.json
           test -f _site/api/v1/identity.json
