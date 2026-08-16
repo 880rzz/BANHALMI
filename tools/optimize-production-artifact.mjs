@@ -16,6 +16,7 @@ walk(root);
 
 const stylesheetRe = /<link rel="stylesheet" href="(\/assets\/css\/site\.css[^\"]*)"\s*\/>/g;
 const mainScriptRe = /<script defer="" src="\/assets\/js\/main\.js\?v=20260808-mobile100-v2"><\/script>/g;
+const quoteMainScriptRe = /<script[^>]*\bsrc="(\/assets\/js\/main\.js\?v=[^\"]+)"[^>]*><\/script>/g;
 const megaMenuScriptRe = /<script data-banhalmi-mega-menu="" defer="" src="\/assets\/js\/mega-menu\.js\?v=[^\"]+"><\/script>/g;
 const quotePdfScriptRe = /<script([^>]*?)src="(\/assets\/js\/quote-pdf\.js[^\"]*)"([^>]*)><\/script>/g;
 
@@ -34,6 +35,17 @@ const homeMegaMenuLoader = `<script>(function(){var loading=false,ready=false,pe
 // Keep interaction as the fast path, but use a deterministic post-paint fallback
 // instead of an eager idle callback.
 const homeRuntimeLoader = `<script>(function(){var loaded=false,timer=null;function load(){if(loaded)return;loaded=true;if(timer)clearTimeout(timer);var s=document.createElement('script');s.src='/assets/js/main.js?v=20260808-mobile100-v2';s.defer=true;document.head.appendChild(s);}['pointerdown','keydown','touchstart'].forEach(function(type){addEventListener(type,load,{once:true,passive:true,capture:true});});timer=setTimeout(load,3000);})();</script>`;
+
+// Quote pages have their own calculator runtime. The general site runtime mostly
+// wires navigation, consent UI, reveals and optional widgets, so it should not
+// compete with the calculator during the cold-start measurement. Load it when a
+// user approaches an interactive control; keep a delayed fallback so consent and
+// navigation still initialize even if the page is only being read. Controls whose
+// first click depends on main.js are intercepted and replayed after readiness.
+function quoteRuntimeLoader(src) {
+  const runtimeControls = '.menu-btn,[data-cookie-settings],.info-tip[data-tooltip]';
+  return `<script>(function(){var loading=false,ready=false,pending=null,timer=null;var controls='${runtimeControls}';function replay(){if(!ready||!pending)return;var el=pending;pending=null;setTimeout(function(){el.click();},0);}function load(replayTarget){if(replayTarget)pending=replayTarget;if(ready){replay();return;}if(loading)return;loading=true;if(timer)clearTimeout(timer);var s=document.createElement('script');s.src='${src}';s.defer=true;s.onload=function(){loading=false;ready=true;replay();};s.onerror=function(){loading=false;pending=null;};document.head.appendChild(s);}document.addEventListener('pointerover',function(ev){if(ev.target.closest&&ev.target.closest(controls))load(null);},{passive:true,capture:true});document.addEventListener('focusin',function(ev){if(ev.target.closest&&ev.target.closest(controls))load(null);},true);document.addEventListener('click',function(ev){var el=ev.target.closest&&ev.target.closest(controls);if(!el||ready)return;ev.preventDefault();ev.stopImmediatePropagation();load(el);},true);['pointerdown','keydown','touchstart'].forEach(function(type){addEventListener(type,function(){load(null);},{once:true,passive:true,capture:true});});timer=setTimeout(function(){load(null);},5000);})();</script>`;
+}
 
 function quotePdfLoader(src) {
   return `<script>(function(){var loading=false,ready=false,pending=null;function load(){if(ready||loading)return;loading=true;var s=document.createElement('script');s.src='${src}';s.onload=function(){ready=true;loading=false;if(pending){var el=pending;pending=null;setTimeout(function(){el.click();},0);}};s.onerror=function(){loading=false;pending=null;};document.head.appendChild(s);}document.addEventListener('click',function(ev){var el=ev.target.closest&&ev.target.closest('[data-download-quote-pdf]');if(!el||ready)return;ev.preventDefault();ev.stopImmediatePropagation();pending=el;load();},true);document.addEventListener('pointerover',function(ev){if(ev.target.closest&&ev.target.closest('[data-download-quote-pdf]'))load();},{passive:true,capture:true});document.addEventListener('focusin',function(ev){if(ev.target.closest&&ev.target.closest('[data-download-quote-pdf]'))load();},true);})();</script>`;
@@ -61,7 +73,20 @@ for (const file of htmlFiles) {
     if (!/data-pricing-status=""\s+hidden>/.test(html)) {
       throw new Error(`Quote pricing status was not stabilized in ${rel}`);
     }
+
+    // Modal intent is intrinsic button semantics, not runtime state. Keep it in
+    // the delivered HTML so assistive technology sees the dialog relationship
+    // before the deferred general runtime is needed. aria-expanded stays dynamic.
+    html = html.replace(/class="info-tip"(?![^>]*\baria-haspopup=)/g, 'class="info-tip" aria-haspopup="dialog"');
+    if (!/class="info-tip" aria-haspopup="dialog"/.test(html)) {
+      throw new Error(`Quote info-tip dialog semantics missing in ${rel}`);
+    }
+
+    html = html.replace(quoteMainScriptRe, function(_match, src){ return quoteRuntimeLoader(src); });
     html = html.replace(quotePdfScriptRe, function(_match, _before, src){ return quotePdfLoader(src); });
+    if (/<script[^>]*\bsrc="\/assets\/js\/main\.js\?v=[^\"]+"[^>]*><\/script>/.test(html)) {
+      throw new Error(`Quote general runtime remained eager in ${rel}`);
+    }
   }
 
   if (rel === 'de-at/anfrage/index.html') {
@@ -76,12 +101,24 @@ for (const file of htmlFiles) {
 const quoteCalculatorPath = path.join(root, 'assets/js/quote-calculator.js');
 if (fs.existsSync(quoteCalculatorPath)) {
   let quoteJs = fs.readFileSync(quoteCalculatorPath, 'utf8');
+
+  // The embedded pricing object is part of the audited artifact. Do not first
+  // disable the quote UI and then immediately re-enable it: that creates two
+  // avoidable DOM mutation/layout passes on every quote-page cold start.
+  const loadPricingStart = "function loadPricing(){\n    setPricingUi(false,'');\n    var embedded=window.BANHALMI_PRICING_DATA;";
+  const optimizedLoadPricingStart = "function loadPricing(){\n    var embedded=window.BANHALMI_PRICING_DATA;";
+  if (!quoteJs.includes(loadPricingStart)) throw new Error('Quote optimizer could not find eager pricing UI reset.');
+  quoteJs = quoteJs.replace(loadPricingStart, optimizedLoadPricingStart);
+
   const protocolMarker = "    var protocol=String(window.location&&window.location.protocol||'');";
   if (!quoteJs.includes(protocolMarker)) throw new Error('Quote optimizer could not find pricing fallback marker.');
-  quoteJs = quoteJs.replace(protocolMarker, "    if(pricingReady)return Promise.resolve(true);\n" + protocolMarker);
+  quoteJs = quoteJs.replace(protocolMarker, "    if(pricingReady)return Promise.resolve(true);\n    setPricingUi(false,'');\n" + protocolMarker);
 
+  // loadPricing() performs the one required first paint after verified embedded
+  // prices are applied. init() only wires context, date constraints and events,
+  // avoiding a duplicate startup panel/layout pass in all three languages.
   const oldInit = "function init(f){applyRequestedServiceContext(f);setDateMins(f);updatePanels(f);f.addEventListener('change',function(event){if(event&&event.target&&event.target.name==='category')syncServiceContextFromCategory(f,true);updatePanels(f);paint(f);});f.addEventListener('input',function(){paint(f);});paint(f);}";
-  const newInit = "function init(f){applyRequestedServiceContext(f);setDateMins(f);updatePanels(f);f.addEventListener('change',function(event){if(event&&event.target&&event.target.name==='category')syncServiceContextFromCategory(f,true);paint(f);});f.addEventListener('input',function(){paint(f);});}";
+  const newInit = "function init(f){applyRequestedServiceContext(f);setDateMins(f);f.addEventListener('change',function(event){if(event&&event.target&&event.target.name==='category')syncServiceContextFromCategory(f,true);paint(f);});f.addEventListener('input',function(){paint(f);});}";
   if (!quoteJs.includes(oldInit)) throw new Error('Quote optimizer could not find duplicate startup paint contract.');
   quoteJs = quoteJs.replace(oldInit, newInit);
   fs.writeFileSync(quoteCalculatorPath, quoteJs);
