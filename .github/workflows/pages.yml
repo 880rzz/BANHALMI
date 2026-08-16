@@ -147,3 +147,52 @@ jobs:
           done
           echo "Expected live SHA $expected but received ${actual:-nothing}." >&2
           exit 1
+
+  production-live-gate:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: exact-live
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Check out exact deployed source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify critical production routes and machine endpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          for url in \
+            'https://www.norbertbanhalmi.com/' \
+            'https://www.norbertbanhalmi.com/hu/' \
+            'https://www.norbertbanhalmi.com/de-at/' \
+            'https://www.norbertbanhalmi.com/robots.txt' \
+            'https://www.norbertbanhalmi.com/sitemap.xml' \
+            'https://www.norbertbanhalmi.com/llms.txt' \
+            'https://www.norbertbanhalmi.com/ai.txt' \
+            'https://www.norbertbanhalmi.com/entity.jsonld' \
+            'https://www.norbertbanhalmi.com/pricing.json'; do
+            curl -fsSL --max-time 30 "$url" >/dev/null
+          done
+      - name: Run exact live mobile Lighthouse 100 gate
+        run: |
+          rm -rf artifacts/lighthouse-production-mobile
+          npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.production-mobile.cjs
+          node tools/audit-lighthouse-all-runs.mjs artifacts/lighthouse-production-mobile
+      - name: Run exact live desktop Lighthouse 100 gate
+        run: |
+          rm -rf artifacts/lighthouse-production-desktop
+          npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.production-desktop.cjs
+          node tools/audit-lighthouse-all-runs.mjs artifacts/lighthouse-production-desktop
+      - name: Upload exact live production Lighthouse evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-production-lighthouse-${{ github.sha }}
+          path: |
+            artifacts/lighthouse-production-mobile
+            artifacts/lighthouse-production-desktop
+          if-no-files-found: warn
+          retention-days: 14
