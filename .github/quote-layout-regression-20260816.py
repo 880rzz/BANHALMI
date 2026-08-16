@@ -8,20 +8,12 @@ if marker not in s:
 block = r'''
 /* QUOTE-LAYOUT-REGRESSION-20260816:START */
 /* Keep quote choices optically compact: intrinsic rows, no distributed empty space. */
-html body .smart-quote-layout{
-  align-items:start!important;
-}
-html body .smart-quote-layout>.form,
-html body .smart-quote-layout [data-smart-quote]{
-  align-content:start!important;
-}
 html body .smart-quote-layout .category-grid{
   align-content:start!important;
   align-items:start!important;
   grid-auto-rows:max-content!important;
   height:auto!important;
   min-height:0!important;
-  row-gap:10px!important;
 }
 html body .smart-quote-layout .quote-step{
   height:auto!important;
@@ -30,32 +22,16 @@ html body .smart-quote-layout .quote-step{
   margin-bottom:14px!important;
   padding:18px 20px!important;
 }
-html body .smart-quote-layout .quote-step h3{
-  margin-bottom:12px!important;
-}
-html body .smart-quote-layout .option-stack{
-  gap:8px!important;
-  margin-bottom:10px!important;
-}
-html body .smart-quote-layout :is(.grid-2,.grid-3,.check-grid,.production-grid){
-  row-gap:10px!important;
-  align-items:start!important;
-}
-html body .smart-quote-layout :is(.category-card,.option-row){
-  margin:0!important;
-  min-height:0!important;
-  height:auto!important;
-  align-self:start!important;
-}
-html body .smart-quote-layout .conditional-panel{
-  margin-bottom:10px!important;
-}
-html body .smart-quote-layout .conditional-panel[hidden]{
-  display:none!important;
-}
-html body .smart-quote-layout .quote-step > :last-child{
-  margin-bottom:0!important;
-}
+html body .smart-quote-layout .quote-step h3{margin-bottom:12px!important;}
+html body .smart-quote-layout .option-stack{gap:8px!important;margin-bottom:10px!important;}
+html body .smart-quote-layout .category-grid{gap:10px!important;row-gap:10px!important;}
+html body .smart-quote-layout .grid-2,
+html body .smart-quote-layout .grid-3,
+html body .smart-quote-layout .check-grid,
+html body .smart-quote-layout .production-grid{row-gap:10px!important;column-gap:10px!important;align-items:start!important;}
+html body .smart-quote-layout .category-card,
+html body .smart-quote-layout .option-row{margin:0!important;min-height:0!important;height:auto!important;align-self:start!important;}
+
 /* Choice row contract: radio at the left inner edge, copy in the fluid middle,
    and the 44px info target locked to the right edge on the same visual row. */
 html body .smart-quote-layout .option-row{
@@ -92,71 +68,77 @@ html body .smart-quote-layout .option-row > span > .info-tip{
   align-self:center!important;
   margin:0!important;
 }
-/* Footer metadata row: copyright flush left, legal/utility links flush right,
-   one shared baseline on desktop. */
-.site-footer .footer-bottom{
-  display:flex!important;
-  width:100%!important;
-  align-items:center!important;
-  justify-content:space-between!important;
-  gap:24px!important;
-  margin-top:28px!important;
-  padding-top:16px!important;
-  line-height:1.4!important;
+
+/* Contract/licensing drawer: preserve breathing room between intro copy, card grid,
+   action row and the following legal bridge. The drawer must never visually collide
+   with the next section. */
+html body .quote-deep-details > section.pricing-licensing-clarity{
+  padding-top:clamp(34px,4vw,52px)!important;
+  padding-bottom:clamp(42px,4.8vw,64px)!important;
 }
-.site-footer .footer-bottom > span:first-child{
-  flex:0 0 auto!important;
-  margin:0!important;
-  white-space:nowrap!important;
-  text-align:left!important;
+html body .quote-deep-details .pricing-licensing-clarity .section-head{
+  margin-bottom:clamp(34px,4vw,48px)!important;
 }
-.site-footer .footer-bottom > span:last-child{
-  flex:1 1 auto!important;
-  min-width:0!important;
+html body .quote-deep-details .pricing-licensing-clarity .section-head > :last-child{
+  margin-bottom:0!important;
+}
+html body .quote-deep-details .pricing-licensing-clarity .card-grid{
+  margin-top:0!important;
+  margin-bottom:clamp(34px,4vw,48px)!important;
+  row-gap:clamp(18px,2.2vw,26px)!important;
+  column-gap:clamp(18px,2.2vw,26px)!important;
+}
+html body .quote-deep-details .pricing-licensing-clarity .button-row{
   margin:0!important;
-  display:flex!important;
-  flex-wrap:nowrap!important;
-  justify-content:flex-end!important;
-  align-items:center!important;
-  text-align:right!important;
-  white-space:nowrap!important;
+  padding-top:2px!important;
+}
+html body .quote-deep-details > section.quote-legal-bridge{
+  margin-top:0!important;
+  padding-top:clamp(42px,4.8vw,64px)!important;
+  padding-bottom:clamp(42px,4.8vw,64px)!important;
+  border-top:1px solid var(--line)!important;
+}
+html body .quote-deep-details > section.quote-legal-bridge .section-head{
+  margin-bottom:clamp(24px,3vw,34px)!important;
+}
+html body .quote-deep-details > section.quote-legal-bridge .service-actions{
+  margin-top:0!important;
+  padding-top:0!important;
+}
+
+/* Footer metadata row: copyright flush left, utility links flush right on desktop. */
+@media (min-width:981px){
+  html body .site-footer .footer-bottom{
+    display:grid!important;
+    grid-template-columns:max-content minmax(0,1fr)!important;
+    align-items:center!important;
+    column-gap:28px!important;
+    row-gap:0!important;
+    width:100%!important;
+  }
+  html body .site-footer .footer-bottom > span:first-child{
+    justify-self:start!important;
+    text-align:left!important;
+    white-space:nowrap!important;
+  }
+  html body .site-footer .footer-bottom > span:last-child{
+    justify-self:end!important;
+    text-align:right!important;
+    white-space:nowrap!important;
+  }
 }
 @media (max-width:980px){
-  .site-footer .footer-bottom{
-    display:grid!important;
-    grid-template-columns:1fr!important;
-    align-items:start!important;
-    justify-content:stretch!important;
-    gap:8px!important;
-  }
-  .site-footer .footer-bottom > span:first-child{
-    white-space:normal!important;
-  }
-  .site-footer .footer-bottom > span:last-child{
-    display:block!important;
-    text-align:left!important;
-    white-space:normal!important;
-  }
+  html body .site-footer .footer-bottom{grid-template-columns:1fr!important;row-gap:8px!important;}
+  html body .site-footer .footer-bottom > span:first-child,
+  html body .site-footer .footer-bottom > span:last-child{justify-self:start!important;text-align:left!important;white-space:normal!important;}
 }
 @media (max-width:620px){
-  html body .smart-quote-layout .quote-step{
-    margin-bottom:12px!important;
-    padding:16px!important;
-  }
-  html body .smart-quote-layout .category-grid,
-  html body .smart-quote-layout .option-stack,
-  html body .smart-quote-layout :is(.grid-2,.grid-3,.check-grid,.production-grid){
-    row-gap:8px!important;
-    gap:8px!important;
-  }
-  html body .smart-quote-layout .option-row{
-    grid-template-columns:24px minmax(0,1fr)!important;
-    column-gap:10px!important;
-  }
-  html body .smart-quote-layout .option-row > span{
-    grid-template-columns:minmax(0,1fr) 44px!important;
-    column-gap:10px!important;
-  }
+  html body .smart-quote-layout .option-row{grid-template-columns:24px minmax(0,1fr)!important;column-gap:10px!important;}
+  html body .smart-quote-layout .option-row > span{grid-template-columns:minmax(0,1fr) 44px!important;column-gap:10px!important;}
+  html body .quote-deep-details > section.pricing-licensing-clarity,
+  html body .quote-deep-details > section.quote-legal-bridge{padding-top:30px!important;padding-bottom:36px!important;}
+  html body .quote-deep-details .pricing-licensing-clarity .section-head{margin-bottom:28px!important;}
+  html body .quote-deep-details .pricing-licensing-clarity .card-grid{margin-bottom:30px!important;row-gap:14px!important;column-gap:14px!important;}
 }
 /* QUOTE-LAYOUT-REGRESSION-20260816:END */
 '''
