@@ -19,7 +19,7 @@ jobs:
           node-version: 22
       - name: Run source contract audits
         run: npm test
-      - name: Run strict PSI and CrUX field gate
+      - name: Run PSI and CrUX field monitor
         env:
           PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
         run: node tools/audit-pagespeed-field.mjs
