@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const extensions = new Set(['.html', '.json', '.jsonld', '.txt']);
+const extensions = new Set(['.html', '.json', '.jsonld', '.txt', '.js']);
 let changed = 0;
 
 function normalize(text) {
