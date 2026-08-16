@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 
+// One-shot audit remediation: final responsive cascade guard for footer accordion labels.
 const file = 'assets/css/site.css';
 let css = fs.readFileSync(file, 'utf8');
 const marker = '/* AUDIT-20260816-FOOTER-SUMMARY-CONTRAST */';
