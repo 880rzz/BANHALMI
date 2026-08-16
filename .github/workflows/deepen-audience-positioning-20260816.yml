@@ -26,19 +26,30 @@ jobs:
       - name: Apply positioning edits
         run: node tools/deepen-audience-positioning-20260816-v4.mjs
       - name: Content-only placement check and commit
+        shell: bash
         run: |
           set -euo pipefail
-          node -e "for (const f of ['ai-entry.json','knowledge-core.json','customer-needs.json','services.json','brand-positioning.jsonld','entity.jsonld','ecosystem.json']) JSON.parse(require('fs').readFileSync(f,'utf8')); console.log('JSON placement layer OK')"
-          grep -q 'Executive Portraiture &amp; Headshots' index.html
-          grep -q 'artists, actors and creative professionals' index.html
-          grep -q 'Executive portré &amp; headshot' hu/index.html
-          grep -q 'művészeknek, színészeknek' hu/index.html
-          grep -q 'Executive-Porträts &amp; Headshots' de-at/index.html
-          grep -q 'Künstler, Schauspieler' de-at/index.html
-          grep -q 'Professional Headshot' brand-positioning.jsonld
-          grep -q 'artists' entity.jsonld
-          grep -q 'Audience and complete visual presence' llms-full.txt
-          grep -q 'AUDIENCE-POSITIONING-PRODUCTION-GUARD' tools/optimize-production-artifact.mjs
+          node <<'NODE'
+          const fs=require('fs');
+          for (const f of ['ai-entry.json','knowledge-core.json','customer-needs.json','services.json','brand-positioning.jsonld','entity.jsonld','ecosystem.json']) JSON.parse(fs.readFileSync(f,'utf8'));
+          const checks={
+            'index.html':['executive portraiture','headshots','brand photography','c-level','artists','actors','visual presence'],
+            'hu/index.html':['executive portré','headshot','brandfotózás','c-level','művészek','színészek','vizuális jelenlét'],
+            'de-at/index.html':['executive-porträt','headshot','brandfotografie','c-level','künstler','schauspieler','visuelle präsenz'],
+            'brand-positioning.jsonld':['professional headshot photography','artists','actors','visual presence'],
+            'entity.jsonld':['professional headshot photography','artists','actors','visual presence'],
+            'ecosystem.json':['executive portrait','professional headshot','brand photography','c-level event photography','artists','actors'],
+            'llms-full.txt':['audience and complete visual presence','executive portrait','professional headshot','brand photography','c-level event photography','artists','actors'],
+            'tools/optimize-production-artifact.mjs':['audience-positioning-production-guard','professional headshot','artists','actors']
+          };
+          for(const [file,tokens] of Object.entries(checks)){
+            const body=fs.readFileSync(file,'utf8').toLowerCase();
+            for(const token of tokens){
+              if(!body.includes(token.toLowerCase())) throw new Error(`${file}: placement token missing: ${token}`);
+            }
+            console.log(`PLACEMENT OK: ${file}`);
+          }
+          NODE
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add index.html hu/index.html de-at/index.html brand-positioning.jsonld entity.jsonld ecosystem.json llms-full.txt tools/optimize-production-artifact.mjs
