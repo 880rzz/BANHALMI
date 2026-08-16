@@ -19,6 +19,10 @@ jobs:
           node-version: 22
       - name: Run source contract audits
         run: npm test
+      - name: Run live external-link and ecosystem audit
+        env:
+          LIVE_AUDIT: '1'
+        run: node tools/audit-seo-network.mjs
       - name: Run PSI and CrUX field monitor
         env:
           PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
@@ -74,5 +78,6 @@ jobs:
             artifacts/exhaustive-visual
             artifacts/lighthouse-mobile
             artifacts/lighthouse-desktop
+            link-audit-results.json
           if-no-files-found: warn
           retention-days: 14
