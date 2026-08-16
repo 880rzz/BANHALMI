@@ -7,6 +7,8 @@ on:
     paths:
       - .github/workflows/remediate-google-search-page-contract.yml
       - tools/remediate-google-search-page-contract.mjs
+      - tools/audit-google-search-contract.mjs
+      - tools/audit-homepage-meta-parity.mjs
 permissions:
   contents: write
 jobs:
