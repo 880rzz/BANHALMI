@@ -55,6 +55,7 @@
       "description": "BANHALMI is Norbert Banhalmi's strategic visual partnership for leaders and organisations, built around executive portraiture, brand photography, C-level event photography, fine-art authorship and long-term visual positioning.",
       "founder": {"@id": "https://www.norbertbanhalmi.com/about/"},
       "brand": {"@id": "https://www.norbertbanhalmi.com/#brand"},
+      "subjectOf": [{"@id": "https://www.norbertbanhalmi.com/#visual-trust-partnership"}],
       "email": "hello@norbertbanhalmi.com",
       "telephone": "+4367761655592",
       "address": {
@@ -191,5 +192,5 @@
     "artisticArchive": "https://www.banhalmi.art/",
     "artisticArchivePurpose": "Official artistic oeuvre and source archive for books, exhibitions, projects, media records, curatorial documentation and selected works."
   },
-  "dateModified": "2026-08-16T10:45:00+02:00"
+  "dateModified": "2026-08-16T10:55:00+02:00"
 }
