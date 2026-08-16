@@ -1,0 +1,40 @@
+name: Remediate footer summary contrast
+
+on:
+  push:
+    branches:
+      - audit/full-10-10-20260816
+    paths:
+      - 'tools/remediate-footer-summary-contrast.mjs'
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/full-10-10-20260816
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply deterministic footer contrast remediation
+        run: node tools/remediate-footer-summary-contrast.mjs
+      - name: Verify selector and commit
+        run: |
+          set -euo pipefail
+          grep -F 'html body .site-footer .footer-accordion > summary' assets/css/site.css
+          grep -F 'color:#CBB45F!important' assets/css/site.css
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git diff --quiet -- assets/css/site.css; then
+            echo 'No CSS change required.'
+            exit 0
+          fi
+          git add assets/css/site.css
+          git commit -m 'fix(a11y): enforce footer accordion AA contrast at tablet width'
+          git push origin HEAD:audit/full-10-10-20260816
