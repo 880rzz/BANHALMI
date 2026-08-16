@@ -6,6 +6,7 @@ on:
       - content/audience-visual-presence-work
     paths:
       - 'tools/deepen-audience-positioning-20260816.mjs'
+      - 'tools/deepen-audience-positioning-20260816.trigger'
 
 permissions:
   contents: write
