@@ -25,6 +25,10 @@ const staticRedirects = {
   'blog/tags/filter-nélkül-a-testem-története': 'https://blog.banhalmi.art/blog'
 };
 
+const mainDomainLegacyRedirects = {
+  'de-at/event-photography': 'https://www.norbertbanhalmi.com/de-at/eventfotografie/'
+};
+
 for (const [route, target] of Object.entries(staticRedirects)) {
   const file = `${route}/index.html`;
   if (!exists(file)) {
@@ -37,6 +41,21 @@ for (const [route, target] of Object.entries(staticRedirects)) {
   if (!/rel=["']canonical["']/i.test(html)) failures.push(`${file}: canonical link missing`);
   if (!/http-equiv=["']refresh["']/i.test(html)) failures.push(`${file}: meta refresh missing`);
   if (!/window\.location\.replace/i.test(html)) failures.push(`${file}: JS forwarding missing`);
+}
+
+for (const [route, target] of Object.entries(mainDomainLegacyRedirects)) {
+  const file = `${route}/index.html`;
+  if (!exists(file)) {
+    failures.push(`${file}: main-domain legacy redirect stub missing`);
+    continue;
+  }
+  const html = read(file);
+  if (/noindex/i.test(html)) failures.push(`${file}: consolidation redirect must not carry noindex`);
+  if (!html.includes(target)) failures.push(`${file}: target ${target} missing`);
+  if (!/rel=["']canonical["']/i.test(html)) failures.push(`${file}: canonical link missing`);
+  if (!/http-equiv=["']refresh["']/i.test(html)) failures.push(`${file}: meta refresh missing`);
+  if (!/window\.location\.replace/i.test(html)) failures.push(`${file}: JS forwarding missing`);
+  if (/€\s*200|200\s*€|200\s*\/\s*hour|200\s*€\s*\/\s*Stunde/i.test(html)) failures.push(`${file}: legacy event price leaked into redirect stub`);
 }
 
 const vercel = JSON.parse(read('vercel.json'));
@@ -111,12 +130,12 @@ for (const file of ['redirects/at/vercel.json', 'redirects/hu/vercel.json']) {
 }
 
 const sitemap = read('sitemap.xml');
-for (const route of Object.keys(staticRedirects)) {
+for (const route of [...Object.keys(staticRedirects), ...Object.keys(mainDomainLegacyRedirects)]) {
   const local = `https://www.norbertbanhalmi.com/${route.replace(/^\/+|\/+$/g, '')}/`;
   if (sitemap.includes(`<loc>${local}</loc>`)) failures.push(`sitemap.xml: redirect source must not be indexed: ${local}`);
 }
 
-for (const canonicalPage of ['hu/eletmu/index.html', 'de-at/werk/index.html', 'hu/portre/index.html', 'de-at/portrait/index.html']) {
+for (const canonicalPage of ['hu/eletmu/index.html', 'de-at/werk/index.html', 'hu/portre/index.html', 'de-at/portrait/index.html', 'de-at/eventfotografie/index.html']) {
   if (!exists(canonicalPage)) failures.push(`${canonicalPage}: canonical destination missing`);
   else if (/http-equiv=["']refresh["']|window\.location\.replace/i.test(read(canonicalPage))) failures.push(`${canonicalPage}: canonical destination became a redirect`);
 }
@@ -126,4 +145,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Legacy redirect preservation passed: ${Object.keys(staticRedirects).length} historical stubs, two localized alias maps, permanent Vercel routing and sitemap exclusion are protected.`);
+console.log(`Legacy redirect preservation passed: ${Object.keys(staticRedirects).length} historical stubs, ${Object.keys(mainDomainLegacyRedirects).length} main-domain legacy service redirects, two localized alias maps, permanent Vercel routing and sitemap exclusion are protected.`);
