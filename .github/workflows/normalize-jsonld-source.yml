@@ -1,0 +1,42 @@
+name: Normalize canonical JSON-LD source
+
+on:
+  push:
+    branches:
+      - audit/full-10-10-20260816
+
+permissions:
+  contents: write
+
+concurrency:
+  group: normalize-jsonld-audit-full-10-10-20260816
+  cancel-in-progress: true
+
+jobs:
+  normalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/full-10-10-20260816
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Normalize nested canonical entity definitions
+        run: node tools/remediate-jsonld-canonical-references.mjs .
+      - name: Verify normalized JSON-LD source
+        run: node tools/audit-jsonld-canonical-references.mjs
+      - name: Commit deterministic source remediation when needed
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- '*.html'; then
+            echo 'No HTML normalization required.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- '*.html'
+          git commit -m 'fix(schema): normalize canonical entity references across HTML'
+          git push origin HEAD:audit/full-10-10-20260816
