@@ -10,7 +10,9 @@ module.exports = {
         'http://127.0.0.1:4174/de-at/',
         'http://127.0.0.1:4174/portrait/'
       ],
-      numberOfRuns: 2,
+      // Three independent runs allow a strict 2-of-3 quorum without lowering
+      // any desktop performance or quality threshold.
+      numberOfRuns: 3,
       settings: {
         preset: 'desktop',
         chromeFlags: '--headless --no-sandbox --disable-dev-shm-usage'
