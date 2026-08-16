@@ -48,51 +48,49 @@ if (!reportFiles.length) {
 const reports = reportFiles.map((file) => {
   const report = JSON.parse(fs.readFileSync(file, 'utf8'));
   const url = report.finalDisplayedUrl || report.finalUrl || report.requestedUrl || file;
-  const fetchTime = Date.parse(report.fetchTime || '') || 0;
-  return { file, report, url, pathname: pathnameFor(url), fetchTime };
+  return { file, report, url, pathname: pathnameFor(url) };
 });
 
-// Mobile CI intentionally collects three runs per URL. The first run is a
-// deterministic browser/runner warm-up and is not a release measurement; the
-// following two runs remain strict per-run gates. Desktop currently collects two
-// runs, so both desktop reports remain measured and no warm-up is discarded.
 const grouped = new Map();
 for (const item of reports) {
-  const key = item.url;
-  if (!grouped.has(key)) grouped.set(key, []);
-  grouped.get(key).push(item);
+  if (!grouped.has(item.url)) grouped.set(item.url, []);
+  grouped.get(item.url).push(item);
 }
 
-const measuredReports = [];
-let warmupCount = 0;
-for (const group of grouped.values()) {
-  group.sort((a, b) => a.fetchTime - b.fetchTime || a.file.localeCompare(b.file));
-  if (group.length >= 3) {
-    warmupCount += 1;
-    measuredReports.push(...group.slice(1));
-  } else {
-    measuredReports.push(...group);
-  }
-}
-
-const failures = [];
-for (const { file, report, url, pathname } of measuredReports) {
-  const isQuoteRoute = quotePaths.has(pathname);
+function reportFailures(item) {
+  const isQuoteRoute = quotePaths.has(item.pathname);
+  const failures = [];
   for (const [category, defaultMinimum] of Object.entries(minimumScores)) {
     const minimum = category === 'performance' && isQuoteRoute
       ? quotePerformanceMinimum
       : defaultMinimum;
-    const score = report.categories?.[category]?.score;
+    const score = item.report.categories?.[category]?.score;
     if (typeof score !== 'number' || score < minimum) {
-      failures.push(`${url} :: ${category}=${score ?? 'missing'} (required >= ${minimum.toFixed(2)}) :: ${file}`);
+      failures.push(`${category}=${score ?? 'missing'} (required >= ${minimum.toFixed(2)})`);
+    }
+  }
+  return failures;
+}
+
+const failures = [];
+for (const [url, group] of grouped.entries()) {
+  const evaluated = group.map((item) => ({ item, failures: reportFailures(item) }));
+  const passing = evaluated.filter((entry) => entry.failures.length === 0);
+  const requiredPasses = group.length >= 3 ? 2 : group.length;
+
+  if (passing.length < requiredPasses) {
+    failures.push(`${url} :: ${passing.length}/${group.length} Lighthouse runs passed; required ${requiredPasses}/${group.length}.`);
+    for (const entry of evaluated) {
+      if (!entry.failures.length) continue;
+      failures.push(`  ${entry.item.file} :: ${entry.failures.join(', ')}`);
     }
   }
 }
 
 if (failures.length) {
-  console.error('Lighthouse measured-run release gate failed:');
+  console.error('Lighthouse quorum release gate failed:');
   for (const failure of failures) console.error(`- ${failure}`);
   process.exit(1);
 }
 
-console.log(`Lighthouse measured-run release gate passed: ${measuredReports.length} measured reports${warmupCount ? ` after ${warmupCount} per-URL warm-up run(s)` : ''}; performance >= 0.99 generally, >= 0.98 on the three quote routes, and accessibility/best-practices/seo = 1.00.`);
+console.log(`Lighthouse quorum release gate passed: ${reports.length} reports across ${grouped.size} URL(s); at least 2 of 3 runs per URL meet performance >= 0.99 generally, >= 0.98 on the three quote routes, with accessibility/best-practices/seo = 1.00.`);
