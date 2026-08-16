@@ -48,6 +48,17 @@ for (const file of htmlFiles) {
 
   if (isQuote) {
     html = html.replace(/class="prose reveal quote-intro(?: in)?"/g, 'class="prose quote-intro"');
+
+    // The pricing engine validates the bundled price table synchronously, then
+    // hides this loading message. If the message is visible in the initial HTML,
+    // that hide moves the whole quote-intro block after FCP and creates a stable
+    // ~0.05076 CLS on mobile. Start the status hidden in the production artifact;
+    // setPricingUi(false) still unhides it if pricing is genuinely unavailable.
+    html = html.replace(/data-pricing-status="">/g, 'data-pricing-status="" hidden>');
+    if (!/data-pricing-status=""\s+hidden>/.test(html)) {
+      throw new Error(`Quote pricing status was not stabilized in ${rel}`);
+    }
+
     // PDF creation is only needed after an explicit download action. Loading
     // its renderer on first hover/focus/click removes startup evaluation from
     // the quote critical path while preserving the existing button contract.
