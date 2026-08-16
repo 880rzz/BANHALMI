@@ -26,7 +26,7 @@ const discovery = bridge.fullArchiveDiscovery || {};
 for (const key of ['entry', 'ecosystemBridge', 'authorityBridge', 'archiveRecordRegistry', 'masterSourceDatabase', 'careerArc', 'wikidataEntityRegistry', 'wikidataSourceRegistry', 'wikipediaSourceRegistry', 'pressSourceRegistry', 'periodEvidenceBackbone', 'oeuvreContext', 'imageKnowledgeGraph']) {
   if (!discovery[key]) failures.push(`archive-bridge.json: fullArchiveDiscovery.${key} missing`);
 }
-if (!bridge.agentRules?.some(rule => /featuredNodes.*not.*complete archive/i.test(rule))) {
+if (!bridge.agentRules?.some(rule => /do not interpret.*featuredNodes.*complete archive/i.test(rule))) {
   failures.push('archive-bridge.json: featuredNodes must be explicitly declared non-exhaustive');
 }
 if (!bridge.agentRules?.some(rule => /current Fine Art Photography commission/i.test(rule))) {
