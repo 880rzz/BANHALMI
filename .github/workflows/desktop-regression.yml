@@ -13,9 +13,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  browser-performance-gate:
+  source-contracts:
     runs-on: ubuntu-24.04
-    timeout-minutes: 90
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,6 +23,15 @@ jobs:
           node-version: 22
       - name: Run source contract audits
         run: npm test
+
+  external-field:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - name: Run live external-link and ecosystem audit
         env:
           LIVE_AUDIT: '1'
@@ -31,10 +40,19 @@ jobs:
         env:
           PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
         run: node tools/audit-pagespeed-field.mjs
+
+  build-artifact:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - name: Prepare production-like Pages artifact
         run: |
           set -euo pipefail
-          rm -rf _site artifacts/browser-layout artifacts/exhaustive-visual artifacts/lighthouse-desktop artifacts/lighthouse-mobile
+          rm -rf _site
           mkdir -p _site
           git ls-files -z | rsync -a --from0 --files-from=- ./ _site/
           node tools/optimize-production-artifact.mjs _site
@@ -47,41 +65,169 @@ jobs:
             fi
           done
           test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "1"
-      - name: Install Chromium browser audit runtime
-        run: |
-          npm ci
-          npx playwright install --with-deps chromium
-      - name: Run exhaustive browser QA and visual capture
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pr-site-${{ github.sha }}
+          path: _site
+          include-hidden-files: true
+          retention-days: 1
+
+  e2e:
+    needs: build-artifact
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: pr-site-${{ github.sha }}
+          path: _site
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Run 86 interaction and service tests
         run: |
           set -euo pipefail
-          node tools/perf-static-server.mjs _site 4173 > /tmp/banhalmi-browser-server.log 2>&1 &
+          node tools/perf-static-server.mjs _site 4173 > /tmp/banhalmi-e2e-server.log 2>&1 &
           SERVER_PID=$!
           trap 'kill $SERVER_PID || true' EXIT
           for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep 0.25; done
           npm run test:e2e
+
+  browser-layout:
+    needs: build-artifact
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: pr-site-${{ github.sha }}
+          path: _site
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Run exhaustive browser layout audit
+        run: |
+          set -euo pipefail
+          node tools/perf-static-server.mjs _site 4173 > /tmp/banhalmi-layout-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep 0.25; done
           AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-browser-layout.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-layout-${{ github.sha }}
+          path: artifacts/browser-layout
+          if-no-files-found: warn
+          retention-days: 14
+
+  first-principles-layout:
+    needs: build-artifact
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: pr-site-${{ github.sha }}
+          path: _site
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Run first-principles layout audit
+        run: |
+          set -euo pipefail
+          node tools/perf-static-server.mjs _site 4173 > /tmp/banhalmi-first-principles-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep 0.25; done
           AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-first-principles-layout.mjs
+
+  visual-capture:
+    needs: build-artifact
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: pr-site-${{ github.sha }}
+          path: _site
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Capture exhaustive visual evidence
+        run: |
+          set -euo pipefail
+          node tools/perf-static-server.mjs _site 4173 > /tmp/banhalmi-visual-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep 0.25; done
           AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/capture-exhaustive-visual.mjs
-          kill $SERVER_PID || true
-          trap - EXIT
-      - name: Run mobile Lighthouse 100 gate
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: exhaustive-visual-${{ github.sha }}
+          path: artifacts/exhaustive-visual
+          if-no-files-found: warn
+          retention-days: 14
+
+  lighthouse-mobile:
+    needs: build-artifact
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: pr-site-${{ github.sha }}
+          path: _site
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run mobile Lighthouse release gate
         run: |
           npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.mobile.cjs
           node tools/audit-lighthouse-all-runs.mjs artifacts/lighthouse-mobile
-      - name: Run desktop Lighthouse 100 gate
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-mobile-${{ github.sha }}
+          path: artifacts/lighthouse-mobile
+          if-no-files-found: warn
+          retention-days: 14
+
+  lighthouse-desktop:
+    needs: build-artifact
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: pr-site-${{ github.sha }}
+          path: _site
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run desktop Lighthouse release gate
         run: |
           npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.desktop.cjs
           node tools/audit-lighthouse-all-runs.mjs artifacts/lighthouse-desktop
-      - name: Upload browser and Lighthouse QA artifacts
+      - uses: actions/upload-artifact@v4
         if: always()
-        uses: actions/upload-artifact@v4
         with:
-          name: browser-performance-${{ github.sha }}
-          path: |
-            artifacts/browser-layout
-            artifacts/exhaustive-visual
-            artifacts/lighthouse-mobile
-            artifacts/lighthouse-desktop
-            link-audit-results.json
+          name: lighthouse-desktop-${{ github.sha }}
+          path: artifacts/lighthouse-desktop
           if-no-files-found: warn
           retention-days: 14
