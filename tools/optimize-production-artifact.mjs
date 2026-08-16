@@ -16,6 +16,7 @@ walk(root);
 
 const stylesheetRe = /<link rel="stylesheet" href="(\/assets\/css\/site\.css[^\"]*)"\s*\/>/g;
 const mainScriptRe = /<script defer="" src="\/assets\/js\/main\.js\?v=20260808-mobile100-v2"><\/script>/g;
+const quotePdfScriptRe = /<script([^>]*?)src="(\/assets\/js\/quote-pdf\.js[^\"]*)"([^>]*)><\/script>/g;
 
 const asyncStyle = '<link rel="preload" as="style" href="$1"/><link rel="stylesheet" href="$1" media="print" onload="this.media=\'all\';this.onload=null"/><noscript><link rel="stylesheet" href="$1"/></noscript>';
 
@@ -25,19 +26,32 @@ const asyncStyle = '<link rel="preload" as="style" href="$1"/><link rel="stylesh
 // does not create the primary navigation structure.
 const homeRuntimeLoader = `<script>(function(){var loaded=false;function load(){if(loaded)return;loaded=true;var s=document.createElement('script');s.src='/assets/js/main.js?v=20260808-mobile100-v2';s.defer=true;document.head.appendChild(s);}['pointerdown','keydown','touchstart'].forEach(function(type){addEventListener(type,load,{once:true,passive:true,capture:true});});if('requestIdleCallback'in window)requestIdleCallback(load,{timeout:5000});else setTimeout(load,5000);})();</script>`;
 
+function quotePdfLoader(src) {
+  return `<script>(function(){var loading=false,ready=false,pending=null;function load(){if(ready||loading)return;loading=true;var s=document.createElement('script');s.src='${src}';s.onload=function(){ready=true;loading=false;if(pending){var el=pending;pending=null;setTimeout(function(){el.click();},0);}};s.onerror=function(){loading=false;pending=null;};document.head.appendChild(s);}document.addEventListener('click',function(ev){var el=ev.target.closest&&ev.target.closest('[data-download-quote-pdf]');if(!el||ready)return;ev.preventDefault();ev.stopImmediatePropagation();pending=el;load();},true);document.addEventListener('pointerover',function(ev){if(ev.target.closest&&ev.target.closest('[data-download-quote-pdf]'))load();},{passive:true,capture:true});document.addEventListener('focusin',function(ev){if(ev.target.closest&&ev.target.closest('[data-download-quote-pdf]'))load();},true);})();</script>`;
+}
+
 for (const file of htmlFiles) {
   let html = fs.readFileSync(file, 'utf8');
-  html = html.replace(stylesheetRe, asyncStyle);
-
   const rel = path.relative(root, file).replaceAll('\\', '/');
   const isHome = rel === 'index.html' || rel === 'hu/index.html' || rel === 'de-at/index.html';
+  const isQuote = rel === 'requestaquote/index.html' || rel === 'hu/ajanlatkeres/index.html' || rel === 'de-at/anfrage/index.html';
+
+  // Async CSS is a win on normal content pages, but the very large quote form
+  // creates a costly post-FCP full-document restyle when the stylesheet flips
+  // from media=print to all. Keep the same single minified stylesheet blocking
+  // on quote routes so layout work finishes before FCP instead of inflating TBT.
+  if (!isQuote) html = html.replace(stylesheetRe, asyncStyle);
+
   if (isHome) {
     html = html.replace(mainScriptRe, homeRuntimeLoader);
   }
 
-  const isQuote = rel === 'requestaquote/index.html' || rel === 'hu/ajanlatkeres/index.html' || rel === 'de-at/anfrage/index.html';
   if (isQuote) {
     html = html.replace(/class="prose reveal quote-intro(?: in)?"/g, 'class="prose quote-intro"');
+    // PDF creation is only needed after an explicit download action. Loading
+    // its renderer on first hover/focus/click removes startup evaluation from
+    // the quote critical path while preserving the existing button contract.
+    html = html.replace(quotePdfScriptRe, function(_match, _before, src){ return quotePdfLoader(src); });
   }
 
   if (rel === 'de-at/anfrage/index.html') {
