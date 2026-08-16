@@ -5,9 +5,8 @@ on:
     branches:
       - content/audience-visual-presence-work
     paths:
-      - 'tools/deepen-audience-positioning-20260816-v2.mjs'
-      - 'tools/deepen-audience-positioning-20260816-v2.trigger'
-      - 'tools/deepen-audience-positioning-20260816.trigger'
+      - 'tools/deepen-audience-positioning-20260816-v3.mjs'
+      - 'tools/deepen-audience-positioning-20260816-v3.trigger'
 
 permissions:
   contents: write
@@ -25,20 +24,21 @@ jobs:
         with:
           node-version: 22
       - name: Apply positioning edits
-        run: node tools/deepen-audience-positioning-20260816-v2.mjs
-      - name: Content-only sanity check and commit
+        run: node tools/deepen-audience-positioning-20260816-v3.mjs
+      - name: Content-only placement check and commit
         run: |
           set -euo pipefail
-          node -e "for (const f of ['ai-entry.json','knowledge-core.json','customer-needs.json','services.json']) JSON.parse(require('fs').readFileSync(f,'utf8')); console.log('JSON OK')"
-          grep -q 'artists, actors and creative professionals' index.html
-          grep -q 'művészeknek, színészeknek' hu/index.html
-          grep -q 'Künstler, Schauspieler' de-at/index.html
+          node -e "for (const f of ['ai-entry.json','knowledge-core.json','customer-needs.json','services.json','brand-positioning.jsonld','entity.jsonld','ecosystem.json']) JSON.parse(require('fs').readFileSync(f,'utf8')); console.log('JSON placement layer OK')"
+          grep -q 'Executive portraits and headshots for leaders, founders, experts, artists, actors and creative professionals' index.html
+          grep -q 'Executive portré és headshot vezetőknek, cégvezetőknek, szakembereknek, művészeknek, színészeknek' hu/index.html
+          grep -q 'Executive-Porträts und Headshots für Führungskräfte, Unternehmer, Experten, Künstler, Schauspieler' de-at/index.html
           grep -q 'Executive Portrait' llms.txt
-          grep -q 'Headshot' llms.txt
+          grep -q 'Professional Headshot' llms.txt
           grep -q 'Brand Photography' llms.txt
           grep -q 'C-Level Event Photography' llms.txt
+          grep -q 'AUDIENCE-POSITIONING-PRODUCTION-GUARD' tools/optimize-production-artifact.mjs
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add index.html hu/index.html de-at/index.html portrait/index.html hu/portre/index.html de-at/portrait/index.html ai-entry.json knowledge-core.json customer-needs.json services.json llms.txt ai.txt
-          git commit -m 'content: broaden BANHALMI audience without diluting core intents'
+          git add index.html hu/index.html de-at/index.html brand-positioning.jsonld entity.jsonld ecosystem.json llms-full.txt tools/optimize-production-artifact.mjs
+          git commit -m 'content: sync broad audience across canonical and self-modifying layers'
           git push origin HEAD:content/audience-visual-presence-work
