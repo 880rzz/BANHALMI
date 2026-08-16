@@ -1,0 +1,33 @@
+name: One-time live external link audit 2026-08-16
+
+on:
+  push:
+    branches:
+      - audit/full-10-10-20260816
+    paths:
+      - '.github/workflows/one-shot-live-link-audit-20260816.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  live-links:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check all collected external and critical ecosystem URLs
+        env:
+          LIVE_AUDIT: '1'
+        run: node tools/audit-seo-network.mjs
+      - name: Upload live link evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-link-audit-${{ github.sha }}
+          path: link-audit-results.json
+          if-no-files-found: warn
+          retention-days: 14
