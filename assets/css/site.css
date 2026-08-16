@@ -4364,8 +4364,6 @@ html body .quote-deep-details > section.quote-legal-bridge .service-actions{
 }
 /* QUOTE-LAYOUT-REGRESSION-20260816:END */
 
-/* APPLE-RESPONSIVE-CONTRACT-V1:END */
-
 /* AUDIT-20260816-FOOTER-SUMMARY-CONTRAST */
 @media (max-width:1040px){
   html body .site-footer .footer-accordion > summary{
@@ -4376,3 +4374,6 @@ html body .quote-deep-details > section.quote-legal-bridge .service-actions{
   html body .site-footer .footer-accordion > summary:hover,
   html body .site-footer .footer-accordion > summary:focus-visible{color:#fff!important;}
 }
+
+/* APPLE-RESPONSIVE-CONTRACT-V1:END */
+
