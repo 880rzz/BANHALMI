@@ -5,8 +5,8 @@ on:
     branches:
       - content/audience-visual-presence-work
     paths:
-      - 'tools/deepen-audience-positioning-20260816.mjs'
-      - 'tools/deepen-audience-positioning-20260816.trigger'
+      - 'tools/deepen-audience-positioning-20260816-v2.mjs'
+      - 'tools/deepen-audience-positioning-20260816-v2.trigger'
 
 permissions:
   contents: write
@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 22
       - name: Apply positioning edits
-        run: node tools/deepen-audience-positioning-20260816.mjs
+        run: node tools/deepen-audience-positioning-20260816-v2.mjs
       - name: Content-only sanity check and commit
         run: |
           set -euo pipefail
