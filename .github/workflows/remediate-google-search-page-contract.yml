@@ -1,6 +1,12 @@
 name: Remediate Google Search page contract
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - fix/homepage-meta-parity-20260816
+    paths:
+      - .github/workflows/remediate-google-search-page-contract.yml
+      - tools/remediate-google-search-page-contract.mjs
 permissions:
   contents: write
 jobs:
