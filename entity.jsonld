@@ -6,28 +6,76 @@
       "@id": "https://www.norbertbanhalmi.com/about/",
       "url": "https://www.norbertbanhalmi.com/about/",
       "name": "Bánhalmi Norbert",
-      "alternateName": ["Norbert Banhalmi", "Norbert Bánhalmi", "Norbert BANHALMI"],
+      "alternateName": [
+        "Norbert Banhalmi",
+        "Norbert Bánhalmi",
+        "Norbert BANHALMI"
+      ],
       "givenName": "Norbert",
       "familyName": "Bánhalmi",
-      "description": "Norbert BANHALMI is a Hungarian fine-art and applied photographer, executive portrait specialist and visual branding strategist. Active since 1999, he works from Vienna and Budapest on executive portraiture, brand photography, C-level event photography, fine-art work and strategic visual positioning.",
-      "jobTitle": ["Fine Art Photographer", "Applied Photographer", "Executive Portrait Photographer", "Visual Branding Strategist", "Photography Curator"],
-      "email": "mailto:hello@norbertbanhalmi.com",
-      "image": {"@id": "https://www.norbertbanhalmi.com/about/#portrait"},
-      "worksFor": {"@id": "https://www.norbertbanhalmi.com/#organization"},
-      "workLocation": [
-        {"@id": "https://www.norbertbanhalmi.com/#vienna-studio"},
-        {"@id": "https://www.norbertbanhalmi.com/#budapest-studio"},
-        {"@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"}
+      "description": "Norbert BANHALMI is a Hungarian fine-art and applied photographer, executive portrait and professional headshot specialist, and visual branding strategist. Active since 1999, he works from Vienna and Budapest with executives, founders, experts, professionals, artists, actors, creative professionals, teams and organisations on executive portraiture, headshots, brand photography, C-level event photography, fine-art work and strategic visual positioning.",
+      "jobTitle": [
+        "Fine Art Photographer",
+        "Applied Photographer",
+        "Executive Portrait Photographer",
+        "Visual Branding Strategist",
+        "Photography Curator"
       ],
-      "knowsLanguage": ["Hungarian", "English", "German"],
-      "knowsAbout": ["Fine art photography", "Executive portrait photography", "Brand photography", "C-level event photography", "Visual branding strategy", "Strategic visual positioning"],
+      "email": "mailto:hello@norbertbanhalmi.com",
+      "image": {
+        "@id": "https://www.norbertbanhalmi.com/about/#portrait"
+      },
+      "worksFor": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      },
+      "workLocation": [
+        {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"
+        }
+      ],
+      "knowsLanguage": [
+        "Hungarian",
+        "English",
+        "German"
+      ],
+      "knowsAbout": [
+        "Fine art photography",
+        "Executive portrait photography",
+        "Professional headshot photography",
+        "Brand photography",
+        "C-level event photography",
+        "Visual branding strategy",
+        "Strategic visual positioning"
+      ],
       "memberOf": [
-        {"@type": "Organization", "name": "AmCham Austria", "url": "https://amcham.at/"},
-        {"@type": "Organization", "name": "WKO Wien — Landesinnung der Berufsfotografie", "url": "https://www.wko.at/wien/gewerbe-handwerk/berufsfotografie"},
-        {"@type": "Organization", "name": "Magyar Fotóművészek Világszövetsége", "url": "https://www.mfvsz.com/"}
+        {
+          "@type": "Organization",
+          "name": "AmCham Austria",
+          "url": "https://amcham.at/"
+        },
+        {
+          "@type": "Organization",
+          "name": "WKO Wien — Landesinnung der Berufsfotografie",
+          "url": "https://www.wko.at/wien/gewerbe-handwerk/berufsfotografie"
+        },
+        {
+          "@type": "Organization",
+          "name": "Magyar Fotóművészek Világszövetsége",
+          "url": "https://www.mfvsz.com/"
+        }
       ],
       "affiliation": [
-        {"@type": "Organization", "name": "OM SYSTEM", "url": "https://explore.omsystem.com/"}
+        {
+          "@type": "Organization",
+          "name": "OM SYSTEM",
+          "url": "https://explore.omsystem.com/"
+        }
       ],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q56391118",
@@ -40,25 +88,39 @@
         "https://www.saatchiart.com/norbertbanhalmi"
       ],
       "subjectOf": [
-        {"@id": "https://www.norbertbanhalmi.com/#website"},
-        {"@id": "https://www.banhalmi.art/#website"}
+        {
+          "@id": "https://www.norbertbanhalmi.com/#website"
+        },
+        {
+          "@id": "https://www.banhalmi.art/#website"
+        }
       ],
-      "mainEntityOfPage": {"@id": "https://www.norbertbanhalmi.com/about/#webpage"}
+      "mainEntityOfPage": {
+        "@id": "https://www.norbertbanhalmi.com/about/#webpage"
+      }
     },
     {
       "@type": "Organization",
       "@id": "https://www.norbertbanhalmi.com/#organization",
       "name": "Norbert Banhalmi e.U.",
       "legalName": "Norbert Banhalmi e.U.",
-      "alternateName": ["BANHALMI"],
+      "alternateName": [
+        "BANHALMI"
+      ],
       "url": "https://www.norbertbanhalmi.com/",
-      "description": "BANHALMI is Norbert Banhalmi's strategic visual partnership for leaders and organisations, built around executive portraiture, brand photography, C-level event photography, fine-art authorship and long-term visual positioning.",
-      "founder": {"@id": "https://www.norbertbanhalmi.com/about/"},
-      "brand": {"@id": "https://www.norbertbanhalmi.com/#brand"},
+      "description": "BANHALMI is Norbert Banhalmi's strategic visual partnership for executives, founders, experts, professionals, artists, actors, creative professionals, teams and organisations, built around executive portraiture, professional headshots, brand photography, C-level event photography, fine-art authorship and long-term visual positioning.",
+      "founder": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "brand": {
+        "@id": "https://www.norbertbanhalmi.com/#brand"
+      },
       "makesOffer": {
         "@type": "Offer",
         "@id": "https://www.norbertbanhalmi.com/#visual-trust-partnership-offer",
-        "itemOffered": {"@id": "https://www.norbertbanhalmi.com/#visual-trust-partnership"}
+        "itemOffered": {
+          "@id": "https://www.norbertbanhalmi.com/#visual-trust-partnership"
+        }
       },
       "email": "hello@norbertbanhalmi.com",
       "telephone": "+4367761655592",
@@ -70,31 +132,62 @@
         "addressCountry": "AT"
       },
       "location": [
-        {"@id": "https://www.norbertbanhalmi.com/#vienna-studio"},
-        {"@id": "https://www.norbertbanhalmi.com/#budapest-studio"},
-        {"@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"}
+        {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"
+        }
       ],
-      "headquarters": {"@id": "https://www.norbertbanhalmi.com/#vienna-studio"},
+      "headquarters": {
+        "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+      },
       "areaServed": [
-        {"@id": "https://www.wikidata.org/wiki/Q1741"},
-        {"@id": "https://www.wikidata.org/wiki/Q1781"},
+        {
+          "@id": "https://www.wikidata.org/wiki/Q1741"
+        },
+        {
+          "@id": "https://www.wikidata.org/wiki/Q1781"
+        },
         "Worldwide"
       ],
-      "availableLanguage": ["en", "hu-HU", "de-AT"],
-      "knowsAbout": ["Executive portraiture", "Brand photography", "C-level event photography", "Fine-art photography", "Visual branding strategy", "Strategic visual positioning", "Visual strategic partnership"],
+      "availableLanguage": [
+        "en",
+        "hu-HU",
+        "de-AT"
+      ],
+      "knowsAbout": [
+        "Executive portraiture",
+        "Professional headshot photography",
+        "Brand photography",
+        "C-level event photography",
+        "Fine-art photography",
+        "Visual branding strategy",
+        "Strategic visual positioning",
+        "Visual strategic partnership"
+      ],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q138425941",
         "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40",
         "https://www.banhalmi.at/",
         "https://www.banhalminorbert.hu/"
       ],
-      "logo": {"@id": "https://www.norbertbanhalmi.com/#logo"},
+      "logo": {
+        "@id": "https://www.norbertbanhalmi.com/#logo"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
         "email": "hello@norbertbanhalmi.com",
         "telephone": "+4367761655592",
-        "availableLanguage": ["English", "German", "Hungarian"]
+        "availableLanguage": [
+          "English",
+          "German",
+          "Hungarian"
+        ]
       }
     },
     {
@@ -102,8 +195,13 @@
       "@id": "https://www.norbertbanhalmi.com/#brand",
       "name": "BANHALMI",
       "url": "https://www.norbertbanhalmi.com/",
-      "owner": {"@id": "https://www.norbertbanhalmi.com/#organization"},
-      "founder": {"@id": "https://www.norbertbanhalmi.com/about/"}
+      "owner": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      },
+      "founder": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "description": "BANHALMI is the professional brand for executive portraiture, professional headshots, brand photography, C-level event photography, fine-art photography and strategic visual positioning, helping people, teams and organisations build a coherent visual presence."
     },
     {
       "@type": "WebSite",
@@ -111,9 +209,17 @@
       "url": "https://www.norbertbanhalmi.com/",
       "name": "BANHALMI | Norbert Banhalmi",
       "description": "Current multilingual professional services, pricing, enquiries and visual strategic partnership context for BANHALMI.",
-      "publisher": {"@id": "https://www.norbertbanhalmi.com/#organization"},
-      "about": {"@id": "https://www.norbertbanhalmi.com/about/"},
-      "inLanguage": ["en", "hu-HU", "de-AT"]
+      "publisher": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      },
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "inLanguage": [
+        "en",
+        "hu-HU",
+        "de-AT"
+      ]
     },
     {
       "@type": "WebSite",
@@ -121,8 +227,14 @@
       "url": "https://www.banhalmi.art/",
       "name": "BANHALMI ART",
       "description": "The official artistic oeuvre and source archive of Norbert Banhalmi for books, exhibitions, projects, media records, curatorial documentation and selected works. Current professional services, pricing and enquiries are canonical on norbertbanhalmi.com.",
-      "about": {"@id": "https://www.norbertbanhalmi.com/about/"},
-      "inLanguage": ["en", "hu-HU", "de-AT"]
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "inLanguage": [
+        "en",
+        "hu-HU",
+        "de-AT"
+      ]
     },
     {
       "@type": "City",
@@ -141,46 +253,109 @@
       "@id": "https://www.norbertbanhalmi.com/#vienna-studio",
       "name": "Norbert Banhalmi Studio Vienna",
       "sameAs": "https://www.wikidata.org/wiki/Q138426506",
-      "address": {"@type": "PostalAddress", "streetAddress": "Schwedenplatz 2, Top 8–9", "postalCode": "1010", "addressLocality": "Wien", "addressCountry": "AT"},
-      "containedInPlace": {"@id": "https://www.wikidata.org/wiki/Q1741"}
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Schwedenplatz 2, Top 8–9",
+        "postalCode": "1010",
+        "addressLocality": "Wien",
+        "addressCountry": "AT"
+      },
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q1741"
+      }
     },
     {
       "@type": "Place",
       "@id": "https://www.norbertbanhalmi.com/#budapest-studio",
       "name": "BANHALMI Budapest Studio",
       "sameAs": "https://www.wikidata.org/wiki/Q138830452",
-      "address": {"@type": "PostalAddress", "streetAddress": "Lágymányosi utca 15", "postalCode": "1111", "addressLocality": "Budapest", "addressCountry": "HU"},
-      "containedInPlace": {"@id": "https://www.wikidata.org/wiki/Q1781"}
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Lágymányosi utca 15",
+        "postalCode": "1111",
+        "addressLocality": "Budapest",
+        "addressCountry": "HU"
+      },
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q1781"
+      }
     },
     {
       "@type": "Place",
       "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
       "name": "BANHALMI Vienna — Gersthofer office & client meeting location",
       "description": "Active Vienna office and client meeting location. This is not a photographic studio.",
-      "address": {"@type": "PostalAddress", "streetAddress": "Gersthofer Straße 150–154/6/2", "postalCode": "1180", "addressLocality": "Wien", "addressCountry": "AT"},
-      "containedInPlace": {"@id": "https://www.wikidata.org/wiki/Q1741"}
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gersthofer Straße 150–154/6/2",
+        "postalCode": "1180",
+        "addressLocality": "Wien",
+        "addressCountry": "AT"
+      },
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q1741"
+      }
     },
     {
       "@type": "Service",
       "@id": "https://www.norbertbanhalmi.com/#visual-trust-partnership",
       "name": "BANHALMI Strategic Visual Partnership",
-      "alternateName": ["Visual Strategic Partnership", "Vizuális stratégiai partnerség", "Strategische visuelle Partnerschaft"],
-      "provider": {"@id": "https://www.norbertbanhalmi.com/#organization"},
-      "areaServed": ["Vienna", "Budapest", "Worldwide"],
-      "serviceType": ["Executive portraiture", "Brand photography", "C-level event photography", "Fine-art photography", "Strategic visual positioning"],
-      "description": "A strategic visual partnership that starts by understanding the person or organisation, then builds a coherent visual presence for leadership, brand, employer-branding, press, corporate communication and international business contexts."
+      "alternateName": [
+        "Visual Strategic Partnership",
+        "Vizuális stratégiai partnerség",
+        "Strategische visuelle Partnerschaft"
+      ],
+      "provider": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      },
+      "areaServed": [
+        "Vienna",
+        "Budapest",
+        "Worldwide"
+      ],
+      "serviceType": [
+        "Executive portraiture",
+        "Professional headshot photography",
+        "Brand photography",
+        "C-level event photography",
+        "Fine-art photography",
+        "Strategic visual positioning"
+      ],
+      "description": "A strategic visual partnership for executives, founders, experts, professionals, artists, actors, creative professionals, teams and organisations. A project can begin with an executive portrait or professional headshot and develop into a coherent visual presence across personal branding, brand communication, press, campaigns, employer branding, team imagery and C-level events.",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Executives and C-level leaders, founders, entrepreneurs, experts, professionals, artists, actors, creative professionals, teams and organisations"
+      }
     },
     {
       "@type": "Person",
       "@id": "https://www.norbertbanhalmi.com/speier-viko/#person",
       "name": "Viko Speier",
-      "alternateName": ["Speier Vikó", "Viktória Speier"],
+      "alternateName": [
+        "Speier Vikó",
+        "Viktória Speier"
+      ],
       "url": "https://www.norbertbanhalmi.com/speier-viko/",
-      "jobTitle": ["Head of BANHALMI Budapest Studio", "Professional Fashion and Portrait Photographer", "OM SYSTEM Ambassador"],
-      "worksFor": {"@id": "https://www.norbertbanhalmi.com/#organization"},
-      "workLocation": {"@id": "https://www.norbertbanhalmi.com/#budapest-studio"},
-      "affiliation": {"@type": "Organization", "name": "OM SYSTEM", "url": "https://explore.omsystem.com/"},
-      "sameAs": ["https://www.vikospeier.com/hu/about", "https://www.linkedin.com/in/vikospeier/"]
+      "jobTitle": [
+        "Head of BANHALMI Budapest Studio",
+        "Professional Fashion and Portrait Photographer",
+        "OM SYSTEM Ambassador"
+      ],
+      "worksFor": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      },
+      "workLocation": {
+        "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+      },
+      "affiliation": {
+        "@type": "Organization",
+        "name": "OM SYSTEM",
+        "url": "https://explore.omsystem.com/"
+      },
+      "sameAs": [
+        "https://www.vikospeier.com/hu/about",
+        "https://www.linkedin.com/in/vikospeier/"
+      ]
     }
   ],
   "officialPositioning": {
@@ -196,5 +371,5 @@
     "artisticArchive": "https://www.banhalmi.art/",
     "artisticArchivePurpose": "Official artistic oeuvre and source archive for books, exhibitions, projects, media records, curatorial documentation and selected works."
   },
-  "dateModified": "2026-08-16T11:00:00+02:00"
+  "dateModified": "2026-08-16T12:00:00+02:00"
 }

@@ -87,4 +87,23 @@ if (fs.existsSync(cssPath)) {
   fs.appendFileSync(cssPath, '\n.site-footer .footer-accordion summary{color:#CBB45F!important;opacity:1!important;}\n');
 }
 
+// AUDIENCE-POSITIONING-PRODUCTION-GUARD
+// The production artifact mutator may optimize delivery, but must not narrow the
+// brand back to an executive-only proposition or drop high-value service intents.
+const semanticContracts = [
+  ['index.html',['Executive Portraiture &amp; Headshots','brand photography','C-level','artists','actors','visual presence']],
+  ['hu/index.html',['Executive portré &amp; headshot','brandfotózás','C-level','művészek','színészek','vizuális jelenlét']],
+  ['de-at/index.html',['Executive-Porträts &amp; Headshots','Brandfotografie','C-Level','Künstler','Schauspieler','visuelle Präsenz']],
+  ['llms.txt',['Executive Portrait','Professional Headshot','Brand Photography','C-Level Event Photography','artists','actors','visual presence']],
+  ['ai.txt',['Executive Portrait','Headshot','Brand Photography','C-Level Event Photography','artists','actors','visual presence']],
+  ['ai-entry.json',['executives and C-level leaders','artists','actors','headshot','brand photography','C-level event photography']],
+  ['services.json',['Professional headshot','artists','actors','Brand Photography','C-Level Event Photography']]
+];
+for (const [rel,tokens] of semanticContracts){
+  const target=path.join(root,rel);
+  if(!fs.existsSync(target)) throw new Error(`Audience positioning production guard: missing ${rel}`);
+  const body=fs.readFileSync(target,'utf8');
+  for(const token of tokens) if(!body.includes(token)) throw new Error(`Audience positioning production guard: ${rel} lost required semantic token: ${token}`);
+}
+
 console.log(`Production artifact optimization applied to ${htmlFiles.length} HTML files.`);
