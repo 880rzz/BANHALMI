@@ -8,12 +8,12 @@ const skip=new Set(['.git','node_modules','_site','dist','coverage','assets','ap
 const files=[];
 function walk(dir,b=''){for(const e of fs.readdirSync(dir,{withFileTypes:true})){if(e.isDirectory()&&skip.has(e.name))continue;const rel=path.posix.join(b,e.name),abs=path.join(dir,e.name);if(e.isDirectory())walk(abs,rel);else if(e.isFile()&&e.name.endsWith('.html'))files.push([rel,abs])}}
 function isRedirect(h){return /<meta[^>]+http-equiv=["']refresh["']/i.test(h)||(/location\.(?:replace|href)\s*=/i.test(h)&&!/<main\b/i.test(h))}
-function attr(tag,name){const m=tag.match(new RegExp(`${name}=["']([^"']*)["']`,'i'));return m?.[1]||''}
+function attr(tag,name){const m=tag.match(new RegExp(`${name}=(["'])(.*?)\\1`,'i'));return m?.[2]||''}
 function meta(h,key){for(const m of h.matchAll(/<meta\b[^>]*>/gi)){const n=attr(m[0],'name').toLowerCase(),p=attr(m[0],'property').toLowerCase();if(n===key||p===key)return attr(m[0],'content')}return''}
 function setMeta(h,key,value,kind='name'){
   const re=new RegExp(`<meta\\b[^>]*${kind}=["']${key.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}["'][^>]*>`,'i');
   const match=h.match(re);if(!match)return h;
-  const replaced=match[0].replace(/content=["'][^"']*["']/i,`content="${value.replace(/&/g,'&amp;').replace(/"/g,'&quot;')}"`);
+  const replaced=match[0].replace(/content=(["'])(.*?)\1/i,`content="${value.replace(/&/g,'&amp;').replace(/"/g,'&quot;')}"`);
   return h.replace(match[0],replaced);
 }
 function langFor(rel){return rel.startsWith('hu/')?'hu-HU':rel.startsWith('de-at/')?'de-AT':'en'}
