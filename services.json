@@ -3,7 +3,7 @@
   "@type": "ItemList",
   "@id": "https://www.norbertbanhalmi.com/services.json#services",
   "name": "BANHALMI four principal service areas",
-  "dateModified": "2026-08-09T01:45:00+02:00",
+  "dateModified": "2026-08-16T11:10:00+02:00",
   "numberOfItems": 4,
   "itemListElement": [
     {
@@ -28,21 +28,10 @@
       ],
       "serviceType": "Portrait Photography",
       "description": "Portrait photography for leaders, founders and experts who need a credible and reusable visual identity across LinkedIn, corporate websites, press, speaking and internal communication.",
-      "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
-      },
-      "areaServed": [
-        "Vienna",
-        "Budapest",
-        "Austria",
-        "Hungary",
-        "Europe"
-      ],
+      "provider": {"@id": "https://www.norbertbanhalmi.com/#organization"},
+      "areaServed": ["Vienna", "Budapest", "Austria", "Hungary", "Worldwide"],
       "url": "https://www.norbertbanhalmi.com/portrait/",
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Leaders, founders and experts"
-      },
+      "audience": {"@type": "Audience", "audienceType": "Leaders, founders and experts"},
       "serviceOutput": "A reusable portrait system, from a precise headshot to a complete public visual identity."
     },
     {
@@ -62,21 +51,10 @@
       ],
       "serviceType": "Brand Photography",
       "description": "Brand photography for organisations that need founders, teams, workplaces and campaigns to communicate as one recognisable brand across recruitment, sales, media and corporate communication.",
-      "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
-      },
-      "areaServed": [
-        "Vienna",
-        "Budapest",
-        "Austria",
-        "Hungary",
-        "Europe"
-      ],
+      "provider": {"@id": "https://www.norbertbanhalmi.com/#organization"},
+      "areaServed": ["Vienna", "Budapest", "Austria", "Hungary", "Worldwide"],
       "url": "https://www.norbertbanhalmi.com/lifestyle/",
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Organisations, leadership teams and employer-branding teams"
-      },
+      "audience": {"@type": "Audience", "audienceType": "Organisations, leadership teams and employer-branding teams"},
       "serviceOutput": "A coherent organisational image library for recruitment, sales, media and corporate communication."
     },
     {
@@ -84,28 +62,13 @@
       "position": 3,
       "@id": "https://www.norbertbanhalmi.com/event-photography/#service",
       "name": "C-Level Event Photography",
-      "alternateName": [
-        "Executive event photography",
-        "Leadership summit photography",
-        "Corporate event communication"
-      ],
+      "alternateName": ["Executive event photography", "Leadership summit photography", "Corporate event communication"],
       "serviceType": "C-Level Event Photography",
       "description": "Discreet C-level event photography for board meetings, leadership summits, conferences and diplomatic settings, preserving relationships, decisions and atmosphere for press, internal communication and institutional archives.",
-      "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
-      },
-      "areaServed": [
-        "Vienna",
-        "Budapest",
-        "Austria",
-        "Hungary",
-        "Europe"
-      ],
+      "provider": {"@id": "https://www.norbertbanhalmi.com/#organization"},
+      "areaServed": ["Vienna", "Budapest", "Austria", "Hungary", "Worldwide"],
       "url": "https://www.norbertbanhalmi.com/event-photography/",
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Boards, leadership teams, conference organisers and institutions"
-      },
+      "audience": {"@type": "Audience", "audienceType": "Boards, leadership teams, conference organisers and institutions"},
       "serviceOutput": "Discreet editorial and institutional event coverage for immediate and long-term use."
     },
     {
@@ -113,29 +76,15 @@
       "position": 4,
       "@id": "https://www.norbertbanhalmi.com/glamour/#service",
       "name": "Fine Art Photography",
-      "alternateName": [
-        "Fine-art portraiture",
-        "Nude art",
-        "Author-led artistic photography"
-      ],
+      "alternateName": ["Fine-art portraiture", "Nude art", "Author-led artistic photography"],
       "serviceType": "Fine Art Photography",
       "description": "Author-led fine-art portraiture and nude art for people seeking a personal artistic work about identity, biography and the body, created with respectful direction, consent and discretion.",
-      "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
-      },
-      "areaServed": [
-        "Vienna",
-        "Budapest",
-        "Austria",
-        "Hungary",
-        "Europe"
-      ],
+      "provider": {"@id": "https://www.norbertbanhalmi.com/#organization"},
+      "areaServed": ["Vienna", "Budapest", "Austria", "Hungary", "Worldwide"],
       "url": "https://www.norbertbanhalmi.com/glamour/",
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Private individuals seeking author-led fine-art portraiture or nude art"
-      },
+      "audience": {"@type": "Audience", "audienceType": "Private individuals seeking author-led fine-art portraiture or nude art"},
       "serviceOutput": "A personal fine-art portrait or nude-art series developed through respectful artistic direction."
     }
-  ]
+  ],
+  "geographyRule": "Vienna and Budapest are the physical studio bases and primary local markets. Agreed projects for all four principal service areas may be undertaken worldwide by travel; Worldwide does not imply additional permanent studios or offices."
 }
