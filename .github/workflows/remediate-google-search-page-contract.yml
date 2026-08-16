@@ -1,0 +1,31 @@
+name: Remediate Google Search page contract
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  remediate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/homepage-meta-parity-20260816
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Normalize page metadata and page-level schema
+        run: node tools/remediate-google-search-page-contract.mjs
+      - name: Verify source contracts
+        run: npm test
+      - name: Commit deterministic remediation
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html'
+          if git diff --cached --quiet; then
+            echo "No page changes required."
+            exit 0
+          fi
+          git commit -m "fix: synchronize Google page metadata and schema"
+          git push origin HEAD:fix/homepage-meta-parity-20260816
