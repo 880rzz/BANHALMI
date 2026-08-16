@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const failures = [];
-const scanExtensions = new Set(['.html', '.json', '.jsonld', '.txt']);
+const scanExtensions = new Set(['.html', '.json', '.jsonld', '.txt', '.js']);
 
 function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -29,4 +29,4 @@ if (failures.length) {
   for (const failure of failures) console.error(`- ${failure}`);
   process.exit(1);
 }
-console.log('Worldwide availability consistency passed: no Europe-only legacy wording remains in public machine/content sources.');
+console.log('Worldwide availability consistency passed: no Europe-only legacy wording remains in public machine/content sources, including embedded JS snapshots.');
