@@ -51,10 +51,53 @@ function inspect(node, path = '$') {
 
 inspect(data);
 
+const aiEntry = JSON.parse(fs.readFileSync(`${ROOT}/ai-entry.json`, 'utf8'));
+const knowledge = JSON.parse(fs.readFileSync(`${ROOT}/knowledge-core.json`, 'utf8'));
+const identity = JSON.parse(fs.readFileSync(`${ROOT}/entity-identity-contract.json`, 'utf8'));
+const personId = 'https://www.norbertbanhalmi.com/about/';
+const orgId = 'https://www.norbertbanhalmi.com/#organization';
+const brandId = 'https://www.norbertbanhalmi.com/#brand';
+
+for (const [label, person] of [
+  ['ai-entry', aiEntry.identity?.person],
+  ['knowledge-core', knowledge.primaryPerson],
+  ['identity-contract', identity.canonicalPerson]
+]) {
+  if (person?.['@id'] !== personId) failures.push(`${label}: canonical Person @id drifted`);
+  if ((person?.alternateName || []).includes('BANHALMI')) failures.push(`${label}: Person must not use bare BANHALMI as alternateName`);
+}
+for (const [label, org] of [
+  ['ai-entry', aiEntry.identity?.organization],
+  ['knowledge-core', knowledge.primaryOrganization],
+  ['identity-contract', identity.canonicalOrganization]
+]) {
+  if (org?.['@id'] !== orgId) failures.push(`${label}: canonical Organization @id drifted`);
+  if (org?.name !== 'Norbert Banhalmi e.U.' || org?.legalName !== 'Norbert Banhalmi e.U.') failures.push(`${label}: legal Organization name must remain Norbert Banhalmi e.U.`);
+}
+for (const [label, brand] of [
+  ['ai-entry', aiEntry.identity?.brand],
+  ['knowledge-core', knowledge.primaryBrand],
+  ['identity-contract', identity.canonicalBrand]
+]) {
+  if (brand?.['@id'] !== brandId || brand?.name !== 'BANHALMI') failures.push(`${label}: canonical Brand identity drifted`);
+}
+for (const [label, history] of [
+  ['ai-entry', aiEntry.identity?.history],
+  ['knowledge-core', knowledge.history],
+  ['identity-contract', identity.history]
+]) {
+  if (history?.practiceSince !== 1999) failures.push(`${label}: practiceSince must remain 1999`);
+  if (history?.legalCompanyStart !== '2023-11-27') failures.push(`${label}: legalCompanyStart must remain 2023-11-27`);
+  const text = JSON.stringify(history || {}).toLowerCase();
+  if (!text.includes('not') || !text.includes('legal')) failures.push(`${label}: 1999 interpretation must explicitly distinguish practice history from legal company founding`);
+}
+const budapest = identity.locations?.find((location) => location?.['@id'] === 'https://www.norbertbanhalmi.com/#budapest-studio');
+if (budapest?.address?.streetAddress !== 'Lágymányosi u. 15' || budapest?.address?.postalCode !== '1111') failures.push('identity-contract: canonical Budapest studio street/postal address drifted');
+
 if (failures.length) {
-  console.error('Foreign entity ownership audit failed:');
+  console.error('Foreign entity and identity ownership audit failed:');
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log('Foreign entity ownership audit passed: external organisations remain identity references and do not inherit BANHALMI service properties.');
+console.log('Foreign entity and identity ownership audit passed: external organisations remain identity references; Person, legal Organization, Brand, 1999 history and canonical Budapest location stay separated and synchronized.');
