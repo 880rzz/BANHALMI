@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+// One-shot normalizer: page-level search/social/schema text follows the human
+// title and meta description without inventing new claims or keyword variants.
 const root=process.cwd();
 const skip=new Set(['.git','node_modules','_site','dist','coverage','assets','api','.well-known']);
 const files=[];
@@ -36,11 +38,9 @@ function syncJsonLd(h,title,description,url,language){return h.replace(/(<script
 walk(root);
 let changed=0;
 for(const [rel,abs] of files){
-  let h=fs.readFileSync(abs,'utf8');if(isRedirect(h)||!/<main\b/i.test(h)||/(^|\/)404\.html$/i.test(rel))continue;
+  const original=fs.readFileSync(abs,'utf8');let h=original;if(isRedirect(h)||!/<main\b/i.test(h)||/(^|\/)404\.html$/i.test(rel))continue;
   const visible=(h.match(/<main\b[\s\S]*?<\/main>/i)?.[0]||'').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();if(visible.length<160)continue;
-  if(rel==='de-at/vertrauen/index.html'){
-    h=h.replace(/<title>Trust Center \| BANHALMI<\/title>/i,'<title>Vertrauen &amp; Transparenz | BANHALMI</title>');
-  }
+  if(rel==='de-at/vertrauen/index.html')h=h.replace(/<title>Trust Center \| BANHALMI<\/title>/i,'<title>Vertrauen &amp; Transparenz | BANHALMI</title>');
   const title=(h.match(/<title>([\s\S]*?)<\/title>/i)?.[1]||'').replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').trim();
   const description=meta(h,'description');const url=canonical(h);const language=langFor(rel);
   if(!title||!description||!url)continue;
@@ -51,6 +51,6 @@ for(const [rel,abs] of files){
   next=setMeta(next,'twitter:description',description,'name');
   next=setMeta(next,'og:url',url,'property');
   next=syncJsonLd(next,title,description,url,language);
-  if(next!==h||h!==fs.readFileSync(abs,'utf8')){fs.writeFileSync(abs,next);changed++}
+  if(next!==original){fs.writeFileSync(abs,next);changed++}
 }
 console.log(`Google page contract remediation synchronized ${changed} HTML files.`);
