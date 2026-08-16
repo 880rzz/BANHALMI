@@ -12,7 +12,9 @@ module.exports = {
         'http://127.0.0.1:4175/hu/ajanlatkeres/',
         'http://127.0.0.1:4175/de-at/anfrage/'
       ],
-      numberOfRuns: 2,
+      // Run 1 warms the fresh browser/runner for this URL. Runs 2 and 3 are the
+      // strict measured release runs enforced by audit-lighthouse-all-runs.mjs.
+      numberOfRuns: 3,
       settings: {
         formFactor: 'mobile',
         screenEmulation: {
@@ -28,9 +30,9 @@ module.exports = {
     },
     assert: {
       assertions: {
-        // Raw LHCI floor is 0.98 so the three quote routes can legitimately pass
-        // at 98. tools/audit-lighthouse-all-runs.mjs applies the stricter 0.99
-        // floor to every non-quote URL on every individual Lighthouse report.
+        // Raw LHCI aggregation uses the route-wide 0.98 floor; the custom audit
+        // applies 0.99 to every non-quote measured report and 0.98 only to the
+        // three quote routes. Accessibility, Best Practices and SEO stay 1.00.
         'categories:performance': ['error', { minScore: 0.98 }],
         'categories:accessibility': ['error', { minScore: 1 }],
         'categories:best-practices': ['error', { minScore: 1 }],
