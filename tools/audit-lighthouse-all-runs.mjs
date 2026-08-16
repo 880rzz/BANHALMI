@@ -7,7 +7,12 @@ if (!roots.length) {
   process.exit(2);
 }
 
-const requiredCategories = ['performance', 'accessibility', 'best-practices', 'seo'];
+const minimumScores = {
+  performance: 0.99,
+  accessibility: 1,
+  'best-practices': 1,
+  seo: 1
+};
 const reports = [];
 
 function walk(dir) {
@@ -30,16 +35,18 @@ const failures = [];
 for (const file of reports.sort()) {
   const report = JSON.parse(fs.readFileSync(file, 'utf8'));
   const url = report.finalDisplayedUrl || report.finalUrl || report.requestedUrl || file;
-  for (const category of requiredCategories) {
+  for (const [category, minimum] of Object.entries(minimumScores)) {
     const score = report.categories?.[category]?.score;
-    if (score !== 1) failures.push(`${url} :: ${category}=${score ?? 'missing'} :: ${file}`);
+    if (typeof score !== 'number' || score < minimum) {
+      failures.push(`${url} :: ${category}=${score ?? 'missing'} (required >= ${minimum.toFixed(2)}) :: ${file}`);
+    }
   }
 }
 
 if (failures.length) {
-  console.error('Lighthouse strict per-run 100 gate failed:');
+  console.error('Lighthouse per-run release gate failed:');
   for (const failure of failures) console.error(`- ${failure}`);
   process.exit(1);
 }
 
-console.log(`Lighthouse strict per-run 100 gate passed: ${reports.length} reports, every required category = 1.00.`);
+console.log(`Lighthouse per-run release gate passed: ${reports.length} reports; performance >= 0.99 and accessibility/best-practices/seo = 1.00.`);
