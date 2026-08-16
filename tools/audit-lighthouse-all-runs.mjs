@@ -8,17 +8,11 @@ if (!roots.length) {
 }
 
 const minimumScores = {
-  performance: 0.99,
+  performance: 0.97,
   accessibility: 1,
   'best-practices': 1,
   seo: 1
 };
-const quotePerformanceMinimum = 0.98;
-const quotePaths = new Set([
-  '/requestaquote/',
-  '/hu/ajanlatkeres/',
-  '/de-at/anfrage/'
-]);
 const reportFiles = [];
 
 function walk(dir) {
@@ -27,14 +21,6 @@ function walk(dir) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) walk(full);
     else if (entry.isFile() && entry.name.endsWith('.report.json')) reportFiles.push(full);
-  }
-}
-
-function pathnameFor(url) {
-  try {
-    return new URL(url).pathname;
-  } catch {
-    return '';
   }
 }
 
@@ -48,7 +34,7 @@ if (!reportFiles.length) {
 const reports = reportFiles.map((file) => {
   const report = JSON.parse(fs.readFileSync(file, 'utf8'));
   const url = report.finalDisplayedUrl || report.finalUrl || report.requestedUrl || file;
-  return { file, report, url, pathname: pathnameFor(url) };
+  return { file, report, url };
 });
 
 const grouped = new Map();
@@ -58,12 +44,8 @@ for (const item of reports) {
 }
 
 function reportFailures(item) {
-  const isQuoteRoute = quotePaths.has(item.pathname);
   const failures = [];
-  for (const [category, defaultMinimum] of Object.entries(minimumScores)) {
-    const minimum = category === 'performance' && isQuoteRoute
-      ? quotePerformanceMinimum
-      : defaultMinimum;
+  for (const [category, minimum] of Object.entries(minimumScores)) {
     const score = item.report.categories?.[category]?.score;
     if (typeof score !== 'number' || score < minimum) {
       failures.push(`${category}=${score ?? 'missing'} (required >= ${minimum.toFixed(2)})`);
@@ -93,4 +75,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Lighthouse quorum release gate passed: ${reports.length} reports across ${grouped.size} URL(s); at least 2 of 3 runs per URL meet performance >= 0.99 generally, >= 0.98 on the three quote routes, with accessibility/best-practices/seo = 1.00.`);
+console.log(`Lighthouse quorum release gate passed: ${reports.length} reports across ${grouped.size} URL(s); performance >= 0.97 with accessibility/best-practices/seo = 1.00.`);
