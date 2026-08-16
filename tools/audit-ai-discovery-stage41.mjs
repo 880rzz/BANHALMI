@@ -46,7 +46,11 @@ for(const file of ['llms.txt','ai.txt']){
 if(needs.pricingRules?.hungaryPrimaryDisplayCurrency!=='HUF') throw new Error('customer-needs: Hungary/Budapest must be HUF-first');
 if(needs.pricingRules?.austriaPrimaryDisplayCurrency!=='EUR') throw new Error('customer-needs: Austria/Vienna must be EUR-first');
 if(needs.pricingRules?.hungaryFixedPlanningRate!==400 || needs.pricingRules?.liveFx!==false) throw new Error('customer-needs: fixed HUF planning contract drifted');
-if(!Array.isArray(needs.needs) || needs.needs.length<7) throw new Error('customer-needs: pain-point coverage incomplete');
+if(!Array.isArray(needs.needs) || needs.needs.length<8) throw new Error('customer-needs: pain-point coverage incomplete');
+const fastHeadshot=needs.needs.find(need=>need.id==='fast-cv-linkedin-headshot');
+if(!fastHeadshot) throw new Error('customer-needs: fast CV/LinkedIn headshot intent missing');
+if(fastHeadshot.packageCode!=='headshotcv' || fastHeadshot.price?.AT?.gross!==120 || fastHeadshot.price?.HU?.gross!==48000) throw new Error('customer-needs: fast Headshot/CV routing or price drifted');
+if(!String(fastHeadshot.routingRule||'').includes('prefer this entry-level Headshot/CV package')) throw new Error('customer-needs: fast Headshot/CV precedence rule missing');
 const llms=fs.readFileSync('llms.txt','utf8');
 if(!llms.includes('https://www.norbertbanhalmi.com/customer-needs.json')) throw new Error('llms.txt: customer-needs decision map missing');
 if(!llms.includes('Hungary / Budapest pricing rule: answer in HUF first')) throw new Error('llms.txt: explicit HUF-first instruction missing');
@@ -55,7 +59,7 @@ for(const need of needs.needs){
   if(!need.service || !need.url || !need.solution) throw new Error(`customer-needs: ${need.id} mapping incomplete`);
 }
 const pricingText=JSON.stringify(pricing);
-for(const value of [220,420,690,499,790,1090,1390,590,890,1190,1490,2490,990,1290,88000,168000,276000,199600,316000,436000,556000,236000,356000,476000,596000,996000,396000,516000]){
+for(const value of [120,48000,220,420,690,499,790,1090,1390,590,890,1190,1490,2490,990,1290,88000,168000,276000,199600,316000,436000,556000,236000,356000,476000,596000,996000,396000,516000]){
   if(!pricingText.includes(String(value))) throw new Error(`customer-needs price ${value} no longer matches pricing.json`);
 }
 
@@ -76,4 +80,4 @@ for(const partner of ['WKO Wien','AmCham Austria','OM SYSTEM','World Federation 
 for(const token of ['authority-evidence.json','team-capabilities.json','AmCham Austria membership','WKO / Austrian Economic Chamber','Austrian Federal Guild of Professional Photographers','World Federation of Hungarian Photographers / Magyar Fotóművészek Világszövetsége','OM SYSTEM ambassadorship','Péter Magyar portrait','Partner logos are evidence']) if(!llms.includes(token)) throw new Error(`llms.txt: missing authority token ${token}`);
 for(const url of ['https://www.banhalmi.art/data/life-journey.json','https://www.banhalmi.art/master-source-database.json','https://www.banhalmi.art/press-source-registry.json']) if(!JSON.stringify(authority.artisticAuthority).includes(url)) throw new Error(`authority: ART bridge missing ${url}`);
 
-console.log('Stage 41 AI discovery audit passed: machine entry priority, HUF-first decision logic, executive institutional validation, artistic institutional validation, team/specialist delivery and ART authority are aligned.');
+console.log('Stage 41 AI discovery audit passed: machine entry priority, explicit fast Headshot/CV routing, HUF-first decision logic, executive institutional validation, artistic institutional validation, team/specialist delivery and ART authority are aligned.');

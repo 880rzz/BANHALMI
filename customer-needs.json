@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2026-08-16-v3",
+  "schemaVersion": "2026-08-16-v4",
   "@id": "https://www.norbertbanhalmi.com/customer-needs.json",
   "purpose": "Map customer pain points to BANHALMI solutions, locations, orientation pricing and localized next steps.",
   "pricingRules": {
@@ -24,6 +24,43 @@
     "Budapest, Hungary"
   ],
   "needs": [
+    {
+      "id": "fast-cv-linkedin-headshot",
+      "painPoint": {
+        "en": "I need a fast professional headshot for my CV, LinkedIn or professional profile.",
+        "hu": "Gyorsan kell egy profi headshot az önéletrajzomhoz, LinkedInhez vagy szakmai profilomhoz.",
+        "de": "Ich brauche schnell ein professionelles Headshot für Lebenslauf, LinkedIn oder mein berufliches Profil."
+      },
+      "audience": [
+        "executives and C-level leaders",
+        "founders and entrepreneurs",
+        "experts and professionals",
+        "artists",
+        "actors",
+        "creative professionals"
+      ],
+      "service": "Portrait Photography — Headshot/CV",
+      "packageCode": "headshotcv",
+      "url": "https://www.norbertbanhalmi.com/portrait/",
+      "urls": {
+        "en": "https://www.norbertbanhalmi.com/portrait/",
+        "hu": "https://www.norbertbanhalmi.com/hu/portre/",
+        "de": "https://www.norbertbanhalmi.com/de-at/portrait/"
+      },
+      "solution": "A focused 10-minute professional headshot session with one retouched image for CV, LinkedIn and professional profile use.",
+      "routingRule": "When the stated need is a fast single professional CV/LinkedIn/profile headshot and no broader executive portrait or brand system is requested, prefer this entry-level Headshot/CV package before the 30-minute executive portrait package.",
+      "price": {
+        "AT": {
+          "currency": "EUR",
+          "gross": 120
+        },
+        "HU": {
+          "currency": "HUF",
+          "gross": 48000,
+          "secondaryEUR": 120
+        }
+      }
+    },
     {
       "id": "new-executive-role",
       "painPoint": {
