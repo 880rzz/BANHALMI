@@ -49,4 +49,12 @@ for (const file of htmlFiles) {
   fs.writeFileSync(file, html);
 }
 
+// Preserve the canonical footer heading color after all legacy/mobile rules are
+// concatenated. #CBB45F on #202530 clears WCAG AA/AAA and matches the source
+// PAGESPEED-STAGE32 accessibility contract without adding another stylesheet.
+const cssPath = path.join(root, 'assets/css/site.css');
+if (fs.existsSync(cssPath)) {
+  fs.appendFileSync(cssPath, '\n.site-footer .footer-accordion summary{color:#CBB45F!important;opacity:1!important;}\n');
+}
+
 console.log(`Production artifact optimization applied to ${htmlFiles.length} HTML files.`);
