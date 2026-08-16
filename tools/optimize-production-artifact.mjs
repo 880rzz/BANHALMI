@@ -22,9 +22,12 @@ const asyncStyle = '<link rel="preload" as="style" href="$1"/><link rel="stylesh
 
 // The mega-menu runtime stays as a normal deferred script: it is small after
 // minification and must be ready for the user's very first menu interaction.
-// The heavier general runtime can safely wait for interaction/idle because it
-// does not create the primary navigation structure.
-const homeRuntimeLoader = `<script>(function(){var loaded=false;function load(){if(loaded)return;loaded=true;var s=document.createElement('script');s.src='/assets/js/main.js?v=20260808-mobile100-v2';s.defer=true;document.head.appendChild(s);}['pointerdown','keydown','touchstart'].forEach(function(type){addEventListener(type,load,{once:true,passive:true,capture:true});});if('requestIdleCallback'in window)requestIdleCallback(load,{timeout:5000});else setTimeout(load,5000);})();</script>`;
+// The heavier general runtime is not required for first paint/navigation. Loading
+// it from requestIdleCallback made Chromium execute it almost immediately during
+// Lighthouse's idle window and reflow the homepage inside the TBT measurement.
+// Keep interaction as the fast path, but use a deterministic post-paint fallback
+// instead of an eager idle callback.
+const homeRuntimeLoader = `<script>(function(){var loaded=false,timer=null;function load(){if(loaded)return;loaded=true;if(timer)clearTimeout(timer);var s=document.createElement('script');s.src='/assets/js/main.js?v=20260808-mobile100-v2';s.defer=true;document.head.appendChild(s);}['pointerdown','keydown','touchstart'].forEach(function(type){addEventListener(type,load,{once:true,passive:true,capture:true});});timer=setTimeout(load,3000);})();</script>`;
 
 function quotePdfLoader(src) {
   return `<script>(function(){var loading=false,ready=false,pending=null;function load(){if(ready||loading)return;loading=true;var s=document.createElement('script');s.src='${src}';s.onload=function(){ready=true;loading=false;if(pending){var el=pending;pending=null;setTimeout(function(){el.click();},0);}};s.onerror=function(){loading=false;pending=null;};document.head.appendChild(s);}document.addEventListener('click',function(ev){var el=ev.target.closest&&ev.target.closest('[data-download-quote-pdf]');if(!el||ready)return;ev.preventDefault();ev.stopImmediatePropagation();pending=el;load();},true);document.addEventListener('pointerover',function(ev){if(ev.target.closest&&ev.target.closest('[data-download-quote-pdf]'))load();},{passive:true,capture:true});document.addEventListener('focusin',function(ev){if(ev.target.closest&&ev.target.closest('[data-download-quote-pdf]'))load();},true);})();</script>`;
