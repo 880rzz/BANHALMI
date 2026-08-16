@@ -39,11 +39,13 @@ for (const file of htmlFiles) {
   const isHome = rel === 'index.html' || rel === 'hu/index.html' || rel === 'de-at/index.html';
   const isQuote = rel === 'requestaquote/index.html' || rel === 'hu/ajanlatkeres/index.html' || rel === 'de-at/anfrage/index.html';
 
-  // Async CSS is a win on normal content pages, but the very large quote form
-  // creates a costly post-FCP full-document restyle when the stylesheet flips
-  // from media=print to all. Keep the same single minified stylesheet blocking
-  // on quote routes so layout work finishes before FCP instead of inflating TBT.
-  if (!isQuote) html = html.replace(stylesheetRe, asyncStyle);
+  // Async CSS remains useful on ordinary content pages. The homepages and quote
+  // builders are layout-dense enough that switching site.css from media=print to
+  // all after FCP creates a full-document style/layout task. On the German home
+  // page Lighthouse measured that restyle at 103–140 ms TBT despite almost no
+  // script boot cost. Keep the same minified single stylesheet blocking on these
+  // critical routes so layout is complete before FCP instead of becoming TBT.
+  if (!isQuote && !isHome) html = html.replace(stylesheetRe, asyncStyle);
 
   if (isHome) {
     html = html.replace(mainScriptRe, homeRuntimeLoader);
