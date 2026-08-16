@@ -9,8 +9,7 @@
       "alternateName": [
         "Norbert Banhalmi",
         "Norbert Bánhalmi",
-        "Norbert BANHALMI",
-        "BANHALMI"
+        "Norbert BANHALMI"
       ],
       "givenName": "Norbert",
       "familyName": "Bánhalmi",
@@ -300,7 +299,7 @@
     {
       "@type": "Organization",
       "@id": "https://www.norbertbanhalmi.com/#organization",
-      "name": "BANHALMI",
+      "name": "Norbert Banhalmi e.U.",
       "legalName": "Norbert Banhalmi e.U.",
       "url": "https://www.norbertbanhalmi.com/",
       "founder": {
@@ -330,7 +329,7 @@
         {
           "@id": "https://www.wikidata.org/wiki/Q1781"
         },
-        "Europe"
+        "Worldwide"
       ],
       "availableLanguage": [
         "en",
@@ -564,7 +563,25 @@
           "@id": "https://www.norbertbanhalmi.com/speier-viko/#person"
         }
       ],
-      "dateModified": "2026-07-15T23:30:00+02:00"
+      "dateModified": "2026-07-15T23:30:00+02:00",
+      "alternateName": [
+        "BANHALMI"
+      ],
+      "brand": {
+        "@id": "https://www.norbertbanhalmi.com/#brand"
+      }
+    },
+    {
+      "@type": "Brand",
+      "@id": "https://www.norbertbanhalmi.com/#brand",
+      "name": "BANHALMI",
+      "url": "https://www.norbertbanhalmi.com/",
+      "owner": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      },
+      "founder": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      }
     },
     {
       "@type": "WebSite",
@@ -2141,7 +2158,7 @@
       "areaServed": [
         "Vienna",
         "Budapest",
-        "Europe"
+        "Worldwide"
       ],
       "serviceType": [
         "Strategic visual positioning",
