@@ -3596,8 +3596,8 @@ html body :is(.title-accent,.semantic-emphasis){color:var(--bn-text-accent)!impo
     -webkit-background-clip:text!important;background-clip:text!important;
     -webkit-text-fill-color:transparent!important;color:transparent!important;
   }
-  html body :is(.cta-band,.dark-band,.section-dark) :is(h1,h2,h3) :is(.title-accent,.semantic-emphasis){
-    background:linear-gradient(90deg,#F5F5F7 0%,#AFC4D9 62%,#B79C44 100%)!important;
+  html body :is(.cta-band,.dark-band,.section-dark,.presence-thesis[data-surface="dark"]) :is(h1,h2,h3) :is(.title-accent,.semantic-emphasis){
+    background:linear-gradient(90deg,#F5F5F7 0%,#AFC4D9 62%,#DCC56B 100%)!important;
     -webkit-background-clip:text!important;background-clip:text!important;
     -webkit-text-fill-color:transparent!important;color:transparent!important;
   }
