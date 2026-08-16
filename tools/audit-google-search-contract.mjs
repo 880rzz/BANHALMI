@@ -8,11 +8,12 @@ const descriptions=new Map();
 const pages=[];
 const skip=new Set(['.git','node_modules','_site','dist','coverage','assets','api','.well-known']);
 
-function attrs(tag){const o={};for(const m of tag.matchAll(/([:\w-]+)=(["'])(.*?)\2/g))o[m[1].toLowerCase()]=m[3];return o}
+function decode(v=''){return String(v).replace(/&amp;/gi,'&').replace(/&quot;/gi,'"').replace(/&#39;|&apos;/gi,"'").replace(/&lt;/gi,'<').replace(/&gt;/gi,'>').replace(/&nbsp;/gi,' ').replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n)))}
+function attrs(tag){const o={};for(const m of tag.matchAll(/([:\w-]+)=(["'])(.*?)\2/g))o[m[1].toLowerCase()]=decode(m[3]);return o}
 function isRedirect(h){return /<meta[^>]+http-equiv=["']refresh["']/i.test(h)||(/location\.(?:replace|href)\s*=/i.test(h)&&!/<main\b/i.test(h))}
 function meta(h,key){for(const m of h.matchAll(/<meta\b[^>]*>/gi)){const a=attrs(m[0]);if((a.name||'').toLowerCase()===key||(a.property||'').toLowerCase()===key)return a.content||''}return''}
 function links(h,rel){const out=[];for(const m of h.matchAll(/<link\b[^>]*>/gi)){const a=attrs(m[0]);if((a.rel||'').toLowerCase().split(/\s+/).includes(rel))out.push(a)}return out}
-function text(v){return String(v||'').replace(/<[^>]+>/g,' ').replace(/&(?:amp|quot|apos|lt|gt|nbsp);/gi,' ').replace(/&#\d+;/g,' ').replace(/\s+/g,' ').trim()}
+function text(v){return decode(String(v||'').replace(/<[^>]+>/g,' ')).replace(/\s+/g,' ').trim()}
 function norm(v){return text(v).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()}
 function expectedLang(rel){if(rel.startsWith('hu/'))return'hu';if(rel.startsWith('de-at/'))return'de';return'en'}
 function expectedCanonical(rel){if(rel==='index.html')return origin+'/';return origin+'/'+rel.replace(/index\.html$/,'')}
@@ -48,10 +49,10 @@ function inspect(rel,file){
 
   if(canonical!==expCanonical)failures.push(`${rel}: canonical mismatch; expected ${expCanonical}, got ${canonical||'missing'}`);
   if(ogUrl&&ogUrl!==canonical)failures.push(`${rel}: og:url must match canonical`);
-  if(ogTitle&&ogTitle!==title)failures.push(`${rel}: og:title drift from title`);
-  if(twTitle&&twTitle!==title)failures.push(`${rel}: twitter:title drift from title`);
-  if(ogDesc&&ogDesc!==desc)failures.push(`${rel}: og:description drift from meta description`);
-  if(twDesc&&twDesc!==desc)failures.push(`${rel}: twitter:description drift from meta description`);
+  if(ogTitle&&ogTitle!==title)failures.push(`${rel}: internal social-title parity drift`);
+  if(twTitle&&twTitle!==title)failures.push(`${rel}: internal Twitter-title parity drift`);
+  if(ogDesc&&ogDesc!==desc)failures.push(`${rel}: internal social-description parity drift`);
+  if(twDesc&&twDesc!==desc)failures.push(`${rel}: internal Twitter-description parity drift`);
 
   const alternates=links(h,'alternate').filter(a=>a.hreflang);
   const self=alternates.find(a=>(a.hreflang||'').toLowerCase()===lang || (expLang==='en'&&(a.hreflang||'').toLowerCase()==='en') || (expLang==='hu'&&(a.hreflang||'').toLowerCase()==='hu-hu') || (expLang==='de'&&(a.hreflang||'').toLowerCase()==='de-at'));
@@ -62,11 +63,12 @@ function inspect(rel,file){
   if(/"homeLocation"\s*:/.test(allJson))failures.push(`${rel}: business-site schema must not use Person.homeLocation`);
   for(const node of nodes){
     const types=[].concat(node?.['@type']||[]);
-    if(types.some(t=>['WebPage','ProfilePage','AboutPage','ContactPage','FAQPage'].includes(t))){
+    if(types.some(t=>['WebPage','ProfilePage','AboutPage','ContactPage','FAQPage','CollectionPage'].includes(t))){
       if(node.url&&node.url!==canonical)failures.push(`${rel}: ${types.join('/')} schema url must match canonical`);
       if(node.inLanguage){const il=String(node.inLanguage).toLowerCase();if(expLang==='hu'&&!il.startsWith('hu'))failures.push(`${rel}: schema inLanguage must be Hungarian`);if(expLang==='de'&&!il.startsWith('de'))failures.push(`${rel}: schema inLanguage must be German`);if(expLang==='en'&&!il.startsWith('en'))failures.push(`${rel}: schema inLanguage must be English`)}
-      if(node.name&&title&&norm(node.name)!==norm(title))failures.push(`${rel}: WebPage schema name drift from title`);
-      if(node.description&&desc&&norm(node.description)!==norm(desc))failures.push(`${rel}: WebPage schema description drift from meta description`);
+      // Exact parity is an internal consistency guard, not a Google ranking rule.
+      if(node.name&&title&&norm(node.name)!==norm(title))failures.push(`${rel}: page-level schema name drift from title`);
+      if(node.description&&desc&&norm(node.description)!==norm(desc))failures.push(`${rel}: page-level schema description drift from meta description`);
     }
   }
   pages.push(rel);
@@ -75,4 +77,4 @@ function walk(d,b=''){for(const e of fs.readdirSync(d,{withFileTypes:true})){if(
 walk('.');
 if(pages.length<50)failures.push(`Google Search contract coverage unexpectedly low: ${pages.length} pages`);
 if(failures.length){console.error('BANHALMI Google Search contract FAILED:\n'+failures.map(x=>' - '+x).join('\n'));process.exit(1)}
-console.log(`BANHALMI Google Search contract passed across ${pages.length} real content pages: unique people-first titles/descriptions, canonical/hreflang language alignment, social metadata parity and page-relevant structured data.`);
+console.log(`BANHALMI Google Search contract passed across ${pages.length} real content pages: unique people-first titles/descriptions, canonical/hreflang language alignment, plus internally synchronized social and page-level structured data.`);
