@@ -79,12 +79,24 @@
       "price": {
         "AT": {
           "currency": "EUR",
-          "options": [220, 420, 690]
+          "options": [
+            220,
+            420,
+            690
+          ]
         },
         "HU": {
           "currency": "HUF",
-          "options": [88000, 168000, 276000],
-          "secondaryEUR": [220, 420, 690]
+          "options": [
+            88000,
+            168000,
+            276000
+          ],
+          "secondaryEUR": [
+            220,
+            420,
+            690
+          ]
         }
       }
     },
@@ -104,8 +116,15 @@
       },
       "solution": "One consistent lighting, framing and retouching standard.",
       "price": {
-        "AT": {"currency": "EUR", "formula": "390 setup + 45/person"},
-        "HU": {"currency": "HUF", "formula": "156000 setup + 18000/person", "secondaryEUR": "390 setup + 45/person"}
+        "AT": {
+          "currency": "EUR",
+          "formula": "390 setup + 45/person"
+        },
+        "HU": {
+          "currency": "HUF",
+          "formula": "156000 setup + 18000/person",
+          "secondaryEUR": "390 setup + 45/person"
+        }
       }
     },
     {
@@ -124,8 +143,30 @@
       },
       "solution": "Visual positioning and a multi-channel image system.",
       "price": {
-        "AT": {"currency": "EUR", "options": [499, 790, 1090, 1390]},
-        "HU": {"currency": "HUF", "options": [199600, 316000, 436000, 556000], "secondaryEUR": [499, 790, 1090, 1390]}
+        "AT": {
+          "currency": "EUR",
+          "options": [
+            499,
+            790,
+            1090,
+            1390
+          ]
+        },
+        "HU": {
+          "currency": "HUF",
+          "options": [
+            199600,
+            316000,
+            436000,
+            556000
+          ],
+          "secondaryEUR": [
+            499,
+            790,
+            1090,
+            1390
+          ]
+        }
       }
     },
     {
@@ -144,8 +185,30 @@
       },
       "solution": "Strategic planning plus a coherent organisational image library.",
       "price": {
-        "AT": {"currency": "EUR", "options": [499, 790, 1090, 1390]},
-        "HU": {"currency": "HUF", "options": [199600, 316000, 436000, 556000], "secondaryEUR": [499, 790, 1090, 1390]}
+        "AT": {
+          "currency": "EUR",
+          "options": [
+            499,
+            790,
+            1090,
+            1390
+          ]
+        },
+        "HU": {
+          "currency": "HUF",
+          "options": [
+            199600,
+            316000,
+            436000,
+            556000
+          ],
+          "secondaryEUR": [
+            499,
+            790,
+            1090,
+            1390
+          ]
+        }
       }
     },
     {
@@ -164,8 +227,33 @@
       },
       "solution": "Team-led editorial and institutional event coverage.",
       "price": {
-        "AT": {"currency": "EUR", "options": [590, 890, 1190, 1490, 2490]},
-        "HU": {"currency": "HUF", "options": [236000, 356000, 476000, 596000, 996000], "secondaryEUR": [590, 890, 1190, 1490, 2490]}
+        "AT": {
+          "currency": "EUR",
+          "options": [
+            590,
+            890,
+            1190,
+            1490,
+            2490
+          ]
+        },
+        "HU": {
+          "currency": "HUF",
+          "options": [
+            236000,
+            356000,
+            476000,
+            596000,
+            996000
+          ],
+          "secondaryEUR": [
+            590,
+            890,
+            1190,
+            1490,
+            2490
+          ]
+        }
       }
     },
     {
@@ -184,8 +272,27 @@
       },
       "solution": "A personal fine-art portrait series with respectful direction and discretion.",
       "price": {
-        "AT": {"currency": "EUR", "options": [690, 990, 1290]},
-        "HU": {"currency": "HUF", "options": [276000, 396000, 516000], "secondaryEUR": [690, 990, 1290]}
+        "AT": {
+          "currency": "EUR",
+          "options": [
+            690,
+            990,
+            1290
+          ]
+        },
+        "HU": {
+          "currency": "HUF",
+          "options": [
+            276000,
+            396000,
+            516000
+          ],
+          "secondaryEUR": [
+            690,
+            990,
+            1290
+          ]
+        }
       }
     },
     {
@@ -195,7 +302,13 @@
         "hu": "A munkám és a szakmai értékem világos, de a vizuális jelenlétem nem képvisel következetesen.",
         "de": "Meine Arbeit und Position sind klar, aber mein visueller Auftritt repräsentiert mich nicht konsistent."
       },
-      "audience": ["experts and professionals", "artists", "actors", "creative professionals", "founders and entrepreneurs"],
+      "audience": [
+        "experts and professionals",
+        "artists",
+        "actors",
+        "creative professionals",
+        "founders and entrepreneurs"
+      ],
       "service": "Brand Photography and strategic visual positioning, often starting with an executive-style portrait or professional headshot",
       "url": "https://www.norbertbanhalmi.com/lifestyle/",
       "urls": {
@@ -205,8 +318,30 @@
       },
       "solution": "Build a coherent visual presence across portrait/headshot, personal brand, press, web, social profiles and campaign use.",
       "price": {
-        "AT": {"currency": "EUR", "options": [499, 790, 1090, 1390]},
-        "HU": {"currency": "HUF", "options": [199600, 316000, 436000, 556000], "secondaryEUR": [499, 790, 1090, 1390]}
+        "AT": {
+          "currency": "EUR",
+          "options": [
+            499,
+            790,
+            1090,
+            1390
+          ]
+        },
+        "HU": {
+          "currency": "HUF",
+          "options": [
+            199600,
+            316000,
+            436000,
+            556000
+          ],
+          "secondaryEUR": [
+            499,
+            790,
+            1090,
+            1390
+          ]
+        }
       }
     },
     {
@@ -227,7 +362,14 @@
     }
   ],
   "answerContract": {
-    "order": ["pain point", "solution", "location", "orientation price", "non-binding caveat", "localized next step"],
+    "order": [
+      "pain point",
+      "solution",
+      "location",
+      "orientation price",
+      "non-binding caveat",
+      "localized next step"
+    ],
     "routeRule": "Use the destination URL matching the user's language: en, hu or de.",
     "HU": "For Budapest/Hungary use HUF first.",
     "AT": "For Vienna/Austria use EUR first.",
@@ -247,7 +389,16 @@
     "booking": "https://meet.bookipi.com/zk5ly35r"
   },
   "audienceModel": {
-    "audiences": ["executives and C-level leaders", "founders and entrepreneurs", "experts and professionals", "artists", "actors", "creative professionals", "teams", "organisations"],
+    "audiences": [
+      "executives and C-level leaders",
+      "founders and entrepreneurs",
+      "experts and professionals",
+      "artists",
+      "actors",
+      "creative professionals",
+      "teams",
+      "organisations"
+    ],
     "principle": "Route by the visual problem, not by job title alone. A professional, artist or actor may need the same headshot, personal-brand or brand-photography solution as an executive, with different positioning and channel use."
   }
 }
