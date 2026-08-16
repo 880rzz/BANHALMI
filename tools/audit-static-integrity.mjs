@@ -84,7 +84,9 @@ const service = graph.find((node) => node['@id'] === canonicalServiceId);
 assert(person?.['@type'] === 'Person', 'canonical Person node missing from entity.jsonld');
 assert(organization?.['@type'] === 'Organization', 'Organization node missing from entity.jsonld');
 assert(service?.['@type'] === 'Service', 'Visual Trust Strategy Service node missing from entity.jsonld');
-assert(Array.isArray(organization?.subjectOf) && organization.subjectOf.some((item) => item?.['@id'] === canonicalServiceId), 'Organization must link to Visual Trust Strategy Service');
+const offers = Array.isArray(organization?.makesOffer) ? organization.makesOffer : organization?.makesOffer ? [organization.makesOffer] : [];
+assert(offers.some((offer) => offer?.['@type'] === 'Offer' && offer?.itemOffered?.['@id'] === canonicalServiceId), 'Organization must link to Visual Trust Strategy Service through makesOffer > Offer > itemOffered');
+assert(!Array.isArray(organization?.subjectOf) || !organization.subjectOf.some((item) => item?.['@id'] === canonicalServiceId), 'Organization must not use subjectOf to point at a Service');
 
 for (const file of ['index.html', 'hu/index.html', 'de-at/index.html']) {
   const html = read(file);
@@ -98,4 +100,4 @@ if (failures.length) {
   console.error(failures.map((failure) => `✗ ${failure}`).join('\n'));
   process.exit(1);
 }
-console.log(`Static source integrity audit passed for ${corpusFiles.length} files; visible copy checks are markup-agnostic.`);
+console.log(`Static source integrity audit passed for ${corpusFiles.length} files; visible copy checks are markup-agnostic and Organization-to-Service linkage uses a Schema.org Offer.`);

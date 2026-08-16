@@ -3596,8 +3596,8 @@ html body :is(.title-accent,.semantic-emphasis){color:var(--bn-text-accent)!impo
     -webkit-background-clip:text!important;background-clip:text!important;
     -webkit-text-fill-color:transparent!important;color:transparent!important;
   }
-  html body :is(.cta-band,.dark-band,.section-dark) :is(h1,h2,h3) :is(.title-accent,.semantic-emphasis){
-    background:linear-gradient(90deg,#F5F5F7 0%,#AFC4D9 62%,#B79C44 100%)!important;
+  html body :is(.cta-band,.dark-band,.section-dark,.presence-thesis[data-surface="dark"]) :is(h1,h2,h3) :is(.title-accent,.semantic-emphasis){
+    background:linear-gradient(90deg,#F5F5F7 0%,#AFC4D9 62%,#DCC56B 100%)!important;
     -webkit-background-clip:text!important;background-clip:text!important;
     -webkit-text-fill-color:transparent!important;color:transparent!important;
   }
@@ -4364,4 +4364,16 @@ html body .quote-deep-details > section.quote-legal-bridge .service-actions{
 }
 /* QUOTE-LAYOUT-REGRESSION-20260816:END */
 
+/* AUDIT-20260816-FOOTER-SUMMARY-CONTRAST */
+@media (max-width:1040px){
+  html body .site-footer .footer-accordion > summary{
+    color:#CBB45F!important;
+    opacity:1!important;
+    font-weight:650!important;
+  }
+  html body .site-footer .footer-accordion > summary:hover,
+  html body .site-footer .footer-accordion > summary:focus-visible{color:#fff!important;}
+}
+
 /* APPLE-RESPONSIVE-CONTRACT-V1:END */
+

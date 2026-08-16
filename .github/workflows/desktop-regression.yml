@@ -1,16 +1,19 @@
-name: Desktop browser regression
+name: Full browser and performance quality gate
 
 on:
+  workflow_call:
   pull_request:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: browser-performance-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  desktop-regression:
+  browser-performance-gate:
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     steps:
@@ -20,7 +23,11 @@ jobs:
           node-version: 22
       - name: Run source contract audits
         run: npm test
-      - name: Run strict PSI and CrUX field gate
+      - name: Run live external-link and ecosystem audit
+        env:
+          LIVE_AUDIT: '1'
+        run: node tools/audit-seo-network.mjs
+      - name: Run PSI and CrUX field monitor
         env:
           PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
         run: node tools/audit-pagespeed-field.mjs
@@ -58,18 +65,23 @@ jobs:
           kill $SERVER_PID || true
           trap - EXIT
       - name: Run mobile Lighthouse 100 gate
-        run: npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.mobile.cjs
-      - name: Run desktop Lighthouse budgets
-        run: npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.desktop.cjs
+        run: |
+          npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.mobile.cjs
+          node tools/audit-lighthouse-all-runs.mjs artifacts/lighthouse-mobile
+      - name: Run desktop Lighthouse 100 gate
+        run: |
+          npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.desktop.cjs
+          node tools/audit-lighthouse-all-runs.mjs artifacts/lighthouse-desktop
       - name: Upload browser and Lighthouse QA artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: desktop-regression-${{ github.sha }}
+          name: browser-performance-${{ github.sha }}
           path: |
             artifacts/browser-layout
             artifacts/exhaustive-visual
             artifacts/lighthouse-mobile
             artifacts/lighthouse-desktop
+            link-audit-results.json
           if-no-files-found: warn
           retention-days: 14
