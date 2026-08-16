@@ -1,0 +1,43 @@
+name: One-time worldwide availability migration 2026-08-16
+
+on:
+  push:
+    branches:
+      - audit/full-10-10-20260816
+    paths:
+      - '.github/workflows/worldwide-availability-migration-20260816.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/full-10-10-20260816
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Normalize worldwide availability wording
+        run: node tools/remediate-worldwide-availability-20260816.mjs
+      - name: Remove one-time migration machinery
+        run: |
+          rm tools/remediate-worldwide-availability-20260816.mjs
+          rm .github/workflows/worldwide-availability-migration-20260816.yml
+      - name: Verify normalized source before commit
+        run: npm test
+      - name: Commit normalized source and self-cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No migration changes required.'
+            exit 0
+          fi
+          git commit -m 'Normalize worldwide project availability wording'
+          git push origin HEAD:audit/full-10-10-20260816
