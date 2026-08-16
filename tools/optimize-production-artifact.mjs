@@ -16,11 +16,14 @@ walk(root);
 
 const stylesheetRe = /<link rel="stylesheet" href="(\/assets\/css\/site\.css[^\"]*)"\s*\/>/g;
 const mainScriptRe = /<script defer="" src="\/assets\/js\/main\.js\?v=20260808-mobile100-v2"><\/script>/g;
-const megaScriptRe = /<script data-banhalmi-mega-menu="" defer="" src="\/assets\/js\/mega-menu\.js\?v=20260807-type-accent-v50"><\/script>/g;
 
 const asyncStyle = '<link rel="preload" as="style" href="$1"/><link rel="stylesheet" href="$1" media="print" onload="this.media=\'all\';this.onload=null"/><noscript><link rel="stylesheet" href="$1"/></noscript>';
 
-const homeRuntimeLoader = `<script>(function(){var loaded=false;function load(){if(loaded)return;loaded=true;['/assets/js/mega-menu.js?v=20260807-type-accent-v50','/assets/js/main.js?v=20260808-mobile100-v2'].forEach(function(src){var s=document.createElement('script');s.src=src;s.defer=true;document.head.appendChild(s);});}['pointerdown','keydown','touchstart'].forEach(function(type){addEventListener(type,load,{once:true,passive:true,capture:true});});setTimeout(load,7000);})();</script>`;
+// The mega-menu runtime stays as a normal deferred script: it is small after
+// minification and must be ready for the user's very first menu interaction.
+// The heavier general runtime can safely wait for interaction/idle because it
+// does not create the primary navigation structure.
+const homeRuntimeLoader = `<script>(function(){var loaded=false;function load(){if(loaded)return;loaded=true;var s=document.createElement('script');s.src='/assets/js/main.js?v=20260808-mobile100-v2';s.defer=true;document.head.appendChild(s);}['pointerdown','keydown','touchstart'].forEach(function(type){addEventListener(type,load,{once:true,passive:true,capture:true});});if('requestIdleCallback'in window)requestIdleCallback(load,{timeout:5000});else setTimeout(load,5000);})();</script>`;
 
 for (const file of htmlFiles) {
   let html = fs.readFileSync(file, 'utf8');
@@ -29,7 +32,6 @@ for (const file of htmlFiles) {
   const rel = path.relative(root, file).replaceAll('\\', '/');
   const isHome = rel === 'index.html' || rel === 'hu/index.html' || rel === 'de-at/index.html';
   if (isHome) {
-    html = html.replace(megaScriptRe, '');
     html = html.replace(mainScriptRe, homeRuntimeLoader);
   }
 
