@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Normalize worldwide availability wording
+      - name: Normalize worldwide availability wording and embedded snapshots
         run: node tools/remediate-worldwide-availability-20260816.mjs
       - name: Remove one-time migration machinery
         run: |
