@@ -73,6 +73,15 @@ for (const file of htmlFiles) {
     if (!/data-pricing-status=""\s+hidden>/.test(html)) {
       throw new Error(`Quote pricing status was not stabilized in ${rel}`);
     }
+
+    // Modal intent is intrinsic button semantics, not runtime state. Keep it in
+    // the delivered HTML so assistive technology sees the dialog relationship
+    // before the deferred general runtime is needed. aria-expanded stays dynamic.
+    html = html.replace(/class="info-tip"(?![^>]*\baria-haspopup=)/g, 'class="info-tip" aria-haspopup="dialog"');
+    if (!/class="info-tip" aria-haspopup="dialog"/.test(html)) {
+      throw new Error(`Quote info-tip dialog semantics missing in ${rel}`);
+    }
+
     html = html.replace(quoteMainScriptRe, function(_match, src){ return quoteRuntimeLoader(src); });
     html = html.replace(quotePdfScriptRe, function(_match, _before, src){ return quotePdfLoader(src); });
     if (/<script[^>]*\bsrc="\/assets\/js\/main\.js\?v=[^\"]+"[^>]*><\/script>/.test(html)) {
