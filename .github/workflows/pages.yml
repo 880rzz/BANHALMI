@@ -39,6 +39,10 @@ jobs:
     steps:
       - name: Check out verified source
         uses: actions/checkout@v4
+      - name: Set up Node.js for production minification
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
       - name: Prepare immutable static artifact
         shell: bash
         run: |
@@ -58,6 +62,9 @@ jobs:
           test -f _site/hu/index.html
           test -f _site/de-at/index.html
           test -f _site/assets/css/site.css
+          npx --yes esbuild@0.25.9 _site/assets/css/site.css --minify --outfile=/tmp/site.min.css
+          mv /tmp/site.min.css _site/assets/css/site.css
+          test -s _site/assets/css/site.css
           test -f _site/.well-known/agent.json
           test -f _site/api/v1/identity.json
           test -f _site/robots.txt
