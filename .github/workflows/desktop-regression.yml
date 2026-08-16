@@ -30,8 +30,15 @@ jobs:
           rm -rf _site artifacts/browser-layout artifacts/exhaustive-visual artifacts/lighthouse-desktop artifacts/lighthouse-mobile
           mkdir -p _site
           git ls-files -z | rsync -a --from0 --files-from=- ./ _site/
+          node tools/optimize-production-artifact.mjs _site
           npx --yes esbuild@0.25.9 _site/assets/css/site.css --minify --outfile=/tmp/site.min.css
           mv /tmp/site.min.css _site/assets/css/site.css
+          for js in _site/assets/js/main.js _site/assets/js/mega-menu.js _site/assets/js/analytics.js; do
+            if [ -f "$js" ]; then
+              npx --yes esbuild@0.25.9 "$js" --minify --outfile=/tmp/runtime.min.js
+              mv /tmp/runtime.min.js "$js"
+            fi
+          done
           test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "1"
       - name: Install Chromium browser audit runtime
         run: |
