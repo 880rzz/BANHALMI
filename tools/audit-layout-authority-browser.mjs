@@ -60,8 +60,21 @@ for(const width of widths){
     for(const file of quoteFiles){
       await page.goto(urlFor(file),{waitUntil:'networkidle'});
       const result=await page.evaluate(()=>{
-        const cards=[...document.querySelectorAll('.smart-quote-layout .category-card')];
-        const failures=[];
+        const details=document.querySelector('details.quote-deep-details');
+        if(details) details.open=true;
+        const cards=[...document.querySelectorAll('.smart-quote-layout .category-card')].filter(el=>el.getBoundingClientRect().width>0);
+        const rows=[...document.querySelectorAll('.smart-quote-layout .option-row')].filter(el=>el.getBoundingClientRect().width>0);
+        const steps=[...document.querySelectorAll('.smart-quote-layout .quote-step')].filter(el=>el.getBoundingClientRect().width>0);
+        const footer=document.querySelector('.site-footer .footer-bottom');
+        const copyright=footer?.querySelector(':scope > span:first-child');
+        const utilities=footer?.querySelector(':scope > span:last-child');
+        const pricing=document.querySelector('.quote-deep-details > section.pricing-licensing-clarity');
+        const pricingHead=pricing?.querySelector('.section-head');
+        const pricingGrid=pricing?.querySelector('.card-grid');
+        const pricingActions=pricing?.querySelector('.button-row');
+        const legal=document.querySelector('.quote-deep-details > section.quote-legal-bridge');
+        const local=[];
+
         for(const card of cards){
           const cr=card.getBoundingClientRect();
           const info=card.querySelector('.info-tip');
@@ -73,14 +86,62 @@ for(const width of widths){
           const slack=bottoms.length?cr.bottom-Math.max(...bottoms):cr.height;
           const pos=info?getComputedStyle(info).position:null;
           const ir=info?.getBoundingClientRect();
-          if(pos!=='static') failures.push(`info position=${pos}`);
-          if(slack>34) failures.push(`bottom slack=${slack.toFixed(1)}px`);
-          if(cr.height>180) failures.push(`card height=${cr.height.toFixed(1)}px`);
-          if(ir&&(ir.left<cr.left-1||ir.right>cr.right+1||ir.top<cr.top-1||ir.bottom>cr.bottom+1)) failures.push('info control outside card bounds');
+          if(pos!=='static') local.push(`info position=${pos}`);
+          if(slack>34) local.push(`bottom slack=${slack.toFixed(1)}px`);
+          if(cr.height>180) local.push(`card height=${cr.height.toFixed(1)}px`);
+          if(ir&&(ir.left<cr.left-1||ir.right>cr.right+1||ir.top<cr.top-1||ir.bottom>cr.bottom+1)) local.push('info control outside card bounds');
         }
-        return {count:cards.length,failures,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
+
+        const categoryTops=[...new Set(cards.map(c=>Math.round(c.getBoundingClientRect().top)))].sort((a,b)=>a-b);
+        for(let i=1;i<categoryTops.length;i++){
+          const pitch=categoryTops[i]-categoryTops[i-1];
+          if(pitch>170) local.push(`category row pitch=${pitch}px`);
+        }
+        for(let i=1;i<steps.length;i++){
+          const prev=steps[i-1].getBoundingClientRect();
+          const cur=steps[i].getBoundingClientRect();
+          const gap=cur.top-prev.bottom;
+          if(gap>20) local.push(`quote-step gap=${gap.toFixed(1)}px`);
+        }
+        for(const row of rows){
+          const input=row.querySelector(':scope > input[type="radio"]');
+          const span=row.querySelector(':scope > span');
+          const info=span?.querySelector(':scope > .info-tip');
+          if(!input||!span||!info) continue;
+          const rr=row.getBoundingClientRect(), ir=input.getBoundingClientRect(), sr=span.getBoundingClientRect(), tr=info.getBoundingClientRect();
+          if(Math.abs((ir.top+ir.height/2)-(rr.top+rr.height/2))>4) local.push('radio not vertically centered');
+          if(Math.abs((tr.top+tr.height/2)-(rr.top+rr.height/2))>4) local.push('info not vertically centered');
+          const rightSlack=rr.right-tr.right;
+          const leftSlack=ir.left-rr.left;
+          if(rightSlack<8||rightSlack>22) local.push(`info right slack=${rightSlack.toFixed(1)}px`);
+          if(leftSlack<8||leftSlack>22) local.push(`radio left slack=${leftSlack.toFixed(1)}px`);
+          if(sr.right<rr.right-24) local.push('option copy span does not reach right side');
+          if(ir.width<23||ir.height<23||tr.width<43||tr.height<43) local.push('quote choice target too small');
+        }
+
+        if(footer&&copyright&&utilities&&innerWidth>=1024){
+          const fr=footer.getBoundingClientRect(), ar=copyright.getBoundingClientRect(), br=utilities.getBoundingClientRect();
+          if(Math.abs(ar.left-fr.left)>2) local.push(`footer copyright left offset=${(ar.left-fr.left).toFixed(1)}px`);
+          if(Math.abs(fr.right-br.right)>2) local.push(`footer utilities right offset=${(fr.right-br.right).toFixed(1)}px`);
+          if(Math.abs((ar.top+ar.height/2)-(br.top+br.height/2))>5) local.push('footer metadata not on shared row');
+          if(br.height>48) local.push(`footer utilities wrap=${br.height.toFixed(1)}px`);
+        }
+
+        if(pricing&&pricingHead&&pricingGrid&&pricingActions&&legal){
+          const pr=pricing.getBoundingClientRect(), hr=pricingHead.getBoundingClientRect(), gr=pricingGrid.getBoundingClientRect(), ar=pricingActions.getBoundingClientRect(), lr=legal.getBoundingClientRect();
+          const introGap=gr.top-hr.bottom;
+          const actionsBottomSpace=pr.bottom-ar.bottom;
+          const legalTopPadding=parseFloat(getComputedStyle(legal).paddingTop)||0;
+          if(introGap<24) local.push(`pricing intro-to-cards gap=${introGap.toFixed(1)}px`);
+          if(actionsBottomSpace<28) local.push(`pricing actions bottom space=${actionsBottomSpace.toFixed(1)}px`);
+          if(legalTopPadding<28) local.push(`legal bridge top padding=${legalTopPadding.toFixed(1)}px`);
+          if(lr.top<pr.bottom-1) local.push('legal bridge overlaps pricing section');
+        }
+
+        return {count:cards.length,rowCount:rows.length,failures:local,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
       });
       if(!result.count) failures.push(`${file} @${width}: no quote category cards rendered`);
+      if(!result.rowCount) failures.push(`${file} @${width}: no quote option rows rendered`);
       for(const failure of result.failures) failures.push(`${file} @${width}: ${failure}`);
       if(result.overflow>1) failures.push(`${file} @${width}: horizontal overflow ${result.overflow}px`);
       checks++;
