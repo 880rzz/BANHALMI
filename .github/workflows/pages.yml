@@ -19,6 +19,8 @@ jobs:
   quality-gate:
     runs-on: ubuntu-24.04
     timeout-minutes: 90
+    env:
+      LIVE_AUDIT: '1'
     steps:
       - name: Check out source
         uses: actions/checkout@v4
