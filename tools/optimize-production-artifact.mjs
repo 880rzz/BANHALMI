@@ -22,11 +22,11 @@ const quotePdfScriptRe = /<script([^>]*?)src="(\/assets\/js\/quote-pdf\.js[^\"]*
 const asyncStyle = '<link rel="preload" as="style" href="$1"/><link rel="stylesheet" href="$1" media="print" onload="this.media=\'all\';this.onload=null"/><noscript><link rel="stylesheet" href="$1"/></noscript>';
 
 // Homepages do not need the descriptive menu runtime until the user approaches
-// the menu. Parsing/evaluating the menu's large localized navigation data on the
-// cold Lighthouse run caused a 235 ms long task and inflated TBT to 766 ms even
-// though the second run was 100/100. Load on hover/focus, or intercept the first
-// click and replay it after the runtime has armed its own menu handler.
-const homeMegaMenuLoader = `<script>(function(){var loaded=false,pending=false;function replay(){if(!pending)return;pending=false;var b=document.querySelector('.menu-btn');if(b)setTimeout(function(){b.click();},0);}function load(openAfter){if(openAfter)pending=true;if(loaded){replay();return;}loaded=true;var s=document.createElement('script');s.src='/assets/js/mega-menu.js?v=20260810-menu-polish-v65';s.defer=true;s.setAttribute('data-banhalmi-mega-menu','');s.onload=replay;document.head.appendChild(s);}document.addEventListener('pointerover',function(e){if(e.target.closest&&e.target.closest('.menu-btn'))load(false);},{passive:true,capture:true});document.addEventListener('focusin',function(e){if(e.target.closest&&e.target.closest('.menu-btn'))load(false);},true);document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.menu-btn');if(!b||document.getElementById('bn-mega-menu'))return;e.preventDefault();e.stopImmediatePropagation();load(true);},true);})();</script>`;
+// the menu. Keep the menu off the cold-start critical path, but distinguish
+// "loading" from "ready" so a hover immediately followed by a click cannot lose
+// the user's first activation. Any click received before readiness is replayed
+// only after mega-menu.js has installed its own click handler.
+const homeMegaMenuLoader = `<script>(function(){var loading=false,ready=false,pending=false;function replay(){if(!ready||!pending)return;pending=false;var b=document.querySelector('.menu-btn');if(b)setTimeout(function(){b.click();},0);}function load(openAfter){if(openAfter)pending=true;if(ready){replay();return;}if(loading)return;loading=true;var s=document.createElement('script');s.src='/assets/js/mega-menu.js?v=20260810-menu-polish-v65';s.defer=true;s.setAttribute('data-banhalmi-mega-menu','');s.onload=function(){loading=false;ready=true;replay();};s.onerror=function(){loading=false;};document.head.appendChild(s);}document.addEventListener('pointerover',function(e){if(e.target.closest&&e.target.closest('.menu-btn'))load(false);},{passive:true,capture:true});document.addEventListener('focusin',function(e){if(e.target.closest&&e.target.closest('.menu-btn'))load(false);},true);document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.menu-btn');if(!b||document.getElementById('bn-mega-menu'))return;if(!ready){e.preventDefault();e.stopImmediatePropagation();load(true);}},true);})();</script>`;
 
 // The heavier general runtime is not required for first paint/navigation. Loading
 // it from requestIdleCallback made Chromium execute it almost immediately during
@@ -45,35 +45,22 @@ for (const file of htmlFiles) {
   const isHome = rel === 'index.html' || rel === 'hu/index.html' || rel === 'de-at/index.html';
   const isQuote = rel === 'requestaquote/index.html' || rel === 'hu/ajanlatkeres/index.html' || rel === 'de-at/anfrage/index.html';
 
-  // Async CSS remains useful on ordinary content pages. The homepages and quote
-  // builders are layout-dense enough that switching site.css from media=print to
-  // all after FCP creates a full-document style/layout task. Keep the same
-  // minified single stylesheet blocking on these critical routes so layout is
-  // complete before FCP instead of becoming TBT.
   if (!isQuote && !isHome) html = html.replace(stylesheetRe, asyncStyle);
 
   if (isHome) {
     html = html.replace(megaMenuScriptRe, homeMegaMenuLoader);
     html = html.replace(mainScriptRe, homeRuntimeLoader);
-    if (!html.includes('homeMegaMenuLoader') && /data-banhalmi-mega-menu="" defer=""/.test(html)) {
+    if (/data-banhalmi-mega-menu="" defer=""/.test(html)) {
       throw new Error(`Homepage mega-menu runtime remained eager in ${rel}`);
     }
   }
 
   if (isQuote) {
     html = html.replace(/class="prose reveal quote-intro(?: in)?"/g, 'class="prose quote-intro"');
-
-    // The pricing engine validates the bundled price table synchronously, then
-    // hides this loading message. If the message is visible in the initial HTML,
-    // that hide moves the whole quote-intro block after FCP and creates CLS.
     html = html.replace(/data-pricing-status="">/g, 'data-pricing-status="" hidden>');
     if (!/data-pricing-status=""\s+hidden>/.test(html)) {
       throw new Error(`Quote pricing status was not stabilized in ${rel}`);
     }
-
-    // PDF creation is only needed after an explicit download action. Loading
-    // its renderer on first hover/focus/click removes startup evaluation from
-    // the quote critical path while preserving the existing button contract.
     html = html.replace(quotePdfScriptRe, function(_match, _before, src){ return quotePdfLoader(src); });
   }
 
@@ -86,13 +73,6 @@ for (const file of htmlFiles) {
   fs.writeFileSync(file, html);
 }
 
-// Quote pages already ship a verified embedded pricing table. On a cold run the
-// calculator previously performed duplicate panel/paint work, then fetched the
-// same pricing.json and painted a third time. One Hungarian run spent 451 ms in
-// quote-calculator script evaluation and produced a 253 ms long task. In the
-// production artifact, use the embedded table immediately; keep network pricing
-// as a fallback only if the embedded table is missing/invalid, and avoid duplicate
-// updatePanels calls because paint() already performs that synchronization.
 const quoteCalculatorPath = path.join(root, 'assets/js/quote-calculator.js');
 if (fs.existsSync(quoteCalculatorPath)) {
   let quoteJs = fs.readFileSync(quoteCalculatorPath, 'utf8');
@@ -107,17 +87,12 @@ if (fs.existsSync(quoteCalculatorPath)) {
   fs.writeFileSync(quoteCalculatorPath, quoteJs);
 }
 
-// Preserve the canonical footer heading color after all legacy/mobile rules are
-// concatenated. #CBB45F on #202530 clears WCAG AA/AAA and matches the source
-// PAGESPEED-STAGE32 accessibility contract without adding another stylesheet.
 const cssPath = path.join(root, 'assets/css/site.css');
 if (fs.existsSync(cssPath)) {
   fs.appendFileSync(cssPath, '\n.site-footer .footer-accordion summary{color:#CBB45F!important;opacity:1!important;}\n');
 }
 
 // AUDIENCE-POSITIONING-PRODUCTION-GUARD
-// The production artifact mutator may optimize delivery, but must not narrow the
-// brand back to an executive-only proposition or drop high-value service intents.
 const semanticContracts = [
   ['index.html',['Executive Portraiture &amp; Headshots','brand photography','C-level','artists','actors','visual presence']],
   ['hu/index.html',['Executive portré &amp; headshot','brandfotózás','C-level','művészek','színészek','vizuális jelenlét']],
