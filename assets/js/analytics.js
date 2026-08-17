@@ -1,13 +1,15 @@
-/* BANHALMI GA4 — consent-first loader. No Google request is made before explicit consent. */
+/* BANHALMI analytics — consent-first GA4 + Microsoft Clarity. No analytics request is made before explicit consent. */
 (function () {
   "use strict";
 
   var MEASUREMENT_ID = "G-90C452LJKQ";
+  var CLARITY_PROJECT_ID = "ky4j4kbgt7";
   var CONSENT_KEY = "banhalmi_consent_v3";
   var CONSENT_VERSION = "3.0";
   var CONSENT_TTL_MS = 180 * 24 * 60 * 60 * 1000;
-  var scriptId = "banhalmi-ga4";
-  var configured = false;
+  var gaScriptId = "banhalmi-ga4";
+  var clarityScriptId = "banhalmi-clarity";
+  var gaConfigured = false;
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
@@ -34,7 +36,28 @@
     }
   }
 
-  function load() {
+  function ensureClarityQueue() {
+    window.clarity = window.clarity || function () {
+      (window.clarity.q = window.clarity.q || []).push(arguments);
+    };
+  }
+
+  function loadClarity() {
+    ensureClarityQueue();
+    window.clarity("consentv2", {
+      ad_Storage: "denied",
+      analytics_Storage: "granted"
+    });
+    if (!document.getElementById(clarityScriptId)) {
+      var script = document.createElement("script");
+      script.id = clarityScriptId;
+      script.async = true;
+      script.src = "https://www.clarity.ms/tag/" + encodeURIComponent(CLARITY_PROJECT_ID) + "?ref=bwt";
+      document.head.appendChild(script);
+    }
+  }
+
+  function loadGA() {
     window.gtag("consent", "update", {
       analytics_storage: "granted",
       ad_storage: "denied",
@@ -44,8 +67,8 @@
       functionality_storage: "denied"
     });
 
-    if (!configured) {
-      configured = true;
+    if (!gaConfigured) {
+      gaConfigured = true;
       window.gtag("js", new Date());
       window.gtag("config", MEASUREMENT_ID, {
         anonymize_ip: true,
@@ -55,26 +78,33 @@
       });
     }
 
-    if (!document.getElementById(scriptId)) {
+    if (!document.getElementById(gaScriptId)) {
       var script = document.createElement("script");
-      script.id = scriptId;
+      script.id = gaScriptId;
       script.async = true;
       script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(MEASUREMENT_ID);
       document.head.appendChild(script);
     }
   }
 
+  function grant() {
+    loadGA();
+    loadClarity();
+  }
+
+  function expireCookie(name, domain) {
+    var domainPart = domain ? "; domain=" + domain : "";
+    document.cookie = name + "=; Max-Age=0; path=/" + domainPart + "; SameSite=Lax";
+  }
+
   function clearAnalyticsCookies() {
     var host = location.hostname;
-    var domains = [host, "." + host, ".norbertbanhalmi.com", "norbertbanhalmi.com"];
+    var domains = ["", host, "." + host, ".norbertbanhalmi.com", "norbertbanhalmi.com"];
     var names = document.cookie.split(";").map(function (part) { return part.split("=")[0].trim(); }).filter(function (name) {
-      return name === "_ga" || name.indexOf("_ga_") === 0;
+      return name === "_ga" || name.indexOf("_ga_") === 0 || name === "_clck" || name === "_clsk";
     });
     names.forEach(function (name) {
-      domains.forEach(function (domain) {
-        document.cookie = name + "=; Max-Age=0; path=/; domain=" + domain + "; SameSite=Lax";
-      });
-      document.cookie = name + "=; Max-Age=0; path=/; SameSite=Lax";
+      domains.forEach(function (domain) { expireCookie(name, domain); });
     });
   }
 
@@ -87,15 +117,23 @@
       personalization_storage: "denied",
       functionality_storage: "denied"
     });
+    if (window.clarity) {
+      window.clarity("consentv2", {
+        ad_Storage: "denied",
+        analytics_Storage: "denied"
+      });
+      window.clarity("consent", false);
+    }
     clearAnalyticsCookies();
   }
 
   window.BANHALMI_ANALYTICS = {
     measurementId: MEASUREMENT_ID,
-    grant: load,
+    clarityProjectId: CLARITY_PROJECT_ID,
+    grant: grant,
     revoke: revoke,
     hasConsent: validStoredConsent
   };
 
-  if (validStoredConsent()) load();
+  if (validStoredConsent()) grant();
 })();
