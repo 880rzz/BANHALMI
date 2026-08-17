@@ -64,9 +64,11 @@ jobs:
             }
           }
           EOF
-          npx --yes purgecss@7.0.2 --config tools/purge-home-css.cjs
+          node tools/build-home-css-safelist.mjs _site/assets/css/site.css _site/.home-css-safelist.html
+          npx --yes purgecss@7.0.2 --css _site/assets/css/site.css --content _site/index.html _site/hu/index.html _site/de-at/index.html '_site/assets/js/*.js' _site/.home-css-safelist.html --output /tmp/banhalmi-home-css
           test -s /tmp/banhalmi-home-css/site.css
           mv /tmp/banhalmi-home-css/site.css _site/assets/css/home.css
+          rm -f _site/.home-css-safelist.html
           node --input-type=module <<'EOF'
           import fs from 'node:fs';
           for (const file of ['_site/index.html','_site/hu/index.html','_site/de-at/index.html']) {
