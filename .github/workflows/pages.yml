@@ -56,6 +56,14 @@ jobs:
           test -f _site/de-at/index.html
           test -f _site/assets/css/site.css
           node tools/optimize-production-artifact.mjs _site
+          cat >> _site/assets/css/site.css <<'EOF'
+          @media (max-width:760px){
+            main[data-homepage-redesign] > section:nth-of-type(n+3){
+              content-visibility:auto;
+              contain-intrinsic-size:auto 760px;
+            }
+          }
+          EOF
           npx --yes esbuild@0.25.9 _site/assets/css/site.css --minify --outfile=/tmp/site.min.css
           mv /tmp/site.min.css _site/assets/css/site.css
           for js in _site/assets/js/main.js _site/assets/js/mega-menu.js _site/assets/js/analytics.js; do
