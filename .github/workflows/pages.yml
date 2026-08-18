@@ -58,7 +58,7 @@ jobs:
           node tools/optimize-production-artifact.mjs _site
           cat >> _site/assets/css/site.css <<'EOF'
           @media (max-width:760px){
-            main[data-homepage-redesign] > section:nth-of-type(n+3){
+            main[data-homepage-redesign] > section:nth-of-type(n+2){
               content-visibility:auto;
               contain-intrinsic-size:auto 760px;
             }
