@@ -1,0 +1,106 @@
+name: PR-visible production gate diagnostic
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-and-field-gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      LIVE_AUDIT: '1'
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run source contract audits
+        run: npm test
+      - name: Run PSI and CrUX field audit
+        env:
+          PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+        run: node tools/audit-pagespeed-field.mjs
+
+  browser-and-lighthouse-gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install runtime
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Prepare production artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site /tmp/banhalmi-home-css
+          mkdir -p _site /tmp/banhalmi-home-css
+          tar --exclude=.git --exclude=.github --exclude=tools --exclude=node_modules --exclude=package.json --exclude=package-lock.json --exclude=_site --exclude=artifacts -cf - . | tar -xf - -C _site
+          printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
+          node tools/optimize-production-artifact.mjs _site
+          cat >> _site/assets/css/site.css <<'EOF'
+          @media (max-width:760px){
+            main[data-homepage-redesign] > section:nth-of-type(n+3){
+              content-visibility:auto;
+              contain-intrinsic-size:auto 760px;
+            }
+          }
+          EOF
+          node tools/build-home-css-safelist.mjs _site/assets/css/site.css _site/.home-css-safelist.html
+          npx --yes purgecss@7.0.2 --css _site/assets/css/site.css --content _site/index.html _site/hu/index.html _site/de-at/index.html '_site/assets/js/*.js' _site/.home-css-safelist.html --output /tmp/banhalmi-home-css
+          mv /tmp/banhalmi-home-css/site.css _site/assets/css/home.css
+          rm -f _site/.home-css-safelist.html
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          for (const file of ['_site/index.html','_site/hu/index.html','_site/de-at/index.html']) {
+            let html = fs.readFileSync(file, 'utf8');
+            html = html.replace(/\/assets\/css\/site\.css([^\"']*)/g, '/assets/css/home.css$1');
+            fs.writeFileSync(file, html);
+          }
+          EOF
+          npx --yes esbuild@0.25.9 _site/assets/css/site.css --minify --outfile=/tmp/site.min.css
+          mv /tmp/site.min.css _site/assets/css/site.css
+          npx --yes esbuild@0.25.9 _site/assets/css/home.css --minify --outfile=/tmp/home.min.css
+          mv /tmp/home.min.css _site/assets/css/home.css
+          for js in _site/assets/js/main.js _site/assets/js/mega-menu.js _site/assets/js/analytics.js; do
+            if [ -f "$js" ]; then
+              npx --yes esbuild@0.25.9 "$js" --minify --outfile=/tmp/runtime.min.js
+              mv /tmp/runtime.min.js "$js"
+            fi
+          done
+          grep -q 'office@banhalmi.at' _site/speier-viko/index.html
+          grep -q 'office@banhalmi.at' _site/hu/speier-viko/index.html
+          grep -q 'office@banhalmi.at' _site/de-at/speier-viko/index.html
+      - name: Run browser QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/perf-static-server.mjs _site 4173 > /tmp/banhalmi-browser-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep 0.25; done
+          npm run test:e2e
+          AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-browser-layout.mjs
+          AUDIT_BASE_URL=http://127.0.0.1:4173 AUDIT_SITE_DIR=_site node tools/audit-first-principles-layout.mjs
+      - name: Run mobile Lighthouse strict gate
+        run: |
+          npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.mobile.cjs
+          node tools/audit-lighthouse-all-runs.mjs artifacts/lighthouse-mobile
+      - name: Run desktop Lighthouse strict gate
+        run: |
+          npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.desktop.cjs
+          node tools/audit-lighthouse-all-runs.mjs artifacts/lighthouse-desktop
