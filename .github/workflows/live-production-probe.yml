@@ -1,0 +1,29 @@
+name: Live production probe
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe production origin
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected="__EXPECTED_MAIN_SHA__"
+          actual="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/deployment-sha.txt')"
+          echo "EXPECTED_SHA=$expected"
+          echo "ACTUAL_SHA=$actual"
+          html="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/speier-viko/')"
+          if printf '%s' "$html" | grep -q 'viko@banhalmi.at'; then
+            echo 'VIKO_EMAIL=OK'
+          else
+            echo 'VIKO_EMAIL=OLD_OR_MISSING'
+          fi
+          test "$actual" = "$expected"
+          printf '%s' "$html" | grep -q 'viko@banhalmi.at'
