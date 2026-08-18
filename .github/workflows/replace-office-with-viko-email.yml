@@ -28,13 +28,12 @@ jobs:
           import subprocess
           old = 'office' + '@banhalmi.at'
           new = 'viko' + '@banhalmi.at'
-          self_path = Path('.github/workflows/replace-office-with-viko-email.yml')
           changed = []
           for raw in subprocess.check_output(['git','ls-files','-z']).split(b'\0'):
               if not raw:
                   continue
               p = Path(raw.decode())
-              if p == self_path:
+              if str(p).startswith('.github/workflows/'):
                   continue
               try:
                   data = p.read_text(encoding='utf-8')
