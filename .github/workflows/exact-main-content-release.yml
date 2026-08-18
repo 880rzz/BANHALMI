@@ -6,6 +6,11 @@ on:
       - release/viko-email-exact-live-20260818
     paths:
       - '.github/workflows/exact-main-content-release.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/exact-main-content-release.yml'
 
 permissions:
   contents: read
@@ -51,7 +56,6 @@ jobs:
               text = path.read_text(encoding='utf-8')
               if 'office@banhalmi.at' not in text:
                   raise SystemExit(f'{path}: office@banhalmi.at missing')
-              # Viko-specific JSON-LD contact points must use the new address.
               for marker in ('Budapest studio and AmCham Austria liaison', 'Vienna project contact'):
                   idx = text.find(marker)
                   if idx >= 0:
