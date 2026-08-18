@@ -1,0 +1,154 @@
+name: Exact main content release
+
+on:
+  push:
+    branches:
+      - release/viko-email-exact-live-20260818
+    paths:
+      - '.github/workflows/exact-main-content-release.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: banhalmi-exact-content-release
+  cancel-in-progress: false
+
+jobs:
+  verify-build-deploy:
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out exact current main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Capture target SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "TARGET_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          test "$(git rev-parse HEAD)" = "d0b3954591abd06c9f02a4578ffd14b39560497d"
+
+      - name: Verify Viko email correction in all language profiles
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          files = [
+              Path('speier-viko/index.html'),
+              Path('hu/speier-viko/index.html'),
+              Path('de-at/speier-viko/index.html'),
+          ]
+          for path in files:
+              text = path.read_text(encoding='utf-8')
+              if 'office@banhalmi.at' not in text:
+                  raise SystemExit(f'{path}: office@banhalmi.at missing')
+              # Viko-specific JSON-LD contact points must use the new address.
+              for marker in ('Budapest studio and AmCham Austria liaison', 'Vienna project contact'):
+                  idx = text.find(marker)
+                  if idx >= 0:
+                      window = text[idx:idx+500]
+                      if 'office@banhalmi.at' not in window:
+                          raise SystemExit(f'{path}: {marker} does not use office@banhalmi.at')
+          print('Viko email correction verified in EN/HU/DE profiles')
+          PY
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Prepare the same production artifact shape
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site /tmp/banhalmi-home-css
+          mkdir -p _site /tmp/banhalmi-home-css
+          tar \
+            --exclude=.git \
+            --exclude=.github \
+            --exclude=tools \
+            --exclude=node_modules \
+            --exclude=package.json \
+            --exclude=package-lock.json \
+            --exclude=_site \
+            --exclude=artifacts \
+            -cf - . | tar -xf - -C _site
+          printf '%s\n' "$TARGET_SHA" > _site/deployment-sha.txt
+          test -f _site/index.html
+          test -f _site/hu/index.html
+          test -f _site/de-at/index.html
+          test -f _site/speier-viko/index.html
+          node tools/optimize-production-artifact.mjs _site
+          cat >> _site/assets/css/site.css <<'EOF'
+          @media (max-width:760px){
+            main[data-homepage-redesign] > section:nth-of-type(n+3){
+              content-visibility:auto;
+              contain-intrinsic-size:auto 760px;
+            }
+          }
+          EOF
+          node tools/build-home-css-safelist.mjs _site/assets/css/site.css _site/.home-css-safelist.html
+          npx --yes purgecss@7.0.2 --css _site/assets/css/site.css --content _site/index.html _site/hu/index.html _site/de-at/index.html '_site/assets/js/*.js' _site/.home-css-safelist.html --output /tmp/banhalmi-home-css
+          test -s /tmp/banhalmi-home-css/site.css
+          mv /tmp/banhalmi-home-css/site.css _site/assets/css/home.css
+          rm -f _site/.home-css-safelist.html
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          for (const file of ['_site/index.html','_site/hu/index.html','_site/de-at/index.html']) {
+            let html = fs.readFileSync(file, 'utf8');
+            const before = html;
+            html = html.replace(/\/assets\/css\/site\.css([^\"']*)/g, '/assets/css/home.css$1');
+            if (html === before) throw new Error(`Homepage stylesheet replacement failed for ${file}`);
+            fs.writeFileSync(file, html);
+          }
+          EOF
+          npx --yes esbuild@0.25.9 _site/assets/css/site.css --minify --outfile=/tmp/site.min.css
+          mv /tmp/site.min.css _site/assets/css/site.css
+          npx --yes esbuild@0.25.9 _site/assets/css/home.css --minify --outfile=/tmp/home.min.css
+          mv /tmp/home.min.css _site/assets/css/home.css
+          for js in _site/assets/js/main.js _site/assets/js/mega-menu.js _site/assets/js/analytics.js; do
+            if [ -f "$js" ]; then
+              npx --yes esbuild@0.25.9 "$js" --minify --outfile=/tmp/runtime.min.js
+              mv /tmp/runtime.min.js "$js"
+            fi
+          done
+          grep -q 'office@banhalmi.at' _site/speier-viko/index.html
+          grep -q 'office@banhalmi.at' _site/hu/speier-viko/index.html
+          grep -q 'office@banhalmi.at' _site/de-at/speier-viko/index.html
+
+      - name: Upload exact artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy exact main artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Verify exact live SHA and Viko email
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 30); do
+            actual="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/deployment-sha.txt' || true)"
+            page="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/speier-viko/' || true)"
+            if [ "$actual" = "$TARGET_SHA" ] && printf '%s' "$page" | grep -q 'office@banhalmi.at'; then
+              echo "Exact live Viko release verified: $actual"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "Exact live verification failed; expected $TARGET_SHA, received ${actual:-nothing}." >&2
+          exit 1
