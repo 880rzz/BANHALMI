@@ -6,17 +6,26 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: Probe production origin
+      - name: Inspect latest main push runs and probe production origin
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          echo 'LATEST_MAIN_PUSH_RUNS:'
+          curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/880rzz/BANHALMI/actions/runs?branch=main&event=push&per_page=20' > /tmp/runs.json
+          python3 - <<'PY'
+          import json
+          data=json.load(open('/tmp/runs.json'))
+          for r in data.get('workflow_runs', []):
+              print(f"RUN id={r['id']} name={r['name']} sha={r['head_sha']} status={r['status']} conclusion={r['conclusion']} created={r['created_at']}")
+          PY
           expected="$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/880rzz/BANHALMI/git/ref/heads/main' | python3 -c "import json,sys; print(json.load(sys.stdin)['object']['sha'])")"
           actual="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/deployment-sha.txt')"
           echo "EXPECTED_SHA=$expected"
