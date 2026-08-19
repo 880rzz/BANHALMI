@@ -10,27 +10,34 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - name: Probe production origin
+      - name: Wait for exact production origin
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           expected="$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/880rzz/BANHALMI/git/ref/heads/main' | python3 -c "import json,sys; print(json.load(sys.stdin)['object']['sha'])")"
-          actual="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/deployment-sha.txt')"
           echo "EXPECTED_SHA=$expected"
-          echo "ACTUAL_SHA=$actual"
-          html="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/speier-viko/')"
-          if printf '%s' "$html" | grep -q 'viko@banhalmi.at'; then
-            echo 'VIKO_EMAIL=OK'
-          else
-            echo 'VIKO_EMAIL=OLD_OR_MISSING'
-          fi
-          test "$actual" = "$expected"
-          printf '%s' "$html" | grep -q 'viko@banhalmi.at'
+          actual=''
+          for attempt in $(seq 1 90); do
+            actual="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/deployment-sha.txt' || true)"
+            echo "ATTEMPT=$attempt ACTUAL_SHA=${actual:-missing}"
+            if [ "$actual" = "$expected" ]; then
+              html="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/speier-viko/')"
+              printf '%s' "$html" | grep -q 'viko@banhalmi.at'
+              echo 'VIKO_EMAIL=OK'
+              echo "EXACT_LIVE_SHA=$actual"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "Expected live SHA $expected but received ${actual:-nothing}." >&2
+          exit 1
 
   live-lighthouse:
+    needs: probe
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
