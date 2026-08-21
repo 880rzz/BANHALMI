@@ -20,17 +20,23 @@ const esc = (s) => s.replace(/&/g, '&amp;');
 for (const [path, title] of targets) {
   let html = fs.readFileSync(path, 'utf8');
   const encoded = esc(title);
-  const rules = [
-    [/<title>[^<]*<\/title>/, `<title>${encoded}</title>`],
-    [/<meta\b(?=[^>]*property="og:title")[^>]*\/?\s*>/, `<meta content="${encoded}" property="og:title"/>`],
-    [/<meta\b(?=[^>]*name="twitter:title")[^>]*\/?\s*>/, `<meta name="twitter:title" content="${encoded}">`]
-  ];
+  const titleRe = /<title>[^<]*<\/title>/;
+  const ogRe = /<meta\b(?=[^>]*property="og:title")[^>]*\/?\s*>/;
+  const twRe = /<meta\b(?=[^>]*name="twitter:title")[^>]*\/?\s*>/;
 
-  for (const [re, replacement] of rules) {
-    const matches = html.match(new RegExp(re.source, 'g')) || [];
-    if (matches.length !== 1) throw new Error(`${path}: expected exactly one ${re}, found ${matches.length}`);
-    html = html.replace(re, replacement);
-  }
+  const titleMatches = html.match(new RegExp(titleRe.source, 'g')) || [];
+  if (titleMatches.length !== 1) throw new Error(`${path}: expected exactly one title, found ${titleMatches.length}`);
+  html = html.replace(titleRe, `<title>${encoded}</title>`);
+
+  const ogMatches = html.match(new RegExp(ogRe.source, 'g')) || [];
+  if (ogMatches.length > 1) throw new Error(`${path}: multiple og:title tags`);
+  if (ogMatches.length === 1) html = html.replace(ogRe, `<meta content="${encoded}" property="og:title"/>`);
+  else html = html.replace(`</title>`, `</title><meta content="${encoded}" property="og:title"/>`);
+
+  const twMatches = html.match(new RegExp(twRe.source, 'g')) || [];
+  if (twMatches.length > 1) throw new Error(`${path}: multiple twitter:title tags`);
+  if (twMatches.length === 1) html = html.replace(twRe, `<meta name="twitter:title" content="${encoded}">`);
+  else html = html.replace(`</title>`, `</title><meta name="twitter:title" content="${encoded}">`);
 
   fs.writeFileSync(path, html);
   const check = fs.readFileSync(path, 'utf8');
