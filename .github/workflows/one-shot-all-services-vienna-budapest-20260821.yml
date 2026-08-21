@@ -1,0 +1,50 @@
+name: One-shot all services Vienna Budapest
+
+on:
+  push:
+    branches:
+      - seo/portrait-metadata-vienna-budapest-20260821
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: seo/portrait-metadata-vienna-budapest-20260821
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Apply all-service location metadata
+        run: node tools/one-shot-all-services-vienna-budapest-20260821.mjs
+      - name: Validate exact service location titles
+        run: |
+          grep -Fq 'Vienna–Budapest | BANHALMI' portrait/index.html
+          grep -Fq 'Vienna–Budapest | BANHALMI' lifestyle/index.html
+          grep -Fq 'Vienna–Budapest | BANHALMI' event-photography/index.html
+          grep -Fq 'Vienna–Budapest | BANHALMI' glamour/index.html
+          grep -Fq 'Bécs–Budapest | BANHALMI' hu/portre/index.html
+          grep -Fq 'Bécs–Budapest | BANHALMI' hu/brand/index.html
+          grep -Fq 'Bécs–Budapest | BANHALMI' hu/rendezvenyfotozas/index.html
+          grep -Fq 'Bécs–Budapest | BANHALMI' hu/muveszi-fotografia/index.html
+          grep -Fq 'Wien–Budapest | BANHALMI' de-at/portrait/index.html
+          grep -Fq 'Wien–Budapest | BANHALMI' de-at/brand/index.html
+          grep -Fq 'Wien–Budapest | BANHALMI' de-at/event-photography/index.html
+          grep -Fq 'Wien–Budapest | BANHALMI' de-at/fine-art/index.html
+      - name: Remove one-shot helpers
+        run: |
+          rm tools/one-shot-all-services-vienna-budapest-20260821.mjs
+          rm .github/workflows/one-shot-all-services-vienna-budapest-20260821.yml
+      - name: Commit targeted service metadata
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- portrait/index.html hu/portre/index.html de-at/portrait/index.html lifestyle/index.html hu/brand/index.html de-at/brand/index.html event-photography/index.html hu/rendezvenyfotozas/index.html de-at/event-photography/index.html glamour/index.html hu/muveszi-fotografia/index.html de-at/fine-art/index.html tools/one-shot-all-services-vienna-budapest-20260821.mjs .github/workflows/one-shot-all-services-vienna-budapest-20260821.yml
+          git diff --cached --check
+          git commit -m 'SEO: align all services to Vienna and Budapest'
+          git push origin HEAD:seo/portrait-metadata-vienna-budapest-20260821
