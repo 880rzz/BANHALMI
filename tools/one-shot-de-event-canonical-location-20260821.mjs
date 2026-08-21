@@ -13,3 +13,4 @@ if(twRe.test(html)) html=html.replace(twRe,`<meta name="twitter:title" content="
 fs.writeFileSync(path,html);
 for(const s of [`<title>${encoded}</title>`,`content="${encoded}" property="og:title"`,`name="twitter:title" content="${encoded}"`]) if(!html.includes(s)) throw new Error(`missing ${s}`);
 console.log('Canonical German event page aligned to Wien–Budapest.');
+// trigger
