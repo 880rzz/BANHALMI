@@ -22,14 +22,16 @@ for (const [path, title] of targets) {
   const encoded = esc(title);
   const rules = [
     [/<title>[^<]*<\/title>/, `<title>${encoded}</title>`],
-    [/<meta content="[^"]*" property="og:title"\/>/, `<meta content="${encoded}" property="og:title"/>`],
-    [/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${encoded}">`]
+    [/<meta\b(?=[^>]*property="og:title")[^>]*\/?\s*>/, `<meta content="${encoded}" property="og:title"/>`],
+    [/<meta\b(?=[^>]*name="twitter:title")[^>]*\/?\s*>/, `<meta name="twitter:title" content="${encoded}">`]
   ];
+
   for (const [re, replacement] of rules) {
     const matches = html.match(new RegExp(re.source, 'g')) || [];
     if (matches.length !== 1) throw new Error(`${path}: expected exactly one ${re}, found ${matches.length}`);
     html = html.replace(re, replacement);
   }
+
   fs.writeFileSync(path, html);
   const check = fs.readFileSync(path, 'utf8');
   for (const fragment of [`<title>${encoded}</title>`, `content="${encoded}" property="og:title"`, `name="twitter:title" content="${encoded}"`]) {
@@ -38,4 +40,3 @@ for (const [path, title] of targets) {
 }
 
 console.log('All EN/HU/DE service titles aligned to Vienna–Budapest.');
-// trigger after workflow installation
