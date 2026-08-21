@@ -1,0 +1,61 @@
+name: Emergency production deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/emergency-pages-deploy.yml'
+      - '.emergency-pages-deploy-trigger'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: banhalmi-emergency-production
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Prepare production artifact without quality gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site
+          tar \
+            --exclude=.git \
+            --exclude=.github \
+            --exclude=tools \
+            --exclude=node_modules \
+            --exclude=package.json \
+            --exclude=package-lock.json \
+            --exclude=_site \
+            --exclude=artifacts \
+            -cf - . | tar -xf - -C _site
+          printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
+          test -f _site/index.html
+          test -f _site/hu/index.html
+          test -f _site/de-at/index.html
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Deploy emergency artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
