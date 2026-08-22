@@ -11,22 +11,76 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - name: Probe production origin
+      - name: Wait for exact production origin
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           expected="$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/880rzz/BANHALMI/git/ref/heads/main' | python3 -c "import json,sys; print(json.load(sys.stdin)['object']['sha'])")"
-          actual="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/deployment-sha.txt')"
           echo "EXPECTED_SHA=$expected"
-          echo "ACTUAL_SHA=$actual"
-          html="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/speier-viko/')"
-          if printf '%s' "$html" | grep -q 'viko@banhalmi.at'; then
-            echo 'VIKO_EMAIL=OK'
-          else
-            echo 'VIKO_EMAIL=OLD_OR_MISSING'
-          fi
-          test "$actual" = "$expected"
-          printf '%s' "$html" | grep -q 'viko@banhalmi.at'
+          actual=''
+          for attempt in $(seq 1 90); do
+            actual="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/deployment-sha.txt' || true)"
+            echo "ATTEMPT=$attempt ACTUAL_SHA=${actual:-missing}"
+            if [ "$actual" = "$expected" ]; then
+              html="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/speier-viko/')"
+              printf '%s' "$html" | grep -q 'viko@banhalmi.at'
+              echo 'VIKO_EMAIL=OK'
+              echo "EXACT_LIVE_SHA=$actual"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "Expected live SHA $expected but received ${actual:-nothing}." >&2
+          exit 1
+
+  live-lighthouse:
+    needs: probe
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Check out verifier source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify critical production routes and machine endpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          for url in \
+            'https://www.norbertbanhalmi.com/' \
+            'https://www.norbertbanhalmi.com/hu/' \
+            'https://www.norbertbanhalmi.com/de-at/' \
+            'https://www.norbertbanhalmi.com/robots.txt' \
+            'https://www.norbertbanhalmi.com/sitemap.xml' \
+            'https://www.norbertbanhalmi.com/llms.txt' \
+            'https://www.norbertbanhalmi.com/ai.txt' \
+            'https://www.norbertbanhalmi.com/entity.jsonld' \
+            'https://www.norbertbanhalmi.com/pricing.json'; do
+            curl -fsSL --max-time 30 "$url" >/dev/null
+          done
+      - name: Run exact live mobile Lighthouse 100 gate
+        run: |
+          rm -rf artifacts/lighthouse-production-mobile
+          npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.production-mobile.cjs
+          node tools/audit-lighthouse-all-runs.mjs artifacts/lighthouse-production-mobile
+      - name: Run exact live desktop Lighthouse 100 gate
+        run: |
+          rm -rf artifacts/lighthouse-production-desktop
+          npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.production-desktop.cjs
+          node tools/audit-lighthouse-all-runs.mjs artifacts/lighthouse-production-desktop
+      - name: Upload exact live production Lighthouse evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-production-verifier-${{ github.sha }}
+          path: |
+            artifacts/lighthouse-production-mobile
+            artifacts/lighthouse-production-desktop
+          if-no-files-found: warn
+          retention-days: 7
