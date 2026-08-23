@@ -84,6 +84,7 @@ jobs:
           done
 
           python3 - <<'PY'
+          import html as html_module
           import json, re, urllib.request
           urls = [
             'https://www.norbertbanhalmi.com/portrait/',
@@ -95,11 +96,11 @@ jobs:
           ]
           for url in urls:
             with urllib.request.urlopen(url, timeout=30) as r:
-              html = r.read().decode('utf-8', 'replace')
-            m = re.search(r'<title>(.*?)</title>', html, re.I|re.S)
+              body = r.read().decode('utf-8', 'replace')
+            m = re.search(r'<title>(.*?)</title>', body, re.I|re.S)
             if not m: raise SystemExit(f'{url}: missing title')
-            title = re.sub(r'\s+', ' ', m.group(1)).strip()
-            scripts = re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', html, re.I|re.S)
+            title = html_module.unescape(re.sub(r'\s+', ' ', m.group(1)).strip())
+            scripts = re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', body, re.I|re.S)
             objs=[]
             for raw in scripts:
               try: objs.append(json.loads(raw))
