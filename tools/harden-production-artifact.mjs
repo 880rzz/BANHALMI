@@ -8,17 +8,17 @@ const forbidden = [
   'vercel.json', 'netlify.toml', 'middleware.js',
   'playwright.config.js', 'playwright.config.mjs',
   'lighthouserc.mobile.cjs', 'lighthouserc.desktop.cjs',
-  'lighthouserc.production-mobile.cjs', 'lighthouserc.production-desktop.cjs'
+  'lighthouserc.production-mobile.cjs', 'lighthouserc.production-desktop.cjs',
+  'tests', 'scripts', 'docs', 'reports'
 ];
 
 for (const rel of forbidden) {
-  const target = path.join(root, rel);
-  fs.rmSync(target, { recursive: true, force: true });
+  fs.rmSync(path.join(root, rel), { recursive: true, force: true });
 }
 
 for (const rel of forbidden) {
   if (fs.existsSync(path.join(root, rel))) {
-    throw new Error(`Production artifact leaked repository-only file: ${rel}`);
+    throw new Error(`Production artifact leaked repository-only path: ${rel}`);
   }
 }
 
@@ -32,4 +32,4 @@ for (const rel of required) {
   if (!fs.existsSync(path.join(root, rel))) throw new Error(`Production artifact lost required public file: ${rel}`);
 }
 
-console.log(`Production surface hardened: ${forbidden.length} repository-only root files are excluded and ${required.length} public contracts are present.`);
+console.log(`Production surface hardened: ${forbidden.length} repository-only paths are excluded and ${required.length} public contracts are present.`);
