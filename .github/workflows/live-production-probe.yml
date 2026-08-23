@@ -22,11 +22,97 @@ jobs:
           actual="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/deployment-sha.txt')"
           echo "EXPECTED_SHA=$expected"
           echo "ACTUAL_SHA=$actual"
-          html="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/speier-viko/')"
-          if printf '%s' "$html" | grep -q 'viko@banhalmi.at'; then
-            echo 'VIKO_EMAIL=OK'
-          else
-            echo 'VIKO_EMAIL=OLD_OR_MISSING'
-          fi
           test "$actual" = "$expected"
+
+          for url in \
+            'https://www.norbertbanhalmi.com/' \
+            'https://www.norbertbanhalmi.com/hu/' \
+            'https://www.norbertbanhalmi.com/de-at/' \
+            'https://www.norbertbanhalmi.com/portrait/' \
+            'https://www.norbertbanhalmi.com/hu/portre/' \
+            'https://www.norbertbanhalmi.com/de-at/portrait/' \
+            'https://www.norbertbanhalmi.com/lifestyle/' \
+            'https://www.norbertbanhalmi.com/hu/brand/' \
+            'https://www.norbertbanhalmi.com/de-at/brand/' \
+            'https://www.norbertbanhalmi.com/event-photography/' \
+            'https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/' \
+            'https://www.norbertbanhalmi.com/de-at/eventfotografie/' \
+            'https://www.norbertbanhalmi.com/glamour/' \
+            'https://www.norbertbanhalmi.com/hu/muveszi-fotografia/' \
+            'https://www.norbertbanhalmi.com/de-at/fine-art/' \
+            'https://www.norbertbanhalmi.com/robots.txt' \
+            'https://www.norbertbanhalmi.com/sitemap.xml' \
+            'https://www.norbertbanhalmi.com/llms.txt' \
+            'https://www.norbertbanhalmi.com/ai.txt' \
+            'https://www.norbertbanhalmi.com/entity.jsonld' \
+            'https://www.norbertbanhalmi.com/pricing.json'; do
+            curl -fsSL --max-time 30 "$url" >/dev/null
+          done
+
+          curl -fsSL --max-time 30 -o /tmp/analytics.js 'https://www.norbertbanhalmi.com/assets/js/analytics.js'
+          grep -Fq 'analytics_storage:"denied"' /tmp/analytics.js || grep -Fq 'analytics_storage: "denied"' /tmp/analytics.js
+          grep -Fq 'ad_storage:"denied"' /tmp/analytics.js || grep -Fq 'ad_storage: "denied"' /tmp/analytics.js
+          grep -Fq 'allow_google_signals:!1' /tmp/analytics.js || grep -Fq 'allow_google_signals:false' /tmp/analytics.js || grep -Fq 'allow_google_signals: false' /tmp/analytics.js
+          grep -Fq 'allow_ad_personalization_signals:!1' /tmp/analytics.js || grep -Fq 'allow_ad_personalization_signals:false' /tmp/analytics.js || grep -Fq 'allow_ad_personalization_signals: false' /tmp/analytics.js
+          grep -Fq 'norbertbanhalmi.com' /tmp/analytics.js
+          grep -Fq 'banhalmi.art' /tmp/analytics.js
+
+          curl -fsSL --max-time 30 -o /tmp/privacy-hu.html 'https://www.norbertbanhalmi.com/hu/adatvedelem/'
+          grep -Fq 'tiltakozhat az adatkezelés ellen' /tmp/privacy-hu.html
+          grep -Fq 'Nemzetközi' /tmp/privacy-hu.html
+          grep -Fq 'Österreichische Datenschutzbehörde' /tmp/privacy-hu.html
+          grep -Fq 'G-90C452LJKQ' /tmp/privacy-hu.html
+          grep -Fq 'domainek közötti' /tmp/privacy-hu.html
+
+          curl -fsSL --max-time 30 -o /tmp/llms.txt 'https://www.norbertbanhalmi.com/llms.txt'
+          grep -Fq 'https://www.banhalmi.art/' /tmp/llms.txt
+          grep -Fq 'https://blog.banhalmi.art/' /tmp/llms.txt
+
+          curl -fsSL --max-time 30 -o /tmp/entity.jsonld 'https://www.norbertbanhalmi.com/entity.jsonld'
+          grep -Fq 'Q56391118' /tmp/entity.jsonld
+          grep -Fq 'https://www.banhalmi.art/' /tmp/entity.jsonld
+
+          html="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/speier-viko/')"
           printf '%s' "$html" | grep -q 'viko@banhalmi.at'
+
+          for forbidden in '.github/workflows/pages.yml' 'package.json' 'package-lock.json' 'tools/audit-claude-hardening-contract.mjs' 'tools/harden-production-artifact.mjs'; do
+            code="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 30 "https://www.norbertbanhalmi.com/$forbidden")"
+            case "$code" in
+              404|410) ;;
+              *) echo "Repository-only production path leaked: $forbidden returned $code" >&2; exit 1 ;;
+            esac
+          done
+
+          python3 - <<'PY'
+          import json, re, urllib.request
+          urls = [
+            'https://www.norbertbanhalmi.com/portrait/',
+            'https://www.norbertbanhalmi.com/hu/portre/',
+            'https://www.norbertbanhalmi.com/de-at/portrait/',
+            'https://www.norbertbanhalmi.com/event-photography/',
+            'https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/',
+            'https://www.norbertbanhalmi.com/de-at/eventfotografie/',
+          ]
+          for url in urls:
+            with urllib.request.urlopen(url, timeout=30) as r:
+              html = r.read().decode('utf-8', 'replace')
+            m = re.search(r'<title>(.*?)</title>', html, re.I|re.S)
+            if not m: raise SystemExit(f'{url}: missing title')
+            title = re.sub(r'\s+', ' ', m.group(1)).strip()
+            scripts = re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', html, re.I|re.S)
+            objs=[]
+            for raw in scripts:
+              try: objs.append(json.loads(raw))
+              except Exception: pass
+            names=[]
+            def walk(x):
+              if isinstance(x, dict):
+                if x.get('@type') in ('WebPage','Service') and isinstance(x.get('name'), str): names.append(x['name'])
+                for v in x.values(): walk(v)
+              elif isinstance(x, list):
+                for v in x: walk(v)
+            for o in objs: walk(o)
+            if not any(n == title for n in names):
+              raise SystemExit(f'{url}: schema/title parity failed: title={title!r}, names={names!r}')
+          print('Schema/title parity OK')
+          PY
