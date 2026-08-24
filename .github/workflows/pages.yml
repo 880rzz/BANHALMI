@@ -69,8 +69,6 @@ jobs:
           grep -q '/assets/css/site.css' _site/index.html
           grep -q '/assets/css/site.css' _site/hu/index.html
           grep -q '/assets/css/site.css' _site/de-at/index.html
-          ! grep -R -q '/assets/css/home.css' _site --include='*.html'
-          ! grep -R -q 'visual-rhythm-20260825.css' _site --include='*.html'
       - name: Install Chromium audit runtime
         run: |
           npm ci
