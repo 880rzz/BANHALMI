@@ -1,6 +1,6 @@
 name: Consolidate BANHALMI single CSS authority
 
-# One-shot migration v7: push only non-workflow source changes; production workflow is updated separately.
+# One-shot migration v8: validate with the temporary writer workflow removed from the worktree.
 on:
   push:
     branches: [main]
@@ -29,6 +29,7 @@ jobs:
           rm -f assets/css/visual-rhythm-20260825.css
           rm -f tools/audit-visual-rhythm-regression.mjs
           rm -f tools/audit-visual-rhythm-regression-20260825.mjs
+          rm .github/workflows/single-css-authority-20260825.yml
       - name: Validate source contracts
         run: npm test
       - name: Commit non-workflow design system changes
