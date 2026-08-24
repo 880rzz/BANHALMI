@@ -1,0 +1,41 @@
+name: Consolidate BANHALMI single CSS authority
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/single-css-authority-20260825.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Consolidate source and production CSS authority
+        run: |
+          node tools/migrate-single-css-authority-20260825.cjs
+          node tools/migrate-pages-single-css-20260825.cjs
+      - name: Validate source contracts
+        run: |
+          npm test
+          node tools/audit-css-syntax-stage44.mjs
+      - name: Commit consolidated design system
+        run: |
+          git config user.name "BANHALMI release bot"
+          git config user.email "actions@users.noreply.github.com"
+          git rm .github/workflows/single-css-authority-20260825.yml
+          git rm tools/migrate-single-css-authority-20260825.cjs
+          git rm tools/migrate-pages-single-css-20260825.cjs
+          git rm -f tools/audit-visual-rhythm-regression-20260825.mjs || true
+          git add assets/css/site.css tools/audit-apple-responsive-contract.mjs package.json .github/workflows/pages.yml '*.html' ':**/*.html'
+          git commit -m "Restore single Apple responsive CSS authority"
+          git push origin HEAD:main
