@@ -3910,470 +3910,241 @@ input[type="checkbox"],input[type="radio"]{min-width:24px;min-height:24px;}
 
 
 /* APPLE-RESPONSIVE-CONTRACT-V1:START */
-/* Final visual authority: Apple-like optical rhythm, explicit alignment semantics,
-   WCAG-safe contrast, and one predictable desktop/tablet/mobile geometry. */
+/* SINGLE-CSS-AUTHORITY-20260825
+   One final responsive design system for every BANHALMI page.
+   No component or build-time CSS is allowed to override rules after this block. */
 :root{
   --apple-page-max:1200px;
   --apple-reading-max:760px;
   --apple-wide-reading-max:900px;
   --apple-gutter:clamp(20px,4.2vw,56px);
-  --apple-section-space:clamp(64px,7.2vw,104px);
-  --apple-block-gap:clamp(24px,3vw,40px);
-  --apple-card-gap:clamp(16px,2vw,24px);
+  --apple-section-space:clamp(72px,7.6vw,112px);
+  --apple-section-space-compact:clamp(56px,5.6vw,84px);
+  --apple-block-gap:clamp(28px,3.2vw,44px);
+  --apple-card-gap:clamp(18px,2.2vw,28px);
   --apple-radius:22px;
   --apple-radius-small:16px;
   --apple-text:#202530;
-  --apple-muted:#6E6E73;
+  --apple-muted:#646A74;
   --apple-surface:#FFFFFF;
   --apple-surface-soft:#F5F5F7;
+  --apple-surface-dark:#202530;
   --apple-gold-text:#8A681F;
+  --apple-gold-dark:#DCC56B;
+  --apple-line:rgba(32,37,48,.09);
 }
-html,body{overflow-x:clip;}
-body{background:var(--apple-surface);color:var(--apple-text);}
-.wrap{
+
+html{overflow-x:clip;background:var(--apple-surface-dark);}
+body{
+  margin:0!important;
+  min-height:0!important;
+  display:block!important;
+  overflow-x:clip;
+  background:var(--apple-surface)!important;
+  color:var(--apple-text)!important;
+  font-size:17px;
+  line-height:1.62;
+}
+body>main,#main{display:block!important;min-height:0!important;flex:none!important;width:100%;min-width:0;}
+body>.site-footer,.site-footer{height:auto!important;min-height:0!important;flex:none!important;margin-top:0!important;width:100%;}
+
+/* Global horizontal geometry. */
+.wrap,.container{
   width:min(100%,var(--apple-page-max))!important;
   max-width:var(--apple-page-max)!important;
   margin-inline:auto!important;
   padding-inline:var(--apple-gutter)!important;
+  box-sizing:border-box!important;
 }
-main>section,body>main>section{padding-block:var(--apple-section-space)!important;}
+main>section,body>main>section{padding-block:var(--apple-section-space)!important;margin-block:0!important;}
+main>section+section{margin-top:0!important;}
 section>p,section>h2{
   width:min(100%,var(--apple-page-max));
   max-width:var(--apple-page-max)!important;
   margin-inline:auto!important;
   padding-inline:var(--apple-gutter)!important;
+  box-sizing:border-box!important;
 }
-h1{font-size:clamp(2.55rem,5.4vw,4.7rem)!important;line-height:1.02!important;letter-spacing:-.035em!important;}
-h2{font-size:clamp(1.85rem,3.3vw,3rem)!important;line-height:1.08!important;letter-spacing:-.028em!important;}
-h3{font-size:clamp(1.12rem,1.55vw,1.35rem)!important;line-height:1.2!important;letter-spacing:-.018em!important;}
-p,li{line-height:1.58;}
-.lead{font-size:clamp(1.18rem,1.8vw,1.52rem)!important;line-height:1.42!important;}
 
-/* Reading blocks are left aligned unless the component is semantically declarative. */
+/* One typography system. */
+h1,h2,h3{font-family:var(--font-display)!important;text-wrap:balance;}
+h1{font-size:clamp(2.55rem,5.2vw,4.45rem)!important;line-height:1.03!important;letter-spacing:-.035em!important;}
+h2{font-size:clamp(1.95rem,3.35vw,3rem)!important;line-height:1.08!important;letter-spacing:-.028em!important;}
+h3{font-size:clamp(1.15rem,1.55vw,1.38rem)!important;line-height:1.2!important;letter-spacing:-.018em!important;}
+p,li{line-height:1.68!important;}
+p{margin-top:0;}
+.prose p,.structural-prose p,.about-longform p{margin-bottom:1.25em!important;}
+.prose p:last-child,.structural-prose p:last-child,.about-longform p:last-child{margin-bottom:0!important;}
+.lead{font-size:clamp(1.18rem,1.8vw,1.52rem)!important;line-height:1.48!important;}
+.eyebrow,.section-head .eyebrow,.hero .eyebrow{font-size:.82rem!important;line-height:1.4!important;}
+
+/* Reading blocks share one left edge. */
 :is(.section-head,.prose,.legal,.form,.quote-intro,.quote-builder,.quote-step,.card,.step,
 .timeline,.timeline-item,.project-summary,.amcham-benefit-box,.service-context-lead,
-.about-longform,.professional-network,.contact-custom-quote,.budget-result,.custom-brief){
-  text-align:left!important;
-}
-:is(.section-head,.prose,.legal,.form,.quote-intro,.service-context-lead,.about-longform){
-  margin-left:0!important;
-  margin-right:auto!important;
-}
+.about-longform,.professional-network,.contact-custom-quote,.budget-result,.custom-brief){text-align:left!important;}
+:is(.section-head,.prose,.legal,.form,.quote-intro,.service-context-lead,.about-longform){margin-left:0!important;margin-right:auto!important;}
 .section-head{width:min(100%,var(--apple-reading-max));max-width:var(--apple-reading-max)!important;margin-bottom:var(--apple-block-gap)!important;}
 .prose,.legal,.form,.quote-intro,.about-longform{width:min(100%,var(--apple-reading-max));max-width:var(--apple-reading-max)!important;}
 .service-context-lead,.professional-network .prose{width:min(100%,var(--apple-wide-reading-max));max-width:var(--apple-wide-reading-max)!important;}
 :is(.card,.step,.quote-step,.project-summary,.amcham-benefit-box) :is(h2,h3,h4,p,li,dt,dd){text-align:left!important;}
 
-/* Hero: editorial text uses the left reading axis, never accidental centering. */
+/* Authored surface sequence is authoritative. */
+.section-band{border-top:1px solid var(--apple-line)!important;border-bottom:1px solid var(--apple-line)!important;}
+main>section.surface-white,main>section[data-surface="white"],.section-band.surface-white,.section-band[data-surface="white"]{background:var(--apple-surface)!important;}
+main>section.surface-soft,main>section[data-surface="soft"],.section-band.surface-soft,.section-band[data-surface="soft"]{background:var(--apple-surface-soft)!important;}
+main>section.surface-dark,main>section[data-surface="dark"],.section-band.surface-dark,.section-band[data-surface="dark"]{background:var(--apple-surface-dark)!important;color:#F5F5F7!important;}
+main>section.section-band:not([data-surface]):not(.surface-white):not(.surface-soft):not(.surface-dark):nth-of-type(odd){background:var(--apple-surface)!important;}
+main>section.section-band:not([data-surface]):not(.surface-white):not(.surface-soft):not(.surface-dark):nth-of-type(even){background:var(--apple-surface-soft)!important;}
+[data-surface="dark"] :is(h1,h2,h3,p,.lead){color:#F5F5F7!important;}
+[data-surface="dark"] :is(.eyebrow,.label,.kicker,.title-accent){color:var(--apple-gold-dark)!important;}
+[data-surface="dark"] .btn-link{color:#F5F5F7!important;}
+
+/* Hero: image-first pages meet the header; copy uses the global reading axis. */
 .hero .wrap,.pf-intro .wrap{text-align:left!important;}
 .hero :is(h1,.lead,.eyebrow){margin-left:0!important;margin-right:auto!important;text-align:left!important;}
 .hero h1{max-width:16ch!important;}
 .hero .lead{max-width:50ch!important;}
 .hero-actions,.service-actions{justify-content:flex-start!important;}
+main>section.hero.hero-image-first.hero-visual-only{padding:0!important;margin:0!important;}
+main>section.hero.hero-image-first.hero-visual-only>.wrap{padding-top:0!important;padding-bottom:0!important;}
+main>section.hero-copy-only{padding-top:var(--apple-section-space-compact)!important;}
+main[data-homepage-redesign] .hero-image-first .hero-figure{margin-bottom:0!important;}
+main[data-homepage-redesign] .hero-copy-only{margin-top:0!important;}
 
 /* Intentional centred components only. */
 :is(.cta-band,.statement,.editorial-statement,.text-center){text-align:center!important;}
-:is(.cta-band,.statement,.editorial-statement,.text-center) :is(h1,h2,h3,p,.lead,.section-head,.prose){
-  margin-left:auto!important;margin-right:auto!important;text-align:center!important;
-}
+:is(.cta-band,.statement,.editorial-statement,.text-center) :is(h1,h2,h3,p,.lead,.section-head,.prose){margin-left:auto!important;margin-right:auto!important;text-align:center!important;}
 .cta-band .wrap{display:flex;flex-direction:column;align-items:center;}
 
-/* Layout families. */
-:is(.cards,.steps,.gallery,.split,.service-info-cards,.smart-quote-layout,.quote-layout,.grid-2,
-.category-grid,.legal-grid){gap:var(--apple-card-gap)!important;}
+/* Layout families use one gap scale. */
+:is(.cards,.steps,.gallery,.split,.service-info-cards,.smart-quote-layout,.quote-layout,.grid-2,.grid-3,
+.card-grid,.category-grid,.legal-grid,.fp-decision-grid){gap:var(--apple-card-gap)!important;row-gap:var(--apple-card-gap)!important;}
 :is(.cards,.steps,.service-info-cards,.legal-grid){align-items:stretch!important;}
-.card,.quote-step,.quote-summary-card,.amcham-benefit-box,.project-summary{
+.card,.quote-step,.quote-summary-card,.amcham-benefit-box,.project-summary,.fp-choice{
+  margin:0!important;
   border-radius:var(--apple-radius)!important;
   box-shadow:none!important;
 }
-.card{padding:clamp(22px,2.7vw,32px)!important;}
+.card{padding:clamp(24px,2.8vw,34px)!important;}
 .card:hover{transform:none!important;box-shadow:none!important;}
-.split{column-gap:clamp(32px,5vw,72px)!important;}
+.split{column-gap:clamp(36px,5vw,72px)!important;}
 .timeline,.timeline-item,.steps,.ticks,.faq{width:100%;}
 .timeline-item,.step{min-width:0;}
 .faq summary{min-height:52px;display:flex;align-items:center;}
 
-/* Contrast contract: #B79C44 is decorative on light surfaces; readable gold text is #8A681F. */
-:is(.section-head .eyebrow,.price-card .price,.price-line,.card .more,.map-card-link,.brand-word,
-.location-card-linkable .map-card-link){color:var(--apple-gold-text)!important;}
-.section-band{background:var(--apple-surface-soft)!important;}
-:is(.card,.quote-builder,.quote-step,.quote-summary-card,.amcham-benefit-box,.project-summary){background:var(--apple-surface)!important;}
-.card p,.step p,.microcopy,.custom-brief p,.amcham-copy{color:var(--apple-muted)!important;}
+/* Homepage decision tail is a deliberate component, not loose text. */
+.fp-decision-inner{width:min(100%,var(--apple-page-max))!important;max-width:var(--apple-page-max)!important;margin-inline:auto!important;padding-inline:var(--apple-gutter)!important;box-sizing:border-box!important;}
+.fp-art-path,.fp-decision-actions{
+  width:100%!important;
+  margin-top:var(--apple-card-gap)!important;
+  padding:clamp(20px,2.2vw,28px)!important;
+  background:var(--apple-surface)!important;
+  border:1px solid var(--apple-line)!important;
+  border-radius:var(--apple-radius)!important;
+  box-sizing:border-box!important;
+  box-shadow:none!important;
+}
+.fp-art-path{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:16px 28px!important;flex-wrap:wrap!important;}
+.fp-art-path>span{color:#3F4147!important;}
+.fp-decision-actions{display:flex!important;justify-content:flex-start!important;align-items:center!important;gap:14px 24px!important;flex-wrap:wrap!important;}
+.fp-decision-actions .btn{margin:0!important;}
 
-/* Form and interactive geometry. */
+/* Full-width drawers start on the same content axis as every other block. */
+.project-framework-drawer>summary{width:min(100%,var(--apple-page-max))!important;margin-inline:auto!important;padding-left:var(--apple-gutter)!important;padding-right:var(--apple-gutter)!important;box-sizing:border-box!important;}
+.project-framework-content>.section-band>.wrap,.project-framework-content>.section-band>.container{width:min(100%,var(--apple-page-max))!important;margin-inline:auto!important;}
+.project-framework-content>.section-band{padding-top:var(--apple-section-space-compact)!important;padding-bottom:var(--apple-section-space-compact)!important;}
+
+/* Contrast and accessible interaction. */
+:is(.section-head .eyebrow,.price-card .price,.price-line,.card .more,.map-card-link,.brand-word,.location-card-linkable .map-card-link){color:var(--apple-gold-text)!important;}
+:is(.card,.quote-builder,.quote-step,.quote-summary-card,.amcham-benefit-box,.project-summary,.fp-choice){background:var(--apple-surface)!important;}
+.card p,.step p,.microcopy,.custom-brief p,.amcham-copy{color:var(--apple-muted)!important;}
 :is(.btn,.nav-cta,.pf-filter,.menu-btn,button,input,select,textarea,summary){min-height:44px;}
 .field input,.field select,.field textarea{font-size:16px;}
-.form,.quote-builder{min-width:0;}
-.check-grid,.category-grid,.option-stack{min-width:0;}
+.form,.quote-builder,.check-grid,.category-grid,.option-stack{min-width:0;}
+main :is(.section,.section-band) p a:not(.btn):not(.btn-link){text-decoration:underline!important;text-underline-offset:.18em!important;text-decoration-thickness:max(1px,.07em)!important;}
+.site-header .menu-btn{min-width:44px!important;min-height:44px!important;align-items:center!important;justify-content:center!important;}
 
-/* Executive footer: information is left aligned; brand block may breathe but does not float. */
-.site-footer{background:#202530!important;color:#AEB4C2!important;}
-.site-footer .wrap{width:min(100%,var(--apple-page-max))!important;max-width:var(--apple-page-max)!important;}
-.footer-grid{
-  display:grid!important;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr))!important;
-  gap:clamp(32px,4vw,56px)!important;
-  align-items:start!important;
-  text-align:left!important;
-}
-.footer-brand-col{grid-column:span 2;max-width:360px!important;text-align:left!important;}
-.site-footer :is(h3,li,p,a){text-align:left;}
-.footer-bottom{justify-content:flex-start!important;gap:12px 24px!important;text-align:left!important;}
-
-@media (max-width:1024px){
-  :root{--apple-section-space:clamp(60px,7vw,84px);--apple-gutter:clamp(22px,4.5vw,44px);}
-  .footer-brand-col{grid-column:span 1;}
-  .smart-quote-layout,.quote-layout{grid-template-columns:1fr!important;}
-  .quote-intro{position:static!important;}
-}
-@media (max-width:768px){
-  :root{--apple-section-space:60px;--apple-gutter:24px;--apple-card-gap:18px;}
-  h1{font-size:clamp(2.35rem,9vw,3.4rem)!important;}
-  h2{font-size:clamp(1.75rem,7vw,2.35rem)!important;}
-  .hero{padding:68px 0 52px!important;}
-  :is(.cards,.steps,.split,.service-info-cards,.smart-quote-layout,.quote-layout,.grid-2,
-  .category-grid,.legal-grid){grid-template-columns:1fr!important;}
-  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
-  .ticks{columns:1!important;}
-  .section-head,.prose,.legal,.form,.quote-intro,.about-longform,.service-context-lead{max-width:100%!important;}
-  .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
-}
-@media (max-width:560px){
-  :root{--apple-section-space:52px;--apple-gutter:20px;--apple-card-gap:16px;}
-  body{font-size:16px;line-height:1.55;}
-  h1{font-size:clamp(2.15rem,11vw,3rem)!important;}
-  h2{font-size:clamp(1.65rem,8vw,2.1rem)!important;}
-  .hero{padding:60px 0 44px!important;}
-  .hero-actions,.service-actions{display:grid!important;grid-template-columns:1fr!important;width:100%;}
-  .hero-actions .btn,.service-actions .btn{width:100%;text-align:center;}
-  .gallery{grid-template-columns:1fr!important;}
-  .card,.quote-step,.quote-summary-card,.amcham-benefit-box,.project-summary{border-radius:var(--apple-radius-small)!important;}
-  .footer-grid{grid-template-columns:1fr!important;}
-  .footer-brand-col{grid-column:auto;}
-  .footer-bottom{display:grid!important;grid-template-columns:1fr!important;}
-}
-@media (prefers-reduced-motion:reduce){
-  .card,.btn,.menu-btn,.nav-links{transition:none!important;transform:none!important;}
+/* Menu: current/focus state is typographic, never a pill or framed control. */
+.bn-mega-link.active,.bn-mega-link[aria-current="page"],.bn-mega-link:focus-visible{
+  border:0!important;
+  outline:0!important;
+  outline-offset:0!important;
+  box-shadow:none!important;
+  background:transparent!important;
+  border-radius:0!important;
+  padding-left:0!important;
+  padding-right:0!important;
+  text-decoration-line:underline!important;
+  text-decoration-thickness:2px!important;
+  text-underline-offset:.24em!important;
+  text-decoration-color:currentColor!important;
 }
 
 /* QUOTE-DENSITY-REMEDIATION-20260814:START */
 @media(min-width:1024px){
-  html body .smart-quote-layout{
-    grid-template-columns:minmax(250px,.58fr) minmax(0,1.42fr)!important;
-    gap:clamp(28px,3.6vw,48px)!important;
-    align-items:start!important;
-  }
-  html body .smart-quote-layout>.form{max-width:none!important;width:100%!important;min-width:0!important}
-  html body .smart-quote-layout .quote-intro{max-width:34ch!important}
-  html body .smart-quote-layout .quote-step{padding:18px 20px!important;margin-bottom:14px!important;border-radius:14px!important}
-  html body .smart-quote-layout .quote-step h3{margin-bottom:13px!important;font-size:1.04rem!important}
-  html body .smart-quote-layout .category-grid{gap:9px!important;align-items:start!important}
-  html body .smart-quote-layout .option-stack{gap:8px!important;margin-bottom:12px!important}
-  html body .smart-quote-layout :is(.category-card,.option-row){padding:12px 14px!important;border-radius:12px!important;align-self:start!important}
-  html body .smart-quote-layout .quote-summary-card{padding:20px 22px!important;margin-top:22px!important;border-radius:16px!important}
-  html body .smart-quote-layout .quote-decision-guide{margin-bottom:14px!important;padding:14px 16px!important}
-  html body .smart-quote-layout :is(.grid-2,.grid-3,.check-grid,.production-grid){row-gap:12px!important}
-  html body .smart-quote-layout .custom-brief{margin:12px 0 16px!important}
-}
-@media(max-width:1023px){
-  html body .smart-quote-layout .quote-step{padding:18px!important;border-radius:16px!important}
-  html body .smart-quote-layout :is(.category-card,.option-row){padding:13px 14px!important;border-radius:13px!important;align-self:start!important}
+  .smart-quote-layout{grid-template-columns:minmax(250px,.58fr) minmax(0,1.42fr)!important;gap:clamp(28px,3.6vw,48px)!important;align-items:start!important;}
+  .smart-quote-layout>.form{max-width:none!important;width:100%!important;min-width:0!important;}
+  .smart-quote-layout .quote-intro{max-width:34ch!important;}
+  .smart-quote-layout .quote-step{padding:18px 20px!important;margin-bottom:14px!important;border-radius:14px!important;}
+  .smart-quote-layout .quote-step h3{margin-bottom:13px!important;font-size:1.04rem!important;}
+  .smart-quote-layout .category-grid{gap:9px!important;align-items:start!important;}
+  .smart-quote-layout .option-stack{gap:8px!important;margin-bottom:12px!important;}
+  .smart-quote-layout :is(.category-card,.option-row){padding:12px 14px!important;border-radius:12px!important;align-self:start!important;}
+  .smart-quote-layout .quote-summary-card{padding:20px 22px!important;margin-top:22px!important;border-radius:16px!important;}
 }
 /* QUOTE-DENSITY-REMEDIATION-20260814:END */
 
-
-
 /* DESKTOP-A11Y-REMEDIATION-20260814:START */
-/* Lighthouse/browser-confirmed contrast, touch-target, wrapping and link distinctions. */
-html body [data-surface="dark"] .section-head :is(h1,h2,h3){color:#F5F5F7!important;}
-html body [data-surface="dark"] .section-head :is(.eyebrow,.label,.kicker){color:#DCC56B!important;}
-html body .site-footer .brand .brand-word{color:#DCC56B!important;}
-html body main :is(.section,.section-band) p a:not(.btn):not(.btn-link){
-  text-decoration:underline!important;
-  text-underline-offset:.18em!important;
-  text-decoration-thickness:max(1px,.07em)!important;
+@media(max-width:480px){
+  main :is(h1,h2,h3,p,li,a,strong,span,code){overflow-wrap:anywhere;}
+  main :is(.legal,.prose,.card,.split,.grid-2,.grid-3){min-width:0;}
 }
-/* Keep the visible hamburger glyph unchanged while ensuring the interactive
-   control itself meets the mobile touch-target contract. */
-html body .site-header .menu-btn{
-  min-width:44px!important;
-  min-height:44px!important;
-  align-items:center!important;
-  justify-content:center!important;
-}
-/* The homepage principle band is a dark surface. Generic heading/prose rules
-   previously reintroduced dark ink on the navy background. */
-html body .presence-thesis[data-surface="dark"]{
-  background:#202530!important;
-  color:#F5F5F7!important;
-}
-html body .presence-thesis[data-surface="dark"] :is(h1,h2,h3,p){color:#F5F5F7!important;}
-html body .presence-thesis[data-surface="dark"] :is(.eyebrow,.title-accent){color:#DCC56B!important;}
-html body .presence-thesis[data-surface="dark"] .btn-link{color:#F5F5F7!important;}
-html body .presence-thesis[data-surface="dark"] .btn-link:hover,
-html body .presence-thesis[data-surface="dark"] .btn-link:focus-visible{color:#DCC56B!important;}
-/* Long legal URLs, Austrian identifiers and German compounds may wrap on narrow
-   screens; ordinary prose remains unaffected because overflow-wrap only acts
-   when a token cannot otherwise fit. */
-@media (max-width:480px){
-  html body main :is(h1,h2,h3,p,li,a,strong,span,code){overflow-wrap:anywhere;}
-  html body main :is(.legal,.prose,.card,.split,.grid-2,.grid-3){min-width:0;}
-}
-/* FIRST-PRINCIPLES-DESKTOP-GUARD-20260814:START */
-@media(min-width:769px){
-  html body main h1,
-  html body header h1{
-    font-size:min(4.375rem,7vw)!important;
-  }
-}
-html body main .trust-hero p.lead{
-  width:min(100%,52rem)!important;
-  max-width:52rem!important;
-}
-/* FIRST-PRINCIPLES-DESKTOP-GUARD-20260814:END */
 /* DESKTOP-A11Y-REMEDIATION-20260814:END */
-/* UI-POLISH-20260816:START */
-/* Homepage visual hero must touch the header without inheriting the generic
-   main>section vertical rhythm from later design-system layers. */
-html body main > section.hero.hero-image-first.hero-visual-only{
-  padding-top:0!important;
-  margin-top:0!important;
-}
-html body main > section.hero.hero-image-first.hero-visual-only > .wrap{
-  padding-top:0!important;
-}
 
-/* PageSpeed/Lighthouse contrast: the author-led fine-art prompt is secondary
-   copy, but it must still meet normal-text WCAG contrast on the soft surface. */
-html body .fp-decision-system.surface-soft .fp-art-path > span{
-  color:#3f4147!important;
-}
+/* Executive footer: content-height only; shared responsive grid. */
+.site-footer{background:var(--apple-surface-dark)!important;color:#AEB4C2!important;padding:clamp(54px,6vw,76px) 0 30px!important;}
+.site-footer .wrap{width:min(100%,var(--apple-page-max))!important;max-width:var(--apple-page-max)!important;}
+.footer-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))!important;gap:clamp(32px,4vw,56px)!important;align-items:start!important;text-align:left!important;}
+.footer-brand-col{grid-column:span 2;max-width:360px!important;text-align:left!important;}
+.site-footer :is(h3,li,p,a){text-align:left;}
+.footer-bottom{justify-content:flex-start!important;gap:12px 24px!important;text-align:left!important;}
 
-/* Quote cards keep the 44px accessible info target in normal flow while the
-   copy wrapper owns the full second grid column. This pins every info control
-   to the card's right edge instead of letting it follow the label text. */
-html body .smart-quote-layout :is(.option-row,.category-card) > span{
-  display:grid!important;
-  width:100%!important;
-  min-width:0!important;
-  grid-template-columns:minmax(0,1fr) 44px!important;
-  column-gap:12px!important;
-  align-items:center!important;
+@media(max-width:1024px){
+  :root{--apple-section-space:clamp(64px,7vw,88px);--apple-section-space-compact:clamp(52px,6vw,72px);--apple-gutter:clamp(22px,4.5vw,44px);}
+  .footer-brand-col{grid-column:span 1;}
+  .smart-quote-layout,.quote-layout{grid-template-columns:1fr!important;}
+  .quote-intro{position:static!important;}
 }
-html body .smart-quote-layout :is(.option-row,.category-card) > span > .info-tip{
-  position:static!important;
-  grid-column:2!important;
-  grid-row:1 / span 2!important;
-  justify-self:end!important;
-  align-self:center!important;
-  margin:0!important;
+@media(max-width:768px){
+  :root{--apple-section-space:64px;--apple-section-space-compact:52px;--apple-gutter:24px;--apple-card-gap:18px;}
+  body{font-size:17px;}
+  h1{font-size:clamp(2.3rem,9vw,3.35rem)!important;}
+  h2{font-size:clamp(1.8rem,7vw,2.4rem)!important;}
+  .hero:not(.hero-image-first){padding:64px 0 52px!important;}
+  :is(.cards,.steps,.split,.service-info-cards,.smart-quote-layout,.quote-layout,.grid-2,.category-grid,.legal-grid){grid-template-columns:1fr!important;}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .ticks{columns:1!important;}
+  .section-head,.prose,.legal,.form,.quote-intro,.about-longform,.service-context-lead{max-width:100%!important;}
+  .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .fp-art-path{align-items:flex-start!important;flex-direction:column!important;}
 }
-
-/* Footer business identifiers are compact two-column data, not loose list
-   copy. Keep identifiers on one line at desktop widths and allow narrow-screen
-   wrapping only where it is genuinely needed. */
-.site-footer .footer-legal-list{
-  min-width:225px;
+@media(max-width:560px){
+  :root{--apple-section-space:56px;--apple-section-space-compact:46px;--apple-gutter:20px;--apple-card-gap:16px;}
+  body{font-size:16px;line-height:1.58;}
+  h1{font-size:clamp(2.1rem,11vw,3rem)!important;}
+  h2{font-size:clamp(1.65rem,8vw,2.12rem)!important;}
+  .hero:not(.hero-image-first){padding:56px 0 44px!important;}
+  .hero-actions,.service-actions{display:grid!important;grid-template-columns:1fr!important;width:100%;}
+  .hero-actions .btn,.service-actions .btn{width:100%;text-align:center;}
+  .gallery{grid-template-columns:1fr!important;}
+  .card,.quote-step,.quote-summary-card,.amcham-benefit-box,.project-summary,.fp-choice{border-radius:var(--apple-radius-small)!important;}
+  .footer-grid{grid-template-columns:1fr!important;}
+  .footer-brand-col{grid-column:auto;}
+  .footer-bottom{display:grid!important;grid-template-columns:1fr!important;}
+  .fp-art-path,.fp-decision-actions{padding:20px!important;}
+  .fp-decision-actions{align-items:stretch!important;flex-direction:column!important;}
+  .fp-decision-actions .btn,.fp-decision-actions .fp-text-action{width:100%!important;justify-content:center!important;text-align:center!important;}
 }
-.site-footer .footer-legal-list li{
-  display:grid!important;
-  grid-template-columns:58px minmax(0,1fr)!important;
-  column-gap:10px!important;
-  align-items:start!important;
-  margin-bottom:8px!important;
-  line-height:1.35!important;
-}
-.site-footer .footer-legal-list li > span{
-  min-width:0!important;
-  line-height:1.35!important;
-}
-.site-footer .footer-legal-list li > strong{
-  min-width:0!important;
-  line-height:1.35!important;
-  white-space:nowrap;
-}
-
-/* Copyright and utility links form one deliberate metadata row on desktop,
-   with a compact stacked fallback instead of space-between stretching. */
-.site-footer .footer-bottom{
-  display:grid!important;
-  grid-template-columns:max-content minmax(0,1fr)!important;
-  align-items:start!important;
-  justify-content:initial!important;
-  column-gap:24px!important;
-  row-gap:8px!important;
-  margin-top:28px!important;
-  padding-top:16px!important;
-  line-height:1.4!important;
-}
-.site-footer .footer-bottom > span:first-child{
-  white-space:nowrap;
-  line-height:1.4!important;
-}
-.site-footer .footer-bottom > span:last-child{
-  min-width:0;
-  line-height:1.4!important;
-}
-@media (max-width:980px){
-  .site-footer .footer-bottom{
-    grid-template-columns:1fr!important;
-  }
-  .site-footer .footer-bottom > span:first-child{
-    white-space:normal;
-  }
-}
-@media (max-width:620px){
-  .site-footer .footer-legal-list{min-width:0;}
-  .site-footer .footer-legal-list li > strong{white-space:normal;}
-}
-/* UI-POLISH-20260816:END */
-
-/* QUOTE-LAYOUT-REGRESSION-20260816:START */
-/* Keep quote choices optically compact: intrinsic rows, no distributed empty space. */
-html body .smart-quote-layout .category-grid{
-  align-content:start!important;
-  align-items:start!important;
-  grid-auto-rows:max-content!important;
-  height:auto!important;
-  min-height:0!important;
-}
-html body .smart-quote-layout .quote-step{
-  height:auto!important;
-  min-height:0!important;
-  align-self:start!important;
-  margin-bottom:14px!important;
-  padding:18px 20px!important;
-}
-html body .smart-quote-layout .quote-step h3{margin-bottom:12px!important;}
-html body .smart-quote-layout .option-stack{gap:8px!important;margin-bottom:10px!important;}
-html body .smart-quote-layout .category-grid{gap:10px!important;row-gap:10px!important;}
-html body .smart-quote-layout .grid-2,
-html body .smart-quote-layout .grid-3,
-html body .smart-quote-layout .check-grid,
-html body .smart-quote-layout .production-grid{row-gap:10px!important;column-gap:10px!important;align-items:start!important;}
-html body .smart-quote-layout .category-card,
-html body .smart-quote-layout .option-row{margin:0!important;min-height:0!important;height:auto!important;align-self:start!important;}
-
-/* Choice row contract: radio at the left inner edge, copy in the fluid middle,
-   and the 44px info target locked to the right edge on the same visual row. */
-html body .smart-quote-layout .option-row{
-  display:grid!important;
-  grid-template-columns:24px minmax(0,1fr)!important;
-  column-gap:12px!important;
-  align-items:center!important;
-}
-html body .smart-quote-layout .option-row > input[type="radio"]{
-  grid-column:1!important;
-  justify-self:start!important;
-  align-self:center!important;
-  margin:0!important;
-  inline-size:24px!important;
-  block-size:24px!important;
-  min-width:24px!important;
-  min-height:24px!important;
-}
-html body .smart-quote-layout .option-row > span{
-  grid-column:2!important;
-  display:grid!important;
-  width:100%!important;
-  min-width:0!important;
-  grid-template-columns:minmax(0,1fr) 44px!important;
-  column-gap:14px!important;
-  align-items:center!important;
-  line-height:1.42!important;
-}
-html body .smart-quote-layout .option-row > span > .info-tip{
-  position:static!important;
-  grid-column:2!important;
-  grid-row:1!important;
-  justify-self:end!important;
-  align-self:center!important;
-  margin:0!important;
-}
-
-/* Contract/licensing drawer: preserve breathing room between intro copy, card grid,
-   action row and the following legal bridge. The drawer must never visually collide
-   with the next section. */
-html body .quote-deep-details > section.pricing-licensing-clarity{
-  padding-top:clamp(34px,4vw,52px)!important;
-  padding-bottom:clamp(42px,4.8vw,64px)!important;
-}
-html body .quote-deep-details .pricing-licensing-clarity .section-head{
-  margin-bottom:clamp(34px,4vw,48px)!important;
-}
-html body .quote-deep-details .pricing-licensing-clarity .section-head > :last-child{
-  margin-bottom:0!important;
-}
-html body .quote-deep-details .pricing-licensing-clarity .card-grid{
-  margin-top:0!important;
-  margin-bottom:clamp(34px,4vw,48px)!important;
-  row-gap:clamp(18px,2.2vw,26px)!important;
-  column-gap:clamp(18px,2.2vw,26px)!important;
-}
-html body .quote-deep-details .pricing-licensing-clarity .button-row{
-  margin:0!important;
-  padding-top:2px!important;
-}
-html body .quote-deep-details > section.quote-legal-bridge{
-  margin-top:0!important;
-  padding-top:clamp(42px,4.8vw,64px)!important;
-  padding-bottom:clamp(42px,4.8vw,64px)!important;
-  border-top:1px solid var(--line)!important;
-}
-html body .quote-deep-details > section.quote-legal-bridge .section-head{
-  margin-bottom:clamp(24px,3vw,34px)!important;
-}
-html body .quote-deep-details > section.quote-legal-bridge .service-actions{
-  margin-top:0!important;
-  padding-top:0!important;
-}
-
-/* Footer metadata row: copyright flush left, utility links flush right on desktop. */
-@media (min-width:981px){
-  html body .site-footer .footer-bottom{
-    display:grid!important;
-    grid-template-columns:max-content minmax(0,1fr)!important;
-    align-items:center!important;
-    column-gap:28px!important;
-    row-gap:0!important;
-    width:100%!important;
-  }
-  html body .site-footer .footer-bottom > span:first-child{
-    justify-self:start!important;
-    text-align:left!important;
-    white-space:nowrap!important;
-  }
-  html body .site-footer .footer-bottom > span:last-child{
-    justify-self:end!important;
-    text-align:right!important;
-    white-space:nowrap!important;
-  }
-}
-@media (max-width:980px){
-  html body .site-footer .footer-bottom{grid-template-columns:1fr!important;row-gap:8px!important;}
-  html body .site-footer .footer-bottom > span:first-child,
-  html body .site-footer .footer-bottom > span:last-child{justify-self:start!important;text-align:left!important;white-space:normal!important;}
-}
-@media (max-width:620px){
-  html body .smart-quote-layout .option-row{grid-template-columns:24px minmax(0,1fr)!important;column-gap:10px!important;}
-  html body .smart-quote-layout .option-row > span{grid-template-columns:minmax(0,1fr) 44px!important;column-gap:10px!important;}
-  html body .quote-deep-details > section.pricing-licensing-clarity,
-  html body .quote-deep-details > section.quote-legal-bridge{padding-top:30px!important;padding-bottom:36px!important;}
-  html body .quote-deep-details .pricing-licensing-clarity .section-head{margin-bottom:28px!important;}
-  html body .quote-deep-details .pricing-licensing-clarity .card-grid{margin-bottom:30px!important;row-gap:14px!important;column-gap:14px!important;}
-}
-/* QUOTE-LAYOUT-REGRESSION-20260816:END */
-
-/* AUDIT-20260816-FOOTER-SUMMARY-CONTRAST */
-@media (max-width:1040px){
-  html body .site-footer .footer-accordion > summary{
-    color:#CBB45F!important;
-    opacity:1!important;
-    font-weight:650!important;
-  }
-  html body .site-footer .footer-accordion > summary:hover,
-  html body .site-footer .footer-accordion > summary:focus-visible{color:#fff!important;}
-}
-
+@media(prefers-reduced-motion:reduce){.card,.btn,.menu-btn,.nav-links{transition:none!important;transform:none!important;}}
 /* APPLE-RESPONSIVE-CONTRACT-V1:END */
 

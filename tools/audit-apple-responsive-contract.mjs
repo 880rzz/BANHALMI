@@ -18,12 +18,12 @@ const contract = a >= 0 && b > a ? css.slice(a,b) : '';
 
 for (const needle of [
   '--apple-page-max:1200px','--apple-reading-max:760px','--apple-gutter:',
-  '--apple-section-space:','text-align:left','min-height:44px',
-  '@media (max-width:1024px)','@media (max-width:768px)','@media (max-width:560px)',
+  '--apple-section-space:','--apple-card-gap:','text-align:left','min-height:44px',
+  '@media(max-width:1024px)','@media(max-width:768px)','@media(max-width:560px)',
   '.section-head','.prose','.cards','.steps','.timeline','.faq','.form','.legal',
-  '.quote-step','.cta-band','.site-footer',
-  'DESKTOP-A11Y-REMEDIATION-20260814:START','QUOTE-DENSITY-REMEDIATION-20260814:START',
-  '.category-card','.option-row','.quote-summary-card','text-decoration:underline'
+  '.quote-step','.cta-band','.site-footer','.fp-art-path','.project-framework-drawer>summary',
+  'SINGLE-CSS-AUTHORITY-20260825','DESKTOP-A11Y-REMEDIATION-20260814:START','QUOTE-DENSITY-REMEDIATION-20260814:START',
+  '.bn-mega-link[aria-current="page"]','border-radius:0!important'
 ]) if (!contract.includes(needle)) failures.push(`contract missing: ${needle}`);
 
 function rgb(hex){const v=hex.replace('#','');return [0,2,4].map(i=>parseInt(v.slice(i,i+2),16)/255)}
@@ -45,6 +45,11 @@ function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){if([
 walk('.');
 const realPages = htmlFiles.filter(p=>!p.startsWith('redirects/'));
 if (realPages.length < 50) failures.push(`unexpectedly low HTML coverage: ${realPages.length}`);
+
+
+const workflow = fs.readFileSync('.github/workflows/pages.yml','utf8');
+if (workflow.includes('home.css')) failures.push('site.css must remain the only production stylesheet; home.css generation detected');
+if (workflow.includes('purgecss')) failures.push('homepage PurgeCSS fork detected; single CSS authority must not be split');
 
 if (failures.length){console.error(failures.join('\n'));process.exit(1)}
 console.log(`Apple responsive contract passed for BANHALMI: ${realPages.length} HTML files; final CSS authority includes quote density, accessibility, palette and desktop/tablet/mobile guards.`);
