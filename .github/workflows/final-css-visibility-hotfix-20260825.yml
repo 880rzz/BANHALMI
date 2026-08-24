@@ -1,5 +1,6 @@
 name: Finalize single CSS visibility authority
 
+# Retry after production workflow consolidation.
 on:
   push:
     branches: [main]
