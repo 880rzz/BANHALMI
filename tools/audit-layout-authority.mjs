@@ -10,7 +10,7 @@ if(css.indexOf(start,a+1)!==-1||css.indexOf(end,b+1)!==-1) fail.push('multiple A
 if(!contract.includes('SINGLE-CSS-AUTHORITY-20260825')) fail.push('single CSS authority marker missing');
 for(const needle of [
   '--apple-page-max:1200px','--apple-reading-max:760px','--apple-gutter:',
-  '--apple-section-space:','--apple-card-gap:',
+  '--apple-section-space:','--apple-card-gap:','content-visibility:visible!important','contain-intrinsic-size:none!important',
   'main>section,body>main>section{padding-block:var(--apple-section-space)!important',
   '.smart-quote-layout .category-grid{gap:9px!important;align-items:start!important;}',
   '.fp-art-path,.fp-decision-actions{',

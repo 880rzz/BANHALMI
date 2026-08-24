@@ -3956,7 +3956,7 @@ body>.site-footer,.site-footer{height:auto!important;min-height:0!important;flex
   padding-inline:var(--apple-gutter)!important;
   box-sizing:border-box!important;
 }
-main>section,body>main>section{padding-block:var(--apple-section-space)!important;margin-block:0!important;}
+main>section,body>main>section{padding-block:var(--apple-section-space)!important;margin-block:0!important;content-visibility:visible!important;contain-intrinsic-size:none!important;}
 main>section+section{margin-top:0!important;}
 section>p,section>h2{
   width:min(100%,var(--apple-page-max));
