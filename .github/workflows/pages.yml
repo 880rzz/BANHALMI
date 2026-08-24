@@ -48,16 +48,9 @@ jobs:
           test -f _site/hu/index.html
           test -f _site/de-at/index.html
           test -f _site/assets/css/site.css
+          test -f _site/assets/css/visual-rhythm-20260825.css
           node tools/optimize-production-artifact.mjs _site
           node tools/harden-production-artifact.mjs _site
-          cat >> _site/assets/css/site.css <<'EOF'
-          @media (max-width:760px){
-            main[data-homepage-redesign] > section:nth-of-type(n+2){
-              content-visibility:auto;
-              contain-intrinsic-size:auto 760px;
-            }
-          }
-          EOF
           node tools/build-home-css-safelist.mjs _site/assets/css/site.css _site/.home-css-safelist.html
           npx --yes purgecss@7.0.2 --css _site/assets/css/site.css --content _site/index.html _site/hu/index.html _site/de-at/index.html _site/.home-css-safelist.html --output /tmp/banhalmi-home-css
           test -s /tmp/banhalmi-home-css/site.css
@@ -77,6 +70,8 @@ jobs:
           mv /tmp/site.min.css _site/assets/css/site.css
           npx --yes esbuild@0.25.9 _site/assets/css/home.css --minify --outfile=/tmp/home.min.css
           mv /tmp/home.min.css _site/assets/css/home.css
+          npx --yes esbuild@0.25.9 _site/assets/css/visual-rhythm-20260825.css --minify --outfile=/tmp/visual-rhythm.min.css
+          mv /tmp/visual-rhythm.min.css _site/assets/css/visual-rhythm-20260825.css
           for js in _site/assets/js/main.js _site/assets/js/mega-menu.js _site/assets/js/analytics.js; do
             if [ -f "$js" ]; then
               npx --yes esbuild@0.25.9 "$js" --minify --outfile=/tmp/runtime.min.js
@@ -85,13 +80,14 @@ jobs:
           done
           test -s _site/assets/css/site.css
           test -s _site/assets/css/home.css
+          test -s _site/assets/css/visual-rhythm-20260825.css
           test -f _site/.well-known/agent.json
           test -f _site/api/v1/identity.json
           test -f _site/robots.txt
           test -f _site/sitemap.xml
           test -f _site/llms.txt
           test -f _site/ai.txt
-          test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "2"
+          test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "3"
           grep -q '/assets/css/home.css' _site/index.html
           grep -q '/assets/css/home.css' _site/hu/index.html
           grep -q '/assets/css/home.css' _site/de-at/index.html
