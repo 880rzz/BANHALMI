@@ -1,0 +1,48 @@
+name: Finalize single CSS visibility authority
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/final-css-visibility-hotfix-20260825.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Patch final authority
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs');
+          const p='assets/css/site.css';
+          let s=fs.readFileSync(p,'utf8');
+          const old='main>section,body>main>section{padding-block:var(--apple-section-space)!important;margin-block:0!important;}';
+          const neu='main>section,body>main>section{padding-block:var(--apple-section-space)!important;margin-block:0!important;content-visibility:visible!important;contain-intrinsic-size:none!important;}';
+          if(!s.includes(old)&&!s.includes(neu)) throw new Error('final section authority rule not found');
+          s=s.replace(old,neu);
+          fs.writeFileSync(p,s);
+          const a='tools/audit-layout-authority.mjs';
+          let q=fs.readFileSync(a,'utf8');
+          if(!q.includes("'content-visibility:visible!important'")) q=q.replace("'--apple-section-space:','--apple-card-gap:',","'--apple-section-space:','--apple-card-gap:','content-visibility:visible!important','contain-intrinsic-size:none!important',");
+          fs.writeFileSync(a,q);
+          NODE
+          rm .github/workflows/final-css-visibility-hotfix-20260825.yml
+      - name: Validate final source authority
+        run: npm test
+      - name: Commit non-workflow patch
+        run: |
+          git restore .github/workflows/final-css-visibility-hotfix-20260825.yml
+          git config user.name "BANHALMI release bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/css/site.css tools/audit-layout-authority.mjs
+          git commit -m "Disable legacy intrinsic blank bands in final CSS authority"
+          git push origin HEAD:main
