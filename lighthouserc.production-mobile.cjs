@@ -6,7 +6,7 @@ module.exports = {
         'https://www.norbertbanhalmi.com/hu/',
         'https://www.norbertbanhalmi.com/de-at/'
       ],
-      numberOfRuns: 2,
+      numberOfRuns: 3,
       settings: {
         formFactor: 'mobile',
         screenEmulation: {
