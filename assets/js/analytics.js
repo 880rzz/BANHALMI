@@ -147,6 +147,7 @@
     };
 
     if (validStoredConsent()) grant();
+    else revoke();
   }
 
   ["pointerdown", "keydown", "touchstart"].forEach(function (type) {
