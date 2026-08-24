@@ -3,6 +3,7 @@
   "@id":"https://www.norbertbanhalmi.com/team-capabilities.json",
   "provider":"https://www.norbertbanhalmi.com/#organization",
   "creativeLead":"https://www.norbertbanhalmi.com/about/",
+  "brandPositioning":"Professional Photography Team",
   "activeMarkets":["Vienna, Austria","Budapest, Hungary"],
   "deliveryModel":{
     "default":"Norbert Bánhalmi leads the photographic and visual direction.",

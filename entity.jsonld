@@ -108,7 +108,7 @@
         "BANHALMI"
       ],
       "url": "https://www.norbertbanhalmi.com/",
-      "description": "BANHALMI is Norbert Banhalmi's strategic visual partnership for executives, founders, experts, professionals, artists, actors, creative professionals, teams and organisations, built around executive portraiture, professional headshots, brand photography, C-level event photography, fine-art authorship and long-term visual positioning.",
+      "description": "BANHALMI is a Norbert Banhalmi-founded professional photography team and strategic visual partnership for executives, founders, experts, professionals, artists, actors, creative professionals, teams and organisations, built around executive portraiture, professional headshots, brand photography, C-level event photography, fine-art authorship and long-term visual positioning.",
       "founder": {
         "@id": "https://www.norbertbanhalmi.com/about/"
       },
@@ -201,7 +201,7 @@
       "founder": {
         "@id": "https://www.norbertbanhalmi.com/about/"
       },
-      "description": "BANHALMI is the professional brand for executive portraiture, professional headshots, brand photography, C-level event photography, fine-art photography and strategic visual positioning, helping people, teams and organisations build a coherent visual presence."
+      "description": "BANHALMI is a professional photography team and brand founded and creatively directed by Norbert Banhalmi. It provides executive portraiture, professional headshots, brand photography, C-level event photography, fine-art photography and strategic visual positioning through Norbert-led, project-specific teams."
     },
     {
       "@type": "WebSite",
