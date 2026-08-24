@@ -13,7 +13,7 @@ const pages=[
     ],
     "urls": [
       "https://www.banhalmi.art/press.html",
-      "https://blog.banhalmi.art/?lang=en-GB"
+      "https://blog.banhalmi.art/en"
     ],
     "group": "Further resources"
   },
@@ -37,7 +37,7 @@ const pages=[
     ],
     "urls": [
       "https://www.banhalmi.art/de-at/press.html",
-      "https://blog.banhalmi.art/?lang=de"
+      "https://blog.banhalmi.art/de"
     ],
     "group": "Weitere Inhalte"
   }

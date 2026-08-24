@@ -79,13 +79,12 @@ if (!/ai\.txt|knowledge|services/i.test(llms)) errors.push('llms.txt: missing ma
 if (!llms.includes('blog-collections.json')) errors.push('llms.txt: missing multilingual service-related editorial collection bridge');
 
 const menu = await text(path.join(root,'assets/js/mega-menu.js'));
-const blogTags = ['portfolio-fotozas','fotozas-stylisttal','portrefotozas','muveszi-akt-fotozas','szakmai-blogok'];
-for (const tag of blogTags) {
-  const base = `https://blog.banhalmi.art/blog/tags/${tag}`;
-  if (!menu.includes(`'${base}'`)) errors.push(`mega-menu.js: missing HU blog collection ${tag}`);
-  if (!menu.includes(`'${base}?lang=en-GB'`)) errors.push(`mega-menu.js: missing EN blog collection ${tag}`);
-  if (!menu.includes(`'${base}?lang=de'`)) errors.push(`mega-menu.js: missing DE blog collection ${tag}`);
+const blogCategories = ['portre-es-portfoliofotozas','portre-es-headshotfotozas','aktfotozas-muveszi-szemmel','vipach-fotografiai-kozosseg'];
+for (const slug of blogCategories) {
+  const url = `https://blog.banhalmi.art/blog/categories/${slug}`;
+  if (!menu.includes(`'${url}'`)) errors.push(`mega-menu.js: missing canonical blog category ${slug}`);
 }
+if (menu.includes('/blog/tags/') || menu.includes('?lang=')) errors.push('mega-menu.js: retired blog tag or query-language URL remains');
 for (const label of ['Journal & expert guides','Szakmai tudástár','Wissen & Journal']) if (!menu.includes(label)) errors.push(`mega-menu.js: missing localized editorial navigation label “${label}”`);
 for (const heading of ['Further reading from the BANHALMI journal','Kapcsolódó írások a BANHALMI szakmai blogból','Weiterführende Beiträge aus dem BANHALMI Journal']) if (!menu.includes(heading)) errors.push(`mega-menu.js: missing localized contextual editorial heading “${heading}”`);
 for (const route of ['/portrait','/hu/portre','/de-at/portrait','/lifestyle','/hu/brand','/de-at/brand','/glamour','/hu/muveszi-fotografia','/de-at/fine-art']) if (!menu.includes(`'${route}'`)) errors.push(`mega-menu.js: missing contextual editorial service route ${route}`);
@@ -99,10 +98,13 @@ if (collections) {
   const items = Array.isArray(collections.itemListElement) ? collections.itemListElement : [];
   if (items.length !== 15) errors.push(`blog-collections.json: expected 15 localized collection records, found ${items.length}`);
   const urls = items.map(x => x?.item?.url).filter(Boolean);
-  for (const tag of blogTags) {
-    const base = `https://blog.banhalmi.art/blog/tags/${tag}`;
-    for (const suffix of ['', '?lang=en-GB', '?lang=de']) if (!urls.includes(base + suffix)) errors.push(`blog-collections.json: missing ${base + suffix}`);
+  for (const slug of blogCategories) {
+    const url = `https://blog.banhalmi.art/blog/categories/${slug}`;
+    if (!urls.includes(url)) errors.push(`blog-collections.json: missing ${url}`);
   }
+  if (JSON.stringify(collections).includes('/blog/tags/') || JSON.stringify(collections).includes('?lang=')) errors.push('blog-collections.json: retired tag or query-language URL remains');
+  const ids = items.map(x => x?.item?.['@id']).filter(Boolean);
+  if (new Set(ids).size !== ids.length) errors.push('blog-collections.json: duplicate category-context @id');
   const person = collections.author || {};
   if (person['@id'] !== 'https://www.norbertbanhalmi.com/about/' || person.sameAs !== 'https://www.wikidata.org/wiki/Q56391118') errors.push('blog-collections.json: Wikidata-first author contract incomplete');
   if (collections.isPartOf?.['@id'] !== 'https://www.norbertbanhalmi.com/#website') errors.push('blog-collections.json: collection map must belong to the professional WebSite that hosts it');
@@ -125,7 +127,8 @@ if (blogEntity) {
   const related = new Set((blog?.isRelatedTo || []).map(x => x?.['@id']));
   for (const id of ['https://www.norbertbanhalmi.com/#website','https://www.banhalmi.art/#website']) if (!related.has(id)) errors.push(`blog-entity.jsonld: Blog missing reciprocal ecosystem relation ${id}`);
   if (JSON.stringify(blogEntity).includes('https://www.norbertbanhalmi.com/#ecosystem')) errors.push('blog-entity.jsonld: undefined #ecosystem node must not be referenced');
-  for (const tag of blogTags) if (!JSON.stringify(blogEntity).includes(`https://blog.banhalmi.art/blog/tags/${tag}#collection`)) errors.push(`blog-entity.jsonld: missing collection entity ${tag}`);
+  for (const slug of blogCategories) if (!JSON.stringify(blogEntity).includes(`https://blog.banhalmi.art/blog/categories/${slug}#collection`)) errors.push(`blog-entity.jsonld: missing category entity ${slug}`);
+  if (JSON.stringify(blogEntity).includes('/blog/tags/') || JSON.stringify(blogEntity).includes('?lang=')) errors.push('blog-entity.jsonld: retired tag or query-language URL remains');
   if (!JSON.stringify(blogEntity).includes('blog-collections.json')) errors.push('blog-entity.jsonld: missing machine-readable collection dataset link');
 }
 

@@ -5,7 +5,7 @@ const pages={
   'index.html':{
     heading:'Throughout my life, I have explored presence through photography.',
     archive:'https://www.banhalmi.art/',
-    journal:'https://blog.banhalmi.art/?lang=en-GB',
+    journal:'https://blog.banhalmi.art/en',
     euforia:'https://www.banhalmi.art/exhibitions/euforia.html'
   },
   'hu/index.html':{
@@ -17,7 +17,7 @@ const pages={
   'de-at/index.html':{
     heading:'Mein ganzes Leben lang habe ich durch die Fotografie Präsenz erforscht.',
     archive:'https://www.banhalmi.art/de-at/',
-    journal:'https://blog.banhalmi.art/?lang=de',
+    journal:'https://blog.banhalmi.art/de',
     euforia:'https://www.banhalmi.art/de-at/exhibitions/euforia.html'
   }
 };
