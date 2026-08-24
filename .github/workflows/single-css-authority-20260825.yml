@@ -1,5 +1,6 @@
 name: Consolidate BANHALMI single CSS authority
 
+# One-shot migration v5: final layout audit is itself part of the single authority contract.
 on:
   push:
     branches: [main]
@@ -41,6 +42,6 @@ jobs:
           rm -f tools/migrate-pages-single-css-20260825.cjs
           rm -f tools/cleanup-css-authority-20260825.cjs
           git add -u
-          git add assets/css/site.css tools/audit-apple-responsive-contract.mjs package.json .github/workflows/pages.yml '*.html' ':**/*.html'
+          git add assets/css/site.css tools/audit-apple-responsive-contract.mjs tools/audit-layout-authority.mjs package.json .github/workflows/pages.yml '*.html' ':**/*.html'
           git commit -m "Restore single Apple responsive CSS authority"
           git push origin HEAD:main
