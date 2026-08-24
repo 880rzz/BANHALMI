@@ -1,0 +1,16 @@
+const fs=require('node:fs');
+const p='.github/workflows/pages.yml';
+let s=fs.readFileSync(p,'utf8');
+s=s.replace('rm -rf _site artifacts/browser-layout artifacts/exhaustive-visual artifacts/lighthouse-desktop artifacts/lighthouse-mobile /tmp/banhalmi-home-css','rm -rf _site artifacts/browser-layout artifacts/exhaustive-visual artifacts/lighthouse-desktop artifacts/lighthouse-mobile');
+s=s.replace('mkdir -p _site /tmp/banhalmi-home-css','mkdir -p _site');
+const start="          cat >> _site/assets/css/site.css <<'EOF'\n";
+const end="          npx --yes esbuild@0.25.9 _site/assets/css/site.css --minify --outfile=/tmp/site.min.css\n";
+const a=s.indexOf(start), b=s.indexOf(end);
+if(a<0||b<a) throw new Error('Could not locate homepage CSS fork in pages.yml');
+s=s.slice(0,a)+end+s.slice(b+end.length);
+s=s.replace("          npx --yes esbuild@0.25.9 _site/assets/css/home.css --minify --outfile=/tmp/home.min.css\n          mv /tmp/home.min.css _site/assets/css/home.css\n",'');
+s=s.replace("          test -s _site/assets/css/home.css\n",'');
+s=s.replace("          test \"$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')\" = \"2\"\n          grep -q '/assets/css/home.css' _site/index.html\n          grep -q '/assets/css/home.css' _site/hu/index.html\n          grep -q '/assets/css/home.css' _site/de-at/index.html\n","          test \"$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')\" = \"1\"\n          grep -q '/assets/css/site.css' _site/index.html\n          grep -q '/assets/css/site.css' _site/hu/index.html\n          grep -q '/assets/css/site.css' _site/de-at/index.html\n");
+if(s.includes('home.css')||s.includes('purgecss')) throw new Error('Production stylesheet fork remains in pages.yml');
+fs.writeFileSync(p,s);
+console.log('Production build now ships one CSS authority.');
