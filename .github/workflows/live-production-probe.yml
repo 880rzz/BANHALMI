@@ -12,6 +12,9 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out audit branch
+        uses: actions/checkout@v7
+
       - name: Probe production origin
         shell: bash
         env:
@@ -30,3 +33,14 @@ jobs:
           fi
           test "$actual" = "$expected"
           printf '%s' "$html" | grep -q 'viko@banhalmi.at'
+
+      - name: Crawl live blog ecosystem in HU EN DE
+        run: node tools/audit-live-blog-ecosystem.mjs
+
+      - name: Upload live blog audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-blog-audit-report
+          path: live-blog-audit-report.json
+          if-no-files-found: warn
