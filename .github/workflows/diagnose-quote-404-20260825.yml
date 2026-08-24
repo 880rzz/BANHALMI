@@ -1,0 +1,54 @@
+name: Diagnose quote builder 404 gate
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/diagnose-quote-404-20260825.yml'
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Build production-like artifact and report every 404 URL
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site
+          git archive --format=tar HEAD | tar -xf - -C _site
+          rm -rf _site/.github _site/tools _site/tests _site/node_modules _site/artifacts
+          rm -f _site/package.json _site/package-lock.json
+          node tools/optimize-production-artifact.mjs _site
+          node tools/harden-production-artifact.mjs _site
+          node tools/perf-static-server.mjs _site 4173 >/tmp/server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          for i in $(seq 1 80); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep .25; done
+          node --input-type=module <<'NODE'
+          import { chromium } from 'playwright';
+          const browser = await chromium.launch({headless:true});
+          for (const path of ['/requestaquote/','/hu/ajanlatkeres/','/de-at/anfrage/']) {
+            const page = await browser.newPage({viewport:{width:375,height:900}});
+            const bad=[];
+            page.on('response', r=>{ if(r.status()===404) bad.push(`${r.status()} ${r.request().resourceType()} ${r.url()}`); });
+            page.on('requestfailed', r=>bad.push(`FAILED ${r.resourceType()} ${r.url()} :: ${r.failure()?.errorText||''}`));
+            page.on('console', m=>{if(m.type()==='error') console.log(`CONSOLE ${path}: ${m.text()}`)});
+            await page.goto('http://127.0.0.1:4173'+path,{waitUntil:'networkidle'});
+            await page.locator('input[name="category"][value="individual"]').check();
+            await page.locator('input[name="individual_mode"][value="quick30"]').check();
+            await page.locator('input[name="retouched_images"]').fill('3');
+            await page.waitForTimeout(1000);
+            console.log(`404_REPORT ${path}`);
+            console.log(bad.length?bad.join('\n'):'NONE');
+            await page.close();
+          }
+          await browser.close();
+          NODE
