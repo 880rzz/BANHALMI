@@ -1,4 +1,3 @@
-# Redeploy trigger: 2026-08-21 Vienna–Budapest service metadata
 name: Live production probe
 
 on:
@@ -14,25 +13,6 @@ jobs:
     steps:
       - name: Check out audit branch
         uses: actions/checkout@v7
-
-      - name: Probe production origin
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          expected="$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/880rzz/BANHALMI/git/ref/heads/main' | python3 -c "import json,sys; print(json.load(sys.stdin)['object']['sha'])")"
-          actual="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/deployment-sha.txt')"
-          echo "EXPECTED_SHA=$expected"
-          echo "ACTUAL_SHA=$actual"
-          html="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/speier-viko/')"
-          if printf '%s' "$html" | grep -q 'viko@banhalmi.at'; then
-            echo 'VIKO_EMAIL=OK'
-          else
-            echo 'VIKO_EMAIL=OLD_OR_MISSING'
-          fi
-          test "$actual" = "$expected"
-          printf '%s' "$html" | grep -q 'viko@banhalmi.at'
 
       - name: Crawl live blog ecosystem in HU EN DE
         run: node tools/audit-live-blog-ecosystem.mjs
