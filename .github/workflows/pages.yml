@@ -38,8 +38,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf _site artifacts/browser-layout artifacts/exhaustive-visual artifacts/lighthouse-desktop artifacts/lighthouse-mobile /tmp/banhalmi-home-css
-          mkdir -p _site /tmp/banhalmi-home-css
+          rm -rf _site artifacts/browser-layout artifacts/exhaustive-visual artifacts/lighthouse-desktop artifacts/lighthouse-mobile
+          mkdir -p _site
           git archive --format=tar HEAD | tar -xf - -C _site
           rm -rf _site/.github _site/tools _site/tests _site/node_modules _site/artifacts
           rm -f _site/package.json _site/package-lock.json
@@ -48,30 +48,10 @@ jobs:
           test -f _site/hu/index.html
           test -f _site/de-at/index.html
           test -f _site/assets/css/site.css
-          test -f _site/assets/css/visual-rhythm-20260825.css
           node tools/optimize-production-artifact.mjs _site
           node tools/harden-production-artifact.mjs _site
-          node tools/build-home-css-safelist.mjs _site/assets/css/site.css _site/.home-css-safelist.html
-          npx --yes purgecss@7.0.2 --css _site/assets/css/site.css --content _site/index.html _site/hu/index.html _site/de-at/index.html _site/.home-css-safelist.html --output /tmp/banhalmi-home-css
-          test -s /tmp/banhalmi-home-css/site.css
-          mv /tmp/banhalmi-home-css/site.css _site/assets/css/home.css
-          rm -f _site/.home-css-safelist.html
-          node --input-type=module <<'EOF'
-          import fs from 'node:fs';
-          for (const file of ['_site/index.html','_site/hu/index.html','_site/de-at/index.html']) {
-            let html = fs.readFileSync(file, 'utf8');
-            const before = html;
-            html = html.replace(/\/assets\/css\/site\.css([^\"']*)/g, '/assets/css/home.css$1');
-            if (html === before) throw new Error(`Homepage stylesheet replacement failed for ${file}`);
-            fs.writeFileSync(file, html);
-          }
-          EOF
           npx --yes esbuild@0.25.9 _site/assets/css/site.css --minify --outfile=/tmp/site.min.css
           mv /tmp/site.min.css _site/assets/css/site.css
-          npx --yes esbuild@0.25.9 _site/assets/css/home.css --minify --outfile=/tmp/home.min.css
-          mv /tmp/home.min.css _site/assets/css/home.css
-          npx --yes esbuild@0.25.9 _site/assets/css/visual-rhythm-20260825.css --minify --outfile=/tmp/visual-rhythm.min.css
-          mv /tmp/visual-rhythm.min.css _site/assets/css/visual-rhythm-20260825.css
           for js in _site/assets/js/main.js _site/assets/js/mega-menu.js _site/assets/js/analytics.js; do
             if [ -f "$js" ]; then
               npx --yes esbuild@0.25.9 "$js" --minify --outfile=/tmp/runtime.min.js
@@ -79,18 +59,18 @@ jobs:
             fi
           done
           test -s _site/assets/css/site.css
-          test -s _site/assets/css/home.css
-          test -s _site/assets/css/visual-rhythm-20260825.css
           test -f _site/.well-known/agent.json
           test -f _site/api/v1/identity.json
           test -f _site/robots.txt
           test -f _site/sitemap.xml
           test -f _site/llms.txt
           test -f _site/ai.txt
-          test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "3"
-          grep -q '/assets/css/home.css' _site/index.html
-          grep -q '/assets/css/home.css' _site/hu/index.html
-          grep -q '/assets/css/home.css' _site/de-at/index.html
+          test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "1"
+          grep -q '/assets/css/site.css' _site/index.html
+          grep -q '/assets/css/site.css' _site/hu/index.html
+          grep -q '/assets/css/site.css' _site/de-at/index.html
+          ! grep -R -q '/assets/css/home.css' _site --include='*.html'
+          ! grep -R -q 'visual-rhythm-20260825.css' _site --include='*.html'
       - name: Install Chromium audit runtime
         run: |
           npm ci
