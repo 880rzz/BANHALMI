@@ -21,10 +21,10 @@
         {"@id": "https://www.banhalmi.art/#website"}
       ],
       "hasPart": [
-        {"@id": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas#collection"},
-        {"@id": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas#collection"},
-        {"@id": "https://blog.banhalmi.art/blog/categories/aktfotozas-muveszi-szemmel#collection"},
-        {"@id": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg#collection"}
+        {"@id": "https://blog.banhalmi.art/en/blog/categories/portrait-portfolio-photography#collection"},
+        {"@id": "https://blog.banhalmi.art/en/blog/categories/portrait-headshot-photography#collection"},
+        {"@id": "https://blog.banhalmi.art/en/blog/categories/fine-art-nude-photography#collection"},
+        {"@id": "https://blog.banhalmi.art/en/blog/categories/vipach-photography-community#collection"}
       ],
       "subjectOf": {
         "@type": "DataDownload",
@@ -52,8 +52,8 @@
     },
     {
       "@type": "CollectionPage",
-      "@id": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas#collection",
-      "url": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas",
+      "@id": "https://blog.banhalmi.art/en/blog/categories/portrait-portfolio-photography#collection",
+      "url": "https://blog.banhalmi.art/en/blog/categories/portrait-portfolio-photography",
       "name": "Portfolio and fashion photography editorial collection",
       "about": ["portfolio photography", "fashion photography", "brand photography", "artist portfolio"],
       "isPartOf": {"@id": "https://blog.banhalmi.art/#blog"},
@@ -65,8 +65,8 @@
     },
     {
       "@type": "CollectionPage",
-      "@id": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas#collection",
-      "url": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas",
+      "@id": "https://blog.banhalmi.art/en/blog/categories/portrait-headshot-photography#collection",
+      "url": "https://blog.banhalmi.art/en/blog/categories/portrait-headshot-photography",
       "name": "Portrait photography editorial collection",
       "about": ["portrait photography", "executive portrait", "headshot", "CV photography", "dating profile photography"],
       "isPartOf": {"@id": "https://blog.banhalmi.art/#blog"},
@@ -78,8 +78,8 @@
     },
     {
       "@type": "CollectionPage",
-      "@id": "https://blog.banhalmi.art/blog/categories/aktfotozas-muveszi-szemmel#collection",
-      "url": "https://blog.banhalmi.art/blog/categories/aktfotozas-muveszi-szemmel",
+      "@id": "https://blog.banhalmi.art/en/blog/categories/fine-art-nude-photography#collection",
+      "url": "https://blog.banhalmi.art/en/blog/categories/fine-art-nude-photography",
       "name": "Artistic nude photography editorial collection",
       "about": ["artistic nude photography", "fine-art photography", "body", "identity", "author-led photography"],
       "isPartOf": {"@id": "https://blog.banhalmi.art/#blog"},
@@ -91,8 +91,8 @@
     },
     {
       "@type": "CollectionPage",
-      "@id": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg#collection",
-      "url": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg",
+      "@id": "https://blog.banhalmi.art/en/blog/categories/vipach-photography-community#collection",
+      "url": "https://blog.banhalmi.art/en/blog/categories/vipach-photography-community",
       "name": "Professional photography and visual-positioning articles",
       "about": ["photography", "visual positioning", "brand strategy", "professional methodology"],
       "isPartOf": {"@id": "https://blog.banhalmi.art/#blog"},

@@ -26,7 +26,12 @@
         "url": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas",
         "name": "Portfólió- és divatfotózás",
         "inLanguage": "hu-HU",
-        "about": ["portfólió fotózás", "divatfotózás", "brandfotózás", "művészportfólió"],
+        "about": [
+          "portfólió fotózás",
+          "divatfotózás",
+          "brandfotózás",
+          "művészportfólió"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/hu/brand/"
       }
     },
@@ -35,11 +40,16 @@
       "position": 2,
       "item": {
         "@type": "CollectionPage",
-        "@id": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas#portfolio-en",
-        "url": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas",
+        "@id": "https://blog.banhalmi.art/en/blog/categories/portrait-portfolio-photography#portfolio-en",
+        "url": "https://blog.banhalmi.art/en/blog/categories/portrait-portfolio-photography",
         "name": "Portfolio & fashion photography",
         "inLanguage": "en-GB",
-        "about": ["portfolio photography", "fashion photography", "brand photography", "artist portfolio"],
+        "about": [
+          "portfolio photography",
+          "fashion photography",
+          "brand photography",
+          "artist portfolio"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/lifestyle/"
       }
     },
@@ -48,11 +58,16 @@
       "position": 3,
       "item": {
         "@type": "CollectionPage",
-        "@id": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas#portfolio-de",
-        "url": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas",
+        "@id": "https://blog.banhalmi.art/de/blog/categories/portraet-portfoliofotografie#portfolio-de",
+        "url": "https://blog.banhalmi.art/de/blog/categories/portraet-portfoliofotografie",
         "name": "Portfolio- & Modefotografie",
         "inLanguage": "de-AT",
-        "about": ["Portfoliofotografie", "Modefotografie", "Brand-Fotografie", "Künstlerportfolio"],
+        "about": [
+          "Portfoliofotografie",
+          "Modefotografie",
+          "Brand-Fotografie",
+          "Künstlerportfolio"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/de-at/brand/"
       }
     },
@@ -65,7 +80,12 @@
         "url": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas",
         "name": "Fotózás stylisttal",
         "inLanguage": "hu-HU",
-        "about": ["fotózás stylisttal", "divatfotózás", "brandfotózás", "vizuális pozicionálás"],
+        "about": [
+          "fotózás stylisttal",
+          "divatfotózás",
+          "brandfotózás",
+          "vizuális pozicionálás"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/hu/brand/"
       }
     },
@@ -74,11 +94,16 @@
       "position": 5,
       "item": {
         "@type": "CollectionPage",
-        "@id": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas#stylist-en",
-        "url": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas",
+        "@id": "https://blog.banhalmi.art/en/blog/categories/portrait-portfolio-photography#stylist-en",
+        "url": "https://blog.banhalmi.art/en/blog/categories/portrait-portfolio-photography",
         "name": "Photography with a stylist",
         "inLanguage": "en-GB",
-        "about": ["photography with stylist", "fashion photography", "brand photography", "visual positioning"],
+        "about": [
+          "photography with stylist",
+          "fashion photography",
+          "brand photography",
+          "visual positioning"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/lifestyle/"
       }
     },
@@ -87,11 +112,16 @@
       "position": 6,
       "item": {
         "@type": "CollectionPage",
-        "@id": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas#stylist-de",
-        "url": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas",
+        "@id": "https://blog.banhalmi.art/de/blog/categories/portraet-portfoliofotografie#stylist-de",
+        "url": "https://blog.banhalmi.art/de/blog/categories/portraet-portfoliofotografie",
         "name": "Fotografie mit Stylist",
         "inLanguage": "de-AT",
-        "about": ["Fotografie mit Stylist", "Modefotografie", "Brand-Fotografie", "visuelle Positionierung"],
+        "about": [
+          "Fotografie mit Stylist",
+          "Modefotografie",
+          "Brand-Fotografie",
+          "visuelle Positionierung"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/de-at/brand/"
       }
     },
@@ -104,7 +134,14 @@
         "url": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas",
         "name": "Portréfotózás",
         "inLanguage": "hu-HU",
-        "about": ["portréfotózás", "vezetői portré", "executive portré", "headshot", "önéletrajz fotózás", "társkereső fotózás"],
+        "about": [
+          "portréfotózás",
+          "vezetői portré",
+          "executive portré",
+          "headshot",
+          "önéletrajz fotózás",
+          "társkereső fotózás"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/hu/portre/"
       }
     },
@@ -113,11 +150,17 @@
       "position": 8,
       "item": {
         "@type": "CollectionPage",
-        "@id": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas#en",
-        "url": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas",
+        "@id": "https://blog.banhalmi.art/en/blog/categories/portrait-headshot-photography#en",
+        "url": "https://blog.banhalmi.art/en/blog/categories/portrait-headshot-photography",
         "name": "Portrait photography",
         "inLanguage": "en-GB",
-        "about": ["portrait photography", "executive portrait", "headshot", "CV photography", "dating profile photography"],
+        "about": [
+          "portrait photography",
+          "executive portrait",
+          "headshot",
+          "CV photography",
+          "dating profile photography"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/portrait/"
       }
     },
@@ -126,11 +169,17 @@
       "position": 9,
       "item": {
         "@type": "CollectionPage",
-        "@id": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas#de",
-        "url": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas",
+        "@id": "https://blog.banhalmi.art/de/blog/categories/portraet-headshotfotografie#de",
+        "url": "https://blog.banhalmi.art/de/blog/categories/portraet-headshotfotografie",
         "name": "Porträtfotografie",
         "inLanguage": "de-AT",
-        "about": ["Porträtfotografie", "Executive-Porträt", "Headshot", "Bewerbungsfoto", "Dating-Profil-Fotografie"],
+        "about": [
+          "Porträtfotografie",
+          "Executive-Porträt",
+          "Headshot",
+          "Bewerbungsfoto",
+          "Dating-Profil-Fotografie"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/de-at/portrait/"
       }
     },
@@ -143,7 +192,12 @@
         "url": "https://blog.banhalmi.art/blog/categories/aktfotozas-muveszi-szemmel",
         "name": "Művészi aktfotózás",
         "inLanguage": "hu-HU",
-        "about": ["művészi aktfotózás", "fine art fotózás", "szerzői fotográfia", "test és identitás"],
+        "about": [
+          "művészi aktfotózás",
+          "fine art fotózás",
+          "szerzői fotográfia",
+          "test és identitás"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/"
       }
     },
@@ -152,11 +206,16 @@
       "position": 11,
       "item": {
         "@type": "CollectionPage",
-        "@id": "https://blog.banhalmi.art/blog/categories/aktfotozas-muveszi-szemmel#en",
-        "url": "https://blog.banhalmi.art/blog/categories/aktfotozas-muveszi-szemmel",
+        "@id": "https://blog.banhalmi.art/en/blog/categories/fine-art-nude-photography#en",
+        "url": "https://blog.banhalmi.art/en/blog/categories/fine-art-nude-photography",
         "name": "Artistic nude photography",
         "inLanguage": "en-GB",
-        "about": ["artistic nude photography", "fine-art photography", "author-led photography", "body and identity"],
+        "about": [
+          "artistic nude photography",
+          "fine-art photography",
+          "author-led photography",
+          "body and identity"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/glamour/"
       }
     },
@@ -165,11 +224,16 @@
       "position": 12,
       "item": {
         "@type": "CollectionPage",
-        "@id": "https://blog.banhalmi.art/blog/categories/aktfotozas-muveszi-szemmel#de",
-        "url": "https://blog.banhalmi.art/blog/categories/aktfotozas-muveszi-szemmel",
+        "@id": "https://blog.banhalmi.art/de/blog/categories/kuenstlerische-aktfotografie#de",
+        "url": "https://blog.banhalmi.art/de/blog/categories/kuenstlerische-aktfotografie",
         "name": "Künstlerische Aktfotografie",
         "inLanguage": "de-AT",
-        "about": ["künstlerische Aktfotografie", "Fine-Art-Fotografie", "Autorenfotografie", "Körper und Identität"],
+        "about": [
+          "künstlerische Aktfotografie",
+          "Fine-Art-Fotografie",
+          "Autorenfotografie",
+          "Körper und Identität"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/de-at/fine-art/"
       }
     },
@@ -182,7 +246,12 @@
         "url": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg",
         "name": "Szakmai blogok",
         "inLanguage": "hu-HU",
-        "about": ["fotográfia", "vizuális pozicionálás", "brandstratégia", "szakmai módszertan"],
+        "about": [
+          "fotográfia",
+          "vizuális pozicionálás",
+          "brandstratégia",
+          "szakmai módszertan"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/hu/"
       }
     },
@@ -191,11 +260,16 @@
       "position": 14,
       "item": {
         "@type": "CollectionPage",
-        "@id": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg#en",
-        "url": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg",
+        "@id": "https://blog.banhalmi.art/en/blog/categories/vipach-photography-community#en",
+        "url": "https://blog.banhalmi.art/en/blog/categories/vipach-photography-community",
         "name": "Professional photography articles",
         "inLanguage": "en-GB",
-        "about": ["photography", "visual positioning", "brand strategy", "professional methodology"],
+        "about": [
+          "photography",
+          "visual positioning",
+          "brand strategy",
+          "professional methodology"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/"
       }
     },
@@ -204,11 +278,16 @@
       "position": 15,
       "item": {
         "@type": "CollectionPage",
-        "@id": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg#de",
-        "url": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg",
+        "@id": "https://blog.banhalmi.art/de/blog/categories/vipach-fotografie-community#de",
+        "url": "https://blog.banhalmi.art/de/blog/categories/vipach-fotografie-community",
         "name": "Fachartikel zur Fotografie",
         "inLanguage": "de-AT",
-        "about": ["Fotografie", "visuelle Positionierung", "Markenstrategie", "professionelle Methodik"],
+        "about": [
+          "Fotografie",
+          "visuelle Positionierung",
+          "Markenstrategie",
+          "professionelle Methodik"
+        ],
         "isRelatedTo": "https://www.norbertbanhalmi.com/de-at/"
       }
     }
