@@ -1,0 +1,202 @@
+name: Repair BANHALMI visual rhythm regression
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/visual-rhythm-repair-20260825.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Patch final Apple design authority
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const path = require('node:path');
+
+          const cssPath = 'assets/css/site.css';
+          let css = fs.readFileSync(cssPath, 'utf8');
+          const endMarker = '/* APPLE-RESPONSIVE-CONTRACT-V1:END */';
+          if (!css.includes(endMarker)) throw new Error('Final Apple contract END marker missing');
+
+          const start = '/* BANHALMI-VISUAL-RHYTHM-20260825:START */';
+          const end = '/* BANHALMI-VISUAL-RHYTHM-20260825:END */';
+          const oldBlock = new RegExp(start.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '[\\s\\S]*?' + end.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '\\n?', 'g');
+          css = css.replace(oldBlock, '');
+
+          const block = `
+${start}
+/* Restores the previously approved editorial rhythm without changing content,
+   schema, routing or the existing component architecture. */
+:root{
+  --rhythm-section:clamp(76px,7.4vw,112px);
+  --rhythm-section-compact:clamp(56px,5.4vw,82px);
+  --rhythm-block-gap:clamp(24px,3vw,38px);
+  --rhythm-copy-gap:1.28em;
+  --rhythm-soft:#F5F5F7;
+  --rhythm-white:#FFFFFF;
+  --rhythm-dark:#202530;
+}
+
+/* One typography scale and one readable line-height system. */
+html body{line-height:1.62;}
+html body p,html body li{line-height:1.68;}
+html body .prose p,
+html body .structural-prose p,
+html body .about-longform p,
+html body .section-head + p,
+html body .card p,
+html body .fp-choice span{line-height:1.68;}
+html body .prose p + p,
+html body .structural-prose p + p,
+html body .about-longform p + p{margin-top:.4em;}
+html body h1{font-size:clamp(2.55rem,5vw,4.2rem);line-height:1.04;letter-spacing:-.035em;}
+html body h2{font-size:clamp(2rem,3.45vw,3.05rem);line-height:1.08;letter-spacing:-.029em;}
+html body h3{font-size:clamp(1.18rem,1.55vw,1.42rem);line-height:1.18;letter-spacing:-.02em;}
+html body .eyebrow,html body .section-head .eyebrow{font-size:.82rem;line-height:1.4;}
+
+/* Sections need visible breathing room; Safari content-visibility must not create false blank bands. */
+html body main>section{padding-top:var(--rhythm-section)!important;padding-bottom:var(--rhythm-section)!important;content-visibility:visible!important;contain-intrinsic-size:none!important;}
+html body main>section.hero-image-first{padding-top:0!important;padding-bottom:0!important;}
+html body main>section.hero-copy-only{padding-top:var(--rhythm-section-compact)!important;padding-bottom:var(--rhythm-section)!important;}
+html body .section-head{margin-bottom:clamp(34px,4vw,54px)!important;}
+html body :is(.cards,.steps,.grid-3,.grid-2,.fp-decision-grid){gap:var(--rhythm-block-gap)!important;row-gap:var(--rhythm-block-gap)!important;}
+
+/* Restore the authored white / soft / dark surface alternation. */
+html body main>section.surface-white,
+html body main>section[data-surface="white"],
+html body .section-band.surface-white,
+html body .section-band[data-surface="white"]{background:var(--rhythm-white)!important;}
+html body main>section.surface-soft,
+html body main>section[data-surface="soft"],
+html body .section-band.surface-soft,
+html body .section-band[data-surface="soft"]{background:var(--rhythm-soft)!important;}
+html body main>section.surface-dark,
+html body main>section[data-surface="dark"],
+html body .section-band.surface-dark,
+html body .section-band[data-surface="dark"]{background:var(--rhythm-dark)!important;}
+html body main>section.section-band:not([data-surface]):nth-of-type(odd){background:var(--rhythm-white)!important;}
+html body main>section.section-band:not([data-surface]):nth-of-type(even){background:var(--rhythm-soft)!important;}
+html body .section-band{border-top-color:rgba(32,37,48,.06)!important;border-bottom-color:rgba(32,37,48,.06)!important;}
+
+/* Homepage: remove the oversized void below the hero and make the four trailing actions deliberate. */
+html body main[data-homepage-redesign] .hero-image-first .wrap{padding-bottom:0!important;}
+html body main[data-homepage-redesign] .hero-image-first .hero-figure{margin-bottom:0!important;}
+html body main[data-homepage-redesign] .hero-copy-only{margin-top:0!important;}
+html body .fp-decision-system{padding-top:var(--rhythm-section)!important;padding-bottom:var(--rhythm-section)!important;}
+html body .fp-decision-inner{width:min(var(--apple-page-max),calc(100% - (2 * var(--apple-gutter))));margin-inline:auto;}
+html body .fp-art-path,
+html body .fp-decision-actions{
+  width:100%;margin-top:clamp(18px,2.2vw,28px)!important;
+  padding:clamp(20px,2.2vw,28px)!important;
+  background:#fff;border:1px solid rgba(32,37,48,.10);border-radius:22px;
+  align-items:center;box-shadow:none;
+}
+html body .fp-art-path{display:flex;justify-content:space-between;gap:18px 28px;flex-wrap:wrap;}
+html body .fp-art-path span{color:#5f6570;}
+html body .fp-decision-actions{display:flex;justify-content:flex-start;gap:14px 24px;flex-wrap:wrap;}
+html body .fp-decision-actions .btn{min-width:0;}
+
+/* Full-width drawers / accordions use the same left edge as the reading grid. */
+html body .project-framework-drawer>summary{
+  width:min(var(--apple-page-max),100%);margin-inline:auto!important;
+  padding-left:var(--apple-gutter)!important;padding-right:var(--apple-gutter)!important;
+}
+html body .project-framework-content>.section-band>.wrap,
+html body .project-framework-content>.section-band>.container{width:min(var(--apple-page-max),100%);margin-inline:auto;}
+html body .project-framework-content>.section-band{padding-top:var(--rhythm-section-compact)!important;padding-bottom:var(--rhythm-section-compact)!important;}
+html body .project-framework-content>.section-band + .section-band{margin-top:0!important;}
+
+/* Card groups must never visually touch. */
+html body :is(.card,.quote-step,.trust-proof .grid-3>.card,.fp-choice){margin:0!important;}
+html body .trust-proof .grid-3{gap:var(--rhythm-block-gap)!important;row-gap:var(--rhythm-block-gap)!important;}
+
+/* Menu active/focus state: no pill/frame. Keep an accessible editorial underline. */
+html body .bn-mega-link.active,
+html body .bn-mega-link[aria-current="page"],
+html body .bn-mega-link:focus-visible{
+  border:0!important;border-radius:0!important;outline:0!important;box-shadow:none!important;
+  background:transparent!important;padding-left:0!important;padding-right:0!important;
+  text-decoration-line:underline!important;text-decoration-thickness:2px!important;
+  text-underline-offset:.24em!important;text-decoration-color:currentColor!important;
+}
+
+/* Footer follows content instead of manufacturing a viewport-sized empty tail. */
+html body{display:block!important;min-height:0!important;}
+html body>main,html body #main{display:block!important;min-height:0!important;flex:none!important;}
+html body>.site-footer,html body .site-footer{height:auto!important;min-height:0!important;flex:none!important;margin-top:0!important;}
+
+@media(max-width:768px){
+  :root{--rhythm-section:clamp(58px,11vw,82px);--rhythm-section-compact:clamp(46px,9vw,66px);--rhythm-block-gap:18px;}
+  html body h1{font-size:clamp(2.25rem,10.5vw,3.55rem);}
+  html body h2{font-size:clamp(1.8rem,8vw,2.65rem);}
+  html body .fp-art-path,html body .fp-decision-actions{padding:20px!important;}
+  html body .fp-art-path{align-items:flex-start;flex-direction:column;}
+}
+${end}
+`;
+          css = css.replace(endMarker, block + '\n' + endMarker);
+          fs.writeFileSync(cssPath, css);
+
+          // Cache-bust the shared stylesheet everywhere so Safari cannot keep the regressed CSS.
+          const skip = new Set(['.git','node_modules','_site']);
+          function walk(dir){
+            for (const ent of fs.readdirSync(dir,{withFileTypes:true})){
+              if (skip.has(ent.name)) continue;
+              const p = path.join(dir, ent.name);
+              if (ent.isDirectory()) walk(p);
+              else if (p.endsWith('.html')) {
+                let s = fs.readFileSync(p,'utf8');
+                const n = s.replace(/\/assets\/css\/site\.css\?v=[^\"'\s>]+/g,'/assets/css/site.css?v=20260825-rhythm-v1');
+                if (n !== s) fs.writeFileSync(p,n);
+              }
+            }
+          }
+          walk('.');
+
+          // Permanent regression guard inside the existing mandatory Apple audit.
+          const auditPath = 'tools/audit-apple-responsive-contract.mjs';
+          let audit = fs.readFileSync(auditPath,'utf8');
+          const guardStart = '// VISUAL-RHYTHM-REGRESSION-GUARD-20260825:START';
+          const guardEnd = '// VISUAL-RHYTHM-REGRESSION-GUARD-20260825:END';
+          const guardRe = new RegExp(guardStart.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '[\\s\\S]*?' + guardEnd.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '\\n?', 'g');
+          audit = audit.replace(guardRe,'');
+          const guard = `${guardStart}\nfor (const needle of [\n  'BANHALMI-VISUAL-RHYTHM-20260825:START',\n  '--rhythm-section:',\n  'content-visibility:visible!important',\n  '.section-band.surface-white',\n  '.section-band.surface-soft',\n  '.section-band.surface-dark',\n  '.bn-mega-link:focus-visible',\n  'body>.site-footer'\n]) if (!contract.includes(needle)) failures.push(\`visual rhythm guard missing: \${needle}\`);\n${guardEnd}\n\n`;
+          audit = audit.replace('if (failures.length){', guard + 'if (failures.length){');
+          fs.writeFileSync(auditPath,audit);
+          NODE
+
+      - name: Validate design contract and static integrity
+        run: |
+          node tools/audit-apple-responsive-contract.mjs
+          node tools/audit-layout-authority.mjs
+          node tools/audit-css-syntax-stage44.mjs
+          node tools/audit-static-integrity.mjs
+
+      - name: Commit repaired design authority
+        shell: bash
+        run: |
+          git config user.name "BANHALMI release bot"
+          git config user.email "actions@users.noreply.github.com"
+          git rm .github/workflows/visual-rhythm-repair-20260825.yml
+          git add assets/css/site.css tools/audit-apple-responsive-contract.mjs '*.html' ':**/*.html'
+          if git diff --cached --quiet; then
+            echo "No repair changes to commit"
+            exit 0
+          fi
+          git commit -m "Restore Apple visual rhythm and spacing authority"
+          git push origin HEAD:main
