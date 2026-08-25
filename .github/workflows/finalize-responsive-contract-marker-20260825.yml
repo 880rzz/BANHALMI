@@ -1,0 +1,36 @@
+name: Finalize responsive contract marker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/finalize-responsive-contract-marker-20260825.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Move marker to final authority position
+        run: node tools/finalize-responsive-contract-marker-20260825.mjs
+      - name: Validate responsive and clean architecture contracts
+        run: |
+          node tools/audit-apple-responsive-contract.mjs
+          node tools/audit-clean-architecture.mjs
+      - name: Commit marker-only CSS change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/css/site.css
+          git diff --cached --check
+          git commit -m "Finalize Apple responsive contract authority marker"
+          git push origin HEAD:main
