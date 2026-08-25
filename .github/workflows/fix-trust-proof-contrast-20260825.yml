@@ -1,0 +1,47 @@
+name: One-shot trust proof contrast remediation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-trust-proof-contrast-20260825.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply scoped WCAG contrast fix and remove runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat >> assets/css/site.css <<'CSS'
+
+/* TRUST-PROOF-WCAG-20260825:START
+   The verified-context band is intentionally dark, while proof cards remain white.
+   Explicit surface ownership prevents inherited light/dark component rules from
+   collapsing text contrast across service pages and responsive breakpoints. */
+main .trust-proof[data-surface="dark"] .section-head > h2,
+main .trust-proof[data-surface="dark"] .section-head > p:not(.eyebrow){color:#f7f9fc!important}
+main .trust-proof[data-surface="dark"] .section-head > .eyebrow{color:#ead67f!important}
+main .trust-proof[data-surface="dark"] .grid-3 > .card{
+  background:#fff!important;
+  color:#202530!important;
+  border-color:rgba(255,255,255,.18)!important;
+}
+main .trust-proof[data-surface="dark"] .grid-3 > .card h3{color:#202530!important}
+main .trust-proof[data-surface="dark"] .grid-3 > .card p{color:#5b616c!important}
+main .trust-proof[data-surface="dark"] .grid-3 > .card a{color:#5f4715!important}
+/* TRUST-PROOF-WCAG-20260825:END */
+CSS
+          git rm .github/workflows/fix-trust-proof-contrast-20260825.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/css/site.css
+          git commit -m 'Fix verified-context contrast across service pages'
+          git push origin HEAD:main
