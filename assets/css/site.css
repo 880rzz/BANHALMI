@@ -170,7 +170,7 @@ p{margin:0 0 1.05em;}
 .btn-link:hover::after{transform:translateX(2px);}
 
 /* ---------- Sections ---------- */
-section{padding:72px 0;}
+main>section{padding:72px 0;}
 .section-band{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .section-head{max-width:58ch;margin-bottom:44px;}
 .section-head .eyebrow{color:var(--muted);font-size:0.8rem;font-weight:500;letter-spacing:0.01em;margin-bottom:12px;display:block;}
@@ -368,7 +368,7 @@ section{padding:72px 0;}
 @media (max-width:480px){
   .wrap{padding:0 20px;}
   .hero{padding:72px 0 52px;}
-  section{padding:56px 0;}
+  main>section{padding:56px 0;}
   .cookie{left:10px;right:10px;bottom:10px;}
   .cookie-actions{flex-direction:column;}
   .cookie .btn{width:100%;text-align:center;}
@@ -1552,7 +1552,7 @@ button.card:hover,
   --jony-gap:clamp(20px,2.8vw,38px);
   --jony-radius:clamp(18px,2vw,28px);
 }
-section{padding:var(--jony-air) 0;}
+main>section{padding:var(--jony-air) 0;}
 .section-band{background:#FAFAF8;border-top:1px solid rgba(32,37,48,.07);border-bottom:1px solid rgba(32,37,48,.07);}
 .hero:not(.hero-image-first){padding:clamp(78px,8.2vw,132px) 0 var(--jony-air-tight);}
 .hero .lead,.section-head,.prose{max-width:760px;}
@@ -1593,7 +1593,7 @@ h2{max-width:20ch;}
 .jony-gallery-section .section-head{margin-bottom:0;}
 .jony-gallery-section .lead{font-size:clamp(1.05rem,1.4vw,1.34rem);}
 @media (max-width:920px){.jony-gallery-grid{column-count:2}.nav-links a{font-size:clamp(1.06rem,4vw,1.42rem)}}
-@media (max-width:620px){section{padding:56px 0}.hero:not(.hero-image-first){padding:64px 0 44px}.jony-gallery-grid{column-count:1}.service-hero-image{margin-top:30px}.hero-actions,.service-actions{width:100%;}.hero-actions .btn,.service-actions .btn{width:100%;text-align:center;}.btn-link{min-height:44px;align-items:center;}}
+@media (max-width:620px){main>section{padding:56px 0}.hero:not(.hero-image-first){padding:64px 0 44px}.jony-gallery-grid{column-count:1}.service-hero-image{margin-top:30px}.hero-actions,.service-actions{width:100%;}.hero-actions .btn,.service-actions .btn{width:100%;text-align:center;}.btn-link{min-height:44px;align-items:center;}}
 
 /* Jony Ive portrait archive expansion — quiet large-image rhythm */
 .portrait-archive-item{background:#f6f2eb;}
@@ -2146,7 +2146,7 @@ html.nav-open,html.nav-open body{overflow:hidden;}
 }
 
 /* Whitespace and readable measure. */
-section{padding:clamp(64px,7.5vw,104px) 0;}
+main>section{padding:clamp(64px,7.5vw,104px) 0;}
 .section-head{max-width:var(--wide-textw);margin-bottom:clamp(30px,4vw,46px);}
 .prose{max-width:var(--textw);}
 .prose p,.about-longform p,.structural-prose p{line-height:1.65;}
@@ -2281,7 +2281,7 @@ section{padding:clamp(64px,7.5vw,104px) 0;}
   h3{font-size:1.25rem;}
   .lead{font-size:1.2rem;line-height:1.43;}
   .hero > .wrap > p:not(.eyebrow):not(.lead):not(.hero-location-line){font-size:1rem;line-height:1.58;}
-  section{padding:56px 0;}
+  main>section{padding:56px 0;}
   .section-head{margin-bottom:28px;}
   .service-hero-image{margin-top:28px;border-radius:18px;}
   .service-hero-image img{border-radius:18px;}
@@ -3085,9 +3085,12 @@ h1{font-size:clamp(2.35rem,3.45vw,2.95rem);}
 /* 2026-07 production audit: stable controls and readable cards. */
 .strategy-process-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));}
 .strategy-process-card,.card,.service-card,.option-row,.category-card{word-break:normal;overflow-wrap:normal;hyphens:manual;}
-.option-row,.category-card{position:relative;display:grid;grid-template-columns:auto 1fr;align-items:flex-start;gap:.75rem;min-height:56px;padding-right:58px;padding-bottom:52px;}
+.option-row,.category-card{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:flex-start;gap:.75rem;min-height:0;padding:12px 14px;}
 .option-row input,.category-card input{position:static!important;margin:.18rem 0 0 0!important;transform:none!important;inline-size:1.05rem;block-size:1.05rem;}
 .option-row span,.category-card span{min-width:0;line-height:1.42;}
+.option-row>span,.category-card>span{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:start;}
+.option-row>span>strong,.category-card>span>strong,.option-row>span>em,.category-card>span>em{grid-column:1;min-width:0;}
+.option-row>span>.info-tip,.category-card>span>.info-tip{position:static!important;grid-column:2;grid-row:1 / span 2;align-self:center;justify-self:end;margin:0!important;}
 .info-tip{position:absolute;right:10px;bottom:10px;display:grid;place-items:center;width:44px;height:44px;margin:0;padding:0;border:1px solid rgba(22,24,29,.22);border-radius:50%;background:#fff;color:var(--ink);font-family:Georgia,serif;font-size:1rem;font-style:italic;line-height:1;cursor:pointer;transition:border-color .15s ease,background .15s ease,transform .15s ease;}
 .info-tip:hover{border-color:var(--gold-deep);background:#f7f3e9;transform:translateY(-1px);}
 .info-tip:focus-visible{outline:3px solid rgba(177,135,45,.35);outline-offset:2px;}
@@ -4052,179 +4055,313 @@ p,li{line-height:1.58;}
 @media (prefers-reduced-motion:reduce){
   .card,.btn,.menu-btn,.nav-links{transition:none!important;transform:none!important;}
 }
-/* CLEAN-BANHALMI-DESIGN-AUTHORITY-20260825:START */
-/* Final visual source of truth for current markup. The approved Apple baseline stays intact; this compatibility layer only maps newer components onto its geometry, surfaces and interaction rules. */
-:root{
-  --clean-page:1200px;
-  --clean-editorial:900px;
-  --clean-reading:760px;
-  --clean-gutter:clamp(20px,4vw,56px);
-  --clean-section:clamp(68px,7vw,108px);
-  --clean-gap:clamp(18px,2.2vw,30px);
-}
-html,body{max-width:100%;overflow-x:clip}
-body{display:block!important;min-height:0!important;background:#fff;color:#202530;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;font-size:17px;line-height:1.62;letter-spacing:-.018em}
-body>main,#main{display:block!important;flex:none!important;min-height:0!important;width:100%;min-width:0;overflow:visible}
-.wrap{box-sizing:border-box;width:100%;max-width:var(--clean-page)!important;margin-inline:auto!important;padding-inline:var(--clean-gutter)!important}
-.prose,.structural-prose{max-width:var(--clean-reading)!important;margin-left:0!important;margin-right:auto!important}
-.section-head{max-width:var(--clean-editorial)!important;margin-left:0!important;margin-right:auto!important}
-.section-head>p,.section-head .lead,.prose>p{max-width:var(--clean-reading)!important}
-main>section{content-visibility:visible!important;contain-intrinsic-size:none!important}
-main>section:not(.hero){padding-block:var(--clean-section)}
-main>section[data-surface="white"],.surface-white{background:#fff!important;color:#202530}
-main>section[data-surface="soft"],.surface-soft{background:#f5f5f7!important;color:#202530}
-main>section[data-surface="dark"],.surface-dark{background:#202530!important;color:#fff}
-.surface-dark h1,.surface-dark h2,.surface-dark h3,.surface-dark strong{color:#fff}
-.surface-dark p,.surface-dark li{color:#d7dde5}
-.surface-dark .eyebrow,.surface-dark .title-accent,.surface-dark .bn-heading-accent{color:#CBB45F!important}
-h1,h2,h3{text-wrap:balance;transform:none}
-h1{font-size:clamp(2.55rem,5.4vw,4.9rem);line-height:1.03;letter-spacing:-.046em}
-h2{font-size:clamp(1.85rem,3.3vw,3rem);line-height:1.08;letter-spacing:-.038em}
-h3{font-size:clamp(1.28rem,2vw,1.68rem);line-height:1.18;letter-spacing:-.026em}
-p,li{max-width:var(--clean-reading)}
-.eyebrow{font-size:.78rem;line-height:1.35;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#8A681F}
-.site-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);border-bottom:1px solid rgba(32,37,48,.11);box-shadow:none!important}
-.site-header .wrap{max-width:var(--clean-page)!important}
-.site-header .nav{min-height:68px;display:flex;align-items:center;gap:20px}
-.site-header .brand,.site-header .nav-links a,.site-header summary{border-radius:0!important;box-shadow:none!important}
-.site-header .nav-links a[aria-current="page"],.site-header .nav-links a.active,.site-header .nav-links a:focus-visible,.bn-mega-link.active,.bn-mega-link[aria-current="page"],.bn-mega-link:focus-visible{outline:0!important;border:0!important;border-radius:0!important;box-shadow:inset 0 -2px 0 #8A681F!important;background:transparent!important}
-.hero-image-first{padding:0!important;background:#fff!important}
-.hero-image-first>.wrap{max-width:none!important;padding:0!important}
-.hero-figure{margin:0!important;position:relative;overflow:hidden;background:#f5f5f7}
-.hero-figure picture,.hero-figure picture img{display:block;width:100%;height:auto}
-.hero-copy-only{padding:clamp(64px,7vw,108px) 0!important;background:#fff!important}
-.hero-copy-only>.wrap{max-width:var(--clean-page)!important}
-.hero-copy-only h1{max-width:17ch;margin:14px 0 24px}
-.hero-copy-only> .wrap>p:not(.eyebrow):not(.hero-location-line){max-width:var(--clean-reading);font-size:clamp(1.05rem,1.35vw,1.2rem)}
-.hero-actions{display:flex;flex-wrap:wrap;align-items:flex-start;gap:14px 22px;margin-top:28px}
-.btn,.btn-primary,.nav-cta{border-radius:999px}
-.fp-decision-system{padding:var(--clean-section) 0!important}
-.fp-decision-inner{box-sizing:border-box;width:100%;max-width:var(--clean-page);margin-inline:auto;padding-inline:var(--clean-gutter)}
-.fp-decision-inner>h2,.fp-decision-lead{max-width:var(--clean-editorial);margin-left:0;margin-right:auto}
-.fp-decision-lead{max-width:var(--clean-reading)}
-.fp-decision-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(32,37,48,.12);border:1px solid rgba(32,37,48,.12);margin-top:36px}
-.fp-choice{display:flex;flex-direction:column;gap:10px;min-height:190px;padding:clamp(24px,3vw,36px);background:#fff;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important}
-.fp-choice strong{font-size:clamp(1.18rem,1.8vw,1.45rem);line-height:1.2;color:#202530}
-.fp-choice span{color:#5f6368;line-height:1.55}
-.fp-choice em{margin-top:auto;color:#8A681F;font-style:normal;font-weight:600}
-.fp-art-path,.fp-decision-actions{max-width:var(--clean-editorial);margin-left:0!important;margin-right:auto!important}
-.section-band{padding:var(--clean-section) 0!important}
-.cards,.steps,.card-grid,.project-grid,.category-grid{gap:var(--clean-gap)!important}
-.card,.cards>*,.card-grid>*{box-shadow:none!important;transform:none!important}
-.site-footer{display:block!important;flex:none!important;min-height:0!important;height:auto!important;background:#202530;color:#fff;padding:clamp(54px,6vw,84px) 0 28px}
-.site-footer .wrap{max-width:var(--clean-page)!important}
-.site-footer .footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14)}
 
-/* Smart quote: information controls remain inside normal card flow; modal behaviour belongs to runtime, not absolute positioning. */
-.smart-quote-layout .category-card{position:relative;display:grid;grid-template-columns:auto 1fr;align-items:start;column-gap:12px;row-gap:7px;min-height:0!important;padding:18px!important}
-.smart-quote-layout .category-card>input{grid-column:1;grid-row:1}
-.smart-quote-layout .category-card>strong,.smart-quote-layout .category-card>em{grid-column:2}
-.smart-quote-layout .info-tip[data-tooltip]{position:static!important;inset:auto!important;right:auto!important;bottom:auto!important;top:auto!important;left:auto!important;transform:none!important;float:none!important;margin:0!important;flex:0 0 44px!important}
-.smart-quote-layout .category-card>span{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-rows:auto auto!important;align-items:start!important;gap:6px 10px!important;min-width:0!important;width:100%!important}
-.smart-quote-layout .category-card>span>strong,.smart-quote-layout .category-card>span>em{grid-column:1!important;min-width:0!important}
-.smart-quote-layout .category-card>span>.info-tip[data-tooltip]{grid-column:2!important;grid-row:1 / span 2!important;justify-self:end!important;align-self:end!important}
-.smart-quote-layout .option-row>span{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;min-width:0!important;width:100%!important}
-.smart-quote-layout .option-row .info-tip[data-tooltip]{margin-left:auto!important;align-self:center!important}
-.smart-quote-layout .option-row{display:grid!important;grid-template-columns:auto minmax(0,1fr) auto!important;align-items:center!important;gap:12px!important}
-.smart-quote-layout .option-row>span{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;gap:10px!important;min-width:0;width:100%}
-.smart-quote-layout .option-row .info-tip[data-tooltip]{justify-self:end!important}
+/* QUOTE-DENSITY-REMEDIATION-20260814:START */
+@media(min-width:1024px){
+  html body .smart-quote-layout{
+    grid-template-columns:minmax(250px,.58fr) minmax(0,1.42fr)!important;
+    gap:clamp(28px,3.6vw,48px)!important;
+    align-items:start!important;
+  }
+  html body .smart-quote-layout>.form{max-width:none!important;width:100%!important;min-width:0!important}
+  html body .smart-quote-layout .quote-intro{max-width:34ch!important}
+  html body .smart-quote-layout .quote-step{padding:18px 20px!important;margin-bottom:14px!important;border-radius:14px!important}
+  html body .smart-quote-layout .quote-step h3{margin-bottom:13px!important;font-size:1.04rem!important}
+  html body .smart-quote-layout .category-grid{gap:9px!important;align-items:start!important}
+  html body .smart-quote-layout .option-stack{gap:8px!important;margin-bottom:12px!important}
+  html body .smart-quote-layout :is(.category-card,.option-row){padding:12px 14px!important;border-radius:12px!important;align-self:start!important}
+  html body .smart-quote-layout .quote-summary-card{padding:20px 22px!important;margin-top:22px!important;border-radius:16px!important}
+  html body .smart-quote-layout .quote-decision-guide{margin-bottom:14px!important;padding:14px 16px!important}
+  html body .smart-quote-layout :is(.grid-2,.grid-3,.check-grid,.production-grid){row-gap:12px!important}
+  html body .smart-quote-layout .custom-brief{margin:12px 0 16px!important}
+}
+@media(max-width:1023px){
+  html body .smart-quote-layout .quote-step{padding:18px!important;border-radius:16px!important}
+  html body .smart-quote-layout :is(.category-card,.option-row){padding:13px 14px!important;border-radius:13px!important;align-self:start!important}
+}
+/* QUOTE-DENSITY-REMEDIATION-20260814:END */
 
-/* Full-screen descriptive menu uses editorial lines, never floating rounded cards. */
-#bn-mega-menu{background:#202530!important;color:#fff!important}
-#bn-mega-menu .bn-mega-shell{max-width:var(--clean-page)!important;margin-inline:auto!important;padding-inline:var(--clean-gutter)!important}
-#bn-mega-menu a,#bn-mega-menu summary{border-radius:0!important;box-shadow:none!important}
-#bn-mega-menu .bn-mega-link{background:transparent!important;border:0!important;padding-block:10px!important}
 
-@media(max-width:1024px){
-  .fp-decision-grid{grid-template-columns:1fr 1fr}
+
+/* DESKTOP-A11Y-REMEDIATION-20260814:START */
+/* Lighthouse/browser-confirmed contrast, touch-target, wrapping and link distinctions. */
+html body [data-surface="dark"] .section-head :is(h1,h2,h3){color:#F5F5F7!important;}
+html body [data-surface="dark"] .section-head :is(.eyebrow,.label,.kicker){color:#DCC56B!important;}
+html body .site-footer .brand .brand-word{color:#DCC56B!important;}
+html body main :is(.section,.section-band) p a:not(.btn):not(.btn-link){
+  text-decoration:underline!important;
+  text-underline-offset:.18em!important;
+  text-decoration-thickness:max(1px,.07em)!important;
 }
-@media(max-width:768px){
-  body{font-size:16px}
-  .wrap,.fp-decision-inner{padding-inline:24px!important}
-  main>section:not(.hero){padding-block:clamp(56px,9vw,82px)}
-  .fp-decision-grid{grid-template-columns:1fr}
-  .fp-choice{min-height:0}
-  .site-footer .footer-bottom{display:block}
-  .site-footer .footer-bottom>*+*{display:block;margin-top:12px}
+/* Keep the visible hamburger glyph unchanged while ensuring the interactive
+   control itself meets the mobile touch-target contract. */
+html body .site-header .menu-btn{
+  min-width:44px!important;
+  min-height:44px!important;
+  align-items:center!important;
+  justify-content:center!important;
 }
-@media(max-width:560px){
-  .wrap,.fp-decision-inner{padding-inline:20px!important}
-  h1{font-size:clamp(2.2rem,11vw,3.35rem)}
-  .hero-actions{display:grid;grid-template-columns:1fr;width:100%}
-  .hero-actions .btn,.hero-actions .btn-primary{width:100%;justify-content:center;text-align:center}
+/* The homepage principle band is a dark surface. Generic heading/prose rules
+   previously reintroduced dark ink on the navy background. */
+html body .presence-thesis[data-surface="dark"]{
+  background:#202530!important;
+  color:#F5F5F7!important;
 }
-/* CLEAN-QUOTE-OPTION-ALIGNMENT-20260825:START */
-/* The option info control remains in document flow and aligns with the card's bottom-right inset. */
-html body .smart-quote-layout.smart-quote-layout .option-row.option-row{
-  display:flex!important;align-items:center!important;gap:12px!important;padding:14px!important;min-height:72px!important;
+html body .presence-thesis[data-surface="dark"] :is(h1,h2,h3,p){color:#F5F5F7!important;}
+html body .presence-thesis[data-surface="dark"] :is(.eyebrow,.title-accent){color:#DCC56B!important;}
+html body .presence-thesis[data-surface="dark"] .btn-link{color:#F5F5F7!important;}
+html body .presence-thesis[data-surface="dark"] .btn-link:hover,
+html body .presence-thesis[data-surface="dark"] .btn-link:focus-visible{color:#DCC56B!important;}
+/* Long legal URLs, Austrian identifiers and German compounds may wrap on narrow
+   screens; ordinary prose remains unaffected because overflow-wrap only acts
+   when a token cannot otherwise fit. */
+@media (max-width:480px){
+  html body main :is(h1,h2,h3,p,li,a,strong,span,code){overflow-wrap:anywhere;}
+  html body main :is(.legal,.prose,.card,.split,.grid-2,.grid-3){min-width:0;}
 }
-html body .smart-quote-layout.smart-quote-layout .option-row.option-row>input{
-  flex:0 0 auto!important;margin:0!important;
+/* FIRST-PRINCIPLES-DESKTOP-GUARD-20260814:START */
+@media(min-width:769px){
+  html body main h1,
+  html body header h1{
+    font-size:min(4.375rem,7vw)!important;
+  }
 }
-html body .smart-quote-layout.smart-quote-layout .option-row.option-row>span{
-  display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:10px!important;
-  flex:1 1 auto!important;width:auto!important;min-width:0!important;
+html body main .trust-hero p.lead{
+  width:min(100%,52rem)!important;
+  max-width:52rem!important;
 }
-html body .smart-quote-layout.smart-quote-layout .option-row.option-row .info-tip[data-tooltip]{
-  position:static!important;inset:auto!important;transform:none!important;float:none!important;
-  flex:0 0 44px!important;width:44px!important;min-width:44px!important;max-width:44px!important;
-  height:44px!important;min-height:44px!important;max-height:44px!important;
-  margin:0 0 0 auto!important;align-self:center!important;justify-self:auto!important;
+/* FIRST-PRINCIPLES-DESKTOP-GUARD-20260814:END */
+/* DESKTOP-A11Y-REMEDIATION-20260814:END */
+/* UI-POLISH-20260816:START */
+/* Homepage visual hero must touch the header without inheriting the generic
+   main>section vertical rhythm from later design-system layers. */
+html body main > section.hero.hero-image-first.hero-visual-only{
+  padding-top:0!important;
+  margin-top:0!important;
 }
-/* CLEAN-QUOTE-OPTION-ALIGNMENT-20260825:END */
-/* CLEAN-BANHALMI-BROWSER-QA-20260825:START */
-/* Systemic render corrections proven by the exhaustive 58-page / 348-render browser gate. */
-html body button.menu-btn{
-  box-sizing:border-box!important;width:44px!important;min-width:44px!important;max-width:44px!important;
-  height:44px!important;min-height:44px!important;max-height:44px!important;padding:10px!important;
-  display:grid!important;place-items:center!important;flex:0 0 44px!important;
+html body main > section.hero.hero-image-first.hero-visual-only > .wrap{
+  padding-top:0!important;
 }
-/* Editorial links on light homepage surfaces use the AA-safe deep brand gold. */
-html body a.btn-link{color:#8A681F!important;opacity:1!important;-webkit-text-fill-color:currentColor!important}
-html body a.btn-link:hover,html body a.btn-link:focus-visible{color:#6F5218!important}
-/* Reveal animation may never determine legibility. Evidence headings are readable before and after JS. */
-html body .text-reveal{opacity:1!important;visibility:visible!important;transform:none!important}
-html body h2.text-reveal{color:#202530!important;-webkit-text-fill-color:#202530!important;background:none!important}
-html body p.eyebrow.text-reveal,html body .eyebrow.text-reveal{color:#8A681F!important;-webkit-text-fill-color:#8A681F!important;background:none!important}
-/* Containment: no hidden menu shell or long legal/entity token may widen the document. */
-html body .bn-mega-panel,html body .bn-mega-menu,html body #bn-mega-menu{box-sizing:border-box!important;max-width:100vw!important}
-html body main,html body main>*,html body section,html body article,html body .wrap,html body .legal,html body .prose,html body .person-profile-facts,html body .entity-facts{min-width:0!important}
-html body .legal :is(p,li,a,dd,dt),html body .prose :is(p,li,a,dd,dt),html body .entity-facts :is(dd,a),html body .person-profile-facts :is(p,a,dd){overflow-wrap:anywhere;word-break:normal}
-@media(min-width:861px){html body .bn-mega-panel{width:min(1440px,100%)!important}}
-/* CLEAN-BANHALMI-BROWSER-QA-20260825:END */
-/* CLEAN-BANHALMI-FINAL-BROWSER-CASCADE-20260825:START */
-/* Dark-surface typography: retain the editorial palette while satisfying AA in every reveal state. */
-html body main :is([data-surface="dark"],.trust-proof,.cta-band,.dark-band,.section-dark) a.btn-link{
-  color:#DCC56B!important;-webkit-text-fill-color:#DCC56B!important;opacity:1!important;
+
+/* PageSpeed/Lighthouse contrast: the author-led fine-art prompt is secondary
+   copy, but it must still meet normal-text WCAG contrast on the soft surface. */
+html body .fp-decision-system.surface-soft .fp-art-path > span{
+  color:#3f4147!important;
 }
-html body main :is([data-surface="dark"],.trust-proof,.cta-band,.dark-band,.section-dark) a.btn-link:hover,
-html body main :is([data-surface="dark"],.trust-proof,.cta-band,.dark-band,.section-dark) a.btn-link:focus-visible{
-  color:#F5F5F7!important;-webkit-text-fill-color:#F5F5F7!important;
+
+/* Quote cards keep the 44px accessible info target in normal flow while the
+   copy wrapper owns the full second grid column. This pins every info control
+   to the card's right edge instead of letting it follow the label text. */
+html body .smart-quote-layout :is(.option-row,.category-card) > span{
+  display:grid!important;
+  width:100%!important;
+  min-width:0!important;
+  grid-template-columns:minmax(0,1fr) 44px!important;
+  column-gap:12px!important;
+  align-items:center!important;
 }
-html body main :is([data-surface="dark"],.trust-proof,.cta-band,.dark-band,.section-dark) :is(h1,h2,h3).text-reveal,
-html body main :is([data-surface="dark"],.trust-proof,.cta-band,.dark-band,.section-dark) :is(h1,h2,h3){
-  color:#F5F5F7!important;-webkit-text-fill-color:#F5F5F7!important;background:none!important;opacity:1!important;
+html body .smart-quote-layout :is(.option-row,.category-card) > span > .info-tip{
+  position:static!important;
+  grid-column:2!important;
+  grid-row:1 / span 2!important;
+  justify-self:end!important;
+  align-self:center!important;
+  margin:0!important;
 }
-html body main :is([data-surface="dark"],.trust-proof,.cta-band,.dark-band,.section-dark) :is(.eyebrow,p.eyebrow).text-reveal,
-html body main :is([data-surface="dark"],.trust-proof,.cta-band,.dark-band,.section-dark) :is(.eyebrow,p.eyebrow){
-  color:#DCC56B!important;-webkit-text-fill-color:#DCC56B!important;background:none!important;opacity:1!important;
+
+/* Footer business identifiers are compact two-column data, not loose list
+   copy. Keep identifiers on one line at desktop widths and allow narrow-screen
+   wrapping only where it is genuinely needed. */
+.site-footer .footer-legal-list{
+  min-width:225px;
 }
-/* The verified proof band is a dark semantic surface even where legacy markup omitted data-surface. */
-html body main .trust-proof :is(h2,h2.text-reveal){color:#F5F5F7!important;-webkit-text-fill-color:#F5F5F7!important;background:none!important}
-html body main .trust-proof :is(.eyebrow,p.eyebrow,.eyebrow.text-reveal,p.eyebrow.text-reveal){color:#DCC56B!important;-webkit-text-fill-color:#DCC56B!important;background:none!important}
-/* Prevent hidden navigation/decorative layers and long legal identifiers from widening the document. */
-html,body{max-width:100%;overflow-x:clip}
-html body :is(.site-header,main,.site-footer,.bn-mega-menu,#bn-mega-menu){max-width:100%;overflow-x:clip}
-html body .bn-mega-panel{width:min(1320px,100%)!important;max-width:100%!important;box-sizing:border-box!important}
-html body :is(.legal,.person-profile-facts,.entity-facts,.trust-proof,.service-deep-dive){max-width:100%;overflow-x:clip}
-html body :is(.legal,.person-profile-facts,.entity-facts,.trust-proof,.service-deep-dive) *{min-width:0;max-width:100%}
-html body main :is(p,li,dd,dt,a,code,samp,kbd){overflow-wrap:anywhere}
-html body main table{display:block;max-width:100%;overflow-x:auto}
-@media(max-width:760px){
-  html body .person-profile-hero .wrap,html body .person-profile-facts,html body .executive-profile-grid{grid-template-columns:minmax(0,1fr)!important}
-  html body .person-profile-hero-media{min-width:0!important;width:100%!important;max-width:100%!important}
+.site-footer .footer-legal-list li{
+  display:grid!important;
+  grid-template-columns:58px minmax(0,1fr)!important;
+  column-gap:10px!important;
+  align-items:start!important;
+  margin-bottom:8px!important;
+  line-height:1.35!important;
 }
-/* CLEAN-BANHALMI-FINAL-BROWSER-CASCADE-20260825:END */
-/* CLEAN-BANHALMI-DESIGN-AUTHORITY-20260825:END */
+.site-footer .footer-legal-list li > span{
+  min-width:0!important;
+  line-height:1.35!important;
+}
+.site-footer .footer-legal-list li > strong{
+  min-width:0!important;
+  line-height:1.35!important;
+  white-space:nowrap;
+}
+
+/* Copyright and utility links form one deliberate metadata row on desktop,
+   with a compact stacked fallback instead of space-between stretching. */
+.site-footer .footer-bottom{
+  display:grid!important;
+  grid-template-columns:max-content minmax(0,1fr)!important;
+  align-items:start!important;
+  justify-content:initial!important;
+  column-gap:24px!important;
+  row-gap:8px!important;
+  margin-top:28px!important;
+  padding-top:16px!important;
+  line-height:1.4!important;
+}
+.site-footer .footer-bottom > span:first-child{
+  white-space:nowrap;
+  line-height:1.4!important;
+}
+.site-footer .footer-bottom > span:last-child{
+  min-width:0;
+  line-height:1.4!important;
+}
+@media (max-width:980px){
+  .site-footer .footer-bottom{
+    grid-template-columns:1fr!important;
+  }
+  .site-footer .footer-bottom > span:first-child{
+    white-space:normal;
+  }
+}
+@media (max-width:620px){
+  .site-footer .footer-legal-list{min-width:0;}
+  .site-footer .footer-legal-list li > strong{white-space:normal;}
+}
+/* UI-POLISH-20260816:END */
+
+/* QUOTE-LAYOUT-REGRESSION-20260816:START */
+/* Keep quote choices optically compact: intrinsic rows, no distributed empty space. */
+html body .smart-quote-layout .category-grid{
+  align-content:start!important;
+  align-items:start!important;
+  grid-auto-rows:max-content!important;
+  height:auto!important;
+  min-height:0!important;
+}
+html body .smart-quote-layout .quote-step{
+  height:auto!important;
+  min-height:0!important;
+  align-self:start!important;
+  margin-bottom:14px!important;
+  padding:18px 20px!important;
+}
+html body .smart-quote-layout .quote-step h3{margin-bottom:12px!important;}
+html body .smart-quote-layout .option-stack{gap:8px!important;margin-bottom:10px!important;}
+html body .smart-quote-layout .category-grid{gap:10px!important;row-gap:10px!important;}
+html body .smart-quote-layout .grid-2,
+html body .smart-quote-layout .grid-3,
+html body .smart-quote-layout .check-grid,
+html body .smart-quote-layout .production-grid{row-gap:10px!important;column-gap:10px!important;align-items:start!important;}
+html body .smart-quote-layout .category-card,
+html body .smart-quote-layout .option-row{margin:0!important;min-height:0!important;height:auto!important;align-self:start!important;}
+
+/* Choice row contract: radio at the left inner edge, copy in the fluid middle,
+   and the 44px info target locked to the right edge on the same visual row. */
+html body .smart-quote-layout .option-row{
+  display:grid!important;
+  grid-template-columns:24px minmax(0,1fr)!important;
+  column-gap:12px!important;
+  align-items:center!important;
+}
+html body .smart-quote-layout .option-row > input[type="radio"]{
+  grid-column:1!important;
+  justify-self:start!important;
+  align-self:center!important;
+  margin:0!important;
+  inline-size:24px!important;
+  block-size:24px!important;
+  min-width:24px!important;
+  min-height:24px!important;
+}
+html body .smart-quote-layout .option-row > span{
+  grid-column:2!important;
+  display:grid!important;
+  width:100%!important;
+  min-width:0!important;
+  grid-template-columns:minmax(0,1fr) 44px!important;
+  column-gap:14px!important;
+  align-items:center!important;
+  line-height:1.42!important;
+}
+html body .smart-quote-layout .option-row > span > .info-tip{
+  position:static!important;
+  grid-column:2!important;
+  grid-row:1!important;
+  justify-self:end!important;
+  align-self:center!important;
+  margin:0!important;
+}
+
+/* Contract/licensing drawer: preserve breathing room between intro copy, card grid,
+   action row and the following legal bridge. The drawer must never visually collide
+   with the next section. */
+html body .quote-deep-details > section.pricing-licensing-clarity{
+  padding-top:clamp(34px,4vw,52px)!important;
+  padding-bottom:clamp(42px,4.8vw,64px)!important;
+}
+html body .quote-deep-details .pricing-licensing-clarity .section-head{
+  margin-bottom:clamp(34px,4vw,48px)!important;
+}
+html body .quote-deep-details .pricing-licensing-clarity .section-head > :last-child{
+  margin-bottom:0!important;
+}
+html body .quote-deep-details .pricing-licensing-clarity .card-grid{
+  margin-top:0!important;
+  margin-bottom:clamp(34px,4vw,48px)!important;
+  row-gap:clamp(18px,2.2vw,26px)!important;
+  column-gap:clamp(18px,2.2vw,26px)!important;
+}
+html body .quote-deep-details .pricing-licensing-clarity .button-row{
+  margin:0!important;
+  padding-top:2px!important;
+}
+html body .quote-deep-details > section.quote-legal-bridge{
+  margin-top:0!important;
+  padding-top:clamp(42px,4.8vw,64px)!important;
+  padding-bottom:clamp(42px,4.8vw,64px)!important;
+  border-top:1px solid var(--line)!important;
+}
+html body .quote-deep-details > section.quote-legal-bridge .section-head{
+  margin-bottom:clamp(24px,3vw,34px)!important;
+}
+html body .quote-deep-details > section.quote-legal-bridge .service-actions{
+  margin-top:0!important;
+  padding-top:0!important;
+}
+
+/* Footer metadata row: copyright flush left, utility links flush right on desktop. */
+@media (min-width:981px){
+  html body .site-footer .footer-bottom{
+    display:grid!important;
+    grid-template-columns:max-content minmax(0,1fr)!important;
+    align-items:center!important;
+    column-gap:28px!important;
+    row-gap:0!important;
+    width:100%!important;
+  }
+  html body .site-footer .footer-bottom > span:first-child{
+    justify-self:start!important;
+    text-align:left!important;
+    white-space:nowrap!important;
+  }
+  html body .site-footer .footer-bottom > span:last-child{
+    justify-self:end!important;
+    text-align:right!important;
+    white-space:nowrap!important;
+  }
+}
+@media (max-width:980px){
+  html body .site-footer .footer-bottom{grid-template-columns:1fr!important;row-gap:8px!important;}
+  html body .site-footer .footer-bottom > span:first-child,
+  html body .site-footer .footer-bottom > span:last-child{justify-self:start!important;text-align:left!important;white-space:normal!important;}
+}
+@media (max-width:620px){
+  html body .smart-quote-layout .option-row{grid-template-columns:24px minmax(0,1fr)!important;column-gap:10px!important;}
+  html body .smart-quote-layout .option-row > span{grid-template-columns:minmax(0,1fr) 44px!important;column-gap:10px!important;}
+  html body .quote-deep-details > section.pricing-licensing-clarity,
+  html body .quote-deep-details > section.quote-legal-bridge{padding-top:30px!important;padding-bottom:36px!important;}
+  html body .quote-deep-details .pricing-licensing-clarity .section-head{margin-bottom:28px!important;}
+  html body .quote-deep-details .pricing-licensing-clarity .card-grid{margin-bottom:30px!important;row-gap:14px!important;column-gap:14px!important;}
+}
+/* QUOTE-LAYOUT-REGRESSION-20260816:END */
 
 /* APPLE-RESPONSIVE-CONTRACT-V1:END */
