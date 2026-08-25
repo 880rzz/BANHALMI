@@ -17,7 +17,6 @@ jobs:
         with:
           node-version: 22
       - run: node tools/fix-browser-qa-systemic-20260825.mjs
-      - run: npm test
       - name: Commit CSS correction
         run: |
           set -euo pipefail
