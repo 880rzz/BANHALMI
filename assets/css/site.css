@@ -4119,9 +4119,12 @@ p,li{max-width:var(--clean-reading)}
 .smart-quote-layout .category-card{position:relative;display:grid;grid-template-columns:auto 1fr;align-items:start;column-gap:12px;row-gap:7px;min-height:0!important;padding:18px!important}
 .smart-quote-layout .category-card>input{grid-column:1;grid-row:1}
 .smart-quote-layout .category-card>strong,.smart-quote-layout .category-card>em{grid-column:2}
-.smart-quote-layout .category-card>.info-tip[data-tooltip],
-.smart-quote-layout .option-row .info-tip[data-tooltip]{position:static!important;inset:auto!important;transform:none!important;float:none!important;margin:0!important}
-.smart-quote-layout .category-card>.info-tip[data-tooltip]{grid-column:2;justify-self:end;align-self:start;grid-row:1 / span 2}
+.smart-quote-layout .info-tip[data-tooltip]{position:static!important;inset:auto!important;right:auto!important;bottom:auto!important;top:auto!important;left:auto!important;transform:none!important;float:none!important;margin:0!important;flex:0 0 44px!important}
+.smart-quote-layout .category-card>span{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-rows:auto auto!important;align-items:start!important;gap:6px 10px!important;min-width:0!important;width:100%!important}
+.smart-quote-layout .category-card>span>strong,.smart-quote-layout .category-card>span>em{grid-column:1!important;min-width:0!important}
+.smart-quote-layout .category-card>span>.info-tip[data-tooltip]{grid-column:2!important;grid-row:1 / span 2!important;justify-self:end!important;align-self:end!important}
+.smart-quote-layout .option-row>span{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;min-width:0!important;width:100%!important}
+.smart-quote-layout .option-row .info-tip[data-tooltip]{margin-left:auto!important;align-self:center!important}
 .smart-quote-layout .option-row{display:grid!important;grid-template-columns:auto minmax(0,1fr) auto!important;align-items:center!important;gap:12px!important}
 .smart-quote-layout .option-row>span{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;gap:10px!important;min-width:0;width:100%}
 .smart-quote-layout .option-row .info-tip[data-tooltip]{justify-self:end!important}
