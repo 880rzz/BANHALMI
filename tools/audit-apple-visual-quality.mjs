@@ -59,7 +59,7 @@ for(const width of widths){
         if(lh<lhLim[0]||lh>lhLim[1])issues.push(`${name(h)} heading line-height ${lh.toFixed(2)}`);
         if(fw<500||fw>750)issues.push(`${name(h)} heading weight ${fw}`);
         if(fs&&abs(ls/fs)>0.025)issues.push(`${name(h)} heading tracking ${(ls/fs).toFixed(3)}em too strong`);
-        const sec=h.closest('section');const sr=sec?.getBoundingClientRect();const centeredViewportDisplay=(s.textAlign==='center'&&r.width>=w-2&&!!sr&&sr.width>=w-2);const fullWidthDisplay=!!h.closest('.text-reveal,.full-bleed,[data-full-bleed="true"]')||h.classList.contains('text-reveal')||centeredViewportDisplay;
+        const sec=h.closest('section');const sr=sec?.getBoundingClientRect();const viewportDisplay=(r.width>=w-2&&!!sr&&sr.width>=w-2);const centeredViewportDisplay=(s.textAlign==='center'&&viewportDisplay);const fullWidthDisplay=!!h.closest('.text-reveal,.full-bleed,[data-full-bleed="true"]')||h.classList.contains('text-reveal')||viewportDisplay||centeredViewportDisplay;
         if(w<=768&&!fullWidthDisplay&&!h.closest('.gallery,.collage')&&(r.left<15||r.right>w-15))issues.push(`${name(h)} heading violates page gutter [${r.left.toFixed(1)},${(w-r.right).toFixed(1)}]`);
       }
 

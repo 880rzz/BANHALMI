@@ -4415,3 +4415,21 @@ body main .quote-summary-card{
 /* STRICT-APPLE-WEB-CONTRACT-20260825:END */
 
 /* APPLE-RESPONSIVE-CONTRACT-V1:END */
+
+/* STRICT-APPLE-FINAL-20260825 */
+/* Final semantic visual calibration. Keeps the approved layout while enforcing restrained tracking and readable lead/card geometry. */
+body main h2,
+body main h3{
+  letter-spacing:-.015em!important;
+}
+body main p.lead{
+  font-size:max(19px,1.1875rem)!important;
+  line-height:1.5!important;
+}
+body main label.category-card,
+body main label.option-row,
+body main .quote-step,
+body main .quote-summary-card{
+  padding-left:max(20px,3vw)!important;
+  padding-right:max(20px,3vw)!important;
+}
