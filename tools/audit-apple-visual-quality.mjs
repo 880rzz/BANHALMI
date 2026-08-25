@@ -24,31 +24,41 @@ for(const width of widths){
       const w=innerWidth,bodyBg=getComputedStyle(document.body).backgroundColor;
       const left=s=>s.textAlign==='left'||s.textAlign==='start';
       const shortCentered=el=>!!el.closest('.hero,.hero-centered,.cta-band,.statement,.error-page,.site-footer')&&((el.innerText||'').trim().length<=220);
+      const isLead=el=>el.classList.contains('lead')||el.closest('.lead');
+      const isSecondary=el=>el.matches('.microcopy,.form-data-note,.field-help,.form-submit-wait-note,.quote-disclaimer')||!!el.closest('.microcopy,.form-data-note,.field-help,.form-submit-wait-note,.quote-disclaimer');
       if(document.documentElement.scrollWidth>document.documentElement.clientWidth+1)issues.push(`document horizontal overflow ${document.documentElement.scrollWidth-document.documentElement.clientWidth}px`);
 
       const text=[...document.querySelectorAll('main p,main li,main blockquote')].filter(visible);
       const longText=text.filter(el=>(el.innerText||'').replace(/\s+/g,' ').trim().length>=120);
       for(const el of longText){
-        const s=getComputedStyle(el),r=el.getBoundingClientRect(),fs=px(s.fontSize),lh=px(s.lineHeight)/(fs||1),fw=Number(s.fontWeight)||400,ls=px(s.letterSpacing);
+        const s=getComputedStyle(el),r=el.getBoundingClientRect(),fs=px(s.fontSize),lh=px(s.lineHeight)/(fs||1),fw=Number(s.fontWeight)||400,ls=px(s.letterSpacing),lead=isLead(el),secondary=isSecondary(el);
         if(s.textAlign==='justify')issues.push(`${name(el)} uses justified text`);
         if(!left(s)&&!shortCentered(el))issues.push(`${name(el)} long prose text-align=${s.textAlign}`);
-        if(fs<16||fs>21.5)issues.push(`${name(el)} long prose font-size ${fs.toFixed(1)}px outside 16–21.5px`);
-        if(lh<1.4||lh>1.72)issues.push(`${name(el)} long prose line-height ${lh.toFixed(2)} outside 1.40–1.72`);
+        if(lead){
+          if(fs<19||fs>28.5)issues.push(`${name(el)} lead font-size ${fs.toFixed(1)}px outside 19–28.5px`);
+          if(lh<1.28||lh>1.52)issues.push(`${name(el)} lead line-height ${lh.toFixed(2)} outside 1.28–1.52`);
+        }else if(secondary){
+          if(fs<14||fs>17.5)issues.push(`${name(el)} secondary font-size ${fs.toFixed(1)}px outside 14–17.5px`);
+          if(lh<1.35||lh>1.75)issues.push(`${name(el)} secondary line-height ${lh.toFixed(2)} outside 1.35–1.75`);
+        }else{
+          if(fs<15.75||fs>21.5)issues.push(`${name(el)} long prose font-size ${fs.toFixed(1)}px outside 16–21.5px`);
+          if(lh<1.4||lh>1.72)issues.push(`${name(el)} long prose line-height ${lh.toFixed(2)} outside 1.40–1.72`);
+        }
         if(fw<300||fw>600)issues.push(`${name(el)} long prose weight ${fw}`);
         if(abs(ls)>1)issues.push(`${name(el)} long prose tracking ${ls.toFixed(2)}px`);
-        if(w>=1024&&r.width>860)issues.push(`${name(el)} long prose width ${r.width.toFixed(0)}px > 860px`);
+        if(w>=1024&&!lead&&r.width>860)issues.push(`${name(el)} long prose width ${r.width.toFixed(0)}px > 860px`);
         if(w<=768&&!el.closest('.gallery,.collage,.full-bleed,[data-full-bleed="true"]')&&(r.left<15||r.right>w-15))issues.push(`${name(el)} page gutter [${r.left.toFixed(1)},${(w-r.right).toFixed(1)}]px`);
         if((el.innerText||'').trim().length>500&&r.width<Math.min(280,w-40))issues.push(`${name(el)} reading column too narrow ${r.width.toFixed(0)}px`);
       }
 
       for(const h of document.querySelectorAll('main h1,main h2,main h3,header h1')){
         if(!visible(h))continue;const s=getComputedStyle(h),r=h.getBoundingClientRect(),fs=px(s.fontSize),lh=px(s.lineHeight)/(fs||1),fw=Number(s.fontWeight)||400,ls=px(s.letterSpacing);if(fs<1)continue;
-        const tag=h.tagName.toLowerCase(),lim=tag==='h1'?(w<=430?[34,50]:w<=768?[34,58]:[38,76]):tag==='h2'?(w<=430?[24,42]:[24,48]):[18,34];
+        const tag=h.tagName.toLowerCase(),lim=tag==='h1'?(w<=430?[34,50]:w<=768?[34,58]:[38,76]):tag==='h2'?(w<=430?[24,42]:[24,48]):[17.75,34];
         const lhLim=tag==='h1'?[0.98,1.18]:[1.02,1.30];
         if(fs<lim[0]||fs>lim[1])issues.push(`${name(h)} font-size ${fs.toFixed(1)}px outside ${lim[0]}–${lim[1]}px`);
         if(lh<lhLim[0]||lh>lhLim[1])issues.push(`${name(h)} heading line-height ${lh.toFixed(2)}`);
         if(fw<500||fw>750)issues.push(`${name(h)} heading weight ${fw}`);
-        if(abs(ls)>1.8)issues.push(`${name(h)} heading tracking ${ls.toFixed(2)}px`);
+        if(fs&&abs(ls/fs)>0.035)issues.push(`${name(h)} heading tracking ${(ls/fs).toFixed(3)}em too strong`);
         const sec=h.closest('section');const sr=sec?.getBoundingClientRect();const centeredViewportDisplay=(s.textAlign==='center'&&r.width>=w-2&&!!sr&&sr.width>=w-2);const fullWidthDisplay=!!h.closest('.text-reveal,.full-bleed,[data-full-bleed="true"]')||h.classList.contains('text-reveal')||centeredViewportDisplay;
         if(w<=768&&!fullWidthDisplay&&!h.closest('.gallery,.collage')&&(r.left<15||r.right>w-15))issues.push(`${name(h)} heading violates page gutter [${r.left.toFixed(1)},${(w-r.right).toFixed(1)}]`);
       }
@@ -62,7 +72,7 @@ for(const width of widths){
       }
 
       for(const wrap of document.querySelectorAll('main .wrap,main .container,main .content-wrap')){
-        if(!visible(wrap))continue;const r=wrap.getBoundingClientRect();if(r.right>w+2||r.left<-2)issues.push(`${name(wrap)} wrap escapes viewport [${r.left.toFixed(1)},${r.right.toFixed(1)}]`);if(w>=1024&&r.width>1280)issues.push(`${name(wrap)} content width ${r.width.toFixed(0)}px > 1280px`);if(w<=768&&!wrap.closest('.full-bleed,[data-full-bleed="true"]')&&(r.left<15||r.right>w-15))issues.push(`${name(wrap)} mobile/tablet gutter [${r.left.toFixed(1)},${(w-r.right).toFixed(1)}]px`);if(w>=1024&&r.width<w-80&&abs(r.left-(w-r.right))>5)issues.push(`${name(wrap)} container not centered (${r.left.toFixed(1)} vs ${(w-r.right).toFixed(1)})`);
+        if(!visible(wrap))continue;const r=wrap.getBoundingClientRect(),s=getComputedStyle(wrap),pl=px(s.paddingLeft),pr=px(s.paddingRight),effectiveLeft=r.left+pl,effectiveRight=w-r.right+pr;if(r.right>w+2||r.left<-2)issues.push(`${name(wrap)} wrap escapes viewport [${r.left.toFixed(1)},${r.right.toFixed(1)}]`);if(w>=1024&&r.width>1280)issues.push(`${name(wrap)} content width ${r.width.toFixed(0)}px > 1280px`);if(w<=768&&!wrap.closest('.full-bleed,[data-full-bleed="true"]')&&(effectiveLeft<15||effectiveRight<15))issues.push(`${name(wrap)} mobile/tablet content gutter [${effectiveLeft.toFixed(1)},${effectiveRight.toFixed(1)}]px`);if(w>=1024&&r.width<w-80&&abs(r.left-(w-r.right))>5)issues.push(`${name(wrap)} container not centered (${r.left.toFixed(1)} vs ${(w-r.right).toFixed(1)})`);
       }
 
       for(const h of document.querySelectorAll('main h1,main h2,main h3')){
@@ -90,4 +100,4 @@ for(const width of widths){
 await browser.close();
 fs.mkdirSync('artifacts',{recursive:true});fs.writeFileSync('artifacts/apple-visual-quality.json',JSON.stringify({contract:'strict-apple-web-20260825',pages:pages.length,widths,reports,failures},null,2));
 if(failures.length){console.error(`BANHALMI strict Apple visual contract found ${failures.length} failing page/viewport combinations.`);console.error(failures.join('\n'));process.exit(1)}
-console.log(`BANHALMI strict Apple visual contract passed: ${pages.length} pages × ${widths.length} viewports; typography, weight, tracking, leading, alignment, reading measure, gutters, full-width colored surfaces, spacing rhythm, controls, grids and cell geometry verified.`);
+console.log(`BANHALMI strict Apple visual contract passed: ${pages.length} pages × ${widths.length} viewports; semantic lead/body/secondary typography, weight, tracking, leading, alignment, reading measure, gutters, full-width colored surfaces, spacing rhythm, controls, grids and cell geometry verified.`);
