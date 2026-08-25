@@ -14,18 +14,55 @@ const key = process.env.PAGESPEED_API_KEY || '';
 let measured = 0;
 const failures = [];
 
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+async function fetchPsi(endpoint, target) {
+  const maxAttempts = 4;
+  let lastError = null;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const response = await fetch(endpoint, { headers: { accept: 'application/json' } });
+      if (response.ok || [403, 429].includes(response.status)) return response;
+      if (response.status >= 500 && response.status <= 599) {
+        lastError = new Error(`HTTP ${response.status}`);
+        if (attempt < maxAttempts) {
+          const delay = 1500 * attempt;
+          console.warn(`PSI transient failure for ${target}: HTTP ${response.status}; retry ${attempt}/${maxAttempts - 1} in ${delay}ms.`);
+          await sleep(delay);
+          continue;
+        }
+        console.warn(`PSI temporarily unavailable for ${target} after ${maxAttempts} attempts: HTTP ${response.status}. Lighthouse lab gates remain authoritative for this release.`);
+        return null;
+      }
+      throw new Error(`PSI request failed for ${target}: HTTP ${response.status}`);
+    } catch (error) {
+      lastError = error;
+      if (attempt < maxAttempts) {
+        const delay = 1500 * attempt;
+        console.warn(`PSI network failure for ${target}: ${error.message}; retry ${attempt}/${maxAttempts - 1} in ${delay}ms.`);
+        await sleep(delay);
+        continue;
+      }
+    }
+  }
+  console.warn(`PSI temporarily unavailable for ${target} after retries: ${lastError?.message || 'unknown network error'}. Lighthouse lab gates remain authoritative for this release.`);
+  return null;
+}
+
 for (const target of targets) {
   const endpoint = new URL('https://www.googleapis.com/pagespeedonline/v5/runPagespeed');
   endpoint.searchParams.set('url', target);
   endpoint.searchParams.set('strategy', 'mobile');
   endpoint.searchParams.append('category', 'performance');
   if (key) endpoint.searchParams.set('key', key);
-  const response = await fetch(endpoint, { headers: { accept: 'application/json' } });
+
+  const response = await fetchPsi(endpoint, target);
+  if (!response) continue;
   if ([403, 429].includes(response.status)) {
     console.warn(`PSI unavailable for ${target}: HTTP ${response.status}. Configure PAGESPEED_API_KEY for stable quota.`);
     continue;
   }
-  if (!response.ok) throw new Error(`PSI request failed for ${target}: HTTP ${response.status}`);
+
   const data = await response.json();
   const field = data.loadingExperience?.metrics || data.originLoadingExperience?.metrics || {};
   const values = {
@@ -44,7 +81,7 @@ for (const target of targets) {
 }
 
 if (!measured) {
-  console.log('No URL has sufficient CrUX field data yet; the verified Lighthouse lab budgets remain the release gate.');
+  console.log('No URL has sufficient CrUX field data yet, or PSI was temporarily unavailable; verified Lighthouse lab budgets remain the release gate.');
 }
 if (failures.length) {
   console.error('\nCore Web Vitals field gate failed:');
