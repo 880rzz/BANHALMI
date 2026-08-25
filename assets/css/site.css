@@ -4148,3 +4148,14 @@ main :is(.section,.section-band) p a:not(.btn):not(.btn-link){text-decoration:un
 @media(prefers-reduced-motion:reduce){.card,.btn,.menu-btn,.nav-links{transition:none!important;transform:none!important;}}
 /* APPLE-RESPONSIVE-CONTRACT-V1:END */
 
+
+/* TRUST-PROOF-WCAG-20260825:START */
+/* Verified-context band: explicit dark-band and white-card contrast authority. */
+main .trust-proof[data-surface="dark"] .section-head > h2,
+main .trust-proof[data-surface="dark"] .section-head > p:not(.eyebrow){color:#f7f9fc!important}
+main .trust-proof[data-surface="dark"] .section-head > .eyebrow{color:#ead67f!important}
+main .trust-proof[data-surface="dark"] .grid-3 > .card{background:#fff!important;color:#202530!important;border-color:rgba(255,255,255,.18)!important}
+main .trust-proof[data-surface="dark"] .grid-3 > .card h3{color:#202530!important}
+main .trust-proof[data-surface="dark"] .grid-3 > .card p{color:#5b616c!important}
+main .trust-proof[data-surface="dark"] .grid-3 > .card a{color:#5f4715!important}
+/* TRUST-PROOF-WCAG-20260825:END */
