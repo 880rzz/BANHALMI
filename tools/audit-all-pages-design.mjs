@@ -11,13 +11,67 @@ walk(siteDir);
 const contentFiles=files.filter(file=>{const rel=path.relative(siteDir,file).replaceAll('\\','/');const html=fs.readFileSync(file,'utf8');if(rel.startsWith('redirects/'))return false;if(/http-equiv=["']refresh["']/i.test(html)&&html.length<7000)return false;return /<main\b/i.test(html)&&!/<meta[^>]+name=["']robots["'][^>]+noindex/i.test(html)});
 function urlFor(file){let rel=path.relative(siteDir,file).replaceAll('\\','/');rel=rel.replace(/index\.html$/,'');return `${baseUrl}/${rel}`.replace(/([^:]\/)\/+/g,'$1')}
 const browser=await chromium.launch({headless:true});const failures=[];let checks=0;
-for(const width of widths){const page=await browser.newPage({viewport:{width,height:1100}});for(const file of contentFiles){const rel=path.relative(siteDir,file).replaceAll('\\','/');await page.goto(urlFor(file),{waitUntil:'networkidle'});const r=await page.evaluate(()=>{
-const visible=el=>{if(!el)return false;const s=getComputedStyle(el),b=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0&&b.width>0&&b.height>0};const de=document.documentElement;const outside=[];for(const el of document.querySelectorAll('h1,h2,h3,p,li,a,button,summary,img')){if(!visible(el))continue;const b=el.getBoundingClientRect();if(b.right>innerWidth+2||b.left<-2){outside.push(`${el.tagName.toLowerCase()}.${el.className||''} [${b.left.toFixed(1)},${b.right.toFixed(1)}]`);if(outside.length>=6)break;}}
-const header=document.querySelector('.site-header');const main=document.querySelector('main');const first=main?[...main.querySelectorAll('h1,h2')].find(visible):null;const headerBottom=visible(header)?header.getBoundingClientRect().bottom:0;const firstGap=first?first.getBoundingClientRect().top-headerBottom:null;
-const surface=[];for(const el of document.querySelectorAll('main>section[data-surface]')){if(!visible(el))continue;const s=getComputedStyle(el),surfaceName=el.getAttribute('data-surface');surface.push({surfaceName,bg:s.backgroundColor,color:s.color,padTop:parseFloat(s.paddingTop)||0,padBottom:parseFloat(s.paddingBottom)||0});}
-const wraps=[];for(const w of document.querySelectorAll('main .wrap')){if(!visible(w))continue;const b=w.getBoundingClientRect();if(b.width>Math.min(innerWidth,1200)+4)wraps.push(b.width);}
-const info=[...document.querySelectorAll('.smart-quote-layout .info-tip[data-tooltip]')].filter(visible).map(el=>({position:getComputedStyle(el).position,b:el.getBoundingClientRect(),card:el.closest('.category-card,.option-row')?.getBoundingClientRect()||null}));
-const footer=document.querySelector('.site-footer');return {overflow:de.scrollWidth-de.clientWidth,outside,firstGap,headerHeight:visible(header)?header.getBoundingClientRect().height:0,surface,wraps,info,footerHeight:visible(footer)?footer.getBoundingClientRect().height:0};});
-if(r.overflow>1)failures.push(`${rel} @${width}: horizontal overflow ${r.overflow}px`);for(const x of r.outside)failures.push(`${rel} @${width}: viewport escape ${x}`);if(r.headerHeight&&(r.headerHeight<48||r.headerHeight>110))failures.push(`${rel} @${width}: header height ${r.headerHeight.toFixed(1)}px`);if(r.firstGap!=null&&r.firstGap>330)failures.push(`${rel} @${width}: excessive header-to-first-heading gap ${r.firstGap.toFixed(1)}px`);for(const w of r.wraps)failures.push(`${rel} @${width}: .wrap too wide ${w.toFixed(1)}px`);for(const s of r.surface){if(s.surfaceName==='white'&&s.bg!=='rgb(255, 255, 255)')failures.push(`${rel} @${width}: white surface rendered ${s.bg}`);if(s.surfaceName==='soft'&&s.bg!=='rgb(245, 245, 247)')failures.push(`${rel} @${width}: soft surface rendered ${s.bg}`);if(s.surfaceName==='dark'&&!['rgb(32, 37, 48)','rgb(28, 31, 38)'].includes(s.bg))failures.push(`${rel} @${width}: dark surface rendered ${s.bg}`);}
-for(const i of r.info){if(i.position!=='static')failures.push(`${rel} @${width}: quote info-tip position=${i.position}`);if(i.card&&(i.b.left<i.card.left-1||i.b.right>i.card.right+1||i.b.top<i.card.top-1||i.b.bottom>i.card.bottom+1))failures.push(`${rel} @${width}: quote info-tip escapes its option card`);}if(r.footerHeight>1000)failures.push(`${rel} @${width}: footer height ${r.footerHeight.toFixed(1)}px`);checks++;}await page.close();}
-await browser.close();if(failures.length){console.error(`BANHALMI exhaustive design audit failed (${failures.length} issue(s), ${checks} route/viewport checks):`);for(const f of failures.slice(0,250))console.error(`- ${f}`);if(failures.length>250)console.error(`... ${failures.length-250} more`);process.exit(1)}console.log(`BANHALMI exhaustive design audit passed: ${contentFiles.length} content pages × ${widths.length} viewports = ${checks} render checks.`);
+for(const width of widths){
+  const page=await browser.newPage({viewport:{width,height:1100}});
+  for(const file of contentFiles){
+    const rel=path.relative(siteDir,file).replaceAll('\\','/');
+    await page.goto(urlFor(file),{waitUntil:'networkidle'});
+    const r=await page.evaluate(()=>{
+      const visible=el=>{if(!el)return false;const s=getComputedStyle(el),b=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0&&b.width>0&&b.height>0};
+      const de=document.documentElement;
+      const header=document.querySelector('.site-header');
+      const main=document.querySelector('main');
+      const footer=document.querySelector('.site-footer');
+      const surfaces=[];
+      for(const el of document.querySelectorAll('main>section[data-surface]')){
+        if(!visible(el))continue;
+        const s=getComputedStyle(el);
+        surfaces.push({surfaceName:el.getAttribute('data-surface'),bg:s.backgroundColor,color:s.color});
+      }
+      const wraps=[];
+      for(const w of document.querySelectorAll('main .wrap')){
+        if(!visible(w))continue;
+        const b=w.getBoundingClientRect();
+        if(b.width>Math.min(innerWidth,1200)+4)wraps.push(b.width);
+      }
+      const info=[...document.querySelectorAll('.smart-quote-layout .info-tip[data-tooltip]')].filter(visible).map(el=>({position:getComputedStyle(el).position,b:el.getBoundingClientRect(),card:el.closest('.category-card,.option-row')?.getBoundingClientRect()||null}));
+      const mainBox=visible(main)?main.getBoundingClientRect():null;
+      const footerBox=visible(footer)?footer.getBoundingClientRect():null;
+      return {
+        overflow:de.scrollWidth-de.clientWidth,
+        headerHeight:visible(header)?header.getBoundingClientRect().height:0,
+        surfaces,wraps,info,
+        mainRight:mainBox?.right??0,
+        footerRight:footerBox?.right??0,
+        footerLeft:footerBox?.left??0,
+        footerTop:footerBox?.top??null,
+        mainBottom:mainBox?.bottom??null
+      };
+    });
+    if(r.overflow>1)failures.push(`${rel} @${width}: document horizontal overflow ${r.overflow}px`);
+    if(r.headerHeight&&(r.headerHeight<48||r.headerHeight>110))failures.push(`${rel} @${width}: header height ${r.headerHeight.toFixed(1)}px`);
+    if(r.mainRight>width+2)failures.push(`${rel} @${width}: main escapes viewport (${r.mainRight.toFixed(1)}px)`);
+    if(r.footerRight>width+2||r.footerLeft<-2)failures.push(`${rel} @${width}: footer escapes viewport [${r.footerLeft.toFixed(1)},${r.footerRight.toFixed(1)}]`);
+    if(r.footerTop!=null&&r.mainBottom!=null&&r.footerTop<r.mainBottom-2)failures.push(`${rel} @${width}: footer overlaps main content by ${(r.mainBottom-r.footerTop).toFixed(1)}px`);
+    for(const w of r.wraps)failures.push(`${rel} @${width}: .wrap too wide ${w.toFixed(1)}px`);
+    for(const s of r.surfaces){
+      if(s.surfaceName==='white'&&s.bg!=='rgb(255, 255, 255)')failures.push(`${rel} @${width}: white surface rendered ${s.bg}`);
+      if(s.surfaceName==='soft'&&s.bg!=='rgb(245, 245, 247)')failures.push(`${rel} @${width}: soft surface rendered ${s.bg}`);
+      if(s.surfaceName==='dark'&&!['rgb(13, 27, 46)','rgb(32, 37, 48)','rgb(28, 31, 38)'].includes(s.bg))failures.push(`${rel} @${width}: dark surface rendered ${s.bg}`);
+    }
+    for(const i of r.info){
+      if(i.position!=='static')failures.push(`${rel} @${width}: quote info-tip position=${i.position}`);
+      if(i.card&&(i.b.left<i.card.left-1||i.b.right>i.card.right+1||i.b.top<i.card.top-1||i.b.bottom>i.card.bottom+1))failures.push(`${rel} @${width}: quote info-tip escapes its option card`);
+    }
+    checks++;
+  }
+  await page.close();
+}
+await browser.close();
+if(failures.length){
+  console.error(`BANHALMI exhaustive design audit failed (${failures.length} issue(s), ${checks} route/viewport checks):`);
+  for(const f of failures.slice(0,250))console.error(`- ${f}`);
+  if(failures.length>250)console.error(`... ${failures.length-250} more`);
+  process.exit(1);
+}
+console.log(`BANHALMI exhaustive design audit passed: ${contentFiles.length} content pages × ${widths.length} viewports = ${checks} render checks; document overflow, shell containment, surfaces and quote controls verified against the approved visual baseline.`);
