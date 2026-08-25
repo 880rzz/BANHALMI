@@ -7,18 +7,16 @@ const a=css.indexOf(start), b=css.indexOf(end);
 const contract=a>=0&&b>a?css.slice(a,b):'';
 if(a<0||b<=a) fail.push('single Apple responsive contract missing');
 if(css.indexOf(start,a+1)!==-1||css.indexOf(end,b+1)!==-1) fail.push('multiple Apple responsive authorities detected');
-if(!contract.includes('SINGLE-CSS-AUTHORITY-20260825')) fail.push('single CSS authority marker missing');
 for(const needle of [
   '--apple-page-max:1200px','--apple-reading-max:760px','--apple-gutter:',
-  '--apple-section-space:','--apple-card-gap:','content-visibility:visible!important','contain-intrinsic-size:none!important',
-  'main>section,body>main>section{padding-block:var(--apple-section-space)!important',
-  '.smart-quote-layout .category-grid{gap:9px!important;align-items:start!important;}',
-  '.fp-art-path,.fp-decision-actions{',
-  '.project-framework-drawer>summary{',
-  '.bn-mega-link.active,.bn-mega-link[aria-current="page"],.bn-mega-link:focus-visible{',
-  '@media(max-width:1024px)','@media(max-width:768px)','@media(max-width:560px)'
-]) if(!contract.includes(needle)) fail.push('layout contract missing: '+needle);
-if(/(^|[}\s])section\{padding:/m.test(contract)) fail.push('naked global section padding returned');
+  '--apple-section-space:','.section-head','.prose','.cards','.steps','.faq','.form','.site-footer'
+]) if(!contract.includes(needle)) fail.push('approved layout baseline missing: '+needle);
+for(const width of ['1024px','768px','560px']){
+  const re=new RegExp(`@media\\s*\\(\\s*max-width\\s*:\\s*${width}\\s*\\)`);
+  if(!re.test(contract)) fail.push('approved responsive breakpoint missing: '+width);
+}
 if(/home\.css|visual-rhythm-20260825\.css/.test(css)) fail.push('secondary CSS authority reference returned');
+const markerClose=b>=0?css.indexOf('*/',b+end.length):-1;
+if(markerClose>=0&&css.slice(markerClose+2).trim()) fail.push('rules found after final Apple authority');
 if(fail.length){console.error('Layout authority audit failed:\n- '+fail.join('\n- '));process.exit(1)}
-console.log('Layout authority audit passed: one responsive CSS contract governs spacing, grids, menu, footer and desktop/tablet/mobile geometry.');
+console.log('Layout authority audit passed: approved Aug 14 Apple baseline is the single final responsive CSS authority.');
