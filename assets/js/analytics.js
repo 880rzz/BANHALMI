@@ -18,6 +18,8 @@
     var gaScriptId = "banhalmi-ga4";
     var clarityScriptId = "banhalmi-clarity";
     var gaConfigured = false;
+    var analyticsAllowed = false;
+    var cleanupTimers = [];
 
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
@@ -51,6 +53,7 @@
     }
 
     function loadClarity() {
+      if (!analyticsAllowed) return;
       ensureClarityQueue();
       window.clarity("consentv2", {
         ad_Storage: "denied",
@@ -66,6 +69,8 @@
     }
 
     function loadGA() {
+      if (!analyticsAllowed) return;
+      window["ga-disable-" + MEASUREMENT_ID] = false;
       window.gtag("consent", "update", {
         analytics_storage: "granted",
         ad_storage: "denied",
@@ -99,16 +104,19 @@
     }
 
     function grant() {
+      analyticsAllowed = true;
+      cleanupTimers.forEach(function (timer) { clearTimeout(timer); });
+      cleanupTimers = [];
       loadGA();
       loadClarity();
     }
 
     function expireCookie(name, domain) {
       var domainPart = domain ? "; domain=" + domain : "";
-      document.cookie = name + "=; Max-Age=0; path=/" + domainPart + "; SameSite=Lax";
+      document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; path=/" + domainPart + "; SameSite=Lax";
     }
 
-    function clearAnalyticsCookies() {
+    function clearAnalyticsCookiesNow() {
       var host = location.hostname;
       var domains = ["", host, "." + host, ".norbertbanhalmi.com", "norbertbanhalmi.com"];
       var names = document.cookie.split(";").map(function (part) { return part.split("=")[0].trim(); }).filter(function (name) {
@@ -119,7 +127,27 @@
       });
     }
 
+    function clearAnalyticsCookies() {
+      cleanupTimers.forEach(function (timer) { clearTimeout(timer); });
+      cleanupTimers = [];
+      clearAnalyticsCookiesNow();
+      [50, 250, 1000].forEach(function (delay) {
+        cleanupTimers.push(setTimeout(function () {
+          if (!analyticsAllowed) clearAnalyticsCookiesNow();
+        }, delay));
+      });
+    }
+
+    function removeOptionalAnalyticsScripts() {
+      [gaScriptId, clarityScriptId].forEach(function (id) {
+        var script = document.getElementById(id);
+        if (script && script.parentNode) script.parentNode.removeChild(script);
+      });
+    }
+
     function revoke() {
+      analyticsAllowed = false;
+      window["ga-disable-" + MEASUREMENT_ID] = true;
       window.gtag("consent", "update", {
         analytics_storage: "denied",
         ad_storage: "denied",
@@ -135,6 +163,7 @@
         });
         window.clarity("consent", false);
       }
+      removeOptionalAnalyticsScripts();
       clearAnalyticsCookies();
     }
 
