@@ -4364,4 +4364,54 @@ html body .quote-deep-details > section.quote-legal-bridge .service-actions{
 }
 /* QUOTE-LAYOUT-REGRESSION-20260816:END */
 
+/* STRICT-APPLE-WEB-CONTRACT-20260825:START */
+/* Release-blocking Apple visual authority: restrained display tracking, readable prose and full-bleed surfaces. */
+body main h1,
+body header h1{
+  letter-spacing:-.015em!important;
+}
+body main p:not(.lead):not(.microcopy):not(.form-data-note):not(.field-help):not(.form-submit-wait-note):not(.quote-disclaimer),
+body main li:not(.microcopy):not(.field-help){
+  font-size:max(1rem,1em)!important;
+}
+body main p:not(.lead):not(.microcopy):not(.form-data-note):not(.field-help):not(.form-submit-wait-note):not(.quote-disclaimer){
+  line-height:1.55!important;
+}
+body main h3 + p{
+  margin-top:.75rem!important;
+}
+body main .wrap,
+body main .container,
+body main .content-wrap{
+  max-width:1280px!important;
+}
+body main > section.section-band,
+body main > section.next-step-selector{
+  position:relative!important;
+  isolation:isolate;
+}
+body main > section.section-band::before,
+body main > section.next-step-selector::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset-block:0;
+  left:50%;
+  width:100vw;
+  transform:translateX(-50%);
+  background:inherit;
+  pointer-events:none;
+}
+body main .card,
+body main .service-card,
+body main .case-card,
+body main .fact-card,
+body main .quote-step,
+body main .category-card,
+body main .option-row,
+body main .quote-summary-card{
+  padding-inline:max(1.25rem,3vw)!important;
+}
+/* STRICT-APPLE-WEB-CONTRACT-20260825:END */
+
 /* APPLE-RESPONSIVE-CONTRACT-V1:END */

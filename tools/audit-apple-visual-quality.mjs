@@ -58,14 +58,14 @@ for(const width of widths){
         if(fs<lim[0]||fs>lim[1])issues.push(`${name(h)} font-size ${fs.toFixed(1)}px outside ${lim[0]}–${lim[1]}px`);
         if(lh<lhLim[0]||lh>lhLim[1])issues.push(`${name(h)} heading line-height ${lh.toFixed(2)}`);
         if(fw<500||fw>750)issues.push(`${name(h)} heading weight ${fw}`);
-        if(fs&&abs(ls/fs)>0.035)issues.push(`${name(h)} heading tracking ${(ls/fs).toFixed(3)}em too strong`);
+        if(fs&&abs(ls/fs)>0.025)issues.push(`${name(h)} heading tracking ${(ls/fs).toFixed(3)}em too strong`);
         const sec=h.closest('section');const sr=sec?.getBoundingClientRect();const centeredViewportDisplay=(s.textAlign==='center'&&r.width>=w-2&&!!sr&&sr.width>=w-2);const fullWidthDisplay=!!h.closest('.text-reveal,.full-bleed,[data-full-bleed="true"]')||h.classList.contains('text-reveal')||centeredViewportDisplay;
         if(w<=768&&!fullWidthDisplay&&!h.closest('.gallery,.collage')&&(r.left<15||r.right>w-15))issues.push(`${name(h)} heading violates page gutter [${r.left.toFixed(1)},${(w-r.right).toFixed(1)}]`);
       }
 
       for(const sec of [...document.querySelectorAll('main>section')].filter(visible)){
         const r=sec.getBoundingClientRect(),s=getComputedStyle(sec),bg=s.backgroundColor,pt=px(s.paddingTop),pb=px(s.paddingBottom);const colored=bg!=='rgba(0, 0, 0, 0)'&&bg!==bodyBg;
-        if(colored&&r.width<w-2)issues.push(`${name(sec)} colored top-level section not full viewport (${r.width.toFixed(0)}/${w})`);
+        if(colored&&r.width<w-2){const before=getComputedStyle(sec,'::before'),bw=px(before.width),bbg=before.backgroundColor;const visualBleed=before.content!=='none'&&bw>=w-2&&bbg!=='rgba(0, 0, 0, 0)';if(!visualBleed)issues.push(`${name(sec)} colored top-level section not visually full viewport (${r.width.toFixed(0)}/${w})`);}
         if(s.contentVisibility==='auto')issues.push(`${name(sec)} content-visibility:auto can create blank bands`);
         const special=!!sec.closest('.gallery,.collage')||sec.classList.contains('gallery')||sec.classList.contains('hero');
         if(!special&&colored&&((w<=768&&(pt<32||pb<32))||(w>768&&(pt<48||pb<48))))issues.push(`${name(sec)} colored section vertical padding ${pt.toFixed(0)}/${pb.toFixed(0)}px too tight`);
