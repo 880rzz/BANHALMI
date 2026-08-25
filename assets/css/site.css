@@ -4383,7 +4383,7 @@ body main h3 + p{
 body main .wrap,
 body main .container,
 body main .content-wrap{
-  max-width:1280px!important;
+  max-width:1200px!important;
 }
 body main > section.section-band,
 body main > section.next-step-selector{
