@@ -1,0 +1,44 @@
+name: Restore last known perfect BANHALMI visual authority
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/restore-last-known-perfect-design-20260825.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out full history
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Restore approved BANHALMI visual baseline only
+        shell: bash
+        run: |
+          set -euo pipefail
+          baseline='2f7978178f1acff80ce0da01448ff525fe5c5d08'
+          git cat-file -e "$baseline^{commit}"
+          git show "$baseline:assets/css/site.css" > assets/css/site.css
+          grep -Fq 'APPLE-RESPONSIVE-CONTRACT-V1:START' assets/css/site.css
+          grep -Fq 'APPLE-RESPONSIVE-CONTRACT-V1:END' assets/css/site.css
+
+      - name: Commit exact visual baseline without touching content or machine layers
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- assets/css/site.css; then
+            echo 'BANHALMI visual baseline already exact.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/css/site.css
+          git commit -m 'Restore BANHALMI last known perfect visual baseline'
+          git push origin HEAD:main
