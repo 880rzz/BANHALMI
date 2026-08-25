@@ -4146,7 +4146,7 @@ main :is(.section,.section-band) p a:not(.btn):not(.btn-link){text-decoration:un
   .fp-decision-actions .btn,.fp-decision-actions .fp-text-action{width:100%!important;justify-content:center!important;text-align:center!important;}
 }
 @media(prefers-reduced-motion:reduce){.card,.btn,.menu-btn,.nav-links{transition:none!important;transform:none!important;}}
-/* APPLE-RESPONSIVE-CONTRACT-V1:END */
+
 
 
 /* TRUST-PROOF-WCAG-20260825:START */
@@ -4159,3 +4159,5 @@ main .trust-proof[data-surface="dark"] .grid-3 > .card h3{color:#202530!importan
 main .trust-proof[data-surface="dark"] .grid-3 > .card p{color:#5b616c!important}
 main .trust-proof[data-surface="dark"] .grid-3 > .card a{color:#5f4715!important}
 /* TRUST-PROOF-WCAG-20260825:END */
+
+/* APPLE-RESPONSIVE-CONTRACT-V1:END */
