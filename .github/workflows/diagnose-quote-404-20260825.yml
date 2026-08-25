@@ -26,6 +26,7 @@ jobs:
           git archive --format=tar HEAD | tar -xf - -C _site
           rm -rf _site/.github _site/tools _site/tests _site/node_modules _site/artifacts
           rm -f _site/package.json _site/package-lock.json
+          printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
           node tools/optimize-production-artifact.mjs _site
           node tools/harden-production-artifact.mjs _site
           node tools/perf-static-server.mjs _site 4173 >/tmp/server.log 2>&1 &
