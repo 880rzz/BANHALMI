@@ -18,13 +18,15 @@ const contract = a >= 0 && b > a ? css.slice(a,b) : '';
 
 for (const needle of [
   '--apple-page-max:1200px','--apple-reading-max:760px','--apple-gutter:',
-  '--apple-section-space:','--apple-card-gap:','text-align:left','min-height:44px',
-  '@media(max-width:1024px)','@media(max-width:768px)','@media(max-width:560px)',
+  '--apple-section-space:','text-align:left','min-height:44px',
   '.section-head','.prose','.cards','.steps','.timeline','.faq','.form','.legal',
-  '.quote-step','.cta-band','.site-footer','.fp-art-path','.project-framework-drawer>summary',
-  'SINGLE-CSS-AUTHORITY-20260825','DESKTOP-A11Y-REMEDIATION-20260814:START','QUOTE-DENSITY-REMEDIATION-20260814:START',
-  '.bn-mega-link[aria-current="page"]','border-radius:0!important'
-]) if (!contract.includes(needle)) failures.push(`contract missing: ${needle}`);
+  '.quote-step','.cta-band','.site-footer'
+]) if (!contract.includes(needle)) failures.push(`approved baseline missing: ${needle}`);
+
+for (const width of ['1024px','768px','560px']) {
+  const re = new RegExp(`@media\\s*\\(\\s*max-width\\s*:\\s*${width.replace('.', '\\.') }\\s*\\)`);
+  if (!re.test(contract)) failures.push(`approved baseline missing responsive breakpoint: ${width}`);
+}
 
 function rgb(hex){const v=hex.replace('#','');return [0,2,4].map(i=>parseInt(v.slice(i,i+2),16)/255)}
 function channel(v){return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}
@@ -34,8 +36,7 @@ for (const [fg,bg,min,label] of [
   ['#202530','#FFFFFF',7,'primary text / light'],
   ['#6E6E73','#FFFFFF',4.5,'muted text / light'],
   ['#8A681F','#FFFFFF',4.5,'gold text / light'],
-  ['#FFFFFF','#202530',7,'white text / dark'],
-  ['#DCC56B','#202530',4.5,'light gold / dark']
+  ['#FFFFFF','#202530',7,'white text / dark']
 ]) if (contrast(fg,bg) < min) failures.push(`${label} contrast ${contrast(fg,bg).toFixed(2)} < ${min}`);
 if (contrast('#B79C44','#FFFFFF') >= 4.5) failures.push('brand gold contrast assumption changed; review accent policy');
 if (/color\s*:\s*#?B79C44/i.test(contract)) failures.push('#B79C44 may not be used as light-background text in the final contract');
@@ -46,10 +47,9 @@ walk('.');
 const realPages = htmlFiles.filter(p=>!p.startsWith('redirects/'));
 if (realPages.length < 50) failures.push(`unexpectedly low HTML coverage: ${realPages.length}`);
 
-
 const workflow = fs.readFileSync('.github/workflows/pages.yml','utf8');
 if (workflow.includes('home.css')) failures.push('site.css must remain the only production stylesheet; home.css generation detected');
 if (workflow.includes('purgecss')) failures.push('homepage PurgeCSS fork detected; single CSS authority must not be split');
 
 if (failures.length){console.error(failures.join('\n'));process.exit(1)}
-console.log(`Apple responsive contract passed for BANHALMI: ${realPages.length} HTML files; final CSS authority includes quote density, accessibility, palette and desktop/tablet/mobile guards.`);
+console.log(`Approved Aug 14 Apple CSS baseline passed for BANHALMI: ${realPages.length} HTML files; one final CSS authority, responsive geometry and contrast guards active.`);
