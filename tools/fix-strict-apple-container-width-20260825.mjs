@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+const file='assets/css/site.css';
+let css=fs.readFileSync(file,'utf8');
+const start='/* STRICT-APPLE-WEB-CONTRACT-20260825:START */';
+const end='/* STRICT-APPLE-WEB-CONTRACT-20260825:END */';
+const a=css.indexOf(start), b=css.indexOf(end,a);
+if(a<0||b<0) throw new Error('Strict Apple contract block not found');
+const before=css.slice(0,a), block=css.slice(a,b+end.length), after=css.slice(b+end.length);
+const next=block.replace('max-width:1280px!important;','max-width:1200px!important;');
+if(next===block) throw new Error('Expected 1280px strict contract width not found');
+fs.writeFileSync(file,before+next+after);
+console.log('BANHALMI strict Apple content authority constrained to 1200px.');
