@@ -18,6 +18,15 @@ html body main :is(.prose,.section-head)>:is(h1,h2,h3,p,.lead,.meta,blockquote,u
 html body main .section-head{margin-left:0!important;margin-right:auto!important}
 html body main .section-head p,html body main .prose{margin-left:0!important;margin-right:auto!important}
 
+/* Preserve a disciplined editorial reading measure on long service-page reveal copy.
+   The optical-axis rule may change x-position, but must never turn long-form prose into a near full-shell line length. */
+html body main p.text-reveal{
+  width:100%!important;
+  max-width:var(--wide-textw,820px)!important;
+  margin-left:0!important;
+  margin-right:auto!important;
+}
+
 /* Text never touches a cell wall. Cards/panels use one protected inset system. */
 html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell){
   box-sizing:border-box!important;min-width:0!important;padding:var(--oa-cell-inset)!important;
