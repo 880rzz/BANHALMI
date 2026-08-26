@@ -33,8 +33,8 @@ html body main+footer,html body .site-footer{margin-top:0!important}
 html body .site-footer{min-height:0!important;height:auto!important;padding-top:clamp(44px,5vw,68px)!important;padding-bottom:clamp(28px,3vw,44px)!important}
 
 /* 4. Text never touches a real cell wall. */
-html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell){box-sizing:border-box!important;min-width:0!important;padding:var(--oa-cell-inset)!important}
-html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell)>:is(h1,h2,h3,h4,p,.lead,.meta,ul,ol,blockquote){max-width:100%;overflow-wrap:normal;word-break:normal}
+html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell,.fp-choice){box-sizing:border-box!important;min-width:0!important;padding:var(--oa-cell-inset)!important}
+html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell,.fp-choice)>:is(h1,h2,h3,h4,p,.lead,.meta,ul,ol,blockquote,strong,span,em){max-width:100%;overflow-wrap:normal;word-break:normal}
 
 /* 5. Typography may wrap, but never collapse into cramped columns. */
 html body main p,html body main li{line-height:max(1.45,1.45em);text-wrap:pretty}
@@ -42,10 +42,10 @@ html body main :is(h1,h2,h3,h4){text-wrap:balance}
 
 /* 6. Stable block and grid rhythm. */
 html body main :is(.section-head,.section-intro,.service-intro,.content-intro){margin-bottom:var(--oa-block-gap)!important}
-html body main :is(.cards,.steps,.process-grid,.process-steps,.workflow-grid,.service-grid,.services-grid,.offer-grid,.evidence-grid,.trust-grid){gap:clamp(14px,1.5vw,20px)!important}
+html body main :is(.cards,.steps,.process-grid,.process-steps,.workflow-grid,.service-grid,.services-grid,.offer-grid,.evidence-grid,.trust-grid,.fp-decision-grid){gap:clamp(14px,1.5vw,20px)!important}
 
 /* 7. Divider restraint. */
-html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell){border-width:1px!important;box-shadow:none!important}
+html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell,.fp-choice){border-width:1px!important;box-shadow:none!important}
 html body main details>summary{border-top:1px solid var(--oa-divider)!important;border-bottom:0!important}
 html body main details:last-of-type>summary{border-bottom:1px solid var(--oa-divider)!important}
 html body main :is(.feature-list,.service-list,.link-list,.plain-list,.editorial-list)>li{border-bottom:1px solid var(--oa-divider)!important}
@@ -58,11 +58,11 @@ html body .site-header :is(.nav-links,.lang-switch,.mega-menu,.mega-panel,.partn
 html body :is(.mega-menu,.mega-panel,.partners-menu,.service-menu) :is(a,summary){min-height:44px;display:flex;align-items:center}
 html body :is(.mega-menu,.mega-panel,.partners-menu,.service-menu){padding:clamp(14px,1.6vw,22px)!important}
 
-/* 9. Mobile card grids become one readable column before text becomes cramped. */
+/* 9. Mobile text-bearing grids become one readable column before text becomes cramped. */
 @media(max-width:620px){
   :root{--oa-cell-inset:20px;--oa-block-gap:28px;--oa-section-pad:clamp(44px,12vw,64px)}
-  html body main :is(.cards,.steps,.process-grid,.process-steps,.workflow-grid,.service-grid,.services-grid,.offer-grid,.evidence-grid,.trust-grid,.archive-grid,.results-grid){grid-template-columns:1fr!important}
-  html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell){width:100%!important;max-width:none!important}
+  html body main :is(.cards,.steps,.process-grid,.process-steps,.workflow-grid,.service-grid,.services-grid,.offer-grid,.evidence-grid,.trust-grid,.archive-grid,.results-grid,.fp-decision-grid){grid-template-columns:1fr!important}
+  html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell,.fp-choice){width:100%!important;max-width:none!important}
 }
 
 /* 10. Responsive gutters remain the single viewport-edge contract. */
