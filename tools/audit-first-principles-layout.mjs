@@ -40,36 +40,35 @@ for(const width of widths){
         const kids=[...el.children].filter(visible);if(kids.length){const first=kids[0].getBoundingClientRect(),last=kids[kids.length-1].getBoundingClientRect();const topGap=first.top-r.top,bottomGap=r.bottom-last.bottom;const lim=w<=620?110:150;if(topGap>lim)out.push(`${name(el)} unexplained top whitespace ${topGap.toFixed(0)}px`);if(bottomGap>lim)out.push(`${name(el)} unexplained bottom whitespace ${bottomGap.toFixed(0)}px`)}
       }
 
-      for(const h of document.querySelectorAll('main h1,main h2,header h1')){if(!visible(h))continue;const fs=px(getComputedStyle(h).fontSize),max=w<=430?50:w<=768?58:70;if(fs>max)out.push(`${name(h)} display size ${fs.toFixed(1)}px > ${max}px`)}
+      for(const h of document.querySelectorAll('main h1,main h2,main h3,header h1')){
+        if(!visible(h))continue;const fs=px(getComputedStyle(h).fontSize);let min=0,max=999;
+        if(h.matches('h1')){min=w<=430?34:42;max=w<=430?50:w<=768?58:74}
+        else if(h.matches('h2')){min=w<=430?27:29;max=w<=430?40:50}
+        else {min=18;max=28}
+        if(fs<min||fs>max)out.push(`${name(h)} type scale ${fs.toFixed(1)}px outside ${min}-${max}px`)
+      }
+
+      for(const h of document.querySelectorAll('main h1,main h2,main h3')){
+        if(!visible(h))continue;let n=h.nextElementSibling;if(!n||!visible(n)||!n.matches('p,.lead,.description,.section-description,.hero-description,.service-description'))continue;
+        const hr=h.getBoundingClientRect(),nr=n.getBoundingClientRect(),gap=nr.top-hr.bottom;const min=w<=620?10:12,max=w<=620?28:34;if(gap<min||gap>max)out.push(`${name(h)} → ${name(n)} gap ${gap.toFixed(0)}px outside ${min}-${max}px`)
+      }
 
       for(const intro of document.querySelectorAll('main .section-head,main .section-intro,main .service-intro,main .content-intro')){
         if(!visible(intro))continue;const nodes=[...intro.children].filter(el=>visible(el)&&el.matches('h1,h2,h3,p,.lead,.eyebrow,.label,.kicker,[class*="eyebrow"],[class*="kicker"]'));if(nodes.length<2)continue;const lefts=nodes.map(el=>el.getBoundingClientRect().left),spread=Math.max(...lefts)-Math.min(...lefts);if(spread>5)out.push(`${name(intro)} optical-axis drift ${spread.toFixed(1)}px`)
       }
 
-      for(const cell of document.querySelectorAll('main .card,main .step,main .process-card,main .process-step,main .workflow-card,main .service-card,main .evidence-card,main .trust-card,main .panel,main .cell')){
-        if(!visible(cell))continue;const s=getComputedStyle(cell),r=cell.getBoundingClientRect();const wall=px(s.borderLeftWidth)+px(s.borderRightWidth)+px(s.borderTopWidth)+px(s.borderBottomWidth)>0||s.backgroundColor!=='rgba(0, 0, 0, 0)';if(!wall)continue;const kids=[...cell.children].filter(visible);for(const kid of kids.slice(0,5)){const kr=kid.getBoundingClientRect();if(kr.left-r.left<15||r.right-kr.right<15)out.push(`${name(cell)} child touches cell wall (${(kr.left-r.left).toFixed(0)}/${(r.right-kr.right).toFixed(0)}px)`)}if(w<=620&&(cell.innerText||'').trim().length>100&&r.width<240)out.push(`${name(cell)} cramped mobile text cell ${r.width.toFixed(0)}px`)
+      for(const cell of document.querySelectorAll('main .card,main .step,main .process-card,main .process-step,main .workflow-card,main .service-card,main .evidence-card,main .trust-card,main .panel,main .cell,main .fp-choice')){
+        if(!visible(cell))continue;const s=getComputedStyle(cell),r=cell.getBoundingClientRect();const wall=px(s.borderLeftWidth)+px(s.borderRightWidth)+px(s.borderTopWidth)+px(s.borderBottomWidth)>0||s.backgroundColor!=='rgba(0, 0, 0, 0)';if(!wall)continue;
+        const pads=[px(s.paddingTop),px(s.paddingRight),px(s.paddingBottom),px(s.paddingLeft)];const minPad=w<=620?18:20;if(Math.min(...pads)<minPad)out.push(`${name(cell)} four-side padding ${pads.map(v=>v.toFixed(0)).join('/')}px`);if(Math.max(...pads)-Math.min(...pads)>10)out.push(`${name(cell)} asymmetric cell inset ${pads.map(v=>v.toFixed(0)).join('/')}px`);
+        const kids=[...cell.children].filter(visible);for(const kid of kids.slice(0,5)){const kr=kid.getBoundingClientRect();if(kr.left-r.left<15||r.right-kr.right<15)out.push(`${name(cell)} child touches cell wall (${(kr.left-r.left).toFixed(0)}/${(r.right-kr.right).toFixed(0)}px)`)}if(w<=620&&(cell.innerText||'').trim().length>100&&r.width<240)out.push(`${name(cell)} cramped mobile text cell ${r.width.toFixed(0)}px`)
       }
 
-      /* Generic future-proof density guard: any visible grid/flex layout with text-heavy children
-         must collapse before those children become too narrow, regardless of class name. */
-      if(w<=620){
-        for(const layout of document.querySelectorAll('main *')){
-          if(!visible(layout))continue;const s=getComputedStyle(layout);if(!['grid','flex'].includes(s.display))continue;
-          const kids=[...layout.children].filter(visible);if(kids.length<2)continue;
-          const rows=new Set(kids.map(k=>Math.round(k.getBoundingClientRect().top/4)*4));
-          const isMultiColumn=rows.size<kids.length;
-          if(!isMultiColumn)continue;
-          for(const kid of kids){const text=(kid.innerText||'').replace(/\s+/g,' ').trim();const r=kid.getBoundingClientRect();if(text.length>100&&r.width<240)out.push(`${name(layout)} generic cramped mobile child ${name(kid)} ${r.width.toFixed(0)}px`)}
-        }
-      }
+      if(w<=620){for(const layout of document.querySelectorAll('main *')){if(!visible(layout))continue;const s=getComputedStyle(layout);if(!['grid','flex'].includes(s.display))continue;const kids=[...layout.children].filter(visible);if(kids.length<2)continue;const rows=new Set(kids.map(k=>Math.round(k.getBoundingClientRect().top/4)*4));if(rows.size>=kids.length)continue;for(const kid of kids){const text=(kid.innerText||'').replace(/\s+/g,' ').trim();const r=kid.getBoundingClientRect();if(text.length>100&&r.width<240)out.push(`${name(layout)} generic cramped mobile child ${name(kid)} ${r.width.toFixed(0)}px`)}}}
 
       const footer=document.querySelector('.site-footer,footer');const main=document.querySelector('main');if(main&&footer&&visible(main)&&visible(footer)){const gap=footer.getBoundingClientRect().top-main.getBoundingClientRect().bottom;if(gap>80)out.push(`main/footer unexplained gap ${gap.toFixed(0)}px`)}
-
       for(const a of document.querySelectorAll('.site-header a.active,.site-header a[aria-current="page"]')){if(!visible(a))continue;const s=getComputedStyle(a);if(px(s.borderRadius)>8)out.push(`active navigation pill radius ${s.borderRadius}`);if(px(s.borderTopWidth)+px(s.borderRightWidth)+px(s.borderBottomWidth)+px(s.borderLeftWidth)>0)out.push(`active navigation framed`)}
 
-      const quote=document.querySelector('[data-smart-quote],#build-package,.smart-quote-layout');
-      if(quote&&visible(quote)&&w>=1024){const layout=document.querySelector('.smart-quote-layout'),intro=document.querySelector('.smart-quote-layout>.quote-intro'),form=document.querySelector('.smart-quote-layout>.form');if(layout&&intro&&form&&visible(intro)&&visible(form)){const ir=intro.getBoundingClientRect(),fr=form.getBoundingClientRect();if(fr.width<ir.width*1.45)out.push(`quote workspace too narrow: form ${fr.width.toFixed(0)}px vs intro ${ir.width.toFixed(0)}px`);if(w>=1280&&fr.width<690)out.push(`quote form desktop width ${fr.width.toFixed(0)}px < 690px`)}}
-
+      const quote=document.querySelector('[data-smart-quote],#build-package,.smart-quote-layout');if(quote&&visible(quote)&&w>=1024){const layout=document.querySelector('.smart-quote-layout'),intro=document.querySelector('.smart-quote-layout>.quote-intro'),form=document.querySelector('.smart-quote-layout>.form');if(layout&&intro&&form&&visible(intro)&&visible(form)){const ir=intro.getBoundingClientRect(),fr=form.getBoundingClientRect();if(fr.width<ir.width*1.45)out.push(`quote workspace too narrow: form ${fr.width.toFixed(0)}px vs intro ${ir.width.toFixed(0)}px`);if(w>=1280&&fr.width<690)out.push(`quote form desktop width ${fr.width.toFixed(0)}px < 690px`)}}
       for(const card of document.querySelectorAll('.card,.service-card,.case-card,.fact-card,.quote-summary-card')){if(!visible(card))continue;const r=card.getBoundingClientRect(),text=(card.innerText||'').replace(/\s+/g,' ').trim(),media=card.querySelectorAll('img,video,figure').length;if(w>=1024&&r.height>700&&text.length<260&&media===0)out.push(`${name(card)} oversized card ${r.height.toFixed(0)}px/${text.length} chars`)}
 
       return [...new Set(out)].slice(0,160);
@@ -81,5 +80,5 @@ for(const width of widths){
 }
 await browser.close();
 if(failures.length){console.error(`First-principles BANHALMI layout audit found ${failures.length} failing page/viewport combinations.`);console.error(failures.join('\n'));process.exit(1)}
-console.log(`First-principles BANHALMI layout audit passed: ${pages.length} pages across ${widths.length} widths; screenshot-derived axis, whitespace, reading measure, leading, cell inset, generic mobile density, navigation and footer geometry are within contract.`);
+console.log(`First-principles BANHALMI layout audit passed: ${pages.length} pages across ${widths.length} widths; typography scale, heading-description rhythm, four-side cell inset, axis, whitespace, reading measure, mobile density, navigation and footer geometry are within contract.`);
 await import('./audit-layout-authority-browser.mjs');
