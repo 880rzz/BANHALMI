@@ -60,7 +60,7 @@ for(const quoteRoute of quoteRoutes){
     for(const link of await page.locator('.lang-switch a[hreflang]').all()) await expect(link).toHaveAttribute('href',/service=private-event/);
     await expect(form.locator('input[name="event_duration"][value="event120"]')).toBeChecked();
     const gross=amount(await page.locator('[data-estimate-gross]').textContent());
-    expect(gross).toBe(590);
+    expect(gross).toBe(quoteRoute.startsWith('/hu/')?236000:590);
   });
   test(quoteRoute+' ignores missing or unsupported service context safely',async({page})=>{
     await page.goto(quoteRoute+'?service=unsupported');
