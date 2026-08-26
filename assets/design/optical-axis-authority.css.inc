@@ -74,10 +74,6 @@ html body main :is(h1,h2,h3)+:is(.lead,.description,.section-description,.hero-d
 html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell,.fp-choice){padding-top:var(--oa-cell-inset)!important;padding-right:var(--oa-cell-inset)!important;padding-bottom:var(--oa-cell-inset)!important;padding-left:var(--oa-cell-inset)!important}
 
 /* Final computed authority: legacy reveal and page-family selectors must not alter the shared type scale or heading rhythm. */
-html body:not([data-oa-never]):not([data-oa-never-2]):not([data-oa-never-3]) main :is(h1,h2,h3),
-html body:not([data-oa-never]):not([data-oa-never-2]):not([data-oa-never-3]) main :is(h1,h2,h3).text-reveal{
-  opacity:1;
-}
 html body:not([data-oa-never]):not([data-oa-never-2]):not([data-oa-never-3]) main h1{font-size:var(--oa-h1-size)!important;line-height:1.02!important}
 html body:not([data-oa-never]):not([data-oa-never-2]):not([data-oa-never-3]) main h2{font-size:var(--oa-h2-size)!important;line-height:1.08!important}
 html body:not([data-oa-never]):not([data-oa-never-2]):not([data-oa-never-3]) main h3{font-size:var(--oa-h3-size)!important;line-height:1.16!important}
