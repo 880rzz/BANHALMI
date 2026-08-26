@@ -41,7 +41,13 @@ for(const width of widths){
       }
 
       for(const h of document.querySelectorAll('main h1,main h2,main h3,header h1')){
-        if(!visible(h))continue;const fs=px(getComputedStyle(h).fontSize);let min=0,max=999;
+        if(!visible(h))continue;const fs=px(getComputedStyle(h).fontSize);
+        // Animated text-reveal headings can use a zero-size semantic wrapper while
+        // their visible descendant spans carry the rendered type. The approved
+        // visual audit already treats those wrappers as non-measurable; keep this
+        // first-principles gate consistent so it never reports a false 0px scale.
+        if(fs<1)continue;
+        let min=0,max=999;
         if(h.matches('h1')){min=w<=430?34:42;max=w<=430?50:w<=768?58:74}
         else if(h.matches('h2')){min=w<=430?27:29;max=w<=430?40:50}
         else {min=18;max=28}
@@ -49,7 +55,7 @@ for(const width of widths){
       }
 
       for(const h of document.querySelectorAll('main h1,main h2,main h3')){
-        if(!visible(h))continue;let n=h.nextElementSibling;if(!n||!visible(n)||!n.matches('p,.lead,.description,.section-description,.hero-description,.service-description'))continue;
+        if(!visible(h)||px(getComputedStyle(h).fontSize)<1)continue;let n=h.nextElementSibling;if(!n||!visible(n)||!n.matches('p,.lead,.description,.section-description,.hero-description,.service-description'))continue;
         const hr=h.getBoundingClientRect(),nr=n.getBoundingClientRect(),gap=nr.top-hr.bottom;const min=w<=620?10:12,max=w<=620?28:34;if(gap<min||gap>max)out.push(`${name(h)} → ${name(n)} gap ${gap.toFixed(0)}px outside ${min}-${max}px`)
       }
 
