@@ -81,4 +81,5 @@ html body .service-deep-dive-content>section[data-surface="soft"]{background:#f5
 html body .trust-proof .card{border-radius:8px!important;padding:clamp(26px,2.4vw,34px)!important}
 html body footer,html body .site-footer{height:auto!important;min-height:0!important;max-height:none!important}
 html body .site-footer>.wrap,html body footer>.wrap{min-height:0!important;height:auto!important}
+html body main .presence-thesis[data-surface="dark"] .title-accent{color:#78B9C2!important;-webkit-text-fill-color:currentColor!important;background:none!important}
 @media(max-width:720px){html body .project-framework-drawer>summary>span:first-child{display:grid!important;gap:4px!important}html body .project-framework-drawer>summary>span:first-child small{display:block!important}}
