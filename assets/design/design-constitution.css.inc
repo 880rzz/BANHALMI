@@ -43,8 +43,9 @@ html body footer .wrap,html body .site-footer .wrap{max-width:var(--dc-shell)}
 html body footer :is(p,a,small,li),html body .site-footer :is(p,a,small,li){font-size:clamp(.76rem,.74vw,.86rem);line-height:1.45}
 html body footer h2,html body footer h3,html body .site-footer h2,html body .site-footer h3{font-size:1rem;letter-spacing:-.01em}
 html body [id]{scroll-margin-top:88px}
+@media(max-width:1100px){html body main .cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:960px){:root{--dc-gutter:clamp(22px,5vw,40px);--dc-section:clamp(68px,9vw,92px)}html body .service-process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}html body .trust-proof .cards,html body main :is(.service-grid,.services-grid,.offer-grid,.evidence-grid,.trust-grid){grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:720px){:root{--dc-gutter:20px;--dc-section:58px;--dc-section-tight:42px;--dc-radius:18px}html body h1{font-size:clamp(2.35rem,11vw,3.125rem)}html body h2{font-size:clamp(1.8rem,8.5vw,2.5rem)}html body .cards,html body .service-process-grid,html body .trust-proof .cards,html body :is(.steps,.process-grid,.process-steps,.workflow-grid),html body main :is(.service-grid,.services-grid,.offer-grid,.evidence-grid,.trust-grid){grid-template-columns:1fr}html body .card,html body :is(.step,.process-card,.process-step,.workflow-card){padding:24px}html body footer,html body .site-footer{padding-block:48px}}
+@media(max-width:720px){:root{--dc-gutter:20px;--dc-section:58px;--dc-section-tight:42px;--dc-radius:18px}html body h1{font-size:clamp(2.35rem,11vw,3.125rem)}html body h2{font-size:clamp(1.8rem,8.5vw,2.5rem)}html body .cards,html body .service-process-grid,html body .trust-proof .cards,html body :is(.steps,.process-grid,.process-steps,.workflow-grid),html body main :is(.service-grid,.services-grid,.offer-grid,.evidence-grid,.trust-grid){grid-template-columns:1fr!important}html body .card,html body :is(.step,.process-card,.process-step,.workflow-card){padding:24px}html body footer,html body .site-footer{padding-block:48px}}
 
 /* Final computed-style authority. Older page-specific selectors cannot reintroduce
    the former mixed spacing/typography once the production bundle is built. */
@@ -55,6 +56,11 @@ html body main h2{letter-spacing:-.022em!important;line-height:1.04!important}
 html body main h3{letter-spacing:-.018em!important;line-height:1.16!important}
 html body main .lead{line-height:1.48!important}
 html body main :is(h1,h2,h3)+:is(p,.lead,ul,ol,blockquote){margin-top:12px!important}
+
+/* Quote-builder controls use the same minimum cell geometry as the rest of the
+   system; this preserves 44px targets without returning to cramped widget UI. */
+html body main .smart-quote-layout :is(label.category-card,label.option-row){padding-left:18px!important;padding-right:18px!important}
+html body main .smart-quote-layout h3{font-size:max(1.125rem,clamp(1.125rem,1.6vw,1.5rem))!important}
 
 /* Breadcrumbs are navigation inside the hero rhythm, not an extra page band.
    Their wrapper has zero flow height; the breadcrumb sits in the hero's existing
