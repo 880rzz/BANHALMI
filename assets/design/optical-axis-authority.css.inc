@@ -10,6 +10,12 @@
   --oa-divider:rgba(17,17,17,.10);
   --oa-reading:68ch;
   --oa-reading-wide:78ch;
+  --oa-h1-size:clamp(2.75rem,5vw,4.5rem);
+  --oa-h2-size:clamp(1.875rem,3.2vw,3rem);
+  --oa-h3-size:clamp(1.25rem,1.8vw,1.625rem);
+  --oa-lead-size:clamp(1.0625rem,1.35vw,1.3125rem);
+  --oa-body-size:clamp(1rem,.35vw + .94rem,1.125rem);
+  --oa-heading-description-gap:clamp(14px,1.4vw,22px);
 }
 
 /* 1. One optical axis for linear editorial content. */
@@ -60,10 +66,21 @@ html body :is(.mega-menu,.mega-panel,.partners-menu,.service-menu){padding:clamp
 
 /* 9. Mobile text-bearing grids become one readable column before text becomes cramped. */
 @media(max-width:620px){
-  :root{--oa-cell-inset:20px;--oa-block-gap:28px;--oa-section-pad:clamp(44px,12vw,64px)}
+  :root{--oa-cell-inset:20px;--oa-block-gap:28px;--oa-section-pad:clamp(44px,12vw,64px);--oa-h1-size:clamp(2.125rem,10vw,3.125rem);--oa-h2-size:clamp(1.75rem,7vw,2.375rem);--oa-h3-size:clamp(1.2rem,5vw,1.5rem);--oa-heading-description-gap:14px}
   html body main :is(.cards,.steps,.process-grid,.process-steps,.workflow-grid,.service-grid,.services-grid,.offer-grid,.evidence-grid,.trust-grid,.archive-grid,.results-grid,.fp-decision-grid){grid-template-columns:1fr!important}
   html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell,.fp-choice){width:100%!important;max-width:none!important}
 }
 
 /* 10. Responsive gutters remain the single viewport-edge contract. */
 @media(max-width:960px){html body main>section:not(.hero):not(.center):not(.centered):not([data-align="center"])>.wrap{padding-left:var(--dc-gutter)!important;padding-right:var(--dc-gutter)!important}}
+
+/* 11. Global type scale and heading-description rhythm. */
+html body main h1{font-size:var(--oa-h1-size)!important;line-height:1.02!important;letter-spacing:-.024em!important}
+html body main h2{font-size:var(--oa-h2-size)!important;line-height:1.08!important;letter-spacing:-.022em!important}
+html body main h3{font-size:var(--oa-h3-size)!important;line-height:1.16!important;letter-spacing:-.018em!important}
+html body main :is(.lead,.description,.section-description,.hero-description,.service-description){font-size:var(--oa-lead-size)!important;line-height:1.5!important}
+html body main :is(p,li){font-size:var(--oa-body-size)}
+html body main :is(h1,h2,h3)+:is(.lead,.description,.section-description,.hero-description,.service-description,p){margin-top:var(--oa-heading-description-gap)!important}
+
+/* 12. Four-sided cell inset is symmetric and deliberate. */
+html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell,.fp-choice){padding-top:var(--oa-cell-inset)!important;padding-right:var(--oa-cell-inset)!important;padding-bottom:var(--oa-cell-inset)!important;padding-left:var(--oa-cell-inset)!important}
