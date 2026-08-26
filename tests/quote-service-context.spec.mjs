@@ -33,7 +33,8 @@ for(const quoteRoute of quoteRoutes){
       await expect(form).toHaveAttribute('data-service-context',context.service);
       await expect(form).toHaveAttribute('data-service-context-source','url');
       await expect(form.locator('input[name="service_context"]')).toHaveValue(context.service);
-      await expect(form.locator('input[name="category"][value="'+context.category+'"]').first()).toBeChecked();
+      const categorySelector='input[name="category"][value="'+context.category+'"]'+(context.category==='event'?':not([data-private-event])':'');
+      await expect(form.locator(categorySelector).first()).toBeChecked();
       await expect(form.locator('[data-panel="'+context.panel+'"]').first()).toBeVisible();
       const gross=amount(await page.locator('[data-estimate-gross]').textContent());
       expect(Number.isFinite(gross)).toBe(true);
@@ -45,6 +46,22 @@ for(const quoteRoute of quoteRoutes){
       for(const href of switchHrefs) expect(href).toContain('service='+context.service);
     });
   }
+  test(quoteRoute+' supports private-event as a distinct event intent',async({page})=>{
+    await page.goto(quoteRoute+'?service=private-event');
+    await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1,{timeout:10000});
+    const form=page.locator('[data-smart-quote]');
+    const privateOption=form.locator('input[name="category"][data-private-event="true"]');
+    await expect(privateOption).toHaveCount(1);
+    await expect(privateOption).toBeChecked();
+    await expect(form).toHaveAttribute('data-private-event-active','true');
+    await expect(form).toHaveAttribute('data-service-context','private-event');
+    await expect(form.locator('input[name="service_context"]')).toHaveValue('private-event');
+    await expect(page).toHaveURL(/service=private-event/);
+    for(const link of await page.locator('.lang-switch a[hreflang]').all()) await expect(link).toHaveAttribute('href',/service=private-event/);
+    await expect(form.locator('input[name="event_duration"][value="event120"]')).toBeChecked();
+    const gross=amount(await page.locator('[data-estimate-gross]').textContent());
+    expect(gross).toBe(590);
+  });
   test(quoteRoute+' ignores missing or unsupported service context safely',async({page})=>{
     await page.goto(quoteRoute+'?service=unsupported');
     await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1,{timeout:10000});
@@ -57,7 +74,7 @@ for(const quoteRoute of quoteRoutes){
 test('manual category change synchronizes the public URL and localized language links',async({page})=>{
   await page.goto('/requestaquote/?service=brand');
   await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1,{timeout:10000});
-  await page.locator('input[name="category"][value="event"]').check();
+  await page.locator('input[name="category"][value="event"]:not([data-private-event])').check();
   await expect(page).toHaveURL(/service=event/);
   await expect(page.locator('[data-smart-quote] input[name="service_context"]')).toHaveValue('event');
   for(const link of await page.locator('.lang-switch a[hreflang]').all()) await expect(link).toHaveAttribute('href',/service=event/);
@@ -146,7 +163,8 @@ for(const item of serviceRoutes){
     await link.click();
     await expect(page).toHaveURL(new RegExp('service='+item.service));
     await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1,{timeout:10000});
-    await expect(page.locator('input[name="category"][value="'+item.category+'"]').first()).toBeChecked();
+    const categorySelector='input[name="category"][value="'+item.category+'"]'+(item.category==='event'?':not([data-private-event])':'');
+    await expect(page.locator(categorySelector).first()).toBeChecked();
     await expect(page.locator('[data-smart-quote] input[name="service_context"]')).toHaveValue(item.service);
   });
 }
