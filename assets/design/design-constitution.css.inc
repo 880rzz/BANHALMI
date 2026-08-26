@@ -59,7 +59,7 @@ html body main :is(h1,h2,h3)+:is(p,.lead,ul,ol,blockquote){margin-top:12px!impor
 
 /* Quote-builder controls stay compact enough to read as choices rather than
    oversized cards while preserving their native 44px interaction targets. */
-html body main .smart-quote-layout :is(label.category-card,label.option-row){padding:14px!important}
+html body main .smart-quote-layout :is(label.category-card,label.option-row){padding:13px!important}
 html body main .smart-quote-layout h3{font-size:max(1.125rem,clamp(1.125rem,1.6vw,1.5rem))!important}
 
 /* Breadcrumbs are navigation inside the hero rhythm, not an extra page band.
