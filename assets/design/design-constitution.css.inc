@@ -68,3 +68,17 @@ html body main .smart-quote-layout h3{font-size:max(1.125rem,clamp(1.125rem,1.6v
 html body main>.wrap:has(>.crumb){height:0!important;min-height:0!important;position:relative!important;z-index:3!important;padding-block:0!important;overflow:visible!important}
 html body main>.wrap:has(>.crumb)>.crumb{position:absolute!important;top:0!important;left:var(--dc-gutter)!important;right:var(--dc-gutter)!important;padding-top:18px!important;margin:0!important;z-index:3!important}
 html body main>.wrap:has(>.crumb)+.hero{margin-top:0!important;padding-top:clamp(96px,9vw,128px)!important}
+
+/* Screenshot-backed visual regression fixes — presentation only. */
+html body .site-header{background:#fff!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+html body :is(.mega-menu,.mega-panel,.partners-menu,.service-menu,.nav-links) a:not(.nav-cta):is(.active,[aria-current="page"]){border-radius:0!important;outline:0!important;box-shadow:none!important}
+html body .service-deep-dive>summary{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:16px!important}
+html body .project-framework-drawer>summary>span:first-child{display:flex!important;align-items:baseline!important;flex-wrap:wrap!important;gap:10px 14px!important;min-width:0!important}
+html body .project-framework-drawer>summary>span:first-child small{margin:0!important}
+html body .service-deep-dive-content>section+section{margin-top:0!important}
+html body .service-deep-dive-content>section[data-surface="white"]{background:#fff!important}
+html body .service-deep-dive-content>section[data-surface="soft"]{background:#f5f5f7!important}
+html body .trust-proof .card{border-radius:8px!important;padding:clamp(26px,2.4vw,34px)!important}
+html body footer,html body .site-footer{height:auto!important;min-height:0!important;max-height:none!important}
+html body .site-footer>.wrap,html body footer>.wrap{min-height:0!important;height:auto!important}
+@media(max-width:720px){html body .project-framework-drawer>summary>span:first-child{display:grid!important;gap:4px!important}html body .project-framework-drawer>summary>span:first-child small{display:block!important}}
