@@ -108,4 +108,6 @@ html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]
 @media(max-width:620px){
   html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell,.fp-choice,.proof-card,.framework-card,.portrait-card,.partner-card,[class$="-card"]){padding:20px!important}
   html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main>section:not(.hero):not(.hero-section):not(.immersive):not(.statement):not([data-layout="immersive"]){padding-top:var(--oa-section-pad)!important;padding-bottom:var(--oa-section-pad)!important}
+  html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main .category-card{grid-template-columns:22px minmax(0,1fr)!important;column-gap:10px!important;padding:18px!important}
+  html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main .category-card>span{min-width:0!important;width:auto!important;max-width:100%!important;overflow-wrap:anywhere!important}
 }
