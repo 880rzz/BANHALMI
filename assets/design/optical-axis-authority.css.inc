@@ -13,7 +13,7 @@
   --oa-h1-size:clamp(2.75rem,5vw,4.5rem);
   --oa-h2-size:clamp(1.875rem,3.2vw,3rem);
   --oa-h3-size:clamp(1.25rem,1.8vw,1.625rem);
-  --oa-lead-size:clamp(1.0625rem,1.35vw,1.3125rem);
+  --oa-lead-size:clamp(1.1875rem,1.35vw,1.3125rem);
   --oa-body-size:clamp(1rem,.35vw + .94rem,1.125rem);
   --oa-heading-description-gap:clamp(14px,1.4vw,22px);
 }
