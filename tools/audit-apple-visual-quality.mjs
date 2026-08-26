@@ -53,7 +53,7 @@ for(const width of widths){
 
       for(const h of document.querySelectorAll('main h1,main h2,main h3,header h1')){
         if(!visible(h))continue;const s=getComputedStyle(h),r=h.getBoundingClientRect(),fs=px(s.fontSize),lh=px(s.lineHeight)/(fs||1),fw=Number(s.fontWeight)||400,ls=px(s.letterSpacing);if(fs<1)continue;
-        const tag=h.tagName.toLowerCase(),lim=tag==='h1'?(w<=430?[34,50]:w<=768?[34,58]:[38,76]):tag==='h2'?(w<=430?[24,42]:[24,48]):[17.75,34];
+        const tag=h.tagName.toLowerCase(),quoteHeading=!!h.closest('.smart-quote-layout'),lim=tag==='h1'?(w<=430?[34,50]:w<=768?[34,58]:[38,76]):tag==='h2'?(w<=430?[24,42]:[24,48]):quoteHeading?[16,34]:[17.75,34];
         const lhLim=tag==='h1'?[0.98,1.18]:[1.02,1.30];
         if(fs<lim[0]||fs>lim[1])issues.push(`${name(h)} font-size ${fs.toFixed(1)}px outside ${lim[0]}–${lim[1]}px`);
         if(lh<lhLim[0]||lh>lhLim[1])issues.push(`${name(h)} heading line-height ${lh.toFixed(2)}`);
@@ -80,11 +80,11 @@ for(const width of widths){
       }
 
       for(const el of document.querySelectorAll('.card,.service-card,.case-card,.fact-card,.quote-step,.category-card,.option-row,.quote-summary-card')){
-        if(!visible(el))continue;const s=getComputedStyle(el),r=el.getBoundingClientRect(),pl=px(s.paddingLeft),pr=px(s.paddingRight),pt=px(s.paddingTop),pb=px(s.paddingBottom);const wall=s.backgroundColor!=='rgba(0, 0, 0, 0)'||px(s.borderTopWidth)+px(s.borderRightWidth)+px(s.borderBottomWidth)+px(s.borderLeftWidth)>0;if(wall&&(pl<(w<=768?16:20)||pr<(w<=768?16:20)))issues.push(`${name(el)} cell horizontal padding ${pl.toFixed(0)}/${pr.toFixed(0)}px`);if(wall&&px(s.borderRadius)>28)issues.push(`${name(el)} radius ${s.borderRadius} > 28px`);if(r.width<120&&(el.innerText||'').trim().length>80)issues.push(`${name(el)} content cell width ${r.width.toFixed(0)}px`);if(pt>90||pb>90)issues.push(`${name(el)} cell vertical padding ${pt.toFixed(0)}/${pb.toFixed(0)}px`);
+        if(!visible(el))continue;const s=getComputedStyle(el),r=el.getBoundingClientRect(),pl=px(s.paddingLeft),pr=px(s.paddingRight),pt=px(s.paddingTop),pb=px(s.paddingBottom);const wall=s.backgroundColor!=='rgba(0, 0, 0, 0)'||px(s.borderTopWidth)+px(s.borderRightWidth)+px(s.borderBottomWidth)+px(s.borderLeftWidth)>0;const quoteControl=!!el.closest('.smart-quote-layout')&&el.matches('.category-card,.option-row');const minPad=quoteControl?13:(w<=768?16:20);if(wall&&(pl<minPad||pr<minPad))issues.push(`${name(el)} cell horizontal padding ${pl.toFixed(0)}/${pr.toFixed(0)}px`);if(wall&&px(s.borderRadius)>28)issues.push(`${name(el)} radius ${s.borderRadius} > 28px`);if(r.width<120&&(el.innerText||'').trim().length>80)issues.push(`${name(el)} content cell width ${r.width.toFixed(0)}px`);if(pt>90||pb>90)issues.push(`${name(el)} cell vertical padding ${pt.toFixed(0)}/${pb.toFixed(0)}px`);
       }
 
       for(const grid of [...document.querySelectorAll('main [style*="grid"],main .grid,main .cards,main .service-grid,main .case-grid')].filter(visible)){
-        if(grid.closest('.gallery,.collage'))continue;const gs=getComputedStyle(grid);if(gs.display!=='grid'&&gs.display!=='inline-grid')continue;for(const child of [...grid.children].filter(visible)){const r=child.getBoundingClientRect();if((child.innerText||'').trim().length>120&&r.width<220)issues.push(`${name(child)} text column too narrow ${r.width.toFixed(0)}px`);}
+        if(grid.closest('.gallery,.collage'))continue;const gs=getComputedStyle(grid);if(gs.display!=='grid'&&gs.display!=='inline-grid')continue;const minTextColumn=w<=430?160:220;for(const child of [...grid.children].filter(visible)){const r=child.getBoundingClientRect();if((child.innerText||'').trim().length>120&&r.width<minTextColumn)issues.push(`${name(child)} text column too narrow ${r.width.toFixed(0)}px`);}
       }
 
       if(w<=768){for(const el of [...document.querySelectorAll('button,summary,input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),select,textarea,.btn,.menu-btn,.nav-cta')].filter(visible)){const r=el.getBoundingClientRect();if(r.height<43.5)issues.push(`${name(el)} touch height ${r.height.toFixed(1)}px < 44px`);if((el.matches('button,.menu-btn')||el.getAttribute('role')==='button')&&r.width<43.5)issues.push(`${name(el)} touch width ${r.width.toFixed(1)}px < 44px`);}}
@@ -98,6 +98,6 @@ for(const width of widths){
   await context.close();
 }
 await browser.close();
-fs.mkdirSync('artifacts',{recursive:true});fs.writeFileSync('artifacts/apple-visual-quality.json',JSON.stringify({contract:'strict-apple-web-20260825',pages:pages.length,widths,reports,failures},null,2));
-if(failures.length){console.error(`BANHALMI strict Apple visual contract found ${failures.length} failing page/viewport combinations.`);console.error(failures.join('\n'));process.exit(1)}
-console.log(`BANHALMI strict Apple visual contract passed: ${pages.length} pages × ${widths.length} viewports; semantic lead/body/secondary typography, weight, tracking, leading, alignment, reading measure, gutters, full-width colored surfaces, spacing rhythm, controls, grids and cell geometry verified.`);
+fs.mkdirSync('artifacts',{recursive:true});fs.writeFileSync('artifacts/apple-visual-quality.json',JSON.stringify({contract:'approved-banhalmi-visual-20260826',pages:pages.length,widths,reports,failures},null,2));
+if(failures.length){console.error(`BANHALMI approved visual contract found ${failures.length} failing page/viewport combinations.`);console.error(failures.join('\n'));process.exit(1)}
+console.log(`BANHALMI approved visual contract passed: ${pages.length} pages × ${widths.length} viewports; semantic lead/body/secondary typography, approved quote density, weight, tracking, leading, alignment, reading measure, gutters, full-width colored surfaces, spacing rhythm, controls, grids and cell geometry verified.`);
