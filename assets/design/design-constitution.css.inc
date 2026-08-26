@@ -57,9 +57,9 @@ html body main h3{letter-spacing:-.018em!important;line-height:1.16!important}
 html body main .lead{line-height:1.48!important}
 html body main :is(h1,h2,h3)+:is(p,.lead,ul,ol,blockquote){margin-top:12px!important}
 
-/* Quote-builder controls use the same minimum cell geometry as the rest of the
-   system; this preserves 44px targets without returning to cramped widget UI. */
-html body main .smart-quote-layout :is(label.category-card,label.option-row){padding:18px!important}
+/* Quote-builder controls stay compact enough to read as choices rather than
+   oversized cards while preserving their native 44px interaction targets. */
+html body main .smart-quote-layout :is(label.category-card,label.option-row){padding:15px!important}
 html body main .smart-quote-layout h3{font-size:max(1.125rem,clamp(1.125rem,1.6vw,1.5rem))!important}
 
 /* Breadcrumbs are navigation inside the hero rhythm, not an extra page band.
