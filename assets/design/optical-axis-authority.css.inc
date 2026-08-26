@@ -79,3 +79,33 @@ html body:not([data-oa-never]):not([data-oa-never-2]):not([data-oa-never-3]) mai
 html body:not([data-oa-never]):not([data-oa-never-2]):not([data-oa-never-3]) main h3{font-size:var(--oa-h3-size)!important;line-height:1.16!important}
 html body:not([data-oa-never]):not([data-oa-never-2]):not([data-oa-never-3]) main :is(h1,h2,h3):has(+ :is(.lead,.description,.section-description,.hero-description,.service-description,p)){margin-bottom:0!important}
 html body:not([data-oa-never]):not([data-oa-never-2]):not([data-oa-never-3]) main :is(h1,h2,h3)+:is(.lead,.description,.section-description,.hero-description,.service-description,p){margin-top:var(--oa-heading-description-gap)!important}
+
+/* Screenshot-closure authority. The professional site had the same cascade failure
+   mode as ART: page-family selectors could still win after the shared design layer.
+   These rules own the final computed geometry without changing content or semantics. */
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main>section:not(.hero):not(.hero-section):not(.immersive):not(.statement):not([data-layout="immersive"]){min-height:0!important;height:auto!important;padding-top:var(--oa-section-pad)!important;padding-bottom:var(--oa-section-pad)!important;margin-top:0!important;margin-bottom:0!important}
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell,.fp-choice,.proof-card,.framework-card,.portrait-card,.partner-card,[class$="-card"]){box-sizing:border-box!important;min-width:0!important;padding-top:var(--oa-cell-inset)!important;padding-right:var(--oa-cell-inset)!important;padding-bottom:var(--oa-cell-inset)!important;padding-left:var(--oa-cell-inset)!important;box-shadow:none!important}
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main :is(.section-head,.section-intro,.service-intro,.content-intro,.section-copy,.content-copy,.prose,.presence-context,.presence-copy) :is(.eyebrow,.label,.kicker,[class*="eyebrow"],[class*="kicker"],h1,h2,h3,h4,p,.lead,.meta,blockquote,ul,ol){margin-left:0!important;margin-right:auto!important;text-align:left!important}
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main>section:not(.center):not(.centered):not([data-align="center"]):not([data-layout="immersive"]) :is(.actions,.action-row,.cta-row,.button-row,.link-row,.section-actions,.service-actions,.partner-actions,.framework-actions){display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:flex-start!important;gap:clamp(12px,1.4vw,18px)!important;margin-left:0!important;margin-right:auto!important;text-align:left!important}
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main :is(p,.lead,.meta,.note)>a+a{margin-left:clamp(12px,1.4vw,18px)!important}
+
+/* One boundary = one divider. Parent list/detail owns the line; child cards do not
+   add a second horizontal rule at the same visual boundary. */
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main :is(.feature-list,.service-list,.link-list,.plain-list,.editorial-list,.framework-list,.evidence-list)>li{border-top:0!important;border-bottom:1px solid var(--oa-divider)!important}
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main :is(.feature-list,.service-list,.link-list,.plain-list,.editorial-list,.framework-list,.evidence-list)>li:last-child{border-bottom:0!important}
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main details>summary{border-top:1px solid var(--oa-divider)!important;border-bottom:0!important;box-shadow:none!important}
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main details+details>summary{border-top:1px solid var(--oa-divider)!important}
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main details:last-of-type>summary{border-bottom:1px solid var(--oa-divider)!important}
+
+/* Menu closure: no active pill/outline can reappear from route-specific CSS. */
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) .site-header :is(.nav-links,.lang-switch,.mega-menu,.mega-panel,.partners-menu,.service-menu) a:is(.active,[aria-current="page"]){border:0!important;border-radius:0!important;outline:0!important;box-shadow:none!important;background:transparent!important}
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) :is(.mega-menu,.mega-panel,.partners-menu,.service-menu){box-shadow:none!important}
+
+/* Footer closure: historical full-height/min-height declarations must not create a
+   trailing empty panel below the actual footer content. */
+html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) :is(footer,.site-footer,.site-footer>.wrap,footer>.wrap){min-height:0!important;height:auto!important;max-height:none!important}
+
+@media(max-width:620px){
+  html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell,.fp-choice,.proof-card,.framework-card,.portrait-card,.partner-card,[class$="-card"]){padding:20px!important}
+  html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main>section:not(.hero):not(.hero-section):not(.immersive):not(.statement):not([data-layout="immersive"]){padding-top:var(--oa-section-pad)!important;padding-bottom:var(--oa-section-pad)!important}
+}
