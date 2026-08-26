@@ -6,6 +6,7 @@
   --oa-cell-inset:clamp(22px,2.4vw,34px);
   --oa-block-gap:clamp(28px,3.4vw,48px);
   --oa-section-gap:clamp(64px,7vw,104px);
+  --oa-section-pad:clamp(56px,6vw,88px);
   --oa-divider:rgba(17,17,17,.10);
 }
 
@@ -18,14 +19,28 @@ html body main :is(.prose,.section-head)>:is(h1,h2,h3,p,.lead,.meta,blockquote,u
 html body main .section-head{margin-left:0!important;margin-right:auto!important}
 html body main .section-head p,html body main .prose{margin-left:0!important;margin-right:auto!important}
 
-/* Preserve a disciplined editorial reading measure on long service-page reveal copy.
-   The optical-axis rule may change x-position, but must never turn long-form prose into a near full-shell line length. */
+/* Preserve a disciplined editorial reading measure on long service-page reveal copy. */
 html body main p.text-reveal{
   width:100%!important;
   max-width:var(--wide-textw,820px)!important;
   margin-left:0!important;
   margin-right:auto!important;
 }
+
+/* No unjustified dead space. Normal editorial sections are content-driven and use a
+   bounded Apple-like vertical rhythm. Hero/immersive/statement compositions stay exempt. */
+html body main>section:not(.hero):not(.hero-section):not(.immersive):not(.statement):not([data-layout="immersive"]){
+  min-height:0!important;
+  height:auto!important;
+  padding-top:var(--oa-section-pad)!important;
+  padding-bottom:var(--oa-section-pad)!important;
+}
+html body main>section:last-child:not(.hero):not(.hero-section):not(.immersive):not(.statement):not([data-layout="immersive"]){
+  margin-bottom:0!important;
+  padding-bottom:clamp(48px,5vw,76px)!important;
+}
+html body main>section+section{margin-top:0!important}
+html body main+footer,html body .site-footer{margin-top:0!important}
 
 /* Text never touches a cell wall. Cards/panels use one protected inset system. */
 html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.service-card,.evidence-card,.trust-card,.panel,.cell){
@@ -58,4 +73,4 @@ html body :is(.mega-menu,.mega-panel,.partners-menu,.service-menu){padding:clamp
 
 /* Responsive gutters remain the single viewport-edge contract. */
 @media(max-width:960px){html body main>section:not(.hero):not(.center):not(.centered):not([data-align="center"])>.wrap{padding-left:var(--dc-gutter)!important;padding-right:var(--dc-gutter)!important}}
-@media(max-width:620px){:root{--oa-cell-inset:20px;--oa-block-gap:28px}}
+@media(max-width:620px){:root{--oa-cell-inset:20px;--oa-block-gap:28px;--oa-section-pad:clamp(44px,12vw,64px)}}
