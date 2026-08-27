@@ -131,3 +131,76 @@ html[lang^="hu"] body .bn-mega-primary::before{content:"A BANHALMI-ról"}
   html body main[data-homepage-redesign]>.hero.hero-visual-only .hero-figure{margin-bottom:0!important}
   html body main[data-homepage-redesign]>.hero.hero-copy-only{padding-top:34px!important;margin-top:0!important}
 }
+
+/* 2026-08-27 — live desktop screenshot closure. These rules target the actual
+   production DOM observed on the homepage, service proof cards, quote builder
+   and partner membership page rather than generic look-alike components. */
+@media(min-width:721px){
+  html body main[data-homepage-redesign]>.hero.hero-visual-only{padding-bottom:0!important;margin-bottom:0!important}
+  html body main[data-homepage-redesign]>.hero.hero-visual-only .hero-figure{margin-bottom:0!important}
+  html body main[data-homepage-redesign]>.hero.hero-copy-only{padding-top:36px!important;margin-top:0!important}
+}
+html body main[data-homepage-redesign]>.cta-band>.wrap{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+}
+html body main[data-homepage-redesign]>.cta-band h2{
+  width:min(100%,24ch)!important;
+  max-width:24ch!important;
+  margin-inline:auto!important;
+  text-align:center!important;
+  text-wrap:balance!important;
+}
+html body .trust-proof .grid-3{
+  width:100%!important;
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:16px!important;
+  align-items:stretch!important;
+}
+html body .trust-proof .grid-3>.card{
+  min-width:0!important;
+  height:100%!important;
+  margin:0!important;
+}
+html body .partner-memberships .partner-cta{
+  width:100%!important;
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  margin-inline:auto!important;
+  text-align:center!important;
+}
+@media(min-width:1081px){
+  html body main .smart-quote-layout{
+    grid-template-columns:minmax(390px,420px) minmax(0,1fr)!important;
+    gap:30px!important;
+    align-items:start!important;
+  }
+  html body main .smart-quote-layout>.quote-intro{
+    width:100%!important;
+    max-width:none!important;
+    min-width:0!important;
+  }
+  html body main .smart-quote-layout .quote-summary-card{
+    width:100%!important;
+    min-width:0!important;
+    padding:28px!important;
+  }
+  html body main .smart-quote-layout .quote-total{
+    font-size:clamp(2.15rem,3vw,3.2rem)!important;
+    white-space:nowrap!important;
+    overflow-wrap:normal!important;
+    word-break:normal!important;
+  }
+}
+/* Decision guidance duplicated the information already available on each option
+   and made the quote path feel like documentation rather than a decision tool. */
+html body main .smart-quote-layout .quote-decision-guide,
+html body main .quote-hero .quote-flow-line{display:none!important}
+@media(max-width:960px){
+  html body .trust-proof .grid-3{grid-template-columns:1fr!important}
+}
