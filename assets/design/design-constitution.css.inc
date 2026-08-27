@@ -83,3 +83,51 @@ html body footer,html body .site-footer{height:auto!important;min-height:0!impor
 html body .site-footer>.wrap,html body footer>.wrap{min-height:0!important;height:auto!important}
 html body main .presence-thesis[data-surface="dark"] .title-accent{color:#78B9C2!important;-webkit-text-fill-color:currentColor!important;background:none!important}
 @media(max-width:720px){html body .project-framework-drawer>summary>span:first-child{display:grid!important;gap:4px!important}html body .project-framework-drawer>summary>span:first-child small{display:block!important}}
+
+/* 2026-08-27 — visual consistency closure requested after screenshot review. */
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  html body main h1,
+  html body main h2{
+    background:linear-gradient(90deg,#202530 0%,#2F6F78 62%,#8A681F 100%)!important;
+    -webkit-background-clip:text!important;
+    background-clip:text!important;
+    -webkit-text-fill-color:transparent!important;
+    color:transparent!important;
+  }
+  html body main :is(.surface-dark,[data-surface="dark"],.dark,.dark-section,.section-dark,.navy-section,.cta-band) h1,
+  html body main :is(.surface-dark,[data-surface="dark"],.dark,.dark-section,.section-dark,.navy-section,.cta-band) h2{
+    background:linear-gradient(90deg,#F5F5F7 0%,#AFC4D9 62%,#B79C44 100%)!important;
+    -webkit-background-clip:text!important;
+    background-clip:text!important;
+    -webkit-text-fill-color:transparent!important;
+    color:transparent!important;
+  }
+}
+
+/* The desktop menu's first-column label belongs to the column itself, not to the
+   global menu intro. Keep the city/region context above the grid but restore a
+   clear multilingual first-column heading in the same hierarchy as Services and
+   Working together. */
+html body .bn-mega-intro .bn-mega-eyebrow{display:none!important}
+html body .bn-mega-primary::before{
+  display:block;
+  margin-bottom:clamp(.45rem,1vh,.75rem);
+  padding-bottom:clamp(.4rem,.8vh,.65rem);
+  border-bottom:1px solid var(--bn-menu-line,rgba(211,184,90,.28));
+  color:var(--bn-menu-soft,#C4CFDA);
+  font-size:clamp(.72rem,1.22vh,.84rem);
+  font-weight:650;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+html[lang^="en"] body .bn-mega-primary::before{content:"About BANHALMI"}
+html[lang^="de"] body .bn-mega-primary::before{content:"Über BANHALMI"}
+html[lang^="hu"] body .bn-mega-primary::before{content:"A BANHALMI-ról"}
+
+/* Mobile homepage: remove the residual double-spacing between the visual hero
+   and the following copy hero on all language homepages. */
+@media(max-width:720px){
+  html body main[data-homepage-redesign]>.hero.hero-visual-only{padding-bottom:0!important;margin-bottom:0!important}
+  html body main[data-homepage-redesign]>.hero.hero-visual-only .hero-figure{margin-bottom:0!important}
+  html body main[data-homepage-redesign]>.hero.hero-copy-only{padding-top:34px!important;margin-top:0!important}
+}
