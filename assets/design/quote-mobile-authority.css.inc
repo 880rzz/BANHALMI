@@ -37,7 +37,7 @@ html body main .smart-quote-layout .category-card em{
     grid-auto-rows:max-content!important;
   }
   html body main .smart-quote-layout .category-card{
-    padding:8px 12px!important;
+    padding:8px 12px 7px!important;
   }
   html body main .smart-quote-layout .category-card em{
     font-size:.8125rem!important;
