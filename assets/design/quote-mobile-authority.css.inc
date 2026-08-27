@@ -9,7 +9,9 @@ html body main .smart-quote-layout .category-card{
   align-content:start!important;
   align-items:start!important;
   align-self:start!important;
+  justify-content:start!important;
   grid-auto-rows:max-content!important;
+  grid-template-rows:max-content max-content!important;
 }
 html body main .smart-quote-layout .category-card>span{
   min-width:0!important;
@@ -35,9 +37,14 @@ html body main .smart-quote-layout .category-card em{
     align-content:start!important;
     align-items:start!important;
     grid-auto-rows:max-content!important;
+    grid-template-rows:none!important;
   }
   html body main .smart-quote-layout .category-card{
+    height:fit-content!important;
+    min-height:0!important;
     padding:8px 12px 7px!important;
+    align-self:start!important;
+    align-content:start!important;
   }
   html body main .smart-quote-layout .category-card em{
     font-size:.8125rem!important;
@@ -53,6 +60,7 @@ html body main .smart-quote-layout .category-card em{
 @media(max-width:620px){
   html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]):not([data-qa-x5]):not([data-qa-x6]) main .category-card{
     grid-template-columns:18px minmax(0,1fr)!important;
+    grid-template-rows:max-content max-content!important;
     column-gap:8px!important;
     padding:14px!important;
   }
