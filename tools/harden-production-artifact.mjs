@@ -3,6 +3,7 @@ import path from 'node:path';
 import { generateMachineProjections } from './generate-machine-projections.mjs';
 
 const root = path.resolve(process.argv[2] || '_site');
+const quoteRadioSpacingPath = path.resolve('assets/css/quote-radio-spacing.css.inc');
 
 function walkHtml(dir, out = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -53,6 +54,22 @@ for (const file of walkHtml(root)) {
 
 generateMachineProjections(root);
 
+if (!fs.existsSync(quoteRadioSpacingPath)) throw new Error('Quote radio spacing authority source fragment missing.');
+const quoteRadioSpacing = fs.readFileSync(quoteRadioSpacingPath, 'utf8').trim();
+if (!quoteRadioSpacing.includes('QUOTE-RADIO-SPACING-AUTHORITY-20260827:START') || !quoteRadioSpacing.includes('QUOTE-RADIO-SPACING-AUTHORITY-20260827:END')) {
+  throw new Error('Quote radio spacing authority markers missing.');
+}
+const siteCssPath = path.join(root, 'assets/css/site.css');
+if (!fs.existsSync(siteCssPath)) throw new Error('Production artifact lost assets/css/site.css before quote spacing hardening.');
+let siteCss = fs.readFileSync(siteCssPath, 'utf8');
+siteCss = siteCss.replace(/\/\* QUOTE-RADIO-SPACING-AUTHORITY-20260827:START \*\/[\s\S]*?\/\* QUOTE-RADIO-SPACING-AUTHORITY-20260827:END \*\//g, '').trimEnd();
+fs.writeFileSync(siteCssPath, `${siteCss}\n\n${quoteRadioSpacing}\n`, 'utf8');
+
+const hardenedCss = fs.readFileSync(siteCssPath, 'utf8');
+if (!hardenedCss.includes('grid-template-columns:32px minmax(0,1fr)!important') || !hardenedCss.includes('column-gap:16px!important')) {
+  throw new Error('Production quote radio spacing contract was not applied.');
+}
+
 const forbidden = [
   '.gitignore', '.DS_Store', '.emergency-pages-deploy-trigger',
   'package.json', 'package-lock.json', 'README.md',
@@ -78,4 +95,4 @@ for (const rel of required) {
   if (!fs.existsSync(path.join(root, rel))) throw new Error(`Production artifact lost required public file: ${rel}`);
 }
 
-console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links and ${buttonTypesAdded} non-form button types normalized.`);
+console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links and ${buttonTypesAdded} non-form button types normalized; mobile quote radio spacing authority applied.`);
