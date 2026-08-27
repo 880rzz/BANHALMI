@@ -174,7 +174,7 @@ html body main .smart-quote-layout :is(.option-row,.category-card)>input[type="r
 }
 @media(min-width:1081px){
   html body main .smart-quote-layout{
-    grid-template-columns:minmax(250px,320px) minmax(0,1fr)!important;
+    grid-template-columns:minmax(250px,316px) minmax(0,1fr)!important;
     column-gap:clamp(28px,3vw,44px)!important;
     align-items:start!important;
   }
@@ -182,7 +182,7 @@ html body main .smart-quote-layout :is(.option-row,.category-card)>input[type="r
   html body main .smart-quote-layout>.quote-side,
   html body main .smart-quote-layout>.quote-sidebar{
     min-width:0!important;
-    max-width:320px!important;
+    max-width:316px!important;
   }
 }
 
