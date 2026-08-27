@@ -1,11 +1,11 @@
 /* BANHALMI Quote Mobile Authority 2026-08-27
    Final quote-category geometry across mobile, tablet and desktop.
    This service-specific authority intentionally outranks the generic [class$="-card"]
-   optical-axis rule so compact quote choices do not inherit editorial-card padding. */
-html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]):not([data-qa-x5]):not([data-qa-x6]) main .smart-quote-layout .category-card{
+   optical-axis rule so quote choices stay compact without touching their cell walls. */
+html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]):not([data-qa-x5]):not([data-qa-x6]) main .smart-quote-layout .category-card.category-card.category-card{
   min-height:0!important;
   height:max-content!important;
-  padding:13px!important;
+  padding:16px!important;
   align-content:start!important;
   align-items:start!important;
   align-self:start!important;
@@ -39,10 +39,10 @@ html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]
     grid-auto-rows:max-content!important;
     grid-template-rows:none!important;
   }
-  html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]):not([data-qa-x5]):not([data-qa-x6]) main .smart-quote-layout .category-card{
+  html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]):not([data-qa-x5]):not([data-qa-x6]) main .smart-quote-layout .category-card.category-card.category-card{
     height:fit-content!important;
     min-height:0!important;
-    padding:8px 13px 7px!important;
+    padding:10px 16px!important;
     align-self:start!important;
     align-content:start!important;
   }
@@ -58,11 +58,11 @@ html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]
   }
 }
 @media(max-width:620px){
-  html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]):not([data-qa-x5]):not([data-qa-x6]) main .category-card{
+  html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]):not([data-qa-x5]):not([data-qa-x6]) main .smart-quote-layout .category-card.category-card.category-card{
     grid-template-columns:18px minmax(0,1fr)!important;
     grid-template-rows:max-content max-content!important;
     column-gap:8px!important;
-    padding:14px!important;
+    padding:16px!important;
   }
   html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]):not([data-qa-x5]):not([data-qa-x6]) main .category-card>span{
     min-width:0!important;
