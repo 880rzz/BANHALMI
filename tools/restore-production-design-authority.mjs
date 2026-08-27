@@ -13,7 +13,7 @@ const targetDesignDir=path.join(siteRoot,'assets/design');
 if(!fs.existsSync(targetCss)) throw new Error('BANHALMI production site.css missing.');
 if(!constitutionCss.includes('Design Constitution 2026-08-25')) throw new Error('BANHALMI design constitution marker missing.');
 if(!opticalAxisCss.includes('BANHALMI Optical Axis Authority 2026-08-26')) throw new Error('BANHALMI optical-axis authority marker missing.');
-if(!quoteMobileCss.includes('BANHALMI Quote Mobile Authority 2026-08-26')) throw new Error('BANHALMI quote mobile authority marker missing.');
+if(!quoteMobileCss.includes('BANHALMI Quote Mobile Authority 2026-08-')) throw new Error('BANHALMI quote mobile authority marker missing.');
 if(!fs.existsSync(privateEventScript)||!fs.existsSync(privateEventPricing)) throw new Error('BANHALMI private-event quote sources missing.');
 const merged=`${sourceCss.trimEnd()}\n\n/* BANHALMI-DESIGN-CONSTITUTION-MERGED:START */\n${constitutionCss.trim()}\n/* BANHALMI-DESIGN-CONSTITUTION-MERGED:END */\n\n/* BANHALMI-OPTICAL-AXIS-AUTHORITY-MERGED:START */\n${opticalAxisCss.trim()}\n/* BANHALMI-OPTICAL-AXIS-AUTHORITY-MERGED:END */\n\n/* BANHALMI-QUOTE-MOBILE-AUTHORITY-MERGED:START */\n${quoteMobileCss.trim()}\n/* BANHALMI-QUOTE-MOBILE-AUTHORITY-MERGED:END */\n`;
 fs.writeFileSync(targetCss,merged,'utf8');
