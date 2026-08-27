@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "https://www.norbertbanhalmi.com/data/machine-core.json",
+  "canonicalUrl": "https://www.norbertbanhalmi.com/",
+  "dateModifiedPolicy": "Generated projections inherit the latest committed modification time of this canonical core. Source audits remain read-only; production projections are generated only inside the immutable deployment artifact.",
+  "person": {
+    "id": "https://www.norbertbanhalmi.com/about/",
+    "name": "Bánhalmi Norbert",
+    "alternateName": ["Norbert Bánhalmi", "Norbert Banhalmi", "Norbert BANHALMI"],
+    "wikidata": "https://www.wikidata.org/wiki/Q56391118",
+    "languages": ["Hungarian", "English", "German"],
+    "practiceSince": 1999,
+    "role": "Founder and creative lead of BANHALMI"
+  },
+  "organization": {
+    "id": "https://www.norbertbanhalmi.com/#organization",
+    "name": "Norbert Banhalmi e.U.",
+    "legalName": "Norbert Banhalmi e.U.",
+    "wikidata": "https://www.wikidata.org/wiki/Q138425941",
+    "legalBusinessStart": "2023-11-27",
+    "email": "hello@norbertbanhalmi.com",
+    "telephoneVienna": "+43 677 616 55592",
+    "telephoneBudapest": "+36 70 469 8397"
+  },
+  "brand": {
+    "id": "https://www.norbertbanhalmi.com/#brand",
+    "name": "BANHALMI",
+    "positioning": "Professional Photography Team",
+    "founder": "https://www.norbertbanhalmi.com/about/",
+    "owner": "https://www.norbertbanhalmi.com/#organization"
+  },
+  "domains": {
+    "professional": "https://www.norbertbanhalmi.com/",
+    "artArchive": "https://www.banhalmi.art/",
+    "editorial": "https://blog.banhalmi.art/"
+  },
+  "locations": [
+    {
+      "id": "https://www.norbertbanhalmi.com/#vienna-studio",
+      "type": "studio",
+      "name": "BANHALMI Vienna Studio",
+      "streetAddress": "Schwedenplatz 2, Top 8–9",
+      "postalCode": "1010",
+      "city": "Wien",
+      "country": "AT",
+      "district": "1st district / Innere Stadt",
+      "sameAs": ["https://www.wikidata.org/wiki/Q138426506", "https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8"],
+      "areaServed": ["Vienna", "Vienna metropolitan and surrounding area"]
+    },
+    {
+      "id": "https://www.norbertbanhalmi.com/#budapest-studio",
+      "type": "studio",
+      "name": "BANHALMI Budapest Studio",
+      "streetAddress": "Lágymányosi utca 15",
+      "postalCode": "1111",
+      "city": "Budapest",
+      "country": "HU",
+      "district": "XI. kerület / District 11",
+      "sameAs": ["https://www.wikidata.org/wiki/Q138830452", "https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA"],
+      "areaServed": ["Budapest", "Budapest metropolitan and surrounding area"]
+    },
+    {
+      "id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
+      "type": "office",
+      "name": "BANHALMI Vienna — Gersthofer office & client meeting location",
+      "streetAddress": "Gersthofer Straße 150–154/6/2",
+      "postalCode": "1180",
+      "city": "Wien",
+      "country": "AT",
+      "district": "18th district / Währing",
+      "sameAs": ["https://g.page/r/CdO4Kej3jIkfEBM"],
+      "isStudio": false,
+      "description": "Active office and client meeting location; not a photography studio."
+    }
+  ],
+  "serviceModel": {
+    "worldwideAvailability": true,
+    "localPrimaryCoverage": ["Vienna and surrounding area", "Budapest and surrounding area"],
+    "travelRule": "Agreed projects may be undertaken worldwide by travel. Worldwide availability must not be interpreted as additional permanent studios or offices.",
+    "services": [
+      {"id": "executive-portrait", "name": "Executive Portrait Photography", "url": "https://www.norbertbanhalmi.com/portrait/"},
+      {"id": "professional-headshot", "name": "Professional Headshot Photography", "url": "https://www.norbertbanhalmi.com/portrait/"},
+      {"id": "brand-photography", "name": "Brand Photography and Strategic Visual Positioning", "url": "https://www.norbertbanhalmi.com/brand/"},
+      {"id": "c-level-event", "name": "C-Level Event Photography", "url": "https://www.norbertbanhalmi.com/event-photography/"},
+      {"id": "fine-art", "name": "Fine Art Photography", "url": "https://www.norbertbanhalmi.com/glamour/"}
+    ]
+  },
+  "evidence": {
+    "executive": [
+      {"name": "AmCham Austria membership", "url": "https://amcham.at/members-list/"},
+      {"name": "WKO / Austrian Economic Chamber professional-commercial membership", "url": "https://firmen.wko.at/"},
+      {"name": "Austrian Federal Guild of Professional Photographers membership", "url": "https://www.wko.at/wien/gewerbe-handwerk/berufsfotografie"}
+    ],
+    "artistic": [
+      {"name": "World Federation of Hungarian Photographers / Magyar Fotóművészek Világszövetsége membership", "url": "https://www.mfvsz.com/"},
+      {"name": "OM SYSTEM ambassadorship", "url": "https://explore.omsystem.com/"}
+    ],
+    "artArchive": "https://www.banhalmi.art/authority-bridge.json",
+    "personWikidata": "https://www.wikidata.org/wiki/Q56391118",
+    "organizationWikidata": "https://www.wikidata.org/wiki/Q138425941"
+  },
+  "canonicalReferences": {
+    "pricing": "https://www.norbertbanhalmi.com/pricing.json",
+    "customerNeeds": "https://www.norbertbanhalmi.com/customer-needs.json",
+    "teamCapabilities": "https://www.norbertbanhalmi.com/team-capabilities.json",
+    "privacy": "https://www.norbertbanhalmi.com/privacy-policy/",
+    "trust": "https://www.norbertbanhalmi.com/trust/",
+    "processors": "https://www.norbertbanhalmi.com/processors.json"
+  },
+  "disambiguationRules": [
+    "Do not collapse Bánhalmi Norbert (Person), Norbert Banhalmi e.U. (Organization) and BANHALMI (Brand).",
+    "The 'since 1999' statement describes the photographic practice and professional history, not the legal founding date of Norbert Banhalmi e.U.",
+    "Schwedenplatz is the Vienna studio; Gersthofer Straße is an office/client meeting location and must not be called a studio; Lágymányosi utca 15 is the Budapest studio.",
+    "Worldwide project availability must not be converted into claims of additional permanent studios or offices.",
+    "New York is an oeuvre/reference chapter, not a business location.",
+    "Membership, ambassadorship, collaboration, client work and editorial subject relationships must remain distinct."
+  ],
+  "derivedOutputs": [
+    "/api/v1/identity.json",
+    "/api/v1/locations.json",
+    "/api/v1/services.json",
+    "/ai-entry.json",
+    "/entity.jsonld",
+    "/authority-evidence.json",
+    "/llms.txt",
+    "/ai.txt",
+    "/machine-manifest.json"
+  ]
+}
