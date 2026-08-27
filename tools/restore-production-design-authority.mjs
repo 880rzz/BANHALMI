@@ -7,6 +7,7 @@ const constitutionCss=fs.readFileSync('assets/design/design-constitution.css.inc
 const opticalAxisCss=fs.readFileSync('assets/design/optical-axis-authority.css.inc','utf8');
 const quoteMobileCss=fs.readFileSync('assets/design/quote-mobile-authority.css.inc','utf8');
 const touchLinkStateCss=fs.readFileSync('assets/design/touch-link-state-authority.css.inc','utf8');
+const layoutConsistencyCss=fs.readFileSync('assets/design/layout-consistency-authority.css.inc','utf8');
 const privateEventScript=path.resolve('assets/js/private-event-quote.js');
 const privateEventPricing=path.resolve('private-event-pricing.json');
 const targetCss=path.join(siteRoot,'assets/css/site.css');
@@ -16,8 +17,9 @@ if(!constitutionCss.includes('Design Constitution 2026-08-25')) throw new Error(
 if(!opticalAxisCss.includes('BANHALMI Optical Axis Authority 2026-08-26')) throw new Error('BANHALMI optical-axis authority marker missing.');
 if(!quoteMobileCss.includes('BANHALMI Quote Mobile Authority 2026-08-')) throw new Error('BANHALMI quote mobile authority marker missing.');
 if(!touchLinkStateCss.includes('BANHALMI Touch Link State Authority 2026-08-27')) throw new Error('BANHALMI touch-link-state authority marker missing.');
+if(!layoutConsistencyCss.includes('BANHALMI Layout Consistency Authority 2026-08-27')) throw new Error('BANHALMI layout consistency authority marker missing.');
 if(!fs.existsSync(privateEventScript)||!fs.existsSync(privateEventPricing)) throw new Error('BANHALMI private-event quote sources missing.');
-const merged=`${sourceCss.trimEnd()}\n\n/* BANHALMI-DESIGN-CONSTITUTION-MERGED:START */\n${constitutionCss.trim()}\n/* BANHALMI-DESIGN-CONSTITUTION-MERGED:END */\n\n/* BANHALMI-OPTICAL-AXIS-AUTHORITY-MERGED:START */\n${opticalAxisCss.trim()}\n/* BANHALMI-OPTICAL-AXIS-AUTHORITY-MERGED:END */\n\n/* BANHALMI-QUOTE-MOBILE-AUTHORITY-MERGED:START */\n${quoteMobileCss.trim()}\n/* BANHALMI-QUOTE-MOBILE-AUTHORITY-MERGED:END */\n\n/* BANHALMI-TOUCH-LINK-STATE-AUTHORITY-MERGED:START */\n${touchLinkStateCss.trim()}\n/* BANHALMI-TOUCH-LINK-STATE-AUTHORITY-MERGED:END */\n`;
+const merged=`${sourceCss.trimEnd()}\n\n/* BANHALMI-DESIGN-CONSTITUTION-MERGED:START */\n${constitutionCss.trim()}\n/* BANHALMI-DESIGN-CONSTITUTION-MERGED:END */\n\n/* BANHALMI-OPTICAL-AXIS-AUTHORITY-MERGED:START */\n${opticalAxisCss.trim()}\n/* BANHALMI-OPTICAL-AXIS-AUTHORITY-MERGED:END */\n\n/* BANHALMI-QUOTE-MOBILE-AUTHORITY-MERGED:START */\n${quoteMobileCss.trim()}\n/* BANHALMI-QUOTE-MOBILE-AUTHORITY-MERGED:END */\n\n/* BANHALMI-TOUCH-LINK-STATE-AUTHORITY-MERGED:START */\n${touchLinkStateCss.trim()}\n/* BANHALMI-TOUCH-LINK-STATE-AUTHORITY-MERGED:END */\n\n/* BANHALMI-LAYOUT-CONSISTENCY-AUTHORITY-MERGED:START */\n${layoutConsistencyCss.trim()}\n/* BANHALMI-LAYOUT-CONSISTENCY-AUTHORITY-MERGED:END */\n`;
 fs.writeFileSync(targetCss,merged,'utf8');
 if(fs.existsSync(targetDesignDir)) fs.rmSync(targetDesignDir,{recursive:true,force:true});
 
@@ -45,5 +47,6 @@ if(!finalCss.includes('BANHALMI-DESIGN-CONSTITUTION-MERGED:START')) throw new Er
 if(!finalCss.includes('BANHALMI-OPTICAL-AXIS-AUTHORITY-MERGED:START')) throw new Error('BANHALMI optical-axis authority was not merged into production CSS.');
 if(!finalCss.includes('BANHALMI-QUOTE-MOBILE-AUTHORITY-MERGED:START')) throw new Error('BANHALMI quote mobile authority was not merged into production CSS.');
 if(!finalCss.includes('BANHALMI-TOUCH-LINK-STATE-AUTHORITY-MERGED:START')) throw new Error('BANHALMI touch-link-state authority was not merged into production CSS.');
+if(!finalCss.includes('BANHALMI-LAYOUT-CONSISTENCY-AUTHORITY-MERGED:START')) throw new Error('BANHALMI layout consistency authority was not merged into production CSS.');
 for(const rel of quotePages){const full=path.join(siteRoot,rel);if(!fs.existsSync(full)||!fs.readFileSync(full,'utf8').includes('/assets/js/private-event-quote.js')) throw new Error(`BANHALMI private-event quote adapter missing from ${rel}.`);}
-console.log(`BANHALMI production design authority restored; Design Constitution, optical-axis, quote-mobile and touch-link-state authority merged; ${checked} HTML files checked, ${normalized} artifact HTML file(s) normalized, ${privateInjected} private-event quote adapter injection(s), ${pdfPatched} PDF label patch(es).`);
+console.log(`BANHALMI production design authority restored; Design Constitution, optical-axis, quote-mobile, touch-link-state and layout-consistency authority merged; ${checked} HTML files checked, ${normalized} artifact HTML file(s) normalized, ${privateInjected} private-event quote adapter injection(s), ${pdfPatched} PDF label patch(es).`);
