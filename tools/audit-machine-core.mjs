@@ -26,8 +26,14 @@ fail((core.derivedOutputs || []).includes('/ai.txt'), 'ai.txt must remain a gene
 const sourceText = JSON.stringify(core);
 for (const forbidden of ['viko@banhalmi.at']) fail(!sourceText.includes(forbidden), `Unnecessary collaborator contact leaked into canonical core: ${forbidden}`);
 
+const robots = fs.readFileSync('robots.txt', 'utf8');
+fail(robots.includes('# AI / LLM machine entry points'), 'robots.txt AI/LLM discovery comment heading missing');
+fail(robots.includes('# https://www.norbertbanhalmi.com/llms.txt'), 'robots.txt must document the canonical llms.txt entry point as a comment');
+fail(robots.includes('# https://www.norbertbanhalmi.com/ai.txt'), 'robots.txt must document the canonical ai.txt entry point as a comment');
+fail(!/^\s*(?:LLMS|AI)\s*:/im.test(robots), 'robots.txt must not invent non-standard LLMS: or AI: directives');
+
 if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log('Canonical machine core audit passed: identity, legal history, Vienna/Budapest location roles, services, generated-output ownership and data-minimisation invariants are intact.');
+console.log('Canonical machine core audit passed: identity, legal history, Vienna/Budapest location roles, services, generated-output ownership, data minimisation and standards-safe robots AI discovery comments are intact.');
