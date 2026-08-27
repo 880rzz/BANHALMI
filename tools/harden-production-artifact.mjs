@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { generateMachineProjections } from './generate-machine-projections.mjs';
 
 const root = path.resolve(process.argv[2] || '_site');
 
@@ -50,6 +51,8 @@ for (const file of walkHtml(root)) {
   fs.writeFileSync(file, html);
 }
 
+generateMachineProjections(root);
+
 const forbidden = [
   '.gitignore', '.DS_Store', '.emergency-pages-deploy-trigger',
   'package.json', 'package-lock.json', 'README.md',
@@ -68,7 +71,8 @@ const required = [
   'index.html', 'hu/index.html', 'de-at/index.html',
   'robots.txt', 'sitemap.xml', 'llms.txt', 'ai.txt',
   '.well-known/agent.json', 'api/v1/identity.json',
-  'assets/css/site.css', 'assets/js/analytics.js', 'deployment-sha.txt'
+  'assets/css/site.css', 'assets/js/analytics.js', 'deployment-sha.txt',
+  'data/machine-core.json', 'machine-manifest.json'
 ];
 for (const rel of required) {
   if (!fs.existsSync(path.join(root, rel))) throw new Error(`Production artifact lost required public file: ${rel}`);
