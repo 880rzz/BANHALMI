@@ -48,7 +48,7 @@ html body main :is(.card,.step,.process-card,.process-step,.workflow-card,.servi
 html body main details>summary{border-top:1px solid var(--oa-divider)!important;border-bottom:0!important}
 html body main details:last-of-type>summary{border-bottom:1px solid var(--oa-divider)!important}
 html body main :is(.feature-list,.service-list,.link-list,.plain-list,.editorial-list)>li{border-bottom:1px solid var(--oa-divider)!important}
-html body main :is(.feature-list,.service-list,.link-list,.plain-list,.editorial-list)>li:last-child{border-bottom:0!important}
+html body main :is(.feature-list,.service-list,.link-list,.plain-list,.editor-list)>li:last-child{border-bottom:0!important}
 
 html body .site-header :is(.nav-links,.lang-switch,.mega-menu,.mega-panel,.partners-menu,.service-menu) a{border-radius:0!important;box-shadow:none!important;font-weight:500;outline-offset:3px}
 html body .site-header :is(.nav-links,.lang-switch,.mega-menu,.mega-panel,.partners-menu,.service-menu){gap:clamp(10px,1.4vw,20px)}
@@ -110,4 +110,26 @@ html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]
   html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main>section:not(.hero):not(.hero-section):not(.immersive):not(.statement):not([data-layout="immersive"]){padding-top:var(--oa-section-pad)!important;padding-bottom:var(--oa-section-pad)!important}
   html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main .category-card{grid-template-columns:22px minmax(0,1fr)!important;column-gap:10px!important;padding:18px!important}
   html body:not([data-oa-x1]):not([data-oa-x2]):not([data-oa-x3]):not([data-oa-x4]):not([data-oa-x5]) main .category-card>span{min-width:0!important;width:auto!important;max-width:100%!important;overflow-wrap:anywhere!important}
+}
+
+/* Expanded-state responsive closure. Long process copy and disclosure lists keep
+   a genuine reading measure instead of inheriting compact card/column geometry. */
+@media(min-width:961px){
+  html body main .service-deep-dive[open] .service-process-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+html body main .smart-quote-layout .pricing-logic-card[open] .pricing-logic-details ul{
+  display:block!important;
+  columns:1!important;
+  column-count:1!important;
+  width:100%!important;
+  max-width:none!important;
+}
+html body main .smart-quote-layout .pricing-logic-card[open] .pricing-logic-details li{
+  display:list-item!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:250px!important;
+}
+@media(max-width:620px){
+  html body main .smart-quote-layout .pricing-logic-card[open] .pricing-logic-details li{min-width:0!important}
 }
