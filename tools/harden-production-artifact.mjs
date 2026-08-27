@@ -3,7 +3,6 @@ import path from 'node:path';
 import { generateMachineProjections } from './generate-machine-projections.mjs';
 
 const root = path.resolve(process.argv[2] || '_site');
-const quoteRadioSpacingPath = path.resolve('assets/css/quote-radio-spacing.css.inc');
 
 function walkHtml(dir, out = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -54,20 +53,11 @@ for (const file of walkHtml(root)) {
 
 generateMachineProjections(root);
 
-if (!fs.existsSync(quoteRadioSpacingPath)) throw new Error('Quote radio spacing authority source fragment missing.');
-const quoteRadioSpacing = fs.readFileSync(quoteRadioSpacingPath, 'utf8').trim();
-if (!quoteRadioSpacing.includes('QUOTE-RADIO-SPACING-AUTHORITY-20260827:START') || !quoteRadioSpacing.includes('QUOTE-RADIO-SPACING-AUTHORITY-20260827:END')) {
-  throw new Error('Quote radio spacing authority markers missing.');
-}
 const siteCssPath = path.join(root, 'assets/css/site.css');
-if (!fs.existsSync(siteCssPath)) throw new Error('Production artifact lost assets/css/site.css before quote spacing hardening.');
-let siteCss = fs.readFileSync(siteCssPath, 'utf8');
-siteCss = siteCss.replace(/\/\* QUOTE-RADIO-SPACING-AUTHORITY-20260827:START \*\/[\s\S]*?\/\* QUOTE-RADIO-SPACING-AUTHORITY-20260827:END \*\//g, '').trimEnd();
-fs.writeFileSync(siteCssPath, `${siteCss}\n\n${quoteRadioSpacing}\n`, 'utf8');
-
+if (!fs.existsSync(siteCssPath)) throw new Error('Production artifact lost assets/css/site.css during hardening.');
 const hardenedCss = fs.readFileSync(siteCssPath, 'utf8');
-if (!hardenedCss.includes('grid-template-columns:32px minmax(0,1fr)!important') || !hardenedCss.includes('column-gap:16px!important')) {
-  throw new Error('Production quote radio spacing contract was not applied.');
+if (!hardenedCss.includes('CANONICAL-DESIGN-SYSTEM-20260827:START') || !hardenedCss.includes('grid-template-columns:24px minmax(0,1fr)!important')) {
+  throw new Error('Canonical quote radio spacing contract is missing from source CSS.');
 }
 
 const forbidden = [
