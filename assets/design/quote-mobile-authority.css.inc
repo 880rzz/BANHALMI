@@ -5,7 +5,7 @@
 html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]):not([data-qa-x5]):not([data-qa-x6]) main .smart-quote-layout .category-card{
   min-height:0!important;
   height:max-content!important;
-  padding:12px!important;
+  padding:13px!important;
   align-content:start!important;
   align-items:start!important;
   align-self:start!important;
@@ -42,7 +42,7 @@ html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]
   html body:not([data-qa-x1]):not([data-qa-x2]):not([data-qa-x3]):not([data-qa-x4]):not([data-qa-x5]):not([data-qa-x6]) main .smart-quote-layout .category-card{
     height:fit-content!important;
     min-height:0!important;
-    padding:8px 12px 7px!important;
+    padding:8px 13px 7px!important;
     align-self:start!important;
     align-content:start!important;
   }
