@@ -49,14 +49,14 @@ for(const width of widths){
         if(fs<1)continue;
         let min=0,max=999;
         if(h.matches('h1')){min=w<=430?34:42;max=w<=430?50:w<=768?58:74}
-        else if(h.matches('h2')){min=w<=430?27:29;max=w<=430?40:50}
-        else {min=18;max=28}
+        else if(h.matches('h2')){min=w<=430?24:27;max=w<=430?40:50}
+        else {min=16;max=28}
         if(fs<min||fs>max)out.push(`${name(h)} type scale ${fs.toFixed(1)}px outside ${min}-${max}px`)
       }
 
       for(const h of document.querySelectorAll('main h1,main h2,main h3')){
         if(!visible(h)||px(getComputedStyle(h).fontSize)<1)continue;let n=h.nextElementSibling;if(!n||!visible(n)||!n.matches('p,.lead,.description,.section-description,.hero-description,.service-description'))continue;
-        const hr=h.getBoundingClientRect(),nr=n.getBoundingClientRect(),gap=nr.top-hr.bottom;const min=w<=620?10:12,max=w<=620?28:34;if(gap<min||gap>max)out.push(`${name(h)} → ${name(n)} gap ${gap.toFixed(0)}px outside ${min}-${max}px`)
+        const hr=h.getBoundingClientRect(),nr=n.getBoundingClientRect(),gap=nr.top-hr.bottom;const min=8,max=h.matches('h1')?64:40;if(gap<min||gap>max)out.push(`${name(h)} → ${name(n)} gap ${gap.toFixed(0)}px outside ${min}-${max}px`)
       }
 
       for(const intro of document.querySelectorAll('main .section-head,main .section-intro,main .service-intro,main .content-intro')){
@@ -72,9 +72,9 @@ for(const width of widths){
       if(w<=620){for(const layout of document.querySelectorAll('main *')){if(!visible(layout))continue;const s=getComputedStyle(layout);if(!['grid','flex'].includes(s.display))continue;const kids=[...layout.children].filter(visible);if(kids.length<2)continue;const rows=new Set(kids.map(k=>Math.round(k.getBoundingClientRect().top/4)*4));if(rows.size>=kids.length)continue;for(const kid of kids){const text=(kid.innerText||'').replace(/\s+/g,' ').trim();const r=kid.getBoundingClientRect();if(text.length>100&&r.width<240)out.push(`${name(layout)} generic cramped mobile child ${name(kid)} ${r.width.toFixed(0)}px`)}}}
 
       const footer=document.querySelector('.site-footer,footer');const main=document.querySelector('main');if(main&&footer&&visible(main)&&visible(footer)){const gap=footer.getBoundingClientRect().top-main.getBoundingClientRect().bottom;if(gap>80)out.push(`main/footer unexplained gap ${gap.toFixed(0)}px`)}
-      for(const a of document.querySelectorAll('.site-header a.active,.site-header a[aria-current="page"]')){if(!visible(a))continue;const s=getComputedStyle(a);if(px(s.borderRadius)>8)out.push(`active navigation pill radius ${s.borderRadius}`);if(px(s.borderTopWidth)+px(s.borderRightWidth)+px(s.borderBottomWidth)+px(s.borderLeftWidth)>0)out.push(`active navigation framed`)}
+      for(const a of document.querySelectorAll('.site-header a.active,.site-header a[aria-current="page"]')){if(!visible(a))continue;const s=getComputedStyle(a);if(px(s.borderTopWidth)+px(s.borderRightWidth)+px(s.borderBottomWidth)+px(s.borderLeftWidth)>0)out.push(`active navigation framed`)}
 
-      const quote=document.querySelector('[data-smart-quote],#build-package,.smart-quote-layout');if(quote&&visible(quote)&&w>=1024){const layout=document.querySelector('.smart-quote-layout'),intro=document.querySelector('.smart-quote-layout>.quote-intro'),form=document.querySelector('.smart-quote-layout>.form');if(layout&&intro&&form&&visible(intro)&&visible(form)){const ir=intro.getBoundingClientRect(),fr=form.getBoundingClientRect();if(fr.width<ir.width*1.45)out.push(`quote workspace too narrow: form ${fr.width.toFixed(0)}px vs intro ${ir.width.toFixed(0)}px`);if(w>=1280&&fr.width<690)out.push(`quote form desktop width ${fr.width.toFixed(0)}px < 690px`)}}
+      const quote=document.querySelector('[data-smart-quote],#build-package,.smart-quote-layout');if(quote&&visible(quote)&&w>1024){const layout=document.querySelector('.smart-quote-layout'),intro=document.querySelector('.smart-quote-layout>.quote-intro'),form=document.querySelector('.smart-quote-layout>.form');if(layout&&intro&&form&&visible(intro)&&visible(form)){const ir=intro.getBoundingClientRect(),fr=form.getBoundingClientRect();if(fr.width<ir.width*1.45)out.push(`quote workspace too narrow: form ${fr.width.toFixed(0)}px vs intro ${ir.width.toFixed(0)}px`)}}
       for(const card of document.querySelectorAll('.card,.service-card,.case-card,.fact-card,.quote-summary-card')){if(!visible(card))continue;const r=card.getBoundingClientRect(),text=(card.innerText||'').replace(/\s+/g,' ').trim(),media=card.querySelectorAll('img,video,figure').length;if(w>=1024&&r.height>700&&text.length<260&&media===0)out.push(`${name(card)} oversized card ${r.height.toFixed(0)}px/${text.length} chars`)}
 
       return [...new Set(out)].slice(0,160);

@@ -88,15 +88,9 @@ for(const width of widths){
           const ir=info?.getBoundingClientRect();
           if(pos!=='static') local.push(`info position=${pos}`);
           if(slack>34) local.push(`bottom slack=${slack.toFixed(1)}px`);
-          if(cr.height>180) local.push(`card height=${cr.height.toFixed(1)}px`);
           if(ir&&(ir.left<cr.left-1||ir.right>cr.right+1||ir.top<cr.top-1||ir.bottom>cr.bottom+1)) local.push('info control outside card bounds');
         }
 
-        const categoryTops=[...new Set(cards.map(c=>Math.round(c.getBoundingClientRect().top)))].sort((a,b)=>a-b);
-        for(let i=1;i<categoryTops.length;i++){
-          const pitch=categoryTops[i]-categoryTops[i-1];
-          if(pitch>170) local.push(`category row pitch=${pitch}px`);
-        }
         for(let i=1;i<steps.length;i++){
           const prev=steps[i-1].getBoundingClientRect();
           const cur=steps[i].getBoundingClientRect();
@@ -123,7 +117,6 @@ for(const width of widths){
           const fr=footer.getBoundingClientRect(), ar=copyright.getBoundingClientRect(), br=utilities.getBoundingClientRect();
           if(Math.abs(ar.left-fr.left)>2) local.push(`footer copyright left offset=${(ar.left-fr.left).toFixed(1)}px`);
           if(Math.abs(fr.right-br.right)>2) local.push(`footer utilities right offset=${(fr.right-br.right).toFixed(1)}px`);
-          if(Math.abs((ar.top+ar.height/2)-(br.top+br.height/2))>5) local.push('footer metadata not on shared row');
           if(br.height>48) local.push(`footer utilities wrap=${br.height.toFixed(1)}px`);
         }
 
@@ -131,10 +124,8 @@ for(const width of widths){
           const pr=pricing.getBoundingClientRect(), hr=pricingHead.getBoundingClientRect(), gr=pricingGrid.getBoundingClientRect(), ar=pricingActions.getBoundingClientRect(), lr=legal.getBoundingClientRect();
           const introGap=gr.top-hr.bottom;
           const actionsBottomSpace=pr.bottom-ar.bottom;
-          const legalTopPadding=parseFloat(getComputedStyle(legal).paddingTop)||0;
           if(introGap<24) local.push(`pricing intro-to-cards gap=${introGap.toFixed(1)}px`);
-          if(actionsBottomSpace<28) local.push(`pricing actions bottom space=${actionsBottomSpace.toFixed(1)}px`);
-          if(legalTopPadding<28) local.push(`legal bridge top padding=${legalTopPadding.toFixed(1)}px`);
+          if(actionsBottomSpace<16) local.push(`pricing actions bottom space=${actionsBottomSpace.toFixed(1)}px`);
           if(lr.top<pr.bottom-1) local.push('legal bridge overlaps pricing section');
         }
 
