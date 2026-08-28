@@ -4148,11 +4148,11 @@ html body main .trust-hero p.lead{
 
 /* One typographic scale: display type is restrained; body, descriptions and
    disclosure copy share a readable rhythm in every language. */
-html body main h1{font-size:clamp(2.35rem,4.8vw,4.375rem)!important;line-height:1.04!important;letter-spacing:-.03em!important;}
+html body main h1{font-size:clamp(2.35rem,4.8vw,4.375rem)!important;line-height:1.04!important;letter-spacing:-.024em!important;}
 html body main h2{font-size:clamp(1.7rem,3vw,2.75rem)!important;line-height:1.12!important;letter-spacing:-.022em!important;}
-html body main h3{font-size:clamp(1.08rem,1.45vw,1.3rem)!important;line-height:1.24!important;letter-spacing:-.012em!important;}
-html body main :is(p,li,dd){font-size:1rem;line-height:1.62;}
-html body main .lead{font-size:clamp(1.125rem,1.6vw,1.4rem)!important;line-height:1.48!important;}
+html body main h3{font-size:clamp(18px,1.45vw,1.3rem)!important;line-height:1.24!important;letter-spacing:-.012em!important;}
+html body main :is(p,li,dd){font-size:16px!important;line-height:1.62!important;}
+html body main .lead{font-size:clamp(19px,1.6vw,1.4rem)!important;line-height:1.48!important;}
 html body main :is(summary,.description,.desc,.microcopy,.field-help){line-height:1.5!important;}
 
 /* One editorial axis. Only explicit statement/CTA components are centred. */
@@ -4160,6 +4160,7 @@ html body main :is(.section-head,.prose,.legal,.form,.quote-intro,.about-longfor
 html body main :is(.section-head,.prose,.legal,.form,.quote-intro,.about-longform){width:min(100%,var(--apple-reading-max))!important;max-width:var(--apple-reading-max)!important;}
 html body main :is(.cta-band,.statement,.editorial-statement,.text-center){text-align:center!important;}
 html body main :is(.cta-band,.statement,.editorial-statement,.text-center) :is(h1,h2,h3,p,.lead){margin-inline:auto!important;text-align:center!important;}
+html body main>section.section-band[data-surface]{width:100vw!important;max-width:none!important;margin-inline:calc(50% - 50vw)!important;}
 
 /* Grids and disclosures use one gap and intrinsic rows; decorative divider
    chains are replaced by spacing except where a real boundary is meaningful. */
@@ -4179,9 +4180,13 @@ html body .smart-quote-layout .option-row{display:grid!important;grid-template-c
 html body .smart-quote-layout .option-row>input[type="radio"]{grid-column:1!important;inline-size:24px!important;block-size:24px!important;min-width:24px!important;min-height:24px!important;margin:0!important;align-self:center!important;}
 html body .smart-quote-layout .option-row>span{grid-column:2!important;display:grid!important;grid-template-columns:minmax(0,1fr) 44px!important;column-gap:12px!important;align-items:center!important;width:100%!important;line-height:1.45!important;}
 html body .smart-quote-layout .option-row .info-tip{position:static!important;grid-column:2!important;justify-self:end!important;align-self:center!important;margin:0!important;}
+html body .smart-quote-layout .quote-decision-guide ul{padding-inline-start:1rem!important;}
+html body .smart-quote-layout .pricing-logic-card{padding:0!important;}
+html body .smart-quote-layout .quote-summary-card{padding-inline:16px!important;}
 @media(min-width:769px){
   html body main .smart-quote-layout{grid-template-columns:minmax(380px,.78fr) minmax(0,1.22fr)!important;}
   html body main .smart-quote-layout>.quote-intro{max-width:380px!important;}
+  html body .smart-quote-layout .quote-summary-card{padding-inline:20px!important;}
 }
 
 /* Footer columns and metadata share the same left edge; no accidental mixed

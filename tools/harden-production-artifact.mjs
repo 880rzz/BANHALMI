@@ -85,4 +85,4 @@ for (const rel of required) {
   if (!fs.existsSync(path.join(root, rel))) throw new Error(`Production artifact lost required public file: ${rel}`);
 }
 
-console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links and ${buttonTypesAdded} non-form button types normalized; mobile quote radio spacing authority applied.`);
+console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links and ${buttonTypesAdded} non-form button types normalized; canonical quote spacing verified.`);
