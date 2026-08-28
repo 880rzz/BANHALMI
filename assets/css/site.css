@@ -3461,7 +3461,7 @@ main .card,.next-step-selector .card,main details{box-shadow:none;}
 .fp-choice:hover{transform:translateY(-2px);border-color:rgba(138,104,31,.35);}
 .fp-choice:focus-visible{outline:3px solid #8A681F;outline-offset:3px;}
 .fp-choice strong{display:block;max-width:17ch;font-size:clamp(1.18rem,1.8vw,1.5rem);line-height:1.08;letter-spacing:-.03em;}
-.fp-choice span{display:block;margin-top:1rem;max-width:31ch;color:#6e7480;font-size:.96rem;line-height:1.45;}
+.fp-choice span{display:block;margin-top:1rem;max-width:31ch;color:#656b75;font-size:.96rem;line-height:1.45;}
 .fp-choice em{display:block;margin-top:1.35rem;color:#8A681F;font-style:normal;font-weight:650;font-size:.92rem;}
 .fp-decision-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.1rem;margin-top:clamp(1.7rem,3vw,2.4rem);}
 .fp-decision-actions .btn{margin:0;}
@@ -3473,7 +3473,7 @@ main .card,.next-step-selector .card,main details{box-shadow:none;}
 
 
 /* STAGE69-FINE-ART-PATH:START */
-.fp-art-path{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem .75rem;margin-top:1.35rem;color:#6e7480;font-size:.95rem;line-height:1.45;}
+.fp-art-path{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem .75rem;margin-top:1.35rem;color:#656b75;font-size:.95rem;line-height:1.45;}
 .fp-art-path a{color:#1d1d1f;font-weight:650;text-decoration:none;text-underline-offset:.2em;}
 .fp-art-path a:hover{text-decoration:underline;}
 .fp-art-path a:focus-visible{outline:3px solid #8A681F;outline-offset:3px;border-radius:6px;}
