@@ -124,11 +124,6 @@ if (fs.existsSync(quoteCalculatorPath)) {
   fs.writeFileSync(quoteCalculatorPath, quoteJs);
 }
 
-const cssPath = path.join(root, 'assets/css/site.css');
-if (fs.existsSync(cssPath)) {
-  fs.appendFileSync(cssPath, '\n.site-footer .footer-accordion summary{color:#CBB45F!important;opacity:1!important;}\n');
-}
-
 // AUDIENCE-POSITIONING-PRODUCTION-GUARD
 const semanticContracts = [
   ['index.html',['Executive Portraiture &amp; Headshots','brand photography','C-level','artists','actors','visual presence']],

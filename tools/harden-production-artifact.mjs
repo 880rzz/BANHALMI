@@ -56,9 +56,7 @@ generateMachineProjections(root);
 const siteCssPath = path.join(root, 'assets/css/site.css');
 if (!fs.existsSync(siteCssPath)) throw new Error('Production artifact lost assets/css/site.css during hardening.');
 const hardenedCss = fs.readFileSync(siteCssPath, 'utf8');
-if (!hardenedCss.includes('UI-POLISH-20260816:START') ||
-    !hardenedCss.includes('QUOTE-LAYOUT-REGRESSION-20260816:START') ||
-    !hardenedCss.includes('grid-template-columns:24px minmax(0,1fr)!important')) {
+if (!hardenedCss.includes('CANONICAL-DESIGN-SYSTEM-20260827:START') || !hardenedCss.includes('grid-template-columns:24px minmax(0,1fr)!important')) {
   throw new Error('Canonical quote radio spacing contract is missing from source CSS.');
 }
 
