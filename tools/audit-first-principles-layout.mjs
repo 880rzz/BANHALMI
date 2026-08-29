@@ -48,8 +48,12 @@ for(const width of widths){
         // first-principles gate consistent so it never reports a false 0px scale.
         if(fs<1)continue;
         let min=0,max=999;
-        if(h.matches('h1')){min=w<=430?34:42;max=w<=430?50:w<=768?58:74}
-        else if(h.matches('h2')){min=w<=430?24:27;max=w<=430?40:50}
+        // Canonical Stage 83 editorial scale: restrained enough for the
+        // August visual baseline, while preserving a clear heading hierarchy.
+        // Keep this gate aligned with --apple-h1/--apple-h2 in site.css so a
+        // historical oversized threshold cannot force a regression.
+        if(h.matches('h1')){min=34;max=w<=430?46:w<=768?52:58}
+        else if(h.matches('h2')){min=24;max=w<=430?34:38}
         else {min=16;max=28}
         if(fs<min||fs>max)out.push(`${name(h)} type scale ${fs.toFixed(1)}px outside ${min}-${max}px`)
       }
