@@ -58,21 +58,11 @@
 
   // Production audit: accessible Services submenu and gallery lightbox.
 
-  // Desktop footer columns stay open like Apple's information architecture;
-  // on small screens they return to compact native accordions.
-  var footerMedia = window.matchMedia("(min-width: 681px)");
+  // Footer groups are native disclosures at every viewport. Automatically
+  // opening them on desktop created a second, needlessly tall footer row.
   var footerAccordions = Array.prototype.slice.call(document.querySelectorAll("details.footer-accordion"));
-
-  function syncFooterAccordions(event) {
-    var desktop = event && typeof event.matches === "boolean" ? event.matches : footerMedia.matches;
-    footerAccordions.forEach(function (details) {
-      details.open = desktop;
-    });
-  }
   if (footerAccordions.length) {
-    syncFooterAccordions();
-    if (typeof footerMedia.addEventListener === "function") footerMedia.addEventListener("change", syncFooterAccordions);
-    else if (typeof footerMedia.addListener === "function") footerMedia.addListener(syncFooterAccordions);
+    footerAccordions.forEach(function (details) { details.open = false; });
   }
 
   // Scroll reveal (respects reduced motion)
