@@ -4148,7 +4148,7 @@ html body main .trust-hero p.lead{
   --apple-reading-max:760px;
   --apple-wide-reading-max:900px;
   --apple-gutter:clamp(20px,4.2vw,56px);
-  --apple-section-space:clamp(56px,6vw,88px);
+  --apple-section-space:clamp(44px,5.5vw,72px);
   --apple-card-gap:clamp(22px,2.4vw,32px);
 }
 
@@ -4163,7 +4163,6 @@ html body main :is(summary,.description,.desc,.microcopy,.field-help){line-heigh
 /* Every section owns its real height. Deferred paint placeholders created
    artificial 760 px gaps on Safari when a section approached the viewport. */
 html body main>section{content-visibility:visible!important;contain-intrinsic-size:auto!important;}
-html body main>section:not(.hero):not(.hero-section){padding-block:var(--apple-section-space)!important;}
 html body main>section.hero.hero-image-first.hero-visual-only,
 html body main>section.hero.hero-image-first.hero-visual-only,
 html body main>section.hero.hero-image-first.hero-visual-only>.wrap{padding-top:0!important;padding-bottom:0!important;margin-top:0!important;}
