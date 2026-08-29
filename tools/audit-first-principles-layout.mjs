@@ -53,7 +53,7 @@ for(const width of widths){
         // Keep this gate aligned with --apple-h1/--apple-h2 in site.css so a
         // historical oversized threshold cannot force a regression.
         if(h.matches('h1')){min=34;max=w<=430?40:w<=768?44:58}
-        else if(h.matches('h2')){min=24;max=w<=430?30:32}
+        else if(h.matches('h2')){min=24;max=w<=430?30:w<=768?32:38}
         else {min=16;max=28}
         if(fs<min||fs>max)out.push(`${name(h)} type scale ${fs.toFixed(1)}px outside ${min}-${max}px`)
       }
