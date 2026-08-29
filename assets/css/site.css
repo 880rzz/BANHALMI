@@ -3451,7 +3451,7 @@ main .card,.next-step-selector .card,main details{box-shadow:none;}
 .next-step-selector{max-width:1180px;margin-inline:auto;}
 .next-step-selector .card{border-radius:28px;padding:clamp(1.4rem,2.7vw,2.25rem);border:1px solid rgba(32,37,48,.10);}
 .next-step-selector .card h2,.next-step-selector .card h3{letter-spacing:-.025em;line-height:1.08;}
-.fp-decision-system{background:#f5f5f7;color:#1d1d1f;padding:clamp(4.75rem,8vw,8.5rem) clamp(1.25rem,5vw,4rem);}
+.fp-decision-system{background:#f5f5f7;color:#1d1d1f;padding:clamp(3.75rem,6vw,6rem) clamp(1.25rem,5vw,4rem);}
 .fp-decision-inner{width:min(1180px,100%);margin:0 auto;}
 .fp-decision-eyebrow{margin:0 0 .75rem;color:#8A681F;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;}
 .fp-decision-system h2{margin:0;max-width:15ch;font-size:clamp(2.45rem,5.5vw,5.25rem);line-height:.96;letter-spacing:-.055em;font-weight:700;}
@@ -3463,9 +3463,11 @@ main .card,.next-step-selector .card,main details{box-shadow:none;}
 .fp-choice strong{display:block;max-width:17ch;font-size:clamp(1.18rem,1.8vw,1.5rem);line-height:1.08;letter-spacing:-.03em;}
 .fp-choice span{display:block;margin-top:1rem;max-width:31ch;color:#656b75;font-size:.96rem;line-height:1.45;}
 .fp-choice em{display:block;margin-top:1.35rem;color:#8A681F;font-style:normal;font-weight:650;font-size:.92rem;}
-.fp-decision-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.1rem;margin-top:clamp(1.7rem,3vw,2.4rem);}
+.fp-decision-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem 1rem;margin-top:clamp(1.25rem,2vw,1.75rem);}
 .fp-decision-actions .btn{margin:0;}
-.fp-decision-actions .fp-text-action{color:#1d1d1f;font-weight:600;text-underline-offset:.2em;}
+.fp-decision-actions .fp-primary-action{background:#202530;color:#fff;border-color:#202530;}
+.fp-decision-actions .fp-primary-action:hover,.fp-decision-actions .fp-primary-action:focus-visible{background:#2F6F78;border-color:#2F6F78;color:#fff;}
+.fp-decision-actions .fp-text-action{display:inline-flex;align-items:center;min-height:44px;color:#1d1d1f;font-weight:600;text-underline-offset:.2em;}
 @media(max-width:900px){.fp-decision-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.fp-choice{min-height:172px;}}
 @media(max-width:620px){.fp-decision-system{padding:4rem 1.15rem;}.fp-decision-system h2{font-size:clamp(2.35rem,12vw,3.7rem);}.fp-decision-grid{grid-template-columns:1fr;gap:.72rem;margin-top:2rem;}.fp-choice{min-height:0;padding:1.35rem 1.25rem;border-radius:22px;}.fp-choice strong{max-width:none;font-size:1.2rem;}.fp-choice span{margin-top:.55rem;}.fp-choice em{margin-top:.9rem;}.fp-decision-actions{align-items:stretch;flex-direction:column;}.fp-decision-actions .btn,.fp-decision-actions .fp-text-action{width:100%;justify-content:center;text-align:center;min-height:48px;display:inline-flex;align-items:center;}}
 @media(prefers-reduced-motion:reduce){.fp-choice{transition:none;}.fp-choice:hover{transform:none;}}
@@ -4156,8 +4158,9 @@ html body main .lead{font-size:clamp(19px,1.6vw,1.4rem)!important;line-height:1.
 html body main :is(summary,.description,.desc,.microcopy,.field-help){line-height:1.5!important;}
 html body main>section.hero.hero-image-first.hero-visual-only,
 html body main>section.hero.hero-image-first.hero-visual-only>.wrap{padding-top:0!important;margin-top:0!important;}
+html body .site-header{background:rgba(255,255,255,.98)!important;}
 html body .fp-decision-system.surface-soft .fp-art-path>span{color:#3f4147!important;}
-html body .presence-thesis[data-surface="dark"] :is(h1,h2,h3) :is(.title-accent,.semantic-emphasis){color:#DCC56B!important;}
+html body .presence-thesis[data-surface="dark"] :is(h1,h2,h3) :is(.title-accent,.semantic-emphasis){background:none!important;-webkit-text-fill-color:#DCC56B!important;color:#DCC56B!important;}
 
 /* One editorial axis. Only explicit statement/CTA components are centred. */
 html body main :is(.section-head,.prose,.legal,.form,.quote-intro,.about-longform,.service-context-lead){margin-left:0!important;margin-right:auto!important;text-align:left!important;}
