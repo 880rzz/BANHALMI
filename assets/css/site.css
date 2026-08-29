@@ -4230,8 +4230,8 @@ html body .site-footer .footer-bottom>span:last-child{justify-self:end!important
 }
 
 @media(max-width:768px){
-  html body main h1{font-size:clamp(2.2rem,9vw,3.35rem)!important;}
-  html body main h2{font-size:clamp(1.6rem,6.5vw,2.25rem)!important;}
+  html body main h1{font-size:clamp(2.15rem,4.8vw,2.75rem)!important;}
+  html body main h2{font-size:clamp(1.55rem,3.2vw,2rem)!important;}
   html body main :is(.cards,.steps,.card-grid,.grid-2,.grid-3,.service-info-cards,.category-grid,.legal-grid){grid-template-columns:1fr!important;}
   html body main :is(.service-process-grid,.quote-deep-details .card-grid){grid-template-columns:1fr!important;}
   html body .site-footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
@@ -4240,8 +4240,8 @@ html body .site-footer .footer-bottom>span:last-child{justify-self:end!important
   html body .site-footer .footer-bottom>span:last-child{justify-self:start!important;text-align:left!important;white-space:normal!important;}
 }
 @media(max-width:560px){
-  html body main h1{font-size:clamp(2.05rem,10vw,2.85rem)!important;}
-  html body main h2{font-size:clamp(1.55rem,7.5vw,2rem)!important;}
+  html body main h1{font-size:clamp(2.15rem,4.8vw,2.75rem)!important;}
+  html body main h2{font-size:clamp(1.55rem,3.2vw,2rem)!important;}
   html body .site-footer :is(.footer-grid,.footer-bottom){grid-template-columns:1fr!important;}
   html body .site-footer .footer-legal-list{min-width:0;}
   html body .site-footer .footer-legal-list li>strong{white-space:normal;}

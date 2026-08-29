@@ -52,8 +52,8 @@ for(const width of widths){
         // August visual baseline, while preserving a clear heading hierarchy.
         // Keep this gate aligned with --apple-h1/--apple-h2 in site.css so a
         // historical oversized threshold cannot force a regression.
-        if(h.matches('h1')){min=34;max=w<=430?46:w<=768?52:58}
-        else if(h.matches('h2')){min=24;max=w<=430?34:38}
+        if(h.matches('h1')){min=34;max=w<=430?40:w<=768?44:58}
+        else if(h.matches('h2')){min=24;max=w<=430?30:32}
         else {min=16;max=28}
         if(fs<min||fs>max)out.push(`${name(h)} type scale ${fs.toFixed(1)}px outside ${min}-${max}px`)
       }
