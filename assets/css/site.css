@@ -3350,9 +3350,9 @@ html{min-height:100%;background:#202530!important}
 body{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
 body>main,#main{flex:1 0 auto;width:100%;min-width:0}
 body>.site-footer,.site-footer{flex:0 0 auto;width:100%}
-.trust-proof .grid-3{gap:24px!important;row-gap:24px!important}
+.trust-proof .grid-3{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:24px!important;row-gap:24px!important}
 .trust-proof .grid-3>.card{margin:0!important;border-radius:12px}
-@media(max-width:760px){.trust-proof .grid-3{gap:16px!important;row-gap:16px!important}}
+@media(max-width:760px){.trust-proof .grid-3{grid-template-columns:1fr!important;gap:16px!important;row-gap:16px!important}}
 /* STAGE48-LAYOUT-CACHE-CONTRACT:END */
 
 
