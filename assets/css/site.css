@@ -1554,7 +1554,7 @@ button.card:hover,
 }
 main>section{padding:var(--jony-air) 0;}
 .section-band{background:#FAFAF8;border-top:1px solid rgba(32,37,48,.07);border-bottom:1px solid rgba(32,37,48,.07);}
-.hero:not(.hero-image-first){padding:clamp(78px,8.2vw,132px) 0 var(--jony-air-tight);}
+.hero:not(.hero-image-first){padding:clamp(48px,5vw,72px) 0 var(--jony-air-tight);}
 .hero .lead,.section-head,.prose{max-width:760px;}
 .eyebrow,.section-head .eyebrow,.hero .eyebrow{
   text-transform:none;
@@ -1593,7 +1593,7 @@ h2{max-width:20ch;}
 .jony-gallery-section .section-head{margin-bottom:0;}
 .jony-gallery-section .lead{font-size:clamp(1.05rem,1.4vw,1.34rem);}
 @media (max-width:920px){.jony-gallery-grid{column-count:2}.nav-links a{font-size:clamp(1.06rem,4vw,1.42rem)}}
-@media (max-width:620px){main>section{padding:56px 0}.hero:not(.hero-image-first){padding:64px 0 44px}.jony-gallery-grid{column-count:1}.service-hero-image{margin-top:30px}.hero-actions,.service-actions{width:100%;}.hero-actions .btn,.service-actions .btn{width:100%;text-align:center;}.btn-link{min-height:44px;align-items:center;}}
+@media (max-width:620px){main>section{padding:56px 0}.hero:not(.hero-image-first){padding:48px 0 44px}.jony-gallery-grid{column-count:1}.service-hero-image{margin-top:30px}.hero-actions,.service-actions{width:100%;}.hero-actions .btn,.service-actions .btn{width:100%;text-align:center;}.btn-link{min-height:44px;align-items:center;}}
 
 /* Jony Ive portrait archive expansion — quiet large-image rhythm */
 .portrait-archive-item{background:#f6f2eb;}
@@ -4157,7 +4157,9 @@ html body main :is(p,li,dd){font-size:16px!important;line-height:1.62!important;
 html body main .lead{font-size:clamp(19px,1.6vw,1.4rem)!important;line-height:1.48!important;}
 html body main :is(summary,.description,.desc,.microcopy,.field-help){line-height:1.5!important;}
 html body main>section.hero.hero-image-first.hero-visual-only,
-html body main>section.hero.hero-image-first.hero-visual-only>.wrap{padding-top:0!important;margin-top:0!important;}
+html body main>section.hero.hero-image-first.hero-visual-only,
+html body main>section.hero.hero-image-first.hero-visual-only>.wrap{padding-top:0!important;padding-bottom:0!important;margin-top:0!important;}
+html body main>section.hero.hero-image-first.hero-visual-only .hero-figure{margin-bottom:0!important;}
 html body .site-header{background:rgba(255,255,255,.98)!important;}
 html body .fp-decision-system.surface-soft .fp-art-path>span{color:#3f4147!important;}
 html body .presence-thesis[data-surface="dark"] :is(h1,h2,h3) :is(.title-accent,.semantic-emphasis){background:none!important;-webkit-text-fill-color:#DCC56B!important;color:#DCC56B!important;}
