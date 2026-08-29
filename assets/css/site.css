@@ -4148,14 +4148,14 @@ html body main .trust-hero p.lead{
   --apple-reading-max:760px;
   --apple-wide-reading-max:900px;
   --apple-gutter:clamp(20px,4.2vw,56px);
-  --apple-section-space:clamp(44px,5.5vw,72px);
-  --apple-card-gap:clamp(16px,2vw,24px);
+  --apple-section-space:clamp(56px,6vw,88px);
+  --apple-card-gap:clamp(22px,2.4vw,32px);
 }
 
 /* One typographic scale: display type is restrained; body, descriptions and
    disclosure copy share a readable rhythm in every language. */
-html body main h1{font-size:clamp(2.15rem,3.6vw,3.55rem)!important;line-height:1.06!important;letter-spacing:-.024em!important;}
-html body main h2{font-size:clamp(1.55rem,2.35vw,2.35rem)!important;line-height:1.14!important;letter-spacing:-.022em!important;}
+html body main h1{font-size:clamp(2.1rem,3.25vw,3.25rem)!important;line-height:1.08!important;letter-spacing:-.024em!important;}
+html body main h2{font-size:clamp(1.45rem,2.1vw,2.1rem)!important;line-height:1.18!important;letter-spacing:-.022em!important;}
 html body main h3{font-size:clamp(18px,1.45vw,1.3rem)!important;line-height:1.24!important;letter-spacing:-.012em!important;}
 html body main :is(p,li,dd){font-size:16px!important;line-height:1.62!important;}
 html body main .lead{font-size:clamp(19px,1.6vw,1.4rem)!important;line-height:1.48!important;}
@@ -4163,6 +4163,7 @@ html body main :is(summary,.description,.desc,.microcopy,.field-help){line-heigh
 /* Every section owns its real height. Deferred paint placeholders created
    artificial 760 px gaps on Safari when a section approached the viewport. */
 html body main>section{content-visibility:visible!important;contain-intrinsic-size:auto!important;}
+html body main>section:not(.hero):not(.hero-section){padding-block:var(--apple-section-space)!important;}
 html body main>section.hero.hero-image-first.hero-visual-only,
 html body main>section.hero.hero-image-first.hero-visual-only,
 html body main>section.hero.hero-image-first.hero-visual-only>.wrap{padding-top:0!important;padding-bottom:0!important;margin-top:0!important;}
@@ -4186,9 +4187,19 @@ html body main .grid-3{display:grid!important;grid-template-columns:repeat(3,min
 html body main :is(.card,.step,.quote-step,.quote-summary-card,.category-card,.option-row){height:auto!important;min-height:0!important;align-self:start!important;}
 html body main .service-process-grid,
 html body main .quote-deep-details .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+html body main .service-process-grid{margin-bottom:var(--apple-section-space)!important;}
+html body main .partner-grid{gap:var(--apple-card-gap)!important;}
+html body main .partner-cta{display:flex!important;justify-content:center!important;margin-top:clamp(2rem,3vw,3rem)!important;}
+html body main .partner-cta .btn{margin-inline:auto!important;}
 html body main :is(.faq,.quote-deep-details) details{border-top:0!important;border-bottom:1px solid var(--line)!important;}
 html body main details>summary{min-height:52px;display:flex;align-items:center;font-size:1rem!important;line-height:1.45!important;}
 html body main details[open]>summary{margin-bottom:1rem;}
+html body main .project-framework-drawer>summary{grid-template-columns:minmax(0,1fr) auto!important;padding-block:20px!important;}
+html body main .project-framework-drawer>summary>span:first-child{display:grid!important;gap:4px!important;min-width:0;}
+html body main .project-framework-drawer>summary>span:first-child strong{font-size:1rem!important;line-height:1.25!important;}
+html body main .project-framework-drawer>summary>span:first-child small{display:block!important;font-size:.84rem!important;line-height:1.4!important;color:var(--muted)!important;letter-spacing:0!important;text-transform:none!important;}
+html body main .project-framework-drawer>summary>span:last-child{font-size:1.25rem!important;line-height:1!important;}
+html body main .project-framework-content>section{padding-block:clamp(28px,3vw,42px)!important;}
 
 /* Quote calculator: radio, label and optional information control form one
    stable row without inherited label margins. */
@@ -4224,6 +4235,7 @@ html body .site-footer .footer-legal-list li>strong{white-space:nowrap;}
 html body .site-footer .footer-bottom{display:grid!important;grid-template-columns:max-content minmax(0,1fr)!important;gap:8px 28px!important;align-items:center!important;justify-content:start!important;}
 html body .site-footer .footer-bottom>span:first-child{justify-self:start!important;text-align:left!important;white-space:nowrap!important;}
 html body .site-footer .footer-bottom>span:last-child{justify-self:end!important;text-align:right!important;white-space:nowrap!important;}
+html body .site-footer,html body .site-footer .wrap{min-height:0!important;}
 @media(max-width:1040px){
   html body .site-footer .footer-accordion>summary{color:#CBB45F!important;opacity:1!important;font-weight:650!important;}
   html body .site-footer .footer-accordion>summary:is(:hover,:focus-visible){color:#fff!important;}
