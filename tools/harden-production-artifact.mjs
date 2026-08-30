@@ -56,7 +56,9 @@ generateMachineProjections(root);
 const siteCssPath = path.join(root, 'assets/css/site.css');
 if (!fs.existsSync(siteCssPath)) throw new Error('Production artifact lost assets/css/site.css during hardening.');
 const hardenedCss = fs.readFileSync(siteCssPath, 'utf8');
-if (!hardenedCss.includes('CANONICAL-DESIGN-SYSTEM-20260827:START') || !hardenedCss.includes('grid-template-columns:24px minmax(0,1fr)!important')) {
+// Verify the rendered contract by its semantic selector and declaration rather
+// than a historical comment marker. CSS minifiers legitimately remove comments.
+if (!/\.smart-quote-layout\s+\.option-row\s*\{[^}]*grid-template-columns\s*:\s*24px\s+minmax\(0,1fr\)/s.test(hardenedCss)) {
   throw new Error('Canonical quote radio spacing contract is missing from source CSS.');
 }
 
