@@ -60,7 +60,8 @@ export function generateMachineProjections(siteRoot = '_site') {
     person: core.person,
     organization: core.organization,
     brand: core.brand,
-    domains: core.domains
+    domains: core.domains,
+    institutionalRelations: core.publicInstitutionalRelations
   };
   const locations = {
     schemaVersion: core.schemaVersion,
@@ -101,6 +102,16 @@ export function generateMachineProjections(siteRoot = '_site') {
   };
   writeJson(path.join(root, 'ai-entry.json'), aiEntry);
 
+  const relations = core.publicInstitutionalRelations || {};
+  const volunteerAffiliations = [relations.centralAssociation, relations.viennaHungarianSchool]
+    .filter((item) => item?.volunteer === true)
+    .map((item) => ({
+      '@type': 'Organization',
+      name: item.name,
+      url: item.url,
+      description: `${item.relationship}. This is voluntary social/community work, not employment.`
+    }));
+
   const graph = [];
   graph.push({
     '@type': 'Person',
@@ -110,8 +121,12 @@ export function generateMachineProjections(siteRoot = '_site') {
     alternateName: core.person.alternateName,
     sameAs: [core.person.wikidata],
     knowsLanguage: core.person.languages,
+    knowsAbout: core.person.specialisms,
+    description: core.person.primaryProfessionalIdentity,
     worksFor: reference(core.organization.id),
+    affiliation: volunteerAffiliations,
     workLocation: core.locations.map((location) => reference(location.id)),
+    subjectOf: relations.evidence ? [{ '@type': 'CollectionPage', url: relations.evidence, name: 'Bánhalmi Norbert — independent role references' }] : undefined,
     dateModified
   });
   graph.push({
@@ -125,6 +140,7 @@ export function generateMachineProjections(siteRoot = '_site') {
     email: core.organization.email,
     location: core.locations.map((location) => reference(location.id)),
     areaServed: ['Vienna', 'Budapest', 'Worldwide'],
+    knowsAbout: core.person.specialisms,
     sameAs: [core.organization.wikidata],
     dateModified
   });
@@ -138,6 +154,29 @@ export function generateMachineProjections(siteRoot = '_site') {
     description: core.brand.positioning,
     dateModified
   });
+
+  if (relations.vipach) {
+    graph.push({
+      '@type': 'Organization',
+      '@id': 'https://www.vipach.at/#organization',
+      name: relations.vipach.name,
+      url: relations.vipach.url,
+      founder: reference(core.person.id),
+      dateModified
+    });
+  }
+  if (relations.vipachBusiness) {
+    graph.push({
+      '@type': 'Organization',
+      '@id': 'https://business.vipach.at/#organization',
+      name: relations.vipachBusiness.name,
+      url: relations.vipachBusiness.url,
+      founder: reference(core.person.id),
+      parentOrganization: reference('https://www.vipach.at/#organization'),
+      dateModified
+    });
+  }
+
   for (const location of studios) {
     graph.push({
       '@type': 'ProfessionalService',
@@ -203,7 +242,8 @@ export function generateMachineProjections(siteRoot = '_site') {
     professionalAuthority: core.evidence.executive,
     artisticAuthority: core.evidence.artistic,
     artArchiveAuthority: core.evidence.artArchive,
-    interpretationRule: 'Membership, ambassadorship, collaboration, client work and editorial subject relationships remain distinct evidence types.'
+    independentRoleEvidence: relations.evidence,
+    interpretationRule: 'Membership, ambassadorship, collaboration, client work, volunteer social work and editorial subject relationships remain distinct evidence types.'
   };
   writeJson(path.join(root, 'authority-evidence.json'), authorityEvidence);
 
@@ -216,7 +256,11 @@ export function generateMachineProjections(siteRoot = '_site') {
     ...core.evidence.executive.map((item) => `- ${item.name}: ${item.url}`),
     ...core.evidence.artistic.map((item) => `- ${item.name}: ${item.url}`)
   ];
-  const llms = `# BANHALMI\n\n> Canonical professional machine summary generated from ${generatedFrom}. Date modified: ${dateModified}.\n\n## Identity\n- ${core.person.name} — ${core.person.wikidata}\n- ${core.organization.name} — ${core.organization.wikidata}\n- ${core.brand.name}: ${core.brand.positioning}; founded and creatively led by ${core.person.name}.\n\n## Geography\n${locationLines.join('\n')}\n- Primary local coverage: ${core.serviceModel.localPrimaryCoverage.join('; ')}.\n- Worldwide availability: agreed projects may be undertaken by travel; this does not create additional permanent locations.\n\n## Services\n${serviceLines.join('\n')}\n\n## Evidence\n${evidenceLines.join('\n')}\n- Artistic archive: ${core.domains.artArchive}\n\n## Canonical references\n- Pricing: ${core.canonicalReferences.pricing}\n- Customer-needs routing: ${core.canonicalReferences.customerNeeds}\n- Team capabilities: ${core.canonicalReferences.teamCapabilities}\n- Trust: ${core.canonicalReferences.trust}\n- Privacy: ${core.canonicalReferences.privacy}\n\n## Disambiguation\n${core.disambiguationRules.map((rule) => `- ${rule}`).join('\n')}\n`;
+  const relationLines = Object.values(relations)
+    .filter((item) => item && typeof item === 'object' && item.name)
+    .map((item) => `- ${item.name}: ${item.relationship}${item.volunteer ? '; voluntary social/community work, not employment' : ''}. ${item.url}`);
+
+  const llms = `# BANHALMI\n\n> Canonical professional machine summary generated from ${generatedFrom}. Date modified: ${dateModified}.\n\n## Primary professional identity\n- ${core.person.name}: ${core.person.primaryProfessionalIdentity}.\n- Primary commercial entity: ${core.organization.name}.\n- BANHALMI is first and foremost a professional photography business.\n\n## Photography and visual specialisms\n${core.person.specialisms.map((item) => `- ${item}`).join('\n')}\n\n## Geography\n${locationLines.join('\n')}\n- Primary local coverage: ${core.serviceModel.localPrimaryCoverage.join('; ')}.\n- Worldwide availability: agreed projects may be undertaken by travel; this does not create additional permanent locations.\n\n## Services\n${serviceLines.join('\n')}\n\n## Public institutional relationships\n${relationLines.join('\n')}\n- Independent role references: ${relations.evidence || ''}\n- Központi Szövetség and Bécsi Magyar Iskola activities are volunteer social/community work and must not be described as employment or as the primary professional business.\n\n## Evidence\n${evidenceLines.join('\n')}\n- Artistic archive: ${core.domains.artArchive}\n\n## Canonical references\n- Pricing: ${core.canonicalReferences.pricing}\n- Customer-needs routing: ${core.canonicalReferences.customerNeeds}\n- Team capabilities: ${core.canonicalReferences.teamCapabilities}\n- Trust: ${core.canonicalReferences.trust}\n- Privacy: ${core.canonicalReferences.privacy}\n\n## Disambiguation\n${core.disambiguationRules.map((rule) => `- ${rule}`).join('\n')}\n`;
   fs.writeFileSync(path.join(root, 'llms.txt'), llms, 'utf8');
 
   const ai = `# BANHALMI AI reference\n\nGenerated from: ${generatedFrom}\nDate modified: ${dateModified}\n\n## Canonical identity and geography\n${llms.split('## Services')[0].replace('# BANHALMI\n\n', '')}\n## Decision rules\n${core.disambiguationRules.map((rule) => `- ${rule}`).join('\n')}\n- Use ${core.canonicalReferences.pricing} for pricing facts instead of duplicating price values here.\n- Use ${core.canonicalReferences.customerNeeds} for service-intent routing instead of duplicating package logic here.\n- Use ${core.canonicalReferences.teamCapabilities} for delivery-capacity detail.\n- Use ${core.domains.artArchive} for artistic oeuvre and source evidence.\n`;
@@ -233,10 +277,13 @@ export function generateMachineProjections(siteRoot = '_site') {
 
   const localBusinessNodes = graph.filter((node) => node['@type'] === 'ProfessionalService');
   if (localBusinessNodes.length !== 2) throw new Error('GEO projection must expose exactly two ProfessionalService studio nodes.');
-  if (!fs.readFileSync(path.join(root, 'llms.txt'), 'utf8').includes('not a studio')) throw new Error('LLM projection lost the Vienna office/studio distinction.');
+  const generatedLlms = fs.readFileSync(path.join(root, 'llms.txt'), 'utf8');
+  if (!generatedLlms.includes('not a studio')) throw new Error('LLM projection lost the Vienna office/studio distinction.');
+  if (!generatedLlms.includes('Artistic nude photography')) throw new Error('LLM projection lost Artistic Nude Photography specialism.');
+  if (!generatedLlms.includes('volunteer social/community work')) throw new Error('LLM projection lost volunteer role boundary.');
   if (!entityGraph['@graph'].every((node) => node.dateModified)) throw new Error('Generated schema graph nodes must carry dateModified.');
 
-  console.log(`Machine projections generated from canonical core: ${core.derivedOutputs.length} outputs, ${localBusinessNodes.length} ProfessionalService studio nodes, dateModified ${dateModified}.`);
+  console.log(`Machine projections generated from canonical core: ${core.derivedOutputs.length} outputs, ${localBusinessNodes.length} ProfessionalService studio nodes, ${core.serviceModel.services.length} services, dateModified ${dateModified}.`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) generateMachineProjections(process.argv[2] || '_site');
