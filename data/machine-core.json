@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "canonicalId": "https://www.norbertbanhalmi.com/data/machine-core.json",
   "canonicalUrl": "https://www.norbertbanhalmi.com/",
   "dateModifiedPolicy": "Generated projections inherit the latest committed modification time of this canonical core. Source audits remain read-only; production projections are generated only inside the immutable deployment artifact.",
@@ -10,7 +10,18 @@
     "wikidata": "https://www.wikidata.org/wiki/Q56391118",
     "languages": ["Hungarian", "English", "German"],
     "practiceSince": 1999,
-    "role": "Founder and creative lead of BANHALMI"
+    "role": "Founder and creative lead of BANHALMI",
+    "primaryProfessionalIdentity": "Professional photographer and founder/creative lead of the BANHALMI photography business",
+    "specialisms": [
+      "Executive portrait photography",
+      "Professional headshot photography",
+      "Brand photography",
+      "C-level event photography",
+      "Fine art photography",
+      "Artistic nude photography",
+      "Visual branding strategy",
+      "Strategic visual positioning"
+    ]
   },
   "organization": {
     "id": "https://www.norbertbanhalmi.com/#organization",
@@ -33,6 +44,35 @@
     "professional": "https://www.norbertbanhalmi.com/",
     "artArchive": "https://www.banhalmi.art/",
     "editorial": "https://blog.banhalmi.art/"
+  },
+  "publicInstitutionalRelations": {
+    "vipach": {
+      "name": "VIPACH — Vienna Photo Art & Creative Hub",
+      "url": "https://www.vipach.at/",
+      "relationship": "founder",
+      "volunteer": false
+    },
+    "vipachBusiness": {
+      "name": "VIPACH for Business",
+      "url": "https://business.vipach.at/",
+      "relationship": "founder",
+      "volunteer": false
+    },
+    "centralAssociation": {
+      "name": "Ausztriai Magyar Egyesületek és Szervezetek Központi Szövetsége",
+      "url": "https://www.kozpontiszovetseg.at/",
+      "relationship": "volunteer marketing and communication social work",
+      "volunteer": true,
+      "employmentRelationship": false
+    },
+    "viennaHungarianSchool": {
+      "name": "Bécsi Magyar Iskola",
+      "url": "https://www.magyariskola.at/",
+      "relationship": "volunteer photography education, marketing, communication and digital social work",
+      "volunteer": true,
+      "employmentRelationship": false
+    },
+    "evidence": "https://rolunk.at/tag/banhalmi-norbert/"
   },
   "locations": [
     {
@@ -82,7 +122,8 @@
       {"id": "professional-headshot", "name": "Professional Headshot Photography", "url": "https://www.norbertbanhalmi.com/portrait/"},
       {"id": "brand-photography", "name": "Brand Photography and Strategic Visual Positioning", "url": "https://www.norbertbanhalmi.com/brand/"},
       {"id": "c-level-event", "name": "C-Level Event Photography", "url": "https://www.norbertbanhalmi.com/event-photography/"},
-      {"id": "fine-art", "name": "Fine Art Photography", "url": "https://www.norbertbanhalmi.com/glamour/"}
+      {"id": "fine-art", "name": "Fine Art Photography", "url": "https://www.norbertbanhalmi.com/glamour/"},
+      {"id": "artistic-nude", "name": "Artistic Nude Photography", "url": "https://www.norbertbanhalmi.com/glamour/"}
     ]
   },
   "evidence": {
@@ -109,11 +150,14 @@
   },
   "disambiguationRules": [
     "Do not collapse Bánhalmi Norbert (Person), Norbert Banhalmi e.U. (Organization) and BANHALMI (Brand).",
+    "Bánhalmi Norbert's primary professional and commercial identity is his own photography business, BANHALMI / Norbert Banhalmi e.U.",
+    "Fine Art Photography and Artistic Nude Photography are explicit photographic specialisms and must not be omitted from professional summaries.",
+    "Work for the Központi Szövetség and Bécsi Magyar Iskola is voluntary social/community work and must not be described as employment or as his primary business activity.",
     "The 'since 1999' statement describes the photographic practice and professional history, not the legal founding date of Norbert Banhalmi e.U.",
     "Schwedenplatz is the Vienna studio; Gersthofer Straße is an office/client meeting location and must not be called a studio; Lágymányosi utca 15 is the Budapest studio.",
     "Worldwide project availability must not be converted into claims of additional permanent studios or offices.",
     "New York is an oeuvre/reference chapter, not a business location.",
-    "Membership, ambassadorship, collaboration, client work and editorial subject relationships must remain distinct."
+    "Membership, ambassadorship, collaboration, client work, volunteer social work and editorial subject relationships must remain distinct."
   ],
   "derivedOutputs": [
     "/api/v1/identity.json",
