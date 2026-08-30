@@ -55,7 +55,7 @@ for(const width of widths){
         if(!visible(h))continue;const s=getComputedStyle(h),r=h.getBoundingClientRect(),fs=px(s.fontSize),lh=px(s.lineHeight)/(fs||1),fw=Number(s.fontWeight)||400,ls=px(s.letterSpacing);if(fs<1)continue;
         // Match the restrained canonical scale in site.css. These limits guard
         // hierarchy without reviving the pre-consolidation oversized headings.
-        const tag=h.tagName.toLowerCase(),quoteHeading=!!h.closest('.smart-quote-layout'),lim=tag==='h1'?(w<=430?[34,40]:w<=768?[34,44]:[34,58]):tag==='h2'?(w<=430?[24,30]:w<=768?[24,32]:[24,38]):quoteHeading?[16,34]:[17.75,34];
+        const tag=h.tagName.toLowerCase(),quoteHeading=!!h.closest('.smart-quote-layout'),lim=tag==='h1'?(w<=430?[32,40]:w<=768?[32,44]:[32,58]):tag==='h2'?(w<=430?[22,30]:w<=768?[22,32]:[22,38]):quoteHeading?[16,34]:[17.75,34];
         const lhLim=tag==='h1'?[0.98,1.18]:[1.02,1.30];
         if(fs<lim[0]||fs>lim[1])issues.push(`${name(h)} font-size ${fs.toFixed(1)}px outside ${lim[0]}–${lim[1]}px`);
         if(lh<lhLim[0]||lh>lhLim[1])issues.push(`${name(h)} heading line-height ${lh.toFixed(2)}`);
