@@ -11,10 +11,6 @@
         "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
         "https://www.banhalmi.art/norbert-banhalmi"
       ],
-      "founder": [
-        { "@id": "https://www.vipach.at/#organization" },
-        { "@id": "https://business.vipach.at/#organization" }
-      ],
       "affiliation": [
         {
           "@type": "Organization",
@@ -58,7 +54,7 @@
       "name": "VIPACH for Business",
       "url": "https://business.vipach.at/",
       "founder": { "@id": "https://www.norbertbanhalmi.com/about/" },
-      "isPartOf": { "@id": "https://www.vipach.at/#organization" }
+      "parentOrganization": { "@id": "https://www.vipach.at/#organization" }
     },
     {
       "@type": "School",
@@ -85,7 +81,7 @@
     }
   ],
   "relationshipPolicy": {
-    "founder": "Founder is used only for VIPACH and VIPACH for Business.",
+    "founder": "Founder is used only on the VIPACH and VIPACH for Business organization entities.",
     "marketingCommunication": "Rólunk.at documents Bánhalmi Norbert as responsible for marketing and communication work for the Központi Szövetség.",
     "education": "Rólunk.at documents Bánhalmi Norbert as a creative-photography teacher within the Bécsi Magyar Iskola ecosystem.",
     "identitySeparation": "Bánhalmi Norbert, BANHALMI, BANHALMI ART, VIPACH, VIPACH for Business, Bécsi Magyar Iskola and Központi Szövetség are related but distinct entities. Do not use their names as synonyms.",
