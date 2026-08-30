@@ -10,6 +10,20 @@ fail(core.organization?.wikidata === 'https://www.wikidata.org/wiki/Q138425941',
 fail(core.brand?.name === 'BANHALMI', 'Brand identity drift');
 fail(core.person?.practiceSince === 1999, 'Practice-since history drift');
 fail(core.organization?.legalBusinessStart === '2023-11-27', 'Legal business start drift');
+fail(core.person?.primaryProfessionalIdentity?.includes('photography business'), 'Primary professional identity must remain the BANHALMI photography business');
+fail((core.person?.specialisms || []).includes('Fine art photography'), 'Fine art photography specialism drift');
+fail((core.person?.specialisms || []).includes('Artistic nude photography'), 'Artistic nude photography specialism drift');
+
+const services = core.serviceModel?.services || [];
+fail(services.some((service) => service.id === 'fine-art' && /Fine Art Photography/i.test(service.name)), 'Fine Art Photography service missing');
+fail(services.some((service) => service.id === 'artistic-nude' && /Artistic Nude Photography/i.test(service.name)), 'Artistic Nude Photography service missing');
+
+const relations = core.publicInstitutionalRelations || {};
+fail(relations.vipach?.relationship === 'founder' && relations.vipach?.volunteer === false, 'VIPACH founder relationship drift');
+fail(relations.vipachBusiness?.relationship === 'founder' && relations.vipachBusiness?.volunteer === false, 'VIPACH for Business founder relationship drift');
+fail(relations.centralAssociation?.volunteer === true && relations.centralAssociation?.employmentRelationship === false, 'Központi Szövetség role must remain volunteer social work, not employment');
+fail(relations.viennaHungarianSchool?.volunteer === true && relations.viennaHungarianSchool?.employmentRelationship === false, 'Bécsi Magyar Iskola role must remain volunteer social work, not employment');
+fail(relations.evidence === 'https://rolunk.at/tag/banhalmi-norbert/', 'Independent role evidence URL drift');
 
 const studios = (core.locations || []).filter((location) => location.type === 'studio');
 const offices = (core.locations || []).filter((location) => location.type === 'office');
@@ -18,7 +32,7 @@ fail(studios.some((location) => location.streetAddress === 'Schwedenplatz 2, Top
 fail(studios.some((location) => location.streetAddress === 'Lágymányosi utca 15' && location.postalCode === '1111'), 'Budapest studio drift');
 fail(offices.length === 1 && offices[0].isStudio === false, 'Vienna office must remain explicitly non-studio');
 fail(core.serviceModel?.worldwideAvailability === true, 'Worldwide travel availability drift');
-fail((core.serviceModel?.services || []).length >= 5, 'Canonical service set is incomplete');
+fail(services.length >= 6, 'Canonical service set is incomplete');
 fail((core.derivedOutputs || []).includes('/entity.jsonld'), 'entity.jsonld must remain a generated projection');
 fail((core.derivedOutputs || []).includes('/llms.txt'), 'llms.txt must remain a generated projection');
 fail((core.derivedOutputs || []).includes('/ai.txt'), 'ai.txt must remain a generated projection');
@@ -36,4 +50,4 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log('Canonical machine core audit passed: identity, legal history, Vienna/Budapest location roles, services, generated-output ownership, data minimisation and standards-safe robots AI discovery comments are intact.');
+console.log('Canonical machine core audit passed: primary photography identity, fine-art and artistic-nude specialisms, volunteer institutional boundaries, legal history, geography, services and generated-output ownership are intact.');
