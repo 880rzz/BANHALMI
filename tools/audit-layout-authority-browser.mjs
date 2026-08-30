@@ -47,11 +47,36 @@ for(const width of widths){
         const main=document.querySelector('main');
         const firstHeading=main?.querySelector('h1,h2');
         const gap=header&&firstHeading?firstHeading.getBoundingClientRect().top-header.getBoundingClientRect().bottom:null;
-        return {topicBands,gap,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
+        const axisChecks=topics.map(topic=>{
+          const heading=topic.querySelector(':scope > h2');
+          const disclosure=topic.querySelector(':scope > .faq > details');
+          if(!heading||!disclosure) return null;
+          const h=heading.getBoundingClientRect(), d=disclosure.getBoundingClientRect();
+          return {headingLeft:h.left,disclosureLeft:d.left};
+        }).filter(Boolean);
+        return {topicBands,gap,axisChecks,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
       });
       if(result.topicBands.some(x=>x.pt>=50||x.pb>=50)) failures.push(`${file} @${width}: nested FAQ topic inherited page-band padding ${JSON.stringify(result.topicBands)}`);
       if(result.gap!=null&&result.gap>190) failures.push(`${file} @${width}: header-to-first-heading gap ${result.gap.toFixed(1)}px`);
+      for(const axis of result.axisChecks) if(Math.abs(axis.headingLeft-axis.disclosureLeft)>2) failures.push(`${file} @${width}: FAQ heading/disclosure axis drift ${(axis.headingLeft-axis.disclosureLeft).toFixed(1)}px`);
       if(result.overflow>1) failures.push(`${file} @${width}: horizontal overflow ${result.overflow}px`);
+      checks++;
+    }
+  }
+
+  if(scope==='all'){
+    const partnerFiles=files.filter(file=>source.get(file).includes('partner-grid-memberships')&&source.get(file).includes('partner-cta'));
+    for(const file of partnerFiles){
+      await page.goto(urlFor(file),{waitUntil:'networkidle'});
+      const result=await page.evaluate(()=>{
+        const cta=document.querySelector('.partner-memberships .partner-cta');
+        const grid=document.querySelector('.partner-memberships .partner-grid-memberships');
+        if(!cta||!grid) return null;
+        const c=cta.getBoundingClientRect(), g=grid.getBoundingClientRect();
+        return {ctaCenter:c.left+c.width/2,gridCenter:g.left+g.width/2,ctaWidth:c.width,gridWidth:g.width};
+      });
+      if(!result) failures.push(`${file} @${width}: membership CTA or grid missing`);
+      else if(Math.abs(result.ctaCenter-result.gridCenter)>2||result.ctaWidth+2<result.gridWidth) failures.push(`${file} @${width}: membership CTA is not centred to the card grid ${JSON.stringify(result)}`);
       checks++;
     }
   }

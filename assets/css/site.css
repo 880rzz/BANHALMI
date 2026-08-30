@@ -4188,8 +4188,13 @@ html body main .service-process-grid,
 html body main .quote-deep-details .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
 html body main .service-process-grid{margin-bottom:var(--apple-section-space)!important;}
 html body main .partner-grid{gap:var(--apple-card-gap)!important;}
-html body main .partner-cta{display:flex!important;justify-content:center!important;margin-top:clamp(2rem,3vw,3rem)!important;}
-html body main .partner-cta .btn{margin-inline:auto!important;}
+/* Component axes are explicit: the membership CTA belongs to the full five-card
+   grid, while FAQ headings and their disclosures begin on one reading column. */
+html body main .partner-memberships .partner-cta{display:flex!important;width:100%!important;max-width:none!important;justify-content:center!important;margin:clamp(2rem,3vw,3rem) 0 0!important;text-align:center!important;}
+html body main .partner-memberships .partner-cta .btn{margin-inline:auto!important;}
+html body main .faq-topic{width:min(100%,var(--apple-reading-max))!important;max-width:var(--apple-reading-max)!important;margin-left:0!important;margin-right:auto!important;text-align:left!important;}
+html body main .faq-topic>h2,
+html body main .faq-topic>.faq{width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important;text-align:left!important;}
 html body main :is(.faq,.quote-deep-details) details{border-top:0!important;border-bottom:1px solid var(--line)!important;}
 html body main details>summary{min-height:52px;display:flex;align-items:center;font-size:1rem!important;line-height:1.45!important;}
 html body main details[open]>summary{margin-bottom:1rem;}
