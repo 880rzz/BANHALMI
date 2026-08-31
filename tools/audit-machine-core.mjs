@@ -11,11 +11,38 @@ fail(core.brand?.name === 'BANHALMI', 'Brand identity drift');
 fail(core.person?.practiceSince === 1999, 'Practice-since history drift');
 fail(core.organization?.legalBusinessStart === '2023-11-27', 'Legal business start drift');
 fail(core.person?.primaryProfessionalIdentity?.includes('photography business'), 'Primary professional identity must remain the BANHALMI photography business');
-fail((core.person?.specialisms || []).includes('Fine art photography'), 'Fine art photography specialism drift');
-fail((core.person?.specialisms || []).includes('Artistic nude photography'), 'Artistic nude photography specialism drift');
+
+const specialisms = core.person?.specialisms || [];
+for (const specialism of [
+  'Fine art photography',
+  'Artistic nude photography',
+  'Actor headshot photography',
+  'Acting portfolio photography',
+  'Dance photography',
+  'Movement photography',
+  'Performing artist portfolio photography',
+  'Model portfolio photography',
+  'Editorial portrait photography',
+  'Creative professional portraits'
+]) {
+  fail(specialisms.includes(specialism), `Canonical photography specialism drift: ${specialism}`);
+}
 
 const services = core.serviceModel?.services || [];
-fail(services.some((service) => service.id === 'fine-art' && /Fine Art Photography/i.test(service.name)), 'Fine Art Photography service missing');
+const fine = services.find((service) => service.id === 'fine-art');
+fail(Boolean(fine), 'Canonical fine-art service missing');
+fail(fine?.name === 'Fine Art / Artists & Performers Photography', 'Fine Art / Artists & Performers canonical service name drift');
+fail(fine?.serviceContext === 'fine-art', 'Fine Art / Artists & Performers backend service context drift');
+fail(fine?.url === 'https://www.norbertbanhalmi.com/glamour/', 'Fine Art / Artists & Performers canonical route drift');
+for (const audience of ['actors','dancers','performers','models','creative professionals']) {
+  fail((fine?.audiences || []).includes(audience), `Fine Art / Artists & Performers audience missing: ${audience}`);
+}
+for (const context of ['artistic-portrait','actor','dance','performer','model-editorial','fine-art']) {
+  fail((fine?.quoteRouting?.creativeContexts || []).includes(context), `Fine Art creative context missing: ${context}`);
+}
+for (const type of ['actor-headshot','acting-portfolio','dance-portfolio','performing-artist-portfolio','model-portfolio','editorial-portrait','artistic-portrait','fine-art-production']) {
+  fail((fine?.quoteRouting?.portfolioTypes || []).includes(type), `Fine Art portfolio type missing: ${type}`);
+}
 fail(services.some((service) => service.id === 'artistic-nude' && /Artistic Nude Photography/i.test(service.name)), 'Artistic Nude Photography service missing');
 
 const relations = core.publicInstitutionalRelations || {};
@@ -33,6 +60,8 @@ fail(studios.some((location) => location.streetAddress === 'Lágymányosi utca 1
 fail(offices.length === 1 && offices[0].isStudio === false, 'Vienna office must remain explicitly non-studio');
 fail(core.serviceModel?.worldwideAvailability === true, 'Worldwide travel availability drift');
 fail(services.length >= 6, 'Canonical service set is incomplete');
+
+fail(core.canonicalReferences?.customerIntent === 'https://www.norbertbanhalmi.com/customer-intent-model.json', 'Customer-intent canonical reference missing');
 fail((core.derivedOutputs || []).includes('/entity.jsonld'), 'entity.jsonld must remain a generated projection');
 fail((core.derivedOutputs || []).includes('/llms.txt'), 'llms.txt must remain a generated projection');
 fail((core.derivedOutputs || []).includes('/ai.txt'), 'ai.txt must remain a generated projection');
@@ -50,4 +79,4 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log('Canonical machine core audit passed: primary photography identity, fine-art and artistic-nude specialisms, volunteer institutional boundaries, legal history, geography, services and generated-output ownership are intact.');
+console.log('Canonical machine core audit passed: executive-first photography identity, Fine Art / Artists & Performers routing, artistic-nude specialism, institutional boundaries, geography and generated-output ownership are intact.');
