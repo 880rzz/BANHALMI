@@ -1,6 +1,6 @@
 {
   "documentType": "BANHALMI fixed-rate HUF orientation pricing",
-  "schemaVersion": "2026-08-05-v1-artists-performers",
+  "schemaVersion": "2026-08-31-v2-artists-performers",
   "dateModified": "2026-08-31T23:25:00+02:00",
   "canonicalBasePricingSource": "https://www.norbertbanhalmi.com/pricing.json",
   "aiInterpretationGuide": "https://www.norbertbanhalmi.com/pricing-guide.json",
@@ -153,9 +153,9 @@
     {
       "id": "fine-art",
       "name": {
-        "en": "Fine art and intimate portrait photography",
-        "hu": "Művészi és intim portréfotózás",
-        "de-AT": "Fine-Art- und intime Porträtfotografie"
+        "en": "Fine Art / Artists & Performers",
+        "hu": "Művészi fotózás / Művészek és előadóművészek",
+        "de-AT": "Fine Art / Künstler:innen & Performer:innen"
       },
       "packages": [
         {
@@ -191,24 +191,24 @@
       ],
       "audiences": {
         "en": [
+          "artists",
           "actors",
-          "acting students",
           "dancers",
           "performers",
           "models",
           "creative professionals"
         ],
         "hu": [
+          "művészek",
           "színészek",
-          "színészhallgatók",
           "táncosok",
           "előadóművészek",
           "modellek",
           "kreatív szakemberek"
         ],
         "de-AT": [
+          "Künstler:innen",
           "Schauspieler:innen",
-          "Schauspielstudierende",
           "Tänzer:innen",
           "Performer:innen",
           "Models",
@@ -216,13 +216,25 @@
         ]
       },
       "quoteRouting": {
-        "serviceValue": "art",
-        "interfaceLabel": {
-          "en": "Fine Art / Artists & Performers",
-          "hu": "Művészi fotózás / Művészek és előadók",
-          "de-AT": "Fine Art / Künstler:innen & Performer:innen"
-        },
-        "note": "Actor, dance, performer and model/editorial portfolio requests use the existing artistic-production calculation route so the submission backend and delivery contract remain unchanged."
+        "serviceContext": "fine-art",
+        "creativeContexts": [
+          "artistic-portrait",
+          "actor",
+          "dance",
+          "performer",
+          "model-editorial",
+          "fine-art"
+        ],
+        "portfolioTypes": [
+          "actor-headshot",
+          "acting-portfolio",
+          "dance-portfolio",
+          "performing-artist-portfolio",
+          "model-portfolio",
+          "editorial-portrait",
+          "artistic-portrait",
+          "fine-art-production"
+        ]
       }
     },
     {
