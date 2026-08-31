@@ -6,7 +6,6 @@ on:
     paths:
       - '.github/workflows/_apply-artists-performers-machine-layer.yml'
       - 'tools/apply-artists-performers-machine-layer-20260831.mjs'
-      - 'tools/patch-artists-migration-quality-20260831.mjs'
       - 'tools/audit-machine-core.mjs'
   workflow_dispatch:
 
@@ -24,8 +23,6 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
-      - name: Normalize the one-time migration itself
-        run: node tools/patch-artists-migration-quality-20260831.mjs
       - name: Apply canonical Artists & Performers migration
         run: node tools/apply-artists-performers-machine-layer-20260831.mjs
       - name: Audit canonical migration contracts
@@ -34,20 +31,8 @@ jobs:
         run: node tools/audit-css-cache-token.mjs && node tools/audit-claude-hardening-contract.mjs && node tools/audit-favicon-contract.mjs && node tools/audit-legacy-redirect-preservation.mjs && node tools/audit-embedded-schema-location-parity.mjs && node tools/audit-jsonld-canonical-references.mjs && node tools/audit-entity-role-separation.mjs && node tools/audit-foreign-entity-ownership.mjs && node tools/audit-worldwide-availability.mjs
       - name: Legacy audit group B
         run: node tools/audit-fine-art-art-bridge.mjs && node tools/audit-authority-memberships-peter-magyar.mjs && node tools/audit-apple-responsive-contract.mjs && node tools/audit-homepage-meta-parity.mjs && node tools/audit-content-structure-first-principles.mjs && node tools/audit-internal-fragment-targets.mjs && node tools/audit-about-ownership.mjs && node tools/audit-meta-description-quality.mjs
-      - name: Capture Google Search contract diagnostics
-        run: |
-          set +e
-          node tools/audit-google-search-contract.mjs > /tmp/google-search-contract.log 2>&1
-          status=$?
-          cat /tmp/google-search-contract.log
-          mkdir -p diagnostics
-          cp /tmp/google-search-contract.log diagnostics/artists-performers-google-search-contract.txt
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add diagnostics/artists-performers-google-search-contract.txt
-          git commit -m "Capture Artists Performers Google Search diagnostics" || true
-          git push || true
-          exit $status
+      - name: Audit Google Search contract
+        run: node tools/audit-google-search-contract.mjs
       - name: Audit form autocomplete
         run: node tools/audit-form-autocomplete.mjs
       - name: Audit image priority
