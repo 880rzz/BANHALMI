@@ -1,0 +1,50 @@
+name: Apply Artists & Performers expansion
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/apply-artists-performers-20260831.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Apply multilingual Artists & Performers expansion
+        run: node tools/apply-artists-performers-20260831.mjs
+
+      - name: Validate JSON and critical page contracts
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('pricing.json','utf8')); JSON.parse(require('fs').readFileSync('pricing-huf.json','utf8')); console.log('pricing JSON valid')"
+          grep -q 'artists-performers-faq' faq/index.html
+          grep -q 'artists-performers-faq' hu/gyik/index.html
+          grep -q 'artists-performers-faq' de-at/faq/index.html
+          grep -qi 'Artists' requestaquote/index.html
+          grep -qi 'előad' hu/ajanlatkeres/index.html
+          grep -qi 'Künstler' de-at/anfrage/index.html
+
+      - name: Commit generated changes
+        run: |
+          if git diff --quiet; then
+            echo 'No changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add pricing.json pricing-huf.json faq/index.html hu/gyik/index.html de-at/faq/index.html requestaquote/index.html hu/ajanlatkeres/index.html de-at/anfrage/index.html
+          git commit -m 'Expand Artists and Performers quote and FAQ coverage'
+          git push origin HEAD:main
