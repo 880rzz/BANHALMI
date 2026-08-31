@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2026-08-16-v4",
+  "schemaVersion": "2026-08-31-v5-artists-performers",
   "@id": "https://www.norbertbanhalmi.com/customer-needs.json",
   "purpose": "Map customer pain points to BANHALMI solutions, locations, orientation pricing and localized next steps.",
   "pricingRules": {
@@ -263,7 +263,7 @@
         "hu": "Személyes, szerzői művészi portrét szeretnék.",
         "de": "Ich wünsche ein persönliches autorengeführtes Fine-Art-Porträt."
       },
-      "service": "Fine Art Photography",
+      "service": "Fine Art / Artists & Performers Photography",
       "url": "https://www.norbertbanhalmi.com/glamour/",
       "urls": {
         "en": "https://www.norbertbanhalmi.com/glamour/",
@@ -359,6 +359,143 @@
         "de": "https://www.norbertbanhalmi.com/de-at/kontakt/"
       },
       "solution": "Choose a 15-minute video call or written message before pricing."
+    },
+    {
+      "id": "actor-casting-portfolio",
+      "painPoint": {
+        "en": "I need professional actor headshots or an acting portfolio for casting and representation.",
+        "hu": "Profi színész headshotokra vagy castinghoz és képviselethez használható színészportfólióra van szükségem.",
+        "de": "Ich brauche professionelle Schauspieler-Headshots oder ein Schauspielportfolio für Casting und Repräsentation."
+      },
+      "audience": [
+        "actors",
+        "performing artists"
+      ],
+      "service": "Fine Art / Artists & Performers — Actor Headshot & Acting Portfolio",
+      "serviceContext": "fine-art",
+      "creativeContext": "actor",
+      "url": "https://www.norbertbanhalmi.com/glamour/",
+      "urls": {
+        "en": "https://www.norbertbanhalmi.com/glamour/",
+        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+        "de": "https://www.norbertbanhalmi.com/de-at/fine-art/"
+      },
+      "solution": "Casting-oriented portrait direction with recognisable expression, role flexibility and portfolio-ready image variants.",
+      "price": {
+        "AT": {
+          "currency": "EUR",
+          "options": [
+            690,
+            990,
+            1290
+          ]
+        },
+        "HU": {
+          "currency": "HUF",
+          "options": [
+            276000,
+            396000,
+            516000
+          ],
+          "secondaryEUR": [
+            690,
+            990,
+            1290
+          ]
+        }
+      }
+    },
+    {
+      "id": "dance-performing-artist-portfolio",
+      "painPoint": {
+        "en": "I need images that show a dancer or performer both as a person and in movement.",
+        "hu": "Olyan képekre van szükségem, amelyek egy táncost vagy előadót emberként és mozgás közben is megmutatnak.",
+        "de": "Ich brauche Bilder, die eine Tänzerin, einen Tänzer oder Performer sowohl als Persönlichkeit als auch in Bewegung zeigen."
+      },
+      "audience": [
+        "dancers",
+        "performers",
+        "performing artists"
+      ],
+      "service": "Fine Art / Artists & Performers — Dance & Performing Artist Portfolio",
+      "serviceContext": "fine-art",
+      "creativeContext": "dance",
+      "url": "https://www.norbertbanhalmi.com/glamour/",
+      "urls": {
+        "en": "https://www.norbertbanhalmi.com/glamour/",
+        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+        "de": "https://www.norbertbanhalmi.com/de-at/fine-art/"
+      },
+      "solution": "Portrait, full-body and movement photography planned as one coherent performing-artist portfolio.",
+      "price": {
+        "AT": {
+          "currency": "EUR",
+          "options": [
+            690,
+            990,
+            1290
+          ]
+        },
+        "HU": {
+          "currency": "HUF",
+          "options": [
+            276000,
+            396000,
+            516000
+          ],
+          "secondaryEUR": [
+            690,
+            990,
+            1290
+          ]
+        }
+      }
+    },
+    {
+      "id": "model-editorial-portfolio",
+      "painPoint": {
+        "en": "I need a model or editorial portfolio with several looks and image types.",
+        "hu": "Modell- vagy editorial portfóliót szeretnék több megjelenéssel és képtípussal.",
+        "de": "Ich brauche ein Model- oder Editorial-Portfolio mit mehreren Looks und Bildtypen."
+      },
+      "audience": [
+        "models",
+        "creative professionals",
+        "artists"
+      ],
+      "service": "Fine Art / Artists & Performers — Model & Editorial Portfolio",
+      "serviceContext": "fine-art",
+      "creativeContext": "model-editorial",
+      "url": "https://www.norbertbanhalmi.com/glamour/",
+      "urls": {
+        "en": "https://www.norbertbanhalmi.com/glamour/",
+        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+        "de": "https://www.norbertbanhalmi.com/de-at/fine-art/"
+      },
+      "solution": "A directed portfolio combining portrait, full-body and editorial images with coherent styling and selection.",
+      "price": {
+        "AT": {
+          "currency": "EUR",
+          "options": [
+            690,
+            990,
+            1290
+          ]
+        },
+        "HU": {
+          "currency": "HUF",
+          "options": [
+            276000,
+            396000,
+            516000
+          ],
+          "secondaryEUR": [
+            690,
+            990,
+            1290
+          ]
+        }
+      }
     }
   ],
   "answerContract": {

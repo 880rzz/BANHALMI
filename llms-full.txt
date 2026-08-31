@@ -198,3 +198,12 @@ Existing canonical pages are used; no additional service URLs were created. Head
 - The accepted written offer defines the contractual currency, tax treatment and final scope.
 - Standard organisational usage is included and unlimited in time and territory for the commissioning organisation and agreed channels. Copyright remains with the photographer. Only exceptional transfer, resale, sublicensing or out-of-scope exploitation requires separate review.
 <!-- PRICING-CURRENCY-SYSTEM:END -->
+
+
+## Artists & Performers service family
+- Canonical backend service context: fine-art.
+- Public service meaning: Fine Art / Artists & Performers Photography.
+- Audiences: artists, actors, dancers, performers, models and creative professionals, alongside private fine-art clients.
+- Portfolio directions: actor headshots, acting portfolios, dance photography, movement photography, performing-artist portfolios, model portfolios, editorial portraits and creative-professional portraits.
+- Local intent: Vienna and Budapest are physical studio bases and primary local coverage; agreed projects remain available worldwide by travel.
+- Quote routing must keep service_context=fine-art for Cloudflare Worker and EN/HU/DE Apps Script compatibility; creative_context and portfolio_type refine the request without creating a duplicate commercial service.

@@ -4,7 +4,7 @@
   "dateModified": "2026-08-31T23:25:00+02:00",
   "publisher": {
     "@id": "https://www.norbertbanhalmi.com/#organization",
-    "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna and Budapest, with agreed projects available worldwide.",
+    "description": "BANHALMI is an executive-first photography and visual-branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business and event photography, brand photography, Fine Art / Artists & Performers photography and strategic visual positioning in Vienna and Budapest, with agreed projects available worldwide.",
     "slogan": [
       "BANHALMI | Executive Portraiture & Visual Branding",
       "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
@@ -181,9 +181,9 @@
     {
       "id": "fine-art",
       "name": {
-        "en": "Fine art and intimate portrait photography",
-        "hu": "Művészi és intim portréfotózás",
-        "de-AT": "Fine-Art- und intime Porträtfotografie"
+        "en": "Fine Art / Artists & Performers",
+        "hu": "Művészi fotózás / Művészek és előadóművészek",
+        "de-AT": "Fine Art / Künstler:innen & Performer:innen"
       },
       "packages": [
         {
@@ -220,24 +220,24 @@
       ],
       "audiences": {
         "en": [
+          "artists",
           "actors",
-          "acting students",
           "dancers",
           "performers",
           "models",
           "creative professionals"
         ],
         "hu": [
+          "művészek",
           "színészek",
-          "színészhallgatók",
           "táncosok",
           "előadóművészek",
           "modellek",
           "kreatív szakemberek"
         ],
         "de-AT": [
+          "Künstler:innen",
           "Schauspieler:innen",
-          "Schauspielstudierende",
           "Tänzer:innen",
           "Performer:innen",
           "Models",
@@ -251,7 +251,26 @@
           "hu": "Művészi fotózás / Művészek és előadók",
           "de-AT": "Fine Art / Künstler:innen & Performer:innen"
         },
-        "note": "Actor, dance, performer and model/editorial portfolio requests use the existing artistic-production calculation route so the submission backend and delivery contract remain unchanged."
+        "note": "Actor, dance, performer and model/editorial portfolio requests use the existing artistic-production calculation route so the submission backend and delivery contract remain unchanged.",
+        "serviceContext": "fine-art",
+        "creativeContexts": [
+          "artistic-portrait",
+          "actor",
+          "dance",
+          "performer",
+          "model-editorial",
+          "fine-art"
+        ],
+        "portfolioTypes": [
+          "actor-headshot",
+          "acting-portfolio",
+          "dance-portfolio",
+          "performing-artist-portfolio",
+          "model-portfolio",
+          "editorial-portrait",
+          "artistic-portrait",
+          "fine-art-production"
+        ]
       }
     },
     {

@@ -16,6 +16,7 @@ const PRICING = 'pricing.json';
 {
   const core = json(CORE);
   core.schemaVersion = '1.2';
+  core.canonicalReferences.customerIntent = 'https://www.norbertbanhalmi.com/customer-intent-model.json';
   core.person.specialisms = uniq([
     ...core.person.specialisms,
     'Actor headshot photography',
@@ -128,13 +129,35 @@ const PRICING = 'pricing.json';
 // 4) Canonical pricing semantics — keep code/service route stable.
 {
   const p = json(PRICING);
+  p.publisher.description = 'BANHALMI is an executive-first photography and visual-branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business and event photography, brand photography, Fine Art / Artists & Performers photography and strategic visual positioning in Vienna and Budapest, with agreed projects available worldwide.';
   const service = (p.services || []).find(x => x.id === 'fine-art');
   if (service) {
-    service.name = { ...(service.name || {}), en: 'Fine Art / Artists & Performers', hu: 'Művészi fotózás / Művészek és előadóművészek', de: 'Fine Art / Künstler:innen & Performer:innen' };
-    service.audiences = { en: ['artists','actors','dancers','performers','models','creative professionals'], hu: ['művészek','színészek','táncosok','előadóművészek','modellek','kreatív szakemberek'], de: ['Künstler:innen','Schauspieler:innen','Tänzer:innen','Performer:innen','Models','Kreativschaffende'] };
+    service.name = { en: 'Fine Art / Artists & Performers', hu: 'Művészi fotózás / Művészek és előadóművészek', 'de-AT': 'Fine Art / Künstler:innen & Performer:innen' };
+    service.audiences = { en: ['artists','actors','dancers','performers','models','creative professionals'], hu: ['művészek','színészek','táncosok','előadóművészek','modellek','kreatív szakemberek'], 'de-AT': ['Künstler:innen','Schauspieler:innen','Tänzer:innen','Performer:innen','Models','Kreativschaffende'] };
     service.quoteRouting = { ...(service.quoteRouting || {}), serviceContext: 'fine-art', creativeContexts: ['artistic-portrait','actor','dance','performer','model-editorial','fine-art'], portfolioTypes: ['actor-headshot','acting-portfolio','dance-portfolio','performing-artist-portfolio','model-portfolio','editorial-portrait','artistic-portrait','fine-art-production'] };
   }
   writeJson(PRICING, p);
+}
+
+// 4b) Synchronize HUF planning metadata and the browser-embedded canonical pricing projection.
+{
+  const huf = json('pricing-huf.json');
+  huf.schemaVersion = '2026-08-31-v2-artists-performers';
+  const fineHuf = (huf.services || []).find(x => x.id === 'fine-art');
+  if (!fineHuf) throw new Error('pricing-huf.json: fine-art service missing');
+  fineHuf.name = { en: 'Fine Art / Artists & Performers', hu: 'Művészi fotózás / Művészek és előadóművészek', 'de-AT': 'Fine Art / Künstler:innen & Performer:innen' };
+  fineHuf.audiences = { en: ['artists','actors','dancers','performers','models','creative professionals'], hu: ['művészek','színészek','táncosok','előadóművészek','modellek','kreatív szakemberek'], 'de-AT': ['Künstler:innen','Schauspieler:innen','Tänzer:innen','Performer:innen','Models','Kreativschaffende'] };
+  fineHuf.quoteRouting = { serviceContext: 'fine-art', creativeContexts: ['artistic-portrait','actor','dance','performer','model-editorial','fine-art'], portfolioTypes: ['actor-headshot','acting-portfolio','dance-portfolio','performing-artist-portfolio','model-portfolio','editorial-portrait','artistic-portrait','fine-art-production'] };
+  writeJson('pricing-huf.json', huf);
+
+  const canonicalPricing = json('pricing.json');
+  const embeddedPath = 'assets/js/pricing-data.js';
+  const embedded = read(embeddedPath);
+  const suffixMarker = ';\nwindow.BANHALMI_PRICING_VERSION=';
+  const suffixAt = embedded.indexOf(suffixMarker);
+  if (suffixAt < 0) throw new Error('assets/js/pricing-data.js: pricing version marker missing');
+  const suffix = embedded.slice(suffixAt);
+  write(embeddedPath, 'window.BANHALMI_PRICING_DATA=' + JSON.stringify(canonicalPricing) + suffix);
 }
 
 // 5) SEO + embedded Schema on the three canonical Fine Art / Artists & Performers pages.
@@ -174,10 +197,53 @@ for (const page of pages) {
   });
   // Add a compact invisible machine-readable service relation without changing visual layout.
   if (!h.includes('data-artists-performers-semantic')) {
-    const semantic = `<meta data-artists-performers-semantic="" name="keywords" content="${page.tokens.join(', ')}">`;
+    const semantic = '<!-- data-artists-performers-semantic: service vocabulary is expressed in JSON-LD knowsAbout and the canonical machine core -->';
     h = h.replace('</head>', semantic + '</head>');
   }
+  const canonical = 'https://www.norbertbanhalmi.com/' + (page.path === 'glamour/index.html' ? 'glamour/' : page.path.replace(/index\.html$/, ''));
+  h = h.replace(/<script\b([^>]*type=[\"']application\/ld\+json[\"'][^>]*)>([\s\S]*?)<\/script>/gi, (full, attrs, raw) => {
+    try {
+      const data = JSON.parse(raw);
+      const nodes = Array.isArray(data?.['@graph']) ? data['@graph'] : [data];
+      const pageTypes = new Set(['WebPage','ProfilePage','AboutPage','ContactPage','FAQPage','CollectionPage']);
+      for (const node of nodes) {
+        const types = [].concat(node?.['@type'] || []);
+        const id = String(node?.['@id'] || '');
+        const isCurrentPage = node?.url === canonical || id === canonical + '#webpage' || id === canonical + '#page';
+        if (isCurrentPage && types.some(type => pageTypes.has(type))) { node.name = page.title; node.description = page.desc; }
+      }
+      return '<script' + attrs + '>' + JSON.stringify(data) + '</script>';
+    } catch { return full; }
+  });
   write(page.path, h);
+}
+
+// 5b) Keep quote-page SEO and page-level Schema in exact parity after Artists & Performers expansion.
+for (const quotePath of ['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/anfrage/index.html']) {
+  let q = read(quotePath);
+  const rawTitle = q.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || '';
+  const title = rawTitle.replace(/&amp;/gi, '&');
+  const desc = q.match(/<meta\s+content="([^"]*)"\s+name="description"\s*\/>/i)?.[1] || '';
+  const canonical = q.match(/<link\s+href="([^"]+)"\s+rel="canonical"\s*\/>/i)?.[1] || '';
+  const vocabulary = ['actor headshot photography','acting portfolio photography','dance photography','movement photography','performing artist portfolio photography','model portfolio photography','editorial portrait photography'];
+  q = q.replace(/<script\b([^>]*type=[\"']application\/ld\+json[\"'][^>]*)>([\s\S]*?)<\/script>/gi, (full, attrs, raw) => {
+    try {
+      const data = JSON.parse(raw);
+      const nodes = Array.isArray(data?.['@graph']) ? data['@graph'] : [data];
+      for (const node of nodes) {
+        const types = [].concat(node?.['@type'] || []);
+        const id = String(node?.['@id'] || '');
+        if (types.includes('WebPage') && (node?.url === canonical || id === canonical + '#webpage')) {
+          node.name = title;
+          node.description = desc;
+          if (node.about && typeof node.about === 'object') node.about.knowsAbout = uniq([...(node.about.knowsAbout || []), ...vocabulary]);
+          if (node.isPartOf?.about && typeof node.isPartOf.about === 'object') node.isPartOf.about.knowsAbout = uniq([...(node.isPartOf.about.knowsAbout || []), ...vocabulary]);
+        }
+      }
+      return '<script' + attrs + '>' + JSON.stringify(data) + '</script>';
+    } catch { return full; }
+  });
+  write(quotePath, q);
 }
 
 // 6) Long-form LLM reference is source-authored (unlike llms.txt/ai.txt projections), so update it directly.
