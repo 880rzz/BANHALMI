@@ -226,7 +226,8 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
         data[key].push(value);
       } else data[key] = value;
     });
-    data.page_language = languageOf(form);
+    data.language = languageOf(form);
+    data.page_language = data.language;
     data.page_url = location.href;
     data.submitted_at = new Date().toISOString();
     return data;
