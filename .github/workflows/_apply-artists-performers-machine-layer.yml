@@ -7,6 +7,7 @@ on:
       - '.github/workflows/_apply-artists-performers-machine-layer.yml'
       - 'tools/apply-artists-performers-machine-layer-20260831.mjs'
       - 'tools/patch-artists-migration-quality-20260831.mjs'
+      - 'tools/audit-machine-core.mjs'
   workflow_dispatch:
 
 permissions:
