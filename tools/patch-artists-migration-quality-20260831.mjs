@@ -35,5 +35,12 @@ text = text.replace(
   "p.publisher.description = 'BANHALMI is an executive-first photography and visual-branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business and event photography, brand photography, Fine Art / Artists & Performers photography and strategic visual positioning in Vienna and Budapest, with agreed projects available worldwide.';\n  const service = (p.services || []).find(x => x.id === 'fine-art');"
 );
 
+// The migration patches the canonical audit. Use an exact canonical name check rather than
+// embedding a slash-sensitive regular expression into generated JavaScript source.
+text = text.replace(
+  "fail(services.some((service) => service.id === 'fine-art' && /Fine Art \\/ Artists & Performers Photography/i.test(service.name)), 'Fine Art / Artists & Performers canonical service missing');",
+  "fail(services.some((service) => service.id === 'fine-art' && service.name === 'Fine Art / Artists & Performers Photography' && service.serviceContext === 'fine-art'), 'Fine Art / Artists & Performers canonical service missing');"
+);
+
 fs.writeFileSync(path, text);
-console.log('Artists & Performers migration quality patch applied: de-AT contract preserved, obsolete meta-keywords removed, customer-intent reference added, executive-first pricing description retained.');
+console.log('Artists & Performers migration quality patch applied: de-AT contract preserved, obsolete meta-keywords removed, customer-intent reference added, executive-first pricing description retained, canonical service audit made slash-safe.');
