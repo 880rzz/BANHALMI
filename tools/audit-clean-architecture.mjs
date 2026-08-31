@@ -51,7 +51,8 @@ if (exists('assets/js/site-config.js')) {
   const runtimeContracts = [
     ['Cloudflare form gateway', 'https://banhalmi-form-gateway.6ymnrwgnv9.workers.dev/api/banhalmi-form'],
     ['POST form submission', "method:'POST'"],
-    ['language payload', 'data.page_language = languageOf(form)'],
+    ['Worker routing language payload', 'data.language = languageOf(form)'],
+    ['Apps Script / analytics language mirror', 'data.page_language = data.language'],
     ['admin delivery verification', 'body.adminEmailSent === true'],
     ['customer delivery verification', 'body.customerEmailSent === true'],
     ['submission key', 'submission_key']
