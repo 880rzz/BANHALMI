@@ -27,7 +27,15 @@ jobs:
         run: node tools/patch-artists-migration-quality-20260831.mjs
       - name: Apply canonical Artists & Performers migration
         run: node tools/apply-artists-performers-machine-layer-20260831.mjs
-      - name: Run source quality gate
+      - name: Audit workflow safety
+        run: node tools/audit-workflow-safety.mjs
+      - name: Audit canonical machine core
+        run: node tools/audit-machine-core.mjs
+      - name: Audit Artists & Performers layer
+        run: node tools/audit-artists-performers-layer.mjs
+      - name: Audit clean architecture
+        run: node tools/audit-clean-architecture.mjs
+      - name: Run complete source quality gate
         run: npm test
       - name: Commit migration output
         run: |
