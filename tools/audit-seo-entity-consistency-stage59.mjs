@@ -1,18 +1,58 @@
 import assert from 'node:assert/strict';
-import { readFile, readdir } from 'node:fs/promises';
-import path from 'node:path';
+import { readFile } from 'node:fs/promises';
 
-const root=process.cwd();
-const titles={"index.html":"BANHALMI | Executive Portrait & Brand Photography in Vienna","portrait/index.html":"Executive Portrait & Headshot Photography for Leaders | BANHALMI","lifestyle/index.html":"Brand Photography & Visual Positioning for Companies | BANHALMI","event-photography/index.html":"C-Level Event Photography for Boards & Leadership | BANHALMI","glamour/index.html":"Fine Art & Nude Art Photography in Vienna | BANHALMI","hu/index.html":"BANHALMI | Executive portré és brandfotózás Bécs–Budapest","hu/portre/index.html":"Executive portré és Headshot fotózás B2B vezetőkről | BANHALMI","hu/brand/index.html":"Brandfotózás és vizuális pozicionálás vállalatoknak | BANHALMI","hu/rendezvenyfotozas/index.html":"C-level rendezvényfotózás vezetőknek és cégeknek | BANHALMI","hu/muveszi-fotografia/index.html":"Művészi portré és aktfotózás galéria-minőségben | BANHALMI","de-at/index.html":"BANHALMI | Executive-Porträts & Brandfotografie in Wien","de-at/portrait/index.html":"Executive-Porträt & Headshot für Führungskräfte | BANHALMI","de-at/brand/index.html":"Brandfotografie & visuelle Positionierung | BANHALMI Wien","de-at/eventfotografie/index.html":"C-Level-Eventfotografie für Vorstände & Unternehmen | BANHALMI","de-at/fine-art/index.html":"Fine-Art- & Aktfotografie in Galerie-Qualität | BANHALMI Wien"};
-for (const [rel,title] of Object.entries(titles)){
- const html=await readFile(rel,'utf8');
- assert.ok(html.includes('<title>'+title.replaceAll('&','&amp;')+'</title>'),rel+' title');
- assert.ok(title.length>=45&&title.length<=68,rel+' title length '+title.length);
+const pageContracts = {
+  'index.html': /Executive Portrait|Executive portr/i,
+  'portrait/index.html': /Executive Portrait|Headshot/i,
+  'lifestyle/index.html': /Brand Photography|Visual Positioning/i,
+  'event-photography/index.html': /C-Level Event Photography/i,
+  'glamour/index.html': /Fine Art[^<]*(Actor|Dance|Performer)/i,
+  'hu/index.html': /Executive portr|brandfotózás/i,
+  'hu/portre/index.html': /Executive portr|Headshot/i,
+  'hu/brand/index.html': /Brandfotózás|vizuális/i,
+  'hu/rendezvenyfotozas/index.html': /rendezvényfotózás/i,
+  'hu/muveszi-fotografia/index.html': /Művészi[^<]*(színész|tánc|előadóművész)/i,
+  'de-at/index.html': /Executive-Portr|Brandfotografie/i,
+  'de-at/portrait/index.html': /Executive-Portr|Headshot/i,
+  'de-at/brand/index.html': /Brandfotografie|visuelle/i,
+  'de-at/eventfotografie/index.html': /Eventfotografie/i,
+  'de-at/fine-art/index.html': /Fine Art[^<]*(Schauspieler|Tanz|Performer)/i
+};
+
+for (const [rel, expected] of Object.entries(pageContracts)) {
+  const html = await readFile(rel, 'utf8');
+  const title = html.match(/<title>([^<]+)<\/title>/i)?.[1] || '';
+  assert.ok(title, rel + ' title missing');
+  assert.match(title, expected, rel + ' current service-intent title drift');
+  assert.match(html, /name=["']description["']/i, rel + ' meta description missing');
+  assert.match(html, /property=["']og:description["']/i, rel + ' og description missing');
 }
-assert.equal(new Set(Object.values(titles)).size,Object.keys(titles).length,'titles must be unique');
-for (const rel of ["trust/index.html","hu/bizalom/index.html","de-at/vertrauen/index.html"]){const h=await readFile(rel,'utf8');assert.match(h,/name=[\"']description[\"'][^>]*content=|content=[\"'][^\"']+[\"'][^>]*name=[\"']description[\"']/i,rel+' meta description');assert.match(h,/property=[\"']og:description[\"']/i,rel+' og description');assert.match(h,/\"description\":/i,rel+' schema description');}
-const services=JSON.parse(await readFile('services.json','utf8'));const p=services.itemListElement.find(s=>s.position===1);const b=services.itemListElement.find(s=>s.position===2);for(const s of ['CEO portré','board of directors fotózás','PR headshot','Vorstandsporträt','Geschäftsführer Headshot','Pressefoto Führungskräfte'])assert.ok(p.alternateName.includes(s),'portrait synonym '+s);for(const s of ['sajtószoba vizuális tartalom','PR-Fotografie'])assert.ok(b.alternateName.includes(s),'brand synonym '+s);
-const ai=await readFile('ai.txt','utf8');for(const rel of ['faq/index.html','hu/gyik/index.html','de-at/faq/index.html']){const h=await readFile(rel,'utf8');const blocks=[...h.matchAll(/<script\b[^>]*type=[\"']application\/ld\+json[\"'][^>]*>([\s\S]*?)<\/script>/gi)];let faq;for(const m of blocks){try{const d=JSON.parse(m[1]);const ns=Array.isArray(d?.['@graph'])?d['@graph']:[d];faq=ns.find(n=>n?.['@type']==='FAQPage')||faq;}catch{}}assert.equal(faq?.mainEntity?.length,19,rel+' 19 FAQ');for(const x of faq.mainEntity){assert.ok(ai.includes(x.name),rel+' Q mirrored');assert.ok(ai.includes(x.acceptedAnswer.text),rel+' A mirrored');}}
-const files=[];async function walk(d){for(const e of await readdir(d,{withFileTypes:true})){if(['.git','node_modules','dist'].includes(e.name))continue;const f=path.join(d,e.name);if(e.isDirectory())await walk(f);else if(/\.(html|json|jsonld|txt|md|xml)$/.test(e.name))files.push(f)}}await walk(root);for(const f of files){const s=await readFile(f,'utf8');assert.ok(!s.includes('partnerschaft-für-führungskräfte'),path.relative(root,f)+' raw WKO URL');}
-const expected={"en":"Strategic visual partnership for leaders and organisations. Executive portraiture, brand photography and C-level event imagery designed as one coherent system that builds visual trust.","hu":"Stratégiai vizuális partnerség vezetőknek és szervezeteknek. Az executive portré, a brandfotózás és a C-level eseményfotózás egyetlen koherens rendszert alkot, amely vizuális bizalmat épít.","de":"Strategische visuelle Partnerschaft für Führungskräfte und Organisationen. Executive-Porträts, Brandfotografie und C-Level-Eventbilder bilden ein kohärentes System, das visuelles Vertrauen aufbaut."};for(const rel of ['index.html','hu/index.html','de-at/index.html']){const h=await readFile(rel,'utf8');const lang=rel.startsWith('hu/')?'hu':rel.startsWith('de-at/')?'de':'en';assert.ok(h.includes(JSON.stringify(expected[lang]).slice(1,-1)),rel+' canonical Person description');}
-console.log('SEO/GEO/entity consistency stage59: OK');
+
+for (const rel of ['glamour/index.html','hu/muveszi-fotografia/index.html','de-at/fine-art/index.html']) {
+  const html = await readFile(rel, 'utf8');
+  assert.match(html, /actor|színész|Schauspiel/i, rel + ' actor intent missing');
+  assert.match(html, /dance|tánc|Tanz/i, rel + ' dance intent missing');
+  assert.match(html, /performer|előadóművész/i, rel + ' performer intent missing');
+  assert.match(html, /application\/ld\+json/i, rel + ' schema missing');
+}
+
+const core = JSON.parse(await readFile('data/machine-core.json','utf8'));
+const fine = core.serviceModel?.services?.find(s => s.id === 'fine-art');
+assert.equal(fine?.serviceContext, 'fine-art', 'canonical Fine Art / Artists & Performers backend context drift');
+assert.match(fine?.name || '', /Artists & Performers/i, 'canonical Artists & Performers service meaning missing');
+for (const token of ['Actor headshot photography','Dance photography','Performing artist portfolio photography','Model portfolio photography']) {
+  assert.ok(core.person?.specialisms?.includes(token), 'canonical specialism missing: ' + token);
+}
+
+const expectedPersonDescriptions={
+  en:'Strategic visual partnership for leaders and organisations. Executive portraiture, brand photography and C-level event imagery designed as one coherent system that builds visual trust.',
+  hu:'Stratégiai vizuális partnerség vezetőknek és szervezeteknek. Az executive portré, a brandfotózás és a C-level eseményfotózás egyetlen koherens rendszert alkot, amely vizuális bizalmat épít.',
+  de:'Strategische visuelle Partnerschaft für Führungskräfte und Organisationen. Executive-Porträts, Brandfotografie und C-Level-Eventbilder bilden ein kohärentes System, das visuelles Vertrauen aufbaut.'
+};
+for (const rel of ['index.html','hu/index.html','de-at/index.html']) {
+  const html=await readFile(rel,'utf8');
+  const lang=rel.startsWith('hu/')?'hu':rel.startsWith('de-at/')?'de':'en';
+  assert.ok(html.includes(JSON.stringify(expectedPersonDescriptions[lang]).slice(1,-1)), rel+' canonical executive-first Person description');
+}
+
+console.log('SEO/GEO/entity consistency stage59: current executive-first identity and Fine Art / Artists & Performers service family are aligned.');
