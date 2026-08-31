@@ -1,0 +1,2 @@
+BANHALMI Google Search contract FAILED:
+ - requestaquote/index.html: page-level schema name drift from title
