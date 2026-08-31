@@ -1,0 +1,39 @@
+name: Apply Artists Performers Machine Layer
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/apply-artists-performers-machine-layer-20260831.mjs'
+      - '.github/workflows/apply-artists-performers-machine-layer.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Apply canonical Artists & Performers migration
+        run: node tools/apply-artists-performers-machine-layer-20260831.mjs
+      - name: Run source quality gate
+        run: npm test
+      - name: Commit migration output
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/machine-core.json customer-intent-model.json customer-needs.json pricing.json glamour/index.html hu/muveszi-fotografia/index.html de-at/fine-art/index.html tools/audit-machine-core.mjs tools/audit-artists-performers-layer.mjs package.json llms-full.txt
+          git commit -m "Align Artists and Performers SEO GEO Schema LLM layer"
+          git push
