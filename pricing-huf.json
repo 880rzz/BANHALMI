@@ -1,7 +1,7 @@
 {
   "documentType": "BANHALMI fixed-rate HUF orientation pricing",
-  "schemaVersion": "2026-08-05-v1",
-  "dateModified": "2026-08-05T23:48:00+02:00",
+  "schemaVersion": "2026-08-05-v1-artists-performers",
+  "dateModified": "2026-08-31T23:25:00+02:00",
   "canonicalBasePricingSource": "https://www.norbertbanhalmi.com/pricing.json",
   "aiInterpretationGuide": "https://www.norbertbanhalmi.com/pricing-guide.json",
   "quoteCalculator": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/",
@@ -178,7 +178,52 @@
         }
       ],
       "includedRetouchedImages": 2,
-      "extraRetouchedImageGrossHUF": 18000
+      "extraRetouchedImageGrossHUF": 18000,
+      "scope": [
+        "actor headshots",
+        "acting portfolio photography",
+        "dance photography",
+        "movement photography",
+        "performing artist portfolio photography",
+        "model portfolio photography",
+        "editorial portrait photography",
+        "creative professional portraits"
+      ],
+      "audiences": {
+        "en": [
+          "actors",
+          "acting students",
+          "dancers",
+          "performers",
+          "models",
+          "creative professionals"
+        ],
+        "hu": [
+          "színészek",
+          "színészhallgatók",
+          "táncosok",
+          "előadóművészek",
+          "modellek",
+          "kreatív szakemberek"
+        ],
+        "de-AT": [
+          "Schauspieler:innen",
+          "Schauspielstudierende",
+          "Tänzer:innen",
+          "Performer:innen",
+          "Models",
+          "Kreativschaffende"
+        ]
+      },
+      "quoteRouting": {
+        "serviceValue": "art",
+        "interfaceLabel": {
+          "en": "Fine Art / Artists & Performers",
+          "hu": "Művészi fotózás / Művészek és előadók",
+          "de-AT": "Fine Art / Künstler:innen & Performer:innen"
+        },
+        "note": "Actor, dance, performer and model/editorial portfolio requests use the existing artistic-production calculation route so the submission backend and delivery contract remain unchanged."
+      }
     },
     {
       "id": "event",

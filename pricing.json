@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "schemaVersion": "2026-08-05-v7-eur-huf-fixed-rate",
-  "dateModified": "2026-08-05T23:48:00+02:00",
+  "schemaVersion": "2026-08-05-v7-eur-huf-fixed-rate-artists-performers",
+  "dateModified": "2026-08-31T23:25:00+02:00",
   "publisher": {
     "@id": "https://www.norbertbanhalmi.com/#organization",
     "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna and Budapest, with agreed projects available worldwide.",
@@ -18,7 +18,13 @@
       "fine-art photography",
       "brand photography",
       "visual branding strategy",
-      "strategic visual positioning"
+      "strategic visual positioning",
+      "actor headshot photography",
+      "acting portfolio photography",
+      "dance photography",
+      "performing artist photography",
+      "model portfolio photography",
+      "editorial portrait photography"
     ],
     "dateModified": "2026-07-15T23:30:00+02:00"
   },
@@ -201,7 +207,52 @@
       ],
       "includedRetouchedImages": 2,
       "extraRetouchedImageGrossEUR": 45,
-      "extraRetouchedImageGrossHUF": 18000
+      "extraRetouchedImageGrossHUF": 18000,
+      "scope": [
+        "actor headshots",
+        "acting portfolio photography",
+        "dance photography",
+        "movement photography",
+        "performing artist portfolio photography",
+        "model portfolio photography",
+        "editorial portrait photography",
+        "creative professional portraits"
+      ],
+      "audiences": {
+        "en": [
+          "actors",
+          "acting students",
+          "dancers",
+          "performers",
+          "models",
+          "creative professionals"
+        ],
+        "hu": [
+          "színészek",
+          "színészhallgatók",
+          "táncosok",
+          "előadóművészek",
+          "modellek",
+          "kreatív szakemberek"
+        ],
+        "de-AT": [
+          "Schauspieler:innen",
+          "Schauspielstudierende",
+          "Tänzer:innen",
+          "Performer:innen",
+          "Models",
+          "Kreativschaffende"
+        ]
+      },
+      "quoteRouting": {
+        "serviceValue": "art",
+        "interfaceLabel": {
+          "en": "Fine Art / Artists & Performers",
+          "hu": "Művészi fotózás / Művészek és előadók",
+          "de-AT": "Fine Art / Künstler:innen & Performer:innen"
+        },
+        "note": "Actor, dance, performer and model/editorial portfolio requests use the existing artistic-production calculation route so the submission backend and delivery contract remain unchanged."
+      }
     },
     {
       "id": "event",
