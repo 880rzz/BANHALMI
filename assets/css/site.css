@@ -4268,3 +4268,52 @@ html body .site-footer,html body .site-footer .wrap{min-height:0!important;}
 }
 /* CANONICAL-DESIGN-SYSTEM-20260827:END */
 /* APPLE-RESPONSIVE-CONTRACT-V1:END */
+
+
+/* EXECUTIVE-WHATSAPP-CONTACT-V1:START */
+/* A restrained first-party contact affordance: neutral by default, branded only
+   on intentional interaction. No WhatsApp code, cookies or tracking load. */
+.whatsapp-contact{
+  position:fixed;
+  right:max(18px,env(safe-area-inset-right));
+  bottom:max(18px,env(safe-area-inset-bottom));
+  z-index:990;
+  display:grid;
+  place-items:center;
+  inline-size:48px;
+  block-size:48px;
+  min-inline-size:48px;
+  min-block-size:48px;
+  border:1px solid rgba(32,37,48,.16);
+  border-radius:50%;
+  background:rgba(245,245,247,.9);
+  color:#555b66;
+  box-shadow:0 8px 28px rgba(20,24,32,.11);
+  -webkit-backdrop-filter:blur(14px) saturate(120%);
+  backdrop-filter:blur(14px) saturate(120%);
+  transition:color .2s ease,background-color .2s ease,border-color .2s ease,
+             box-shadow .2s ease,transform .2s ease,bottom .25s ease;
+}
+.whatsapp-contact svg{inline-size:21px;block-size:21px;fill:currentColor;}
+.whatsapp-contact:is(:hover,:focus-visible){
+  color:#fff;
+  background:#59616d;
+  border-color:#59616d;
+  box-shadow:0 12px 34px rgba(20,24,32,.18);
+  transform:translateY(-2px);
+}
+.whatsapp-contact:focus-visible{outline:2px solid #B79C44;outline-offset:3px;}
+body.whatsapp-cookie-visible .whatsapp-contact{bottom:max(112px,calc(env(safe-area-inset-bottom) + 88px));}
+@media(max-width:560px){
+  .whatsapp-contact{
+    right:max(14px,env(safe-area-inset-right));
+    bottom:max(14px,env(safe-area-inset-bottom));
+    inline-size:46px;
+    block-size:46px;
+    min-inline-size:46px;
+    min-block-size:46px;
+  }
+  body.whatsapp-cookie-visible .whatsapp-contact{bottom:max(132px,calc(env(safe-area-inset-bottom) + 108px));}
+}
+@media(prefers-reduced-motion:reduce){.whatsapp-contact{transition:none;}}
+/* EXECUTIVE-WHATSAPP-CONTACT-V1:END */
