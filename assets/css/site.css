@@ -4267,9 +4267,6 @@ html body .site-footer,html body .site-footer .wrap{min-height:0!important;}
   html body .quote-deep-details .pricing-licensing-clarity .card-grid{margin-bottom:30px!important;row-gap:14px!important;column-gap:14px!important;}
 }
 /* CANONICAL-DESIGN-SYSTEM-20260827:END */
-/* APPLE-RESPONSIVE-CONTRACT-V1:END */
-
-
 /* EXECUTIVE-WHATSAPP-CONTACT-V1:START */
 /* A restrained first-party contact affordance: neutral by default, branded only
    on intentional interaction. No WhatsApp code, cookies or tracking load. */
@@ -4317,3 +4314,4 @@ body.whatsapp-cookie-visible .whatsapp-contact{bottom:max(112px,calc(env(safe-ar
 }
 @media(prefers-reduced-motion:reduce){.whatsapp-contact{transition:none;}}
 /* EXECUTIVE-WHATSAPP-CONTACT-V1:END */
+/* APPLE-RESPONSIVE-CONTRACT-V1:END */
