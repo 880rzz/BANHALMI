@@ -29,6 +29,15 @@ if (!css.includes('color:#F5F5F7!important;font-weight:650!important')) {
 if (!css.includes('min-height:44px!important;padding-right:24px!important')) {
   errors.push('touch footer accordion target contract missing');
 }
+for (const token of [
+  'minmax(280px,1.15fr) minmax(225px,1fr) minmax(140px,.68fr) minmax(135px,.68fr) minmax(150px,.72fr) minmax(270px,1.2fr)',
+  'white-space:nowrap!important',
+  'content:"•"!important',
+  '.footer-contact-actions a:first-child{color:#F5F5F7!important;font-weight:650!important;}',
+  '@media(max-width:1460px)'
+]) {
+  if (!css.includes(token)) errors.push(`footer navigation hierarchy contract missing: ${token}`);
+}
 
 let footers = 0;
 for (const page of pages) {
