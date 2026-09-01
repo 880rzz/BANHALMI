@@ -4313,5 +4313,14 @@ body.whatsapp-cookie-visible .whatsapp-contact{bottom:max(112px,calc(env(safe-ar
   body.whatsapp-cookie-visible .whatsapp-contact{bottom:max(132px,calc(env(safe-area-inset-bottom) + 108px));}
 }
 @media(prefers-reduced-motion:reduce){.whatsapp-contact{transition:none;}}
+@media(max-width:900px){
+  /* Keep the contact action visually separate from the fixed quote estimate. */
+  body:has([data-smart-quote]) .whatsapp-contact{
+    bottom:max(84px,calc(env(safe-area-inset-bottom) + 74px));
+  }
+  body.whatsapp-cookie-visible:has([data-smart-quote]) .whatsapp-contact{
+    bottom:max(154px,calc(env(safe-area-inset-bottom) + 144px));
+  }
+}
 /* EXECUTIVE-WHATSAPP-CONTACT-V1:END */
 /* APPLE-RESPONSIVE-CONTRACT-V1:END */
