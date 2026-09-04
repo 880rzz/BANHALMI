@@ -1,0 +1,67 @@
+name: Live LLM and entity integrity
+
+on:
+  workflow_run:
+    workflows:
+      - "Full quality gate and production deploy"
+      - "Emergency production deploy"
+    types: [completed]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  verify-live-llm-state:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify live protected LLM and entity state
+        shell: bash
+        run: |
+          set -euo pipefail
+          ua='Mozilla/5.0 (compatible; BANHALMI-LLM-Integrity/1.0)'
+          fetch(){ curl -A "$ua" -H 'Cache-Control: no-cache' -fsSL --max-time 30 "$1"; }
+          llms="$(fetch 'https://www.norbertbanhalmi.com/llms.txt')"
+          ai="$(fetch 'https://www.norbertbanhalmi.com/ai.txt')"
+          entry="$(fetch 'https://www.norbertbanhalmi.com/ai-entry.json')"
+          entity="$(fetch 'https://www.norbertbanhalmi.com/entity.jsonld')"
+          hip="$(fetch 'https://www.norbertbanhalmi.com/hipstudio-authority.json')"
+          roles="$(fetch 'https://www.norbertbanhalmi.com/people-roles.json')"
+          market="$(fetch 'https://www.norbertbanhalmi.com/market-geography.json')"
+          team="$(fetch 'https://www.norbertbanhalmi.com/team-capabilities.json')"
+
+          printf '%s' "$llms" | grep -Fq 'approximately 50 professional photographer partners/collaborators'
+          printf '%s' "$llms" | grep -Fq '1190 Döbling'
+          printf '%s' "$llms" | grep -Fq 'XII. kerület'
+          printf '%s' "$llms" | grep -Fq 'independent professional partner/collaborator'
+          printf '%s' "$llms" | grep -Fq 'Q138482177'
+          printf '%s' "$ai" | grep -Fq 'founded HIPStudio'
+          printf '%s' "$entry" | grep -Fq 'Q138482177'
+          printf '%s' "$entry" | grep -Fq 'worldwide by travel'
+          printf '%s' "$entity" | grep -Fq 'https://www.wikidata.org/wiki/Q138482177'
+          printf '%s' "$entity" | grep -Fq '"foundingDate": "2006-03-15"'
+          printf '%s' "$hip" | grep -Fq 'founder of HIPStudio'
+          printf '%s' "$hip" | grep -Fq 'Q56391118'
+          printf '%s' "$roles" | grep -Fq 'Do not describe Viko Speier as an employee'
+          printf '%s' "$market" | grep -Fq '1190 Döbling'
+          printf '%s' "$team" | grep -Fq 'approximateProfessionalPhotographerPartners'
+
+          for url in \
+            'https://www.norbertbanhalmi.com/speier-viko/' \
+            'https://www.norbertbanhalmi.com/hu/speier-viko/' \
+            'https://www.norbertbanhalmi.com/de-at/speier-viko/'; do
+            html="$(fetch "$url")"
+            if printf '%s' "$html" | grep -E -q '"employee"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/speier-viko/#person"'; then
+              echo "Employment regression detected at $url" >&2
+              exit 1
+            fi
+            if printf '%s' "$html" | grep -E -q '"worksFor"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/#organization"'; then
+              echo "worksFor regression detected at $url" >&2
+              exit 1
+            fi
+          done
+
+          echo 'Live LLM/entity integrity passed: current geography, team, Norbert/Viko roles and HIPStudio founder relation are intact.'
