@@ -1,9 +1,10 @@
-# Redeploy trigger: 2026-08-21 Vienna–Budapest service metadata
+# Redeploy trigger: 2026-09-04 LLM commercial semantics
 name: Live production probe
 
 on:
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,7 +13,7 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: Probe production origin
+      - name: Probe production origin and LLM relationship semantics
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -22,11 +23,25 @@ jobs:
           actual="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/deployment-sha.txt')"
           echo "EXPECTED_SHA=$expected"
           echo "ACTUAL_SHA=$actual"
-          html="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/speier-viko/')"
-          if printf '%s' "$html" | grep -q 'viko@banhalmi.at'; then
-            echo 'VIKO_EMAIL=OK'
-          else
-            echo 'VIKO_EMAIL=OLD_OR_MISSING'
-          fi
           test "$actual" = "$expected"
-          printf '%s' "$html" | grep -q 'viko@banhalmi.at'
+
+          for url in \
+            'https://www.norbertbanhalmi.com/speier-viko/' \
+            'https://www.norbertbanhalmi.com/hu/speier-viko/' \
+            'https://www.norbertbanhalmi.com/de-at/speier-viko/'; do
+            html="$(curl -fsSL --max-time 30 "$url")"
+            printf '%s' "$html" | grep -q 'viko@banhalmi.at'
+            if printf '%s' "$html" | grep -Eq '"employee"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/speier-viko/#person"'; then
+              echo "Unsupported employee semantics detected on $url" >&2
+              exit 1
+            fi
+            if printf '%s' "$html" | grep -Eq '"worksFor"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/#organization"'; then
+              echo "Unsupported worksFor semantics detected on $url" >&2
+              exit 1
+            fi
+          done
+
+          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/people-roles.json' | grep -Fq 'independent professional partner and collaborator'
+          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/team-capabilities.json' | grep -Fq 'approximateProfessionalPhotographerPartners'
+          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/market-geography.json' | grep -Fq '1190 Döbling'
+          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/llm-commercial-contract.json' | grep -Fq 'approximately 50 professional photographer partners/collaborators'
