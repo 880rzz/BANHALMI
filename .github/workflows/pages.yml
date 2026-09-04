@@ -66,6 +66,12 @@ jobs:
           test -f _site/sitemap.xml
           test -f _site/llms.txt
           test -f _site/ai.txt
+          test -f _site/entity.jsonld
+          test -f _site/person-authority.jsonld
+          test -f _site/business-authority.json
+          grep -Fq 'Q56391118' _site/person-authority.jsonld
+          grep -Fq 'Q138425941' _site/business-authority.json
+          grep -Fq 'ATU80445314' _site/business-authority.json
           test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "1"
           grep -q '/assets/css/site.css' _site/index.html
           grep -q '/assets/css/site.css' _site/hu/index.html
@@ -178,9 +184,13 @@ jobs:
             'https://www.norbertbanhalmi.com/llms.txt' \
             'https://www.norbertbanhalmi.com/ai.txt' \
             'https://www.norbertbanhalmi.com/entity.jsonld' \
+            'https://www.norbertbanhalmi.com/person-authority.jsonld' \
+            'https://www.norbertbanhalmi.com/business-authority.json' \
             'https://www.norbertbanhalmi.com/pricing.json'; do
             curl -fsSL --max-time 30 "$url" >/dev/null
           done
+          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/person-authority.jsonld' | grep -Fq 'Q56391118'
+          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/business-authority.json' | grep -Fq 'ATU80445314'
       - name: Run exact live mobile Lighthouse 100 gate
         run: |
           rm -rf artifacts/lighthouse-production-mobile
