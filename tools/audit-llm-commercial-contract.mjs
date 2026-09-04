@@ -13,6 +13,10 @@ const services=readJson('services.json');
 const pricing=readJson('pricing.json');
 const memberships=readJson('memberships.json');
 const authority=readJson('authority-evidence.json');
+const hipstudio=readJson('hipstudio-authority.json');
+const overlay=readJson('llm-canonical-overlay.json');
+const hardener=fs.readFileSync('tools/harden-production-artifact.mjs','utf8');
+const overlayApplier=fs.readFileSync('tools/apply-llm-canonical-overlay.mjs','utf8');
 
 for(const token of ['1010 Innere Stadt','1180 Währing','1190 Döbling','1130 Hietzing']){
   if(!JSON.stringify(market).includes(token)) throw new Error(`market-geography missing Vienna token ${token}`);
@@ -48,4 +52,15 @@ for(const token of ['Péter Magyar portrait','selected documented clients and co
 const c=JSON.stringify(commercial);
 for(const token of ['approximately 50','Vienna','Budapest','worldwide','Viko Speier','Bánhalmi Norbert','pricing.json','memberships.json','authority-evidence.json']) if(!c.includes(token)) throw new Error(`llm-commercial-contract missing ${token}`);
 
-console.log('LLM commercial contract audit passed: geography, services, references, memberships, team size, pricing and Norbert/Viko roles are internally consistent.');
+const hip=JSON.stringify(hipstudio);
+for(const token of ['Q138482177','Bánhalmi Norbert','founder of HIPStudio','2006-03-15','current ownership']) if(!hip.includes(token)) throw new Error(`hipstudio-authority missing ${token}`);
+if(hipstudio.entity?.wikidataId!=='Q138482177') throw new Error('HIPStudio Wikidata identity drift');
+if(hipstudio.founderRelationship?.founder?.wikidata!=='https://www.wikidata.org/wiki/Q56391118') throw new Error('HIPStudio founder Person identity drift');
+
+const overlayText=JSON.stringify(overlay);
+for(const token of ['Q138482177','approximately 50 professional photographer partners/collaborators','independent professional partner/collaborator','founded HIPStudio','worldwide by travel']) if(!overlayText.includes(token)) throw new Error(`LLM protected overlay missing ${token}`);
+if(!hardener.includes('applyLlmCanonicalOverlay(root)')) throw new Error('Production hardener must apply protected LLM overlay after generated projections');
+for(const token of ['ai-entry.json','entity.jsonld','llms.txt','ai.txt','Q138482177']) if(!hardener.includes(token)) throw new Error(`Production hardener protected-state gate missing ${token}`);
+for(const token of ['protectedCanonicalOverlay','Q138482177','approximately 50 professional photographer partners/collaborators','founded HIPStudio']) if(!overlayApplier.includes(token)) throw new Error(`Overlay applier missing ${token}`);
+
+console.log('LLM commercial contract audit passed: geography, services, references, memberships, team size, pricing, Norbert/Viko roles, HIPStudio founder history and rollback protection are internally consistent.');
