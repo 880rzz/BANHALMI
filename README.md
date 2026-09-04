@@ -11,6 +11,13 @@ Production-ready static website for Norbert Banhalmi / Bánhalmi Norbert.
 
 Vienna is the company headquarters. Vienna and Budapest are equal active service bases.
 
+## Canonical authority layer
+
+- `person-authority.jsonld` — canonical Person resolution for Bánhalmi Norbert, Wikidata Q56391118, Hungarian Wikipedia, Rólunk.at press coverage, and explicitly typed relationships to the Központi Szövetség, Bécsi Magyar Iskola and VIPACH.
+- `business-authority.json` — WKO-backed legal/business identity for Norbert Banhalmi e.U., including Q138425941, GLN 9110037983878, UID ATU80445314, GISA 36592951, Schwedenplatz 2 and the distinct Gersthofer office/client-meeting location.
+- Bánhalmi Norbert's marketing and communications contribution to the Központi Szövetség is voluntary. It must not be represented or inferred as employment, employee/staff status, payroll relationship or paid engagement without a separate authoritative source.
+- Rólunk.at tag archives are `subjectOf`/press-context evidence, not `sameAs` identity URLs.
+
 ## Ecosystem and automation contract
 
 - `norbertbanhalmi.com` is the professional service and enquiry site.
