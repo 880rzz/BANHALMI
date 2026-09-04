@@ -22,26 +22,49 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v4
-      - name: Prepare production artifact without quality gates
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run non-negotiable source contracts
+        run: |
+          set -euo pipefail
+          node tools/audit-workflow-safety.mjs
+          node tools/audit-machine-core.mjs
+          node tools/audit-authority-integrity.mjs
+          node tools/audit-llm-commercial-contract.mjs
+      - name: Prepare hardened emergency production artifact
         shell: bash
         run: |
           set -euo pipefail
           rm -rf _site
           mkdir -p _site
-          tar \
-            --exclude=.git \
-            --exclude=.github \
-            --exclude=tools \
-            --exclude=node_modules \
-            --exclude=package.json \
-            --exclude=package-lock.json \
-            --exclude=_site \
-            --exclude=artifacts \
-            -cf - . | tar -xf - -C _site
+          git archive --format=tar HEAD | tar -xf - -C _site
+          rm -rf _site/.github _site/tools _site/tests _site/node_modules _site/artifacts
+          rm -f _site/package.json _site/package-lock.json
           printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
+          node tools/optimize-production-artifact.mjs _site
+          node tools/restore-production-design-authority.mjs _site
+          node tools/harden-production-artifact.mjs _site
           test -f _site/index.html
           test -f _site/hu/index.html
           test -f _site/de-at/index.html
+          for file in \
+            _site/llms.txt \
+            _site/ai.txt \
+            _site/ai-entry.json \
+            _site/market-geography.json \
+            _site/people-roles.json \
+            _site/llm-commercial-contract.json \
+            _site/team-capabilities.json; do
+            test -s "$file"
+          done
+          grep -Fq 'approximately 50' _site/llms.txt
+          grep -Fq 'independent professional partner' _site/llms.txt
+          grep -Fq '1190 Döbling' _site/llms.txt
+          grep -Fq 'XII. kerület' _site/llms.txt
+          grep -Fq 'worldwide' _site/llms.txt
+          ! grep -R -E '"employee"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/speier-viko/#person"' _site/speier-viko _site/hu/speier-viko _site/de-at/speier-viko
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
@@ -56,6 +79,6 @@ jobs:
     steps:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Deploy emergency artifact
+      - name: Deploy hardened emergency artifact
         id: deployment
         uses: actions/deploy-pages@v4
