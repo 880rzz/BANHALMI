@@ -18,15 +18,12 @@ function asArray(value) {
   return Array.isArray(value) ? value : value == null ? [] : [value];
 }
 
-function hasId(value, id) {
-  return asArray(value).some((entry) => entry && typeof entry === 'object' && entry['@id'] === id);
-}
-
 const PERSON_ID = 'https://www.norbertbanhalmi.com/about/';
 const COMPANY_ID = 'https://www.norbertbanhalmi.com/#organization';
 const CENTRAL_ID = 'https://www.kozpontiszovetseg.at/#organization';
 const BMI_ID = 'https://www.magyariskola.at/#school';
 const VIPACH_ID = 'https://www.vipach.at/#organization';
+const HIPSTUDIO_ID = 'https://www.hipstudio.hu/#organization';
 
 const authority = readJson('person-authority.jsonld');
 const graph = asArray(authority['@graph']);
@@ -42,34 +39,40 @@ for (const required of [
 }
 
 const subjectUrls = asArray(person.subjectOf).map((entry) => entry?.url || entry?.['@id']).filter(Boolean);
-if (!subjectUrls.includes('https://rolunk.at/tag/banhalmi-norbert/')) {
-  fail('Rólunk.at must remain subjectOf/press evidence for Bánhalmi Norbert');
-}
-if (sameAs.includes('https://rolunk.at/tag/banhalmi-norbert/')) {
-  fail('Rólunk.at must never be serialized as sameAs');
-}
+if (!subjectUrls.includes('https://rolunk.at/tag/banhalmi-norbert/')) fail('Rólunk.at must remain subjectOf/press evidence for Bánhalmi Norbert');
+if (!subjectUrls.includes('https://www.norbertbanhalmi.com/hipstudio-authority.json')) fail('HIPStudio founder authority must remain linked from the canonical Person');
+if (sameAs.includes('https://rolunk.at/tag/banhalmi-norbert/')) fail('Rólunk.at must never be serialized as sameAs');
 
-if (person.worksFor?.['@id'] !== COMPANY_ID) {
-  fail('Person worksFor must resolve only to the canonical Norbert Banhalmi e.U. organization');
-}
+if (person.worksFor?.['@id'] !== COMPANY_ID) fail('Person worksFor must resolve only to the canonical Norbert Banhalmi e.U. organization');
 
 const affiliations = asArray(person.affiliation);
 const central = affiliations.find((entry) => entry?.['@id'] === CENTRAL_ID);
 const bmi = affiliations.find((entry) => entry?.['@id'] === BMI_ID);
 const vipach = affiliations.find((entry) => entry?.['@id'] === VIPACH_ID);
+const hipstudioAffiliation = affiliations.find((entry) => entry?.['@id'] === HIPSTUDIO_ID);
 if (!central || central.sameAs !== 'https://www.wikidata.org/wiki/Q141274866') fail('Központi affiliation/Q141274866 missing');
 if (!bmi || bmi.sameAs !== 'https://www.wikidata.org/wiki/Q141274560') fail('BMI affiliation/Q141274560 missing');
 if (!vipach || vipach.sameAs !== 'https://www.wikidata.org/wiki/Q138416887') fail('VIPACH affiliation/Q138416887 missing');
+if (!hipstudioAffiliation || hipstudioAffiliation.sameAs !== 'https://www.wikidata.org/wiki/Q138482177') fail('HIPStudio affiliation/Q138482177 missing');
+if (!String(hipstudioAffiliation.description || '').includes('founded HIPStudio')) fail('HIPStudio founder relationship missing from Person authority');
+if (!String(hipstudioAffiliation.description || '').includes('does not imply current ownership')) fail('HIPStudio founder/current-ownership boundary missing');
 
 const centralDescription = String(central.description || '').toLowerCase();
-if (!centralDescription.includes('önkéntes') || !centralDescription.includes('nem munkaviszony') || !centralDescription.includes('nem fizetett')) {
-  fail('Központi relationship must explicitly remain voluntary and non-employment/non-paid');
-}
+if (!centralDescription.includes('önkéntes') || !centralDescription.includes('nem munkaviszony') || !centralDescription.includes('nem fizetett')) fail('Központi relationship must explicitly remain voluntary and non-employment/non-paid');
 
 const company = graph.find((node) => node?.['@id'] === COMPANY_ID);
-if (!company || company.sameAs !== 'https://www.wikidata.org/wiki/Q138425941') {
-  fail('Norbert Banhalmi e.U. must remain linked to Wikidata Q138425941');
-}
+if (!company || company.sameAs !== 'https://www.wikidata.org/wiki/Q138425941') fail('Norbert Banhalmi e.U. must remain linked to Wikidata Q138425941');
+
+const hipstudioNode = graph.find((node) => node?.['@id'] === HIPSTUDIO_ID);
+if (!hipstudioNode) fail('HIPStudio Organization node missing from person-authority.jsonld');
+if (hipstudioNode.sameAs !== 'https://www.wikidata.org/wiki/Q138482177') fail('HIPStudio Wikidata identity drift');
+if (hipstudioNode.founder?.['@id'] !== PERSON_ID) fail('HIPStudio founder must remain Bánhalmi Norbert');
+if (hipstudioNode.foundingDate !== '2006-03-15') fail('HIPStudio operational founding date drift');
+
+const hipstudioAuthority = readJson('hipstudio-authority.json');
+if (hipstudioAuthority.entity?.wikidataId !== 'Q138482177') fail('hipstudio-authority Wikidata drift');
+if (hipstudioAuthority.founderRelationship?.founder?.wikidata !== 'https://www.wikidata.org/wiki/Q56391118') fail('hipstudio-authority founder Person drift');
+if (hipstudioAuthority.founderRelationship?.operationalFoundingDate !== '2006-03-15') fail('hipstudio-authority founding date drift');
 
 const business = readJson('business-authority.json');
 const entity = business.entity || {};
@@ -79,23 +82,15 @@ if (entity.identifiers?.VAT_UID !== 'ATU80445314') fail('UID drift detected');
 if (entity.identifiers?.GISA !== '36592951') fail('GISA drift detected');
 
 const primary = entity.primaryWkoBusinessAddress || {};
-if (primary.streetAddress !== 'Schwedenplatz 2, Top 8–9' || primary.postalCode !== '1010' || primary.addressLocality !== 'Wien') {
-  fail('Schwedenplatz business/studio address drift detected');
-}
+if (primary.streetAddress !== 'Schwedenplatz 2, Top 8–9' || primary.postalCode !== '1010' || primary.addressLocality !== 'Wien') fail('Schwedenplatz business/studio address drift detected');
 const office = entity.additionalViennaLocation || {};
-if (office.streetAddress !== 'Gersthofer Straße 150–154/6/2' || office.postalCode !== '1180' || office.addressLocality !== 'Wien') {
-  fail('Gersthofer office address drift detected');
-}
-if (!String(office.role || '').toLowerCase().includes('not the vienna studio')) {
-  fail('Gersthofer office must remain explicitly distinct from the Vienna studio');
-}
+if (office.streetAddress !== 'Gersthofer Straße 150–154/6/2' || office.postalCode !== '1180' || office.addressLocality !== 'Wien') fail('Gersthofer office address drift detected');
+if (!String(office.role || '').toLowerCase().includes('not the vienna studio')) fail('Gersthofer office must remain explicitly distinct from the Vienna studio');
 
 const readme = fs.readFileSync('README.md', 'utf8');
-for (const token of ['person-authority.jsonld', 'business-authority.json', 'Q56391118', 'Q138425941']) {
+for (const token of ['person-authority.jsonld', 'business-authority.json', 'hipstudio-authority.json', 'Q56391118', 'Q138425941', 'Q138482177']) {
   if (!readme.includes(token)) fail(`README authority contract missing ${token}`);
 }
-if (!readme.toLowerCase().includes('voluntary') || !readme.toLowerCase().includes('must not be represented or inferred as employment')) {
-  fail('README must preserve the voluntary/non-employment interpretation rule');
-}
+if (!readme.toLowerCase().includes('voluntary') || !readme.toLowerCase().includes('must not be represented or inferred as employment')) fail('README must preserve the voluntary/non-employment interpretation rule');
 
-console.log('Authority integrity audit passed: Person, business, institutional affiliations and location semantics are stable.');
+console.log('Authority integrity audit passed: Person, business, HIPStudio founder history, institutional affiliations and location semantics are stable.');
