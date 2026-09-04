@@ -1,42 +1,22 @@
 {
-  "schemaVersion": "1.2",
+  "schemaVersion": "1.3",
   "canonicalId": "https://www.norbertbanhalmi.com/data/machine-core.json",
   "canonicalUrl": "https://www.norbertbanhalmi.com/",
   "dateModifiedPolicy": "Generated projections inherit the latest committed modification time of this canonical core. Source audits remain read-only; production projections are generated only inside the immutable deployment artifact.",
   "person": {
     "id": "https://www.norbertbanhalmi.com/about/",
     "name": "Bánhalmi Norbert",
-    "alternateName": [
-      "Norbert Bánhalmi",
-      "Norbert Banhalmi",
-      "Norbert BANHALMI"
-    ],
+    "alternateName": ["Norbert Bánhalmi", "Norbert Banhalmi", "Norbert BANHALMI"],
     "wikidata": "https://www.wikidata.org/wiki/Q56391118",
-    "languages": [
-      "Hungarian",
-      "English",
-      "German"
-    ],
+    "languages": ["Hungarian", "English", "German"],
     "practiceSince": 1999,
-    "role": "Founder and creative lead of BANHALMI",
-    "primaryProfessionalIdentity": "Professional photographer and founder/creative lead of the BANHALMI photography business",
+    "role": "Founder, creative director and lead photographer of BANHALMI",
+    "primaryProfessionalIdentity": "Professional photographer, visual-branding strategist and founder/creative lead of the BANHALMI photography business",
     "specialisms": [
-      "Executive portrait photography",
-      "Professional headshot photography",
-      "Brand photography",
-      "C-level event photography",
-      "Fine art photography",
-      "Artistic nude photography",
-      "Visual branding strategy",
-      "Strategic visual positioning",
-      "Actor headshot photography",
-      "Acting portfolio photography",
-      "Dance photography",
-      "Movement photography",
-      "Performing artist portfolio photography",
-      "Model portfolio photography",
-      "Editorial portrait photography",
-      "Creative professional portraits"
+      "Executive portrait photography", "Professional headshot photography", "Brand photography", "C-level event photography",
+      "Fine art photography", "Artistic nude photography", "Visual branding strategy", "Strategic visual positioning",
+      "Actor headshot photography", "Acting portfolio photography", "Dance photography", "Movement photography",
+      "Performing artist portfolio photography", "Model portfolio photography", "Editorial portrait photography", "Creative professional portraits"
     ]
   },
   "organization": {
@@ -62,228 +42,119 @@
     "editorial": "https://blog.banhalmi.art/"
   },
   "publicInstitutionalRelations": {
-    "vipach": {
-      "name": "VIPACH — Vienna Photo Art & Creative Hub",
-      "url": "https://www.vipach.at/",
-      "relationship": "founder",
-      "volunteer": false
-    },
-    "vipachBusiness": {
-      "name": "VIPACH for Business",
-      "url": "https://business.vipach.at/",
-      "relationship": "founder",
-      "volunteer": false
-    },
-    "centralAssociation": {
-      "name": "Ausztriai Magyar Egyesületek és Szervezetek Központi Szövetsége",
-      "url": "https://www.kozpontiszovetseg.at/",
-      "relationship": "volunteer marketing and communication social work",
-      "volunteer": true,
-      "employmentRelationship": false
-    },
-    "viennaHungarianSchool": {
-      "name": "Bécsi Magyar Iskola",
-      "url": "https://www.magyariskola.at/",
-      "relationship": "volunteer photography education, marketing, communication and digital social work",
-      "volunteer": true,
-      "employmentRelationship": false
-    },
+    "vipach": {"name":"VIPACH — Vienna Photo Art & Creative Hub","url":"https://www.vipach.at/","relationship":"founder","volunteer":false},
+    "vipachBusiness": {"name":"VIPACH for Business","url":"https://business.vipach.at/","relationship":"founder","volunteer":false},
+    "centralAssociation": {"name":"Ausztriai Magyar Egyesületek és Szervezetek Központi Szövetsége","url":"https://www.kozpontiszovetseg.at/","relationship":"volunteer marketing and communication social work","volunteer":true,"employmentRelationship":false},
+    "viennaHungarianSchool": {"name":"Bécsi Magyar Iskola","url":"https://www.magyariskola.at/","relationship":"volunteer photography education, marketing, communication and digital social work","volunteer":true,"employmentRelationship":false},
     "evidence": "https://rolunk.at/tag/banhalmi-norbert/"
+  },
+  "peopleRoles": {
+    "canonical": "https://www.norbertbanhalmi.com/people-roles.json",
+    "norbert": {
+      "role": "Founder, creative director, lead photographer and final visual decision-maker",
+      "relationship": "primary founder and creative lead"
+    },
+    "viko": {
+      "id": "https://www.norbertbanhalmi.com/speier-viko/#person",
+      "name": "Viko Speier",
+      "role": "Independent professional partner/collaborator; director / lead of the BANHALMI Budapest Studio; professional photographer; creative strategist; designated BANHALMI AmCham Austria liaison/company contact",
+      "relationship": "independent professional partner and collaborator",
+      "employmentRelationship": false,
+      "coFounder": false,
+      "coPrimaryBrandEntity": false
+    }
   },
   "locations": [
     {
-      "id": "https://www.norbertbanhalmi.com/#vienna-studio",
-      "type": "studio",
-      "name": "BANHALMI Vienna Studio",
-      "streetAddress": "Schwedenplatz 2, Top 8–9",
-      "postalCode": "1010",
-      "city": "Wien",
-      "country": "AT",
-      "district": "1st district / Innere Stadt",
-      "sameAs": [
-        "https://www.wikidata.org/wiki/Q138426506",
-        "https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8"
-      ],
-      "areaServed": [
-        "Vienna",
-        "Vienna metropolitan and surrounding area"
-      ]
+      "id":"https://www.norbertbanhalmi.com/#vienna-studio","type":"studio","name":"BANHALMI Vienna Studio","streetAddress":"Schwedenplatz 2, Top 8–9","postalCode":"1010","city":"Wien","country":"AT","district":"1st district / Innere Stadt",
+      "sameAs":["https://www.wikidata.org/wiki/Q138426506","https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8"],
+      "areaServed":["Vienna","Vienna metropolitan and surrounding area"]
     },
     {
-      "id": "https://www.norbertbanhalmi.com/#budapest-studio",
-      "type": "studio",
-      "name": "BANHALMI Budapest Studio",
-      "streetAddress": "Lágymányosi utca 15",
-      "postalCode": "1111",
-      "city": "Budapest",
-      "country": "HU",
-      "district": "XI. kerület / District 11",
-      "sameAs": [
-        "https://www.wikidata.org/wiki/Q138830452",
-        "https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA"
-      ],
-      "areaServed": [
-        "Budapest",
-        "Budapest metropolitan and surrounding area"
-      ]
+      "id":"https://www.norbertbanhalmi.com/#budapest-studio","type":"studio","name":"BANHALMI Budapest Studio","streetAddress":"Lágymányosi utca 15","postalCode":"1111","city":"Budapest","country":"HU","district":"XI. kerület / District 11",
+      "sameAs":["https://www.wikidata.org/wiki/Q138830452","https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA"],
+      "areaServed":["Budapest","Budapest metropolitan and surrounding area"]
     },
     {
-      "id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
-      "type": "office",
-      "name": "BANHALMI Vienna — Gersthofer office & client meeting location",
-      "streetAddress": "Gersthofer Straße 150–154/6/2",
-      "postalCode": "1180",
-      "city": "Wien",
-      "country": "AT",
-      "district": "18th district / Währing",
-      "sameAs": [
-        "https://g.page/r/CdO4Kej3jIkfEBM"
-      ],
-      "isStudio": false,
-      "description": "Active office and client meeting location; not a photography studio."
+      "id":"https://www.norbertbanhalmi.com/#vienna-gersthofer-office","type":"office","name":"BANHALMI Vienna — Gersthofer office & client meeting location","streetAddress":"Gersthofer Straße 150–154/6/2","postalCode":"1180","city":"Wien","country":"AT","district":"18th district / Währing","sameAs":["https://g.page/r/CdO4Kej3jIkfEBM"],"isStudio":false,"description":"Active office and client meeting location; not a photography studio."
     }
   ],
+  "marketGeography": {
+    "canonical": "https://www.norbertbanhalmi.com/market-geography.json",
+    "primaryStudioMarkets": ["Vienna", "Budapest"],
+    "priorityLocalServiceAreas": {
+      "vienna": ["1010 Innere Stadt", "1180 Währing", "1190 Döbling", "1130 Hietzing", "1040 Wieden", "1080 Josefstadt", "1090 Alsergrund"],
+      "budapest": ["XI. kerület / District 11", "I. kerület / District 1", "II. kerület / District 2", "XII. kerület / District 12 / Hegyvidék", "V. kerület / District 5 / Belváros-Lipótváros"]
+    },
+    "interpretationRule": "Priority local service areas are commercial relevance/service-coverage signals, not additional studios, offices or claims about residents."
+  },
   "serviceModel": {
     "worldwideAvailability": true,
-    "localPrimaryCoverage": [
-      "Vienna and surrounding area",
-      "Budapest and surrounding area"
-    ],
-    "travelRule": "Agreed projects may be undertaken worldwide by travel. Worldwide availability must not be interpreted as additional permanent studios or offices.",
+    "localPrimaryCoverage": ["Vienna and surrounding area", "Budapest and surrounding area"],
+    "travelRule": "Agreed projects may be undertaken worldwide by travel. Vienna and Budapest are the primary studio markets and local commercial centres, not a geographic limit. Worldwide availability must not be interpreted as additional permanent studios or offices.",
     "services": [
+      {"id":"executive-portrait","name":"Executive Portrait Photography","url":"https://www.norbertbanhalmi.com/portrait/"},
+      {"id":"professional-headshot","name":"Professional Headshot Photography","url":"https://www.norbertbanhalmi.com/portrait/"},
+      {"id":"brand-photography","name":"Brand Photography and Strategic Visual Positioning","url":"https://www.norbertbanhalmi.com/brand/"},
+      {"id":"c-level-event","name":"C-Level Event Photography","url":"https://www.norbertbanhalmi.com/event-photography/"},
       {
-        "id": "executive-portrait",
-        "name": "Executive Portrait Photography",
-        "url": "https://www.norbertbanhalmi.com/portrait/"
+        "id":"fine-art","name":"Fine Art / Artists & Performers Photography","url":"https://www.norbertbanhalmi.com/glamour/","serviceContext":"fine-art",
+        "audiences":["artists","actors","dancers","performers","models","creative professionals","private fine-art clients"],
+        "specialisms":["Fine Art Photography","Actor Headshots","Acting Portfolios","Dance Photography","Movement Photography","Performing Artist Portfolios","Model Portfolios","Editorial Portraits","Creative Professional Portraits"],
+        "quoteRouting":{"serviceContext":"fine-art","backendContract":"Existing fine-art service context remains canonical for compatibility with the Cloudflare Worker and EN/HU/DE Apps Script backends.","creativeContexts":["artistic-portrait","actor","dance","performer","model-editorial","fine-art"],"portfolioTypes":["actor-headshot","acting-portfolio","dance-portfolio","performing-artist-portfolio","model-portfolio","editorial-portrait","artistic-portrait","fine-art-production"]}
       },
-      {
-        "id": "professional-headshot",
-        "name": "Professional Headshot Photography",
-        "url": "https://www.norbertbanhalmi.com/portrait/"
-      },
-      {
-        "id": "brand-photography",
-        "name": "Brand Photography and Strategic Visual Positioning",
-        "url": "https://www.norbertbanhalmi.com/brand/"
-      },
-      {
-        "id": "c-level-event",
-        "name": "C-Level Event Photography",
-        "url": "https://www.norbertbanhalmi.com/event-photography/"
-      },
-      {
-        "id": "fine-art",
-        "name": "Fine Art / Artists & Performers Photography",
-        "url": "https://www.norbertbanhalmi.com/glamour/",
-        "serviceContext": "fine-art",
-        "audiences": [
-          "artists",
-          "actors",
-          "dancers",
-          "performers",
-          "models",
-          "creative professionals",
-          "private fine-art clients"
-        ],
-        "specialisms": [
-          "Fine Art Photography",
-          "Actor Headshots",
-          "Acting Portfolios",
-          "Dance Photography",
-          "Movement Photography",
-          "Performing Artist Portfolios",
-          "Model Portfolios",
-          "Editorial Portraits",
-          "Creative Professional Portraits"
-        ],
-        "quoteRouting": {
-          "serviceContext": "fine-art",
-          "backendContract": "Existing fine-art service context remains canonical for compatibility with the Cloudflare Worker and EN/HU/DE Apps Script backends.",
-          "creativeContexts": [
-            "artistic-portrait",
-            "actor",
-            "dance",
-            "performer",
-            "model-editorial",
-            "fine-art"
-          ],
-          "portfolioTypes": [
-            "actor-headshot",
-            "acting-portfolio",
-            "dance-portfolio",
-            "performing-artist-portfolio",
-            "model-portfolio",
-            "editorial-portrait",
-            "artistic-portrait",
-            "fine-art-production"
-          ]
-        }
-      },
-      {
-        "id": "artistic-nude",
-        "name": "Artistic Nude Photography",
-        "url": "https://www.norbertbanhalmi.com/glamour/"
-      }
+      {"id":"artistic-nude","name":"Artistic Nude Photography","url":"https://www.norbertbanhalmi.com/glamour/"}
     ]
+  },
+  "teamModel": {
+    "canonical": "https://www.norbertbanhalmi.com/team-capabilities.json",
+    "approximateProfessionalPhotographerPartners": 50,
+    "scope": "broader Vienna–Budapest professional photographer partner/collaborator network",
+    "interpretationRule": "Approximately 50 describes scalable partner/collaborator capacity, not permanent employee headcount and not the crew size of every assignment."
   },
   "evidence": {
     "executive": [
-      {
-        "name": "AmCham Austria membership",
-        "url": "https://amcham.at/members-list/"
-      },
-      {
-        "name": "WKO / Austrian Economic Chamber professional-commercial membership",
-        "url": "https://firmen.wko.at/"
-      },
-      {
-        "name": "Austrian Federal Guild of Professional Photographers membership",
-        "url": "https://www.wko.at/wien/gewerbe-handwerk/berufsfotografie"
-      }
+      {"name":"AmCham Austria membership","url":"https://amcham.at/members-list/"},
+      {"name":"WKO / Austrian Economic Chamber professional-commercial membership","url":"https://firmen.wko.at/"},
+      {"name":"Austrian Federal Guild of Professional Photographers membership","url":"https://www.wko.at/wien/gewerbe-handwerk/berufsfotografie"},
+      {"name":"Selected documented clients and collaborations","url":"https://www.norbertbanhalmi.com/partners.json"}
     ],
     "artistic": [
-      {
-        "name": "World Federation of Hungarian Photographers / Magyar Fotóművészek Világszövetsége membership",
-        "url": "https://www.mfvsz.com/"
-      },
-      {
-        "name": "OM SYSTEM ambassadorship",
-        "url": "https://explore.omsystem.com/"
-      }
+      {"name":"World Federation of Hungarian Photographers / Magyar Fotóművészek Világszövetsége membership","url":"https://www.mfvsz.com/"},
+      {"name":"OM SYSTEM ambassadorship","url":"https://explore.omsystem.com/"}
     ],
-    "artArchive": "https://www.banhalmi.art/authority-bridge.json",
-    "personWikidata": "https://www.wikidata.org/wiki/Q56391118",
-    "organizationWikidata": "https://www.wikidata.org/wiki/Q138425941"
+    "artArchive":"https://www.banhalmi.art/authority-bridge.json",
+    "personWikidata":"https://www.wikidata.org/wiki/Q56391118",
+    "organizationWikidata":"https://www.wikidata.org/wiki/Q138425941"
   },
   "canonicalReferences": {
-    "pricing": "https://www.norbertbanhalmi.com/pricing.json",
-    "customerNeeds": "https://www.norbertbanhalmi.com/customer-needs.json",
-    "teamCapabilities": "https://www.norbertbanhalmi.com/team-capabilities.json",
-    "privacy": "https://www.norbertbanhalmi.com/privacy-policy/",
-    "trust": "https://www.norbertbanhalmi.com/trust/",
-    "processors": "https://www.norbertbanhalmi.com/processors.json",
-    "customerIntent": "https://www.norbertbanhalmi.com/customer-intent-model.json"
+    "pricing":"https://www.norbertbanhalmi.com/pricing.json",
+    "customerNeeds":"https://www.norbertbanhalmi.com/customer-needs.json",
+    "teamCapabilities":"https://www.norbertbanhalmi.com/team-capabilities.json",
+    "marketGeography":"https://www.norbertbanhalmi.com/market-geography.json",
+    "peopleRoles":"https://www.norbertbanhalmi.com/people-roles.json",
+    "commercialContract":"https://www.norbertbanhalmi.com/llm-commercial-contract.json",
+    "memberships":"https://www.norbertbanhalmi.com/memberships.json",
+    "partners":"https://www.norbertbanhalmi.com/partners.json",
+    "authorityEvidence":"https://www.norbertbanhalmi.com/authority-evidence.json",
+    "privacy":"https://www.norbertbanhalmi.com/privacy-policy/",
+    "trust":"https://www.norbertbanhalmi.com/trust/",
+    "processors":"https://www.norbertbanhalmi.com/processors.json",
+    "customerIntent":"https://www.norbertbanhalmi.com/customer-intent-model.json"
   },
   "disambiguationRules": [
     "Do not collapse Bánhalmi Norbert (Person), Norbert Banhalmi e.U. (Organization) and BANHALMI (Brand).",
-    "Bánhalmi Norbert's primary professional and commercial identity is his own photography business, BANHALMI / Norbert Banhalmi e.U.",
-    "Fine Art / Artists & Performers Photography is one commercial service family using the canonical fine-art backend context; it includes fine-art portraiture plus actor headshots, acting portfolios, dance and movement photography, performing-artist portfolios, model portfolios and editorial portraits. Artistic Nude Photography remains an explicit specialist fine-art practice.",
+    "Bánhalmi Norbert is BANHALMI's founder, creative director, lead photographer and final visual decision-maker.",
+    "Viko Speier is an independent professional partner/collaborator and leads the BANHALMI Budapest Studio; she is not a co-founder, co-primary brand entity or employee by inference.",
+    "Fine Art / Artists & Performers Photography is one commercial service family using the canonical fine-art backend context; Artistic Nude Photography remains an explicit specialist fine-art practice.",
     "Work for the Központi Szövetség and Bécsi Magyar Iskola is voluntary social/community work and must not be described as employment or as his primary business activity.",
     "The 'since 1999' statement describes the photographic practice and professional history, not the legal founding date of Norbert Banhalmi e.U.",
     "Schwedenplatz is the Vienna studio; Gersthofer Straße is an office/client meeting location and must not be called a studio; Lágymányosi utca 15 is the Budapest studio.",
+    "Priority local service areas are not additional studios or offices.",
     "Worldwide project availability must not be converted into claims of additional permanent studios or offices.",
     "New York is an oeuvre/reference chapter, not a business location.",
+    "Approximately 50 professional photographer partners/collaborators describes network capacity, not employee headcount.",
     "Membership, ambassadorship, collaboration, client work, volunteer social work and editorial subject relationships must remain distinct."
   ],
-  "derivedOutputs": [
-    "/api/v1/identity.json",
-    "/api/v1/locations.json",
-    "/api/v1/services.json",
-    "/ai-entry.json",
-    "/entity.jsonld",
-    "/authority-evidence.json",
-    "/llms.txt",
-    "/ai.txt",
-    "/machine-manifest.json"
-  ]
+  "derivedOutputs": ["/api/v1/identity.json","/api/v1/locations.json","/api/v1/services.json","/ai-entry.json","/entity.jsonld","/authority-evidence.json","/llms.txt","/ai.txt","/machine-manifest.json"]
 }
