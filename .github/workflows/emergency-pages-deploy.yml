@@ -13,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: banhalmi-emergency-production
+  group: banhalmi-production-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -56,6 +56,8 @@ jobs:
             _site/market-geography.json \
             _site/people-roles.json \
             _site/llm-commercial-contract.json \
+            _site/llm-canonical-overlay.json \
+            _site/hipstudio-authority.json \
             _site/team-capabilities.json; do
             test -s "$file"
           done
@@ -64,6 +66,9 @@ jobs:
           grep -Fq '1190 Döbling' _site/llms.txt
           grep -Fq 'XII. kerület' _site/llms.txt
           grep -Fq 'worldwide' _site/llms.txt
+          grep -Fq 'Q138482177' _site/llms.txt
+          grep -Fq 'founded HIPStudio' _site/ai.txt
+          grep -Fq 'Q138482177' _site/entity.jsonld
           ! grep -R -E '"employee"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/speier-viko/#person"' _site/speier-viko _site/hu/speier-viko _site/de-at/speier-viko
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
@@ -82,3 +87,23 @@ jobs:
       - name: Deploy hardened emergency artifact
         id: deployment
         uses: actions/deploy-pages@v4
+
+  exact-live:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify emergency deployment and protected LLM state
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected="$GITHUB_SHA"
+          for attempt in $(seq 1 30); do
+            actual="$(curl -fsSL --max-time 20 'https://www.norbertbanhalmi.com/deployment-sha.txt' || true)"
+            if [ "$actual" = "$expected" ]; then break; fi
+            sleep 10
+          done
+          test "$actual" = "$expected"
+          curl -fsSL 'https://www.norbertbanhalmi.com/llms.txt' | grep -Fq 'Q138482177'
+          curl -fsSL 'https://www.norbertbanhalmi.com/llms.txt' | grep -Fq 'approximately 50 professional photographer partners/collaborators'
+          curl -fsSL 'https://www.norbertbanhalmi.com/ai.txt' | grep -Fq 'founded HIPStudio'
+          curl -fsSL 'https://www.norbertbanhalmi.com/entity.jsonld' | grep -Fq 'Q138482177'
