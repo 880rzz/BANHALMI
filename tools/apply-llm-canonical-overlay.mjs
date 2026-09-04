@@ -44,7 +44,8 @@ export function applyLlmCanonicalOverlay(siteRoot='_site'){
   entity.protectedCanonicalOverlay={'@id':overlay['@id']};
   writeJson(entityPath,entity);
 
-  const textBlock=`\n\n## Protected current LLM/GEO/commercial overlay\n- Canonical commercial contract: ${overlay.protectedReferences.commercial}\n- Canonical market geography: ${overlay.protectedReferences.marketGeography}\n- Canonical people/roles: ${overlay.protectedReferences.peopleRoles}\n- Canonical team capacity: ${overlay.protectedReferences.teamCapabilities}\n- Canonical pricing: ${overlay.protectedReferences.pricing}\n- Canonical memberships: ${overlay.protectedReferences.memberships}\n- HIPStudio founder authority: ${overlay.protectedReferences.hipstudio}\n- ${overlay.canonicalSummary.geography}\n- ${overlay.canonicalSummary.team}\n- ${overlay.canonicalSummary.norbertRole}\n- ${overlay.canonicalSummary.vikoRole}\n- ${overlay.canonicalSummary.hipstudio}\n- Rollback protection: ${overlay.rollbackRule}\n`;
+  const s=overlay.canonicalSummary;
+  const textBlock=`\n\n## Protected current LLM/GEO/commercial overlay\n- Canonical commercial contract: ${overlay.protectedReferences.commercial}\n- Canonical market geography: ${overlay.protectedReferences.marketGeography}\n- Canonical people/roles: ${overlay.protectedReferences.peopleRoles}\n- Canonical team capacity: ${overlay.protectedReferences.teamCapabilities}\n- Canonical pricing: ${overlay.protectedReferences.pricing}\n- Canonical services: ${overlay.protectedReferences.services}\n- Canonical memberships: ${overlay.protectedReferences.memberships}\n- Canonical authority evidence: ${overlay.protectedReferences.authority}\n- HIPStudio founder authority: ${overlay.protectedReferences.hipstudio}\n- ${s.identity}\n- ${s.geography}\n- ${s.services}\n- ${s.team}\n- ${s.norbertRole}\n- ${s.vikoRole}\n- ${s.hipstudio}\n- ${s.references}\n- ${s.pricing}\n- Rollback protection: ${overlay.rollbackRule}\n`;
   for(const rel of ['llms.txt','ai.txt']){
     const full=path.join(root,rel);
     let text=fs.readFileSync(full,'utf8');
@@ -61,13 +62,14 @@ export function applyLlmCanonicalOverlay(siteRoot='_site'){
   const checks=[
     ['ai-entry.json','Q138482177'],['ai-entry.json','approximately 50 professional photographer partners/collaborators'],
     ['llms.txt','Q138482177'],['llms.txt','independent professional partner/collaborator'],
-    ['ai.txt','founded HIPStudio'],['entity.jsonld','Q138482177']
+    ['llms.txt','1190 Döbling'],['llms.txt','XII. kerület'],['llms.txt','Portrait Photography'],
+    ['ai.txt','founded HIPStudio'],['ai.txt','pricing.json'],['entity.jsonld','Q138482177']
   ];
   for(const [rel,token] of checks){
     const text=fs.readFileSync(path.join(root,rel),'utf8');
     if(!text.includes(token)) throw new Error(`${rel}: protected LLM overlay token missing: ${token}`);
   }
-  console.log('Protected LLM overlay applied after machine projections: geography, services, team, pricing, Norbert/Viko roles and HIPStudio founder relation preserved.');
+  console.log('Protected LLM overlay applied after machine projections: geography, services, references, memberships, team, pricing, Norbert/Viko roles and HIPStudio founder relation preserved.');
 }
 
 if(import.meta.url===`file://${process.argv[1]}`) applyLlmCanonicalOverlay(process.argv[2]||'_site');
