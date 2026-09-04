@@ -14,12 +14,7 @@ for(const name of await readdir(dir)){
   if(/git\s+push/i.test(text)) errors.push(name+': permanent workflow must not push');
   if(/git\s+commit/i.test(text)) errors.push(name+': permanent workflow must not commit');
 
-  for(const forbidden of [
-    /npm\s+run\s+fix:/i,
-    /npm\s+run\s+sync:/i,
-    /sync-sitemap-lastmod\.mjs/i,
-    /\s--write(?:\s|$)/i
-  ]){
+  for(const forbidden of [/npm\s+run\s+fix:/i,/npm\s+run\s+sync:/i,/sync-sitemap-lastmod\.mjs/i,/\s--write(?:\s|$)/i]){
     if(forbidden.test(text)) errors.push(name+': permanent workflow invokes a source-mutating maintenance command: '+forbidden);
   }
 }
@@ -32,24 +27,41 @@ const lighthouseMobilePos=pages.indexOf('- name: Run mobile Lighthouse strict 10
 const lighthouseDesktopPos=pages.indexOf('- name: Run desktop Lighthouse strict 100 gate');
 const uploadPos=pages.indexOf('- name: Upload the exact audited Pages artifact');
 
-if(
-  [sourceAuditPos,artifactPos,browserPos,lighthouseMobilePos,lighthouseDesktopPos,uploadPos].some((p)=>p<0) ||
-  !(sourceAuditPos<artifactPos && artifactPos<browserPos && browserPos<lighthouseMobilePos && lighthouseMobilePos<lighthouseDesktopPos && lighthouseDesktopPos<uploadPos)
-){
+if([sourceAuditPos,artifactPos,browserPos,lighthouseMobilePos,lighthouseDesktopPos,uploadPos].some((p)=>p<0) || !(sourceAuditPos<artifactPos && artifactPos<browserPos && browserPos<lighthouseMobilePos && lighthouseMobilePos<lighthouseDesktopPos && lighthouseDesktopPos<uploadPos)){
   errors.push('pages.yml must run source audits first, build an immutable committed artifact, then browser QA and both Lighthouse 100 gates before uploading the deployable artifact');
 }
-if(!/git archive --format=tar HEAD \| tar -xf - -C _site/.test(pages)){
-  errors.push('pages.yml must build the public artifact from committed HEAD, never from a possibly mutated working tree');
+if(!/git archive --format=tar HEAD \| tar -xf - -C _site/.test(pages)) errors.push('pages.yml must build the public artifact from committed HEAD, never from a possibly mutated working tree');
+if(!/printf '%s\\n' \"\$GITHUB_SHA\" > _site\/deployment-sha\.txt/.test(pages)) errors.push('pages.yml must stamp the exact source SHA into the artifact');
+if(!/Verify exact .*commit is live on custom domain/i.test(pages)) errors.push('pages.yml must verify the exact deployed SHA on the custom domain');
+if(!/needs:\s*exact-live/.test(pages)) errors.push('pages.yml production live gate must depend on exact-live verification');
+
+for (const token of [
+  'llm-canonical-overlay.json',
+  'market-geography.json',
+  'people-roles.json',
+  'llm-commercial-contract.json',
+  'approximately 50 professional photographer partners/collaborators',
+  'independent professional partner/collaborator',
+  '1190 Döbling',
+  'XII. kerület / District 12 / Hegyvidék',
+  'protectedCanonicalOverlay'
+]) {
+  if (!pages.includes(token)) errors.push(`pages.yml anti-rollback production gate missing token: ${token}`);
 }
-if(!/printf '%s\\n' \"\$GITHUB_SHA\" > _site\/deployment-sha\.txt/.test(pages)){
-  errors.push('pages.yml must stamp the exact source SHA into the artifact');
+
+const emergency=workflows.get('emergency-pages-deploy.yml')||'';
+for(const token of ['audit-machine-core.mjs','audit-authority-integrity.mjs','audit-llm-commercial-contract.mjs','harden-production-artifact.mjs','llm-canonical-overlay.json','approximately 50','independent professional partner','1190 Döbling','XII. kerület']){
+  if(!emergency.includes(token)) errors.push(`emergency-pages-deploy.yml must not bypass current LLM/authority contract: missing ${token}`);
 }
-if(!/Verify exact .*commit is live on custom domain/i.test(pages)){
-  errors.push('pages.yml must verify the exact deployed SHA on the custom domain');
-}
-if(!/needs:\s*exact-live/.test(pages)){
-  errors.push('pages.yml production live gate must depend on exact-live verification');
+if(/without quality gates/i.test(emergency)) errors.push('emergency-pages-deploy.yml must not advertise or implement a quality-gate bypass');
+
+const harden=await readFile(path.resolve(import.meta.dirname,'./harden-production-artifact.mjs'),'utf8');
+const generatePos=harden.indexOf('generateMachineProjections(root)');
+const overlayPos=harden.indexOf('applyLlmCanonicalOverlay(root)');
+if(generatePos<0||overlayPos<0||generatePos>=overlayPos) errors.push('harden-production-artifact.mjs must apply the protected LLM overlay after machine projection generation');
+for(const token of ['llm-canonical-overlay.json','people-roles.json','market-geography.json','llm-commercial-contract.json']){
+  if(!harden.includes(token)) errors.push(`harden-production-artifact.mjs protected contract missing: ${token}`);
 }
 
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
-console.log('Workflow safety audit passed: permanent workflows are read-only, source mutation commands are forbidden, deployment uses committed HEAD, browser and Lighthouse gates precede artifact upload, and exact-live SHA verification gates production validation.');
+console.log('Workflow safety audit passed: permanent workflows are read-only; normal and emergency deploys use committed HEAD and hardened artifacts; generated machine projections are overlaid by the protected current LLM contract; live anti-rollback tokens are mandatory.');
