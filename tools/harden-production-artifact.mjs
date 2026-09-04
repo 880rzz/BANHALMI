@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { generateMachineProjections } from './generate-machine-projections.mjs';
+import { applyLlmCanonicalOverlay } from './apply-llm-canonical-overlay.mjs';
 
 const root = path.resolve(process.argv[2] || '_site');
 
@@ -72,6 +73,7 @@ for (const file of walkHtml(root)) {
 }
 
 generateMachineProjections(root);
+applyLlmCanonicalOverlay(root);
 
 const siteCssPath = path.join(root, 'assets/css/site.css');
 if (!fs.existsSync(siteCssPath)) throw new Error('Production artifact lost assets/css/site.css during hardening.');
@@ -101,6 +103,7 @@ const required = [
   'assets/css/site.css', 'assets/js/analytics.js', 'deployment-sha.txt',
   'data/machine-core.json', 'machine-manifest.json',
   'market-geography.json', 'people-roles.json', 'llm-commercial-contract.json',
+  'llm-canonical-overlay.json', 'hipstudio-authority.json',
   'team-capabilities.json', 'services.json', 'pricing.json', 'memberships.json', 'authority-evidence.json'
 ];
 for (const rel of required) {
@@ -115,4 +118,15 @@ for (const rel of ['speier-viko/index.html','hu/speier-viko/index.html','de-at/s
   if (/"worksFor"\s*:\s*\{\s*"@id"\s*:\s*"https:\/\/www\.norbertbanhalmi\.com\/#organization"/.test(html)) throw new Error(`${rel}: Viko partnership must not be serialized as employment-like worksFor semantics.`);
 }
 
-console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links, ${buttonTypesAdded} non-form button types and ${vikoRelationshipFixes} Viko employment-like relationship fragments normalized; canonical quote spacing verified.`);
+for (const [rel, token] of [
+  ['ai-entry.json','Q138482177'],
+  ['entity.jsonld','Q138482177'],
+  ['llms.txt','approximately 50 professional photographer partners/collaborators'],
+  ['llms.txt','independent professional partner/collaborator'],
+  ['ai.txt','founded HIPStudio']
+]) {
+  const full = path.join(root, rel);
+  if (!fs.readFileSync(full, 'utf8').includes(token)) throw new Error(`${rel}: protected current LLM state missing ${token}`);
+}
+
+console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links, ${buttonTypesAdded} non-form button types and ${vikoRelationshipFixes} Viko employment-like relationship fragments normalized; protected LLM overlay applied; canonical quote spacing verified.`);
