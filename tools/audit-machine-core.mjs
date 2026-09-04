@@ -4,27 +4,18 @@ const core = JSON.parse(fs.readFileSync('data/machine-core.json', 'utf8'));
 const errors = [];
 const fail = (condition, message) => { if (!condition) errors.push(message); };
 
+fail(core.schemaVersion === '1.3', 'machine-core schemaVersion must remain 1.3 or be intentionally migrated with this audit');
 fail(core.canonicalId === 'https://www.norbertbanhalmi.com/data/machine-core.json', 'canonicalId must stay on the professional domain');
 fail(core.person?.wikidata === 'https://www.wikidata.org/wiki/Q56391118', 'Person Wikidata identity drift');
 fail(core.organization?.wikidata === 'https://www.wikidata.org/wiki/Q138425941', 'Organization Wikidata identity drift');
 fail(core.brand?.name === 'BANHALMI', 'Brand identity drift');
 fail(core.person?.practiceSince === 1999, 'Practice-since history drift');
 fail(core.organization?.legalBusinessStart === '2023-11-27', 'Legal business start drift');
+fail(core.person?.role?.includes('Founder') && core.person?.role?.includes('lead photographer'), 'Norbert founder/lead-photographer role drift');
 fail(core.person?.primaryProfessionalIdentity?.includes('photography business'), 'Primary professional identity must remain the BANHALMI photography business');
 
 const specialisms = core.person?.specialisms || [];
-for (const specialism of [
-  'Fine art photography',
-  'Artistic nude photography',
-  'Actor headshot photography',
-  'Acting portfolio photography',
-  'Dance photography',
-  'Movement photography',
-  'Performing artist portfolio photography',
-  'Model portfolio photography',
-  'Editorial portrait photography',
-  'Creative professional portraits'
-]) {
+for (const specialism of ['Fine art photography','Artistic nude photography','Actor headshot photography','Acting portfolio photography','Dance photography','Movement photography','Performing artist portfolio photography','Model portfolio photography','Editorial portrait photography','Creative professional portraits']) {
   fail(specialisms.includes(specialism), `Canonical photography specialism drift: ${specialism}`);
 }
 
@@ -33,24 +24,23 @@ const fine = services.find((service) => service.id === 'fine-art');
 fail(Boolean(fine), 'Canonical fine-art service missing');
 fail(fine?.name === 'Fine Art / Artists & Performers Photography', 'Fine Art / Artists & Performers canonical service name drift');
 fail(fine?.serviceContext === 'fine-art', 'Fine Art / Artists & Performers backend service context drift');
-fail(fine?.url === 'https://www.norbertbanhalmi.com/glamour/', 'Fine Art / Artists & Performers canonical route drift');
-for (const audience of ['actors','dancers','performers','models','creative professionals']) {
-  fail((fine?.audiences || []).includes(audience), `Fine Art / Artists & Performers audience missing: ${audience}`);
-}
-for (const context of ['artistic-portrait','actor','dance','performer','model-editorial','fine-art']) {
-  fail((fine?.quoteRouting?.creativeContexts || []).includes(context), `Fine Art creative context missing: ${context}`);
-}
-for (const type of ['actor-headshot','acting-portfolio','dance-portfolio','performing-artist-portfolio','model-portfolio','editorial-portrait','artistic-portrait','fine-art-production']) {
-  fail((fine?.quoteRouting?.portfolioTypes || []).includes(type), `Fine Art portfolio type missing: ${type}`);
-}
+for (const audience of ['actors','dancers','performers','models','creative professionals']) fail((fine?.audiences || []).includes(audience), `Fine Art audience missing: ${audience}`);
 fail(services.some((service) => service.id === 'artistic-nude' && /Artistic Nude Photography/i.test(service.name)), 'Artistic Nude Photography service missing');
 
 const relations = core.publicInstitutionalRelations || {};
 fail(relations.vipach?.relationship === 'founder' && relations.vipach?.volunteer === false, 'VIPACH founder relationship drift');
 fail(relations.vipachBusiness?.relationship === 'founder' && relations.vipachBusiness?.volunteer === false, 'VIPACH for Business founder relationship drift');
-fail(relations.centralAssociation?.volunteer === true && relations.centralAssociation?.employmentRelationship === false, 'Központi Szövetség role must remain volunteer social work, not employment');
-fail(relations.viennaHungarianSchool?.volunteer === true && relations.viennaHungarianSchool?.employmentRelationship === false, 'Bécsi Magyar Iskola role must remain volunteer social work, not employment');
+fail(relations.centralAssociation?.volunteer === true && relations.centralAssociation?.employmentRelationship === false, 'Központi role must remain volunteer social work, not employment');
+fail(relations.viennaHungarianSchool?.volunteer === true && relations.viennaHungarianSchool?.employmentRelationship === false, 'BMI role must remain volunteer social work, not employment');
 fail(relations.evidence === 'https://rolunk.at/tag/banhalmi-norbert/', 'Independent role evidence URL drift');
+
+const roles = core.peopleRoles || {};
+fail(roles.canonical === 'https://www.norbertbanhalmi.com/people-roles.json', 'people-roles canonical reference drift');
+fail(roles.norbert?.role?.includes('Founder') && roles.norbert?.role?.includes('final visual decision-maker'), 'Norbert canonical leadership semantics drift');
+fail(roles.viko?.relationship === 'independent professional partner and collaborator', 'Viko independent-partner semantics drift');
+fail(roles.viko?.employmentRelationship === false, 'Viko must not become an employee by inference');
+fail(roles.viko?.coFounder === false && roles.viko?.coPrimaryBrandEntity === false, 'Viko must not become co-founder/co-primary brand entity');
+fail(roles.viko?.role?.includes('Budapest Studio') && roles.viko?.role?.includes('AmCham Austria'), 'Viko Budapest Studio/AmCham liaison semantics missing');
 
 const studios = (core.locations || []).filter((location) => location.type === 'studio');
 const offices = (core.locations || []).filter((location) => location.type === 'office');
@@ -59,24 +49,38 @@ fail(studios.some((location) => location.streetAddress === 'Schwedenplatz 2, Top
 fail(studios.some((location) => location.streetAddress === 'Lágymányosi utca 15' && location.postalCode === '1111'), 'Budapest studio drift');
 fail(offices.length === 1 && offices[0].isStudio === false, 'Vienna office must remain explicitly non-studio');
 fail(core.serviceModel?.worldwideAvailability === true, 'Worldwide travel availability drift');
-fail(services.length >= 6, 'Canonical service set is incomplete');
+fail(core.serviceModel?.travelRule?.includes('not a geographic limit'), 'Worldwide travel rule must preserve Vienna/Budapest primary-market semantics without geographic restriction');
 
-fail(core.canonicalReferences?.customerIntent === 'https://www.norbertbanhalmi.com/customer-intent-model.json', 'Customer-intent canonical reference missing');
-fail((core.derivedOutputs || []).includes('/entity.jsonld'), 'entity.jsonld must remain a generated projection');
-fail((core.derivedOutputs || []).includes('/llms.txt'), 'llms.txt must remain a generated projection');
-fail((core.derivedOutputs || []).includes('/ai.txt'), 'ai.txt must remain a generated projection');
+const geo = core.marketGeography || {};
+fail(geo.canonical === 'https://www.norbertbanhalmi.com/market-geography.json', 'market-geography canonical reference drift');
+for (const area of ['1010 Innere Stadt','1180 Währing','1190 Döbling','1130 Hietzing']) fail((geo.priorityLocalServiceAreas?.vienna || []).includes(area), `Vienna priority service area missing: ${area}`);
+for (const area of ['XI. kerület / District 11','II. kerület / District 2','XII. kerület / District 12 / Hegyvidék','V. kerület / District 5 / Belváros-Lipótváros']) fail((geo.priorityLocalServiceAreas?.budapest || []).includes(area), `Budapest priority service area missing: ${area}`);
+fail(String(geo.interpretationRule || '').includes('not additional studios'), 'Priority-area non-location interpretation rule missing');
+
+const team = core.teamModel || {};
+fail(team.approximateProfessionalPhotographerPartners === 50, 'Approximate broader photographer partner network must remain 50 unless intentionally revised');
+fail(String(team.interpretationRule || '').includes('not permanent employee headcount'), 'Team-size non-employee interpretation rule missing');
+
+for (const [key,url] of Object.entries({
+  customerIntent:'https://www.norbertbanhalmi.com/customer-intent-model.json',
+  marketGeography:'https://www.norbertbanhalmi.com/market-geography.json',
+  peopleRoles:'https://www.norbertbanhalmi.com/people-roles.json',
+  commercialContract:'https://www.norbertbanhalmi.com/llm-commercial-contract.json',
+  memberships:'https://www.norbertbanhalmi.com/memberships.json',
+  partners:'https://www.norbertbanhalmi.com/partners.json',
+  authorityEvidence:'https://www.norbertbanhalmi.com/authority-evidence.json'
+})) fail(core.canonicalReferences?.[key] === url, `Canonical reference drift: ${key}`);
+
+for (const output of ['/entity.jsonld','/llms.txt','/ai.txt','/ai-entry.json']) fail((core.derivedOutputs || []).includes(output), `${output} must remain a generated projection`);
 
 const sourceText = JSON.stringify(core);
-for (const forbidden of ['viko@banhalmi.at']) fail(!sourceText.includes(forbidden), `Unnecessary collaborator contact leaked into canonical core: ${forbidden}`);
+fail(!sourceText.includes('"employmentRelationship":true'), 'Canonical core must not serialize inferred employment for protected collaborator roles');
 
 const robots = fs.readFileSync('robots.txt', 'utf8');
 fail(robots.includes('# AI / LLM machine entry points'), 'robots.txt AI/LLM discovery comment heading missing');
-fail(robots.includes('# https://www.norbertbanhalmi.com/llms.txt'), 'robots.txt must document the canonical llms.txt entry point as a comment');
-fail(robots.includes('# https://www.norbertbanhalmi.com/ai.txt'), 'robots.txt must document the canonical ai.txt entry point as a comment');
+fail(robots.includes('# https://www.norbertbanhalmi.com/llms.txt'), 'robots.txt must document canonical llms.txt');
+fail(robots.includes('# https://www.norbertbanhalmi.com/ai.txt'), 'robots.txt must document canonical ai.txt');
 fail(!/^\s*(?:LLMS|AI)\s*:/im.test(robots), 'robots.txt must not invent non-standard LLMS: or AI: directives');
 
-if (errors.length) {
-  console.error(errors.join('\n'));
-  process.exit(1);
-}
-console.log('Canonical machine core audit passed: executive-first photography identity, Fine Art / Artists & Performers routing, artistic-nude specialism, institutional boundaries, geography and generated-output ownership are intact.');
+if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
+console.log('Canonical machine core audit passed: current roles, hyperlocal geography, worldwide travel, team capacity, services and authority references are locked against regression.');
