@@ -60,18 +60,37 @@ jobs:
             fi
           done
           test -s _site/assets/css/site.css
-          test -f _site/.well-known/agent.json
-          test -f _site/api/v1/identity.json
-          test -f _site/robots.txt
-          test -f _site/sitemap.xml
-          test -f _site/llms.txt
-          test -f _site/ai.txt
-          test -f _site/entity.jsonld
-          test -f _site/person-authority.jsonld
-          test -f _site/business-authority.json
+          for file in \
+            _site/.well-known/agent.json \
+            _site/api/v1/identity.json \
+            _site/robots.txt \
+            _site/sitemap.xml \
+            _site/llms.txt \
+            _site/ai.txt \
+            _site/ai-entry.json \
+            _site/entity.jsonld \
+            _site/person-authority.jsonld \
+            _site/business-authority.json \
+            _site/market-geography.json \
+            _site/people-roles.json \
+            _site/llm-commercial-contract.json \
+            _site/llm-canonical-overlay.json \
+            _site/team-capabilities.json \
+            _site/pricing.json \
+            _site/memberships.json; do
+            test -s "$file"
+          done
           grep -Fq 'Q56391118' _site/person-authority.jsonld
           grep -Fq 'Q138425941' _site/business-authority.json
           grep -Fq 'ATU80445314' _site/business-authority.json
+          grep -Fq 'approximately 50 professional photographer partners/collaborators' _site/llms.txt
+          grep -Fq 'independent professional partner/collaborator' _site/llms.txt
+          grep -Fq '1190 Döbling' _site/llms.txt
+          grep -Fq 'XII. kerület / District 12 / Hegyvidék' _site/llms.txt
+          grep -Fq 'worldwide' _site/llms.txt
+          grep -Fq 'protectedCanonicalOverlay' _site/ai-entry.json
+          grep -Fq 'older projection code must not erase current commercial, geography, role or ecosystem semantics' _site/machine-manifest.json
+          ! grep -R -E '"employee"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/speier-viko/#person"' _site/speier-viko _site/hu/speier-viko _site/de-at/speier-viko
           test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "1"
           grep -q '/assets/css/site.css' _site/index.html
           grep -q '/assets/css/site.css' _site/hu/index.html
@@ -171,7 +190,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Verify critical production routes and machine endpoints
+      - name: Verify critical production routes and protected LLM endpoints
         shell: bash
         run: |
           set -euo pipefail
@@ -183,14 +202,34 @@ jobs:
             'https://www.norbertbanhalmi.com/sitemap.xml' \
             'https://www.norbertbanhalmi.com/llms.txt' \
             'https://www.norbertbanhalmi.com/ai.txt' \
+            'https://www.norbertbanhalmi.com/ai-entry.json' \
             'https://www.norbertbanhalmi.com/entity.jsonld' \
             'https://www.norbertbanhalmi.com/person-authority.jsonld' \
             'https://www.norbertbanhalmi.com/business-authority.json' \
+            'https://www.norbertbanhalmi.com/market-geography.json' \
+            'https://www.norbertbanhalmi.com/people-roles.json' \
+            'https://www.norbertbanhalmi.com/llm-commercial-contract.json' \
+            'https://www.norbertbanhalmi.com/llm-canonical-overlay.json' \
+            'https://www.norbertbanhalmi.com/team-capabilities.json' \
             'https://www.norbertbanhalmi.com/pricing.json'; do
             curl -fsSL --max-time 30 "$url" >/dev/null
           done
           curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/person-authority.jsonld' | grep -Fq 'Q56391118'
           curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/business-authority.json' | grep -Fq 'ATU80445314'
+          live_llms="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/llms.txt')"
+          printf '%s' "$live_llms" | grep -Fq 'approximately 50 professional photographer partners/collaborators'
+          printf '%s' "$live_llms" | grep -Fq 'independent professional partner/collaborator'
+          printf '%s' "$live_llms" | grep -Fq '1190 Döbling'
+          printf '%s' "$live_llms" | grep -Fq 'XII. kerület / District 12 / Hegyvidék'
+          printf '%s' "$live_llms" | grep -Fq 'worldwide'
+          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/ai-entry.json' | grep -Fq 'protectedCanonicalOverlay'
+          for url in \
+            'https://www.norbertbanhalmi.com/speier-viko/' \
+            'https://www.norbertbanhalmi.com/hu/speier-viko/' \
+            'https://www.norbertbanhalmi.com/de-at/speier-viko/'; do
+            html="$(curl -fsSL --max-time 30 "$url")"
+            ! printf '%s' "$html" | grep -E '"employee"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/speier-viko/#person"'
+          done
       - name: Run exact live mobile Lighthouse 100 gate
         run: |
           rm -rf artifacts/lighthouse-production-mobile
