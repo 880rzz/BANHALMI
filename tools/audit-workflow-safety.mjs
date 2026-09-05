@@ -19,6 +19,9 @@ for(const name of await readdir(dir)){
   }
 }
 
+const packageText=await readFile(path.resolve(import.meta.dirname,'../package.json'),'utf8');
+if(!packageText.includes('git diff --exit-code')) errors.push('package.json test contract must prove tracked source remains identical to committed HEAD after audits');
+
 const pages=workflows.get('pages.yml')||'';
 const sourceAuditPos=pages.indexOf('- name: Run source contract audits');
 const artifactPos=pages.indexOf('- name: Prepare immutable Pages artifact');
@@ -55,6 +58,10 @@ for(const token of ['audit-machine-core.mjs','audit-authority-integrity.mjs','au
 }
 if(/without quality gates/i.test(emergency)) errors.push('emergency-pages-deploy.yml must not advertise or implement a quality-gate bypass');
 
+const liveProbe=workflows.get('live-production-probe.yml')||'';
+if(/Unsupported (?:employee|worksFor) semantics|Employment regression|worksFor regression/i.test(liveProbe)) errors.push('live-production-probe.yml must not block a corrective PR by requiring production to already contain the proposed semantic fix; post-deploy semantic checks belong in llm-live-integrity.yml');
+if(!liveProbe.includes('deployment-sha.txt')) errors.push('live-production-probe.yml must still verify the exact current main deployment SHA');
+
 const harden=await readFile(path.resolve(import.meta.dirname,'./harden-production-artifact.mjs'),'utf8');
 const generatePos=harden.indexOf('generateMachineProjections(root)');
 const overlayPos=harden.indexOf('applyLlmCanonicalOverlay(root)');
@@ -64,4 +71,4 @@ for(const token of ['llm-canonical-overlay.json','people-roles.json','market-geo
 }
 
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
-console.log('Workflow safety audit passed: permanent workflows are read-only; normal and emergency deploys use committed HEAD and hardened artifacts; generated machine projections are overlaid by the protected current LLM contract; live anti-rollback tokens are mandatory.');
+console.log('Workflow safety audit passed: permanent workflows are read-only; tracked source must remain unchanged after audits; normal and emergency deploys use committed HEAD and hardened artifacts; corrective PRs are not blocked by stale production semantics; generated machine projections are overlaid by the protected current LLM contract; live anti-rollback tokens are mandatory.');
