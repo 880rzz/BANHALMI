@@ -1,6 +1,6 @@
 {
-  "version": "2026-09-05-root-cause-v1",
-  "pageMaxPx": 1440,
+  "version": "2026-09-05-root-cause-v2",
+  "pageMaxPx": 1500,
   "readingMaxPx": 760,
   "wideReadingMaxPx": 900,
   "typography": {
