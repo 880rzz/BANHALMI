@@ -20,7 +20,7 @@ function replaceOne(css,re,replacement,label){
 function compileDesign(css){
   const d=design.typography.desktop,t=design.typography.tablet,m=design.typography.mobile,l=design.layout;
   // The historical site.css remains a compatibility template. These substitutions
-  // replace the values inside the existing final canonical block; they do not append
+  // replace values inside the existing final canonical block; they do not append
   // a second patch authority. data/design-authority.json is the single design source.
   const start='/* CANONICAL-DESIGN-SYSTEM-20260827:START';
   const end='/* CANONICAL-DESIGN-SYSTEM-20260827:END */';
@@ -36,6 +36,10 @@ function compileDesign(css){
   c=replaceOne(c,/html body main h3\{font-size:[^;]+;/,`html body main h3{font-size:${d.h3}!important;`,'desktop H3 scale');
   c=replaceOne(c,/@media\(max-width:768px\)\{\s*html body main h1\{font-size:[^;]+;/,`@media(max-width:768px){\n  html body main h1{font-size:${t.h1}!important;`,'tablet H1 scale');
   c=replaceOne(c,/html body main h2\{font-size:clamp\(1\.55rem,3\.2vw,2rem\)!important;/,`html body main h2{font-size:${t.h2}!important;`,'tablet H2 scale');
+  // A service-process grid sits inside an already padded section. The old
+  // extra section-space margin duplicated the section's bottom rhythm and was
+  // the root cause of the 141–144px dead band on all three Fine Art pages.
+  c=replaceOne(c,/html body main \.service-process-grid\{margin-bottom:var\(--apple-section-space\)!important;\}/,`html body main .service-process-grid{margin-bottom:${l.serviceProcessBottomMarginPx}px!important;}`,'service-process bottom rhythm');
   // Add component geometry inside the existing canonical block, immediately before
   // its own responsive section. These rules are part of that block, not a later layer.
   const anchor='@media(max-width:1460px){';
@@ -67,6 +71,6 @@ if(fs.existsSync(quotePdfPath)){
 if(!sourceCss.includes('APPLE-RESPONSIVE-CONTRACT-V1:START')||!sourceCss.includes('APPLE-RESPONSIVE-CONTRACT-V1:END')) throw new Error('Approved BANHALMI Apple CSS authority markers missing.');
 const finalCss=fs.readFileSync(targetCss,'utf8');
 const desktop=design.typography.desktop,tablet=design.typography.tablet;
-for(const required of [`--apple-page-max:${design.pageMaxPx}px`,desktop.h1,desktop.h2,tablet.h1,tablet.h2,`margin-top:${design.typography.h3DescriptionGapPx}px`]) if(!finalCss.includes(required)) throw new Error(`BANHALMI compiled design token missing: ${required}`);
+for(const required of [`--apple-page-max:${design.pageMaxPx}px`,desktop.h1,desktop.h2,tablet.h1,tablet.h2,`margin-top:${design.typography.h3DescriptionGapPx}px`,`margin-bottom:${design.layout.serviceProcessBottomMarginPx}px!important`]) if(!finalCss.includes(required)) throw new Error(`BANHALMI compiled design token missing: ${required}`);
 for(const rel of quotePages){const full=path.join(siteRoot,rel);if(!fs.existsSync(full)||!fs.readFileSync(full,'utf8').includes('/assets/js/private-event-quote.js')) throw new Error(`BANHALMI private-event quote adapter missing from ${rel}.`);}
 console.log(`BANHALMI production design compiled from ${design.version}; ${checked} HTML files checked, ${normalized} artifact HTML file(s) normalized, ${privateInjected} private-event quote adapter injection(s), ${pdfPatched} PDF label patch(es).`);
