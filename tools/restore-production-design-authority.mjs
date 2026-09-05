@@ -66,6 +66,7 @@ if(fs.existsSync(quotePdfPath)){
 }
 if(!sourceCss.includes('APPLE-RESPONSIVE-CONTRACT-V1:START')||!sourceCss.includes('APPLE-RESPONSIVE-CONTRACT-V1:END')) throw new Error('Approved BANHALMI Apple CSS authority markers missing.');
 const finalCss=fs.readFileSync(targetCss,'utf8');
-for(const required of [`--apple-page-max:${design.pageMaxPx}px`,d.h1,d.h2,t.h1,t.h2,`margin-top:${design.typography.h3DescriptionGapPx}px`]) if(!finalCss.includes(required)) throw new Error(`BANHALMI compiled design token missing: ${required}`);
+const desktop=design.typography.desktop,tablet=design.typography.tablet;
+for(const required of [`--apple-page-max:${design.pageMaxPx}px`,desktop.h1,desktop.h2,tablet.h1,tablet.h2,`margin-top:${design.typography.h3DescriptionGapPx}px`]) if(!finalCss.includes(required)) throw new Error(`BANHALMI compiled design token missing: ${required}`);
 for(const rel of quotePages){const full=path.join(siteRoot,rel);if(!fs.existsSync(full)||!fs.readFileSync(full,'utf8').includes('/assets/js/private-event-quote.js')) throw new Error(`BANHALMI private-event quote adapter missing from ${rel}.`);}
 console.log(`BANHALMI production design compiled from ${design.version}; ${checked} HTML files checked, ${normalized} artifact HTML file(s) normalized, ${privateInjected} private-event quote adapter injection(s), ${pdfPatched} PDF label patch(es).`);
