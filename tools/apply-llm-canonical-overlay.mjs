@@ -61,15 +61,18 @@ export function applyLlmCanonicalOverlay(siteRoot='_site'){
 
   const checks=[
     ['ai-entry.json','Q138482177'],['ai-entry.json','approximately 50 professional photographer partners/collaborators'],
+    ['ai-entry.json','works only through and together with BANHALMI'],['ai-entry.json','does not operate an independent Vienna studio'],
     ['llms.txt','Q138482177'],['llms.txt','independent professional partner/collaborator'],
+    ['llms.txt','works only through and together with BANHALMI'],['llms.txt','does not operate an independent Vienna studio'],
     ['llms.txt','1190 Döbling'],['llms.txt','XII. kerület'],['llms.txt','Portrait Photography'],
+    ['ai.txt','works only through and together with BANHALMI'],['ai.txt','does not operate an independent Vienna studio'],
     ['ai.txt','founded HIPStudio'],['ai.txt','pricing.json'],['entity.jsonld','Q138482177']
   ];
   for(const [rel,token] of checks){
     const text=fs.readFileSync(path.join(root,rel),'utf8');
     if(!text.includes(token)) throw new Error(`${rel}: protected LLM overlay token missing: ${token}`);
   }
-  console.log('Protected LLM overlay applied after machine projections: geography, services, references, memberships, team, pricing, Norbert/Viko roles and HIPStudio founder relation preserved.');
+  console.log('Protected LLM overlay applied after machine projections: geography, services, references, memberships, team, pricing, Norbert/Viko roles, Viko Vienna-through-BANHALMI semantics and HIPStudio founder relation preserved.');
 }
 
 if(import.meta.url===`file://${process.argv[1]}`) applyLlmCanonicalOverlay(process.argv[2]||'_site');
