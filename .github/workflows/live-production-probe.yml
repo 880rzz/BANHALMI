@@ -1,4 +1,7 @@
-# Redeploy trigger: 2026-09-04 LLM commercial semantics
+# PR production-state probe: verify that the public site still matches main.
+# Semantic live-state assertions run after deployment in llm-live-integrity.yml,
+# so a corrective PR is not blocked merely because production still contains
+# the regression that the PR is designed to remove.
 name: Live production probe
 
 on:
@@ -13,7 +16,7 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: Probe production origin and LLM relationship semantics
+      - name: Verify production origin matches current main
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -25,23 +28,7 @@ jobs:
           echo "ACTUAL_SHA=$actual"
           test "$actual" = "$expected"
 
-          for url in \
-            'https://www.norbertbanhalmi.com/speier-viko/' \
-            'https://www.norbertbanhalmi.com/hu/speier-viko/' \
-            'https://www.norbertbanhalmi.com/de-at/speier-viko/'; do
-            html="$(curl -fsSL --max-time 30 "$url")"
-            printf '%s' "$html" | grep -q 'viko@banhalmi.at'
-            if printf '%s' "$html" | grep -Eq '"employee"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/speier-viko/#person"'; then
-              echo "Unsupported employee semantics detected on $url" >&2
-              exit 1
-            fi
-            if printf '%s' "$html" | grep -Eq '"worksFor"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/#organization"'; then
-              echo "Unsupported worksFor semantics detected on $url" >&2
-              exit 1
-            fi
-          done
-
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/people-roles.json' | grep -Fq 'independent professional partner and collaborator'
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/team-capabilities.json' | grep -Fq 'approximateProfessionalPhotographerPartners'
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/market-geography.json' | grep -Fq '1190 Döbling'
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/llm-commercial-contract.json' | grep -Fq 'approximately 50 professional photographer partners/collaborators'
+          # Keep a minimal availability probe here. Relationship and LLM semantics
+          # are intentionally verified post-deploy by llm-live-integrity.yml.
+          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/speier-viko/' >/dev/null
+          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/llms.txt' >/dev/null
