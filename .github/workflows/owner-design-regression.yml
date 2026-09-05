@@ -22,6 +22,7 @@ jobs:
           rm -rf _site
           mkdir -p _site
           git ls-files -z | rsync -a --from0 --files-from=- ./ _site/
+          printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
           node tools/optimize-production-artifact.mjs _site
           node tools/restore-production-design-authority.mjs _site
           node tools/harden-production-artifact.mjs _site
