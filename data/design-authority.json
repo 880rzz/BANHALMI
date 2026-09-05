@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-05-root-cause-v2",
+  "version": "2026-09-05-root-cause-v3",
   "pageMaxPx": 1500,
   "readingMaxPx": 760,
   "wideReadingMaxPx": 900,
@@ -23,6 +23,7 @@
     "mobileMembershipOddCardCentered": true,
     "quoteControlColumnPx": 24,
     "quoteControlGapPx": 14,
-    "quoteInfoColumnPx": 44
+    "quoteInfoColumnPx": 44,
+    "serviceProcessBottomMarginPx": 0
   }
 }
