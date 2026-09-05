@@ -4,11 +4,12 @@ const core = JSON.parse(fs.readFileSync('data/machine-core.json', 'utf8'));
 const errors = [];
 const fail = (condition, message) => { if (!condition) errors.push(message); };
 
-fail(core.schemaVersion === '1.3', 'machine-core schemaVersion must remain 1.3 or be intentionally migrated with this audit');
+fail(core.schemaVersion === '1.4', 'machine-core schemaVersion must remain 1.4 or be intentionally migrated with this audit');
 fail(core.canonicalId === 'https://www.norbertbanhalmi.com/data/machine-core.json', 'canonicalId must stay on the professional domain');
 fail(core.person?.wikidata === 'https://www.wikidata.org/wiki/Q56391118', 'Person Wikidata identity drift');
 fail(core.organization?.wikidata === 'https://www.wikidata.org/wiki/Q138425941', 'Organization Wikidata identity drift');
 fail(core.brand?.name === 'BANHALMI', 'Brand identity drift');
+fail(core.brand?.positioning === 'Professional Photography Team', 'BANHALMI brand positioning drift');
 fail(core.person?.practiceSince === 1999, 'Practice-since history drift');
 fail(core.organization?.legalBusinessStart === '2023-11-27', 'Legal business start drift');
 fail(core.person?.role?.includes('Founder') && core.person?.role?.includes('lead photographer'), 'Norbert founder/lead-photographer role drift');
