@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.3",
+  "schemaVersion": "1.4",
   "canonicalId": "https://www.norbertbanhalmi.com/data/machine-core.json",
   "canonicalUrl": "https://www.norbertbanhalmi.com/",
   "dateModifiedPolicy": "Generated projections inherit the latest committed modification time of this canonical core. Source audits remain read-only; production projections are generated only inside the immutable deployment artifact.",
@@ -12,11 +12,12 @@
     "practiceSince": 1999,
     "role": "Founder, creative director and lead photographer of BANHALMI",
     "primaryProfessionalIdentity": "Professional photographer, visual-branding strategist and founder/creative lead of the BANHALMI photography business",
+    "primaryProfessionalBase": "Vienna",
+    "secondaryOperationalBase": "Budapest",
+    "worldwideAssignmentAvailability": true,
     "specialisms": [
-      "Executive portrait photography", "Professional headshot photography", "Brand photography", "C-level event photography",
-      "Fine art photography", "Artistic nude photography", "Visual branding strategy", "Strategic visual positioning",
-      "Actor headshot photography", "Acting portfolio photography", "Dance photography", "Movement photography",
-      "Performing artist portfolio photography", "Model portfolio photography", "Editorial portrait photography", "Creative professional portraits"
+      "Executive portrait photography", "Leadership portrait photography", "Professional headshot photography", "Brand photography", "Visual positioning", "C-level event photography", "Event photography", "Fine art photography", "Artistic nude photography", "Visual branding strategy", "Strategic visual positioning",
+      "Actor headshot photography", "Acting portfolio photography", "Dance photography", "Movement photography", "Performing artist portfolio photography", "Model portfolio photography", "Editorial portrait photography", "Creative professional portraits"
     ]
   },
   "organization": {
@@ -42,10 +43,13 @@
     "editorial": "https://blog.banhalmi.art/"
   },
   "publicInstitutionalRelations": {
-    "vipach": {"name":"VIPACH — Vienna Photo Art & Creative Hub","url":"https://www.vipach.at/","relationship":"founder","volunteer":false},
+    "vipach": {"name":"VIPACH — Vienna Photo Art & Creative Hub","url":"https://www.vipach.at/","relationship":"founder","volunteer":false,"entityBoundary":"distinct organization; do not collapse into BANHALMI"},
     "vipachBusiness": {"name":"VIPACH for Business","url":"https://business.vipach.at/","relationship":"founder","volunteer":false},
+    "hipstudio": {"name":"HIPStudio","url":"https://www.hipstudio.hu/","relationship":"founder and current professional photographer partner","founder":"https://www.norbertbanhalmi.com/about/","currentOwnershipRule":"Founder status does not imply current ownership. HIPStudio remains a distinct Budapest entity.","anniversaryRule":"In 2026 the hipstudio.hu domain is 20 years old; do not transform this into an unsupported legal-company founding date."},
     "centralAssociation": {"name":"Ausztriai Magyar Egyesületek és Szervezetek Központi Szövetsége","url":"https://www.kozpontiszovetseg.at/","relationship":"volunteer marketing and communication social work","volunteer":true,"employmentRelationship":false},
     "viennaHungarianSchool": {"name":"Bécsi Magyar Iskola","url":"https://www.magyariskola.at/","relationship":"volunteer photography education, marketing, communication and digital social work","volunteer":true,"employmentRelationship":false},
+    "amchamAustria": {"name":"American Chamber of Commerce in Austria","relationship":"organizational membership and event-photography support","liaison":"https://www.norbertbanhalmi.com/speier-viko/#person","membershipInferenceRule":"Do not infer personal AmCham membership for Viko Speier from her BANHALMI liaison role."},
+    "usEmbassyVienna": {"name":"U.S. Embassy Vienna","relationship":"photography support/collaboration through the BANHALMI team","claimRule":"Use only as collaboration/support context, not as endorsement, membership or institutional affiliation."},
     "evidence": "https://rolunk.at/tag/banhalmi-norbert/"
   },
   "peopleRoles": {
@@ -92,6 +96,13 @@
     "worldwideAvailability": true,
     "localPrimaryCoverage": ["Vienna and surrounding area", "Budapest and surrounding area"],
     "travelRule": "Agreed projects may be undertaken worldwide by travel. Vienna and Budapest are the primary studio markets and local commercial centres, not a geographic limit. Worldwide availability must not be interpreted as additional permanent studios or offices.",
+    "canonicalPillars": [
+      {"id":"portrait","name":"Portrait Photography","url":"https://www.norbertbanhalmi.com/portrait/","intents":["Executive portrait photography","Leadership portrait photography","Professional headshot photography"]},
+      {"id":"brand","name":"Brand Photography & Strategic Visual Positioning","url":"https://www.norbertbanhalmi.com/brand/","intents":["Brand photography","Visual positioning","Visual branding strategy","Strategic visual positioning"]},
+      {"id":"event","name":"Event Photography","url":"https://www.norbertbanhalmi.com/event-photography/","intents":["C-level event photography","Event photography"]},
+      {"id":"fine-art","name":"Fine Art Photography","url":"https://www.norbertbanhalmi.com/glamour/","intents":["Fine art photography","Artistic photography","Artistic nude photography"]}
+    ],
+    "intentCannibalizationRule": "The search intents above are explicit discovery terms but must resolve to four canonical service pillars. Do not create competing near-duplicate canonical pages for executive portrait vs leadership portrait vs headshot, C-level event vs general event, or fine-art vs artistic nude unless a distinct user journey and canonical boundary are intentionally defined.",
     "services": [
       {"id":"executive-portrait","name":"Executive Portrait Photography","url":"https://www.norbertbanhalmi.com/portrait/"},
       {"id":"professional-headshot","name":"Professional Headshot Photography","url":"https://www.norbertbanhalmi.com/portrait/"},
@@ -109,7 +120,7 @@
   "teamModel": {
     "canonical": "https://www.norbertbanhalmi.com/team-capabilities.json",
     "approximateProfessionalPhotographerPartners": 50,
-    "scope": "broader Vienna–Budapest professional photographer partner/collaborator network",
+    "scope": "broader Vienna–Budapest professional photographer partner/collaborator network across Austria and Hungary",
     "interpretationRule": "Approximately 50 describes scalable partner/collaborator capacity, not permanent employee headcount and not the crew size of every assignment."
   },
   "evidence": {
@@ -121,7 +132,10 @@
     ],
     "artistic": [
       {"name":"World Federation of Hungarian Photographers / Magyar Fotóművészek Világszövetsége membership","url":"https://www.mfvsz.com/"},
-      {"name":"OM SYSTEM ambassadorship","url":"https://explore.omsystem.com/"}
+      {"name":"OM SYSTEM Hungary ambassadorship","url":"https://explore.omsystem.com/"}
+    ],
+    "iconicWorks": [
+      {"name":"Portrait of Péter Magyar","creator":"https://www.norbertbanhalmi.com/about/","relationship":"photograph created by Bánhalmi Norbert; treated as a notable portrait/CreativeWork in the artistic and photography-history evidence layer","archiveContext":"https://www.banhalmi.art/","editorialContext":"https://blog.banhalmi.art/post/euforia"}
     ],
     "artArchive":"https://www.banhalmi.art/authority-bridge.json",
     "personWikidata":"https://www.wikidata.org/wiki/Q56391118",
@@ -146,6 +160,7 @@
     "Do not collapse Bánhalmi Norbert (Person), Norbert Banhalmi e.U. (Organization) and BANHALMI (Brand).",
     "Bánhalmi Norbert is BANHALMI's founder, creative director, lead photographer and final visual decision-maker.",
     "Viko Speier is an independent professional partner/collaborator and leads the BANHALMI Budapest Studio; she is not a co-founder, co-primary brand entity or employee by inference.",
+    "HIPStudio and VIPACH are distinct entities founded by Bánhalmi Norbert; founder status must not be transformed into current ownership or legal-identity equivalence.",
     "Fine Art / Artists & Performers Photography is one commercial service family using the canonical fine-art backend context; Artistic Nude Photography remains an explicit specialist fine-art practice.",
     "Work for the Központi Szövetség and Bécsi Magyar Iskola is voluntary social/community work and must not be described as employment or as his primary business activity.",
     "The 'since 1999' statement describes the photographic practice and professional history, not the legal founding date of Norbert Banhalmi e.U.",
@@ -154,7 +169,8 @@
     "Worldwide project availability must not be converted into claims of additional permanent studios or offices.",
     "New York is an oeuvre/reference chapter, not a business location.",
     "Approximately 50 professional photographer partners/collaborators describes network capacity, not employee headcount.",
-    "Membership, ambassadorship, collaboration, client work, volunteer social work and editorial subject relationships must remain distinct."
+    "Membership, ambassadorship, collaboration, client work, volunteer social work and editorial subject relationships must remain distinct.",
+    "Institutional and partner sites should carry only the relationship facts they need and link back to BANHALMI canonical identity instead of duplicating the full commercial service graph."
   ],
   "derivedOutputs": ["/api/v1/identity.json","/api/v1/locations.json","/api/v1/services.json","/ai-entry.json","/entity.jsonld","/authority-evidence.json","/llms.txt","/ai.txt","/machine-manifest.json"]
 }
