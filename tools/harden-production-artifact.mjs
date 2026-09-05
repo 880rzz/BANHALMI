@@ -45,7 +45,8 @@ function hardenVikoRelationshipSemantics(html) {
   let changed = 0;
   const patterns = [
     /"employee"\s*:\s*\{\s*"@id"\s*:\s*"https:\/\/www\.norbertbanhalmi\.com\/speier-viko\/#person"\s*\}\s*,?/g,
-    /"worksFor"\s*:\s*\{\s*"@id"\s*:\s*"https:\/\/www\.norbertbanhalmi\.com\/#organization"\s*\}\s*,?/g
+    /"worksFor"\s*:\s*\{\s*"@id"\s*:\s*"https:\/\/www\.norbertbanhalmi\.com\/#organization"\s*\}\s*,?/g,
+    /"affiliation"\s*:\s*\[\s*\{\s*"@id"\s*:\s*"https:\/\/www\.wikidata\.org\/wiki\/Q138413481"\s*\}\s*\]\s*,?/g
   ];
   for (const re of patterns) {
     const before = out;
@@ -167,6 +168,13 @@ for (const rel of required) {
   if (!fs.existsSync(path.join(root, rel))) throw new Error(`Production artifact lost required public file: ${rel}`);
 }
 
+const directAmchamAffiliation = /"affiliation"\s*:\s*\[\s*\{\s*"@id"\s*:\s*"https:\/\/www\.wikidata\.org\/wiki\/Q138413481"/;
+for (const file of walkHtml(root)) {
+  const html = fs.readFileSync(file, 'utf8');
+  if (!html.includes('speier-viko/#person')) continue;
+  if (directAmchamAffiliation.test(html)) throw new Error(`${path.relative(root, file)}: Viko must not be serialized as directly affiliated with AmCham Austria; the relationship is through BANHALMI.`);
+}
+
 for (const rel of ['speier-viko/index.html','hu/speier-viko/index.html','de-at/speier-viko/index.html']) {
   const full = path.join(root, rel);
   if (!fs.existsSync(full)) continue;
@@ -174,7 +182,6 @@ for (const rel of ['speier-viko/index.html','hu/speier-viko/index.html','de-at/s
   if (/"employee"\s*:\s*\{\s*"@id"\s*:\s*"https:\/\/www\.norbertbanhalmi\.com\/speier-viko\/#person"/.test(html)) throw new Error(`${rel}: Viko must not be serialized as an employee by inference.`);
   if (/"worksFor"\s*:\s*\{\s*"@id"\s*:\s*"https:\/\/www\.norbertbanhalmi\.com\/#organization"/.test(html)) throw new Error(`${rel}: Viko partnership must not be serialized as employment-like worksFor semantics.`);
   if (!html.includes('VIKO_BANHALMI_VIENNA_RELATIONSHIP')) throw new Error(`${rel}: Viko Vienna-through-BANHALMI relationship statement missing.`);
-  if (/"affiliation"\s*:\s*\[\s*\{\s*"@id"\s*:\s*"https:\/\/www\.wikidata\.org\/wiki\/Q138413481"/.test(html)) throw new Error(`${rel}: Viko must not be serialized as directly affiliated with AmCham Austria; the relationship is through BANHALMI.`);
 }
 
 for (const [rel, token] of [
