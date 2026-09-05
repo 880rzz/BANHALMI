@@ -4,7 +4,9 @@ import { chromium } from 'playwright';
 
 const base=(process.env.AUDIT_BASE_URL||'http://127.0.0.1:4173').replace(/\/$/,'');
 const siteDir=path.resolve(process.env.AUDIT_SITE_DIR||'_site');
-const widths=[375,390,768,1024,1440];
+const design=JSON.parse(fs.readFileSync('data/design-authority.json','utf8'));
+const pageMax=Number(design.pageMaxPx||1200);
+const widths=[375,390,768,1024,1440,1920];
 const failures=[];
 const reports=[];
 function walk(dir){const out=[];for(const e of fs.readdirSync(dir,{withFileTypes:true})){const f=path.join(dir,e.name);if(e.isDirectory())out.push(...walk(f));else if(e.isFile()&&e.name.endsWith('.html'))out.push(f)}return out}
@@ -17,7 +19,7 @@ for(const width of widths){
   for(const pathname of pages){
     const page=await context.newPage();
     try{await page.goto(new URL(pathname,base).href,{waitUntil:'domcontentloaded',timeout:30000});await page.waitForTimeout(150)}catch(e){failures.push(`${width}px ${pathname}: navigation ${e.message}`);await page.close();continue}
-    const result=await page.evaluate(()=>{
+    const result=await page.evaluate(({pageMax})=>{
       const issues=[];const px=v=>parseFloat(v)||0;const abs=Math.abs;
       const visible=el=>{if(!el)return false;const s=getComputedStyle(el),r=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0&&r.width>0&&r.height>0};
       const name=el=>`${el.tagName.toLowerCase()}${el.id?'#'+el.id:''}${el.className?'.'+String(el.className).trim().replace(/\s+/g,'.').slice(0,100):''}`;
@@ -53,8 +55,6 @@ for(const width of widths){
 
       for(const h of document.querySelectorAll('main h1,main h2,main h3,header h1')){
         if(!visible(h))continue;const s=getComputedStyle(h),r=h.getBoundingClientRect(),fs=px(s.fontSize),lh=px(s.lineHeight)/(fs||1),fw=Number(s.fontWeight)||400,ls=px(s.letterSpacing);if(fs<1)continue;
-        // Match the restrained canonical scale in site.css. These limits guard
-        // hierarchy without reviving the pre-consolidation oversized headings.
         const tag=h.tagName.toLowerCase(),quoteHeading=!!h.closest('.smart-quote-layout'),lim=tag==='h1'?(w<=430?[32,40]:w<=768?[32,44]:[32,58]):tag==='h2'?(w<=430?[22,30]:w<=768?[22,32]:[22,38]):quoteHeading?[16,34]:[17.75,34];
         const lhLim=tag==='h1'?[0.98,1.18]:[1.02,1.30];
         if(fs<lim[0]||fs>lim[1])issues.push(`${name(h)} font-size ${fs.toFixed(1)}px outside ${lim[0]}–${lim[1]}px`);
@@ -74,7 +74,7 @@ for(const width of widths){
       }
 
       for(const wrap of document.querySelectorAll('main .wrap,main .container,main .content-wrap')){
-        if(!visible(wrap))continue;const r=wrap.getBoundingClientRect(),s=getComputedStyle(wrap),pl=px(s.paddingLeft),pr=px(s.paddingRight),effectiveLeft=r.left+pl,effectiveRight=w-r.right+pr;if(r.right>w+2||r.left<-2)issues.push(`${name(wrap)} wrap escapes viewport [${r.left.toFixed(1)},${r.right.toFixed(1)}]`);if(w>=1024&&r.width>1280)issues.push(`${name(wrap)} content width ${r.width.toFixed(0)}px > 1280px`);if(w<=768&&!wrap.closest('.full-bleed,[data-full-bleed="true"]')&&(effectiveLeft<15||effectiveRight<15))issues.push(`${name(wrap)} mobile/tablet content gutter [${effectiveLeft.toFixed(1)},${effectiveRight.toFixed(1)}]px`);if(w>=1024&&r.width<w-80&&abs(r.left-(w-r.right))>5)issues.push(`${name(wrap)} container not centered (${r.left.toFixed(1)} vs ${(w-r.right).toFixed(1)})`);
+        if(!visible(wrap))continue;const r=wrap.getBoundingClientRect(),s=getComputedStyle(wrap),pl=px(s.paddingLeft),pr=px(s.paddingRight),effectiveLeft=r.left+pl,effectiveRight=w-r.right+pr;if(r.right>w+2||r.left<-2)issues.push(`${name(wrap)} wrap escapes viewport [${r.left.toFixed(1)},${r.right.toFixed(1)}]`);if(w>=1024&&r.width>pageMax+4)issues.push(`${name(wrap)} content width ${r.width.toFixed(0)}px > canonical ${pageMax}px`);if(w<=768&&!wrap.closest('.full-bleed,[data-full-bleed="true"]')&&(effectiveLeft<15||effectiveRight<15))issues.push(`${name(wrap)} mobile/tablet content gutter [${effectiveLeft.toFixed(1)},${effectiveRight.toFixed(1)}]px`);if(w>=1024&&r.width<w-80&&abs(r.left-(w-r.right))>5)issues.push(`${name(wrap)} container not centered (${r.left.toFixed(1)} vs ${(w-r.right).toFixed(1)})`);
       }
 
       for(const h of document.querySelectorAll('main h1,main h2,main h3')){
@@ -94,12 +94,12 @@ for(const width of widths){
       for(const el of [...document.querySelectorAll('main .hero a,main .hero button,main .cta-band a,main .cta-band button')].filter(visible)){if((el.innerText||'').trim().length>64)issues.push(`${name(el)} CTA label too long (${(el.innerText||'').trim().length} chars)`);}
 
       return {issues:[...new Set(issues)].slice(0,240),longText:longText.length,sections:[...document.querySelectorAll('main>section')].filter(visible).length};
-    });
+    },{pageMax});
     reports.push({width,pathname,longText:result.longText,sections:result.sections,issues:result.issues.length});if(result.issues.length)failures.push(`${width}px ${pathname}: ${result.issues.join(' | ')}`);await page.close();
   }
   await context.close();
 }
 await browser.close();
-fs.mkdirSync('artifacts',{recursive:true});fs.writeFileSync('artifacts/apple-visual-quality.json',JSON.stringify({contract:'approved-banhalmi-visual-20260826',pages:pages.length,widths,reports,failures},null,2));
+fs.mkdirSync('artifacts',{recursive:true});fs.writeFileSync('artifacts/apple-visual-quality.json',JSON.stringify({contract:'approved-banhalmi-visual-20260826',pageMax,pages:pages.length,widths,reports,failures},null,2));
 if(failures.length){console.error(`BANHALMI approved visual contract found ${failures.length} failing page/viewport combinations.`);console.error(failures.join('\n'));process.exit(1)}
-console.log(`BANHALMI approved visual contract passed: ${pages.length} pages × ${widths.length} viewports; semantic lead/body/secondary typography, approved quote density, weight, tracking, leading, alignment, reading measure, gutters, full-width colored surfaces, spacing rhythm, controls, grids and cell geometry verified.`);
+console.log(`BANHALMI approved visual contract passed: ${pages.length} pages × ${widths.length} viewports; canonical ${pageMax}px canvas containment, semantic lead/body/secondary typography, approved quote density, weight, tracking, leading, alignment, reading measure, gutters, full-width colored surfaces, spacing rhythm, controls, grids and cell geometry verified.`);
