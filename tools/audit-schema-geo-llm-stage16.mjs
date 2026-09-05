@@ -18,9 +18,12 @@ if (fs.existsSync(policyPath)) {
   const policy = JSON.parse(fs.readFileSync(policyPath, 'utf8'));
   const requiredTop = ['commercialInterpretation','paymentAndInvoicing','licensing','workflow','peopleAndStudios','bookingAndContingency','confidentialityAndPublication','storageAndDeletion','accessibility','authoritativeHumanPages','interpretationRules'];
   for (const key of requiredTop) if (!policy[key]) errors.push(`project-policy.json missing ${key}`);
-  const expectedPolicyVersion = policy.commercialInterpretation?.hungarianOrientationCurrency
-    ? '2026-08-05-v3-eur-huf'
-    : '2026-08-03-v2';
+  const hasPartnerDeliveryContract = Boolean(policy.peopleAndStudios?.vikoBudapestDelivery && policy.peopleAndStudios?.vikoViennaDelivery && policy.peopleAndStudios?.amchamRelationship);
+  const expectedPolicyVersion = hasPartnerDeliveryContract
+    ? '2026-09-05-v4-partner-delivery'
+    : policy.commercialInterpretation?.hungarianOrientationCurrency
+      ? '2026-08-05-v3-eur-huf'
+      : '2026-08-03-v2';
   if (policy.schemaVersion !== expectedPolicyVersion) errors.push(`project-policy.json schemaVersion mismatch: expected ${expectedPolicyVersion}`);
   for (const lang of ['en','hu-HU','de-AT']) if (!policy.languages?.includes(lang)) errors.push(`project-policy.json missing language ${lang}`);
   for (const lang of ['en','hu-HU','de-AT']) {
@@ -41,6 +44,11 @@ if (fs.existsSync(policyPath)) {
   if (policy.commercialInterpretation?.hungarianOrientationCurrency) {
     for (const token of ['1 EUR = 400 HUF','canonical base price','contractual currency']) {
       if (!policy.commercialInterpretation.hungarianOrientationCurrency.includes(token)) errors.push(`project-policy.json HUF interpretation missing ${token}`);
+    }
+  }
+  if (hasPartnerDeliveryContract) {
+    for (const token of ['independent professional partner','works only through and together with BANHALMI','no independent Vienna studio','do not infer personal AmCham membership']) {
+      if (!policyText.includes(token)) errors.push(`project-policy.json partner-delivery contract missing ${token}`);
     }
   }
 }
@@ -94,4 +102,4 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log('Stage sixteen schema, GEO and LLM synchronization audit passed: llms is concise; detailed policy evidence remains canonical in ai.txt and project-policy.*; ecosystem schema v7 is synchronized.');
+console.log('Stage sixteen schema, GEO and LLM synchronization audit passed: llms is concise; detailed policy evidence remains canonical in ai.txt and project-policy.*; partner-delivery semantics and ecosystem schema v7 are synchronized.');
