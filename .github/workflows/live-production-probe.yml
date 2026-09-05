@@ -1,7 +1,7 @@
-# PR production-state probe: verify that the public site still matches main.
-# Semantic live-state assertions run after deployment in llm-live-integrity.yml,
-# so a corrective PR is not blocked merely because production still contains
-# the regression that the PR is designed to remove.
+# PR production-state probe. This workflow reports live/main drift but must not
+# block a corrective PR because production is stale or still contains the bug
+# that the PR is intended to fix. Exact-live SHA and semantic assertions are
+# mandatory after deployment in pages.yml and llm-live-integrity.yml.
 name: Live production probe
 
 on:
@@ -16,19 +16,21 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: Verify production origin matches current main
+      - name: Report production origin and verify public availability
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           expected="$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/880rzz/BANHALMI/git/ref/heads/main' | python3 -c "import json,sys; print(json.load(sys.stdin)['object']['sha'])")"
-          actual="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/deployment-sha.txt')"
-          echo "EXPECTED_SHA=$expected"
-          echo "ACTUAL_SHA=$actual"
-          test "$actual" = "$expected"
+          actual="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/deployment-sha.txt' || true)"
+          echo "EXPECTED_MAIN_SHA=$expected"
+          echo "LIVE_DEPLOYMENT_SHA=${actual:-unavailable}"
+          if [ -z "$actual" ]; then
+            echo '::warning::Live deployment SHA could not be read; post-deploy exact-live gate remains authoritative.'
+          elif [ "$actual" != "$expected" ]; then
+            echo "::warning::Production currently differs from main ($actual != $expected). This is reported but does not block a corrective PR; pages.yml exact-live gate must close the drift after merge."
+          fi
 
-          # Keep a minimal availability probe here. Relationship and LLM semantics
-          # are intentionally verified post-deploy by llm-live-integrity.yml.
           curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/speier-viko/' >/dev/null
           curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/llms.txt' >/dev/null
