@@ -3,15 +3,50 @@ import path from 'node:path';
 
 const siteRoot=path.resolve(process.argv[2]||'_site');
 const sourceCss=fs.readFileSync('assets/css/site.css','utf8');
+const design=JSON.parse(fs.readFileSync('data/design-authority.json','utf8'));
 const privateEventScript=path.resolve('assets/js/private-event-quote.js');
 const privateEventPricing=path.resolve('private-event-pricing.json');
 const targetCss=path.join(siteRoot,'assets/css/site.css');
 const targetDesignDir=path.join(siteRoot,'assets/design');
 if(!fs.existsSync(targetCss)) throw new Error('BANHALMI production site.css missing.');
 if(!fs.existsSync(privateEventScript)||!fs.existsSync(privateEventPricing)) throw new Error('BANHALMI private-event quote sources missing.');
-/* Production receives the audited source authority byte-for-byte. Design
-   fragments are historical references, never deploy-time patch layers. */
-fs.writeFileSync(targetCss,sourceCss,'utf8');
+
+function replaceOne(css,re,replacement,label){
+  let count=0;
+  const out=css.replace(re,(...args)=>{count++;return typeof replacement==='function'?replacement(...args):replacement;});
+  if(count!==1) throw new Error(`BANHALMI design compilation expected exactly one ${label}, found ${count}.`);
+  return out;
+}
+function compileDesign(css){
+  const d=design.typography.desktop,t=design.typography.tablet,m=design.typography.mobile,l=design.layout;
+  // The historical site.css remains a compatibility template. These substitutions
+  // replace the values inside the existing final canonical block; they do not append
+  // a second patch authority. data/design-authority.json is the single design source.
+  const start='/* CANONICAL-DESIGN-SYSTEM-20260827:START';
+  const end='/* CANONICAL-DESIGN-SYSTEM-20260827:END */';
+  const a=css.indexOf(start),b=css.indexOf(end);
+  if(a<0||b<=a) throw new Error('BANHALMI final canonical CSS block missing.');
+  const before=css.slice(0,a),block=css.slice(a,b),after=css.slice(b);
+  let c=block;
+  c=replaceOne(c,/--apple-page-max:\s*1200px;/,`--apple-page-max:${design.pageMaxPx}px;`,'page max token');
+  c=replaceOne(c,/--apple-reading-max:\s*760px;/,`--apple-reading-max:${design.readingMaxPx}px;`,'reading max token');
+  c=replaceOne(c,/--apple-wide-reading-max:\s*900px;/,`--apple-wide-reading-max:${design.wideReadingMaxPx}px;`,'wide reading max token');
+  c=replaceOne(c,/html body main h1\{font-size:[^;]+;/,`html body main h1{font-size:${d.h1}!important;`,'desktop H1 scale');
+  c=replaceOne(c,/html body main h2\{font-size:[^;]+;/,`html body main h2{font-size:${d.h2}!important;`,'desktop H2 scale');
+  c=replaceOne(c,/html body main h3\{font-size:[^;]+;/,`html body main h3{font-size:${d.h3}!important;`,'desktop H3 scale');
+  c=replaceOne(c,/@media\(max-width:768px\)\{\s*html body main h1\{font-size:[^;]+;/,`@media(max-width:768px){\n  html body main h1{font-size:${t.h1}!important;`,'tablet H1 scale');
+  c=replaceOne(c,/html body main h2\{font-size:clamp\(1\.55rem,3\.2vw,2rem\)!important;/,`html body main h2{font-size:${t.h2}!important;`,'tablet H2 scale');
+  // Add component geometry inside the existing canonical block, immediately before
+  // its own responsive section. These rules are part of that block, not a later layer.
+  const anchor='@media(max-width:1460px){';
+  const componentRules=`\n/* Root-cause geometry: one optical rhythm for headings, quote controls and odd membership grids. */\nhtml body main h3 + :is(p,.lead,.description,.desc){margin-top:${design.typography.h3DescriptionGapPx}px!important;}\nhtml body .smart-quote-layout .category-card{display:grid!important;grid-template-columns:${l.quoteControlColumnPx}px minmax(0,1fr)!important;column-gap:${l.quoteControlGapPx}px!important;align-items:center!important;}\nhtml body .smart-quote-layout .category-card>input[type="radio"]{grid-column:1!important;inline-size:${l.quoteControlColumnPx}px!important;block-size:${l.quoteControlColumnPx}px!important;min-width:${l.quoteControlColumnPx}px!important;min-height:${l.quoteControlColumnPx}px!important;margin:0!important;}\nhtml body .smart-quote-layout .category-card>span{grid-column:2!important;display:grid!important;grid-template-columns:minmax(0,1fr) ${l.quoteInfoColumnPx}px!important;column-gap:12px!important;align-items:center!important;min-width:0!important;}\nhtml body .smart-quote-layout .category-card .info-tip{position:static!important;grid-column:2!important;justify-self:end!important;margin:0!important;}\n@media(max-width:620px){html body main .partner-grid-memberships>:last-child:nth-child(odd){grid-column:1/-1!important;width:calc((100% - .7rem)/2)!important;justify-self:center!important;}}\n`;
+  if(!c.includes(anchor)) throw new Error('BANHALMI canonical responsive anchor missing.');
+  c=c.replace(anchor,componentRules+anchor);
+  return before+c+after;
+}
+
+const compiledCss=compileDesign(sourceCss);
+fs.writeFileSync(targetCss,compiledCss,'utf8');
 if(fs.existsSync(targetDesignDir)) fs.rmSync(targetDesignDir,{recursive:true,force:true});
 
 const quotePages=new Set(['requestaquote/index.html','hu/ajanlatkeres/index.html','de-at/anfrage/index.html']);
@@ -20,9 +55,6 @@ let checked=0,normalized=0,privateInjected=0;
 function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const full=path.join(dir,e.name);if(e.isDirectory())walk(full);else if(e.isFile()&&e.name.endsWith('.html')){checked++;let html=fs.readFileSync(full,'utf8');const before=html;html=html.replace(/<link rel="preload" as="style" href="(\/assets\/css\/site\.css[^\"]*)"\s*\/><link rel="stylesheet" href="\1" media="print" onload="this\.media='all';this\.onload=null"\s*\/><noscript><link rel="stylesheet" href="\1"\s*\/><\/noscript>/g,'<link rel="stylesheet" href="$1"/>');const rel=path.relative(siteRoot,full).split(path.sep).join('/');if(quotePages.has(rel)&&!html.includes('/assets/js/private-event-quote.js')){html=html.replace(/<\/body>/i,`${privateScriptTag}</body>`);privateInjected++;}if(html!==before){fs.writeFileSync(full,html,'utf8');normalized++;}}}}
 walk(siteRoot);
 
-/* The static PDF engine already knows the event duration/guest model. Add only
-   the private-event service label at artifact build time; calculation remains
-   owned by the shared quote calculator and private-event pricing adapter. */
 const quotePdfPath=path.join(siteRoot,'assets/js/quote-pdf.js');
 let pdfPatched=0;
 if(fs.existsSync(quotePdfPath)){
@@ -34,6 +66,6 @@ if(fs.existsSync(quotePdfPath)){
 }
 if(!sourceCss.includes('APPLE-RESPONSIVE-CONTRACT-V1:START')||!sourceCss.includes('APPLE-RESPONSIVE-CONTRACT-V1:END')) throw new Error('Approved BANHALMI Apple CSS authority markers missing.');
 const finalCss=fs.readFileSync(targetCss,'utf8');
-if(finalCss!==sourceCss) throw new Error('BANHALMI production restore mutated the canonical CSS authority.');
+for(const required of [`--apple-page-max:${design.pageMaxPx}px`,d.h1,d.h2,t.h1,t.h2,`margin-top:${design.typography.h3DescriptionGapPx}px`]) if(!finalCss.includes(required)) throw new Error(`BANHALMI compiled design token missing: ${required}`);
 for(const rel of quotePages){const full=path.join(siteRoot,rel);if(!fs.existsSync(full)||!fs.readFileSync(full,'utf8').includes('/assets/js/private-event-quote.js')) throw new Error(`BANHALMI private-event quote adapter missing from ${rel}.`);}
-console.log(`BANHALMI canonical production design preserved byte-for-byte; ${checked} HTML files checked, ${normalized} artifact HTML file(s) normalized, ${privateInjected} private-event quote adapter injection(s), ${pdfPatched} PDF label patch(es).`);
+console.log(`BANHALMI production design compiled from ${design.version}; ${checked} HTML files checked, ${normalized} artifact HTML file(s) normalized, ${privateInjected} private-event quote adapter injection(s), ${pdfPatched} PDF label patch(es).`);
