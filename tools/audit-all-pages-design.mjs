@@ -4,7 +4,9 @@ import { chromium } from 'playwright';
 
 const baseUrl=(process.env.AUDIT_BASE_URL||'http://127.0.0.1:4173').replace(/\/$/,'');
 const siteDir=process.env.AUDIT_SITE_DIR||'_site';
-const widths=(process.env.BANHALMI_DESIGN_WIDTHS||'390,768,1440').split(',').map(Number).filter(Boolean);
+const design=JSON.parse(fs.readFileSync('data/design-authority.json','utf8'));
+const pageMax=Number(design.pageMaxPx||1200);
+const widths=(process.env.BANHALMI_DESIGN_WIDTHS||'390,768,1440,1920').split(',').map(Number).filter(Boolean);
 const files=[];
 function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const full=path.join(dir,e.name);if(e.isDirectory())walk(full);else if(e.isFile()&&e.name.endsWith('.html'))files.push(full)}}
 walk(siteDir);
@@ -16,7 +18,7 @@ for(const width of widths){
   for(const file of contentFiles){
     const rel=path.relative(siteDir,file).replaceAll('\\','/');
     await page.goto(urlFor(file),{waitUntil:'networkidle'});
-    const r=await page.evaluate(()=>{
+    const r=await page.evaluate(({pageMax})=>{
       const visible=el=>{if(!el)return false;const s=getComputedStyle(el),b=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0&&b.width>0&&b.height>0};
       const de=document.documentElement;
       const header=document.querySelector('.site-header');
@@ -32,7 +34,7 @@ for(const width of widths){
       for(const w of document.querySelectorAll('main .wrap')){
         if(!visible(w))continue;
         const b=w.getBoundingClientRect();
-        if(b.width>Math.min(innerWidth,1200)+4)wraps.push(b.width);
+        if(b.width>Math.min(innerWidth,pageMax)+4)wraps.push(b.width);
       }
       const info=[...document.querySelectorAll('.smart-quote-layout .info-tip[data-tooltip]')].filter(visible).map(el=>({position:getComputedStyle(el).position,b:el.getBoundingClientRect(),card:el.closest('.category-card,.option-row')?.getBoundingClientRect()||null}));
       const mainBox=visible(main)?main.getBoundingClientRect():null;
@@ -47,13 +49,13 @@ for(const width of widths){
         footerTop:footerBox?.top??null,
         mainBottom:mainBox?.bottom??null
       };
-    });
+    },{pageMax});
     if(r.overflow>1)failures.push(`${rel} @${width}: document horizontal overflow ${r.overflow}px`);
     if(r.headerHeight&&(r.headerHeight<48||r.headerHeight>110))failures.push(`${rel} @${width}: header height ${r.headerHeight.toFixed(1)}px`);
     if(r.mainRight>width+2)failures.push(`${rel} @${width}: main escapes viewport (${r.mainRight.toFixed(1)}px)`);
     if(r.footerRight>width+2||r.footerLeft<-2)failures.push(`${rel} @${width}: footer escapes viewport [${r.footerLeft.toFixed(1)},${r.footerRight.toFixed(1)}]`);
     if(r.footerTop!=null&&r.mainBottom!=null&&r.footerTop<r.mainBottom-2)failures.push(`${rel} @${width}: footer overlaps main content by ${(r.mainBottom-r.footerTop).toFixed(1)}px`);
-    for(const w of r.wraps)failures.push(`${rel} @${width}: .wrap too wide ${w.toFixed(1)}px`);
+    for(const w of r.wraps)failures.push(`${rel} @${width}: .wrap exceeds canonical page max ${pageMax}px (${w.toFixed(1)}px)`);
     for(const s of r.surfaces){
       if(s.surfaceName==='white'&&s.bg!=='rgb(255, 255, 255)')failures.push(`${rel} @${width}: white surface rendered ${s.bg}`);
       if(s.surfaceName==='soft'&&s.bg!=='rgb(245, 245, 247)')failures.push(`${rel} @${width}: soft surface rendered ${s.bg}`);
@@ -74,4 +76,4 @@ if(failures.length){
   if(failures.length>250)console.error(`... ${failures.length-250} more`);
   process.exit(1);
 }
-console.log(`BANHALMI exhaustive design audit passed: ${contentFiles.length} content pages × ${widths.length} viewports = ${checks} render checks; document overflow, shell containment, surfaces and quote controls verified against the approved visual baseline.`);
+console.log(`BANHALMI exhaustive design audit passed: ${contentFiles.length} content pages × ${widths.length} viewports = ${checks} render checks; document overflow, shell containment, canonical ${pageMax}px wide-canvas containment, surfaces and quote controls verified.`);
