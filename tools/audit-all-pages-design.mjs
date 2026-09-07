@@ -8,6 +8,7 @@ const widths=(process.env.BANHALMI_DESIGN_WIDTHS||'375,390,430,768,1024,1280,144
 const designAuthority=JSON.parse(fs.readFileSync('data/design-authority.json','utf8'));
 const pageMaxPx=Number(designAuthority.pageMaxPx)||1200;
 const structuredMaxPx=Number(designAuthority.structuredMaxPx)||pageMaxPx;
+const structuredBreakpointPx=1440;
 const structuredSelector=':scope > :is(.service-process-grid,.partner-grid,.partner-grid-memberships,.archive-cards,.two-reading-grid,.smart-quote-layout)';
 const files=[];
 function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const full=path.join(dir,e.name);if(e.isDirectory())walk(full);else if(e.isFile()&&e.name.endsWith('.html'))files.push(full)}}
@@ -20,7 +21,7 @@ for(const width of widths){
   for(const file of contentFiles){
     const rel=path.relative(siteDir,file).replaceAll('\\','/');
     await page.goto(urlFor(file),{waitUntil:'networkidle'});
-    const r=await page.evaluate(({pageMaxPx,structuredMaxPx,structuredSelector})=>{
+    const r=await page.evaluate(({pageMaxPx,structuredMaxPx,structuredBreakpointPx,structuredSelector})=>{
       const visible=el=>{if(!el)return false;const s=getComputedStyle(el),b=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0&&b.width>0&&b.height>0};
       const de=document.documentElement;
       const header=document.querySelector('.site-header');
@@ -36,7 +37,7 @@ for(const width of widths){
       for(const w of document.querySelectorAll('main .wrap')){
         if(!visible(w))continue;
         const b=w.getBoundingClientRect();
-        const isStructured=Boolean(w.querySelector(structuredSelector));
+        const isStructured=innerWidth>=structuredBreakpointPx&&Boolean(w.querySelector(structuredSelector));
         const allowedMax=isStructured?structuredMaxPx:pageMaxPx;
         if(b.width>Math.min(innerWidth,allowedMax)+4)wraps.push({width:b.width,allowedMax,isStructured});
       }
@@ -53,7 +54,7 @@ for(const width of widths){
         footerTop:footerBox?.top??null,
         mainBottom:mainBox?.bottom??null
       };
-    },{pageMaxPx,structuredMaxPx,structuredSelector});
+    },{pageMaxPx,structuredMaxPx,structuredBreakpointPx,structuredSelector});
     if(r.overflow>1)failures.push(`${rel} @${width}: document horizontal overflow ${r.overflow}px`);
     if(r.headerHeight&&(r.headerHeight<48||r.headerHeight>110))failures.push(`${rel} @${width}: header height ${r.headerHeight.toFixed(1)}px`);
     if(r.mainRight>width+2)failures.push(`${rel} @${width}: main escapes viewport (${r.mainRight.toFixed(1)}px)`);
@@ -80,4 +81,4 @@ if(failures.length){
   if(failures.length>250)console.error(`... ${failures.length-250} more`);
   process.exit(1);
 }
-console.log(`BANHALMI exhaustive design audit passed: ${contentFiles.length} content pages × ${widths.length} viewports = ${checks} render checks; standard page max ${pageMaxPx}px, structured max ${structuredMaxPx}px, document overflow, shell containment, surfaces and quote controls verified against the approved visual baseline.`);
+console.log(`BANHALMI exhaustive design audit passed: ${contentFiles.length} content pages × ${widths.length} viewports = ${checks} render checks; standard page max ${pageMaxPx}px, structured max ${structuredMaxPx}px from ${structuredBreakpointPx}px, document overflow, shell containment, surfaces and quote controls verified against the approved visual baseline.`);
