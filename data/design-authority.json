@@ -1,6 +1,7 @@
 {
-  "version": "2026-09-07-root-cause-v4",
+  "version": "2026-09-07-root-cause-v5",
   "pageMaxPx": 1280,
+  "structuredMaxPx": 1320,
   "readingMaxPx": 760,
   "wideReadingMaxPx": 900,
   "typography": {
@@ -36,6 +37,7 @@
   "principles": {
     "singleLeftContentAxis": true,
     "readingMeasureSeparateFromStructuredCanvas": true,
+    "standardAndStructuredCanvasesAreDistinct": true,
     "computedGeometryIsReleaseEvidence": true,
     "noPatchLayerAfterCanonicalAuthority": true
   }
