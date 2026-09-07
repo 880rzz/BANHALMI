@@ -1,7 +1,7 @@
 {
-  "version": "2026-09-07-root-cause-v5",
+  "version": "2026-09-07-root-cause-v6",
   "pageMaxPx": 1280,
-  "structuredMaxPx": 1320,
+  "structuredMaxPx": 1440,
   "readingMaxPx": 760,
   "wideReadingMaxPx": 900,
   "typography": {
