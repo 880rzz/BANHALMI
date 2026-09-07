@@ -17,15 +17,19 @@ This repository treats the following as a release-blocking visual contract for e
 - Long-form prose is left/start aligned. No justified body copy.
 - Centered text is reserved for short hero, CTA, statement, error, or footer copy.
 - Long prose must never be centered merely for decoration.
+- Elements that are left-aligned within the same semantic content group share one optical start axis; headings, descriptions, links, lists and structured records must not drift independently.
 - Long prose width is capped at 860 px; normal reading measure should remain narrower where possible.
 - Text columns must not collapse below a usable reading width.
 
 ## Layout and full-width surfaces
 - Colored top-level section surfaces span the full viewport width.
 - Content inside those surfaces uses centered constrained wrappers.
-- Desktop content wrappers are capped at 1280 px.
-- Standard wrappers remain geometrically centered.
+- Standard desktop content wrappers are capped at 1280 px.
+- Information-dense structured components (service/process grids, partner grids, archive/reading records and quote workspaces) may use a separate 1320 px structured canvas on sufficiently wide viewports.
+- The structured canvas must be applied to the real rendered component and, where necessary, its semantic wrapper; it must not remain trapped inside a narrower legacy parent.
+- Standard and structured wrappers remain geometrically centered and use the same optical start-axis system.
 - Mobile/tablet content keeps visible side gutters unless the element explicitly declares full-bleed semantics.
+- Responsive use of space means narrow prose remains narrow while structured records expand only when their information architecture benefits from it; no desktop-only centred ribbon is allowed to waste usable width.
 - No horizontal document overflow.
 - No `content-visibility:auto` on top-level sections where it can create blank visual bands.
 
@@ -33,6 +37,7 @@ This repository treats the following as a release-blocking visual contract for e
 - Related heading/copy blocks remain visually attached without collision or arbitrary voids.
 - Colored editorial sections require meaningful vertical breathing room.
 - Spacing follows a small, repeated rhythm rather than arbitrary one-off values.
+- Rows, cards and groups use the same canonical spacing scale unless their information architecture explicitly requires a documented exception.
 
 ## Cards, cells, rows, and columns
 - Cards are used only for real content units, not as decoration around every paragraph.
@@ -40,10 +45,12 @@ This repository treats the following as a release-blocking visual contract for e
 - Bordered/colored cards keep sufficient inner padding.
 - Text-bearing grid columns must remain wide enough to read.
 - Dense desktop grids must collapse or reflow before text becomes cramped.
+- Cards in the same semantic grid use a shared gap and comparable inset rhythm; isolated page-specific spacing patches are not accepted as the design authority.
 
-## Controls
+## Controls and links
 - Mobile/tablet interactive controls use at least a 44 px touch height; button-like controls also require a 44 px touch width.
 - Primary and secondary CTAs remain visually distinct and concise.
+- Navigation links, inline text links, utility links, disclosures and CTA links may differ by role, but each role must remain typographically, spatially and interactively consistent across pages and languages.
 
 ## Release rule
-A visual failure on any published page, language, or audited viewport blocks release. The automated browser contract is implemented in `tools/audit-apple-visual-quality.mjs` and must run together with the repository's exhaustive browser, first-principles, accessibility, contrast, Lighthouse, SEO, schema, GEO, GDPR, AI/LLM, trust, and exact-live gates.
+A visual failure on any published page, language, or audited viewport blocks release. The automated browser contract is implemented in `tools/audit-apple-visual-quality.mjs` and must run together with the repository's exhaustive browser, first-principles, accessibility, contrast, Lighthouse, SEO, schema, GEO, GDPR, AI/LLM, trust, and exact-live gates. Computed geometry, not token presence alone, is the release evidence.
