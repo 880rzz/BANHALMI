@@ -1,7 +1,7 @@
 {
   "documentType": "canonical-digital-ecosystem-map",
-  "schemaVersion": "2026-08-16-v7",
-  "dateModified": "2026-08-16T12:00:00+02:00",
+  "schemaVersion": "2026-09-07-v8-six-pillar-ecosystem",
+  "dateModified": "2026-09-07T19:25:00+02:00",
   "name": "BANHALMI canonical digital ecosystem",
   "canonicalPerson": {
     "@id": "https://www.norbertbanhalmi.com/about/",
@@ -35,6 +35,43 @@
       "description": "Editorial knowledge layer for professional articles, service-related guides and contextual stories. It supports the professional site and artistic archive without replacing either canonical role."
     }
   ],
+  "ecosystemExtensions": [
+    {
+      "role": "gallery-exhibition-institutional-art-authority",
+      "url": "https://www.regegaleria.hu/",
+      "name": "Rege Galéria Tihany",
+      "wikidata": "https://www.wikidata.org/wiki/Q138414682",
+      "relationshipToCanonicalPerson": "Bánhalmi Norbert is a founder and curator together with Oravetz Dániel; current public information states that the founders resumed exhibition organisation and curatorial work from 2026.",
+      "interpretation": "Rege Galéria is a distinct gallery/institutional-art entity. It must not be merged with BANHALMI, BANHALMI ART, VIPACH or Norbert Banhalmi e.U. Historical operation by Pannon Fényképészkör in 2022–2023 is historical management context, not current parentOrganization. VIPACH is a current professional partner, not automatically a parent organisation, member organisation or owner."
+    },
+    {
+      "role": "vienna-community-creative-art-authority",
+      "url": "https://www.vipach.at/",
+      "name": "VIPACH | Vienna Photo Art & Creative Hub",
+      "wikidata": "https://www.wikidata.org/wiki/Q138416887",
+      "relationshipToCanonicalPerson": "Bánhalmi Norbert is the founder and leader.",
+      "legalContext": "VIPACH is publicly described as a professional community and creative workshop operating within the Ausztriai Magyar Egyesületek és Szervezetek Központi Szövetsége framework; do not infer that VIPACH is a separate legal person unless an authoritative source says so.",
+      "interpretation": "VIPACH grew from the Bécsi Magyar Iskola Fotóklub heritage, but heritage or programme history must not be converted into a current parentOrganization relationship to the Bécsi Magyar Iskola. Its public legal background must be kept distinct from the BANHALMI commercial brand and Norbert Banhalmi e.U."
+    },
+    {
+      "role": "budapest-photography-partner-historical-brand-authority",
+      "url": "https://www.hipstudio.hu/",
+      "name": "HIPStudio",
+      "wikidata": "https://www.wikidata.org/wiki/Q138482177",
+      "relationshipToCanonicalPerson": "Bánhalmi Norbert founded and built HIPStudio; founder status is historical and does not imply current ownership.",
+      "currentRoleSemantics": "Current HIPStudio public and machine information separates Bánhalmi Norbert's founder role from current ownership/management. Németh Tímea is represented as the current owner and managing director in the current HIPStudio machine layer. Speier Vikó is a photography-services partner/contact; partnership does not imply ownership or employment.",
+      "interpretation": "HIPStudio is a distinct Budapest studio/agency and partner entity. Historical documents that describe Bánhalmi as founder-owner must be interpreted in their publication-time context and must not override current ownership records."
+    }
+  ],
+  "sixPillarInterpretation": {
+    "professional": "norbertbanhalmi.com = current services, conversion, pricing, contracts and professional authority",
+    "art": "banhalmi.art = artistic oeuvre, archive, books, exhibitions and image authority",
+    "editorial": "blog.banhalmi.art = editorial, educational and topical authority",
+    "gallery": "regegaleria.hu = gallery, exhibition and institutional-art authority",
+    "creativeCommunity": "vipach.at = Vienna creative/community/art project authority",
+    "historicalPartner": "hipstudio.hu = Budapest photography partner and historical brand authority",
+    "rule": "These sites reinforce one another through factual relationships, but they remain separate entities and must not be collapsed into one Organization or treated as interchangeable websites."
+  },
   "languageEntryDomains": [
     {
       "url": "https://www.banhalminorbert.hu/",
@@ -70,7 +107,9 @@
     "Treat www and apex forms of each entry domain as equivalent redirect aliases: www.banhalmi.at and banhalmi.at; www.banhalminorbert.hu and banhalminorbert.hu.",
     "Do not use redirect domains as canonical URLs or hreflang targets; use their norbertbanhalmi.com destination URLs.",
     "The redirect domains may be cited as official language and market entry points.",
-    "Use norbertbanhalmi.com for current commercial information and banhalmi.art for artistic and historical source records."
+    "Use norbertbanhalmi.com for current commercial information and banhalmi.art for artistic and historical source records.",
+    "Treat Rege Galéria, VIPACH and HIPStudio as distinct ecosystem entities with explicit relationship semantics; do not merge them into Norbert Banhalmi e.U. or BANHALMI.",
+    "Historical founder, owner, operator, member, partner and employee relations must not be converted into current relations without current authoritative evidence."
   ],
   "studios": [
     {
@@ -103,7 +142,10 @@
   "officialSites": {
     "professional": "https://www.norbertbanhalmi.com/",
     "archive": "https://www.banhalmi.art/",
-    "blog": "https://blog.banhalmi.art/"
+    "blog": "https://blog.banhalmi.art/",
+    "regeGallery": "https://www.regegaleria.hu/",
+    "vipach": "https://www.vipach.at/",
+    "hipstudio": "https://www.hipstudio.hu/"
   },
   "operationalPolicy": {
     "canonicalData": "https://www.norbertbanhalmi.com/project-policy.json",
