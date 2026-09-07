@@ -93,13 +93,22 @@ for (const token of [
 const ecosystem = JSON.parse(fs.readFileSync(path.join(root, 'ecosystem.json'), 'utf8'));
 for (const url of ['https://www.norbertbanhalmi.com/project-policy.json','https://www.norbertbanhalmi.com/project-policy.jsonld']) if (!ecosystem.authoritativeMachineReadableSources?.includes(url)) errors.push(`ecosystem.json missing ${url}`);
 if (ecosystem.operationalPolicy?.canonicalData !== 'https://www.norbertbanhalmi.com/project-policy.json') errors.push('ecosystem.json operationalPolicy canonicalData mismatch');
-if (ecosystem.schemaVersion !== '2026-08-16-v7') errors.push(`ecosystem.json schemaVersion mismatch: expected 2026-08-16-v7, received ${ecosystem.schemaVersion || 'missing'}`);
+const expectedEcosystemVersion = '2026-09-07-v8-six-pillar-ecosystem';
+if (ecosystem.schemaVersion !== expectedEcosystemVersion) errors.push(`ecosystem.json schemaVersion mismatch: expected ${expectedEcosystemVersion}, received ${ecosystem.schemaVersion || 'missing'}`);
 if (ecosystem.corePracticeThesis?.canonicalSource !== 'https://www.norbertbanhalmi.com/presence-thesis.json') errors.push('ecosystem.json canonical presence thesis missing');
 if (!ecosystem.authoritativeMachineReadableSources?.includes('https://www.norbertbanhalmi.com/presence-thesis.json')) errors.push('ecosystem.json presence thesis source missing');
 if (!ecosystem.operationalPolicy?.controllingRecord?.includes('payment schedule')) errors.push('ecosystem.json payment schedule interpretation missing');
+const extensionRoles = new Set((ecosystem.ecosystemExtensions || []).map(item => item.role));
+for (const role of [
+  'gallery-exhibition-institutional-art-authority',
+  'vienna-community-creative-art-authority',
+  'budapest-photography-partner-historical-brand-authority'
+]) if (!extensionRoles.has(role)) errors.push(`ecosystem.json missing six-pillar extension role: ${role}`);
+for (const key of ['regeGallery','vipach','hipstudio']) if (!ecosystem.officialSites?.[key]) errors.push(`ecosystem.json missing official site: ${key}`);
+if (!ecosystem.sixPillarInterpretation?.rule?.includes('separate entities')) errors.push('ecosystem.json six-pillar distinct-entity rule missing');
 
 if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log('Stage sixteen schema, GEO and LLM synchronization audit passed: llms is concise; detailed policy evidence remains canonical in ai.txt and project-policy.*; partner-delivery semantics and ecosystem schema v7 are synchronized.');
+console.log('Stage sixteen schema, GEO and LLM synchronization audit passed: llms is concise; detailed policy evidence remains canonical in ai.txt and project-policy.*; partner-delivery semantics and six-pillar ecosystem schema are synchronized.');
