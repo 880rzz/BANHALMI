@@ -1,6 +1,6 @@
 {
-  "version": "2026-09-05-root-cause-v3",
-  "pageMaxPx": 1500,
+  "version": "2026-09-07-root-cause-v4",
+  "pageMaxPx": 1280,
   "readingMaxPx": 760,
   "wideReadingMaxPx": 900,
   "typography": {
@@ -20,10 +20,23 @@
     "h3DescriptionGapPx": 10
   },
   "layout": {
+    "desktopStructuredMinViewportFraction": 0.7,
+    "contentAxisTolerancePx": 4,
+    "compactSectionPaddingMaxPx": 96,
+    "contentSectionPaddingMaxPx": 120,
+    "heroToContentGapMaxPx": 72,
+    "cardGapPx": 24,
     "mobileMembershipOddCardCentered": true,
     "quoteControlColumnPx": 24,
     "quoteControlGapPx": 14,
     "quoteInfoColumnPx": 44,
+    "quoteWorkspaceMinFormToIntroRatio": 1.55,
     "serviceProcessBottomMarginPx": 0
+  },
+  "principles": {
+    "singleLeftContentAxis": true,
+    "readingMeasureSeparateFromStructuredCanvas": true,
+    "computedGeometryIsReleaseEvidence": true,
+    "noPatchLayerAfterCanonicalAuthority": true
   }
 }
