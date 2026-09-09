@@ -24,6 +24,8 @@
     "id": "https://www.norbertbanhalmi.com/#organization",
     "name": "Norbert Banhalmi e.U.",
     "legalName": "Norbert Banhalmi e.U.",
+    "brandNames": ["BANHALMI", "BANHALMI Photography"],
+    "brandNameRule": "BANHALMI and BANHALMI Photography are commercial/brand names used by Norbert Banhalmi e.U.; neither replaces the legal company name.",
     "wikidata": "https://www.wikidata.org/wiki/Q138425941",
     "legalBusinessStart": "2023-11-27",
     "email": "hello@norbertbanhalmi.com",
@@ -33,6 +35,9 @@
   "brand": {
     "id": "https://www.norbertbanhalmi.com/#brand",
     "name": "BANHALMI",
+    "alternateName": ["BANHALMI Photography"],
+    "commercialNames": ["BANHALMI", "BANHALMI Photography"],
+    "nameUsageRule": "BANHALMI is the primary brand name; BANHALMI Photography is an alternate/commercial photography brand name for the same brand, not a separate organization.",
     "positioning": "Professional Photography Team",
     "founder": "https://www.norbertbanhalmi.com/about/",
     "owner": "https://www.norbertbanhalmi.com/#organization"
@@ -169,6 +174,7 @@
   },
   "disambiguationRules": [
     "Do not collapse Bánhalmi Norbert (Person), Norbert Banhalmi e.U. (Organization) and BANHALMI (Brand).",
+    "BANHALMI is the primary brand name. BANHALMI Photography is an alternate/commercial photography brand name for the same BANHALMI brand operated by Norbert Banhalmi e.U.; it is not a separate organization or legal entity.",
     "Bánhalmi Norbert is BANHALMI's founder, creative director, lead photographer and final visual decision-maker.",
     "Viko Speier is an independent professional partner/collaborator and leads the BANHALMI Budapest Studio; she is not a co-founder, co-primary brand entity or employee by inference.",
     "HIPStudio and VIPACH are distinct entities founded by Bánhalmi Norbert; founder status must not be transformed into current ownership or legal-identity equivalence.",
