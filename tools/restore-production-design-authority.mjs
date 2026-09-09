@@ -18,7 +18,7 @@ function replaceOne(css,re,replacement,label){
   return out;
 }
 function compileDesign(css){
-  const d=design.typography.desktop,t=design.typography.tablet,l=design.layout;
+  const d=design.typography.desktop,t=design.typography.tablet,l=design.layout,flow=l.documentFlow||{};
   const start='/* CANONICAL-DESIGN-SYSTEM-20260827:START';
   const end='/* CANONICAL-DESIGN-SYSTEM-20260827:END */';
   const a=css.indexOf(start),b=css.indexOf(end);
@@ -39,7 +39,13 @@ function compileDesign(css){
   const componentRules=`\n/* Root-cause geometry: one optical axis, distinct reading/standard/structured canvases, one card rhythm. */\nhtml body main h3 + :is(p,.lead,.description,.desc){margin-top:${design.typography.h3DescriptionGapPx}px!important;}\nhtml body main :is(.section-head,.section-intro,.service-intro,.content-intro){margin-left:0!important;margin-right:auto!important;text-align:left!important;}\nhtml body main :is(.section-head,.section-intro,.service-intro,.content-intro)>:is(.eyebrow,.label,.kicker,h1,h2,h3,p,.lead,a,.btn-link){margin-left:0!important;margin-right:auto!important;text-align:left!important;}\n@media(min-width:1440px){\n  html body main .wrap:has(> :is(.service-process-grid,.partner-grid,.partner-grid-memberships,.archive-cards,.two-reading-grid,.smart-quote-layout)){width:min(calc(100% - 2 * var(--apple-gutter)),var(--apple-structured-max))!important;max-width:var(--apple-structured-max)!important;}\n  html body main :is(.service-process-grid,.partner-grid,.partner-grid-memberships,.archive-cards,.two-reading-grid,.smart-quote-layout){width:100%!important;max-width:var(--apple-structured-max)!important;margin-left:auto!important;margin-right:auto!important;}\n}\n@media(max-width:1439px){\n  html body main :is(.service-process-grid,.partner-grid,.partner-grid-memberships,.archive-cards,.two-reading-grid,.smart-quote-layout){width:100%!important;max-width:var(--apple-page-max)!important;margin-left:auto!important;margin-right:auto!important;}\n}\nhtml body main :is(.service-process-grid,.partner-grid,.partner-grid-memberships,.archive-cards,.two-reading-grid){gap:${l.cardGapPx}px!important;}\nhtml body .smart-quote-layout .category-card{display:grid!important;grid-template-columns:${l.quoteControlColumnPx}px minmax(0,1fr)!important;column-gap:${l.quoteControlGapPx}px!important;align-items:center!important;}\nhtml body .smart-quote-layout .category-card>input[type="radio"]{grid-column:1!important;inline-size:${l.quoteControlColumnPx}px!important;block-size:${l.quoteControlColumnPx}px!important;min-width:${l.quoteControlColumnPx}px!important;min-height:${l.quoteControlColumnPx}px!important;margin:0!important;}\nhtml body .smart-quote-layout .category-card>span{grid-column:2!important;display:grid!important;grid-template-columns:minmax(0,1fr) ${l.quoteInfoColumnPx}px!important;column-gap:12px!important;align-items:center!important;min-width:0!important;}\nhtml body .smart-quote-layout .category-card .info-tip{position:static!important;grid-column:2!important;justify-self:end!important;margin:0!important;}\n@media(max-width:620px){html body main .partner-grid-memberships>:last-child:nth-child(odd){grid-column:1/-1!important;width:calc((100% - .7rem)/2)!important;justify-self:center!important;}}\n`;
   if(!c.includes(anchor)) throw new Error('BANHALMI canonical responsive anchor missing.');
   c=c.replace(anchor,componentRules+anchor);
-  return before+c+after;
+
+  let compiled=before+c+after;
+  compiled=replaceOne(compiled,/html\{min-height:100%;background:#202530!important\}/,`html{min-height:100%;background:${flow.documentBackground||'#ffffff'}!important}`,'document background floor');
+  compiled=replaceOne(compiled,/body\{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column\}/,`body{min-height:100vh;min-height:100dvh;display:grid;grid-template-rows:auto minmax(0,1fr) auto;background:var(--bg,#fff)}`,'document layout mode');
+  compiled=replaceOne(compiled,/body>main,#main\{flex:1 0 auto;width:100%;min-width:0\}/,'body>main,#main{width:100%;min-width:0;min-height:0}','main normal-flow contract');
+  compiled=replaceOne(compiled,/body>\.site-footer,\.site-footer\{flex:0 0 auto;width:100%\}/,'body>.site-footer,.site-footer{width:100%;min-height:0}','footer normal-flow contract');
+  return compiled;
 }
 
 const compiledCss=compileDesign(sourceCss);
@@ -70,7 +76,11 @@ for(const required of [
   `margin-top:${design.typography.h3DescriptionGapPx}px`,
   `margin-bottom:${design.layout.serviceProcessBottomMarginPx}px!important`,
   `gap:${design.layout.cardGapPx}px!important`,
-  'max-width:var(--apple-structured-max)!important'
+  'max-width:var(--apple-structured-max)!important',
+  `html{min-height:100%;background:${design.layout.documentFlow.documentBackground}!important}`,
+  'body{min-height:100vh;min-height:100dvh;display:grid;grid-template-rows:auto minmax(0,1fr) auto;background:var(--bg,#fff)}',
+  'body>main,#main{width:100%;min-width:0;min-height:0}',
+  'body>.site-footer,.site-footer{width:100%;min-height:0}'
 ]) if(!finalCss.includes(required)) throw new Error(`BANHALMI compiled design token missing: ${required}`);
 for(const rel of quotePages){const full=path.join(siteRoot,rel);if(!fs.existsSync(full)||!fs.readFileSync(full,'utf8').includes('/assets/js/private-event-quote.js')) throw new Error(`BANHALMI private-event quote adapter missing from ${rel}.`);}
-console.log(`BANHALMI production design compiled from ${design.version}; ${checked} HTML files checked, ${normalized} artifact HTML file(s) normalized, ${privateInjected} private-event quote adapter injection(s), ${pdfPatched} PDF label patch(es). Standard and structured canvases, canonical content-axis and card rhythm projections are active.`);
+console.log(`BANHALMI production design compiled from ${design.version}; ${checked} HTML files checked, ${normalized} artifact HTML file(s) normalized, ${privateInjected} private-event quote adapter injection(s), ${pdfPatched} PDF label patch(es). Standard and structured canvases, canonical content-axis, card rhythm and normal footer document flow are active.`);
