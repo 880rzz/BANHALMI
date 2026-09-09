@@ -8,7 +8,13 @@ fail(core.schemaVersion === '1.4', 'machine-core schemaVersion must remain 1.4 o
 fail(core.canonicalId === 'https://www.norbertbanhalmi.com/data/machine-core.json', 'canonicalId must stay on the professional domain');
 fail(core.person?.wikidata === 'https://www.wikidata.org/wiki/Q56391118', 'Person Wikidata identity drift');
 fail(core.organization?.wikidata === 'https://www.wikidata.org/wiki/Q138425941', 'Organization Wikidata identity drift');
-fail(core.brand?.name === 'BANHALMI', 'Brand identity drift');
+fail(core.brand?.name === 'BANHALMI', 'Primary brand identity drift');
+fail((core.brand?.alternateName || []).includes('BANHALMI Photography'), 'BANHALMI Photography alternate brand name missing');
+fail((core.brand?.commercialNames || []).includes('BANHALMI') && (core.brand?.commercialNames || []).includes('BANHALMI Photography'), 'BANHALMI commercial brand-name pair drift');
+fail(String(core.brand?.nameUsageRule || '').includes('not a separate organization'), 'Brand alias entity-boundary rule missing');
+fail((core.organization?.brandNames || []).includes('BANHALMI') && (core.organization?.brandNames || []).includes('BANHALMI Photography'), 'Organization-to-brand names contract drift');
+fail(core.organization?.legalName === 'Norbert Banhalmi e.U.', 'Legal company name drift');
+fail(String(core.organization?.brandNameRule || '').includes('neither replaces the legal company name'), 'Legal-name vs brand-name rule missing');
 fail(core.brand?.positioning === 'Professional Photography Team', 'BANHALMI brand positioning drift');
 fail(core.person?.practiceSince === 1999, 'Practice-since history drift');
 fail(core.organization?.legalBusinessStart === '2023-11-27', 'Legal business start drift');
@@ -84,4 +90,4 @@ fail(robots.includes('# https://www.norbertbanhalmi.com/ai.txt'), 'robots.txt mu
 fail(!/^\s*(?:LLMS|AI)\s*:/im.test(robots), 'robots.txt must not invent non-standard LLMS: or AI: directives');
 
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
-console.log('Canonical machine core audit passed: current roles, hyperlocal geography, worldwide travel, team capacity, services and authority references are locked against regression.');
+console.log('Canonical machine core audit passed: BANHALMI/BANHALMI Photography naming, current roles, hyperlocal geography, worldwide travel, team capacity, services and authority references are locked against regression.');
