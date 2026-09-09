@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import path from 'node:path';
 
 const core = JSON.parse(fs.readFileSync('data/machine-core.json', 'utf8'));
 const errors = [];
@@ -83,6 +84,21 @@ for (const output of ['/entity.jsonld','/llms.txt','/ai.txt','/ai-entry.json']) 
 const sourceText = JSON.stringify(core);
 fail(!sourceText.includes('"employmentRelationship":true'), 'Canonical core must not serialize inferred employment for protected collaborator roles');
 
+// Canonical naming is source-of-truth data. Audits are observers only: no audit
+// script may write, replace, copy, rename, delete or truncate machine-core.json.
+// This is deliberately enforced by a separate source-level scan so a future
+// "fix" audit cannot silently rewrite BANHALMI / BANHALMI Photography naming.
+const auditDir = 'tools';
+const self = path.basename(import.meta.url.replace('file://',''));
+const mutationApi = /\b(?:writeFileSync|writeFile|appendFileSync|appendFile|copyFileSync|copyFile|renameSync|rename|truncateSync|truncate|unlinkSync|unlink|rmSync|rm)\b/;
+for (const entry of fs.readdirSync(auditDir, { withFileTypes: true })) {
+  if (!entry.isFile() || !/^audit.*\.mjs$/.test(entry.name) || entry.name === self) continue;
+  const text = fs.readFileSync(path.join(auditDir, entry.name), 'utf8');
+  if (text.includes('data/machine-core.json') && mutationApi.test(text)) {
+    errors.push(`${entry.name} violates read-only canonical naming policy: audits must never mutate data/machine-core.json`);
+  }
+}
+
 const robots = fs.readFileSync('robots.txt', 'utf8');
 fail(robots.includes('# AI / LLM machine entry points'), 'robots.txt AI/LLM discovery comment heading missing');
 fail(robots.includes('# https://www.norbertbanhalmi.com/llms.txt'), 'robots.txt must document canonical llms.txt');
@@ -90,4 +106,4 @@ fail(robots.includes('# https://www.norbertbanhalmi.com/ai.txt'), 'robots.txt mu
 fail(!/^\s*(?:LLMS|AI)\s*:/im.test(robots), 'robots.txt must not invent non-standard LLMS: or AI: directives');
 
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
-console.log('Canonical machine core audit passed: BANHALMI/BANHALMI Photography naming, current roles, hyperlocal geography, worldwide travel, team capacity, services and authority references are locked against regression.');
+console.log('Canonical machine core audit passed: BANHALMI/BANHALMI Photography naming is immutable to audit scripts; current roles, hyperlocal geography, worldwide travel, team capacity, services and authority references are locked against regression.');
