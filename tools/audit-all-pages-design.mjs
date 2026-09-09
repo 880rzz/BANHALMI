@@ -9,6 +9,7 @@ const designAuthority=JSON.parse(fs.readFileSync('data/design-authority.json','u
 const pageMaxPx=Number(designAuthority.pageMaxPx)||1200;
 const structuredMaxPx=Number(designAuthority.structuredMaxPx)||pageMaxPx;
 const structuredBreakpointPx=1440;
+const flow=designAuthority.layout?.documentFlow||{};
 const structuredSelector=':scope > :is(.service-process-grid,.partner-grid,.partner-grid-memberships,.archive-cards,.two-reading-grid,.smart-quote-layout)';
 const files=[];
 function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const full=path.join(dir,e.name);if(e.isDirectory())walk(full);else if(e.isFile()&&e.name.endsWith('.html'))files.push(full)}}
@@ -24,6 +25,7 @@ for(const width of widths){
     const r=await page.evaluate(({pageMaxPx,structuredMaxPx,structuredBreakpointPx,structuredSelector})=>{
       const visible=el=>{if(!el)return false;const s=getComputedStyle(el),b=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0&&b.width>0&&b.height>0};
       const de=document.documentElement;
+      const body=document.body;
       const header=document.querySelector('.site-header');
       const main=document.querySelector('main');
       const footer=document.querySelector('.site-footer');
@@ -44,22 +46,32 @@ for(const width of widths){
       const info=[...document.querySelectorAll('.smart-quote-layout .info-tip[data-tooltip]')].filter(visible).map(el=>({position:getComputedStyle(el).position,b:el.getBoundingClientRect(),card:el.closest('.category-card,.option-row')?.getBoundingClientRect()||null}));
       const mainBox=visible(main)?main.getBoundingClientRect():null;
       const footerBox=visible(footer)?footer.getBoundingClientRect():null;
+      const footerBottomDocument=footerBox?footerBox.bottom+scrollY:null;
       return {
         overflow:de.scrollWidth-de.clientWidth,
         headerHeight:visible(header)?header.getBoundingClientRect().height:0,
         surfaces,wraps,info,
+        bodyDisplay:getComputedStyle(body).display,
+        htmlBackground:getComputedStyle(de).backgroundColor,
+        bodyBackground:getComputedStyle(body).backgroundColor,
         mainRight:mainBox?.right??0,
         footerRight:footerBox?.right??0,
         footerLeft:footerBox?.left??0,
         footerTop:footerBox?.top??null,
-        mainBottom:mainBox?.bottom??null
+        mainBottom:mainBox?.bottom??null,
+        footerBottomDocument,
+        documentScrollHeight:de.scrollHeight,
+        afterFooter:footerBottomDocument==null?null:Math.max(0,de.scrollHeight-footerBottomDocument)
       };
     },{pageMaxPx,structuredMaxPx,structuredBreakpointPx,structuredSelector});
     if(r.overflow>1)failures.push(`${rel} @${width}: document horizontal overflow ${r.overflow}px`);
     if(r.headerHeight&&(r.headerHeight<48||r.headerHeight>110))failures.push(`${rel} @${width}: header height ${r.headerHeight.toFixed(1)}px`);
+    if(flow.layoutMode==='grid'&&r.bodyDisplay!=='grid')failures.push(`${rel} @${width}: body document flow is ${r.bodyDisplay}, expected grid`);
+    if(flow.documentBackground==='#ffffff'&&r.htmlBackground!=='rgb(255, 255, 255)')failures.push(`${rel} @${width}: html document floor rendered ${r.htmlBackground}, expected white`);
     if(r.mainRight>width+2)failures.push(`${rel} @${width}: main escapes viewport (${r.mainRight.toFixed(1)}px)`);
     if(r.footerRight>width+2||r.footerLeft<-2)failures.push(`${rel} @${width}: footer escapes viewport [${r.footerLeft.toFixed(1)},${r.footerRight.toFixed(1)}]`);
-    if(r.footerTop!=null&&r.mainBottom!=null&&r.footerTop<r.mainBottom-2)failures.push(`${rel} @${width}: footer overlaps main content by ${(r.mainBottom-r.footerTop).toFixed(1)}px`);
+    if(r.footerTop!=null&&r.mainBottom!=null&&r.footerTop<r.mainBottom-Number(flow.mainToFooterOverlapTolerancePx||2))failures.push(`${rel} @${width}: footer overlaps main content by ${(r.mainBottom-r.footerTop).toFixed(1)}px`);
+    if(r.afterFooter!=null&&r.afterFooter>Number(flow.footerAfterDocumentGapMaxPx||2))failures.push(`${rel} @${width}: ${r.afterFooter.toFixed(1)}px document overhang remains after footer`);
     for(const w of r.wraps)failures.push(`${rel} @${width}: ${w.isStructured?'structured ':''}.wrap exceeds canonical ${w.isStructured?'structured ':'page '}max ${w.allowedMax}px (${w.width.toFixed(1)}px)`);
     for(const s of r.surfaces){
       if(s.surfaceName==='white'&&s.bg!=='rgb(255, 255, 255)')failures.push(`${rel} @${width}: white surface rendered ${s.bg}`);
@@ -81,4 +93,4 @@ if(failures.length){
   if(failures.length>250)console.error(`... ${failures.length-250} more`);
   process.exit(1);
 }
-console.log(`BANHALMI exhaustive design audit passed: ${contentFiles.length} content pages × ${widths.length} viewports = ${checks} render checks; standard page max ${pageMaxPx}px, structured max ${structuredMaxPx}px from ${structuredBreakpointPx}px, document overflow, shell containment, surfaces and quote controls verified against the approved visual baseline.`);
+console.log(`BANHALMI exhaustive design audit passed: ${contentFiles.length} content pages × ${widths.length} viewports = ${checks} render checks; standard page max ${pageMaxPx}px, structured max ${structuredMaxPx}px from ${structuredBreakpointPx}px, document/footer flow, overflow, shell containment, surfaces and quote controls verified against the approved visual baseline.`);
