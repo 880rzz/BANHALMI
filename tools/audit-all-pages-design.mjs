@@ -26,6 +26,7 @@ for(const width of widths){
       const visible=el=>{if(!el)return false;const s=getComputedStyle(el),b=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0&&b.width>0&&b.height>0};
       const de=document.documentElement;
       const body=document.body;
+      const bodyStyle=getComputedStyle(body);
       const header=document.querySelector('.site-header');
       const main=document.querySelector('main');
       const footer=document.querySelector('.site-footer');
@@ -47,13 +48,17 @@ for(const width of widths){
       const mainBox=visible(main)?main.getBoundingClientRect():null;
       const footerBox=visible(footer)?footer.getBoundingClientRect():null;
       const footerBottomDocument=footerBox?footerBox.bottom+scrollY:null;
+      const bodyPaddingBottom=parseFloat(bodyStyle.paddingBottom)||0;
+      const rawAfterFooter=footerBottomDocument==null?null:Math.max(0,de.scrollHeight-footerBottomDocument);
+      const unreservedAfterFooter=rawAfterFooter==null?null:Math.max(0,rawAfterFooter-bodyPaddingBottom);
       return {
         overflow:de.scrollWidth-de.clientWidth,
         headerHeight:visible(header)?header.getBoundingClientRect().height:0,
         surfaces,wraps,info,
-        bodyDisplay:getComputedStyle(body).display,
+        bodyDisplay:bodyStyle.display,
+        bodyPaddingBottom,
         htmlBackground:getComputedStyle(de).backgroundColor,
-        bodyBackground:getComputedStyle(body).backgroundColor,
+        bodyBackground:bodyStyle.backgroundColor,
         mainRight:mainBox?.right??0,
         footerRight:footerBox?.right??0,
         footerLeft:footerBox?.left??0,
@@ -61,7 +66,8 @@ for(const width of widths){
         mainBottom:mainBox?.bottom??null,
         footerBottomDocument,
         documentScrollHeight:de.scrollHeight,
-        afterFooter:footerBottomDocument==null?null:Math.max(0,de.scrollHeight-footerBottomDocument)
+        rawAfterFooter,
+        unreservedAfterFooter
       };
     },{pageMaxPx,structuredMaxPx,structuredBreakpointPx,structuredSelector});
     if(r.overflow>1)failures.push(`${rel} @${width}: document horizontal overflow ${r.overflow}px`);
@@ -71,7 +77,7 @@ for(const width of widths){
     if(r.mainRight>width+2)failures.push(`${rel} @${width}: main escapes viewport (${r.mainRight.toFixed(1)}px)`);
     if(r.footerRight>width+2||r.footerLeft<-2)failures.push(`${rel} @${width}: footer escapes viewport [${r.footerLeft.toFixed(1)},${r.footerRight.toFixed(1)}]`);
     if(r.footerTop!=null&&r.mainBottom!=null&&r.footerTop<r.mainBottom-Number(flow.mainToFooterOverlapTolerancePx||2))failures.push(`${rel} @${width}: footer overlaps main content by ${(r.mainBottom-r.footerTop).toFixed(1)}px`);
-    if(r.afterFooter!=null&&r.afterFooter>Number(flow.footerAfterDocumentGapMaxPx||2))failures.push(`${rel} @${width}: ${r.afterFooter.toFixed(1)}px document overhang remains after footer`);
+    if(r.unreservedAfterFooter!=null&&r.unreservedAfterFooter>Number(flow.footerAfterDocumentGapMaxPx||2))failures.push(`${rel} @${width}: ${r.unreservedAfterFooter.toFixed(1)}px unreserved document overhang remains after footer (raw ${r.rawAfterFooter.toFixed(1)}px, intentional body reserve ${r.bodyPaddingBottom.toFixed(1)}px)`);
     for(const w of r.wraps)failures.push(`${rel} @${width}: ${w.isStructured?'structured ':''}.wrap exceeds canonical ${w.isStructured?'structured ':'page '}max ${w.allowedMax}px (${w.width.toFixed(1)}px)`);
     for(const s of r.surfaces){
       if(s.surfaceName==='white'&&s.bg!=='rgb(255, 255, 255)')failures.push(`${rel} @${width}: white surface rendered ${s.bg}`);
@@ -93,4 +99,4 @@ if(failures.length){
   if(failures.length>250)console.error(`... ${failures.length-250} more`);
   process.exit(1);
 }
-console.log(`BANHALMI exhaustive design audit passed: ${contentFiles.length} content pages × ${widths.length} viewports = ${checks} render checks; standard page max ${pageMaxPx}px, structured max ${structuredMaxPx}px from ${structuredBreakpointPx}px, document/footer flow, overflow, shell containment, surfaces and quote controls verified against the approved visual baseline.`);
+console.log(`BANHALMI exhaustive design audit passed: ${contentFiles.length} content pages × ${widths.length} viewports = ${checks} render checks; standard page max ${pageMaxPx}px, structured max ${structuredMaxPx}px from ${structuredBreakpointPx}px, document/footer flow including intentional fixed-UI body reserves, overflow, shell containment, surfaces and quote controls verified against the approved visual baseline.`);
