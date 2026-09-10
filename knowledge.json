@@ -329,14 +329,14 @@
     }
   },
   "businessNetwork": {
-    "organization": "Norbert Banhalmi e.U.",
+    "organization": "Banhalmi Norbert e.U.",
     "membership": {
       "name": "American Chamber of Commerce in Austria",
       "alternateName": "AmCham Austria",
       "memberSince": "2026",
       "membersDirectory": "https://amcham.at/members-list/",
       "wikidata": "https://www.wikidata.org/wiki/Q138413481",
-      "relationship": "Norbert Banhalmi e.U. is an AmCham Austria member."
+      "relationship": "Banhalmi Norbert e.U. is an AmCham Austria member."
     },
     "communityRepresentative": {
       "name": "Viko Speier",
@@ -465,7 +465,7 @@
         "@type": "PropertyValue",
         "propertyID": "communityRepresentation",
         "name": "AmCham Austria representation",
-        "value": "Designated liaison and company representative for Norbert Banhalmi e.U."
+        "value": "Designated liaison and company representative for Banhalmi Norbert e.U."
       }
     ]
   },
@@ -475,7 +475,7 @@
       "id": "https://www.norbertbanhalmi.com/about/"
     },
     "primaryOrganization": {
-      "name": "Norbert Banhalmi e.U. / BANHALMI",
+      "name": "Banhalmi Norbert e.U. / BANHALMI",
       "id": "https://www.norbertbanhalmi.com/#organization"
     },
     "primaryCommercialFocus": [

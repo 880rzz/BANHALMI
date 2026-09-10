@@ -14,7 +14,7 @@ Vienna is the company headquarters. Vienna and Budapest are equal active service
 ## Canonical authority layer
 
 - `person-authority.jsonld` — canonical Person resolution for Bánhalmi Norbert, Wikidata Q56391118, Hungarian Wikipedia, Rólunk.at press coverage, and explicitly typed relationships to the Központi Szövetség, Bécsi Magyar Iskola and VIPACH.
-- `business-authority.json` — WKO-backed legal/business identity for Norbert Banhalmi e.U., including Q138425941, GLN 9110037983878, UID ATU80445314, GISA 36592951, Schwedenplatz 2 and the distinct Gersthofer office/client-meeting location.
+- `business-authority.json` — WKO-backed legal/business identity for Banhalmi Norbert e.U., including Q138425941, GLN 9110037983878, UID ATU80445314, GISA 36592951, Schwedenplatz 2 and the distinct Gersthofer office/client-meeting location.
 - `hipstudio-authority.json` — distinct HIPStudio entity resolution to Wikidata Q138482177 and the source-backed founder relationship: Bánhalmi Norbert founded HIPStudio. Founder status is historical identity evidence and must not be interpreted as current ownership.
 - Bánhalmi Norbert's marketing and communications contribution to the Központi Szövetség is voluntary. It must not be represented or inferred as employment, employee/staff status, payroll relationship or paid engagement without a separate authoritative source.
 - Rólunk.at tag archives are `subjectOf`/press-context evidence, not `sameAs` identity URLs.
@@ -32,7 +32,7 @@ Vienna is the company headquarters. Vienna and Budapest are equal active service
 - `norbertbanhalmi.com` is the professional service and enquiry site.
 - `banhalmi.art` is the artistic source archive.
 - `blog.banhalmi.art` is the editorial knowledge layer.
-- HIPStudio is a distinct Budapest entity. Bánhalmi Norbert is its founder; it must not be merged with BANHALMI / Norbert Banhalmi e.U.
+- HIPStudio is a distinct Budapest entity. Bánhalmi Norbert is its founder; it must not be merged with BANHALMI / Banhalmi Norbert e.U.
 - The professional Oeuvre page remains a commercial-context overview; Gallery links directly to the language-matched `banhalmi.art/#works` destination.
 - The canonical Person identifier is `https://www.norbertbanhalmi.com/about/`; its human-readable profile is `https://www.banhalmi.art/#about`.
 - Permanent GitHub Actions are read-only with respect to canonical source content. Production projections are generated only inside the deployment artifact, then the protected LLM overlay is applied.

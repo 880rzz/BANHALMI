@@ -5,7 +5,7 @@
   "provider": {
     "@id": "https://www.norbertbanhalmi.com/#organization",
     "name": "BANHALMI",
-    "legalName": "Norbert Banhalmi e.U.",
+    "legalName": "Banhalmi Norbert e.U.",
     "founder": {
       "@id": "https://www.norbertbanhalmi.com/about/",
       "name": "Norbert Banhalmi"

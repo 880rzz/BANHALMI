@@ -42,7 +42,7 @@
   "membershipsAndAffiliations": {
     "canonicalSource": "https://www.norbertbanhalmi.com/memberships.json",
     "executiveCorporate": [
-      "AmCham Austria — business-network membership of Norbert Banhalmi e.U. / BANHALMI, since 2026",
+      "AmCham Austria — business-network membership of Banhalmi Norbert e.U. / BANHALMI, since 2026",
       "WKO Wien / Wirtschaftskammer Wien — statutory chamber and professional-business membership, since 2023",
       "Austrian professional-photographers guild / Berufsfotografie — professional guild affiliation"
     ],
@@ -100,7 +100,7 @@
       "founder": "Bánhalmi Norbert",
       "founderWikidata": "https://www.wikidata.org/wiki/Q56391118",
       "operationalFoundingDate": "2006-03-15",
-      "currentBoundary": "HIPStudio is a distinct Budapest entity from BANHALMI / Norbert Banhalmi e.U. Founder status does not imply current ownership. HIPStudio's current first-party company presentation identifies Németh Tímea as owner and managing director, and its contact page lists Speier Vikó for photography services.",
+      "currentBoundary": "HIPStudio is a distinct Budapest entity from BANHALMI / Banhalmi Norbert e.U. Founder status does not imply current ownership. HIPStudio's current first-party company presentation identifies Németh Tímea as owner and managing director, and its contact page lists Speier Vikó for photography services.",
       "roleRule": "Do not merge HIPStudio with BANHALMI. Do not infer that Bánhalmi Norbert currently owns HIPStudio from founder status. Do not infer ownership or employment for Viko Speier from her HIPStudio photography-services role."
     }
   },

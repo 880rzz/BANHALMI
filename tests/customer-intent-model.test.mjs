@@ -28,7 +28,7 @@ assert.equal(
 assert.equal(
   aiEntry.identity.organization.wikidata,
   'https://www.wikidata.org/wiki/Q138425941',
-  'Organization Wikidata must resolve to Norbert Banhalmi e.U. Q138425941'
+  'Organization Wikidata must resolve to Banhalmi Norbert e.U. Q138425941'
 );
 assert.equal(
   aiEntry.reference.customerIntentModel,

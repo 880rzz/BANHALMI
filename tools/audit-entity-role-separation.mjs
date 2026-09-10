@@ -6,7 +6,7 @@ const PERSON_ID = 'https://www.norbertbanhalmi.com/about/';
 const ORG_ID = 'https://www.norbertbanhalmi.com/#organization';
 const BRAND_ID = 'https://www.norbertbanhalmi.com/#brand';
 const SERVICE_ID = 'https://www.norbertbanhalmi.com/#visual-trust-partnership';
-const LEGAL_NAME = 'Norbert Banhalmi e.U.';
+const LEGAL_NAME = 'Banhalmi Norbert e.U.';
 const failures = [];
 let fullGraphs = 0;
 

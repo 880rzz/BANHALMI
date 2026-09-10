@@ -43,7 +43,7 @@ if (!subjectUrls.includes('https://rolunk.at/tag/banhalmi-norbert/')) fail('Ról
 if (!subjectUrls.includes('https://www.norbertbanhalmi.com/hipstudio-authority.json')) fail('HIPStudio founder authority must remain linked from the canonical Person');
 if (sameAs.includes('https://rolunk.at/tag/banhalmi-norbert/')) fail('Rólunk.at must never be serialized as sameAs');
 
-if (person.worksFor?.['@id'] !== COMPANY_ID) fail('Person worksFor must resolve only to the canonical Norbert Banhalmi e.U. organization');
+if (person.worksFor?.['@id'] !== COMPANY_ID) fail('Person worksFor must resolve only to the canonical Banhalmi Norbert e.U. organization');
 
 const affiliations = asArray(person.affiliation);
 const central = affiliations.find((entry) => entry?.['@id'] === CENTRAL_ID);
@@ -61,7 +61,7 @@ const centralDescription = String(central.description || '').toLowerCase();
 if (!centralDescription.includes('önkéntes') || !centralDescription.includes('nem munkaviszony') || !centralDescription.includes('nem fizetett')) fail('Központi relationship must explicitly remain voluntary and non-employment/non-paid');
 
 const company = graph.find((node) => node?.['@id'] === COMPANY_ID);
-if (!company || company.sameAs !== 'https://www.wikidata.org/wiki/Q138425941') fail('Norbert Banhalmi e.U. must remain linked to Wikidata Q138425941');
+if (!company || company.sameAs !== 'https://www.wikidata.org/wiki/Q138425941') fail('Banhalmi Norbert e.U. must remain linked to Wikidata Q138425941');
 
 const hipstudioNode = graph.find((node) => node?.['@id'] === HIPSTUDIO_ID);
 if (!hipstudioNode) fail('HIPStudio Organization node missing from person-authority.jsonld');

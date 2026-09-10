@@ -102,8 +102,8 @@
     {
       "@type": "Organization",
       "@id": "https://www.norbertbanhalmi.com/#organization",
-      "name": "Norbert Banhalmi e.U.",
-      "legalName": "Norbert Banhalmi e.U.",
+      "name": "Banhalmi Norbert e.U.",
+      "legalName": "Banhalmi Norbert e.U.",
       "alternateName": [
         "BANHALMI"
       ],
