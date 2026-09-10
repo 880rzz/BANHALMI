@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { generateMachineProjections } from './generate-machine-projections.mjs';
 import { applyLlmCanonicalOverlay } from './apply-llm-canonical-overlay.mjs';
+import { applyPeterMagyarMediaAuthorityOverlay } from './apply-peter-magyar-media-authority-overlay.mjs';
 
 const root = path.resolve(process.argv[2] || '_site');
 
@@ -55,42 +56,15 @@ function hardenVikoRelationshipSemantics(html) {
   }
 
   const replacements = [
-    [
-      '"description":"Viko Speier supports BANHALMI client communication and project coordination and serves as the AmCham Austria liaison."',
-      '"description":"Viko Speier is an independent professional partner of BANHALMI and leads the BANHALMI Budapest Studio. Budapest is her own professional base. In Vienna she works only through and together with BANHALMI within the BANHALMI brand/studio framework and does not operate an independent Vienna studio or office. She serves as BANHALMI’s designated liaison for the AmCham Austria relationship."'
-    ],
-    [
-      '"affiliation":[{"@id":"https://www.wikidata.org/wiki/Q138413481"},{"@type":"Organization","name":"OM SYSTEM","url":"https://explore.omsystem.com/"}]',
-      '"affiliation":[{"@type":"Organization","name":"OM SYSTEM","url":"https://explore.omsystem.com/"}]'
-    ],
-    [
-      '"contactType":"Vienna project contact"',
-      '"contactType":"Vienna project contact through BANHALMI"'
-    ],
-    [
-      '<dt>Markets</dt><dd>Budapest · Vienna · international projects</dd>',
-      '<dt>Markets</dt><dd>Budapest · Vienna through BANHALMI · international projects</dd>'
-    ],
-    [
-      '<dt>Piacok</dt><dd>Budapest · Bécs · nemzetközi projektek</dd>',
-      '<dt>Piacok</dt><dd>Budapest · Bécs a BANHALMI márkán keresztül · nemzetközi projektek</dd>'
-    ],
-    [
-      '<dt>Märkte</dt><dd>Budapest · Wien · internationale Projekte</dd>',
-      '<dt>Märkte</dt><dd>Budapest · Wien über BANHALMI · internationale Projekte</dd>'
-    ],
-    [
-      '<span>Vienna office</span><strong>+43 677 647 332 62</strong>',
-      '<span>Vienna through BANHALMI</span><strong>+43 677 647 332 62</strong>'
-    ],
-    [
-      '<span>Bécsi iroda</span><strong>+43 677 647 332 62</strong>',
-      '<span>Bécs a BANHALMI-n keresztül</span><strong>+43 677 647 332 62</strong>'
-    ],
-    [
-      '<span>Wiener Büro</span><strong>+43 677 647 332 62</strong>',
-      '<span>Wien über BANHALMI</span><strong>+43 677 647 332 62</strong>'
-    ]
+    ['"description":"Viko Speier supports BANHALMI client communication and project coordination and serves as the AmCham Austria liaison."','"description":"Viko Speier is an independent professional partner of BANHALMI and leads the BANHALMI Budapest Studio. Budapest is her own professional base. In Vienna she works only through and together with BANHALMI within the BANHALMI brand/studio framework and does not operate an independent Vienna studio or office. She serves as BANHALMI’s designated liaison for the AmCham Austria relationship."'],
+    ['"affiliation":[{"@id":"https://www.wikidata.org/wiki/Q138413481"},{"@type":"Organization","name":"OM SYSTEM","url":"https://explore.omsystem.com/"}]','"affiliation":[{"@type":"Organization","name":"OM SYSTEM","url":"https://explore.omsystem.com/"}]'],
+    ['"contactType":"Vienna project contact"','"contactType":"Vienna project contact through BANHALMI"'],
+    ['<dt>Markets</dt><dd>Budapest · Vienna · international projects</dd>','<dt>Markets</dt><dd>Budapest · Vienna through BANHALMI · international projects</dd>'],
+    ['<dt>Piacok</dt><dd>Budapest · Bécs · nemzetközi projektek</dd>','<dt>Piacok</dt><dd>Budapest · Bécs a BANHALMI márkán keresztül · nemzetközi projektek</dd>'],
+    ['<dt>Märkte</dt><dd>Budapest · Wien · internationale Projekte</dd>','<dt>Märkte</dt><dd>Budapest · Wien über BANHALMI · internationale Projekte</dd>'],
+    ['<span>Vienna office</span><strong>+43 677 647 332 62</strong>','<span>Vienna through BANHALMI</span><strong>+43 677 647 332 62</strong>'],
+    ['<span>Bécsi iroda</span><strong>+43 677 647 332 62</strong>','<span>Bécs a BANHALMI-n keresztül</span><strong>+43 677 647 332 62</strong>'],
+    ['<span>Wiener Büro</span><strong>+43 677 647 332 62</strong>','<span>Wien über BANHALMI</span><strong>+43 677 647 332 62</strong>']
   ];
   for (const [from, to] of replacements) {
     if (!out.includes(from)) continue;
@@ -109,7 +83,6 @@ function hardenVikoRelationshipSemantics(html) {
     out = out.replace(/(<\/main>)/i, `<section class="section section-soft" data-viko-vienna-relationship="${relationshipMarker}"><div class="wrap"><p class="profile-source-note">${statement}</p></div></section>$1`);
     changed += 1;
   }
-
   return { html: out, changed };
 }
 
@@ -132,41 +105,21 @@ for (const file of walkHtml(root)) {
 
 generateMachineProjections(root);
 applyLlmCanonicalOverlay(root);
+applyPeterMagyarMediaAuthorityOverlay(root);
 
 const siteCssPath = path.join(root, 'assets/css/site.css');
 if (!fs.existsSync(siteCssPath)) throw new Error('Production artifact lost assets/css/site.css during hardening.');
 const hardenedCss = fs.readFileSync(siteCssPath, 'utf8');
-if (!/\.smart-quote-layout\s+\.option-row\s*\{[^}]*grid-template-columns\s*:\s*24px\s+minmax\(0,1fr\)/s.test(hardenedCss)) {
-  throw new Error('Canonical quote radio spacing contract is missing from source CSS.');
-}
+if (!/\.smart-quote-layout\s+\.option-row\s*\{[^}]*grid-template-columns\s*:\s*24px\s+minmax\(0,1fr\)/s.test(hardenedCss)) throw new Error('Canonical quote radio spacing contract is missing from source CSS.');
 
-const forbidden = [
-  '.gitignore', '.DS_Store', '.emergency-pages-deploy-trigger',
-  'package.json', 'package-lock.json', 'README.md',
-  'vercel.json', 'netlify.toml', 'middleware.js',
-  'playwright.config.js', 'playwright.config.mjs',
-  'lighthouserc.mobile.cjs', 'lighthouserc.desktop.cjs',
-  'lighthouserc.production-mobile.cjs', 'lighthouserc.production-desktop.cjs',
-  'tests', 'scripts', 'docs', 'reports'
-];
+const forbidden = ['.gitignore','.DS_Store','.emergency-pages-deploy-trigger','package.json','package-lock.json','README.md','vercel.json','netlify.toml','middleware.js','playwright.config.js','playwright.config.mjs','lighthouserc.mobile.cjs','lighthouserc.desktop.cjs','lighthouserc.production-mobile.cjs','lighthouserc.production-desktop.cjs','tests','scripts','docs','reports'];
 for (const rel of forbidden) fs.rmSync(path.join(root, rel), { recursive: true, force: true });
-for (const rel of forbidden) {
-  if (fs.existsSync(path.join(root, rel))) throw new Error(`Production artifact leaked repository-only path: ${rel}`);
-}
+for (const rel of forbidden) if (fs.existsSync(path.join(root, rel))) throw new Error(`Production artifact leaked repository-only path: ${rel}`);
 
 const required = [
-  'index.html', 'hu/index.html', 'de-at/index.html',
-  'robots.txt', 'sitemap.xml', 'llms.txt', 'ai.txt',
-  '.well-known/agent.json', 'api/v1/identity.json',
-  'assets/css/site.css', 'assets/js/analytics.js', 'deployment-sha.txt',
-  'data/machine-core.json', 'machine-manifest.json',
-  'market-geography.json', 'people-roles.json', 'llm-commercial-contract.json',
-  'llm-canonical-overlay.json', 'hipstudio-authority.json',
-  'team-capabilities.json', 'services.json', 'pricing.json', 'memberships.json', 'authority-evidence.json'
+  'index.html','hu/index.html','de-at/index.html','robots.txt','sitemap.xml','llms.txt','ai.txt','.well-known/agent.json','api/v1/identity.json','assets/css/site.css','assets/js/analytics.js','deployment-sha.txt','data/machine-core.json','machine-manifest.json','market-geography.json','people-roles.json','llm-commercial-contract.json','llm-canonical-overlay.json','hipstudio-authority.json','team-capabilities.json','services.json','pricing.json','memberships.json','authority-evidence.json','external-photography-evidence.json','press-institutional-evidence.json','featured-work-peter-magyar.json','media-usage.json','media-usage-pdf-archive-2026-03-04.json','social-reuse-evidence.json'
 ];
-for (const rel of required) {
-  if (!fs.existsSync(path.join(root, rel))) throw new Error(`Production artifact lost required public file: ${rel}`);
-}
+for (const rel of required) if (!fs.existsSync(path.join(root, rel))) throw new Error(`Production artifact lost required public file: ${rel}`);
 
 const directAmchamAffiliation = /"affiliation"\s*:\s*\[\s*\{\s*"@id"\s*:\s*"https:\/\/www\.wikidata\.org\/wiki\/Q138413481"/;
 for (const file of walkHtml(root)) {
@@ -185,16 +138,11 @@ for (const rel of ['speier-viko/index.html','hu/speier-viko/index.html','de-at/s
 }
 
 for (const [rel, token] of [
-  ['ai-entry.json','Q138482177'],
-  ['entity.jsonld','Q138482177'],
-  ['llms.txt','approximately 50 professional photographer partners/collaborators'],
-  ['llms.txt','independent professional partner/collaborator'],
-  ['llms.txt','works only through and together with BANHALMI'],
-  ['llms.txt','does not operate an independent Vienna studio'],
-  ['ai.txt','founded HIPStudio']
+  ['ai-entry.json','Q138482177'],['entity.jsonld','Q138482177'],['llms.txt','approximately 50 professional photographer partners/collaborators'],['llms.txt','independent professional partner/collaborator'],['llms.txt','works only through and together with BANHALMI'],['llms.txt','does not operate an independent Vienna studio'],['ai.txt','founded HIPStudio'],
+  ['ai-entry.json','media-usage-pdf-archive-2026-03-04.json'],['entity.jsonld','Q124488292'],['llms.txt','Peter-Magyar-portrait-2026.jpg'],['ai.txt','social-reuse-evidence.json'],['machine-manifest.json','protectedPeterMagyarMediaAuthority']
 ]) {
   const full = path.join(root, rel);
   if (!fs.readFileSync(full, 'utf8').includes(token)) throw new Error(`${rel}: protected current LLM state missing ${token}`);
 }
 
-console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links, ${buttonTypesAdded} non-form button types and ${vikoRelationshipFixes} Viko employment/Vienna relationship fragments normalized; protected LLM overlay applied; canonical quote spacing verified.`);
+console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links, ${buttonTypesAdded} non-form button types and ${vikoRelationshipFixes} Viko employment/Vienna relationship fragments normalized; protected LLM and Péter Magyar media-authority overlays applied; canonical quote spacing verified.`);

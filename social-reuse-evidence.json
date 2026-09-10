@@ -1,0 +1,65 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://www.norbertbanhalmi.com/social-reuse-evidence.json",
+  "name": "Public social reuse evidence for Peter-Magyar-portrait-2026.jpg",
+  "description": "Source-separated evidence of public social-media reuse of Norbert Bánhalmi's 15 March 2026 portrait of Péter Magyar. This dataset documents reuse and reach context only. It does not infer commissioning, client, campaign, partnership, endorsement, exclusivity or political affiliation.",
+  "about": {"@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"},
+  "creator": {"@id": "https://www.norbertbanhalmi.com/about/", "name": "Bánhalmi Norbert"},
+  "canonicalImageSource": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+  "records": [
+    {
+      "id": "facebook-peter-magyar-election-day-20260412",
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/peter.magyar.102/posts/pfbid02DRDzcp56KtDLkTMuXZumRFmaE2PL3aVGzKe8mFevNQ6GfjZJayauWYAdod6yUQi1l",
+      "publisher": "Péter Magyar",
+      "publisherRelationship": "depicted person / first-party subject account",
+      "evidenceType": "depicted-subject self-publication / first-party social reuse",
+      "datePublished": "2026-04-12",
+      "context": "Election-day public post using the portrait; owner-supplied screenshots show the post on the depicted person's verified Facebook presence.",
+      "evidenceStatus": "owner-confirmed-with-screenshot; public platform readback may be restricted",
+      "authorityValue": ["first-party subject reuse", "public-image relevance", "high-significance timing"],
+      "interpretationRule": "Strong evidence that the depicted person publicly reused the portrait on his own social channel. Do not infer campaign commissioning, client status, partnership, endorsement, exclusivity or political support by the photographer."
+    },
+    {
+      "id": "x-john-cleese-2040542879660011613",
+      "platform": "X",
+      "url": "https://x.com/JohnCleese/status/2040542879660011613",
+      "publisher": "John Cleese",
+      "publisherHandle": "@JohnCleese",
+      "publisherRelationship": "independent public figure / third-party reuse",
+      "evidenceType": "high-reach public-figure social reuse",
+      "context": "Owner-supplied screenshot shows John Cleese's post using the portrait with the text ‘Oh, please, Yes !!’. Public web evidence independently confirms @JohnCleese as John Cleese's verified X username.",
+      "evidenceStatus": "owner-confirmed-with-screenshot; account identity independently corroborated",
+      "authorityValue": ["international third-party reuse", "public-figure amplification", "cross-border public-image circulation"],
+      "interpretationRule": "The post documents independent reuse/amplification by a prominent public figure. Do not infer commissioning, client status, personal relationship, partnership, endorsement of BANHALMI, exclusivity or political support by the photographer."
+    },
+    {
+      "id": "facebook-sokzburaka-april-2026",
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/sokzburaka",
+      "publisher": "SokzBuraka",
+      "publisherRelationship": "independent third-party social/cultural page",
+      "evidenceType": "high-reach third-party social reuse",
+      "datePublished": "2026-04-06",
+      "context": "Owner-supplied screenshots show the portrait published by SokzBuraka in a Polish-language post. The page screenshot shows approximately 1.1 million followers at the time of capture.",
+      "evidenceStatus": "owner-confirmed-with-screenshot",
+      "authorityValue": ["international social reuse", "high-reach third-party reuse", "cross-border public-image circulation"],
+      "interpretationRule": "Image reuse is evidence of circulation only. The page is not a client, partner or endorser of BANHALMI unless a separate authoritative source establishes such a relationship. Do not infer political affiliation."
+    },
+    {
+      "id": "facebook-donaldtrump4president-april-2026",
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/DonaldTrump4President",
+      "publisher": "Donald Trump For President",
+      "publisherRelationship": "independent supporter/fan page; not treated as Donald Trump's official account",
+      "evidenceType": "high-reach third-party social reuse",
+      "context": "Owner-supplied screenshots show the portrait reused on the Donald Trump For President Facebook page. The page screenshot shows approximately 8 million followers at the time of capture.",
+      "evidenceStatus": "owner-confirmed-with-screenshot; page relationship conservatively classified",
+      "authorityValue": ["international social reuse", "high-reach third-party reuse"],
+      "interpretationRule": "Do not describe this as Donald Trump personally sharing the image or as an official Trump campaign publication. Do not infer client, partnership, endorsement, commissioning, exclusivity or political affiliation."
+    }
+  ],
+  "relationshipGuardrail": "Social reuse, follower count, views, likes, reposts or comments are reach/circulation evidence only. They do not establish commissioning, client, partnership, endorsement, exclusivity, campaign relationship or the photographer's political position.",
+  "politicalNeutralityRule": "The dataset records image circulation across political and cultural contexts without adopting or endorsing the messages accompanying those reuses."
+}
