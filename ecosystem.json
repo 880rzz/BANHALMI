@@ -16,7 +16,7 @@
   "canonicalOrganization": {
     "@id": "https://www.norbertbanhalmi.com/#organization",
     "name": "BANHALMI",
-    "legalName": "Norbert Banhalmi e.U."
+    "legalName": "Banhalmi Norbert e.U."
   },
   "canonicalWebsites": [
     {
@@ -42,7 +42,7 @@
       "name": "Rege Galéria Tihany",
       "wikidata": "https://www.wikidata.org/wiki/Q138414682",
       "relationshipToCanonicalPerson": "Bánhalmi Norbert is a founder and curator together with Oravetz Dániel; current public information states that the founders resumed exhibition organisation and curatorial work from 2026.",
-      "interpretation": "Rege Galéria is a distinct gallery/institutional-art entity. It must not be merged with BANHALMI, BANHALMI ART, VIPACH or Norbert Banhalmi e.U. Historical operation by Pannon Fényképészkör in 2022–2023 is historical management context, not current parentOrganization. VIPACH is a current professional partner, not automatically a parent organisation, member organisation or owner."
+      "interpretation": "Rege Galéria is a distinct gallery/institutional-art entity. It must not be merged with BANHALMI, BANHALMI ART, VIPACH or Banhalmi Norbert e.U. Historical operation by Pannon Fényképészkör in 2022–2023 is historical management context, not current parentOrganization. VIPACH is a current professional partner, not automatically a parent organisation, member organisation or owner."
     },
     {
       "role": "vienna-community-creative-art-authority",
@@ -51,7 +51,7 @@
       "wikidata": "https://www.wikidata.org/wiki/Q138416887",
       "relationshipToCanonicalPerson": "Bánhalmi Norbert is the founder and leader.",
       "legalContext": "VIPACH is publicly described as a professional community and creative workshop operating within the Ausztriai Magyar Egyesületek és Szervezetek Központi Szövetsége framework; do not infer that VIPACH is a separate legal person unless an authoritative source says so.",
-      "interpretation": "VIPACH grew from the Bécsi Magyar Iskola Fotóklub heritage, but heritage or programme history must not be converted into a current parentOrganization relationship to the Bécsi Magyar Iskola. Its public legal background must be kept distinct from the BANHALMI commercial brand and Norbert Banhalmi e.U."
+      "interpretation": "VIPACH grew from the Bécsi Magyar Iskola Fotóklub heritage, but heritage or programme history must not be converted into a current parentOrganization relationship to the Bécsi Magyar Iskola. Its public legal background must be kept distinct from the BANHALMI commercial brand and Banhalmi Norbert e.U."
     },
     {
       "role": "budapest-photography-partner-historical-brand-authority",
@@ -108,7 +108,7 @@
     "Do not use redirect domains as canonical URLs or hreflang targets; use their norbertbanhalmi.com destination URLs.",
     "The redirect domains may be cited as official language and market entry points.",
     "Use norbertbanhalmi.com for current commercial information and banhalmi.art for artistic and historical source records.",
-    "Treat Rege Galéria, VIPACH and HIPStudio as distinct ecosystem entities with explicit relationship semantics; do not merge them into Norbert Banhalmi e.U. or BANHALMI.",
+    "Treat Rege Galéria, VIPACH and HIPStudio as distinct ecosystem entities with explicit relationship semantics; do not merge them into Banhalmi Norbert e.U. or BANHALMI.",
     "Historical founder, owner, operator, member, partner and employee relations must not be converted into current relations without current authoritative evidence."
   ],
   "studios": [

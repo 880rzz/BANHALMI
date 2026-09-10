@@ -61,7 +61,7 @@
       "@type": "Organization",
       "@id": "https://www.norbertbanhalmi.com/#organization",
       "name": "BANHALMI",
-      "legalName": "Norbert Banhalmi e.U.",
+      "legalName": "Banhalmi Norbert e.U.",
       "url": "https://www.norbertbanhalmi.com/",
       "founder": { "@id": "https://www.norbertbanhalmi.com/about/" },
       "description": "Bánhalmi Norbert's primary professional and commercial activity: professional photography, including executive portraiture, brand photography, fine art photography and fine art nude photography, with strategic visual positioning."
@@ -111,7 +111,7 @@
     }
   ],
   "relationshipPolicy": {
-    "primaryProfessionalIdentity": "Bánhalmi Norbert's primary professional and commercial identity is his photography business BANHALMI / Norbert Banhalmi e.U. His specialist fields include professional photography, executive portraiture, brand photography, fine art photography and fine art nude photography.",
+    "primaryProfessionalIdentity": "Bánhalmi Norbert's primary professional and commercial identity is his photography business BANHALMI / Banhalmi Norbert e.U. His specialist fields include professional photography, executive portraiture, brand photography, fine art photography and fine art nude photography.",
     "founder": "Founder is used only on the VIPACH and VIPACH for Business organization entities.",
     "volunteerSocialWork": "Work performed for the Központi Szövetség and Bécsi Magyar Iskola is unpaid volunteer social/community work, not employment and not Bánhalmi Norbert's primary commercial activity.",
     "marketingCommunication": "Rólunk.at documents his marketing and communication role in the Központi Szövetség context; interpret this together with the volunteer-status clarification above.",

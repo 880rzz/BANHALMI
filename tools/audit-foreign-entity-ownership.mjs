@@ -72,7 +72,7 @@ for (const [label, org] of [
   ['identity-contract', identity.canonicalOrganization]
 ]) {
   if (org?.['@id'] !== orgId) failures.push(`${label}: canonical Organization @id drifted`);
-  if (org?.name !== 'Norbert Banhalmi e.U.' || org?.legalName !== 'Norbert Banhalmi e.U.') failures.push(`${label}: legal Organization name must remain Norbert Banhalmi e.U.`);
+  if (org?.name !== 'Banhalmi Norbert e.U.' || org?.legalName !== 'Banhalmi Norbert e.U.') failures.push(`${label}: legal Organization name must remain Banhalmi Norbert e.U.`);
 }
 for (const [label, brand] of [
   ['ai-entry', aiEntry.identity?.brand],
