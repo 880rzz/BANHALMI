@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "2026-09-10-v1",
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://www.norbertbanhalmi.com/media-usage-pdf-archive-2026-03-04.json",
+  "name": "Archived evidence inventory from media_usage_2026_03-04 PDF",
+  "about": {
+    "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+  },
+  "sourceDescription": "Machine-readable inventory derived from the owner-supplied 98-page PDF of captured media/social uses. This archive preserves page-level evidence and embedded candidate URLs without silently upgrading them to live-verified publication status.",
+  "relationshipGuardrail": "Inclusion documents apparent reuse, attribution or discussion of the photograph only. It does not establish client, commissioning, campaign, partnership, endorsement, exclusivity or political alignment.",
+  "recordCount": 11,
+  "records": [
+    {
+      "pdfPage": 3,
+      "captureTitle": "Europa Geopolitika Hovedsaker Juridisk Politikk Nyhetsartikler | Vil stanse Viktor Orbán – lover maks to perioder som statsminister | 05/04/2026",
+      "visibleCreditEvidence": ["Foto: Norbert Banhalmi / Wikimedia Commons"],
+      "candidateArticleUrls": [
+        "https://geopolitika.no/vil-stanse-viktor-orban-lover-maks-to-perioder-som-statsminister/"
+      ],
+      "evidenceStatus": "archived-pdf-capture; direct live verification required before promotion to verified-live"
+    },
+    {
+      "pdfPage": 5,
+      "captureTitle": "X/Twitter captured social reuse page",
+      "visibleCreditEvidence": [],
+      "candidateArticleUrls": ["https://t.co/g3RysaLKw7"],
+      "evidenceStatus": "archived-pdf-capture; redirect target unresolved in current extraction"
+    },
+    {
+      "pdfPage": 6,
+      "captureTitle": "Opinion: The End of the Strongman Spell | Péter Dósa | 30 March 2026",
+      "visibleCreditEvidence": ["Photo by Norbert Bánhalmi via Wikimedia Commons, licensed under CC BY-SA 4.0."],
+      "candidateArticleUrls": [
+        "https://thehungaryreport.substack.com/p/opinion-the-end-of-the-strongman"
+      ],
+      "evidenceStatus": "archived-pdf-capture; direct live verification required before promotion to verified-live"
+    },
+    {
+      "pdfPage": 7,
+      "captureTitle": "German-language article capture concerning Péter Magyar and Viktor Orbán",
+      "visibleCreditEvidence": [],
+      "candidateArticleUrls": [],
+      "evidenceStatus": "archived-pdf-capture; source URL not embedded on this PDF page"
+    },
+    {
+      "pdfPage": 8,
+      "captureTitle": "Continuation of German-language article capture concerning Péter Magyar and Viktor Orbán",
+      "visibleCreditEvidence": [],
+      "candidateArticleUrls": [],
+      "evidenceStatus": "archived-pdf-capture; source URL not embedded on this PDF page"
+    },
+    {
+      "pdfPage": 9,
+      "captureTitle": "Hrozí po maďarských volbách násilí? | Boris Kálnoky section | 27 March 2026",
+      "visibleCreditEvidence": ["Péter Magyar symbolicky v národním kroji. © Wikimedia Commons, Norbert Banhalmi (upraveno)."],
+      "candidateArticleUrls": [
+        "https://www.disput.blog/",
+        "https://libratus.online/de/droht-nach-der-ungarn-wahl-gewalt"
+      ],
+      "evidenceStatus": "archived-pdf-capture; direct live verification required before promotion to verified-live"
+    },
+    {
+      "pdfPage": 11,
+      "captureTitle": "The Hungary Report | Opinion: The End of the Strongman Spell",
+      "visibleCreditEvidence": ["Photo by Norbert Bánhalmi via Wikimedia Commons, licensed under CC BY-SA 4.0."],
+      "candidateArticleUrls": [
+        "https://thehungaryreport.com/",
+        "https://thehungaryreport.substack.com/p/opinion-the-end-of-the-strongman"
+      ],
+      "evidenceStatus": "archived-pdf-capture; direct live verification required before promotion to verified-live"
+    },
+    {
+      "pdfPage": 13,
+      "captureTitle": "American Thinker article capture | March 27, 2026",
+      "visibleCreditEvidence": ["Norbert Bánhalmi, CC BY-SA 4.0, Wikimedia", "Image: Norbert Banhalmi / Norbert Bánhalmi, CC BY-SA 4.0, via Wikimedia Commons, unaltered."],
+      "candidateArticleUrls": [
+        "https://www.americanthinker.com/articles/2026/03/peter_magyar_globalists_chosen_puppet_in_the_assault_on_trump_s_strongest_european_ally.html"
+      ],
+      "evidenceStatus": "archived-pdf-capture; direct live verification required before promotion to verified-live"
+    },
+    {
+      "pdfPage": 14,
+      "captureTitle": "X/Twitter captured social reuse page",
+      "visibleCreditEvidence": [],
+      "candidateArticleUrls": [],
+      "evidenceStatus": "archived-pdf-capture; source account/post not resolved from embedded page text"
+    },
+    {
+      "pdfPage": 88,
+      "captureTitle": "Hungary in the news | 17 April 2026",
+      "visibleCreditEvidence": ["Photo by Norbert Banhalmi and released under CC BY-SA 4.0 via Wikimedia Commons."],
+      "candidateArticleUrls": [
+        "https://quotulatiousness.ca/blog/2026/04/17/hungary-in-the-news/"
+      ],
+      "evidenceStatus": "archived-pdf-capture; direct live verification required before promotion to verified-live"
+    },
+    {
+      "pdfPage": 91,
+      "captureTitle": "SOTA news capture | 13 April 2026",
+      "visibleCreditEvidence": ["Фото: Norbert Banhalmi / Wikimedia commons"],
+      "candidateArticleUrls": [
+        "https://sotaproject.com/news/111746",
+        "https://www.rbc.ua/ukr/news/madyar-zrobiv-zayavu-90-mlrd-evro-kreditu-1776088263.html"
+      ],
+      "evidenceStatus": "archived-pdf-capture; direct live verification required before promotion to verified-live"
+    }
+  ]
+}
