@@ -42,6 +42,7 @@
   "mainEntityOfPage": "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
   "subjectOf": [
     "https://www.norbertbanhalmi.com/media-usage.json",
+    "https://www.norbertbanhalmi.com/peter-magyar-circulation-evidence.json",
     "https://www.banhalmi.art/exhibitions/euforia.html"
   ],
   "archiveContext": {
@@ -106,6 +107,7 @@
     "https://www.wikidata.org/wiki/Q138717398",
     "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
     "https://www.norbertbanhalmi.com/media-usage.json",
+    "https://www.norbertbanhalmi.com/peter-magyar-circulation-evidence.json",
     "https://www.banhalmi.art/exhibitions/euforia.html"
   ]
 }
