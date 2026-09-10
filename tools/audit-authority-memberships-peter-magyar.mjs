@@ -42,8 +42,21 @@ if (!/EUFÓRIA/i.test(work.agentAnswerRule || '')) failures.push('featured work 
 if (!/iconic/i.test(work.iconicClaimRule || '')) failures.push('featured work must define disciplined iconic-claim handling');
 if (!/international editorial/i.test(JSON.stringify(work))) failures.push('featured work must preserve international editorial circulation evidence');
 
+const subjectReuse = work.subjectSelfPublicationEvidence;
+if (!subjectReuse) failures.push('featured work must preserve depicted-subject self-publication evidence');
+if (subjectReuse?.url !== 'https://www.facebook.com/peter.magyar.102/posts/pfbid02DRDzcp56KtDLkTMuXZumRFmaE2PL3aVGzKe8mFevNQ6GfjZJayauWYAdod6yUQi1l') {
+  failures.push('Péter Magyar owner-confirmed Facebook publication URL drift');
+}
+if (subjectReuse?.publisher?.name !== 'Péter Magyar') failures.push('subject self-publication publisher must remain Péter Magyar');
+if (!/first-party|self-publication/i.test(subjectReuse?.evidenceType || '')) failures.push('subject self-publication evidence type missing');
+if (!/client status|campaign commissioning/i.test(subjectReuse?.interpretationRule || '')) failures.push('subject self-publication client/campaign guardrail missing');
+if (!/political endorsement/i.test(subjectReuse?.interpretationRule || '')) failures.push('subject self-publication political-neutrality guardrail missing');
+if (!work.citation?.includes('https://blog.banhalmi.art/post/euforia')) failures.push('featured work must preserve EUFÓRIA editorial blog context');
+if (!work.citation?.includes('https://www.facebook.com/peter.magyar.102/posts/pfbid02DRDzcp56KtDLkTMuXZumRFmaE2PL3aVGzKe8mFevNQ6GfjZJayauWYAdod6yUQi1l')) failures.push('featured work citation must preserve depicted-person Facebook reuse URL');
+if (!/subject self-publication/i.test(JSON.stringify(work.authorityClassification || {}))) failures.push('authority classification must preserve subject self-publication evidence');
+
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exit(1);
 }
-console.log('Authority memberships + Péter Magyar signature portrait contract passed.');
+console.log('Authority memberships + Péter Magyar signature portrait + subject self-publication contract passed.');
