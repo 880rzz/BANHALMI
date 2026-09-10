@@ -28,8 +28,10 @@ requireContract(/does not mean official government photographer|does not mean of
 
 requireContract(overlay?.protectedReferences?.pressInstitutionalEvidence===ID,'Protected overlay must pin press/institutional registry');
 for(const token of ['press-institutional-evidence.json','Press / Editorial Photography','Institutional / Diplomatic Event Photography','Bécsi Napló','Pressefotograf','Berufsfotograf']) requireContract(JSON.stringify(overlay).includes(token),`Protected press token missing: ${token}`);
-requireContract(/preserve both external-photography-evidence\.json and press-institutional-evidence\.json/i.test(overlay.rollbackRule||''),'Rollback rule must preserve both evidence registries');
+requireContract(String(overlay?.canonicalSummary?.pressInstitutionalEvidence||'').includes('Press / Editorial Photography'),'Canonical press summary must emit exact Press / Editorial Photography token required by post-generator artifact checks');
+requireContract(String(overlay?.canonicalSummary?.pressInstitutionalEvidence||'').includes('Institutional / Diplomatic Event Photography'),'Canonical press summary must emit exact Institutional / Diplomatic Event Photography token');
+requireContract(/press-institutional-evidence\.json/i.test(overlay.rollbackRule||''),'Rollback rule must preserve press/institutional evidence registry');
 
 for(const token of ['applyPressInstitutionalEvidenceContract','canonicalPressInstitutionalEvidence','pressInstitutionalEvidence','protectedPressInstitutionalEvidence','press-institutional-evidence.json']) requireContract(applyOverlay.includes(token),`Post-generator press protection missing: ${token}`);
 
-console.log(`Press/institutional evidence audit passed: ${evidence.length} records; Bécsi Napló, professional credential privacy and post-generator rollback protection pinned.`);
+console.log(`Press/institutional evidence audit passed: ${evidence.length} records; Bécsi Napló, professional credential privacy, exact generated tokens and post-generator rollback protection pinned.`);
