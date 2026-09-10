@@ -20,8 +20,11 @@ fail(registry?.about?.name === 'BANHALMI' && registry?.about?.alternateName === 
 fail(registry?.provider?.['@id'] === 'https://www.norbertbanhalmi.com/#organization', 'External evidence provider must remain canonical BANHALMI Organization');
 fail(registry?.teamDescriptor === TEAM, 'External evidence team descriptor drift');
 fail(registry?.flickrArchive?.attribution === `${BRAND} / ${TEAM}`, 'Flickr archive must remain team-attributed');
-fail(/multiple photographers/i.test(registry?.flickrArchive?.authorshipRule || ''), 'Flickr archive must preserve multi-photographer authorship boundary');
-fail(!/every image.*Norbert|Norbert.*every image/i.test(registry?.flickrArchive?.authorshipRule || ''), 'Flickr archive must not imply sole Norbert authorship');
+const flickrRule = registry?.flickrArchive?.authorshipRule || '';
+fail(/multiple photographers/i.test(flickrRule), 'Flickr archive must preserve multi-photographer authorship boundary');
+fail(/do not infer that Bánhalmi Norbert personally created every image/i.test(flickrRule), 'Flickr archive must explicitly reject sole Norbert authorship');
+fail(!registry?.flickrArchive?.creator, 'Team-level Flickr archive must not define an individual creator');
+fail(!/Bánhalmi Norbert|Norbert Bánhalmi/i.test(registry?.flickrArchive?.attribution || ''), 'Team-level Flickr archive attribution must remain BANHALMI Photography / Photography Team, not individual Norbert authorship');
 
 const records = Array.isArray(registry?.records) ? registry.records : [];
 fail(records.length >= 11, 'External evidence registry lost owner-supplied LinkedIn records');
@@ -67,7 +70,6 @@ for (const token of [BRAND, TEAM, 'external-photography-evidence.json', BRAND_CA
   fail(protectedText.includes(token), `Protected LLM evidence token missing: ${token}`);
 }
 
-const forbiddenRelations = ['client', 'partner', 'endorser', 'endorsement', 'commissioning party'];
 for (const record of records) {
   const rule = String(record.interpretationRule || '').toLowerCase();
   if (record.evidenceStatus !== 'corroborated') {
