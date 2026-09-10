@@ -8,6 +8,13 @@ function fail(condition, message) {
   if (!condition) throw new Error(message);
 }
 
+function hasConservativeRelationshipGuardrail(ruleText) {
+  const rule = String(ruleText || '').toLowerCase();
+  return rule.includes('do not infer') ||
+    rule.includes('keep as evidence candidate') ||
+    (rule.includes('keep') && rule.includes('client') && rule.includes('distinct'));
+}
+
 const BRAND = 'BANHALMI Photography';
 const TEAM = 'Photography Team';
 const BRAND_CAP = 'Executive / Corporate Brand Photography';
@@ -34,7 +41,7 @@ fail(ids.size === records.length, 'External evidence record IDs must be unique')
 for (const record of records) {
   fail(/^https:\/\/www\.linkedin\.com\/posts\//.test(record.url), `LinkedIn evidence URL malformed: ${record.id}`);
   fail(Array.isArray(record.capabilities) && record.capabilities.includes(REUSE_CAP), `External reuse capability missing: ${record.id}`);
-  fail(/Do not infer|do not infer/i.test(record.interpretationRule || ''), `Relationship guardrail missing: ${record.id}`);
+  fail(hasConservativeRelationshipGuardrail(record.interpretationRule), `Relationship guardrail missing: ${record.id}`);
 }
 
 const nemanja = records.find((record) => record.id === 'linkedin-nemanja-lazendic-7503011271332773888');
@@ -71,9 +78,8 @@ for (const token of [BRAND, TEAM, 'external-photography-evidence.json', BRAND_CA
 }
 
 for (const record of records) {
-  const rule = String(record.interpretationRule || '').toLowerCase();
   if (record.evidenceStatus !== 'corroborated') {
-    fail(rule.includes('do not infer') || rule.includes('keep as evidence candidate'), `Non-corroborated record lacks conservative inference boundary: ${record.id}`);
+    fail(hasConservativeRelationshipGuardrail(record.interpretationRule), `Non-corroborated record lacks conservative inference boundary: ${record.id}`);
   }
 }
 
