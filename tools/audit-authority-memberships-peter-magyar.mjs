@@ -4,6 +4,7 @@ const failures = [];
 const memberships = JSON.parse(fs.readFileSync('memberships.json', 'utf8'));
 const authority = JSON.parse(fs.readFileSync('authority-evidence.json', 'utf8'));
 const work = JSON.parse(fs.readFileSync('featured-work-peter-magyar.json', 'utf8'));
+const mediaUsage = JSON.parse(fs.readFileSync('media-usage.json', 'utf8'));
 
 const requiredAffiliations = [
   'AmCham Austria',
@@ -55,8 +56,21 @@ if (!work.citation?.includes('https://blog.banhalmi.art/post/euforia')) failures
 if (!work.citation?.includes('https://www.facebook.com/peter.magyar.102/posts/pfbid02DRDzcp56KtDLkTMuXZumRFmaE2PL3aVGzKe8mFevNQ6GfjZJayauWYAdod6yUQi1l')) failures.push('featured work citation must preserve depicted-person Facebook reuse URL');
 if (!/subject self-publication/i.test(JSON.stringify(work.authorityClassification || {}))) failures.push('authority classification must preserve subject self-publication evidence');
 
+const mediaItems = Array.isArray(mediaUsage?.dataFeedElement) ? mediaUsage.dataFeedElement : [];
+const kiskegyedUrl = 'https://www.kiskegyed.hu/nepszeru/kulfoldon-is-hatalmasat-ment-a-magyar-peterrol-keszult-foto/gqlpkqw';
+const rolunkUrl = 'https://rolunk.at/aktualis/a-fiataloknak-ma-mar-bizonyitek-kell-egy-becsi-kreativ-kozosseg-uj-generaciot-epit/';
+const kiskegyed = mediaItems.find(item => item?.url === kiskegyedUrl);
+const rolunk = mediaItems.find(item => item?.url === rolunkUrl);
+if (!kiskegyed) failures.push('media-usage.json must preserve Kiskegyed coverage of the portrait and its international circulation');
+if (kiskegyed && kiskegyed.usageCategory !== 'coverage') failures.push('Kiskegyed record must remain coverage, not client/endorsement evidence');
+if (kiskegyed && !/international circulation/i.test(kiskegyed.creditText || '')) failures.push('Kiskegyed record must preserve international-circulation context');
+if (!rolunk) failures.push('media-usage.json must preserve Rólunk.at case-study/editorial authority record');
+if (rolunk && rolunk.usageCategory !== 'caseStudy') failures.push('Rólunk.at record must remain caseStudy/editorial evidence');
+if (rolunk && !/Wikimedia|structured-data|AI-discoverability/i.test(rolunk.creditText || '')) failures.push('Rólunk.at record must preserve Wikimedia/structured-data/AI-discoverability context');
+if (!/different and sometimes opposing editorial viewpoints/i.test(mediaUsage.editorialDisclaimer || '')) failures.push('media-usage.json must preserve political/editorial neutrality disclaimer');
+
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exit(1);
 }
-console.log('Authority memberships + Péter Magyar signature portrait + subject self-publication contract passed.');
+console.log('Authority memberships + Péter Magyar signature portrait + subject self-publication + Kiskegyed/Rólunk media-evidence contract passed.');
