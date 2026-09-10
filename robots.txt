@@ -4,5 +4,6 @@ Allow: /
 # AI / LLM machine entry points
 # https://www.norbertbanhalmi.com/llms.txt
 # https://www.norbertbanhalmi.com/ai.txt
+# https://www.norbertbanhalmi.com/protected-entity-contract.json
 
 Sitemap: https://www.norbertbanhalmi.com/sitemap.xml
