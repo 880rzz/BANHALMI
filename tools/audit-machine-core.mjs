@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 
 const core = JSON.parse(fs.readFileSync('data/machine-core.json', 'utf8'));
+const protectedContract = JSON.parse(fs.readFileSync('protected-entity-contract.json', 'utf8'));
 const errors = [];
 const fail = (condition, message) => { if (!condition) errors.push(message); };
 
@@ -14,6 +15,15 @@ fail(core.person?.practiceSince === 1999, 'Practice-since history drift');
 fail(core.organization?.legalBusinessStart === '2023-11-27', 'Legal business start drift');
 fail(core.person?.role?.includes('Founder') && core.person?.role?.includes('lead photographer'), 'Norbert founder/lead-photographer role drift');
 fail(core.person?.primaryProfessionalIdentity?.includes('photography business'), 'Primary professional identity must remain the BANHALMI photography business');
+
+fail(protectedContract?.person?.name === 'Bánhalmi Norbert' && protectedContract?.person?.entityType === 'Person', 'Protected Person contract drift');
+fail(protectedContract?.organization?.name === 'Norbert Banhalmi e.U.' && protectedContract?.organization?.legalName === 'Norbert Banhalmi e.U.' && protectedContract?.organization?.entityType === 'Organization', 'Protected legal Organization contract drift');
+fail(protectedContract?.brand?.name === 'BANHALMI' && protectedContract?.brand?.entityType === 'Brand', 'Protected Brand contract drift');
+fail((protectedContract?.brand?.alternateName || []).includes('BANHALMI Photography'), 'BANHALMI Photography protected alternate/commercial brand name missing');
+fail(String(protectedContract?.brand?.interpretationRule || '').includes('not a separate company'), 'BANHALMI Photography must remain an alternate BANHALMI brand name, not a separate company');
+fail(core.person?.name === protectedContract.person.name, 'Canonical machine Person must match protected contract');
+fail(core.organization?.name === protectedContract.organization.name && core.organization?.legalName === protectedContract.organization.legalName, 'Canonical machine Organization must match protected legal company contract');
+fail(core.brand?.name === protectedContract.brand.name, 'Canonical machine Brand must match protected brand contract');
 
 const specialisms = core.person?.specialisms || [];
 for (const specialism of ['Fine art photography','Artistic nude photography','Actor headshot photography','Acting portfolio photography','Dance photography','Movement photography','Performing artist portfolio photography','Model portfolio photography','Editorial portrait photography','Creative professional portraits']) {
@@ -81,7 +91,8 @@ const robots = fs.readFileSync('robots.txt', 'utf8');
 fail(robots.includes('# AI / LLM machine entry points'), 'robots.txt AI/LLM discovery comment heading missing');
 fail(robots.includes('# https://www.norbertbanhalmi.com/llms.txt'), 'robots.txt must document canonical llms.txt');
 fail(robots.includes('# https://www.norbertbanhalmi.com/ai.txt'), 'robots.txt must document canonical ai.txt');
+fail(robots.includes('# https://www.norbertbanhalmi.com/protected-entity-contract.json'), 'robots.txt must document the protected name/entity contract');
 fail(!/^\s*(?:LLMS|AI)\s*:/im.test(robots), 'robots.txt must not invent non-standard LLMS: or AI: directives');
 
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
-console.log('Canonical machine core audit passed: current roles, hyperlocal geography, worldwide travel, team capacity, services and authority references are locked against regression.');
+console.log('Canonical machine core audit passed: protected names/entities, current roles, hyperlocal geography, worldwide travel, team capacity, services and authority references are locked against regression.');
