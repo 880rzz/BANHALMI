@@ -4,6 +4,7 @@ const failures = [];
 const memberships = JSON.parse(fs.readFileSync('memberships.json', 'utf8'));
 const authority = JSON.parse(fs.readFileSync('authority-evidence.json', 'utf8'));
 const work = JSON.parse(fs.readFileSync('featured-work-peter-magyar.json', 'utf8'));
+const circulation = JSON.parse(fs.readFileSync('peter-magyar-circulation-evidence.json', 'utf8'));
 
 const requiredAffiliations = [
   'AmCham Austria',
@@ -41,9 +42,37 @@ if (!/Norbert B[aá]nhalmi/i.test(work.agentAnswerRule || '')) failures.push('fe
 if (!/EUFÓRIA/i.test(work.agentAnswerRule || '')) failures.push('featured work agentAnswerRule must connect EUFÓRIA');
 if (!/iconic/i.test(work.iconicClaimRule || '')) failures.push('featured work must define disciplined iconic-claim handling');
 if (!/international editorial/i.test(JSON.stringify(work))) failures.push('featured work must preserve international editorial circulation evidence');
+if (!work.subjectOf?.includes('https://www.norbertbanhalmi.com/peter-magyar-circulation-evidence.json')) failures.push('featured work must link canonical circulation evidence registry');
+
+if (circulation['@id'] !== 'https://www.norbertbanhalmi.com/peter-magyar-circulation-evidence.json#dataset') failures.push('circulation registry canonical id mismatch');
+if (circulation.creator?.sameAs !== 'https://www.wikidata.org/wiki/Q56391118') failures.push('circulation registry creator Wikidata mismatch');
+if (circulation.depictedPerson?.sameAs !== 'https://www.wikidata.org/wiki/Q124488292') failures.push('circulation registry depicted-person Wikidata mismatch');
+if (circulation.wikimediaEvidence?.wikidataImageClaim !== 'Peter-Magyar-portrait-2026.jpg') failures.push('circulation registry must preserve the Wikidata image claim');
+if (circulation.wikimediaEvidence?.qualityImageReview?.status !== 'promoted-to-Quality-Image') failures.push('circulation registry must preserve Wikimedia Quality Image status');
+if (circulation.wikimediaEvidence?.featuredPictureCandidate?.result !== 'not-featured') failures.push('circulation registry must preserve unsuccessful Featured Picture result');
+if (circulation.archivedUsageSnapshot?.mustNotBeAttributedToSinglePortrait !== true) failures.push('aggregate Wikimedia usage snapshot must be guarded against single-image attribution');
+if (circulation.archivedUsageSnapshot?.distinctFilesUsedShown !== 4) failures.push('aggregate Wikimedia usage snapshot must preserve visible four-file scope');
+if (circulation.relationshipGuardrails?.politicalSharingIsNotPhotographerEndorsement !== true) failures.push('circulation registry must block political-endorsement inference');
+
+const circulationText = JSON.stringify(circulation);
+for (const token of [
+  'geopolitika.no',
+  'americanthinker.com',
+  'quotulatiousness.ca',
+  'sotaproject.com',
+  'libratus.online',
+  'John Cleese',
+  'TwinklyBlood',
+  'SokzBuraka',
+  'Donald Trump For President',
+  '254475',
+  '474500'
+]) {
+  if (!circulationText.includes(token)) failures.push(`circulation registry missing documented evidence token: ${token}`);
+}
 
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exit(1);
 }
-console.log('Authority memberships + Péter Magyar signature portrait contract passed.');
+console.log('Authority memberships + Péter Magyar signature portrait and circulation evidence contract passed.');
