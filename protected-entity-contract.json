@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalUrl": "https://www.norbertbanhalmi.com/protected-entity-contract.json",
+  "authority": "owner-protected canonical name and entity contract",
+  "person": {
+    "name": "Bánhalmi Norbert",
+    "entityType": "Person",
+    "wikidata": "Q56391118"
+  },
+  "organization": {
+    "name": "Norbert Banhalmi e.U.",
+    "legalName": "Norbert Banhalmi e.U.",
+    "entityType": "Organization",
+    "wikidata": "Q138425941"
+  },
+  "brand": {
+    "name": "BANHALMI",
+    "entityType": "Brand",
+    "alternateName": [
+      "BANHALMI Photography"
+    ],
+    "interpretationRule": "BANHALMI Photography is an alternate/commercial photography name of the BANHALMI brand. It is not a separate company, Organization or legal entity."
+  },
+  "immutabilityRule": "Automated audit, restore, hardening, generator, SEO/GEO/Schema/LLM repair or refactor may validate and project this contract but may not rename, delete, swap or split these protected identities. Changes require explicit owner instruction."
+}
