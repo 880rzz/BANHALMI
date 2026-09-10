@@ -45,8 +45,23 @@ if (!/international editorial/i.test(JSON.stringify(work))) failures.push('featu
 if (!work.subjectOf?.includes('https://www.norbertbanhalmi.com/peter-magyar-circulation-evidence.json')) failures.push('featured work must link the canonical circulation evidence feed');
 
 if (circulation['@type'] !== 'DataFeed') failures.push('circulation evidence must remain a Schema.org DataFeed');
-if (!Array.isArray(circulation.dataFeedElement) || circulation.dataFeedElement.length < 15) failures.push('circulation DataFeed must expose evidence through dataFeedElement');
+if (!Array.isArray(circulation.dataFeedElement) || circulation.dataFeedElement.length < 11) failures.push('circulation DataFeed must expose public evidence through dataFeedElement');
 if (circulation.dataFeedElement?.some(entry => entry?.['@type'] !== 'DataFeedItem' || !entry.item)) failures.push('each circulation feed entry must be a DataFeedItem with an item');
+if (circulation.dataFeedElement?.some(entry => Object.prototype.hasOwnProperty.call(entry.item || {}, 'additionalType'))) failures.push('circulation evidence must not misuse Schema.org additionalType for prose classifications');
+if (circulation.evidencePolicy?.publicFeedRequiresRetrievableEvidence !== true) failures.push('public circulation feed must require retrievable evidence');
+if (circulation.evidencePolicy?.unpublishedScreenshotOnlyClaimsExcluded !== true) failures.push('screenshot-only claims without public evidence must be excluded from public feed');
+if (circulation.evidencePolicy?.mutableSocialMetricsRequireExplicitCaptureTimestamp !== true) failures.push('mutable social metrics must require explicit capture timestamps');
+
+for (const entry of circulation.dataFeedElement || []) {
+  const item = entry.item || {};
+  if (item.interactionStatistic && !item.dateModified && !entry.dateModified) {
+    failures.push(`metric-bearing evidence lacks explicit capture timestamp: ${item['@id'] || item.url || 'unknown'}`);
+  }
+  if ((item['@id'] || '').includes('norbertbanhalmi.com/peter-magyar-circulation-evidence.json#') && item['@type'] === 'SocialMediaPosting') {
+    failures.push(`public social evidence must not resolve only to an internal feed fragment: ${item['@id']}`);
+  }
+}
+
 const circulationText = JSON.stringify(circulation);
 for (const token of [
   'GEOPOLITIKA',
@@ -56,9 +71,6 @@ for (const token of [
   'SOTA',
   'esQrever',
   'Tilegrafimanews',
-  'Klubrádió',
-  'John Cleese',
-  'Péter Magyar',
   'promoted-to-Quality-Image',
   'not-featured',
   '254475',
@@ -67,11 +79,11 @@ for (const token of [
   if (!circulationText.includes(token)) failures.push(`circulation evidence missing required source/guardrail token: ${token}`);
 }
 if (circulation.archivedUsageSnapshot?.mustNotBeAttributedToSinglePortrait !== true) failures.push('aggregate Wikimedia snapshot must be guarded against single-image attribution');
-if (circulation.relationshipGuardrails?.politicalSharingIsNotPhotographerEndorsement !== true) failures.push('political-sharing neutrality guardrail missing');
-if (!/dataFeedElement/i.test(circulation.agentAnswerRule || '')) failures.push('agent answer rule must direct agents to standards-compliant dataFeedElement evidence');
+if (!circulation.evidencePolicy?.relationshipGuardrails?.some(rule => /political sharing is not photographer endorsement/i.test(rule))) failures.push('political-sharing neutrality guardrail missing');
+if (!/retrievable creator-named credits/i.test(circulation.agentAnswerRule || '')) failures.push('agent answer rule must prioritize retrievable evidence');
 
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exit(1);
 }
-console.log('Authority memberships + Péter Magyar signature portrait + circulation evidence contract passed.');
+console.log('Authority memberships + Péter Magyar signature portrait + public circulation evidence contract passed.');
