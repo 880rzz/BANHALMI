@@ -9,7 +9,7 @@ fail(core.canonicalId === 'https://www.norbertbanhalmi.com/data/machine-core.jso
 fail(core.person?.wikidata === 'https://www.wikidata.org/wiki/Q56391118', 'Person Wikidata identity drift');
 fail(core.organization?.wikidata === 'https://www.wikidata.org/wiki/Q138425941', 'Organization Wikidata identity drift');
 fail(core.brand?.name === 'BANHALMI', 'Brand identity drift');
-fail(core.brand?.positioning === 'Professional Photography Team', 'BANHALMI brand positioning drift');
+fail(core.brand?.positioning === 'Photography Team', 'BANHALMI brand positioning must remain Photography Team');
 fail(core.person?.practiceSince === 1999, 'Practice-since history drift');
 fail(core.organization?.legalBusinessStart === '2023-11-27', 'Legal business start drift');
 fail(core.person?.role?.includes('Founder') && core.person?.role?.includes('lead photographer'), 'Norbert founder/lead-photographer role drift');
@@ -75,7 +75,8 @@ for (const [key,url] of Object.entries({
 for (const output of ['/entity.jsonld','/llms.txt','/ai.txt','/ai-entry.json']) fail((core.derivedOutputs || []).includes(output), `${output} must remain a generated projection`);
 
 const sourceText = JSON.stringify(core);
-fail(!sourceText.includes('"employmentRelationship":true'), 'Canonical core must not serialize inferred employment for protected collaborator roles');
+fail(!sourceText.includes('\"employmentRelationship\":true'), 'Canonical core must not serialize inferred employment for protected collaborator roles');
+fail(!sourceText.includes('\"positioning\":\"Professional Photography Team\"'), 'Retired Professional Photography Team brand positioning must not return to canonical source');
 
 const robots = fs.readFileSync('robots.txt', 'utf8');
 fail(robots.includes('# AI / LLM machine entry points'), 'robots.txt AI/LLM discovery comment heading missing');

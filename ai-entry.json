@@ -40,12 +40,15 @@
       "founder": {
         "@id": "https://www.norbertbanhalmi.com/about/"
       },
-      "positioning": "Professional Photography Team",
+      "positioning": "Photography Team",
       "creativeDirection": {
         "@id": "https://www.norbertbanhalmi.com/about/"
       },
       "deliveryModel": "Norbert-led project-specific photographers and specialists",
-      "wikidataPolicy": "BANHALMI currently has no dedicated Wikidata item. Do not use the Person Q56391118 or Organization Q138425941 as a sameAs identifier for the Brand."
+      "wikidataPolicy": "BANHALMI currently has no dedicated Wikidata item. Do not use the Person Q56391118 or Organization Q138425941 as a sameAs identifier for the Brand.",
+      "alternateName": [
+        "BANHALMI Photography"
+      ]
     },
     "history": {
       "practiceSince": 1999,
