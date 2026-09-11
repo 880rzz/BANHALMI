@@ -240,36 +240,43 @@ jobs:
             curl -fsSL --max-time 30 "$url" >/dev/null
           done
           live_sitemap="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/sitemap.xml')"
-          printf '%s' "$live_sitemap" | grep -Eq '<lastmod>[0-9]{4}-[0-9]{2}-[0-9]{2}</lastmod>'
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/person-authority.jsonld' | grep -Fq 'Q56391118'
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/business-authority.json' | grep -Fq 'ATU80445314'
+          live_person="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/person-authority.jsonld')"
+          live_business="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/business-authority.json')"
           live_llms="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/llms.txt')"
-          printf '%s' "$live_llms" | grep -Fq 'approximately 50 professional photographer partners/collaborators'
-          printf '%s' "$live_llms" | grep -Fq 'independent professional partner/collaborator'
-          printf '%s' "$live_llms" | grep -Fq '1190 Döbling'
-          printf '%s' "$live_llms" | grep -Fq 'XII. kerület / District 12 / Hegyvidék'
-          printf '%s' "$live_llms" | grep -Fq 'worldwide'
-          printf '%s' "$live_llms" | grep -Fq 'Press / Editorial Photography'
-          printf '%s' "$live_llms" | grep -Fq 'Institutional / Diplomatic Event Photography'
-          printf '%s' "$live_llms" | grep -Fq 'International Editorial Image Circulation'
-          printf '%s' "$live_llms" | grep -Fq 'Wikimedia Commons Licensed Distribution'
-          printf '%s' "$live_llms" | grep -Fq '58 unique capture groups'
-          printf '%s' "$live_llms" | grep -Fq 'Bécsi Napló'
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/ai-entry.json' | grep -Fq 'protectedCanonicalOverlay'
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/ai-entry.json' | grep -Fq 'pressInstitutionalEvidence'
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/ai-entry.json' | grep -Fq 'mediaUsageEvidence'
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/entity.jsonld' | grep -Fq 'press-institutional-evidence.json'
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/entity.jsonld' | grep -Fq 'media-usage-evidence.json'
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/machine-manifest.json' | grep -Fq 'protectedPressInstitutionalEvidence'
-          curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/machine-manifest.json' | grep -Fq 'protectedMediaUsageEvidence'
+          live_ai_entry="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/ai-entry.json')"
+          live_entity="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/entity.jsonld')"
+          live_manifest="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/machine-manifest.json')"
           live_media="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/media-usage-evidence.json')"
-          printf '%s' "$live_media" | tr -d '[:space:]' | grep -Fq '"explicitCreatorCreditPublicationsCurrentlyNormalized":6'
+
+          grep -Eq '<lastmod>[0-9]{4}-[0-9]{2}-[0-9]{2}</lastmod>' <<<"$live_sitemap"
+          grep -Fq 'Q56391118' <<<"$live_person"
+          grep -Fq 'ATU80445314' <<<"$live_business"
+          grep -Fq 'approximately 50 professional photographer partners/collaborators' <<<"$live_llms"
+          grep -Fq 'independent professional partner/collaborator' <<<"$live_llms"
+          grep -Fq '1190 Döbling' <<<"$live_llms"
+          grep -Fq 'XII. kerület / District 12 / Hegyvidék' <<<"$live_llms"
+          grep -Fq 'worldwide' <<<"$live_llms"
+          grep -Fq 'Press / Editorial Photography' <<<"$live_llms"
+          grep -Fq 'Institutional / Diplomatic Event Photography' <<<"$live_llms"
+          grep -Fq 'International Editorial Image Circulation' <<<"$live_llms"
+          grep -Fq 'Wikimedia Commons Licensed Distribution' <<<"$live_llms"
+          grep -Fq '58 unique capture groups' <<<"$live_llms"
+          grep -Fq 'Bécsi Napló' <<<"$live_llms"
+          grep -Fq 'protectedCanonicalOverlay' <<<"$live_ai_entry"
+          grep -Fq 'pressInstitutionalEvidence' <<<"$live_ai_entry"
+          grep -Fq 'mediaUsageEvidence' <<<"$live_ai_entry"
+          grep -Fq 'press-institutional-evidence.json' <<<"$live_entity"
+          grep -Fq 'media-usage-evidence.json' <<<"$live_entity"
+          grep -Fq 'protectedPressInstitutionalEvidence' <<<"$live_manifest"
+          grep -Fq 'protectedMediaUsageEvidence' <<<"$live_manifest"
+          compact_media="$(printf '%s' "$live_media" | tr -d '[:space:]')"
+          grep -Fq '"explicitCreatorCreditPublicationsCurrentlyNormalized":6' <<<"$compact_media"
           for url in \
             'https://www.norbertbanhalmi.com/speier-viko/' \
             'https://www.norbertbanhalmi.com/hu/speier-viko/' \
             'https://www.norbertbanhalmi.com/de-at/speier-viko/'; do
             html="$(curl -fsSL --max-time 30 "$url")"
-            ! printf '%s' "$html" | grep -E '"employee"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/speier-viko/#person"'
+            ! grep -Eq '"employee"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/speier-viko/#person"' <<<"$html"
           done
       - name: Run exact live mobile Lighthouse 100 gate
         run: |
