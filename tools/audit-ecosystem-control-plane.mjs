@@ -38,6 +38,36 @@ assert(Array.isArray(research.candidates), 'Trust research candidates must be an
 assert(research.qualityRules?.some((r) => r.includes('not a client')), 'Relationship inflation guard missing from trust research');
 assert(research.promotionPolicy?.verified, 'Verified promotion state missing');
 
+const requiredCandidateFields = research.candidateSchema?.required || [];
+const signalTypes = new Set(research.signalTypes || []);
+const relationshipTypes = new Set(research.relationshipClassifications || []);
+const candidateKeys = new Set();
+
+for (const [index, candidate] of (research.candidates || []).entries()) {
+  const prefix = `Trust candidate[${index}]`;
+  assert(candidate && typeof candidate === 'object' && !Array.isArray(candidate), `${prefix} must be an object`);
+  if (!candidate || typeof candidate !== 'object' || Array.isArray(candidate)) continue;
+  for (const field of requiredCandidateFields) {
+    assert(candidate[field] !== undefined && candidate[field] !== null && candidate[field] !== '', `${prefix} missing required field ${field}`);
+  }
+  assert(signalTypes.has(candidate.signalType), `${prefix} has unknown signalType`);
+  assert(relationshipTypes.has(candidate.relationshipClassification), `${prefix} has unknown relationshipClassification`);
+  assert(typeof candidate.sourceUrl === 'string' && /^https:\/\//.test(candidate.sourceUrl), `${prefix} sourceUrl must be HTTPS`);
+  assert(typeof candidate.confidence === 'string' || typeof candidate.confidence === 'number', `${prefix} confidence must be recorded`);
+  assert(typeof candidate.dedupeKey === 'string' && candidate.dedupeKey.length > 0, `${prefix} dedupeKey must be recorded`);
+  if (candidate.dedupeKey) {
+    assert(!candidateKeys.has(candidate.dedupeKey), `${prefix} duplicates dedupeKey ${candidate.dedupeKey}`);
+    candidateKeys.add(candidate.dedupeKey);
+  }
+  const forbiddenInference = new Set(policy.dailyPublicTrustResearch?.neverInfer || []);
+  const relationship = String(candidate.relationshipClassification || '');
+  for (const forbidden of forbiddenInference) {
+    if (relationship === forbidden && !relationship.endsWith('-confirmed')) {
+      assert(false, `${prefix} uses forbidden inferred relationship ${relationship}`);
+    }
+  }
+}
+
 if (errors.length) {
   console.error('Ecosystem control-plane audit failed:');
   for (const error of errors) console.error(`- ${error}`);
