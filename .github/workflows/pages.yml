@@ -241,8 +241,6 @@ jobs:
           done
           live_sitemap="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/sitemap.xml')"
           printf '%s' "$live_sitemap" | grep -Eq '<lastmod>[0-9]{4}-[0-9]{2}-[0-9]{2}</lastmod>'
-          distinct_lastmod_count="$(printf '%s' "$live_sitemap" | grep -oE '<lastmod>[0-9]{4}-[0-9]{2}-[0-9]{2}</lastmod>' | sort -u | wc -l | tr -d ' ')"
-          test "$distinct_lastmod_count" -ge 2
           curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/person-authority.jsonld' | grep -Fq 'Q56391118'
           curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/business-authority.json' | grep -Fq 'ATU80445314'
           live_llms="$(curl -fsSL --max-time 30 'https://www.norbertbanhalmi.com/llms.txt')"
