@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Apply root-source and sitemap fixes
+      - name: Apply and audit root-source fixes
         shell: bash
         run: |
           set -euo pipefail
@@ -51,7 +51,6 @@ jobs:
           }
           fs.writeFileSync(auditPath,audit);
 
-          // Canonical sitemap source is a URL/image template. Production lastmod is rendered from full Git history.
           const sitemapPath='sitemap.xml';
           let sitemap=fs.readFileSync(sitemapPath,'utf8');
           sitemap=sitemap.replace(/\s*<lastmod>[^<]+<\/lastmod>/g,'');
@@ -60,14 +59,12 @@ jobs:
           const renderer=`import fs from 'node:fs';
           import path from 'node:path';
           import { execFileSync } from 'node:child_process';
-
           const siteRoot=path.resolve(process.argv[2]||'_site');
           const sitemapPath=path.join(siteRoot,'sitemap.xml');
           const origin='https://www.norbertbanhalmi.com';
           let xml=fs.readFileSync(sitemapPath,'utf8');
           let sourceBacked=0;
           let withoutSource=0;
-
           function sourcePathFor(urlString){
             const url=new URL(urlString);
             if(url.origin!==origin) return null;
@@ -140,15 +137,13 @@ jobs:
           if(!pkg.scripts.test.includes('audit-search-console-readiness.mjs')) pkg.scripts.test='node tools/audit-search-console-readiness.mjs && '+pkg.scripts.test;
           fs.writeFileSync(pkgPath,JSON.stringify(pkg,null,2)+'\n');
           NODE
-
           npm test
-      - name: Commit remediated source and remove one-shot workflow
+      - name: Commit only non-workflow remediation source
         shell: bash
         run: |
           set -euo pipefail
-          git rm .github/workflows/one-shot-strict-eeat-remediation.yml
           git config user.name 'BANHALMI Steward'
           git config user.email '107166660+880rzz@users.noreply.github.com'
-          git add data/machine-core.json ai-entry.json sitemap.xml tools/audit-machine-core.mjs tools/render-production-sitemap-lastmod.mjs tools/audit-search-console-readiness.mjs .github/workflows/pages.yml .github/workflows/desktop-regression.yml package.json STRICT-FIRST-PRINCIPLES-EEAT-AUDIT-2026-09-11.md
-          git commit -m 'Fix first-principles E-E-A-T and sitemap freshness blockers'
+          git add data/machine-core.json ai-entry.json sitemap.xml tools/audit-machine-core.mjs tools/render-production-sitemap-lastmod.mjs tools/audit-search-console-readiness.mjs package.json
+          git commit -m 'Fix first-principles E-E-A-T source blockers'
           git push origin HEAD:steward/strict-eeat-search-console-20260911
