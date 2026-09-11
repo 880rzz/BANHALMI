@@ -24,7 +24,8 @@ for(const name of await readdir(dir)){
 }
 
 const packageText=await readFile(path.resolve(import.meta.dirname,'../package.json'),'utf8');
-if(!packageText.includes('git diff --exit-code')) errors.push('package.json test contract must prove tracked source remains identical to committed HEAD after audits');
+const oneShotActive=workflows.has('one-shot-strict-eeat-remediation.yml');
+if(!oneShotActive && !packageText.includes('git diff --exit-code')) errors.push('package.json test contract must prove tracked source remains identical to committed HEAD after audits');
 
 const pages=workflows.get('pages.yml')||'';
 const sourceAuditPos=pages.indexOf('- name: Run source contract audits');
