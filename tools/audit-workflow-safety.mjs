@@ -10,10 +10,6 @@ for(const name of await readdir(dir)){
   const text=await readFile(path.join(dir,name),'utf8');
   workflows.set(name,text);
 
-  // Temporary branch-only exception used by the self-deleting one-shot remediation.
-  // This exact filename must not exist in the mergeable branch state.
-  if(name==='one-shot-strict-eeat-remediation.yml') continue;
-
   if(/contents:\s*write/i.test(text)) errors.push(name+': contents write permission is forbidden');
   if(/git\s+push/i.test(text)) errors.push(name+': permanent workflow must not push');
   if(/git\s+commit/i.test(text)) errors.push(name+': permanent workflow must not commit');
@@ -24,8 +20,7 @@ for(const name of await readdir(dir)){
 }
 
 const packageText=await readFile(path.resolve(import.meta.dirname,'../package.json'),'utf8');
-const oneShotActive=workflows.has('one-shot-strict-eeat-remediation.yml');
-if(!oneShotActive && !packageText.includes('git diff --exit-code')) errors.push('package.json test contract must prove tracked source remains identical to committed HEAD after audits');
+if(!packageText.includes('git diff --exit-code')) errors.push('package.json test contract must prove tracked source remains identical to committed HEAD after audits');
 
 const pages=workflows.get('pages.yml')||'';
 const sourceAuditPos=pages.indexOf('- name: Run source contract audits');
@@ -42,6 +37,8 @@ if(!/git archive --format=tar HEAD \| tar -xf - -C _site/.test(pages)) errors.pu
 if(!/printf '%s\\n' \"\$GITHUB_SHA\" > _site\/deployment-sha\.txt/.test(pages)) errors.push('pages.yml must stamp the exact source SHA into the artifact');
 if(!/Verify exact .*commit is live on custom domain/i.test(pages)) errors.push('pages.yml must verify the exact deployed SHA on the custom domain');
 if(!/needs:\s*exact-live/.test(pages)) errors.push('pages.yml production live gate must depend on exact-live verification');
+if(!pages.includes('fetch-depth: 0')) errors.push('pages.yml must use full Git history for truthful per-page sitemap lastmod rendering');
+if(!pages.includes('render-production-sitemap-lastmod.mjs _site')) errors.push('pages.yml must render production sitemap lastmod from Git history');
 
 for (const token of [
   'llm-canonical-overlay.json',
@@ -76,4 +73,4 @@ for(const token of ['llm-canonical-overlay.json','people-roles.json','market-geo
 }
 
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
-console.log('Workflow safety audit passed: permanent workflows are read-only; tracked source must remain unchanged after audits; normal and emergency deploys use committed HEAD and hardened artifacts; corrective PRs are not blocked by stale production semantics; generated machine projections are overlaid by the protected current LLM contract; live anti-rollback tokens are mandatory.');
+console.log('Workflow safety audit passed: permanent workflows are read-only; tracked source must remain unchanged after audits; normal and emergency deploys use committed HEAD and hardened artifacts; corrective PRs are not blocked by stale production semantics; generated machine projections are overlaid by the protected current LLM contract; truthful sitemap freshness is release-gated; live anti-rollback tokens are mandatory.');
