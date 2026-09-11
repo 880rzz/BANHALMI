@@ -1,0 +1,154 @@
+name: One-shot strict E-E-A-T remediation
+
+on:
+  push:
+    branches:
+      - steward/strict-eeat-search-console-20260911
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply root-source and sitemap fixes
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs=require('fs');
+          const corePath='data/machine-core.json';
+          const core=JSON.parse(fs.readFileSync(corePath,'utf8'));
+          core.brand.positioning='Photography Team';
+          core.brand.namingRule='BANHALMI is the primary brand. BANHALMI Photography is the secondary/commercial photography brand name of the same brand and is not a separate company or Organization. Photography Team is the canonical team/delivery descriptor.';
+          fs.writeFileSync(corePath,JSON.stringify(core,null,2)+'\n');
+
+          const aiPath='ai-entry.json';
+          const ai=JSON.parse(fs.readFileSync(aiPath,'utf8'));
+          if(ai?.identity?.brand){
+            ai.identity.brand.positioning='Photography Team';
+            ai.identity.brand.name='BANHALMI';
+            const aliases=Array.isArray(ai.identity.brand.alternateName)?ai.identity.brand.alternateName:[];
+            if(!aliases.includes('BANHALMI Photography')) aliases.push('BANHALMI Photography');
+            ai.identity.brand.alternateName=aliases;
+          }
+          fs.writeFileSync(aiPath,JSON.stringify(ai,null,2)+'\n');
+
+          const auditPath='tools/audit-machine-core.mjs';
+          let audit=fs.readFileSync(auditPath,'utf8');
+          audit=audit.replace("core.brand?.positioning === 'Professional Photography Team'", "core.brand?.positioning === 'Photography Team'");
+          audit=audit.replace("'BANHALMI brand positioning drift'", "'BANHALMI brand positioning must remain Photography Team'");
+          if(!audit.includes("sourceText.includes('\\\"positioning\\\":\\\"Professional Photography Team\\\"')")){
+            audit=audit.replace("fail(!sourceText.includes('\"employmentRelationship\":true'), 'Canonical core must not serialize inferred employment for protected collaborator roles');", "fail(!sourceText.includes('\\\"employmentRelationship\\\":true'), 'Canonical core must not serialize inferred employment for protected collaborator roles');\nfail(!sourceText.includes('\\\"positioning\\\":\\\"Professional Photography Team\\\"'), 'Retired Professional Photography Team brand positioning must not return to canonical source');");
+          }
+          fs.writeFileSync(auditPath,audit);
+
+          // Canonical sitemap source is a URL/image template. Production lastmod is rendered from full Git history.
+          const sitemapPath='sitemap.xml';
+          let sitemap=fs.readFileSync(sitemapPath,'utf8');
+          sitemap=sitemap.replace(/\s*<lastmod>[^<]+<\/lastmod>/g,'');
+          fs.writeFileSync(sitemapPath,sitemap.endsWith('\n')?sitemap:sitemap+'\n');
+
+          const renderer=`import fs from 'node:fs';
+          import path from 'node:path';
+          import { execFileSync } from 'node:child_process';
+
+          const siteRoot=path.resolve(process.argv[2]||'_site');
+          const sitemapPath=path.join(siteRoot,'sitemap.xml');
+          const origin='https://www.norbertbanhalmi.com';
+          let xml=fs.readFileSync(sitemapPath,'utf8');
+          let sourceBacked=0;
+          let withoutSource=0;
+
+          function sourcePathFor(urlString){
+            const url=new URL(urlString);
+            if(url.origin!==origin) return null;
+            const pathname=decodeURIComponent(url.pathname);
+            if(pathname==='/') return 'index.html';
+            const clean=pathname.replace(/^\\//,'');
+            return clean.endsWith('/')?clean+'index.html':clean;
+          }
+          function gitDate(file){
+            if(!file||!fs.existsSync(file)) return null;
+            try{return execFileSync('git',['log','-1','--format=%cs','--',file],{encoding:'utf8'}).trim()||null;}catch{return null;}
+          }
+          xml=xml.replace(/<url>\\s*([\\s\\S]*?)\\s*<\\/url>/g,(whole,body)=>{
+            const loc=body.match(/<loc>([^<]+)<\\/loc>/)?.[1];
+            if(!loc) return whole;
+            const file=sourcePathFor(loc);
+            const date=gitDate(file);
+            let next=body.replace(/\\s*<lastmod>[^<]+<\\/lastmod>/g,'');
+            if(date){sourceBacked++;next=next.replace(/(<loc>[^<]+<\\/loc>)/,'$1\\n    <lastmod>'+date+'</lastmod>');}
+            else withoutSource++;
+            return '<url>\\n'+next.trim()+'\\n  </url>';
+          });
+          fs.writeFileSync(sitemapPath,xml.endsWith('\\n')?xml:xml+'\\n');
+          const rendered=fs.readFileSync(sitemapPath,'utf8');
+          if(!/<lastmod>\\d{4}-\\d{2}-\\d{2}<\\/lastmod>/.test(rendered)) throw new Error('Rendered production sitemap has no truthful source-backed lastmod values');
+          console.log('Production sitemap lastmod rendered from full Git history: '+sourceBacked+' source-backed URLs; '+withoutSource+' entries without a source file left without lastmod.');
+          `;
+          fs.writeFileSync('tools/render-production-sitemap-lastmod.mjs',renderer);
+
+          const readiness=`import fs from 'node:fs';
+          const errors=[];
+          const core=JSON.parse(fs.readFileSync('data/machine-core.json','utf8'));
+          const overlay=JSON.parse(fs.readFileSync('llm-canonical-overlay.json','utf8'));
+          const ai=JSON.parse(fs.readFileSync('ai-entry.json','utf8'));
+          const sitemap=fs.readFileSync('sitemap.xml','utf8');
+          const pages=fs.readFileSync('.github/workflows/pages.yml','utf8');
+          const pr=fs.readFileSync('.github/workflows/desktop-regression.yml','utf8');
+          const req=(ok,msg)=>{if(!ok)errors.push(msg)};
+          req(core.brand?.name==='BANHALMI','Canonical primary brand drift');
+          req(core.brand?.positioning==='Photography Team','Canonical brand positioning is not Photography Team');
+          req(!(JSON.stringify(core).includes('\\\"positioning\\\":\\\"Professional Photography Team\\\"')),'Retired brand positioning remains in canonical machine core');
+          req(overlay.forbiddenBrandValues?.includes('Professional Photography Team'),'Overlay no longer forbids retired brand positioning');
+          req(ai?.identity?.brand?.positioning==='Photography Team','Committed AI entry still contains retired brand positioning');
+          req(!/<lastmod>/.test(sitemap),'Source sitemap must remain a lastmod-free template; production lastmod is Git-history rendered');
+          req(pages.includes('fetch-depth: 0'),'Production deploy checkout lacks full history for truthful sitemap lastmod');
+          req(pages.includes('render-production-sitemap-lastmod.mjs _site'),'Production deploy does not render truthful sitemap lastmod');
+          req(pr.includes('render-production-sitemap-lastmod.mjs _site'),'PR artifact does not exercise production sitemap rendering');
+          req(fs.existsSync('external-photography-evidence.json')&&fs.existsSync('press-institutional-evidence.json')&&fs.existsSync('media-usage-evidence.json'),'Protected evidence registry missing');
+          if(errors.length){console.error(errors.join('\\n'));process.exit(1)}
+          console.log('Strict E-E-A-T / Search Console source readiness passed: canonical brand semantics and truthful production sitemap contract are coherent.');
+          `;
+          fs.writeFileSync('tools/audit-search-console-readiness.mjs',readiness);
+
+          function patchWorkflow(file){
+            let text=fs.readFileSync(file,'utf8');
+            text=text.replace(/- uses: actions\/checkout@v4(?!\n\s+with:)/g,"- uses: actions/checkout@v4\n        with:\n          fetch-depth: 0");
+            if(file.endsWith('pages.yml')){
+              text=text.replace("      - name: Check out source\n        uses: actions/checkout@v4\n", "      - name: Check out source\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n");
+              if(!text.includes('render-production-sitemap-lastmod.mjs _site')) text=text.replace('          node tools/harden-production-artifact.mjs _site\n','          node tools/harden-production-artifact.mjs _site\n          node tools/render-production-sitemap-lastmod.mjs _site\n');
+            } else if(!text.includes('render-production-sitemap-lastmod.mjs _site')){
+              text=text.replace('          node tools/harden-production-artifact.mjs _site\n','          node tools/harden-production-artifact.mjs _site\n          node tools/render-production-sitemap-lastmod.mjs _site\n');
+            }
+            fs.writeFileSync(file,text);
+          }
+          patchWorkflow('.github/workflows/pages.yml');
+          patchWorkflow('.github/workflows/desktop-regression.yml');
+
+          const pkgPath='package.json';
+          const pkg=JSON.parse(fs.readFileSync(pkgPath,'utf8'));
+          if(!pkg.scripts.test.includes('audit-search-console-readiness.mjs')) pkg.scripts.test='node tools/audit-search-console-readiness.mjs && '+pkg.scripts.test;
+          fs.writeFileSync(pkgPath,JSON.stringify(pkg,null,2)+'\n');
+          NODE
+
+          npm test
+      - name: Commit remediated source and remove one-shot workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rm .github/workflows/one-shot-strict-eeat-remediation.yml
+          git config user.name 'BANHALMI Steward'
+          git config user.email '107166660+880rzz@users.noreply.github.com'
+          git add data/machine-core.json ai-entry.json sitemap.xml tools/audit-machine-core.mjs tools/render-production-sitemap-lastmod.mjs tools/audit-search-console-readiness.mjs .github/workflows/pages.yml .github/workflows/desktop-regression.yml package.json STRICT-FIRST-PRINCIPLES-EEAT-AUDIT-2026-09-11.md
+          git commit -m 'Fix first-principles E-E-A-T and sitemap freshness blockers'
+          git push origin HEAD:steward/strict-eeat-search-console-20260911
