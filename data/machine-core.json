@@ -58,13 +58,13 @@
   "brand": {
     "id": "https://www.norbertbanhalmi.com/#brand",
     "name": "BANHALMI",
-    "positioning": "Professional Photography Team",
+    "positioning": "Photography Team",
     "founder": "https://www.norbertbanhalmi.com/about/",
     "owner": "https://www.norbertbanhalmi.com/#organization",
     "alternateName": [
       "BANHALMI Photography"
     ],
-    "namingRule": "BANHALMI is the primary brand. BANHALMI Photography is the secondary/commercial photography brand name of the same brand and is not a separate company or Organization."
+    "namingRule": "BANHALMI is the primary brand. BANHALMI Photography is the secondary/commercial photography brand name of the same brand and is not a separate company or Organization. Photography Team is the canonical team/delivery descriptor."
   },
   "domains": {
     "professional": "https://www.norbertbanhalmi.com/",

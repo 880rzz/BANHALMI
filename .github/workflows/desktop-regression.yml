@@ -46,6 +46,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -59,6 +61,8 @@ jobs:
           node tools/optimize-production-artifact.mjs _site
           node tools/restore-production-design-authority.mjs _site
           node tools/harden-production-artifact.mjs _site
+          node tools/render-production-sitemap-lastmod.mjs _site
+          grep -Eq '<lastmod>[0-9]{4}-[0-9]{2}-[0-9]{2}</lastmod>' _site/sitemap.xml
           npx --yes esbuild@0.25.9 _site/assets/css/site.css --minify --outfile=/tmp/site.min.css
           mv /tmp/site.min.css _site/assets/css/site.css
           for js in _site/assets/js/main.js _site/assets/js/mega-menu.js _site/assets/js/analytics.js; do
