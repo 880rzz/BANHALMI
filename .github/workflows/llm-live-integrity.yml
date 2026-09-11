@@ -18,36 +18,99 @@ jobs:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
-      - name: Verify live protected LLM and entity state
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify live protected LLM, Search Console and entity state
         shell: bash
         run: |
           set -euo pipefail
-          ua='Mozilla/5.0 (compatible; BANHALMI-LLM-Integrity/1.0)'
+          ua='Mozilla/5.0 (compatible; BANHALMI-LLM-Integrity/2.0)'
           fetch(){ curl -A "$ua" -H 'Cache-Control: no-cache' -fsSL --max-time 30 "$1"; }
-          llms="$(fetch 'https://www.norbertbanhalmi.com/llms.txt')"
-          ai="$(fetch 'https://www.norbertbanhalmi.com/ai.txt')"
-          entry="$(fetch 'https://www.norbertbanhalmi.com/ai-entry.json')"
-          entity="$(fetch 'https://www.norbertbanhalmi.com/entity.jsonld')"
-          hip="$(fetch 'https://www.norbertbanhalmi.com/hipstudio-authority.json')"
-          roles="$(fetch 'https://www.norbertbanhalmi.com/people-roles.json')"
-          market="$(fetch 'https://www.norbertbanhalmi.com/market-geography.json')"
-          team="$(fetch 'https://www.norbertbanhalmi.com/team-capabilities.json')"
 
-          printf '%s' "$llms" | grep -Fq 'approximately 50 professional photographer partners/collaborators'
-          printf '%s' "$llms" | grep -Fq '1190 Döbling'
-          printf '%s' "$llms" | grep -Fq 'XII. kerület'
-          printf '%s' "$llms" | grep -Fq 'independent professional partner/collaborator'
-          printf '%s' "$llms" | grep -Fq 'Q138482177'
-          printf '%s' "$ai" | grep -Fq 'founded HIPStudio'
-          printf '%s' "$entry" | grep -Fq 'Q138482177'
-          printf '%s' "$entry" | grep -Fq 'worldwide by travel'
-          printf '%s' "$entity" | grep -Fq 'https://www.wikidata.org/wiki/Q138482177'
-          printf '%s' "$entity" | grep -Fq '"foundingDate": "2006-03-15"'
-          printf '%s' "$hip" | grep -Fq 'founder of HIPStudio'
-          printf '%s' "$hip" | grep -Fq 'Q56391118'
-          printf '%s' "$roles" | grep -Fq 'Do not describe Viko Speier as an employee'
-          printf '%s' "$market" | grep -Fq '1190 Döbling'
-          printf '%s' "$team" | grep -Fq 'approximateProfessionalPhotographerPartners'
+          fetch 'https://www.norbertbanhalmi.com/llms.txt' > /tmp/llms.txt
+          fetch 'https://www.norbertbanhalmi.com/ai.txt' > /tmp/ai.txt
+          fetch 'https://www.norbertbanhalmi.com/ai-entry.json' > /tmp/ai-entry.json
+          fetch 'https://www.norbertbanhalmi.com/entity.jsonld' > /tmp/entity.jsonld
+          fetch 'https://www.norbertbanhalmi.com/hipstudio-authority.json' > /tmp/hipstudio-authority.json
+          fetch 'https://www.norbertbanhalmi.com/people-roles.json' > /tmp/people-roles.json
+          fetch 'https://www.norbertbanhalmi.com/market-geography.json' > /tmp/market-geography.json
+          fetch 'https://www.norbertbanhalmi.com/team-capabilities.json' > /tmp/team-capabilities.json
+          fetch 'https://www.norbertbanhalmi.com/external-photography-evidence.json' > /tmp/external-photography-evidence.json
+          fetch 'https://www.norbertbanhalmi.com/press-institutional-evidence.json' > /tmp/press-institutional-evidence.json
+          fetch 'https://www.norbertbanhalmi.com/media-usage-evidence.json' > /tmp/media-usage-evidence.json
+          fetch 'https://www.norbertbanhalmi.com/sitemap.xml' > /tmp/sitemap.xml
+          fetch 'https://www.norbertbanhalmi.com/about/' > /tmp/about.html
+
+          grep -Fq 'approximately 50 professional photographer partners/collaborators' /tmp/llms.txt
+          grep -Fq '1190 Döbling' /tmp/llms.txt
+          grep -Fq 'XII. kerület' /tmp/llms.txt
+          grep -Fq 'independent professional partner/collaborator' /tmp/llms.txt
+          grep -Fq 'Q138482177' /tmp/llms.txt
+          grep -Fq 'founded HIPStudio' /tmp/ai.txt
+          grep -Fq 'Q138482177' /tmp/ai-entry.json
+          grep -Fq 'worldwide by travel' /tmp/ai-entry.json
+          grep -Fq 'https://www.wikidata.org/wiki/Q138482177' /tmp/entity.jsonld
+          grep -Fq '"foundingDate": "2006-03-15"' /tmp/entity.jsonld
+          grep -Fq 'founder of HIPStudio' /tmp/hipstudio-authority.json
+          grep -Fq 'Q56391118' /tmp/hipstudio-authority.json
+          grep -Fq 'Do not describe Viko Speier as an employee' /tmp/people-roles.json
+          grep -Fq '1190 Döbling' /tmp/market-geography.json
+          grep -Fq 'approximateProfessionalPhotographerPartners' /tmp/team-capabilities.json
+
+          # Protected brand semantics must survive every generator/restore/write-back path.
+          grep -Fq 'Photography Team' /tmp/team-capabilities.json
+          grep -Fq 'BANHALMI Photography' /tmp/team-capabilities.json
+          if grep -Fq 'Professional Photography Team' /tmp/ai-entry.json /tmp/entity.jsonld /tmp/team-capabilities.json; then
+            echo 'Retired Professional Photography Team brand value reappeared in live machine output.' >&2
+            exit 1
+          fi
+
+          # Keep the three protected evidence layers distinct and live.
+          grep -Fq 'external-photography-evidence.json' /tmp/external-photography-evidence.json
+          grep -Fq 'BANHALMI Photography' /tmp/external-photography-evidence.json
+          grep -Fq 'Bécsi Napló' /tmp/press-institutional-evidence.json
+          grep -Fq 'Do not expose membership number' /tmp/press-institutional-evidence.json
+          grep -Fq 'uniqueTextCaptureGroups' /tmp/media-usage-evidence.json
+          grep -Fq 'explicitCreatorCreditPublicationsCurrentlyNormalized' /tmp/media-usage-evidence.json
+          grep -Fq 'Do not present 98 pages, 58 captures or raw link counts as unique media-publication counts.' /tmp/media-usage-evidence.json
+
+          # Search Console / sitemap truthfulness contract: at least one valid deployed lastmod.
+          grep -Eq '<lastmod>[0-9]{4}-[0-9]{2}-[0-9]{2}</lastmod>' /tmp/sitemap.xml
+
+          # Validate every live ProfilePage optional dateCreated/dateModified value recursively.
+          node <<'NODE'
+          const fs = require('fs');
+          const html = fs.readFileSync('/tmp/about.html', 'utf8');
+          const scripts = [...html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)];
+          const iso = /^\d{4}-\d{2}-\d{2}(?:T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:\d{2})?)?$/;
+          let profilePages = 0;
+          const visit = (node) => {
+            if (!node || typeof node !== 'object') return;
+            const types = Array.isArray(node['@type']) ? node['@type'] : [node['@type']];
+            if (types.includes('ProfilePage')) {
+              profilePages += 1;
+              for (const key of ['dateCreated', 'dateModified']) {
+                if (key in node && (typeof node[key] !== 'string' || !iso.test(node[key]))) {
+                  throw new Error(`Invalid ProfilePage ${key}: ${JSON.stringify(node[key])}`);
+                }
+              }
+            }
+            for (const value of Object.values(node)) {
+              if (Array.isArray(value)) value.forEach(visit);
+              else visit(value);
+            }
+          };
+          for (const match of scripts) {
+            try { visit(JSON.parse(match[1])); } catch (error) {
+              if (String(error.message || error).startsWith('Invalid ProfilePage')) throw error;
+            }
+          }
+          if (profilePages < 1) throw new Error('No live ProfilePage JSON-LD found on /about/.');
+          console.log(`ProfilePage date integrity passed for ${profilePages} live node(s).`);
+          NODE
 
           for url in \
             'https://www.norbertbanhalmi.com/speier-viko/' \
@@ -64,4 +127,4 @@ jobs:
             fi
           done
 
-          echo 'Live LLM/entity integrity passed: current geography, team, Norbert/Viko roles and HIPStudio founder relation are intact.'
+          echo 'Live LLM/entity/Search Console integrity passed: brand, ProfilePage dates, truthful sitemap, evidence layers, geography, team, Norbert/Viko roles and HIPStudio founder relation are intact.'
