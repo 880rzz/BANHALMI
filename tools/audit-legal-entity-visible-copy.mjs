@@ -29,7 +29,7 @@ const visibleContracts = {
     [/Company name:<\/strong>\s*Banhalmi Norbert e\.U\./i, 'detailed company-data block']
   ],
   de: [
-    [/<h2>Anbieter[\s\S]{0,300}<p><strong>Banhalmi Norbert e\.U\.<\/strong><\/p>/i, 'visible provider block'],
+    [/<h2>Angaben gemäß ECG[\s\S]{0,300}<p><strong>Banhalmi Norbert e\.U\.<\/strong><\/p>/i, 'visible provider block'],
     [/Firmenname:<\/strong>\s*Banhalmi Norbert e\.U\./i, 'detailed company-data block']
   ],
   hu: [
