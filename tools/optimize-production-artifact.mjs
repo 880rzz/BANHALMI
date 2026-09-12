@@ -22,26 +22,35 @@ const quotePdfScriptRe = /<script([^>]*?)src="(\/assets\/js\/quote-pdf\.js[^\"]*
 
 const asyncStyle = '<link rel="preload" as="style" href="$1"/><link rel="stylesheet" href="$1" media="print" onload="this.media=\'all\';this.onload=null"/><noscript><link rel="stylesheet" href="$1"/></noscript>';
 
-// Homepages do not need the descriptive menu runtime until the user approaches
-// the menu. Keep the menu off the cold-start critical path, but distinguish
-// "loading" from "ready" so a hover immediately followed by a click cannot lose
-// the user's first activation. Any click received before readiness is replayed
-// only after mega-menu.js has installed its own click handler.
+const executivePositioningCopy = {
+  'lifestyle/index.html': {
+    heading: 'Different roles need different visual authority.',
+    body: 'There is no universal executive image. A founder, a senior banking leader, an established adviser and a specialist entering a leadership role communicate different things. We shape brand photography and visual positioning around the person, generational communication context, level of responsibility, professional field, audience and usage channels — never around a generic business-portrait template.'
+  },
+  'hu/brand/index.html': {
+    heading: 'Más szerephez más vizuális tekintély tartozik.',
+    body: 'Nincs univerzális vezetői kép. Egy alapító, egy tapasztalt banki vezető, egy senior tanácsadó vagy egy új vezetői szerepbe érkező szakember más üzenetet közvetít. A brandfotózást és a vizuális pozicionálást a személyhez, a generációs kommunikációs kontextushoz, a felelősségi szinthez, a szakterülethez, a célközönséghez és a felhasználási csatornákhoz igazítjuk — nem egy általános üzleti portrésablonhoz.'
+  },
+  'de-at/brand/index.html': {
+    heading: 'Unterschiedliche Rollen brauchen unterschiedliche visuelle Autorität.',
+    body: 'Es gibt kein universelles Führungsbild. Eine Gründerin oder ein Gründer, eine erfahrene Führungskraft im Banking, ein etablierter Berater oder eine Fachkraft in einer neuen Führungsrolle müssen unterschiedliche Botschaften vermitteln. Wir stimmen Brandfotografie und visuelle Positionierung auf die Person, den generationellen Kommunikationskontext, die Verantwortungsebene, das Fachgebiet, die Zielgruppen und die Nutzungskanäle ab — nicht auf eine allgemeine Business-Porträt-Schablone.'
+  }
+};
+
+function renderExecutivePositioningCopy(rel, html) {
+  const copy = executivePositioningCopy[rel];
+  if (!copy) return html;
+  if (html.includes('data-executive-positioning-copy="v1"')) return html;
+  const section = `<section class="section-band executive-positioning-section" data-surface="white" data-executive-positioning-copy="v1"><div class="wrap"><div class="section-head reveal"><span class="eyebrow">BANHALMI</span><h2>${copy.heading}</h2><p>${copy.body}</p></div></div></section>`;
+  const out = html.replace(/<\/main>/i, `${section}</main>`);
+  if (out === html) throw new Error(`Executive positioning copy could not be rendered in ${rel}`);
+  return out;
+}
+
 const homeMegaMenuLoader = `<script>(function(){var loading=false,ready=false,pending=false;function replay(){if(!ready||!pending)return;pending=false;var b=document.querySelector('.menu-btn');if(b)setTimeout(function(){b.click();},0);}function load(openAfter){if(openAfter)pending=true;if(ready){replay();return;}if(loading)return;loading=true;var s=document.createElement('script');s.src='/assets/js/mega-menu.js?v=20260810-menu-polish-v65';s.defer=true;s.setAttribute('data-banhalmi-mega-menu','');s.onload=function(){loading=false;ready=true;replay();};s.onerror=function(){loading=false;};document.head.appendChild(s);}document.addEventListener('pointerover',function(e){if(e.target.closest&&e.target.closest('.menu-btn'))load(false);},{passive:true,capture:true});document.addEventListener('focusin',function(e){if(e.target.closest&&e.target.closest('.menu-btn'))load(false);},true);document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.menu-btn');if(!b||document.getElementById('bn-mega-menu'))return;if(!ready){e.preventDefault();e.stopImmediatePropagation();load(true);}},true);})();</script>`;
 
-// The heavier general runtime is not required for first paint/navigation. Loading
-// it from requestIdleCallback made Chromium execute it almost immediately during
-// Lighthouse's idle window and reflow the homepage inside the TBT measurement.
-// Keep interaction as the fast path, but use a deterministic post-paint fallback
-// instead of an eager idle callback.
 const homeRuntimeLoader = `<script>(function(){var loaded=false,timer=null;function load(){if(loaded)return;loaded=true;if(timer)clearTimeout(timer);var s=document.createElement('script');s.src='/assets/js/main.js?v=20260808-mobile100-v2';s.defer=true;document.head.appendChild(s);}['pointerdown','keydown','touchstart'].forEach(function(type){addEventListener(type,load,{once:true,passive:true,capture:true});});timer=setTimeout(load,3000);})();</script>`;
 
-// Quote pages have their own calculator runtime. The general site runtime mostly
-// wires navigation, consent UI, reveals and optional widgets, so it should not
-// compete with the calculator during the cold-start measurement. Load it when a
-// user approaches an interactive control; keep a delayed fallback so consent and
-// navigation still initialize even if the page is only being read. Controls whose
-// first click depends on main.js are intercepted and replayed after readiness.
 function quoteRuntimeLoader(src) {
   const runtimeControls = '.menu-btn,[data-cookie-settings],.info-tip[data-tooltip]';
   return `<script>(function(){var loading=false,ready=false,pending=null,timer=null;var controls='${runtimeControls}';function replay(){if(!ready||!pending)return;var el=pending;pending=null;setTimeout(function(){el.click();},0);}function load(replayTarget){if(replayTarget)pending=replayTarget;if(ready){replay();return;}if(loading)return;loading=true;if(timer)clearTimeout(timer);var s=document.createElement('script');s.src='${src}';s.defer=true;s.onload=function(){loading=false;ready=true;replay();};s.onerror=function(){loading=false;pending=null;};document.head.appendChild(s);}document.addEventListener('pointerover',function(ev){if(ev.target.closest&&ev.target.closest(controls))load(null);},{passive:true,capture:true});document.addEventListener('focusin',function(ev){if(ev.target.closest&&ev.target.closest(controls))load(null);},true);document.addEventListener('click',function(ev){var el=ev.target.closest&&ev.target.closest(controls);if(!el||ready)return;ev.preventDefault();ev.stopImmediatePropagation();load(el);},true);['pointerdown','keydown','touchstart'].forEach(function(type){addEventListener(type,function(){load(null);},{once:true,passive:true,capture:true});});timer=setTimeout(function(){load(null);},5000);})();</script>`;
@@ -57,36 +66,25 @@ for (const file of htmlFiles) {
   const isHome = rel === 'index.html' || rel === 'hu/index.html' || rel === 'de-at/index.html';
   const isQuote = rel === 'requestaquote/index.html' || rel === 'hu/ajanlatkeres/index.html' || rel === 'de-at/anfrage/index.html';
 
+  html = renderExecutivePositioningCopy(rel, html);
+
   if (!isQuote && !isHome) html = html.replace(stylesheetRe, asyncStyle);
 
   if (isHome) {
     html = html.replace(megaMenuScriptRe, homeMegaMenuLoader);
     html = html.replace(mainScriptRe, homeRuntimeLoader);
-    if (/data-banhalmi-mega-menu="" defer=""/.test(html)) {
-      throw new Error(`Homepage mega-menu runtime remained eager in ${rel}`);
-    }
+    if (/data-banhalmi-mega-menu="" defer=""/.test(html)) throw new Error(`Homepage mega-menu runtime remained eager in ${rel}`);
   }
 
   if (isQuote) {
     html = html.replace(/class="prose reveal quote-intro(?: in)?"/g, 'class="prose quote-intro"');
     html = html.replace(/data-pricing-status="">/g, 'data-pricing-status="" hidden>');
-    if (!/data-pricing-status=""\s+hidden>/.test(html)) {
-      throw new Error(`Quote pricing status was not stabilized in ${rel}`);
-    }
-
-    // Modal intent is intrinsic button semantics, not runtime state. Keep it in
-    // the delivered HTML so assistive technology sees the dialog relationship
-    // before the deferred general runtime is needed. aria-expanded stays dynamic.
+    if (!/data-pricing-status=""\s+hidden>/.test(html)) throw new Error(`Quote pricing status was not stabilized in ${rel}`);
     html = html.replace(/class="info-tip"(?![^>]*\baria-haspopup=)/g, 'class="info-tip" aria-haspopup="dialog"');
-    if (!/class="info-tip" aria-haspopup="dialog"/.test(html)) {
-      throw new Error(`Quote info-tip dialog semantics missing in ${rel}`);
-    }
-
+    if (!/class="info-tip" aria-haspopup="dialog"/.test(html)) throw new Error(`Quote info-tip dialog semantics missing in ${rel}`);
     html = html.replace(quoteMainScriptRe, function(_match, src){ return quoteRuntimeLoader(src); });
     html = html.replace(quotePdfScriptRe, function(_match, _before, src){ return quotePdfLoader(src); });
-    if (/<script[^>]*\bsrc="\/assets\/js\/main\.js\?v=[^\"]+"[^>]*><\/script>/.test(html)) {
-      throw new Error(`Quote general runtime remained eager in ${rel}`);
-    }
+    if (/<script[^>]*\bsrc="\/assets\/js\/main\.js\?v=[^\"]+"[^>]*><\/script>/.test(html)) throw new Error(`Quote general runtime remained eager in ${rel}`);
   }
 
   if (rel === 'de-at/anfrage/index.html') {
@@ -98,25 +96,25 @@ for (const file of htmlFiles) {
   fs.writeFileSync(file, html);
 }
 
+for (const [rel, copy] of Object.entries(executivePositioningCopy)) {
+  const target = path.join(root, rel);
+  if (!fs.existsSync(target)) throw new Error(`Executive positioning production guard: missing ${rel}`);
+  const body = fs.readFileSync(target, 'utf8');
+  for (const token of ['data-executive-positioning-copy="v1"', copy.heading, copy.body]) {
+    if (!body.includes(token)) throw new Error(`Executive positioning production guard: ${rel} lost localized visible copy.`);
+  }
+}
+
 const quoteCalculatorPath = path.join(root, 'assets/js/quote-calculator.js');
 if (fs.existsSync(quoteCalculatorPath)) {
   let quoteJs = fs.readFileSync(quoteCalculatorPath, 'utf8');
-
-  // The embedded pricing object is part of the audited artifact. Do not first
-  // disable the quote UI and then immediately re-enable it: that creates two
-  // avoidable DOM mutation/layout passes on every quote-page cold start.
   const loadPricingStart = "function loadPricing(){\n    setPricingUi(false,'');\n    var embedded=window.BANHALMI_PRICING_DATA;";
   const optimizedLoadPricingStart = "function loadPricing(){\n    var embedded=window.BANHALMI_PRICING_DATA;";
   if (!quoteJs.includes(loadPricingStart)) throw new Error('Quote optimizer could not find eager pricing UI reset.');
   quoteJs = quoteJs.replace(loadPricingStart, optimizedLoadPricingStart);
-
   const protocolMarker = "    var protocol=String(window.location&&window.location.protocol||'');";
   if (!quoteJs.includes(protocolMarker)) throw new Error('Quote optimizer could not find pricing fallback marker.');
   quoteJs = quoteJs.replace(protocolMarker, "    if(pricingReady)return Promise.resolve(true);\n    setPricingUi(false,'');\n" + protocolMarker);
-
-  // loadPricing() performs the one required first paint after verified embedded
-  // prices are applied. init() only wires context, date constraints and events,
-  // avoiding a duplicate startup panel/layout pass in all three languages.
   const oldInit = "function init(f){applyRequestedServiceContext(f);setDateMins(f);updatePanels(f);f.addEventListener('change',function(event){if(event&&event.target&&event.target.name==='category')syncServiceContextFromCategory(f,true);updatePanels(f);paint(f);});f.addEventListener('input',function(){paint(f);});paint(f);}";
   const newInit = "function init(f){applyRequestedServiceContext(f);setDateMins(f);f.addEventListener('change',function(event){if(event&&event.target&&event.target.name==='category')syncServiceContextFromCategory(f,true);paint(f);});f.addEventListener('input',function(){paint(f);});}";
   if (!quoteJs.includes(oldInit)) throw new Error('Quote optimizer could not find duplicate startup paint contract.');
@@ -124,7 +122,6 @@ if (fs.existsSync(quoteCalculatorPath)) {
   fs.writeFileSync(quoteCalculatorPath, quoteJs);
 }
 
-// AUDIENCE-POSITIONING-PRODUCTION-GUARD
 const semanticContracts = [
   ['index.html',['Executive Portraiture &amp; Headshots','brand photography','C-level','artists','actors','visual presence']],
   ['hu/index.html',['Executive portré &amp; headshot','brandfotózás','C-level','művészek','színészek','vizuális jelenlét']],
