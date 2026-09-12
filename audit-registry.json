@@ -1,5 +1,5 @@
 {
-  "schemaVersion":"1.1.0",
+  "schemaVersion":"1.2.0",
   "updatedAt":"2026-09-12",
   "chiefOrchestrator":"BANHALMI Ecosystem Steward",
   "rules":{
@@ -19,7 +19,8 @@
     {"id":"press-institutional-evidence","scope":"press and institutional evidence","type":"evidence","authority":"diagnostic","writeCapability":"none","requiredForRelease":true},
     {"id":"media-usage-evidence","scope":"deduplicated editorial/media reuse","type":"evidence","authority":"diagnostic","writeCapability":"none","requiredForRelease":true},
     {"id":"daily-public-trust-research","scope":"public web, press and public social posts","type":"discovery","authority":"candidate-only","writeCapability":"PR-only-after-verification","requiredForRelease":false},
-    {"id":"executive-risk-reversal","scope":"qualified executive portrait lead conversion and Proof-of-Concept guardrails","type":"conversion-safety","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"executive-risk-reversal.json","rule":"Risk reversal must remain selective, privacy-safe, evidence-safe, commercially bounded and must never become an automatic free-service entitlement."}
+    {"id":"executive-risk-reversal","scope":"qualified executive portrait lead conversion and Proof-of-Concept guardrails","type":"conversion-safety","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"executive-risk-reversal.json","rule":"Risk reversal must remain selective, privacy-safe, evidence-safe, commercially bounded and must never become an automatic free-service entitlement."},
+    {"id":"executive-positioning-model","scope":"executive brand photography and visual positioning across person, seniority, generational context, role, professional field, stakeholder audience, channels and market culture","type":"positioning-integrity","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"executive-positioning-model.json","rule":"Executive visual positioning must be individualized and context-aware. Generation may inform communication context but must never become a demographic stereotype or a standalone styling rule."}
   ],
   "requiredMutationFlow":["current-main-read","live-read","policy-read","proposed-diff","protected-regression-check","branch","PR","CI","merge","deploy","exact-live","reverse-audit"],
   "dailyBalanceReview":{
