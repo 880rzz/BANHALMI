@@ -1,6 +1,6 @@
 {
-  "schemaVersion":"1.0.0",
-  "updatedAt":"2026-09-11",
+  "schemaVersion":"1.1.0",
+  "updatedAt":"2026-09-12",
   "chiefOrchestrator":"BANHALMI Ecosystem Steward",
   "rules":{
     "singleOrchestrationAuthority":true,
@@ -18,7 +18,8 @@
     {"id":"external-photography-evidence","scope":"external/public photography evidence","type":"evidence","authority":"diagnostic","writeCapability":"none","requiredForRelease":true},
     {"id":"press-institutional-evidence","scope":"press and institutional evidence","type":"evidence","authority":"diagnostic","writeCapability":"none","requiredForRelease":true},
     {"id":"media-usage-evidence","scope":"deduplicated editorial/media reuse","type":"evidence","authority":"diagnostic","writeCapability":"none","requiredForRelease":true},
-    {"id":"daily-public-trust-research","scope":"public web, press and public social posts","type":"discovery","authority":"candidate-only","writeCapability":"PR-only-after-verification","requiredForRelease":false}
+    {"id":"daily-public-trust-research","scope":"public web, press and public social posts","type":"discovery","authority":"candidate-only","writeCapability":"PR-only-after-verification","requiredForRelease":false},
+    {"id":"executive-risk-reversal","scope":"qualified executive portrait lead conversion and Proof-of-Concept guardrails","type":"conversion-safety","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"executive-risk-reversal.json","rule":"Risk reversal must remain selective, privacy-safe, evidence-safe, commercially bounded and must never become an automatic free-service entitlement."}
   ],
   "requiredMutationFlow":["current-main-read","live-read","policy-read","proposed-diff","protected-regression-check","branch","PR","CI","merge","deploy","exact-live","reverse-audit"],
   "dailyBalanceReview":{
