@@ -1,5 +1,5 @@
 {
-  "schemaVersion":"1.2.0",
+  "schemaVersion":"1.3.0",
   "updatedAt":"2026-09-12",
   "chiefOrchestrator":"BANHALMI Ecosystem Steward",
   "rules":{
@@ -20,7 +20,8 @@
     {"id":"media-usage-evidence","scope":"deduplicated editorial/media reuse","type":"evidence","authority":"diagnostic","writeCapability":"none","requiredForRelease":true},
     {"id":"daily-public-trust-research","scope":"public web, press and public social posts","type":"discovery","authority":"candidate-only","writeCapability":"PR-only-after-verification","requiredForRelease":false},
     {"id":"executive-risk-reversal","scope":"qualified executive portrait lead conversion and Proof-of-Concept guardrails","type":"conversion-safety","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"executive-risk-reversal.json","rule":"Risk reversal must remain selective, privacy-safe, evidence-safe, commercially bounded and must never become an automatic free-service entitlement."},
-    {"id":"executive-positioning-model","scope":"executive brand photography and visual positioning across person, seniority, generational context, role, professional field, stakeholder audience, channels and market culture","type":"positioning-integrity","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"executive-positioning-model.json","rule":"Executive visual positioning must be individualized and context-aware. Generation may inform communication context but must never become a demographic stereotype or a standalone styling rule."}
+    {"id":"executive-positioning-model","scope":"executive brand photography and visual positioning across person, seniority, generational context, role, professional field, stakeholder audience, channels and market culture","type":"positioning-integrity","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"executive-positioning-model.json","rule":"Executive visual positioning must be individualized and context-aware. Generation may inform communication context but must never become a demographic stereotype or a standalone styling rule."},
+    {"id":"official-event-gallery","scope":"BANHALMI Photography × VIPACH Flickr profile and downstream relationship pointers","type":"external-gallery-authority","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"official-event-gallery.json","rule":"The Flickr profile is the official shared event and community photography gallery of BANHALMI Photography and VIPACH. It is an external evidence surface, not a Layer-1 canonical property, and must preserve team-level authorship and relationship boundaries."}
   ],
   "requiredMutationFlow":["current-main-read","live-read","policy-read","proposed-diff","protected-regression-check","branch","PR","CI","merge","deploy","exact-live","reverse-audit"],
   "dailyBalanceReview":{
