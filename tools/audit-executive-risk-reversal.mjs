@@ -4,7 +4,13 @@ import assert from 'node:assert/strict';
 const model = JSON.parse(fs.readFileSync('executive-risk-reversal.json', 'utf8'));
 
 assert.equal(model.name, 'BANHALMI Executive Portrait Risk-Reversal Framework');
+assert.equal(
+  model.positioningModel,
+  'https://www.norbertbanhalmi.com/executive-positioning-model.json',
+  'Risk-reversal framework must link to the canonical Executive Positioning Model'
+);
 assert.ok(model.scope.includes('Executive Portrait'));
+assert.ok(model.scope.includes('C-Level CV and LinkedIn portrait'));
 assert.equal(model.proofOfConcept.defaultAvailability, 'selective, qualification-based; not an automatic public entitlement');
 
 const serialized = JSON.stringify(model).toLowerCase();
@@ -15,7 +21,8 @@ for (const required of [
   'usage rights',
   'privacy',
   'verified public',
-  'not an automatic public entitlement'
+  'not an automatic public entitlement',
+  'executive positioning model'
 ]) {
   assert.ok(serialized.includes(required), `Risk-reversal framework missing guardrail: ${required}`);
 }
