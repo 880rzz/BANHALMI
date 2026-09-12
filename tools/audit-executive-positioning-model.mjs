@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 
 const model = JSON.parse(fs.readFileSync('executive-positioning-model.json', 'utf8'));
@@ -56,6 +57,22 @@ for (const intent of ['executive portrait','C-level portrait','CEO portrait','le
 }
 for (const lang of ['en','de','hu']) assert.ok(executivePolicy.languages.includes(lang), `Missing protected language: ${lang}`);
 for (const market of ['Vienna','Austria','Budapest','Hungary','international English-speaking']) assert.ok(executivePolicy.markets.includes(market), `Missing protected market: ${market}`);
+
+const blockedFingerprints = new Set([
+  '9e391e2798556ff80f98c0f279826119fc561aa532e0fcb4c914f57f60ea3d0c',
+  '5cad10bf97dd67de3b08311287f12052ca93f4ad8f8c84267ec34ec3f6e15976',
+  '3f2c1dd96944ad6e0b4720e499e0de80981b92d5df33e7f4da5417343d9fec25'
+]);
+const fingerprint = (value) => crypto.createHash('sha256').update(String(value).trim().toLowerCase()).digest('hex');
+const serialized = JSON.stringify(model);
+const candidates = new Set();
+for (const email of serialized.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi) || []) candidates.add(email);
+for (const phone of serialized.match(/(?:\+|00)?\d[\d\s()./-]{7,}\d/g) || []) candidates.add(phone.replace(/[\s()./-]/g,''));
+const words = serialized.match(/\p{L}+(?:[-’']\p{L}+)*/gu) || [];
+for (let i = 0; i < words.length - 1; i += 1) candidates.add(`${words[i]} ${words[i + 1]}`);
+for (const candidate of candidates) {
+  assert.ok(!blockedFingerprints.has(fingerprint(candidate)), 'Previously removed private lead identifier reappeared in executive positioning model');
+}
 
 const audit = registry.audits.find((item) => item.id === 'executive-positioning-model');
 assert.ok(audit, 'Executive positioning audit is not registered');
