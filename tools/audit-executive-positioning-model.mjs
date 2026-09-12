@@ -34,19 +34,28 @@ assert.ok(model.integration.visibleCopyTarget.includes('do not create a separate
 const executivePolicy = policy.executivePositioningPolicy;
 assert.ok(executivePolicy, 'Missing protected executive positioning policy');
 assert.equal(executivePolicy.authorityModel, model.canonicalId);
+assert.deepEqual(
+  Object.keys(executivePolicy).sort(),
+  ['authorityModel','rule','seoIntentClusters','markets','languages','requiredSemanticAssociation','antiTemplateRule','antiStereotypeRule','contentRule','machineRule','regressionRule'].sort(),
+  'Executive positioning policy field set changed'
+);
 assert.ok(executivePolicy.rule.includes('Every executive and senior professional is positioned individually'));
 assert.ok(executivePolicy.rule.includes('Generational and career-stage context'));
 assert.ok(executivePolicy.rule.includes('leadership level'));
 assert.ok(executivePolicy.rule.includes('professional field'));
+assert.ok(executivePolicy.requiredSemanticAssociation.includes('generational/career-stage context'));
+assert.ok(executivePolicy.requiredSemanticAssociation.includes('stakeholder audience'));
+assert.ok(executivePolicy.requiredSemanticAssociation.includes('intended perception'));
 assert.ok(executivePolicy.antiTemplateRule.includes('Different generations'));
 assert.ok(executivePolicy.antiStereotypeRule.includes('Age or generation alone'));
+assert.ok(executivePolicy.contentRule.includes('do not create doorway or near-duplicate age/city landing pages'));
 assert.ok(executivePolicy.machineRule.includes('LLM, Schema, SEO'));
 assert.ok(executivePolicy.regressionRule.includes('release must fail'));
-for (const intent of ['executive portrait','C-level portrait','CEO portrait','leadership portrait','executive personal branding','strategic visual positioning','CV executive portrait','LinkedIn executive portrait']) {
+for (const intent of ['executive portrait','C-level portrait','CEO portrait','leadership portrait','executive personal branding','executive brand photography','strategic visual positioning','CV executive portrait','LinkedIn executive portrait']) {
   assert.ok(executivePolicy.seoIntentClusters.includes(intent), `Missing protected executive SEO intent: ${intent}`);
 }
 for (const lang of ['en','de','hu']) assert.ok(executivePolicy.languages.includes(lang), `Missing protected language: ${lang}`);
-for (const market of ['Vienna','Austria','Budapest','Hungary']) assert.ok(executivePolicy.markets.includes(market), `Missing protected market: ${market}`);
+for (const market of ['Vienna','Austria','Budapest','Hungary','international English-speaking']) assert.ok(executivePolicy.markets.includes(market), `Missing protected market: ${market}`);
 
 const audit = registry.audits.find((item) => item.id === 'executive-positioning-model');
 assert.ok(audit, 'Executive positioning audit is not registered');
