@@ -20,7 +20,6 @@ for (const id of [
 ]) {
   assert.ok(dimensions.has(id), `Missing executive positioning dimension: ${id}`);
 }
-
 assert.ok(dimensions.get('generational-context').guardrail.toLowerCase().includes('not a stereotype'));
 
 const guardrails = model.guardrails.join(' ').toLowerCase();
@@ -43,6 +42,7 @@ assert.equal(model.integration.supportingService, 'Executive Portrait');
 assert.equal(model.integration.publicRoutes.en, '/lifestyle/');
 assert.equal(model.integration.publicRoutes.hu, '/hu/brand/');
 assert.equal(model.integration.publicRoutes.de, '/de-at/brand/');
+assert.ok(model.integration.visibleCopyTarget.includes('do not create a separate near-duplicate landing page'));
 
 const audit = registry.audits.find((item) => item.id === 'executive-positioning-model');
 assert.ok(audit, 'Executive positioning audit is not registered');
