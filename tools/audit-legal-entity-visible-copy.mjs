@@ -23,11 +23,25 @@ for (const [lang, html] of Object.entries(files)) {
   }
 }
 
-if (!/<h2>Szolgáltatói[\s\S]{0,300}<p><strong>Banhalmi Norbert e\.U\.<\/strong><\/p>/i.test(files.hu)) {
-  errors.push('hu: visible provider block must identify Banhalmi Norbert e.U. directly below Szolgáltatói adatok');
-}
-if (!/Cégnév:<\/strong>\s*Banhalmi Norbert e\.U\./i.test(files.hu)) {
-  errors.push('hu: detailed company-data block must use Banhalmi Norbert e.U.');
+const visibleContracts = {
+  en: [
+    [/<h2>Provider[\s\S]{0,300}<p><strong>Banhalmi Norbert e\.U\.<\/strong><\/p>/i, 'visible provider block'],
+    [/Company name:<\/strong>\s*Banhalmi Norbert e\.U\./i, 'detailed company-data block']
+  ],
+  de: [
+    [/<h2>Anbieter[\s\S]{0,300}<p><strong>Banhalmi Norbert e\.U\.<\/strong><\/p>/i, 'visible provider block'],
+    [/Firmenname:<\/strong>\s*Banhalmi Norbert e\.U\./i, 'detailed company-data block']
+  ],
+  hu: [
+    [/<h2>Szolgáltatói[\s\S]{0,300}<p><strong>Banhalmi Norbert e\.U\.<\/strong><\/p>/i, 'visible provider block'],
+    [/Cégnév:<\/strong>\s*Banhalmi Norbert e\.U\./i, 'detailed company-data block']
+  ]
+};
+
+for (const [lang, contracts] of Object.entries(visibleContracts)) {
+  for (const [pattern, label] of contracts) {
+    if (!pattern.test(files[lang])) errors.push(`${lang}: ${label} must use Banhalmi Norbert e.U.`);
+  }
 }
 
 if (errors.length) {
