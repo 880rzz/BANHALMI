@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "1.0.0",
-  "updatedAt": "2026-09-11",
+  "schemaVersion": "1.1.0",
+  "updatedAt": "2026-09-12",
   "authority": "BANHALMI Ecosystem Chief Steward",
   "principle": "Optimize the ecosystem as a balanced authority system, never a single metric in isolation.",
   "canonicalCore": [
@@ -16,6 +16,19 @@
     "alternateCommercialBrand":"BANHALMI Photography",
     "teamDescriptor":"Photography Team",
     "forbiddenStandaloneBrandValues":["Professional Photography Team"]
+  },
+  "executivePositioningPolicy": {
+    "authorityModel":"https://www.norbertbanhalmi.com/executive-positioning-model.json",
+    "rule":"Every executive and senior professional is positioned individually. Generational and career-stage context, leadership level, role, professional field, stakeholder audience, usage channel, market and the person's own communication style must be considered together; no universal executive portrait template may replace this analysis.",
+    "seoIntentClusters":["executive portrait","C-level portrait","CEO portrait","leadership portrait","executive personal branding","executive brand photography","strategic visual positioning","CV executive portrait","LinkedIn executive portrait"],
+    "markets":["Vienna","Austria","Budapest","Hungary","international English-speaking"],
+    "languages":["en","de","hu"],
+    "requiredSemanticAssociation":"BANHALMI -> Executive Portrait / Brand Photography -> Strategic Visual Positioning -> person + generational/career-stage context + leadership level + role + professional field + stakeholder audience + usage channel + intended perception.",
+    "antiTemplateRule":"Different generations, career stages, leadership levels, positions and professional fields may require different visual messages. The solution must remain person-specific and context-specific.",
+    "antiStereotypeRule":"Age or generation alone must never determine personality, competence, pose, clothing, retouching, setting, aesthetic or perceived authority.",
+    "contentRule":"Relevant executive, brand and visual-positioning surfaces must explain the individualized methodology in natural language where it supports user intent; do not create doorway or near-duplicate age/city landing pages.",
+    "machineRule":"LLM, Schema, SEO and machine-readable projections must preserve the same individualized positioning semantics and must not reduce the method to demographic segmentation.",
+    "regressionRule":"A release must fail if executive positioning is represented as one generic look, if generational context disappears from the methodology, or if age/generation becomes a deterministic styling rule."
   },
   "protectedEvidenceLayers": [
     "external-photography-evidence.json",
