@@ -1,10 +1,11 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "updatedAt": "2026-09-12",
   "canonicalId": "https://www.norbertbanhalmi.com/executive-risk-reversal.json",
   "name": "BANHALMI Executive Portrait Risk-Reversal Framework",
   "purpose": "Reduce purchase uncertainty for qualified executive-portrait prospects without weakening premium positioning, privacy, evidence integrity or pricing discipline.",
   "scope": ["Executive Portrait", "Leadership Portrait", "C-Level CV and LinkedIn portrait", "Professional Headshot when seniority or representation risk is material"],
+  "positioningModel": "https://www.norbertbanhalmi.com/executive-positioning-model.json",
   "observedIntentPattern": {
     "classification": "anonymized lead-pattern evidence",
     "signals": ["requests multiple recent comparable references", "asks for portraits matching age/seniority/role", "needs 2-3 final images for CV and LinkedIn", "asks for pricing before committing"],
@@ -12,7 +13,7 @@
     "privacyRule": "Never publish or encode identifiable lead names, email addresses, phone numbers or private correspondence in this framework."
   },
   "riskDimensions": [
-    {"id":"outcome-fit","question":"Can BANHALMI create a credible image for my role, age, personality and professional context?","response":"Use only verified public work that is genuinely relevant; explain that every executive portrait is individually directed."},
+    {"id":"outcome-fit","question":"Can BANHALMI create a credible image for my role, age, personality and professional context?","response":"Use only verified public work that is genuinely relevant; explain that every executive portrait is individually directed through the Executive Positioning Model rather than copied from another client."},
     {"id":"reference-availability","question":"Why are there not many comparable client portraits publicly shown?","response":"Explain executive-client discretion and reuse permissions. Never imply that private work is public evidence."},
     {"id":"self-fit","question":"Will this approach work on me rather than only on other people?","response":"For a qualified prospect, a controlled personal Proof of Concept may be offered before committing to the full session."},
     {"id":"process-confidence","question":"Will I know how to pose, dress and present myself?","response":"State that visual direction covers wardrobe, expression, posture, body language, framing and image selection; posing experience is not required."},
