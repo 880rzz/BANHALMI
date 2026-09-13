@@ -1,6 +1,6 @@
 {
   "schemaVersion":"1.0.0",
-  "updatedAt":"2026-09-11",
+  "updatedAt":"2026-09-13",
   "purpose":"Daily discovery queue for publicly verifiable BANHALMI trust and authority signals. This is an intake registry, not a claim registry.",
   "searchPlan":{
     "cadence":"daily",
@@ -29,5 +29,23 @@
     "promotable":"verified and useful to an existing evidence layer or a justified authority asset",
     "rejected":"unverifiable, duplicate, misleading, relationship-inflating or low-quality"
   },
-  "candidates":[]
+  "candidates":[
+    {
+      "id":"bmi-fotoklub-2026-2027-banhalmi-lead",
+      "discoveredAt":"2026-09-13",
+      "sourceUrl":"https://www.magyariskola.at/event-details/fotoklub-2026",
+      "sourceName":"Bécsi Magyar Iskola",
+      "sourceType":"institutional website / event page",
+      "signalType":"institutional-mention",
+      "subject":"Bánhalmi Norbert",
+      "relationshipClassification":"institutional-context",
+      "confidence":"high",
+      "dedupeKey":"magyariskola.at|fotoklub-2026|banhalmi-norbert|institutional-context",
+      "verificationStatus":"verified-public-readback-candidate",
+      "exactCredit":"Bánhalmi Norbert fotóművész és Balogh Dávid művészettörténész-muzeológus vezetésével",
+      "context":"The public 2026/2027 VIPACH Adult Photo Club page identifies Bánhalmi Norbert by name as photographer and co-lead of a ten-month photography learning program at the Bécsi Magyar Iskola, Schwedenplatz, Vienna.",
+      "canonicalTargetRegistry":"trust-signal-research.json",
+      "notes":"Strong first-party institutional expertise/teaching signal. Do not infer employment, client status, partnership, endorsement or exclusivity. No existing protected evidence registry cleanly models teaching/expertise, so keep in intake pending Chief Steward target decision."
+    }
+  ]
 }
