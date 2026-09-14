@@ -14,14 +14,16 @@ must(authority.navigation?.activeState==='text-only','BANHALMI active navigation
 must(authority.navigation?.activeFill==='none'&&authority.navigation?.activeBorder==='none'&&authority.navigation?.activeBoxShadow==='none','BANHALMI active navigation may not regain box styling');
 must(authority.principles?.historicalScreenshotRegressionsAreReleaseBlocking===true,'historical screenshot regressions must stay release-blocking');
 must(audit.includes('320,360,375,390,412,430,768,820,1024,1280,1366,1440,1920,2560,3840'),'responsive release matrix must cover 320px through 4K');
-must(audit.includes('active navigation is boxed'),'boxed active-navigation regression guard missing');
-must(audit.includes('footer occupies'),'oversized footer regression guard missing');
-must(audit.includes('document horizontal overflow'),'horizontal overflow regression guard missing');
-must(audit.includes('touch target'),'touch-target regression guard missing');
+must(audit.includes('active navigation is boxed'),'boxed active-navigation browser guard missing');
+must(audit.includes('footer occupies'),'oversized footer browser guard missing');
+must(audit.includes('document horizontal overflow'),'horizontal overflow browser guard missing');
+must(audit.includes('touch target'),'touch-target browser guard missing');
 must(audit.includes("fs.readFileSync('data/design-authority.json','utf8')"),'design audit must read canonical authority');
 must(restore.includes('data/design-authority.json'),'production compiler must read canonical design authority');
+must(restore.includes('html body .site-header a{min-height:${touch}px!important'),'production compiler lost 44px header-link closure');
+must(restore.includes('background:transparent!important;border:0!important;box-shadow:none!important;border-radius:${Number(nav.activeRadiusPx||0)}px!important'),'production compiler lost text-only active-navigation closure');
 must(!audit.includes('pageMaxPx=1200'),'stale 1200px canvas may not return to exhaustive audit');
 must(!audit.includes('pageMaxPx=1500'),'stale 1500px canvas may not return to exhaustive audit');
 
 if(failures.length){console.error(`BANHALMI historical design regression guard failed (${failures.length}):`);for(const f of failures)console.error(`- ${f}`);process.exit(1)}
-console.log('BANHALMI historical design regression guard passed: canonical canvases, 44px controls, text-only active navigation and footer/overflow protections are locked through 4K.');
+console.log('BANHALMI historical design regression guard passed: canonical canvases, compiled 44px header controls, text-only active navigation and footer/overflow protections are locked through 4K.');
