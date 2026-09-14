@@ -40,7 +40,7 @@ This repository treats the following as a release-blocking visual contract for e
 - Spacing follows a small, repeated rhythm rather than arbitrary one-off values: 8 / 12 / 16 / 24 / 40 / fluid section 48–96.
 - Heading to description: 12–16 px. Description to link or CTA: 20–28 px. Card gap: 16–24 px.
 - Rows, cards and groups use the same canonical spacing scale unless their information architecture explicitly requires a documented exception.
-- Short pages keep the footer at the bottom of the viewport (`min-height: 100dvh` column). Footer legal identifiers never wrap mid-number.
+- Short pages keep the footer at the bottom of the viewport using the canonical `min-height: 100dvh` document grid. Footer legal identifiers never wrap mid-number.
 
 ## Cards, cells, rows, and columns
 - Cards are used only for real content units, not as decoration around every paragraph.
