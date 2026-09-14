@@ -65,13 +65,17 @@ jobs:
           grep -Eq '<lastmod>[0-9]{4}-[0-9]{2}-[0-9]{2}</lastmod>' _site/sitemap.xml
           npx --yes esbuild@0.25.9 _site/assets/css/site.css --minify --outfile=/tmp/site.min.css
           mv /tmp/site.min.css _site/assets/css/site.css
+          npx --yes esbuild@0.25.9 _site/assets/css/fluid-4k-rhythm.css --minify --outfile=/tmp/fluid-rhythm.min.css
+          mv /tmp/fluid-rhythm.min.css _site/assets/css/fluid-4k-rhythm.css
           for js in _site/assets/js/main.js _site/assets/js/mega-menu.js _site/assets/js/analytics.js; do
             if [ -f "$js" ]; then
               npx --yes esbuild@0.25.9 "$js" --minify --outfile=/tmp/runtime.min.js
               mv /tmp/runtime.min.js "$js"
             fi
           done
-          test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "1"
+          test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "2"
+          test -f _site/assets/css/site.css
+          test -f _site/assets/css/fluid-4k-rhythm.css
       - uses: actions/upload-artifact@v4
         with:
           name: pr-site-${{ github.sha }}
