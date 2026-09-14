@@ -4,6 +4,7 @@ const failures=[];
 const authority=JSON.parse(fs.readFileSync('data/design-authority.json','utf8'));
 const audit=fs.readFileSync('tools/audit-all-pages-design.mjs','utf8');
 const restore=fs.readFileSync('tools/restore-production-design-authority.mjs','utf8');
+const menuJs=fs.readFileSync('assets/js/mega-menu.js','utf8');
 const must=(ok,msg)=>{if(!ok)failures.push(msg)};
 
 must(Number(authority.pageMaxPx)===1280,'BANHALMI canonical standard canvas must remain 1280px');
@@ -16,6 +17,9 @@ must(Number(authority.layout?.footer?.tabletColumns)===3,'BANHALMI tablet footer
 must(Number(authority.layout?.footer?.mobileColumns)===1,'BANHALMI mobile footer must remain single-column geometry');
 must(authority.navigation?.activeState==='text-only','BANHALMI active navigation must remain text-only');
 must(authority.navigation?.activeFill==='none'&&authority.navigation?.activeBorder==='none'&&authority.navigation?.activeBoxShadow==='none','BANHALMI active navigation may not regain box styling');
+must(Number(authority.navigation?.megaMenu?.panelMaxPx)===1440,'BANHALMI fullscreen menu canvas must remain 1440px');
+must(authority.navigation?.megaMenu?.focusStyle==='underline-only','BANHALMI mega-menu focus must remain underline-only');
+must(authority.navigation?.megaMenu?.pointerAutofocus===false,'BANHALMI pointer-open menu may not auto-focus the first service link');
 must(authority.principles?.historicalScreenshotRegressionsAreReleaseBlocking===true,'historical screenshot regressions must stay release-blocking');
 must(audit.includes('320,360,375,390,412,430,768,820,1024,1280,1366,1440,1920,2560,3840'),'responsive release matrix must cover 320px through 4K');
 must(audit.includes('active navigation is boxed'),'boxed active-navigation browser guard missing');
@@ -26,12 +30,16 @@ must(audit.includes("fs.readFileSync('data/design-authority.json','utf8')"),'des
 must(restore.includes('data/design-authority.json'),'production compiler must read canonical design authority');
 must(restore.includes('html body .site-header a{min-height:${touch}px!important'),'production compiler lost 44px header-link closure');
 must(restore.includes('background:transparent!important;border:0!important;box-shadow:none!important;border-radius:${Number(nav.activeRadiusPx||0)}px!important'),'production compiler lost text-only active-navigation closure');
-must(restore.includes('Canonical responsive footer geometry'),'production compiler lost canonical footer root-cause closure');
+must(restore.includes('html body .site-footer{padding:${Number(footer.paddingTopPx||42)}px'),'production compiler lost canonical footer root-cause closure');
 must(restore.includes('footer.desktopColumns||6'),'production compiler lost desktop footer column authority');
 must(restore.includes('footer.compactDesktopColumns||4'),'production compiler lost compact desktop footer authority');
 must(restore.includes('footer.tabletColumns||3'),'production compiler lost tablet footer authority');
+must(restore.includes('Canonical fullscreen menu: screenshot-approved dark editorial layout'),'production compiler lost canonical fullscreen mega-menu closure');
+must(restore.includes('.bn-mega-link:focus-visible,html body .bn-mega-link.active'),'production compiler lost frame-free focus/current menu closure');
+must(menuJs.includes('open(!document.body.classList.contains(\'bn-mega-open\'),e.detail===0)'),'mega-menu pointer/keyboard modality guard missing');
+must(menuJs.includes('if(v&&keyboard)requestAnimationFrame'),'mega-menu keyboard-only autofocus guard missing');
 must(!audit.includes('pageMaxPx=1200'),'stale 1200px canvas may not return to exhaustive audit');
 must(!audit.includes('pageMaxPx=1500'),'stale 1500px canvas may not return to exhaustive audit');
 
 if(failures.length){console.error(`BANHALMI historical design regression guard failed (${failures.length}):`);for(const f of failures)console.error(`- ${f}`);process.exit(1)}
-console.log('BANHALMI historical design regression guard passed: canonical canvases, compiled 44px controls, text-only active navigation, compact responsive footer and overflow protections are locked through 4K.');
+console.log('BANHALMI historical design regression guard passed: canonical canvases, compiled 44px controls, screenshot-approved frame-free mega menu, compact responsive footer and overflow protections are locked through 4K.');
