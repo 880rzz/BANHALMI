@@ -13,7 +13,8 @@ must(Number(authority.responsive?.touchTargetPx)===44,'BANHALMI canonical touch 
 must(Number(authority.layout?.documentFlow?.footerMaxViewportFractionOnTabletDesktop)===0.85,'BANHALMI oversized-footer threshold must remain canonical');
 must(Number(authority.layout?.footer?.desktopColumns)===8,'BANHALMI desktop footer must remain eight-column single-row geometry');
 must(Number(authority.layout?.footer?.compactDesktopColumns)===6,'BANHALMI compact desktop footer must remain six-column geometry');
-must(Number(authority.layout?.footer?.tabletColumns)===5,'BANHALMI tablet footer must remain five-column single-row section geometry');
+must(Number(authority.layout?.footer?.compactDesktopMinPx)===768,'BANHALMI compact desktop footer must begin at 768px to prevent tablet footer overheight');
+must(Number(authority.layout?.footer?.tabletColumns)===5,'BANHALMI tablet footer must remain five-column geometry below 768px');
 must(Number(authority.layout?.footer?.mobileColumns)===1,'BANHALMI mobile footer must remain single-column geometry');
 must(Number(authority.layout?.footer?.paddingTopPx)===28&&Number(authority.layout?.footer?.paddingBottomPx)===18,'BANHALMI compact footer padding authority changed');
 must(Number(authority.layout?.footer?.tabletGapPx)===12,'BANHALMI tablet footer gap authority changed');
@@ -46,4 +47,4 @@ must(!audit.includes('pageMaxPx=1200'),'stale 1200px canvas may not return to ex
 must(!audit.includes('pageMaxPx=1500'),'stale 1500px canvas may not return to exhaustive audit');
 
 if(failures.length){console.error(`BANHALMI historical design regression guard failed (${failures.length}):`);for(const f of failures)console.error(`- ${f}`);process.exit(1)}
-console.log('BANHALMI historical design regression guard passed: canonical canvases, compiled 44px controls, screenshot-approved frame-free mega menu, compact responsive footer, legal identifier containment and overflow protections are locked through 4K.');
+console.log('BANHALMI historical design regression guard passed: canonical canvases, compiled 44px controls, screenshot-approved frame-free mega menu, compact responsive footer from 768px, legal identifier containment and overflow protections are locked through 4K.');
