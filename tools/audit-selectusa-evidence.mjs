@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+const a=JSON.parse(fs.readFileSync('external-photography-evidence.json','utf8'));
+const b=JSON.parse(fs.readFileSync('press-institutional-evidence.json','utf8'));
+const x=(a.records||[]).find(v=>v.id==='linkedin-kwwalsh-selectusa-7505169409309782017');
+if(!x) throw new Error('SelectUSA evidence missing');
+if(!String(x.eventArchive||'').includes('72177720335539057')) throw new Error('SelectUSA archive drift');
+const y=(b.evidence||[]).find(v=>v.id==='selectusa-investors-luncheon-september-2026');
+if(!y) throw new Error('SelectUSA institutional evidence missing');
+if(!String(y.linkedInPublication||'').includes('7505169409309782017')) throw new Error('SelectUSA LinkedIn attribution drift');
+console.log('SelectUSA evidence guard passed');
