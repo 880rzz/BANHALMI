@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-09-root-cause-v7-footer-flow",
+  "version": "2026-09-14-v9-responsive-antiregression",
   "pageMaxPx": 1280,
   "structuredMaxPx": 1440,
   "readingMaxPx": 760,
@@ -37,8 +37,21 @@
       "layoutMode": "grid",
       "documentBackground": "#ffffff",
       "footerAfterDocumentGapMaxPx": 2,
-      "mainToFooterOverlapTolerancePx": 2
+      "mainToFooterOverlapTolerancePx": 2,
+      "footerMaxViewportFractionOnTabletDesktop": 0.85
     }
+  },
+  "responsive": {
+    "touchTargetPx": 44,
+    "minViewportPx": 320,
+    "maxViewportPx": 3840
+  },
+  "navigation": {
+    "activeState": "text-only",
+    "activeFill": "none",
+    "activeBorder": "none",
+    "activeBoxShadow": "none",
+    "activeRadiusPx": 0
   },
   "principles": {
     "singleLeftContentAxis": true,
@@ -46,6 +59,8 @@
     "standardAndStructuredCanvasesAreDistinct": true,
     "computedGeometryIsReleaseEvidence": true,
     "noPatchLayerAfterCanonicalAuthority": true,
-    "footerRemainsInNormalDocumentFlow": true
+    "footerRemainsInNormalDocumentFlow": true,
+    "historicalScreenshotRegressionsAreReleaseBlocking": true,
+    "designAuditsMustReadCanonicalAuthority": true
   }
 }
