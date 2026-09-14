@@ -13,9 +13,10 @@ must(Number(authority.responsive?.touchTargetPx)===44,'BANHALMI canonical touch 
 must(Number(authority.layout?.documentFlow?.footerMaxViewportFractionOnTabletDesktop)===0.85,'BANHALMI oversized-footer threshold must remain canonical');
 must(Number(authority.layout?.footer?.desktopColumns)===8,'BANHALMI desktop footer must remain eight-column single-row geometry');
 must(Number(authority.layout?.footer?.compactDesktopColumns)===6,'BANHALMI compact desktop footer must remain six-column geometry');
-must(Number(authority.layout?.footer?.tabletColumns)===4,'BANHALMI tablet footer must remain four-column compact geometry');
+must(Number(authority.layout?.footer?.tabletColumns)===5,'BANHALMI tablet footer must remain five-column single-row section geometry');
 must(Number(authority.layout?.footer?.mobileColumns)===1,'BANHALMI mobile footer must remain single-column geometry');
 must(Number(authority.layout?.footer?.paddingTopPx)===28&&Number(authority.layout?.footer?.paddingBottomPx)===18,'BANHALMI compact footer padding authority changed');
+must(Number(authority.layout?.footer?.tabletGapPx)===12,'BANHALMI tablet footer gap authority changed');
 must(authority.navigation?.activeState==='text-only','BANHALMI active navigation must remain text-only');
 must(authority.navigation?.activeFill==='none'&&authority.navigation?.activeBorder==='none'&&authority.navigation?.activeBoxShadow==='none','BANHALMI active navigation may not regain box styling');
 must(Number(authority.navigation?.megaMenu?.panelMaxPx)===1440,'BANHALMI fullscreen menu canvas must remain 1440px');
