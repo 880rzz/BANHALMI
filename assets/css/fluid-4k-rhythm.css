@@ -1,0 +1,196 @@
+/* FLUID-4K-RHYTHM-20260914:START
+   Mobile-to-4K rhythm: full-bleed surfaces, constrained prose,
+   wider structured canvas only above 1600px. Does not stretch
+   sentences to 3840px.
+*/
+:root{
+  --space-1:8px;
+  --space-2:12px;
+  --space-3:16px;
+  --space-4:24px;
+  --space-5:40px;
+  --space-6:clamp(48px,6vw,96px);
+  --heading-to-copy:clamp(12px,1.2vw,16px);
+  --copy-to-link:clamp(20px,2vw,28px);
+  --card-gap:clamp(16px,1.6vw,24px);
+  --section-y:clamp(56px,7vw,104px);
+  --prose-max:860px;
+  --header-offset:calc(var(--header-h,56px) + 16px);
+  --apple-card-gap:clamp(16px,1.6vw,24px);
+}
+@media (min-width:1600px){
+  :root{ --apple-page-max:1440px; --apple-structured-max:1440px; }
+}
+@media (min-width:1920px){
+  :root{ --apple-page-max:1600px; --apple-structured-max:1600px; }
+}
+@media (min-width:2560px){
+  :root{ --apple-page-max:1760px; --apple-structured-max:1760px; }
+}
+
+html,body{min-height:100%;}
+body{
+  min-height:100vh;
+  min-height:100dvh;
+  display:grid;
+  grid-template-rows:auto minmax(0,1fr) auto;
+}
+body > main,
+body > #main{
+  width:100%;
+  min-width:0;
+  min-height:0;
+}
+body > .site-footer{
+  width:100%;
+  min-height:0;
+}
+
+@supports (content-visibility:auto){
+  html body main>section,
+  html body #main>section{
+    content-visibility:visible !important;
+    contain-intrinsic-size:none !important;
+  }
+}
+
+html body main .section-head h1,
+html body main .section-head h2,
+html body main .hero h1,
+html body main h1{
+  margin-bottom:var(--heading-to-copy);
+}
+html body main .section-head p,
+html body main .hero .lede,
+html body main .hero > p,
+html body main .hero .wrap > p{
+  margin-top:0;
+  margin-bottom:var(--copy-to-link);
+  max-width:var(--prose-max) !important;
+}
+html body main .section-head .eyebrow{
+  display:block;
+  margin-bottom:var(--space-2);
+}
+html body main .hero .btn,
+html body main .hero .btn-row,
+html body main .hero .hero-actions,
+html body main .section-head + .btn,
+html body main .section-head .btn{
+  margin-top:0;
+}
+
+html body main :is(.cards,.archive-cards,.card-grid,.fp-choice-grid){
+  gap:var(--apple-card-gap) !important;
+}
+html body main :is(.archive-cards,.cards.archive-cards){
+  margin-top:var(--space-4);
+  margin-bottom:0;
+}
+html body main .reviews-drawer-section{
+  padding-top:var(--space-4) !important;
+  padding-bottom:var(--space-5) !important;
+  scroll-margin-top:var(--header-offset);
+}
+html body main .reviews-drawer-section .wrap{
+  padding-top:0;
+}
+html body main section[data-surface="soft"] :is(.archive-cards,.cards){
+  position:relative;
+  z-index:1;
+  padding-top:4px;
+}
+html body main section[data-surface="soft"]{
+  scroll-margin-top:var(--header-offset);
+}
+
+html body main :is(.archive-card,.card) h3{
+  margin:0 0 var(--space-2);
+}
+html body main :is(.archive-card,.card) p{
+  margin:0 0 var(--space-3);
+}
+html body main :is(.archive-card,.card) .more{
+  margin-top:auto;
+}
+
+html body .site-footer .footer-legal-list li{
+  min-width:0 !important;
+}
+html body .site-footer .footer-legal-list li>strong{
+  white-space:nowrap !important;
+  overflow-wrap:normal !important;
+  word-break:keep-all !important;
+  min-width:max-content !important;
+}
+html body .site-footer .footer-accordion>summary{
+  white-space:nowrap !important;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+html body .site-footer .footer-heading{
+  overflow-wrap:anywhere;
+  line-height:1.25;
+}
+@media (min-width:1180px){
+  html body .site-footer .footer-grid{
+    grid-template-columns:
+      minmax(190px,1.6fr)
+      repeat(5,minmax(82px,.72fr))
+      minmax(160px,1fr)
+      minmax(160px,1fr) !important;
+  }
+}
+@media (max-width:1179px){
+  html body .site-footer .footer-legal-list li{
+    grid-template-columns:1fr !important;
+    row-gap:2px !important;
+  }
+}
+
+html body .bn-mega-panel{
+  padding-top:clamp(3.5rem,5vw,4.5rem) !important;
+  width:min(var(--apple-page-max),100%) !important;
+}
+@media (min-width:1600px){
+  html body .bn-mega-panel{width:min(1600px,100%) !important;}
+}
+
+html body .cookie{
+  z-index:1200;
+  bottom:max(16px,env(safe-area-inset-bottom));
+}
+@media (min-width:900px){
+  html body .cookie{
+    bottom:max(24px,env(safe-area-inset-bottom));
+    max-width:420px;
+    left:auto;
+    right:max(24px,env(safe-area-inset-right));
+  }
+}
+
+@media (min-width:1920px){
+  html body main .hero.hero-image-first .hero-figure,
+  html body main .hero-figure{
+    max-width:min(1760px,calc(100vw - 80px));
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+@media (min-width:2560px){
+  html body main .wrap{padding-left:40px;padding-right:40px;}
+  html body main .hero.hero-image-first .hero-figure{
+    max-width:min(1920px,calc(100vw - 120px));
+  }
+}
+
+@media (max-width:720px){
+  html body main .wrap{padding-left:20px;padding-right:20px;}
+  html body .site-footer .footer-legal-list li{
+    grid-template-columns:1fr !important;
+  }
+  html body .site-footer .footer-legal-list li>strong{
+    white-space:nowrap !important;
+  }
+}
+/* FLUID-4K-RHYTHM-20260914:END */

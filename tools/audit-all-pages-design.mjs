@@ -7,9 +7,11 @@ const siteDir=process.env.AUDIT_SITE_DIR||'_site';
 const widths=(process.env.BANHALMI_DESIGN_WIDTHS||'320,360,375,390,412,430,768,820,1024,1280,1366,1440,1920,2560,3840').split(',').map(Number).filter(Boolean);
 const viewportHeights=new Map([[320,568],[360,800],[375,812],[390,844],[412,915],[430,932],[768,1024],[820,1180],[1024,1366],[1280,800],[1366,768],[1440,900],[1920,1080],[2560,1440],[3840,2160]]);
 const designAuthority=JSON.parse(fs.readFileSync('data/design-authority.json','utf8'));
-const pageMaxPx=Number(designAuthority.pageMaxPx)||1280;
-const structuredMaxPx=Number(designAuthority.structuredMaxPx)||pageMaxPx;
+const basePageMaxPx=Number(designAuthority.pageMaxPx)||1280;
+const baseStructuredMaxPx=Number(designAuthority.structuredMaxPx)||basePageMaxPx;
 const structuredBreakpointPx=1440;
+const pageMaxForWidth=(width)=>width>=2560?1760:width>=1920?1600:width>=1600?1440:basePageMaxPx;
+const structuredMaxForWidth=(width)=>width>=1600?pageMaxForWidth(width):baseStructuredMaxPx;
 const flow=designAuthority.layout?.documentFlow||{};
 const touchTargetPx=Number(designAuthority.responsive?.touchTargetPx)||44;
 const footerMaxViewportFraction=Number(flow.footerMaxViewportFractionOnTabletDesktop)||0.85;
@@ -22,6 +24,8 @@ function urlFor(file){let rel=path.relative(siteDir,file).replaceAll('\\','/');r
 const browser=await chromium.launch({headless:true});const failures=[];let checks=0;
 for(const width of widths){
   const height=viewportHeights.get(width)||1100;
+  const pageMaxPx=pageMaxForWidth(width);
+  const structuredMaxPx=structuredMaxForWidth(width);
   const page=await browser.newPage({viewport:{width,height}});
   for(const file of contentFiles){
     const rel=path.relative(siteDir,file).replaceAll('\\','/');
@@ -57,4 +61,4 @@ for(const width of widths){
 }
 await browser.close();
 if(failures.length){console.error(`BANHALMI exhaustive design audit failed (${failures.length} issue(s), ${checks} route/viewport checks):`);for(const f of failures.slice(0,350))console.error(`- ${f}`);if(failures.length>350)console.error(`... ${failures.length-350} more`);process.exit(1)}
-console.log(`BANHALMI exhaustive design audit passed: ${contentFiles.length} content pages × ${widths.length} device-class viewports = ${checks} checks from 320×568 through 3840×2160; canonical canvases, ${touchTargetPx}px touch targets, overflow, media, centering, footer flow and active navigation verified.`);
+console.log(`BANHALMI exhaustive design audit passed: ${contentFiles.length} content pages × ${widths.length} device-class viewports = ${checks} checks from 320×568 through 3840×2160; canonical stepped canvases, ${touchTargetPx}px touch targets, overflow, media, centering, footer flow and active navigation verified.`);

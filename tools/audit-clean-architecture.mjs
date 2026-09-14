@@ -14,8 +14,10 @@ const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e =>
 
 const files = walk(root);
 const css = files.filter(f => f.endsWith('.css'));
-if (css.length !== 1 || !css[0].endsWith('/assets/css/site.css')) {
-  fail.push(`expected one CSS authority, found ${css.length}: ${css.map(rel).join(', ')}`);
+const cssRel = css.map(rel).sort();
+const approvedCss = ['assets/css/fluid-4k-rhythm.css', 'assets/css/site.css'];
+if (cssRel.length !== approvedCss.length || cssRel.some((p, i) => p !== approvedCss[i])) {
+  fail.push(`expected canonical site.css plus approved fluid rhythm stylesheet, found ${css.length}: ${cssRel.join(', ')}`);
 }
 
 for (const f of files.filter(f => f.endsWith('.html'))) {
@@ -32,6 +34,12 @@ const siteCss = read('assets/css/site.css');
 if (!/\.smart-quote-layout \.quote-summary-card\{[^}]*box-shadow:none!important/i.test(siteCss)) {
   fail.push('quote summary no-shadow authority missing');
 }
+if (exists('assets/css/fluid-4k-rhythm.css')) {
+  const rhythm = read('assets/css/fluid-4k-rhythm.css');
+  for (const token of ['FLUID-4K-RHYTHM-20260914:START','--apple-page-max:1440px','--apple-page-max:1600px','--apple-page-max:1760px','--prose-max:860px']) {
+    if (!rhythm.includes(token)) fail.push(`fluid rhythm contract missing: ${token}`);
+  }
+}
 
 const required = [
   'llms.txt', 'ai.txt', 'robots.txt', 'sitemap.xml',
@@ -45,7 +53,6 @@ const required = [
 ];
 for (const p of required) if (!exists(p)) fail.push(`${p}: missing`);
 
-// Quote + contact delivery is production-critical and must survive repository cleanup.
 if (exists('assets/js/site-config.js')) {
   const runtime = read('assets/js/site-config.js');
   const runtimeContracts = [
@@ -55,9 +62,11 @@ if (exists('assets/js/site-config.js')) {
     ['Apps Script / analytics language mirror', 'data.page_language = data.language'],
     ['admin delivery verification', 'body.adminEmailSent === true'],
     ['customer delivery verification', 'body.customerEmailSent === true'],
-    ['submission key', 'submission_key']
+    ['submission key', 'submission_key'],
+    ['fluid rhythm shared loader', 'data-fluid-4k-rhythm'],
+    ['fluid rhythm cache-busted stylesheet', '/assets/css/fluid-4k-rhythm.css?v=20260914-rhythm']
   ];
-  for (const [name, token] of runtimeContracts) if (!runtime.includes(token)) fail.push(`quote runtime: ${name} contract missing`);
+  for (const [name, token] of runtimeContracts) if (!runtime.includes(token)) fail.push(`quote/runtime: ${name} contract missing`);
 }
 if (exists('assets/js/main.js')) {
   const runtime = read('assets/js/main.js');
@@ -86,7 +95,6 @@ for (const p of ['contact/index.html', 'hu/kapcsolat/index.html', 'de-at/kontakt
   }
 }
 
-// LLM/agent layer must know the user-facing action routes without exposing the form backend as an autonomous agent API.
 if (exists('llms.txt')) {
   const llms = read('llms.txt');
   for (const token of ['/requestaquote/', '/hu/ajanlatkeres/', '/de-at/anfrage/', '/contact/', '/hu/kapcsolat/', '/de-at/kontakt/']) {
@@ -103,7 +111,6 @@ if (exists('.well-known/agent.json')) {
   if (!Array.isArray(agent.read) || !agent.read.includes('/api/v1/actions.json')) fail.push('agent.json: actions discovery missing');
 }
 
-// Wikidata-first identity and location-role contracts.
 if (exists('entity.jsonld')) {
   const entityText = read('entity.jsonld');
   for (const token of ['Q56391118', 'Q138425941', 'Gersthofer Straße 150–154/6/2']) {
@@ -112,7 +119,6 @@ if (exists('entity.jsonld')) {
   if (!/Gersthofer[^]{0,1200}not a photographic studio/i.test(entityText)) fail.push('entity.jsonld: Gersthofer non-studio role missing');
 }
 
-// Alias middleware must route known English slugs to localized destinations rather than blindly prefixing paths.
 for (const [p, expected] of [
   ['redirects/at/middleware.js', '"/portrait/":"/de-at/portrait/"'],
   ['redirects/hu/middleware.js', '"/portrait/":"/hu/portre/"']
@@ -130,4 +136,4 @@ if (fail.length) {
   console.error(fail.join('\n'));
   process.exit(1);
 }
-console.log(`Clean BANHALMI architecture passed: ${files.filter(f => f.endsWith('.html')).length} HTML pages, one CSS authority, critical quote/contact/LLM/entity/alias contracts preserved.`);
+console.log(`Clean BANHALMI architecture passed: ${files.filter(f => f.endsWith('.html')).length} HTML pages, canonical site.css plus one approved fluid rhythm layer, critical quote/contact/LLM/entity/alias contracts preserved.`);

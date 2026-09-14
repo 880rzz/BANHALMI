@@ -50,12 +50,15 @@ jobs:
           test -f _site/hu/index.html
           test -f _site/de-at/index.html
           test -f _site/assets/css/site.css
+          test -f _site/assets/css/fluid-4k-rhythm.css
           node tools/optimize-production-artifact.mjs _site
           node tools/restore-production-design-authority.mjs _site
           node tools/harden-production-artifact.mjs _site
           node tools/render-production-sitemap-lastmod.mjs _site
           npx --yes esbuild@0.25.9 _site/assets/css/site.css --minify --outfile=/tmp/site.min.css
           mv /tmp/site.min.css _site/assets/css/site.css
+          npx --yes esbuild@0.25.9 _site/assets/css/fluid-4k-rhythm.css --minify --outfile=/tmp/fluid-rhythm.min.css
+          mv /tmp/fluid-rhythm.min.css _site/assets/css/fluid-4k-rhythm.css
           for js in _site/assets/js/main.js _site/assets/js/mega-menu.js _site/assets/js/analytics.js; do
             if [ -f "$js" ]; then
               npx --yes esbuild@0.25.9 "$js" --minify --outfile=/tmp/runtime.min.js
@@ -63,6 +66,7 @@ jobs:
             fi
           done
           test -s _site/assets/css/site.css
+          test -s _site/assets/css/fluid-4k-rhythm.css
           for file in \
             _site/.well-known/agent.json \
             _site/api/v1/identity.json \
@@ -112,7 +116,7 @@ jobs:
           grep -Fq 'media-usage-evidence.json' _site/machine-manifest.json
           grep -Fq '"explicitCreatorCreditPublicationsCurrentlyNormalized":6' <(tr -d '[:space:]' < _site/media-usage-evidence.json)
           ! grep -R -E '"employee"[[:space:]]*:[[:space:]]*\{[[:space:]]*"@id"[[:space:]]*:[[:space:]]*"https://www\.norbertbanhalmi\.com/speier-viko/#person"' _site/speier-viko _site/hu/speier-viko _site/de-at/speier-viko
-          test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "1"
+          test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "2"
           grep -q '/assets/css/site.css' _site/index.html
           grep -q '/assets/css/site.css' _site/hu/index.html
           grep -q '/assets/css/site.css' _site/de-at/index.html
