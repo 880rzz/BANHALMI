@@ -1,0 +1,204 @@
+/* FLUID-4K-RHYTHM-20260914:START
+   Mobile-to-4K rhythm: full-bleed surfaces, constrained prose,
+   wider structured canvas only above 1600px. Does not stretch
+   sentences to 3840px.
+*/
+:root{
+  --space-1:8px;
+  --space-2:12px;
+  --space-3:16px;
+  --space-4:24px;
+  --space-5:40px;
+  --space-6:clamp(48px,6vw,96px);
+  --heading-to-copy:clamp(12px,1.2vw,16px);
+  --copy-to-link:clamp(20px,2vw,28px);
+  --card-gap:clamp(16px,1.6vw,24px);
+  --section-y:clamp(56px,7vw,104px);
+  --prose-max:860px;
+  --header-offset:calc(var(--header-h,56px) + 16px);
+}
+@media (min-width:1600px){
+  :root{ --maxw:1440px; }
+}
+@media (min-width:1920px){
+  :root{ --maxw:1600px; }
+}
+@media (min-width:2560px){
+  :root{ --maxw:1760px; }
+}
+
+html,body{min-height:100%;}
+body{
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column;
+}
+body > .skip-link{flex:0 0 auto;}
+body > .site-header{flex:0 0 auto;}
+body > main,
+body > #main{
+  flex:1 0 auto;
+  width:100%;
+}
+body > .site-footer{
+  flex-shrink:0;
+  width:100%;
+  margin-top:auto;
+}
+
+@supports (content-visibility:auto){
+  main>section:nth-of-type(n+3),
+  #main>section:nth-of-type(n+3){
+    content-visibility:visible !important;
+    contain-intrinsic-size:unset !important;
+  }
+}
+
+.section-head h1,
+.section-head h2,
+.hero h1,
+main h1{
+  margin-bottom:var(--heading-to-copy);
+}
+.section-head p,
+.hero .lede,
+.hero > p,
+.hero .wrap > p{
+  margin-top:0;
+  margin-bottom:var(--copy-to-link);
+  max-width:var(--prose-max);
+}
+.section-head .eyebrow{
+  display:block;
+  margin-bottom:var(--space-2);
+}
+.hero .btn,
+.hero .btn-row,
+.hero .hero-actions,
+.section-head + .btn,
+.section-head .btn{
+  margin-top:0;
+}
+
+.cards,
+.archive-cards,
+.card-grid,
+.fp-choice-grid{
+  gap:var(--card-gap) !important;
+}
+.archive-cards,
+.cards.archive-cards{
+  margin-top:var(--space-4);
+  margin-bottom:0;
+}
+.reviews-drawer-section{
+  padding-top:var(--space-4) !important;
+  padding-bottom:var(--space-5) !important;
+  scroll-margin-top:var(--header-offset);
+}
+.reviews-drawer-section .wrap{
+  padding-top:0;
+}
+section[data-surface="soft"] .archive-cards,
+section[data-surface="soft"] .cards{
+  position:relative;
+  z-index:1;
+  padding-top:4px;
+}
+section[data-surface="soft"]{
+  scroll-margin-top:var(--header-offset);
+}
+
+.archive-card h3,
+.card h3{
+  margin:0 0 var(--space-2);
+}
+.archive-card p,
+.card p{
+  margin:0 0 var(--space-3);
+}
+.archive-card .more,
+.card .more{
+  margin-top:auto;
+}
+
+.footer-legal-list li{
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:baseline;
+  gap:10px;
+}
+.footer-legal-list span{
+  flex:0 0 auto;
+  min-width:4.5rem;
+}
+.footer-legal-list strong{
+  white-space:nowrap;
+  overflow-wrap:normal;
+  word-break:keep-all;
+}
+
+.footer-accordion summary{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.footer-heading{
+  overflow-wrap:anywhere;
+  line-height:1.25;
+}
+
+@media (min-width:1100px){
+  .footer-grid{
+    grid-template-columns:
+      minmax(220px,1.2fr)
+      repeat(5,minmax(108px,0.7fr))
+      minmax(210px,0.95fr)
+      minmax(220px,0.9fr);
+  }
+}
+
+.bn-mega-panel{
+  padding-top:clamp(4.5rem,8vw,6.5rem) !important;
+  width:min(var(--maxw),100%) !important;
+}
+@media (min-width:1600px){
+  .bn-mega-panel{width:min(1600px,100%) !important;}
+}
+
+.cookie{
+  z-index:1200;
+  bottom:max(16px,env(safe-area-inset-bottom));
+}
+@media (min-width:900px){
+  .cookie{
+    bottom:max(24px,env(safe-area-inset-bottom));
+    max-width:420px;
+    left:auto;
+    right:max(24px,env(safe-area-inset-right));
+  }
+}
+
+@media (min-width:1920px){
+  .hero.hero-image-first .hero-figure,
+  .hero-figure{
+    max-width:min(1760px,calc(100vw - 80px));
+    margin-left:auto;
+    margin-right:auto;
+  }
+  h1{font-size:clamp(2.6rem,3.2vw,4.4rem);}
+  h2{font-size:clamp(1.7rem,2vw,2.8rem);}
+}
+@media (min-width:2560px){
+  .wrap{padding-left:40px;padding-right:40px;}
+  .hero.hero-image-first .hero-figure{
+    max-width:min(1920px,calc(100vw - 120px));
+  }
+}
+
+@media (max-width:720px){
+  .wrap{padding-left:20px;padding-right:20px;}
+  .footer-legal-list li{flex-wrap:wrap;}
+  .footer-legal-list strong{white-space:nowrap;}
+}
+/* FLUID-4K-RHYTHM-20260914:END */
