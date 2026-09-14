@@ -24,8 +24,9 @@ This repository treats the following as a release-blocking visual contract for e
 ## Layout and full-width surfaces
 - Colored top-level section surfaces span the full viewport width.
 - Content inside those surfaces uses centered constrained wrappers.
-- Standard desktop content wrappers are capped at 1280 px.
-- Information-dense structured components (service/process grids, partner grids, archive/reading records and quote workspaces) may use a separate 1320 px structured canvas on sufficiently wide viewports.
+- Standard desktop content wrappers are capped at 1280 px through 1599 px viewports.
+- From 1600 px the standard wrapper may open to 1440 px; from 1920 px to 1600 px; from 2560 px (4K-class) to 1760 px. Photographs and full-bleed surfaces may use up to 1920 px. Long prose remains capped at 860 px at every width.
+- Information-dense structured components (service/process grids, partner grids, archive/reading records and quote workspaces) may use a separate structured canvas: 1320 px below 1600 px, then the same stepped wrapper as above.
 - The structured canvas must be applied to the real rendered component and, where necessary, its semantic wrapper; it must not remain trapped inside a narrower legacy parent.
 - Standard and structured wrappers remain geometrically centered and use the same optical start-axis system.
 - Mobile/tablet content keeps visible side gutters unless the element explicitly declares full-bleed semantics.
@@ -36,8 +37,10 @@ This repository treats the following as a release-blocking visual contract for e
 ## Spacing rhythm
 - Related heading/copy blocks remain visually attached without collision or arbitrary voids.
 - Colored editorial sections require meaningful vertical breathing room.
-- Spacing follows a small, repeated rhythm rather than arbitrary one-off values.
+- Spacing follows a small, repeated rhythm rather than arbitrary one-off values: 8 / 12 / 16 / 24 / 40 / fluid section 48–96.
+- Heading to description: 12–16 px. Description to link or CTA: 20–28 px. Card gap: 16–24 px.
 - Rows, cards and groups use the same canonical spacing scale unless their information architecture explicitly requires a documented exception.
+- Short pages keep the footer at the bottom of the viewport (`min-height: 100dvh` column). Footer legal identifiers never wrap mid-number.
 
 ## Cards, cells, rows, and columns
 - Cards are used only for real content units, not as decoration around every paragraph.
