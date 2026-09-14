@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-14-v9-responsive-antiregression",
+  "version": "2026-09-14-v10-responsive-footer-authority",
   "pageMaxPx": 1280,
   "structuredMaxPx": 1440,
   "readingMaxPx": 760,
@@ -33,6 +33,21 @@
     "quoteInfoColumnPx": 44,
     "quoteWorkspaceMinFormToIntroRatio": 1.55,
     "serviceProcessBottomMarginPx": 0,
+    "footer": {
+      "desktopColumns": 6,
+      "compactDesktopColumns": 4,
+      "tabletColumns": 3,
+      "mobileColumns": 1,
+      "desktopMinPx": 1180,
+      "compactDesktopMinPx": 1024,
+      "tabletMinPx": 621,
+      "paddingTopPx": 42,
+      "paddingBottomPx": 26,
+      "desktopGapPx": 22,
+      "tabletGapPx": 18,
+      "summaryMinHeightPx": 44,
+      "linkRowGapPx": 10
+    },
     "documentFlow": {
       "layoutMode": "grid",
       "documentBackground": "#ffffff",
