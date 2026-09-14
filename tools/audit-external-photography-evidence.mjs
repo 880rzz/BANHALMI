@@ -11,6 +11,7 @@ function fail(condition, message) {
 function hasConservativeRelationshipGuardrail(ruleText) {
   const rule = String(ruleText || '').toLowerCase();
   return rule.includes('do not infer') ||
+    rule.includes('not proof of') ||
     rule.includes('keep as evidence candidate') ||
     (rule.includes('keep') && rule.includes('client') && rule.includes('distinct'));
 }
