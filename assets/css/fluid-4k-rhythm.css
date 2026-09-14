@@ -16,15 +16,16 @@
   --section-y:clamp(56px,7vw,104px);
   --prose-max:860px;
   --header-offset:calc(var(--header-h,56px) + 16px);
+  --apple-card-gap:clamp(16px,1.6vw,24px);
 }
 @media (min-width:1600px){
-  :root{ --maxw:1440px; }
+  :root{ --apple-page-max:1440px; --apple-structured-max:1440px; }
 }
 @media (min-width:1920px){
-  :root{ --maxw:1600px; }
+  :root{ --apple-page-max:1600px; --apple-structured-max:1600px; }
 }
 @media (min-width:2560px){
-  :root{ --maxw:1760px; }
+  :root{ --apple-page-max:1760px; --apple-structured-max:1760px; }
 }
 
 html,body{min-height:100%;}
@@ -80,11 +81,8 @@ main h1{
   margin-top:0;
 }
 
-.cards,
-.archive-cards,
-.card-grid,
-.fp-choice-grid{
-  gap:var(--card-gap) !important;
+html body main :is(.cards,.archive-cards,.card-grid,.fp-choice-grid){
+  gap:var(--apple-card-gap) !important;
 }
 .archive-cards,
 .cards.archive-cards{
@@ -123,19 +121,21 @@ section[data-surface="soft"]{
 }
 
 .footer-legal-list li{
-  display:flex;
-  flex-wrap:nowrap;
+  display:flex !important;
+  flex-wrap:nowrap !important;
   align-items:baseline;
   gap:10px;
+  min-width:0;
 }
 .footer-legal-list span{
   flex:0 0 auto;
   min-width:4.5rem;
 }
 .footer-legal-list strong{
-  white-space:nowrap;
-  overflow-wrap:normal;
-  word-break:keep-all;
+  flex:0 0 auto;
+  white-space:nowrap !important;
+  overflow-wrap:normal !important;
+  word-break:keep-all !important;
 }
 
 .footer-accordion summary{
@@ -160,7 +160,7 @@ section[data-surface="soft"]{
 
 .bn-mega-panel{
   padding-top:clamp(4.5rem,8vw,6.5rem) !important;
-  width:min(var(--maxw),100%) !important;
+  width:min(var(--apple-page-max),100%) !important;
 }
 @media (min-width:1600px){
   .bn-mega-panel{width:min(1600px,100%) !important;}
@@ -198,7 +198,7 @@ section[data-surface="soft"]{
 
 @media (max-width:720px){
   .wrap{padding-left:20px;padding-right:20px;}
-  .footer-legal-list li{flex-wrap:wrap;}
-  .footer-legal-list strong{white-space:nowrap;}
+  .footer-legal-list li{flex-wrap:wrap !important;}
+  .footer-legal-list strong{white-space:nowrap !important;}
 }
 /* FLUID-4K-RHYTHM-20260914:END */
