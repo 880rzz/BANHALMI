@@ -35,6 +35,8 @@ must(restore.includes('html body .site-footer{padding:${Number(footer.paddingTop
 must(restore.includes('footer.desktopColumns||6'),'production compiler lost desktop footer column authority');
 must(restore.includes('footer.compactDesktopColumns||4'),'production compiler lost compact desktop footer authority');
 must(restore.includes('footer.tabletColumns||3'),'production compiler lost tablet footer authority');
+must(restore.includes('html body .site-footer .footer-legal-list{min-width:0!important;max-width:100%!important;}'),'production compiler lost footer legal-width containment');
+must(restore.includes('overflow-wrap:anywhere!important'),'production compiler lost long legal identifier wrapping');
 must(restore.includes('Canonical fullscreen menu: screenshot-approved dark editorial layout'),'production compiler lost canonical fullscreen mega-menu closure');
 must(restore.includes('.bn-mega-link:focus-visible,html body .bn-mega-link.active'),'production compiler lost frame-free focus/current menu closure');
 must(menuJs.includes('open(!document.body.classList.contains(\'bn-mega-open\'),e.detail===0)'),'mega-menu pointer/keyboard modality guard missing');
@@ -43,4 +45,4 @@ must(!audit.includes('pageMaxPx=1200'),'stale 1200px canvas may not return to ex
 must(!audit.includes('pageMaxPx=1500'),'stale 1500px canvas may not return to exhaustive audit');
 
 if(failures.length){console.error(`BANHALMI historical design regression guard failed (${failures.length}):`);for(const f of failures)console.error(`- ${f}`);process.exit(1)}
-console.log('BANHALMI historical design regression guard passed: canonical canvases, compiled 44px controls, screenshot-approved frame-free mega menu, compact responsive footer and overflow protections are locked through 4K.');
+console.log('BANHALMI historical design regression guard passed: canonical canvases, compiled 44px controls, screenshot-approved frame-free mega menu, compact responsive footer, legal identifier containment and overflow protections are locked through 4K.');
