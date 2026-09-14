@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-14-v11-menu-authority",
+  "version": "2026-09-14-v12-compact-footer-authority",
   "pageMaxPx": 1280,
   "structuredMaxPx": 1440,
   "readingMaxPx": 760,
@@ -23,7 +23,7 @@
     "quoteInfoColumnPx": 44,
     "quoteWorkspaceMinFormToIntroRatio": 1.55,
     "serviceProcessBottomMarginPx": 0,
-    "footer": {"desktopColumns": 6, "compactDesktopColumns": 4, "tabletColumns": 3, "mobileColumns": 1, "desktopMinPx": 1180, "compactDesktopMinPx": 1024, "tabletMinPx": 621, "paddingTopPx": 42, "paddingBottomPx": 26, "desktopGapPx": 22, "tabletGapPx": 18, "summaryMinHeightPx": 44, "linkRowGapPx": 10},
+    "footer": {"desktopColumns": 8, "compactDesktopColumns": 6, "tabletColumns": 4, "mobileColumns": 1, "desktopMinPx": 1180, "compactDesktopMinPx": 1024, "tabletMinPx": 621, "paddingTopPx": 28, "paddingBottomPx": 18, "desktopGapPx": 14, "tabletGapPx": 14, "summaryMinHeightPx": 44, "linkRowGapPx": 8},
     "documentFlow": {"layoutMode": "grid", "documentBackground": "#ffffff", "footerAfterDocumentGapMaxPx": 2, "mainToFooterOverlapTolerancePx": 2, "footerMaxViewportFractionOnTabletDesktop": 0.85}
   },
   "responsive": {"touchTargetPx": 44, "minViewportPx": 320, "maxViewportPx": 3840},
@@ -33,27 +33,7 @@
     "activeBorder": "none",
     "activeBoxShadow": "none",
     "activeRadiusPx": 0,
-    "megaMenu": {
-      "background": "#202530",
-      "panelMaxPx": 1440,
-      "desktopSidePaddingPx": 88,
-      "desktopTopPaddingPx": 86,
-      "desktopBottomPaddingPx": 34,
-      "desktopColumnGapPx": 72,
-      "sectionRuleColor": "rgba(183,156,68,.34)",
-      "focusStyle": "underline-only",
-      "pointerAutofocus": false,
-      "pricingTreatment": "gold-text"
-    }
+    "megaMenu": {"background": "#202530", "panelMaxPx": 1440, "desktopSidePaddingPx": 88, "desktopTopPaddingPx": 86, "desktopBottomPaddingPx": 34, "desktopColumnGapPx": 72, "sectionRuleColor": "rgba(183,156,68,.34)", "focusStyle": "underline-only", "pointerAutofocus": false, "pricingTreatment": "gold-text"}
   },
-  "principles": {
-    "singleLeftContentAxis": true,
-    "readingMeasureSeparateFromStructuredCanvas": true,
-    "standardAndStructuredCanvasesAreDistinct": true,
-    "computedGeometryIsReleaseEvidence": true,
-    "noPatchLayerAfterCanonicalAuthority": true,
-    "footerRemainsInNormalDocumentFlow": true,
-    "historicalScreenshotRegressionsAreReleaseBlocking": true,
-    "designAuditsMustReadCanonicalAuthority": true
-  }
+  "principles": {"singleLeftContentAxis": true, "readingMeasureSeparateFromStructuredCanvas": true, "standardAndStructuredCanvasesAreDistinct": true, "computedGeometryIsReleaseEvidence": true, "noPatchLayerAfterCanonicalAuthority": true, "footerRemainsInNormalDocumentFlow": true, "historicalScreenshotRegressionsAreReleaseBlocking": true, "designAuditsMustReadCanonicalAuthority": true}
 }
