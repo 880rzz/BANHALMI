@@ -21,6 +21,14 @@ for(const width of widths){
       const px=v=>parseFloat(v)||0;
       const visible=el=>{if(!el)return false;const s=getComputedStyle(el),r=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0&&r.width>0&&r.height>0};
       const overlap=(a,b)=>Math.min(a.right,b.right)-Math.max(a.left,b.left)>1&&Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)>1;
+      const textLineCount=el=>{
+        const range=document.createRange();
+        range.selectNodeContents(el);
+        const rects=[...range.getClientRects()].filter(r=>r.width>0&&r.height>0);
+        const lines=[];
+        for(const r of rects){if(!lines.some(y=>Math.abs(y-r.top)<1.5))lines.push(r.top);}
+        return Math.max(1,lines.length);
+      };
       const root=getComputedStyle(document.documentElement);
       const pageMax=px(root.getPropertyValue('--apple-page-max'));
       if(Math.abs(pageMax-expected)>1) issues.push(`--apple-page-max ${pageMax}px, expected ${expected}px`);
@@ -39,7 +47,7 @@ for(const width of widths){
       const footer=document.querySelector('.site-footer');
       if(footer){
         const legal=[...footer.querySelectorAll('.footer-legal-list strong')].filter(visible);
-        for(const el of legal){const s=getComputedStyle(el),r=el.getBoundingClientRect();const lh=px(s.lineHeight)||px(s.fontSize)*1.2;if(r.height>lh*1.55) issues.push(`legal identifier wraps: ${(el.textContent||'').trim()}`);}
+        for(const el of legal){if(textLineCount(el)>1) issues.push(`legal identifier wraps: ${(el.textContent||'').trim()}`);}
         const legalText=footer.innerText||'';
         for(const token of ['36592951','36593897','ATU80445314','9110037983878']) if(!legalText.includes(token)) issues.push(`legal token missing ${token}`);
         if(pathname==='/portrait/'||pathname==='/de-at/portrait/'||pathname==='/hu/portre/'){
@@ -52,7 +60,7 @@ for(const width of widths){
       }else issues.push('site footer missing');
       if(pathname==='/hu/'||pathname==='/hu/portre/'){
         const social=[...document.querySelectorAll('.site-footer *')].find(el=>(el.textContent||'').trim()==='Közösségi média'&&visible(el));
-        if(social){const r=social.getBoundingClientRect(),s=getComputedStyle(social),lh=px(s.lineHeight)||px(s.fontSize)*1.2;if(r.height>lh*1.55) issues.push('HU Közösségi média wraps');}
+        if(social&&textLineCount(social)>1) issues.push('HU Közösségi média wraps');
       }
       const cookie=[...document.querySelectorAll('.cookie,[data-cookie-banner],.cookie-banner')].find(visible);
       if(cookie&&footer){
