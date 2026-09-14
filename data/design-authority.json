@@ -1,23 +1,13 @@
 {
-  "version": "2026-09-14-v10-responsive-footer-authority",
+  "version": "2026-09-14-v11-menu-authority",
   "pageMaxPx": 1280,
   "structuredMaxPx": 1440,
   "readingMaxPx": 760,
   "wideReadingMaxPx": 900,
   "typography": {
-    "desktop": {
-      "h1": "clamp(2.5rem,3.6vw,3.625rem)",
-      "h2": "clamp(1.625rem,2.4vw,2.375rem)",
-      "h3": "clamp(18px,1.45vw,1.3rem)"
-    },
-    "tablet": {
-      "h1": "clamp(2.375rem,5.2vw,2.875rem)",
-      "h2": "clamp(1.5625rem,3.5vw,2.125rem)"
-    },
-    "mobile": {
-      "h1": "clamp(2.15rem,11vw,3rem)",
-      "h2": "clamp(1.65rem,8vw,2.1rem)"
-    },
+    "desktop": {"h1": "clamp(2.5rem,3.6vw,3.625rem)", "h2": "clamp(1.625rem,2.4vw,2.375rem)", "h3": "clamp(18px,1.45vw,1.3rem)"},
+    "tablet": {"h1": "clamp(2.375rem,5.2vw,2.875rem)", "h2": "clamp(1.5625rem,3.5vw,2.125rem)"},
+    "mobile": {"h1": "clamp(2.15rem,11vw,3rem)", "h2": "clamp(1.65rem,8vw,2.1rem)"},
     "h3DescriptionGapPx": 10
   },
   "layout": {
@@ -33,40 +23,28 @@
     "quoteInfoColumnPx": 44,
     "quoteWorkspaceMinFormToIntroRatio": 1.55,
     "serviceProcessBottomMarginPx": 0,
-    "footer": {
-      "desktopColumns": 6,
-      "compactDesktopColumns": 4,
-      "tabletColumns": 3,
-      "mobileColumns": 1,
-      "desktopMinPx": 1180,
-      "compactDesktopMinPx": 1024,
-      "tabletMinPx": 621,
-      "paddingTopPx": 42,
-      "paddingBottomPx": 26,
-      "desktopGapPx": 22,
-      "tabletGapPx": 18,
-      "summaryMinHeightPx": 44,
-      "linkRowGapPx": 10
-    },
-    "documentFlow": {
-      "layoutMode": "grid",
-      "documentBackground": "#ffffff",
-      "footerAfterDocumentGapMaxPx": 2,
-      "mainToFooterOverlapTolerancePx": 2,
-      "footerMaxViewportFractionOnTabletDesktop": 0.85
-    }
+    "footer": {"desktopColumns": 6, "compactDesktopColumns": 4, "tabletColumns": 3, "mobileColumns": 1, "desktopMinPx": 1180, "compactDesktopMinPx": 1024, "tabletMinPx": 621, "paddingTopPx": 42, "paddingBottomPx": 26, "desktopGapPx": 22, "tabletGapPx": 18, "summaryMinHeightPx": 44, "linkRowGapPx": 10},
+    "documentFlow": {"layoutMode": "grid", "documentBackground": "#ffffff", "footerAfterDocumentGapMaxPx": 2, "mainToFooterOverlapTolerancePx": 2, "footerMaxViewportFractionOnTabletDesktop": 0.85}
   },
-  "responsive": {
-    "touchTargetPx": 44,
-    "minViewportPx": 320,
-    "maxViewportPx": 3840
-  },
+  "responsive": {"touchTargetPx": 44, "minViewportPx": 320, "maxViewportPx": 3840},
   "navigation": {
     "activeState": "text-only",
     "activeFill": "none",
     "activeBorder": "none",
     "activeBoxShadow": "none",
-    "activeRadiusPx": 0
+    "activeRadiusPx": 0,
+    "megaMenu": {
+      "background": "#202530",
+      "panelMaxPx": 1440,
+      "desktopSidePaddingPx": 88,
+      "desktopTopPaddingPx": 86,
+      "desktopBottomPaddingPx": 34,
+      "desktopColumnGapPx": 72,
+      "sectionRuleColor": "rgba(183,156,68,.34)",
+      "focusStyle": "underline-only",
+      "pointerAutofocus": false,
+      "pricingTreatment": "gold-text"
+    }
   },
   "principles": {
     "singleLeftContentAxis": true,
