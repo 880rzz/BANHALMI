@@ -14,6 +14,9 @@ must(Number(footer.desktopGapPx)===28,'desktop footer open gap contract changed'
 must(flow.documentBackground==='#202530','document floor must match dark footer to prevent Safari white tail after footer');
 must(Number(flow.footerAfterDocumentGapMaxPx)===2,'footer-after-document overhang tolerance changed');
 must(fluid.includes('grid-template-columns:minmax(260px,1.3fr) repeat(3,minmax(190px,1fr)) !important'),'fluid footer must remain four-column at desktop breakpoint');
+must(fluid.includes('@media (min-width:1180px) and (max-height:820px){'),'short-height desktop footer compaction breakpoint missing');
+must(fluid.includes('padding-top:32px !important;')&&fluid.includes('padding-bottom:22px !important;'),'short-height desktop footer padding contract missing');
+must(fluid.includes('row-gap:24px !important;'),'short-height desktop footer row-gap contract missing');
 must(fluid.includes('html body main .archive-cards > .archive-card{'),'archive card equal-height selector missing');
 must(fluid.includes('height:100% !important;')&&fluid.includes('flex-direction:column !important;'),'archive cards must remain equal-height flex columns');
 must(fluid.includes('html body main :is(.archive-card,.card) .more{\n  margin-top:auto;'),'archive-card bottom CTA alignment contract missing');
@@ -26,4 +29,4 @@ if(failures.length){
   failures.forEach(f=>console.error(`- ${f}`));
   process.exit(1);
 }
-console.log('BANHALMI footer/card/tail contract passed: balanced two-row desktop footer, accessible compact touch targets, equal archive cards, dark document floor and cache-bust token are protected.');
+console.log('BANHALMI footer/card/tail contract passed: balanced two-row desktop footer, short-height rhythm, accessible compact touch targets, equal archive cards, dark document floor and cache-bust token are protected.');
