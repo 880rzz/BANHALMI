@@ -17,6 +17,8 @@ must(fluid.includes('grid-template-columns:minmax(260px,1.3fr) repeat(3,minmax(1
 must(fluid.includes('html body main .archive-cards > .archive-card{'),'archive card equal-height selector missing');
 must(fluid.includes('height:100% !important;')&&fluid.includes('flex-direction:column !important;'),'archive cards must remain equal-height flex columns');
 must(fluid.includes('html body main :is(.archive-card,.card) .more{\n  margin-top:auto;'),'archive-card bottom CTA alignment contract missing');
+must((fluid.match(/min-height:24px !important;/g)||[]).length>=2,'compact footer phone, WhatsApp and contact actions must retain at least 24px touch-target height');
+must(!fluid.includes('min-height:22px !important;'),'compact footer must not regress interactive targets below Lighthouse 24px minimum');
 must(boot.includes('/assets/css/fluid-4k-rhythm.css?v=20260915-footer-cards-v1'),'fluid footer/card cache-bust token missing');
 
 if(failures.length){
@@ -24,4 +26,4 @@ if(failures.length){
   failures.forEach(f=>console.error(`- ${f}`));
   process.exit(1);
 }
-console.log('BANHALMI footer/card/tail contract passed: balanced two-row desktop footer, equal archive cards, dark document floor and cache-bust token are protected.');
+console.log('BANHALMI footer/card/tail contract passed: balanced two-row desktop footer, accessible compact touch targets, equal archive cards, dark document floor and cache-bust token are protected.');
