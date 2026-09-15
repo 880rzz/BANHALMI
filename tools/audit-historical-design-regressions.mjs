@@ -12,7 +12,7 @@ must(Number(authority.structuredMaxPx)===1440,'BANHALMI canonical structured can
 must(Number(authority.responsive?.touchTargetPx)===44,'BANHALMI canonical touch target must remain 44px');
 must(Number(authority.layout?.documentFlow?.footerMaxViewportFractionOnTabletDesktop)===0.85,'BANHALMI oversized-footer threshold must remain canonical');
 must(authority.layout?.documentFlow?.documentBackground==='#202530','BANHALMI document floor must remain aligned with the dark footer to prevent Safari tail exposure');
-must(Number(authority.layout?.footer?.desktopColumns)===6,'BANHALMI desktop footer must remain six-column two-row geometry');
+must(Number(authority.layout?.footer?.desktopColumns)===4,'BANHALMI desktop footer must remain four-column balanced two-row geometry');
 must(Number(authority.layout?.footer?.compactDesktopColumns)===6,'BANHALMI compact desktop footer must remain six-column geometry');
 must(Number(authority.layout?.footer?.compactDesktopMinPx)===768,'BANHALMI compact desktop footer must begin at 768px to prevent tablet footer overheight');
 must(Number(authority.layout?.footer?.tabletColumns)===5,'BANHALMI tablet footer must remain five-column geometry below 768px');
@@ -49,4 +49,4 @@ must(!audit.includes('pageMaxPx=1200'),'stale 1200px canvas may not return to ex
 must(!audit.includes('pageMaxPx=1500'),'stale 1500px canvas may not return to exhaustive audit');
 
 if(failures.length){console.error(`BANHALMI historical design regression guard failed (${failures.length}):`);for(const f of failures)console.error(`- ${f}`);process.exit(1)}
-console.log('BANHALMI historical design regression guard passed: canonical canvases, compiled 44px controls, screenshot-approved frame-free mega menu, approved two-row desktop footer, dark document floor, legal identifier containment and overflow protections are locked through 4K.');
+console.log('BANHALMI historical design regression guard passed: canonical canvases, compiled 44px controls, screenshot-approved frame-free mega menu, balanced two-row desktop footer, dark document floor, legal identifier containment and overflow protections are locked through 4K.');
