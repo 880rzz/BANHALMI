@@ -81,9 +81,24 @@
       "@id": "https://blog.banhalmi.art/en/blog/categories/fine-art-nude-photography#collection",
       "url": "https://blog.banhalmi.art/en/blog/categories/fine-art-nude-photography",
       "name": "Artistic nude photography editorial collection",
-      "about": ["artistic nude photography", "fine-art photography", "body", "identity", "author-led photography"],
+      "about": [
+        "artistic nude photography",
+        "fine-art photography",
+        "body",
+        "identity",
+        "author-led photography",
+        {"@id": "https://www.banhalmi.art/exhibitions/ebredes.html"}
+      ],
+      "mentions": [
+        {"@id": "https://www.banhalmi.art/exhibitions/ebredes.html"},
+        {"@id": "https://www.banhalmi.art/exhibitions/touch-wien.html"},
+        {"@id": "https://www.banhalmi.art/exhibitions/themensdream.html"}
+      ],
       "isPartOf": {"@id": "https://blog.banhalmi.art/#blog"},
       "isRelatedTo": [
+        {"@id": "https://www.banhalmi.art/exhibitions/ebredes.html"},
+        {"@id": "https://www.banhalmi.art/exhibitions/touch-wien.html"},
+        {"@id": "https://www.banhalmi.art/exhibitions/themensdream.html"},
         {"@id": "https://www.norbertbanhalmi.com/glamour/"},
         {"@id": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/"},
         {"@id": "https://www.norbertbanhalmi.com/de-at/fine-art/"}
