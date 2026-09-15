@@ -61,7 +61,7 @@ for(const width of widths){
 
       for(const h of document.querySelectorAll('main h1,main h2,main h3,header h1')){
         if(!visible(h))continue;const s=getComputedStyle(h),r=h.getBoundingClientRect(),fs=px(s.fontSize),lh=px(s.lineHeight)/(fs||1),fw=Number(s.fontWeight)||400,ls=px(s.letterSpacing);if(fs<1)continue;
-        const tag=h.tagName.toLowerCase(),quoteHeading=!!h.closest('.smart-quote-layout'),homepageHeroH1=protectedHomepage&&tag==='h1'&&!!h.closest('main[data-homepage-redesign="stage76"]>.hero-copy-only'),homepageDecisionH2=protectedHomepage&&tag==='h2'&&!!h.closest('main[data-homepage-redesign="stage76"]>.fp-decision-system'),lim=tag==='h1'?(w<=430?[32,40]:w<=768?[32,44]:[32,58]):tag==='h2'?(w<=430?[22,30]:w<=768?[22,32]:[22,38]):quoteHeading?[16,34]:[17.75,34];
+        const tag=h.tagName.toLowerCase(),quoteHeading=!!h.closest('.smart-quote-layout'),homepageHeroH1=protectedHomepage&&tag==='h1'&&!!h.closest('main[data-homepage-redesign="stage76"]>.hero-copy-only'),homepageDecisionH2=protectedHomepage&&tag==='h2'&&!!h.closest('.fp-decision-system')&&h.closest('main')?.dataset.homepageRedesign==='stage76',lim=tag==='h1'?(w<=430?[32,40]:w<=768?[32,44]:[32,58]):tag==='h2'?(w<=430?[22,30]:w<=768?[22,32]:[22,38]):quoteHeading?[16,34]:[17.75,34];
         const lhLim=homepageHeroH1?[0.975,1.18]:tag==='h1'?[0.98,1.18]:[1.02,1.30];
         const trackingLimit=homepageHeroH1?0.055:homepageDecisionH2?0.041:0.025;
         if(fs<lim[0]||fs>lim[1])issues.push(`${name(h)} font-size ${fs.toFixed(1)}px outside ${lim[0]}–${lim[1]}px`);
