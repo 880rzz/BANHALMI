@@ -89,6 +89,12 @@ html body main :is(.cards,.archive-cards,.card-grid,.fp-choice-grid){
 html body main :is(.archive-cards,.cards.archive-cards){
   margin-top:var(--space-4);
   margin-bottom:0;
+  align-items:stretch !important;
+}
+html body main .archive-cards > .archive-card{
+  height:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
 }
 html body main .reviews-drawer-section{
   padding-top:var(--space-6) !important;
@@ -146,11 +152,16 @@ html body .site-footer .footer-heading{
 }
 @media (min-width:1180px){
   html body .site-footer .footer-grid{
-    grid-template-columns:
-      minmax(190px,1.6fr)
-      repeat(5,minmax(82px,.72fr))
-      minmax(160px,1fr)
-      minmax(160px,1fr) !important;
+    grid-template-columns:minmax(220px,1.6fr) repeat(5,minmax(110px,1fr)) !important;
+    column-gap:28px !important;
+    row-gap:32px !important;
+  }
+  html body .site-footer .footer-accordion > summary{
+    pointer-events:none;
+    cursor:default !important;
+  }
+  html body .site-footer .footer-accordion > summary::after{
+    display:none !important;
   }
 }
 @media (max-width:1179px){
