@@ -69,5 +69,16 @@ This repository treats the following as a release-blocking visual contract for e
 - Such processes must preserve equal-height same-type desktop cards, semantic multi-line footer wrapping, and atomic identifier no-break behavior.
 - A process that reintroduces the retired full-footer single-line rule is a regression and must fail the repository audit before release.
 
+## Desktop Visual Redesign v2 — 2026-09-15
+- Homepage-only visual authority: `main[data-homepage-redesign="stage76"]`.
+- Desktop composition begins at `min-width:1180px`; mobile and tablet remain owned by the existing base design system.
+- Desktop hero uses an editorial split: image-led left field and constrained positioning copy on the right.
+- Decision paths use a three-column editorial grid; principal services use a two-column rule-separated grid; the oeuvre teaser uses an asymmetric copy/image composition.
+- 1440, 1920 and 2560 px viewports must look materially different from the pre-redesign desktop while preserving readable prose and negative space.
+- Footer geometry, reviews rhythm and deterministic multilingual navigation remain protected.
+- SEO, canonical, hreflang, Schema, machine-readable evidence and trust semantics are presentation-external and must not be weakened by visual changes.
+- U.S. Embassy in Austria / SelectUSA / AmCham evidence and ART ↔ Blog ↔ Professional intent separation remain protected. Event/publication evidence must not be reinterpreted as endorsement, client, partnership or exclusivity proof.
+- `assets/js/fluid-rhythm-boot.js` must load the current versioned `fluid-4k-rhythm.css` token for the redesign.
+
 ## Release rule
 A visual failure on any published page, language, or audited viewport blocks release. The automated browser contract is implemented in `tools/audit-apple-visual-quality.mjs` and must run together with the repository's exhaustive browser, first-principles, accessibility, contrast, Lighthouse, SEO, schema, GEO, GDPR, AI/LLM, trust, exact-live, and design-contract gates. Computed geometry, not token presence alone, is the release evidence.
