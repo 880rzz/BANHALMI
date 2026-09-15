@@ -440,7 +440,7 @@ html body .cookie{
     margin-bottom:18px;
     font-size:clamp(2rem,2.35vw,2.5rem) !important;
     line-height:1.04;
-    letter-spacing:-.04em;
+    letter-spacing:-.024em;
   }
   html body main[data-homepage-redesign="stage76"]>.fp-decision-system .fp-decision-lead{
     margin-bottom:clamp(42px,3.4vw,60px);
@@ -493,7 +493,7 @@ html body .cookie{
     margin-bottom:24px !important;
     font-size:clamp(2rem,2.35vw,2.5rem) !important;
     line-height:1.04 !important;
-    letter-spacing:-.04em !important;
+    letter-spacing:-.024em !important;
   }
   html body main[data-homepage-redesign="stage76"]>.presence-thesis p{
     max-width:54ch !important;
@@ -515,7 +515,7 @@ html body .cookie{
     max-width:13ch;
     font-size:clamp(2rem,2.35vw,2.5rem) !important;
     line-height:1.04;
-    letter-spacing:-.04em;
+    letter-spacing:-.024em;
   }
   html body main[data-homepage-redesign="stage76"]>.client-decision-bridge .prose{
     padding-top:clamp(24px,2vw,32px);
