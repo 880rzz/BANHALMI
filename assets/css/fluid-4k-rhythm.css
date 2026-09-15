@@ -88,8 +88,8 @@ html body main :is(.archive-cards,.cards.archive-cards){
   margin-bottom:0;
 }
 html body main .reviews-drawer-section{
-  padding-top:var(--section-y) !important;
-  padding-bottom:var(--section-y) !important;
+  padding-top:var(--space-5) !important;
+  padding-bottom:var(--space-5) !important;
   scroll-margin-top:var(--header-offset);
 }
 html body main .reviews-drawer-section .wrap{
