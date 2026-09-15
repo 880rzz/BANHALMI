@@ -3,6 +3,8 @@ import fs from 'node:fs';
 const failures = [];
 const services = JSON.parse(fs.readFileSync('services.json', 'utf8'));
 const bridge = JSON.parse(fs.readFileSync('archive-bridge.json', 'utf8'));
+const collections = JSON.parse(fs.readFileSync('blog-collections.json', 'utf8'));
+const blogEntity = JSON.parse(fs.readFileSync('blog-entity.jsonld', 'utf8'));
 
 const fineArt = services.itemListElement?.find(item => item.name === 'Fine Art Photography');
 if (!fineArt) failures.push('services.json: Fine Art Photography service missing');
@@ -58,8 +60,55 @@ if (bridge.canonicalPerson?.wikidata !== 'https://www.wikidata.org/wiki/Q5639111
   failures.push('archive-bridge.json: canonical Person Wikidata drift');
 }
 
+const expectedCollections = {
+  'hu-HU': {
+    category: 'https://blog.banhalmi.art/blog/categories/aktfotozas-muveszi-szemmel',
+    authority: 'https://www.banhalmi.art/hu/exhibitions/ebredes.html',
+    professional: 'https://www.norbertbanhalmi.com/hu/muveszi-fotografia/'
+  },
+  'en-GB': {
+    category: 'https://blog.banhalmi.art/en/blog/categories/fine-art-nude-photography',
+    authority: 'https://www.banhalmi.art/exhibitions/ebredes.html',
+    professional: 'https://www.norbertbanhalmi.com/glamour/'
+  },
+  'de-AT': {
+    category: 'https://blog.banhalmi.art/de/blog/categories/kuenstlerische-aktfotografie',
+    authority: 'https://www.banhalmi.art/de-at/exhibitions/ebredes.html',
+    professional: 'https://www.norbertbanhalmi.com/de-at/fine-art/'
+  }
+};
+const collectionItems = (collections.itemListElement || []).map(entry => entry?.item).filter(Boolean);
+for (const [locale, expected] of Object.entries(expectedCollections)) {
+  const item = collectionItems.find(candidate => candidate.inLanguage === locale && candidate.url === expected.category);
+  if (!item) {
+    failures.push(`blog-collections.json: artistic-nude editorial collection missing for ${locale}`);
+    continue;
+  }
+  const related = Array.isArray(item.isRelatedTo) ? item.isRelatedTo : [item.isRelatedTo].filter(Boolean);
+  if (!related.includes(expected.authority)) failures.push(`blog-collections.json: ${locale} artistic-nude collection missing Ébredés authority relation`);
+  if (!related.includes(expected.professional)) failures.push(`blog-collections.json: ${locale} artistic-nude collection missing professional Fine Art relation`);
+}
+
+const graph = Array.isArray(blogEntity['@graph']) ? blogEntity['@graph'] : [];
+const nudeCollection = graph.find(node => node?.['@id'] === 'https://blog.banhalmi.art/en/blog/categories/fine-art-nude-photography#collection');
+const nudeRelated = new Set((nudeCollection?.isRelatedTo || []).map(node => node?.['@id']));
+for (const id of [
+  'https://www.banhalmi.art/exhibitions/ebredes.html',
+  'https://www.banhalmi.art/exhibitions/touch-wien.html',
+  'https://www.banhalmi.art/exhibitions/themensdream.html',
+  'https://www.norbertbanhalmi.com/glamour/',
+  'https://www.norbertbanhalmi.com/hu/muveszi-fotografia/',
+  'https://www.norbertbanhalmi.com/de-at/fine-art/'
+]) {
+  if (!nudeRelated.has(id)) failures.push(`blog-entity.jsonld: artistic-nude collection missing relation ${id}`);
+}
+if (nudeCollection?.mainEntity) failures.push('blog-entity.jsonld: editorial collection must not redefine Ébredés as its own mainEntity');
+if (nudeCollection?.subjectOf?.['@id'] !== 'https://www.banhalmi.art/exhibitions/ebredes.html#artistic-nude-authority') {
+  failures.push('blog-entity.jsonld: artistic-nude collection must reference Ébredés as external oeuvre authority');
+}
+
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exit(1);
 }
-console.log('Fine Art ↔ BANHALMI ART agent bridge contract passed, including artist collaboration plus Awakening and Touch anchors.');
+console.log('Fine Art ↔ BANHALMI ART ↔ Blog bridge contract passed: professional commission intent, Ébredés oeuvre authority, Touch/Tantra + The Men’s Dream support and multilingual editorial collections remain distinct but connected.');
