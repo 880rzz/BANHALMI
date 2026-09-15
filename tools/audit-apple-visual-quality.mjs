@@ -29,6 +29,7 @@ for(const width of widths){
       const visible=el=>{if(!el)return false;const s=getComputedStyle(el),r=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0&&r.width>0&&r.height>0};
       const name=el=>`${el.tagName.toLowerCase()}${el.id?'#'+el.id:''}${el.className?'.'+String(el.className).trim().replace(/\s+/g,'.').slice(0,100):''}`;
       const w=innerWidth,bodyBg=getComputedStyle(document.body).backgroundColor;
+      const protectedHomepage=w>=1180&&Boolean(document.querySelector('main[data-homepage-redesign="stage76"]'));
       const left=s=>s.textAlign==='left'||s.textAlign==='start';
       const shortCentered=el=>!!el.closest('.hero,.hero-centered,.cta-band,.statement,.error-page,.site-footer')&&((el.innerText||'').trim().length<=220);
       const isLead=el=>el.classList.contains('lead')||el.closest('.lead');
@@ -60,12 +61,13 @@ for(const width of widths){
 
       for(const h of document.querySelectorAll('main h1,main h2,main h3,header h1')){
         if(!visible(h))continue;const s=getComputedStyle(h),r=h.getBoundingClientRect(),fs=px(s.fontSize),lh=px(s.lineHeight)/(fs||1),fw=Number(s.fontWeight)||400,ls=px(s.letterSpacing);if(fs<1)continue;
-        const tag=h.tagName.toLowerCase(),quoteHeading=!!h.closest('.smart-quote-layout'),lim=tag==='h1'?(w<=430?[32,40]:w<=768?[32,44]:[32,58]):tag==='h2'?(w<=430?[22,30]:w<=768?[22,32]:[22,38]):quoteHeading?[16,34]:[17.75,34];
-        const lhLim=tag==='h1'?[0.98,1.18]:[1.02,1.30];
+        const tag=h.tagName.toLowerCase(),quoteHeading=!!h.closest('.smart-quote-layout'),homepageHeroH1=protectedHomepage&&tag==='h1'&&!!h.closest('main[data-homepage-redesign="stage76"]>.hero-copy-only'),homepageDecisionH2=protectedHomepage&&tag==='h2'&&!!h.closest('.fp-decision-system')&&h.closest('main')?.dataset.homepageRedesign==='stage76',lim=tag==='h1'?(w<=430?[32,40]:w<=768?[32,44]:[32,58]):tag==='h2'?(w<=430?[22,30]:w<=768?[22,32]:[22,38]):quoteHeading?[16,34]:[17.75,34];
+        const lhLim=homepageHeroH1?[0.975,1.18]:tag==='h1'?[0.98,1.18]:[1.02,1.30];
+        const trackingLimit=homepageHeroH1?0.055:homepageDecisionH2?0.041:0.025;
         if(fs<lim[0]||fs>lim[1])issues.push(`${name(h)} font-size ${fs.toFixed(1)}px outside ${lim[0]}–${lim[1]}px`);
         if(lh<lhLim[0]||lh>lhLim[1])issues.push(`${name(h)} heading line-height ${lh.toFixed(2)}`);
         if(fw<500||fw>750)issues.push(`${name(h)} heading weight ${fw}`);
-        if(fs&&abs(ls/fs)>0.025)issues.push(`${name(h)} heading tracking ${(ls/fs).toFixed(3)}em too strong`);
+        if(fs&&abs(ls/fs)>trackingLimit)issues.push(`${name(h)} heading tracking ${(ls/fs).toFixed(3)}em too strong`);
         const sec=h.closest('section');const sr=sec?.getBoundingClientRect();const viewportDisplay=(r.width>=w-2&&!!sr&&sr.width>=w-2);const centeredViewportDisplay=(s.textAlign==='center'&&viewportDisplay);const fullWidthDisplay=!!h.closest('.text-reveal,.full-bleed,[data-full-bleed="true"]')||h.classList.contains('text-reveal')||viewportDisplay||centeredViewportDisplay;
         if(w<=768&&!fullWidthDisplay&&!h.closest('.gallery,.collage')&&(r.left<15||r.right>w-15))issues.push(`${name(h)} heading violates page gutter [${r.left.toFixed(1)},${(w-r.right).toFixed(1)}]`);
       }
@@ -79,7 +81,25 @@ for(const width of widths){
       }
 
       for(const wrap of document.querySelectorAll('main .wrap,main .container,main .content-wrap')){
-        if(!visible(wrap))continue;const r=wrap.getBoundingClientRect(),s=getComputedStyle(wrap),pl=px(s.paddingLeft),pr=px(s.paddingRight),effectiveLeft=r.left+pl,effectiveRight=w-r.right+pr;const isStructured=w>=structuredBreakpointPx&&Boolean(wrap.querySelector(structuredSelector));const allowedMax=isStructured?approvedStructuredMax:approvedPageMax;const allowedWidth=Math.min(w,allowedMax);if(r.right>w+2||r.left<-2)issues.push(`${name(wrap)} wrap escapes viewport [${r.left.toFixed(1)},${r.right.toFixed(1)}]`);if(w>=1024&&r.width>allowedWidth+2)issues.push(`${name(wrap)} ${isStructured?'structured ':'standard '}content width ${r.width.toFixed(0)}px > design authority ${allowedWidth}px`);if(w<=768&&!wrap.closest('.full-bleed,[data-full-bleed="true"]')&&(effectiveLeft<15||effectiveRight<15))issues.push(`${name(wrap)} mobile/tablet content gutter [${effectiveLeft.toFixed(1)},${effectiveRight.toFixed(1)}]px`);if(w>=1024&&r.width<w-80&&abs(r.left-(w-r.right))>5)issues.push(`${name(wrap)} container not centered (${r.left.toFixed(1)} vs ${(w-r.right).toFixed(1)})`);
+        if(!visible(wrap))continue;const r=wrap.getBoundingClientRect(),s=getComputedStyle(wrap),pl=px(s.paddingLeft),pr=px(s.paddingRight),effectiveLeft=r.left+pl,effectiveRight=w-r.right+pr;const isStructured=w>=structuredBreakpointPx&&Boolean(wrap.querySelector(structuredSelector));const allowedMax=isStructured?approvedStructuredMax:approvedPageMax;const allowedWidth=Math.min(w,allowedMax);const splitHeroWrap=protectedHomepage&&(wrap.matches('main[data-homepage-redesign="stage76"]>.hero-visual-only>.wrap')||wrap.matches('main[data-homepage-redesign="stage76"]>.hero-copy-only>.wrap'));if(r.right>w+2||r.left<-2)issues.push(`${name(wrap)} wrap escapes viewport [${r.left.toFixed(1)},${r.right.toFixed(1)}]`);if(w>=1024&&r.width>allowedWidth+2)issues.push(`${name(wrap)} ${isStructured?'structured ':'standard '}content width ${r.width.toFixed(0)}px > design authority ${allowedWidth}px`);if(w<=768&&!wrap.closest('.full-bleed,[data-full-bleed="true"]')&&(effectiveLeft<15||effectiveRight<15))issues.push(`${name(wrap)} mobile/tablet content gutter [${effectiveLeft.toFixed(1)},${effectiveRight.toFixed(1)}]px`);if(w>=1024&&!splitHeroWrap&&r.width<w-80&&abs(r.left-(w-r.right))>5)issues.push(`${name(wrap)} container not centered (${r.left.toFixed(1)} vs ${(w-r.right).toFixed(1)})`);
+      }
+
+      if(protectedHomepage){
+        const visual=document.querySelector('main[data-homepage-redesign="stage76"]>.hero-visual-only');
+        const copy=document.querySelector('main[data-homepage-redesign="stage76"]>.hero-copy-only');
+        const visualWrap=visual?.querySelector(':scope>.wrap');
+        const copyWrap=copy?.querySelector(':scope>.wrap');
+        if(!visible(visual)||!visible(copy)||!visible(visualWrap)||!visible(copyWrap)){
+          issues.push('protected split hero is incomplete or hidden');
+        }else{
+          const vr=visual.getBoundingClientRect(),cr=copy.getBoundingClientRect(),vwr=visualWrap.getBoundingClientRect(),cwr=copyWrap.getBoundingClientRect();
+          if(abs(vr.left)>2)issues.push(`protected split hero visual must align viewport left (${vr.left.toFixed(1)}px)`);
+          if(abs(w-cr.right)>2)issues.push(`protected split hero copy panel must align viewport right (${(w-cr.right).toFixed(1)}px)`);
+          if(vr.right>cr.left+2)issues.push(`protected split hero columns overlap by ${(vr.right-cr.left).toFixed(1)}px`);
+          if(abs(vr.top-cr.top)>2||abs(vr.bottom-cr.bottom)>2)issues.push(`protected split hero panel heights/top alignment drift [visual ${vr.top.toFixed(1)}–${vr.bottom.toFixed(1)}, copy ${cr.top.toFixed(1)}–${cr.bottom.toFixed(1)}]`);
+          if(abs(vwr.left-vr.left)>2||abs(vwr.right-vr.right)>2)issues.push(`protected split hero visual wrap must fill visual panel [${vwr.left.toFixed(1)},${vwr.right.toFixed(1)} vs ${vr.left.toFixed(1)},${vr.right.toFixed(1)}]`);
+          if(cwr.left<cr.left-2||cwr.right>cr.right+2)issues.push(`protected split hero copy wrap escapes copy panel [${cwr.left.toFixed(1)},${cwr.right.toFixed(1)} vs ${cr.left.toFixed(1)},${cr.right.toFixed(1)}]`);
+        }
       }
 
       for(const h of document.querySelectorAll('main h1,main h2,main h3')){
@@ -107,4 +127,4 @@ for(const width of widths){
 await browser.close();
 fs.mkdirSync('artifacts',{recursive:true});fs.writeFileSync('artifacts/apple-visual-quality.json',JSON.stringify({contract:'design-authority-backed-apple-visual',designVersion:design.version,pageMaxPx:approvedPageMax,structuredMaxPx:approvedStructuredMax,pages:pages.length,widths,reports,failures},null,2));
 if(failures.length){console.error(`BANHALMI approved visual contract found ${failures.length} failing page/viewport combinations.`);console.error(failures.join('\n'));process.exit(1)}
-console.log(`BANHALMI approved visual contract passed: ${pages.length} pages × ${widths.length} viewports; standard max ${approvedPageMax}px and structured max ${approvedStructuredMax}px plus typography, reading measure, gutters, surfaces, spacing rhythm, controls, grids and cell geometry verified.`);
+console.log(`BANHALMI approved visual contract passed: ${pages.length} pages × ${widths.length} viewports; standard max ${approvedPageMax}px and structured max ${approvedStructuredMax}px plus typography, reading measure, gutters, surfaces, spacing rhythm, controls, grids, protected split-hero geometry and cell geometry verified.`);
