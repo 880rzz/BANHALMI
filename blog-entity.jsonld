@@ -89,6 +89,11 @@
         "author-led photography",
         {"@id": "https://www.banhalmi.art/exhibitions/ebredes.html"}
       ],
+      "mentions": [
+        {"@id": "https://www.banhalmi.art/exhibitions/ebredes.html"},
+        {"@id": "https://www.banhalmi.art/exhibitions/touch-wien.html"},
+        {"@id": "https://www.banhalmi.art/exhibitions/themensdream.html"}
+      ],
       "isPartOf": {"@id": "https://blog.banhalmi.art/#blog"},
       "isRelatedTo": [
         {"@id": "https://www.banhalmi.art/exhibitions/ebredes.html"},
@@ -97,13 +102,7 @@
         {"@id": "https://www.norbertbanhalmi.com/glamour/"},
         {"@id": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/"},
         {"@id": "https://www.norbertbanhalmi.com/de-at/fine-art/"}
-      ],
-      "subjectOf": {
-        "@type": "CreativeWork",
-        "@id": "https://www.banhalmi.art/exhibitions/ebredes.html#artistic-nude-authority",
-        "name": "Awakening / Ébredés — central artistic-nude oeuvre authority",
-        "url": "https://www.banhalmi.art/exhibitions/ebredes.html"
-      }
+      ]
     },
     {
       "@type": "CollectionPage",
