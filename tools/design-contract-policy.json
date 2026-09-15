@@ -1,0 +1,13 @@
+{
+  "version": "2026-09-15",
+  "authority": ["APPLE-DESIGN-CONTRACT.md", "assets/css/fluid-4k-rhythm.css"],
+  "rules": {
+    "equalHeightSameTypeCardsDesktop": true,
+    "naturalHeightCardsMobile": true,
+    "desktopFooterExpandedAllowed": true,
+    "footerMayWrapAcrossLines": true,
+    "footerAtomicIdentifiersNoWrap": true,
+    "legacyFullFooterSingleLineRule": false
+  },
+  "rewritePolicy": "Generators, optimizers, restore, hardening and remediation jobs must preserve this policy and must never reconstruct the retired full-footer single-line rule."
+}

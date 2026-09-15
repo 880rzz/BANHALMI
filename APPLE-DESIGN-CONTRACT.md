@@ -40,7 +40,7 @@ This repository treats the following as a release-blocking visual contract for e
 - Spacing follows a small, repeated rhythm rather than arbitrary one-off values: 8 / 12 / 16 / 24 / 40 / fluid section 48–96.
 - Heading to description: 12–16 px. Description to link or CTA: 20–28 px. Card gap: 16–24 px.
 - Rows, cards and groups use the same canonical spacing scale unless their information architecture explicitly requires a documented exception.
-- Short pages keep the footer at the bottom of the viewport using the canonical `min-height: 100dvh` document grid. Footer legal identifiers never wrap mid-number.
+- Short pages keep the footer at the bottom of the viewport using the canonical `min-height: 100dvh` document grid.
 
 ## Cards, cells, rows, and columns
 - Cards are used only for real content units, not as decoration around every paragraph.
@@ -49,11 +49,25 @@ This repository treats the following as a release-blocking visual contract for e
 - Text-bearing grid columns must remain wide enough to read.
 - Dense desktop grids must collapse or reflow before text becomes cramped.
 - Cards in the same semantic grid use a shared gap and comparable inset rhythm; isolated page-specific spacing patches are not accepted as the design authority.
+- Same-type cards in the same rendered row use equal outer visual height on tablet/desktop/4K; content length must not make sibling cards visibly shorter or taller.
+- CTA/action regions should align consistently toward the bottom when present. Mobile uses natural content height rather than forced empty space.
+
+## Footer
+- The desktop footer may remain information-rich and expanded by default.
+- Footer columns, metadata and legal records may wrap across multiple lines. A single-line footer is not a design requirement.
+- Wrapping must occur between semantic fields/items; do not solve density by shrinking typography or widening the document.
+- Atomic identifiers must remain intact: telephone numbers, email addresses, VAT/tax/company identifiers and similar IDs must not break internally.
+- The retired rule requiring the complete footer/legal identifier area to stay on one line must never be restored by a generator, optimizer, restore, hardening or remediation job.
 
 ## Controls and links
 - Mobile/tablet interactive controls use at least a 44 px touch height; button-like controls also require a 44 px touch width.
 - Primary and secondary CTAs remain visually distinct and concise.
 - Navigation links, inline text links, utility links, disclosures and CTA links may differ by role, but each role must remain typographically, spatially and interactively consistent across pages and languages.
 
+## Restore / rewrite authority
+- `APPLE-DESIGN-CONTRACT.md` and `tools/design-contract-policy.json` are canonical inputs for any automated generator, optimizer, restore, hardening, remediation or rewrite process that can affect layout.
+- Such processes must preserve equal-height same-type desktop cards, semantic multi-line footer wrapping, and atomic identifier no-break behavior.
+- A process that reintroduces the retired full-footer single-line rule is a regression and must fail the repository audit before release.
+
 ## Release rule
-A visual failure on any published page, language, or audited viewport blocks release. The automated browser contract is implemented in `tools/audit-apple-visual-quality.mjs` and must run together with the repository's exhaustive browser, first-principles, accessibility, contrast, Lighthouse, SEO, schema, GEO, GDPR, AI/LLM, trust, and exact-live gates. Computed geometry, not token presence alone, is the release evidence.
+A visual failure on any published page, language, or audited viewport blocks release. The automated browser contract is implemented in `tools/audit-apple-visual-quality.mjs` and must run together with the repository's exhaustive browser, first-principles, accessibility, contrast, Lighthouse, SEO, schema, GEO, GDPR, AI/LLM, trust, exact-live, and design-contract gates. Computed geometry, not token presence alone, is the release evidence.
