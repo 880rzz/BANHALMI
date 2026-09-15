@@ -152,7 +152,7 @@ html body .site-footer .footer-heading{
 }
 @media (min-width:1180px){
   html body .site-footer .footer-grid{
-    grid-template-columns:minmax(220px,1.6fr) repeat(5,minmax(110px,1fr)) !important;
+    grid-template-columns:minmax(260px,1.3fr) repeat(3,minmax(190px,1fr)) !important;
     column-gap:28px !important;
     row-gap:32px !important;
   }
