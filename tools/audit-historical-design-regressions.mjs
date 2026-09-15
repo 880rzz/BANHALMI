@@ -14,8 +14,8 @@ must(Number(authority.layout?.documentFlow?.footerMaxViewportFractionOnTabletDes
 must(authority.layout?.documentFlow?.documentBackground==='#202530','BANHALMI document floor must remain aligned with the dark footer to prevent Safari tail exposure');
 must(Number(authority.layout?.footer?.desktopColumns)===4,'BANHALMI desktop footer must remain four-column balanced two-row geometry');
 must(Number(authority.layout?.footer?.compactDesktopColumns)===6,'BANHALMI compact desktop footer must remain six-column geometry');
-must(Number(authority.layout?.footer?.compactDesktopMinPx)===768,'BANHALMI compact desktop footer must begin at 768px to prevent tablet footer overheight');
-must(Number(authority.layout?.footer?.tabletColumns)===5,'BANHALMI tablet footer must remain five-column geometry below 768px');
+must(Number(authority.layout?.footer?.compactDesktopMinPx)===769,'BANHALMI compact desktop footer must begin at 769px so the 768px tablet contract cannot overlap it');
+must(Number(authority.layout?.footer?.tabletColumns)===5,'BANHALMI tablet footer must remain five-column geometry through 768px');
 must(Number(authority.layout?.footer?.mobileColumns)===1,'BANHALMI mobile footer must remain single-column geometry');
 must(Number(authority.layout?.footer?.paddingTopPx)===40&&Number(authority.layout?.footer?.paddingBottomPx)===28,'BANHALMI open two-row footer padding authority changed');
 must(Number(authority.layout?.footer?.desktopGapPx)===28,'BANHALMI open desktop footer gap authority changed');
@@ -49,4 +49,4 @@ must(!audit.includes('pageMaxPx=1200'),'stale 1200px canvas may not return to ex
 must(!audit.includes('pageMaxPx=1500'),'stale 1500px canvas may not return to exhaustive audit');
 
 if(failures.length){console.error(`BANHALMI historical design regression guard failed (${failures.length}):`);for(const f of failures)console.error(`- ${f}`);process.exit(1)}
-console.log('BANHALMI historical design regression guard passed: canonical canvases, compiled 44px controls, screenshot-approved frame-free mega menu, balanced two-row desktop footer, dark document floor, legal identifier containment and overflow protections are locked through 4K.');
+console.log('BANHALMI historical design regression guard passed: canonical canvases, compiled 44px controls, screenshot-approved frame-free mega menu, balanced two-row desktop footer, non-overlapping 768/769px footer boundary, dark document floor, legal identifier containment and overflow protections are locked through 4K.');
