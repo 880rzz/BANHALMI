@@ -70,10 +70,14 @@ for (const file of files) {
 
 for (const route of ['privacy-policy/index.html', 'hu/adatvedelem/index.html', 'de-at/datenschutz/index.html']) {
   const content = await readFile(path.join(root, route), 'utf8');
-  if (!content.includes('data-cross-site-privacy="true"')) failures.push(`${route}: missing BANHALMI ART privacy disclosure`);
-  if (!content.includes('G-90C452LJKQ')) failures.push(`${route}: missing shared GA4 property disclosure`);
+  if (!content.includes('data-cross-site-privacy="true"')) failures.push(`${route}: missing BANHALMI ART ecosystem/privacy disclosure`);
+  if (!content.includes('G-90C452LJKQ')) failures.push(`${route}: missing BANHALMI professional GA4 property disclosure`);
 }
 
+const analytics = await readFile(path.join(root, 'assets/js/analytics.js'), 'utf8');
+if (/banhalmi\.art/i.test(analytics)) failures.push('assets/js/analytics.js: ART domain leaked into professional analytics configuration');
+if (/\blinker\s*:/i.test(analytics)) failures.push('assets/js/analytics.js: cross-domain linker must remain disabled');
+
 for (const failure of failures) console.error(`FAIL ${failure}`);
-console.log(`Audited ${files.length} COM files for cross-site consistency.`);
+console.log(`Audited ${files.length} COM files for cross-site consistency and dedicated professional analytics boundaries.`);
 if (failures.length) process.exitCode = 1;
