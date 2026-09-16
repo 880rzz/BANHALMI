@@ -22,7 +22,7 @@ must(fluid.includes('height:100% !important;')&&fluid.includes('flex-direction:c
 must(fluid.includes('html body main :is(.archive-card,.card) .more{\n  margin-top:auto;'),'archive-card bottom CTA alignment contract missing');
 must((fluid.match(/min-height:24px !important;/g)||[]).length>=2,'compact footer phone, WhatsApp and contact actions must retain at least 24px touch-target height');
 must(!fluid.includes('min-height:22px !important;'),'compact footer must not regress interactive targets below Lighthouse 24px minimum');
-must(boot.includes('/assets/css/fluid-4k-rhythm.css?v=20260915-footer-cards-v1'),'fluid footer/card cache-bust token missing');
+must(boot.includes('/assets/css/fluid-4k-rhythm.css?v=20260916-hero-root-v2'),'fluid footer/card cache-bust token missing');
 
 if(failures.length){
   console.error(`BANHALMI footer/card/tail contract failed (${failures.length}):`);
