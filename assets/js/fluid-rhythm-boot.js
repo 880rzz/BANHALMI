@@ -1,7 +1,7 @@
 /* Legacy-compatible loader for the canonical fluid 4K rhythm contract. Navigation authority lives in mega-menu.js. */
 (function(){
   'use strict';
-  var href = '/assets/css/fluid-4k-rhythm.css?v=20260915-footer-cards-v1';
+  var href = '/assets/css/fluid-4k-rhythm.css?v=20260916-hero-root-v2';
   var existing = document.querySelector('link[data-fluid-4k-rhythm]');
   if (existing) {
     if (existing.getAttribute('href') !== href) existing.setAttribute('href', href);
@@ -27,8 +27,14 @@
       'html body .site-footer details.footer-accordion>:not(summary){display:block!important}',
       'html body .site-footer details.footer-accordion>summary{pointer-events:none!important;cursor:default!important}',
       'html body main[data-homepage-redesign="stage76"]{--desktop-hero-min:clamp(520px,62vh,680px)!important}',
-      'html body main[data-homepage-redesign="stage76"]>.hero-visual-only,html body main[data-homepage-redesign="stage76"]>.hero-copy-only,html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure,html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure picture,html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure picture>img,html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-video{min-height:var(--desktop-hero-min)!important}',
-      'html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure picture>img,html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-video{object-position:center 30%!important}',
+      'html body main[data-homepage-redesign="stage76"]>.hero-visual-only{display:flex!important;min-height:var(--desktop-hero-min)!important;padding:0!important}',
+      'html body main[data-homepage-redesign="stage76"]>.hero-visual-only>.wrap{display:flex!important;flex:1 1 auto!important;height:auto!important;min-height:var(--desktop-hero-min)!important}',
+      'html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure{position:relative!important;display:block!important;flex:1 1 auto!important;width:100%!important;height:auto!important;min-height:0!important;background:#0a0a0a!important;overflow:hidden!important}',
+      'html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure picture{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;min-height:0!important}',
+      'html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure picture>img,html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-video{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;min-height:0!important;object-fit:cover!important;object-position:center 30%!important}',
+      'html body main[data-homepage-redesign="stage76"]>.hero-copy-only{min-height:var(--desktop-hero-min)!important}',
+      'html body main[data-homepage-redesign="stage76"]>.hero-copy-only h1{max-width:15ch!important;text-wrap:pretty!important}',
+      'html body main[data-homepage-redesign="stage76"]>.hero-copy-only h1 .title-accent,html body main[data-homepage-redesign="stage76"]>.hero-copy-only h1 .title-accent--block{display:inline!important;margin-top:0!important;background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;-webkit-text-fill-color:#8A681F!important;color:#8A681F!important}',
       '}',
       'html body main .cards:not(.smart-quote-layout):not(.quote-layout),html body main .archive-cards,html body main .card-grid,html body main .service-info-cards{align-items:stretch!important}',
       'html body main .cards:not(.smart-quote-layout):not(.quote-layout)>.card,html body main .archive-cards>.archive-card,html body main .card-grid>.card,html body main .service-info-cards>.card{height:100%!important;min-height:100%!important;display:flex!important;flex-direction:column!important}',
