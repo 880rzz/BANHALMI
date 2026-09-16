@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-16-live-pixel-v19",
+  "version": "2026-09-16-live-pixel-v22",
   "authority": ["APPLE-DESIGN-CONTRACT.md", "data/design-authority.json", "assets/css/fluid-4k-rhythm.css"],
   "rules": {
     "equalHeightSameTypeCardsDesktop": true,
@@ -15,5 +15,9 @@
     "renderedPixelEvidenceRequired": true,
     "greenCIWithoutRenderedGeometryIsInsufficient": true
   },
-  "rewritePolicy": "Generators, optimizers, restore, hardening and remediation jobs must preserve canonical geometry in assets/css/fluid-4k-rhythm.css, must parser-discover that stylesheet in the production head, must not inject layout geometry from JavaScript, must preserve the three-band desktop footer, and must preserve the 1440/1920/2560/4K rendered pixel gates."
+  "livePixelGeometryVersion": "V22",
+  "cacheToken": "20260916-live-pixel-v22",
+  "footerContract": {"visualBands": 3, "primaryRows": 1, "desktopTracks": 11, "paddingTopPx": 18, "paddingBottomPx": 12, "columnGapPx": 16, "absoluteMaxPx": 360, "viewportFractionMax": 0.4},
+  "cardContract": {"families": [".cards", ".service-process-grid", ".archive-cards"], "widthVarianceMaxPx": 1, "heightVarianceMaxPx": 1, "ctaAlignmentTolerancePx": 2},
+  "rewritePolicy": "Generators, optimizers, restore, hardening and remediation jobs must preserve LIVE-PIXEL-GEOMETRY-V22 as the final canonical authority in assets/css/fluid-4k-rhythm.css, must parser-discover that stylesheet in the production head, must not inject or append layout geometry from JavaScript or build-time hardening, must preserve the three-band desktop footer and equal-card contracts, and must preserve the 1440/1920/2560/4K rendered pixel gates."
 }
