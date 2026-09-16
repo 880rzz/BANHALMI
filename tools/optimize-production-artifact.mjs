@@ -21,7 +21,7 @@ const megaMenuScriptRe = /<script data-banhalmi-mega-menu="" defer="" src="\/ass
 const quotePdfScriptRe = /<script([^>]*?)src="(\/assets\/js\/quote-pdf\.js[^\"]*)"([^>]*)><\/script>/g;
 
 const asyncStyle = '<link rel="preload" as="style" href="$1"/><link rel="stylesheet" href="$1" media="print" onload="this.media=\'all\';this.onload=null"/><noscript><link rel="stylesheet" href="$1"/></noscript>';
-const fluidRhythmStyle = '<link rel="stylesheet" href="/assets/css/fluid-4k-rhythm.css?v=20260914-rhythm" data-fluid-4k-rhythm=""/>';
+const fluidRhythmStyle = '<link rel="stylesheet" href="/assets/css/fluid-4k-rhythm.css?v=20260916-live-pixel-v19" data-fluid-4k-rhythm=""/>';
 
 const executivePositioningCopy = {
   'lifestyle/index.html': {
@@ -71,12 +71,15 @@ for (const file of htmlFiles) {
 
   if (!isQuote && !isHome) html = html.replace(stylesheetRe, asyncStyle);
 
+  /* The geometry stylesheet must be parser-discovered in <head> on every production page.
+     Loading it from runtime JS caused deterministic CLS on service pages such as /portrait/. */
+  if (!html.includes('data-fluid-4k-rhythm')) html = html.replace(/<\/head>/i, `${fluidRhythmStyle}</head>`);
+  if (!html.includes('data-fluid-4k-rhythm')) throw new Error(`Fluid rhythm stylesheet missing in ${rel}`);
+
   if (isHome) {
-    if (!html.includes('data-fluid-4k-rhythm')) html = html.replace(/<\/head>/i, `${fluidRhythmStyle}</head>`);
     html = html.replace(megaMenuScriptRe, homeMegaMenuLoader);
     html = html.replace(mainScriptRe, homeRuntimeLoader);
     if (/data-banhalmi-mega-menu="" defer=""/.test(html)) throw new Error(`Homepage mega-menu runtime remained eager in ${rel}`);
-    if (!html.includes('data-fluid-4k-rhythm')) throw new Error(`Homepage fluid rhythm stylesheet missing in ${rel}`);
   }
 
   if (isQuote) {
