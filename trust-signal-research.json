@@ -1,6 +1,6 @@
 {
   "schemaVersion":"1.0.0",
-  "updatedAt":"2026-09-11",
+  "updatedAt":"2026-09-16",
   "purpose":"Daily discovery queue for publicly verifiable BANHALMI trust and authority signals. This is an intake registry, not a claim registry.",
   "searchPlan":{
     "cadence":"daily",
@@ -29,5 +29,23 @@
     "promotable":"verified and useful to an existing evidence layer or a justified authority asset",
     "rejected":"unverifiable, duplicate, misleading, relationship-inflating or low-quality"
   },
-  "candidates":[]
+  "candidates":[
+    {
+      "id":"amcham-austria-team-page-botond-pap-photo-credit-2026",
+      "discoveredAt":"2026-09-16",
+      "sourceUrl":"https://amcham.at/amcham-team/",
+      "sourceName":"AmCham Austria — AmCham Team",
+      "sourceType":"first-party institutional website",
+      "signalType":"creator-credit",
+      "subject":"Bánhalmi Norbert / Norbert Banhalmi",
+      "relationshipClassification":"photo-credit",
+      "confidence":"high",
+      "dedupeKey":"amcham.at|amcham-team|botond-r-pap|photo-credit|norbert-banhalmi",
+      "verificationStatus":"verified-candidate",
+      "exactCredit":"Foto Credit: © Norbert Banhalmi",
+      "context":"AmCham Austria's official team page credits Norbert Banhalmi for the portrait of Botond R. Pap, Office & Event Manager.",
+      "canonicalTargetRegistry":"press-institutional-evidence.json",
+      "notes":"First-party institutional photo-credit evidence. It supports creator attribution and institutional publication context only. It does not establish client, commission, partnership, endorsement, employment, exclusivity or official photographer status. No duplicate of this specific persistent team-page credit was found in current press-institutional-evidence.json."
+    }
+  ]
 }
