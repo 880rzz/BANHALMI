@@ -142,6 +142,11 @@ const compactFooterPattern = /@media \(min-width:621px\) and \(max-width:1179px\
 const compactFooterReplacement = '@media (min-width:621px) and (max-width:1179px){html body .site-footer{padding-top:14px!important;padding-bottom:10px!important}html body .site-footer .footer-grid{grid-template-columns:repeat(6,minmax(0,1fr))!important;column-gap:12px!important;row-gap:8px!important;align-items:start!important}html body .site-footer .footer-grid>div:first-child{grid-column:span 2!important}html body .site-footer .footer-grid>details.footer-accordion{grid-column:span 1!important}html body .site-footer .footer-grid>div:has(.footer-contact-list){grid-column:span 3!important}html body .site-footer .footer-grid>div:has(.footer-legal-list){grid-column:span 2!important}html body .site-footer .footer-brand-col .footer-entity{font-size:.76rem!important;line-height:1.3!important;margin-top:5px!important;margin-bottom:5px!important}html body .site-footer .footer-wko-profile img{width:auto!important;max-width:112px!important;height:auto!important}html body .site-footer .footer-bottom{margin-top:8px!important;padding-top:6px!important}html body .site-footer .banhalmi-ecosystem,html body .banhalmi-ecosystem{margin-top:4px!important;padding-top:4px!important}}';
 if (!compactFooterPattern.test(fluidCss)) throw new Error('BANHALMI compact footer v19 source block missing from production artifact.');
 fluidCss = fluidCss.replace(compactFooterPattern, compactFooterReplacement);
+
+const heroSignatureWhite = 'html body main[data-homepage-redesign=stage76]>.hero-visual-only .hero-signature-line{position:absolute;left:clamp(30px,3vw,56px);bottom:clamp(28px,3vw,52px);z-index:3;max-width:34ch!important;margin:0!important;color:#fff;';
+const heroSignatureGold = 'html body main[data-homepage-redesign=stage76]>.hero-visual-only .hero-signature-line{position:absolute;left:clamp(30px,3vw,56px);bottom:clamp(28px,3vw,52px);z-index:3;max-width:34ch!important;margin:0!important;color:#B79C44;';
+if (!fluidCss.includes(heroSignatureWhite)) throw new Error('BANHALMI hero image slogan white-color source token missing.');
+fluidCss = fluidCss.replace(heroSignatureWhite, heroSignatureGold);
 fs.writeFileSync(fluidCssPath, fluidCss, 'utf8');
 
 const siteCssPath = path.join(root, 'assets/css/site.css');
@@ -208,4 +213,4 @@ for (const [rel, token] of [
   if (!fs.readFileSync(full, 'utf8').includes(token)) throw new Error(`${rel}: protected current LLM state missing ${token}`);
 }
 
-console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links, ${buttonTypesAdded} non-form button types and ${vikoRelationshipFixes} Viko employment/Vienna relationship fragments normalized; protected LLM overlay applied; canonical quote spacing verified; compact footer v20 compiled.`);
+console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links, ${buttonTypesAdded} non-form button types and ${vikoRelationshipFixes} Viko employment/Vienna relationship fragments normalized; protected LLM overlay applied; canonical quote spacing verified; compact footer v20 compiled; hero image slogan gold restored.`);
