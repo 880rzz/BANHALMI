@@ -133,6 +133,17 @@ for (const file of walkHtml(root)) {
 generateMachineProjections(root);
 applyLlmCanonicalOverlay(root);
 
+/* LIVE-PIXEL-GEOMETRY-V20: compile the compact footer into the canonical
+   production stylesheet instead of adding a late runtime patch. */
+const fluidCssPath = path.join(root, 'assets/css/fluid-4k-rhythm.css');
+if (!fs.existsSync(fluidCssPath)) throw new Error('Production artifact lost assets/css/fluid-4k-rhythm.css during hardening.');
+let fluidCss = fs.readFileSync(fluidCssPath, 'utf8');
+const compactFooterPattern = /@media \(min-width:621px\) and \(max-width:1179px\)\{html body \.site-footer\{padding-top:24px!important;padding-bottom:18px!important\}html body \.site-footer \.footer-grid\{grid-template-columns:repeat\(6,minmax\(0,1fr\)\)!important;column-gap:14px!important;row-gap:14px!important;align-items:start!important\}html body \.site-footer \.footer-grid>div:first-child\{grid-column:span 2!important\}html body \.site-footer \.footer-grid>details\.footer-accordion\{grid-column:span 1!important\}html body \.site-footer \.footer-grid>div:has\(\.footer-contact-list\)\{grid-column:span 3!important\}html body \.site-footer \.footer-grid>div:has\(\.footer-legal-list\)\{grid-column:span 2!important\}html body \.site-footer \.footer-brand-col \.footer-entity\{font-size:\.76rem!important;line-height:1\.35!important;margin-top:8px!important;margin-bottom:8px!important\}html body \.site-footer \.footer-wko-profile img\{width:auto!important;max-width:120px!important;height:auto!important\}html body \.site-footer \.footer-bottom\{margin-top:14px!important;padding-top:10px!important\}html body \.site-footer \.banhalmi-ecosystem,html body \.banhalmi-ecosystem\{margin-top:8px!important;padding-top:8px!important\}\}/;
+const compactFooterReplacement = '@media (min-width:621px) and (max-width:1179px){html body .site-footer{padding-top:14px!important;padding-bottom:10px!important}html body .site-footer .footer-grid{grid-template-columns:repeat(6,minmax(0,1fr))!important;column-gap:12px!important;row-gap:8px!important;align-items:start!important}html body .site-footer .footer-grid>div:first-child{grid-column:span 2!important}html body .site-footer .footer-grid>details.footer-accordion{grid-column:span 1!important}html body .site-footer .footer-grid>div:has(.footer-contact-list){grid-column:span 3!important}html body .site-footer .footer-grid>div:has(.footer-legal-list){grid-column:span 2!important}html body .site-footer .footer-brand-col .footer-entity{font-size:.76rem!important;line-height:1.3!important;margin-top:5px!important;margin-bottom:5px!important}html body .site-footer .footer-wko-profile img{width:auto!important;max-width:112px!important;height:auto!important}html body .site-footer .footer-bottom{margin-top:8px!important;padding-top:6px!important}html body .site-footer .banhalmi-ecosystem,html body .banhalmi-ecosystem{margin-top:4px!important;padding-top:4px!important}}';
+if (!compactFooterPattern.test(fluidCss)) throw new Error('BANHALMI compact footer v19 source block missing from production artifact.');
+fluidCss = fluidCss.replace(compactFooterPattern, compactFooterReplacement);
+fs.writeFileSync(fluidCssPath, fluidCss, 'utf8');
+
 const siteCssPath = path.join(root, 'assets/css/site.css');
 if (!fs.existsSync(siteCssPath)) throw new Error('Production artifact lost assets/css/site.css during hardening.');
 const hardenedCss = fs.readFileSync(siteCssPath, 'utf8');
@@ -197,4 +208,4 @@ for (const [rel, token] of [
   if (!fs.readFileSync(full, 'utf8').includes(token)) throw new Error(`${rel}: protected current LLM state missing ${token}`);
 }
 
-console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links, ${buttonTypesAdded} non-form button types and ${vikoRelationshipFixes} Viko employment/Vienna relationship fragments normalized; protected LLM overlay applied; canonical quote spacing verified.`);
+console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links, ${buttonTypesAdded} non-form button types and ${vikoRelationshipFixes} Viko employment/Vienna relationship fragments normalized; protected LLM overlay applied; canonical quote spacing verified; compact footer v20 compiled.`);
