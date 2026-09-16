@@ -1,7 +1,7 @@
 /* BANHALMI LAYOUT CONTRACT V18 — production regression recovery, 2026-09-16.
    Canonical goals: natural document flow, visible desktop footer groups,
-   equal-height card rows, and a cropped desktop homepage hero without a
-   residual black band below the photographic composition. */
+   equal-height card rows, a cropped desktop homepage hero, and a clear review
+   disclosure affordance. */
 
 /* The document must end where the footer ends. Do not stretch a dark floor to
    the viewport; short pages may show the normal white document background. */
@@ -75,4 +75,28 @@ html body main .contact-custom-quote .cards,
 html body main .smart-quote-layout,
 html body main .quote-layout{
   align-items:start !important;
+}
+
+/* Restore the review drawer's visual affordance without changing native
+   details/summary semantics. Closed = down arrow, open = up arrow. */
+html body main .reviews-drawer-section details.review-drawer > summary{
+  position:relative;
+  padding-right:34px !important;
+  cursor:pointer;
+}
+html body main .reviews-drawer-section details.review-drawer > summary::after{
+  content:"⌄" !important;
+  position:absolute;
+  right:4px;
+  top:50%;
+  transform:translateY(-56%);
+  display:block !important;
+  color:#8f7118;
+  font-size:1.35rem;
+  line-height:1;
+  font-weight:500;
+  transition:transform .18s ease;
+}
+html body main .reviews-drawer-section details.review-drawer[open] > summary::after{
+  transform:translateY(-44%) rotate(180deg);
 }
