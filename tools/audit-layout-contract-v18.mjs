@@ -15,6 +15,8 @@ must(css.includes('--desktop-hero-min:clamp(520px,62vh,680px) !important;'),'hom
 must(css.includes('object-position:center 30% !important;'),'homepage hero crop position missing');
 must(css.includes('.cards:not(.smart-quote-layout):not(.quote-layout) > .card'),'generic card equal-height selector missing');
 must(css.includes('height:100% !important;')&&css.includes('flex-direction:column !important;'),'equal-height card flex contract missing');
+must(css.includes('details.review-drawer > summary::after'),'review drawer arrow affordance missing');
+must(css.includes('details.review-drawer[open] > summary::after'),'review drawer open-state arrow rotation missing');
 must(boot.includes('/assets/css/layout-contract-v18.css?v=20260916-v18'),'layout v18 stylesheet loader missing');
 must(boot.includes('/assets/js/layout-contract-v18.js?v=20260916-v18'),'layout v18 script loader missing');
 
@@ -23,4 +25,4 @@ if(failures.length){
   failures.forEach(f=>console.error(`- ${f}`));
   process.exit(1);
 }
-console.log('BANHALMI layout contract v18 passed: natural document flow, visible desktop footer content, cropped homepage hero and equal-height reusable cards are protected.');
+console.log('BANHALMI layout contract v18 passed: natural document flow, visible desktop footer content, cropped homepage hero, equal-height reusable cards and review drawer arrow are protected.');
