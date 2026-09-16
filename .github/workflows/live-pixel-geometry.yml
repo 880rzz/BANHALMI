@@ -1,0 +1,67 @@
+name: Live pixel geometry
+
+on:
+  pull_request:
+    paths:
+      - 'assets/css/fluid-4k-rhythm.css'
+      - 'assets/js/fluid-rhythm-boot.js'
+      - 'data/design-authority.json'
+      - 'tools/audit-live-pixel-geometry.mjs'
+      - 'tools/audit-layout-contract-v18.mjs'
+      - 'tools/audit-footer-cards-tail-contract.mjs'
+      - 'tools/audit-historical-design-regressions.mjs'
+      - '.github/workflows/live-pixel-geometry.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pixel-geometry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Verify source authority contracts
+        run: |
+          node tools/audit-layout-contract-v18.mjs
+          node tools/audit-footer-cards-tail-contract.mjs
+          node tools/audit-historical-design-regressions.mjs
+      - name: Assemble production-equivalent artifact
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          git ls-files -z | rsync -a --from0 --files-from=- ./ _site/
+          printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
+          node tools/optimize-production-artifact.mjs _site
+          node tools/restore-production-design-authority.mjs _site
+          node tools/harden-production-artifact.mjs _site
+          node tools/render-production-sitemap-lastmod.mjs _site
+      - name: Start artifact server
+        run: |
+          python3 -m http.server 4173 --directory _site >/tmp/banhalmi-live-pixel-http.log 2>&1 &
+          echo $! > /tmp/banhalmi-live-pixel-http.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/banhalmi-live-pixel-http.log
+          exit 1
+      - name: Run 1440 / 1920 / 2560 / 4K pixel gate
+        env:
+          LIVE_PIXEL_BASE_URL: http://127.0.0.1:4173
+        run: node tools/audit-live-pixel-geometry.mjs
+      - name: Upload visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-pixel-geometry-${{ github.sha }}
+          path: artifacts/live-pixel-geometry/
+          if-no-files-found: warn
+          retention-days: 14
