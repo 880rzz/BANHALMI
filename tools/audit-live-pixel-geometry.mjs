@@ -115,7 +115,7 @@ for(const vp of viewports){
       const button=page.locator('.menu-btn').first();
       if(await button.count()){
         await button.click();
-        await page.waitForTimeout(120);
+        await page.waitForTimeout(350);
         const mega=await page.evaluate(()=>{
           const panel=document.querySelector('.bn-mega-panel');
           if(!panel)return null;
@@ -145,7 +145,7 @@ for(const vp of viewports){
   await context.close();
 }
 await browser.close();
-const report={contract:'BANHALMI-LIVE-PIXEL-GEOMETRY-V18',designVersion:authority.version,base,viewports,pages,reports,failures};
+const report={contract:'BANHALMI-LIVE-PIXEL-GEOMETRY-V19',designVersion:authority.version,base,viewports,pages,reports,failures};
 fs.writeFileSync(path.join(outDir,'report.json'),JSON.stringify(report,null,2));
 if(failures.length){
   console.error(`BANHALMI live pixel geometry failed (${failures.length} page/viewport combinations):`);
