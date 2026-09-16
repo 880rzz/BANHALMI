@@ -147,6 +147,13 @@ const heroSignatureWhite = 'html body main[data-homepage-redesign=stage76]>.hero
 const heroSignatureGold = 'html body main[data-homepage-redesign=stage76]>.hero-visual-only .hero-signature-line{position:absolute;left:clamp(30px,3vw,56px);bottom:clamp(28px,3vw,52px);z-index:3;max-width:34ch!important;margin:0!important;color:#B79C44;';
 if (!fluidCss.includes(heroSignatureWhite)) throw new Error('BANHALMI hero image slogan white-color source token missing.');
 fluidCss = fluidCss.replace(heroSignatureWhite, heroSignatureGold);
+
+/* LIVE-PIXEL-GEOMETRY-V21: 1180–1439 is a small-desktop class, not wide desktop.
+   Keep all footer information and the three visual bands, but remove the wide-screen
+   vertical rhythm that caused German wrapping to push the footer above 54% of the viewport. */
+const smallDesktopFooter = '@media (min-width:1180px) and (max-width:1439px){html body .site-footer{padding-top:14px!important;padding-bottom:8px!important}html body .site-footer .footer-grid{column-gap:12px!important;row-gap:0!important}html body .site-footer .footer-bottom{margin-top:8px!important;padding-top:6px!important}html body .site-footer .banhalmi-ecosystem,html body .banhalmi-ecosystem{margin-top:4px!important;padding-top:4px!important}html body .site-footer .footer-heading{line-height:1.18!important}html body .site-footer .footer-brand-col .footer-entity{margin-top:5px!important;margin-bottom:5px!important}}';
+if (fluidCss.includes('LIVE-PIXEL-GEOMETRY-V21-SMALL-DESKTOP')) throw new Error('Small-desktop footer v21 already compiled unexpectedly.');
+fluidCss += `\n/* LIVE-PIXEL-GEOMETRY-V21-SMALL-DESKTOP */\n${smallDesktopFooter}\n`;
 fs.writeFileSync(fluidCssPath, fluidCss, 'utf8');
 
 const siteCssPath = path.join(root, 'assets/css/site.css');
@@ -213,4 +220,4 @@ for (const [rel, token] of [
   if (!fs.readFileSync(full, 'utf8').includes(token)) throw new Error(`${rel}: protected current LLM state missing ${token}`);
 }
 
-console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links, ${buttonTypesAdded} non-form button types and ${vikoRelationshipFixes} Viko employment/Vienna relationship fragments normalized; protected LLM overlay applied; canonical quote spacing verified; compact footer v20 compiled; hero image slogan gold restored.`);
+console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links, ${buttonTypesAdded} non-form button types and ${vikoRelationshipFixes} Viko employment/Vienna relationship fragments normalized; protected LLM overlay applied; canonical quote spacing verified; compact footer v20 compiled; small-desktop footer v21 compiled; hero image slogan gold restored.`);
