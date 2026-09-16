@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-16-v19-live-pixel-geometry",
+  "version": "2026-09-16-v20-compact-footer-geometry",
   "pageMaxPx": 1280,
   "structuredMaxPx": 1440,
   "readingMaxPx": 760,
@@ -23,7 +23,7 @@
     "quoteInfoColumnPx": 44,
     "quoteWorkspaceMinFormToIntroRatio": 1.55,
     "serviceProcessBottomMarginPx": 0,
-    "footer": {"desktopColumns": 11, "desktopBands": 3, "compactDesktopColumns": 6, "tabletColumns": 6, "mobileColumns": 1, "desktopMinPx": 1180, "compactDesktopMinPx": 769, "tabletMinPx": 621, "paddingTopPx": 28, "paddingBottomPx": 18, "desktopGapPx": 18, "tabletGapPx": 14, "summaryMinHeightPx": 44, "linkRowGapPx": 8},
+    "footer": {"desktopColumns": 11, "desktopBands": 3, "compactDesktopColumns": 6, "tabletColumns": 6, "mobileColumns": 1, "desktopMinPx": 1180, "compactDesktopMinPx": 769, "tabletMinPx": 621, "paddingTopPx": 28, "paddingBottomPx": 18, "desktopGapPx": 18, "tabletGapPx": 14, "summaryMinHeightPx": 44, "linkRowGapPx": 8, "compactPaddingTopPx": 14, "compactPaddingBottomPx": 10, "compactColumnGapPx": 12, "compactRowGapPx": 8, "compactFooterBottomMarginPx": 8, "compactFooterBottomPaddingPx": 6, "compactEcosystemMarginPx": 4, "compactEcosystemPaddingPx": 4},
     "documentFlow": {"layoutMode": "grid", "documentBackground": "#202530", "footerAfterDocumentGapMaxPx": 2, "mainToFooterOverlapTolerancePx": 2, "footerMaxViewportFractionOnTabletDesktop": 0.54, "footerAbsoluteMaxPx": 480}
   },
   "responsive": {"touchTargetPx": 44, "minViewportPx": 320, "maxViewportPx": 3840},
