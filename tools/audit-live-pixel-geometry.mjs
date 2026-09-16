@@ -30,7 +30,6 @@ fs.mkdirSync(outDir,{recursive:true});
 const failures=[];
 const reports=[];
 const browser=await chromium.launch({headless:true});
-const visible=el=>!!el;
 
 function sameRowHeightIssues(cards,tolerance){
   const rows=[];
@@ -80,16 +79,10 @@ for(const vp of viewports){
         if(grid){data.cards=[...grid.children].filter(isVisible).map(rect)}
       }
       if(kind==='portrait'){
-        const grids=[...document.querySelectorAll('main *')].filter(el=>{
-          if(!isVisible(el)) return false;
-          const s=getComputedStyle(el);
-          if(s.display!=='grid'&&s.display!=='inline-grid') return false;
-          return el.querySelectorAll('img').length>=6;
-        }).map(el=>({el,count:el.querySelectorAll('img').length})).sort((a,b)=>b.count-a.count);
-        if(grids[0]){
-          const el=grids[0].el,s=getComputedStyle(el),r=rect(el);
-          const cols=s.gridTemplateColumns==='none'?0:s.gridTemplateColumns.trim().split(/\s+/).filter(Boolean).length;
-          data.gallery={...r,columns:cols,imageCount:grids[0].count,className:String(el.className||'')};
+        const gallery=document.querySelector('main .collage-gallery');
+        if(gallery&&isVisible(gallery)){
+          const s=getComputedStyle(gallery),r=rect(gallery);
+          data.gallery={...r,columns:Math.round(px(s.columnCount)),imageCount:gallery.querySelectorAll('img').length,className:String(gallery.className||''),columnGap:px(s.columnGap)};
         }
       }
       return data;
@@ -113,7 +106,7 @@ for(const vp of viewports){
       if(rowIssues.length) issues.push(`decision-card row height delta ${Math.max(...rowIssues.map(x=>x.delta)).toFixed(1)}px > ${cardTolerance}px`);
     }
     if(target.kind==='portrait'){
-      if(!result.gallery) issues.push('portrait gallery grid not found');
+      if(!result.gallery) issues.push('portrait collage gallery not found');
       else if(result.gallery.columns<Number(vp.portraitGalleryColumns)) issues.push(`portrait gallery ${result.gallery.columns} columns < ${vp.portraitGalleryColumns}`);
     }
 
