@@ -43,6 +43,18 @@ html body main :is(.cards,.service-process-grid,.archive-cards)>:is(.card,.archi
   html body .site-footer .banhalmi-ecosystem,html body .banhalmi-ecosystem{margin-top:4px!important;padding-top:4px!important;line-height:1.2!important}
   html body .site-footer .banhalmi-ecosystem a,html body .banhalmi-ecosystem a{min-height:32px!important;padding-block:0!important}
 }
+@media (min-width:769px) and (max-width:1179px){
+  html body .site-footer{padding-top:14px!important;padding-bottom:10px!important}
+  html body .site-footer .footer-grid{column-gap:12px!important;row-gap:8px!important}
+  html body .site-footer .footer-accordion li>a{min-height:32px!important;padding-block:2px!important}
+  html body .site-footer .footer-bottom{margin-top:8px!important;padding-top:6px!important}
+  html body .site-footer .banhalmi-ecosystem,html body .banhalmi-ecosystem{margin-top:4px!important;padding-top:4px!important}
+}
+@media (min-width:1180px) and (max-width:1439px){
+  html body .site-footer .footer-accordion li>a{min-height:24px!important;padding-block:1px!important}
+  html body .site-footer .footer-grid{column-gap:12px!important}
+  html body .site-footer .footer-heading{line-height:1.18!important}
+}
 @media (min-width:621px) and (max-width:768px){
   html body .site-footer .footer-grid>*{min-width:0!important}
   html body .site-footer .footer-accordion>summary{white-space:normal!important;overflow-wrap:anywhere!important;text-overflow:clip!important}
