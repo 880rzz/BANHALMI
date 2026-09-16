@@ -31,6 +31,7 @@ must(boot.includes('/assets/css/fluid-4k-rhythm.css?v=20260916-live-pixel-v22'),
 must(fluid.trimEnd().endsWith('/* LIVE-PIXEL-GEOMETRY-V22 */'),'V22 must be the final canonical stylesheet marker');
 must(fluid.includes('@media (min-width:769px) and (max-width:1179px)'),'canonical intermediate footer compaction missing');
 must(fluid.includes('@media (min-width:1180px) and (max-width:1439px)'),'canonical small-desktop footer compaction missing');
+must(fluid.includes('@media (min-width:621px) and (max-width:768px)'),'canonical 768px tablet footer compaction missing');
 must(!boot.includes('style.textContent'),'runtime geometry injection must not return');
 must(hardener.includes('must never regenerate or append footer/card geometry'),'hardener must declare the V22 no-regeneration contract');
 must(!hardener.includes('compactFooterReplacement')&&!hardener.includes('smallDesktopFooter'),'hardener must not restore V20/V21 footer geometry');
