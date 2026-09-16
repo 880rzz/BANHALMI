@@ -68,7 +68,7 @@ for(const vp of viewports){
       const rect=el=>{const r=el.getBoundingClientRect();return {top:r.top+scrollY,left:r.left,width:r.width,height:r.height,bottom:r.bottom+scrollY,right:r.right}};
       const footer=document.querySelector('.site-footer');
       const reviews=document.querySelector('main .reviews-drawer-section');
-      const data={footer:footer&&isVisible(footer)?rect(footer):null,reviews:null,hero:null,cards:[],gallery:null};
+      const data={footer:footer&&isVisible(footer)?rect(footer):null,reviews:null,hero:null,cards:[],gallery:null,mega:null};
       if(reviews&&isVisible(reviews)){const s=getComputedStyle(reviews);data.reviews={...rect(reviews),paddingTop:px(s.paddingTop),paddingBottom:px(s.paddingBottom)}}
       if(kind==='home'){
         const main=document.querySelector('main[data-homepage-redesign="stage76"]');
@@ -110,6 +110,7 @@ for(const vp of viewports){
       else if(result.gallery.columns<Number(vp.portraitGalleryColumns)) issues.push(`portrait gallery ${result.gallery.columns} columns < ${vp.portraitGalleryColumns}`);
     }
 
+    const slug=`${width}x${height}-${target.lang}-${target.kind}`;
     if(target.lang==='en'&&target.kind==='home'){
       const button=page.locator('.menu-btn').first();
       if(await button.count()){
@@ -125,16 +126,17 @@ for(const vp of viewports){
           const rs=candidates.map(el=>el.getBoundingClientRect());
           return {height:pr.height,firstContent:Math.min(...rs.map(r=>r.top))-pr.top,bottomWhitespace:pr.bottom-Math.max(...rs.map(r=>r.bottom))};
         });
+        result.mega=mega;
         if(!mega) issues.push('mega menu panel not measurable');
         else {
           if(mega.firstContent!=null&&mega.firstContent>megaFirstMax) issues.push(`mega first content ${mega.firstContent.toFixed(1)}px > ${megaFirstMax}px`);
           if(mega.bottomWhitespace!=null&&mega.bottomWhitespace>megaBottomMax) issues.push(`mega bottom whitespace ${mega.bottomWhitespace.toFixed(1)}px > ${megaBottomMax}px`);
         }
+        await page.screenshot({path:path.join(outDir,`${slug}-mega-open.png`),fullPage:false});
         await page.keyboard.press('Escape');
       } else issues.push('mega menu button missing');
     }
 
-    const slug=`${width}x${height}-${target.lang}-${target.kind}`;
     await page.screenshot({path:path.join(outDir,`${slug}.png`),fullPage:true});
     reports.push({viewport:{width,height},...target,geometry:result,issues});
     if(issues.length) failures.push(`${slug}: ${issues.join(' | ')}`);
