@@ -4,7 +4,7 @@ This repository treats the following as a release-blocking visual contract for e
 
 ## Typography
 - System/SF-style sans-serif hierarchy.
-- H1: 34–50 px on small mobile, 34–58 px through tablet, 38–76 px on desktop.
+- H1: 34–50 px on small mobile, 34–58 px through tablet, 40–76 px on desktop.
 - H2: 24–42 px on mobile, up to 48 px on larger viewports.
 - H3: 18–34 px.
 - Long-form body copy: 16–21.5 px.
@@ -53,11 +53,14 @@ This repository treats the following as a release-blocking visual contract for e
 - CTA/action regions should align consistently toward the bottom when present. Mobile uses natural content height rather than forced empty space.
 
 ## Footer
-- The desktop footer may remain information-rich and expanded by default.
+- The desktop footer is a three-band composition: one compact primary information grid, one footer-bottom row, and one ecosystem row.
+- The primary desktop information grid remains a single rendered row at the audited desktop widths; semantic items may wrap internally where required.
 - Footer columns, metadata and legal records may wrap across multiple lines. A single-line footer is not a design requirement.
 - Wrapping must occur between semantic fields/items; do not solve density by shrinking typography or widening the document.
 - Atomic identifiers must remain intact: telephone numbers, email addresses, VAT/tax/company identifiers and similar IDs must not break internally.
 - The retired rule requiring the complete footer/legal identifier area to stay on one line must never be restored by a generator, optimizer, restore, hardening or remediation job.
+- On audited desktop viewports, the rendered footer must satisfy both the viewport-ratio and absolute-pixel limits from `data/design-authority.json`; “no overflow” alone is not sufficient.
+- Intermediate tablet/compact-desktop widths use the canonical six-column compact geometry rather than allowing the footer to grow into a dominant page section.
 
 ## Controls and links
 - Mobile/tablet interactive controls use at least a 44 px touch height; button-like controls also require a 44 px touch width.
@@ -65,9 +68,11 @@ This repository treats the following as a release-blocking visual contract for e
 - Navigation links, inline text links, utility links, disclosures and CTA links may differ by role, but each role must remain typographically, spatially and interactively consistent across pages and languages.
 
 ## Restore / rewrite authority
-- `APPLE-DESIGN-CONTRACT.md` and `tools/design-contract-policy.json` are canonical inputs for any automated generator, optimizer, restore, hardening, remediation or rewrite process that can affect layout.
-- Such processes must preserve equal-height same-type desktop cards, semantic multi-line footer wrapping, and atomic identifier no-break behavior.
-- A process that reintroduces the retired full-footer single-line rule is a regression and must fail the repository audit before release.
+- `APPLE-DESIGN-CONTRACT.md`, `data/design-authority.json`, `tools/design-contract-policy.json`, and `assets/css/fluid-4k-rhythm.css` are canonical inputs for any automated generator, optimizer, restore, hardening, remediation or rewrite process that can affect layout.
+- The production artifact must parser-discover the canonical `fluid-4k-rhythm.css` stylesheet in `<head>` before first layout; loading geometry only after runtime JavaScript executes is a release-blocking CLS regression.
+- JavaScript loaders may verify/load the canonical stylesheet as a fallback and synchronize disclosure state, but must not inject hero, footer, cards, reviews, section-rhythm, gallery or mega-menu geometry.
+- Such processes must preserve equal-height same-type desktop cards, the three-band desktop footer, semantic multi-line footer wrapping, and atomic identifier no-break behavior.
+- A process that reintroduces the retired full-footer single-line rule, delays canonical geometry until runtime, or adds a runtime geometry patch is a regression and must fail the repository audit before release.
 
 ## Desktop Visual Redesign v2 — 2026-09-15
 - Homepage-only visual authority: `main[data-homepage-redesign="stage76"]`.
@@ -78,7 +83,18 @@ This repository treats the following as a release-blocking visual contract for e
 - Footer geometry, reviews rhythm and deterministic multilingual navigation remain protected.
 - SEO, canonical, hreflang, Schema, machine-readable evidence and trust semantics are presentation-external and must not be weakened by visual changes.
 - U.S. Embassy in Austria / SelectUSA / AmCham evidence and ART ↔ Blog ↔ Professional intent separation remain protected. Event/publication evidence must not be reinterpreted as endorsement, client, partnership or exclusivity proof.
-- `assets/js/fluid-rhythm-boot.js` must load the current versioned `fluid-4k-rhythm.css` token for the redesign.
+- `assets/js/fluid-rhythm-boot.js` must reference the current versioned `fluid-4k-rhythm.css` token as a runtime fallback, while production HTML parser-discovers the stylesheet directly.
+
+## Live Pixel Geometry v19 — 2026-09-16
+- Required desktop evidence viewports are 1440×900, 1920×1080 and 2560×1440. 3840×2160 is a separate 4K sanity gate.
+- The release gate must render the production-equivalent artifact in Chromium and save full-page screenshots for EN `/`, `/portrait/`; HU `/hu/`, `/hu/portre/`; DE `/de-at/`, `/de-at/portrait/`.
+- Homepage hero height is bounded by both an explicit viewport-specific pixel maximum and a viewport-height fraction. A hero that consumes the complete first fold is a visual failure even without overflow.
+- Portrait gallery density must scale across desktop widths according to `data/design-authority.json`; wider desktop viewports must not create longer pages merely because the grid remains too sparse.
+- Same-row editorial cards have a rendered-height tolerance; source declarations such as `height:100%` are not proof of equal visual height.
+- Reviews spacing, three-band footer mass, and mega-menu first-content/bottom whitespace are rendered-geometry contracts rather than token-presence checks.
+- Mega-menu screenshot evidence is captured after the opening transition has settled; transient animation frames are not accepted as final visual evidence.
+- A green source/CI contract without the rendered geometry evidence is not sufficient release evidence.
+- The automated contract is `tools/audit-live-pixel-geometry.mjs`; screenshot evidence is retained from the PR gate.
 
 ## Release rule
-A visual failure on any published page, language, or audited viewport blocks release. The automated browser contract is implemented in `tools/audit-apple-visual-quality.mjs` and must run together with the repository's exhaustive browser, first-principles, accessibility, contrast, Lighthouse, SEO, schema, GEO, GDPR, AI/LLM, trust, exact-live, and design-contract gates. Computed geometry, not token presence alone, is the release evidence.
+A visual failure on any published page, language, or audited viewport blocks release. The automated browser contracts include `tools/audit-apple-visual-quality.mjs` and `tools/audit-live-pixel-geometry.mjs` and must run together with the repository's exhaustive browser, first-principles, accessibility, contrast, Lighthouse, SEO, schema, GEO, GDPR, AI/LLM, trust, exact-live, and design-contract gates. Computed geometry, not token presence alone, is the release evidence.
