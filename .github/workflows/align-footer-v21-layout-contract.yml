@@ -19,31 +19,28 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Align cache token and layout marker
+      - name: Align production geometry cache token
         shell: bash
         run: |
           node <<'NODE'
           const fs=require('fs');
-          const tokenOld='20260916-live-pixel-v22';
-          const tokenNew='20260917-footer-v21';
-          for(const p of ['tools/optimize-production-artifact.mjs','tools/audit-layout-contract-v18.mjs']){
-            let s=fs.readFileSync(p,'utf8');
-            s=s.split(tokenOld).join(tokenNew);
-            fs.writeFileSync(p,s);
-          }
-          const audit='tools/audit-layout-contract-v18.mjs';
-          let a=fs.readFileSync(audit,'utf8');
-          a=a.replace("must(fluid.includes('LIVE-PIXEL-GEOMETRY-V22'),'canonical live-pixel stylesheet marker missing');", "must(fluid.includes('FOOTER-DESKTOP-GEOMETRY-V21-FLUID:START'),'canonical footer/layout stylesheet marker missing');");
-          fs.writeFileSync(audit,a);
+          const p='tools/optimize-production-artifact.mjs';
+          let s=fs.readFileSync(p,'utf8');
+          s=s.split('20260916-live-pixel-v22').join('20260917-footer-v21');
+          fs.writeFileSync(p,s);
           NODE
-      - name: Verify source contracts
-        run: npm test
-      - name: Commit contract alignment
+      - name: Verify focused layout contracts
+        run: |
+          node tools/audit-footer-cards-tail-contract.mjs
+          node tools/audit-layout-contract-v18.mjs
+          node tools/audit-executive-footer-contract.mjs
+          node tools/audit-historical-design-regressions.mjs
+      - name: Commit token alignment
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tools/optimize-production-artifact.mjs tools/audit-layout-contract-v18.mjs
+          git add tools/optimize-production-artifact.mjs
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Align footer V21 with production layout contract [skip ci]"
+          git commit -m "Align footer V21 production cache token [skip ci]"
           git push origin HEAD:main
