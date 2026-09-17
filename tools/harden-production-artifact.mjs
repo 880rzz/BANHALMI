@@ -136,7 +136,8 @@ applyLlmCanonicalOverlay(root);
 const fluidCssPath = path.join(root, 'assets/css/fluid-4k-rhythm.css');
 if (!fs.existsSync(fluidCssPath)) throw new Error('Production artifact lost assets/css/fluid-4k-rhythm.css during hardening.');
 let fluidCss = fs.readFileSync(fluidCssPath, 'utf8');
-if (!fluidCss.includes('LIVE-PIXEL-GEOMETRY-V22')) throw new Error('Canonical live pixel geometry v22 source block missing from production artifact.');
+if (!fluidCss.includes('LIVE-PIXEL-GEOMETRY-V19-20260916')) throw new Error('Canonical live pixel geometry source block missing from production artifact.');
+if (!fluidCss.includes('FOOTER-DESKTOP-GEOMETRY-V21-FLUID:START')) throw new Error('Canonical footer desktop geometry V21 source block missing from production artifact.');
 
 const heroSignatureWhite = 'html body main[data-homepage-redesign=stage76]>.hero-visual-only .hero-signature-line{position:absolute;left:clamp(30px,3vw,56px);bottom:clamp(28px,3vw,52px);z-index:3;max-width:34ch!important;margin:0!important;color:#fff;';
 const heroSignatureGold = 'html body main[data-homepage-redesign=stage76]>.hero-visual-only .hero-signature-line{position:absolute;left:clamp(30px,3vw,56px);bottom:clamp(28px,3vw,52px);z-index:3;max-width:34ch!important;margin:0!important;color:#B79C44;';
@@ -209,4 +210,4 @@ for (const [rel, token] of [
   if (!fs.readFileSync(full, 'utf8').includes(token)) throw new Error(`${rel}: protected current LLM state missing ${token}`);
 }
 
-console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links, ${buttonTypesAdded} non-form button types and ${vikoRelationshipFixes} Viko employment/Vienna relationship fragments normalized; protected LLM overlay applied; canonical quote spacing verified; canonical geometry v22 preserved without footer rewrites; hero image slogan gold restored.`);
+console.log(`Production surface hardened: ${forbidden.length} repository-only paths excluded; ${required.length} public contracts present; ${skipLinksAdded} missing skip links, ${buttonTypesAdded} non-form button types and ${vikoRelationshipFixes} Viko employment/Vienna relationship fragments normalized; protected LLM overlay applied; canonical quote spacing verified; canonical live pixel geometry and footer V21 authority preserved without footer rewrites; hero image slogan gold restored.`);
