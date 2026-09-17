@@ -1,13 +1,23 @@
 {
-  "version": "2026-09-16-v20-compact-footer-geometry",
+  "version": "2026-09-17-v21-two-row-footer-no-overflow",
   "pageMaxPx": 1280,
   "structuredMaxPx": 1440,
   "readingMaxPx": 760,
   "wideReadingMaxPx": 900,
   "typography": {
-    "desktop": {"h1": "clamp(2.5rem,3.6vw,3.625rem)", "h2": "clamp(1.625rem,2.4vw,2.375rem)", "h3": "clamp(18px,1.45vw,1.3rem)"},
-    "tablet": {"h1": "clamp(2.375rem,5.2vw,2.875rem)", "h2": "clamp(1.5625rem,3.5vw,2.125rem)"},
-    "mobile": {"h1": "clamp(2.15rem,11vw,3rem)", "h2": "clamp(1.65rem,8vw,2.1rem)"},
+    "desktop": {
+      "h1": "clamp(2.5rem,3.6vw,3.625rem)",
+      "h2": "clamp(1.625rem,2.4vw,2.375rem)",
+      "h3": "clamp(18px,1.45vw,1.3rem)"
+    },
+    "tablet": {
+      "h1": "clamp(2.375rem,5.2vw,2.875rem)",
+      "h2": "clamp(1.5625rem,3.5vw,2.125rem)"
+    },
+    "mobile": {
+      "h1": "clamp(2.15rem,11vw,3rem)",
+      "h2": "clamp(1.65rem,8vw,2.1rem)"
+    },
     "h3DescriptionGapPx": 10
   },
   "layout": {
@@ -23,16 +33,79 @@
     "quoteInfoColumnPx": 44,
     "quoteWorkspaceMinFormToIntroRatio": 1.55,
     "serviceProcessBottomMarginPx": 0,
-    "footer": {"desktopColumns": 4, "desktopBands": 3, "compactDesktopColumns": 6, "tabletColumns": 6, "mobileColumns": 1, "desktopMinPx": 1180, "compactDesktopMinPx": 769, "tabletMinPx": 621, "paddingTopPx": 28, "paddingBottomPx": 18, "desktopGapPx": 18, "tabletGapPx": 14, "summaryMinHeightPx": 44, "linkRowGapPx": 8, "compactPaddingTopPx": 14, "compactPaddingBottomPx": 10, "compactColumnGapPx": 12, "compactRowGapPx": 8, "compactFooterBottomMarginPx": 8, "compactFooterBottomPaddingPx": 6, "compactEcosystemMarginPx": 4, "compactEcosystemPaddingPx": 4},
-    "documentFlow": {"layoutMode": "grid", "documentBackground": "#202530", "footerAfterDocumentGapMaxPx": 2, "mainToFooterOverlapTolerancePx": 2, "footerMaxViewportFractionOnTabletDesktop": 0.54, "footerAbsoluteMaxPx": 480}
+    "footer": {
+      "desktopColumns": 12,
+      "desktopBands": 3,
+      "compactDesktopColumns": 6,
+      "tabletColumns": 6,
+      "mobileColumns": 1,
+      "desktopMinPx": 1180,
+      "compactDesktopMinPx": 769,
+      "tabletMinPx": 621,
+      "paddingTopPx": 28,
+      "paddingBottomPx": 18,
+      "desktopGapPx": 18,
+      "tabletGapPx": 14,
+      "summaryMinHeightPx": 44,
+      "linkRowGapPx": 8,
+      "compactPaddingTopPx": 14,
+      "compactPaddingBottomPx": 10,
+      "compactColumnGapPx": 12,
+      "compactRowGapPx": 8,
+      "compactFooterBottomMarginPx": 8,
+      "compactFooterBottomPaddingPx": 6,
+      "compactEcosystemMarginPx": 4,
+      "compactEcosystemPaddingPx": 4,
+      "desktopRows": 2,
+      "contactStudioColumns": 2,
+      "preventHorizontalOverflow": true,
+      "semanticWordWrap": true,
+      "desktopPlacement": "brand/services/archive/profile row 1; contact/social/memberships/legal row 2"
+    },
+    "documentFlow": {
+      "layoutMode": "grid",
+      "documentBackground": "#202530",
+      "footerAfterDocumentGapMaxPx": 2,
+      "mainToFooterOverlapTolerancePx": 2,
+      "footerMaxViewportFractionOnTabletDesktop": 0.54,
+      "footerAbsoluteMaxPx": 480
+    }
   },
-  "responsive": {"touchTargetPx": 44, "minViewportPx": 320, "maxViewportPx": 3840},
+  "responsive": {
+    "touchTargetPx": 44,
+    "minViewportPx": 320,
+    "maxViewportPx": 3840
+  },
   "visualGeometry": {
     "requiredDesktopViewports": [
-      {"width": 1440, "height": 900, "homepageHeroMaxPx": 760, "footerMaxPx": 450, "portraitGalleryColumns": 4},
-      {"width": 1920, "height": 1080, "homepageHeroMaxPx": 830, "footerMaxPx": 420, "portraitGalleryColumns": 5},
-      {"width": 2560, "height": 1440, "homepageHeroMaxPx": 920, "footerMaxPx": 420, "portraitGalleryColumns": 6},
-      {"width": 3840, "height": 2160, "homepageHeroMaxPx": 1080, "footerMaxPx": 440, "portraitGalleryColumns": 6}
+      {
+        "width": 1440,
+        "height": 900,
+        "homepageHeroMaxPx": 760,
+        "footerMaxPx": 450,
+        "portraitGalleryColumns": 4
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "homepageHeroMaxPx": 830,
+        "footerMaxPx": 420,
+        "portraitGalleryColumns": 5
+      },
+      {
+        "width": 2560,
+        "height": 1440,
+        "homepageHeroMaxPx": 920,
+        "footerMaxPx": 420,
+        "portraitGalleryColumns": 6
+      },
+      {
+        "width": 3840,
+        "height": 2160,
+        "homepageHeroMaxPx": 1080,
+        "footerMaxPx": 440,
+        "portraitGalleryColumns": 6
+      }
     ],
     "homepageHeroMaxViewportFraction": 0.92,
     "sameRowCardHeightTolerancePx": 2,
@@ -48,7 +121,27 @@
     "activeBorder": "none",
     "activeBoxShadow": "none",
     "activeRadiusPx": 0,
-    "megaMenu": {"background": "#202530", "panelMaxPx": 1440, "desktopSidePaddingPx": 88, "desktopTopPaddingPx": 86, "desktopBottomPaddingPx": 34, "desktopColumnGapPx": 72, "sectionRuleColor": "rgba(183,156,68,.34)", "focusStyle": "underline-only", "pointerAutofocus": false, "pricingTreatment": "gold-text"}
+    "megaMenu": {
+      "background": "#202530",
+      "panelMaxPx": 1440,
+      "desktopSidePaddingPx": 88,
+      "desktopTopPaddingPx": 86,
+      "desktopBottomPaddingPx": 34,
+      "desktopColumnGapPx": 72,
+      "sectionRuleColor": "rgba(183,156,68,.34)",
+      "focusStyle": "underline-only",
+      "pointerAutofocus": false,
+      "pricingTreatment": "gold-text"
+    }
   },
-  "principles": {"singleLeftContentAxis": true, "readingMeasureSeparateFromStructuredCanvas": true, "standardAndStructuredCanvasesAreDistinct": true, "computedGeometryIsReleaseEvidence": true, "noPatchLayerAfterCanonicalAuthority": true, "footerRemainsInNormalDocumentFlow": true, "historicalScreenshotRegressionsAreReleaseBlocking": true, "designAuditsMustReadCanonicalAuthority": true}
+  "principles": {
+    "singleLeftContentAxis": true,
+    "readingMeasureSeparateFromStructuredCanvas": true,
+    "standardAndStructuredCanvasesAreDistinct": true,
+    "computedGeometryIsReleaseEvidence": true,
+    "noPatchLayerAfterCanonicalAuthority": true,
+    "footerRemainsInNormalDocumentFlow": true,
+    "historicalScreenshotRegressionsAreReleaseBlocking": true,
+    "designAuditsMustReadCanonicalAuthority": true
+  }
 }

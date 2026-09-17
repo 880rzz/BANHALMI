@@ -30,14 +30,18 @@ if (!css.includes('min-height:44px!important;padding-right:24px!important')) {
   errors.push('touch footer accordion target contract missing');
 }
 for (const token of [
-  'minmax(280px,1.15fr) minmax(225px,1fr) minmax(140px,.68fr) minmax(135px,.68fr) minmax(150px,.72fr) minmax(270px,1.2fr)',
+  'FOOTER-DESKTOP-GEOMETRY-V21:START',
+  'grid-template-columns:repeat(12,minmax(0,1fr))!important',
+  'grid-template-columns:repeat(2,minmax(0,1fr))!important',
   'white-space:nowrap!important',
   'content:"•"!important',
   '.footer-contact-actions a:first-child{color:#F5F5F7!important;font-weight:650!important;}',
-  '@media(max-width:1460px)'
+  '@media(min-width:1180px)'
 ]) {
   if (!css.includes(token)) errors.push(`footer navigation hierarchy contract missing: ${token}`);
 }
+
+if(css.includes('grid-template-columns:minmax(280px,1.15fr) minmax(225px,1fr) minmax(140px,.68fr) minmax(135px,.68fr) minmax(150px,.72fr) minmax(270px,1.2fr)!important')) errors.push('legacy six-track footer overflow geometry remains');
 
 let footers = 0;
 for (const page of pages) {
