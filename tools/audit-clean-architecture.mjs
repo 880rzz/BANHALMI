@@ -15,9 +15,9 @@ const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e =>
 const files = walk(root);
 const css = files.filter(f => f.endsWith('.css'));
 const cssRel = css.map(rel).sort();
-const approvedCss = ['assets/css/fluid-4k-rhythm.css', 'assets/css/site.css'];
+const approvedCss = ['assets/css/fluid-4k-rhythm.css', 'assets/css/live-pixel-geometry-v23.css', 'assets/css/site.css'];
 if (cssRel.length !== approvedCss.length || cssRel.some((p, i) => p !== approvedCss[i])) {
-  fail.push(`expected canonical site.css plus approved fluid rhythm stylesheet, found ${css.length}: ${cssRel.join(', ')}`);
+  fail.push(`expected canonical site.css, fluid rhythm and V23 live-pixel authority, found ${css.length}: ${cssRel.join(', ')}`);
 }
 
 for (const f of files.filter(f => f.endsWith('.html'))) {
@@ -38,6 +38,12 @@ if (exists('assets/css/fluid-4k-rhythm.css')) {
   const rhythm = read('assets/css/fluid-4k-rhythm.css');
   for (const token of ['FLUID-4K-RHYTHM-20260914:START','--apple-page-max:1440px','--apple-page-max:1600px','--apple-page-max:1760px','--prose-max:860px']) {
     if (!rhythm.includes(token)) fail.push(`fluid rhythm contract missing: ${token}`);
+  }
+}
+if (exists('assets/css/live-pixel-geometry-v23.css')) {
+  const live = read('assets/css/live-pixel-geometry-v23.css');
+  for (const token of ['LIVE-PIXEL-GEOMETRY-V23','grid-template-columns:repeat(11,minmax(0,1fr))','footer-contact-list','hero-visual-only']) {
+    if (!live.includes(token)) fail.push(`V23 live pixel contract missing: ${token}`);
   }
 }
 
@@ -81,9 +87,7 @@ if (exists('assets/js/main.js')) {
 }
 
 for (const p of ['requestaquote/index.html', 'hu/ajanlatkeres/index.html', 'de-at/anfrage/index.html']) {
-  if (exists(p) && !/data-smart-quote|data-form-kind=["']quote["']/i.test(read(p))) {
-    fail.push(`${p}: quote form contract missing`);
-  }
+  if (exists(p) && !/data-smart-quote|data-form-kind=["']quote["']/i.test(read(p))) fail.push(`${p}: quote form contract missing`);
 }
 for (const p of ['contact/index.html', 'hu/kapcsolat/index.html', 'de-at/kontakt/index.html']) {
   if (exists(p)) {
@@ -97,9 +101,7 @@ for (const p of ['contact/index.html', 'hu/kapcsolat/index.html', 'de-at/kontakt
 
 if (exists('llms.txt')) {
   const llms = read('llms.txt');
-  for (const token of ['/requestaquote/', '/hu/ajanlatkeres/', '/de-at/anfrage/', '/contact/', '/hu/kapcsolat/', '/de-at/kontakt/']) {
-    if (!llms.includes(token)) fail.push(`llms.txt: missing action route ${token}`);
-  }
+  for (const token of ['/requestaquote/', '/hu/ajanlatkeres/', '/de-at/anfrage/', '/contact/', '/hu/kapcsolat/', '/de-at/kontakt/']) if (!llms.includes(token)) fail.push(`llms.txt: missing action route ${token}`);
 }
 if (exists('api/v1/actions.json')) {
   const actions = JSON.parse(read('api/v1/actions.json'));
@@ -113,9 +115,7 @@ if (exists('.well-known/agent.json')) {
 
 if (exists('entity.jsonld')) {
   const entityText = read('entity.jsonld');
-  for (const token of ['Q56391118', 'Q138425941', 'Gersthofer Straße 150–154/6/2']) {
-    if (!entityText.includes(token)) fail.push(`entity.jsonld: missing ${token}`);
-  }
+  for (const token of ['Q56391118', 'Q138425941', 'Gersthofer Straße 150–154/6/2']) if (!entityText.includes(token)) fail.push(`entity.jsonld: missing ${token}`);
   if (!/Gersthofer[^]{0,1200}not a photographic studio/i.test(entityText)) fail.push('entity.jsonld: Gersthofer non-studio role missing');
 }
 
@@ -132,8 +132,5 @@ for (const [p, expected] of [
   }
 }
 
-if (fail.length) {
-  console.error(fail.join('\n'));
-  process.exit(1);
-}
-console.log(`Clean BANHALMI architecture passed: ${files.filter(f => f.endsWith('.html')).length} HTML pages, canonical site.css plus one approved fluid rhythm layer, critical quote/contact/LLM/entity/alias contracts preserved.`);
+if (fail.length) { console.error(fail.join('\n')); process.exit(1); }
+console.log(`Clean BANHALMI architecture passed: ${files.filter(f => f.endsWith('.html')).length} HTML pages, canonical site.css + fluid rhythm + V23 live-pixel authority, critical quote/contact/LLM/entity/alias contracts preserved.`);
