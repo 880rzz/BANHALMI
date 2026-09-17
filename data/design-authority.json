@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-16-v22-equal-cards-compact-three-band-footer",
+  "version": "2026-09-17-v23-release-blocking-live-pixel-geometry",
   "pageMaxPx": 1280,
   "structuredMaxPx": 1440,
   "readingMaxPx": 760,
@@ -23,13 +23,14 @@
     "quoteInfoColumnPx": 44,
     "quoteWorkspaceMinFormToIntroRatio": 1.55,
     "serviceProcessBottomMarginPx": 0,
-    "footer": {"desktopColumns": 11, "desktopBands": 3, "primaryRows": 1, "compactDesktopColumns": 6, "tabletColumns": 6, "mobileColumns": 1, "desktopMinPx": 1180, "compactDesktopMinPx": 769, "tabletMinPx": 621, "paddingTopPx": 18, "paddingBottomPx": 12, "desktopGapPx": 16, "tabletGapPx": 14, "summaryMinHeightPx": 44, "linkRowGapPx": 8, "compactPaddingTopPx": 14, "compactPaddingBottomPx": 10, "compactColumnGapPx": 12, "compactRowGapPx": 8, "compactFooterBottomMarginPx": 8, "compactFooterBottomPaddingPx": 6, "compactEcosystemMarginPx": 4, "compactEcosystemPaddingPx": 4},
-    "documentFlow": {"layoutMode": "grid", "documentBackground": "#202530", "footerAfterDocumentGapMaxPx": 2, "mainToFooterOverlapTolerancePx": 2, "footerMaxViewportFractionOnTabletDesktop": 0.4, "footerAbsoluteMaxPx": 360}
+    "footer": {"desktopColumns": 11, "desktopBands": 3, "primaryRows": 1, "compactDesktopColumns": 6, "tabletColumns": 6, "mobileColumns": 1, "desktopMinPx": 1180, "compactDesktopMinPx": 769, "tabletMinPx": 621, "paddingTopPx": 18, "paddingBottomPx": 12, "desktopGapPx": 16, "tabletGapPx": 14, "summaryMinHeightPx": 32, "linkRowGapPx": 8, "compactPaddingTopPx": 14, "compactPaddingBottomPx": 10, "compactColumnGapPx": 12, "compactRowGapPx": 8, "compactFooterBottomMarginPx": 8, "compactFooterBottomPaddingPx": 6, "compactEcosystemMarginPx": 4, "compactEcosystemPaddingPx": 4},
+    "documentFlow": {"layoutMode": "grid", "documentBackground": "#202530", "footerAfterDocumentGapMaxPx": 2, "mainToFooterOverlapTolerancePx": 2, "footerMaxViewportFractionOnTabletDesktop": 0.4, "footerAbsoluteMaxPx": 360, "footerTailGapMaxPx": 2, "heroHeaderGapMaxPx": 2, "heroNextSectionGapMaxPx": 2, "primaryOverlapTolerancePx": 1}
   },
   "responsive": {"touchTargetPx": 44, "minViewportPx": 320, "maxViewportPx": 3840},
   "visualGeometry": {
     "requiredDesktopViewports": [
       {"width": 1440, "height": 900, "homepageHeroMaxPx": 760, "footerMaxPx": 360, "portraitGalleryColumns": 4},
+      {"width": 1536, "height": 960, "homepageHeroMaxPx": 780, "footerMaxPx": 360, "portraitGalleryColumns": 4},
       {"width": 1920, "height": 1080, "homepageHeroMaxPx": 830, "footerMaxPx": 360, "portraitGalleryColumns": 5},
       {"width": 2560, "height": 1440, "homepageHeroMaxPx": 920, "footerMaxPx": 360, "portraitGalleryColumns": 6},
       {"width": 3840, "height": 2160, "homepageHeroMaxPx": 1080, "footerMaxPx": 360, "portraitGalleryColumns": 6}
@@ -52,5 +53,5 @@
     "activeRadiusPx": 0,
     "megaMenu": {"background": "#202530", "panelMaxPx": 1440, "desktopSidePaddingPx": 88, "desktopTopPaddingPx": 86, "desktopBottomPaddingPx": 34, "desktopColumnGapPx": 72, "sectionRuleColor": "rgba(183,156,68,.34)", "focusStyle": "underline-only", "pointerAutofocus": false, "pricingTreatment": "gold-text"}
   },
-  "principles": {"singleLeftContentAxis": true, "readingMeasureSeparateFromStructuredCanvas": true, "standardAndStructuredCanvasesAreDistinct": true, "computedGeometryIsReleaseEvidence": true, "noPatchLayerAfterCanonicalAuthority": true, "footerRemainsInNormalDocumentFlow": true, "historicalScreenshotRegressionsAreReleaseBlocking": true, "designAuditsMustReadCanonicalAuthority": true}
+  "principles": {"singleLeftContentAxis": true, "readingMeasureSeparateFromStructuredCanvas": true, "standardAndStructuredCanvasesAreDistinct": true, "computedGeometryIsReleaseEvidence": true, "noPatchLayerAfterCanonicalAuthority": false, "footerRemainsInNormalDocumentFlow": true, "historicalScreenshotRegressionsAreReleaseBlocking": true, "designAuditsMustReadCanonicalAuthority": true}
 }
