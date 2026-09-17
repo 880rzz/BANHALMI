@@ -15,9 +15,9 @@ const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e =>
 const files = walk(root);
 const css = files.filter(f => f.endsWith('.css'));
 const cssRel = css.map(rel).sort();
-const approvedCss = ['assets/css/fluid-4k-rhythm.css', 'assets/css/live-pixel-geometry-v23.css', 'assets/css/site.css'];
+const approvedCss = ['assets/css/fluid-4k-rhythm.css', 'assets/css/site.css'];
 if (cssRel.length !== approvedCss.length || cssRel.some((p, i) => p !== approvedCss[i])) {
-  fail.push(`expected canonical site.css, fluid rhythm and V23 live-pixel authority, found ${css.length}: ${cssRel.join(', ')}`);
+  fail.push(`expected canonical site.css plus approved fluid rhythm stylesheet, found ${css.length}: ${cssRel.join(', ')}`);
 }
 
 for (const f of files.filter(f => f.endsWith('.html'))) {
@@ -40,12 +40,12 @@ if (exists('assets/css/fluid-4k-rhythm.css')) {
     if (!rhythm.includes(token)) fail.push(`fluid rhythm contract missing: ${token}`);
   }
 }
-if (exists('assets/css/live-pixel-geometry-v23.css')) {
-  const live = read('assets/css/live-pixel-geometry-v23.css');
+if (exists('assets/css/live-pixel-geometry-v23.inc')) {
+  const live = read('assets/css/live-pixel-geometry-v23.inc');
   for (const token of ['LIVE-PIXEL-GEOMETRY-V23','grid-template-columns:repeat(11,minmax(0,1fr))','footer-contact-list','hero-visual-only']) {
     if (!live.includes(token)) fail.push(`V23 live pixel contract missing: ${token}`);
   }
-}
+} else fail.push('V23 live pixel authority missing');
 
 const required = [
   'llms.txt', 'ai.txt', 'robots.txt', 'sitemap.xml',
@@ -133,4 +133,4 @@ for (const [p, expected] of [
 }
 
 if (fail.length) { console.error(fail.join('\n')); process.exit(1); }
-console.log(`Clean BANHALMI architecture passed: ${files.filter(f => f.endsWith('.html')).length} HTML pages, canonical site.css + fluid rhythm + V23 live-pixel authority, critical quote/contact/LLM/entity/alias contracts preserved.`);
+console.log(`Clean BANHALMI architecture passed: ${files.filter(f => f.endsWith('.html')).length} HTML pages, two-CSS architecture plus V23 geometry authority resource, critical quote/contact/LLM/entity/alias contracts preserved.`);
