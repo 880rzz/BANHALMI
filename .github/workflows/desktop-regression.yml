@@ -67,15 +67,18 @@ jobs:
           mv /tmp/site.min.css _site/assets/css/site.css
           npx --yes esbuild@0.25.9 _site/assets/css/fluid-4k-rhythm.css --minify --outfile=/tmp/fluid-rhythm.min.css
           mv /tmp/fluid-rhythm.min.css _site/assets/css/fluid-4k-rhythm.css
+          npx --yes esbuild@0.25.9 _site/assets/css/live-pixel-geometry-v23.css --minify --outfile=/tmp/live-pixel-v23.min.css
+          mv /tmp/live-pixel-v23.min.css _site/assets/css/live-pixel-geometry-v23.css
           for js in _site/assets/js/main.js _site/assets/js/mega-menu.js _site/assets/js/analytics.js; do
             if [ -f "$js" ]; then
               npx --yes esbuild@0.25.9 "$js" --minify --outfile=/tmp/runtime.min.js
               mv /tmp/runtime.min.js "$js"
             fi
           done
-          test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "2"
+          test "$(find _site/assets/css -type f -name '*.css' | wc -l | tr -d ' ')" = "3"
           test -f _site/assets/css/site.css
           test -f _site/assets/css/fluid-4k-rhythm.css
+          test -f _site/assets/css/live-pixel-geometry-v23.css
       - uses: actions/upload-artifact@v4
         with:
           name: pr-site-${{ github.sha }}
