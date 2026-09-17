@@ -48,16 +48,15 @@ jobs:
           if(refs<50) throw new Error(`Expected at least 50 site.css references, found ${refs}`);
           console.log(`Synchronized ${refs} site.css references in ${changed}/${files} HTML files to ${expected}.`);
           NODE
-      - name: Remove this one-time workflow before audits
-        run: git rm .github/workflows/one-time-footer-v21-cache-sync.yml
-      - name: Run complete source audit
-        run: npm test
-      - name: Commit synchronized sources
+      - name: Create clean local candidate commit
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/one-time-footer-v21-cache-sync.yml
           git add -A
-          git diff --cached --exit-code && exit 0
           git commit -m "Synchronize footer V21 CSS cache token across source HTML"
-          git push origin HEAD:main
+      - name: Run complete source audit on committed candidate
+        run: npm test
+      - name: Push audited candidate
+        run: git push origin HEAD:main
