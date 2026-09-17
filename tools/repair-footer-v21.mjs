@@ -2,6 +2,8 @@ import fs from 'node:fs';
 
 const cssPath='assets/css/site.css';
 let css=fs.readFileSync(cssPath,'utf8');
+const legacySix='grid-template-columns:minmax(280px,1.15fr) minmax(225px,1fr) minmax(140px,.68fr) minmax(135px,.68fr) minmax(150px,.72fr) minmax(270px,1.2fr)!important';
+if(css.includes(legacySix)) css=css.split(legacySix).join('grid-template-columns:repeat(12,minmax(0,1fr))!important');
 const start='/* FOOTER-DESKTOP-GEOMETRY-V21:START */';
 const end='/* FOOTER-DESKTOP-GEOMETRY-V21:END */';
 const block=`${start}
