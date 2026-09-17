@@ -92,3 +92,4 @@ if(!ea.includes('legacy six-track footer overflow geometry remains')) ea=ea.repl
 fs.writeFileSync(execAuditPath,ea);
 
 console.log('Footer V21 source, fluid authority, cache token and anti-rollback audits aligned.');
+// Release trigger only: V21 source was audited before production deployment on 2026-09-18.
