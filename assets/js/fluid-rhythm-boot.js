@@ -3,7 +3,7 @@
   'use strict';
   var sheets = [
     {href:'/assets/css/fluid-4k-rhythm.css?v=20260916-live-pixel-v22', key:'fluid-4k-rhythm'},
-    {href:'/assets/css/live-pixel-geometry-v23.css?v=20260917', key:'live-pixel-geometry-v23'}
+    {href:'/assets/css/live-pixel-geometry-v23.inc?v=20260917', key:'live-pixel-geometry-v23'}
   ];
   sheets.forEach(function(sheet){
     var selector='link[data-'+sheet.key+']';
