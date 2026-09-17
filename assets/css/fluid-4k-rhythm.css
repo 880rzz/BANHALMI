@@ -14,10 +14,10 @@
   html body main .hero.service-hero.service-editorial-hero>.wrap>.service-hero-image img{width:100%!important;height:100%!important;object-fit:cover!important}
   html body main .collage-gallery{column-count:4!important;column-gap:18px!important}
   html body .site-footer{padding-top:28px!important;padding-bottom:18px!important}
-  html body .site-footer .footer-grid{grid-template-columns:repeat(11,minmax(0,1fr))!important;grid-template-rows:auto!important;grid-auto-flow:row!important;column-gap:18px!important;row-gap:0!important;align-items:start!important}
+  html body .site-footer .footer-grid{grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr))!important;grid-template-rows:auto!important;grid-auto-flow:row!important;column-gap:18px!important;row-gap:32px!important;align-items:start!important}
   html body .site-footer .footer-grid>div:first-child{grid-column:span 2!important}
-  html body .site-footer .footer-grid>details.footer-accordion{grid-column:span 1!important}
-  html body .site-footer .footer-grid>div:nth-last-child(-n+2){grid-column:span 2!important}
+  html body .site-footer .footer-grid>details.footer-accordion{grid-column:auto!important}
+  html body .site-footer .footer-grid>div:nth-last-child(-n+2){grid-column:auto!important}
   html body .site-footer .footer-bottom{margin-top:16px!important;padding-top:12px!important}
   html body .banhalmi-ecosystem{margin-top:8px!important;padding-top:8px!important}
   html body .bn-mega-panel{padding-top:48px!important;padding-bottom:28px!important;padding-left:64px!important;padding-right:64px!important;column-gap:48px!important}

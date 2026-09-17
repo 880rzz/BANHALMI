@@ -13,7 +13,7 @@ must(Number(authority.responsive?.touchTargetPx)===44,'BANHALMI canonical touch 
 must(Number(authority.layout?.documentFlow?.footerMaxViewportFractionOnTabletDesktop)===0.54,'BANHALMI visual footer threshold must remain 0.54 or tighter');
 must(Number(authority.layout?.documentFlow?.footerAbsoluteMaxPx)===480,'BANHALMI desktop footer absolute maximum must remain 480px');
 must(authority.layout?.documentFlow?.documentBackground==='#202530','BANHALMI document floor must remain aligned with the dark footer to prevent Safari tail exposure');
-must(Number(authority.layout?.footer?.desktopColumns)===11,'BANHALMI desktop footer primary band must remain eleven-track geometry');
+must(Number(authority.layout?.footer?.desktopColumns)===4,'BANHALMI desktop footer must use four readable tracks');
 must(Number(authority.layout?.footer?.desktopBands)===3,'BANHALMI desktop footer must remain a three-band composition');
 must(Number(authority.layout?.footer?.compactDesktopColumns)===6,'BANHALMI compact desktop footer must remain six-column geometry');
 must(Number(authority.layout?.footer?.compactDesktopMinPx)===769,'BANHALMI compact desktop footer must begin at 769px so the 768px tablet contract cannot overlap it');

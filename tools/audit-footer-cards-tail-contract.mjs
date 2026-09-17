@@ -8,7 +8,7 @@ const footer=authority.layout?.footer||{};
 const flow=authority.layout?.documentFlow||{};
 const must=(ok,msg)=>{if(!ok)failures.push(msg)};
 
-must(Number(footer.desktopColumns)===11,'desktop footer primary band must remain eleven-track geometry');
+must(Number(footer.desktopColumns)===4,'desktop footer must use four readable tracks');
 must(Number(footer.desktopBands)===3,'desktop footer must remain a three-band composition');
 must(Number(footer.compactDesktopColumns)===6&&Number(footer.tabletColumns)===6,'intermediate footer must remain six-column compact geometry');
 must(Number(footer.paddingTopPx)===28&&Number(footer.paddingBottomPx)===18,'desktop footer padding contract changed');
@@ -17,7 +17,7 @@ must(flow.documentBackground==='#202530','document floor must match dark footer'
 must(Number(flow.footerAfterDocumentGapMaxPx)===2,'footer-after-document overhang tolerance changed');
 must(Number(flow.footerMaxViewportFractionOnTabletDesktop)<=0.54,'desktop footer viewport fraction became too permissive');
 must(Number(flow.footerAbsoluteMaxPx)<=480,'desktop footer absolute maximum became too permissive');
-must(/grid-template-columns:repeat\(11,minmax\(0,1fr\)\)!important/.test(fluid),'canonical desktop footer must remain a single primary row across eleven tracks');
+must(/grid-template-columns:minmax\(0,2fr\) repeat\(3,minmax\(0,1fr\)\)!important/.test(fluid),'canonical desktop footer must use four readable tracks');
 must(/grid-template-columns:repeat\(6,minmax\(0,1fr\)\)!important/.test(fluid),'canonical intermediate footer six-column geometry missing');
 must(fluid.includes('grid-template-rows:auto!important')&&fluid.includes('grid-auto-flow:row!important'),'desktop footer primary band must stay one rendered row');
 must(/\.archive-cards>\.archive-card\{[^}]*height:100%!important;[^}]*display:flex!important;[^}]*flex-direction:column!important/.test(fluid),'archive cards must remain equal-height flex columns');
