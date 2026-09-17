@@ -4312,7 +4312,7 @@ html body .site-footer,html body .site-footer .wrap{min-height:0!important;}
   html body .site-footer .footer-legal-list{min-width:0!important;max-width:100%!important;}
   html body .site-footer .footer-legal-list li{grid-template-columns:minmax(0,58px) minmax(0,1fr)!important;min-width:0!important;}
   html body .site-footer .footer-legal-list li>*{min-width:0!important;max-width:100%!important;}
-  html body .site-footer .footer-legal-list li>strong{white-space:normal!important;overflow-wrap:anywhere!important;word-break:normal!important;}
+  html body .site-footer .footer-legal-list li>strong{white-space:normal!important;overflow-wrap:anywhere!important;word-break:normal!important;min-width:0!important;}
   html body .site-footer .footer-bottom,html body .banhalmi-ecosystem{min-width:0!important;max-width:100%!important;overflow-x:clip!important;}
 }
 @media(min-width:1180px) and (max-width:1365px){

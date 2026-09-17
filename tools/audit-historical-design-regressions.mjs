@@ -13,7 +13,7 @@ must(Number(authority.responsive?.touchTargetPx)===44,'BANHALMI canonical touch 
 must(Number(authority.layout?.documentFlow?.footerMaxViewportFractionOnTabletDesktop)===0.54,'BANHALMI visual footer threshold must remain 0.54 or tighter');
 must(Number(authority.layout?.documentFlow?.footerAbsoluteMaxPx)===480,'BANHALMI desktop footer absolute maximum must remain 480px');
 must(authority.layout?.documentFlow?.documentBackground==='#202530','BANHALMI document floor must remain aligned with the dark footer to prevent Safari tail exposure');
-must(Number(authority.layout?.footer?.desktopColumns)===4,'BANHALMI desktop footer must use four readable tracks');
+must(Number(authority.layout?.footer?.desktopColumns)===12,'BANHALMI desktop footer must use twelve safe tracks for the explicit two-row layout');
 must(Number(authority.layout?.footer?.desktopBands)===3,'BANHALMI desktop footer must remain a three-band composition');
 must(Number(authority.layout?.footer?.compactDesktopColumns)===6,'BANHALMI compact desktop footer must remain six-column geometry');
 must(Number(authority.layout?.footer?.compactDesktopMinPx)===769,'BANHALMI compact desktop footer must begin at 769px so the 768px tablet contract cannot overlap it');
@@ -54,4 +54,4 @@ must(!audit.includes('pageMaxPx=1200'),'stale 1200px canvas may not return to ex
 must(!audit.includes('pageMaxPx=1500'),'stale 1500px canvas may not return to exhaustive audit');
 
 if(failures.length){console.error(`BANHALMI historical design regression guard failed (${failures.length}):`);for(const f of failures)console.error(`- ${f}`);process.exit(1)}
-console.log('BANHALMI historical design regression guard passed: canonical canvases, three-band footer authority, 1440/1920/2560/4K pixel gates, frame-free mega menu and overflow protections are locked.');
+console.log('BANHALMI historical design regression guard passed: canonical canvases, two-row desktop footer authority, 1440/1920/2560/4K pixel gates, frame-free mega menu and overflow protections are locked.');
