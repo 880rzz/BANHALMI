@@ -76,6 +76,7 @@ html body main :is(.cards,.service-process-grid,.archive-cards)>:is(.card,.archi
   html body .site-footer .footer-wko-profile{margin-top:2px!important}
   html body .site-footer .footer-wko-profile img{max-width:64px!important}
   html body .site-footer .footer-heading,html body .site-footer .footer-accordion>summary{font-size:.66rem!important;line-height:1.1!important}
+  html[lang^="hu"] body .site-footer [data-social-footer]>summary{white-space:nowrap!important;overflow-wrap:normal!important;padding-right:18px!important}
   html body .site-footer .footer-grid>div:has(.footer-contact-list) :is(.footer-studio-link,.footer-address,.footer-phone,.footer-whatsapp,.footer-contact-actions a),html body .site-footer .footer-legal-list{font-size:.62rem!important;line-height:1.12!important}
   html body .site-footer .footer-bottom{margin-top:4px!important;padding-top:3px!important;font-size:.62rem!important;line-height:1.15!important;gap:3px 8px!important}
   html body .site-footer .banhalmi-ecosystem,html body .banhalmi-ecosystem{margin-top:2px!important;padding-top:2px!important;font-size:.62rem!important;line-height:1.1!important;gap:2px 8px!important}
