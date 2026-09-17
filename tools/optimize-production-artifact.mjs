@@ -21,7 +21,7 @@ const megaMenuScriptRe = /<script data-banhalmi-mega-menu="" defer="" src="\/ass
 const quotePdfScriptRe = /<script([^>]*?)src="(\/assets\/js\/quote-pdf\.js[^\"]*)"([^>]*)><\/script>/g;
 
 const asyncStyle = '<link rel="preload" as="style" href="$1"/><link rel="stylesheet" href="$1" media="print" onload="this.media=\'all\';this.onload=null"/><noscript><link rel="stylesheet" href="$1"/></noscript>';
-const fluidRhythmStyle = '<link rel="stylesheet" href="/assets/css/fluid-4k-rhythm.css?v=20260916-live-pixel-v22" data-fluid-4k-rhythm=""/>';
+const fluidRhythmStyle = '<link rel="stylesheet" href="/assets/css/fluid-4k-rhythm.css?v=20260917-footer-v21" data-fluid-4k-rhythm=""/>';
 
 const executivePositioningCopy = {
   'lifestyle/index.html': {
