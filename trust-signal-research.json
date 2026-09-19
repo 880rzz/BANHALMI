@@ -1,6 +1,6 @@
 {
   "schemaVersion":"1.0.0",
-  "updatedAt":"2026-09-11",
+  "updatedAt":"2026-09-19",
   "purpose":"Daily discovery queue for publicly verifiable BANHALMI trust and authority signals. This is an intake registry, not a claim registry.",
   "searchPlan":{
     "cadence":"daily",
@@ -29,5 +29,23 @@
     "promotable":"verified and useful to an existing evidence layer or a justified authority asset",
     "rejected":"unverifiable, duplicate, misleading, relationship-inflating or low-quality"
   },
-  "candidates":[]
+  "candidates":[
+    {
+      "id":"orf-community-portrait-fundraiser-2025",
+      "discoveredAt":"2026-09-19",
+      "sourceUrl":"https://volksgruppen.orf.at/magyarok/stories/3295966/",
+      "sourceName":"ORF Volksgruppen – Magyarok",
+      "sourceType":"public-service-media",
+      "publishedAt":"2025-03-06T18:17:00+01:00",
+      "exactCredit":"ORF reports that photographer Bánhalmi Norbert initiated and carried out a portrait-photography fundraising project for the Bécsi Magyar Iskola; the article identifies him as a fotóművész and quotes him about extending similar projects to other associations.",
+      "subject":"Bánhalmi Norbert",
+      "signalType":"profile",
+      "relationshipClassification":"institutional-context",
+      "confidence":"high",
+      "dedupeKey":"orf-volksgruppen-3295966-banhalmi-bmi-portrait-fundraiser-2025",
+      "verificationStatus":"candidate-source-resolved-deduped",
+      "canonicalTargetRegistry":"press-institutional-evidence.json",
+      "notes":"Independent Austrian public-service media coverage. Supports documented community portrait/fundraising activity and public professional identification only. Does not imply ORF client status, BMI employment, partnership, endorsement, commission, exclusivity or official-photographer status."
+    }
+  ]
 }
