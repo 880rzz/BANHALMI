@@ -8,7 +8,7 @@ for(const path of baseline.htmlPaths)assert.ok(existsSync(path),"Historical URL 
 for(const [path,expected] of Object.entries(baseline.imageBlobs)){
  assert.ok(existsSync(path),"Historical image missing: "+path);
  const content=readFileSync(path);
- const actual=createHash("sha1").update("blob "+content.length+"\\0".replace("\\\\0","\\0")).update(content).digest("hex");
+ const actual=createHash("sha1").update(Buffer.from("blob "+content.length+"\\0")).update(content).digest("hex");
  assert.equal(actual,expected,"Historical image changed: "+path);
 }
 console.log("BANHALMI-C historical 100 routes and 595 original images: PASS");
