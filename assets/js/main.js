@@ -79,19 +79,35 @@
     membershipFooter.appendChild(artinerisItem);
   }
 
+  // Desktop information columns; native mobile details, one responsive authority.
   var footerAccordions = Array.prototype.slice.call(document.querySelectorAll("details.footer-accordion"));
   if (footerAccordions.length) {
+    var desktopFooter = window.matchMedia("(min-width: 721px)");
+    function syncFooterMode() {
+      footerAccordions.forEach(function (details) {
+        var summary = details.querySelector("summary");
+        if (!summary) return;
+        details.open = desktopFooter.matches;
+        summary.setAttribute("aria-expanded", details.open ? "true" : "false");
+        if (desktopFooter.matches) summary.setAttribute("tabindex", "-1");
+        else summary.removeAttribute("tabindex");
+      });
+    }
     footerAccordions.forEach(function (details) {
       var summary = details.querySelector("summary");
       if (!summary) return;
-      details.setAttribute("data-footer-disclosure-runtime", "v44");
-      details.open = false;
-      summary.setAttribute("aria-expanded", "false");
+      details.setAttribute("data-footer-disclosure-runtime", "responsive-v1");
+      summary.addEventListener("click", function (event) {
+        if (desktopFooter.matches) event.preventDefault();
+      });
       details.addEventListener("toggle", function () {
+        if (desktopFooter.matches && !details.open) details.open = true;
         summary.setAttribute("aria-expanded", details.open ? "true" : "false");
-        details.setAttribute("data-footer-disclosure-last-action", details.open ? "open" : "close");
       });
     });
+    syncFooterMode();
+    if (desktopFooter.addEventListener) desktopFooter.addEventListener("change", syncFooterMode);
+    else if (desktopFooter.addListener) desktopFooter.addListener(syncFooterMode);
   }
 
   // Scroll reveal (respects reduced motion)
@@ -1157,70 +1173,7 @@
   });
 })();
 
-/* Hero video: identical on EN/HU/DE, but deliberately absent from the
-   critical loading path. The still image remains the LCP element. Video source
-   URLs live in data-src and are attached only after real pointer intent or a
-   tap. Reduced-motion visitors never download the video. */
-(function(){
-  var figure=document.querySelector('.hero.hero-image-first .hero-figure');
-  if(!figure)return;
-  var video=figure.querySelector('.hero-video');
-  if(!video)return;
-  var canHover=!window.matchMedia||window.matchMedia('(hover:hover)').matches;
-  var reducedMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reducedMotion)return;
-  var sourcesBound=false;
-
-  function bindSources(){
-    if(sourcesBound)return;
-    var sources=video.querySelectorAll('source[data-src]');
-    sources.forEach(function(source){
-      source.src=source.getAttribute('data-src');
-      source.removeAttribute('data-src');
-    });
-    sourcesBound=true;
-    video.load();
-  }
-  function play(){
-    bindSources();
-    if(video.readyState>0){try{video.currentTime=0;}catch(e){}}
-    var playPromise=video.play();
-    if(playPromise&&playPromise.catch)playPromise.catch(function(){});
-  }
-  function stop(){
-    video.pause();
-    figure.classList.remove('is-video-playing');
-  }
-  video.addEventListener('playing',function(){figure.classList.add('is-video-playing');});
-  video.addEventListener('pause',function(){figure.classList.remove('is-video-playing');});
-  video.addEventListener('ended',function(){figure.classList.remove('is-video-playing');});
-  video.addEventListener('error',function(){figure.classList.remove('is-video-playing');});
-
-  if(canHover){
-    figure.addEventListener('mouseenter',play,{passive:true});
-    figure.addEventListener('mouseleave',stop,{passive:true});
-    return;
-  }
-
-  figure.addEventListener('click',function(event){
-    event.preventDefault();
-    var isPlaying=figure.classList.contains('is-tapped');
-    if(isPlaying){
-      figure.classList.remove('is-tapped');
-      stop();
-    }else{
-      figure.classList.add('is-tapped');
-      play();
-    }
-  });
-  document.addEventListener('click',function(event){
-    if(figure.classList.contains('is-tapped')&&!figure.contains(event.target)){
-      figure.classList.remove('is-tapped');
-      stop();
-    }
-  });
-})();
-
+/* Homepage hero is a static image; no pointer-activated video. */
 
 /* BANHALMI-CONTACT-DOCK-V1:START */
 (function () {
