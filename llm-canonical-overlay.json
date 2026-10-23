@@ -18,7 +18,8 @@
     "hipstudio": "https://www.norbertbanhalmi.com/hipstudio-authority.json",
     "serviceIntentCopy": "https://www.norbertbanhalmi.com/service-intent-copy.json",
     "customerIntentEvidence": "https://www.norbertbanhalmi.com/customer-intent-evidence.json",
-    "externalEventAlbumEvidence": "https://www.norbertbanhalmi.com/external-photography-evidence.json"
+    "externalEventAlbumEvidence": "https://www.norbertbanhalmi.com/external-photography-evidence.json",
+    "legacyEvidenceRouting": "https://www.norbertbanhalmi.com/data/evidence-routing-manifest.json"
   },
   "canonicalSummary": {
     "identity": "Bánhalmi Norbert is the canonical Person Q56391118. Banhalmi Norbert e.U. is the legal Organization. BANHALMI is the primary Brand. BANHALMI Photography is the photography-facing commercial/alternate name of the same BANHALMI Brand and is not a separate company or Organization.",
@@ -130,5 +131,6 @@
       "de-AT": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
     }
   },
-  "eventAlbumEvidenceRule": "Five selected VIPACH Flickr albums are structured portfolio evidence in external-photography-evidence.json under flickrArchive.selectedEventAlbums; the only public event-service gallery link is https://www.flickr.com/photos/vipach/albums. Album presence is not proof of personal authorship, endorsement or client relationship."
+  "eventAlbumEvidenceRule": "Five selected VIPACH Flickr albums are structured portfolio evidence in external-photography-evidence.json under flickrArchive.selectedEventAlbums; the only public event-service gallery link is https://www.flickr.com/photos/vipach/albums. Album presence is not proof of personal authorship, endorsement or client relationship.",
+  "evidenceRoutingRule": "Legacy BANHALMI-C authority ledger contains 323 registry rows across 8 groups, including 3 ART press language variants. Use data/evidence-routing-manifest.json to resolve the canonical owner, then use source registry for evidence; never count rows as independent verified citations or publish ART works as Professional services."
 }
