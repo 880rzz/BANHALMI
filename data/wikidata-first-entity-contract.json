@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "2026-10-24",
+  "architecture": "Wikidata-first identity, evidence-first claims, site-owned canonical landing pages",
+  "entities": {
+    "person": {
+      "wikidata": "Q56391118",
+      "wikidataUrl": "https://www.wikidata.org/wiki/Q56391118",
+      "canonicalId": "https://www.norbertbanhalmi.com/about/",
+      "schemaType": "Person",
+      "sameAsPolicy": "Only exact identity sources; no partner, press, client or event URL"
+    },
+    "legalOrganization": {
+      "wikidata": "Q138425941",
+      "wikidataUrl": "https://www.wikidata.org/wiki/Q138425941",
+      "canonicalId": "https://www.norbertbanhalmi.com/#organization",
+      "schemaType": "Organization",
+      "sameAsPolicy": "Never equate the legal organization with the person or brand"
+    },
+    "brand": {
+      "wikidata": null,
+      "canonicalId": "https://www.norbertbanhalmi.com/#brand",
+      "schemaType": "Brand",
+      "sameAsPolicy": "No dedicated Wikidata item; never borrow Q56391118 or Q138425941"
+    },
+    "professionalWebsite": {
+      "canonical": "https://www.norbertbanhalmi.com/",
+      "role": "Commercial photography services, bookings, locations, client trust"
+    },
+    "artWebsite": {
+      "canonical": "https://www.banhalmi.art/",
+      "role": "Works, oeuvre, archives, exhibitions, VisualArtwork and art press"
+    },
+    "editorialWebsite": {
+      "canonical": "https://blog.banhalmi.art/",
+      "role": "Photography history and editorial articles"
+    }
+  },
+  "routing": {
+    "press": "press-institutional-evidence.json",
+    "eventPhotography": "external-photography-evidence.json",
+    "serviceProof": "service-trust-evidence.json",
+    "mediaUsage": "media-usage-evidence.json",
+    "artPress": "880rzz/ART:press-source-registry.json",
+    "artArchive": "880rzz/ART:archive-record-registry.json",
+    "artWikidata": "880rzz/ART:wikidata-source-registry.json",
+    "auditLedger": ".github/internal-evidence/authority-evidence-audit-ledger-20261010.json",
+    "auditManifest": "data/evidence-routing-manifest.json"
+  },
+  "schemaRelations": {
+    "sameAs": "Entity identity only",
+    "subjectOf": "Independent article about an entity",
+    "citation": "Source for a concrete factual assertion",
+    "creator": "Only when attribution is independently supported",
+    "about": "Content topic, not author",
+    "isPartOf": "Publication or collection membership",
+    "worksFor": "Documented employment or role only",
+    "affiliation": "Documented relationship with exact role"
+  },
+  "safety": {
+    "independentVerification": "A source registry entry does not establish live verification",
+    "pressCredits": "Do not infer commission, employment, partnership, endorsement, licensing or creator status from coverage",
+    "privacy": "Do not expose internal audit ledger on public website; publish only verified references",
+    "multilingual": "HU/EN/DE pages preserve semantic equivalence and canonical/hreflang mapping",
+    "historicalIntegrity": "Preserve 100 legacy page routes and 595 image blobs from BANHALMI-C"
+  }
+}
