@@ -23,3 +23,5 @@ jobs:
         run: node tests/legacy-evidence-integrity.test.mjs
       - name: Verify evidence routing
         run: node tests/evidence-routing.test.mjs
+      - name: Verify Fine Art EN DE HU gallery parity
+        run: node tests/fine-art-three-language-gallery.test.mjs
