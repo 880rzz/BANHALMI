@@ -1,0 +1,341 @@
+{
+  "version": "2026-09-29-v47-gallery-20px",
+  "pageMaxPx": 1280,
+  "structuredMaxPx": 1440,
+  "readingMaxPx": 760,
+  "wideReadingMaxPx": 900,
+  "typography": {
+    "desktop": {
+      "h1": "clamp(2.5rem,3.6vw,3.625rem)",
+      "h2": "clamp(1.625rem,2.4vw,2.375rem)",
+      "h3": "clamp(18px,1.45vw,1.3rem)"
+    },
+    "tablet": {
+      "h1": "clamp(2.375rem,5.2vw,2.875rem)",
+      "h2": "clamp(1.5625rem,3.5vw,2.125rem)"
+    },
+    "mobile": {
+      "h1": "clamp(2.15rem,11vw,3rem)",
+      "h2": "clamp(1.65rem,8vw,2.1rem)"
+    },
+    "h3DescriptionGapPx": 10,
+    "semanticBreakProtection": {
+      "contractVersion": "v33",
+      "shortHyphenatedTermsAtomic": true,
+      "maxProtectedTermCharacters": 28,
+      "sourceTextUnchanged": true,
+      "appliesAllLanguages": true,
+      "noHorizontalOverflow": true
+    }
+  },
+  "layout": {
+    "desktopStructuredMinViewportFraction": 0.7,
+    "contentAxisTolerancePx": 4,
+    "compactSectionPaddingMaxPx": 96,
+    "contentSectionPaddingMaxPx": 120,
+    "heroToContentGapMaxPx": 72,
+    "cardGapPx": 24,
+    "mobileMembershipOddCardCentered": true,
+    "quoteControlColumnPx": 24,
+    "quoteControlGapPx": 14,
+    "quoteInfoColumnPx": 44,
+    "quoteWorkspaceMinFormToIntroRatio": 1.55,
+    "serviceProcessBottomMarginPx": 0,
+    "footer": {
+      "desktopColumns": 12,
+      "desktopContentRows": 2,
+      "desktopBands": 3,
+      "desktopMinPx": 1180,
+      "wideDesktopMinPx": 1440,
+      "desktopMaxContentPx": 1440,
+      "desktopSideInsetPx": 48,
+      "desktopColumnGapMinPx": 18,
+      "desktopColumnGapMaxPx": 34,
+      "desktopRowGapMinPx": 22,
+      "desktopRowGapMaxPx": 22,
+      "desktopContactColumns": 3,
+      "desktopTopRowGroups": [
+        "brand",
+        "services",
+        "archive",
+        "profile",
+        "social"
+      ],
+      "desktopBottomRowGroups": [
+        "contact",
+        "memberships",
+        "legal"
+      ],
+      "desktopNoMidWordBreaks": true,
+      "smallDesktopMinPx": 1180,
+      "smallDesktopMaxPx": 1439,
+      "smallDesktopColumns": 12,
+      "smallDesktopContentRows": 2,
+      "smallDesktopSideInsetPx": 32,
+      "smallDesktopTopRowGroups": [
+        "brand",
+        "services",
+        "archive",
+        "profile",
+        "social"
+      ],
+      "smallDesktopBottomRowGroups": [
+        "contact",
+        "memberships",
+        "legal"
+      ],
+      "smallDesktopOverflowGuard": true,
+      "compactDesktopColumns": 12,
+      "tabletColumns": 12,
+      "mobileColumns": 1,
+      "compactDesktopMinPx": 721,
+      "tabletMinPx": 621,
+      "paddingTopPx": 32,
+      "paddingBottomPx": 20,
+      "tabletGapPx": 14,
+      "summaryMinHeightPx": 44,
+      "linkRowGapPx": 10,
+      "compactPaddingTopPx": 26,
+      "compactPaddingBottomPx": 18,
+      "compactColumnGapPx": 14,
+      "compactRowGapPx": 12,
+      "compactFooterBottomMarginPx": 22,
+      "compactFooterBottomPaddingPx": 18,
+      "compactEcosystemMarginPx": 0,
+      "compactEcosystemPaddingPx": 0,
+      "canonicalGeometryAuthority": "assets/css/site.css",
+      "separateGeometryStylesheetAllowed": false,
+      "runtimeGeometryLoaderAllowed": false,
+      "desktopInternalStudioDivider": false,
+      "desktopContactSpanTracks": 7,
+      "smallDesktopContactSpanTracks": 7,
+      "compactContactColumns": 3,
+      "physicalBusinessLocationCount": 3,
+      "locationRoles": [
+        "vienna-studio",
+        "vienna-office",
+        "budapest-studio"
+      ],
+      "canonicalFinalMarker": "FOOTER-SINGLE-CANONICAL-V43-20260926",
+      "desktopInternalLocationDivider": true,
+      "singleGeometryAuthorityRequired": true,
+      "legacyFooterMutatorsDisabled": true,
+      "runtimeDisclosureAuthority": "assets/js/main.js",
+      "runtimeDisclosureAuthorityCount": 1,
+      "mobileMaxPx": 720,
+      "mobileTopLevelFullWidth": true,
+      "mobileResetExplicitGridPlacement": true,
+      "mobileNoCharacterBreaks": true,
+      "runtimeDisclosureMode": "user-owned-closed-default-all-viewports",
+      "compactNativeDisclosureRequired": true,
+      "compactInteractiveDisclosureRequired": true,
+      "inlineVisibilityMutationAllowed": false,
+      "wideDesktopLegalSingleLineMinPx": 1440,
+      "cookieSettingsStaysWithLegalLinks": true,
+      "desktopDisclosureDefaultOpen": false,
+      "desktopDisclosureUserOwned": true
+    },
+    "documentFlow": {
+      "layoutMode": "flex",
+      "documentBackground": "#ffffff",
+      "footerAfterDocumentGapMaxPx": 2,
+      "mainToFooterOverlapTolerancePx": 2,
+      "footerMaxViewportFractionOnTabletDesktop": 0.82,
+      "footerAbsoluteMaxPx": 760,
+      "rootOverscrollBackground": "#ffffff",
+      "rootOverscrollMatchesFooter": false
+    },
+    "quote": {
+      "categoryCardHeight": "intrinsic",
+      "equalHeightStretchingAllowed": false,
+      "authority": "assets/css/site.css"
+    },
+    "sectionSpacing": {
+      "cardGapMinPx": 20,
+      "cardGapMaxPx": 28
+    }
+  },
+  "responsive": {
+    "touchTargetPx": 44,
+    "minViewportPx": 320,
+    "maxViewportPx": 3840
+  },
+  "visualGeometry": {
+    "requiredDesktopViewports": [
+      {
+        "width": 1440,
+        "height": 900,
+        "homepageHeroMaxPx": 760,
+        "footerMaxPx": 720,
+        "portraitGalleryColumns": 3
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "homepageHeroMaxPx": 830,
+        "footerMaxPx": 720,
+        "portraitGalleryColumns": 3
+      },
+      {
+        "width": 2560,
+        "height": 1440,
+        "homepageHeroMaxPx": 920,
+        "footerMaxPx": 740,
+        "portraitGalleryColumns": 3
+      },
+      {
+        "width": 3840,
+        "height": 2160,
+        "homepageHeroMaxPx": 1080,
+        "footerMaxPx": 760,
+        "portraitGalleryColumns": 3
+      }
+    ],
+    "homepageHeroMedia": {
+      "reductionFraction": 0.15,
+      "mobileUnchangedMaxPx": 0,
+      "tabletMinPx": 621,
+      "tabletMaxPx": 1179,
+      "tabletHeightVw": 39.5604,
+      "desktopMinPx": 1180,
+      "desktopHeight": "clamp(600px,42.8vw,720px)",
+      "shortDesktopMaxViewportHeightPx": 760,
+      "shortDesktopHeightPx": 561,
+      "copyPanelGeometryUnchanged": false,
+      "copyPanelMatchesMediaHeight": false,
+      "languages": [
+        "en",
+        "de-AT",
+        "hu-HU"
+      ],
+      "pages": [
+        "index.html",
+        "de-at/index.html",
+        "hu/index.html"
+      ],
+      "desktopLayout": "stacked",
+      "mobileGoldRuleAtImageEdge": true,
+      "mobileGoldRuleHeightPx": 64,
+      "mobileHeroClosureGapMaxPx": 2,
+      "mobileGoldRuleShape": "curved-sweep",
+      "mobileGoldRuleBottomPx": -40,
+      "mobileGoldRuleBorderTopPx": 4
+    },
+    "homepageHeroMaxViewportFraction": 0.92,
+    "sameRowCardHeightTolerancePx": 2,
+    "reviewsSectionPaddingMaxPx": 72,
+    "sectionStartToHeadingMaxPx": 180,
+    "megaMenuFirstContentMaxPx": 72,
+    "megaMenuBottomWhitespaceMaxPx": 44,
+    "runtimeGeometryOverridesAllowed": false,
+    "mobileProductionViewports": [
+      375,
+      390,
+      393,
+      414,
+      430,
+      621,
+      720,
+      721,
+      768,
+      820,
+      1024,
+      1179,
+      1180,
+      1280,
+      1440,
+      1920,
+      2560,
+      3840
+    ],
+    "gallery": {
+      "contractVersion": "v48",
+      "desktopMinPx": 1101,
+      "desktopColumns": 3,
+      "layout": "css-multicol-masonry",
+      "reference": "BANHALMI ART homepage gallery",
+      "gap": "20px",
+      "appliesTo": [
+        ".gallery",
+        ".pf-grid",
+        ".collage-gallery",
+        ".jony-gallery-grid",
+        ".banhalmi-portrait-gallery-grid",
+        ".service-lower-gallery-grid",
+        ".portrait-reference-gallery",
+        ".portrait-service-gallery"
+      ],
+      "gapPx": 20,
+      "spacingAxes": "row-and-column",
+      "appliesAllBreakpoints": true,
+      "desktopWidth": "near-full-viewport",
+      "desktopSidePadding": "clamp(24px,2.5vw,48px)",
+      "desktopSidePaddingMinPx": 24,
+      "desktopSidePaddingMaxPx": 48
+    }
+  },
+  "navigation": {
+    "activeState": "text-only",
+    "activeFill": "none",
+    "activeBorder": "none",
+    "activeBoxShadow": "none",
+    "activeRadiusPx": 0,
+    "megaMenu": {
+      "background": "#202530",
+      "panelMaxPx": 1440,
+      "desktopSidePaddingPx": 40,
+      "desktopTopPaddingPx": 24,
+      "desktopBottomPaddingPx": 20,
+      "desktopColumnGapPx": 64,
+      "sectionRuleColor": "rgba(183,156,68,.28)",
+      "focusStyle": "underline-only",
+      "pointerAutofocus": false,
+      "pricingTreatment": "gold-text",
+      "contractVersion": "v31",
+      "desktopOverlayBelowHeader": true,
+      "desktopColumns": 3,
+      "desktopMaxHeightPx": null,
+      "desktopDescriptionsHidden": false,
+      "duplicateBrandIntroHidden": true,
+      "duplicateTailHidden": true,
+      "visualTile": false,
+      "sloganTile": false,
+      "decorativeSectionArrows": false,
+      "mobileStartsBelowHeader": true,
+      "mobileDescriptionsHidden": true,
+      "mobileSectionSpacingCompact": true,
+      "mobileTextOnly": true,
+      "desktopFullViewport": true,
+      "mobileBottomSafetyPx": 0,
+      "firstPointerActivationMustOpen": true,
+      "mobileBackgroundFillsViewport": true,
+      "contentVerticallyCentered": true,
+      "singleStageRuntime": true,
+      "nestedLoaderAllowed": false,
+      "parserDiscoveredOnHome": true,
+      "reference": "BANHALMI ART desktop menu"
+    }
+  },
+  "principles": {
+    "singleLeftContentAxis": true,
+    "readingMeasureSeparateFromStructuredCanvas": true,
+    "standardAndStructuredCanvasesAreDistinct": true,
+    "computedGeometryIsReleaseEvidence": true,
+    "noPatchLayerAfterCanonicalAuthority": true,
+    "footerRemainsInNormalDocumentFlow": true,
+    "historicalScreenshotRegressionsAreReleaseBlocking": true,
+    "designAuditsMustReadCanonicalAuthority": true
+  },
+  "releaseGovernance": {
+    "requiredGates": [
+      "source-contracts",
+      "browser-qa",
+      "lighthouse-mobile-100",
+      "lighthouse-desktop-100",
+      "exact-live-sha",
+      "production-live-gate"
+    ],
+    "deployArtifact": "immutable-committed-head",
+    "runtimeGeometryMutationAllowed": false
+  }
+}
