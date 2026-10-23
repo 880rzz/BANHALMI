@@ -25,3 +25,5 @@ jobs:
         run: node tests/evidence-routing.test.mjs
       - name: Verify Fine Art EN DE HU gallery parity
         run: node tests/fine-art-three-language-gallery.test.mjs
+      - name: Verify footer icon and responsive disclosure contract
+        run: node tests/footer-disclosure-contract.test.mjs
