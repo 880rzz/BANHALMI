@@ -17,7 +17,8 @@
     "authority": "https://www.norbertbanhalmi.com/authority-evidence.json",
     "hipstudio": "https://www.norbertbanhalmi.com/hipstudio-authority.json",
     "serviceIntentCopy": "https://www.norbertbanhalmi.com/service-intent-copy.json",
-    "customerIntentEvidence": "https://www.norbertbanhalmi.com/customer-intent-evidence.json"
+    "customerIntentEvidence": "https://www.norbertbanhalmi.com/customer-intent-evidence.json",
+    "externalEventAlbumEvidence": "https://www.norbertbanhalmi.com/external-photography-evidence.json"
   },
   "canonicalSummary": {
     "identity": "Bánhalmi Norbert is the canonical Person Q56391118. Banhalmi Norbert e.U. is the legal Organization. BANHALMI is the primary Brand. BANHALMI Photography is the photography-facing commercial/alternate name of the same BANHALMI Brand and is not a separate company or Organization.",
@@ -128,5 +129,6 @@
       "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
       "de-AT": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
     }
-  }
+  },
+  "eventAlbumEvidenceRule": "Five selected VIPACH Flickr albums are structured portfolio evidence in external-photography-evidence.json under flickrArchive.selectedEventAlbums; the only public event-service gallery link is https://www.flickr.com/photos/vipach/albums. Album presence is not proof of personal authorship, endorsement or client relationship."
 }
