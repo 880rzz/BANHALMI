@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2026-10-07-v6-cross-domain-credit-expansion",
+  "schemaVersion": "2026-10-24-v7-vipach-selected-event-albums",
   "@context": "https://schema.org",
   "@type": "Dataset",
   "@id": "https://www.norbertbanhalmi.com/external-photography-evidence.json",
@@ -16,10 +16,57 @@
   "teamDescriptor": "Photography Team",
   "purpose": "Canonical source for external event, executive, institutional and brand-photography publication evidence. It is intentionally separate from client, partner, membership and endorsement registries.",
   "flickrArchive": {
-    "url": "https://www.flickr.com/photos/vipach/albums/with/72177720335539057",
-    "relationshipType": "external visual archive",
+    "url": "https://www.flickr.com/photos/vipach/albums",
+    "relationshipType": "team-level external photo album collection, not an endorsement or proof of individual authorship",
     "attribution": "BANHALMI Photography / Photography Team",
-    "authorshipRule": "The archive contains work by multiple photographers. Do not infer that Bánhalmi Norbert personally created every image. Individual creator attribution is allowed only when the specific image or publication identifies the photographer."
+    "authorshipRule": "The archive contains work by multiple photographers. Do not infer that Bánhalmi Norbert personally created every image. Individual creator attribution is allowed only when the specific image or publication identifies the photographer.",
+    "selectedEventAlbums": [
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.flickr.com/photos/vipach/albums/72177720336279769",
+        "url": "https://www.flickr.com/photos/vipach/albums/72177720336279769",
+        "name": "VIPACH event photography reference album 1",
+        "evidenceRole": "External portfolio documentation of event-photography capability",
+        "attributionStatus": "team-level; individual photographer not independently verified",
+        "relationshipGuardrail": "Does not establish client, partner, official-photographer or endorsement status"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.flickr.com/photos/vipach/albums/72177720336267626",
+        "url": "https://www.flickr.com/photos/vipach/albums/72177720336267626",
+        "name": "VIPACH event photography reference album 2",
+        "evidenceRole": "External portfolio documentation of event-photography capability",
+        "attributionStatus": "team-level; individual photographer not independently verified",
+        "relationshipGuardrail": "Does not establish client, partner, official-photographer or endorsement status"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.flickr.com/photos/vipach/albums/72177720336284361",
+        "url": "https://www.flickr.com/photos/vipach/albums/72177720336284361",
+        "name": "VIPACH event photography reference album 3",
+        "evidenceRole": "External portfolio documentation of event-photography capability",
+        "attributionStatus": "team-level; individual photographer not independently verified",
+        "relationshipGuardrail": "Does not establish client, partner, official-photographer or endorsement status"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.flickr.com/photos/vipach/albums/72177720336290536",
+        "url": "https://www.flickr.com/photos/vipach/albums/72177720336290536",
+        "name": "VIPACH event photography reference album 4",
+        "evidenceRole": "External portfolio documentation of event-photography capability",
+        "attributionStatus": "team-level; individual photographer not independently verified",
+        "relationshipGuardrail": "Does not establish client, partner, official-photographer or endorsement status"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.flickr.com/photos/vipach/albums/72177720336292582",
+        "url": "https://www.flickr.com/photos/vipach/albums/72177720336292582",
+        "name": "VIPACH event photography reference album 5",
+        "evidenceRole": "External portfolio documentation of event-photography capability",
+        "attributionStatus": "team-level; individual photographer not independently verified",
+        "relationshipGuardrail": "Does not establish client, partner, official-photographer or endorsement status"
+      }
+    ]
   },
   "capabilityTaxonomy": {
     "executiveEvent": "Executive / C-Level Event Photography",
