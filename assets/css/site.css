@@ -6821,3 +6821,8 @@ html body .smart-quote-layout .quote-summary-card{box-shadow:none}
 html body .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 html,html body{background:#fff}
 @media (min-width:1180px){html body .site-footer .footer-contact-list{grid-template-columns:repeat(3,minmax(0,1fr))}html body .site-footer .footer-grid>div:has(.footer-contact-list){grid-column:1 / span 6}html body .site-footer .footer-grid>div:has(.footer-memberships){grid-column:7 / span 3}html body .site-footer .footer-grid>div:has(.footer-legal-list){grid-column:10 / span 3}html body .site-footer .footer-legal-list li>strong{white-space:nowrap}}
+
+/* Shared rhythm: adjacent content panels and FAQ disclosure cards. */
+html body .faq-list>details+details,html body .faq-grid>details+details,html body .faq-accordion+ .faq-accordion,html body .accordion-list>details+details{margin-block-start:clamp(12px,1.5vw,22px)}
+html body .service-pricing-section--end{margin-block-end:0;padding-block-end:clamp(24px,3vw,48px)}
+html body .service-pricing-section--end+.site-footer{margin-block-start:0}
