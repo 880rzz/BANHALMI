@@ -1,0 +1,25 @@
+name: BANHALMI Wikidata and migration integrity
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preserve 100 legacy URLs and 595 original images
+        run: node tests/banhalmi-c-url-image-parity.test.mjs
+      - name: Verify Wikidata-first identity
+        run: node tests/wikidata-first-contract.test.mjs
+      - name: Verify legacy authority audit
+        run: node tests/legacy-evidence-integrity.test.mjs
+      - name: Verify evidence routing
+        run: node tests/evidence-routing.test.mjs
