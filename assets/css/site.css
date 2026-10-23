@@ -6605,6 +6605,16 @@ html body a[data-banhalmi-link-arrow]>.banhalmi-link-arrow{
 }
 html body a[data-banhalmi-link-arrow]:hover>.banhalmi-link-arrow,
 html body a[data-banhalmi-link-arrow]:focus-visible>.banhalmi-link-arrow{opacity:.9;}
+/* The relocated pricing disclosure is the final content block; do not reserve
+   the generic below-fold intrinsic height after its collapsed state. */
+html body main>.service-pricing-section--end{
+  content-visibility:visible;
+  contain-intrinsic-size:none;
+  padding-block:clamp(16px,2vw,28px) clamp(20px,2.5vw,36px);
+}
+/* Footer accordions use the text label and open/closed state; remove the
+   competing decorative arrow/X marker. */
+html body .site-footer .footer-accordion>summary::after{display:none;content:none;}
 /* Tablet disclosure and price layout: one shared 900–1100px authority. */
 @media (min-width:900px) and (max-width:1100px){
   html body main details.project-framework-drawer .project-framework-content{
