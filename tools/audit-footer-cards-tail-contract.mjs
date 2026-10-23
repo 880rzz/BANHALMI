@@ -1,0 +1,64 @@
+import fs from 'node:fs';
+
+const failures=[];
+const authority=JSON.parse(fs.readFileSync('data/design-authority.json','utf8'));
+const site=fs.readFileSync('assets/css/site.css','utf8');
+const fluid=fs.readFileSync('assets/css/site.css','utf8').split('/* BANHALMI-CANONICAL-FLUID-COMPONENTS-20261016 */')[1]||'';
+const main=fs.readFileSync('assets/js/main.js','utf8');
+const boot=fs.readFileSync('assets/js/fluid-rhythm-boot.js','utf8');
+const legacyMain=fs.readFileSync('js/main.js','utf8');
+const hardener=fs.readFileSync('tools/harden-production-artifact.mjs','utf8');
+const restore=fs.readFileSync('tools/restore-production-design-authority.mjs','utf8');
+const optimizer=fs.readFileSync('tools/optimize-production-artifact.mjs','utf8');
+const footer=authority.layout?.footer||{};
+const flow=authority.layout?.documentFlow||{};
+const must=(ok,msg)=>{if(!ok)failures.push(msg)};
+
+must(footer.canonicalGeometryAuthority==='assets/css/site.css','footer geometry authority must be site.css');
+must(footer.canonicalFinalMarker==='FOOTER-SINGLE-CANONICAL-V43-20260926','footer canonical marker drifted');
+must(footer.singleGeometryAuthorityRequired===true,'single footer geometry authority lock missing');
+must(footer.legacyFooterMutatorsDisabled===true,'legacy footer mutator lock missing');
+must(footer.runtimeDisclosureAuthority==='assets/js/main.js'&&Number(footer.runtimeDisclosureAuthorityCount)===1,'footer disclosure runtime must have exactly one owner');
+must(Number(footer.physicalBusinessLocationCount)===3,'footer must expose exactly three physical business locations');
+must(JSON.stringify(footer.locationRoles)===JSON.stringify(['vienna-studio','vienna-office','budapest-studio']),'footer location roles drifted');
+must(Number(footer.desktopColumns)===12&&Number(footer.smallDesktopColumns)===12&&Number(footer.tabletColumns)===12,'responsive footer grid authority drifted');
+must(Number(footer.desktopContentRows)===2&&Number(footer.smallDesktopContentRows)===2,'desktop and small-desktop footer must remain two rows');
+must(flow.layoutMode==='flex'&&flow.documentBackground==='#ffffff','document/footer flow contract drifted');
+must(Number(flow.footerAbsoluteMaxPx)<=760,'footer absolute height guard became too permissive');
+
+must((fluid.match(/FOOTER-SINGLE-CANONICAL-V43-20260926/g)||[]).length===1,'canonical footer authority must occur exactly once');
+for(const stale of ['FOOTER-RESTORE-V24','VISUAL-REPAIR-V27','FOOTER-TWO-ROW-V29','FOOTER-GEOMETRY-V32','FOOTER-SINGLE-AUTHORITY-20260918','FOOTER-ROOT-CAUSE-FINAL-CLOSURE','FINAL-FOOTER-MEGA-AUTHORITY','FOOTER-RENDER-STABILITY','FOOTER-MENU-HARMONY-CLOSURE','FOOTER-THREE-LOCATION-V36','HU-TABLET-FOOTER-DENSITY-V38']){
+  must(!fluid.includes(stale),`stale footer authority returned: ${stale}`);
+}
+for(const rel of ['index.html','hu/index.html','de-at/index.html','portrait/index.html']){
+  const html=fs.readFileSync(rel,'utf8');
+  const siteStyles=(html.match(/\/assets\/css\/site\.css\?v=/g)||[]).length;
+  must(siteStyles===1&&!html.includes('/assets/css/fluid-4k-rhythm.css'),rel+': one canonical site.css link required');
+}
+must(fluid.includes('grid-template-columns:repeat(12,minmax(0,1fr))'),'desktop 12-track footer missing');
+must(fluid.includes('@media (min-width:1180px) and (max-width:1439px)')&&fluid.includes('grid-template-columns:repeat(12,minmax(0,1fr))'),'small desktop 12-track footer missing');
+must(fluid.includes('@media (min-width:721px) and (max-width:1179px)')&&fluid.includes('grid-template-columns:repeat(12,minmax(0,1fr))'),'compact 12-track footer missing');
+must((fluid.match(/grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/g)||[]).length>=2,'three-location desktop contact columns missing');
+must(fluid.includes('details.footer-accordion:not([open])>ul')&&fluid.includes('details.footer-accordion[open]>ul')&&fluid.includes('visibility:hidden')&&fluid.includes('visibility:visible'),'compact footer must hide only closed disclosures and reveal open disclosures');
+must(fluid.includes('overflow-x:clip')&&fluid.includes('overflow-wrap:anywhere')&&fluid.includes('margin:0'),'footer containment/tail fallback missing');
+
+must(/footerAccordions/.test(main),'assets/js/main.js must own footer disclosure aria/state synchronization');
+must(!/style\.setProperty\("display".*footer|footer[\s\S]{0,1200}style\.setProperty\("display"/.test(main),'footer runtime must not override native details visibility with inline display');
+must(!main.includes('list.style.removeProperty("display")'),'footer runtime must not mutate list display authority');
+must(footer.compactInteractiveDisclosureRequired===true&&footer.compactNativeDisclosureRequired===true&&footer.runtimeDisclosureMode==='user-owned-closed-default-all-viewports','footer disclosures must be native, closed by default and user-owned at all widths');
+must(footer.inlineVisibilityMutationAllowed===false,'footer runtime must not regain inline visibility ownership');
+must(main.includes('data-footer-disclosure-runtime')&&main.includes('details.open = false')&&main.includes('addEventListener("toggle"'),'footer runtime must initialize closed state once and then observe native user-owned toggles');
+must(main.includes('data-artineris-participation')&&main.includes('budapest.artineris.com/en/artists/?codice=FMRAXT'),'shared footer must expose verified Budapest Artineris artist participation');
+must(!/footerAccordions|syncFooterGroups|syncFooterAccordions/.test(boot),'fluid rhythm boot must not own footer disclosure state');
+must(!/footerDesktopQuery|syncFooterAccordions|event\.preventDefault\(\)[\s\S]{0,180}details\.open = true/.test(main),'desktop viewport logic must not force footer disclosures open or steal summary interaction');
+must(!/footerAccordions|syncFooterGroups|syncFooterAccordions/.test(legacyMain),'legacy js/main.js must not own footer disclosure state');
+must(!/compactFooterReplacement|smallDesktopFooter|LIVE-PIXEL-GEOMETRY-V21-SMALL-DESKTOP/.test(hardener),'production hardener must not rewrite footer geometry');
+must(!/const footerRules=|site-footer.*grid-template-columns/.test(restore),'design restore compiler must not generate footer geometry');
+must(!/data-footer-compact-authority|compactCss|details\.footer-accordion>ul/.test(optimizer),'optimizer must not inject footer CSS/runtime authority');
+
+if(failures.length){
+  console.error(`BANHALMI single-footer-authority contract failed (${failures.length}):`);
+  failures.forEach(f=>console.error(`- ${f}`));
+  process.exit(1);
+}
+console.log('BANHALMI footer contract passed: one committed CSS geometry authority, one disclosure runtime, three physical locations, and zero legacy footer mutators.');
