@@ -1,0 +1,292 @@
+{
+  "documentType": "ai-pricing-interpretation-guide",
+  "schemaVersion": "2026-09-29-v4-executive-architecture",
+  "dateModified": "2026-10-06",
+  "name": "BANHALMI AI pricing interpretation and calculation guide",
+  "canonicalPricingSource": "https://www.norbertbanhalmi.com/pricing.json",
+  "quoteCalculator": "https://www.norbertbanhalmi.com/requestaquote/",
+  "currency": "EUR",
+  "defaultTaxTreatment": {
+    "displayMode": "gross",
+    "austrianVatPercent": 20,
+    "rule": "Use the gross prices from pricing.json. Do not assume reverse charge or 0% VAT until the customer's company, VAT ID and legal eligibility have been verified in the final written offer."
+  },
+  "assistantInstructions": [
+    "For Executive requests, apply the outcome-led architecture before any duration-based calculation: Professional Presence from EUR 499; Positioning from EUR 790; Visual Library individually scoped.",
+    "Never present quick30, guided60 or guided120 as Executive packages. Never present brand180 or brand240 as fixed public Executive Visual Library tiers.",
+    "Ask only for variables required by the selected service formula and any conditional travel or add-on variables that actually apply.",
+    "Return a non-binding orientation estimate, never a binding final quotation.",
+    "State the selected package, included items, additions, gross total, indicative net amount and VAT amount.",
+    "Round monetary values to two decimals.",
+    "Use the exact formulas and component prices in pricing.json; do not invent discounts, packages or usage-rights fees.",
+    "Standard event image selection and colour correction are included in the event package and must not be priced per delivered image.",
+    "Travel within Austria and Hungary is calculated per required vehicle only when travel is part of the assignment; travel outside Austria and Hungary requires a custom offer.",
+    "Usage rights, exceptional production, unusual deadlines and unverified tax treatment must be marked for final review.",
+    "For Hungarian-language orientation estimates, display HUF as the primary currency using the fixed planning conversion 1 EUR = 400 HUF. Do not use or imply a live foreign-exchange rate.",
+    "For HUF tax display, convert the gross EUR total first: grossHUF = round(grossEUR × 400); netHUF = round(grossHUF / 1.20); vatHUF = grossHUF - netHUF.",
+    "Always state that EUR is the canonical base price and that the HUF amount is a non-binding fixed-rate planning view. The accepted written offer defines the contractual currency.",
+    "The standard organisational licence is included and unlimited in time and territory for the agreed client and channels. Do not invent a usage-rights surcharge unless the requested use is exceptional or outside the accepted scope."
+  ],
+  "requiredInputsByService": {
+    "individualPortrait": [
+      "packageCode",
+      "selectedRetouchedImages"
+    ],
+    "groupPortrait": [
+      "people",
+      "selectedHours",
+      "retouchedImagesPerPerson"
+    ],
+    "brandPhotography": [
+      "packageCode",
+      "people",
+      "retouchedImagesPerPerson"
+    ],
+    "fineArtPhotography": [
+      "packageCode",
+      "selectedRetouchedImages"
+    ],
+    "cLevelEventPhotography": [
+      "packageCode",
+      "guestCount",
+      "parallelTracks",
+      "manualAdditionalPhotographers"
+    ],
+    "businessEventPhotography": [
+      "packageCode",
+      "guestCount",
+      "parallelTracks",
+      "manualAdditionalPhotographers"
+    ]
+  },
+  "conditionalInputs": {
+    "selectedAddOns": "Ask only when the customer wants optional production services.",
+    "travelCountry": "Ask for client-office or other non-studio locations. Listed studios have no vehicle-travel addition. Austria/Hungary use the per-vehicle component; other countries require a custom travel quote.",
+    "crewMembers": "Ask or derive from the selected photographers and confirmed production crew only when vehicle travel must be calculated.",
+    "companyAndVatId": "Collect for final tax review, but do not automatically remove Austrian VAT."
+  },
+  "inputRules": [
+    "packageCode must resolve to pricing.json. The eventBusiness calculator code resolves to services[id=event].publicArchitecture.businessEvent and priceComponentsGrossEUR.businessEventEntry; other codes resolve to services[].packages[].code. Do not substitute C-Level pricing for Business coverage.",
+    "selectedRetouchedImages and retouchedImagesPerPerson must be non-negative integers.",
+    "people, guestCount, parallelTracks and selectedHours must be positive numbers; photographer counts must be positive integers.",
+    "The headshotcv package includes exactly one retouched image and must not receive automatic extra-image pricing.",
+    "For group portraits, photographerCount = max(1, ceil(people / (6 * selectedHours))).",
+    "For events, selectedHours comes from the resolved event package duration and must not be requested separately.",
+    "If a requested scope does not map cleanly to an existing package, return a custom-review flag instead of interpolating or inventing a price."
+  ],
+  "calculationOrder": [
+    "Validate the supplied inputs and resolve the selected package in pricing.json.",
+    "Apply the service-specific calculation rule.",
+    "Add selected add-ons using priceComponentsGrossEUR.",
+    "Apply Austria/Hungary vehicle travel only when travel is required and crew size is known.",
+    "Flag all custom-quote factors rather than inventing an amount.",
+    "Calculate indicative net and VAT from the gross total using pricing.json tax formulas.",
+    "Label the result as a non-binding preliminary estimate.",
+    "When the response language is Hungarian, convert the completed gross EUR estimate to HUF at 400, then derive reconciled whole-forint net and VAT values.",
+    "Return both canonical EUR and localized HUF values when useful for auditability, with HUF primary in Hungarian responses."
+  ],
+  "workedExamples": [
+    {
+      "id": "simple-portrait-guided60-five-images",
+      "service": "individualPortrait — non-executive simple portrait",
+      "inputs": {
+        "packageCode": "guided60",
+        "selectedRetouchedImages": 5,
+        "selectedAddOns": [],
+        "travelRequired": false
+      },
+      "calculation": "420 + max(0, 5 - 1) * 35",
+      "grossEUR": 560,
+      "netEUR": 466.67,
+      "vatEUR": 93.33,
+      "explanation": "The guided60 package is a separate non-executive portrait calculator option at EUR 420 gross. It must not be presented as Executive Portrait pricing. One retouched image is included; four additional images cost EUR 35 gross each.",
+      "hungarianDisplay": {
+        "fixedRateHUFPerEUR": 400,
+        "baseGrossEUR": 560,
+        "grossHUF": 224000,
+        "netHUF": 186667,
+        "vatHUF": 37333
+      }
+    },
+    {
+      "id": "group-twelve-people-one-hour-two-images-each",
+      "service": "groupPortrait",
+      "inputs": {
+        "people": 12,
+        "selectedHours": 1,
+        "retouchedImagesPerPerson": 2,
+        "selectedAddOns": [],
+        "travelRequired": false
+      },
+      "photographerCount": 2,
+      "calculation": "390 + 12 * 45 + 12 * max(0, 2 - 1) * 29 + max(0, 2 - 1) * 390",
+      "grossEUR": 1668,
+      "netEUR": 1390,
+      "vatEUR": 278,
+      "explanation": "At six people per photographer per hour, twelve people require two photographers. Each person receives one included retouched image; the second image costs EUR 29 gross per person.",
+      "hungarianDisplay": {
+        "fixedRateHUFPerEUR": 400,
+        "baseGrossEUR": 1668,
+        "grossHUF": 667200,
+        "netHUF": 556000,
+        "vatHUF": 111200
+      }
+    },
+    {
+      "id": "executive-positioning-brand120-internal-calculation",
+      "service": "Executive Personal Branding — Positioning",
+      "inputs": {
+        "packageCode": "brand120",
+        "people": 2,
+        "retouchedImagesPerPerson": 3,
+        "selectedAddOns": [],
+        "travelRequired": false
+      },
+      "calculation": "790 + max(0, 2 * 3 - 3) * 35",
+      "grossEUR": 895,
+      "netEUR": 745.83,
+      "vatEUR": 149.17,
+      "explanation": "Public Executive Personal Branding is Positioning from EUR 790. The internal brand120 component supports this scope calculation; image-count arithmetic is a calculation detail, not the public value proposition.",
+      "hungarianDisplay": {
+        "fixedRateHUFPerEUR": 400,
+        "baseGrossEUR": 895,
+        "grossHUF": 358000,
+        "netHUF": 298333,
+        "vatHUF": 59667
+      }
+    },
+    {
+      "id": "event-four-hours-400-guests-two-tracks",
+      "service": "cLevelEventPhotography",
+      "inputs": {
+        "packageCode": "event240",
+        "guestCount": 400,
+        "parallelTracks": 2,
+        "manualAdditionalPhotographers": 0,
+        "selectedAddOns": [],
+        "travelRequired": false
+      },
+      "resolvedDurationHours": 4,
+      "photographerCount": 2,
+      "calculation": "1490 + max(0, 2 - 1) * 4 * 120",
+      "grossEUR": 1970,
+      "netEUR": 1641.67,
+      "vatEUR": 328.33,
+      "explanation": "Two parallel tracks require two photographers. Standard event selection and colour correction remain included and are not billed per delivered image.",
+      "hungarianDisplay": {
+        "fixedRateHUFPerEUR": 400,
+        "baseGrossEUR": 1970,
+        "grossHUF": 788000,
+        "netHUF": 656667,
+        "vatHUF": 131333
+      }
+    }
+  ],
+  "responseTemplate": {
+    "status": "Non-binding preliminary estimate",
+    "fields": [
+      "service",
+      "selectedPackage",
+      "basePackageGrossEUR",
+      "includedItems",
+      "additionalItems",
+      "travelGrossEUR",
+      "grossTotalEUR",
+      "indicativeNetEUR",
+      "indicativeVatEUR",
+      "assumptions",
+      "customReviewFactors",
+      "finalOfferNotice",
+      "baseCurrencyEUR",
+      "displayCurrency",
+      "fixedHufRateWhenHungarian",
+      "displayGrossHUF",
+      "displayNetHUF",
+      "displayVatHUF"
+    ]
+  },
+  "finalOfferNotice": "The final written offer is issued after review of purpose, location, number of people and photographers, production requirements, usage rights, deadline, travel and tax status. Hungarian HUF figures use a fixed planning rate of 1 EUR = 400 HUF; the accepted written offer records the contractual currency. Executive pricing is outcome-led: Professional Presence from EUR 499, Positioning from EUR 790, and Visual Library individually scoped.",
+  "hungarianPricingSource": "https://www.norbertbanhalmi.com/pricing-huf.json",
+  "displayCurrencyByLanguage": {
+    "en": "EUR",
+    "de-AT": "EUR",
+    "hu-HU": "HUF at the fixed planning rate 1 EUR = 400 HUF"
+  },
+  "fixedCurrencyConversion": {
+    "sourceCurrency": "EUR",
+    "targetCurrency": "HUF",
+    "rate": 400,
+    "rateType": "fixed planning conversion",
+    "liveExchangeRate": false,
+    "scope": "Hungarian website, Hungarian preliminary PDF and AI-generated Hungarian orientation estimates",
+    "formula": "grossHUF = round(grossEUR × 400); netHUF = round(grossHUF / 1.20); vatHUF = grossHUF - netHUF",
+    "disclosure": "This is not a daily exchange rate and does not predetermine the currency of the final written offer."
+  },
+  "executiveArchitecture": {
+    "executivePortrait": {
+      "outcome": "Professional Presence",
+      "publicPrice": "from EUR 499",
+      "calculationStartingComponent": "brand60"
+    },
+    "executivePersonalBranding": {
+      "outcome": "Positioning",
+      "publicPrice": "from EUR 790",
+      "calculationStartingComponent": "brand120"
+    },
+    "executiveVisualLibrary": {
+      "outcome": "Communication System",
+      "publicPrice": "individually scoped",
+      "calculationRule": "Use internal brand duration components only after scope review; never advertise EUR 1090/1390 as fixed Visual Library tiers."
+    },
+    "separationRule": "Headshot/CV and EUR 220/420/690 simple portrait options remain separate services and must never be interpreted as Executive price anchors.",
+    "commercialRule": "Scope down when less is required; do not automatically discount. Do not sell Executive work as EUR per image.",
+    "eventPhotography": {
+      "businessEvent": {
+        "publicPrice": "from EUR 490 gross",
+        "role": "entry tier for shorter, straightforward corporate events; standard single-photographer coverage; final written scope controls"
+      },
+      "cLevelInstitutional": {
+        "publicPrice": "from EUR 590 gross",
+        "role": "premium tier for leadership, conference, institutional and diplomatic coverage; retain existing event package ladder"
+      },
+      "separationRule": "Do not present the EUR 490 Business Event entry as a discounted C-Level package. It is a narrower scope tier."
+    },
+    "fineArtPhotography": {
+      "professionalArtistsPerformers": {
+        "publicPrice": "from EUR 690 gross",
+        "use": "career-facing portfolio, casting, agency, press, website and professional communication"
+      },
+      "rule": "Professional Artists & Performers portfolios are career-facing. Personal portraits, boudoir and lingerie enquiries route to localized BANHALMI ART private photography. Artistic nude service and enquiries belong to the localized Ébredés / Awakening exhibition. No Professional fixed price is stated for those personal commissions.",
+      "privateCommissionRouting": {
+        "privatePortraitBoudoirLingerie": {
+          "en": "https://www.banhalmi.art/private-photography.html",
+          "hu": "https://www.banhalmi.art/hu/private-photography.html",
+          "de-AT": "https://www.banhalmi.art/de-at/private-photography.html"
+        },
+        "artisticNude": {
+          "en": "https://www.banhalmi.art/exhibitions/ebredes.html",
+          "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+          "de-AT": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
+        },
+        "fixedProfessionalPrice": false,
+        "policy": "Professional Artists & Performers portfolios are career-facing. Personal portraits, boudoir and lingerie enquiries route to localized BANHALMI ART private photography. Artistic nude service and enquiries belong to the localized Ébredés / Awakening exhibition. No Professional fixed price is stated for those personal commissions."
+      }
+    }
+  },
+  "calculatorPackageResolution": {
+    "eventBusiness": {
+      "canonicalPricingSource": "https://www.norbertbanhalmi.com/pricing.json",
+      "serviceId": "event",
+      "publicArchitectureKey": "businessEvent",
+      "priceComponent": "businessEventEntry",
+      "scope": "Up to one hour of straightforward Business Event Coverage; additional team, travel and optional services follow the existing calculator and written offer."
+    }
+  },
+  "privateEventPricing": {
+    "source": "https://www.norbertbanhalmi.com/private-event-pricing.json",
+    "serviceContext": "private-event",
+    "calculation": "Use the private package for the selected duration. Never mutate C-Level or Business event prices. Standard event crew and optional-service components remain from pricing.json.",
+    "travel": "City travel is included only for a private celebration at an explicitly selected Vienna or Budapest city location with matching country and an exact address. Other Austria/Hungary locations use the standard per-vehicle travel component; other countries require a custom travel quote.",
+    "submission": "Preserve event duration codes for transport compatibility; include serviceContext, canonicalPackageCode, privateEventCity, cityTravelIncluded, travelPricingStatus and the same monetary totals as the PDF."
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.norbertbanhalmi.com/about/",
+      "name": "Bánhalmi Norbert",
+      "alternateName": [
+        "Norbert Bánhalmi",
+        "Norbert Banhalmi",
+        "Norbert BANHALMI",
+        "BANHALMI"
+      ],
+      "url": "https://www.norbertbanhalmi.com/about/",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q56391118",
+        "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
+      ],
+      "subjectOf": [
+        {
+          "@type": "CollectionPage",
+          "name": "Rólunk.at – Bánhalmi Norbert sajtóarchívum",
+          "url": "https://rolunk.at/tag/banhalmi-norbert/"
+        },
+        {
+          "@id": "https://www.banhalmi.art/#website"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/#website"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/hipstudio-authority.json"
+        }
+      ],
+      "worksFor": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      },
+      "affiliation": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.kozpontiszovetseg.at/#organization",
+          "name": "Ausztriai Magyar Egyesületek és Szervezetek Központi Szövetsége",
+          "sameAs": "https://www.wikidata.org/wiki/Q141274866",
+          "description": "Bánhalmi Norbert marketing- és kommunikációs feladatokban önkéntes alapon közreműködik. Ez nem munkaviszony és nem fizetett alkalmazotti státusz."
+        },
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://www.magyariskola.at/#school",
+          "name": "Bécsi Magyar Iskola",
+          "sameAs": "https://www.wikidata.org/wiki/Q141274560",
+          "description": "Oktatási, digitális és vizuális ökoszisztéma-közreműködés; a kapcsolatból önmagában nem következik munkaviszony."
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.vipach.at/#organization",
+          "name": "VIPACH | Vienna Photo Art & Creative HUB",
+          "sameAs": "https://www.wikidata.org/wiki/Q138416887"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.hipstudio.hu/#organization",
+          "name": "HIPStudio",
+          "sameAs": "https://www.wikidata.org/wiki/Q138482177",
+          "description": "Bánhalmi Norbert founded HIPStudio. This historical founder relationship does not imply current ownership; HIPStudio is a distinct entity from BANHALMI / Banhalmi Norbert e.U."
+        }
+      ],
+      "workLocation": [
+        {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.norbertbanhalmi.com/#organization",
+      "name": "Banhalmi Norbert e.U.",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q138425941",
+        "https://www.linkedin.com/company/banhalmi/",
+        "https://cherrydeck.com/norbert.banhalmi"
+      ],
+      "founder": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "location": [
+        {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"
+        },
+        {
+          "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.hipstudio.hu/#organization",
+      "name": "HIPStudio",
+      "url": "https://www.hipstudio.hu/",
+      "sameAs": "https://www.wikidata.org/wiki/Q138482177",
+      "founder": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "foundingDate": "2006-03-15",
+      "description": "Distinct Budapest visual-communications entity founded by Bánhalmi Norbert; founder status is historical identity evidence and does not imply current ownership."
+    },
+    {
+      "@type": "Place",
+      "@id": "https://www.norbertbanhalmi.com/#vienna-studio",
+      "name": "BANHALMI Vienna Studio — Schwedenplatz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Schwedenplatz 2, Top 8–9",
+        "postalCode": "1010",
+        "addressLocality": "Wien",
+        "addressCountry": "AT"
+      },
+      "description": "Active photography studio in Vienna; distinct from the Gersthofer office."
+    },
+    {
+      "@type": "Place",
+      "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
+      "name": "BANHALMI Vienna Office — Gersthofer Straße",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gersthofer Straße 150–154/6/2",
+        "postalCode": "1180",
+        "addressLocality": "Wien",
+        "addressCountry": "AT"
+      },
+      "description": "Active office and client meeting location; not a photography studio."
+    },
+    {
+      "@type": "Place",
+      "@id": "https://www.norbertbanhalmi.com/#budapest-studio",
+      "name": "BANHALMI Budapest Studio",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Lágymányosi utca 15",
+        "postalCode": "1111",
+        "addressLocality": "Budapest",
+        "addressCountry": "HU"
+      },
+      "description": "Active photography studio in Budapest District XI; distinct from the two Vienna business locations."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.norbertbanhalmi.com/#website",
+      "url": "https://www.norbertbanhalmi.com/",
+      "name": "BANHALMI",
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "publisher": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.banhalmi.art/#website",
+      "url": "https://www.banhalmi.art/",
+      "name": "BANHALMI ART",
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://blog.banhalmi.art/#website",
+      "url": "https://blog.banhalmi.art/",
+      "name": "BANHALMI Blog",
+      "about": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "publisher": {
+        "@id": "https://www.norbertbanhalmi.com/#organization"
+      }
+    }
+  ]
+}
