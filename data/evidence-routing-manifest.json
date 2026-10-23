@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "2026-10-24-cross-repository-evidence-routing-v1",
+  "sourceLedger": "https://github.com/880rzz/BANHALMI-C/blob/main/.github/internal-evidence/authority-evidence-audit-ledger-20261010.json",
+  "sourceAuditDate": "2026-10-10",
+  "sourceRowCount": 323,
+  "sourceDistinctUrls": 233,
+  "sourceGroupCounts": {
+    "proPress": 8,
+    "proExternal": 18,
+    "proServices": 100,
+    "artPress-en": 35,
+    "artPress-hu": 35,
+    "artPress-de-AT": 35,
+    "artRecords": 69,
+    "artWiki": 23
+  },
+  "sourceRegistries": [
+    {
+      "repository": "880rzz/BANHALMI-C",
+      "path": "press-institutional-evidence.json",
+      "sourceBlobSha": "806135fa41de9215eb4c8c861d193b9580c792da"
+    },
+    {
+      "repository": "880rzz/BANHALMI-C",
+      "path": "external-photography-evidence.json",
+      "sourceBlobSha": "a06d6b2b836afc9e0deeaddf2704955758945700"
+    },
+    {
+      "repository": "880rzz/BANHALMI-C",
+      "path": "service-trust-evidence.json",
+      "sourceBlobSha": "44c9325948bbb6916708193fd3a55557361510d6"
+    },
+    {
+      "repository": "880rzz/ART",
+      "path": "press-source-registry.json",
+      "sourceBlobSha": "44c1cb9a64802ded668272e56dcc511f7b9bb6ee"
+    },
+    {
+      "repository": "880rzz/ART",
+      "path": "archive-record-registry.json",
+      "sourceBlobSha": "24ed3795c50d2eb16d859fe44afb9ff11801bc07"
+    },
+    {
+      "repository": "880rzz/ART",
+      "path": "wikidata-source-registry.json",
+      "sourceBlobSha": "a522789c8a9314a9d4b3e9442e6075e28710cb89"
+    }
+  ],
+  "canonicalRouting": {
+    "proPress": {
+      "site": "https://www.norbertbanhalmi.com/press/",
+      "registry": "press-institutional-evidence.json",
+      "schema": "CreativeWork citation / subjectOf, never sameAs"
+    },
+    "proExternal": {
+      "site": "https://www.norbertbanhalmi.com/event-photography/",
+      "registry": "external-photography-evidence.json",
+      "schema": "CreativeWork / ImageObject where verified, no inferred creator"
+    },
+    "proServices": {
+      "site": "https://www.norbertbanhalmi.com/",
+      "registry": "service-trust-evidence.json",
+      "schema": "Service supporting evidence; only service-specific verified citations"
+    },
+    "artPress-en": {
+      "site": "https://www.banhalmi.art/",
+      "registry": "880rzz/ART:press-source-registry.json",
+      "schema": "CreativeWork / citation; ART editorial intent"
+    },
+    "artPress-hu": {
+      "site": "https://www.banhalmi.art/",
+      "registry": "880rzz/ART:press-source-registry.json",
+      "schema": "CreativeWork / citation; language variants not independent sources"
+    },
+    "artPress-de-AT": {
+      "site": "https://www.banhalmi.art/",
+      "registry": "880rzz/ART:press-source-registry.json",
+      "schema": "CreativeWork / citation; language variants not independent sources"
+    },
+    "artRecords": {
+      "site": "https://www.banhalmi.art/",
+      "registry": "880rzz/ART:archive-record-registry.json",
+      "schema": "VisualArtwork / CreativeWork on ART only"
+    },
+    "artWiki": {
+      "site": "https://www.banhalmi.art/",
+      "registry": "880rzz/ART:wikidata-source-registry.json",
+      "schema": "Person / VisualArtwork subjectOf / citation; sameAs only exact identity"
+    }
+  },
+  "policy": [
+    "Photographer/creator and depicted person are separate entities.",
+    "Press use, photo credit, editorial publication, commission, client, partnership, membership and endorsement are distinct evidence types.",
+    "Only use sameAs for identity equivalence; use subjectOf, citation, about and isPartOf for related articles.",
+    "Previous LIVE-VERIFIED labels reflect historical registry claims until contemporaneously rechecked.",
+    "Missing fields are explicitly null or generic guardrails; do not interpret them as verified facts."
+  ],
+  "publicationPolicy": "This is an audit routing manifest, not proof of independent verification, endorsement, personal authorship or a claim that 323 records are unique. Do not expose the raw audit ledger on a commercial page; use verified records in their canonical registries."
+}
