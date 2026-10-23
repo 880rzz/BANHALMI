@@ -6826,3 +6826,7 @@ html,html body{background:#fff}
 html body .faq-list>details+details,html body .faq-grid>details+details,html body .faq-accordion+ .faq-accordion,html body .accordion-list>details+details{margin-block-start:clamp(12px,1.5vw,22px)}
 html body .service-pricing-section--end{margin-block-end:0;padding-block-end:clamp(24px,3vw,48px)}
 html body .service-pricing-section--end+.site-footer{margin-block-start:0}
+
+/* Legal navigation cards: explicit two-axis spacing at every breakpoint. */
+html body main .legal-navigation .service-grid{display:grid;column-gap:clamp(16px,2vw,28px);row-gap:clamp(16px,2vw,28px)}
+html body main .legal-navigation .service-grid>.card{min-width:0;margin:0}
