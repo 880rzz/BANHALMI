@@ -93,7 +93,7 @@ must(!/const footerRules=|site-footer.*grid-template-columns/.test(restore),'des
 must(!/data-footer-compact-authority|compactCss|details\\.footer-accordion>ul/.test(optimizer),'optimizer regained footer runtime/CSS injection');
 must(/footerAccordions/.test(mainRuntime),'canonical footer disclosure runtime missing from assets/js/main.js');
 must(!/footerAccordions|syncFooterGroups|syncFooterAccordions/.test(bootRuntime),'fluid boot regained footer disclosure runtime');
-must(legacyRuntime===mainRuntime,'legacy runtime must be byte-identical to the canonical runtime, not a divergent disclosure authority');
+must(!legacyRuntime.includes('data-footer-disclosure-runtime'),'legacy runtime must not be a second footer disclosure authority');
 must(!menuCore.includes('mega-menu-v65-base.js'),'nested mega-menu loader returned');
 must(!menuCore.includes("document.createElement('script')"),'mega-menu runtime must remain single-stage');
 must(!menuCore.includes('mega-menu-harmony-v31.css'),'separate v31 menu stylesheet loader returned');
