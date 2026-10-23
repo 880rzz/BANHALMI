@@ -1157,22 +1157,9 @@ border-bottom:1px solid rgba(180,144,72,.18);
   transition:opacity .2s ease, color .2s ease;
 }
 .footer-accordion summary::-webkit-details-marker{display:none;}
-.footer-accordion summary::after{
-  content:"";
-  position:absolute;
-  right:4px;
-  top:18px;
-  width:8px;
-  height:8px;
-  border-right:1.5px solid rgba(255,255,255,.55);
-  border-bottom:1.5px solid rgba(255,255,255,.55);
-  transform:rotate(45deg);
-  transition:transform .28s cubic-bezier(.16,1,.3,1), top .28s cubic-bezier(.16,1,.3,1);
-}
-.footer-accordion[open] summary::after{
-  transform:rotate(-135deg);
-  top:21px;
-}
+.footer-accordion summary::marker{content:"";}
+
+
 .footer-accordion summary:hover,
 .footer-accordion summary:focus-visible{
   color:var(--gold-deep);
@@ -1184,9 +1171,7 @@ border-bottom:1px solid rgba(180,144,72,.18);
 .footer-accordion[open] summary{
   margin-bottom:2px;
 }
-@media (prefers-reduced-motion: reduce){
-  .footer-accordion summary::after{transition:none;}
-}
+
 .footer-contact-list li,
 .footer-legal-list li{
   margin-bottom:16px;
@@ -1710,14 +1695,14 @@ h1,h2{max-width:none;}
 .service-lower-gallery-section{padding-top:clamp(56px,7vw,110px);padding-bottom:clamp(64px,8vw,122px);}
 .service-lower-gallery-section .section-head{max-width:760px;margin-bottom:clamp(28px,4vw,52px);}
 
-.service-lower-gallery-item{margin:0;border-radius:24px;overflow:hidden;background:#f7f5f0;border:1px solid rgba(32,37,48,.075);box-shadow:0 18px 52px rgba(18,22,33,.038);}
-.service-lower-gallery-item img{display:block;width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .7s ease,filter .7s ease;}
+.service-lower-gallery-item{margin:0;border-radius:20px;overflow:hidden;background:transparent;border:1px solid rgba(32,37,48,.08);box-shadow:none;}
+.service-lower-gallery-item img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;transition:transform .7s ease,filter .7s ease;}
 .service-lower-gallery-item:hover img{transform:scale(1.018);filter:saturate(.98) contrast(1.02);}
 .service-lower-gallery-item figcaption{padding:14px 16px 16px;font-size:.82rem;line-height:1.45;color:rgba(31,36,48,.66);background:rgba(255,255,255,.74);}
 .service-lower-gallery-section .service-gallery-actions{margin-top:clamp(30px,4vw,56px);}
 
-@media (max-width:760px){.service-lower-gallery-item{border-radius:18px;}.service-lower-gallery-item figcaption{font-size:.76rem;padding:12px 13px 14px;}}
-@media (max-width:480px){.service-lower-gallery-item img{aspect-ratio:4/4.8;} }
+@media (max-width:760px){.service-lower-gallery-item figcaption{font-size:.76rem;padding:12px 13px 14px;}}
+
 
 /* BANHALMI final engineering pass — componentized gallery performance and clean button rhythm */
 .smart-quote-layout .field.consent{
@@ -2303,7 +2288,7 @@ main>section{padding:clamp(64px,7.5vw,104px) 0;}
     line-height:1.35;
     color:#8A681F ;
   }
-  .footer-accordion summary::after{display:block;}
+  
   .footer-accordion ul{padding-bottom:12px;}
   .site-footer > .wrap > .footer-grid > div:not(.footer-brand-col){margin-top:28px;}
   .footer-bottom{flex-direction:column;gap:10px;}
@@ -4176,8 +4161,7 @@ html body .site-footer,html body .site-footer .wrap{min-height:0;}
 }
 /* Footer disclosure marker is a trailing gold plus, aligned with its label. */
 html body .site-footer .footer-accordion>summary{display:flex;align-items:center;justify-content:flex-start;gap:.65em;}
-html body .site-footer .footer-accordion>summary::after{content:"+";position:static;inset:auto;width:auto;height:auto;border:0;transform:none;color:var(--gold);font-size:1.25rem;line-height:1;font-weight:400;}
-html body .site-footer .footer-accordion[open]>summary::after{content:"−";}
+
 /* CANONICAL-DESIGN-SYSTEM-20260827:END */
 /* BANHALMI-CONTACT-DOCK-V1:START */
 .banhalmi-contact-dock{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:2147483000;font-family:inherit;color:#111}
@@ -6615,10 +6599,7 @@ html body main>.service-pricing-section--end{
 /* Service pages end after the pricing disclosure; the footer must follow the
    content instead of stretching the main element to fill the viewport. */
 html body:has(main>.service-pricing-section--end)>main{flex:0 0 auto;}
-/* Footer accordions use the text label and open/closed state; remove the
-   competing decorative arrow/X marker. */
-html body .site-footer .footer-accordion>summary::before,
-html body .site-footer .footer-accordion>summary::after{display:none !important;content:none !important;border:0 !important;}
+
 /* All Professional service pages share the same editorial rhythm. */
 html body main .service-gallery-section{
   padding-block:clamp(48px,6vw,88px);
@@ -6630,6 +6611,7 @@ html body main .service-gallery-section .service-gallery-actions{
 }
 html body main .service-gallery-section .section-head{margin-bottom:clamp(24px,3vw,40px);}
 html body main .service-gallery-section .section-head .eyebrow{margin-bottom:12px;}
+html body main .service-gallery-section .service-gallery-actions{margin-top:clamp(30px,4vw,56px);}
 html body main .service-gallery-section .service-lower-gallery-grid{margin-top:0;}
 /* Tablet disclosure and price layout: one shared 900–1100px authority. */
 @media (min-width:900px) and (max-width:1100px){
@@ -6818,25 +6800,7 @@ html body main .service-gallery-section .service-lower-gallery-grid{margin-top:0
 }
 
 
-/* Canonical footer disclosure marker: aligned, explicit, and gold. */
-@media (min-width:621px){
-  html body .site-footer .footer-accordion summary{
-    padding-right:32px;
-  }
-  html body .site-footer .footer-accordion summary::after{
-    right:0;
-    top:50%;
-    width:9px;
-    height:9px;
-    border-right:1.5px solid var(--gold-deep);
-    border-bottom:1.5px solid var(--gold-deep);
-    transform:translateY(-65%) rotate(45deg);
-  }
-  html body .site-footer .footer-accordion[open] summary::after{
-    top:50%;
-    transform:translateY(-35%) rotate(-135deg);
-  }
-}
+
 /* BANHALMI-C SIMPLE SYSTEM 2026-10-23: presentation-only hierarchy layer. */
 html body main[data-homepage-redesign] .hero-copy-only h1,html body main[data-homepage-redesign] .section-head h2,html body main[data-homepage-redesign] .client-decision-bridge h2,html body main[data-homepage-redesign] .presence-thesis h2,html body main[data-homepage-redesign] .cta-band h2{max-width:24ch;text-wrap:balance;}
 html body main[data-homepage-redesign] .hero-copy-only h1{font-size:clamp(2.25rem,3.2vw,3.5rem);line-height:1.02;letter-spacing:-.04em;}
