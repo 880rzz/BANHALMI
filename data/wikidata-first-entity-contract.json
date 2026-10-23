@@ -62,5 +62,15 @@
     "privacy": "Do not expose internal audit ledger on public website; publish only verified references",
     "multilingual": "HU/EN/DE pages preserve semantic equivalence and canonical/hreflang mapping",
     "historicalIntegrity": "Preserve 100 legacy page routes and 595 image blobs from BANHALMI-C"
+  },
+  "machineDiscovery": {
+    "agent": "/.well-known/agent.json",
+    "identity": "/api/v1/identity.json",
+    "services": "/api/v1/services.json",
+    "locations": "/api/v1/locations.json",
+    "actions": "/api/v1/actions.json",
+    "llmSummary": "/llms.txt",
+    "llmFull": "/llms-full.txt",
+    "policy": "All machine endpoints must resolve on production and agree on canonical Person, Organization and Brand; a manifest alone is not evidence of live publication."
   }
 }
