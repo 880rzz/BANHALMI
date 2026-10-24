@@ -1,0 +1,32 @@
+name: BANHALMI release regression gate
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify production topology
+        run: node tools/audit-production-topology.mjs
+      - name: Verify existing customer-intent contract
+        run: node tests/customer-intent-model.test.mjs
+      - name: Verify existing professional journeys
+        run: node tests/professional-journeys.test.mjs
+      - name: Verify existing anchor integrity
+        run: node tests/audit-anchor-integrity.mjs
+  full-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run complete test suite (must be green before merge)
+        run: npm test
