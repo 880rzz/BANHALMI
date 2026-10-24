@@ -38,6 +38,9 @@ if([sourceAuditPos,artifactPos,browserPos,lighthouseMobilePos,lighthouseDesktopP
   errors.push('pages.yml must run source audits first, build an immutable committed artifact, then browser QA and both Lighthouse 100 gates before uploading the deployable artifact');
 }
 if(!/git archive --format=tar HEAD \| tar -xf - -C _site/.test(pages)) errors.push('pages.yml must build the public artifact from committed HEAD, never from a possibly mutated working tree');
+if(!pages.includes('rm -f _site/.gitignore _site/docs/.responsive-4k-audit-ready')) errors.push('pages.yml must strip repo-only hidden paths before packaging and Pages upload');
+if(!/npx --yes @lhci\/cli@0\.15\.1 autorun --config=\.\/lighthouserc\.mobile\.cjs/.test(pages)) errors.push('pages.yml must run mobile LHCI against lighthouserc.mobile.cjs');
+if(!/npx --yes @lhci\/cli@0\.15\.1 autorun --config=\.\/lighthouserc\.desktop\.cjs/.test(pages)) errors.push('pages.yml must run desktop LHCI against lighthouserc.desktop.cjs');
 if(!/printf '%s\\n' \"\$GITHUB_SHA\" > _site\/deployment-sha\.txt/.test(pages)) errors.push('pages.yml must stamp the exact source SHA into the artifact');
 if(!/Verify exact .*commit is live on custom domain/i.test(pages)) errors.push('pages.yml must verify the exact deployed SHA on the custom domain');
 if(!/needs:\s*exact-live/.test(pages)) errors.push('pages.yml production live gate must depend on exact-live verification');
@@ -56,6 +59,7 @@ for(const [name,text] of workflows){
     if(!text.includes(token)) errors.push(name+': public machine discovery preservation is missing: '+token);
   }
   if(!text.includes('actions/upload-pages-artifact@v4')) errors.push(name+': Pages artifact upload must use the current v4 action');
+  if(!/include-hidden-files:\s*true/.test(text)) errors.push(name+': Pages upload must set include-hidden-files: true so .well-known/agent.json reaches production');
 }
 if(!packageText.includes('test_pages_artifact.py')) errors.push('package.json must exercise actual tar membership, hidden-file protection and byte identity');
 
