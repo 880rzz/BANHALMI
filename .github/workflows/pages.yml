@@ -34,11 +34,13 @@ jobs:
           mkdir _site
           git archive --format=tar HEAD | tar -xf - -C _site
           rm -rf _site/.git _site/.github _site/tools _site/tests _site/node_modules _site/artifacts _site/_site _site/package.json _site/package-lock.json _site/.nojekyll
-          printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
+          printf '%s\\n' "$GITHUB_SHA" > _site/deployment-sha.txt
           test -s _site/sitemap.xml
           test "$(cat _site/deployment-sha.txt)" = "$GITHUB_SHA"
           node tools/assert-production-integrity.mjs _site
           python3 tools/package-pages-artifact.py --site _site --output "$RUNNER_TEMP/artifact.tar" --expected-sha "$GITHUB_SHA"
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
       - name: Run exhaustive browser QA
         run: node tools/audit-browser-layout.mjs
       - name: Run mobile Lighthouse strict 100 gate
