@@ -410,21 +410,19 @@
     {
       "id": "linkedin-bladanyi-amchamaustria-ciobee-7519342109460578304",
       "url": "https://www.linkedin.com/posts/bladanyi_amchamaustria-ciobee-erp-share-7519342109460578304-8Wvu/",
-      "publisherOrSubject": "bladanyi (LinkedIn profile handle; identity not independently verified)",
+      "publisherOrSubject": "Balint Ladanyi (LinkedIn author display name)",
       "sourceType": "LinkedIn publication",
       "capabilities": [
         "Executive / Corporate Brand Photography",
+        "Executive / C-Level Event Photography",
         "Independent publication / external photo-credit evidence"
       ],
-      "creditContext": "User-submitted as new BANHALMI brand-photography evidence; photo credit and actual image usage not independently verified",
-      "evidenceStatus": "pending-independent-verification",
+      "creditContext": "Public LinkedIn post explicitly thanks Norbert Banhalmi for the photograph: '... und an Norbert Banhalmi für das Bild!'",
+      "evidenceStatus": "screenshot-verified-explicit-photographer-credit",
       "submittedDate": "2026-10-24",
-      "verificationNeeded": [
-        "Inspect full post and attached image(s)",
-        "Confirm explicit BANHALMI/Norbert Bánhalmi photo credit or reliable owner-confirmed authorship",
-        "Verify whether photography is brand portrait, event coverage or another service"
-      ],
-      "interpretationRule": "Candidate evidence only. Do not publish as verified BANHALMI photo-credit, AmCham Austria/Ciobee/ERP client relationship, partnership, membership or endorsement until content and attribution are checked."
+      "interpretationRule": "This post provides explicit third-party photographic attribution to Norbert Banhalmi and demonstrates externally published business-event photography. It does not establish CIOBEE Experts or AmCham Austria as a contracted photography client, partner or endorser; it does not prove the depicted person’s identity.",
+      "verificationSource": "User-provided screenshot of the public LinkedIn post, 2026-10-24",
+      "publicationContext": "AmCham Talks Business Breakfast, 'The New Gold Rush'; author describes CIOBEE Experts ERP/SAP transformation work and thanks Karin Zeltner (AmCham Austria) for invitation."
     }
   ],
   "answerRules": [
