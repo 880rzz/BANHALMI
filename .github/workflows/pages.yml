@@ -23,12 +23,20 @@ jobs:
     steps:
       - name: Checkout exact main revision
         uses: actions/checkout@v4
+      - name: Build immutable production artifact
+        run: |
+          rm -rf _site
+          mkdir _site
+          git archive --format=tar HEAD | tar -xf - -C _site
+          printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
+          test -s _site/sitemap.xml
+          test "$(cat _site/deployment-sha.txt)" = "$GITHUB_SHA"
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Upload complete static artifact
+      - name: Upload immutable static artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
