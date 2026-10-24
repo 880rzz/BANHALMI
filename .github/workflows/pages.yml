@@ -29,7 +29,7 @@ jobs:
       - name: Run source contract audits
         run: npm ci && npm test
       - name: Run exhaustive browser QA
-        run: node tools/audit-browser-layout.mjs
+        run: |\n          rm -rf _site\n          mkdir _site\n          git archive --format=tar HEAD | tar -xf - -C _site\n          node tools/audit-browser-layout.mjs
       - name: Run mobile Lighthouse strict 100 gate
         run: node tools/audit-lighthouse-all-runs.mjs
       - name: Run desktop Lighthouse strict 100 gate
