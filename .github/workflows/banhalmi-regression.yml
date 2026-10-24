@@ -1,0 +1,34 @@
+name: BANHALMI regression gate
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify production topology
+        run: node tools/audit-production-topology.mjs
+      - name: Verify 100 legacy URLs and 595 images
+        run: node tests/banhalmi-c-url-image-parity.test.mjs
+      - name: Verify Wikidata-first identity
+        run: node tests/wikidata-first-contract.test.mjs
+      - name: Verify Fine Art gallery parity
+        run: node tests/fine-art-three-language-gallery.test.mjs
+      - name: Verify footer disclosure contract
+        run: node tests/footer-disclosure-contract.test.mjs
+  full-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run complete test suite
+        run: npm test
