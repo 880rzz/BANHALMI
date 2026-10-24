@@ -32,11 +32,11 @@ for(const rel of priority){
   for(const[type,label]of uiText(html)){const normalized=label.toLocaleLowerCase(lang).replace(/[.!?:;–—→+]+$/u,'').trim();if(genericUi[lang].has(normalized))failures.push(`${rel}: generic ${type} UI copy "${label}" — /human also covers H1/H2 and controls`)}
 }
 const required=[
-  ['index.html','Portrait and brand photography in Vienna and Budapest.'],
+  ['index.html','Choose the right photograph for your situation — Vienna and Budapest.'],
   ['index.html','We begin with where the photograph will be used.'],
   ['lifestyle/index.html','For leaders, experts, entrepreneurs, artists and organisations'],
   ['speier-viko/index.html','Viko Speier — strategy and photography together'],
-  ['de-at/index.html','Porträt- und Brandfotografie in Wien und Budapest.'],
+  ['de-at/index.html','Wählen Sie die Fotografie, die zu Ihrer Situation passt — Wien und Budapest.'],
   ['de-at/index.html','Wir beginnen damit, wo das Bild eingesetzt wird.'],
   ['de-at/speier-viko/index.html','Viko Speier — Strategie und Fotografie zusammen']
 ];

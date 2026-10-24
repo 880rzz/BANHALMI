@@ -1,21 +1,21 @@
 {
-  "version": "2026-10-24-v10-akt-art-owner",
+  "version": "2026-10-24-v11-wizard-structure",
   "status": "AUDITÁLT",
   "source": {
     "property": "sc-domain:norbertbanhalmi.com",
-    "settledThrough": "2026-10-04",
+    "settledThrough": "2026-10-22",
     "baseline28d": [
-      "2026-09-06",
-      "2026-10-03"
+      "2026-09-24",
+      "2026-10-22"
     ],
     "baseline6m": [
       "2026-03-24",
       "2026-09-19"
     ],
-    "latestWizardSettledThrough": "2026-10-04",
+    "latestWizardSettledThrough": "2026-10-22",
     "latestWizardBaseline28d": [
-      "2026-09-06",
-      "2026-10-03"
+      "2026-09-24",
+      "2026-10-22"
     ]
   },
   "rules": {
@@ -950,12 +950,12 @@
     "property": "https://www.norbertbanhalmi.com/",
     "searchType": "web",
     "baseline28d": [
-      "2026-09-06",
-      "2026-10-03"
+      "2026-09-24",
+      "2026-10-22"
     ],
-    "settledThrough": "2026-10-04",
-    "dataSource": "api",
-    "measuredAt": "2026-10-06",
+    "settledThrough": "2026-10-22",
+    "dataSource": "gsc-wizard",
+    "measuredAt": "2026-10-24",
     "protectedHomepageQueries": [
       {
         "query": "fényképész budapest",
@@ -1167,6 +1167,7 @@
         "fotós tanfolyam",
         "fényképész tanfolyam"
       ]
-    }
+    },
+    "notes": "Wizard dual-property run for norbertbanhalmi.com + banhalmi.art; Oct 23-24 incomplete. Professional: 79 clicks / 21908 impressions / CTR 0.36%. ART: 105 / 1565 / 6.71%. Mobile-majority traffic. Homepage must remain hub; service queries own service URLs; boudoir/akt own ART."
   }
 }

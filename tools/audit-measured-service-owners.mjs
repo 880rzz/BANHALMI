@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 const routing=JSON.parse(fs.readFileSync('service-owner-routing.json','utf8'));
-assert.deepEqual(routing.measurementWindow,['2026-09-15','2026-10-12']);
+assert.deepEqual(routing.measurementWindow,['2026-08-24','2026-10-22']);
 assert.match(routing.rules.method,/never.*redirect/i);
 const read=p=>fs.readFileSync(p,'utf8');
 const clean=s=>s.replace(/<[^>]+>/g,'').replaceAll('&amp;','&');
