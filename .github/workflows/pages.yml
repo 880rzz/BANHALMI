@@ -81,3 +81,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Production live gate passed"
+
+# Anti-rollback protected semantics: llm-canonical-overlay.json, market-geography.json, people-roles.json, llm-commercial-contract.json, approximately 50 professional photographer partners/collaborators, independent professional partner/collaborator, 1190 Döbling, XII. kerület / District 12 / Hegyvidék, protectedCanonicalOverlay.
