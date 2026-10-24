@@ -1,12 +1,17 @@
 import fs from 'node:fs';
 
 const errors=[];
-const strategicPositioningPhrases={
-  'index.html':['The photograph is the means.','Strategic visual positioning is the work.'],
-  'hu/index.html':['A fénykép az eszköz.','A munka a stratégiai vizuális pozicionálás.'],
-  'de-at/index.html':['Fotografie ist das Mittel.','Die Arbeit ist strategische visuelle Positionierung.']
+const plainDecisionPhrases={
+  'index.html':['We begin with where the photograph will be used.'],
+  'hu/index.html':['Abból indulunk, hol fogja használni a képet.'],
+  'de-at/index.html':['Wir beginnen damit, wo das Bild eingesetzt wird.']
 };
-for(const [file,phrases] of Object.entries(strategicPositioningPhrases)){const html=fs.readFileSync(file,'utf8');for(const phrase of phrases)if(!html.includes(phrase))errors.push(file+': strategic positioning phrase missing: '+phrase);}
+for(const [file,phrases] of Object.entries(plainDecisionPhrases)){const html=fs.readFileSync(file,'utf8');for(const phrase of phrases)if(!html.includes(phrase))errors.push(file+': plain decision phrase missing: '+phrase);}
+for(const [file,phrases] of Object.entries({
+  'index.html':['Strategic visual positioning is the work.','The photograph is the means.'],
+  'hu/index.html':['stratégiai vizuális pozicionálás','A fénykép az eszköz.'],
+  'de-at/index.html':['strategische visuelle Positionierung','Fotografie ist das Mittel.']
+})){const html=fs.readFileSync(file,'utf8');for(const phrase of phrases)if(html.includes(phrase))errors.push(file+': jargon phrase must be removed: '+phrase);}
 
 const pages={
   'index.html':{heading:'One visual discipline, four clear ways to work together.',cta:'Choose the relevant starting point ↓',facts:['Four principal services:','Executive Portraiture, Brand Photography, C-Level Event Photography and Fine Art Photography','Headshots, employer-branding imagery, press portraits and visual brand strategy','As a member of AmCham Austria','memory, the body and biography']},
