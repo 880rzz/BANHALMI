@@ -1,12 +1,12 @@
 {
-  "version": "2026-10-15",
-  "status": "IMPLEMENTED_PENDING_CI",
+  "version": "2026-10-24-gsc-wizard",
+  "status": "IMPLEMENTED_PENDING_MEASUREMENT",
   "property": "https://www.norbertbanhalmi.com/",
   "measurementWindow": [
-    "2026-09-15",
-    "2026-10-12"
+    "2026-08-24",
+    "2026-10-22"
   ],
-  "evidence": "GSC API, 2026-09-15 through 2026-10-12 (28 days), supported by 2026-07-15 through 2026-10-12 (90 days). Raw country/query/page evidence and the per-query classification table are retained in a private deliverable.",
+  "evidence": "GSC Wizard, 2026-08-24 through 2026-10-22 (settled window before incomplete 2026-10-23/24). Professional clicks 79 / impressions 21908; ART clicks 105 / impressions 1565.",
   "rules": {
     "method": "Semantic internal links, explicit service headings and Service aliases; never query/referrer-dependent HTTP redirects",
     "language": "Infer query language from lexical evidence. Country is a measured market dimension, not a language selector. Ambiguous queries remain reviewable.",

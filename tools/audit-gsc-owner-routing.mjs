@@ -4,9 +4,9 @@ const errors = [];
 const read = path => fs.readFileSync(path, 'utf8');
 
 const matrix = JSON.parse(read('data/search-authority-master-matrix.json'));
-if (matrix.version !== '2026-10-24-v10-akt-art-owner') errors.push('GSC authority matrix version is stale');
-if (matrix.latestWizardSnapshot?.settledThrough !== '2026-10-04') errors.push('GSC Wizard settled-through date must be 2026-10-04');
-if (JSON.stringify(matrix.latestWizardSnapshot?.baseline28d) !== JSON.stringify(['2026-09-06','2026-10-03'])) errors.push('GSC Wizard 28d window drifted');
+if (matrix.version !== '2026-10-24-v11-wizard-structure') errors.push('GSC authority matrix version is stale');
+if (matrix.latestWizardSnapshot?.settledThrough !== '2026-10-22') errors.push('GSC Wizard settled-through date must be 2026-10-22');
+if (JSON.stringify(matrix.latestWizardSnapshot?.baseline28d) !== JSON.stringify(['2026-09-24','2026-10-22'])) errors.push('GSC Wizard 28d window drifted');
 
 const protectedQueries = new Set((matrix.latestWizardSnapshot?.protectedHomepageQueries || []).map(row => row.query));
 for (const query of ['fényképész budapest','fotós budapest','budapest fotós','profi fotós']) {

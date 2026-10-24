@@ -6831,8 +6831,24 @@ html body .service-pricing-section--end+.site-footer{margin-block-start:0}
 html body main .legal-navigation .service-grid{display:grid;column-gap:clamp(16px,2vw,28px);row-gap:clamp(16px,2vw,28px)}
 html body main .legal-navigation .service-grid>.card{min-width:0;margin:0}
 
-/* FOOTER-DISCLOSURE-ICON-CONTRACT: a single chevron on mobile, no X/plus/close glyphs. */
+/* FOOTER-DISCLOSURE-ICON-CONTRACT: mobile closed rows show a trailing gold +; open rows show −.
+   Desktop keeps groups open, so the marker stays mobile-only. No leading X/close glyphs. */
 html body .site-footer details.footer-accordion>summary::before{content:none;display:none;}
+@media (max-width:720px){
+  html body .site-footer details.footer-accordion>summary::after{
+    content:"+";
+    display:inline-block;
+    margin-left:auto;
+    flex:0 0 auto;
+    width:1.1em;
+    font-size:1.35rem;
+    font-weight:300;
+    line-height:1;
+    color:#CBB45F;
+    text-align:center;
+  }
+  html body .site-footer details.footer-accordion[open]>summary::after{content:"−";}
+}
 
 /* HOMEPAGE_SERVICES_QUOTE_CTA_V1 */
 html body main[data-homepage-redesign] #services .cards{align-items:stretch}
