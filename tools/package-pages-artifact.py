@@ -30,8 +30,12 @@ REQUIRED_FILES = frozenset({
 
 
 def digest_file(path: Path) -> str:
+    # hashlib.file_digest needs Python 3.11+; keep a 3.9-compatible path for local/CI hosts.
+    digest = hashlib.sha256()
     with path.open('rb') as stream:
-        return hashlib.file_digest(stream, 'sha256').hexdigest()
+        for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def public_manifest(site: Path) -> dict[str, str]:
