@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-07-v9-gsc-owner-routing",
+  "version": "2026-10-24-v10-akt-art-owner",
   "status": "AUDITÁLT",
   "source": {
     "property": "sc-domain:norbertbanhalmi.com",
@@ -1091,9 +1091,70 @@
         "position": 9.454545454545455,
         "leadingPage": "https://www.norbertbanhalmi.com/",
         "leadingPageImpressions": 4,
-        "expectedOwner": "/hu/muveszi-fotografia/",
-        "cluster": "fine-art",
-        "priority": "P1"
+        "expectedOwner": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+        "cluster": "private-art-nude",
+        "priority": "P0",
+        "note": "Artistic nude / akt intent belongs to ART Ébredés, not Professional Artists & Performers."
+      },
+      {
+        "query": "akt",
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0,
+        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "expectedOwner": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+        "cluster": "private-art-nude",
+        "priority": "P0",
+        "note": "Intent separation: private/artistic photography is owned by ART."
+      },
+      {
+        "query": "akt foto",
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0,
+        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "expectedOwner": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+        "cluster": "private-art-nude",
+        "priority": "P0",
+        "note": "Intent separation: private/artistic photography is owned by ART."
+      },
+      {
+        "query": "akt fotozás",
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0,
+        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "expectedOwner": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+        "cluster": "private-art-nude",
+        "priority": "P0",
+        "note": "Intent separation: private/artistic photography is owned by ART."
+      },
+      {
+        "query": "boudoir photography",
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0,
+        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "expectedOwner": "https://www.banhalmi.art/private-photography.html",
+        "cluster": "private-art",
+        "priority": "P0",
+        "note": "Intent separation: private/artistic photography is owned by ART."
+      },
+      {
+        "query": "boudoir shoot",
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0,
+        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "expectedOwner": "https://www.banhalmi.art/private-photography.html",
+        "cluster": "private-art",
+        "priority": "P0",
+        "note": "Intent separation: private/artistic photography is owned by ART."
       }
     ],
     "remediation": {

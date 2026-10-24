@@ -172,7 +172,23 @@ class PagesArtifactTests(unittest.TestCase):
             self.assertNotIn('index.html', names)
 
     def test_official_v4_exclusion_reproduces_missing_discovery(self):
-        subprocess.run(['tar', '--directory', str(self.site), '-cf', str(self.archive), '--exclude=.git', '--exclude=.github', '--exclude=.[^/]*', '.'], check=True)
+        # Reproduce the old Pages v4 "exclude hidden paths" behaviour in Python.
+        # Do not depend on GNU tar --exclude regexes; BSD tar treats them differently
+        # and can emit an empty archive on macOS hosts.
+        with tarfile.open(self.archive, 'w') as archive:
+            for path in sorted(self.site.rglob('*')):
+                rel = path.relative_to(self.site)
+                if any(part.startswith('.') for part in rel.parts):
+                    continue
+                arcname = '.' if rel == Path('.') else './' + rel.as_posix()
+                if path.is_dir():
+                    info = tarfile.TarInfo(arcname)
+                    info.type = tarfile.DIRTYPE
+                    archive.addfile(info)
+                elif path.is_file():
+                    info = archive.gettarinfo(str(path), arcname=arcname)
+                    with path.open('rb') as stream:
+                        archive.addfile(info, stream)
         with tarfile.open(self.archive) as archive:
             self.assertNotIn('./.well-known/agent.json', archive.getnames())
             self.assertIn('./index.html', archive.getnames())
