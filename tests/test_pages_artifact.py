@@ -58,11 +58,13 @@ class PagesArtifactTests(unittest.TestCase):
     def test_known_non_public_hidden_files_stay_excluded(self):
         self.write('.DS_Store', b'junk')
         self.write('assets/.DS_Store', b'junk')
+        self.write('.gitignore', b'node_modules/\n')
         self.write('docs/.responsive-4k-audit-ready', b'ready')
         self.pack()
         with tarfile.open(self.archive) as archive:
             hidden_files = [m.name for m in archive if m.isfile() and any(p.startswith('.') for p in Path(m.name[2:]).parts)]
             self.assertEqual(hidden_files, ['./.well-known/agent.json'])
+            self.assertNotIn('./.gitignore', archive.getnames())
 
     def test_source_only_evidence_audit_ledgers_are_not_published(self):
         for name in PACKAGER.INTERNAL_SOURCE_ONLY_FILES:

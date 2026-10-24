@@ -15,7 +15,7 @@ import tarfile
 from pathlib import Path
 
 PUBLIC_HIDDEN_FILES = frozenset({'.well-known/agent.json'})
-INTERNAL_HIDDEN_FILES = frozenset({'docs/.responsive-4k-audit-ready'})
+INTERNAL_HIDDEN_FILES = frozenset({'docs/.responsive-4k-audit-ready', '.gitignore'})
 # Source-only audit snapshots must remain in Git, never in the public Pages archive.
 INTERNAL_SOURCE_ONLY_FILES = frozenset({
     'docs/authority-evidence-audit-ledger-20261010.json',
@@ -27,6 +27,7 @@ REQUIRED_FILES = frozenset({
     'api/v1/identity.json', 'api/v1/services.json',
     'api/v1/locations.json', 'api/v1/actions.json',
 })
+SKIP_HIDDEN_BASENAMES = frozenset({'.DS_Store', '.gitignore'})
 
 
 def digest_stream(stream) -> str:
@@ -60,7 +61,7 @@ def public_manifest(site: Path) -> dict[str, str]:
         if hidden:
             if name in PUBLIC_HIDDEN_FILES or name == '.well-known' and path.is_dir():
                 pass
-            elif (path.name == '.DS_Store' or name in INTERNAL_HIDDEN_FILES) and path.is_file():
+            elif (path.name in SKIP_HIDDEN_BASENAMES or name in INTERNAL_HIDDEN_FILES) and path.is_file():
                 continue
             else:
                 raise ValueError(f'Unreviewed hidden path: {name}')

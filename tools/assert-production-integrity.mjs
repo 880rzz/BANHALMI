@@ -6,8 +6,14 @@ import { execFileSync } from 'node:child_process';
 const root=process.cwd();
 const artifact=path.resolve(process.argv[2]||'_site');
 const excludedTop=new Set(['.git','.github','tools','tests','node_modules','artifacts','_site']);
-const excludedRootFiles=new Set(['package.json','package-lock.json']);
+const excludedRootFiles=new Set(['package.json','package-lock.json','.gitignore']);
+const excludedExact=new Set(['docs/.responsive-4k-audit-ready']);
 const failures=[];
+
+function isRepoOnlyPublicPath(rel){
+  if(excludedRootFiles.has(rel)||excludedExact.has(rel)) return true;
+  return rel.split('/').includes('.DS_Store');
+}
 
 function walk(dir,base=dir){
   const out=[];
@@ -19,7 +25,7 @@ function walk(dir,base=dir){
       if(base===root&&excludedTop.has(entry.name)) continue;
       out.push(...walk(full,base));
     }else if(entry.isFile()){
-      if(base===root&&excludedRootFiles.has(rel)) continue;
+      if(isRepoOnlyPublicPath(rel)) continue;
       out.push(rel);
     }
   }

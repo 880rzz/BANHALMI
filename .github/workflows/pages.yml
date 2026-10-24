@@ -34,6 +34,9 @@ jobs:
           mkdir _site
           git archive --format=tar HEAD | tar -xf - -C _site
           rm -rf _site/.git _site/.github _site/tools _site/tests _site/node_modules _site/artifacts _site/_site _site/package.json _site/package-lock.json _site/.nojekyll
+          # Repo-only hidden paths must never reach Pages (packager + include-hidden-files upload).
+          rm -f _site/.gitignore _site/docs/.responsive-4k-audit-ready
+          find _site -name .DS_Store -type f -delete
           printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
           test -s _site/sitemap.xml
           test "$(cat _site/deployment-sha.txt)" = "$GITHUB_SHA"
@@ -50,15 +53,16 @@ jobs:
       - name: Run exhaustive browser QA
         run: node tools/audit-browser-layout.mjs
       - name: Run mobile Lighthouse strict 100 gate
-        run: node tools/audit-lighthouse-all-runs.mjs
+        run: npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.mobile.cjs
       - name: Run desktop Lighthouse strict 100 gate
-        run: node tools/audit-lighthouse-all-runs.mjs
+        run: npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.desktop.cjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload the exact audited Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
+          include-hidden-files: true
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
