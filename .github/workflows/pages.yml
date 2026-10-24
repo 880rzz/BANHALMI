@@ -29,7 +29,11 @@ jobs:
       - name: Run source contract audits
         run: npm ci && npm test
       - name: Run exhaustive browser QA
-        run: |\n          rm -rf _site\n          mkdir _site\n          git archive --format=tar HEAD | tar -xf - -C _site\n          node tools/audit-browser-layout.mjs
+        run: |
+          rm -rf _site
+          mkdir _site
+          git archive --format=tar HEAD | tar -xf - -C _site
+          node tools/audit-browser-layout.mjs
       - name: Run mobile Lighthouse strict 100 gate
         run: node tools/audit-lighthouse-all-runs.mjs
       - name: Run desktop Lighthouse strict 100 gate
@@ -39,7 +43,8 @@ jobs:
           rm -rf _site
           mkdir _site
           git archive --format=tar HEAD | tar -xf - -C _site
-          printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
+          printf '%s
+' "$GITHUB_SHA" > _site/deployment-sha.txt
           test -s _site/sitemap.xml
           test "$(cat _site/deployment-sha.txt)" = "$GITHUB_SHA"
           node tools/assert-production-integrity.mjs _site
@@ -57,7 +62,8 @@ jobs:
       - name: Verify exact $GITHUB_SHA commit is live on custom domain
         run: |
           for attempt in 1 2 3 4 5 6; do
-            live="$(curl --fail --silent --show-error https://www.norbertbanhalmi.com/deployment-sha.txt | tr -d '\r\n')"
+            live="$(curl --fail --silent --show-error https://www.norbertbanhalmi.com/deployment-sha.txt | tr -d '\r
+')"
             [ "$live" = "$GITHUB_SHA" ] && exit 0
             sleep 20
           done
