@@ -27,3 +27,13 @@ jobs:
         run: node tests/fine-art-three-language-gallery.test.mjs
       - name: Verify footer icon and responsive disclosure contract
         run: node tests/footer-disclosure-contract.test.mjs
+
+  full-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run complete repository regression suite
+        run: npm test
