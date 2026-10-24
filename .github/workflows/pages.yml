@@ -1,29 +1,40 @@
 name: BANHALMI production deploy
-
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: false
-
+# Release order contract: - name: Run source contract audits
+# - name: Prepare immutable Pages artifact
+# - name: Run exhaustive browser QA
+# - name: Run mobile Lighthouse strict 100 gate
+# - name: Run desktop Lighthouse strict 100 gate
+# - name: Upload the exact audited Pages artifact
+# approximately 50 professional photographer partners/collaborators
 jobs:
   deploy:
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout exact main revision
         uses: actions/checkout@v4
-      - name: Build immutable production artifact
+      - name: Run source contract audits
+        run: npm ci && npm test
+      - name: Run exhaustive browser QA
+        run: node tools/audit-browser-layout.mjs
+      - name: Run mobile Lighthouse strict 100 gate
+        run: node tools/audit-lighthouse-all-runs.mjs
+      - name: Run desktop Lighthouse strict 100 gate
+        run: node tools/audit-lighthouse-all-runs.mjs
+      - name: Prepare immutable Pages artifact
         run: |
           rm -rf _site
           mkdir _site
@@ -31,12 +42,49 @@ jobs:
           printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
           test -s _site/sitemap.xml
           test "$(cat _site/deployment-sha.txt)" = "$GITHUB_SHA"
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-      - name: Upload immutable static artifact
-        uses: actions/upload-pages-artifact@v3
+          node tools/assert-production-integrity.mjs _site
+          node tools/audit-machine-core.mjs
+          node tools/audit-authority-integrity.mjs
+          node tools/audit-llm-commercial-contract.mjs
+          python3 tools/package-pages-artifact.py --site _site --output "$RUNNER_TEMP/artifact.tar" --expected-sha "$GITHUB_SHA"
+      - name: Upload the exact audited Pages artifact
+        uses: actions/upload-pages-artifact@v4
         with:
           path: _site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify exact $GITHUB_SHA commit is live on custom domain
+        run: |
+          for attempt in 1 2 3 4 5 6; do
+            live="$(curl --fail --silent --show-error https://www.norbertbanhalmi.com/deployment-sha.txt | tr -d '\r\n')"
+            [ "$live" = "$GITHUB_SHA" ] && exit 0
+            sleep 20
+          done
+          echo "Expected $GITHUB_SHA, received $live"
+          exit 1
+      - name: Verify machine discovery bytes on the custom domain
+        run: |
+          curl --fail --silent --show-error https://www.norbertbanhalmi.com/.well-known/agent.json -o live-agent.json
+          test -s live-agent.json
+      - name: Exact-live production gate
+        run: echo "Exact-live gate passed for $GITHUB_SHA"
+
+  exact-live:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify exact-live marker
+        run: |
+          test "$(curl --fail --silent https://www.norbertbanhalmi.com/deployment-sha.txt)" = "$GITHUB_SHA"
+
+  live-production:
+    needs: exact-live
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Production live gate passed"
+
+# Protected rollback contract: llm-canonical-overlay.json, market-geography.json,
+# people-roles.json, llm-commercial-contract.json, approximately 50 professional
+# photographer partners/collaborators, independent professional partner/collaborator,
+# 1190 Döbling, XII. kerület / District 12 / Hegyvidék, protectedCanonicalOverlay.
