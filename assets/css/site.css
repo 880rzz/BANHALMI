@@ -6870,3 +6870,8 @@ html body main[data-homepage-redesign] #services .services-quote-cta .btn{
   html body main[data-homepage-redesign] #services .services-quote-cta{margin-top:22px;padding-top:18px;gap:12px}
 }
 /* /HOMEPAGE_SERVICES_QUOTE_CTA_V1 */
+/* HOMEPAGE_ART_PRIVATE_BRIDGE_V1 */
+html body main .homepage-art-private-bridge{margin:clamp(12px,1.4vw,18px) 0 0;max-width:46ch;color:#6e6e73;font-size:clamp(.92rem,.8vw,1.02rem);line-height:1.55}
+html body main .homepage-art-private-bridge a{color:inherit;text-decoration:underline;text-underline-offset:0.18em}
+/* /HOMEPAGE_ART_PRIVATE_BRIDGE_V1 */
+
