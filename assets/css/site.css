@@ -6833,16 +6833,4 @@ html body main .legal-navigation .service-grid>.card{min-width:0;margin:0}
 
 /* FOOTER-DISCLOSURE-ICON-CONTRACT: a single chevron on mobile, no X/plus/close glyphs. */
 html body .site-footer details.footer-accordion>summary::before{content:none;display:none;}
-html body .site-footer details.footer-accordion>summary::after{content:none;display:none;}
-html body .site-footer details.footer-accordion>summary::marker{content:"";}
-@media (max-width:720px){
-  html body .site-footer details.footer-accordion>summary{position:relative;padding-inline-end:32px;}
-  html body .site-footer details.footer-accordion>summary::after{
-    content:"";display:block;position:absolute;inset-inline-end:9px;inset-block-start:50%;
-    width:8px;height:8px;border-inline-end:1.5px solid currentColor;
-    border-block-end:1.5px solid currentColor;transform:translateY(-65%) rotate(45deg);
-    transition:transform .16s ease;pointer-events:none;
-  }
-  html body .site-footer details.footer-accordion[open]>summary::after{transform:translateY(-25%) rotate(225deg);}
-}
-@media (prefers-reduced-motion:reduce){html body .site-footer details.footer-accordion>summary::after{transition:none;}}
+
