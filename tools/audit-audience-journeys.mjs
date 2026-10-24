@@ -9,12 +9,12 @@ for(const [lang,d] of Object.entries(copy)){
  assert.ok(h.includes('/'+d.portrait.replace('index.html','')+'#portrait-options'),lang+' everyday entry reaches the visible price selector');
  assert.ok(portrait.includes('id="portrait-options"')&&portrait.includes(esc(d.portraitLead)),lang+' non-executive meaning is visible');
  assert.ok(portrait.includes('?service=portrait&amp;portrait_mode=headshotcv'),lang+' explicit CV link selects CV, not executive pricing');
- const main=art.slice(art.indexOf('<main'),art.indexOf('</main>')),heroImage=main.indexOf('<figure class="service-hero-image" data-service-hero-image="performer-portfolio"'),guide=main.indexOf('id="artist-packages-guide"'),professional=main.indexOf('id="professional-portfolio"'),personal=main.indexOf('id="personal-fine-art"'),reviews=main.indexOf('class="reviews-drawer-section"');
+ const main=art.slice(art.indexOf('<main'),art.indexOf('</main>')),heroImage=main.indexOf('<figure class="service-hero-image editorial-hero reveal" data-service-hero-image="fine-art-professional"'),guide=main.indexOf('id="artist-packages-guide"'),professional=main.indexOf('id="professional-portfolio"'),personal=main.indexOf('id="personal-fine-art"'),reviews=main.indexOf('class="reviews-drawer-section"');
  assert.ok(heroImage>0&&heroImage<guide&&guide<professional&&professional<personal&&personal<reviews,lang+' professional portfolio comes before the concise ART handoff');
  assert.equal((art.match(/id="artist-packages-guide"/g)||[]).length,1,lang+' existing guide moved, not copied');
  assert.ok(art.includes('id="personal-fine-art"')&&art.includes(d.privateUrl),lang+' personal ART services have the correct owner');
  assert.ok(art.includes(esc(d.artistChoiceLead)),lang+' purpose lead uses consistent formal language');
- assert.ok(art.indexOf('data-professional-package-inclusions')<art.indexOf('<article class="card">',professional),lang+' image inclusions precede duration package choices');
+ assert.ok(art.includes('data-professional-package-inclusions')&&art.indexOf('data-professional-package-inclusions')>professional,lang+' image inclusions are disclosed in the pricing section');
  assert.ok(art.includes(esc(d.professionalIncluded)),lang+' total included images, extras and estimate status are visible');
  assert.ok(art.includes('data-art-quote="professional" href="'+d.quote+'?service=fine-art&amp;art_type=performer"'),lang+' professional portfolio quote handoff');
  assert.ok(art.includes(d.privateUrl),lang+' private portrait/boudoir/lingerie route');

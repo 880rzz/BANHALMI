@@ -44,28 +44,25 @@ for (const path of pages) {
         const isFooterDisclosure = await details.evaluate(node => node.matches('.site-footer .footer-accordion'));
         checked += 1;
         if (isFooterDisclosure) {
-          await expect(summary).not.toHaveCSS('pointer-events', 'none');
-          const marker = await summary.evaluate(node => {
-            const style = getComputedStyle(node, '::after');
-            return {content:style.content,color:style.color,position:style.position,
-              display:getComputedStyle(node).display,gap:getComputedStyle(node).columnGap};
-          });
-          expect(marker.content).toBe('"+"');
-          expect(marker.color).toBe('rgb(183, 156, 68)');
-          expect(marker.position).toBe('static');
-          expect(marker.display).toBe('flex');
-          expect(parseFloat(marker.gap)).toBeGreaterThan(0);
-          await expect(details).toHaveJSProperty('open', false);
-          const expanded = await summary.getAttribute('aria-expanded');
-          if (expanded !== null) expect(expanded).toBe('false');
-          if (index % 2 === 0) await summary.click();
-          else {
+          // Desktop is an always-expanded information column; compact screens
+          // preserve native pointer/keyboard disclosures without visual markers.
+          const marker = await summary.evaluate(node => getComputedStyle(node, '::after').content);
+          expect(['none', 'normal', '""']).toContain(marker);
+          if (width >= 721) {
+            await expect(details).toHaveJSProperty('open', true);
+            await expect(summary).toHaveAttribute('aria-expanded', 'true');
+            await expect(summary).toHaveAttribute('tabindex', '-1');
+            await expect(details.locator('a').first()).toBeVisible();
+          } else {
+            await expect(details).toHaveJSProperty('open', false);
+            await expect(summary).not.toHaveCSS('pointer-events', 'none');
+            await expect(summary).toHaveAttribute('aria-expanded', 'false');
+            await summary.click();
+            await expect(details).toHaveJSProperty('open', true);
+            await expect(summary).toHaveAttribute('aria-expanded', 'true');
             await summary.focus();
             await page.keyboard.press('Space');
-          }
-          await expect(details).toHaveJSProperty('open', true);
-          if ((await summary.getAttribute('aria-expanded')) !== null) {
-            await expect(summary).toHaveAttribute('aria-expanded', 'true');
+            await expect(details).toHaveJSProperty('open', false);
           }
           continue;
         }

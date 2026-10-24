@@ -45,7 +45,7 @@ must(heroAuthority.desktopLayout==='stacked'&&heroAuthority.copyPanelMatchesMedi
 for(const rel of ['index.html','hu/index.html','de-at/index.html']){
   const html=fs.readFileSync(rel,'utf8');
   must(html.includes('data-homepage-redesign="stage76"'),`${rel}: homepage geometry scope missing`);
-  must(html.includes('class="hero-video"'),`${rel}: homepage video layer missing`);
+  must(!html.includes('class="hero-video"'),`${rel}: retired homepage hero video reintroduced`);
   must(html.includes('hero-signature-2400.avif'),`${rel}: shared homepage hero still missing`);
 }
 must(!hardener.includes('--homepage-hero-media-height'),'production hardener must not overwrite canonical homepage media geometry');

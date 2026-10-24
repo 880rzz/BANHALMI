@@ -126,14 +126,14 @@
       "mobileTopLevelFullWidth": true,
       "mobileResetExplicitGridPlacement": true,
       "mobileNoCharacterBreaks": true,
-      "runtimeDisclosureMode": "user-owned-closed-default-all-viewports",
+      "runtimeDisclosureMode": "desktop-open-mobile-native-disclosures",
       "compactNativeDisclosureRequired": true,
       "compactInteractiveDisclosureRequired": true,
       "inlineVisibilityMutationAllowed": false,
       "wideDesktopLegalSingleLineMinPx": 1440,
       "cookieSettingsStaysWithLegalLinks": true,
-      "desktopDisclosureDefaultOpen": false,
-      "desktopDisclosureUserOwned": true
+      "desktopDisclosureDefaultOpen": true,
+      "desktopDisclosureUserOwned": false
     },
     "documentFlow": {
       "layoutMode": "flex",

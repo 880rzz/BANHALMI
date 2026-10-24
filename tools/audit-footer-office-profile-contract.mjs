@@ -27,7 +27,7 @@ const footerGenerator=fs.readFileSync('tools/normalize-executive-footer.mjs','ut
 if(footerGenerator.includes('footer-location-profile')||footerGenerator.includes('officeProfile'))failures.push('footer normalizer must not regenerate the office-only profile link');
 if(css.includes('.footer-location-profile'))failures.push('CSS must not retain the removed office profile component');
 if(!css.includes('html body .site-footer .footer-accordion>summary{display:flex;align-items:center;justify-content:flex-start;gap:.65em;}'))failures.push('footer disclosure summary must place its marker after its label');
-if(!css.includes('html body .site-footer .footer-accordion>summary::after{content:"+";position:static;inset:auto;width:auto;height:auto;border:0;transform:none;color:var(--gold);'))failures.push('footer disclosure marker must be a static gold plus');
+if(/\.footer-accordion(?:\[open\])?(?:>|\\s)summary::after/.test(css))failures.push('footer should not render decorative plus, minus or chevron markers');
 if(css.includes('html body main>section.section-band[data-surface]{width:100vw'))failures.push('full-bleed section must not include the scrollbar in a 100vw width');
 if(!css.includes('html body main>section.section-band[data-surface]{width:100%;max-width:none;margin-inline:0;}'))failures.push('section surface must align with the document content edge');
 if(!css.includes('html body main h1{font-size:clamp(2.5rem,3.2vw,2.75rem);line-height:1.08;letter-spacing:-.024em;text-wrap:balance;}'))failures.push('shared main H1 scale or balanced line wrapping changed');
