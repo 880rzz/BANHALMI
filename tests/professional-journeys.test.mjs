@@ -8,7 +8,7 @@ for(const [locale,data] of Object.entries(manifest.locales)){
  assert.ok(section,locale+': missing four-service decision section');
  const links=[...section.matchAll(/<a\b[^>]*class="card reveal"[^>]*href="([^"]+)"[^>]*>/gi)].map(m=>m[1]);
  assert.equal(links.length,4,locale+': exactly four primary service cards');
- for(const service of data.services)assert.ok(links.includes(service.url),locale+': missing primary service '+service.id+' '+service.url);
+ for(const service of data.services)assert.ok(links.includes(service.url.split('#')[0]),locale+': missing primary service '+service.id+' '+service.url);
  assert.equal(new Set(links).size,4,locale+': duplicate primary service destination');
  const hero=html.match(/<section class="hero hero-copy-only\b[\s\S]*?<\/section>/)?.[0]||'';
  assert.ok(hero,locale+': hero missing');
