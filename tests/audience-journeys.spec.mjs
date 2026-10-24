@@ -8,11 +8,15 @@ const locales=[
 ];
 const ready=async page=>{await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1);};
 for(const d of locales){
- test(d.home+' everyday entry is visible, keyboard-usable and lands on portrait prices',async({page})=>{
+ test(d.home+' quote CTA is visible, keyboard-usable and lands on the shared quote flow',async({page})=>{
   await page.goto(d.home);
-  const entry=page.locator('[data-persona-path="everyday-portrait"]');await expect(entry).toBeVisible();
+  const entry=page.locator('[data-homepage-quote-cta] a.btn');await expect(entry).toBeVisible();
   await entry.focus();await page.keyboard.press('Enter');
-  await expect(page).toHaveURL(new RegExp(d.portrait+'#portrait-options$'));
+  await expect(page).toHaveURL(new RegExp(d.quote.replace(/\//g,'\\/')+'$'));
+  await ready(page);
+ });
+ test(d.portrait+' CV portrait options remain reachable from the portrait page',async({page})=>{
+  await page.goto(d.portrait+'#portrait-options');
   await expect(page.locator('#portrait-options')).toBeVisible();
   await page.locator('[data-portrait-cv-entry]').click();await ready(page);
   await expect(page.locator('[name="individual_mode"][value="headshotcv"]')).toBeChecked();

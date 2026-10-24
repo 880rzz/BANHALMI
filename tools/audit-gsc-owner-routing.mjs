@@ -4,7 +4,7 @@ const errors = [];
 const read = path => fs.readFileSync(path, 'utf8');
 
 const matrix = JSON.parse(read('data/search-authority-master-matrix.json'));
-if (matrix.version !== '2026-10-07-v9-gsc-owner-routing') errors.push('GSC authority matrix version is stale');
+if (matrix.version !== '2026-10-24-v10-akt-art-owner') errors.push('GSC authority matrix version is stale');
 if (matrix.latestWizardSnapshot?.settledThrough !== '2026-10-04') errors.push('GSC Wizard settled-through date must be 2026-10-04');
 if (JSON.stringify(matrix.latestWizardSnapshot?.baseline28d) !== JSON.stringify(['2026-09-06','2026-10-03'])) errors.push('GSC Wizard 28d window drifted');
 
@@ -21,7 +21,12 @@ for (const [query, owner] of [
   ['brand photographer','/lifestyle/'],
   ['event photography','/event-photography/'],
   ['fine art fotografie','/de-at/fine-art/'],
-  ['aktfotózás','/hu/muveszi-fotografia/']
+  ['aktfotózás','https://www.banhalmi.art/hu/exhibitions/ebredes.html'],
+  ['akt','https://www.banhalmi.art/hu/exhibitions/ebredes.html'],
+  ['akt foto','https://www.banhalmi.art/hu/exhibitions/ebredes.html'],
+  ['akt fotozás','https://www.banhalmi.art/hu/exhibitions/ebredes.html'],
+  ['boudoir photography','https://www.banhalmi.art/private-photography.html'],
+  ['boudoir shoot','https://www.banhalmi.art/private-photography.html']
 ]) {
   if (gapOwners.get(query) !== owner) errors.push(`Canonical owner gap mismatch for ${query}`);
 }

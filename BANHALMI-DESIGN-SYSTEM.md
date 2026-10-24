@@ -49,3 +49,18 @@ The three language versions preserve the same decision path and evidence. SEO, G
 Schema, LLM, E-E-A-T, GDPR, AI Trust and GSC routes are machine-readable contracts;
 visual simplification must not remove or duplicate them. Professional and ART intent
 remain separate.
+
+
+## Homepage services CTA (2026-10-24)
+
+The four service cards are the only service decisions on the homepage.
+Below them sits one shared quote CTA — never a fifth category and never a
+detached portrait-price row:
+
+- EN: Build your quote → `/requestaquote/`
+- HU: Árajánlat összeállítása → `/hu/ajanlatkeres/`
+- DE: Angebot zusammenstellen → `/de-at/anfrage/`
+
+CV / LinkedIn / personal portrait pricing remains on the Portrait page
+(`#portrait-options`). Artistic nude and private personal photography belong
+to BANHALMI ART (Ébredés / private photography).
