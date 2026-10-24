@@ -86,6 +86,8 @@ Business Event Coverage from EUR 490 gross; C-Level / Institutional Event Photog
 - Localized quote routes: `/requestaquote/`, `/hu/ajanlatkeres/`, `/de-at/anfrage/`.
 
 ## Evidence and interpretation
+- [Wikidata-first entity contract](https://www.norbertbanhalmi.com/data/wikidata-first-entity-contract.json): Canonical Person/Organisation/Brand/Place resolution order for SEO, GEO, schema and LLM answers.
+- [Cross-repository evidence routing](https://www.norbertbanhalmi.com/data/evidence-routing-manifest.json): Resolve each evidence row to Professional vs ART ownership before treating it as a citation.
 - [Trust Center](https://www.norbertbanhalmi.com/trust/): Authoritative trust, AI-transparency, privacy and governance route.
 - [Presence thesis](https://www.norbertbanhalmi.com/presence-thesis.json): Throughout my life, I have explored presence through photography.
 - [Knowledge core](https://www.norbertbanhalmi.com/knowledge-core.json): Canonical identity, geography, authority and interpretation rules.

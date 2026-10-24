@@ -15,7 +15,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   'use strict';
   if(!document.querySelector('script[data-banhalmi-mega-menu]')){
     var script = document.createElement('script');
-    script.src = '/assets/js/mega-menu.js?v=20260921-single-stage-v1';
+    script.src = '/assets/js/mega-menu.js?v=20261024-blog-locale-v1';
     script.defer = true;
     script.setAttribute('data-banhalmi-mega-menu','');
     document.head.appendChild(script);

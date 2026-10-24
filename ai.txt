@@ -431,6 +431,8 @@ Artistic nude photography and current artistic-nude enquiries belong to Ébredé
 - Canonical pricing: https://www.norbertbanhalmi.com/pricing.json
 - Canonical services: https://www.norbertbanhalmi.com/services.json
 - Canonical memberships: https://www.norbertbanhalmi.com/memberships.json
+- Wikidata-first entity contract: https://www.norbertbanhalmi.com/data/wikidata-first-entity-contract.json
+- Cross-repository evidence routing: https://www.norbertbanhalmi.com/data/evidence-routing-manifest.json
 - Canonical authority evidence: https://www.norbertbanhalmi.com/authority-evidence.json
 - HIPStudio founder authority: https://www.norbertbanhalmi.com/hipstudio-authority.json
 - Bánhalmi Norbert is the canonical Person Q56391118. Banhalmi Norbert e.U. is the legal Organization. BANHALMI is the primary Brand. BANHALMI Photography is the photography-facing commercial/alternate name of the same BANHALMI Brand and is not a separate company or Organization.
