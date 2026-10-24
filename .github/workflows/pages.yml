@@ -41,6 +41,12 @@ jobs:
           python3 tools/package-pages-artifact.py --site _site --output "$RUNNER_TEMP/artifact.tar" --expected-sha "$GITHUB_SHA"
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
+      - name: Start local Pages server
+        run: |
+          python3 -m http.server 4173 --directory _site > /tmp/banhalmi-pages.log 2>&1 &
+          for attempt in 1 2 3 4 5; do curl --fail --silent http://127.0.0.1:4173/ >/dev/null && exit 0; sleep 1; done
+          cat /tmp/banhalmi-pages.log
+          exit 1
       - name: Run exhaustive browser QA
         run: node tools/audit-browser-layout.mjs
       - name: Run mobile Lighthouse strict 100 gate
