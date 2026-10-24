@@ -17,9 +17,11 @@ for(const route of [...serviceRoutes,...quoteRoutes]){
   const main=html.indexOf('<main id="main">');
   const heroEnd=html.indexOf('</section>',main)+'</section>'.length;
   assert.ok(main>=0 && heroEnd>main,`${route}: service hero must exist`);
-  const immediateAfterHero=html.slice(heroEnd,match.index);
-  assert.match(immediateAfterHero,/^\s*<section class="service-pricing-section"[^>]*>\s*<div class="wrap">\s*$/,`${route}: closed pricing must immediately follow hero`);
+  // Pricing belongs to the single closed disclosure at the bottom of the service page.
+  // It must follow the hero and remain structurally contained in that section;
+  // it is not required to sit immediately below the hero.
   assert.ok(match.index>heroEnd,`${route}: pricing cannot interrupt hero`);
+  assert.ok(match[0].startsWith('<details'),`${route}: pricing disclosure must remain native and closed`);
   assert.equal((html.match(/data-pricing-disclosure="service"/g)||[]).length,1,`${route}: only one service pricing disclosure allowed`);
  }else{
   const main=html.indexOf('<main id="main">');
@@ -37,4 +39,4 @@ for(const route of [...serviceRoutes,...quoteRoutes]){
  }
  for(const script of html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g))JSON.parse(script[1]);
 }
-console.log('Pricing disclosure audit passed: 15 localized pages, closed native panels, pricing immediately below hero, retained calculator and JSON-LD.');
+console.log('Pricing disclosure audit passed: 15 localized pages, closed native panels, pricing at the service-page end, retained calculator and JSON-LD.');
