@@ -9,7 +9,7 @@ for(const [lang,d] of Object.entries(copy)){
  assert.ok(h.includes('/'+d.portrait.replace('index.html','')+'#portrait-options'),lang+' everyday entry reaches the visible price selector');
  assert.ok(portrait.includes('id="portrait-options"')&&portrait.includes(esc(d.portraitLead)),lang+' non-executive meaning is visible');
  assert.ok(portrait.includes('?service=portrait&amp;portrait_mode=headshotcv'),lang+' explicit CV link selects CV, not executive pricing');
- const main=art.slice(art.indexOf('<main'),art.indexOf('</main>')),heroImage=main.search(/<figure\\b[^>]*\\bdata-service-hero-image="(?:performer-portfolio|fine-art-professional)"[^>]*>/),guide=main.indexOf('id="artist-packages-guide"'),professional=main.indexOf('id="professional-portfolio"'),personal=main.indexOf('id="personal-fine-art"'),reviews=main.indexOf('class="reviews-drawer-section"');
+ const main=art.slice(art.indexOf('<main'),art.indexOf('</main>')),heroImage=main.search(/<figure\\b[^>]*\\bdata-service-hero-image="(?:performer-portfolio|fine-art-professional)"[^>]*>/),guide=main.indexOf('id="artist-packages-guide"'),professional=main.indexOf('id="professional-portfolio"'),personal=main.indexOf('id="personal-fine-art"'),reviews=main.search(/<section\\b[^>]*\\bclass="[^"]*\\breviews-drawer-section\\b[^"]*"[^>]*>/);
  assert.ok(heroImage>0&&heroImage<guide&&guide<professional&&professional<personal&&personal<reviews,lang+' professional portfolio comes before the concise ART handoff');
  assert.equal((art.match(/id="artist-packages-guide"/g)||[]).length,1,lang+' existing guide moved, not copied');
  assert.ok(art.includes('id="personal-fine-art"')&&art.includes(d.privateUrl),lang+' personal ART services have the correct owner');
