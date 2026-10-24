@@ -29,13 +29,17 @@ REQUIRED_FILES = frozenset({
 })
 
 
-def digest_file(path: Path) -> str:
+def digest_stream(stream) -> str:
     # hashlib.file_digest needs Python 3.11+; keep a 3.9-compatible path for local/CI hosts.
     digest = hashlib.sha256()
-    with path.open('rb') as stream:
-        for chunk in iter(lambda: stream.read(1024 * 1024), b''):
-            digest.update(chunk)
+    for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+        digest.update(chunk)
     return digest.hexdigest()
+
+
+def digest_file(path: Path) -> str:
+    with path.open('rb') as stream:
+        return digest_stream(stream)
 
 
 def public_manifest(site: Path) -> dict[str, str]:
@@ -107,7 +111,7 @@ def verify_archive(archive: Path, expected: dict[str, str]) -> None:
             if stream is None:
                 raise ValueError(f'Unreadable tar member: {member.name}')
             with stream:
-                actual[name] = hashlib.file_digest(stream, 'sha256').hexdigest()
+                actual[name] = digest_stream(stream)
     missing_dirs = sorted(expected_dirs - seen)
     if missing_dirs:
         raise ValueError(f'Packed artifact missing Pages directories: {missing_dirs}')
