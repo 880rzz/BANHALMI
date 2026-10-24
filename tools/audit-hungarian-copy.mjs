@@ -75,9 +75,10 @@ for (const file of pages) {
   const html = fs.readFileSync(file, 'utf8');
   const hasServiceFooter = html.includes('<summary>Szolgáltatások</summary>');
   if (hasServiceFooter && !html.includes('>Üzleti és vezetői portré<')) failures.push(`${path.relative(root, file)}: approved Hungarian portrait footer label missing`);
-  if (hasServiceFooter && !html.includes('>Brandfotózás és vizuális pozicionálás<')) failures.push(`${path.relative(root, file)}: approved Hungarian brand footer label missing`);
+  if (hasServiceFooter && !html.includes('>Brandfotózás<')) failures.push(`${path.relative(root, file)}: approved Hungarian brand footer label missing`);
   if (html.includes('>üzleti portré &amp; vezetői portré<')) failures.push(`${path.relative(root, file)}: obsolete portrait footer label remains`);
   if (html.includes('>Brand &amp; vizuális pozicionálás<')) failures.push(`${path.relative(root, file)}: obsolete brand footer label remains`);
+  if (html.includes('>Brandfotózás és vizuális pozicionálás<')) failures.push(`${path.relative(root, file)}: obsolete long brand footer label remains`);
 }
 const archiveHtml = read('hu/archivum/index.html');
 if (archiveHtml.includes('Best of')) failures.push('archive metadata: obsolete English Best of phrase remains');
@@ -99,7 +100,7 @@ const approvedMenu = [
   'Válogatás megbízásos sorozatokból és a művészeti archívumból.',
   'Könyvek, kiállítások, projektek és ellenőrizhető háttéranyagok.',
   'Milyen képi feladatra keres megoldást?',
-  'Üzleti portré, vezetői portré és személyes vizuális pozicionálás.',
+  'Üzleti portré, vezetői portré és headshotok.',
   'Egységes képi rendszer vezetőknek, csapatoknak és szervezeteknek.',
   'Visszafogott, helyzetérzékeny fotózás vezetői és vállalati eseményeken.',
   'Válaszok az előkészítésről, a fotózásról, az átadásról és a felhasználási jogokról.',

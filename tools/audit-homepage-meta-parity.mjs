@@ -1,9 +1,9 @@
 import fs from 'node:fs';
 
 const expected = {
-  'index.html': ['BANHALMI | Executive Portrait & Brand Photography | Vienna–Budapest','Executive portraits, headshots, brand photography and C-level event coverage in Vienna and Budapest. Strategic visual positioning for leaders, experts, artists, actors, teams and organisations.'],
-  'hu/index.html': ['BANHALMI | Executive portré és brandfotózás | Bécs–Budapest','Executive portré, headshot és brandfotózás Bécsben és Budapesten. Stratégiai vizuális pozicionálás vezetőknek, szakembereknek, művészeknek, színészeknek és szervezeteknek.'],
-  'de-at/index.html': ['BANHALMI | Executive-Porträt & Brandfotografie | Wien–Budapest','Executive-Porträts, Headshots, Brandfotografie und C-Level-Eventfotografie in Wien und Budapest. Visuelle Positionierung für Führungskräfte, Experten, Künstler, Schauspieler und Organisationen.']
+  'index.html': ['BANHALMI | Executive Portrait & Brand Photography | Vienna–Budapest','Executive portraits, headshots, brand photography and C-level event coverage in Vienna and Budapest — for leaders, experts, artists, actors, teams and organisations.'],
+  'hu/index.html': ['BANHALMI | Executive portré és brandfotózás | Bécs–Budapest','Executive portré, headshot és brandfotózás Bécsben és Budapesten — vezetőknek, szakembereknek, művészeknek, színészeknek és szervezeteknek.'],
+  'de-at/index.html': ['BANHALMI | Executive-Porträt & Brandfotografie | Wien–Budapest','Executive-Porträts, Headshots, Brandfotografie und C-Level-Eventfotografie in Wien und Budapest — für Führungskräfte, Experten, Künstler, Schauspieler und Organisationen.']
 };
 const failures=[];
 function decode(v=''){return v.replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>')}

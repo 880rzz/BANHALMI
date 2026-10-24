@@ -32,13 +32,13 @@ for(const rel of priority){
   for(const[type,label]of uiText(html)){const normalized=label.toLocaleLowerCase(lang).replace(/[.!?:;–—→+]+$/u,'').trim();if(genericUi[lang].has(normalized))failures.push(`${rel}: generic ${type} UI copy "${label}" — /human also covers H1/H2 and controls`)}
 }
 const required=[
-  ['index.html','Photography for clear communication'],
-  ['index.html','Strategic visual positioning is the work.'],
+  ['index.html','Portrait and brand photography in Vienna and Budapest.'],
+  ['index.html','We begin with where the photograph will be used.'],
   ['lifestyle/index.html','For leaders, experts, entrepreneurs, artists and organisations'],
-  ['speier-viko/index.html','Viko Speier — where strategy meets photography'],
-  ['de-at/index.html','Fotografie für klare Kommunikation'],
-  ['de-at/index.html','Die Arbeit ist strategische visuelle Positionierung.'],
-  ['de-at/speier-viko/index.html','Viko Speier — wo Strategie und Fotografie zusammenkommen']
+  ['speier-viko/index.html','Viko Speier — strategy and photography together'],
+  ['de-at/index.html','Porträt- und Brandfotografie in Wien und Budapest.'],
+  ['de-at/index.html','Wir beginnen damit, wo das Bild eingesetzt wird.'],
+  ['de-at/speier-viko/index.html','Viko Speier — Strategie und Fotografie zusammen']
 ];
 for(const [rel,phrase] of required){const h=fs.readFileSync(path.join(root,rel),'utf8');if(!visible(h).includes(phrase))failures.push(`${rel}: approved human copy missing: ${phrase}`)}
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}

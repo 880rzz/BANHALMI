@@ -33,11 +33,11 @@ const executivePositioningCopy = {
   },
   'hu/brand/index.html': {
     heading: 'Más szerephez más vizuális tekintély tartozik.',
-    body: 'Nincs univerzális vezetői kép. Egy alapító, egy tapasztalt banki vezető, egy senior tanácsadó vagy egy új vezetői szerepbe érkező szakember más üzenetet közvetít. A brandfotózást és a vizuális pozicionálást a személyhez, a generációs kommunikációs kontextushoz, a felelősségi szinthez, a szakterülethez, a célközönséghez és a felhasználási csatornákhoz igazítjuk — nem egy általános üzleti portrésablonhoz.'
+    body: 'Nincs univerzális vezetői kép. Egy alapító, egy tapasztalt banki vezető, egy senior tanácsadó vagy egy új vezetői szerepbe érkező szakember más üzenetet közvetít. A brandfotózást a személyhez, a generációs kommunikációs kontextushoz, a felelősségi szinthez, a szakterülethez, a célközönséghez és a felhasználási csatornákhoz igazítjuk — nem egy általános üzleti portrésablonhoz.'
   },
   'de-at/brand/index.html': {
     heading: 'Unterschiedliche Rollen brauchen unterschiedliche visuelle Autorität.',
-    body: 'Es gibt kein universelles Führungsbild. Eine Gründerin oder ein Gründer, eine erfahrene Führungskraft im Banking, ein etablierter Berater oder eine Fachkraft in einer neuen Führungsrolle müssen unterschiedliche Botschaften vermitteln. Wir stimmen Brandfotografie und visuelle Positionierung auf die Person, den generationellen Kommunikationskontext, die Verantwortungsebene, das Fachgebiet, die Zielgruppen und die Nutzungskanäle ab — nicht auf eine allgemeine Business-Porträt-Schablone.'
+    body: 'Es gibt kein universelles Führungsbild. Eine Gründerin oder ein Gründer, eine erfahrene Führungskraft im Banking, ein etablierter Berater oder eine Fachkraft in einer neuen Führungsrolle müssen unterschiedliche Botschaften vermitteln. Wir stimmen Brandfotografie auf die Person, den generationellen Kommunikationskontext, die Verantwortungsebene, das Fachgebiet, die Zielgruppen und die Nutzungskanäle ab — nicht auf eine allgemeine Business-Porträt-Schablone.'
   }
 };
 
