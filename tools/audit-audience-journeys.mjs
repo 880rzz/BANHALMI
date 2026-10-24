@@ -14,7 +14,7 @@ for(const [lang,d] of Object.entries(copy)){
  assert.equal((art.match(/id="artist-packages-guide"/g)||[]).length,1,lang+' existing guide moved, not copied');
  assert.ok(art.includes('id="personal-fine-art"')&&art.includes(d.privateUrl),lang+' personal ART services have the correct owner');
  assert.ok(art.includes(esc(d.artistChoiceLead)),lang+' purpose lead uses consistent formal language');
- assert.ok(art.indexOf('data-professional-package-inclusions')<art.indexOf('<article class="card">',professional),lang+' image inclusions precede duration package choices');
+ assert.ok(art.includes('data-professional-package-inclusions')&&art.indexOf('data-professional-package-inclusions')>professional,lang+' image inclusions are disclosed in the pricing section');
  assert.ok(art.includes(esc(d.professionalIncluded)),lang+' total included images, extras and estimate status are visible');
  assert.ok(art.includes('data-art-quote="professional" href="'+d.quote+'?service=fine-art&amp;art_type=performer"'),lang+' professional portfolio quote handoff');
  assert.ok(art.includes(d.privateUrl),lang+' private portrait/boudoir/lingerie route');
