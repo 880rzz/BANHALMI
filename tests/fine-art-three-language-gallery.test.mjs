@@ -36,3 +36,12 @@ for(const page of pages){
  else assert.deepEqual(sources,baseline,page+": gallery image order differs across languages");
  console.log(page+": gallery "+sources.length+" images, "+restricted.length+" age-gated, hero and parity verified");
 }
+
+// Ensure gallery navigation and keyboard shortcuts cannot bypass the 18+ gate.
+const lightboxScript=readFileSync("assets/js/main.js","utf8");
+assert.match(lightboxScript,/function requestOpen\(index,trigger\)[\s\S]*?isRestricted\(items\[index\]\)&&!ageVerified[\s\S]*?showAgeDialog\(index,trigger\|\|items\[index\]\)/,"restricted image must be gated before opening");
+assert.match(lightboxScript,/universal-lightbox-next[^\n]*requestOpen\(current\+1\)/,"next control must pass through age gate");
+assert.match(lightboxScript,/universal-lightbox-prev[^\n]*requestOpen\(current-1\)/,"previous control must pass through age gate");
+assert.match(lightboxScript,/e\.key===\x27ArrowRight\x27\)requestOpen\(current\+1\)/,"keyboard next must pass through age gate");
+assert.match(lightboxScript,/e\.key===\x27ArrowLeft\x27\)requestOpen\(current-1\)/,"keyboard previous must pass through age gate");
+console.log("18+ gate and gallery navigation source contracts verified");
