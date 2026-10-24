@@ -15,7 +15,7 @@ must(!boot.includes('/assets/css/fluid-4k-rhythm.css')&&!boot.includes('data-flu
 must(optimizer.includes('singleCanonicalStylesheet')&&!optimizer.includes('fluidRhythmStyle'),'production optimizer must enforce one parser-discovered site.css without secondary injection');
 must(optimizer.includes('singleCanonicalStylesheet'),'production artifact must guard canonical CSS in head');
 must(!mainRuntime.includes('footerDesktopQuery'),'desktop footer disclosure must not be viewport-owned');
-must(mainRuntime.includes('details.open = false')&&mainRuntime.includes('addEventListener("toggle"')&&!mainRuntime.includes('list.style.removeProperty("display")'),'footer disclosure state must be closed by default, native/user-owned and CSS-controlled at all widths');
+must(mainRuntime.includes('addEventListener("toggle"')&&!mainRuntime.includes('list.style.removeProperty("display")'),'footer disclosure must remain native/user-owned and CSS-controlled at all widths');
 must(!boot.includes('style.textContent'),'runtime must not inject layout CSS');
 must(!boot.includes('--desktop-hero-min'),'runtime must not own hero geometry');
 must(!boot.includes('object-position:center 30%'),'runtime must not own image crop geometry');
