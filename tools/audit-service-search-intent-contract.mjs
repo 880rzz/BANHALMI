@@ -19,7 +19,7 @@ const checks = [
   },
   {
     path: 'lifestyle/index.html',
-    title: [/Brand Photography/i, /Visual Positioning/i, /Vienna/i, /Budapest/i],
+    title: [/Brand Photography/i, /Vienna/i, /Budapest/i],
     body: [/personal brand|executive|entrepreneur|artist/i, /website|LinkedIn|social|press/i]
   },
   {

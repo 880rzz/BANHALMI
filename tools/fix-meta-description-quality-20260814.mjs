@@ -1,18 +1,18 @@
 import fs from 'node:fs';
 
 const descriptions={
- 'lifestyle/index.html':'Brand photography and visual positioning in Vienna and Budapest for executives, entrepreneurs, artists and personal brands.',
+ 'lifestyle/index.html':'Brand photography in Vienna and Budapest for executives, entrepreneurs, artists and personal brands.',
  'fine-art/index.html':'Fine-art photography in Vienna and Budapest exploring identity, dignity, the body and memory, with private commissions informed by an exhibited oeuvre.',
  'accessibility/index.html':'Accessibility statement for norbertbanhalmi.com covering keyboard access, image alternatives, responsive design, known limitations and support.',
  'trust/index.html':'BANHALMI Trust Center covering privacy, GDPR, responsible AI, image licensing, security, accessibility and transparent project governance.',
  'portrait/index.html':'Executive portrait and headshot photography in Vienna and Budapest for leaders, entrepreneurs and personal brands, built for credible professional use.',
  'contact/index.html':'Contact BANHALMI in Vienna or Budapest to discuss executive portraits, brand photography, C-level events or fine-art commissions.',
- 'hu/brand/index.html':'Brandfotózás és vizuális pozicionálás Bécsben és Budapesten vezetőknek, vállalkozóknak, művészeknek és személyes márkáknak.',
+ 'hu/brand/index.html':'Brandfotózás Bécsben és Budapesten vezetőknek, vállalkozóknak, művészeknek és személyes márkáknak.',
  'hu/portre/index.html':'Executive portré és headshot fotózás Bécsben és Budapesten vezetőknek, vállalkozóknak és személyes márkáknak, hiteles szakmai felhasználásra.',
  'hu/muveszi-fotografia/index.html':'Művészi fotográfia Bécsben és Budapesten az identitás, méltóság, test és emlékezet témáiban, kiállított életműre épülő magánmegbízásokkal.',
  'hu/rendezvenyfotozas/index.html':'C-level eseményfotózás fotós csapattal Bécsben és Budapesten, gyorsan használható sajtó-, vállalati és hosszú távú kommunikációs képanyaggal.',
  'de-at/kontakt/index.html':'Kontakt zu BANHALMI in Wien oder Budapest für Executive-Porträts, Brandfotografie, C-Level-Events und Fine-Art-Projekte.',
- 'de-at/brand/index.html':'Brandfotografie und visuelle Positionierung in Wien und Budapest für Führungskräfte, Unternehmer, Kunstschaffende und persönliche Marken.',
+ 'de-at/brand/index.html':'Brandfotografie in Wien und Budapest für Führungskräfte, Unternehmer, Kunstschaffende und persönliche Marken.',
  'de-at/fine-art/index.html':'Fine-Art-Fotografie in Wien und Budapest zu Identität, Würde, Körper und Erinnerung, mit privaten Aufträgen auf Basis eines ausgestellten Œuvres.',
  'de-at/portrait/index.html':'Executive-Porträt- und Headshot-Fotografie in Wien und Budapest für Führungskräfte, Unternehmer und persönliche Marken mit professionellem Einsatzfokus.',
  'de-at/eventfotografie/index.html':'C-Level-Eventfotografie mit Fototeam in Wien und Budapest für schnell nutzbare Presse-, Unternehmens- und langfristige Kommunikationsbilder.'
