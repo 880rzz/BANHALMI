@@ -28,7 +28,7 @@ function walk(dir,base=dir){
 function hash(file){return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')}
 
 if(!fs.existsSync(artifact)) failures.push(`artifact missing: ${artifact}`);
-const expected=walk(root).filter(x=>x!=='deployment-sha.txt');
+const expected=walk(root).filter(x=>x!=='deployment-sha.txt'&&x!=='.nojekyll');
 const actual=fs.existsSync(artifact)?walk(artifact,artifact).filter(x=>x!=='deployment-sha.txt'):[];
 const expectedSet=new Set(expected),actualSet=new Set(actual);
 
