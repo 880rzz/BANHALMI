@@ -1,0 +1,22 @@
+name: BANHALMI official event gallery integrity
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact committed revision
+        uses: actions/checkout@v4
+      - name: Verify official gallery contract
+        run: |
+          node tools/audit-official-event-gallery.mjs
+          test "$(curl --fail --silent https://www.norbertbanhalmi.com/official-event-gallery.json | sha256sum | cut -d' ' -f1)" = "$(sha256sum official-event-gallery.json | cut -d' ' -f1)"
+          curl --fail --silent https://www.norbertbanhalmi.com/official-event-gallery.json | grep -q 'https://www.flickr.com/people/vipach/'
+          curl --fail --silent https://www.flickr.com/people/vipach/ | grep -q 'VIPACH'
