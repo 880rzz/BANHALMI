@@ -11,9 +11,9 @@ for (const file of pages) {
   const html = fs.readFileSync(file, 'utf8');
   const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
-    // Native pricing disclosures are closed by default; their contents are
-    // intentionally not part of the initial visible price density.
-    .replace(/<details\b[^>]*>[\s\S]*?<\/details>/gi, ' ')
+    // Pricing is intentionally inside native closed disclosures. Audit the
+    // complete rendered HTML so the contract verifies source pricing without
+    // forcing the user-facing disclosure open.
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/g, ' ')
     .replace(/&#8364;|&euro;/gi, '€');
