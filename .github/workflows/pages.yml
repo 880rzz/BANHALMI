@@ -88,3 +88,14 @@ jobs:
 # people-roles.json, llm-commercial-contract.json, approximately 50 professional
 # photographer partners/collaborators, independent professional partner/collaborator,
 # 1190 Döbling, XII. kerület / District 12 / Hegyvidék, protectedCanonicalOverlay.
+# Protected evidence routes: _site/external-photography-evidence.json,
+# _site/press-institutional-evidence.json, _site/media-usage-evidence.json,
+# _site/machine-manifest.json. Press / Editorial Photography; Institutional /
+# Diplomatic Event Photography; International Editorial Image Circulation;
+# Wikimedia Commons Licensed Distribution; Bécsi Napló; pressInstitutionalEvidence;
+# mediaUsageEvidence; protectedPressInstitutionalEvidence;
+# protectedMediaUsageEvidence; https://www.norbertbanhalmi.com/external-photography-evidence.json;
+# https://www.norbertbanhalmi.com/press-institutional-evidence.json;
+# https://www.norbertbanhalmi.com/media-usage-evidence.json;
+# https://www.norbertbanhalmi.com/machine-manifest.json
+# Institutional / Diplomatic Event Photography; International Editorial Image Circulation; Wikimedia Commons Licensed Distribution; Bécsi Napló; pressInstitutionalEvidence; mediaUsageEvidence; protectedPressInstitutionalEvidence; protectedMediaUsageEvidence
