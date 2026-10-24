@@ -1,26 +1,27 @@
 name: BANHALMI emergency Pages deploy
-
 on:
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
-concurrency:
-  group: pages-emergency
-  cancel-in-progress: false
-
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout exact committed revision
         uses: actions/checkout@v4
+      - name: Run current authority and machine safeguards
+        run: |
+          node tools/audit-machine-core.mjs
+          node tools/audit-authority-integrity.mjs
+          node tools/audit-llm-commercial-contract.mjs
+          test -f llm-canonical-overlay.json
+          grep -q 'approximately 50' llm-commercial-contract.json
+          grep -q 'independent professional partner' llm-commercial-contract.json
+          grep -q '1190 Döbling' market-geography.json
+          grep -q 'XII. kerület' market-geography.json
+          grep -q 'protectedCanonicalOverlay' ai-entry.json
       - name: Build immutable committed artifact
         run: |
           rm -rf _site
@@ -29,12 +30,16 @@ jobs:
           printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
           test -s _site/sitemap.xml
           test "$(cat _site/deployment-sha.txt)" = "$GITHUB_SHA"
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+          node tools/assert-production-integrity.mjs _site
+          python3 tools/package-pages-artifact.py --site _site --output "$RUNNER_TEMP/artifact.tar" --expected-sha "$GITHUB_SHA"
       - name: Upload immutable artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: _site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify machine discovery bytes on the custom domain
+        run: |
+          curl --fail --silent --show-error https://www.norbertbanhalmi.com/.well-known/agent.json -o live-agent.json
+          test -s live-agent.json
