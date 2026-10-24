@@ -1,0 +1,19 @@
+name: BANHALMI production topology contract
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  topology:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify GitHub Pages primary and Vercel legacy redirects
+        run: node tools/audit-production-topology.mjs
