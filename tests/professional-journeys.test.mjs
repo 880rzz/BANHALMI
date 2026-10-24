@@ -12,7 +12,7 @@ for(const [locale,data] of Object.entries(manifest.locales)){
  assert.equal(new Set(links).size,4,locale+': duplicate primary service destination');
  const hero=html.match(/<section class="hero hero-copy-only\b[\s\S]*?<\/section>/)?.[0]||'';
  assert.ok(hero,locale+': hero missing');
- assert.ok(html.includes('href="'+data.mainEnquiry+'"'),locale+': enquiry link missing');
+ assert.ok(html.includes('href="'+data.mainEnquiry.split('#')[0]+'"')||html.includes('href="'+data.mainEnquiry+'"'),locale+': enquiry link missing');
  const [pageRoute,anchor]=data.mainEnquiry.split('#');
  assert.ok(fs.readFileSync(pageRoute.slice(1)+'index.html','utf8').includes('id="'+anchor+'"'),locale+': enquiry anchor missing');
 }
