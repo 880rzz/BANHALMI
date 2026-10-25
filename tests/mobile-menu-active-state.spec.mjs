@@ -73,6 +73,32 @@ test('first mobile tap opens immediately with single-stage menu runtime', async 
   expect(menuRequests).toBeLessThanOrEqual(1);
 });
 
+test('mobile menu drops empty pricing/about heads and keeps one journal +', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  await page.locator('.menu-btn').click();
+  const menu = page.locator('#bn-mega-menu[aria-hidden="false"]');
+  await expect(menu).toBeVisible();
+  const heads = await menu.locator('.bn-mega-section-head > span').allTextContents();
+  expect(heads.map(t => t.trim().toLowerCase())).not.toEqual(
+    expect.arrayContaining(['pricing · quote', 'about · contact'])
+  );
+  expect(heads.some(t => /pricing\s*·\s*quote/i.test(t))).toBe(false);
+  expect(heads.some(t => /about\s*·\s*contact/i.test(t))).toBe(false);
+  await expect(menu.locator('.bn-mega-pricing .bn-mega-link')).toHaveText('Pricing & packages');
+  await expect(menu.locator('.bn-mega-footer .bn-mega-link').first()).toHaveText('About BANHALMI');
+  const journal = menu.locator('details.bn-mega-journal');
+  await expect(journal).toBeVisible();
+  const summary = journal.locator('summary');
+  const marker = await summary.evaluate(node => {
+    const pseudo = getComputedStyle(node, '::after').content;
+    const explicit = [...node.querySelectorAll('[aria-hidden="true"]')]
+      .filter(child => ['+', '−', '–'].includes((child.textContent || '').trim())).length;
+    return { pseudo, explicit };
+  });
+  expect(marker.pseudo).toBe('"+"');
+  expect(marker.explicit).toBe(0);
+});
+
 
 test('review drawer exposes a visible disclosure chevron', async ({ page }) => {
   await page.goto('/portrait/', { waitUntil: 'domcontentloaded' });

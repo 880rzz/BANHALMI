@@ -6937,12 +6937,8 @@ html body .bn-mega-journal > summary{
 }
 html body .bn-mega-journal > summary::-webkit-details-marker{display:none}
 html body .bn-mega-journal-title{font-weight:650}
-html body .bn-mega-journal-mark{
-  font-size:1.25rem;
-  font-weight:400;
-  line-height:1;
-  color:var(--bn-menu-gold,#B79C44);
-}
+/* Shared disclosure ::after is the only +/− marker — no HTML twin. */
+html body .bn-mega-journal > summary::after{color:var(--bn-menu-gold,#B79C44);}
 html body .bn-mega-journal-desc{
   margin:0.45rem 0 0.75rem;
   color:var(--bn-menu-muted,#b0b0b5);
@@ -7128,7 +7124,7 @@ html body .bn-mega-journal > summary{
   color:rgba(244,241,234,.78);
   letter-spacing:.12em;
 }
-html body .bn-mega-journal-mark{color:#e3c552;}
+html body .bn-mega-journal > summary::after{color:#e3c552;}
 body.bn-mega-open .site-header{
   background:#1a1e27;
   border-bottom-color:rgba(227,197,82,.18);
