@@ -50,3 +50,14 @@ Diff inventory: `docs/content-audit-before-after.csv`
 | IPTC binary tagging | **Out of scope** | |
 
 **Verdict:** voice/first-principles cleanup for Professional entry and service surfaces is complete for this brief, including the previously deferred H1 rewrite.
+
+## Runtime QA follow-up 2026-10-25 night
+
+| Change | Decision | Note |
+|---|---|---|
+| Fine-art pricing `.prose` past card edge on phones | **Fix** | `width:calc(100% - 36px)` + matching margin for pricing children at `max-width:760px` (and 761–899); CSS token `runtime-qa-v3` |
+| Event hero CTAs | **Align** to `#next-step` / `#selected-work` | Matches other service pages; keeps conversion e2e |
+| `href="#event-flickr-gallery"` | **Keep** as in-page jump from event-film copy | Flickr evidence audit + ID retained |
+| Footer disclosure markers | **Expect `+`/`−` on mobile** | Matches FOOTER-DISCLOSURE-ICON-CONTRACT |
+| Portrait measured H1s | **Voice candidates** | Tests updated |
+| Persona-path homepage doors | **Service cards** | Removed retired `data-persona-path` expectations |

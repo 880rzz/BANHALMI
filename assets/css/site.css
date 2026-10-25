@@ -6611,6 +6611,13 @@ html body main .service-gallery-section .service-lower-gallery-grid{margin-top:0
     max-width:none;
     min-width:0;
   }
+  /* Pricing panels already inset direct children; do not stretch .prose to 100% + margins. */
+  html body main .service-pricing-section .quote-decision-guide > .prose{
+    width:calc(100% - 60px);
+    max-width:calc(100% - 60px);
+    margin-inline:30px;
+    box-sizing:border-box;
+  }
   html body main .service-pricing-section .service-price-examples li{
     grid-template-columns:minmax(0,1fr);
     min-width:0;
@@ -6660,11 +6667,24 @@ html body main .service-gallery-section .service-lower-gallery-grid{margin-top:0
     word-break:normal;
   }
 }
-/* Pricing disclosures stay narrow-safe below the tablet reading breakpoint. */
-@media (min-width:761px) and (max-width:899px){
-  html body main .service-pricing-section .quote-decision-guide > :not(summary){
+/* Pricing disclosures stay narrow-safe on phones and below the tablet reading breakpoint.
+   Base .prose width:min(100%) + margin-inline otherwise sticks past the card edge. */
+@media (max-width:760px){
+  html body main .service-pricing-section .quote-decision-guide > :not(summary),
+  html body main .service-pricing-section .quote-decision-guide > .prose{
     width:calc(100% - 36px);
+    max-width:calc(100% - 36px);
     margin-inline:18px;
+    box-sizing:border-box;
+  }
+}
+@media (min-width:761px) and (max-width:899px){
+  html body main .service-pricing-section .quote-decision-guide > :not(summary),
+  html body main .service-pricing-section .quote-decision-guide > .prose{
+    width:calc(100% - 36px);
+    max-width:calc(100% - 36px);
+    margin-inline:18px;
+    box-sizing:border-box;
   }
 }
 

@@ -9,23 +9,21 @@ const pages = [
 ];
 
 const personaHomes = [
-  { path: '/', artist: '/fine-art/', quote: '/requestaquote/?service=event', artistText: 'Artists & performers', organizerText: 'I am organising photography for someone else' },
-  { path: '/hu/', artist: '/hu/muveszi-fotografia/', quote: '/hu/ajanlatkeres/?service=event', artistText: 'Művészek és előadók', organizerText: 'Másnak szervezem a fotózást' },
-  { path: '/de-at/', artist: '/de-at/fine-art/', quote: '/de-at/anfrage/?service=event', artistText: 'Kunst & Performance', organizerText: 'Ich organisiere das Shooting für andere' }
+  { path: '/', artist: '/fine-art/', artistText: 'Artists & Performers' },
+  { path: '/hu/', artist: '/hu/muveszi-fotografia/', artistText: 'Művészek és előadók' },
+  { path: '/de-at/', artist: '/de-at/fine-art/', artistText: 'Kunstschaffende' }
 ];
 
 for (const home of personaHomes) {
-  test(`artist and organiser entry paths stay distinct: ${home.path}`, async ({ page }) => {
+  test(`artist service remains a first-class homepage door: ${home.path}`, async ({ page }) => {
     await page.goto(home.path);
-    const artist = page.locator('[data-persona-path="artist-portfolio"]');
-    const organizer = page.locator('[data-persona-path="organizer"]');
-    await expect(artist).toHaveAttribute('href', home.artist+'#artist-packages-guide');
-    await expect(artist).toContainText(home.artistText);
-    await expect(organizer).toHaveAttribute('href', home.quote);
-    await expect(organizer).toContainText(home.organizerText);
+    await expect(page.locator('[data-persona-path]')).toHaveCount(0);
+    const artist = page.locator(`#services a.card[href="${home.artist}"]`);
+    await expect(artist).toBeVisible();
+    await expect(artist.locator('h3')).toContainText(new RegExp(home.artistText, 'i'));
     await artist.click();
-    await expect(page).toHaveURL(home.artist+'#artist-packages-guide');
-    await expect(page.locator('#artist-packages-guide')).toBeVisible();
+    await expect(page).toHaveURL(new RegExp(home.artist.replace(/\//g, '\\/') + '$'));
+    await expect(page.locator('h1')).toBeVisible();
   });
 }
 
@@ -44,22 +42,25 @@ for (const path of pages) {
         const isFooterDisclosure = await details.evaluate(node => node.matches('.site-footer .footer-accordion'));
         checked += 1;
         if (isFooterDisclosure) {
-          // Desktop is an always-expanded information column; compact screens
-          // preserve native pointer/keyboard disclosures without visual markers.
+          // Desktop keeps footer groups open as columns (no mobile +/− affordance).
+          // Compact screens use the gold trailing +/− contract in site.css.
           const marker = await summary.evaluate(node => getComputedStyle(node, '::after').content);
-          expect(['none', 'normal', '""']).toContain(marker);
           if (width >= 721) {
+            expect(['none', 'normal', '""']).toContain(marker);
             await expect(details).toHaveJSProperty('open', true);
             await expect(summary).toHaveAttribute('aria-expanded', 'true');
             await expect(summary).toHaveAttribute('tabindex', '-1');
             await expect(details.locator('a').first()).toBeVisible();
           } else {
+            expect(marker).toBe('"+"');
             await expect(details).toHaveJSProperty('open', false);
             await expect(summary).not.toHaveCSS('pointer-events', 'none');
             await expect(summary).toHaveAttribute('aria-expanded', 'false');
             await summary.click();
             await expect(details).toHaveJSProperty('open', true);
             await expect(summary).toHaveAttribute('aria-expanded', 'true');
+            const openMarker = await summary.evaluate(node => getComputedStyle(node, '::after').content);
+            expect(openMarker).toBe('"−"');
             await summary.focus();
             await page.keyboard.press('Space');
             await expect(details).toHaveJSProperty('open', false);
