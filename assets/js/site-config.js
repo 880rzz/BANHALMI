@@ -105,15 +105,15 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
         failed:'The request could not be sent. Please try again or email hello@norbertbanhalmi.com.'
       },
       hu: {
-        invalid:'Kérlek ellenőrizd a kiemelt mezőket.',
+        invalid:'Kérem, ellenőrizze a kiemelt mezőket.',
         required:'A mező kitöltése kötelező.',
-        email:'Kérlek adj meg érvényes e-mail címet.',
-        phone:'Kérlek adj meg érvényes telefonszámot.',
-        consent:'Kérlek erősítsd meg a szükséges hozzájárulást.',
-        date:'Kérlek jövőbeli dátumot válassz.',
+        email:'Kérem, adjon meg érvényes e-mail címet.',
+        phone:'Kérem, adjon meg érvényes telefonszámot.',
+        consent:'Kérem, erősítse meg a szükséges hozzájárulást.',
+        date:'Kérem, jövőbeli dátumot válasszon.',
         sending:'Küldés…',
-        sent:'Köszönöm. Az ajánlatkérésed megérkezett.',
-        failed:'Az ajánlatkérés nem küldhető el. Próbáld újra, vagy írj a hello@norbertbanhalmi.com címre.'
+        sent:'Köszönöm. Az ajánlatkérése megérkezett.',
+        failed:'Az ajánlatkérés nem küldhető el. Próbálja újra, vagy írjon a hello@norbertbanhalmi.com címre.'
       },
       de: {
         invalid:'Bitte prüfen Sie die markierten Felder.',
