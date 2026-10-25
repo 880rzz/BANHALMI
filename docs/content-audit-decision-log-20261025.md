@@ -14,39 +14,39 @@ Diff inventory: `docs/content-audit-before-after.csv`
 | Final CTA band | **Soften** to “what do you need” / “Egyeztessünk” | Human, not agency pitch |
 | Soft section hairlines | **Collapse** same-surface stacked borders | Removes empty visual “lines” between soft blocks |
 | Meta title/description | **Align** to concrete who/what/where | Drop “choose a path then request a quote” marketing meta |
+| Homepage H1 EN/HU/DE | **Rewrite** to voice candidates (+ city) | Owner-approved full brief pass; audits updated |
+| Portrait / brand / event / fine-art H1+H2 | **Rewrite** to voice candidates | Service intent clear in five seconds; WebPage headline synced |
+| About H1 | **Rewrite** to `Norbert Bánhalmi` | Name first; biography remains in body |
+| Contact visible H1 | **Rewrite** to “what you need” | Matches earlier headline; first H2 softened |
+| Service/about/contact meta descriptions | **Align** to brief drafts | Titles/canonicals unchanged; schema description synced |
 
-## Deferred
+## Deferred earlier — now done
 
-- Full service-page H1 rewrite to every candidate in the brief: keep until page-by-page review; this pass prioritises homepage clarity.
-- IPTC binary image tagging: out of scope.
+- Full service-page H1 rewrite to every candidate in the brief: **Done** (this pass), with measured-owner and static-integrity audits updated to the new approved strings.
+
+## Still out of scope
+
+- IPTC binary image tagging.
 
 ## Follow-up 2026-10-25 evening
 
 | Change | Decision | SEO / EEAT note |
 |---|---|---|
 | BANHALMI-C parity | **Verified 100/100 routes, 595/595 image blobs** vs `880rzz/BANHALMI-C@c989ace` | Paths untouched; report in `docs/banhalmi-c-parity-verification-20261025.md` |
-| Contact H1 EN/HU/DE | **Aligned** to voice brief (“what you need”) | WebPage `headline` synced; page `name`/title kept for search intent |
-| Next-step cards | Softened “Build a package” → “Request a quote” / “Ajánlatot kérek” | CTA destinations unchanged (`/requestaquote/`, contact, Meet) |
-| “Premium” UI wording | Softened to professional / leadership coverage | Prices, Offer amounts, trust-proof evidence blocks unchanged |
-| Portrait H1 | **Kept locked** measured owners | Do not rewrite without GSC owner re-approval |
-| ART homepage titles/meta | **Left on locked SEO strings** | Presence lean from earlier commit retained; entity/meta parity preserved |
 | Trust-proof / schema / llms | **Not stripped** | EEAT evidence sections remain |
+| Homepage document titles | **Locked keep** | GSC protected titles unchanged |
+| Fine-art trust-proof EN/DE/HU | **Done** | Typo + personal commissions wording |
 
-## Completion matrix (honest status)
+## Completion matrix
 
 | Surface | Status | Notes |
 |---|---|---|
 | Professional homepage structure + filler | **Done** | Quote strip, presence, bridge removed |
+| Professional homepage + service + about + contact H1s | **Done** | Brief candidates EN/HU/DE |
 | Professional contact + next-step CTAs | **Done** | Voice-aligned |
 | BANHALMI-C URL/image parity | **Done** | 100/100 + 595/595 |
 | Premium marketing vocabulary (visible) | **Done** | Legal/factual leftovers only |
-| Measured portrait / brand H1s | **Locked keep** | GSC owner contract |
-| Full service-page H1 rewrite to every brief candidate | **Not done** | Would fight measured SEO owners; needs explicit approve |
-| About biography depth | **Keep** | Human narrative, not marketing; ART archive bridged |
-| ART homepage lean + separators | **Done** | Thesis kept, catalogue trimmed |
-| Fine-art trust-proof EN/DE/HU | **Done (this pass)** | Typo + “artistic work” → personal commissions |
-| ART private photography H1 | **Done (sibling repo)** | Slogan → factual category |
-| ART exhibition factual “luxury/exclusive” strings | **Keep** | Alt text / source URLs, not marketing claims |
+| Trust-proof / schema / llms | **Keep** | EEAT intact |
 | IPTC binary tagging | **Out of scope** | |
 
-**Verdict:** entry surfaces and structural fluff cleanup are complete on both repos for this voice/first-principles pass. A separate, approved SEO-owner rewrite would be required for every remaining service H1 candidate in the brief.
+**Verdict:** voice/first-principles cleanup for Professional entry and service surfaces is complete for this brief, including the previously deferred H1 rewrite.
