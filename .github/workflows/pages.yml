@@ -75,11 +75,22 @@ jobs:
         run: npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.desktop.cjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
+      # upload-pages-artifact@v4 drops dotfiles (including .nojekyll / .well-known)
+      # even with include-hidden-files: true. Ship the packager-verified tar instead.
+      - name: Prove deployable tar retains machine discovery files
+        run: |
+          tar -tf "$RUNNER_TEMP/artifact.tar" | grep -Fx './.nojekyll'
+          tar -tf "$RUNNER_TEMP/artifact.tar" | grep -Fx './.well-known/agent.json'
+          tar -xOf "$RUNNER_TEMP/artifact.tar" './.well-known/agent.json' > /tmp/packed-agent.json
+          cmp -s .well-known/agent.json /tmp/packed-agent.json
+          echo "Verified tar retains .nojekyll and exact agent.json bytes"
       - name: Upload the exact audited Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
-          path: _site
-          include-hidden-files: true
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
