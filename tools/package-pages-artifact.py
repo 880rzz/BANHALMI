@@ -14,7 +14,8 @@ import re
 import tarfile
 from pathlib import Path
 
-PUBLIC_HIDDEN_FILES = frozenset({'.well-known/agent.json'})
+# .nojekyll must ship so GitHub Pages does not run Jekyll and drop .well-known/.
+PUBLIC_HIDDEN_FILES = frozenset({'.well-known/agent.json', '.nojekyll'})
 INTERNAL_HIDDEN_FILES = frozenset({'docs/.responsive-4k-audit-ready', '.gitignore'})
 # Source-only audit snapshots must remain in Git, never in the public Pages archive.
 INTERNAL_SOURCE_ONLY_FILES = frozenset({
@@ -23,7 +24,7 @@ INTERNAL_SOURCE_ONLY_FILES = frozenset({
 })
 FORBIDDEN_ROOTS = frozenset({'.git', '.github', 'node_modules', '_site', 'tools', 'tests', 'artifacts'})
 REQUIRED_FILES = frozenset({
-    'deployment-sha.txt', '.well-known/agent.json',
+    'deployment-sha.txt', '.nojekyll', '.well-known/agent.json',
     'api/v1/identity.json', 'api/v1/services.json',
     'api/v1/locations.json', 'api/v1/actions.json',
 })

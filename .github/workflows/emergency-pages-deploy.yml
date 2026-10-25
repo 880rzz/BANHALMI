@@ -27,12 +27,29 @@ jobs:
           rm -rf _site
           mkdir _site
           git archive --format=tar HEAD | tar -xf - -C _site
-          rm -rf _site/.git _site/.github _site/tools _site/tests _site/node_modules _site/artifacts _site/_site _site/package.json _site/package-lock.json _site/.nojekyll
+          # Keep committed .nojekyll so Pages does not run Jekyll and drop .well-known/.
+          rm -rf _site/.git _site/.github _site/tools _site/tests _site/node_modules _site/artifacts _site/_site _site/package.json _site/package-lock.json
           rm -f _site/.gitignore _site/docs/.responsive-4k-audit-ready
           find _site -name .DS_Store -type f -delete
           printf '%s\n' "$GITHUB_SHA" > _site/deployment-sha.txt
+          test -f _site/.nojekyll
+          test -s _site/.well-known/agent.json
+          cmp -s .nojekyll _site/.nojekyll
+          cmp -s .well-known/agent.json _site/.well-known/agent.json
           test -s _site/sitemap.xml
           test "$(cat _site/deployment-sha.txt)" = "$GITHUB_SHA"
+          python3 - <<'PY'
+          from pathlib import Path
+          site = Path('_site')
+          required = ['.nojekyll', '.well-known/agent.json']
+          missing = [name for name in required if not (site / name).is_file()]
+          if missing:
+              raise SystemExit('Pages artifact missing required discovery files: ' + ', '.join(missing))
+          print('Artifact discovery files present:', ', '.join(required))
+          for path in sorted(site.rglob('*')):
+              if path.is_file():
+                  print(path.relative_to(site).as_posix())
+          PY
           node tools/assert-production-integrity.mjs _site
           python3 tools/package-pages-artifact.py --site _site --output "$RUNNER_TEMP/artifact.tar" --expected-sha "$GITHUB_SHA"
       - name: Upload immutable artifact
@@ -45,5 +62,17 @@ jobs:
         uses: actions/deploy-pages@v4
       - name: Verify machine discovery bytes on the custom domain
         run: |
-          curl --fail --silent --show-error https://www.norbertbanhalmi.com/.well-known/agent.json -o live-agent.json
-          test -s live-agent.json
+          for attempt in 1 2 3 4 5 6; do
+            agent_code="$(curl -sS -o live-agent.json -w '%{http_code}' -L https://www.norbertbanhalmi.com/.well-known/agent.json || true)"
+            nojekyll_code="$(curl -sS -o /dev/null -w '%{http_code}' -L https://www.norbertbanhalmi.com/.nojekyll || true)"
+            if [ "$agent_code" = "200" ] && [ "$nojekyll_code" = "200" ] && cmp -s .well-known/agent.json live-agent.json; then
+              curl -sS -I -L https://www.norbertbanhalmi.com/.well-known/agent.json | tr -d '\r'
+              curl -sS -I -L https://www.norbertbanhalmi.com/.nojekyll | tr -d '\r'
+              echo "Live agent.json matches committed source bytes for $GITHUB_SHA"
+              exit 0
+            fi
+            echo "attempt=$attempt agent_http=$agent_code nojekyll_http=$nojekyll_code"
+            sleep 20
+          done
+          echo "Machine discovery exact-live gate failed for $GITHUB_SHA"
+          exit 1

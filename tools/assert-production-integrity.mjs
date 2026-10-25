@@ -34,7 +34,7 @@ function walk(dir,base=dir){
 function hash(file){return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')}
 
 if(!fs.existsSync(artifact)) failures.push(`artifact missing: ${artifact}`);
-const expected=walk(root).filter(x=>x!=='deployment-sha.txt'&&x!=='.nojekyll');
+const expected=walk(root).filter(x=>x!=='deployment-sha.txt');
 const actual=fs.existsSync(artifact)?walk(artifact,artifact).filter(x=>x!=='deployment-sha.txt'):[];
 const expectedSet=new Set(expected),actualSet=new Set(actual);
 
@@ -45,6 +45,9 @@ for(const rel of expected){
   const src=path.join(root,rel),dst=path.join(artifact,rel);
   if(hash(src)!==hash(dst)) failures.push(`artifact byte drift: ${rel}`);
 }
+
+if(!actualSet.has('.nojekyll')) failures.push('artifact missing required .nojekyll (Jekyll must stay disabled for .well-known/agent.json)');
+if(!actualSet.has('.well-known/agent.json')) failures.push('artifact missing required .well-known/agent.json');
 
 const shaFile=path.join(artifact,'deployment-sha.txt');
 if(!fs.existsSync(shaFile)) failures.push('deployment-sha.txt missing from artifact');

@@ -25,7 +25,12 @@ class PagesArtifactTests(unittest.TestCase):
         self.site.mkdir()
         self.archive = self.root / 'artifact.tar'
         for name in PACKAGER.REQUIRED_FILES:
-            self.write(name, (SHA + '\n').encode() if name == 'deployment-sha.txt' else b'{"public":true}\n')
+            if name == 'deployment-sha.txt':
+                self.write(name, (SHA + '\n').encode())
+            elif name == '.nojekyll':
+                self.write(name, b'')
+            else:
+                self.write(name, b'{"public":true}\n')
         self.write('index.html', b'<h1>BANHALMI</h1>\n')
         self.write('hu/index.html', '<h1>Portr\u00e9</h1>\n'.encode())
 
@@ -41,13 +46,16 @@ class PagesArtifactTests(unittest.TestCase):
     def test_preserves_discovery_and_all_visible_file_bytes(self):
         report = self.pack()
         with tarfile.open(self.archive) as archive:
-            self.assertIn('./.well-known/agent.json', archive.getnames())
+            names = archive.getnames()
+            self.assertIn('./.well-known/agent.json', names)
+            self.assertIn('./.nojekyll', names)
             for member in archive:
                 if member.isfile():
                     self.assertTrue(member.name.startswith('./'))
                     self.assertEqual(archive.extractfile(member).read(), (self.site / member.name[2:]).read_bytes())
         self.assertTrue(report['byte_identity_verified'])
         self.assertEqual(report['expected_commit'], SHA)
+        self.assertEqual(report['preserved_hidden_files'], ['.nojekyll', '.well-known/agent.json'])
 
     def test_source_is_not_changed(self):
         before = {p.relative_to(self.site): p.read_bytes() for p in self.site.rglob('*') if p.is_file()}
@@ -62,8 +70,11 @@ class PagesArtifactTests(unittest.TestCase):
         self.write('docs/.responsive-4k-audit-ready', b'ready')
         self.pack()
         with tarfile.open(self.archive) as archive:
-            hidden_files = [m.name for m in archive if m.isfile() and any(p.startswith('.') for p in Path(m.name[2:]).parts)]
-            self.assertEqual(hidden_files, ['./.well-known/agent.json'])
+            hidden_files = sorted(
+                m.name for m in archive
+                if m.isfile() and any(p.startswith('.') for p in Path(m.name[2:]).parts)
+            )
+            self.assertEqual(hidden_files, ['./.nojekyll', './.well-known/agent.json'])
             self.assertNotIn('./.gitignore', archive.getnames())
 
     def test_source_only_evidence_audit_ledgers_are_not_published(self):
@@ -80,6 +91,7 @@ class PagesArtifactTests(unittest.TestCase):
             self.assertIn('./docs/release-checklist.md', names)
             self.assertIn('./press-institutional-evidence.json', names)
             self.assertIn('./.well-known/agent.json', names)
+            self.assertIn('./.nojekyll', names)
         self.assertTrue(report['byte_identity_verified'])
 
     def test_source_only_audit_ledgers_are_hidden_from_branch_pages_build(self):
@@ -123,6 +135,11 @@ class PagesArtifactTests(unittest.TestCase):
 
     def test_missing_discovery_file_is_rejected(self):
         (self.site / '.well-known/agent.json').unlink()
+        with self.assertRaisesRegex(ValueError, 'Missing required discovery'):
+            self.pack()
+
+    def test_missing_nojekyll_is_rejected(self):
+        (self.site / '.nojekyll').unlink()
         with self.assertRaisesRegex(ValueError, 'Missing required discovery'):
             self.pack()
 
@@ -171,6 +188,7 @@ class PagesArtifactTests(unittest.TestCase):
             self.assertIn('./index.html', names)
             self.assertIn('./.well-known', names)
             self.assertIn('./.well-known/agent.json', names)
+            self.assertIn('./.nojekyll', names)
             self.assertNotIn('index.html', names)
 
     def test_official_v4_exclusion_reproduces_missing_discovery(self):
