@@ -177,4 +177,4 @@ Severity: P0 factual/legal/intent misrepresentation; P1 primary page comprehensi
 - Full email bodies and longitudinal consistency of tone across multiple years.
 - Whether every proposed service is a standalone page or a section.
 
-**Status: editorial strategy and candidate copy prepared; repository-level before/after audit remains pending.**
+**Status: entry-surface cleanup shipped on BANHALMI #45 and ART #300 (2026-10-25). Full service/project H1 rewrite to every candidate below remains deferred pending SEO-owner approval.**
