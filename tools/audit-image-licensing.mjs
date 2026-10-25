@@ -3,6 +3,9 @@ import path from "node:path";
 
 const ROOT=process.cwd();
 const PERSON="https://www.norbertbanhalmi.com/about/";
+const EXPECTED_CREDIT="Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography";
+const EXPECTED_NOTICE="© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.";
+const EXPECTED_NOTICE_CC="© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. Licensed under CC BY-SA 4.0.";
 const TERMS="https://www.norbertbanhalmi.com/terms-conditions/";
 const ACQUIRE="https://www.norbertbanhalmi.com/requestaquote/";
 const MIRRORS=[["data/image-catalog.json","assets/data/image-catalog.json"],["data/fine-art-archive.json","assets/data/fine-art-archive.json"]];
@@ -40,6 +43,8 @@ for(const x of items){
  for(const f of ["creator","copyrightHolder","copyrightNotice","creditText","license","acquireLicensePage"]) if(!x[f]) fail(`${key} missing ${f}`);
  if(x.creator?.["@id"]!==PERSON) fail(`${key} creator drift`);
  if(x.copyrightHolder?.["@id"]!==PERSON) fail(`${key} copyrightHolder drift`);
+ if(x.creditText!==EXPECTED_CREDIT) fail(`${key} creditText drift`);
+ if(x.copyrightNotice!==EXPECTED_NOTICE && x.copyrightNotice!==EXPECTED_NOTICE_CC && x.copyrightNotice!==`© ${EXPECTED_CREDIT}. Minden jog fenntartva.` && x.copyrightNotice!==`© ${EXPECTED_CREDIT}. Alle Rechte vorbehalten.`) fail(`${key} copyrightNotice drift`);
  if(typeof x.license!=="string"||!x.license.trim()) fail(`${key} empty license`);
  if(typeof x.acquireLicensePage!=="string"||!x.acquireLicensePage.trim()) fail(`${key} empty acquireLicensePage`);
  if(x.license===x.acquireLicensePage) fail(`${key} license and acquireLicensePage must differ`);
@@ -59,6 +64,8 @@ for(const x of media){
  for(const f of ["creator","copyrightHolder","copyrightNotice","creditText","license","acquireLicensePage"]) if(!x[f]) fail(`${key} missing ${f}`);
  if(x.creator?.["@id"]!==PERSON) fail(`${key} creator drift`);
  if(x.copyrightHolder?.["@id"]!==PERSON) fail(`${key} copyrightHolder drift`);
+ if(x.creditText!==EXPECTED_CREDIT) fail(`${key} creditText drift`);
+ if(x.copyrightNotice!==EXPECTED_NOTICE && x.copyrightNotice!==EXPECTED_NOTICE_CC && x.copyrightNotice!==`© ${EXPECTED_CREDIT}. Minden jog fenntartva.` && x.copyrightNotice!==`© ${EXPECTED_CREDIT}. Alle Rechte vorbehalten.`) fail(`${key} copyrightNotice drift`);
  if(x.license!==TERMS) fail(`${key} license-policy URL drift`);
  if(x.acquireLicensePage!==ACQUIRE) fail(`${key} acquire-license URL drift`);
 }
