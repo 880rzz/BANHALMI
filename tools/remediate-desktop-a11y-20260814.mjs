@@ -7,8 +7,8 @@ const patch=`
 /* DESKTOP-A11Y-REMEDIATION-20260814:START */
 /* Lighthouse/browser-confirmed contrast, touch-target, wrapping and link distinctions. */
 html body [data-surface="dark"] .section-head :is(h1,h2,h3){color:#F5F5F7!important;}
-html body [data-surface="dark"] .section-head :is(.eyebrow,.label,.kicker){color:#DCC56B!important;}
-html body .site-footer .brand .brand-word{color:#DCC56B!important;}
+html body [data-surface="dark"] .section-head :is(.eyebrow,.label,.kicker){color:var(--gold)!important;}
+html body .site-footer .brand .brand-word{color:var(--gold)!important;}
 html body main :is(.section,.section-band) p a:not(.btn):not(.btn-link){
   text-decoration:underline!important;
   text-underline-offset:.18em!important;
@@ -29,10 +29,10 @@ html body .presence-thesis[data-surface="dark"]{
   color:#F5F5F7!important;
 }
 html body .presence-thesis[data-surface="dark"] :is(h1,h2,h3,p){color:#F5F5F7!important;}
-html body .presence-thesis[data-surface="dark"] :is(.eyebrow,.title-accent){color:#DCC56B!important;}
+html body .presence-thesis[data-surface="dark"] :is(.eyebrow,.title-accent){color:var(--gold)!important;}
 html body .presence-thesis[data-surface="dark"] .btn-link{color:#F5F5F7!important;}
 html body .presence-thesis[data-surface="dark"] .btn-link:hover,
-html body .presence-thesis[data-surface="dark"] .btn-link:focus-visible{color:#DCC56B!important;}
+html body .presence-thesis[data-surface="dark"] .btn-link:focus-visible{color:var(--gold)!important;}
 /* Long legal URLs, Austrian identifiers and German compounds may wrap on narrow
    screens; ordinary prose remains unaffected because overflow-wrap only acts
    when a token cannot otherwise fit. */
