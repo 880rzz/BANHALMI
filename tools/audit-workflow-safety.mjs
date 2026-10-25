@@ -53,8 +53,9 @@ for (const mutator of ['optimize-production-artifact.mjs _site','restore-product
   if (pages.includes(mutator)) errors.push(`pages.yml must not mutate the deploy artifact: ${mutator}`);
 }
 
-// Validate the packaging boundary too: upload-pages-artifact@v4 silently
-// drops .well-known even when the pre-upload directory passed integrity.
+// Validate the packaging boundary: upload-pages-artifact@v4 silently drops
+// .well-known / .nojekyll even with include-hidden-files: true. Deploy must
+// upload the packager-verified tar (same contract as ART).
 for(const [name,text] of workflows){
   if(!text.includes('actions/deploy-pages@')) continue;
   for(const token of ['python3 tools/package-pages-artifact.py --site _site',
@@ -62,12 +63,17 @@ for(const [name,text] of workflows){
     'Verify machine discovery bytes on the custom domain',
     'test -f _site/.nojekyll',
     'cmp -s .well-known/agent.json live-agent.json',
-    'https://www.norbertbanhalmi.com/.nojekyll']){
+    'https://www.norbertbanhalmi.com/.nojekyll',
+    'Prove deployable tar retains machine discovery files',
+    "grep -Fx './.nojekyll'",
+    "grep -Fx './.well-known/agent.json'"]){
     if(!text.includes(token)) errors.push(name+': public machine discovery preservation is missing: '+token);
   }
   if(/rm\s+-rf[^\n]*_site\/\.nojekyll/.test(text)) errors.push(name+': must not delete .nojekyll from the Pages artifact');
-  if(!text.includes('actions/upload-pages-artifact@v4')) errors.push(name+': Pages artifact upload must use the current v4 action');
-  if(!/include-hidden-files:\s*true/.test(text)) errors.push(name+': Pages upload must set include-hidden-files: true so .well-known/agent.json reaches production');
+  if(text.includes('actions/upload-pages-artifact@')) errors.push(name+': must not use upload-pages-artifact (it drops .nojekyll / .well-known); upload the verified artifact.tar instead');
+  if(!/actions\/upload-artifact@v4/.test(text)) errors.push(name+': Pages artifact upload must use actions/upload-artifact@v4 for the verified tar');
+  if(!/name:\s*github-pages/.test(text)) errors.push(name+': Pages artifact must be named github-pages for deploy-pages');
+  if(!/path:\s*\$\{\{\s*runner\.temp\s*\}\}\/artifact\.tar/.test(text)) errors.push(name+': Pages upload path must be the packager-verified artifact.tar');
 }
 if(!packageText.includes('test_pages_artifact.py')) errors.push('package.json must exercise actual tar membership, hidden-file protection and byte identity');
 
