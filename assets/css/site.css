@@ -6892,3 +6892,108 @@ html body main .homepage-art-private-bridge{margin:clamp(12px,1.4vw,18px) 0 0;ma
 html body main .homepage-art-private-bridge a{color:inherit;text-decoration:underline;text-underline-offset:0.18em}
 /* /HOMEPAGE_ART_PRIVATE_BRIDGE_V1 */
 
+
+/* === HUMAN-LAYOUT-20261025 === */
+/* Keep lines from wrapping early when the viewport has room; restore missing vertical rhythm. */
+html body main h1,
+html body main h2,
+html body main .section-head h1,
+html body main .section-head h2,
+html body main .hero h1{
+  max-width:min(100%,42rem);
+  text-wrap:pretty;
+}
+html body main .hero-copy-only h1,
+html body main[data-homepage-redesign] .hero-copy-only h1{
+  max-width:min(100%,22ch);
+}
+html body main .eyebrow[data-service-owner-links],
+html body main .hero-copy-only .eyebrow[data-service-owner-links]{
+  max-width:none;
+  white-space:normal;
+}
+@media (min-width:1100px){
+  html body main .eyebrow[data-service-owner-links]{
+    white-space:nowrap;
+  }
+}
+html body main .service-grid .card p,
+html body main .contact-routing .card p,
+html body main .cards .card p,
+html body main .location-cards .card p{
+  max-width:none;
+}
+html body main .contact-routing .service-grid{
+  gap:clamp(28px,3vw,40px);
+}
+html body main .contact-routing .service-grid .card + .card{
+  border-top:1px solid var(--line,rgba(16,34,63,.12));
+  padding-top:clamp(22px,2.4vw,30px);
+  margin-top:clamp(6px,1vw,10px);
+}
+@media (min-width:860px){
+  html body main .contact-routing .service-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:clamp(28px,3vw,48px);
+  }
+  html body main .contact-routing .service-grid .card + .card{
+    border-top:0;
+    padding-top:0;
+    margin-top:0;
+    border-left:1px solid var(--line,rgba(16,34,63,.12));
+    padding-left:clamp(22px,2.4vw,32px);
+  }
+}
+html body main .faq-topic{
+  margin-top:clamp(28px,3.5vw,44px);
+}
+html body main .faq-topic > h2{
+  margin-bottom:clamp(14px,1.6vw,22px);
+}
+html body main .faq .lead,
+html body main .hero .lead{
+  margin-top:clamp(12px,1.4vw,18px);
+  margin-bottom:clamp(18px,2vw,28px);
+}
+html body main .service-pricing-section{
+  margin-top:clamp(8px,1.2vw,16px);
+}
+html body .bn-mega-pricing-section{
+  margin-top:0.85rem;
+  padding-top:0.85rem;
+}
+html body .bn-mega-journal{
+  margin-top:1.1rem;
+  padding-top:0.85rem;
+  border-top:1px solid var(--bn-menu-line,rgba(255,255,255,.14));
+}
+html body .bn-mega-journal > summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  min-height:44px;
+  color:var(--bn-menu-ink,#f5f5f7);
+  font-size:0.78rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+html body .bn-mega-journal > summary::-webkit-details-marker{display:none}
+html body .bn-mega-journal-title{font-weight:650}
+html body .bn-mega-journal-mark{
+  font-size:1.25rem;
+  font-weight:400;
+  line-height:1;
+  color:var(--bn-menu-gold,#B79C44);
+}
+html body .bn-mega-journal-desc{
+  margin:0.45rem 0 0.75rem;
+  color:var(--bn-menu-muted,#b0b0b5);
+  font-size:0.92rem;
+  line-height:1.45;
+}
+html body .bn-mega-journal-list{display:grid;gap:0.55rem}
+html body .bn-mega-journal:not([open]) .bn-mega-journal-list,
+html body .bn-mega-journal:not([open]) .bn-mega-journal-desc{display:none}

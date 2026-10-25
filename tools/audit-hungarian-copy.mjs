@@ -96,15 +96,13 @@ if (!read('hu/archivum/index.html').includes('Válogatott galéria')) failures.p
 if (!read('hu/gyik/index.html').includes('Az üzleti portré gyorsan és pontosan megmutatja, ki Ön.')) failures.push('FAQ: corrected Hungarian article is missing');
 const menu = read('assets/js/mega-menu.js');
 const approvedMenu = [
-  'Szakmai pálya, alkotói fordulópontok és közösségi munka 1999 óta.',
-  'Válogatás megbízásos sorozatokból és a művészeti archívumból.',
-  'Könyvek, kiállítások, projektek és ellenőrizhető háttéranyagok.',
-  'Milyen képi feladatra keres megoldást?',
-  'Üzleti portré, vezetői portré és headshotok.',
-  'Egységes képi rendszer vezetőknek, csapatoknak és szervezeteknek.',
-  'Visszafogott, helyzetérzékeny fotózás vezetői és vállalati eseményeken.',
-  'Válaszok az előkészítésről, a fotózásról, az átadásról és a felhasználási jogokról.',
-  "cta:'Árak és csomagajánlatok'"
+  'Előbb a képek, aztán a magyarázat.',
+  'Válassza ki, milyen fotózásra van szüksége.',
+  'Cikkek és gyakorlati jegyzetek a blogról.',
+  'bn-mega-journal',
+  'journalToggle:\'Blog kategóriák megnyitása\'',
+  "cta:'Árak és csomagajánlatok'",
+  "ctaDesc:'Induló árak és árajánlatkérés.'"
 ];
 for (const phrase of approvedMenu) if (!menu.includes(phrase)) failures.push(`mega-menu: approved Hungarian copy missing: ${phrase}`);
 for (const obsolete of ['Headshot, executive portré', 'C-Level események', "cta:'Csomag összeállítása'", "cta:'Projekt összeállítása'", 'kontextusérzékeny dokumentáció']) {
