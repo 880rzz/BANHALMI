@@ -31,3 +31,22 @@ Diff inventory: `docs/content-audit-before-after.csv`
 | Portrait H1 | **Kept locked** measured owners | Do not rewrite without GSC owner re-approval |
 | ART homepage titles/meta | **Left on locked SEO strings** | Presence lean from earlier commit retained; entity/meta parity preserved |
 | Trust-proof / schema / llms | **Not stripped** | EEAT evidence sections remain |
+
+## Completion matrix (honest status)
+
+| Surface | Status | Notes |
+|---|---|---|
+| Professional homepage structure + filler | **Done** | Quote strip, presence, bridge removed |
+| Professional contact + next-step CTAs | **Done** | Voice-aligned |
+| BANHALMI-C URL/image parity | **Done** | 100/100 + 595/595 |
+| Premium marketing vocabulary (visible) | **Done** | Legal/factual leftovers only |
+| Measured portrait / brand H1s | **Locked keep** | GSC owner contract |
+| Full service-page H1 rewrite to every brief candidate | **Not done** | Would fight measured SEO owners; needs explicit approve |
+| About biography depth | **Keep** | Human narrative, not marketing; ART archive bridged |
+| ART homepage lean + separators | **Done** | Thesis kept, catalogue trimmed |
+| Fine-art trust-proof EN/DE/HU | **Done (this pass)** | Typo + “artistic work” → personal commissions |
+| ART private photography H1 | **Done (sibling repo)** | Slogan → factual category |
+| ART exhibition factual “luxury/exclusive” strings | **Keep** | Alt text / source URLs, not marketing claims |
+| IPTC binary tagging | **Out of scope** | |
+
+**Verdict:** entry surfaces and structural fluff cleanup are complete on both repos for this voice/first-principles pass. A separate, approved SEO-owner rewrite would be required for every remaining service H1 candidate in the brief.
