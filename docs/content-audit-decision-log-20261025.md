@@ -19,3 +19,15 @@ Diff inventory: `docs/content-audit-before-after.csv`
 
 - Full service-page H1 rewrite to every candidate in the brief: keep until page-by-page review; this pass prioritises homepage clarity.
 - IPTC binary image tagging: out of scope.
+
+## Follow-up 2026-10-25 evening
+
+| Change | Decision | SEO / EEAT note |
+|---|---|---|
+| BANHALMI-C parity | **Verified 100/100 routes, 595/595 image blobs** vs `880rzz/BANHALMI-C@c989ace` | Paths untouched; report in `docs/banhalmi-c-parity-verification-20261025.md` |
+| Contact H1 EN/HU/DE | **Aligned** to voice brief (“what you need”) | WebPage `headline` synced; page `name`/title kept for search intent |
+| Next-step cards | Softened “Build a package” → “Request a quote” / “Ajánlatot kérek” | CTA destinations unchanged (`/requestaquote/`, contact, Meet) |
+| “Premium” UI wording | Softened to professional / leadership coverage | Prices, Offer amounts, trust-proof evidence blocks unchanged |
+| Portrait H1 | **Kept locked** measured owners | Do not rewrite without GSC owner re-approval |
+| ART homepage titles/meta | **Left on locked SEO strings** | Presence lean from earlier commit retained; entity/meta parity preserved |
+| Trust-proof / schema / llms | **Not stripped** | EEAT evidence sections remain |
