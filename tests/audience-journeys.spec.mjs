@@ -8,9 +8,10 @@ const locales=[
 ];
 const ready=async page=>{await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1);};
 for(const d of locales){
- test(d.home+' quote CTA is visible, keyboard-usable and lands on the shared quote flow',async({page})=>{
+ test(d.home+' hero quote CTA is visible, keyboard-usable and lands on the shared quote flow',async({page})=>{
   await page.goto(d.home);
-  const entry=page.locator('[data-homepage-quote-cta] a.btn');await expect(entry).toBeVisible();
+  await expect(page.locator('[data-homepage-quote-cta]')).toHaveCount(0);
+  const entry=page.locator('.hero-copy-only a.btn.btn-primary');await expect(entry).toBeVisible();
   await entry.focus();await page.keyboard.press('Enter');
   await expect(page).toHaveURL(new RegExp(d.quote.replace(/\//g,'\\/')+'$'));
   await ready(page);

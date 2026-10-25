@@ -33,7 +33,7 @@ for(const rel of priority){
 }
 const required=[
   ['index.html','Choose the right photograph for your situation — Vienna and Budapest.'],
-  ['index.html','We begin with where the photograph will be used.'],
+  ['index.html','Start from where the image will be used.'],
   ['lifestyle/index.html','For leaders, experts, entrepreneurs, artists and organisations'],
   ['speier-viko/index.html','Viko Speier — strategy and photography together'],
   ['de-at/index.html','Wählen Sie die Fotografie, die zu Ihrer Situation passt — Wien und Budapest.'],

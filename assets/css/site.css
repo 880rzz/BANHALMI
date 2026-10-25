@@ -6823,25 +6823,25 @@ html body main[data-homepage-redesign] #services .card p{
 html body main[data-homepage-redesign] #services .card .more{
   margin-top:auto;padding-top:clamp(8px,1vw,12px);
 }
-html body main[data-homepage-redesign] #services .services-quote-cta{
-  margin-top:clamp(28px,3vw,40px);
-  padding-top:clamp(22px,2.4vw,32px);
-  border-top:1px solid rgba(29,29,31,.14);
-  display:flex;flex-direction:column;align-items:flex-start;gap:14px;
-  max-width:42rem;
-}
-html body main[data-homepage-redesign] #services .services-quote-note{
-  margin:0;color:#6e6e73;font-size:clamp(.95rem,.84vw,1.05rem);line-height:1.55;max-width:46ch;
-}
-html body main[data-homepage-redesign] #services .services-quote-cta .btn{
-  min-height:44px;
-}
 @media (max-width:720px){
   html body main[data-homepage-redesign] #services .card{min-height:0}
   html body main[data-homepage-redesign] #services .card h3{min-height:0}
-  html body main[data-homepage-redesign] #services .services-quote-cta{margin-top:22px;padding-top:18px;gap:12px}
 }
-/* /HOMEPAGE_SERVICES_QUOTE_CTA_V1 */
+/* /HOMEPAGE_SERVICES_QUOTE_CTA_V1 — removed: redundant quote strip under services */
+/* HOMEPAGE_LEAN_SEPARATORS_V1: one surface change = one edge, not stacked hairlines */
+html body main[data-homepage-redesign] > section.section-band{
+  border-top:0;
+  border-bottom:0;
+}
+html body main[data-homepage-redesign] > section + section{
+  border-top:1px solid rgba(29,29,31,.10);
+}
+html body main[data-homepage-redesign] > section[data-surface="soft"] + section[data-surface="soft"],
+html body main[data-homepage-redesign] > section[data-surface="white"] + section[data-surface="white"],
+html body main[data-homepage-redesign] > section[data-surface="dark"] + section[data-surface="dark"]{
+  border-top:0;
+}
+/* /HOMEPAGE_LEAN_SEPARATORS_V1 */
 /* HOMEPAGE_ART_PRIVATE_BRIDGE_V1 */
 html body main .homepage-art-private-bridge{margin:clamp(12px,1.4vw,18px) 0 0;max-width:46ch;color:#6e6e73;font-size:clamp(.92rem,.8vw,1.02rem);line-height:1.55}
 html body main .homepage-art-private-bridge a{color:inherit;text-decoration:underline;text-underline-offset:0.18em}
