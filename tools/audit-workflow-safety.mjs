@@ -39,6 +39,10 @@ if([sourceAuditPos,artifactPos,browserPos,lighthouseMobilePos,lighthouseDesktopP
 }
 if(!/git archive --format=tar HEAD \| tar -xf - -C _site/.test(pages)) errors.push('pages.yml must build the public artifact from committed HEAD, never from a possibly mutated working tree');
 if(!pages.includes('rm -f _site/.gitignore _site/docs/.responsive-4k-audit-ready')) errors.push('pages.yml must strip repo-only hidden paths before packaging and Pages upload');
+if(/_site\/\.nojekyll/.test(pages) && /rm\s+-rf[^\n]*_site\/\.nojekyll/.test(pages)) errors.push('pages.yml must keep committed .nojekyll in the Pages artifact so Jekyll does not drop .well-known/agent.json');
+if(!pages.includes('test -f _site/.nojekyll')) errors.push('pages.yml must assert .nojekyll is present in the deployable artifact');
+if(!pages.includes('test -s _site/.well-known/agent.json')) errors.push('pages.yml must assert .well-known/agent.json is present in the deployable artifact');
+if(!pages.includes('cmp -s .well-known/agent.json _site/.well-known/agent.json')) errors.push('pages.yml must prove artifact agent.json matches committed source bytes');
 if(!/npx --yes @lhci\/cli@0\.15\.1 autorun --config=\.\/lighthouserc\.mobile\.cjs/.test(pages)) errors.push('pages.yml must run mobile LHCI against lighthouserc.mobile.cjs');
 if(!/npx --yes @lhci\/cli@0\.15\.1 autorun --config=\.\/lighthouserc\.desktop\.cjs/.test(pages)) errors.push('pages.yml must run desktop LHCI against lighthouserc.desktop.cjs');
 if(!/printf '%s\\n' \"\$GITHUB_SHA\" > _site\/deployment-sha\.txt/.test(pages)) errors.push('pages.yml must stamp the exact source SHA into the artifact');
@@ -55,9 +59,13 @@ for(const [name,text] of workflows){
   if(!text.includes('actions/deploy-pages@')) continue;
   for(const token of ['python3 tools/package-pages-artifact.py --site _site',
     '--output "$RUNNER_TEMP/artifact.tar" --expected-sha "$GITHUB_SHA"',
-    'Verify machine discovery bytes on the custom domain']){
+    'Verify machine discovery bytes on the custom domain',
+    'test -f _site/.nojekyll',
+    'cmp -s .well-known/agent.json live-agent.json',
+    'https://www.norbertbanhalmi.com/.nojekyll']){
     if(!text.includes(token)) errors.push(name+': public machine discovery preservation is missing: '+token);
   }
+  if(/rm\s+-rf[^\n]*_site\/\.nojekyll/.test(text)) errors.push(name+': must not delete .nojekyll from the Pages artifact');
   if(!text.includes('actions/upload-pages-artifact@v4')) errors.push(name+': Pages artifact upload must use the current v4 action');
   if(!/include-hidden-files:\s*true/.test(text)) errors.push(name+': Pages upload must set include-hidden-files: true so .well-known/agent.json reaches production');
 }
