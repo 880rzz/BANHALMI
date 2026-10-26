@@ -36,7 +36,8 @@ function redirectTarget(request) {
       ['/profifotos', 'https://www.norbertbanhalmi.com/hu/'],
       ['/eskuvoi-fotozas-tihany', 'https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/'],
     ]);
-    if (new Set(['/babafotozas', '/csaladi-fotozas', '/csaladifotozas', '/gyermekfotozas']).has(normalizedPath)) return { gone: true };\n    const historicalTarget = historicalHuTargets.get(normalizedPath);
+    if (new Set(['/babafotozas', '/csaladi-fotozas', '/csaladifotozas', '/gyermekfotozas']).has(normalizedPath)) return { gone: true };
+    const historicalTarget = historicalHuTargets.get(normalizedPath);
     if (historicalTarget) {
       const target = new URL(historicalTarget);
       target.search = incoming.search;
@@ -44,14 +45,43 @@ function redirectTarget(request) {
     }
   }
 
+
+  const pathWithSlash = cleanPath ? '/' + cleanPath.replace(/\/+$/, '') + '/' : '/';
+  if (pathWithSlash === '/hu/trust/' || pathWithSlash === '/de-at/trust/') {
+    const dest = pathWithSlash.startsWith('/hu/')
+      ? 'https://www.norbertbanhalmi.com/hu/bizalom/'
+      : 'https://www.norbertbanhalmi.com/de-at/vertrauen/';
+    const fixed = new URL(dest);
+    fixed.search = incoming.search;
+    return fixed;
+  }
+  if (pathWithSlash === '/quote/') {
+    const dest = languageBase.includes('/hu/')
+      ? 'https://www.norbertbanhalmi.com/hu/ajanlatkeres/'
+      : 'https://www.norbertbanhalmi.com/de-at/anfrage/';
+    const fixed = new URL(dest);
+    fixed.search = incoming.search;
+    return fixed;
+  }
+  if (pathWithSlash === '/trust/') {
+    const dest = languageBase.includes('/hu/')
+      ? 'https://www.norbertbanhalmi.com/hu/bizalom/'
+      : 'https://www.norbertbanhalmi.com/de-at/vertrauen/';
+    const fixed = new URL(dest);
+    fixed.search = incoming.search;
+    return fixed;
+  }
+
   const target = new URL(cleanPath, languageBase);
+
   target.search = incoming.search;
   return target;
 }
 
 export default function middleware(request) {
   const target = redirectTarget(request);
-  if (target && target.gone) return new Response('Ez a szolgáltatás megszűnt.', { status: 410, headers: { 'content-type': 'text/plain; charset=utf-8', 'x-robots-tag': 'noindex' } });\n  if (!target) {
+  if (target && target.gone) return new Response('Ez a szolgáltatás megszűnt.', { status: 410, headers: { 'content-type': 'text/plain; charset=utf-8', 'x-robots-tag': 'noindex' } });
+  if (!target) {
     return new Response('Unknown redirect host', {
       status: 404,
       headers: {

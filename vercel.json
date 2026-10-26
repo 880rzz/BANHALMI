@@ -769,6 +769,54 @@
       ]
     },
     {
+      "source": "/de-at/trust",
+      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "banhalmi.at"
+        }
+      ]
+    },
+    {
+      "source": "/de-at/trust/",
+      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "banhalmi.at"
+        }
+      ]
+    },
+    {
+      "source": "/hu/trust",
+      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "banhalmi.at"
+        }
+      ]
+    },
+    {
+      "source": "/hu/trust/",
+      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "banhalmi.at"
+        }
+      ]
+    },
+    {
       "source": "/reklamfotozas",
       "has": [
         {
@@ -1523,6 +1571,54 @@
       ]
     },
     {
+      "source": "/de-at/trust",
+      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "www.banhalmi.at"
+        }
+      ]
+    },
+    {
+      "source": "/de-at/trust/",
+      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "www.banhalmi.at"
+        }
+      ]
+    },
+    {
+      "source": "/hu/trust",
+      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "www.banhalmi.at"
+        }
+      ]
+    },
+    {
+      "source": "/hu/trust/",
+      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "www.banhalmi.at"
+        }
+      ]
+    },
+    {
       "source": "/:path*",
       "destination": "https://www.norbertbanhalmi.com/de-at/",
       "permanent": true,
@@ -2208,6 +2304,54 @@
     },
     {
       "source": "/trust/",
+      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "banhalminorbert.hu"
+        }
+      ]
+    },
+    {
+      "source": "/de-at/trust",
+      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "banhalminorbert.hu"
+        }
+      ]
+    },
+    {
+      "source": "/de-at/trust/",
+      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "banhalminorbert.hu"
+        }
+      ]
+    },
+    {
+      "source": "/hu/trust",
+      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "banhalminorbert.hu"
+        }
+      ]
+    },
+    {
+      "source": "/hu/trust/",
       "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
       "permanent": true,
       "has": [
@@ -2909,6 +3053,54 @@
     },
     {
       "source": "/trust/",
+      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "www.banhalminorbert.hu"
+        }
+      ]
+    },
+    {
+      "source": "/de-at/trust",
+      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "www.banhalminorbert.hu"
+        }
+      ]
+    },
+    {
+      "source": "/de-at/trust/",
+      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "www.banhalminorbert.hu"
+        }
+      ]
+    },
+    {
+      "source": "/hu/trust",
+      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "www.banhalminorbert.hu"
+        }
+      ]
+    },
+    {
+      "source": "/hu/trust/",
       "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
       "permanent": true,
       "has": [
