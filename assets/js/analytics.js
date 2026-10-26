@@ -47,7 +47,9 @@
     }
 
     function ensureClarityQueue() {
-      window.clarity = window.clarity || function () {
+      // Always reinstall a queue stub on grant so a prior revoke noop cannot
+      // swallow consentv2 before the Clarity tag redefines window.clarity.
+      window.clarity = function () {
         (window.clarity.q = window.clarity.q || []).push(arguments);
       };
     }
@@ -118,9 +120,12 @@
 
     function clearAnalyticsCookiesNow() {
       var host = location.hostname;
-      var domains = ["", host, "." + host, ".norbertbanhalmi.com", "norbertbanhalmi.com"];
+      var domains = ["", host, "." + host, ".norbertbanhalmi.com", "norbertbanhalmi.com", ".banhalmi.art", "banhalmi.art"];
+      var known = {
+        _ga: 1, _gid: 1, _gat: 1, _clck: 1, _clsk: 1, CLID: 1, MUID: 1, ANONCHK: 1, MR: 1, SM: 1
+      };
       var names = document.cookie.split(";").map(function (part) { return part.split("=")[0].trim(); }).filter(function (name) {
-        return name === "_ga" || name.indexOf("_ga_") === 0 || name === "_clck" || name === "_clsk";
+        return !!name && (known[name] || name.indexOf("_ga_") === 0 || name.indexOf("_cl") === 0);
       });
       names.forEach(function (name) {
         domains.forEach(function (domain) { expireCookie(name, domain); });
@@ -131,7 +136,7 @@
       cleanupTimers.forEach(function (timer) { clearTimeout(timer); });
       cleanupTimers = [];
       clearAnalyticsCookiesNow();
-      [50, 250, 1000].forEach(function (delay) {
+      [50, 250, 1000, 2500].forEach(function (delay) {
         cleanupTimers.push(setTimeout(function () {
           if (!analyticsAllowed) clearAnalyticsCookiesNow();
         }, delay));
@@ -143,6 +148,23 @@
         var script = document.getElementById(id);
         if (script && script.parentNode) script.parentNode.removeChild(script);
       });
+      Array.prototype.slice.call(document.querySelectorAll('script[src*="clarity.ms"],script[src*="googletagmanager.com/gtag/js"]')).forEach(function (script) {
+        if (script.parentNode) script.parentNode.removeChild(script);
+      });
+    }
+
+    function neutralizeClarity() {
+      try {
+        if (typeof window.clarity === "function") {
+          try { window.clarity("consentv2", { ad_Storage: "denied", analytics_Storage: "denied" }); } catch (e1) {}
+          try { window.clarity("consent", false); } catch (e2) {}
+          try { window.clarity("stop"); } catch (e3) {}
+        }
+      } catch (error) {}
+      // Drop any queued Clarity calls and prevent further network from the stub.
+      var dead = function () { return undefined; };
+      dead.q = [];
+      window.clarity = dead;
     }
 
     function revoke() {
@@ -156,15 +178,18 @@
         personalization_storage: "denied",
         functionality_storage: "denied"
       });
-      if (window.clarity) {
-        window.clarity("consentv2", {
-          ad_Storage: "denied",
-          analytics_Storage: "denied"
+      try {
+        window.gtag("config", MEASUREMENT_ID, {
+          send_page_view: false,
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false
         });
-        window.clarity("consent", false);
-      }
+      } catch (error) {}
+      neutralizeClarity();
       removeOptionalAnalyticsScripts();
       clearAnalyticsCookies();
+      // Re-assert disable after script teardown in case gtag rehydrated state.
+      window["ga-disable-" + MEASUREMENT_ID] = true;
     }
 
     window.BANHALMI_ANALYTICS = {

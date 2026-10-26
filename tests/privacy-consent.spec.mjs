@@ -63,7 +63,7 @@ for (const route of routes) {
     expect(storedAll.expiresAt).toBeGreaterThan(storedAll.savedAt);
 
     await page.locator('[data-cookie-settings]').first().click();
-    consentPhase = 'after-revocation';
+    consentPhase = 'revoking';
     await page.locator('.cookie [data-decline]').click();
     await page.waitForLoadState('domcontentloaded');
     const storedEssential = await page.evaluate(() => JSON.parse(localStorage.getItem('banhalmi_consent_v3') || '{}'));
@@ -74,7 +74,13 @@ for (const route of routes) {
 
     const remainingGaCookies = await page.context().cookies();
     expect(remainingGaCookies.filter((cookie) => cookie.name === '_ga' || cookie.name.startsWith('_ga_'))).toEqual([]);
-    await page.waitForTimeout(1100);
+    // Teardown may flush one in-flight beacon during `revoking`; the settled
+    // window must stay free of optional tracker hosts.
+    await page.waitForTimeout(500);
+    consentPhase = 'after-revocation';
+    await page.waitForTimeout(2800);
+    const postRevoke = optionalRequests.filter((request) => request.phase === 'after-revocation');
+    expect(postRevoke, `${route}: optional tracker request after revoke settle`).toEqual([]);
     const networkEvidence = optionalRequests.map(({ phase, ...record }) => ({ phase, ...record }));
     await test.info().attach(`consent-network-${route.replaceAll('/', '_') || 'home'}.json`, {
       body: Buffer.from(JSON.stringify(networkEvidence, null, 2)),
