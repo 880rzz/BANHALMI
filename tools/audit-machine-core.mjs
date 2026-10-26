@@ -20,7 +20,9 @@ fail(contactAuthority.telephoneByLanguage?.['hu-HU'] === '+4367761655592', 'HU p
 fail(contactAuthority.googleBusinessProfilePhoneRule?.austriaLocations === '+4367764733262', 'Austrian GBP phone authority drift');
 fail(contactAuthority.googleBusinessProfilePhoneRule?.budapestLocation === '+4367761655592', 'Budapest GBP phone authority drift');
 const ownership=core.authorityOwnership||{};
-for (const url of ['https://www.linkedin.com/company/banhalmi/','https://cherrydeck.com/norbert.banhalmi']) fail((ownership.professionalOrganization?.activeProfiles||[]).includes(url), `Professional organization profile missing: ${url}`);
+for (const url of ['https://www.linkedin.com/company/banhalmi/']) fail((ownership.professionalOrganization?.activeProfiles||[]).includes(url), `Professional organization profile missing: ${url}`);
+fail(!(ownership.professionalOrganization?.activeProfiles||[]).includes('https://cherrydeck.com/norbert.banhalmi'), 'Cherrydeck must not remain professionalOrganization.activeProfiles');
+for (const url of ['https://cherrydeck.com/norbert.banhalmi']) fail((ownership.personPortfolioProfiles||[]).includes(url), `Person portfolio profile missing: ${url}`);
 for (const url of ['https://www.linkedin.com/in/norbertbanhalmi/','https://www.instagram.com/norbert.banhalmi/','https://www.facebook.com/banhalmi.norbert','https://www.youtube.com/@norbert.banhalmi']) fail((ownership.artisticPerson?.activeProfiles||[]).includes(url), `ART person profile missing: ${url}`);
 
 fail(core.person?.role?.includes('Founder') && core.person?.role?.includes('lead photographer'), 'Norbert founder/lead-photographer role drift');

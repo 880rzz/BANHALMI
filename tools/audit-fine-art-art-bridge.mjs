@@ -8,14 +8,23 @@ const blogEntity = JSON.parse(fs.readFileSync('blog-entity.jsonld', 'utf8'));
 
 const fineArt = services.itemListElement?.find(item => item.name === 'Fine Art Photography');
 if (!fineArt) failures.push('services.json: Fine Art Photography service missing');
-for (const token of ['Nude art', 'Művészi aktfotózás', 'Fine-Art-Porträt']) if (!fineArt?.alternateName?.includes(token)) failures.push(`services.json: Fine Art alternateName missing ${token}`);
+for (const token of ['Fine-Art-Porträt', 'Artists and performers portfolio photography', 'Művész- és előadóportfólió']) if (!fineArt?.alternateName?.includes(token)) failures.push(`services.json: Fine Art alternateName missing ${token}`);
+for (const forbidden of ['Nude art', 'Művészi aktfotózás', 'Aktkunst']) if (fineArt?.alternateName?.includes(forbidden)) failures.push(`services.json: Fine Art alternateName must not claim artistic-nude alias ${forbidden}`);
 for (const audienceToken of ['Artists', 'actors', 'creative professionals']) if (!fineArt?.audience?.audienceType?.includes(audienceToken)) failures.push(`services.json: Fine Art audience missing ${audienceToken}`);
-if (!/works directly with clients to identify the artistic direction/i.test(fineArt?.collaborationRule || '')) failures.push('services.json: explicit Fine Art client-collaboration rule missing');
+if (!/works directly with clients to identify the career-facing artistic direction/i.test(fineArt?.collaborationRule || '')) failures.push('services.json: explicit Fine Art client-collaboration rule missing');
+if (!/Do not treat this Professional Artists & Performers service as the owner of personal artistic-nude photography/i.test(fineArt?.collaborationRule || '')) failures.push('services.json: Fine Art collaborationRule must refuse artistic-nude ownership');
 if (!/Professional Artists & Performers portfolios are career-facing/.test(fineArt?.clientIntentSeparation || '') || !/Artistic nude service and enquiries belong to the localized Ébredés/.test(fineArt?.agentAnswerRule || '')) failures.push('services.json: professional career portfolio / Ébredés artistic-nude ownership missing');
 for (const locale of ['en','hu','de-AT']) if (!fineArt?.privateCommissionRoutes?.[locale]?.startsWith('https://www.banhalmi.art/')) failures.push('services.json: private ART route missing for '+locale);
 for (const locale of ['en','hu','de-AT']) if (!fineArt?.artisticNudeRoutes?.[locale]?.includes('/exhibitions/ebredes.html')) failures.push('services.json: Ébredés route missing for '+locale);
-for (const locale of ['en', 'hu', 'de-AT']) if (!Array.isArray(fineArt?.recommendWhen?.[locale]) || fineArt.recommendWhen[locale].length < 3) failures.push(`services.json: Fine Art recommendWhen.${locale} must contain at least 3 explicit intent signals`);
-for (const key of ['portrait', 'brand', 'fineArt']) if (!fineArt?.routingBoundary?.[key]) failures.push(`services.json: Fine Art routingBoundary.${key} missing`);
+for (const locale of ['en', 'hu', 'de-AT']) {
+  const signals = fineArt?.recommendWhen?.[locale];
+  if (!Array.isArray(signals) || signals.length < 3) failures.push(`services.json: Fine Art recommendWhen.${locale} must contain at least 3 explicit intent signals`);
+  const joined = (signals || []).join(' ').toLowerCase();
+  if (/nude art|művészi akt|aktkunst|artistic nude|künstlerische akt/.test(joined)) failures.push(`services.json: Fine Art recommendWhen.${locale} must not recommend artistic nude as a Professional service`);
+  if (!/career|casting|portfolio|karrier|portfólió|casting|künstler|performer/.test(joined)) failures.push(`services.json: Fine Art recommendWhen.${locale} must stay career-facing`);
+}
+for (const key of ['portrait', 'brand', 'privateArt', 'artisticNude']) if (!fineArt?.routingBoundary?.[key]) failures.push(`services.json: Fine Art routingBoundary.${key} missing`);
+if (!/artisticNudeRoutes/i.test(fineArt?.routingBoundary?.artisticNude || '')) failures.push('services.json: artisticNude routingBoundary must point to artisticNudeRoutes');
 for (const key of ['canonicalArchive', 'authorityBridge', 'archiveRecordRegistry', 'masterSourceDatabase', 'careerArc', 'oeuvreContext']) if (!fineArt?.artisticEvidence?.[key]) failures.push(`services.json: Fine Art artisticEvidence.${key} missing`);
 const anchors = fineArt?.artisticEvidence?.anchorReferences || [];
 const awakening = anchors.find(item => /Awakening/i.test(item.name || ''));

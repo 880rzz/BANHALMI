@@ -65,9 +65,11 @@ if (!centralDescription.includes('önkéntes') || !centralDescription.includes('
 
 const company = graph.find((node) => node?.['@id'] === COMPANY_ID);
 const companySameAs = asArray(company?.sameAs);
-for (const required of ['https://www.wikidata.org/wiki/Q138425941','https://www.linkedin.com/company/banhalmi/','https://cherrydeck.com/norbert.banhalmi']) {
+for (const required of ['https://www.wikidata.org/wiki/Q138425941','https://www.linkedin.com/company/banhalmi/']) {
   if (!companySameAs.includes(required)) fail(`Banhalmi Norbert e.U. authority missing ${required}`);
 }
+if (companySameAs.includes('https://cherrydeck.com/norbert.banhalmi')) fail('Cherrydeck Person portfolio must not remain on Organization.sameAs');
+if (!sameAs.includes('https://cherrydeck.com/norbert.banhalmi')) fail('Person.sameAs missing Cherrydeck portfolio identity');
 
 const hipstudioNode = graph.find((node) => node?.['@id'] === HIPSTUDIO_ID);
 if (!hipstudioNode) fail('HIPStudio Organization node missing from person-authority.jsonld');

@@ -546,11 +546,13 @@
     "professionalOrganization": {
       "site": "https://www.norbertbanhalmi.com/",
       "activeProfiles": [
-        "https://www.linkedin.com/company/banhalmi/",
-        "https://cherrydeck.com/norbert.banhalmi"
+        "https://www.linkedin.com/company/banhalmi/"
       ],
       "googleBusinessProfileOwnership": "Location-specific profiles remain attached to their respective Vienna/Budapest location entities."
     },
+    "personPortfolioProfiles": [
+      "https://cherrydeck.com/norbert.banhalmi"
+    ],
     "artisticPerson": {
       "site": "https://www.banhalmi.art/",
       "activeProfiles": [

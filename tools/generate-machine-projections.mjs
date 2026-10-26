@@ -137,7 +137,7 @@ export function generateMachineProjections(siteRoot = '_site') {
   const graph = [];
   graph.push({
     '@type': 'Person', '@id': core.person.id, url: core.person.id, name: core.person.name, alternateName: core.person.alternateName,
-    sameAs: [core.person.wikidata, core.person.wikipedia].filter(Boolean), knowsLanguage: core.person.languages, knowsAbout: core.person.specialisms,
+    sameAs: [core.person.wikidata, core.person.wikipedia, ...(core.authorityOwnership?.personPortfolioProfiles || [])].filter(Boolean), knowsLanguage: core.person.languages, knowsAbout: core.person.specialisms,
     description: core.person.primaryProfessionalIdentity, worksFor: reference(core.organization.id), affiliation: volunteerAffiliations,
     workLocation: core.locations.map((location) => reference(location.id)),
     award: recognitions.items.map((item) => item.claim),
