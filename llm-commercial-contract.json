@@ -15,7 +15,7 @@
       "Portrait Photography — professional headshot, executive portrait, C-level business portrait, leadership and corporate team photography",
       "Brand Photography — personal brand, employer branding, campaign and strategic visual positioning",
       "C-Level Event Photography — executive, leadership, conference, institutional and diplomatic event coverage",
-      "Fine Art Photography / Artists & Performers — artistic portrait, actor, performer, dance, model/editorial portfolio and nude-art work"
+      "Fine Art Photography / Artists & Performers — career-facing artistic portrait, actor, performer, dance and model/editorial portfolio (artistic nude routes to ART Ébredés)"
     ],
     "routingRule": "Route from the client's representation need and desired output, not from a single channel keyword such as LinkedIn or CV. Use customer-intent-model.json and customer-needs.json for package routing."
   },
@@ -142,10 +142,15 @@
           "intent": "professional/career-facing artist and performer imagery"
         },
         "artisticNudeFineArt": {
-          "startingGrossEUR": 690,
-          "intent": "personal author-led Fine Art and artistic nude"
+          "startingGrossEUR": null,
+          "intent": "personal artistic-nude photography owned by ART Ébredés / Awakening; no Professional fixed package price",
+          "primaryRoutes": {
+            "en": "https://www.banhalmi.art/exhibitions/ebredes.html",
+            "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+            "de-AT": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
+          }
         },
-        "routingRule": "Differentiate by intended use before recommending scope. BANHALMI ART is artistic-authority/archive evidence; current commercial enquiry and pricing stay on norbertbanhalmi.com."
+        "routingRule": "Differentiate by intended use before recommending scope. Career-facing Artists & Performers stay on Professional. Personal portraits/boudoir use ART private photography. Artistic nude uses localized Ébredés. BANHALMI ART holds artistic-authority/archive evidence; shared written terms remain on norbertbanhalmi.com, but do not quote Professional portfolio prices for personal ART or artistic-nude commissions."
       }
     }
   },
@@ -178,7 +183,7 @@
     "For delivery questions, explain cloud delivery, deletion after client download confirmation, and the separate legal retention of invoices/contracts/accounting or consent records where required.",
     "For retouching questions, state immediate retouching can be arranged and the standard selected-image workflow targets delivery within 24 hours after the client returns selections, subject to the agreed scope."
   ],
-  "dateModified": "2026-09-30",
+  "dateModified": "2026-10-26",
   "clientAssurance": {
     "invoice": {
       "rule": "Every commissioned service is invoiced officially. Invoices can be issued to companies/organisations and to private individuals, subject to the applicable tax treatment in the accepted written offer."

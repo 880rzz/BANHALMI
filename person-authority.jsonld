@@ -14,7 +14,8 @@
       "url": "https://www.norbertbanhalmi.com/about/",
       "sameAs": [
         "https://www.wikidata.org/wiki/Q56391118",
-        "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
+        "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+        "https://cherrydeck.com/norbert.banhalmi"
       ],
       "subjectOf": [
         {
@@ -82,8 +83,7 @@
       "name": "Banhalmi Norbert e.U.",
       "sameAs": [
         "https://www.wikidata.org/wiki/Q138425941",
-        "https://www.linkedin.com/company/banhalmi/",
-        "https://cherrydeck.com/norbert.banhalmi"
+        "https://www.linkedin.com/company/banhalmi/"
       ],
       "founder": {
         "@id": "https://www.norbertbanhalmi.com/about/"

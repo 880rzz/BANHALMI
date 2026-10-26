@@ -144,13 +144,15 @@
     "Service areas are areaServed signals only and must not be confused with the explicitly documented studio and office entities.",
     "banhalmi.art is the artistic archive and Person/oeuvre evidence layer; norbertbanhalmi.com is the professional service and local-business layer.",
     "BANHALMI Photography is the secondary/commercial photography brand name of BANHALMI; it is not a separate company, Organization or legal entity.",
-    "Active social authority is split by intent: BANHALMI-C Organization uses company LinkedIn and Cherrydeck; BANHALMI ART Person uses Norbert's personal LinkedIn, Instagram, Facebook and YouTube.",
+    "Active social authority is split by intent: Banhalmi Norbert e.U. Organization uses company LinkedIn only for Organization.sameAs; Cherrydeck is a Person portfolio profile (Person.sameAs) that may still appear as a visible Professional portfolio link; BANHALMI ART Person uses Norbert's personal LinkedIn, Instagram, Facebook and YouTube.",
     "BANHALMI-C public phone routing is language-based: EN/DE use Viko +43 677 647 332 62; HU uses Norbert +43 677 616 55592; WhatsApp always uses Norbert +43 677 616 55592."
   ],
   "contactAndSocialAuthority": {
     "professional": {
       "organizationProfiles": [
-        "https://www.linkedin.com/company/banhalmi/",
+        "https://www.linkedin.com/company/banhalmi/"
+      ],
+      "personPortfolioProfiles": [
         "https://cherrydeck.com/norbert.banhalmi"
       ],
       "personActiveSocialProfiles": [],
