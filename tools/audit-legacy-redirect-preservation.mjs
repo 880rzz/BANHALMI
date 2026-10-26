@@ -150,7 +150,10 @@ for (const file of ['redirects/at/vercel.json', 'redirects/hu/vercel.json']) {
     continue;
   }
   const cfg = JSON.parse(read(file));
-  if (!cfg.git || cfg.git.deploymentEnabled !== false) failures.push(`${file}: git deployment suppression missing`);
+  // After reconnect to 880rzz/BANHALMI, Git auto-deploy must stay ON so tip
+  // middleware (trust/quote) reaches production. Suppression left LIVE stuck
+  // on pre-#62 FALLBACK after the Git link change alone.
+  if (!cfg.git || cfg.git.deploymentEnabled !== true) failures.push(`${file}: git.deploymentEnabled must be true so alias middleware publishes from BANHALMI tip`);
   if (!Array.isArray(cfg.redirects) || cfg.redirects.some(r => r.permanent !== true)) failures.push(`${file}: every redirect must remain permanent`);
 }
 
