@@ -131,6 +131,8 @@ const hipstudioAuthority = readJson('hipstudio-authority.json');
 if (hipstudioAuthority.entity?.wikidataId !== 'Q138482177') fail('hipstudio-authority Wikidata drift');
 if (hipstudioAuthority.founderRelationship?.founder?.wikidata !== 'https://www.wikidata.org/wiki/Q56391118') fail('hipstudio-authority founder Person drift');
 if (hipstudioAuthority.founderRelationship?.operationalFoundingDate !== '2006-03-15') fail('hipstudio-authority founding date drift');
+if (hipstudioAuthority.founderRelationship?.domainRegistrationDate !== '2006-02-27') fail('hipstudio-authority domainRegistrationDate drift');
+if (hipstudioAuthority.founderRelationship?.domainRegistrationDate === hipstudioAuthority.founderRelationship?.operationalFoundingDate) fail('HIPStudio domain and operational dates must remain distinct');
 
 const business = readJson('business-authority.json');
 const entity = business.entity || {};
