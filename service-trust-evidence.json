@@ -206,6 +206,7 @@
       "professionalRegistryEvidence": [
         "linkedin-us-embassy-vienna-7422226435219607553",
         "linkedin-kwwalsh-selectusa-7505169409309782017",
+        "linkedin-andreas-keri-7436141369515008000",
         "linkedin-amcham-austria-7466081305701785600",
         "linkedin-amcham-austria-7453014553912610817",
         "linkedin-amcham-austria-7440773944644853760",
@@ -3825,6 +3826,55 @@
       "guardrail": "Use as community/VIPACH/education authority evidence only. Do not treat as a photography commission credit, ORF endorsement, product partnership, or clinical/security certification claim.",
       "sourceStrength": "high",
       "evidenceSummary": "Independent ORF Volksgruppen article documents the VIPACH PhotoStudio phone-reuse education project and names Bánhalmi Norbert as project lead in an information-security education context."
+    },
+    {
+      "id": "linkedin-kwwalsh-selectusa-activity-7505169410488270851",
+      "title": "SelectUSA Investors Luncheon — Ken Walsh photo-credit comment",
+      "publisher": "Ken Walsh",
+      "url": "https://www.linkedin.com/posts/kwwalsh_selectusasummit-activity-7505169410488270851-HsAN",
+      "evidenceKind": "third-party LinkedIn post with author-comment photo credit",
+      "verificationStatus": "LIVE-VERIFIED",
+      "evidenceType": [
+        "PHOTO-CREDIT",
+        "PROFESSIONAL-PUBLICATION"
+      ],
+      "services": [
+        "event",
+        "institutionalEvent"
+      ],
+      "serviceRelevance": [
+        "event",
+        "institutionalEvent"
+      ],
+      "context": "SelectUSA recruitment/summit LinkedIn activity where the author's comment credits Norbert Banhalmi with a person-profile tag. Deduped against registry id linkedin-kwwalsh-selectusa-7505169409309782017 (ugcPost permalink of the same SelectUSA thread family).",
+      "guardrail": "Use as event-photography attribution evidence only. Do not infer SelectUSA, Embassy, or publisher client contract, endorsement, or exclusivity. Keep as one Ken Walsh SelectUSA evidence family with the existing ugcPost registry record.",
+      "sourceStrength": "medium",
+      "evidenceSummary": "Third-party Ken Walsh SelectUSA LinkedIn activity carries a Norbert Banhalmi photo credit in the author comment (profile-tagged).",
+      "dedupedAgainst": "linkedin-kwwalsh-selectusa-7505169409309782017"
+    },
+    {
+      "id": "linkedin-andreas-keri-7436141369515008000",
+      "title": "AmCham / Karim Taga business breakfast — Andreas Keri textual photo credit",
+      "publisher": "Andreas Keri",
+      "url": "https://www.linkedin.com/posts/andreaskeri_at-the-latest-business-breakfast-of-the-american-activity-7436141369515008000-_XOi",
+      "evidenceKind": "third-party LinkedIn textual photo credit",
+      "verificationStatus": "LIVE-VERIFIED",
+      "evidenceType": [
+        "PHOTO-CREDIT",
+        "PROFESSIONAL-PUBLICATION"
+      ],
+      "services": [
+        "event",
+        "institutionalEvent"
+      ],
+      "serviceRelevance": [
+        "event",
+        "institutionalEvent"
+      ],
+      "context": "Public LinkedIn post about an AmCham Austria business-breakfast context includes a textual Photo by Norbert Banhalmi credit that is not an auto-linked @mention.",
+      "guardrail": "Use as event-photography attribution only. Do not infer client contract, partnership, endorsement, or exclusivity with Andreas Keri, AmCham Austria, or named speakers.",
+      "sourceStrength": "medium",
+      "evidenceSummary": "Andreas Keri LinkedIn publication carries a textual Norbert Banhalmi photo credit in an AmCham business-breakfast context."
     }
   ],
   "pendingEvidenceCandidates": [
@@ -5614,6 +5664,7 @@
       "linkedin-michael-broenner-7388473288043225088",
       "linkedin-us-embassy-vienna-7422226435219607553",
       "linkedin-kwwalsh-selectusa-7505169409309782017",
+      "linkedin-andreas-keri-7436141369515008000",
       "linkedin-amcham-austria-7466081305701785600",
       "linkedin-amcham-austria-7453014553912610817",
       "linkedin-amcham-austria-7440773944644853760",
