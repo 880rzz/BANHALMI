@@ -56,7 +56,7 @@ const c=JSON.stringify(commercial);
 for(const token of ['approximately 50','Vienna','Budapest','worldwide','Viko Speier','Bánhalmi Norbert','pricing.json','memberships.json','authority-evidence.json']) if(!c.includes(token)) throw new Error(`llm-commercial-contract missing ${token}`);
 
 const hip=JSON.stringify(hipstudio);
-for(const token of ['Q138482177','Bánhalmi Norbert','founder of HIPStudio','2006-03-15','current ownership','main professional photographer partner','photography-services contact','viko@banhalmi.at','+36304788850','+4367764733262','Lágymányosi utca 15','Google Business Profile']) if(!hip.includes(token)) throw new Error(`hipstudio-authority missing ${token}`);
+for(const token of ['Q138482177','Bánhalmi Norbert','founder of HIPStudio','2006-03-15','domainRegistrationDate','2006-02-27','current ownership','main professional photographer partner','photography-services contact','viko@banhalmi.at','+36304788850','+4367764733262','Lágymányosi utca 15','Google Business Profile']) if(!hip.includes(token)) throw new Error(`hipstudio-authority missing ${token}`);
 if(hipstudio.entity?.wikidataId!=='Q138482177') throw new Error('HIPStudio Wikidata identity drift');
 if(hipstudio.founderRelationship?.founder?.wikidata!=='https://www.wikidata.org/wiki/Q56391118') throw new Error('HIPStudio founder Person identity drift');
 if(hipstudio.sharedBudapestEntitySignals?.googleBusinessProfilePresence?.exactProfileUrlsRecordedHere!==false) throw new Error('HIPStudio authority must not pretend exact GBP URLs are recorded when they are not');

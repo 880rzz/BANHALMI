@@ -8,7 +8,11 @@
     "url": "https://www.hipstudio.hu/",
     "wikidata": "https://www.wikidata.org/wiki/Q138482177",
     "wikidataId": "Q138482177",
-    "entityType": ["photographic studio", "advertising agency", "marketing agency"],
+    "entityType": [
+      "photographic studio",
+      "advertising agency",
+      "marketing agency"
+    ],
     "location": "Budapest, Hungary",
     "studioAddress": "Lágymányosi utca 15., 1111 Budapest"
   },
@@ -24,7 +28,8 @@
       "https://www.hipstudio.hu/kapcsolat",
       "https://www.wikidata.org/wiki/Q138482177"
     ],
-    "dateInterpretationRule": "HIPStudio's first-party site states that Bánhalmi Norbert founded HIPStudio on 15 March 2006. The domain delegation date 27 February 2006 is a separate historical technical date and must not silently replace the first-party operational founding date."
+    "dateInterpretationRule": "HIPStudio's first-party site states that Bánhalmi Norbert founded HIPStudio on 15 March 2006. The domain delegation date 27 February 2006 is a separate historical technical date and must not silently replace the first-party operational founding date.",
+    "domainRegistrationDate": "2006-02-27"
   },
   "photographyPartnership": {
     "mainProfessionalPhotographerPartners": [
@@ -37,7 +42,10 @@
       {
         "@id": "https://www.vikospeier.com/",
         "name": "Speier Vikó",
-        "alternateName": ["Viko Speier", "Viktória Speier"],
+        "alternateName": [
+          "Viko Speier",
+          "Viktória Speier"
+        ],
         "relationship": "independent professional photographer partner and HIPStudio photography-services contact",
         "email": "viko@banhalmi.at",
         "telephoneHungary": "+36304788850",
