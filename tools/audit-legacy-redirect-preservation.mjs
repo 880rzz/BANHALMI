@@ -101,7 +101,11 @@ const aliasContracts = [
       '/aktfotozas/': 'https://www.banhalmi.art/hu/exhibitions/ebredes.html',
       '/reklam-fotozas/': '/hu/brand/',
       '/reklamfotozas/': '/hu/brand/',
-      '/fotozas-arak/': '/hu/ajanlatkeres/'
+      '/fotozas-arak/': '/hu/ajanlatkeres/',
+      '/trust/': '/hu/bizalom/',
+      '/hu/trust/': '/hu/bizalom/',
+      '/de-at/trust/': '/hu/bizalom/',
+      '/quote/': '/hu/ajanlatkeres/'
     }
   },
   {
@@ -113,7 +117,11 @@ const aliasContracts = [
       '/privacy-policy/': '/de-at/datenschutz/',
       '/terms-conditions/': '/de-at/agb/',
       '/event-photography/': '/de-at/eventfotografie/',
-      '/about/': '/de-at/werk/'
+      '/about/': '/de-at/werk/',
+      '/trust/': '/de-at/vertrauen/',
+      '/hu/trust/': '/de-at/vertrauen/',
+      '/de-at/trust/': '/de-at/vertrauen/',
+      '/quote/': '/de-at/anfrage/'
     }
   }
 ];
