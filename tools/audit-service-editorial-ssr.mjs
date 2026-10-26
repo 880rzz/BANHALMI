@@ -41,6 +41,12 @@ for (const [file, type, needles] of pages) {
   ) {
     failures.push(`${file}: Professional fine editorial must not link artistic-nude blog category`);
   }
+  if (!/blog\.banhalmi\.art\/[^"']*\/post\//.test(editorial) && !/blog\.banhalmi\.art\/post\//.test(editorial)) {
+    failures.push(`${file}: service-editorial must cite at least one specific blog post URL, not only categories`);
+  }
+  if (!editorial.includes('data-editorial-post="true"')) {
+    failures.push(`${file}: missing data-editorial-post marker on specific article link`);
+  }
 }
 
 const menu = fs.readFileSync('assets/js/mega-menu.js', 'utf8');
