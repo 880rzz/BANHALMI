@@ -34,7 +34,7 @@ for (const [query, owner] of [
 const homes = [
   {
     path: 'index.html',
-    title: 'BANHALMI | Executive Portrait & Brand Photography | Vienna–Budapest',
+    title: 'BANHALMI | Portrait & brand photography | Vienna–Budapest',
     anchors: [
       'Portrait photography in Vienna &amp; Budapest ›',
       'Brand photography in Vienna &amp; Budapest ›',
@@ -44,7 +44,7 @@ const homes = [
   },
   {
     path: 'hu/index.html',
-    title: 'BANHALMI | Executive portré és brandfotózás | Bécs–Budapest',
+    title: 'BANHALMI | Portréfotózás és brandfotózás | Bécs–Budapest',
     anchors: [
       'Portréfotózás Budapesten és Bécsben ›',
       'Brandfotózás Budapesten és Bécsben ›',
@@ -54,7 +54,7 @@ const homes = [
   },
   {
     path: 'de-at/index.html',
-    title: 'BANHALMI | Executive-Porträt & Brandfotografie | Wien–Budapest',
+    title: 'BANHALMI | Porträt- & Brandfotografie | Wien–Budapest',
     anchors: [
       'Portraitfotografie in Wien &amp; Budapest ›',
       'Brandfotografie in Wien &amp; Budapest ›',

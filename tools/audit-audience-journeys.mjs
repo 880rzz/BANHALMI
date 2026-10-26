@@ -5,8 +5,9 @@ const copy=JSON.parse(read('tools/content/audience-journeys-20261006.json'));
 const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#x27;');
 for(const [lang,d] of Object.entries(copy)){
  const h=read(d.home),portrait=read(d.portrait),art=read(d.fine),quote=read(d.quote.slice(1)+'index.html');
- assert.equal((h.match(/data-homepage-quote-cta="true"/g)||[]).length,1,lang+' homepage quote CTA exists exactly once');
- assert.ok(h.includes('href="'+d.quote+'"')&&h.includes(esc(d.quoteCta)),lang+' homepage quote CTA uses the shared quote label and route');
+ assert.equal((h.match(/data-homepage-quote-cta="true"/g)||[]).length,0,lang+' homepage no longer keeps a redundant services quote CTA');
+ assert.ok(!h.includes('services-quote-cta')&&!h.includes('client-decision-bridge')&&!h.includes('presence-thesis'),lang+' homepage filler sections removed');
+ assert.ok(h.includes('href="'+d.quote+'"')&&h.includes(esc(d.quoteCta)),lang+' homepage hero quote CTA uses the shared quote label and route');
  assert.ok(!h.includes('data-persona-path="everyday-portrait"'),lang+' homepage no longer shows a detached everyday-portrait price row');
  assert.ok(portrait.includes('id="portrait-options"')&&portrait.includes(esc(d.portraitLead)),lang+' non-executive meaning is visible');
  assert.ok(portrait.includes('?service=portrait&amp;portrait_mode=headshotcv'),lang+' explicit CV link selects CV, not executive pricing');

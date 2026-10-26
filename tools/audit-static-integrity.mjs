@@ -49,9 +49,9 @@ const canonicalServiceId = 'https://www.norbertbanhalmi.com/#visual-trust-partne
 assert(corpus.includes(canonicalPersonId), `canonical Person ID missing: ${canonicalPersonId}`);
 
 const requiredHomepageCopy = {
-  'index.html': ['Choose the right photograph for your situation — Vienna and Budapest.', 'A portrait should look like you.', 'We begin with where the photograph will be used.'],
-  'hu/index.html': ['Válassza ki a helyzetéhez illő fotózást — Bécs és Budapest.', 'Abból indulunk, hol fogja használni a képet.'],
-  'de-at/index.html': ['Wählen Sie die Fotografie, die zu Ihrer Situation passt — Wien und Budapest.', 'Wir beginnen damit, wo das Bild eingesetzt wird.']
+  'index.html': ['Portrait photography and visual presence — Vienna and Budapest.', 'Start from where the image will be used.'],
+  'hu/index.html': ['Portréfotózás és vizuális pozicionálás — Bécs és Budapest.', 'Abból indulunk, hol fogja használni a képet.'],
+  'de-at/index.html': ['Porträtfotografie und visuelle Präsenz — Wien und Budapest.', 'Wir beginnen damit, wo das Bild eingesetzt wird.']
 };
 for (const [file, phrases] of Object.entries(requiredHomepageCopy)) {
   const body = visibleBody(read(file));

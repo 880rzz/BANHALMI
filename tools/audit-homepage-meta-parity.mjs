@@ -1,9 +1,9 @@
 import fs from 'node:fs';
 
 const expected = {
-  'index.html': ['BANHALMI | Executive Portrait & Brand Photography | Vienna–Budapest','Professional photography in Vienna and Budapest. Choose portrait, brand, event or artists & performers — then request a clear quote.'],
-  'hu/index.html': ['BANHALMI | Executive portré és brandfotózás | Bécs–Budapest','Professzionális fotós Bécsben és Budapesten. Válassza a megfelelő utat: vezetői portré, brandfotózás, rendezvény vagy művészi portfólió — majd kérjen világos ajánlatot.'],
-  'de-at/index.html': ['BANHALMI | Executive-Porträt & Brandfotografie | Wien–Budapest','Professionelle Fotografie in Wien und Budapest. Wählen Sie Porträt, Brand, Event oder Kunstschaffende — danach ein klares Angebot.']
+  'index.html': ['BANHALMI | Portrait & brand photography | Vienna–Budapest','Norbert Bánhalmi — portrait, brand and event photography in Vienna and Budapest for leaders, professionals and teams.'],
+  'hu/index.html': ['BANHALMI | Portréfotózás és brandfotózás | Bécs–Budapest','Norbert Bánhalmi portréfotós. Vezetői portrék, brandfotózás és rendezvényfotózás Bécsben és Budapesten.'],
+  'de-at/index.html': ['BANHALMI | Porträt- & Brandfotografie | Wien–Budapest','Norbert Bánhalmi — Porträt-, Brand- und Eventfotografie in Wien und Budapest für Führungskräfte, Fachleute und Teams.']
 };
 const failures=[];
 function decode(v=''){return v.replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>')}
