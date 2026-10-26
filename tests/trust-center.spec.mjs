@@ -26,6 +26,16 @@ for (const route of trustPages) {
   });
 }
 
+// English slug under locale prefixes must not 404; canonical localized Trust routes stay unique.
+test('legacy /hu/trust/ and /de-at/trust/ redirect to localized Trust Center', async ({ page }) => {
+  await page.goto('/hu/trust/');
+  await expect(page).toHaveURL(/\/hu\/bizalom\/?$/);
+  await expect(page.locator('h1')).toBeVisible();
+  await page.goto('/de-at/trust/');
+  await expect(page).toHaveURL(/\/de-at\/vertrauen\/?$/);
+  await expect(page.locator('h1')).toBeVisible();
+});
+
 const legacyPages = ['/portrait/','/event-photography/','/privacy-policy/','/terms-conditions/','/requestaquote/','/faq/','/lifestyle/','/hu/portre/','/hu/brand/','/hu/rendezvenyfotozas/','/hu/adatvedelem/','/hu/aszf/','/hu/ajanlatkeres/','/hu/gyik/','/de-at/portrait/','/de-at/brand/','/de-at/eventfotografie/','/de-at/datenschutz/','/de-at/agb/','/de-at/anfrage/','/de-at/faq/'];
 test('legacy container and card-grid markup uses the shared constrained grid', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
