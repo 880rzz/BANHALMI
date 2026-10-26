@@ -53,7 +53,7 @@ function renderExecutivePositioningCopy(rel, html) {
 
 const homeMegaMenuLoader = `<script data-banhalmi-mega-menu="" defer src="/assets/js/mega-menu.js?v=20261018-four-services-v1"></script>`;
 
-const homeRuntimeLoader = `<script defer src="/assets/js/main.js?v=20261023-footer-desktop-hero-still-v1"></script>`;
+const homeRuntimeLoader = `<script defer src="/assets/js/main.js?v=20261026-contact-dock-arrows-v1"></script>`;
 
 function quoteRuntimeLoader(src) {
   const runtimeControls = '.menu-btn,[data-cookie-settings],.info-tip[data-tooltip]';

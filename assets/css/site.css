@@ -2435,7 +2435,7 @@ main > section:not(.hero){
   .site-header{
 
 
-    background:rgba(255,255,255,.98);
+    background:#fff;
   }
 }
 
@@ -4018,7 +4018,7 @@ html body main>section{content-visibility:visible;contain-intrinsic-size:auto;}
 html body main>section.hero.hero-image-first.hero-visual-only,
 html body main>section.hero.hero-image-first.hero-visual-only>.wrap{padding-top:0;padding-bottom:0;margin-top:0;}
 html body main>section.hero.hero-image-first.hero-visual-only .hero-figure{margin-bottom:0;}
-html body .site-header{background:rgba(255,255,255,.98);}
+html body .site-header{background:#fff;}
 html body .fp-decision-system.surface-soft .fp-art-path>span{color:#3f4147;}
 html body .presence-thesis[data-surface="dark"] :is(h1,h2,h3) :is(.title-accent,.semantic-emphasis){background:none;-webkit-text-fill-color:var(--gold);color:var(--gold);}
 
@@ -4170,19 +4170,30 @@ html body .site-footer .footer-accordion>summary{display:flex;align-items:center
 /* BANHALMI-CONTACT-DOCK-V1:START */
 .banhalmi-contact-dock{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:2147483000;font-family:inherit;color:#111}
 .banhalmi-contact-trigger{min-height:48px;padding:0 18px;border:1px solid rgba(17,17,17,.16);border-radius:999px;background:#111;color:#fff;font:600 14px/1 inherit;letter-spacing:.02em;box-shadow:0 10px 30px rgba(0,0,0,.16);cursor:pointer}
-.banhalmi-contact-panel{position:absolute;right:0;bottom:60px;width:min(440px,calc(100vw - 40px));max-height:min(680px,calc(100vh - 120px));overflow:auto;padding:24px;border:1px solid rgba(29,29,31,.12);border-radius:24px;background:rgba(255,255,255,.985);box-shadow:0 1px 0 rgba(0,0,0,.02),0 18px 54px rgba(0,0,0,.16);backdrop-filter:blur(16px);color:#111}
+.banhalmi-contact-panel{position:absolute;right:0;bottom:60px;width:min(400px,calc(100vw - 40px));max-height:none;overflow:visible;padding:18px;border:1px solid rgba(29,29,31,.12);border-radius:24px;background:rgba(255,255,255,.985);box-shadow:0 1px 0 rgba(0,0,0,.02),0 18px 54px rgba(0,0,0,.16);backdrop-filter:blur(16px);color:#111}
 .banhalmi-contact-panel[hidden]{display:none}
 .banhalmi-contact-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
 .banhalmi-contact-head strong{font-size:22px;line-height:1.12;letter-spacing:-.025em;color:#111}
 .banhalmi-contact-close{width:44px;height:44px;border:0;border-radius:50%;background:transparent;font-size:24px;cursor:pointer}
-.banhalmi-contact-list{display:grid;gap:8px}
-.banhalmi-contact-action,.banhalmi-contact-studio{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:62px;padding:15px 16px;border:1px solid rgba(29,29,31,.12);border-radius:16px;color:#111;text-decoration:none;background:#fff}
-.banhalmi-contact-action strong,.banhalmi-contact-studio strong{font-size:15px;line-height:1.3;color:#111;font-weight:700}
-.banhalmi-contact-action span,.banhalmi-contact-studio span{font-size:13px;line-height:1.45;color:#6e6e73;text-align:right}
-.banhalmi-contact-sep{height:1px;background:rgba(29,29,31,.10);margin:20px 0 16px}
-.banhalmi-contact-label{margin:0 0 10px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.10em;color:#6e6e73}
+.banhalmi-contact-list{display:grid;gap:6px}
+.banhalmi-contact-primary{display:grid;gap:6px;margin-bottom:10px}
+.banhalmi-contact-secondary{display:grid;gap:4px}
+.banhalmi-contact-action,.banhalmi-contact-studio{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:48px;min-width:44px;padding:11px 13px;border:1px solid rgba(29,29,31,.12);border-radius:14px;color:#111;text-decoration:none;background:#fff}
+.banhalmi-contact-secondary .banhalmi-contact-action{min-height:44px;padding:9px 12px}
+.banhalmi-contact-action strong,.banhalmi-contact-studio strong{font-size:14px;line-height:1.25;color:#111;font-weight:700}
+.banhalmi-contact-action span,.banhalmi-contact-studio span{font-size:12px;line-height:1.35;color:#6e6e73;text-align:right}
+.banhalmi-contact-studio span{font-size:11px;line-height:1.3}
+.banhalmi-contact-sep{height:1px;background:rgba(29,29,31,.10);margin:12px 0 10px}
+.banhalmi-contact-label{margin:0 0 6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.10em;color:#6e6e73}
+.banhalmi-contact-fallback{display:none;margin:10px 0 0;font-size:13px;line-height:1.4}
+.banhalmi-contact-fallback a{color:#111;text-decoration:underline}
 .banhalmi-contact-action:focus-visible,.banhalmi-contact-studio:focus-visible,.banhalmi-contact-trigger:focus-visible,.banhalmi-contact-close:focus-visible{outline:2px solid #9b7a34;outline-offset:3px}
-@media(max-width:640px){.banhalmi-contact-dock{left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom))}.banhalmi-contact-trigger{margin-left:auto;display:block}.banhalmi-contact-panel{position:fixed;left:0;right:0;bottom:0;width:auto;max-height:70vh;border-radius:20px 20px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom));box-shadow:0 -20px 60px rgba(0,0,0,.22)}}
+@media(max-width:640px){.banhalmi-contact-dock{left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom))}.banhalmi-contact-trigger{margin-left:auto;display:block}.banhalmi-contact-panel{position:fixed;left:12px;right:12px;bottom:calc(max(12px,env(safe-area-inset-bottom)) + 56px);width:auto;max-height:none;overflow:visible;border-radius:20px;padding:14px 12px;box-shadow:0 18px 54px rgba(0,0,0,.16)}}
+@media(max-height:520px),(max-width:720px) and (orientation:landscape){
+  .banhalmi-contact-panel.is-compact .banhalmi-contact-secondary,
+  .banhalmi-contact-panel.is-compact .banhalmi-contact-studios{display:none}
+  .banhalmi-contact-panel.is-compact .banhalmi-contact-fallback{display:block}
+}
 @media(prefers-reduced-motion:no-preference){.banhalmi-contact-panel{animation:banhalmiDockIn .16s ease-out}@keyframes banhalmiDockIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}
 /* BANHALMI-CONTACT-DOCK-V1:END */
 
@@ -6466,15 +6477,14 @@ html body .site-footer .banhalmi-ecosystem a:hover{color:#fff;}
     bottom:calc(max(12px,env(safe-area-inset-bottom)) + 60px);
     width:auto;
     max-width:none;
-    max-height:calc(100dvh - 96px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    max-height:none;
     padding:12px;
     border:1px solid rgba(29,29,31,.12);
     border-radius:20px;
     background:rgba(255,255,255,.985);
     box-shadow:0 1px 0 rgba(0,0,0,.02),0 18px 54px rgba(0,0,0,.16);
     color:#111;
-    overflow-y:auto;
-    overscroll-behavior:contain;
+    overflow:visible;
   }
   html body>.banhalmi-contact-dock .banhalmi-contact-head{margin-bottom:8px}
   html body>.banhalmi-contact-dock .banhalmi-contact-head strong{font-size:18px;line-height:1.15}
@@ -6898,25 +6908,23 @@ html body main .cards .card p,
 html body main .location-cards .card p{
   max-width:none;
 }
+/* Contact routing grid: one component owns display+gap at every width.
+   Column count alone switches at 860px. Do not zero second-card padding. */
 html body main .contact-routing .service-grid{
+  display:grid;
+  grid-template-columns:1fr;
   gap:clamp(28px,3vw,40px);
+  align-items:stretch;
 }
-html body main .contact-routing .service-grid .card + .card{
-  border-top:1px solid var(--line,rgba(16,34,63,.12));
-  padding-top:clamp(22px,2.4vw,30px);
-  margin-top:clamp(6px,1vw,10px);
+html body main .contact-routing .service-grid > .card{
+  margin:0;
+  padding:30px 30px;
+  box-sizing:border-box;
 }
 @media (min-width:860px){
   html body main .contact-routing .service-grid{
     grid-template-columns:repeat(2,minmax(0,1fr));
     gap:clamp(28px,3vw,48px);
-  }
-  html body main .contact-routing .service-grid .card + .card{
-    border-top:0;
-    padding-top:0;
-    margin-top:0;
-    border-left:1px solid var(--line,rgba(16,34,63,.12));
-    padding-left:clamp(22px,2.4vw,32px);
   }
 }
 html body main .faq-topic{

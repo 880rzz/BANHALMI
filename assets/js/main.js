@@ -1183,43 +1183,57 @@
   var root = document.documentElement;
   var lang = String(root.lang || "en").toLowerCase();
   var locale = lang.indexOf("hu") === 0 ? "hu" : (lang.indexOf("de") === 0 ? "de" : "en");
+  var quotePath = locale === "hu" ? "/hu/ajanlatkeres/" : (locale === "de" ? "/de-at/anfrage/" : "/requestaquote/");
+  var contactPath = locale === "hu" ? "/hu/kapcsolat/" : (locale === "de" ? "/de-at/kontakt/" : "/contact/");
+  var bookingHref = "https://meet.bookipi.com/zk5ly35r";
   var copy = {
     en: {
       contact:"Contact", close:"Close contact panel", email:"Email", whatsapp:"WhatsApp", revealEmail:"Show email", revealPhone:"Show phone number", openWhatsApp:"Open WhatsApp",
       phone:"Call", studios:"Studios", budapest:"Budapest studio", vienna:"Vienna studio", directions:"Directions",
+      booking:"Online consultation", bookingHint:"Book an appointment", quote:"Request a quote", quoteHint:"Indicative estimate",
+      moreContact:"Full contact page",
       wa:"Hello Norbert, I am contacting you from the BANHALMI website regarding a photography project."
     },
     de: {
       contact:"Kontakt", close:"Kontaktfenster schließen", email:"E-Mail", whatsapp:"WhatsApp", revealEmail:"E-Mail anzeigen", revealPhone:"Telefonnummer anzeigen", openWhatsApp:"WhatsApp öffnen",
       phone:"Anrufen", studios:"Studios", budapest:"Studio Budapest", vienna:"Studio Wien", directions:"Route",
+      booking:"Online-Gespräch", bookingHint:"Termin buchen", quote:"Angebot anfragen", quoteHint:"Unverbindliche Kalkulation",
+      moreContact:"Zur Kontaktseite",
       wa:"Hallo Norbert, ich kontaktiere Sie über die BANHALMI Website wegen eines Fotoprojekts."
     },
     hu: {
       contact:"Kapcsolat", close:"Kapcsolati panel bezárása", email:"E-mail", whatsapp:"WhatsApp", revealEmail:"E-mail megjelenítése", revealPhone:"Telefonszám megjelenítése", openWhatsApp:"WhatsApp megnyitása",
       phone:"Hívás", studios:"Stúdiók", budapest:"Budapesti stúdió", vienna:"Bécsi stúdió", directions:"Útvonal",
+      booking:"Online egyeztetés", bookingHint:"Időpontfoglalás", quote:"Árajánlat kérése", quoteHint:"Tájékoztató kalkuláció",
+      moreContact:"Teljes kapcsolati oldal",
       wa:"Kedves Norbert, a BANHALMI weboldalról keresem egy fotózással kapcsolatban."
     }
   }[locale];
   var viennaPhoneHref = locale === "hu" ? "+4367761655592" : "+4367764733262";
   var viennaPhoneDisplay = locale === "hu" ? "+43 677 616 55592" : "+43 677 647 332 62";
   var whatsappHref = "+4367761655592";
-  var whatsappDisplay = "+43 677 616 55592";
 
   var wrap = document.createElement("div");
   wrap.className = "banhalmi-contact-dock";
   wrap.innerHTML =
     '<div class="banhalmi-contact-panel" id="banhalmi-contact-panel" hidden role="dialog" aria-modal="false" aria-labelledby="banhalmi-contact-title">'+
       '<div class="banhalmi-contact-head"><strong id="banhalmi-contact-title">'+copy.contact+'</strong><button class="banhalmi-contact-close" type="button" aria-label="'+copy.close+'">×</button></div>'+
-      '<div class="banhalmi-contact-list">'+
-        '<a class="banhalmi-contact-action" href="https://wa.me/'+whatsappHref.slice(1)+'?text='+encodeURIComponent(copy.wa)+'" target="_blank" rel="noopener noreferrer"><strong>'+copy.whatsapp+'</strong><span>'+copy.openWhatsApp+'</span></a>'+
+      '<div class="banhalmi-contact-primary">'+
+        '<a class="banhalmi-contact-action" data-contact-role="booking" href="'+bookingHref+'" target="_blank" rel="noopener noreferrer"><strong>'+copy.booking+'</strong><span>'+copy.bookingHint+'</span></a>'+
+        '<a class="banhalmi-contact-action" data-contact-role="quote" href="'+quotePath+'"><strong>'+copy.quote+'</strong><span>'+copy.quoteHint+'</span></a>'+
+      '</div>'+
+      '<div class="banhalmi-contact-sep"></div>'+
+      '<div class="banhalmi-contact-secondary banhalmi-contact-list">'+
+        '<a class="banhalmi-contact-action" data-contact-role="whatsapp" href="https://wa.me/'+whatsappHref.slice(1)+'?text='+encodeURIComponent(copy.wa)+'" target="_blank" rel="noopener noreferrer"><strong>'+copy.whatsapp+'</strong><span>'+copy.openWhatsApp+'</span></a>'+
         '<button class="banhalmi-contact-action banhalmi-contact-reveal" type="button" data-contact-kind="email"><strong>'+copy.email+'</strong><span>'+copy.revealEmail+'</span></button>'+
         '<button class="banhalmi-contact-action banhalmi-contact-reveal" type="button" data-contact-kind="phone"><strong>'+copy.phone+'</strong><span>'+copy.revealPhone+'</span></button>'+
       '</div>'+
-      '<div class="banhalmi-contact-sep"></div><p class="banhalmi-contact-label">'+copy.studios+'</p>'+
-      '<div class="banhalmi-contact-list">'+
-        '<a class="banhalmi-contact-studio" href="https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8" target="_blank" rel="noopener noreferrer"><strong>'+copy.vienna+'</strong><span>Schwedenplatz 2, Top 8–9<br>1010 Wien · '+copy.directions+' ↗</span></a>'+
-        '<a class="banhalmi-contact-studio" href="https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA" target="_blank" rel="noopener noreferrer"><strong>'+copy.budapest+'</strong><span>Lágymányosi u. 15.<br>1111 Budapest · '+copy.directions+' ↗</span></a>'+
+      '<div class="banhalmi-contact-sep banhalmi-contact-studios"></div><p class="banhalmi-contact-label banhalmi-contact-studios">'+copy.studios+'</p>'+
+      '<div class="banhalmi-contact-list banhalmi-contact-studios">'+
+        '<a class="banhalmi-contact-studio" href="https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8" target="_blank" rel="noopener noreferrer"><strong>'+copy.vienna+'</strong><span>Schwedenplatz 2 · 1010 Wien</span></a>'+
+        '<a class="banhalmi-contact-studio" href="https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA" target="_blank" rel="noopener noreferrer"><strong>'+copy.budapest+'</strong><span>Lágymányosi u. 15 · 1111 Budapest</span></a>'+
       '</div>'+
+      '<p class="banhalmi-contact-fallback"><a href="'+contactPath+'">'+copy.moreContact+'</a></p>'+
     '</div>'+
     '<button class="banhalmi-contact-trigger" type="button" aria-expanded="false" aria-controls="banhalmi-contact-panel">'+copy.contact+'</button>';
 
@@ -1244,15 +1258,28 @@
       revealDirectContact(button);
     });
   });
+  function syncCompact() {
+    if (panel.hidden) return;
+    panel.classList.remove("is-compact");
+    var overflows = panel.scrollHeight > Math.floor(window.innerHeight * 0.92)
+      || panel.getBoundingClientRect().top < 8;
+    if (overflows) panel.classList.add("is-compact");
+  }
   function setOpen(open) {
     panel.hidden = !open;
     trigger.setAttribute("aria-expanded", String(open));
-    if (open) close.focus({preventScroll:true});
+    if (open) {
+      syncCompact();
+      close.focus({preventScroll:true});
+    } else {
+      panel.classList.remove("is-compact");
+    }
   }
   trigger.addEventListener("click", function(){ setOpen(panel.hidden); });
   close.addEventListener("click", function(){ setOpen(false); trigger.focus({preventScroll:true}); });
   document.addEventListener("keydown", function(e){ if(e.key==="Escape" && !panel.hidden){setOpen(false);trigger.focus({preventScroll:true});} });
   document.addEventListener("click", function(e){ if(!panel.hidden && !wrap.contains(e.target)) setOpen(false); });
+  window.addEventListener("resize", function(){ if(!panel.hidden) syncCompact(); }, {passive:true});
 
   var cookieBar = document.querySelector(".cookie");
   function syncCookie() {
@@ -1289,8 +1316,14 @@
     }catch(error){return false;}
   }
   function actionOrMedia(a){
-    return a.matches('.brand,.footer-wko-profile,.btn,.btn-primary,.btn-secondary,.btn-ghost,.nav-cta,.banhalmi-contact-action,[role="button"]')
-      || !!a.querySelector("img,picture,svg,video");
+    if(a.matches('.brand,.footer-wko-profile,.btn,.btn-primary,.btn-secondary,.btn-ghost,.nav-cta,[role="button"],.banhalmi-contact-studio')) return true;
+    if(a.matches('.banhalmi-contact-action')){
+      var role=a.getAttribute("data-contact-role");
+      // Booking is an external text action and keeps one decorative ↗.
+      // WhatsApp and in-panel mailto/tel stay glyph-free.
+      return role!=="booking";
+    }
+    return !!a.querySelector("img,picture,svg,video");
   }
   function decorative(a){
     return a.querySelector(":scope > .banhalmi-link-arrow");
@@ -1302,8 +1335,10 @@
       if(node.parentElement?.closest(".banhalmi-link-arrow")) continue;
       if(node.nodeValue&&node.nodeValue.trim())last=node;
     }
-    if(last&&/\u2197\s*$/.test(last.nodeValue)){
-      last.nodeValue=last.nodeValue.replace(/\s*\u2197\s*$/,"").replace(/\s+$/,"");
+    if(!last) return;
+    // Strip trailing decorative marks (↗ and ›) so the decorator owns one glyph.
+    if(/[\u2197\u203A]\s*$/.test(last.nodeValue)){
+      last.nodeValue=last.nodeValue.replace(/\s*[\u2197\u203A]\s*$/,"").replace(/\s+$/,"");
     }
   }
   function normalize(a){
