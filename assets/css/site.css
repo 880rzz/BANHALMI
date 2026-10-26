@@ -7164,3 +7164,15 @@ body.bn-mega-open .site-header .menu-btn{
 body.bn-mega-open .site-header .menu-btn span:nth-child(1){transform:rotate(45deg);}
 body.bn-mega-open .site-header .menu-btn span:nth-child(2){opacity:0;transform:scaleX(0);}
 body.bn-mega-open .site-header .menu-btn span:nth-child(3){transform:rotate(-45deg);}
+
+/* SERVICE-EDITORIAL-SSR-20261026:START */
+.service-editorial-ssr .service-editorial-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 16px;
+  margin-top:8px;
+}
+.service-editorial-ssr .service-editorial-actions .btn{
+  text-decoration:none;
+}
+/* SERVICE-EDITORIAL-SSR-20261026:END */
