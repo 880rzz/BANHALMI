@@ -22,8 +22,12 @@ for(const route of routes){
     const offsite=!!url&&['https:','http:'].includes(url.protocol)
       && canonicalHost(url.hostname)!==local
       && canonicalHost(url.hostname)!=='norbertbanhalmi.com';
-    const excluded=a.matches('.brand,.footer-wko-profile,.btn,.btn-primary,.btn-secondary,.btn-ghost,.nav-cta,.banhalmi-contact-action,[role="button"]')
+    let excluded=a.matches('.brand,.footer-wko-profile,.btn,.btn-primary,.btn-secondary,.btn-ghost,.nav-cta,.banhalmi-contact-studio,[role="button"]')
       || !!a.querySelector('img,picture,svg,video');
+    if(a.matches('.banhalmi-contact-action')){
+      // Booking keeps one decorative external glyph; WhatsApp and other dock actions do not.
+      excluded=a.getAttribute('data-contact-role')!=='booking';
+    }
     const text=(a.textContent||'').replace(/\u2197/g,'').trim();
     const expected=offsite&&!excluded&&!!text;
     const glyphs=[...a.querySelectorAll(':scope > .banhalmi-link-arrow')];
@@ -74,9 +78,67 @@ for(const route of ['/','/hu/','/de-at/']) {
   const declineCookies = page.locator('[data-decline]');
   if (await declineCookies.isVisible()) await declineCookies.click();
   await page.locator('.banhalmi-contact-trigger').click();
-  const whatsapp=page.locator('.banhalmi-contact-action[href^="https://wa.me/"]');
+  const whatsapp=page.locator('.banhalmi-contact-action[data-contact-role="whatsapp"]');
   await expect(whatsapp).toBeVisible();
   await expect(whatsapp.locator('.banhalmi-link-arrow')).toHaveCount(0);
   await expect(whatsapp).not.toContainText('↗');
+ });
+
+ test('Dock exposes booking and quote without inner scroll: '+route, async({page})=>{
+  await page.goto(route);
+  const declineCookies = page.locator('[data-decline]');
+  if (await declineCookies.isVisible()) await declineCookies.click();
+  await page.locator('.banhalmi-contact-trigger').click();
+  const booking=page.locator('.banhalmi-contact-action[data-contact-role="booking"]');
+  const quote=page.locator('.banhalmi-contact-action[data-contact-role="quote"]');
+  await expect(booking).toBeVisible();
+  await expect(quote).toBeVisible();
+  await expect(booking.locator('.banhalmi-link-arrow')).toHaveCount(1);
+  await expect(quote.locator('.banhalmi-link-arrow')).toHaveCount(0);
+  const panelMetrics=await page.locator('#banhalmi-contact-panel').evaluate((el)=>({
+    overflowY:getComputedStyle(el).overflowY,
+    scrollHeight:el.scrollHeight,
+    clientHeight:el.clientHeight,
+    scrollWidth:el.scrollWidth,
+    clientWidth:el.clientWidth
+  }));
+  expect(['visible','clip'].includes(panelMetrics.overflowY) || panelMetrics.overflowY==='visible').toBeTruthy();
+  expect(panelMetrics.scrollHeight).toBeLessThanOrEqual(panelMetrics.clientHeight+1);
+  expect(panelMetrics.scrollWidth).toBeLessThanOrEqual(panelMetrics.clientWidth+1);
+ });
+}
+
+for(const route of ['/contact/','/hu/kapcsolat/','/de-at/kontakt/']){
+ test('Map card links keep a single external glyph: '+route, async({page})=>{
+  await page.goto(route);
+  const maps=page.locator('a.map-card-link');
+  const count=await maps.count();
+  expect(count).toBeGreaterThan(0);
+  for(let i=0;i<count;i++){
+   const link=maps.nth(i);
+   await expect(link.locator('.banhalmi-link-arrow')).toHaveCount(1);
+   const text=await link.evaluate(a=>Array.from(a.childNodes).filter(n=>n.nodeType===3).map(n=>n.textContent||'').join(''));
+   expect(text).not.toMatch(/[›↗]/);
+  }
+ });
+
+ test('Contact routing cards keep equal padding and grid gap: '+route, async({page})=>{
+  await page.setViewportSize({width:1100,height:900});
+  await page.goto(route);
+  const metrics=await page.locator('.contact-routing .service-grid').evaluate((grid)=>{
+   const style=getComputedStyle(grid);
+   const cards=[...grid.querySelectorAll(':scope > .card')].map((card)=>{
+    const cs=getComputedStyle(card);
+    const box=card.getBoundingClientRect();
+    return {paddingTop:cs.paddingTop,paddingBottom:cs.paddingBottom,top:box.top,bottom:box.bottom,height:box.height};
+   });
+   return {display:style.display,gap:style.gap,columns:style.gridTemplateColumns,cards};
+  });
+  expect(metrics.display).toBe('grid');
+  expect(metrics.cards.length).toBe(2);
+  expect(metrics.cards[0].paddingTop).toBe(metrics.cards[1].paddingTop);
+  expect(metrics.cards[0].paddingBottom).toBe(metrics.cards[1].paddingBottom);
+  // Two columns on desktop: cards should not stack with zero gap.
+  expect(metrics.columns.split(' ').filter(Boolean).length).toBeGreaterThanOrEqual(2);
  });
 }
