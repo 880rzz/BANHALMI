@@ -25,6 +25,16 @@
       "permanent": true
     },
     {
+      "source": "/quote/",
+      "destination": "/requestaquote/",
+      "permanent": true
+    },
+    {
+      "source": "/quote",
+      "destination": "/requestaquote/",
+      "permanent": true
+    },
+    {
       "source": "/en/work",
       "destination": "https://www.banhalmi.art/",
       "permanent": true
