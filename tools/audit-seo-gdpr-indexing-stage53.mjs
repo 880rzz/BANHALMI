@@ -14,8 +14,8 @@ for (const file of walk(root).filter((p)=>p.endsWith('.html'))) {
 const legacy = {
   'en/work/index.html':'https://www.banhalmi.art/',
   'about/norbert-banhalmi/index.html':'https://www.norbertbanhalmi.com/about/',
-  'hu/rolam/banhalmi-norbert/index.html':'https://www.norbertbanhalmi.com/about/',
-  'de/ueber-mich/norbert-banhalmi/index.html':'https://www.norbertbanhalmi.com/about/',
+  'hu/rolam/banhalmi-norbert/index.html':'https://www.norbertbanhalmi.com/hu/eletmu/',
+  'de/ueber-mich/norbert-banhalmi/index.html':'https://www.norbertbanhalmi.com/de-at/werk/',
   'press/index.html':'https://www.banhalmi.art/press.html',
   'old-print/index.html':'https://www.banhalmi.art/press.html',
   'hu/sajto/megjelenesek/index.html':'https://www.banhalmi.art/hu/press.html',
