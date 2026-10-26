@@ -5,6 +5,26 @@
   },
   "redirects": [
     {
+      "source": "/de-at/trust/",
+      "destination": "/de-at/vertrauen/",
+      "permanent": true
+    },
+    {
+      "source": "/de-at/trust",
+      "destination": "/de-at/vertrauen/",
+      "permanent": true
+    },
+    {
+      "source": "/hu/trust/",
+      "destination": "/hu/bizalom/",
+      "permanent": true
+    },
+    {
+      "source": "/hu/trust",
+      "destination": "/hu/bizalom/",
+      "permanent": true
+    },
+    {
       "source": "/en/work",
       "destination": "https://www.banhalmi.art/",
       "permanent": true
