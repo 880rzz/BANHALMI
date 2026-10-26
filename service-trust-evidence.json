@@ -416,7 +416,8 @@
         "veol-rege-digital-exhibition-2021",
         "verocei-tukor-curator-opening-2024",
         "verocei-tukor-digital-exhibition-project-2022",
-        "verocei-tukor-curatorial-evidence-2024"
+        "verocei-tukor-curatorial-evidence-2024",
+        "orf-vipach-old-phones-digital-reuse-2026"
       ],
       "relationshipEvidenceIds": [
         "bridges-japan-times-olympus-ambassador-2021",
@@ -3793,6 +3794,37 @@
       "sourceStrength": "medium-high",
       "guardrail": "Photo-credit/editorial-publication evidence only. Do not infer a Kiskegyed client relationship, endorsement, exclusivity or recurring commission.",
       "evidenceSummary": "Kiskegyed publication evidence independently credits Bánhalmi for Wiener Kaiser Wiesn event imagery."
+    },
+    {
+      "id": "orf-vipach-old-phones-digital-reuse-2026",
+      "title": "Régi telefonok új élete – Digitális újrahasznosítás",
+      "publisher": "ORF Volksgruppen",
+      "url": "https://volksgruppen.orf.at/magyarok/stories/3354195/",
+      "datePublished": "2026-05-16",
+      "evidenceKind": "independent broadcaster community/technology coverage",
+      "verificationStatus": "LIVE-VERIFIED",
+      "evidenceType": [
+        "PROJECT-COVERAGE",
+        "PROFESSIONAL-PUBLICATION"
+      ],
+      "classification": [
+        "VIPACH PhotoStudio",
+        "digital reuse / device recycling education",
+        "Vienna Hungarian community initiative",
+        "information-security education framing"
+      ],
+      "services": [
+        "visualStrategy",
+        "generalAuthority"
+      ],
+      "serviceRelevance": [
+        "visualStrategy",
+        "generalAuthority"
+      ],
+      "context": "ORF covers a Vienna Hungarian-community initiative that reuses old phones via VIPACH PhotoStudio. The article identifies Bánhalmi Norbert as the project lead and as an information-security specialist discussing child-safe digital creation without data collection.",
+      "guardrail": "Use as community/VIPACH/education authority evidence only. Do not treat as a photography commission credit, ORF endorsement, product partnership, or clinical/security certification claim.",
+      "sourceStrength": "high",
+      "evidenceSummary": "Independent ORF Volksgruppen article documents the VIPACH PhotoStudio phone-reuse education project and names Bánhalmi Norbert as project lead in an information-security education context."
     }
   ],
   "pendingEvidenceCandidates": [
