@@ -54,11 +54,12 @@ for (const relative of ['redirects/at/vercel.json', 'redirects/hu/vercel.json'])
   const config = fs.readFileSync(path.join(root, relative), 'utf8');
   if (/X-Robots-Tag|noindex/i.test(config)) failures.push(`${relative} permanent redirect config must not emit noindex`);
   const json = JSON.parse(config);
-  if (!Array.isArray(json.redirects) || json.redirects.length !== 1 || json.redirects[0].permanent !== true) {
-    failures.push(`${relative} must contain one permanent language redirect`);
+  // Middleware owns alias routing; vercel.json redirects may be empty.
+  if (!Array.isArray(json.redirects) || json.redirects.some(r => r.permanent !== true)) {
+    failures.push(`${relative} redirects must be an array of permanent rules (may be empty when middleware owns routing)`);
   }
-  if (!json.git || json.git.deploymentEnabled !== false) {
-    failures.push(`${relative} must disable redundant Git-triggered Vercel deployments with git.deploymentEnabled=false`);
+  if (!json.git || json.git.deploymentEnabled !== true) {
+    failures.push(`${relative} must enable Git-triggered Vercel deployments (git.deploymentEnabled=true) so BANHALMI tip middleware reaches production`);
   }
   if (Object.prototype.hasOwnProperty.call(json, 'ignoreCommand')) {
     failures.push(`${relative} must not retain the legacy ignoreCommand build-suppression path`);
