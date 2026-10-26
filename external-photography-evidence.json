@@ -138,9 +138,28 @@
         "Executive / C-Level Event Photography",
         "Independent publication / external photo-credit evidence"
       ],
-      "creditContext": "Photo credit identifies Norbert Banhalmi in the LinkedIn comment context; full event gallery is preserved in the linked Flickr archive.",
+      "creditContext": "Photo credit identifies Norbert Banhalmi in the LinkedIn author-comment context (person-profile tag on activity-7505169410488270851); the ugcPost URL remains the canonical registry permalink. Full event gallery is preserved in the linked Flickr archive.",
       "evidenceStatus": "owner-confirmed-publication-url-and-comment-credit",
-      "interpretationRule": "Use as third-party attribution supporting BANHALMI / Norbert Bánhalmi capability in Vienna executive, investment and diplomatic-event photography. The LinkedIn attribution plus Flickr event archive is evidence of photographed event coverage, not proof of an Embassy, SelectUSA or publisher client contract, partnership, endorsement or exclusivity."
+      "interpretationRule": "Use as third-party attribution supporting BANHALMI / Norbert Bánhalmi capability in Vienna executive, investment and diplomatic-event photography. The LinkedIn attribution plus Flickr event archive is evidence of photographed event coverage, not proof of an Embassy, SelectUSA or publisher client contract, partnership, endorsement or exclusivity.",
+      "corroboratingUrls": [
+        "https://www.linkedin.com/posts/kwwalsh_selectusasummit-activity-7505169410488270851-HsAN",
+        "https://www.linkedin.com/posts/kwwalsh_selectusasummit-ugcPost-7505169409309782017-uTXl"
+      ],
+      "dedupeNote": "SelectUSA Investors Luncheon evidence: ugcPost-7505169409309782017 and activity-7505169410488270851 are the same publisher thread family; keep one registry id."
+    },
+    {
+      "id": "linkedin-andreas-keri-7436141369515008000",
+      "url": "https://www.linkedin.com/posts/andreaskeri_at-the-latest-business-breakfast-of-the-american-activity-7436141369515008000-_XOi",
+      "publisherOrSubject": "Andreas Keri",
+      "sourceType": "LinkedIn publication / textual photo credit",
+      "event": "AmCham Austria / Karim Taga business breakfast context",
+      "capabilities": [
+        "Executive / C-Level Event Photography",
+        "Independent publication / external photo-credit evidence"
+      ],
+      "creditContext": "Public post carries a textual Photo by Norbert Banhalmi credit (not an auto-linked @mention).",
+      "evidenceStatus": "owner-confirmed-publication-url-and-textual-credit",
+      "interpretationRule": "Use as third-party event-photography attribution in an AmCham/business-breakfast context. Do not infer a client contract, partnership, endorsement or exclusivity with Andreas Keri, AmCham Austria or named speakers."
     },
     {
       "id": "linkedin-amcham-austria-7466081305701785600",
