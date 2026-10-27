@@ -5,9 +5,9 @@
 ## Baseline (ne attribúálj automatikusan)
 | Rendszer | Production change / tip | Exact-live SHA | Change dátum (Europe/Budapest) |
 | --- | --- | --- | --- |
-| BANHALMI Professional | hasMap + dock (PR #65) | `328060b76a6511fa79dbaffac17a234454f40464` | 2026-10-26/27 |
-| BANHALMI ART | Place.hasMap PR #307 | `95a43d602079347c173981e0866fc0a8a641c9d7` | 2026-10-27 |
-| Blog / Wix | Item SEO schema exact-one dedupe | n/a (Wix resolvedTags) | 2026-10-27 |
+| BANHALMI Professional | image-rights evidence PR #67 | `5791bc236fd2b061709122bc5b56477927c44e52` | 2026-10-27 |
+| BANHALMI ART | EUFÓRIA Fellegi/Bence rights PR #308 | `9158ce3617fa2dada4ed3fbec2bc2da53fac7028` | 2026-10-27 |
+| Blog / Wix | Image rights Class A/B/C/D + GSC sitemap resubmit | n/a (Wix resolvedTags / GSC) | 2026-10-27 |
 
 Measurement start: **2026-10-27** · Első checkpoint: **2026-11-02** · Change freeze: aktív a 7 napos checkpointig (P0/P1 kivételekkel).
 

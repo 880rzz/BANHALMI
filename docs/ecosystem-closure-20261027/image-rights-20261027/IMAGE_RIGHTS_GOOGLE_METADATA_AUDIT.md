@@ -1,17 +1,18 @@
 # IMAGE RIGHTS / GOOGLE METADATA AUDIT
 
-Generated: 2026-10-27 13:50 Europe/Budapest
+Generated: 2026-10-27 13:45 Europe/Budapest
 
 ## Professional
 - Catalog ImageObject Google metadata: **154/154**
 - Fine-art archive: **25/25**
 - Page JSON-LD ImageObjects: **495/495**
 - Decorative/UI img tags excluded from licensing requirement: 124
+- Live SHA: `5791bc236fd2b061709122bc5b56477927c44e52`
 
 ## ART
 - Knowledge-graph photographs: **3/3** (Fellegi + Péter Bence + Peter Magyar)
 - Homepage gallery licensing gate: HU 131/131, EN 18/18, DE 18/18
-- Fellegi + Péter Bence: Commons-proven CC BY-SA 4.0 (`copyrightHolder`, `copyrightNotice`, `license`, `acquireLicensePage`) — PR #308 CI green (`39e8d4074`), merge/exact-live pending
+- Fellegi + Péter Bence: Commons-proven CC BY-SA 4.0 live on EN/HU/DE `Photograph` nodes + KG — exact-live **PASS** `9158ce3617fa2dada4ed3fbec2bc2da53fac7028`
 
 ## Blog (Wix)
 - Published posts: **513** / families **171**
