@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 /**
- * Release gate: Wix Fotótörténelem image-rights snapshot invariants.
- * Does not invent rights. Blocks regression of exact-one and of already-proven Google-six posts.
+ * Release gate: Wix Fotótörténelem snapshot invariants.
+ * Blog is NOT in Google Image Licensable scope. This gate only blocks:
+ * - BlogPosting exact-one regressions
+ * - invented Banhalmi copyright on Class C third-party images
+ * - regression of already-proven six-field writes (historical canary/bulk)
+ * It does NOT require Google licensing metadata on remaining covers.
  */
 import fs from "node:fs";
 import path from "node:path";

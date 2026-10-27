@@ -1,0 +1,44 @@
+{
+  "updatedAt": "2026-10-27T16:00:00+01:00",
+  "Europe/Budapest": "2026-10-27 ~16:00",
+  "status": "SUBMITTED / MEASUREMENT PENDING",
+  "note": "Sitemap accept ≠ indexing. Google download may remain pending after acceptance. Do not claim immediate indexing.",
+  "professional": {
+    "sitemap": "https://www.norbertbanhalmi.com/sitemap.xml",
+    "liveSHA": "5791bc236fd2b061709122bc5b56477927c44e52",
+    "resubmission": "SUBMITTED",
+    "channel": "external_GSC_owner_access",
+    "gscState": "accepted_confirmed_0_warning_0_error_pending_google_download"
+  },
+  "art": {
+    "sitemap": "https://www.banhalmi.art/sitemap.xml",
+    "liveSHA": "9158ce3617fa2dada4ed3fbec2bc2da53fac7028",
+    "resubmission": "SUBMITTED",
+    "channel": "external_GSC_owner_access",
+    "gscState": "accepted_confirmed_0_warning_0_error_pending_google_download"
+  },
+  "blog": {
+    "siteId": "5bfb58f7-cf3f-4eee-acbd-b8fcac6b217b",
+    "sitemapsSubmitted": [
+      "https://blog.banhalmi.art/sitemap.xml",
+      "https://blog.banhalmi.art/blog-posts-sitemap.xml"
+    ],
+    "alsoReferenced": [
+      "https://blog.banhalmi.art/en_en-sitemap.xml",
+      "https://blog.banhalmi.art/de_de-sitemap.xml",
+      "https://blog.banhalmi.art/blog-categories-sitemap.xml",
+      "https://blog.banhalmi.art/pages-sitemap.xml"
+    ],
+    "wixApiSubmit": {
+      "endpoint": "POST /gsc/v1/submit-sitemap",
+      "status": 200,
+      "event": {
+        "eventType": "SITEMAP_SUBMITTED",
+        "occurredDate": "2026-10-27T12:36:46.586Z"
+      }
+    },
+    "externalGscConfirm": "accepted_confirmed_0_warning_0_error_pending_google_download",
+    "pageIndexingRequestedSample": 8,
+    "status": "SUBMITTED / MEASUREMENT PENDING"
+  }
+}

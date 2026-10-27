@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-27T13:40:00+01:00",
+  "Europe/Budapest": "2026-10-27 ~13:40",
+  "exactLive": {
+    "expected": "9158ce3617fa2dada4ed3fbec2bc2da53fac7028",
+    "actual": "9158ce3617fa2dada4ed3fbec2bc2da53fac7028",
+    "pass": true,
+    "source": "https://www.banhalmi.art/deployment-sha.txt",
+    "mergeCommit": "9158ce3617fa2dada4ed3fbec2bc2da53fac7028",
+    "pr": "https://github.com/880rzz/ART/pull/308"
+  },
+  "knowledgeGraph": {
+    "url": "https://www.banhalmi.art/data/image-knowledge-graph.jsonld",
+    "fellegi": "COMPLETE_GOOGLE_SIX_PLUS_COPYRIGHTHOLDER",
+    "bence": "COMPLETE_GOOGLE_SIX_PLUS_COPYRIGHTHOLDER",
+    "peter": "COMPLETE_GOOGLE_SIX_PLUS_COPYRIGHTHOLDER",
+    "allThreeComplete": true
+  },
+  "euforiaPages": {
+    "note": "Works are @type Photograph (Schema.org ImageObject subtype) with full Google six-field + copyrightHolder on EN/HU/DE",
+    "en": {
+      "url": "https://www.banhalmi.art/exhibitions/euforia.html",
+      "fellegiGoogleSix": true,
+      "benceGoogleSix": true
+    },
+    "hu": {
+      "url": "https://www.banhalmi.art/hu/exhibitions/euforia.html",
+      "fellegiGoogleSix": true,
+      "benceGoogleSix": true
+    },
+    "de": {
+      "url": "https://www.banhalmi.art/de-at/exhibitions/euforia.html",
+      "fellegiGoogleSix": true,
+      "benceGoogleSix": true
+    },
+    "pass": true
+  },
+  "pagesDeploy": {
+    "run": "https://github.com/880rzz/ART/actions/runs/40498575062",
+    "build": "success",
+    "deploy": "success",
+    "liveVideoVerification": "may still complete asynchronously; SHA already exact-live"
+  }
+}
