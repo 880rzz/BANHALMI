@@ -20,7 +20,7 @@ for(const [locale,home] of [['en','index.html'],['hu','hu/index.html'],['de','de
    const heading=clean(target.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)[1]);
    const web=scripts.find(x=>x['@type']==='WebPage');assert.equal(web.headline,heading,`${route}: headline mismatch`);
    if(owner.service==='portrait'){
-    const approved={en:'A business portrait that represents you.',hu:'Üzleti portré, amely Önt képviseli.',de:'Ein Business-Porträt, das Sie vertritt.'};
+    const approved={en:'Business portraits for leaders and professionals.',hu:'Üzleti portrék vezetőknek és szakembereknek.',de:'Business-Porträts für Führungskräfte und Fachleute.'};
     assert.equal(heading,approved[locale],`${route}: approved portrait H1 must be preserved`);
     assert.match(target.match(/<title>(.*?)<\/title>/)?.[1]||'',/portr|headshot/i,`${route}: portrait intent must remain in title`);
    }else assert.match(heading,/brand/i);
