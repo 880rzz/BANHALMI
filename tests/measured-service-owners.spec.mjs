@@ -1,9 +1,9 @@
 import {test,expect} from '@playwright/test';
 const locales=[['/','/portrait/','/lifestyle/'],['/hu/','/hu/portre/','/hu/brand/'],['/de-at/','/de-at/portrait/','/de-at/brand/']];
 const approvedPortraitH1={
- '/portrait/':'A business portrait that represents you.',
- '/hu/portre/':'Üzleti portré, amely Önt képviseli.',
- '/de-at/portrait/':'Ein Business-Porträt, das Sie vertritt.'
+ '/portrait/':'Business portraits for leaders and professionals.',
+ '/hu/portre/':'Üzleti portrék vezetőknek és szakembereknek.',
+ '/de-at/portrait/':'Business-Porträts für Führungskräfte und Fachleute.'
 };
 for(const [home,portrait,brand] of locales){
  test(home+' exposes service owners before the first conversion action',async({page})=>{
