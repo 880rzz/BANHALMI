@@ -24,7 +24,7 @@
     "imageObjects": 493,
     "googleComplete": 0,
     "googleIncomplete": 493,
-    "ownBanhalmiComplete": "9 (3 EUFÓRIA CC BY-SA + 6 travel commercial)",
+    "ownBanhalmiComplete": "9",
     "fieldPresence": {
       "contentUrl": 484,
       "creator": 3,
@@ -71,8 +71,8 @@
       }
     },
     "remaining": "~481 covers still incomplete/unknown provenance; Class D AI heroes retained without Banhalmi copyright; no invented rights",
-    "googleCompleteKnown": 33,
-    "thirdPartyVerified": 24,
+    "googleCompleteKnown": 45,
+    "thirdPartyVerified": 36,
     "familiesComplete": [
       "EUFÓRIA B",
       "Fenton C",
@@ -86,7 +86,9 @@
       "Budapest-London A",
       "Central Park A"
     ],
-    "exactOne": "513/513"
+    "exactOne": "513/513",
+    "photohistoryPD": "15 series: #02,#05–#15 complete (36 posts); #01/#03/#04 Class D AI exhibition heroes retained without Banhalmi copyright",
+    "remainingApprox": 468
   },
   "voice": {
     "professional": {

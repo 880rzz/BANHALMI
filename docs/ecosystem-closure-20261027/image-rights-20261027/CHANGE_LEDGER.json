@@ -50,10 +50,15 @@
       "action": "Lumière+Porter Class C; Budapest-London+Central Park Class A",
       "status": "LIVE_PASS",
       "count": 12
+    },
+    {
+      "id": "WIX-MEL-CAM-TAL-LEG",
+      "action": "Méliès+Cameron+Talbot+LeGray Class C PD 12 posts",
+      "status": "LIVE_PASS"
     }
   ],
-  "wixGoogleCompleteKnown": 33,
+  "wixGoogleCompleteKnown": 45,
   "wixOwnBanhalmiComplete": 9,
-  "wixThirdPartyVerified": 24,
+  "wixThirdPartyVerified": 36,
   "blogPostingExactOne": "513/513"
 }
