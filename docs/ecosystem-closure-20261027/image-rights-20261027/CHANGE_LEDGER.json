@@ -1,5 +1,6 @@
 {
-  "updatedAt": "2026-10-27T12:10:00+01:00",
+  "updatedAt": "2026-10-27T13:50:00+01:00",
+  "Europe/Budapest": "2026-10-27 ~13:50",
   "entries": [
     {
       "id": "ART-308",
@@ -7,7 +8,8 @@
       "repo": "art",
       "branch": "cursor/euforia-image-rights-1f48",
       "pr": "https://github.com/880rzz/ART/pull/308",
-      "status": "CI_PENDING_DESKTOP"
+      "head": "39e8d407441f6153077ef27dafe98ea9680d6118",
+      "status": "CI_GREEN_READY_TO_MERGE"
     },
     {
       "id": "WIX-EUFORIA-CANARY",
@@ -17,27 +19,12 @@
     },
     {
       "id": "WIX-FENTON-C",
-      "action": "Class C PD rights Fenton #11 family",
-      "status": "IN_PROGRESS"
-    },
-    {
-      "id": "VOICE",
-      "action": "Route matrix + gate reconfirm",
-      "status": "PASS_NO_CHANGES"
-    },
-    {
-      "id": "WIX-FENTON-C",
       "action": "Fenton #11 Class C PD LoC rights HU/EN/DE",
       "status": "LIVE_PASS"
     },
     {
       "id": "WIX-ATKINS-C",
       "action": "Anna Atkins Met Public Domain rights HU/EN/DE",
-      "status": "LIVE_PASS"
-    },
-    {
-      "id": "WIX-LANGE-C",
-      "action": "Dorothea Lange LoC rights HU/EN/DE (string image→ImageObject)",
       "status": "LIVE_PASS"
     },
     {
@@ -55,10 +42,59 @@
       "id": "WIX-MEL-CAM-TAL-LEG",
       "action": "Méliès+Cameron+Talbot+LeGray Class C PD 12 posts",
       "status": "LIVE_PASS"
+    },
+    {
+      "id": "WIX-CLASS-D-01-04",
+      "action": "Fotótörténelem #01–#04 Class D exhibition illustration Google six-field; #02 corrected off LoC PD museum claim to Banhalmi exhibition illustration (non-AI); #01/#03/#04 DigitalSourceType trainedAlgorithmicMedia",
+      "status": "LIVE_PASS",
+      "count": 12,
+      "itemIds": {
+        "#01": [
+          "547e63d1-607d-4091-afc8-d1fb94ff7157",
+          "407d11b8-ac23-47d8-a39c-f134db0ae9a5",
+          "406227a9-525c-49c0-90cf-02cf6ec474e5"
+        ],
+        "#02": [
+          "77cfcff6-fe62-4703-92c7-8a8671eed2a1",
+          "57ff08a1-406a-482e-8285-02cfaa674708",
+          "7d330bc9-f3f6-4d31-8b5a-fb09bdd996d5"
+        ],
+        "#03": [
+          "b8ef2fda-b813-4c2e-be93-42bc4d06db5d",
+          "d4e718c4-25ae-4c92-981f-092d39ef4652",
+          "a7527119-9b19-4550-b8f2-971074adf289"
+        ],
+        "#04": [
+          "b03486c1-4364-40c7-972f-9530302283ba",
+          "20b1b175-7673-435e-99bc-b66d186e878a",
+          "0011afd8-8ab0-4427-bbd2-c4a0d1817775"
+        ]
+      },
+      "rights": {
+        "creator": "Bánhalmi Norbert",
+        "creditText": "Bánhalmi Norbert / BANHALMI — Fotótörténelem exhibition illustration",
+        "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      }
+    },
+    {
+      "id": "WIX-513-LIVE-RECOUNT",
+      "action": "Full live HTML LD+JSON audit of all 513 published posts",
+      "status": "COMPLETE",
+      "exactOne": "513/513",
+      "googleComplete": 54,
+      "buckets": { "A": 6, "B": 3, "C": 33, "D": 12 },
+      "unknownProvenance": 459
+    },
+    {
+      "id": "VOICE",
+      "action": "Route matrix + gate reconfirm",
+      "status": "PASS_NO_CHANGES"
     }
   ],
-  "wixGoogleCompleteKnown": 45,
-  "wixOwnBanhalmiComplete": 9,
-  "wixThirdPartyVerified": 36,
+  "wixGoogleCompleteKnown": 54,
+  "wixOwnBanhalmiComplete": 21,
+  "wixThirdPartyVerified": 33,
+  "wixUnknownProvenance": 459,
   "blogPostingExactOne": "513/513"
 }

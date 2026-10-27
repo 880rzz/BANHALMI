@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-27T12:10:00+01:00",
-  "Europe/Budapest": "2026-10-27 ~12:10",
+  "generatedAt": "2026-10-27T13:50:00+01:00",
+  "Europe/Budapest": "2026-10-27 ~13:50",
   "scope": "IMAGE_RIGHTS + VOICE closure continuation",
   "professional": {
     "catalogComplete": "154/154",
@@ -15,93 +15,47 @@
     "kgImageObjectsComplete": "3/3",
     "fellegiBence": "COMPLETE_CC_BY_SA_4.0_COMMONS_PROVEN",
     "homepageLicensingGate": "HU 131/131 EN 18/18 DE 18/18 PASS",
-    "pageIncompleteNonrefSample": 50,
-    "note": "Page incompletes include logos/Organization images (Class E) and some Person portrait/primaryimage occurrences missing license; homepage gallery gate remains PASS. PR #308 pending exact-live."
+    "pr": "https://github.com/880rzz/ART/pull/308",
+    "prHead": "39e8d407441f6153077ef27dafe98ea9680d6118",
+    "ci": "ALL_GREEN including desktop-regression",
+    "note": "Merge → Pages exact-live → reverse audit → GSC pending this turn."
   },
   "blog": {
     "published": 513,
     "exactOneBlogPosting": "513/513",
-    "imageObjects": 493,
-    "googleComplete": 0,
-    "googleIncomplete": 493,
-    "ownBanhalmiComplete": "9",
-    "fieldPresence": {
-      "contentUrl": 484,
-      "creator": 3,
-      "creditText": 0,
-      "copyrightNotice": 0,
-      "license": 0,
-      "acquireLicensePage": 0
-    },
-    "canary": {
-      "family": "EUFÓRIA / EUPHORIA / EUFORIE",
-      "translationIds": null,
-      "itemIds": {
-        "hu": "d12f16eb-04a5-401d-bf5f-1dbfe342d6ed",
-        "en": "5fc1be3e-5e29-4c19-b907-68c2fd2f7fda",
-        "de": "05a20368-0031-4bc8-b1e1-b615b667db02"
-      },
-      "strategy": "enrich_BlogPosting.image ImageObject with Commons-proven CC BY-SA 4.0 rights; preserve full tags; fieldMask=tags",
-      "apiCanaryPass": true,
-      "liveHtml": {
-        "hu": {
-          "url": "https://blog.banhalmi.art/post/euforia",
-          "primaryCount": 1,
-          "googleSix": true
-        },
-        "en": {
-          "url": "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence",
-          "primaryCount": 1,
-          "googleSix": true
-        },
-        "de": {
-          "url": "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-pr%C3%A4senz",
-          "primaryCount": 1,
-          "googleSix": true
-        }
-      },
-      "preserved": "title/canonical/hreflang/OG/description unchanged",
-      "blogPostingExactOne": true,
-      "rights": {
-        "license": "https://creativecommons.org/licenses/by-sa/4.0/",
-        "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
-        "creditText": "Norbert Bánhalmi / BANHALMI ART",
-        "copyrightNotice": "© Bánhalmi Norbert",
-        "provenance": "ART image-knowledge-graph + Commons File:Peter-Magyar-portrait-2026.jpg; caption identifies Banhalmi EUFÓRIA portrait"
-      }
-    },
-    "remaining": "~481 covers still incomplete/unknown provenance; Class D AI heroes retained without Banhalmi copyright; no invented rights",
-    "googleCompleteKnown": 45,
-    "thirdPartyVerified": 36,
+    "googleComplete": 54,
+    "ownBanhalmiComplete": 21,
+    "thirdPartyVerified": 33,
+    "unknownProvenance": 459,
+    "buckets": { "A": 6, "B": 3, "C": 33, "D": 12 },
     "familiesComplete": [
-      "EUFÓRIA B",
+      "EUFÓRIA B CC BY-SA",
+      "Budapest-London A",
+      "Central Park A",
       "Fenton C",
       "Atkins C",
-      "Lange C",
       "Hine C",
       "Muybridge C",
       "Daguerre C",
       "Lumière C",
       "Porter C",
-      "Budapest-London A",
-      "Central Park A"
+      "Méliès C",
+      "Cameron C",
+      "Talbot C",
+      "LeGray C",
+      "Photohistory #01–#04 Class D"
     ],
-    "exactOne": "513/513",
-    "photohistoryPD": "15 series: #02,#05–#15 complete (36 posts); #01/#03/#04 Class D AI exhibition heroes retained without Banhalmi copyright",
-    "remainingApprox": 468
+    "classD": {
+      "note": "#01/#03/#04 AI exhibition illustration with DigitalSourceType=trainedAlgorithmicMedia; #02 non-AI exhibition illustration (corrected off incorrect LoC PD claim)",
+      "liveVerified": true
+    },
+    "policy": "No invented BANHALMI copyright on third-party/historical covers; INPUT-NEM-ELÉRHETŐ for 459 remaining",
+    "auditFile": "WIX_IMAGE_RIGHTS_513_AUDIT.json"
   },
   "voice": {
-    "professional": {
-      "en": "PASS",
-      "hu": "PASS",
-      "de": "PASS"
-    },
+    "professional": { "en": "PASS", "hu": "PASS", "de": "PASS" },
     "professionalRoutes": 57,
-    "art": {
-      "en": "PASS",
-      "hu": "PASS",
-      "de": "PASS"
-    },
+    "art": { "en": "PASS", "hu": "PASS", "de": "PASS" },
     "artRoutes": 90,
     "blog": {
       "site": "Fotótörténelem",
@@ -114,6 +68,7 @@
   "production": {
     "artPR": "https://github.com/880rzz/ART/pull/308",
     "artBranch": "cursor/euforia-image-rights-1f48",
+    "banPR": "https://github.com/880rzz/BANHALMI/pull/67",
     "banProductionSHA": "da6756ddd7c4e4096fc8e9adbb6072a76db45ac9",
     "artProductionSHA_before": "95a43d602079347c173981e0866fc0a8a641c9d7"
   }

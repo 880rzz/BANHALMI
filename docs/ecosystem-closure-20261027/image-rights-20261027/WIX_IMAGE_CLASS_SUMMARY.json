@@ -1,10 +1,13 @@
 {
-  "generatedAt": "2026-10-27T12:20:00+01:00",
-  "countsFromCaptionSignals": {
-    "B_complete": 3,
-    "C_pd_loc_written": 3,
-    "D_ai_series_estimate": 9,
-    "F_unknown_or_insufficient_caption": 498
+  "generatedAt": "2026-10-27T13:50:00+01:00",
+  "liveHtmlRecount": {
+    "A_own_commercial": 6,
+    "B_own_cc_by_sa": 3,
+    "C_third_party_pd_verified": 33,
+    "D_exhibition_illustration": 12,
+    "F_unknown_or_insufficient_provenance": 459,
+    "googleSixComplete": 54,
+    "blogPostingExactOne": 513
   },
-  "note": "Most SEO ImageObjects lack caption provenance usable for automated rights. Body Sources exist for many historical posts but are not yet mapped into SEO ImageObject fields. Safe writes only where caption/schema already prove rights."
+  "note": "Full 513-post live HTML LD+JSON recount. Safe writes only where caption/schema/Commons/LoC/Met prove rights. No invented BANHALMI copyright on historical covers."
 }
