@@ -1,0 +1,93 @@
+{
+  "generatedAt": "2026-10-27T08:58:00+01:00",
+  "timezone": "Europe/Budapest",
+  "siteId": "5bfb58f7-cf3f-4eee-acbd-b8fcac6b217b",
+  "siteName": "Bánhalmi Norbert",
+  "blogHost": "https://blog.banhalmi.art/",
+  "method": "Item SEO Tags resolvedTags (List/Get); enabled primary = BlogPosting|Article with disabled!==true",
+  "strategy": {
+    "name": "item_disabled_suppressor_for_pattern_BlogPosting",
+    "description": "Keep enriched item #article BlogPosting; add item-level copy of pattern BlogPosting with disabled:true and meta.schemaType=blog-post-blog-posting-preset to suppress default pattern primary on that page. Do NOT put preset schemaType on the live #article node.",
+    "rejectedStrategies": [
+      "remove item BlogPosting (lost inLanguage)",
+      "global pattern disable/remove (44+ default-only posts would go to 0; pattern Set unreliable)",
+      "WebSite override (default BlogPosting remained)"
+    ]
+  },
+  "canary": {
+    "family": "06.17",
+    "translationId": "57426458-abfc-47ac-9cc4-15b71c009251",
+    "resultFile": "WIX_SCHEMA_CANARY_0617_RESULT.json",
+    "allPass": true
+  },
+  "before": {
+    "source": "WIX_SCHEMA_CLASSIFICATION.json + prior bulk scans",
+    "publishedPosts": 513,
+    "byEnabledPrimaryApprox_pre_fix": {
+      "1": 44,
+      "2": 451,
+      "3": 18
+    },
+    "note": "Initial resolvedTags inventory counted all primary nodes including disabled=false only after strategy lock; pre-fix raw resolved primary counts were 1=44,2=451,3=18 (some later scans reported 1=14 after A-default enrichment)."
+  },
+  "after": {
+    "publishedPosts": 513,
+    "byLang": {
+      "hu": 171,
+      "en": 171,
+      "de": 171
+    },
+    "translationFamilies": 171,
+    "incompleteFamilies": 0,
+    "unpublishedChanges": 0,
+    "enabledPrimaryBlogPostingOrArticle": {
+      "0": 0,
+      "1": 513,
+      "2": 0,
+      "3": 0
+    },
+    "exactOne": true,
+    "resolved": {
+      "title": 513,
+      "description": 513,
+      "canonical": 513,
+      "ogTitle": 513,
+      "ogDescription": 513,
+      "ogImage": 513,
+      "hreflang_hu_en_de_xdefault": 513
+    },
+    "articlePresetBugRemaining": 0
+  },
+  "outlierFix": {
+    "itemId": "80eb6cd7-790c-40a5-9378-baba03b1bfdd",
+    "slug": "vivian-maier",
+    "rootCause": "Item #article BlogPosting incorrectly carried meta.schemaType=blog-post-blog-posting-preset; disabled pattern suppressor then zeroed all matching preset nodes in resolvedTags (enabledPrimary=0).",
+    "fix": "STRIP meta.schemaType from #article; keep disabled suppressor with schemaType blog-post-blog-posting-preset; preserve full tags+focusKeywords",
+    "beforeEnabledPrimary": 0,
+    "afterEnabledPrimary": 1,
+    "titlePreserved": true,
+    "canonicalPreserved": true,
+    "focusKeywordPreserved": true,
+    "liveHtmlPrimary": {
+      "hu": 1,
+      "en": 1,
+      "de": 1
+    }
+  },
+  "coverImageP2": {
+    "noOwnMediaOrRichImageFamilies": 1,
+    "noOwnMediaPosts": 3,
+    "family": {
+      "translationId": "03b9e532-4182-4d72-a846-8f3fde494e6c",
+      "titles": {
+        "hu": "Van mikor semmi nem úgy alakul ahogy kéne...",
+        "en": "Sometimes Nothing Goes the Way It Should…",
+        "de": "Manchmal läuft einfach nichts so, wie es sollte …"
+      },
+      "ogImage": "https://static.wixstatic.com/media/b0aee1_7ab1fcc4af8f4ff1a72b0836170c2885~mv2.webp/v1/fit/w_2500,h_1330,al_c/b0aee1_7ab1fcc4af8f4ff1a72b0836170c2885~mv2.webp",
+      "status": "INPUT-NEM-ELÉRHETŐ",
+      "note": "No proven own cover/rich-content image asset; shared OG looks like site-level fallback. Do not invent image/provenance."
+    }
+  },
+  "status": "PRODUCTION-ELLENŐRZÖTT"
+}
