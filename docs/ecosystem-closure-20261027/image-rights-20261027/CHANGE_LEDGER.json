@@ -44,10 +44,16 @@
       "id": "WIX-HINE-MUY-DAG",
       "action": "Hine+Muybridge+Daguerre Class C PD rights 9 posts",
       "status": "LIVE_PASS"
+    },
+    {
+      "id": "WIX-LUM-PORT-TRAVEL",
+      "action": "Lumière+Porter Class C; Budapest-London+Central Park Class A",
+      "status": "LIVE_PASS",
+      "count": 12
     }
   ],
-  "wixGoogleCompleteKnown": 21,
-  "wixOwnBanhalmiComplete": 3,
-  "wixThirdPartyVerified": 18,
+  "wixGoogleCompleteKnown": 33,
+  "wixOwnBanhalmiComplete": 9,
+  "wixThirdPartyVerified": 24,
   "blogPostingExactOne": "513/513"
 }

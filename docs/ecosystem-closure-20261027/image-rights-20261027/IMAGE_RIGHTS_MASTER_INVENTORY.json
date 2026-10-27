@@ -24,7 +24,7 @@
     "imageObjects": 493,
     "googleComplete": 0,
     "googleIncomplete": 493,
-    "ownBanhalmiComplete": "3/3",
+    "ownBanhalmiComplete": "9 (3 EUFÓRIA CC BY-SA + 6 travel commercial)",
     "fieldPresence": {
       "contentUrl": 484,
       "creator": 3,
@@ -71,8 +71,8 @@
       }
     },
     "remaining": "~481 covers still incomplete/unknown provenance; Class D AI heroes retained without Banhalmi copyright; no invented rights",
-    "googleCompleteKnown": 21,
-    "thirdPartyVerified": 18,
+    "googleCompleteKnown": 33,
+    "thirdPartyVerified": 24,
     "familiesComplete": [
       "EUFÓRIA B",
       "Fenton C",
@@ -80,7 +80,11 @@
       "Lange C",
       "Hine C",
       "Muybridge C",
-      "Daguerre C"
+      "Daguerre C",
+      "Lumière C",
+      "Porter C",
+      "Budapest-London A",
+      "Central Park A"
     ],
     "exactOne": "513/513"
   },
