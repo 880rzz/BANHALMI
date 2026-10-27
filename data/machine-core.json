@@ -165,7 +165,9 @@
       "areaServed": [
         "Vienna",
         "Vienna metropolitan and surrounding area"
-      ]
+      ],
+      "hasMap": "https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8",
+      "googleBusinessProfile": "https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8"
     },
     {
       "id": "https://www.norbertbanhalmi.com/#budapest-studio",
@@ -183,7 +185,9 @@
       "areaServed": [
         "Budapest",
         "Budapest metropolitan and surrounding area"
-      ]
+      ],
+      "hasMap": "https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA",
+      "googleBusinessProfile": "https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA"
     },
     {
       "id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
@@ -198,7 +202,9 @@
         "https://g.page/r/CdO4Kej3jIkfEBM"
       ],
       "isStudio": false,
-      "description": "Active office and client meeting location; not a photography studio."
+      "description": "Active office and client meeting location; not a photography studio.",
+      "hasMap": "https://g.page/r/CdO4Kej3jIkfEBM",
+      "googleBusinessProfile": "https://g.page/r/CdO4Kej3jIkfEBM"
     }
   ],
   "marketGeography": {

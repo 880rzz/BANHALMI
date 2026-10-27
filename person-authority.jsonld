@@ -123,7 +123,8 @@
         "addressLocality": "Wien",
         "addressCountry": "AT"
       },
-      "description": "Active photography studio in Vienna; distinct from the Gersthofer office."
+      "description": "Active photography studio in Vienna; distinct from the Gersthofer office.",
+      "hasMap": "https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8"
     },
     {
       "@type": "Place",
@@ -136,7 +137,8 @@
         "addressLocality": "Wien",
         "addressCountry": "AT"
       },
-      "description": "Active office and client meeting location; not a photography studio."
+      "description": "Active office and client meeting location; not a photography studio.",
+      "hasMap": "https://g.page/r/CdO4Kej3jIkfEBM"
     },
     {
       "@type": "Place",
@@ -149,7 +151,8 @@
         "addressLocality": "Budapest",
         "addressCountry": "HU"
       },
-      "description": "Active photography studio in Budapest District XI; distinct from the two Vienna business locations."
+      "description": "Active photography studio in Budapest District XI; distinct from the two Vienna business locations.",
+      "hasMap": "https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA"
     },
     {
       "@type": "WebSite",
