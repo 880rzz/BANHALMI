@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-10-27T13:50:00+01:00",
+  "Europe/Budapest": "2026-10-27 ~13:50",
+  "scope": "IMAGE_RIGHTS + VOICE closure continuation",
+  "professional": {
+    "catalogComplete": "154/154",
+    "fineArtComplete": "25/25",
+    "pageJsonLdImageObjectsComplete": "495/495",
+    "imgTags": 758,
+    "decorativeOrUi": 124,
+    "contentishImgTags": 634,
+    "status": "PASS_BASELINE_RECONFIRMED"
+  },
+  "art": {
+    "kgImageObjectsComplete": "3/3",
+    "fellegiBence": "COMPLETE_CC_BY_SA_4.0_COMMONS_PROVEN",
+    "homepageLicensingGate": "HU 131/131 EN 18/18 DE 18/18 PASS",
+    "pr": "https://github.com/880rzz/ART/pull/308",
+    "prHead": "39e8d407441f6153077ef27dafe98ea9680d6118",
+    "ci": "ALL_GREEN including desktop-regression",
+    "note": "Merge → Pages exact-live → reverse audit → GSC pending this turn."
+  },
+  "blog": {
+    "published": 513,
+    "exactOneBlogPosting": "513/513",
+    "googleComplete": 54,
+    "ownBanhalmiComplete": 21,
+    "thirdPartyVerified": 33,
+    "unknownProvenance": 459,
+    "buckets": { "A": 6, "B": 3, "C": 33, "D": 12 },
+    "familiesComplete": [
+      "EUFÓRIA B CC BY-SA",
+      "Budapest-London A",
+      "Central Park A",
+      "Fenton C",
+      "Atkins C",
+      "Hine C",
+      "Muybridge C",
+      "Daguerre C",
+      "Lumière C",
+      "Porter C",
+      "Méliès C",
+      "Cameron C",
+      "Talbot C",
+      "LeGray C",
+      "Photohistory #01–#04 Class D"
+    ],
+    "classD": {
+      "note": "#01/#03/#04 AI exhibition illustration with DigitalSourceType=trainedAlgorithmicMedia; #02 non-AI exhibition illustration (corrected off incorrect LoC PD claim)",
+      "liveVerified": true
+    },
+    "policy": "No invented BANHALMI copyright on third-party/historical covers; INPUT-NEM-ELÉRHETŐ for 459 remaining",
+    "auditFile": "WIX_IMAGE_RIGHTS_513_AUDIT.json"
+  },
+  "voice": {
+    "professional": { "en": "PASS", "hu": "PASS", "de": "PASS" },
+    "professionalRoutes": 57,
+    "art": { "en": "PASS", "hu": "PASS", "de": "PASS" },
+    "artRoutes": 90,
+    "blog": {
+      "site": "Fotótörténelem",
+      "metric": "editorial voice parity / source integrity / promotional contamination=0",
+      "status": "PASS_BASELINE",
+      "note": "Do not score against commercial BANHALMI voice. Editorial/historical intent preserved; no rewrite under change freeze."
+    },
+    "correctedPages": 0
+  },
+  "production": {
+    "artPR": "https://github.com/880rzz/ART/pull/308",
+    "artBranch": "cursor/euforia-image-rights-1f48",
+    "banPR": "https://github.com/880rzz/BANHALMI/pull/67",
+    "banProductionSHA": "da6756ddd7c4e4096fc8e9adbb6072a76db45ac9",
+    "artProductionSHA_before": "95a43d602079347c173981e0866fc0a8a641c9d7"
+  }
+}

@@ -1,0 +1,931 @@
+{
+  "generatedAt": "2026-10-27T11:20:00+01:00",
+  "professional": {
+    "site": "Professional",
+    "totalRoutes": 57,
+    "byLanguage": {
+      "en": 19,
+      "de": 19,
+      "hu": 19
+    },
+    "baselineGate": "human-voice PASS (existing release gate; no deviation scan rewrite)",
+    "status": {
+      "en": "PASS",
+      "hu": "PASS",
+      "de": "PASS"
+    },
+    "correctedPages": 0,
+    "unresolvedPages": 0,
+    "note": "Change freeze: only proven deviations would be corrected. Existing human-voice gates PASS; no rewrite.",
+    "routes": [
+      {
+        "route": "about/index.html",
+        "language": "en",
+        "h1": "Norbert Bánhalmi",
+        "bytes": 52360
+      },
+      {
+        "route": "accessibility/index.html",
+        "language": "en",
+        "h1": "Accessibility Statement",
+        "bytes": 25616
+      },
+      {
+        "route": "archive/index.html",
+        "language": "en",
+        "h1": "Past work, books and exhibitions.",
+        "bytes": 26703
+      },
+      {
+        "route": "case-studies/peter-magyar-portrait-2026/index.html",
+        "language": "en",
+        "h1": "The Péter Magyar portrait — and how it was used in public.",
+        "bytes": 23569
+      },
+      {
+        "route": "contact/index.html",
+        "language": "en",
+        "h1": "Tell me what you need.",
+        "bytes": 37011
+      },
+      {
+        "route": "cookie-policy/index.html",
+        "language": "en",
+        "h1": "Cookie Policy",
+        "bytes": 29999
+      },
+      {
+        "route": "de-at/agb/index.html",
+        "language": "de",
+        "h1": "Allgemeine Geschäftsbedingungen",
+        "bytes": 41478
+      },
+      {
+        "route": "de-at/anfrage/index.html",
+        "language": "de",
+        "h1": "Sagen Sie mir, was Sie brauchen. Gemeinsam finden wir die passende Bildlösung.",
+        "bytes": 94216
+      },
+      {
+        "route": "de-at/archiv/index.html",
+        "language": "de",
+        "h1": "Frühere Arbeiten, Bücher und Ausstellungen.",
+        "bytes": 27030
+      },
+      {
+        "route": "de-at/barrierefreiheit/index.html",
+        "language": "de",
+        "h1": "Erklärung zur Barrierefreiheit",
+        "bytes": 26068
+      },
+      {
+        "route": "de-at/brand/index.html",
+        "language": "de",
+        "h1": "Brandfotografie für eine einheitliche Bildsprache.",
+        "bytes": 159376
+      },
+      {
+        "route": "de-at/cookies/index.html",
+        "language": "de",
+        "h1": "Cookie-Richtlinie",
+        "bytes": 30839
+      },
+      {
+        "route": "de-at/datenschutz/index.html",
+        "language": "de",
+        "h1": "Datenschutzerklärung",
+        "bytes": 42295
+      },
+      {
+        "route": "de-at/eventfotografie/index.html",
+        "language": "de",
+        "h1": "Eventfotografie, die weiterverwendet werden kann.",
+        "bytes": 90555
+      },
+      {
+        "route": "de-at/fallstudien/peter-magyar-portraet-2026/index.html",
+        "language": "de",
+        "h1": "Das Péter-Magyar-Porträt — und wie es öffentlich genutzt wurde.",
+        "bytes": 24347
+      },
+      {
+        "route": "de-at/faq/index.html",
+        "language": "de",
+        "h1": "Häufige Fragen",
+        "bytes": 51143
+      },
+      {
+        "route": "de-at/fine-art/index.html",
+        "language": "de",
+        "h1": "Porträts und Fotografien für Kunstschaffende und Performer:innen.",
+        "bytes": 108553
+      },
+      {
+        "route": "de-at/impressum/index.html",
+        "language": "de",
+        "h1": "Impressum",
+        "bytes": 30562
+      },
+      {
+        "route": "de-at/index.html",
+        "language": "de",
+        "h1": "Porträtfotografie und visuelle Präsenz — Wien und Budapest.",
+        "bytes": 39301
+      },
+      {
+        "route": "de-at/kontakt/index.html",
+        "language": "de",
+        "h1": "Sagen Sie uns, was Sie brauchen.",
+        "bytes": 37567
+      },
+      {
+        "route": "de-at/partner/index.html",
+        "language": "de",
+        "h1": "Kunden, Kooperationen und professionelle Mitgliedschaften",
+        "bytes": 29558
+      },
+      {
+        "route": "de-at/portrait/index.html",
+        "language": "de",
+        "h1": "Ein Business-Porträt, das Sie vertritt.",
+        "bytes": 229946
+      },
+      {
+        "route": "de-at/speier-viko/index.html",
+        "language": "de",
+        "h1": "Viko Speier — Strategie und Fotografie zusammen",
+        "bytes": 35101
+      },
+      {
+        "route": "de-at/vertrauen/index.html",
+        "language": "de",
+        "h1": "BANHALMI Trust Center",
+        "bytes": 14180
+      },
+      {
+        "route": "de-at/werk/index.html",
+        "language": "de",
+        "h1": "Norbert Bánhalmi",
+        "bytes": 57982
+      },
+      {
+        "route": "event-photography/index.html",
+        "language": "en",
+        "h1": "Event photography you can keep using.",
+        "bytes": 87756
+      },
+      {
+        "route": "faq/index.html",
+        "language": "en",
+        "h1": "Frequently Asked Questions",
+        "bytes": 49549
+      },
+      {
+        "route": "fine-art/index.html",
+        "language": "en",
+        "h1": "Portraits and photographs for performers.",
+        "bytes": 106302
+      },
+      {
+        "route": "hu/adatvedelem/index.html",
+        "language": "hu",
+        "h1": "Adatkezelési tájékoztató",
+        "bytes": 41375
+      },
+      {
+        "route": "hu/ajanlatkeres/index.html",
+        "language": "hu",
+        "h1": "Mondja el, mire van szüksége. Közösen megtaláljuk a megfelelő képi megoldást.",
+        "bytes": 94585
+      },
+      {
+        "route": "hu/akadalymentesseg/index.html",
+        "language": "hu",
+        "h1": "Akadálymentességi nyilatkozat",
+        "bytes": 25879
+      },
+      {
+        "route": "hu/archivum/index.html",
+        "language": "hu",
+        "h1": "Korábbi munkák, könyvek és kiállítások.",
+        "bytes": 26865
+      },
+      {
+        "route": "hu/aszf/index.html",
+        "language": "hu",
+        "h1": "Általános szerződési feltételek",
+        "bytes": 40325
+      },
+      {
+        "route": "hu/bizalom/index.html",
+        "language": "hu",
+        "h1": "BANHALMI Bizalmi Központ",
+        "bytes": 13896
+      },
+      {
+        "route": "hu/brand/index.html",
+        "language": "hu",
+        "h1": "Brandfotózás: következetes képi megjelenés.",
+        "bytes": 156746
+      },
+      {
+        "route": "hu/eletmu/index.html",
+        "language": "hu",
+        "h1": "Norbert Bánhalmi",
+        "bytes": 57006
+      },
+      {
+        "route": "hu/esettanulmanyok/magyar-peter-portre-2026/index.html",
+        "language": "hu",
+        "h1": "A Magyar Péter-portré — és hogyan használták nyilvánosan.",
+        "bytes": 23819
+      },
+      {
+        "route": "hu/gyik/index.html",
+        "language": "hu",
+        "h1": "Gyakori kérdések",
+        "bytes": 49107
+      },
+      {
+        "route": "hu/impresszum/index.html",
+        "language": "hu",
+        "h1": "Impresszum",
+        "bytes": 30332
+      },
+      {
+        "route": "hu/index.html",
+        "language": "hu",
+        "h1": "Portréfotózás és vizuális pozicionálás — Bécs és Budapest.",
+        "bytes": 38875
+      },
+      {
+        "route": "hu/kapcsolat/index.html",
+        "language": "hu",
+        "h1": "Beszéljük meg, mire van szüksége.",
+        "bytes": 37328
+      },
+      {
+        "route": "hu/muveszi-fotografia/index.html",
+        "language": "hu",
+        "h1": "Portrék és fotók előadóművészeknek.",
+        "bytes": 106701
+      },
+      {
+        "route": "hu/partnerek/index.html",
+        "language": "hu",
+        "h1": "Partnerek, megbízók és szakmai tagságok",
+        "bytes": 29336
+      },
+      {
+        "route": "hu/portre/index.html",
+        "language": "hu",
+        "h1": "Üzleti portré, amely Önt képviseli.",
+        "bytes": 227478
+      },
+      {
+        "route": "hu/rendezvenyfotozas/index.html",
+        "language": "hu",
+        "h1": "Eseményfotózás, amely tovább használható.",
+        "bytes": 88509
+      },
+      {
+        "route": "hu/speier-viko/index.html",
+        "language": "hu",
+        "h1": "Speier Vikó — stratégia és fotográfia együtt",
+        "bytes": 34645
+      },
+      {
+        "route": "hu/sutik/index.html",
+        "language": "hu",
+        "h1": "Sütikezelési tájékoztató",
+        "bytes": 30634
+      },
+      {
+        "route": "impressum/index.html",
+        "language": "en",
+        "h1": "Legal Notice",
+        "bytes": 30455
+      },
+      {
+        "route": "index.html",
+        "language": "en",
+        "h1": "Portrait photography and visual presence — Vienna and Budapest.",
+        "bytes": 38451
+      },
+      {
+        "route": "lifestyle/index.html",
+        "language": "en",
+        "h1": "Brand photography for a consistent visual presence.",
+        "bytes": 154109
+      },
+      {
+        "route": "partners/index.html",
+        "language": "en",
+        "h1": "Clients, collaborations and professional memberships",
+        "bytes": 29244
+      },
+      {
+        "route": "portrait/index.html",
+        "language": "en",
+        "h1": "A business portrait that represents you.",
+        "bytes": 224045
+      },
+      {
+        "route": "privacy-policy/index.html",
+        "language": "en",
+        "h1": "Privacy Notice",
+        "bytes": 40169
+      },
+      {
+        "route": "requestaquote/index.html",
+        "language": "en",
+        "h1": "Tell me what you need. I’ll make the right image with you.",
+        "bytes": 92240
+      },
+      {
+        "route": "speier-viko/index.html",
+        "language": "en",
+        "h1": "Viko Speier — strategy and photography together",
+        "bytes": 34487
+      },
+      {
+        "route": "terms-conditions/index.html",
+        "language": "en",
+        "h1": "Terms &amp; Conditions",
+        "bytes": 40087
+      },
+      {
+        "route": "trust/index.html",
+        "language": "en",
+        "h1": "BANHALMI Trust Center",
+        "bytes": 13550
+      }
+    ]
+  },
+  "art": {
+    "site": "ART",
+    "totalRoutes": 90,
+    "byLanguage": {
+      "en": 32,
+      "de": 29,
+      "hu": 29
+    },
+    "baselineGate": "human-voice PASS (existing release gate; no deviation scan rewrite)",
+    "status": {
+      "en": "PASS",
+      "hu": "PASS",
+      "de": "PASS"
+    },
+    "correctedPages": 0,
+    "unresolvedPages": 0,
+    "note": "Change freeze: only proven deviations would be corrected. Existing human-voice gates PASS; no rewrite.",
+    "routes": [
+      {
+        "route": "assets/fragments/home-gallery-de-at.html",
+        "language": "en",
+        "h1": null,
+        "bytes": 50305
+      },
+      {
+        "route": "assets/fragments/home-gallery-en.html",
+        "language": "en",
+        "h1": null,
+        "bytes": 48377
+      },
+      {
+        "route": "assets/fragments/home-gallery-hu.html",
+        "language": "en",
+        "h1": null,
+        "bytes": 48107
+      },
+      {
+        "route": "books/book-anovilaga.html",
+        "language": "en",
+        "h1": "The World of Woman",
+        "bytes": 37472
+      },
+      {
+        "route": "books/book-ebredes.html",
+        "language": "en",
+        "h1": "Awakening: The New Beginning!",
+        "bytes": 37216
+      },
+      {
+        "route": "books/book-szosszenetek.html",
+        "language": "en",
+        "h1": "Snippets",
+        "bytes": 34776
+      },
+      {
+        "route": "community.html",
+        "language": "en",
+        "h1": "Community &amp; Teaching",
+        "bytes": 34027
+      },
+      {
+        "route": "curators.html",
+        "language": "en",
+        "h1": "Norbert Bánhalmi — photographer and visual artist",
+        "bytes": 64713
+      },
+      {
+        "route": "de-at/books/book-anovilaga.html",
+        "language": "de",
+        "h1": "Die Welt der Frau",
+        "bytes": 37880
+      },
+      {
+        "route": "de-at/books/book-ebredes.html",
+        "language": "de",
+        "h1": "Erwachen: Der neue Anfang!",
+        "bytes": 37727
+      },
+      {
+        "route": "de-at/books/book-szosszenetek.html",
+        "language": "de",
+        "h1": "Schnipsel",
+        "bytes": 35362
+      },
+      {
+        "route": "de-at/community.html",
+        "language": "de",
+        "h1": "Gemeinschaft &amp; Lehre",
+        "bytes": 34494
+      },
+      {
+        "route": "de-at/curators.html",
+        "language": "de",
+        "h1": "Norbert Bánhalmi — Fotograf und bildender Künstler",
+        "bytes": 67112
+      },
+      {
+        "route": "de-at/exhibitions/anovilaga.html",
+        "language": "de",
+        "h1": "Die Welt der Frau",
+        "bytes": 143987
+      },
+      {
+        "route": "de-at/exhibitions/avalosag.html",
+        "language": "de",
+        "h1": "Die falschen Gesichter der Wirklichkeit / Die Lügen des Internets",
+        "bytes": 62059
+      },
+      {
+        "route": "de-at/exhibitions/balerina-project-new-york.html",
+        "language": "de",
+        "h1": "Ballerina Project New York — Strut Your Stuff",
+        "bytes": 106767
+      },
+      {
+        "route": "de-at/exhibitions/ebredes.html",
+        "language": "de",
+        "h1": "Erwachen — Der neue Anfang",
+        "bytes": 82469
+      },
+      {
+        "route": "de-at/exhibitions/enano.html",
+        "language": "de",
+        "h1": "Ich bin die Frau",
+        "bytes": 66408
+      },
+      {
+        "route": "de-at/exhibitions/euforia.html",
+        "language": "de",
+        "h1": "EUFÓRIA — Die Anatomie der Präsenz",
+        "bytes": 81256
+      },
+      {
+        "route": "de-at/exhibitions/femmefatale.html",
+        "language": "de",
+        "h1": "Femme Fatale",
+        "bytes": 49300
+      },
+      {
+        "route": "de-at/exhibitions/fotokiallitas1.html",
+        "language": "de",
+        "h1": "Echte Frauen — 30+1 Porträts natürlicher Schönheit",
+        "bytes": 79341
+      },
+      {
+        "route": "de-at/exhibitions/fotokiallitas2.html",
+        "language": "de",
+        "h1": "Jene alten koketten Zeiten — Pin-up rehabilitiert",
+        "bytes": 70172
+      },
+      {
+        "route": "de-at/exhibitions/fotokiallitas3.html",
+        "language": "de",
+        "h1": "Ungarische Frauen in New York",
+        "bytes": 75829
+      },
+      {
+        "route": "de-at/exhibitions/fotokiallitas4.html",
+        "language": "de",
+        "h1": "Fünfzig Schattierungen der Frau",
+        "bytes": 102000
+      },
+      {
+        "route": "de-at/exhibitions/fotokiallitas5.html",
+        "language": "de",
+        "h1": "Ich wurde Vater",
+        "bytes": 68007
+      },
+      {
+        "route": "de-at/exhibitions/fotokiallitas8.html",
+        "language": "de",
+        "h1": "Zeitgenössische Künstler des Komitats Pest",
+        "bytes": 39926
+      },
+      {
+        "route": "de-at/exhibitions/mas-kepp-mas.html",
+        "language": "de",
+        "h1": "Anderes Bild / Anders",
+        "bytes": 52021
+      },
+      {
+        "route": "de-at/exhibitions/merfoldkovek1956.html",
+        "language": "de",
+        "h1": "Meilensteine ’56",
+        "bytes": 64119
+      },
+      {
+        "route": "de-at/exhibitions/szosszenetek.html",
+        "language": "de",
+        "h1": "Schnipsel",
+        "bytes": 86106
+      },
+      {
+        "route": "de-at/exhibitions/teislehetsz.html",
+        "language": "de",
+        "h1": "Auch du kannst es werden…",
+        "bytes": 61099
+      },
+      {
+        "route": "de-at/exhibitions/theframe.html",
+        "language": "de",
+        "h1": "The Frame — 20 Jahre",
+        "bytes": 112997
+      },
+      {
+        "route": "de-at/exhibitions/themensdream.html",
+        "language": "de",
+        "h1": "The Men’s Dream — Die Genesis der Schönheit",
+        "bytes": 62810
+      },
+      {
+        "route": "de-at/exhibitions/touch-wien.html",
+        "language": "de",
+        "h1": "Touch Wien &amp; Touch München",
+        "bytes": 51303
+      },
+      {
+        "route": "de-at/index.html",
+        "language": "de",
+        "h1": "BANHALMI ART",
+        "bytes": 74732
+      },
+      {
+        "route": "de-at/press.html",
+        "language": "de",
+        "h1": "Presse und öffentliche Auftritte",
+        "bytes": 56886
+      },
+      {
+        "route": "de-at/private-photography.html",
+        "language": "de",
+        "h1": "Persönliche Porträts und Boudoir",
+        "bytes": 34057
+      },
+      {
+        "route": "de-at/writing.html",
+        "language": "de",
+        "h1": "Publikationen, Lehre und die OM-SYSTEM-Jahre",
+        "bytes": 33979
+      },
+      {
+        "route": "exhibitions/anovilaga.html",
+        "language": "en",
+        "h1": "The World of Woman",
+        "bytes": 142342
+      },
+      {
+        "route": "exhibitions/avalosag.html",
+        "language": "en",
+        "h1": "The False Faces of Reality / The Lies of the Internet",
+        "bytes": 60509
+      },
+      {
+        "route": "exhibitions/balerina-project-new-york.html",
+        "language": "en",
+        "h1": "Ballerina Project New York — Strut Your Stuff",
+        "bytes": 105443
+      },
+      {
+        "route": "exhibitions/ebredes.html",
+        "language": "en",
+        "h1": "Awakening — The New Beginning",
+        "bytes": 80730
+      },
+      {
+        "route": "exhibitions/enano.html",
+        "language": "en",
+        "h1": "I Am the Woman",
+        "bytes": 65462
+      },
+      {
+        "route": "exhibitions/euforia.html",
+        "language": "en",
+        "h1": "EUFÓRIA — The Anatomy of Presence",
+        "bytes": 79362
+      },
+      {
+        "route": "exhibitions/femmefatale.html",
+        "language": "en",
+        "h1": "Femme Fatale",
+        "bytes": 48485
+      },
+      {
+        "route": "exhibitions/fotokiallitas1.html",
+        "language": "en",
+        "h1": "Real Women — 30+1 Portraits of Natural Beauty",
+        "bytes": 78017
+      },
+      {
+        "route": "exhibitions/fotokiallitas2.html",
+        "language": "en",
+        "h1": "Those Old Flirty Times — Pin-Up Rehabilitated",
+        "bytes": 68824
+      },
+      {
+        "route": "exhibitions/fotokiallitas3.html",
+        "language": "en",
+        "h1": "Hungarian Women in New York",
+        "bytes": 74715
+      },
+      {
+        "route": "exhibitions/fotokiallitas4.html",
+        "language": "en",
+        "h1": "50 Shades of Woman",
+        "bytes": 98435
+      },
+      {
+        "route": "exhibitions/fotokiallitas5.html",
+        "language": "en",
+        "h1": "I Became a Father",
+        "bytes": 67526
+      },
+      {
+        "route": "exhibitions/fotokiallitas8.html",
+        "language": "en",
+        "h1": "Contemporary Artists of Pest County",
+        "bytes": 39194
+      },
+      {
+        "route": "exhibitions/mas-kepp-mas.html",
+        "language": "en",
+        "h1": "Different Image / Different",
+        "bytes": 51091
+      },
+      {
+        "route": "exhibitions/merfoldkovek1956.html",
+        "language": "en",
+        "h1": "Milestones ’56",
+        "bytes": 62942
+      },
+      {
+        "route": "exhibitions/szosszenetek.html",
+        "language": "en",
+        "h1": "Snippets",
+        "bytes": 85038
+      },
+      {
+        "route": "exhibitions/teislehetsz.html",
+        "language": "en",
+        "h1": "You Can Be Too…",
+        "bytes": 59697
+      },
+      {
+        "route": "exhibitions/theframe.html",
+        "language": "en",
+        "h1": "The Frame — 20 Years",
+        "bytes": 111783
+      },
+      {
+        "route": "exhibitions/themensdream.html",
+        "language": "en",
+        "h1": "The Men’s Dream — The Genesis of Beauty",
+        "bytes": 61727
+      },
+      {
+        "route": "exhibitions/touch-wien.html",
+        "language": "en",
+        "h1": "Touch Vienna &amp; Touch Munich",
+        "bytes": 50036
+      },
+      {
+        "route": "hu/books/book-anovilaga.html",
+        "language": "hu",
+        "h1": "A Nő világa",
+        "bytes": 37282
+      },
+      {
+        "route": "hu/books/book-ebredes.html",
+        "language": "hu",
+        "h1": "Ébredés — az Új kezdet!",
+        "bytes": 37123
+      },
+      {
+        "route": "hu/books/book-szosszenetek.html",
+        "language": "hu",
+        "h1": "Szösszenetek",
+        "bytes": 34698
+      },
+      {
+        "route": "hu/community.html",
+        "language": "hu",
+        "h1": "Közösség és oktatás",
+        "bytes": 33905
+      },
+      {
+        "route": "hu/curators.html",
+        "language": "hu",
+        "h1": "Norbert Bánhalmi — fotográfus és képzőművész",
+        "bytes": 63909
+      },
+      {
+        "route": "hu/exhibitions/anovilaga.html",
+        "language": "hu",
+        "h1": "A Nő világa",
+        "bytes": 143915
+      },
+      {
+        "route": "hu/exhibitions/avalosag.html",
+        "language": "hu",
+        "h1": "A valóság hamis arcai",
+        "bytes": 61265
+      },
+      {
+        "route": "hu/exhibitions/balerina-project-new-york.html",
+        "language": "hu",
+        "h1": "Ballerina Project New York — Strut Your Stuff",
+        "bytes": 105711
+      },
+      {
+        "route": "hu/exhibitions/ebredes.html",
+        "language": "hu",
+        "h1": "Ébredés — az Új kezdet",
+        "bytes": 81861
+      },
+      {
+        "route": "hu/exhibitions/enano.html",
+        "language": "hu",
+        "h1": "Én a Nő",
+        "bytes": 66801
+      },
+      {
+        "route": "hu/exhibitions/euforia.html",
+        "language": "hu",
+        "h1": "EUFÓRIA — a Jelenlét anatómiája",
+        "bytes": 80821
+      },
+      {
+        "route": "hu/exhibitions/femmefatale.html",
+        "language": "hu",
+        "h1": "Femme Fatale",
+        "bytes": 49252
+      },
+      {
+        "route": "hu/exhibitions/fotokiallitas1.html",
+        "language": "hu",
+        "h1": "Az igazi Nők — 30+1 portré a természetes szépségről",
+        "bytes": 78564
+      },
+      {
+        "route": "hu/exhibitions/fotokiallitas2.html",
+        "language": "hu",
+        "h1": "Régi csibészes idők — a pin-up rehabilitációja",
+        "bytes": 69187
+      },
+      {
+        "route": "hu/exhibitions/fotokiallitas3.html",
+        "language": "hu",
+        "h1": "Magyar nők New Yorkban",
+        "bytes": 74065
+      },
+      {
+        "route": "hu/exhibitions/fotokiallitas4.html",
+        "language": "hu",
+        "h1": "A Nő ötven árnyalata",
+        "bytes": 98537
+      },
+      {
+        "route": "hu/exhibitions/fotokiallitas5.html",
+        "language": "hu",
+        "h1": "Apa lettem",
+        "bytes": 66805
+      },
+      {
+        "route": "hu/exhibitions/fotokiallitas8.html",
+        "language": "hu",
+        "h1": "Pest megye kortárs művészei",
+        "bytes": 39392
+      },
+      {
+        "route": "hu/exhibitions/mas-kepp-mas.html",
+        "language": "hu",
+        "h1": "Más kép / Más",
+        "bytes": 52041
+      },
+      {
+        "route": "hu/exhibitions/merfoldkovek1956.html",
+        "language": "hu",
+        "h1": "Mérföldkövek ’56",
+        "bytes": 63106
+      },
+      {
+        "route": "hu/exhibitions/szosszenetek.html",
+        "language": "hu",
+        "h1": "Szösszenetek",
+        "bytes": 88059
+      },
+      {
+        "route": "hu/exhibitions/teislehetsz.html",
+        "language": "hu",
+        "h1": "Te is lehetsz…",
+        "bytes": 60985
+      },
+      {
+        "route": "hu/exhibitions/theframe.html",
+        "language": "hu",
+        "h1": "The Frame — 20 év",
+        "bytes": 114609
+      },
+      {
+        "route": "hu/exhibitions/themensdream.html",
+        "language": "hu",
+        "h1": "The Men’s Dream — A szépség genezise",
+        "bytes": 62717
+      },
+      {
+        "route": "hu/exhibitions/touch-wien.html",
+        "language": "hu",
+        "h1": "Touch Bécs &amp; Touch München",
+        "bytes": 51572
+      },
+      {
+        "route": "hu/index.html",
+        "language": "hu",
+        "h1": "BANHALMI ART",
+        "bytes": 235314
+      },
+      {
+        "route": "hu/press.html",
+        "language": "hu",
+        "h1": "Sajtó és nyilvános megjelenések",
+        "bytes": 55834
+      },
+      {
+        "route": "hu/private-photography.html",
+        "language": "hu",
+        "h1": "Személyes portré és boudoir",
+        "bytes": 33389
+      },
+      {
+        "route": "hu/writing.html",
+        "language": "hu",
+        "h1": "Publikációk, oktatás és az OM SYSTEM-évek",
+        "bytes": 33292
+      },
+      {
+        "route": "index.html",
+        "language": "en",
+        "h1": "BANHALMI ART",
+        "bytes": 73774
+      },
+      {
+        "route": "press.html",
+        "language": "en",
+        "h1": "Press and public appearances",
+        "bytes": 56046
+      },
+      {
+        "route": "private-photography.html",
+        "language": "en",
+        "h1": "Personal portraits and boudoir",
+        "bytes": 33441
+      },
+      {
+        "route": "writing.html",
+        "language": "en",
+        "h1": "Writing, Teaching &amp; the OM SYSTEM Years",
+        "bytes": 33565
+      }
+    ]
+  },
+  "blog": {
+    "site": "Fotótörténelem",
+    "metric": "editorial voice parity / source integrity / promotional contamination=0",
+    "status": "PASS_BASELINE",
+    "note": "Do not score against commercial BANHALMI voice. Editorial/historical intent preserved; no rewrite under change freeze."
+  }
+}

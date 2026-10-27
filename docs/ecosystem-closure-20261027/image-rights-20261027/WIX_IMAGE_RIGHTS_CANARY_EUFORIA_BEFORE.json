@@ -1,0 +1,876 @@
+{
+  "hu": {
+    "itemId": "d12f16eb-04a5-401d-bf5f-1dbfe342d6ed",
+    "tagCount": 16,
+    "focusKeywords": [
+      {
+        "term": "a Jelenlét anatómiája",
+        "isMain": true,
+        "origin": "BANHALMI multilingual SEO audit 2026"
+      }
+    ],
+    "scripts": [
+      {
+        "disabled": false,
+        "custom": false,
+        "meta": null,
+        "props": {
+          "type": "application/ld+json"
+        },
+        "atType": "BlogPosting",
+        "atId": "https://blog.banhalmi.art/post/euforia#article",
+        "image": [
+          {
+            "@type": "ImageObject",
+            "url": "https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg",
+            "width": 4095,
+            "height": 6143,
+            "caption": "Magyar Péter portréja, Budapest, Hősök tere, 2026. március 15. — Bánhalmi Norbert, EUFÓRIA",
+            "creator": {
+              "@type": "Person",
+              "name": "Bánhalmi Norbert",
+              "sameAs": "https://www.wikidata.org/wiki/Q56391118"
+            }
+          }
+        ],
+        "hasLicenseFields": {
+          "license": false,
+          "acquireLicensePage": false,
+          "creditText": false,
+          "copyrightNotice": false,
+          "creator": false
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://blog.banhalmi.art/post/euforia#article\",\"url\":\"https://blog.banhalmi.art/post/euforia\",\"headline\":\"EUFÓRIA - a Jelenlét anatómiája\",\"description\":\"Bánhalmi Norbert EUFÓRIA projektje húsz megtalált emberi momentumot keres. Elkészült művek, nyitott keresés, rögzített kiállítási dátum nélkül.\",\"inLanguage\":\"hu\",\"image\":[{\"@type\":\"ImageObject\",\"url\":\"https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg\",\"width\":4095,\"height\":6143,\"caption\":\"Magyar Péter portréja, Budapest, Hősök tere, 2026. március 15. — Bánhalmi Norbert, EUFÓRIA\",\"creator\":{\"@type\":\"Person\",\"name\":\"Bánhalmi Norbert\",\"sameAs\":\"https://www.wikidata.org/wiki/Q56391118\"}}],\"author\":{\"@type\":\"Person\",\"name\":\"Bánhalmi Norbert\",\"sameAs\":\"https://www.wikidata.org/wiki/Q56391118\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"BANHALMI\",\"url\":\"https://blog.banhalmi.art/\"},\"isPartOf\":{\"@type\":\"Blog\",\"@id\":\"https://blog.banhalmi.art/#blog\",\"url\":\"https://blog.banhalmi.art/\",\"name\":\"BANHALMI Blog\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://blog.banhalmi.art/post/euforia\"},\"datePublished\":\"2026-02-09T22:20:32Z\",\"dateModified\":\"2026-10-03T10:37:22.783Z\",\"about\":{\"@type\":\"CreativeWork\",\"@id\":\"https://www.banhalmi.art/hu/exhibitions/euforia.html#project\",\"url\":\"https://www.banhalmi.art/hu/exhibitions/euforia.html\",\"name\":\"EUFÓRIA — a Jelenlét anatómiája / The Anatomy of Presence\",\"sameAs\":\"https://www.wikidata.org/wiki/Q138717398\",\"creator\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":\"https://www.wikidata.org/wiki/Q56391118\"},\"description\":\"Készülő fotóművészeti projekt: húsz ember húsz megtalált momentuma, előre rögzített névsor, befejezési határidő, kiállítási dátum és helyszín nélkül.\"}}"
+      },
+      {
+        "disabled": true,
+        "custom": false,
+        "meta": {
+          "schemaType": "blog-post-blog-posting-preset",
+          "variants": [
+            {
+              "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+              "schemaType": "blog-post-news-article-preset",
+              "disabled": [
+                "{{blog-post.disable-schema}}"
+              ]
+            },
+            {
+              "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+              "schemaType": "blog-post-article-preset",
+              "disabled": [
+                "{{blog-post.disable-schema}}"
+              ]
+            }
+          ]
+        },
+        "props": {
+          "type": "application/ld+json"
+        },
+        "atType": "BlogPosting",
+        "image": {
+          "@type": "ImageObject",
+          "url": "{{blog-post.cover.image}}",
+          "width": "{{blog-post.cover.image.width}}",
+          "height": "{{blog-post.cover.image.height}}"
+        },
+        "hasLicenseFields": {
+          "license": false,
+          "acquireLicensePage": false,
+          "creditText": false,
+          "copyrightNotice": false,
+          "creator": false
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}"
+      }
+    ],
+    "preserved": {
+      "title": "EUFÓRIA — a Jelenlét anatómiája | Bánhalmi Norbert",
+      "canonical": "https://blog.banhalmi.art/post/euforia",
+      "hreflangs": [
+        {
+          "hreflang": "hu",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        },
+        {
+          "hreflang": "en",
+          "href": "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence"
+        },
+        {
+          "hreflang": "de",
+          "href": "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        }
+      ],
+      "ogImage": "https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg",
+      "ogTitle": "EUFÓRIA — a Jelenlét anatómiája | Bánhalmi Norbert",
+      "description": "Bánhalmi Norbert EUFÓRIA projektje húsz megtalált emberi momentumot keres. Elkészült művek, nyitott keresés, rögzített kiállítási dátum nélkül."
+    },
+    "tags": [
+      {
+        "type": "title",
+        "children": "EUFÓRIA — a Jelenlét anatómiája | Bánhalmi Norbert",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "description",
+          "content": "Bánhalmi Norbert EUFÓRIA projektje húsz megtalált emberi momentumot keres. Elkészült művek, nyitott keresés, rögzített kiállítási dátum nélkül."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:title",
+          "content": "EUFÓRIA — a Jelenlét anatómiája | Bánhalmi Norbert"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:description",
+          "content": "Bánhalmi Norbert EUFÓRIA projektje húsz megtalált emberi momentumot keres. Elkészült művek, nyitott keresés, rögzített kiállítási dátum nélkül."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:type",
+          "content": "article"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:image",
+          "content": "https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:image",
+          "content": "https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:title",
+          "content": "EUFÓRIA — a Jelenlét anatómiája | Bánhalmi Norbert"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:description",
+          "content": "Bánhalmi Norbert EUFÓRIA projektje húsz megtalált emberi momentumot keres. Elkészült művek, nyitott keresés, rögzített kiállítási dátum nélkül."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "canonical",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "alternate",
+          "hreflang": "hu",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "alternate",
+          "hreflang": "de",
+          "href": "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "script",
+        "props": {
+          "type": "application/ld+json"
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://blog.banhalmi.art/post/euforia#article\",\"url\":\"https://blog.banhalmi.art/post/euforia\",\"headline\":\"EUFÓRIA - a Jelenlét anatómiája\",\"description\":\"Bánhalmi Norbert EUFÓRIA projektje húsz megtalált emberi momentumot keres. Elkészült művek, nyitott keresés, rögzített kiállítási dátum nélkül.\",\"inLanguage\":\"hu\",\"image\":[{\"@type\":\"ImageObject\",\"url\":\"https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg\",\"width\":4095,\"height\":6143,\"caption\":\"Magyar Péter portréja, Budapest, Hősök tere, 2026. március 15. — Bánhalmi Norbert, EUFÓRIA\",\"creator\":{\"@type\":\"Person\",\"name\":\"Bánhalmi Norbert\",\"sameAs\":\"https://www.wikidata.org/wiki/Q56391118\"}}],\"author\":{\"@type\":\"Person\",\"name\":\"Bánhalmi Norbert\",\"sameAs\":\"https://www.wikidata.org/wiki/Q56391118\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"BANHALMI\",\"url\":\"https://blog.banhalmi.art/\"},\"isPartOf\":{\"@type\":\"Blog\",\"@id\":\"https://blog.banhalmi.art/#blog\",\"url\":\"https://blog.banhalmi.art/\",\"name\":\"BANHALMI Blog\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://blog.banhalmi.art/post/euforia\"},\"datePublished\":\"2026-02-09T22:20:32Z\",\"dateModified\":\"2026-10-03T10:37:22.783Z\",\"about\":{\"@type\":\"CreativeWork\",\"@id\":\"https://www.banhalmi.art/hu/exhibitions/euforia.html#project\",\"url\":\"https://www.banhalmi.art/hu/exhibitions/euforia.html\",\"name\":\"EUFÓRIA — a Jelenlét anatómiája / The Anatomy of Presence\",\"sameAs\":\"https://www.wikidata.org/wiki/Q138717398\",\"creator\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":\"https://www.wikidata.org/wiki/Q56391118\"},\"description\":\"Készülő fotóművészeti projekt: húsz ember húsz megtalált momentuma, előre rögzített névsor, befejezési határidő, kiállítási dátum és helyszín nélkül.\"}}",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "script",
+        "props": {
+          "type": "application/ld+json"
+        },
+        "meta": {
+          "schemaType": "blog-post-blog-posting-preset",
+          "variants": [
+            {
+              "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+              "schemaType": "blog-post-news-article-preset",
+              "disabled": [
+                "{{blog-post.disable-schema}}"
+              ]
+            },
+            {
+              "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+              "schemaType": "blog-post-article-preset",
+              "disabled": [
+                "{{blog-post.disable-schema}}"
+              ]
+            }
+          ]
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+        "custom": false,
+        "disabled": true
+      }
+    ]
+  },
+  "en": {
+    "itemId": "5fc1be3e-5e29-4c19-b907-68c2fd2f7fda",
+    "tagCount": 16,
+    "focusKeywords": [
+      {
+        "term": "EUPHORIA",
+        "isMain": true,
+        "origin": "BANHALMI multilingual SEO audit 2026"
+      }
+    ],
+    "scripts": [
+      {
+        "disabled": false,
+        "custom": false,
+        "meta": null,
+        "props": {
+          "type": "application/ld+json"
+        },
+        "atType": "BlogPosting",
+        "atId": "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence#article",
+        "image": [
+          {
+            "@type": "ImageObject",
+            "url": "https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg",
+            "width": 4095,
+            "height": 6143,
+            "caption": "Portrait of Péter Magyar, Heroes’ Square, Budapest, 15 March 2026 — Norbert Bánhalmi, EUFÓRIA",
+            "creator": {
+              "@type": "Person",
+              "name": "Norbert Bánhalmi",
+              "sameAs": [
+                "https://www.wikidata.org/wiki/Q56391118"
+              ]
+            }
+          }
+        ],
+        "hasLicenseFields": {
+          "license": false,
+          "acquireLicensePage": false,
+          "creditText": false,
+          "copyrightNotice": false,
+          "creator": false
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence#article\",\"url\":\"https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence\",\"headline\":\"EUPHORIA – The Anatomy of Presence\",\"description\":\"Norbert Bánhalmi’s EUFÓRIA photographic art project seeks 20 genuine human moments. Completed works, candidate moments and an open search, without a fixed exhibition date.\",\"inLanguage\":\"en\",\"datePublished\":\"2026-08-20T11:04:01.195Z\",\"dateModified\":\"2026-10-03T11:12:18.930Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q56391118\"]},\"publisher\":{\"@type\":\"Organization\",\"name\":\"BANHALMI\",\"url\":\"https://blog.banhalmi.art/\"},\"isPartOf\":{\"@type\":\"Blog\",\"@id\":\"https://blog.banhalmi.art/#blog\",\"name\":\"BANHALMI Blog\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence\"},\"image\":[{\"@type\":\"ImageObject\",\"url\":\"https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg\",\"width\":4095,\"height\":6143,\"caption\":\"Portrait of Péter Magyar, Heroes’ Square, Budapest, 15 March 2026 — Norbert Bánhalmi, EUFÓRIA\",\"creator\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q56391118\"]}}],\"about\":{\"@type\":\"CreativeWork\",\"@id\":\"https://www.banhalmi.art/exhibitions/euforia.html#project\",\"url\":\"https://www.banhalmi.art/exhibitions/euforia.html\",\"name\":\"EUFÓRIA — The Anatomy of Presence\",\"description\":\"A photographic art project by Norbert Bánhalmi: 20 people, 20 distinct human moments, without a predetermined roster. Completion requires 20 genuine, documented works; no fixed completion date, exhibition date or venue is confirmed.\",\"creator\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q56391118\"]},\"sameAs\":[\"https://www.wikidata.org/wiki/Q138717398\"]}}"
+      },
+      {
+        "disabled": true,
+        "custom": false,
+        "meta": {
+          "schemaType": "blog-post-blog-posting-preset",
+          "variants": [
+            {
+              "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+              "schemaType": "blog-post-news-article-preset",
+              "disabled": [
+                "{{blog-post.disable-schema}}"
+              ]
+            },
+            {
+              "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+              "schemaType": "blog-post-article-preset",
+              "disabled": [
+                "{{blog-post.disable-schema}}"
+              ]
+            }
+          ]
+        },
+        "props": {
+          "type": "application/ld+json"
+        },
+        "atType": "BlogPosting",
+        "image": {
+          "@type": "ImageObject",
+          "url": "{{blog-post.cover.image}}",
+          "width": "{{blog-post.cover.image.width}}",
+          "height": "{{blog-post.cover.image.height}}"
+        },
+        "hasLicenseFields": {
+          "license": false,
+          "acquireLicensePage": false,
+          "creditText": false,
+          "copyrightNotice": false,
+          "creator": false
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}"
+      }
+    ],
+    "preserved": {
+      "title": "EUPHORIA – The Anatomy of Presence | Norbert Bánhalmi",
+      "canonical": "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence",
+      "hreflangs": [
+        {
+          "hreflang": "hu",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        },
+        {
+          "hreflang": "en",
+          "href": "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence"
+        },
+        {
+          "hreflang": "de",
+          "href": "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        }
+      ],
+      "ogImage": "https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg",
+      "ogTitle": "EUPHORIA – The Anatomy of Presence",
+      "description": "Norbert Bánhalmi’s EUFÓRIA photographic art project seeks 20 genuine human moments. Completed works, candidate moments and an open search, without a fixed exhibition date."
+    },
+    "tags": [
+      {
+        "type": "title",
+        "children": "EUPHORIA – The Anatomy of Presence | Norbert Bánhalmi",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "description",
+          "content": "Norbert Bánhalmi’s EUFÓRIA photographic art project seeks 20 genuine human moments. Completed works, candidate moments and an open search, without a fixed exhibition date."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:title",
+          "content": "EUPHORIA – The Anatomy of Presence"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:description",
+          "content": "Norbert Bánhalmi’s EUFÓRIA photographic art project seeks 20 genuine human moments. Completed works, candidate moments and an open search, without a fixed exhibition date."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:type",
+          "content": "article"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:image",
+          "content": "https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:image",
+          "content": "https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:title",
+          "content": "EUPHORIA – The Anatomy of Presence"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:description",
+          "content": "Norbert Bánhalmi’s EUFÓRIA photographic art project seeks 20 genuine human moments. Completed works, candidate moments and an open search, without a fixed exhibition date."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "canonical",
+          "href": "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "alternate",
+          "hreflang": "hu",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "alternate",
+          "hreflang": "de",
+          "href": "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "script",
+        "props": {
+          "type": "application/ld+json"
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence#article\",\"url\":\"https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence\",\"headline\":\"EUPHORIA – The Anatomy of Presence\",\"description\":\"Norbert Bánhalmi’s EUFÓRIA photographic art project seeks 20 genuine human moments. Completed works, candidate moments and an open search, without a fixed exhibition date.\",\"inLanguage\":\"en\",\"datePublished\":\"2026-08-20T11:04:01.195Z\",\"dateModified\":\"2026-10-03T11:12:18.930Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q56391118\"]},\"publisher\":{\"@type\":\"Organization\",\"name\":\"BANHALMI\",\"url\":\"https://blog.banhalmi.art/\"},\"isPartOf\":{\"@type\":\"Blog\",\"@id\":\"https://blog.banhalmi.art/#blog\",\"name\":\"BANHALMI Blog\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence\"},\"image\":[{\"@type\":\"ImageObject\",\"url\":\"https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg\",\"width\":4095,\"height\":6143,\"caption\":\"Portrait of Péter Magyar, Heroes’ Square, Budapest, 15 March 2026 — Norbert Bánhalmi, EUFÓRIA\",\"creator\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q56391118\"]}}],\"about\":{\"@type\":\"CreativeWork\",\"@id\":\"https://www.banhalmi.art/exhibitions/euforia.html#project\",\"url\":\"https://www.banhalmi.art/exhibitions/euforia.html\",\"name\":\"EUFÓRIA — The Anatomy of Presence\",\"description\":\"A photographic art project by Norbert Bánhalmi: 20 people, 20 distinct human moments, without a predetermined roster. Completion requires 20 genuine, documented works; no fixed completion date, exhibition date or venue is confirmed.\",\"creator\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q56391118\"]},\"sameAs\":[\"https://www.wikidata.org/wiki/Q138717398\"]}}",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "script",
+        "props": {
+          "type": "application/ld+json"
+        },
+        "meta": {
+          "schemaType": "blog-post-blog-posting-preset",
+          "variants": [
+            {
+              "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+              "schemaType": "blog-post-news-article-preset",
+              "disabled": [
+                "{{blog-post.disable-schema}}"
+              ]
+            },
+            {
+              "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+              "schemaType": "blog-post-article-preset",
+              "disabled": [
+                "{{blog-post.disable-schema}}"
+              ]
+            }
+          ]
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+        "custom": false,
+        "disabled": true
+      }
+    ]
+  },
+  "de": {
+    "itemId": "05a20368-0031-4bc8-b1e1-b615b667db02",
+    "tagCount": 16,
+    "focusKeywords": [
+      {
+        "term": "Anatomie",
+        "isMain": true,
+        "origin": "BANHALMI multilingual SEO audit 2026"
+      }
+    ],
+    "scripts": [
+      {
+        "disabled": false,
+        "custom": false,
+        "meta": null,
+        "props": {
+          "type": "application/ld+json"
+        },
+        "atType": "BlogPosting",
+        "atId": "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz#article",
+        "image": [
+          {
+            "@type": "ImageObject",
+            "url": "https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg",
+            "width": 4095,
+            "height": 6143,
+            "caption": "Porträt von Péter Magyar, Heldenplatz, Budapest, 15. März 2026 — Norbert Bánhalmi, EUFÓRIA",
+            "creator": {
+              "@type": "Person",
+              "name": "Norbert Bánhalmi",
+              "sameAs": [
+                "https://www.wikidata.org/wiki/Q56391118"
+              ]
+            }
+          }
+        ],
+        "hasLicenseFields": {
+          "license": false,
+          "acquireLicensePage": false,
+          "creditText": false,
+          "copyrightNotice": false,
+          "creator": false
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz#article\",\"url\":\"https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz\",\"headline\":\"EUFORIE – Die Anatomie der Präsenz\",\"description\":\"Norbert Bánhalmis Fotokunstprojekt EUFÓRIA sucht 20 echte menschliche Momente. Fertige Werke, mögliche Momente und eine offene Suche ohne festen Ausstellungstermin.\",\"inLanguage\":\"de\",\"datePublished\":\"2026-08-20T11:04:03.141Z\",\"dateModified\":\"2026-10-03T11:12:19.589Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q56391118\"]},\"publisher\":{\"@type\":\"Organization\",\"name\":\"BANHALMI\",\"url\":\"https://blog.banhalmi.art/\"},\"isPartOf\":{\"@type\":\"Blog\",\"@id\":\"https://blog.banhalmi.art/#blog\",\"name\":\"BANHALMI Blog\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz\"},\"image\":[{\"@type\":\"ImageObject\",\"url\":\"https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg\",\"width\":4095,\"height\":6143,\"caption\":\"Porträt von Péter Magyar, Heldenplatz, Budapest, 15. März 2026 — Norbert Bánhalmi, EUFÓRIA\",\"creator\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q56391118\"]}}],\"about\":{\"@type\":\"CreativeWork\",\"@id\":\"https://www.banhalmi.art/de-at/exhibitions/euforia.html#project\",\"url\":\"https://www.banhalmi.art/de-at/exhibitions/euforia.html\",\"name\":\"EUFÓRIA — Die Anatomie der Präsenz\",\"description\":\"Ein Fotokunstprojekt von Norbert Bánhalmi: 20 Menschen und 20 eigenständige menschliche Momente ohne vorab festgelegte Namensliste. Vollendet ist es erst mit 20 echten, dokumentierbaren Werken. Es gibt keinen festen Abschluss- oder Ausstellungstermin und keinen bestätigten Ausstellungsort.\",\"creator\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q56391118\"]},\"sameAs\":[\"https://www.wikidata.org/wiki/Q138717398\"]}}"
+      },
+      {
+        "disabled": true,
+        "custom": false,
+        "meta": {
+          "schemaType": "blog-post-blog-posting-preset",
+          "variants": [
+            {
+              "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+              "schemaType": "blog-post-news-article-preset",
+              "disabled": [
+                "{{blog-post.disable-schema}}"
+              ]
+            },
+            {
+              "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+              "schemaType": "blog-post-article-preset",
+              "disabled": [
+                "{{blog-post.disable-schema}}"
+              ]
+            }
+          ]
+        },
+        "props": {
+          "type": "application/ld+json"
+        },
+        "atType": "BlogPosting",
+        "image": {
+          "@type": "ImageObject",
+          "url": "{{blog-post.cover.image}}",
+          "width": "{{blog-post.cover.image.width}}",
+          "height": "{{blog-post.cover.image.height}}"
+        },
+        "hasLicenseFields": {
+          "license": false,
+          "acquireLicensePage": false,
+          "creditText": false,
+          "copyrightNotice": false,
+          "creator": false
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}"
+      }
+    ],
+    "preserved": {
+      "title": "EUFORIE – Die Anatomie der Präsenz | Norbert Bánhalmi",
+      "canonical": "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz",
+      "hreflangs": [
+        {
+          "hreflang": "hu",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        },
+        {
+          "hreflang": "en",
+          "href": "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence"
+        },
+        {
+          "hreflang": "de",
+          "href": "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz"
+        },
+        {
+          "hreflang": "x-default",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        }
+      ],
+      "ogImage": "https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg",
+      "ogTitle": "EUFORIE – Die Anatomie der Präsenz",
+      "description": "Norbert Bánhalmis Fotokunstprojekt EUFÓRIA sucht 20 echte menschliche Momente. Fertige Werke, mögliche Momente und eine offene Suche ohne festen Ausstellungstermin."
+    },
+    "tags": [
+      {
+        "type": "title",
+        "children": "EUFORIE – Die Anatomie der Präsenz | Norbert Bánhalmi",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "description",
+          "content": "Norbert Bánhalmis Fotokunstprojekt EUFÓRIA sucht 20 echte menschliche Momente. Fertige Werke, mögliche Momente und eine offene Suche ohne festen Ausstellungstermin."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:title",
+          "content": "EUFORIE – Die Anatomie der Präsenz"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:description",
+          "content": "Norbert Bánhalmis Fotokunstprojekt EUFÓRIA sucht 20 echte menschliche Momente. Fertige Werke, mögliche Momente und eine offene Suche ohne festen Ausstellungstermin."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:type",
+          "content": "article"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:image",
+          "content": "https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:image",
+          "content": "https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:title",
+          "content": "EUFORIE – Die Anatomie der Präsenz"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:description",
+          "content": "Norbert Bánhalmis Fotokunstprojekt EUFÓRIA sucht 20 echte menschliche Momente. Fertige Werke, mögliche Momente und eine offene Suche ohne festen Ausstellungstermin."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "canonical",
+          "href": "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "alternate",
+          "hreflang": "hu",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "alternate",
+          "hreflang": "de",
+          "href": "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "link",
+        "props": {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://blog.banhalmi.art/post/euforia"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "script",
+        "props": {
+          "type": "application/ld+json"
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz#article\",\"url\":\"https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz\",\"headline\":\"EUFORIE – Die Anatomie der Präsenz\",\"description\":\"Norbert Bánhalmis Fotokunstprojekt EUFÓRIA sucht 20 echte menschliche Momente. Fertige Werke, mögliche Momente und eine offene Suche ohne festen Ausstellungstermin.\",\"inLanguage\":\"de\",\"datePublished\":\"2026-08-20T11:04:03.141Z\",\"dateModified\":\"2026-10-03T11:12:19.589Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q56391118\"]},\"publisher\":{\"@type\":\"Organization\",\"name\":\"BANHALMI\",\"url\":\"https://blog.banhalmi.art/\"},\"isPartOf\":{\"@type\":\"Blog\",\"@id\":\"https://blog.banhalmi.art/#blog\",\"name\":\"BANHALMI Blog\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-präsenz\"},\"image\":[{\"@type\":\"ImageObject\",\"url\":\"https://static.wixstatic.com/media/b0aee1_ddaa493ecfe0443a9acbf27e5d032a30~mv2.jpg\",\"width\":4095,\"height\":6143,\"caption\":\"Porträt von Péter Magyar, Heldenplatz, Budapest, 15. März 2026 — Norbert Bánhalmi, EUFÓRIA\",\"creator\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q56391118\"]}}],\"about\":{\"@type\":\"CreativeWork\",\"@id\":\"https://www.banhalmi.art/de-at/exhibitions/euforia.html#project\",\"url\":\"https://www.banhalmi.art/de-at/exhibitions/euforia.html\",\"name\":\"EUFÓRIA — Die Anatomie der Präsenz\",\"description\":\"Ein Fotokunstprojekt von Norbert Bánhalmi: 20 Menschen und 20 eigenständige menschliche Momente ohne vorab festgelegte Namensliste. Vollendet ist es erst mit 20 echten, dokumentierbaren Werken. Es gibt keinen festen Abschluss- oder Ausstellungstermin und keinen bestätigten Ausstellungsort.\",\"creator\":{\"@type\":\"Person\",\"name\":\"Norbert Bánhalmi\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q56391118\"]},\"sameAs\":[\"https://www.wikidata.org/wiki/Q138717398\"]}}",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "script",
+        "props": {
+          "type": "application/ld+json"
+        },
+        "meta": {
+          "schemaType": "blog-post-blog-posting-preset",
+          "variants": [
+            {
+              "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+              "schemaType": "blog-post-news-article-preset",
+              "disabled": [
+                "{{blog-post.disable-schema}}"
+              ]
+            },
+            {
+              "schema": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+              "schemaType": "blog-post-article-preset",
+              "disabled": [
+                "{{blog-post.disable-schema}}"
+              ]
+            }
+          ]
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"itemPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"{{site.name}}\",\"url\":\"{{site.url}}\"}}",
+        "custom": false,
+        "disabled": true
+      }
+    ]
+  }
+}

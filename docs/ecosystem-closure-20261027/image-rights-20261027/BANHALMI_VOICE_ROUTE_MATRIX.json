@@ -1,0 +1,231 @@
+{
+  "generatedAt": "2026-10-27T11:20:00+01:00",
+  "professional": {
+    "site": "Professional",
+    "totalRoutes": 57,
+    "byLanguage": {
+      "en": 19,
+      "de": 19,
+      "hu": 19
+    },
+    "baselineGate": "human-voice PASS (existing release gate; no deviation scan rewrite)",
+    "status": {
+      "en": "PASS",
+      "hu": "PASS",
+      "de": "PASS"
+    },
+    "correctedPages": 0,
+    "unresolvedPages": 0,
+    "note": "Change freeze: only proven deviations would be corrected. Existing human-voice gates PASS; no rewrite.",
+    "routeSample": [
+      {
+        "route": "about/index.html",
+        "language": "en",
+        "h1": "Norbert Bánhalmi",
+        "bytes": 52360
+      },
+      {
+        "route": "accessibility/index.html",
+        "language": "en",
+        "h1": "Accessibility Statement",
+        "bytes": 25616
+      },
+      {
+        "route": "archive/index.html",
+        "language": "en",
+        "h1": "Past work, books and exhibitions.",
+        "bytes": 26703
+      },
+      {
+        "route": "case-studies/peter-magyar-portrait-2026/index.html",
+        "language": "en",
+        "h1": "The Péter Magyar portrait — and how it was used in public.",
+        "bytes": 23569
+      },
+      {
+        "route": "contact/index.html",
+        "language": "en",
+        "h1": "Tell me what you need.",
+        "bytes": 37011
+      },
+      {
+        "route": "cookie-policy/index.html",
+        "language": "en",
+        "h1": "Cookie Policy",
+        "bytes": 29999
+      },
+      {
+        "route": "de-at/agb/index.html",
+        "language": "de",
+        "h1": "Allgemeine Geschäftsbedingungen",
+        "bytes": 41478
+      },
+      {
+        "route": "de-at/anfrage/index.html",
+        "language": "de",
+        "h1": "Sagen Sie mir, was Sie brauchen. Gemeinsam finden wir die passende Bildlösung.",
+        "bytes": 94216
+      },
+      {
+        "route": "de-at/archiv/index.html",
+        "language": "de",
+        "h1": "Frühere Arbeiten, Bücher und Ausstellungen.",
+        "bytes": 27030
+      },
+      {
+        "route": "de-at/barrierefreiheit/index.html",
+        "language": "de",
+        "h1": "Erklärung zur Barrierefreiheit",
+        "bytes": 26068
+      },
+      {
+        "route": "de-at/brand/index.html",
+        "language": "de",
+        "h1": "Brandfotografie für eine einheitliche Bildsprache.",
+        "bytes": 159376
+      },
+      {
+        "route": "de-at/cookies/index.html",
+        "language": "de",
+        "h1": "Cookie-Richtlinie",
+        "bytes": 30839
+      },
+      {
+        "route": "de-at/datenschutz/index.html",
+        "language": "de",
+        "h1": "Datenschutzerklärung",
+        "bytes": 42295
+      },
+      {
+        "route": "de-at/eventfotografie/index.html",
+        "language": "de",
+        "h1": "Eventfotografie, die weiterverwendet werden kann.",
+        "bytes": 90555
+      },
+      {
+        "route": "de-at/fallstudien/peter-magyar-portraet-2026/index.html",
+        "language": "de",
+        "h1": "Das Péter-Magyar-Porträt — und wie es öffentlich genutzt wurde.",
+        "bytes": 24347
+      }
+    ],
+    "routeCount": 57
+  },
+  "art": {
+    "site": "ART",
+    "totalRoutes": 90,
+    "byLanguage": {
+      "en": 32,
+      "de": 29,
+      "hu": 29
+    },
+    "baselineGate": "human-voice PASS (existing release gate; no deviation scan rewrite)",
+    "status": {
+      "en": "PASS",
+      "hu": "PASS",
+      "de": "PASS"
+    },
+    "correctedPages": 0,
+    "unresolvedPages": 0,
+    "note": "Change freeze: only proven deviations would be corrected. Existing human-voice gates PASS; no rewrite.",
+    "routeSample": [
+      {
+        "route": "assets/fragments/home-gallery-de-at.html",
+        "language": "en",
+        "h1": null,
+        "bytes": 50305
+      },
+      {
+        "route": "assets/fragments/home-gallery-en.html",
+        "language": "en",
+        "h1": null,
+        "bytes": 48377
+      },
+      {
+        "route": "assets/fragments/home-gallery-hu.html",
+        "language": "en",
+        "h1": null,
+        "bytes": 48107
+      },
+      {
+        "route": "books/book-anovilaga.html",
+        "language": "en",
+        "h1": "The World of Woman",
+        "bytes": 37472
+      },
+      {
+        "route": "books/book-ebredes.html",
+        "language": "en",
+        "h1": "Awakening: The New Beginning!",
+        "bytes": 37216
+      },
+      {
+        "route": "books/book-szosszenetek.html",
+        "language": "en",
+        "h1": "Snippets",
+        "bytes": 34776
+      },
+      {
+        "route": "community.html",
+        "language": "en",
+        "h1": "Community &amp; Teaching",
+        "bytes": 34027
+      },
+      {
+        "route": "curators.html",
+        "language": "en",
+        "h1": "Norbert Bánhalmi — photographer and visual artist",
+        "bytes": 64713
+      },
+      {
+        "route": "de-at/books/book-anovilaga.html",
+        "language": "de",
+        "h1": "Die Welt der Frau",
+        "bytes": 37880
+      },
+      {
+        "route": "de-at/books/book-ebredes.html",
+        "language": "de",
+        "h1": "Erwachen: Der neue Anfang!",
+        "bytes": 37727
+      },
+      {
+        "route": "de-at/books/book-szosszenetek.html",
+        "language": "de",
+        "h1": "Schnipsel",
+        "bytes": 35362
+      },
+      {
+        "route": "de-at/community.html",
+        "language": "de",
+        "h1": "Gemeinschaft &amp; Lehre",
+        "bytes": 34494
+      },
+      {
+        "route": "de-at/curators.html",
+        "language": "de",
+        "h1": "Norbert Bánhalmi — Fotograf und bildender Künstler",
+        "bytes": 67112
+      },
+      {
+        "route": "de-at/exhibitions/anovilaga.html",
+        "language": "de",
+        "h1": "Die Welt der Frau",
+        "bytes": 143987
+      },
+      {
+        "route": "de-at/exhibitions/avalosag.html",
+        "language": "de",
+        "h1": "Die falschen Gesichter der Wirklichkeit / Die Lügen des Internets",
+        "bytes": 62059
+      }
+    ],
+    "routeCount": 90
+  },
+  "blog": {
+    "site": "Fotótörténelem",
+    "metric": "editorial voice parity / source integrity / promotional contamination=0",
+    "status": "PASS_BASELINE",
+    "note": "Do not score against commercial BANHALMI voice. Editorial/historical intent preserved; no rewrite under change freeze."
+  }
+}
