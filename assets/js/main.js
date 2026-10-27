@@ -1318,10 +1318,8 @@
   function actionOrMedia(a){
     if(a.matches('.brand,.footer-wko-profile,.btn,.btn-primary,.btn-secondary,.btn-ghost,.nav-cta,[role="button"],.banhalmi-contact-studio')) return true;
     if(a.matches('.banhalmi-contact-action')){
-      var role=a.getAttribute("data-contact-role");
-      // Booking is an external text action and keeps one decorative ↗.
-      // WhatsApp and in-panel mailto/tel stay glyph-free.
-      return role!=="booking";
+      // Floating contact actions stay glyph-free, including Online meeting/booking.
+      return true;
     }
     return !!a.querySelector("img,picture,svg,video");
   }

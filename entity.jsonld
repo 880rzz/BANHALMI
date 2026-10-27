@@ -295,7 +295,8 @@
       },
       "containedInPlace": {
         "@id": "https://www.wikidata.org/wiki/Q1741"
-      }
+      },
+      "hasMap": "https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8"
     },
     {
       "@type": "Place",
@@ -311,7 +312,8 @@
       },
       "containedInPlace": {
         "@id": "https://www.wikidata.org/wiki/Q1781"
-      }
+      },
+      "hasMap": "https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA"
     },
     {
       "@type": "Place",
@@ -327,7 +329,8 @@
       },
       "containedInPlace": {
         "@id": "https://www.wikidata.org/wiki/Q1741"
-      }
+      },
+      "hasMap": "https://g.page/r/CdO4Kej3jIkfEBM"
     },
     {
       "@type": "Service",
