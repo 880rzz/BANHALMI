@@ -24,6 +24,25 @@
       "id": "VOICE",
       "action": "Route matrix + gate reconfirm",
       "status": "PASS_NO_CHANGES"
+    },
+    {
+      "id": "WIX-FENTON-C",
+      "action": "Fenton #11 Class C PD LoC rights HU/EN/DE",
+      "status": "LIVE_PASS"
+    },
+    {
+      "id": "WIX-ATKINS-C",
+      "action": "Anna Atkins Met Public Domain rights HU/EN/DE",
+      "status": "LIVE_PASS"
+    },
+    {
+      "id": "WIX-LANGE-C",
+      "action": "Dorothea Lange LoC rights HU/EN/DE (string image→ImageObject)",
+      "status": "LIVE_PASS"
     }
-  ]
+  ],
+  "wixGoogleCompleteKnown": 12,
+  "wixOwnBanhalmiComplete": 3,
+  "wixThirdPartyVerified": 9,
+  "blogPostingExactOne": "513/513"
 }

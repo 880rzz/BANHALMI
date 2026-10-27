@@ -24,7 +24,7 @@
     "imageObjects": 493,
     "googleComplete": 0,
     "googleIncomplete": 493,
-    "ownBanhalmiComplete": "3/3 EUFÓRIA family (Class B CC BY-SA) after canary",
+    "ownBanhalmiComplete": "3/3 EUFÓRIA",
     "fieldPresence": {
       "contentUrl": 484,
       "creator": 3,
@@ -70,7 +70,9 @@
         "provenance": "ART image-knowledge-graph + Commons File:Peter-Magyar-portrait-2026.jpg; caption identifies Banhalmi EUFÓRIA portrait"
       }
     },
-    "remaining": "Most covers Class F/INPUT-NEM-ELÉRHETŐ or Class C historical without safe automated Banhalmi rights; do not invent copyright. Class C PD Fenton family write in progress."
+    "remaining": "~481 covers still incomplete/unknown provenance; Class D AI heroes retained without Banhalmi copyright; no invented rights",
+    "googleCompleteKnown": 12,
+    "thirdPartyVerified": 9
   },
   "voice": {
     "professional": {
