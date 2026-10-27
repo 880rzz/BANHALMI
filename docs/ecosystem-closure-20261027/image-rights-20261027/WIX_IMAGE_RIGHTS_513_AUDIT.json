@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-10-27T11:25:00+01:00",
+  "siteId": "5bfb58f7-cf3f-4eee-acbd-b8fcac6b217b",
+  "totalItems": 513,
+  "blogPostingExactOne": 513,
+  "blogPostingNotExactOne": 0,
+  "postsWithImage": 482,
+  "postsNoImage": 31,
+  "imageObjectCount": 493,
+  "googleComplete": 0,
+  "googleIncomplete": 493,
+  "fieldPresence": {
+    "contentUrl": 484,
+    "creator": 3,
+    "creditText": 0,
+    "copyrightNotice": 0,
+    "license": 0,
+    "acquireLicensePage": 0
+  },
+  "postsAnyLicense": 0,
+  "postsAnyCreator": 3,
+  "postsAnyCredit": 0,
+  "postsAnyNotice": 0,
+  "postsAnyAcquire": 0,
+  "status": "WIX_IMAGE_RIGHTS_NOT_READY",
+  "note": "Full resolved SEO audit of 513 published posts. Google six-field licensing complete = 0/493 ImageObjects. BlogPosting exact-one preserved 513/513. Do not invent BANHALMI copyright on third-party/historical images.",
+  "afterCanary": {
+    "ownBanhalmiComplete": 3,
+    "thirdPartyVerifiedComplete": 3,
+    "googleCompleteKnown": 6,
+    "familiesWritten": [
+      "EUFÓRIA Class B CC BY-SA",
+      "Fenton #11 Class C Public Domain LoC"
+    ],
+    "remainingIncompleteApprox": 487,
+    "unknownProvenancePolicy": "INPUT-NEM-ELÉRHETŐ — no invented BANHALMI copyright"
+  },
+  "fentonClassC": {
+    "itemIds": [
+      "d18458e9-4af6-40cd-bf1b-7b0ce2b03691",
+      "edbdd622-5f72-41a0-aeb9-79f555d81864",
+      "f440d073-076a-437e-9cd6-590e8c89408f"
+    ],
+    "apiPass": true,
+    "banhalmiCopyright": false
+  }
+}

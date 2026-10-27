@@ -1,0 +1,102 @@
+{
+  "generatedAt": "2026-10-27T12:10:00+01:00",
+  "Europe/Budapest": "2026-10-27 ~12:10",
+  "scope": "IMAGE_RIGHTS + VOICE closure continuation",
+  "professional": {
+    "catalogComplete": "154/154",
+    "fineArtComplete": "25/25",
+    "pageJsonLdImageObjectsComplete": "495/495",
+    "imgTags": 758,
+    "decorativeOrUi": 124,
+    "contentishImgTags": 634,
+    "status": "PASS_BASELINE_RECONFIRMED"
+  },
+  "art": {
+    "kgImageObjectsComplete": "3/3",
+    "fellegiBence": "COMPLETE_CC_BY_SA_4.0_COMMONS_PROVEN",
+    "homepageLicensingGate": "HU 131/131 EN 18/18 DE 18/18 PASS",
+    "pageIncompleteNonrefSample": 50,
+    "note": "Page incompletes include logos/Organization images (Class E) and some Person portrait/primaryimage occurrences missing license; homepage gallery gate remains PASS. PR #308 pending exact-live."
+  },
+  "blog": {
+    "published": 513,
+    "exactOneBlogPosting": "513/513",
+    "imageObjects": 493,
+    "googleComplete": 0,
+    "googleIncomplete": 493,
+    "ownBanhalmiComplete": "3/3 EUFÓRIA family (Class B CC BY-SA) after canary",
+    "fieldPresence": {
+      "contentUrl": 484,
+      "creator": 3,
+      "creditText": 0,
+      "copyrightNotice": 0,
+      "license": 0,
+      "acquireLicensePage": 0
+    },
+    "canary": {
+      "family": "EUFÓRIA / EUPHORIA / EUFORIE",
+      "translationIds": null,
+      "itemIds": {
+        "hu": "d12f16eb-04a5-401d-bf5f-1dbfe342d6ed",
+        "en": "5fc1be3e-5e29-4c19-b907-68c2fd2f7fda",
+        "de": "05a20368-0031-4bc8-b1e1-b615b667db02"
+      },
+      "strategy": "enrich_BlogPosting.image ImageObject with Commons-proven CC BY-SA 4.0 rights; preserve full tags; fieldMask=tags",
+      "apiCanaryPass": true,
+      "liveHtml": {
+        "hu": {
+          "url": "https://blog.banhalmi.art/post/euforia",
+          "primaryCount": 1,
+          "googleSix": true
+        },
+        "en": {
+          "url": "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence",
+          "primaryCount": 1,
+          "googleSix": true
+        },
+        "de": {
+          "url": "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-pr%C3%A4senz",
+          "primaryCount": 1,
+          "googleSix": true
+        }
+      },
+      "preserved": "title/canonical/hreflang/OG/description unchanged",
+      "blogPostingExactOne": true,
+      "rights": {
+        "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+        "creditText": "Norbert Bánhalmi / BANHALMI ART",
+        "copyrightNotice": "© Bánhalmi Norbert",
+        "provenance": "ART image-knowledge-graph + Commons File:Peter-Magyar-portrait-2026.jpg; caption identifies Banhalmi EUFÓRIA portrait"
+      }
+    },
+    "remaining": "Most covers Class F/INPUT-NEM-ELÉRHETŐ or Class C historical without safe automated Banhalmi rights; do not invent copyright. Class C PD Fenton family write in progress."
+  },
+  "voice": {
+    "professional": {
+      "en": "PASS",
+      "hu": "PASS",
+      "de": "PASS"
+    },
+    "professionalRoutes": 57,
+    "art": {
+      "en": "PASS",
+      "hu": "PASS",
+      "de": "PASS"
+    },
+    "artRoutes": 90,
+    "blog": {
+      "site": "Fotótörténelem",
+      "metric": "editorial voice parity / source integrity / promotional contamination=0",
+      "status": "PASS_BASELINE",
+      "note": "Do not score against commercial BANHALMI voice. Editorial/historical intent preserved; no rewrite under change freeze."
+    },
+    "correctedPages": 0
+  },
+  "production": {
+    "artPR": "https://github.com/880rzz/ART/pull/308",
+    "artBranch": "cursor/euforia-image-rights-1f48",
+    "banProductionSHA": "da6756ddd7c4e4096fc8e9adbb6072a76db45ac9",
+    "artProductionSHA_before": "95a43d602079347c173981e0866fc0a8a641c9d7"
+  }
+}

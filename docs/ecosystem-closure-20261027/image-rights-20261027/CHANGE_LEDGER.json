@@ -1,0 +1,29 @@
+{
+  "updatedAt": "2026-10-27T12:10:00+01:00",
+  "entries": [
+    {
+      "id": "ART-308",
+      "action": "EUFÓRIA Fellegi+Bence Google image rights + sitemap lastmod",
+      "repo": "art",
+      "branch": "cursor/euforia-image-rights-1f48",
+      "pr": "https://github.com/880rzz/ART/pull/308",
+      "status": "CI_PENDING_DESKTOP"
+    },
+    {
+      "id": "WIX-EUFORIA-CANARY",
+      "action": "ImageObject Google six-field rights on EUFÓRIA HU/EN/DE",
+      "status": "LIVE_PASS",
+      "exactOne": "513/513 preserved"
+    },
+    {
+      "id": "WIX-FENTON-C",
+      "action": "Class C PD rights Fenton #11 family",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "VOICE",
+      "action": "Route matrix + gate reconfirm",
+      "status": "PASS_NO_CHANGES"
+    }
+  ]
+}

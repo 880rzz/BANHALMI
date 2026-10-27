@@ -1,0 +1,37 @@
+{
+  "family": "EUFÓRIA / EUPHORIA / EUFORIE",
+  "translationIds": null,
+  "itemIds": {
+    "hu": "d12f16eb-04a5-401d-bf5f-1dbfe342d6ed",
+    "en": "5fc1be3e-5e29-4c19-b907-68c2fd2f7fda",
+    "de": "05a20368-0031-4bc8-b1e1-b615b667db02"
+  },
+  "strategy": "enrich_BlogPosting.image ImageObject with Commons-proven CC BY-SA 4.0 rights; preserve full tags; fieldMask=tags",
+  "apiCanaryPass": true,
+  "liveHtml": {
+    "hu": {
+      "url": "https://blog.banhalmi.art/post/euforia",
+      "primaryCount": 1,
+      "googleSix": true
+    },
+    "en": {
+      "url": "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence",
+      "primaryCount": 1,
+      "googleSix": true
+    },
+    "de": {
+      "url": "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-pr%C3%A4senz",
+      "primaryCount": 1,
+      "googleSix": true
+    }
+  },
+  "preserved": "title/canonical/hreflang/OG/description unchanged",
+  "blogPostingExactOne": true,
+  "rights": {
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+    "creditText": "Norbert Bánhalmi / BANHALMI ART",
+    "copyrightNotice": "© Bánhalmi Norbert",
+    "provenance": "ART image-knowledge-graph + Commons File:Peter-Magyar-portrait-2026.jpg; caption identifies Banhalmi EUFÓRIA portrait"
+  }
+}

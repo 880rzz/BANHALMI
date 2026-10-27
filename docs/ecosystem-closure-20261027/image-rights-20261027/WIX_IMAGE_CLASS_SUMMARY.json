@@ -1,0 +1,10 @@
+{
+  "generatedAt": "2026-10-27T12:20:00+01:00",
+  "countsFromCaptionSignals": {
+    "B_complete": 3,
+    "C_pd_loc_written": 3,
+    "D_ai_series_estimate": 9,
+    "F_unknown_or_insufficient_caption": 498
+  },
+  "note": "Most SEO ImageObjects lack caption provenance usable for automated rights. Body Sources exist for many historical posts but are not yet mapped into SEO ImageObject fields. Safe writes only where caption/schema already prove rights."
+}

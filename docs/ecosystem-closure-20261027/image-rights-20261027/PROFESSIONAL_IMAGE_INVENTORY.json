@@ -1,0 +1,3605 @@
+{
+  "generatedAt": "2026-10-27T11:00:00+01:00",
+  "summary": {
+    "site": "Professional",
+    "catalog_total": 154,
+    "catalog_google_complete": 154,
+    "catalog_incomplete": 0,
+    "fineart_total": 25,
+    "fineart_google_complete": 25,
+    "html_files_scanned": 104,
+    "jsonld_imageobjects": 495,
+    "jsonld_google_complete": 495,
+    "jsonld_incomplete": 0,
+    "img_tags": 758,
+    "img_decorative_or_ui": 124,
+    "img_contentish": 634,
+    "fineart_incomplete": 0
+  },
+  "catalog": [
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-01.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-01.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-02.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-02.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-03.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-03.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-04.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-04.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-05.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-05.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-06.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-06.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-07.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-07.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-08.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-08.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-09.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-09.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-10.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-10.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-11.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-11.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-12.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-12.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-13.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-13.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-14.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-14.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-15.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-15.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-16.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-16.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-17.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-17.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-18.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-18.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-19.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-19.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-20.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-20.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-21.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-21.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-22.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-22.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-23.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-23.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-24.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-24.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-25.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-25.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-26.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-26.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-27.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-27.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-28.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-28.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-29.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-29.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-30.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-30.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-31.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-31.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-32.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-32.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-33.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-33.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-34.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-34.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-35.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-35.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-36.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-36.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-37.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-37.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-38.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-38.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-39.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-39.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-01.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-01.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-02.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-02.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-03.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-03.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-04.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-04.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-05.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-05.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-06.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-06.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-07.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-07.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-08.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-08.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-09.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-09.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-10.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-10.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-11.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-11.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-12.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-12.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-13.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-13.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-14.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/events/gallery/events-gallery-14.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-02-times-square-night.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-02-times-square-night.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-04-urban-fashion-crouching.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-04-urban-fashion-crouching.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-05-bride-spiral-staircase.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-05-bride-spiral-staircase.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-06-yacht-manhattan-sunset.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-06-yacht-manhattan-sunset.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-07-low-key-body-study.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-07-low-key-body-study.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-08-purple-flower-macro.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-08-purple-flower-macro.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-09-tattooed-body-detail.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-09-tattooed-body-detail.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-10-sunset-lake-silhouette.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-10-sunset-lake-silhouette.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-11-dramatic-stairwell-window.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-11-dramatic-stairwell-window.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-12-woman-red-classic-car.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-12-woman-red-classic-car.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-13-balloons-times-square.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-13-balloons-times-square.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-14-woman-color-portrait.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-14-woman-color-portrait.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-15-blue-haired-violinist.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-15-blue-haired-violinist.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-16-couple-new-york-street.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-16-couple-new-york-street.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-19-monochrome-intimate-portrait.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-19-monochrome-intimate-portrait.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-20-lone-figure-new-york.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-20-lone-figure-new-york.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-21-man-rooftop-new-york.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-21-man-rooftop-new-york.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-23-geometric-building-facade.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-23-geometric-building-facade.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-24-solitary-woman-beach.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-24-solitary-woman-beach.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-25-manhattan-fog-skyline.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-25-manhattan-fog-skyline.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-26-urban-figure-street.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-26-urban-figure-street.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-27-modern-interior-skyline.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-27-modern-interior-skyline.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-28-skyline-framed-window.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-28-skyline-framed-window.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-29-classic-car-new-york.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-29-classic-car-new-york.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-31-police-motorcycles-night.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/archive-extended/banhalmi-art-archive-31-police-motorcycles-night.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-02-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-02-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-03-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-03-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-04-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-04-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-05-horizontal-light.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-05-horizontal-light.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-06-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-06-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-07-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-07-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-08-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-08-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-09-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-09-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-10-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-10-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-11-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-11-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-13-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-13-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-14-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-14-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-15-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-15-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-16-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-16-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-17-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-17-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-18-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-18-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-19-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-19-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-20-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-20-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-21-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-21-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-22-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/fine-art/service-gallery/banhalmi-fine-art-study-22-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-01-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-01-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-02-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-02-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-03-horizontal-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-03-horizontal-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-04-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-04-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-05-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-05-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-06-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-06-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-07-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-07-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-08-vertical-light.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-08-vertical-light.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-09-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-09-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-10-horizontal-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-10-horizontal-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-11-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-11-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-12-square-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-12-square-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-13-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-13-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-14-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-14-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-15-square-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-15-square-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-16-square-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-16-square-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-17-square-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-17-square-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-18-horizontal-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-18-horizontal-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-19-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-19-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-20-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-20-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-21-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-21-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-22-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-22-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-23-square-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-23-square-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-24-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-24-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-25-horizontal-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-25-horizontal-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-26-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-26-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-27-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-27-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-28-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-28-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-29-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-29-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-30-horizontal-light.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-30-horizontal-light.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-31-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-31-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-32-horizontal-light.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-32-horizontal-light.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-33-square-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-33-square-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-34-horizontal-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-34-horizontal-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-35-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-35-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-36-vertical-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-36-vertical-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-37-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-37-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-38-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-38-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-39-horizontal-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-39-horizontal-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-40-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-40-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-41-horizontal-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-41-horizontal-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-42-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-42-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-43-horizontal-light.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-43-horizontal-light.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-44-vertical-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-44-vertical-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-45-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-45-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-46-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-46-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-47-square-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-47-square-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-48-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-48-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-49-horizontal-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-49-horizontal-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-50-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-50-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-51-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-51-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-52-square-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-52-square-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-53-square-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-53-square-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-54-square-deep.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-54-square-deep.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-55-horizontal-balanced.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-55-horizontal-balanced.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "image-catalog",
+      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
+      "@id": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp#image",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. Licensed under CC BY-SA 4.0.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+      "class": "B",
+      "missing": [],
+      "googleComplete": true
+    }
+  ],
+  "fineArtArchive": [
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-02-times-square-night.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-02-times-square-night.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-04-urban-fashion-crouching.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-04-urban-fashion-crouching.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-05-bride-spiral-staircase.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-05-bride-spiral-staircase.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-06-yacht-manhattan-sunset.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-06-yacht-manhattan-sunset.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/age-preview/banhalmi-art-archive-07-low-key-body-study-18-preview.webp",
+      "contentUrl": "/assets/img/fine-art/age-preview/banhalmi-art-archive-07-low-key-body-study-18-preview.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-08-purple-flower-macro.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-08-purple-flower-macro.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/age-preview/banhalmi-art-archive-09-tattooed-body-detail-18-preview.webp",
+      "contentUrl": "/assets/img/fine-art/age-preview/banhalmi-art-archive-09-tattooed-body-detail-18-preview.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-10-sunset-lake-silhouette.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-10-sunset-lake-silhouette.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-11-dramatic-stairwell-window.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-11-dramatic-stairwell-window.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-12-woman-red-classic-car.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-12-woman-red-classic-car.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-13-balloons-times-square.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-13-balloons-times-square.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-14-woman-color-portrait.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-14-woman-color-portrait.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-15-blue-haired-violinist.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-15-blue-haired-violinist.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-16-couple-new-york-street.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-16-couple-new-york-street.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/age-preview/banhalmi-art-archive-19-monochrome-intimate-portrait-18-preview.webp",
+      "contentUrl": "/assets/img/fine-art/age-preview/banhalmi-art-archive-19-monochrome-intimate-portrait-18-preview.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-20-lone-figure-new-york.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-20-lone-figure-new-york.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-21-man-rooftop-new-york.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-21-man-rooftop-new-york.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-23-geometric-building-facade.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-23-geometric-building-facade.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-24-solitary-woman-beach.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-24-solitary-woman-beach.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-25-manhattan-fog-skyline.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-25-manhattan-fog-skyline.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-26-urban-figure-street.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-26-urban-figure-street.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-27-modern-interior-skyline.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-27-modern-interior-skyline.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-28-skyline-framed-window.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-28-skyline-framed-window.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-29-classic-car-new-york.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-29-classic-car-new-york.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    },
+    {
+      "source": "fine-art-archive",
+      "file": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-31-police-motorcycles-night.webp",
+      "contentUrl": "/assets/img/fine-art/archive-extended/banhalmi-art-archive-31-police-motorcycles-night.webp",
+      "creator": {
+        "@id": "https://www.norbertbanhalmi.com/about/"
+      },
+      "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+      "copyrightHolder": {
+        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@type": "Person",
+        "name": "Norbert Bánhalmi"
+      },
+      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/",
+      "class": "A",
+      "missing": [],
+      "googleComplete": true
+    }
+  ],
+  "jsonldIncompleteSample": [],
+  "note": "Catalog/fine-art already gate-complete 154/154 and 25/25. Occurrence scan distinguishes catalog completeness from page-level ImageObject presence."
+}
