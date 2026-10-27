@@ -1,15 +1,20 @@
 # SEARCH_MEASUREMENT_7_14_28
 
-**MÉRÉS ALATT** · Frissítve: 2026-10-27T09:34:57+01:00 Europe/Budapest
+**MÉRÉS ALATT** · Frissítve: 2026-10-27T16:00:00+01:00 Europe/Budapest
 
 ## Baseline (ne attribúálj automatikusan)
 | Rendszer | Production change / tip | Exact-live SHA | Change dátum (Europe/Budapest) |
 | --- | --- | --- | --- |
 | BANHALMI Professional | image-rights evidence PR #67 | `5791bc236fd2b061709122bc5b56477927c44e52` | 2026-10-27 |
 | BANHALMI ART | EUFÓRIA Fellegi/Bence rights PR #308 | `9158ce3617fa2dada4ed3fbec2bc2da53fac7028` | 2026-10-27 |
-| Blog / Wix | Image rights Class A/B/C/D + GSC sitemap resubmit | n/a (Wix resolvedTags / GSC) | 2026-10-27 |
+| Blog / Wix | exact-one 513 + GSC sitemap resubmit | n/a (Wix / GSC) | 2026-10-27 |
 
-Measurement start: **2026-10-27** · Első checkpoint: **2026-11-02** · Change freeze: aktív a 7 napos checkpointig (P0/P1 kivételekkel).
+**GSC sitemap resubmission:** SUBMITTED / MEASUREMENT PENDING  
+(Professional + ART + Blog sitemaps accepted / confirmed, 0 warning / 0 error, pending Google download. Accept ≠ indexing.)
+
+**Production freeze:** ACTIVE until **2026-11-02** (P0/P1 only).
+
+Measurement start: **2026-10-27** · Első checkpoint: **2026-11-02**.
 
 ## Checkpoint naptár
 | Ablak | Dátum | Teendő |

@@ -1,12 +1,35 @@
 {
-  "executedAt": "2026-10-27T13:36:00+01:00",
-  "Europe/Budapest": "2026-10-27 ~13:36",
-  "note": "Sitemap accept ≠ indexing. URL Inspection sample via request-page-indexing acceptance only.",
+  "updatedAt": "2026-10-27T16:00:00+01:00",
+  "Europe/Budapest": "2026-10-27 ~16:00",
+  "status": "SUBMITTED / MEASUREMENT PENDING",
+  "note": "Sitemap accept ≠ indexing. Google download may remain pending after acceptance. Do not claim immediate indexing.",
+  "professional": {
+    "sitemap": "https://www.norbertbanhalmi.com/sitemap.xml",
+    "liveSHA": "5791bc236fd2b061709122bc5b56477927c44e52",
+    "resubmission": "SUBMITTED",
+    "channel": "external_GSC_owner_access",
+    "gscState": "accepted_confirmed_0_warning_0_error_pending_google_download"
+  },
+  "art": {
+    "sitemap": "https://www.banhalmi.art/sitemap.xml",
+    "liveSHA": "9158ce3617fa2dada4ed3fbec2bc2da53fac7028",
+    "resubmission": "SUBMITTED",
+    "channel": "external_GSC_owner_access",
+    "gscState": "accepted_confirmed_0_warning_0_error_pending_google_download"
+  },
   "blog": {
     "siteId": "5bfb58f7-cf3f-4eee-acbd-b8fcac6b217b",
-    "gscConnection": "VALID",
-    "siteReadiness": "READY",
-    "submitSitemap": {
+    "sitemapsSubmitted": [
+      "https://blog.banhalmi.art/sitemap.xml",
+      "https://blog.banhalmi.art/blog-posts-sitemap.xml"
+    ],
+    "alsoReferenced": [
+      "https://blog.banhalmi.art/en_en-sitemap.xml",
+      "https://blog.banhalmi.art/de_de-sitemap.xml",
+      "https://blog.banhalmi.art/blog-categories-sitemap.xml",
+      "https://blog.banhalmi.art/pages-sitemap.xml"
+    ],
+    "wixApiSubmit": {
       "endpoint": "POST /gsc/v1/submit-sitemap",
       "status": 200,
       "event": {
@@ -14,42 +37,8 @@
         "occurredDate": "2026-10-27T12:36:46.586Z"
       }
     },
-    "listedSitemaps": [
-      "https://blog.banhalmi.art/blog-posts-sitemap.xml",
-      "https://blog.banhalmi.art/blog-categories-sitemap.xml",
-      "https://blog.banhalmi.art/pages-sitemap.xml"
-    ],
-    "robotsSitemaps": [
-      "https://blog.banhalmi.art/sitemap.xml",
-      "https://blog.banhalmi.art/en_en-sitemap.xml",
-      "https://blog.banhalmi.art/de_de-sitemap.xml"
-    ],
-    "pageIndexingRequested": [
-      "https://blog.banhalmi.art/post/euforia",
-      "https://blog.banhalmi.art/en/post/euphoria-the-anatomy-of-presence",
-      "https://blog.banhalmi.art/de/post/euforie-die-anatomie-der-pr%C3%A4senz",
-      "https://blog.banhalmi.art/post/henri-cartier-bresson-gare-saint-lazare-1932",
-      "https://blog.banhalmi.art/post/dorothea-lange-migrant-mother-1936",
-      "https://blog.banhalmi.art/post/earthrise-william-anders-apollo-8-1968",
-      "https://blog.banhalmi.art/post/alfred-stieglitz-the-steerage-1907",
-      "https://blog.banhalmi.art/post/roger-fenton-valley-shadow-death-1855"
-    ],
-    "pageIndexingEvent": {
-      "eventType": "PAGE_INDEXING_REQUESTED",
-      "occurredDate": "2026-10-27T12:36:50.810Z"
-    },
-    "status": "SUBMITTED_ACCEPTED_NOT_INDEX_GUARANTEE"
-  },
-  "professional": {
-    "sitemap": "https://www.norbertbanhalmi.com/sitemap.xml",
-    "liveSHA": "5791bc236fd2b061709122bc5b56477927c44e52",
-    "status": "INPUT-NEM-ELÉRHETŐ",
-    "reason": "No Google Search Console API credentials in this environment for GitHub Pages Professional property; cannot API-resubmit without owner OAuth/service account."
-  },
-  "art": {
-    "sitemap": "https://www.banhalmi.art/sitemap.xml",
-    "liveSHA": "9158ce3617fa2dada4ed3fbec2bc2da53fac7028",
-    "status": "INPUT-NEM-ELÉRHETŐ",
-    "reason": "No Google Search Console API credentials in this environment for GitHub Pages ART property; cannot API-resubmit without owner OAuth/service account."
+    "externalGscConfirm": "accepted_confirmed_0_warning_0_error_pending_google_download",
+    "pageIndexingRequestedSample": 8,
+    "status": "SUBMITTED / MEASUREMENT PENDING"
   }
 }

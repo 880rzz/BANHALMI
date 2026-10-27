@@ -1,52 +1,44 @@
 {
-  "updatedAt": "2026-10-27T13:45:00+01:00",
-  "Europe/Budapest": "2026-10-27 ~13:45",
+  "updatedAt": "2026-10-27T16:00:00+01:00",
+  "Europe/Budapest": "2026-10-27 ~16:00",
   "entries": [
     {
       "id": "ART-308",
-      "action": "EUFÓRIA Fellegi+Bence Google image rights + sitemap lastmod",
-      "repo": "art",
-      "pr": "https://github.com/880rzz/ART/pull/308",
+      "action": "EUFÓRIA Fellegi+Bence Google image rights",
       "mergeSHA": "9158ce3617fa2dada4ed3fbec2bc2da53fac7028",
       "liveSHA": "9158ce3617fa2dada4ed3fbec2bc2da53fac7028",
-      "exactLive": "PASS",
-      "reverseAuditFellegiBence": "PASS_EN_HU_DE_PLUS_KG"
+      "exactLive": "PASS"
     },
     {
       "id": "BAN-67",
-      "action": "Image rights + voice evidence + Wix 513 audit + Class D ledger + release gate",
-      "pr": "https://github.com/880rzz/BANHALMI/pull/67",
+      "action": "Image rights + voice evidence + Wix 513 audit + release gate",
       "mergeSHA": "5791bc236fd2b061709122bc5b56477927c44e52",
       "liveSHA": "5791bc236fd2b061709122bc5b56477927c44e52",
       "exactLive": "PASS"
     },
     {
-      "id": "WIX-CLASS-D-01-04",
-      "action": "Fotótörténelem #01–#04 Class D Google six-field; #02 corrected off LoC PD",
-      "status": "LIVE_PASS",
-      "count": 12
+      "id": "BAN-68",
+      "action": "Exact-live reverse audit evidence + GSC/blog-scope documentation correction",
+      "pr": "https://github.com/880rzz/BANHALMI/pull/68",
+      "type": "DOCS_EVIDENCE_ONLY",
+      "status": "MERGE_PENDING"
     },
     {
-      "id": "WIX-513-LIVE-RECOUNT",
-      "action": "Full live HTML LD+JSON audit of all 513 published posts",
-      "status": "COMPLETE",
-      "exactOne": "513/513",
-      "googleComplete": 54,
-      "buckets": { "A": 6, "B": 3, "C": 33, "D": 12 },
-      "unknownProvenance": 459
+      "id": "GSC-ALL",
+      "action": "Professional + ART + Blog sitemap resubmission confirmed via external GSC access; Blog also via Wix GSC API",
+      "status": "SUBMITTED / MEASUREMENT PENDING",
+      "sitemaps": [
+        "https://www.norbertbanhalmi.com/sitemap.xml",
+        "https://www.banhalmi.art/sitemap.xml",
+        "https://blog.banhalmi.art/sitemap.xml",
+        "https://blog.banhalmi.art/blog-posts-sitemap.xml"
+      ],
+      "gscState": "accepted_confirmed_0_warning_0_error_pending_google_download"
     },
     {
-      "id": "GSC-BLOG",
-      "action": "Wix GSC submit-sitemap + request-page-indexing sample (8 URLs)",
-      "status": "ACCEPTED",
-      "sitemapSubmittedAt": "2026-10-27T12:36:46.586Z",
-      "note": "Accept ≠ index"
-    },
-    {
-      "id": "GSC-PROF-ART",
-      "action": "Professional + ART sitemap API resubmit",
-      "status": "INPUT-NEM-ELÉRHETŐ",
-      "reason": "No GSC API credentials in agent environment for GitHub Pages properties"
+      "id": "BLOG-IMAGE-SCOPE",
+      "action": "Reclassify Fotótörténelem images as NOT IN Google Image Licensable scope; 459 covers = optional editorial provenance, not licensing blocker",
+      "status": "DOCUMENTED"
     },
     {
       "id": "VOICE",
@@ -54,11 +46,12 @@
       "status": "PASS_NO_CHANGES"
     }
   ],
-  "wixGoogleCompleteKnown": 54,
-  "wixOwnBanhalmiComplete": 21,
-  "wixThirdPartyVerified": 33,
-  "wixUnknownProvenance": 459,
   "blogPostingExactOne": "513/513",
+  "googleLicensingScope": {
+    "professional": true,
+    "art": true,
+    "blog": false
+  },
   "production": {
     "artLiveSHA": "9158ce3617fa2dada4ed3fbec2bc2da53fac7028",
     "banLiveSHA": "5791bc236fd2b061709122bc5b56477927c44e52"

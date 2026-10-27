@@ -1,52 +1,67 @@
 {
-  "generatedAt": "2026-10-27T13:45:00+01:00",
-  "Europe/Budapest": "2026-10-27 ~13:45",
-  "scope": "IMAGE_RIGHTS + VOICE closure — exact-live reverse",
+  "generatedAt": "2026-10-27T16:00:00+01:00",
+  "Europe/Budapest": "2026-10-27 ~16:00",
+  "scope": "FINAL FREEZE / REGRESSION GUARD / MEASUREMENT HANDOFF",
   "professional": {
     "catalogComplete": "154/154",
     "fineArtComplete": "25/25",
     "pageJsonLdImageObjectsComplete": "495/495",
     "decorativeOrUi": 124,
     "liveSHA": "5791bc236fd2b061709122bc5b56477927c44e52",
-    "status": "PASS_BASELINE_RECONFIRMED"
+    "googleLicensingScope": true,
+    "status": "PASS"
   },
   "art": {
     "kgImageObjectsComplete": "3/3",
     "fellegiBence": "COMPLETE_CC_BY_SA_4.0_COMMONS_PROVEN_LIVE",
     "homepageLicensingGate": "HU 131/131 EN 18/18 DE 18/18 PASS",
-    "pr": "https://github.com/880rzz/ART/pull/308",
-    "mergeSHA": "9158ce3617fa2dada4ed3fbec2bc2da53fac7028",
     "liveSHA": "9158ce3617fa2dada4ed3fbec2bc2da53fac7028",
     "exactLive": "PASS",
-    "reverseAudit": "PASS — Photograph nodes EN/HU/DE + KG"
+    "googleLicensingScope": true,
+    "status": "PASS"
   },
   "blog": {
     "published": 513,
     "exactOneBlogPosting": "513/513",
-    "googleComplete": 54,
-    "ownBanhalmiComplete": 21,
-    "thirdPartyVerified": 33,
-    "unknownProvenance": 459,
-    "buckets": { "A": 6, "B": 3, "C": 33, "D": 12 },
-    "gscSitemapResubmit": "ACCEPTED_2026-10-27T12:36:46Z",
-    "policy": "No invented BANHALMI copyright on third-party/historical covers"
-  },
-  "voice": {
-    "professional": { "en": "PASS", "hu": "PASS", "de": "PASS", "routes": 57, "corrected": 0 },
-    "art": { "en": "PASS", "hu": "PASS", "de": "PASS", "routes": 90, "corrected": 0 },
-    "blog": {
-      "metric": "editorial voice parity / source integrity / promotional contamination=0",
-      "status": "PASS_BASELINE"
-    }
+    "googleLicensingScope": false,
+    "scopeNote": "Fotótörténelem images are NOT in Google Image Licensable contract. Correct image/alt/caption + preserve known rights; never invent BANHALMI copyright.",
+    "editorialImageProvenance": "OPTIONAL / NOT GOOGLE-LICENSING SCOPE",
+    "provenRightsWritesRetained": {
+      "A": 6,
+      "B": 3,
+      "C": 33,
+      "D": 12,
+      "note": "Historical canary/bulk writes remain; not required for freeze; not a licensing blocker for remaining covers"
+    },
+    "coversWithoutProvenanceRecord": 459,
+    "classificationOf459": "EDITORIAL IMAGE PROVENANCE — OPTIONAL / NOT GOOGLE-LICENSING SCOPE",
+    "status": "NOT_IN_SCOPE"
   },
   "googleLicensable": {
-    "professionalCatalog": 154,
-    "artKgPhotographs": 3,
-    "blogGoogleSix": 54,
-    "blogNotReady": 459
+    "professional": "PASS",
+    "art": "PASS",
+    "blog": "NOT_IN_SCOPE"
+  },
+  "gsc": {
+    "status": "SUBMITTED / MEASUREMENT PENDING",
+    "sitemaps": [
+      "https://www.norbertbanhalmi.com/sitemap.xml",
+      "https://www.banhalmi.art/sitemap.xml",
+      "https://blog.banhalmi.art/sitemap.xml",
+      "https://blog.banhalmi.art/blog-posts-sitemap.xml"
+    ]
+  },
+  "voice": {
+    "professional": { "en": "PASS", "hu": "PASS", "de": "PASS" },
+    "art": { "en": "PASS", "hu": "PASS", "de": "PASS" },
+    "blog": { "status": "Editorial PASS" }
   },
   "remaining": [
-    "Blog 459 covers: INPUT-NEM-ELÉRHETŐ (no invented rights)",
-    "Professional + ART GSC sitemap API resubmit: needs owner GSC OAuth/service account in environment"
-  ]
+    "Measurement checkpoint 2026-11-02 (GSC/Bing) — not a production code task",
+    "Blog editorial provenance optional backlog — not Google licensing scope"
+  ],
+  "freeze": {
+    "nextCheckpoint": "2026-11-02",
+    "productionChangeFreeze": "ACTIVE unless P0/P1 regression"
+  }
 }
