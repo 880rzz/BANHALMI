@@ -1,0 +1,81 @@
+[
+  {
+    "changeId": "ART-307-HASMAP-MERGE-EXACT-LIVE",
+    "timestamp": "2026-10-27T08:58:00+01:00",
+    "system": "ART",
+    "URL": "https://www.banhalmi.art/",
+    "itemId": null,
+    "before": {
+      "main": "7df343f434aa3b05a66f810fe8a12a29caff90ae",
+      "live": "7df343f434aa3b05a66f810fe8a12a29caff90ae",
+      "hasMap": "absent_or_pre307"
+    },
+    "after": {
+      "main": "95a43d602079347c173981e0866fc0a8a641c9d7",
+      "live": "95a43d602079347c173981e0866fc0a8a641c9d7",
+      "hasMap": "3/3 EN+HU+DE-AT"
+    },
+    "rootCause": "Place.hasMap missing on three BANHALMI locations in ART JSON-LD",
+    "evidence": "PR #307 merge; deployment-sha.txt; homepage JSON-LD Place.hasMap",
+    "risk": "low",
+    "test": "Audit/PageSpeed/Palette/Live links/Desktop browser regression success @ 95a43d60",
+    "CI": "required checks PASS on merge commit",
+    "mergeSHA": "95a43d602079347c173981e0866fc0a8a641c9d7",
+    "deploymentProof": "GitHub Pages; deployment-sha.txt last-modified 2026-10-27T07:49:12Z",
+    "exactLiveProof": "LIVE==MAIN==95a43d602079347c173981e0866fc0a8a641c9d7",
+    "measurementStart": "2026-10-27",
+    "status": "PRODUCTION-ELLENŐRZÖTT"
+  },
+  {
+    "changeId": "WIX-SCHEMA-DEDUPE-513-EXACT-ONE",
+    "timestamp": "2026-10-27T08:58:00+01:00",
+    "system": "WIX_BLOG",
+    "URL": "https://blog.banhalmi.art/",
+    "itemId": "513 BLOG_POST item SEO tags",
+    "before": {
+      "1": 44,
+      "2": 451,
+      "3": 18
+    },
+    "after": {
+      "0": 0,
+      "1": 513,
+      "2": 0,
+      "3": 0
+    },
+    "rootCause": "Default pattern BlogPosting + item #article BlogPosting (+ occasional authority-bridge BlogPosting)",
+    "evidence": "WIX_513_RESOLVED_SCHEMA_AUDIT.json; WIX_SCHEMA_DEDUPLICATION_REPORT.md; canary 06.17; Vivian fix",
+    "risk": "medium — full tag replace semantics; mitigated by GET→edit→full SET + canary",
+    "test": "resolvedTags exact-one 513/513; title/desc/canonical/OG/hreflang 513/513; live Vivian HU/EN/DE primary=1",
+    "CI": "n/a (Wix API)",
+    "mergeSHA": null,
+    "deploymentProof": "Wix Item SEO Tags publishStatus live via resolvedTags",
+    "exactLiveProof": "List Item SEO Tags pages=6 rows=513 exactOne=true; live HTML Vivian family",
+    "measurementStart": "2026-10-27",
+    "status": "PRODUCTION-ELLENŐRZÖTT"
+  },
+  {
+    "changeId": "WIX-VIVIAN-HU-ARTICLE-PRESET-STRIP",
+    "timestamp": "2026-10-27T08:58:00+01:00",
+    "system": "WIX_BLOG",
+    "URL": "https://blog.banhalmi.art/post/vivian-maier",
+    "itemId": "80eb6cd7-790c-40a5-9378-baba03b1bfdd",
+    "before": {
+      "enabledPrimary": 0
+    },
+    "after": {
+      "enabledPrimary": 1,
+      "articleId": "https://blog.banhalmi.art/post/vivian-maier#article"
+    },
+    "rootCause": "#article carried blog-post-blog-posting-preset schemaType",
+    "evidence": "ExecuteWixAPI SET response; live HTML primary=1",
+    "risk": "low",
+    "test": "title/canonical/focusKeyword preserved; live HU/EN/DE",
+    "CI": "n/a",
+    "mergeSHA": null,
+    "deploymentProof": "resolvedTags + live head",
+    "exactLiveProof": "live primaryCount=1",
+    "measurementStart": "2026-10-27",
+    "status": "PRODUCTION-ELLENŐRZÖTT"
+  }
+]

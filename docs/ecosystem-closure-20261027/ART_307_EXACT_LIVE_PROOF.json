@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-10-27T08:58:00+01:00",
+  "pr": 307,
+  "mainSHA": "95a43d602079347c173981e0866fc0a8a641c9d7",
+  "liveSHA": "95a43d602079347c173981e0866fc0a8a641c9d7",
+  "exactLive": true,
+  "hasMap": {
+    "en": true,
+    "hu": true,
+    "de-at": true,
+    "places": [
+      {
+        "@id": "https://www.norbertbanhalmi.com/#vienna-studio",
+        "hasMap": "https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8"
+      },
+      {
+        "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
+        "hasMap": "https://g.page/r/CdO4Kej3jIkfEBM"
+      },
+      {
+        "@id": "https://www.norbertbanhalmi.com/#budapest-studio",
+        "hasMap": "https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA"
+      }
+    ]
+  },
+  "gersthoferIsOfficeNotStudio": true,
+  "ci": {
+    "Audit": "success",
+    "PageSpeed": "success",
+    "Palette": "success",
+    "Live external links": "success",
+    "Desktop browser regression": "success"
+  },
+  "status": "PRODUCTION-ELLEN\u0150RZ\u00d6TT"
+}

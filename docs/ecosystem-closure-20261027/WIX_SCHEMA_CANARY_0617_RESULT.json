@@ -1,0 +1,43 @@
+{
+  "strategy": "item_disabled_suppressor_for_pattern_BlogPosting",
+  "family": "06.17",
+  "translationId": "57426458-abfc-47ac-9cc4-15b71c009251",
+  "allPass": true,
+  "apiCanaryPass": true,
+  "liveHtml": {
+    "hu": {
+      "url": "https://blog.banhalmi.art/post/06-17",
+      "primaryCount": 1,
+      "primaries": [
+        {
+          "id": "https://blog.banhalmi.art/post/06-17#article",
+          "inLanguage": "hu"
+        }
+      ],
+      "pass": true
+    },
+    "en": {
+      "url": "https://blog.banhalmi.art/en/post/06-17-our-team-was-more-than-a-little-culture-shocked",
+      "primaryCount": 1,
+      "primaries": [
+        {
+          "id": "https://blog.banhalmi.art/en/post/06-17-our-team-was-more-than-a-little-culture-shocked#article",
+          "inLanguage": "en"
+        }
+      ],
+      "pass": true
+    },
+    "de": {
+      "url": "https://blog.banhalmi.art/de/post/06-17-unser-team-war-nicht-nur-ein-bisschen-kulturschockiert",
+      "primaryCount": 1,
+      "primaries": [
+        {
+          "id": "https://blog.banhalmi.art/de/post/06-17-unser-team-war-nicht-nur-ein-bisschen-kulturschockiert#article",
+          "inLanguage": "de"
+        }
+      ],
+      "pass": true
+    }
+  },
+  "note": "Count enabled (disabled!=true) BlogPosting/Article nodes in resolvedTags; disabled pattern suppressor excluded from rendered head."
+}
