@@ -77,5 +77,24 @@
     "exactLiveProof": "live primaryCount=1",
     "measurementStart": "2026-10-27",
     "status": "PRODUCTION-ELLENŐRZÖTT"
+  },
+  {
+    "changeId": "DOCS-66-FINAL-CLOSURE-MATRIX",
+    "timestamp": "2026-10-27T09:34:57+01:00",
+    "system": "BANHALMI_DOCS",
+    "URL": "https://github.com/880rzz/BANHALMI/pull/66",
+    "itemId": "docs/ecosystem-closure-20261027/*",
+    "before": "closure evidence draft",
+    "after": "final 29-ch matrix + GSC/Bing measurement template + change freeze",
+    "rootCause": "documentation/measurement handoff after technical P0/P1 closure",
+    "evidence": "REQUIREMENTS_MATRIX_29CH.md/.json; SEARCH_MEASUREMENT_7_14_28.md",
+    "risk": "none (docs only)",
+    "test": "PR file list docs-only; integrity+full-regression SUCCESS",
+    "CI": "pending push then merge",
+    "mergeSHA": null,
+    "deploymentProof": "docs-only; expect deploy SHA change only if Pages redeploys static docs",
+    "exactLiveProof": "to verify after merge",
+    "measurementStart": "2026-10-27",
+    "status": "CI-ELLENŐRZÖTT"
   }
 ]

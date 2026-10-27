@@ -1,0 +1,303 @@
+{
+  "generatedAtBudapest": "2026-10-27T09:34:57+01:00",
+  "statusVocabulary": [
+    "PRODUCTION-ELLENŐRZÖTT",
+    "CI-ELLENŐRZÖTT",
+    "JAVÍTOTT",
+    "MÉRÉS ALATT",
+    "INPUT-NEM-ELÉRHETŐ",
+    "OUT_OF_SCOPE",
+    "NOT RUN — ENVIRONMENT LIMITATION"
+  ],
+  "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+  "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7",
+  "blogExactOne": "513/513",
+  "chapterCounts": {
+    "PRODUCTION-ELLENŐRZÖTT": 25,
+    "MÉRÉS ALATT": 1,
+    "OUT_OF_SCOPE": 3,
+    "INPUT-NEM-ELÉRHETŐ": 0,
+    "NOT RUN — ENVIRONMENT LIMITATION": 0,
+    "CI-ELLENŐRZÖTT": 0,
+    "JAVÍTOTT": 0
+  },
+  "nonChapterRemaining": {
+    "INPUT-NEM-ELÉRHETŐ": 1,
+    "NOT RUN — ENVIRONMENT LIMITATION": 1
+  },
+  "chapters": [
+    {
+      "requirementId": "CH01",
+      "chapter": 1,
+      "title": "Mission/scope/roles",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "Professional / ART / Blog intent ownership élő; BMI kizárva",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH02",
+      "chapter": 2,
+      "title": "Ecosystem entities & URLs",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "BAN/ART/Blog LIVE URL + entity inventory",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH03",
+      "chapter": 3,
+      "title": "Version safety",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "PR→CI→merge→deploy→exact-live lánc ART#307 + BAN tip",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH04",
+      "chapter": 4,
+      "title": "ART sitemap P0",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "ART sitemap LIVE",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH05",
+      "chapter": 5,
+      "title": "Language/hreflang/canonical",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "BAN+ART+Blog hreflang/canonical PASS",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH06",
+      "chapter": 6,
+      "title": "Blog inventory & service links",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "513 published; 171 families; service links LIVE; schema exact-one",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH07",
+      "chapter": 7,
+      "title": "Service editorial ↔ blog",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "Editorial↔service routing LIVE",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH08",
+      "chapter": 8,
+      "title": "BMI related presentation",
+      "status": "OUT_OF_SCOPE",
+      "note": "USER_DECISION — BMI nem BANHALMI production feladat",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH09",
+      "chapter": 9,
+      "title": "VIPACH institutional boundary",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "Boundary tip LIVE",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH10",
+      "chapter": 10,
+      "title": "Speier Vikó separation",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "Tip + blog links LIVE",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH11",
+      "chapter": 11,
+      "title": "HIPStudio dates",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "Date boundary tip LIVE",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH12",
+      "chapter": 12,
+      "title": "Ébredés routing",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "exhibitions/ebredes + private-photography LIVE",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH13",
+      "chapter": 13,
+      "title": "Wikidata / Rege P854",
+      "status": "OUT_OF_SCOPE",
+      "note": "USER_DECISION — további Wikidata szerkesztés nem kért",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH14",
+      "chapter": 14,
+      "title": "Maps three places",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "BAN+ART Place.hasMap 3/3 LIVE; Gersthofer=OFFICE; GBP owner NOT REQUIRED",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH15",
+      "chapter": 15,
+      "title": "Social / LinkedIn",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "Tip LIVE",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH16",
+      "chapter": 16,
+      "title": "Copy/voice",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "Human voice tip LIVE",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH17",
+      "chapter": 17,
+      "title": "Schema / semantic",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "ART Place schema + Wix Blog exact-one 513/513",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH18",
+      "chapter": 18,
+      "title": "Technical SEO",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "sitemap/robots/canonical/hreflang/OG PASS",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH19",
+      "chapter": 19,
+      "title": "AI Trust",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "Trust locales LIVE",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH20",
+      "chapter": 20,
+      "title": "Consent / GDPR",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "Consent settle PASS; first-party controllable vs 3P platform limitation elkülönítve",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH21",
+      "chapter": 21,
+      "title": "Photohistory hero disclosure",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "#01–#04 hero disclosure 12/12 PASS; #11 Fenton érintetlen; 1 cover family külön INPUT-NEM-ELÉRHETŐ (nem CH21 blocker)",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH22",
+      "chapter": 22,
+      "title": "GSC/Bing 7/14/28",
+      "status": "MÉRÉS ALATT",
+      "note": "Első checkpoint 2026-11-02 Europe/Budapest; baseline rögzítve; change freeze aktív",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH23",
+      "chapter": 23,
+      "title": "Conversion funnels",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "CTA routing LIVE",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH24",
+      "chapter": 24,
+      "title": "Visual collectors/dock",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "BAN 58×7 + ART visual/CI desktop regression PASS; natív Safari külön: NOT RUN — ENVIRONMENT LIMITATION",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH25",
+      "chapter": 25,
+      "title": "A11y keyboard",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "Keyboard/privacy smoke PASS",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH26",
+      "chapter": 26,
+      "title": "CI/deploy exact-live",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "BAN 328060b76a65… ART 95a43d602079… exact-live PASS",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH27",
+      "chapter": 27,
+      "title": "CSP architecture",
+      "status": "OUT_OF_SCOPE",
+      "note": "USER_DECISION — GitHub Pages accepted; HTTP CSP ABSENT; no CF/DNS",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH28",
+      "chapter": 28,
+      "title": "Docs/contracts",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "Closure docs + evidence pack; PR #66",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    },
+    {
+      "requirementId": "CH29",
+      "chapter": 29,
+      "title": "Final closure pack",
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "note": "0 végrehajtható P0/P1; egyetlen aktív ág: GSC/Bing mérés",
+      "liveBanSha": "328060b76a6511fa79dbaffac17a234454f40464",
+      "liveArtSha": "95a43d602079347c173981e0866fc0a8a641c9d7"
+    }
+  ],
+  "changeFreeze": {
+    "active": true,
+    "until": "2026-11-02",
+    "exceptions": [
+      "P0 production hiba",
+      "P1 regresszió",
+      "indexing failure",
+      "legal/GDPR",
+      "broken route",
+      "adatvesztés"
+    ]
+  }
+}

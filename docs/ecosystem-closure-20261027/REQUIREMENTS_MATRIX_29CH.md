@@ -1,45 +1,63 @@
 # 29 fejezet — követelményállapot
 
-Generálva: 2026-10-27T08:58:00+01:00 Europe/Budapest
+Generálva: 2026-10-27T09:34:57+01:00 Europe/Budapest
 
-Frissítés: ART #307 hasMap **PRODUCTION-ELLENŐRZÖTT**; Wix schema exact-one **513/513 PRODUCTION-ELLENŐRZÖTT**; GSC/Bing **MÉRÉS ALATT**; BMI **OUT_OF_SCOPE**; Wikidata/CSP **USER_DECISION**; Cover 1 family **INPUT-NEM-ELÉRHETŐ**; Native Safari **NOT RUN**.
+**BAN** live/main `328060b76a6511fa79dbaffac17a234454f40464` · **ART** live/main `95a43d602079347c173981e0866fc0a8a641c9d7` · **BLOG** schema exact-one 513/513
+
+Státuszszótár (kizárólag): PRODUCTION-ELLENŐRZÖTT · CI-ELLENŐRZÖTT · JAVÍTOTT · MÉRÉS ALATT · INPUT-NEM-ELÉRHETŐ · OUT_OF_SCOPE · NOT RUN — ENVIRONMENT LIMITATION
 
 | CH | Cím | Státusz | Megjegyzés |
 | --- | --- | --- | --- |
-| CH01 | Mission/scope/roles | **CLOSED** | Professional/ART/Blog; BMI excluded |
-| CH02 | Ecosystem entities & URLs | **CLOSED** | LIVE inventory |
-| CH03 | Version safety | **CLOSED** | PR→CI→merge |
-| CH04 | ART sitemap P0 | **CLOSED** | LIVE 87 URLs |
-| CH05 | Language/hreflang/canonical | **CLOSED** | Final integrity seoSampleOk |
-| CH06 | Blog inventory & service links | **CLOSED** | Portrait/RGB/VIPACH/team/event LIVE links |
-| CH07 | Service editorial ↔ blog | **CLOSED** | Tip FIX |
-| CH08 | BMI related presentation | **OUT_OF_SCOPE** | BMI excluded — not an unresolved BANHALMI production defect |
-| CH09 | VIPACH institutional boundary | **CLOSED** | Boundary tip |
-| CH10 | Speier Vikó separation | **CLOSED** | Tip + blog links |
-| CH11 | HIPStudio dates | **CLOSED** | Tip |
-| CH12 | Ébredés routing | **CLOSED** | LIVE |
-| CH13 | Wikidata / Rege P854 | **USER_DECISION_ACCEPTED** | További külső szerkesztés nem kért — felhasználói döntés. Nem agent által végrehajtott / függetlenül igazolt WD-javítás. Saját oldali WD-hivatkozások megőrizve. |
-| CH14 | Maps three places | **CLOSED** | Három külön ellenőrzés: (1) contract googleBusinessProfile PASS; (2) látható Maps-link PASS; (3) Schema Place.hasMap korábban ABSENT → tip-branchban pótolva (BAN#65/ART#307), production deploy függő. Gersthofer nem stúdió. Bizonyíték: LOCATIONS_WEB_BINDING_VERIFY.json |
-| CH15 | Social / LinkedIn | **CLOSED** | Tip |
-| CH16 | Copy/voice | **CLOSED** | Tip |
-| CH17 | Schema / semantic | **CLOSED** | Tip + LIVE places |
-| CH18 | Technical SEO | **CLOSED** | Integrity pack PASS |
-| CH19 | AI Trust | **CLOSED** | Trust locales LIVE |
-| CH20 | Consent / GDPR | **CLOSED** | Final recheck allCritical PASS; settle may show brief Clarity/GA in-flight; 3P cookies residual ≠ active first-party tracking |
-| CH21 | Photohistory hero disclosure | **AWAITING_CONTENT_APPROVAL** | #01–#04 kiállítótéri hero illusztráció-megjelölés; konkrét HU/EN/DE javaslat + jóváhagyási kérdés: PHOTOHISTORY_HERO_APPROVAL_PROPOSAL.json. #11 Fenton HU képhasználat már kész. |
-| CH22 | GSC/Bing 7/14/28 | **PENDING_MEASUREMENT** | Első checkpoint 2026-11-02 Europe/Budapest; baseline ART/BAN tip SHA + Wix CH06 2026-10-26. Nincs lefutott mérés. |
-| CH23 | Conversion funnels | **CLOSED** | CTA LIVE |
-| CH24 | Visual collectors/dock | **CLOSED** | Chromium+WebKit visual PASS. Natív macOS Safari UI: ENVIRONMENT_NOT_RUN (külön jelölve; WebKit ≠ natív Safari). |
-| CH25 | A11y keyboard | **CLOSED** | Chromium+WebKit keyboard PASS |
-| CH26 | CI/deploy exact-live | **CLOSED** | ART/BAN tip=LIVE; CI success on tip |
-| CH27 | CSP architecture | **USER_DECISION_ACCEPTED** | Felhasználói döntés: jelenlegi GitHub Pages architektúra marad. HTTP CSP továbbra is ABSENT (tény). Meta-CSP ≠ HTTP CSP. Nincs CF/DNS/migráció. Consent/tracking működése megőrizve. |
-| CH28 | Docs/contracts | **CLOSED** | Preserved |
-| CH29 | Final closure pack | **CLOSED** | Statuses remapped; evidence refreshed this run |
+| CH01 | Mission/scope/roles | **PRODUCTION-ELLENŐRZÖTT** | Professional / ART / Blog intent ownership élő; BMI kizárva |
+| CH02 | Ecosystem entities & URLs | **PRODUCTION-ELLENŐRZÖTT** | BAN/ART/Blog LIVE URL + entity inventory |
+| CH03 | Version safety | **PRODUCTION-ELLENŐRZÖTT** | PR→CI→merge→deploy→exact-live lánc ART#307 + BAN tip |
+| CH04 | ART sitemap P0 | **PRODUCTION-ELLENŐRZÖTT** | ART sitemap LIVE |
+| CH05 | Language/hreflang/canonical | **PRODUCTION-ELLENŐRZÖTT** | BAN+ART+Blog hreflang/canonical PASS |
+| CH06 | Blog inventory & service links | **PRODUCTION-ELLENŐRZÖTT** | 513 published; 171 families; service links LIVE; schema exact-one |
+| CH07 | Service editorial ↔ blog | **PRODUCTION-ELLENŐRZÖTT** | Editorial↔service routing LIVE |
+| CH08 | BMI related presentation | **OUT_OF_SCOPE** | USER_DECISION — BMI nem BANHALMI production feladat |
+| CH09 | VIPACH institutional boundary | **PRODUCTION-ELLENŐRZÖTT** | Boundary tip LIVE |
+| CH10 | Speier Vikó separation | **PRODUCTION-ELLENŐRZÖTT** | Tip + blog links LIVE |
+| CH11 | HIPStudio dates | **PRODUCTION-ELLENŐRZÖTT** | Date boundary tip LIVE |
+| CH12 | Ébredés routing | **PRODUCTION-ELLENŐRZÖTT** | exhibitions/ebredes + private-photography LIVE |
+| CH13 | Wikidata / Rege P854 | **OUT_OF_SCOPE** | USER_DECISION — további Wikidata szerkesztés nem kért |
+| CH14 | Maps three places | **PRODUCTION-ELLENŐRZÖTT** | BAN+ART Place.hasMap 3/3 LIVE; Gersthofer=OFFICE; GBP owner NOT REQUIRED |
+| CH15 | Social / LinkedIn | **PRODUCTION-ELLENŐRZÖTT** | Tip LIVE |
+| CH16 | Copy/voice | **PRODUCTION-ELLENŐRZÖTT** | Human voice tip LIVE |
+| CH17 | Schema / semantic | **PRODUCTION-ELLENŐRZÖTT** | ART Place schema + Wix Blog exact-one 513/513 |
+| CH18 | Technical SEO | **PRODUCTION-ELLENŐRZÖTT** | sitemap/robots/canonical/hreflang/OG PASS |
+| CH19 | AI Trust | **PRODUCTION-ELLENŐRZÖTT** | Trust locales LIVE |
+| CH20 | Consent / GDPR | **PRODUCTION-ELLENŐRZÖTT** | Consent settle PASS; first-party controllable vs 3P platform limitation elkülönítve |
+| CH21 | Photohistory hero disclosure | **PRODUCTION-ELLENŐRZÖTT** | #01–#04 hero disclosure 12/12 PASS; #11 Fenton érintetlen; 1 cover family külön INPUT-NEM-ELÉRHETŐ (nem CH21 blocker) |
+| CH22 | GSC/Bing 7/14/28 | **MÉRÉS ALATT** | Első checkpoint 2026-11-02 Europe/Budapest; baseline rögzítve; change freeze aktív |
+| CH23 | Conversion funnels | **PRODUCTION-ELLENŐRZÖTT** | CTA routing LIVE |
+| CH24 | Visual collectors/dock | **PRODUCTION-ELLENŐRZÖTT** | BAN 58×7 + ART visual/CI desktop regression PASS; natív Safari külön: NOT RUN — ENVIRONMENT LIMITATION |
+| CH25 | A11y keyboard | **PRODUCTION-ELLENŐRZÖTT** | Keyboard/privacy smoke PASS |
+| CH26 | CI/deploy exact-live | **PRODUCTION-ELLENŐRZÖTT** | BAN 328060b76a65… ART 95a43d602079… exact-live PASS |
+| CH27 | CSP architecture | **OUT_OF_SCOPE** | USER_DECISION — GitHub Pages accepted; HTTP CSP ABSENT; no CF/DNS |
+| CH28 | Docs/contracts | **PRODUCTION-ELLENŐRZÖTT** | Closure docs + evidence pack; PR #66 |
+| CH29 | Final closure pack | **PRODUCTION-ELLENŐRZÖTT** | 0 végrehajtható P0/P1; egyetlen aktív ág: GSC/Bing mérés |
+
+## Fejezet-számláló
+| Státusz | Darab |
+| --- | ---: |
+| PRODUCTION-ELLENŐRZÖTT | 25 |
+| MÉRÉS ALATT | 1 |
+| OUT_OF_SCOPE | 3 |
+| INPUT-NEM-ELÉRHETŐ | 0 |
+| NOT RUN — ENVIRONMENT LIMITATION | 0 |
+| CI-ELLENŐRZÖTT | 0 |
+| JAVÍTOTT | 0 |
+
+## Nem fejezet-szintű fennmaradók
+| Tétel | Státusz | Indok |
+| --- | --- | --- |
+| Cover family (1× HU/EN/DE, translationId `03b9e532-…`) | **INPUT-NEM-ELÉRHETŐ** | Nincs bizonyított saját cover/rich asset; site-level OG fallback; ne inventáljunk képet |
+| Natív macOS Safari UI | **NOT RUN — ENVIRONMENT LIMITATION** | Nincs macOS Safari host; WebKit PASS ≠ natív Safari PASS |
 
 ## Mezőtípusok
-- Technikailag megvalósult és ellenőrzött: CLOSED
-- Elfogadott architektúrakorlát / felhasználói döntéssel elhagyott módosítás: USER_DECISION_ACCEPTED (CH13 WD, CH27 CSP/Pages)
-- Valódi fennmaradó tartalmi feladat: AWAITING_CONTENT_APPROVAL (CH21)
-- Későbbi mérés: PENDING_MEASUREMENT (CH22)
-- Környezeti okból nem futtatott: natív Safari UI (CH24 megjegyzés; WebKit PASS)
-- OUT_OF_SCOPE: CH08 BMI
+- Technikailag teljesített production feladat → PRODUCTION-ELLENŐRZÖTT
+- Felhasználói döntéssel lezárt → OUT_OF_SCOPE (CH08/CH13/CH27)
+- Időalapú mérés → MÉRÉS ALATT (CH22)
+- Input hiány P2 → INPUT-NEM-ELÉRHETŐ (cover family)
+- Környezeti okból nem futtatott → NOT RUN — ENVIRONMENT LIMITATION (natív Safari)
