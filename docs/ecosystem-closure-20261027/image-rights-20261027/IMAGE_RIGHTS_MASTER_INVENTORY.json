@@ -24,7 +24,7 @@
     "imageObjects": 493,
     "googleComplete": 0,
     "googleIncomplete": 493,
-    "ownBanhalmiComplete": "3/3 EUFÓRIA",
+    "ownBanhalmiComplete": "3/3",
     "fieldPresence": {
       "contentUrl": 484,
       "creator": 3,
@@ -71,8 +71,18 @@
       }
     },
     "remaining": "~481 covers still incomplete/unknown provenance; Class D AI heroes retained without Banhalmi copyright; no invented rights",
-    "googleCompleteKnown": 12,
-    "thirdPartyVerified": 9
+    "googleCompleteKnown": 21,
+    "thirdPartyVerified": 18,
+    "familiesComplete": [
+      "EUFÓRIA B",
+      "Fenton C",
+      "Atkins C",
+      "Lange C",
+      "Hine C",
+      "Muybridge C",
+      "Daguerre C"
+    ],
+    "exactOne": "513/513"
   },
   "voice": {
     "professional": {

@@ -39,10 +39,15 @@
       "id": "WIX-LANGE-C",
       "action": "Dorothea Lange LoC rights HU/EN/DE (string image→ImageObject)",
       "status": "LIVE_PASS"
+    },
+    {
+      "id": "WIX-HINE-MUY-DAG",
+      "action": "Hine+Muybridge+Daguerre Class C PD rights 9 posts",
+      "status": "LIVE_PASS"
     }
   ],
-  "wixGoogleCompleteKnown": 12,
+  "wixGoogleCompleteKnown": 21,
   "wixOwnBanhalmiComplete": 3,
-  "wixThirdPartyVerified": 9,
+  "wixThirdPartyVerified": 18,
   "blogPostingExactOne": "513/513"
 }
