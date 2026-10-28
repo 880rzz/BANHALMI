@@ -11,6 +11,6 @@ for (const path of pages) {
   assert.ok(html.includes('OM SYSTEM'),path+' ambassador label');
   assert.ok(html.includes('rel="canonical"'),path+' canonical retained');
   assert.ok(html.includes('hreflang='),path+' hreflang retained');
-  assert.ok(html.includes('property="og:site_name" content="BANHALMI Photography"'),path+' commercial brand');
+  assert.ok(html.includes('property="og:site_name" content="BANHALMI"'),path+' commercial brand');
 }
 console.log('OM SYSTEM ambassador evidence and brand identity checks passed');
