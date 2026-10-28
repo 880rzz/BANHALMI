@@ -25,10 +25,11 @@
         "@type": "CreativeWork",
         "@id": "https://www.flickr.com/photos/vipach/albums/72177720336279769",
         "url": "https://www.flickr.com/photos/vipach/albums/72177720336279769",
-        "name": "VIPACH event photography reference album 1",
-        "evidenceRole": "External portfolio documentation of event-photography capability",
-        "attributionStatus": "team-level; individual photographer not independently verified",
-        "relationshipGuardrail": "Does not establish client, partner, official-photographer or endorsement status"
+        "name": "Freiheit – Ungarn – 1956, Hungarian Embassy in Vienna, 20 October 2026",
+        "evidenceRole": "Institutional event-photography portfolio documentation paired with the embassy's public photo credit",
+        "independentPhotoCredit": "https://www.facebook.com/HunEmbassy.Becs/posts/pfbid0HsjDoV8ASs1oUX1aiYgxSqHWTta9Dwn5E9xkuwyZWvi6zMHmGMMXftGL3q6eMr1Sl",
+        "attributionStatus": "Bánhalmi Norbert credited by the embassy for this event; do not generalize authorship to other albums",
+        "relationshipGuardrail": "Publication and credit do not establish commission, client, partnership, official-photographer or endorsement status"
       },
       {
         "@type": "CreativeWork",

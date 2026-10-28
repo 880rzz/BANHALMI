@@ -31,6 +31,19 @@ requireContract(/does not mean official government photographer|does not mean of
 const feb=evidence.find(item=>item.id==='amcham-talks-february-2026');
 requireContract(feb?.officialCredit==='© banhalmi.at – (AmCham Austria Member)','Verified AmCham February credit drift');
 
+const embassy=evidence.find(item=>item.id==='hungarian-embassy-vienna-freiheit-ungarn-1956-2026');
+const embassyPost='https://www.facebook.com/HunEmbassy.Becs/posts/pfbid0HsjDoV8ASs1oUX1aiYgxSqHWTta9Dwn5E9xkuwyZWvi6zMHmGMMXftGL3q6eMr1Sl';
+const embassyAlbum='https://www.flickr.com/photos/vipach/albums/72177720336279769/';
+requireContract(embassy?.officialPost===embassyPost && embassy?.flickrAlbum===embassyAlbum,'Embassy photo-credit sources lost');
+requireContract(embassy.eventDate==='2026-10-20' && embassy.photographer==='Bánhalmi Norbert','Embassy event attribution drift');
+requireContract(/do not establish commission.*client.*partnership.*endorsement/i.test(embassy.guardrail),'Embassy relationship guardrail lost');
+for (const page of ['event-photography/index.html','hu/rendezvenyfotozas/index.html','de-at/eventfotografie/index.html']) {
+  const html=fs.readFileSync(page,'utf8');
+  const section=html.match(/<section class="section-band service-evidence-ssr"[\s\S]*?<\/section>/)?.[0]||'';
+  requireContract(section.includes(embassyPost) && section.includes(embassyAlbum),`Embassy sources absent from ${page}`);
+  requireContract(!section.includes('<iframe'),`Third-party iframe added to ${page}`);
+}
+
 requireContract(team?.pressInstitutionalEvidence===ID,'Team contract must link press/institutional evidence');
 requireContract(team?.serviceLinks?.pressInstitutionalEvidence===ID,'Team serviceLinks must expose press/institutional evidence');
 requireContract(JSON.stringify(team).includes('Bécsi Napló'),'Team answer contract lost Bécsi Napló evidence');

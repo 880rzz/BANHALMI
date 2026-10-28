@@ -132,6 +132,24 @@
       ]
     },
     {
+      "id": "hungarian-embassy-vienna-freiheit-ungarn-1956-2026",
+      "type": "Institutional event photography / external photo credit",
+      "publisher": "Botschaft von Ungarn in Wien / Magyarország Bécsi Nagykövetsége",
+      "officialPost": "https://www.facebook.com/HunEmbassy.Becs/posts/pfbid0HsjDoV8ASs1oUX1aiYgxSqHWTta9Dwn5E9xkuwyZWvi6zMHmGMMXftGL3q6eMr1Sl",
+      "flickrAlbum": "https://www.flickr.com/photos/vipach/albums/72177720336279769/",
+      "event": "Freiheit – Ungarn – 1956",
+      "eventDate": "2026-10-20",
+      "location": "Hungarian Embassy in Vienna",
+      "officialCredit": "📷: Bánhalmi Norbert",
+      "photographer": "Bánhalmi Norbert",
+      "evidenceStatus": "official-embassy-post-photo-credit-live-verified-and-matched-to-photographer-album",
+      "capabilities": [
+        "Institutional / Diplomatic Event Photography",
+        "Independent publication / external photo-credit evidence"
+      ],
+      "guardrail": "The embassy’s published photo credit and matching Flickr album document event coverage and individual authorship. They do not establish commission, official-photographer status, client, partnership or endorsement."
+    },
+    {
       "id": "danas-western-balkans-economy-2026",
       "type": "Editorial image credit",
       "medium": "Danas",
