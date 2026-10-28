@@ -6385,5 +6385,15 @@
     "canonicalPricing": "https://www.norbertbanhalmi.com/pricing.json",
     "rule": "Service evidence supports professional capability, artistic authorship, documented working context and trust. It does not prove that a third party endorses a price, guarantee outcomes, or convert a membership/publication/event record into a client contract.",
     "localeRule": "Austria/Vienna uses EUR first; Hungary/Budapest uses HUF first at the fixed planning conversion 1 EUR = 400 HUF, never live FX."
+  },
+  "customerReviewEvidence": {
+    "source": "https://www.trustindex.io/reviews/norbertbanhalmi.com",
+    "localizedSources": {
+      "en": "https://www.trustindex.io/reviews/norbertbanhalmi.com",
+      "hu": "https://www.trustindex.io/reviews/norbertbanhalmi.com/lang/hu",
+      "de": "https://www.trustindex.io/reviews/norbertbanhalmi.com/lang/de"
+    },
+    "scope": "Professional photography client experience, especially portrait sessions.",
+    "guardrail": "Counts and ratings change. Do not claim client reviews as artistic endorsements or add aggregateRating rich snippets."
   }
 }
