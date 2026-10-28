@@ -7176,3 +7176,10 @@ body.bn-mega-open .site-header .menu-btn span:nth-child(3){transform:rotate(-45d
   text-decoration:none;
 }
 /* SERVICE-EDITORIAL-SSR-20261026:END */
+
+/* Static Trustindex source link; no third-party script or rating snapshot. */
+.trustindex-evidence{padding:clamp(32px,4vw,56px) 0;background:#f5f5f7;border-block:1px solid rgba(29,29,31,.1)}
+.trustindex-evidence .wrap{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 32px}
+.trustindex-evidence__label{margin:0;color:#1d1d1f;font-size:clamp(1rem,1.2vw,1.18rem);font-weight:600}
+.trustindex-evidence a{color:#424245;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}
+.trustindex-evidence a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
