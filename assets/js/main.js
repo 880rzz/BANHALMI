@@ -1,4 +1,4 @@
-/* NORBERTBANHALMI.COM — minimal interactions. No analytics loads before consent. */
+/* BANHALMIPHOTOGRAPHY.COM — minimal interactions. No analytics loads before consent. */
 (function () {
   "use strict";
 
