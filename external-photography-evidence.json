@@ -387,7 +387,10 @@
       ],
       "creditContext": "Honvédelem identifies Fotó: Bánhalmi Norbert (HOSOSZ) in the article byline and publishes a multi-image event gallery.",
       "evidenceStatus": "publicly-verified-explicit-institutional-photo-credit",
-      "interpretationRule": "Use as sport/community-event documentation and institutional publication-credit evidence. Do not infer official state photographer status, endorsement, exclusivity or a broader government client relationship."
+      "interpretationRule": "Use as sport/community-event documentation and institutional publication-credit evidence. Do not infer official state photographer status, endorsement, exclusivity or a broader government client relationship.",
+      "eventArchive": "https://www.flickr.com/photos/vipach/albums/72177720334092675/",
+      "eventArchiveEvidenceStatus": "creator-supplied-event-album-link; Flickr public metadata not independently retrieved",
+      "eventArchiveProvenance": "Photographer supplied this exact Flickr album as the corresponding event gallery on 2026-10-29."
     },
     {
       "id": "likebalaton-tihany-virtual-exhibition",
