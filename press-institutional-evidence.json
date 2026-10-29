@@ -155,8 +155,10 @@
       "medium": "Danas",
       "articleUrl": "https://www.danas.rs/vesti/ekonomija/lekcije-za-zapadni-balkan-zasto-neke-zemlje-sustizu-zapad-a-druge-ostaju-zarobljene-u-tranziciji/",
       "credit": "Foto: BANHALMI Photography",
-      "evidenceStatus": "publisher-credit-reported-pending-exact-live-recheck",
-      "guardrail": "Publication credit only; no commission, client, affiliation or endorsement implied."
+      "evidenceStatus": "publicly-verified-exact-live-photo-credit",
+      "publicReadback": "Live article image credit reads: Foto: BANHALMI Photography. The image URL and filename also identify BANHALMI Photography.",
+        "verificationDate": "2026-10-29",
+        "guardrail": "Publication credit only; no commission, client, affiliation or endorsement implied."
     },
     {
       "id": "peter-bence-mvm-dome-concert-2026",
