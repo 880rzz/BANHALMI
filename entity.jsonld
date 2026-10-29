@@ -215,7 +215,12 @@
     {
       "@type": "Brand",
       "@id": "https://www.norbertbanhalmi.com/#brand",
-      "name": "BANHALMI",
+      "name": "BANHALMI Photography",
+      "alternateName": [
+        "BANHALMI",
+        "Norbert Bánhalmi",
+        "Bánhalmi Norbert"
+      ],
       "url": "https://www.norbertbanhalmi.com/",
       "owner": {
         "@id": "https://www.norbertbanhalmi.com/#organization"
@@ -223,10 +228,7 @@
       "founder": {
         "@id": "https://www.norbertbanhalmi.com/about/"
       },
-      "description": "BANHALMI is the primary brand. BANHALMI Photography is its photography-facing commercial name, delivered through the BANHALMI Photography Team and creatively directed by Bánhalmi Norbert.",
-      "alternateName": [
-        "BANHALMI Photography"
-      ],
+      "description": "BANHALMI Photography is the primary commercial photography brand, with BANHALMI, Norbert Bánhalmi and Bánhalmi Norbert retained as secondary names for recognition and search continuity. It is delivered through the BANHALMI Photography Team and creatively directed by Bánhalmi Norbert.",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
