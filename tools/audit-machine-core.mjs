@@ -8,7 +8,7 @@ fail(core.schemaVersion === '1.5', 'machine-core schemaVersion must remain 1.5 o
 fail(core.canonicalId === 'https://www.norbertbanhalmi.com/data/machine-core.json', 'canonicalId must stay on the professional domain');
 fail(core.person?.wikidata === 'https://www.wikidata.org/wiki/Q56391118', 'Person Wikidata identity drift');
 fail(core.organization?.wikidata === 'https://www.wikidata.org/wiki/Q138425941', 'Organization Wikidata identity drift');
-fail(core.brand?.name === 'BANHALMI', 'Brand identity drift');
+fail(core.brand?.name === 'BANHALMI Photography', 'Brand identity drift');
 fail(core.brand?.positioning === 'Photography Team', 'BANHALMI brand positioning must remain Photography Team');
 fail(core.person?.practiceSince === 1999, 'Practice-since history drift');
 fail(core.organization?.legalBusinessStart === '2023-11-27', 'Legal business start drift');
