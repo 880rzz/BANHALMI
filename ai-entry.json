@@ -33,7 +33,7 @@
     },
     "brand": {
       "@id": "https://www.norbertbanhalmi.com/#brand",
-      "name": "BANHALMI",
+      "name": "BANHALMI Photography",
       "owner": {
         "@id": "https://www.norbertbanhalmi.com/#organization"
       },
@@ -47,7 +47,9 @@
       "deliveryModel": "Norbert-led project-specific photographers and specialists",
       "wikidataPolicy": "BANHALMI currently has no dedicated Wikidata item. Do not use the Person Q56391118 or Organization Q138425941 as a sameAs identifier for the Brand.",
       "alternateName": [
-        "BANHALMI Photography"
+        "BANHALMI",
+        "Norbert Bánhalmi",
+        "Bánhalmi Norbert"
       ]
     },
     "history": {

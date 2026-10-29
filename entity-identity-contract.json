@@ -25,16 +25,22 @@
   "canonicalBrand": {
     "@type": "Brand",
     "@id": "https://www.norbertbanhalmi.com/#brand",
-    "name": "BANHALMI",
+    "name": "BANHALMI Photography",
     "owner": "https://www.norbertbanhalmi.com/#organization",
     "founder": "https://www.norbertbanhalmi.com/about/",
     "wikidata": null,
     "alternateName": [
-      "BANHALMI Photography"
+      "BANHALMI",
+      "Norbert Bánhalmi",
+      "Bánhalmi Norbert"
     ],
     "namingPriority": {
-      "primary": "BANHALMI",
-      "secondary": "BANHALMI Photography"
+      "primary": "BANHALMI Photography",
+      "secondary": [
+        "BANHALMI",
+        "Norbert Bánhalmi",
+        "Bánhalmi Norbert"
+      ]
     }
   },
   "history": {

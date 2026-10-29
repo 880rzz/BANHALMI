@@ -1,5 +1,5 @@
 {
-  "name": "BANHALMI",
+  "name": "BANHALMI Photography",
   "canonical": "https://www.norbertbanhalmi.com/",
   "type": "commercial-authority",
   "languages": [
@@ -13,5 +13,10 @@
     "/api/v1/services.json",
     "/api/v1/locations.json",
     "/api/v1/actions.json"
+  ],
+  "alternateName": [
+    "BANHALMI",
+    "Norbert Bánhalmi",
+    "Bánhalmi Norbert"
   ]
 }

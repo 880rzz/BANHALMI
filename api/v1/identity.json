@@ -1,8 +1,13 @@
 {
-  "name": "BANHALMI",
+  "name": "BANHALMI Photography",
   "legalName": "Banhalmi Norbert e.U.",
   "person": "Bánhalmi Norbert",
   "personWikidata": "Q56391118",
   "organizationWikidata": "Q138425941",
-  "canonical": "https://www.norbertbanhalmi.com/"
+  "canonical": "https://www.norbertbanhalmi.com/",
+  "alternateName": [
+    "BANHALMI",
+    "Norbert Bánhalmi",
+    "Bánhalmi Norbert"
+  ]
 }

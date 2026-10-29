@@ -82,9 +82,9 @@ for (const [path, rx] of measuredOwnerChecks) {
 }
 
 const protectedHomepageTitles = new Map([
-  ['index.html', 'BANHALMI | Portrait & brand photography | Vienna–Budapest'],
-  ['hu/index.html', 'BANHALMI | Portréfotózás és brandfotózás | Bécs–Budapest'],
-  ['de-at/index.html', 'BANHALMI | Porträt- & Brandfotografie | Wien–Budapest']
+  ['index.html', 'BANHALMI Photography | Portrait & brand photography | Vienna–Budapest'],
+  ['hu/index.html', 'BANHALMI Photography | Portréfotózás és brandfotózás | Bécs–Budapest'],
+  ['de-at/index.html', 'BANHALMI Photography | Porträt- & Brandfotografie | Wien–Budapest']
 ]);
 for (const [path, expected] of protectedHomepageTitles) {
   const actual = extractTitle(fs.readFileSync(path, 'utf8'));

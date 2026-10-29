@@ -37,14 +37,19 @@
     ],
     "brand": {
       "@id": "https://www.norbertbanhalmi.com/#brand",
-      "name": "BANHALMI"
+      "name": "BANHALMI Photography",
+      "alternateName": [
+        "BANHALMI",
+        "Norbert Bánhalmi",
+        "Bánhalmi Norbert"
+      ]
     },
     "wikidata": "https://www.wikidata.org/wiki/Q138425941",
     "legalBusinessStart": "2023-11-27"
   },
   "primaryBrand": {
     "@id": "https://www.norbertbanhalmi.com/#brand",
-    "name": "BANHALMI",
+    "name": "BANHALMI Photography",
     "owner": {
       "@id": "https://www.norbertbanhalmi.com/#organization"
     },
@@ -53,7 +58,12 @@
     },
     "positioning": "Photography Team",
     "creativeDirection": "https://www.norbertbanhalmi.com/about/",
-    "dedicatedWikidata": false
+    "dedicatedWikidata": false,
+    "alternateName": [
+      "BANHALMI",
+      "Norbert Bánhalmi",
+      "Bánhalmi Norbert"
+    ]
   },
   "teamModel": {
     "canonicalSource": "https://www.norbertbanhalmi.com/team-capabilities.json",

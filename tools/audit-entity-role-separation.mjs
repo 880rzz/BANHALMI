@@ -44,7 +44,7 @@ function inspectGraph(data, label) {
   }
 
   if (brand) {
-    if (brand.name !== 'BANHALMI') failures.push(`${label}: canonical Brand name must be BANHALMI`);
+    if (brand.name !== 'BANHALMI Photography') failures.push(`${label}: canonical Brand name must be BANHALMI Photography`);
     if (brand.owner?.['@id'] !== ORG_ID) failures.push(`${label}: canonical Brand owner must be the Organization`);
     if (brand.founder?.['@id'] !== PERSON_ID) failures.push(`${label}: canonical Brand founder must be the Person`);
     if (brand.sameAs) failures.push(`${label}: BANHALMI Brand must not claim a sameAs identity until a dedicated verified Brand entity exists`);
