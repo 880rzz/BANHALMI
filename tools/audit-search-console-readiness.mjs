@@ -10,7 +10,7 @@ const pages=fs.readFileSync('.github/workflows/pages.yml','utf8');
 const emergency=fs.readFileSync('.github/workflows/emergency-pages-deploy.yml','utf8');
 const req=(ok,msg)=>{if(!ok)errors.push(msg)};
 
-req(core.brand?.name==='BANHALMI','Canonical primary brand drift');
+req(core.brand?.name==='BANHALMI Photography','Canonical primary brand drift');
 req(core.brand?.positioning==='Photography Team','Canonical brand positioning is not Photography Team');
 req(!(JSON.stringify(core).includes('"positioning":"Professional Photography Team"')),'Retired brand positioning remains in canonical machine core');
 req(overlay.forbiddenBrandValues?.includes('Professional Photography Team'),'Overlay no longer forbids retired brand positioning');
