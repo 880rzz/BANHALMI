@@ -697,7 +697,7 @@
         }
       }
       function openMailFallback() {
-        var supportEmail = (window.BANHALMI_CONFIG && window.BANHALMI_CONFIG.supportEmail) || 'hello@banhalmiphotography.com';
+        var supportEmail = (window.BANHALMI_CONFIG && window.BANHALMI_CONFIG.supportEmail) || 'hello@norbertbanhalmi.com';
         var subject = encodeURIComponent((isQuote? 'BANHALMI quote request — ': 'BANHALMI enquiry — ') + (payload.category || payload.subject || payload.service || 'photography'));
         var body = encodeURIComponent(Object.keys(payload).map(function (key) { return key + ': ' + payload[key]; }).join("\n"));
         window.location.href = "mailto:" + supportEmail + "?subject=" + subject + "&body=" + body;
