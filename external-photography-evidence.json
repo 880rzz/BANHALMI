@@ -401,10 +401,9 @@
         "Cultural / Curatorial Authority"
       ],
       "creditContext": "Search-indexed LikeBalaton material independently associates Bánhalmi Norbert with Tihany cultural/exhibition activity and identifies him in related coverage as curator and artistic director of Rege Galéria.",
-      "evidenceStatus": "publicly-indexed-authority-context-photo-credit-not-yet-verified-on-target-page",
-      "verificationRequired": [
-        "target-page exact photo-credit text"
-      ],
+      "evidenceStatus": "publicly-verified-exact-target-page-photo-credit",
+      "publicReadback": "Live page contains the explicit credit: Fotó: Bánhalmi Norbert.",
+      "verificationDate": "2026-10-29",
       "interpretationRule": "Use only as cultural/curatorial authority context until the exact target-page photo credit is independently readable. Do not infer a photography commission, client relationship, partnership, endorsement, exclusivity or photographer credit from this record."
     },
     {
