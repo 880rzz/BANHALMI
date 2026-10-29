@@ -5796,7 +5796,7 @@
     "postMigrationUrlEvidence2017": {
       "provenanceClass": "PRIVATE-MIGRATION-PROVENANCE",
       "publicExposure": false,
-      "status": "URL-SET-VERIFIED-ON-NORBERTBANHALMI.COM_OLD-DOMAIN-PATH-PARITY-NOT-YET-PROVEN",
+      "status": "URL-SET-VERIFIED-ON-BANHALMIPHOTOGRAPHY.COM_OLD-DOMAIN-PATH-PARITY-NOT-YET-PROVEN",
       "context": "A contemporaneous February 2017 SEO migration worksheet verifies the following banhalmiphotography.com URLs and target keyword intents immediately after the historical domain transition. This does not by itself prove that identical paths existed on banhalminorbert.hu, so old-domain redirect rules must not be created from path parity alone.",
       "urls": [
         {
