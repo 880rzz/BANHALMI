@@ -30,7 +30,7 @@ for (const file of walk(root)) {
   for (const host of oldHosts) after = after.split(host).join(canonical);
   after = after.replaceAll('www.banhalmiphotography.com', 'www.banhalmiphotography.com');
   after = after.replaceAll('banhalmiphotography.com', 'banhalmiphotography.com');
-  after = after.replaceAll('<span class="brand-word">BANHALMI Photography</span>', '<span class="brand-word">BANHALMI Photography</span>');
+  after = after.replaceAll('<span class="brand-word"><strong>BANHALMI</strong> <span>Photography</span></span>', '<span class="brand-word"><strong>BANHALMI</strong> <span>Photography</span></span>');
   after = after.replaceAll('Brand: BANHALMI\n', 'Brand: BANHALMI Photography\n');
   after = after.replace(/("@type"\s*:\s*"Brand"[\s\S]{0,180}?"name"\s*:\s*)"BANHALMI"/g, '$1"BANHALMI Photography"');
   after = after.replaceAll('"name": "BANHALMI",\n      "url": "https://www.banhalmiphotography.com/"', '"name": "BANHALMI Photography",\n      "alternateName": ["BANHALMI", "Norbert Bánhalmi", "Bánhalmi Norbert"],\n      "url": "https://www.banhalmiphotography.com/"');
