@@ -7183,3 +7183,10 @@ body.bn-mega-open .site-header .menu-btn span:nth-child(3){transform:rotate(-45d
 .trustindex-evidence__label{margin:0;color:#1d1d1f;font-size:clamp(1rem,1.2vw,1.18rem);font-weight:600}
 .trustindex-evidence a{color:#424245;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}
 .trustindex-evidence a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+
+/* Canonical BANHALMI Photography wordmark: compact, with a lighter descriptor. */
+.brand-word{font-size:clamp(.68rem,.78vw,.82rem);letter-spacing:.075em;font-weight:600;white-space:nowrap;}
+.brand-word strong{font-weight:700;}
+.brand-word > span{font-weight:300;letter-spacing:.045em;}
+.site-footer .brand-word{font-size:clamp(.72rem,.82vw,.88rem);letter-spacing:.075em;}
+.site-footer .brand-word > span{font-weight:300;}
