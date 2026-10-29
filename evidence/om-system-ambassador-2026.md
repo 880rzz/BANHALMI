@@ -1,10 +1,10 @@
-# OM SYSTEM Ambassador — source-backed evidence (2026)
+# OM SYSTEM Ambassador — source-backed evidence (2026).
 
 Subject: Norbert Bánhalmi / Bánhalmi Norbert (Person; Wikidata Q56391118).
-Relationship: OM SYSTEM Ambassador, as described by the official Olympus Mintabolt event announcement. This is an ambassador relationship, not evidence of sponsorship, employment, endorsement of every project, or an award.
+Relationship: OM SYSTEM Ambassador, as described by the official OM SYSTEM Day event information. This is an ambassador relationship, not evidence of sponsorship, employment, endorsement of every project, or an award.
 
 ## Primary references
-- OM SYSTEM Day 2026 event information: https://omsystemshop.hu/om-system-day
+- OM SYSTEM Events — official event listing: https://events.eao.omsystem.com/index/om-system-events-hu
 - Olympus Mintabolt Facebook announcement (25 October 2026): https://www.facebook.com/photo/?fbid=1702434115222332&set=a.529355062530249
 
 ## Event record
