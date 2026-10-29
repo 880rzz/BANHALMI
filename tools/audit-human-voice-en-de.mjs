@@ -33,11 +33,11 @@ for(const rel of priority){
 }
 const required=[
   ['index.html','Portrait, brand and event photography — Vienna and Budapest.'],
-  ['index.html','Start from where the image will be used.'],
+  ['index.html','The photograph is the means. Strategic visual positioning is the work.'],
   ['lifestyle/index.html','For leaders, experts, entrepreneurs, artists and organisations'],
   ['speier-viko/index.html','Viko Speier — strategy and photography together'],
   ['de-at/index.html','Porträt-, Brand- und Eventfotografie — Wien und Budapest.'],
-  ['de-at/index.html','Wir beginnen damit, wo das Bild eingesetzt wird.'],
+  ['de-at/index.html','Das Foto ist das Mittel. Die Arbeit ist strategische visuelle Positionierung.'],
   ['de-at/speier-viko/index.html','Viko Speier — Strategie und Fotografie zusammen']
 ];
 for(const [rel,phrase] of required){const h=fs.readFileSync(path.join(root,rel),'utf8');if(!visible(h).includes(phrase))failures.push(`${rel}: approved human copy missing: ${phrase}`)}
