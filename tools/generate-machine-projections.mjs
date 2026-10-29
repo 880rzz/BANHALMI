@@ -103,7 +103,7 @@ export function generateMachineProjections(siteRoot = '_site') {
   const aiEntry = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
-    '@id': 'https://www.norbertbanhalmi.com/ai-entry.json',
+    '@id': 'https://www.banhalmiphotography.com/ai-entry.json',
     name: 'BANHALMI concise AI entry contract',
     version: '2026-09-10-v14',
     generatedFrom,
@@ -168,14 +168,14 @@ export function generateMachineProjections(siteRoot = '_site') {
 
   for (const location of studios) graph.push({ '@type': 'ProfessionalService', '@id': location.id, name: location.name, url: core.canonicalUrl, parentOrganization: reference(core.organization.id), founder: reference(core.person.id), address: postalAddress(location), areaServed: location.areaServed, sameAs: location.sameAs, hasMap: location.hasMap || location.googleBusinessProfile, email: core.organization.email, dateModified });
   for (const location of offices) graph.push({ '@type': 'Place', '@id': location.id, name: location.name, description: location.description, address: postalAddress(location), sameAs: location.sameAs, hasMap: location.hasMap || location.googleBusinessProfile, dateModified });
-  graph.push({ '@type': 'Service', '@id': 'https://www.norbertbanhalmi.com/#visual-trust-partnership', name: 'BANHALMI Strategic Visual Partnership', provider: reference(core.organization.id), areaServed: ['Vienna', 'Budapest', 'Worldwide'], serviceType: core.serviceModel.services.map((service) => service.name), dateModified });
-  graph.push({ '@type': 'WebSite', '@id': 'https://www.norbertbanhalmi.com/#website', url: core.canonicalUrl, name: 'BANHALMI | Norbert Banhalmi', publisher: reference(core.organization.id), about: reference(core.person.id), inLanguage: ['en', 'hu-HU', 'de-AT'], dateModified });
+  graph.push({ '@type': 'Service', '@id': 'https://www.banhalmiphotography.com/#visual-trust-partnership', name: 'BANHALMI Strategic Visual Partnership', provider: reference(core.organization.id), areaServed: ['Vienna', 'Budapest', 'Worldwide'], serviceType: core.serviceModel.services.map((service) => service.name), dateModified });
+  graph.push({ '@type': 'WebSite', '@id': 'https://www.banhalmiphotography.com/#website', url: core.canonicalUrl, name: 'BANHALMI | Norbert Banhalmi', publisher: reference(core.organization.id), about: reference(core.person.id), inLanguage: ['en', 'hu-HU', 'de-AT'], dateModified });
 
   const entityGraph = { '@context': 'https://schema.org', '@graph': graph, generatedFrom, dateModified };
   writeJson(path.join(root, 'entity.jsonld'), entityGraph);
 
   const authorityEvidence = {
-    '@context': 'https://schema.org', '@type': 'CreativeWork', '@id': 'https://www.norbertbanhalmi.com/authority-evidence.json',
+    '@context': 'https://schema.org', '@type': 'CreativeWork', '@id': 'https://www.banhalmiphotography.com/authority-evidence.json',
     name: 'BANHALMI authority evidence projection', generatedFrom, dateModified, about: reference(core.person.id),
     professionalAuthority: core.evidence.executive, artisticAuthority: core.evidence.artistic, recognitionAuthority: recognitions, artArchiveAuthority: core.evidence.artArchive,
     independentRoleEvidence: relations.evidence,

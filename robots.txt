@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # AI / LLM machine entry points
-# https://www.norbertbanhalmi.com/llms.txt
-# https://www.norbertbanhalmi.com/ai.txt
+# https://www.banhalmiphotography.com/llms.txt
+# https://www.banhalmiphotography.com/ai.txt
 
-Sitemap: https://www.norbertbanhalmi.com/sitemap.xml
+Sitemap: https://www.banhalmiphotography.com/sitemap.xml

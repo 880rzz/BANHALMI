@@ -1,16 +1,16 @@
 /* TEAM */
-Brand: BANHALMI
+Brand: BANHALMI Photography
 Person: Norbert Banhalmi / Bánhalmi Norbert
-Canonical professional website: https://www.norbertbanhalmi.com/
+Canonical professional website: https://www.banhalmiphotography.com/
 Official artistic oeuvre and source archive: https://www.banhalmi.art/
-Primary Person entity: https://www.norbertbanhalmi.com/about/
-Contact: hello@norbertbanhalmi.com
+Primary Person entity: https://www.banhalmiphotography.com/about/
+Contact: hello@banhalmiphotography.com
 
 /* SITE ROLES */
-- norbertbanhalmi.com is the canonical multilingual professional website for current services, pricing, enquiries and professional context.
+- banhalmiphotography.com is the canonical multilingual professional website for current services, pricing, enquiries and professional context.
 - banhalmi.art is the official artistic oeuvre and source archive for books, exhibitions, projects, media records, curatorial documentation and selected photographic works.
-- banhalmi.at permanently redirects to https://www.norbertbanhalmi.com/de-at/
-- banhalminorbert.hu permanently redirects to https://www.norbertbanhalmi.com/hu/
+- banhalmi.at permanently redirects to https://www.banhalmiphotography.com/de-at/
+- banhalminorbert.hu permanently redirects to https://www.banhalmiphotography.com/hu/
 
 /* POSITIONING */
 English: Norbert BANHALMI – Fine Art & Executive Portrait Photography • Visual Branding Strategy
@@ -22,9 +22,9 @@ Core services: executive and broader portrait photography, strategic visual posi
 
 /* VERIFIED FEATURED CASE */
 Péter Magyar portrait 2026:
-- EN: https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/
-- HU: https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/
-- DE-AT: https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/
+- EN: https://www.banhalmiphotography.com/case-studies/peter-magyar-portrait-2026/
+- HU: https://www.banhalmiphotography.com/hu/esettanulmanyok/magyar-peter-portre-2026/
+- DE-AT: https://www.banhalmiphotography.com/de-at/fallstudien/peter-magyar-portraet-2026/
 The case documents the portrait made at Heroes’ Square, Budapest, on 15 March 2026, its authorship, Wikimedia Commons and Wikidata records, CC BY-SA 4.0 licence and documented international editorial use.
 
 /* VERIFIED EVENT EVIDENCE */

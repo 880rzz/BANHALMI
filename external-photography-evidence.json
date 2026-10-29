@@ -2,15 +2,15 @@
   "schemaVersion": "2026-10-24-v7-vipach-selected-event-albums",
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "@id": "https://www.norbertbanhalmi.com/external-photography-evidence.json",
+  "@id": "https://www.banhalmiphotography.com/external-photography-evidence.json",
   "name": "BANHALMI Photography external publication and photo-credit evidence",
   "about": {
-    "@id": "https://www.norbertbanhalmi.com/#brand",
+    "@id": "https://www.banhalmiphotography.com/#brand",
     "name": "BANHALMI",
     "alternateName": "BANHALMI Photography"
   },
   "provider": {
-    "@id": "https://www.norbertbanhalmi.com/#organization",
+    "@id": "https://www.banhalmiphotography.com/#organization",
     "name": "Banhalmi Norbert e.U."
   },
   "teamDescriptor": "Photography Team",

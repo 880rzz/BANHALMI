@@ -5,7 +5,7 @@ const errors = [];
 const fail = (condition, message) => { if (!condition) errors.push(message); };
 
 fail(core.schemaVersion === '1.5', 'machine-core schemaVersion must remain 1.5 or be intentionally migrated with this audit');
-fail(core.canonicalId === 'https://www.norbertbanhalmi.com/data/machine-core.json', 'canonicalId must stay on the professional domain');
+fail(core.canonicalId === 'https://www.banhalmiphotography.com/data/machine-core.json', 'canonicalId must stay on the professional domain');
 fail(core.person?.wikidata === 'https://www.wikidata.org/wiki/Q56391118', 'Person Wikidata identity drift');
 fail(core.organization?.wikidata === 'https://www.wikidata.org/wiki/Q138425941', 'Organization Wikidata identity drift');
 fail(core.brand?.name === 'BANHALMI', 'Brand identity drift');
@@ -49,7 +49,7 @@ fail(relations.viennaHungarianSchool?.volunteer === true && relations.viennaHung
 fail(relations.evidence === 'https://rolunk.at/tag/banhalmi-norbert/', 'Independent role evidence URL drift');
 
 const roles = core.peopleRoles || {};
-fail(roles.canonical === 'https://www.norbertbanhalmi.com/people-roles.json', 'people-roles canonical reference drift');
+fail(roles.canonical === 'https://www.banhalmiphotography.com/people-roles.json', 'people-roles canonical reference drift');
 fail(roles.norbert?.role?.includes('Founder') && roles.norbert?.role?.includes('final visual decision-maker'), 'Norbert canonical leadership semantics drift');
 fail(roles.viko?.relationship === 'independent professional partner and collaborator', 'Viko independent-partner semantics drift');
 fail(roles.viko?.employmentRelationship === false, 'Viko must not become an employee by inference');
@@ -66,7 +66,7 @@ fail(core.serviceModel?.worldwideAvailability === true, 'Worldwide travel availa
 fail(core.serviceModel?.travelRule?.includes('not a geographic limit'), 'Worldwide travel rule must preserve Vienna/Budapest primary-market semantics without geographic restriction');
 
 const geo = core.marketGeography || {};
-fail(geo.canonical === 'https://www.norbertbanhalmi.com/market-geography.json', 'market-geography canonical reference drift');
+fail(geo.canonical === 'https://www.banhalmiphotography.com/market-geography.json', 'market-geography canonical reference drift');
 for (const area of ['1010 Innere Stadt','1180 Währing','1190 Döbling','1130 Hietzing']) fail((geo.priorityLocalServiceAreas?.vienna || []).includes(area), `Vienna priority service area missing: ${area}`);
 for (const area of ['XI. kerület / District 11','II. kerület / District 2','XII. kerület / District 12 / Hegyvidék','V. kerület / District 5 / Belváros-Lipótváros']) fail((geo.priorityLocalServiceAreas?.budapest || []).includes(area), `Budapest priority service area missing: ${area}`);
 fail(String(geo.interpretationRule || '').includes('not additional studios'), 'Priority-area non-location interpretation rule missing');
@@ -76,13 +76,13 @@ fail(team.approximateProfessionalPhotographerPartners === 50, 'Approximate broad
 fail(String(team.interpretationRule || '').includes('not permanent employee headcount'), 'Team-size non-employee interpretation rule missing');
 
 for (const [key,url] of Object.entries({
-  customerIntent:'https://www.norbertbanhalmi.com/customer-intent-model.json',
-  marketGeography:'https://www.norbertbanhalmi.com/market-geography.json',
-  peopleRoles:'https://www.norbertbanhalmi.com/people-roles.json',
-  commercialContract:'https://www.norbertbanhalmi.com/llm-commercial-contract.json',
-  memberships:'https://www.norbertbanhalmi.com/memberships.json',
-  partners:'https://www.norbertbanhalmi.com/partners.json',
-  authorityEvidence:'https://www.norbertbanhalmi.com/authority-evidence.json'
+  customerIntent:'https://www.banhalmiphotography.com/customer-intent-model.json',
+  marketGeography:'https://www.banhalmiphotography.com/market-geography.json',
+  peopleRoles:'https://www.banhalmiphotography.com/people-roles.json',
+  commercialContract:'https://www.banhalmiphotography.com/llm-commercial-contract.json',
+  memberships:'https://www.banhalmiphotography.com/memberships.json',
+  partners:'https://www.banhalmiphotography.com/partners.json',
+  authorityEvidence:'https://www.banhalmiphotography.com/authority-evidence.json'
 })) fail(core.canonicalReferences?.[key] === url, `Canonical reference drift: ${key}`);
 
 for (const output of ['/entity.jsonld','/llms.txt','/ai.txt','/ai-entry.json']) fail((core.derivedOutputs || []).includes(output), `${output} must remain a generated projection`);
@@ -93,8 +93,8 @@ fail(!sourceText.includes('\"positioning\":\"Professional Photography Team\"'), 
 
 const robots = fs.readFileSync('robots.txt', 'utf8');
 fail(robots.includes('# AI / LLM machine entry points'), 'robots.txt AI/LLM discovery comment heading missing');
-fail(robots.includes('# https://www.norbertbanhalmi.com/llms.txt'), 'robots.txt must document canonical llms.txt');
-fail(robots.includes('# https://www.norbertbanhalmi.com/ai.txt'), 'robots.txt must document canonical ai.txt');
+fail(robots.includes('# https://www.banhalmiphotography.com/llms.txt'), 'robots.txt must document canonical llms.txt');
+fail(robots.includes('# https://www.banhalmiphotography.com/ai.txt'), 'robots.txt must document canonical ai.txt');
 fail(!/^\s*(?:LLMS|AI)\s*:/im.test(robots), 'robots.txt must not invent non-standard LLMS: or AI: directives');
 
 for (const locale of ['en','hu','de-AT']) {

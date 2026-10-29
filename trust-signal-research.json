@@ -4,7 +4,7 @@
   "purpose":"Daily discovery queue for publicly verifiable BANHALMI trust and authority signals. This is an intake registry, not a claim registry.",
   "searchPlan":{
     "cadence":"daily",
-    "entities":["Bánhalmi Norbert","Norbert Bánhalmi","BANHALMI","BANHALMI Photography","norbertbanhalmi.com"],
+    "entities":["Bánhalmi Norbert","Norbert Bánhalmi","BANHALMI","BANHALMI Photography","banhalmiphotography.com"],
     "sources":["quality press","professional and institutional websites","LinkedIn public posts","Instagram public posts","Facebook public posts","Wikimedia Commons","Wikidata","professional associations","event organizers","public client-owned pages"],
     "languages":["hu","de","en"],
     "recency":"prioritize last 30 days, then unresolved historical authority evidence"

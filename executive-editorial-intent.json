@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "schemaVersion": "2026-08-24-v2",
-  "@id": "https://www.norbertbanhalmi.com/executive-editorial-intent.json",
+  "@id": "https://www.banhalmiphotography.com/executive-editorial-intent.json",
   "purpose": "Disambiguate fast CV/LinkedIn headshot requests from broader executive, editorial, press and corporate-profile portrait needs, while deferring broader multi-image personal-brand briefs to Brand Photography.",
   "canonicalService": "Portrait Photography",
   "canonicalRoute": {
-    "en": "https://www.norbertbanhalmi.com/portrait/",
-    "hu": "https://www.norbertbanhalmi.com/hu/portre/",
-    "de": "https://www.norbertbanhalmi.com/de-at/portrait/"
+    "en": "https://www.banhalmiphotography.com/portrait/",
+    "hu": "https://www.banhalmiphotography.com/hu/portre/",
+    "de": "https://www.banhalmiphotography.com/de-at/portrait/"
   },
   "markets": [
     "Vienna, Austria",

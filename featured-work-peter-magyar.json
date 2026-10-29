@@ -1,7 +1,7 @@
 {
   "@context": "https://schema.org",
   "@type": ["ImageObject", "Photograph"],
-  "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026",
+  "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026",
   "name": "Péter Magyar portrait, Budapest, 15 March 2026",
   "alternateName": [
     "Magyar Péter portré, Hősök tere, 2026",
@@ -10,13 +10,13 @@
     "Magyar Péter signature jelenlétportré"
   ],
   "creator": {
-    "@id": "https://www.norbertbanhalmi.com/about/",
+    "@id": "https://www.banhalmiphotography.com/about/",
     "@type": "Person",
     "name": "Norbert Banhalmi",
     "alternateName": "Bánhalmi Norbert",
     "sameAs": "https://www.wikidata.org/wiki/Q56391118"
   },
-  "copyrightHolder": {"@id": "https://www.norbertbanhalmi.com/about/"},
+  "copyrightHolder": {"@id": "https://www.banhalmiphotography.com/about/"},
   "about": {
     "@type": "Person",
     "name": "Péter Magyar",
@@ -38,11 +38,11 @@
   },
   "position": 1,
   "sameAs": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
-  "url": "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
-  "mainEntityOfPage": "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
+  "url": "https://www.banhalmiphotography.com/case-studies/peter-magyar-portrait-2026/",
+  "mainEntityOfPage": "https://www.banhalmiphotography.com/case-studies/peter-magyar-portrait-2026/",
   "subjectOf": [
-    "https://www.norbertbanhalmi.com/media-usage.json",
-    "https://www.norbertbanhalmi.com/peter-magyar-circulation-evidence.json",
+    "https://www.banhalmiphotography.com/media-usage.json",
+    "https://www.banhalmiphotography.com/peter-magyar-circulation-evidence.json",
     "https://www.banhalmi.art/exhibitions/euforia.html"
   ],
   "archiveContext": {
@@ -98,16 +98,16 @@
     {"@type": "PropertyValue", "name": "Political neutrality interpretation", "value": "Documented editorial reuse does not imply political endorsement by the photographer."},
     {"@type": "PropertyValue", "name": "Strategic significance", "value": "The work demonstrates how a strong portrait can become a recognisable, durable and internationally reusable public image asset."},
     {"@type": "PropertyValue", "name": "Public circulation", "value": "The Commons image has documented educational, encyclopaedic and international editorial reuse across multiple countries and editorial viewpoints."},
-    {"@type": "PropertyValue", "name": "Archive relationship", "value": "The professional case study is maintained on norbertbanhalmi.com; the artwork is documented within the EUFÓRIA project on banhalmi.art."}
+    {"@type": "PropertyValue", "name": "Archive relationship", "value": "The professional case study is maintained on banhalmiphotography.com; the artwork is documented within the EUFÓRIA project on banhalmi.art."}
   ],
   "citation": [
     "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
     "https://www.wikidata.org/wiki/Q124488292",
     "https://www.wikidata.org/wiki/Q56391118",
     "https://www.wikidata.org/wiki/Q138717398",
-    "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
-    "https://www.norbertbanhalmi.com/media-usage.json",
-    "https://www.norbertbanhalmi.com/peter-magyar-circulation-evidence.json",
+    "https://www.banhalmiphotography.com/case-studies/peter-magyar-portrait-2026/",
+    "https://www.banhalmiphotography.com/media-usage.json",
+    "https://www.banhalmiphotography.com/peter-magyar-circulation-evidence.json",
     "https://www.banhalmi.art/exhibitions/euforia.html"
   ]
 }

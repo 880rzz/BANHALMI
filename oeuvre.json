@@ -77,7 +77,7 @@
       "Turul Award — 2025"
     ],
     "source": "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
-    "canonicalId": "https://www.norbertbanhalmi.com/about/"
+    "canonicalId": "https://www.banhalmiphotography.com/about/"
   },
   "timeline": [
     [
@@ -284,11 +284,11 @@
       "id": "exhibition-euforia-the-anatomy-of-presence",
       "wikidata": "https://www.wikidata.org/wiki/Q138717398",
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026",
-        "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
         "sameAs": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
         "about": "https://www.wikidata.org/wiki/Q124488292",
-        "creator": "https://www.norbertbanhalmi.com/about/",
+        "creator": "https://www.banhalmiphotography.com/about/",
         "description": "The first portrait in EUFÓRIA – The Anatomy of Presence, photographed by Norbert Banhalmi at Heroes’ Square, Budapest, on 15 March 2026 at 16:57. Wikimedia Commons verifies authorship and open licensing. The image has documented educational, encyclopaedic and international editorial reuse across publications with differing political viewpoints.",
         "mediaCoverage": [
           "https://www.banhalmi.art/exhibitions/euforia.html",
@@ -307,7 +307,7 @@
           "https://www.wikidata.org/wiki/Q124488292",
           "https://www.banhalmi.art/exhibitions/euforia.html"
         ],
-        "mediaUsageDataset": "https://www.norbertbanhalmi.com/media-usage.json"
+        "mediaUsageDataset": "https://www.banhalmiphotography.com/media-usage.json"
       },
       "featuredSubject": {
         "name": "Péter Magyar",
@@ -483,10 +483,10 @@
     }
   ],
   "@context": "https://schema.org",
-  "@id": "https://www.norbertbanhalmi.com/oeuvre.json",
+  "@id": "https://www.banhalmiphotography.com/oeuvre.json",
   "schemaVersion": "4.0",
   "dateModified": "2026-07-11T12:00:00+02:00",
-  "entityGraph": "https://www.norbertbanhalmi.com/entity.jsonld",
+  "entityGraph": "https://www.banhalmiphotography.com/entity.jsonld",
   "wikidataEntityCount": 28,
   "permanentExhibitions": [
     {
@@ -714,21 +714,21 @@
     },
     {
       "name": "Documented media or context source",
-      "url": "https://www.norbertbanhalmi.com/media-usage.json"
+      "url": "https://www.banhalmiphotography.com/media-usage.json"
     }
   ],
   "caseStudies": [
     {
       "id": "peter-magyar-portrait-2026",
       "name": "Péter Magyar portrait — visual positioning case study",
-      "url": "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
+      "url": "https://www.banhalmiphotography.com/case-studies/peter-magyar-portrait-2026/",
       "languageVersions": {
-        "en": "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
-        "de-AT": "https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/",
-        "hu-HU": "https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/"
+        "en": "https://www.banhalmiphotography.com/case-studies/peter-magyar-portrait-2026/",
+        "de-AT": "https://www.banhalmiphotography.com/de-at/fallstudien/peter-magyar-portraet-2026/",
+        "hu-HU": "https://www.banhalmiphotography.com/hu/esettanulmanyok/magyar-peter-portre-2026/"
       },
-      "image": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
-      "evidence": "https://www.norbertbanhalmi.com/media-usage.json"
+      "image": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
+      "evidence": "https://www.banhalmiphotography.com/media-usage.json"
     }
   ],
   "origin": {

@@ -1,12 +1,12 @@
-# norbertbanhalmi.com
+# banhalmiphotography.com
 
 Production-ready static website for Norbert Banhalmi / Bánhalmi Norbert.
 
 ## Canonical domain structure
 
-- `www.norbertbanhalmi.com` — canonical multilingual professional website
-- `www.banhalmi.at` — permanent HTTP 301 redirect to `https://www.norbertbanhalmi.com/de-at/`
-- `www.banhalminorbert.hu` — permanent HTTP 301 redirect to `https://www.norbertbanhalmi.com/hu/`
+- `www.banhalmiphotography.com` — canonical multilingual professional website
+- `www.banhalmi.at` — permanent HTTP 301 redirect to `https://www.banhalmiphotography.com/de-at/`
+- `www.banhalminorbert.hu` — permanent HTTP 301 redirect to `https://www.banhalmiphotography.com/hu/`
 - `www.banhalmi.art` — official artistic oeuvre and source archive
 
 Vienna is the company headquarters. Vienna and Budapest are equal active service bases. Agreed projects are available worldwide by travel.
@@ -29,12 +29,12 @@ Vienna is the company headquarters. Vienna and Budapest are equal active service
 
 ## Ecosystem and automation contract
 
-- `norbertbanhalmi.com` is the professional service and enquiry site.
+- `banhalmiphotography.com` is the professional service and enquiry site.
 - `banhalmi.art` is the artistic source archive.
 - `blog.banhalmi.art` is the editorial knowledge layer.
 - HIPStudio is a distinct Budapest entity. Bánhalmi Norbert is its founder; it must not be merged with BANHALMI / Banhalmi Norbert e.U.
 - The professional Oeuvre page remains a commercial-context overview; Gallery links directly to the language-matched `banhalmi.art/#works` destination.
-- The canonical Person identifier is `https://www.norbertbanhalmi.com/about/`; its human-readable profile is `https://www.banhalmi.art/#about`.
+- The canonical Person identifier is `https://www.banhalmiphotography.com/about/`; its human-readable profile is `https://www.banhalmi.art/#about`.
 - Permanent GitHub Actions are read-only with respect to canonical source content. Production projections are generated only inside the deployment artifact, then the protected LLM overlay is applied.
 - Emergency deployment uses the same protected LLM/entity hardening and the same production concurrency group; it cannot intentionally bypass the current entity/role/geography contract.
 - A permanent live integrity workflow verifies the public `llms.txt`, `ai.txt`, `ai-entry.json`, `entity.jsonld`, HIPStudio authority, market geography, team capacity and Viko non-employment semantics after deploys and on schedule.

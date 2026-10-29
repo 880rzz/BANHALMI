@@ -39,10 +39,10 @@ for (const jsonFile of ['knowledge.json', 'services.json', 'partners.json']) {
 const robots = exists('robots.txt') ? read('robots.txt') : '';
 assert(/User-agent:\s*\*/i.test(robots), 'robots.txt: missing wildcard user agent');
 assert(/Allow:\s*\//i.test(robots), 'robots.txt: site is not explicitly crawlable');
-assert(robots.includes('Sitemap: https://www.norbertbanhalmi.com/sitemap.xml'), 'robots.txt: canonical sitemap declaration missing');
+assert(robots.includes('Sitemap: https://www.banhalmiphotography.com/sitemap.xml'), 'robots.txt: canonical sitemap declaration missing');
 
 const sitemap = exists('sitemap.xml') ? read('sitemap.xml') : '';
-const sitemapUrls = extract(sitemap, /<loc>(https:\/\/www\.norbertbanhalmi\.com\/[^<]*)<\/loc>/g)
+const sitemapUrls = extract(sitemap, /<loc>(https:\/\/www\.banhalmiphotography\.com\/[^<]*)<\/loc>/g)
   .filter((url) => !/\.(?:avif|gif|jpe?g|png|svg|webp)$/i.test(url));
 assert(sitemapUrls.length > 0, 'sitemap.xml: no page URLs found');
 assert(new Set(sitemapUrls).size === sitemapUrls.length, 'sitemap.xml: duplicate page URL');
@@ -79,18 +79,18 @@ for (const file of htmlFiles) {
   const html = read(file);
   for (const match of html.matchAll(/\b(?:href|src)=["'](https?:\/\/[^"'#\s]+(?:#[^"']*)?)["']/gi)) {
     const url = match[1].replace(/&amp;/g, '&');
-    if (/^https:\/\/www\.norbertbanhalmi\.com\//.test(url)) continue;
+    if (/^https:\/\/www\.banhalmiphotography\.com\//.test(url)) continue;
     externalUrls.add(url);
   }
 }
 
 const criticalLiveUrls = [
-  'https://www.norbertbanhalmi.com/',
-  'https://www.norbertbanhalmi.com/robots.txt',
-  'https://www.norbertbanhalmi.com/sitemap.xml',
-  'https://www.norbertbanhalmi.com/llms.txt',
-  'https://www.norbertbanhalmi.com/knowledge.json',
-  'https://www.norbertbanhalmi.com/ecosystem.json',
+  'https://www.banhalmiphotography.com/',
+  'https://www.banhalmiphotography.com/robots.txt',
+  'https://www.banhalmiphotography.com/sitemap.xml',
+  'https://www.banhalmiphotography.com/llms.txt',
+  'https://www.banhalmiphotography.com/knowledge.json',
+  'https://www.banhalmiphotography.com/ecosystem.json',
   'https://www.banhalmi.art/',
   'https://www.banhalmi.art/llms.txt',
   'https://www.banhalmi.art/knowledge-graph.jsonld',

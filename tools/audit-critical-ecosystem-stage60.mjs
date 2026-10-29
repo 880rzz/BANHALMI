@@ -60,7 +60,7 @@ const strategic = {
 for (const [r, needles] of Object.entries(strategic)) {
   const h = await text(path.join(root,r));
   for (const n of needles) if (!h.toLocaleLowerCase().includes(n.toLocaleLowerCase())) errors.push(`${r}: missing strategic intent “${n}”`);
-  if (!h.includes('Q56391118') || !h.includes('https://www.norbertbanhalmi.com/about/')) errors.push(`${r}: Wikidata-first Person contract incomplete`);
+  if (!h.includes('Q56391118') || !h.includes('https://www.banhalmiphotography.com/about/')) errors.push(`${r}: Wikidata-first Person contract incomplete`);
   if (!/peter-magyar-portrait-2026|magyar-peter-portre-2026|peter-magyar-portraet-2026/.test(h)) errors.push(`${r}: flagship Magyar/Peter portrait evidence not linked`);
 }
 
@@ -113,9 +113,9 @@ if (collections) {
   const ids = items.map(x => x?.item?.['@id']).filter(Boolean);
   if (new Set(ids).size !== ids.length) errors.push('blog-collections.json: duplicate category-context @id');
   const person = collections.author || {};
-  if (person['@id'] !== 'https://www.norbertbanhalmi.com/about/' || person.sameAs !== 'https://www.wikidata.org/wiki/Q56391118') errors.push('blog-collections.json: Wikidata-first author contract incomplete');
-  if (collections.isPartOf?.['@id'] !== 'https://www.norbertbanhalmi.com/#website') errors.push('blog-collections.json: collection map must belong to the professional WebSite that hosts it');
-  if (JSON.stringify(collections).includes('https://www.norbertbanhalmi.com/#ecosystem')) errors.push('blog-collections.json: undefined #ecosystem node must not be referenced');
+  if (person['@id'] !== 'https://www.banhalmiphotography.com/about/' || person.sameAs !== 'https://www.wikidata.org/wiki/Q56391118') errors.push('blog-collections.json: Wikidata-first author contract incomplete');
+  if (collections.isPartOf?.['@id'] !== 'https://www.banhalmiphotography.com/#website') errors.push('blog-collections.json: collection map must belong to the professional WebSite that hosts it');
+  if (JSON.stringify(collections).includes('https://www.banhalmiphotography.com/#ecosystem')) errors.push('blog-collections.json: undefined #ecosystem node must not be referenced');
 }
 
 let blogEntity;
@@ -132,8 +132,8 @@ if (blogEntity) {
   const languages = JSON.stringify(['hu-HU','en-GB','de-AT']);
   if (JSON.stringify(blog?.inLanguage) !== languages || JSON.stringify(website?.inLanguage) !== languages) errors.push('blog-entity.jsonld: Blog and WebSite language contract must be hu-HU/en-GB/de-AT');
   const related = new Set((blog?.isRelatedTo || []).map(x => x?.['@id']));
-  for (const id of ['https://www.norbertbanhalmi.com/#website','https://www.banhalmi.art/#website']) if (!related.has(id)) errors.push(`blog-entity.jsonld: Blog missing reciprocal ecosystem relation ${id}`);
-  if (JSON.stringify(blogEntity).includes('https://www.norbertbanhalmi.com/#ecosystem')) errors.push('blog-entity.jsonld: undefined #ecosystem node must not be referenced');
+  for (const id of ['https://www.banhalmiphotography.com/#website','https://www.banhalmi.art/#website']) if (!related.has(id)) errors.push(`blog-entity.jsonld: Blog missing reciprocal ecosystem relation ${id}`);
+  if (JSON.stringify(blogEntity).includes('https://www.banhalmiphotography.com/#ecosystem')) errors.push('blog-entity.jsonld: undefined #ecosystem node must not be referenced');
   for (const slug of blogCategoriesByLang.en) if (!JSON.stringify(blogEntity).includes(`https://blog.banhalmi.art/en/blog/categories/${slug}#collection`)) errors.push(`blog-entity.jsonld: missing EN category entity ${slug}`);
   if (JSON.stringify(blogEntity).includes('/blog/tags/') || JSON.stringify(blogEntity).includes('?lang=')) errors.push('blog-entity.jsonld: retired tag or query-language URL remains');
   if (!JSON.stringify(blogEntity).includes('blog-collections.json')) errors.push('blog-entity.jsonld: missing machine-readable collection dataset link');

@@ -48,17 +48,17 @@
   ],
   "canonicalRouting": {
     "proPress": {
-      "site": "https://www.norbertbanhalmi.com/press/",
+      "site": "https://www.banhalmiphotography.com/press/",
       "registry": "press-institutional-evidence.json",
       "schema": "CreativeWork citation / subjectOf, never sameAs"
     },
     "proExternal": {
-      "site": "https://www.norbertbanhalmi.com/event-photography/",
+      "site": "https://www.banhalmiphotography.com/event-photography/",
       "registry": "external-photography-evidence.json",
       "schema": "CreativeWork / ImageObject where verified, no inferred creator"
     },
     "proServices": {
-      "site": "https://www.norbertbanhalmi.com/",
+      "site": "https://www.banhalmiphotography.com/",
       "registry": "service-trust-evidence.json",
       "schema": "Service supporting evidence; only service-specific verified citations"
     },

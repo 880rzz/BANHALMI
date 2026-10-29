@@ -21,12 +21,12 @@ for(const entry of entries){
 
 const releaseFloor='2026-08-07';
 for(const loc of [
-  'https://www.norbertbanhalmi.com/',
-  'https://www.norbertbanhalmi.com/hu/',
-  'https://www.norbertbanhalmi.com/de-at/',
-  'https://www.norbertbanhalmi.com/trust/',
-  'https://www.norbertbanhalmi.com/hu/bizalom/',
-  'https://www.norbertbanhalmi.com/de-at/vertrauen/'
+  'https://www.banhalmiphotography.com/',
+  'https://www.banhalmiphotography.com/hu/',
+  'https://www.banhalmiphotography.com/de-at/',
+  'https://www.banhalmiphotography.com/trust/',
+  'https://www.banhalmiphotography.com/hu/bizalom/',
+  'https://www.banhalmiphotography.com/de-at/vertrauen/'
 ]){
   const date=dates.get(loc);
   if(!date) errors.push(`${loc}: key route missing from sitemap`);

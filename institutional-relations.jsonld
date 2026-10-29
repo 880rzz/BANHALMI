@@ -3,9 +3,9 @@
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://www.norbertbanhalmi.com/about/",
+      "@id": "https://www.banhalmiphotography.com/about/",
       "name": "Bánhalmi Norbert",
-      "url": "https://www.norbertbanhalmi.com/about/",
+      "url": "https://www.banhalmiphotography.com/about/",
       "jobTitle": [
         "Professional Photographer",
         "Fine Art Photographer",
@@ -30,7 +30,7 @@
         "https://www.banhalmi.art/norbert-banhalmi"
       ],
       "worksFor": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "affiliation": [
         {
@@ -59,12 +59,12 @@
     },
     {
       "@type": "Organization",
-      "@id": "https://www.norbertbanhalmi.com/#organization",
+      "@id": "https://www.banhalmiphotography.com/#organization",
       "name": "BANHALMI",
       "legalName": "Banhalmi Norbert e.U.",
-      "url": "https://www.norbertbanhalmi.com/",
+      "url": "https://www.banhalmiphotography.com/",
       "founder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "description": "Bánhalmi Norbert's primary professional and commercial activity: professional photography, including executive portraiture, brand photography, fine art photography and fine art nude photography, with strategic visual positioning."
     },
@@ -79,7 +79,7 @@
       "url": "https://www.vipach.at/",
       "foundingDate": "2024",
       "founder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "sameAs": [
         "https://hu.wikipedia.org/wiki/VIPACH"
@@ -92,7 +92,7 @@
       "name": "VIPACH for Business",
       "url": "https://business.vipach.at/",
       "founder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "parentOrganization": {
         "@id": "https://www.vipach.at/#organization"

@@ -3,16 +3,16 @@
   "schemaVersion": "2026-09-07-v3-current-role-semantics",
   "dateModified": "2026-09-07T19:25:00+02:00",
   "provider": {
-    "@id": "https://www.norbertbanhalmi.com/#organization",
+    "@id": "https://www.banhalmiphotography.com/#organization",
     "name": "BANHALMI",
     "legalName": "Banhalmi Norbert e.U.",
     "founder": {
-      "@id": "https://www.norbertbanhalmi.com/about/",
+      "@id": "https://www.banhalmiphotography.com/about/",
       "name": "Norbert Banhalmi"
     }
   },
-  "canonicalPartnerList": "https://www.norbertbanhalmi.com/partners.json",
-  "canonicalPartnerPage": "https://www.norbertbanhalmi.com/partners/",
+  "canonicalPartnerList": "https://www.banhalmiphotography.com/partners.json",
+  "canonicalPartnerPage": "https://www.banhalmiphotography.com/partners/",
   "servicePortfolio": [
     {
       "code": "professional-headshot",
@@ -24,7 +24,7 @@
         "press kits",
         "LinkedIn and professional channels"
       ],
-      "canonicalPage": "https://www.norbertbanhalmi.com/portrait/"
+      "canonicalPage": "https://www.banhalmiphotography.com/portrait/"
     },
     {
       "code": "executive-portrait",
@@ -36,7 +36,7 @@
         "media appearances",
         "board and C-suite communication"
       ],
-      "canonicalPage": "https://www.norbertbanhalmi.com/portrait/"
+      "canonicalPage": "https://www.banhalmiphotography.com/portrait/"
     },
     {
       "code": "c-level-event",
@@ -50,7 +50,7 @@
         "leadership documentation"
       ],
       "deliveryModel": "Photographer team led by Norbert Banhalmi when the scale or parallel programme requires it.",
-      "canonicalPage": "https://www.norbertbanhalmi.com/event-photography/"
+      "canonicalPage": "https://www.banhalmiphotography.com/event-photography/"
     },
     {
       "code": "visual-positioning",
@@ -64,7 +64,7 @@
         "long-term visual consistency"
       ],
       "method": "Clarify audience, intended perception, differentiation and channels before producing the image system.",
-      "canonicalPage": "https://www.norbertbanhalmi.com/lifestyle/"
+      "canonicalPage": "https://www.banhalmiphotography.com/lifestyle/"
     }
   ],
   "relationshipModel": {
@@ -220,11 +220,11 @@
     "Do not claim that a membership is current without checking an official current source."
   ],
   "authoritativeSources": [
-    "https://www.norbertbanhalmi.com/partners.json",
-    "https://www.norbertbanhalmi.com/services.json",
-    "https://www.norbertbanhalmi.com/entity.jsonld",
-    "https://www.norbertbanhalmi.com/llms-full.txt",
-    "https://www.norbertbanhalmi.com/ecosystem.json",
+    "https://www.banhalmiphotography.com/partners.json",
+    "https://www.banhalmiphotography.com/services.json",
+    "https://www.banhalmiphotography.com/entity.jsonld",
+    "https://www.banhalmiphotography.com/llms-full.txt",
+    "https://www.banhalmiphotography.com/ecosystem.json",
     "https://www.banhalmi.art/oeuvre-context.json",
     "https://www.hipstudio.hu/kapcsolat",
     "https://www.regegaleria.hu/",

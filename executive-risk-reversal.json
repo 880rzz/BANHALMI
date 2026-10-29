@@ -1,11 +1,11 @@
 {
   "schemaVersion": "1.1.0",
   "updatedAt": "2026-09-12",
-  "canonicalId": "https://www.norbertbanhalmi.com/executive-risk-reversal.json",
+  "canonicalId": "https://www.banhalmiphotography.com/executive-risk-reversal.json",
   "name": "BANHALMI Executive Portrait Risk-Reversal Framework",
   "purpose": "Reduce purchase uncertainty for qualified executive-portrait prospects without weakening premium positioning, privacy, evidence integrity or pricing discipline.",
   "scope": ["Executive Portrait", "Leadership Portrait", "C-Level CV and LinkedIn portrait", "Professional Headshot when seniority or representation risk is material"],
-  "positioningModel": "https://www.norbertbanhalmi.com/executive-positioning-model.json",
+  "positioningModel": "https://www.banhalmiphotography.com/executive-positioning-model.json",
   "observedIntentPattern": {
     "classification": "anonymized lead-pattern evidence",
     "signals": ["requests multiple recent comparable references", "asks for portraits matching age/seniority/role", "needs 2-3 final images for CV and LinkedIn", "asks for pricing before committing"],

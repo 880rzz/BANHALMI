@@ -1,14 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "schemaVersion": "2026-08-24-v1",
-  "@id": "https://www.norbertbanhalmi.com/personal-branding-intent.json",
+  "@id": "https://www.banhalmiphotography.com/personal-branding-intent.json",
   "purpose": "Route multi-use personal-branding and executive-presence briefs to Brand Photography / strategic visual positioning when the requested output is broader than a single portrait session.",
   "sourceContext": "Historical customer-intent evidence from the retired previous website. This file informs semantic coverage and routing only; it must not be used to attribute conversions to the current website.",
   "canonicalService": "Brand Photography and strategic visual positioning",
   "canonicalRoute": {
-    "en": "https://www.norbertbanhalmi.com/lifestyle/",
-    "hu": "https://www.norbertbanhalmi.com/hu/brand/",
-    "de": "https://www.norbertbanhalmi.com/de-at/brand/"
+    "en": "https://www.banhalmiphotography.com/lifestyle/",
+    "hu": "https://www.banhalmiphotography.com/hu/brand/",
+    "de": "https://www.banhalmiphotography.com/de-at/brand/"
   },
   "markets": [
     "Vienna, Austria",

@@ -8,9 +8,9 @@ function redirectTarget(request) {
 
   let languageBase;
   if (host.includes('banhalminorbert.hu') || host.includes('banhalmi-hu-redirect')) {
-    languageBase = 'https://www.norbertbanhalmi.com/hu/';
+    languageBase = 'https://www.banhalmiphotography.com/hu/';
   } else if (host.includes('banhalmi.at') || host.includes('banhalmi-at-redirect')) {
-    languageBase = 'https://www.norbertbanhalmi.com/de-at/';
+    languageBase = 'https://www.banhalmiphotography.com/de-at/';
   } else {
     return null;
   }
@@ -22,19 +22,19 @@ function redirectTarget(request) {
     let normalizedPath = cleanPath ? '/' + cleanPath : '/';
     while (normalizedPath.length > 1 && normalizedPath.endsWith('/')) normalizedPath = normalizedPath.slice(0, -1);
     const historicalHuTargets = new Map([
-      ['/oneletrajz-cv-fotozas', 'https://www.norbertbanhalmi.com/hu/portre/'],
-      ['/portfolio-fotozas', 'https://www.norbertbanhalmi.com/hu/brand/'],
-      ['/muveszi-aktfotozas', 'https://www.norbertbanhalmi.com/hu/muveszi-fotografia/'],
-      ['/aktfotozas', 'https://www.norbertbanhalmi.com/hu/muveszi-fotografia/'],
-      ['/reklam-fotozas', 'https://www.norbertbanhalmi.com/hu/brand/'],
-      ['/reklamfotozas', 'https://www.norbertbanhalmi.com/hu/brand/'],
-      ['/fotozas-arak', 'https://www.norbertbanhalmi.com/hu/ajanlatkeres/'],
-      ['/cvfotozas', 'https://www.norbertbanhalmi.com/hu/portre/'],
-      ['/portrefotozas', 'https://www.norbertbanhalmi.com/hu/portre/'],
-      ['/portfoliofotozas', 'https://www.norbertbanhalmi.com/hu/brand/'],
-      ['/portfolio-fotozas-budapest', 'https://www.norbertbanhalmi.com/hu/brand/'],
-      ['/profifotos', 'https://www.norbertbanhalmi.com/hu/'],
-      ['/eskuvoi-fotozas-tihany', 'https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/'],
+      ['/oneletrajz-cv-fotozas', 'https://www.banhalmiphotography.com/hu/portre/'],
+      ['/portfolio-fotozas', 'https://www.banhalmiphotography.com/hu/brand/'],
+      ['/muveszi-aktfotozas', 'https://www.banhalmiphotography.com/hu/muveszi-fotografia/'],
+      ['/aktfotozas', 'https://www.banhalmiphotography.com/hu/muveszi-fotografia/'],
+      ['/reklam-fotozas', 'https://www.banhalmiphotography.com/hu/brand/'],
+      ['/reklamfotozas', 'https://www.banhalmiphotography.com/hu/brand/'],
+      ['/fotozas-arak', 'https://www.banhalmiphotography.com/hu/ajanlatkeres/'],
+      ['/cvfotozas', 'https://www.banhalmiphotography.com/hu/portre/'],
+      ['/portrefotozas', 'https://www.banhalmiphotography.com/hu/portre/'],
+      ['/portfoliofotozas', 'https://www.banhalmiphotography.com/hu/brand/'],
+      ['/portfolio-fotozas-budapest', 'https://www.banhalmiphotography.com/hu/brand/'],
+      ['/profifotos', 'https://www.banhalmiphotography.com/hu/'],
+      ['/eskuvoi-fotozas-tihany', 'https://www.banhalmiphotography.com/hu/rendezvenyfotozas/'],
     ]);
     if (new Set(['/babafotozas', '/csaladi-fotozas', '/csaladifotozas', '/gyermekfotozas']).has(normalizedPath)) return { gone: true };
     const historicalTarget = historicalHuTargets.get(normalizedPath);
@@ -49,24 +49,24 @@ function redirectTarget(request) {
   const pathWithSlash = cleanPath ? '/' + cleanPath.replace(/\/+$/, '') + '/' : '/';
   if (pathWithSlash === '/hu/trust/' || pathWithSlash === '/de-at/trust/') {
     const dest = pathWithSlash.startsWith('/hu/')
-      ? 'https://www.norbertbanhalmi.com/hu/bizalom/'
-      : 'https://www.norbertbanhalmi.com/de-at/vertrauen/';
+      ? 'https://www.banhalmiphotography.com/hu/bizalom/'
+      : 'https://www.banhalmiphotography.com/de-at/vertrauen/';
     const fixed = new URL(dest);
     fixed.search = incoming.search;
     return fixed;
   }
   if (pathWithSlash === '/quote/') {
     const dest = languageBase.includes('/hu/')
-      ? 'https://www.norbertbanhalmi.com/hu/ajanlatkeres/'
-      : 'https://www.norbertbanhalmi.com/de-at/anfrage/';
+      ? 'https://www.banhalmiphotography.com/hu/ajanlatkeres/'
+      : 'https://www.banhalmiphotography.com/de-at/anfrage/';
     const fixed = new URL(dest);
     fixed.search = incoming.search;
     return fixed;
   }
   if (pathWithSlash === '/trust/') {
     const dest = languageBase.includes('/hu/')
-      ? 'https://www.norbertbanhalmi.com/hu/bizalom/'
-      : 'https://www.norbertbanhalmi.com/de-at/vertrauen/';
+      ? 'https://www.banhalmiphotography.com/hu/bizalom/'
+      : 'https://www.banhalmiphotography.com/de-at/vertrauen/';
     const fixed = new URL(dest);
     fixed.search = incoming.search;
     return fixed;

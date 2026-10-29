@@ -70,18 +70,18 @@ for (const home of homes) {
 }
 
 const serviceOwners = [
-  ['portrait/index.html','https://www.norbertbanhalmi.com/portrait/','Portrait photography in Vienna and Budapest'],
-  ['hu/portre/index.html','https://www.norbertbanhalmi.com/hu/portre/','Portréfotózás Budapesten és Bécsben'],
-  ['de-at/portrait/index.html','https://www.norbertbanhalmi.com/de-at/portrait/','Portraitfotografie in Wien und Budapest'],
-  ['lifestyle/index.html','https://www.norbertbanhalmi.com/lifestyle/','Brand photography in Vienna and Budapest'],
-  ['hu/brand/index.html','https://www.norbertbanhalmi.com/hu/brand/','Brandfotózás Budapesten és Bécsben'],
-  ['de-at/brand/index.html','https://www.norbertbanhalmi.com/de-at/brand/','Brandfotografie in Wien und Budapest'],
-  ['event-photography/index.html','https://www.norbertbanhalmi.com/event-photography/','Event photography in Vienna and Budapest'],
-  ['hu/rendezvenyfotozas/index.html','https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/','Rendezvényfotózás Budapesten és Bécsben'],
-  ['de-at/eventfotografie/index.html','https://www.norbertbanhalmi.com/de-at/eventfotografie/','Eventfotografie in Wien und Budapest'],
-  ['fine-art/index.html','https://www.norbertbanhalmi.com/fine-art/','Fine Art photography in Vienna and Budapest'],
-  ['hu/muveszi-fotografia/index.html','https://www.norbertbanhalmi.com/hu/muveszi-fotografia/','Művészi fotózás Budapesten és Bécsben'],
-  ['de-at/fine-art/index.html','https://www.norbertbanhalmi.com/de-at/fine-art/','Fine-Art-Fotografie in Wien und Budapest']
+  ['portrait/index.html','https://www.banhalmiphotography.com/portrait/','Portrait photography in Vienna and Budapest'],
+  ['hu/portre/index.html','https://www.banhalmiphotography.com/hu/portre/','Portréfotózás Budapesten és Bécsben'],
+  ['de-at/portrait/index.html','https://www.banhalmiphotography.com/de-at/portrait/','Portraitfotografie in Wien und Budapest'],
+  ['lifestyle/index.html','https://www.banhalmiphotography.com/lifestyle/','Brand photography in Vienna and Budapest'],
+  ['hu/brand/index.html','https://www.banhalmiphotography.com/hu/brand/','Brandfotózás Budapesten és Bécsben'],
+  ['de-at/brand/index.html','https://www.banhalmiphotography.com/de-at/brand/','Brandfotografie in Wien und Budapest'],
+  ['event-photography/index.html','https://www.banhalmiphotography.com/event-photography/','Event photography in Vienna and Budapest'],
+  ['hu/rendezvenyfotozas/index.html','https://www.banhalmiphotography.com/hu/rendezvenyfotozas/','Rendezvényfotózás Budapesten és Bécsben'],
+  ['de-at/eventfotografie/index.html','https://www.banhalmiphotography.com/de-at/eventfotografie/','Eventfotografie in Wien und Budapest'],
+  ['fine-art/index.html','https://www.banhalmiphotography.com/fine-art/','Fine Art photography in Vienna and Budapest'],
+  ['hu/muveszi-fotografia/index.html','https://www.banhalmiphotography.com/hu/muveszi-fotografia/','Művészi fotózás Budapesten és Bécsben'],
+  ['de-at/fine-art/index.html','https://www.banhalmiphotography.com/de-at/fine-art/','Fine-Art-Fotografie in Wien und Budapest']
 ];
 for (const [path, canonical, phrase] of serviceOwners) {
   const html = read(path);

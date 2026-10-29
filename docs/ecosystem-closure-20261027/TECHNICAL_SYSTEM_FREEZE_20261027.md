@@ -15,7 +15,7 @@ Do not modify before **2026-11-02** unless P0/P1 regression:
 - service copy / ART copy / Blog SEO
 
 ## Image licensing scope
-- IN SCOPE: norbertbanhalmi.com, banhalmi.art
+- IN SCOPE: banhalmiphotography.com, banhalmi.art
 - NOT IN SCOPE: blog.banhalmi.art Google Image Licensable metadata
 
 ## GSC

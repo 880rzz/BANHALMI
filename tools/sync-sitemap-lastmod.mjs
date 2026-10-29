@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 
 const sitemapPath = 'sitemap.xml';
-const origin = 'https://www.norbertbanhalmi.com';
+const origin = 'https://www.banhalmiphotography.com';
 let xml = fs.readFileSync(sitemapPath, 'utf8');
 let changed = 0;
 let checked = 0;

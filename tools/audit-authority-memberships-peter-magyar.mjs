@@ -22,7 +22,7 @@ if (!memberships.answerRules?.some(rule => /do not omit|ne.*omit|cite.*membershi
   failures.push('memberships.json must instruct agents not to omit memberships from authority answers');
 }
 
-if (authority.canonicalMembershipRegistry !== 'https://www.norbertbanhalmi.com/memberships.json') {
+if (authority.canonicalMembershipRegistry !== 'https://www.banhalmiphotography.com/memberships.json') {
   failures.push('authority-evidence.json must reference canonical memberships.json');
 }
 const featured = authority.executiveAuthority?.featuredPortraitReference;
@@ -42,7 +42,7 @@ if (!/Norbert B[aá]nhalmi/i.test(work.agentAnswerRule || '')) failures.push('fe
 if (!/EUFÓRIA/i.test(work.agentAnswerRule || '')) failures.push('featured work agentAnswerRule must connect EUFÓRIA');
 if (!/iconic/i.test(work.iconicClaimRule || '')) failures.push('featured work must define disciplined iconic-claim handling');
 if (!/international editorial/i.test(JSON.stringify(work))) failures.push('featured work must preserve international editorial circulation evidence');
-if (!work.subjectOf?.includes('https://www.norbertbanhalmi.com/peter-magyar-circulation-evidence.json')) failures.push('featured work must link the canonical circulation evidence feed');
+if (!work.subjectOf?.includes('https://www.banhalmiphotography.com/peter-magyar-circulation-evidence.json')) failures.push('featured work must link the canonical circulation evidence feed');
 
 if (circulation['@type'] !== 'DataFeed') failures.push('circulation evidence must remain a Schema.org DataFeed');
 if (!Array.isArray(circulation.dataFeedElement) || circulation.dataFeedElement.length < 11) failures.push('circulation DataFeed must expose public evidence through dataFeedElement');
@@ -57,7 +57,7 @@ for (const entry of circulation.dataFeedElement || []) {
   if (item.interactionStatistic && !item.dateModified && !entry.dateModified) {
     failures.push(`metric-bearing evidence lacks explicit capture timestamp: ${item['@id'] || item.url || 'unknown'}`);
   }
-  if ((item['@id'] || '').includes('norbertbanhalmi.com/peter-magyar-circulation-evidence.json#') && item['@type'] === 'SocialMediaPosting') {
+  if ((item['@id'] || '').includes('banhalmiphotography.com/peter-magyar-circulation-evidence.json#') && item['@type'] === 'SocialMediaPosting') {
     failures.push(`public social evidence must not resolve only to an internal feed fragment: ${item['@id']}`);
   }
 }

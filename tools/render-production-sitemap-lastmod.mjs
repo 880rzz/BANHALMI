@@ -3,7 +3,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 const siteRoot=path.resolve(process.argv[2]||'_site');
 const sitemapPath=path.join(siteRoot,'sitemap.xml');
-const origin='https://www.norbertbanhalmi.com';
+const origin='https://www.banhalmiphotography.com';
 let xml=fs.readFileSync(sitemapPath,'utf8');
 let sourceBacked=0;
 let withoutSource=0;

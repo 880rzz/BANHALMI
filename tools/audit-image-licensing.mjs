@@ -2,12 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT=process.cwd();
-const PERSON="https://www.norbertbanhalmi.com/about/";
+const PERSON="https://www.banhalmiphotography.com/about/";
 const EXPECTED_CREDIT="Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography";
 const EXPECTED_NOTICE="© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.";
 const EXPECTED_NOTICE_CC="© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. Licensed under CC BY-SA 4.0.";
-const TERMS="https://www.norbertbanhalmi.com/terms-conditions/";
-const ACQUIRE="https://www.norbertbanhalmi.com/requestaquote/";
+const TERMS="https://www.banhalmiphotography.com/terms-conditions/";
+const ACQUIRE="https://www.banhalmiphotography.com/requestaquote/";
 const MIRRORS=[["data/image-catalog.json","assets/data/image-catalog.json"],["data/fine-art-archive.json","assets/data/fine-art-archive.json"]];
 const errors=[];
 const read=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),"utf8"));

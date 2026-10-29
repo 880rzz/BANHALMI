@@ -33,20 +33,20 @@ auditMiddleware('middleware.js', [
   "host.includes('banhalmi-hu-redirect')",
   "host.includes('banhalmi.at')",
   "host.includes('banhalmi-at-redirect')",
-  "languageBase = 'https://www.norbertbanhalmi.com/hu/'",
-  "languageBase = 'https://www.norbertbanhalmi.com/de-at/'",
+  "languageBase = 'https://www.banhalmiphotography.com/hu/'",
+  "languageBase = 'https://www.banhalmiphotography.com/de-at/'",
   'status: 308'
 ]);
 
 auditMiddleware('redirects/at/middleware.js', [
   "matcher: '/:path*'",
-  "new URL(cleanPath, 'https://www.norbertbanhalmi.com/de-at/')",
+  "new URL(cleanPath, 'https://www.banhalmiphotography.com/de-at/')",
   'status: 308'
 ]);
 
 auditMiddleware('redirects/hu/middleware.js', [
   "matcher: '/:path*'",
-  "new URL(cleanPath, 'https://www.norbertbanhalmi.com/hu/')",
+  "new URL(cleanPath, 'https://www.banhalmiphotography.com/hu/')",
   'status: 308'
 ]);
 

@@ -13,20 +13,20 @@
         "de-AT"
       ],
       "author": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "publisher": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "isPartOf": {
         "@id": "https://blog.banhalmi.art/#website"
       },
       "isRelatedTo": [
         {
-          "@id": "https://www.norbertbanhalmi.com/#website"
+          "@id": "https://www.banhalmiphotography.com/#website"
         },
         {
           "@id": "https://www.banhalmi.art/#website"
@@ -34,7 +34,7 @@
       ],
       "about": [
         {
-          "@id": "https://www.norbertbanhalmi.com/about/"
+          "@id": "https://www.banhalmiphotography.com/about/"
         },
         {
           "@id": "https://www.banhalmi.art/#website"
@@ -56,8 +56,8 @@
       ],
       "subjectOf": {
         "@type": "DataDownload",
-        "@id": "https://www.norbertbanhalmi.com/blog-collections.json#service-editorial-collections",
-        "contentUrl": "https://www.norbertbanhalmi.com/blog-collections.json",
+        "@id": "https://www.banhalmiphotography.com/blog-collections.json#service-editorial-collections",
+        "contentUrl": "https://www.banhalmiphotography.com/blog-collections.json",
         "encodingFormat": "application/json",
         "name": "BANHALMI multilingual service-related editorial collection map"
       },
@@ -76,20 +76,20 @@
         "de-AT"
       ],
       "publisher": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "mainEntity": {
         "@id": "https://blog.banhalmi.art/#blog"
       },
       "isRelatedTo": [
         {
-          "@id": "https://www.norbertbanhalmi.com/#website"
+          "@id": "https://www.banhalmiphotography.com/#website"
         },
         {
           "@id": "https://www.banhalmi.art/#website"
@@ -112,13 +112,13 @@
       },
       "isRelatedTo": [
         {
-          "@id": "https://www.norbertbanhalmi.com/lifestyle/"
+          "@id": "https://www.banhalmiphotography.com/lifestyle/"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/hu/brand/"
+          "@id": "https://www.banhalmiphotography.com/hu/brand/"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/de-at/brand/"
+          "@id": "https://www.banhalmiphotography.com/de-at/brand/"
         }
       ]
     },
@@ -139,13 +139,13 @@
       },
       "isRelatedTo": [
         {
-          "@id": "https://www.norbertbanhalmi.com/portrait/"
+          "@id": "https://www.banhalmiphotography.com/portrait/"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/hu/portre/"
+          "@id": "https://www.banhalmiphotography.com/hu/portre/"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/de-at/portrait/"
+          "@id": "https://www.banhalmiphotography.com/de-at/portrait/"
         }
       ]
     },
@@ -206,10 +206,10 @@
       },
       "isRelatedTo": [
         {
-          "@id": "https://www.norbertbanhalmi.com/#website"
+          "@id": "https://www.banhalmiphotography.com/#website"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/about/"
+          "@id": "https://www.banhalmiphotography.com/about/"
         }
       ]
     }

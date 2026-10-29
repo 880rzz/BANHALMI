@@ -97,7 +97,7 @@ jobs:
       - name: Verify exact commit is live on custom domain
         run: |
           for attempt in 1 2 3 4 5 6; do
-            live="$(curl --fail --silent --show-error https://www.norbertbanhalmi.com/deployment-sha.txt | tr -d '\r\n')"
+            live="$(curl --fail --silent --show-error https://www.banhalmiphotography.com/deployment-sha.txt | tr -d '\r\n')"
             [ "$live" = "$GITHUB_SHA" ] && exit 0
             sleep 20
           done
@@ -106,11 +106,11 @@ jobs:
       - name: Verify machine discovery bytes on the custom domain
         run: |
           for attempt in 1 2 3 4 5 6; do
-            agent_code="$(curl -sS -o live-agent.json -w '%{http_code}' -L https://www.norbertbanhalmi.com/.well-known/agent.json || true)"
-            nojekyll_code="$(curl -sS -o /dev/null -w '%{http_code}' -L https://www.norbertbanhalmi.com/.nojekyll || true)"
+            agent_code="$(curl -sS -o live-agent.json -w '%{http_code}' -L https://www.banhalmiphotography.com/.well-known/agent.json || true)"
+            nojekyll_code="$(curl -sS -o /dev/null -w '%{http_code}' -L https://www.banhalmiphotography.com/.nojekyll || true)"
             if [ "$agent_code" = "200" ] && [ "$nojekyll_code" = "200" ] && cmp -s .well-known/agent.json live-agent.json; then
-              curl -sS -I -L https://www.norbertbanhalmi.com/.well-known/agent.json | tr -d '\r'
-              curl -sS -I -L https://www.norbertbanhalmi.com/.nojekyll | tr -d '\r'
+              curl -sS -I -L https://www.banhalmiphotography.com/.well-known/agent.json | tr -d '\r'
+              curl -sS -I -L https://www.banhalmiphotography.com/.nojekyll | tr -d '\r'
               echo "Live agent.json matches committed source bytes for $GITHUB_SHA"
               exit 0
             fi
@@ -127,7 +127,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Verify exact-live deployment marker
-        run: test "$(curl --fail --silent https://www.norbertbanhalmi.com/deployment-sha.txt)" = "$GITHUB_SHA"
+        run: test "$(curl --fail --silent https://www.banhalmiphotography.com/deployment-sha.txt)" = "$GITHUB_SHA"
 
   live-production:
     needs: exact-live
@@ -137,4 +137,4 @@ jobs:
 
 # Anti-rollback protected semantics: llm-canonical-overlay.json, market-geography.json, people-roles.json, llm-commercial-contract.json, approximately 50 professional photographer partners/collaborators, independent professional partner/collaborator, 1190 Döbling, XII. kerület / District 12 / Hegyvidék, protectedCanonicalOverlay.
 
-# Protected evidence release guard: _site/external-photography-evidence.json; _site/press-institutional-evidence.json; _site/media-usage-evidence.json; _site/machine-manifest.json; Press / Editorial Photography; Institutional / Diplomatic Event Photography; International Editorial Image Circulation; Wikimedia Commons Licensed Distribution; Bécsi Napló; pressInstitutionalEvidence; mediaUsageEvidence; protectedPressInstitutionalEvidence; protectedMediaUsageEvidence; https://www.norbertbanhalmi.com/external-photography-evidence.json; https://www.norbertbanhalmi.com/press-institutional-evidence.json; https://www.norbertbanhalmi.com/media-usage-evidence.json; https://www.norbertbanhalmi.com/machine-manifest.json
+# Protected evidence release guard: _site/external-photography-evidence.json; _site/press-institutional-evidence.json; _site/media-usage-evidence.json; _site/machine-manifest.json; Press / Editorial Photography; Institutional / Diplomatic Event Photography; International Editorial Image Circulation; Wikimedia Commons Licensed Distribution; Bécsi Napló; pressInstitutionalEvidence; mediaUsageEvidence; protectedPressInstitutionalEvidence; protectedMediaUsageEvidence; https://www.banhalmiphotography.com/external-photography-evidence.json; https://www.banhalmiphotography.com/press-institutional-evidence.json; https://www.banhalmiphotography.com/media-usage-evidence.json; https://www.banhalmiphotography.com/machine-manifest.json

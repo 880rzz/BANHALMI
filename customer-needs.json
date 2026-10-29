@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2026-09-30-v3-event-fineart-pricing",
-  "@id": "https://www.norbertbanhalmi.com/customer-needs.json",
+  "@id": "https://www.banhalmiphotography.com/customer-needs.json",
   "purpose": "Map customer pain points to BANHALMI solutions, locations, orientation pricing and localized next steps.",
   "pricingRules": {
     "canonicalCurrency": "EUR",
@@ -46,11 +46,11 @@
       ],
       "service": "Portrait Photography — Headshot/CV",
       "packageCode": "headshotcv",
-      "url": "https://www.norbertbanhalmi.com/portrait/",
+      "url": "https://www.banhalmiphotography.com/portrait/",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/portrait/",
-        "hu": "https://www.norbertbanhalmi.com/hu/portre/",
-        "de": "https://www.norbertbanhalmi.com/de-at/portrait/"
+        "en": "https://www.banhalmiphotography.com/portrait/",
+        "hu": "https://www.banhalmiphotography.com/hu/portre/",
+        "de": "https://www.banhalmiphotography.com/de-at/portrait/"
       },
       "solution": "A focused 10-minute professional headshot session with one retouched image for CV, LinkedIn and professional profile use.",
       "routingRule": "For one straightforward CV, LinkedIn or profile headshot, offer Headshot/CV. For more time or guidance, use the simple portrait options. Executive Portrait is a separate scope; do not label the 30-minute simple portrait as an Executive package. Use pricing.json for current prices.",
@@ -66,14 +66,14 @@
         }
       },
       "visibleEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/portrait/#portrait-options",
-        "hu": "https://www.norbertbanhalmi.com/hu/portre/#portrait-options",
-        "de": "https://www.norbertbanhalmi.com/de-at/portrait/#portrait-options"
+        "en": "https://www.banhalmiphotography.com/portrait/#portrait-options",
+        "hu": "https://www.banhalmiphotography.com/hu/portre/#portrait-options",
+        "de": "https://www.banhalmiphotography.com/de-at/portrait/#portrait-options"
       },
       "quoteEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/requestaquote/?service=portrait&portrait_mode=headshotcv",
-        "hu": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/?service=portrait&portrait_mode=headshotcv",
-        "de": "https://www.norbertbanhalmi.com/de-at/anfrage/?service=portrait&portrait_mode=headshotcv"
+        "en": "https://www.banhalmiphotography.com/requestaquote/?service=portrait&portrait_mode=headshotcv",
+        "hu": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=portrait&portrait_mode=headshotcv",
+        "de": "https://www.banhalmiphotography.com/de-at/anfrage/?service=portrait&portrait_mode=headshotcv"
       }
     },
     {
@@ -84,11 +84,11 @@
         "de": "Mein aktuelles Porträt spiegelt meine Führungsposition nicht wider."
       },
       "service": "Executive Portrait — Professional Presence",
-      "url": "https://www.norbertbanhalmi.com/portrait/",
+      "url": "https://www.banhalmiphotography.com/portrait/",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/portrait/",
-        "hu": "https://www.norbertbanhalmi.com/hu/portre/",
-        "de": "https://www.norbertbanhalmi.com/de-at/portrait/"
+        "en": "https://www.banhalmiphotography.com/portrait/",
+        "hu": "https://www.banhalmiphotography.com/hu/portre/",
+        "de": "https://www.banhalmiphotography.com/de-at/portrait/"
       },
       "solution": "A focused Executive Portrait system for LinkedIn, CV, company and press profiles.",
       "price": {
@@ -111,11 +111,11 @@
         "de": "Unsere Führungskräfteporträts sind uneinheitlich."
       },
       "service": "Portrait Photography — leadership team system",
-      "url": "https://www.norbertbanhalmi.com/portrait/",
+      "url": "https://www.banhalmiphotography.com/portrait/",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/portrait/",
-        "hu": "https://www.norbertbanhalmi.com/hu/portre/",
-        "de": "https://www.norbertbanhalmi.com/de-at/portrait/"
+        "en": "https://www.banhalmiphotography.com/portrait/",
+        "hu": "https://www.banhalmiphotography.com/hu/portre/",
+        "de": "https://www.banhalmiphotography.com/de-at/portrait/"
       },
       "solution": "One consistent lighting, framing and retouching standard.",
       "price": {
@@ -138,11 +138,11 @@
         "de": "Meine berufliche Position ist stärker als mein visueller Auftritt."
       },
       "service": "Executive Personal Branding — Positioning",
-      "url": "https://www.norbertbanhalmi.com/lifestyle/",
+      "url": "https://www.banhalmiphotography.com/lifestyle/",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/lifestyle/",
-        "hu": "https://www.norbertbanhalmi.com/hu/brand/",
-        "de": "https://www.norbertbanhalmi.com/de-at/brand/"
+        "en": "https://www.banhalmiphotography.com/lifestyle/",
+        "hu": "https://www.banhalmiphotography.com/hu/brand/",
+        "de": "https://www.banhalmiphotography.com/de-at/brand/"
       },
       "solution": "Build a coherent strategic visual position across portrait, personal brand, press, web and social profiles.",
       "price": {
@@ -165,11 +165,11 @@
         "de": "Wir brauchen ein einheitliches visuelles System für Website oder Kampagne."
       },
       "service": "Executive Visual Library — Communication System",
-      "url": "https://www.norbertbanhalmi.com/lifestyle/",
+      "url": "https://www.banhalmiphotography.com/lifestyle/",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/lifestyle/",
-        "hu": "https://www.norbertbanhalmi.com/hu/brand/",
-        "de": "https://www.norbertbanhalmi.com/de-at/brand/"
+        "en": "https://www.banhalmiphotography.com/lifestyle/",
+        "hu": "https://www.banhalmiphotography.com/hu/brand/",
+        "de": "https://www.banhalmiphotography.com/de-at/brand/"
       },
       "solution": "Build an individually scoped multi-context communication image system for corporate, press, campaign, web and social use.",
       "price": {
@@ -191,11 +191,11 @@
         "de": "Wir brauchen verlässliche Fotografie für ein kürzeres, klar definiertes Corporate Event."
       },
       "service": "Business Event Coverage",
-      "url": "https://www.norbertbanhalmi.com/event-photography/",
+      "url": "https://www.banhalmiphotography.com/event-photography/",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/event-photography/",
-        "hu": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
-        "de": "https://www.norbertbanhalmi.com/de-at/eventfotografie/"
+        "en": "https://www.banhalmiphotography.com/event-photography/",
+        "hu": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+        "de": "https://www.banhalmiphotography.com/de-at/eventfotografie/"
       },
       "solution": "A narrower-scope event route for shorter corporate events with standard single-photographer coverage.",
       "routingRule": "Use this route when the brief is a shorter, straightforward corporate event without leadership/institutional complexity. Escalate to C-Level / Institutional Event Photography for leadership, conference, institutional or diplomatic contexts.",
@@ -219,11 +219,11 @@
         "de": "Ein wichtiges Führungskräfte-Event braucht diskrete, glaubwürdige Dokumentation."
       },
       "service": "C-Level Event Photography",
-      "url": "https://www.norbertbanhalmi.com/event-photography/",
+      "url": "https://www.banhalmiphotography.com/event-photography/",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/event-photography/",
-        "hu": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
-        "de": "https://www.norbertbanhalmi.com/de-at/eventfotografie/"
+        "en": "https://www.banhalmiphotography.com/event-photography/",
+        "hu": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+        "de": "https://www.banhalmiphotography.com/de-at/eventfotografie/"
       },
       "solution": "Team-led editorial and institutional event coverage.",
       "price": {
@@ -302,11 +302,11 @@
         "founders and entrepreneurs"
       ],
       "service": "Executive Personal Branding — Positioning",
-      "url": "https://www.norbertbanhalmi.com/lifestyle/",
+      "url": "https://www.banhalmiphotography.com/lifestyle/",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/lifestyle/",
-        "hu": "https://www.norbertbanhalmi.com/hu/brand/",
-        "de": "https://www.norbertbanhalmi.com/de-at/brand/"
+        "en": "https://www.banhalmiphotography.com/lifestyle/",
+        "hu": "https://www.banhalmiphotography.com/hu/brand/",
+        "de": "https://www.banhalmiphotography.com/de-at/brand/"
       },
       "solution": "Build a coherent strategic visual position across portrait, personal brand, press, web and social profiles.",
       "price": {
@@ -329,11 +329,11 @@
         "de": "Ich kenne das Problem, aber nicht die passende Leistung."
       },
       "service": "Consultation or written enquiry",
-      "url": "https://www.norbertbanhalmi.com/contact/",
+      "url": "https://www.banhalmiphotography.com/contact/",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/contact/",
-        "hu": "https://www.norbertbanhalmi.com/hu/kapcsolat/",
-        "de": "https://www.norbertbanhalmi.com/de-at/kontakt/"
+        "en": "https://www.banhalmiphotography.com/contact/",
+        "hu": "https://www.banhalmiphotography.com/hu/kapcsolat/",
+        "de": "https://www.banhalmiphotography.com/de-at/kontakt/"
       },
       "solution": "Choose a 15-minute video call or written message before pricing."
     },
@@ -351,11 +351,11 @@
       "service": "Fine Art / Artists & Performers — Actor Headshot & Acting Portfolio",
       "serviceContext": "fine-art",
       "creativeContext": "actor",
-      "url": "https://www.norbertbanhalmi.com/fine-art/",
+      "url": "https://www.banhalmiphotography.com/fine-art/",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/fine-art/",
-        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
-        "de": "https://www.norbertbanhalmi.com/de-at/fine-art/"
+        "en": "https://www.banhalmiphotography.com/fine-art/",
+        "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+        "de": "https://www.banhalmiphotography.com/de-at/fine-art/"
       },
       "solution": "Casting-oriented portrait direction with recognisable expression, role flexibility and portfolio-ready image variants.",
       "price": {
@@ -382,14 +382,14 @@
         }
       },
       "visibleEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/fine-art/#professional-portfolio",
-        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/#professional-portfolio",
-        "de": "https://www.norbertbanhalmi.com/de-at/fine-art/#professional-portfolio"
+        "en": "https://www.banhalmiphotography.com/fine-art/#professional-portfolio",
+        "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/#professional-portfolio",
+        "de": "https://www.banhalmiphotography.com/de-at/fine-art/#professional-portfolio"
       },
       "quoteEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/requestaquote/?service=fine-art&art_type=actor",
-        "hu": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/?service=fine-art&art_type=actor",
-        "de": "https://www.norbertbanhalmi.com/de-at/anfrage/?service=fine-art&art_type=actor"
+        "en": "https://www.banhalmiphotography.com/requestaquote/?service=fine-art&art_type=actor",
+        "hu": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=fine-art&art_type=actor",
+        "de": "https://www.banhalmiphotography.com/de-at/anfrage/?service=fine-art&art_type=actor"
       }
     },
     {
@@ -407,11 +407,11 @@
       "service": "Fine Art / Artists & Performers — Dance & Performing Artist Portfolio",
       "serviceContext": "fine-art",
       "creativeContext": "dance",
-      "url": "https://www.norbertbanhalmi.com/fine-art/",
+      "url": "https://www.banhalmiphotography.com/fine-art/",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/fine-art/",
-        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
-        "de": "https://www.norbertbanhalmi.com/de-at/fine-art/"
+        "en": "https://www.banhalmiphotography.com/fine-art/",
+        "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+        "de": "https://www.banhalmiphotography.com/de-at/fine-art/"
       },
       "solution": "Portrait, full-body and movement photography planned as one coherent performing-artist portfolio.",
       "price": {
@@ -438,14 +438,14 @@
         }
       },
       "visibleEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/fine-art/#professional-portfolio",
-        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/#professional-portfolio",
-        "de": "https://www.norbertbanhalmi.com/de-at/fine-art/#professional-portfolio"
+        "en": "https://www.banhalmiphotography.com/fine-art/#professional-portfolio",
+        "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/#professional-portfolio",
+        "de": "https://www.banhalmiphotography.com/de-at/fine-art/#professional-portfolio"
       },
       "quoteEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/requestaquote/?service=fine-art&art_type=dance",
-        "hu": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/?service=fine-art&art_type=dance",
-        "de": "https://www.norbertbanhalmi.com/de-at/anfrage/?service=fine-art&art_type=dance"
+        "en": "https://www.banhalmiphotography.com/requestaquote/?service=fine-art&art_type=dance",
+        "hu": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=fine-art&art_type=dance",
+        "de": "https://www.banhalmiphotography.com/de-at/anfrage/?service=fine-art&art_type=dance"
       }
     },
     {
@@ -463,11 +463,11 @@
       "service": "Fine Art / Artists & Performers — Model & Editorial Portfolio",
       "serviceContext": "fine-art",
       "creativeContext": "model-editorial",
-      "url": "https://www.norbertbanhalmi.com/fine-art/",
+      "url": "https://www.banhalmiphotography.com/fine-art/",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/fine-art/",
-        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
-        "de": "https://www.norbertbanhalmi.com/de-at/fine-art/"
+        "en": "https://www.banhalmiphotography.com/fine-art/",
+        "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+        "de": "https://www.banhalmiphotography.com/de-at/fine-art/"
       },
       "solution": "A directed portfolio combining portrait, full-body and editorial images with coherent styling and selection.",
       "price": {
@@ -494,14 +494,14 @@
         }
       },
       "visibleEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/fine-art/#professional-portfolio",
-        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/#professional-portfolio",
-        "de": "https://www.norbertbanhalmi.com/de-at/fine-art/#professional-portfolio"
+        "en": "https://www.banhalmiphotography.com/fine-art/#professional-portfolio",
+        "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/#professional-portfolio",
+        "de": "https://www.banhalmiphotography.com/de-at/fine-art/#professional-portfolio"
       },
       "quoteEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/requestaquote/?service=fine-art&art_type=model-editorial",
-        "hu": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/?service=fine-art&art_type=model-editorial",
-        "de": "https://www.norbertbanhalmi.com/de-at/anfrage/?service=fine-art&art_type=model-editorial"
+        "en": "https://www.banhalmiphotography.com/requestaquote/?service=fine-art&art_type=model-editorial",
+        "hu": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=fine-art&art_type=model-editorial",
+        "de": "https://www.banhalmiphotography.com/de-at/anfrage/?service=fine-art&art_type=model-editorial"
       }
     },
     {
@@ -514,11 +514,11 @@
       "service": "Portrait Photography - simple or guided personal portrait",
       "serviceContext": "portrait",
       "visibleEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/portrait/#portrait-options",
-        "hu": "https://www.norbertbanhalmi.com/hu/portre/#portrait-options",
-        "de": "https://www.norbertbanhalmi.com/de-at/portrait/#portrait-options"
+        "en": "https://www.banhalmiphotography.com/portrait/#portrait-options",
+        "hu": "https://www.banhalmiphotography.com/hu/portre/#portrait-options",
+        "de": "https://www.banhalmiphotography.com/de-at/portrait/#portrait-options"
       },
-      "pricingSource": "https://www.norbertbanhalmi.com/pricing.json",
+      "pricingSource": "https://www.banhalmiphotography.com/pricing.json",
       "packageCodes": [
         "quick30",
         "guided60",
@@ -526,9 +526,9 @@
       ],
       "routingRule": "The short CV headshot, simple/guided personal portrait and Executive Portrait are distinct scopes. Route by intended result and required guidance, not by the client holding a leadership title. Do not invent more included images or describe these options as Executive pricing.",
       "urls": {
-        "en": "https://www.norbertbanhalmi.com/portrait/",
-        "hu": "https://www.norbertbanhalmi.com/hu/portre/",
-        "de": "https://www.norbertbanhalmi.com/de-at/portrait/"
+        "en": "https://www.banhalmiphotography.com/portrait/",
+        "hu": "https://www.banhalmiphotography.com/hu/portre/",
+        "de": "https://www.banhalmiphotography.com/de-at/portrait/"
       }
     },
     {
@@ -571,17 +571,17 @@
     "routeRule": "Use the destination URL matching the user's language: en, hu or de.",
     "HU": "For Budapest/Hungary use HUF first.",
     "AT": "For Vienna/Austria use EUR first.",
-    "pricing": "https://www.norbertbanhalmi.com/pricing.json",
+    "pricing": "https://www.banhalmiphotography.com/pricing.json",
     "localizedRoutes": {
       "quote": {
-        "en": "https://www.norbertbanhalmi.com/requestaquote/",
-        "hu": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/",
-        "de": "https://www.norbertbanhalmi.com/de-at/anfrage/"
+        "en": "https://www.banhalmiphotography.com/requestaquote/",
+        "hu": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
+        "de": "https://www.banhalmiphotography.com/de-at/anfrage/"
       },
       "contact": {
-        "en": "https://www.norbertbanhalmi.com/contact/",
-        "hu": "https://www.norbertbanhalmi.com/hu/kapcsolat/",
-        "de": "https://www.norbertbanhalmi.com/de-at/kontakt/"
+        "en": "https://www.banhalmiphotography.com/contact/",
+        "hu": "https://www.banhalmiphotography.com/hu/kapcsolat/",
+        "de": "https://www.banhalmiphotography.com/de-at/kontakt/"
       }
     },
     "booking": "https://meet.bookipi.com/zk5ly35r",

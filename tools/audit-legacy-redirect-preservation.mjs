@@ -8,35 +8,35 @@ const exists = p => fs.existsSync(path.join(root, p));
 
 const staticRedirects = {
   'en/work': 'https://www.banhalmi.art/',
-  'about/norbert-banhalmi': 'https://www.norbertbanhalmi.com/about/',
-  'hu/rolam/banhalmi-norbert': 'https://www.norbertbanhalmi.com/hu/eletmu/',
-  'de/ueber-mich/norbert-banhalmi': 'https://www.norbertbanhalmi.com/de-at/werk/',
+  'about/norbert-banhalmi': 'https://www.banhalmiphotography.com/about/',
+  'hu/rolam/banhalmi-norbert': 'https://www.banhalmiphotography.com/hu/eletmu/',
+  'de/ueber-mich/norbert-banhalmi': 'https://www.banhalmiphotography.com/de-at/werk/',
   'press': 'https://www.banhalmi.art/press.html',
   'old-print': 'https://www.banhalmi.art/press.html',
   'hu/sajto/megjelenesek': 'https://www.banhalmi.art/hu/press.html',
   'hu/sajto/nyomtatott': 'https://www.banhalmi.art/hu/press.html',
   'de/presse/presseauftritte': 'https://www.banhalmi.art/de-at/press.html',
   'de/presse/print': 'https://www.banhalmi.art/de-at/press.html',
-  'oneletrajz-cv-fotozas': 'https://www.norbertbanhalmi.com/hu/portre/',
-  'portfolio-fotozas': 'https://www.norbertbanhalmi.com/hu/brand/',
+  'oneletrajz-cv-fotozas': 'https://www.banhalmiphotography.com/hu/portre/',
+  'portfolio-fotozas': 'https://www.banhalmiphotography.com/hu/brand/',
   'muveszi-aktfotozas': 'https://www.banhalmi.art/hu/exhibitions/ebredes.html',
   'aktfotozas': 'https://www.banhalmi.art/hu/exhibitions/ebredes.html',
-  'reklam-fotozas': 'https://www.norbertbanhalmi.com/hu/brand/',
-  'reklamfotozas': 'https://www.norbertbanhalmi.com/hu/brand/',
-  'fotozas-arak': 'https://www.norbertbanhalmi.com/hu/ajanlatkeres/',
-  'eskuvoi-fotozas-tihany': 'https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/',
-  'profifotos': 'https://www.norbertbanhalmi.com/hu/',
-  'portfolio-fotozas-budapest': 'https://www.norbertbanhalmi.com/hu/brand/',
-  'portfoliofotozas': 'https://www.norbertbanhalmi.com/hu/brand/',
-  'portrefotozas': 'https://www.norbertbanhalmi.com/hu/portre/',
-  'cvfotozas': 'https://www.norbertbanhalmi.com/hu/portre/',
+  'reklam-fotozas': 'https://www.banhalmiphotography.com/hu/brand/',
+  'reklamfotozas': 'https://www.banhalmiphotography.com/hu/brand/',
+  'fotozas-arak': 'https://www.banhalmiphotography.com/hu/ajanlatkeres/',
+  'eskuvoi-fotozas-tihany': 'https://www.banhalmiphotography.com/hu/rendezvenyfotozas/',
+  'profifotos': 'https://www.banhalmiphotography.com/hu/',
+  'portfolio-fotozas-budapest': 'https://www.banhalmiphotography.com/hu/brand/',
+  'portfoliofotozas': 'https://www.banhalmiphotography.com/hu/brand/',
+  'portrefotozas': 'https://www.banhalmiphotography.com/hu/portre/',
+  'cvfotozas': 'https://www.banhalmiphotography.com/hu/portre/',
   'ebredes': 'https://www.banhalmi.art/hu/exhibitions/ebredes.html',
   'post/amikor-csak-egy-táncpartnered-van-egész-estére': 'https://blog.banhalmi.art/post/amikor-csak-egy-táncpartnered-van-egész-estére',
   'blog/tags/filter-nélkül-a-testem-története': 'https://blog.banhalmi.art/blog'
 };
 
 const mainDomainLegacyRedirects = {
-  'de-at/event-photography': 'https://www.norbertbanhalmi.com/de-at/eventfotografie/'
+  'de-at/event-photography': 'https://www.banhalmiphotography.com/de-at/eventfotografie/'
 };
 
 for (const [route, target] of Object.entries(staticRedirects)) {
@@ -72,7 +72,7 @@ const vercel = JSON.parse(read('vercel.json'));
 const edgeRules = Array.isArray(vercel.redirects) ? vercel.redirects : [];
 for (const [route, target] of Object.entries(staticRedirects)) {
   const source = `/${route}`;
-  const expectedDestination = target.startsWith('https://www.norbertbanhalmi.com')
+  const expectedDestination = target.startsWith('https://www.banhalmiphotography.com')
     ? new URL(target).pathname
     : target;
   const rule = edgeRules.find(r => r.source === source && !Array.isArray(r.has));
@@ -159,7 +159,7 @@ for (const file of ['redirects/at/vercel.json', 'redirects/hu/vercel.json']) {
 
 const sitemap = read('sitemap.xml');
 for (const route of [...Object.keys(staticRedirects), ...Object.keys(mainDomainLegacyRedirects)]) {
-  const local = `https://www.norbertbanhalmi.com/${route.replace(/^\/+|\/+$/g, '')}/`;
+  const local = `https://www.banhalmiphotography.com/${route.replace(/^\/+|\/+$/g, '')}/`;
   if (sitemap.includes(`<loc>${local}</loc>`)) failures.push(`sitemap.xml: redirect source must not be indexed: ${local}`);
 }
 

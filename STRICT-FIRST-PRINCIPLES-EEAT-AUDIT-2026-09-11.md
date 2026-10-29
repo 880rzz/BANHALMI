@@ -1,7 +1,7 @@
 # BANHALMI strict first-principles E-E-A-T & Search Console readiness audit
 
 Date: 2026-09-11
-Scope: norbertbanhalmi.com professional layer, machine-readable authority graph, evidence registries, technical SEO, Search Console readiness, E-E-A-T, trust, performance, accessibility, legal/privacy and anti-rollback.
+Scope: banhalmiphotography.com professional layer, machine-readable authority graph, evidence registries, technical SEO, Search Console readiness, E-E-A-T, trust, performance, accessibility, legal/privacy and anti-rollback.
 
 ## Decision
 

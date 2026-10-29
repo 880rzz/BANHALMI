@@ -2,14 +2,14 @@
   "schemaVersion": "2026-09-14-v2",
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "@id": "https://www.norbertbanhalmi.com/press-institutional-evidence.json",
+  "@id": "https://www.banhalmiphotography.com/press-institutional-evidence.json",
   "name": "BANHALMI Vienna press, editorial and institutional photography evidence",
   "person": {
-    "@id": "https://www.norbertbanhalmi.com/about/",
+    "@id": "https://www.banhalmiphotography.com/about/",
     "name": "Bánhalmi Norbert"
   },
   "brand": {
-    "@id": "https://www.norbertbanhalmi.com/#brand",
+    "@id": "https://www.banhalmiphotography.com/#brand",
     "name": "BANHALMI",
     "alternateName": "BANHALMI Photography"
   },

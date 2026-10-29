@@ -13,8 +13,8 @@
   "page_incomplete_nonref": [
     {
       "page": "404.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -28,7 +28,7 @@
     },
     {
       "page": "404.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -54,8 +54,8 @@
     },
     {
       "page": "index.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -69,7 +69,7 @@
     },
     {
       "page": "index.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -82,8 +82,8 @@
     },
     {
       "page": "private-photography.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -97,7 +97,7 @@
     },
     {
       "page": "private-photography.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -110,8 +110,8 @@
     },
     {
       "page": "writing.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -125,7 +125,7 @@
     },
     {
       "page": "writing.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -138,8 +138,8 @@
     },
     {
       "page": "community.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -153,7 +153,7 @@
     },
     {
       "page": "community.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -166,8 +166,8 @@
     },
     {
       "page": "curators.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -181,7 +181,7 @@
     },
     {
       "page": "curators.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -194,8 +194,8 @@
     },
     {
       "page": "exhibitions/fotokiallitas8.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -209,7 +209,7 @@
     },
     {
       "page": "exhibitions/fotokiallitas8.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -222,8 +222,8 @@
     },
     {
       "page": "exhibitions/fotokiallitas1.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -237,7 +237,7 @@
     },
     {
       "page": "exhibitions/fotokiallitas1.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -250,8 +250,8 @@
     },
     {
       "page": "exhibitions/teislehetsz.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -265,7 +265,7 @@
     },
     {
       "page": "exhibitions/teislehetsz.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -278,8 +278,8 @@
     },
     {
       "page": "exhibitions/anovilaga.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -293,7 +293,7 @@
     },
     {
       "page": "exhibitions/anovilaga.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -306,8 +306,8 @@
     },
     {
       "page": "exhibitions/theframe.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -321,7 +321,7 @@
     },
     {
       "page": "exhibitions/theframe.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -334,8 +334,8 @@
     },
     {
       "page": "exhibitions/szosszenetek.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -349,7 +349,7 @@
     },
     {
       "page": "exhibitions/szosszenetek.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -362,8 +362,8 @@
     },
     {
       "page": "exhibitions/fotokiallitas3.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -377,7 +377,7 @@
     },
     {
       "page": "exhibitions/fotokiallitas3.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -390,8 +390,8 @@
     },
     {
       "page": "exhibitions/ebredes.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -405,7 +405,7 @@
     },
     {
       "page": "exhibitions/ebredes.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -418,8 +418,8 @@
     },
     {
       "page": "exhibitions/femmefatale.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -433,7 +433,7 @@
     },
     {
       "page": "exhibitions/femmefatale.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -446,8 +446,8 @@
     },
     {
       "page": "exhibitions/euforia.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -461,7 +461,7 @@
     },
     {
       "page": "exhibitions/euforia.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -474,8 +474,8 @@
     },
     {
       "page": "exhibitions/merfoldkovek1956.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -489,7 +489,7 @@
     },
     {
       "page": "exhibitions/merfoldkovek1956.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -502,8 +502,8 @@
     },
     {
       "page": "exhibitions/fotokiallitas2.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -517,7 +517,7 @@
     },
     {
       "page": "exhibitions/fotokiallitas2.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -530,8 +530,8 @@
     },
     {
       "page": "exhibitions/mas-kepp-mas.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -545,7 +545,7 @@
     },
     {
       "page": "exhibitions/mas-kepp-mas.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -558,8 +558,8 @@
     },
     {
       "page": "exhibitions/enano.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -573,7 +573,7 @@
     },
     {
       "page": "exhibitions/enano.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -586,8 +586,8 @@
     },
     {
       "page": "exhibitions/fotokiallitas5.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -601,7 +601,7 @@
     },
     {
       "page": "exhibitions/fotokiallitas5.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -614,8 +614,8 @@
     },
     {
       "page": "exhibitions/themensdream.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -629,7 +629,7 @@
     },
     {
       "page": "exhibitions/themensdream.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -642,8 +642,8 @@
     },
     {
       "page": "exhibitions/balerina-project-new-york.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -657,7 +657,7 @@
     },
     {
       "page": "exhibitions/balerina-project-new-york.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -670,8 +670,8 @@
     },
     {
       "page": "exhibitions/fotokiallitas4.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -685,7 +685,7 @@
     },
     {
       "page": "exhibitions/fotokiallitas4.html",
-      "@id": "https://www.norbertbanhalmi.com/about/#portrait",
+      "@id": "https://www.banhalmiphotography.com/about/#portrait",
       "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Norbert-Banhalmi-self-portrait.jpg",
       "missing": [
         "license",
@@ -698,8 +698,8 @@
     },
     {
       "page": "exhibitions/avalosag.html",
-      "@id": "https://www.norbertbanhalmi.com/#logo",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/brand/android-chrome-512x512.png",
+      "@id": "https://www.banhalmiphotography.com/#logo",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/android-chrome-512x512.png",
       "missing": [
         "creditText",
         "copyrightNotice",
@@ -721,10 +721,10 @@
       "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Music_and_Words_presents-_%C3%81d%C3%A1m_Fellegi_%E2%80%93_Beethoven%E2%80%99s_Three_Faces.jpg",
       "copyrightNotice": "© Bánhalmi Norbert",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "class": "B",
       "missing": [],
@@ -739,10 +739,10 @@
       "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:P%C3%A9ter_Bence_%E2%80%94_MVM_Dome%2C_Budapest_-_10_October_2026.jpg",
       "copyrightNotice": "© Bánhalmi Norbert",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "class": "B",
       "missing": [],
@@ -759,10 +759,10 @@
       "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
       "copyrightNotice": "© Bánhalmi Norbert",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "class": "B",
       "missing": [],
@@ -777,10 +777,10 @@
       "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Music_and_Words_presents-_%C3%81d%C3%A1m_Fellegi_%E2%80%93_Beethoven%E2%80%99s_Three_Faces.jpg",
       "copyrightNotice": "© Bánhalmi Norbert",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "class": "B",
       "missing": [],
@@ -795,10 +795,10 @@
       "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:P%C3%A9ter_Bence_%E2%80%94_MVM_Dome%2C_Budapest_-_10_October_2026.jpg",
       "copyrightNotice": "© Bánhalmi Norbert",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "class": "B",
       "missing": [],

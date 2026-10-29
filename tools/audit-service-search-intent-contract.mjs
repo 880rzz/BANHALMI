@@ -67,7 +67,7 @@ for (const check of checks) {
   for (const rx of check.title) if (!rx.test(title)) errors.push(`${check.path}: title intent/locality missing ${rx}`);
   const semanticSurface = title + '\n' + description + '\n' + html;
   for (const rx of check.body) if (!rx.test(semanticSurface)) errors.push(`${check.path}: service audience/use-case signal missing ${rx}`);
-  if (!/https:\/\/www\.norbertbanhalmi\.com\/about\//.test(html)) errors.push(`${check.path}: canonical Person missing`);
+  if (!/https:\/\/www\.banhalmiphotography\.com\/about\//.test(html)) errors.push(`${check.path}: canonical Person missing`);
   if (!/Q56391118/.test(html)) errors.push(`${check.path}: Wikidata Person evidence missing`);
 }
 

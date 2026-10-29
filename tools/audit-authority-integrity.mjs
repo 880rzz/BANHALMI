@@ -18,15 +18,15 @@ function asArray(value) {
   return Array.isArray(value) ? value : value == null ? [] : [value];
 }
 
-const PERSON_ID = 'https://www.norbertbanhalmi.com/about/';
-const COMPANY_ID = 'https://www.norbertbanhalmi.com/#organization';
+const PERSON_ID = 'https://www.banhalmiphotography.com/about/';
+const COMPANY_ID = 'https://www.banhalmiphotography.com/#organization';
 const CENTRAL_ID = 'https://www.kozpontiszovetseg.at/#organization';
 const BMI_ID = 'https://www.magyariskola.at/#school';
 const VIPACH_ID = 'https://www.vipach.at/#organization';
 const HIPSTUDIO_ID = 'https://www.hipstudio.hu/#organization';
-const VIENNA_STUDIO_ID = 'https://www.norbertbanhalmi.com/#vienna-studio';
-const VIENNA_OFFICE_ID = 'https://www.norbertbanhalmi.com/#vienna-gersthofer-office';
-const BUDAPEST_STUDIO_ID = 'https://www.norbertbanhalmi.com/#budapest-studio';
+const VIENNA_STUDIO_ID = 'https://www.banhalmiphotography.com/#vienna-studio';
+const VIENNA_OFFICE_ID = 'https://www.banhalmiphotography.com/#vienna-gersthofer-office';
+const BUDAPEST_STUDIO_ID = 'https://www.banhalmiphotography.com/#budapest-studio';
 
 const authority = readJson('person-authority.jsonld');
 const graph = asArray(authority['@graph']);
@@ -43,7 +43,7 @@ for (const required of [
 
 const subjectUrls = asArray(person.subjectOf).map((entry) => entry?.url || entry?.['@id']).filter(Boolean);
 if (!subjectUrls.includes('https://rolunk.at/tag/banhalmi-norbert/')) fail('Rólunk.at must remain subjectOf/press evidence for Bánhalmi Norbert');
-if (!subjectUrls.includes('https://www.norbertbanhalmi.com/hipstudio-authority.json')) fail('HIPStudio founder authority must remain linked from the canonical Person');
+if (!subjectUrls.includes('https://www.banhalmiphotography.com/hipstudio-authority.json')) fail('HIPStudio founder authority must remain linked from the canonical Person');
 if (sameAs.includes('https://rolunk.at/tag/banhalmi-norbert/')) fail('Rólunk.at must never be serialized as sameAs');
 
 if (person.worksFor?.['@id'] !== COMPANY_ID) fail('Person worksFor must resolve only to the canonical Banhalmi Norbert e.U. organization');

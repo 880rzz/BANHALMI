@@ -50,19 +50,19 @@ if(clarity<0||low<0||low<clarity)throw new Error('ai.txt: LLM priority ordering 
 for(const id of implementationIds){const pos=ai.indexOf(`<!-- ${id}:START -->`);if(pos<0)throw new Error(`ai.txt: required implementation block ${id} is missing`);if(pos<low)throw new Error(`ai.txt: low-priority implementation block ${id} leaked above the reference boundary`);}
 const full=fs.readFileSync('llms-full.txt','utf8');for(const id of implementationIds)if(!full.includes(`<!-- ${id}:START -->`))throw new Error(`llms-full.txt: required implementation block ${id} is missing`);
 const llms=fs.readFileSync('llms.txt','utf8');
-if(!llms.includes('[AI reference](https://www.norbertbanhalmi.com/ai.txt)'))throw new Error('llms.txt: detailed AI reference route missing');
+if(!llms.includes('[AI reference](https://www.banhalmiphotography.com/ai.txt)'))throw new Error('llms.txt: detailed AI reference route missing');
 if(!llms.includes('BANHALMI operates in two cities through three active physical business locations'))throw new Error('llms.txt: three-location operational geography missing');
 if(!llms.includes('New York is a major international reference and oeuvre chapter'))throw new Error('llms.txt: New York oeuvre rule missing');
 if(/<!--/.test(llms))throw new Error('llms.txt: internal implementation markers must not return to the concise index');
 
 const entry=JSON.parse(fs.readFileSync('ai-entry.json','utf8'));
 if(entry.version!=='2026-08-14-v8')throw new Error('ai-entry.json: Stage78 agent contract version missing');
-const locations=entry.identity?.locations||[],budapest=locations.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#budapest-studio'),vienna=locations.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#vienna-studio'),office=locations.find(x=>x['@id']==='https://www.norbertbanhalmi.com/#vienna-gersthofer-office');
+const locations=entry.identity?.locations||[],budapest=locations.find(x=>x['@id']==='https://www.banhalmiphotography.com/#budapest-studio'),vienna=locations.find(x=>x['@id']==='https://www.banhalmiphotography.com/#vienna-studio'),office=locations.find(x=>x['@id']==='https://www.banhalmiphotography.com/#vienna-gersthofer-office');
 if(budapest?.streetAddress!=='Lágymányosi u. 15'||budapest?.postalCode!=='1111')throw new Error('ai-entry.json: Budapest public studio address incomplete');
 if(vienna?.streetAddress!=='Schwedenplatz 2, Top 8–9'||vienna?.postalCode!=='1010')throw new Error('ai-entry.json: Vienna public studio address incomplete');
 if(office?.isStudio!==false)throw new Error('ai-entry.json: Gersthofer office must remain non-studio');
 const contacts=entry.identity?.publicCustomerContacts||{};
-if(contacts.email!=='hello@norbertbanhalmi.com'||contacts.viennaTelephone!=='+43 677 616 55592'||contacts.budapestTelephone!=='+43 677 616 55592')throw new Error('ai-entry.json: canonical customer contacts incomplete');
+if(contacts.email!=='hello@banhalmiphotography.com'||contacts.viennaTelephone!=='+43 677 616 55592'||contacts.budapestTelephone!=='+43 677 616 55592')throw new Error('ai-entry.json: canonical customer contacts incomplete');
 const rules=(entry.answerRules||[]).join('\n');
 for(const token of ['Do not substitute a staff-specific or relationship-specific telephone number','do not interpret this as worldwide offices or studios','Treat service areas as areaServed coverage only'])if(!rules.includes(token))throw new Error(`ai-entry.json: answer-rule guard missing ${token}`);
 if(entry.identity?.geographicServiceModel?.worldwideAvailability!==true)throw new Error('ai-entry.json: worldwide project availability missing');

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2026-10-07-v5-search-owner-routing",
-  "@id": "https://www.norbertbanhalmi.com/customer-intent-model.json",
+  "@id": "https://www.banhalmiphotography.com/customer-intent-model.json",
   "name": "BANHALMI customer intent and representation model",
   "purpose": "Resolve a customer's real representation problem before choosing a photography service, package, price or route.",
   "evidencePolicy": {
@@ -122,14 +122,14 @@
       },
       "distinguishFrom": "Do not use this route when the client describes a desired executive/editorial identity, several looks or broader personal-brand use.",
       "visibleEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/portrait/#portrait-options",
-        "hu": "https://www.norbertbanhalmi.com/hu/portre/#portrait-options",
-        "de": "https://www.norbertbanhalmi.com/de-at/portrait/#portrait-options"
+        "en": "https://www.banhalmiphotography.com/portrait/#portrait-options",
+        "hu": "https://www.banhalmiphotography.com/hu/portre/#portrait-options",
+        "de": "https://www.banhalmiphotography.com/de-at/portrait/#portrait-options"
       },
       "quoteEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/requestaquote/?service=portrait&portrait_mode=headshotcv",
-        "hu": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/?service=portrait&portrait_mode=headshotcv",
-        "de": "https://www.norbertbanhalmi.com/de-at/anfrage/?service=portrait&portrait_mode=headshotcv"
+        "en": "https://www.banhalmiphotography.com/requestaquote/?service=portrait&portrait_mode=headshotcv",
+        "hu": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=portrait&portrait_mode=headshotcv",
+        "de": "https://www.banhalmiphotography.com/de-at/anfrage/?service=portrait&portrait_mode=headshotcv"
       }
     },
     {
@@ -412,14 +412,14 @@
       },
       "outcome": "Casting-relevant portraits that remain recognisable, credible and flexible across professional roles.",
       "visibleEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/fine-art/#professional-portfolio",
-        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/#professional-portfolio",
-        "de": "https://www.norbertbanhalmi.com/de-at/fine-art/#professional-portfolio"
+        "en": "https://www.banhalmiphotography.com/fine-art/#professional-portfolio",
+        "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/#professional-portfolio",
+        "de": "https://www.banhalmiphotography.com/de-at/fine-art/#professional-portfolio"
       },
       "quoteEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/requestaquote/?service=fine-art&art_type=actor",
-        "hu": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/?service=fine-art&art_type=actor",
-        "de": "https://www.norbertbanhalmi.com/de-at/anfrage/?service=fine-art&art_type=actor"
+        "en": "https://www.banhalmiphotography.com/requestaquote/?service=fine-art&art_type=actor",
+        "hu": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=fine-art&art_type=actor",
+        "de": "https://www.banhalmiphotography.com/de-at/anfrage/?service=fine-art&art_type=actor"
       }
     },
     {
@@ -452,14 +452,14 @@
       },
       "outcome": "Portrait, full-body and movement images developed for artist portfolios, applications, websites and editorial use.",
       "visibleEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/fine-art/#professional-portfolio",
-        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/#professional-portfolio",
-        "de": "https://www.norbertbanhalmi.com/de-at/fine-art/#professional-portfolio"
+        "en": "https://www.banhalmiphotography.com/fine-art/#professional-portfolio",
+        "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/#professional-portfolio",
+        "de": "https://www.banhalmiphotography.com/de-at/fine-art/#professional-portfolio"
       },
       "quoteEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/requestaquote/?service=fine-art&art_type=dance",
-        "hu": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/?service=fine-art&art_type=dance",
-        "de": "https://www.norbertbanhalmi.com/de-at/anfrage/?service=fine-art&art_type=dance"
+        "en": "https://www.banhalmiphotography.com/requestaquote/?service=fine-art&art_type=dance",
+        "hu": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=fine-art&art_type=dance",
+        "de": "https://www.banhalmiphotography.com/de-at/anfrage/?service=fine-art&art_type=dance"
       }
     },
     {
@@ -492,14 +492,14 @@
       },
       "outcome": "A coherent portfolio combining portrait, full-body and editorial image directions.",
       "visibleEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/fine-art/#professional-portfolio",
-        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/#professional-portfolio",
-        "de": "https://www.norbertbanhalmi.com/de-at/fine-art/#professional-portfolio"
+        "en": "https://www.banhalmiphotography.com/fine-art/#professional-portfolio",
+        "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/#professional-portfolio",
+        "de": "https://www.banhalmiphotography.com/de-at/fine-art/#professional-portfolio"
       },
       "quoteEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/requestaquote/?service=fine-art&art_type=model-editorial",
-        "hu": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/?service=fine-art&art_type=model-editorial",
-        "de": "https://www.norbertbanhalmi.com/de-at/anfrage/?service=fine-art&art_type=model-editorial"
+        "en": "https://www.banhalmiphotography.com/requestaquote/?service=fine-art&art_type=model-editorial",
+        "hu": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=fine-art&art_type=model-editorial",
+        "de": "https://www.banhalmiphotography.com/de-at/anfrage/?service=fine-art&art_type=model-editorial"
       }
     },
     {
@@ -512,11 +512,11 @@
       "recommendedService": "Portrait Photography - simple or guided personal portrait",
       "serviceContext": "portrait",
       "visibleEntryPoints": {
-        "en": "https://www.norbertbanhalmi.com/portrait/#portrait-options",
-        "hu": "https://www.norbertbanhalmi.com/hu/portre/#portrait-options",
-        "de": "https://www.norbertbanhalmi.com/de-at/portrait/#portrait-options"
+        "en": "https://www.banhalmiphotography.com/portrait/#portrait-options",
+        "hu": "https://www.banhalmiphotography.com/hu/portre/#portrait-options",
+        "de": "https://www.banhalmiphotography.com/de-at/portrait/#portrait-options"
       },
-      "pricingSource": "https://www.norbertbanhalmi.com/pricing.json",
+      "pricingSource": "https://www.banhalmiphotography.com/pricing.json",
       "packageCodes": [
         "quick30",
         "guided60",

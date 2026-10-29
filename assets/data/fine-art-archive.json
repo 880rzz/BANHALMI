@@ -1,11 +1,11 @@
 {
   "@context": "https://schema.org",
   "@type": "ImageGallery",
-  "@id": "https://www.norbertbanhalmi.com/#extended-fine-art-archive",
+  "@id": "https://www.banhalmiphotography.com/#extended-fine-art-archive",
   "name": "BANHALMI Extended Fine Art Archive",
   "description": "Selected fine-art, portrait, urban and travel photographs from the BANHALMI archive.",
   "creator": {
-    "@id": "https://www.norbertbanhalmi.com/about/"
+    "@id": "https://www.banhalmiphotography.com/about/"
   },
   "dateModified": "2026-07-18T00:45:00+02:00",
   "associatedMedia": [
@@ -22,17 +22,17 @@
         "de-AT": "Times Square bei Nacht in intensivem Stadtlicht"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-04",
@@ -47,17 +47,17 @@
         "de-AT": "Urbanes Fashionporträt einer Frau in dynamischer Hockpose"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-05",
@@ -72,17 +72,17 @@
         "de-AT": "Braut in der geometrischen Form einer Wendeltreppe"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-06",
@@ -97,17 +97,17 @@
         "de-AT": "Yacht auf dem Hudson vor der Skyline Manhattans bei Sonnenuntergang"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-07",
@@ -121,7 +121,7 @@
         "de-AT": "Low-Key-Fine-Art-Studie der erwachsenen weiblichen Form"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "ageRestricted": true,
@@ -130,13 +130,13 @@
       "previewFile": "/assets/img/fine-art/age-preview/banhalmi-art-archive-07-low-key-body-study-18-preview.webp",
       "fullSizeViewing": "Available through the website after an 18+ self-declaration.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-08",
@@ -151,17 +151,17 @@
         "de-AT": "Makrostudie einer violetten Blütenknospe und weicher Naturtexturen"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-09",
@@ -175,7 +175,7 @@
         "de-AT": "Intimes Detail eines tätowierten männlichen Körpers und einer Geste"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "ageRestricted": true,
@@ -184,13 +184,13 @@
       "previewFile": "/assets/img/fine-art/age-preview/banhalmi-art-archive-09-tattooed-body-detail-18-preview.webp",
       "fullSizeViewing": "Available through the website after an 18+ self-declaration.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-10",
@@ -205,17 +205,17 @@
         "de-AT": "Minimalistische Sonnenuntergangslandschaft mit ferner Silhouette über dem Wasser"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-11",
@@ -230,17 +230,17 @@
         "de-AT": "Architekturbild von Treppenhaus, Fenster und gerichtetem Licht"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-12",
@@ -255,17 +255,17 @@
         "de-AT": "Frau in Rot am Steuer eines klassischen Automobils"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-13",
@@ -280,17 +280,17 @@
         "de-AT": "Frau mit hellen Ballons am Times Square"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-14",
@@ -305,17 +305,17 @@
         "de-AT": "Direktes Farbporträt einer jungen Frau vor neutralem Hintergrund"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-15",
@@ -330,17 +330,17 @@
         "de-AT": "Fine-Art-Porträt einer blauhaarigen Violinistin"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-16",
@@ -355,17 +355,17 @@
         "de-AT": "Paar in einer New Yorker Straßenszene"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-19",
@@ -379,7 +379,7 @@
         "de-AT": "Monochromes intimes Porträt mit gefalteten Händen und gesenktem Blick"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "ageRestricted": true,
@@ -388,13 +388,13 @@
       "previewFile": "/assets/img/fine-art/age-preview/banhalmi-art-archive-19-monochrome-intimate-portrait-18-preview.webp",
       "fullSizeViewing": "Available through the website after an 18+ self-declaration.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-20",
@@ -409,17 +409,17 @@
         "de-AT": "Einzelne Figur auf einer New Yorker Straße"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-21",
@@ -434,17 +434,17 @@
         "de-AT": "Mann auf einem Dach über New York"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-23",
@@ -459,17 +459,17 @@
         "de-AT": "Abstrakte geometrische Studie einer modernen Gebäudefassade"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-24",
@@ -484,17 +484,17 @@
         "de-AT": "Einzelne sitzende Figur an einem weiten Strand mit Blick aufs Meer"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-25",
@@ -509,17 +509,17 @@
         "de-AT": "Manhattan-Skyline und One World Trade Center im Nebel"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-26",
@@ -534,17 +534,17 @@
         "de-AT": "Urbane Figur in einer filmischen New Yorker Straßenszene"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-27",
@@ -559,17 +559,17 @@
         "de-AT": "Modernes Interieur mit Blick auf die Skyline Manhattans"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-28",
@@ -584,17 +584,17 @@
         "de-AT": "New Yorker Skyline in einem schmalen Innenfenster gerahmt"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-29",
@@ -609,17 +609,17 @@
         "de-AT": "Klassisches Automobil auf einer New Yorker Straße"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     },
     {
       "id": "fine-art-archive-31",
@@ -634,17 +634,17 @@
         "de-AT": "Polizeimotorräder und Fahrzeuge nachts unter einer Brücke"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
       "copyrightHolder": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Norbert Bánhalmi"
       },
       "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-      "license": "https://www.norbertbanhalmi.com/terms-conditions/",
-      "acquireLicensePage": "https://www.norbertbanhalmi.com/requestaquote/"
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
     }
   ],
   "contentPolicy": {

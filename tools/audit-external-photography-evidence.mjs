@@ -25,7 +25,7 @@ const REUSE_CAP = 'Independent publication / external photo-credit evidence';
 
 fail(registry?.['@type'] === 'Dataset', 'External photography evidence must remain a Dataset');
 fail(registry?.about?.name === 'BANHALMI' && registry?.about?.alternateName === BRAND, 'BANHALMI/BANHALMI Photography brand identity drift in external evidence registry');
-fail(registry?.provider?.['@id'] === 'https://www.norbertbanhalmi.com/#organization', 'External evidence provider must remain canonical BANHALMI Organization');
+fail(registry?.provider?.['@id'] === 'https://www.banhalmiphotography.com/#organization', 'External evidence provider must remain canonical BANHALMI Organization');
 fail(registry?.teamDescriptor === TEAM, 'External evidence team descriptor drift');
 fail(registry?.flickrArchive?.attribution === `${BRAND} / ${TEAM}`, 'Flickr archive must remain team-attributed');
 const flickrRule = registry?.flickrArchive?.authorshipRule || '';

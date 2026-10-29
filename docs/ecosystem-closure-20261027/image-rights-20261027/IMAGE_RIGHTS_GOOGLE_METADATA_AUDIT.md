@@ -6,7 +6,7 @@ Generated: 2026-10-27 16:00 Europe/Budapest
 
 Google Image Licensable metadata is required only for:
 
-1. `norbertbanhalmi.com` (Professional)
+1. `banhalmiphotography.com` (Professional)
 2. `banhalmi.art` (ART)
 
 **Fotótörténelem / blog.banhalmi.art is NOT in Google Image Licensable scope.**
@@ -34,7 +34,7 @@ Google Image Licensable metadata is required only for:
 ## GSC
 - Status: **SUBMITTED / MEASUREMENT PENDING**
 - Confirmed resubmitted (accepted, 0 warning / 0 error, pending Google download):
-  - https://www.norbertbanhalmi.com/sitemap.xml
+  - https://www.banhalmiphotography.com/sitemap.xml
   - https://www.banhalmi.art/sitemap.xml
   - https://blog.banhalmi.art/sitemap.xml
   - https://blog.banhalmi.art/blog-posts-sitemap.xml

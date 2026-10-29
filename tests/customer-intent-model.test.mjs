@@ -32,7 +32,7 @@ assert.equal(
 );
 assert.equal(
   aiEntry.reference.customerIntentModel,
-  'https://www.norbertbanhalmi.com/customer-intent-model.json',
+  'https://www.banhalmiphotography.com/customer-intent-model.json',
   'AI entry must expose the canonical customer intent model'
 );
 

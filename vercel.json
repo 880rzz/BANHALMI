@@ -86,7 +86,7 @@
     },
     {
       "source": "/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/",
+      "destination": "https://www.banhalmiphotography.com/de-at/",
       "permanent": true,
       "has": [
         {
@@ -98,7 +98,7 @@
     },
     {
       "source": "/about/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/werk/",
+      "destination": "https://www.banhalmiphotography.com/de-at/werk/",
       "permanent": true,
       "has": [
         {
@@ -110,7 +110,7 @@
     },
     {
       "source": "/accessibility/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/barrierefreiheit/",
+      "destination": "https://www.banhalmiphotography.com/de-at/barrierefreiheit/",
       "permanent": true,
       "has": [
         {
@@ -122,7 +122,7 @@
     },
     {
       "source": "/archive/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/archiv/",
+      "destination": "https://www.banhalmiphotography.com/de-at/archiv/",
       "permanent": true,
       "has": [
         {
@@ -134,7 +134,7 @@
     },
     {
       "source": "/case-studies/peter-magyar-portrait-2026/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/",
+      "destination": "https://www.banhalmiphotography.com/de-at/fallstudien/peter-magyar-portraet-2026/",
       "permanent": true,
       "has": [
         {
@@ -146,7 +146,7 @@
     },
     {
       "source": "/contact/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/kontakt/",
+      "destination": "https://www.banhalmiphotography.com/de-at/kontakt/",
       "permanent": true,
       "has": [
         {
@@ -158,7 +158,7 @@
     },
     {
       "source": "/cookie-policy/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/cookies/",
+      "destination": "https://www.banhalmiphotography.com/de-at/cookies/",
       "permanent": true,
       "has": [
         {
@@ -170,7 +170,7 @@
     },
     {
       "source": "/de-at/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/",
+      "destination": "https://www.banhalmiphotography.com/de-at/",
       "permanent": true,
       "has": [
         {
@@ -182,7 +182,7 @@
     },
     {
       "source": "/de-at/agb/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/agb/",
+      "destination": "https://www.banhalmiphotography.com/de-at/agb/",
       "permanent": true,
       "has": [
         {
@@ -194,7 +194,7 @@
     },
     {
       "source": "/de-at/anfrage/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/anfrage/",
+      "destination": "https://www.banhalmiphotography.com/de-at/anfrage/",
       "permanent": true,
       "has": [
         {
@@ -206,7 +206,7 @@
     },
     {
       "source": "/de-at/archiv/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/archiv/",
+      "destination": "https://www.banhalmiphotography.com/de-at/archiv/",
       "permanent": true,
       "has": [
         {
@@ -218,7 +218,7 @@
     },
     {
       "source": "/de-at/barrierefreiheit/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/barrierefreiheit/",
+      "destination": "https://www.banhalmiphotography.com/de-at/barrierefreiheit/",
       "permanent": true,
       "has": [
         {
@@ -230,7 +230,7 @@
     },
     {
       "source": "/de-at/brand/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/brand/",
+      "destination": "https://www.banhalmiphotography.com/de-at/brand/",
       "permanent": true,
       "has": [
         {
@@ -242,7 +242,7 @@
     },
     {
       "source": "/de-at/cookies/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/cookies/",
+      "destination": "https://www.banhalmiphotography.com/de-at/cookies/",
       "permanent": true,
       "has": [
         {
@@ -254,7 +254,7 @@
     },
     {
       "source": "/de-at/datenschutz/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/datenschutz/",
+      "destination": "https://www.banhalmiphotography.com/de-at/datenschutz/",
       "permanent": true,
       "has": [
         {
@@ -266,7 +266,7 @@
     },
     {
       "source": "/de-at/eventfotografie/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/eventfotografie/",
+      "destination": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
       "permanent": true,
       "has": [
         {
@@ -278,7 +278,7 @@
     },
     {
       "source": "/de-at/fallstudien/peter-magyar-portraet-2026/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/",
+      "destination": "https://www.banhalmiphotography.com/de-at/fallstudien/peter-magyar-portraet-2026/",
       "permanent": true,
       "has": [
         {
@@ -290,7 +290,7 @@
     },
     {
       "source": "/de-at/faq/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/faq/",
+      "destination": "https://www.banhalmiphotography.com/de-at/faq/",
       "permanent": true,
       "has": [
         {
@@ -302,7 +302,7 @@
     },
     {
       "source": "/de-at/fine-art/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/fine-art/",
+      "destination": "https://www.banhalmiphotography.com/de-at/fine-art/",
       "permanent": true,
       "has": [
         {
@@ -314,7 +314,7 @@
     },
     {
       "source": "/de-at/impressum/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/impressum/",
+      "destination": "https://www.banhalmiphotography.com/de-at/impressum/",
       "permanent": true,
       "has": [
         {
@@ -326,7 +326,7 @@
     },
     {
       "source": "/de-at/kontakt/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/kontakt/",
+      "destination": "https://www.banhalmiphotography.com/de-at/kontakt/",
       "permanent": true,
       "has": [
         {
@@ -338,7 +338,7 @@
     },
     {
       "source": "/de-at/partner/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/partner/",
+      "destination": "https://www.banhalmiphotography.com/de-at/partner/",
       "permanent": true,
       "has": [
         {
@@ -350,7 +350,7 @@
     },
     {
       "source": "/de-at/portrait/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/portrait/",
+      "destination": "https://www.banhalmiphotography.com/de-at/portrait/",
       "permanent": true,
       "has": [
         {
@@ -362,7 +362,7 @@
     },
     {
       "source": "/de-at/speier-viko/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/speier-viko/",
+      "destination": "https://www.banhalmiphotography.com/de-at/speier-viko/",
       "permanent": true,
       "has": [
         {
@@ -374,7 +374,7 @@
     },
     {
       "source": "/de-at/vertrauen/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -386,7 +386,7 @@
     },
     {
       "source": "/de-at/werk/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/werk/",
+      "destination": "https://www.banhalmiphotography.com/de-at/werk/",
       "permanent": true,
       "has": [
         {
@@ -398,7 +398,7 @@
     },
     {
       "source": "/event-photography/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/eventfotografie/",
+      "destination": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
       "permanent": true,
       "has": [
         {
@@ -410,7 +410,7 @@
     },
     {
       "source": "/faq/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/faq/",
+      "destination": "https://www.banhalmiphotography.com/de-at/faq/",
       "permanent": true,
       "has": [
         {
@@ -422,7 +422,7 @@
     },
     {
       "source": "/glamour/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/fine-art/",
+      "destination": "https://www.banhalmiphotography.com/de-at/fine-art/",
       "permanent": true,
       "has": [
         {
@@ -434,7 +434,7 @@
     },
     {
       "source": "/hu/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/",
+      "destination": "https://www.banhalmiphotography.com/de-at/",
       "permanent": true,
       "has": [
         {
@@ -446,7 +446,7 @@
     },
     {
       "source": "/hu/adatvedelem/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/datenschutz/",
+      "destination": "https://www.banhalmiphotography.com/de-at/datenschutz/",
       "permanent": true,
       "has": [
         {
@@ -458,7 +458,7 @@
     },
     {
       "source": "/hu/ajanlatkeres/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/anfrage/",
+      "destination": "https://www.banhalmiphotography.com/de-at/anfrage/",
       "permanent": true,
       "has": [
         {
@@ -470,7 +470,7 @@
     },
     {
       "source": "/hu/akadalymentesseg/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/barrierefreiheit/",
+      "destination": "https://www.banhalmiphotography.com/de-at/barrierefreiheit/",
       "permanent": true,
       "has": [
         {
@@ -482,7 +482,7 @@
     },
     {
       "source": "/hu/archivum/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/archiv/",
+      "destination": "https://www.banhalmiphotography.com/de-at/archiv/",
       "permanent": true,
       "has": [
         {
@@ -494,7 +494,7 @@
     },
     {
       "source": "/hu/aszf/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/agb/",
+      "destination": "https://www.banhalmiphotography.com/de-at/agb/",
       "permanent": true,
       "has": [
         {
@@ -506,7 +506,7 @@
     },
     {
       "source": "/hu/bizalom/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -518,7 +518,7 @@
     },
     {
       "source": "/hu/brand/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/brand/",
+      "destination": "https://www.banhalmiphotography.com/de-at/brand/",
       "permanent": true,
       "has": [
         {
@@ -530,7 +530,7 @@
     },
     {
       "source": "/hu/eletmu/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/werk/",
+      "destination": "https://www.banhalmiphotography.com/de-at/werk/",
       "permanent": true,
       "has": [
         {
@@ -542,7 +542,7 @@
     },
     {
       "source": "/hu/esettanulmanyok/magyar-peter-portre-2026/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/",
+      "destination": "https://www.banhalmiphotography.com/de-at/fallstudien/peter-magyar-portraet-2026/",
       "permanent": true,
       "has": [
         {
@@ -554,7 +554,7 @@
     },
     {
       "source": "/hu/gyik/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/faq/",
+      "destination": "https://www.banhalmiphotography.com/de-at/faq/",
       "permanent": true,
       "has": [
         {
@@ -566,7 +566,7 @@
     },
     {
       "source": "/hu/impresszum/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/impressum/",
+      "destination": "https://www.banhalmiphotography.com/de-at/impressum/",
       "permanent": true,
       "has": [
         {
@@ -578,7 +578,7 @@
     },
     {
       "source": "/hu/kapcsolat/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/kontakt/",
+      "destination": "https://www.banhalmiphotography.com/de-at/kontakt/",
       "permanent": true,
       "has": [
         {
@@ -590,7 +590,7 @@
     },
     {
       "source": "/hu/muveszi-fotografia/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/fine-art/",
+      "destination": "https://www.banhalmiphotography.com/de-at/fine-art/",
       "permanent": true,
       "has": [
         {
@@ -602,7 +602,7 @@
     },
     {
       "source": "/hu/partnerek/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/partner/",
+      "destination": "https://www.banhalmiphotography.com/de-at/partner/",
       "permanent": true,
       "has": [
         {
@@ -614,7 +614,7 @@
     },
     {
       "source": "/hu/portre/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/portrait/",
+      "destination": "https://www.banhalmiphotography.com/de-at/portrait/",
       "permanent": true,
       "has": [
         {
@@ -626,7 +626,7 @@
     },
     {
       "source": "/hu/rendezvenyfotozas/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/eventfotografie/",
+      "destination": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
       "permanent": true,
       "has": [
         {
@@ -638,7 +638,7 @@
     },
     {
       "source": "/hu/speier-viko/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/speier-viko/",
+      "destination": "https://www.banhalmiphotography.com/de-at/speier-viko/",
       "permanent": true,
       "has": [
         {
@@ -650,7 +650,7 @@
     },
     {
       "source": "/hu/sutik/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/cookies/",
+      "destination": "https://www.banhalmiphotography.com/de-at/cookies/",
       "permanent": true,
       "has": [
         {
@@ -662,7 +662,7 @@
     },
     {
       "source": "/impressum/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/impressum/",
+      "destination": "https://www.banhalmiphotography.com/de-at/impressum/",
       "permanent": true,
       "has": [
         {
@@ -674,7 +674,7 @@
     },
     {
       "source": "/lifestyle/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/brand/",
+      "destination": "https://www.banhalmiphotography.com/de-at/brand/",
       "permanent": true,
       "has": [
         {
@@ -686,7 +686,7 @@
     },
     {
       "source": "/partners/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/partner/",
+      "destination": "https://www.banhalmiphotography.com/de-at/partner/",
       "permanent": true,
       "has": [
         {
@@ -698,7 +698,7 @@
     },
     {
       "source": "/portrait/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/portrait/",
+      "destination": "https://www.banhalmiphotography.com/de-at/portrait/",
       "permanent": true,
       "has": [
         {
@@ -710,7 +710,7 @@
     },
     {
       "source": "/privacy-policy/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/datenschutz/",
+      "destination": "https://www.banhalmiphotography.com/de-at/datenschutz/",
       "permanent": true,
       "has": [
         {
@@ -722,7 +722,7 @@
     },
     {
       "source": "/requestaquote/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/anfrage/",
+      "destination": "https://www.banhalmiphotography.com/de-at/anfrage/",
       "permanent": true,
       "has": [
         {
@@ -734,7 +734,7 @@
     },
     {
       "source": "/speier-viko/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/speier-viko/",
+      "destination": "https://www.banhalmiphotography.com/de-at/speier-viko/",
       "permanent": true,
       "has": [
         {
@@ -746,7 +746,7 @@
     },
     {
       "source": "/terms-conditions/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/agb/",
+      "destination": "https://www.banhalmiphotography.com/de-at/agb/",
       "permanent": true,
       "has": [
         {
@@ -758,7 +758,7 @@
     },
     {
       "source": "/trust/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -770,7 +770,7 @@
     },
     {
       "source": "/de-at/trust",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -782,7 +782,7 @@
     },
     {
       "source": "/de-at/trust/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -794,7 +794,7 @@
     },
     {
       "source": "/hu/trust",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -806,7 +806,7 @@
     },
     {
       "source": "/hu/trust/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -825,7 +825,7 @@
           "value": "banhalminorbert.hu"
         }
       ],
-      "destination": "https://www.norbertbanhalmi.com/hu/brand/",
+      "destination": "https://www.banhalmiphotography.com/hu/brand/",
       "permanent": true
     },
     {
@@ -837,7 +837,7 @@
           "value": "banhalminorbert.hu"
         }
       ],
-      "destination": "https://www.norbertbanhalmi.com/hu/brand/",
+      "destination": "https://www.banhalmiphotography.com/hu/brand/",
       "permanent": true
     },
     {
@@ -849,7 +849,7 @@
           "value": "www.banhalminorbert.hu"
         }
       ],
-      "destination": "https://www.norbertbanhalmi.com/hu/brand/",
+      "destination": "https://www.banhalmiphotography.com/hu/brand/",
       "permanent": true
     },
     {
@@ -861,7 +861,7 @@
           "value": "www.banhalminorbert.hu"
         }
       ],
-      "destination": "https://www.norbertbanhalmi.com/hu/brand/",
+      "destination": "https://www.banhalmiphotography.com/hu/brand/",
       "permanent": true
     },
     {
@@ -876,7 +876,7 @@
     },
     {
       "source": "/:path*",
-      "destination": "https://www.norbertbanhalmi.com/de-at/",
+      "destination": "https://www.banhalmiphotography.com/de-at/",
       "permanent": true,
       "has": [
         {
@@ -888,7 +888,7 @@
     },
     {
       "source": "/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/",
+      "destination": "https://www.banhalmiphotography.com/de-at/",
       "permanent": true,
       "has": [
         {
@@ -900,7 +900,7 @@
     },
     {
       "source": "/about/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/werk/",
+      "destination": "https://www.banhalmiphotography.com/de-at/werk/",
       "permanent": true,
       "has": [
         {
@@ -912,7 +912,7 @@
     },
     {
       "source": "/accessibility/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/barrierefreiheit/",
+      "destination": "https://www.banhalmiphotography.com/de-at/barrierefreiheit/",
       "permanent": true,
       "has": [
         {
@@ -924,7 +924,7 @@
     },
     {
       "source": "/archive/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/archiv/",
+      "destination": "https://www.banhalmiphotography.com/de-at/archiv/",
       "permanent": true,
       "has": [
         {
@@ -936,7 +936,7 @@
     },
     {
       "source": "/case-studies/peter-magyar-portrait-2026/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/",
+      "destination": "https://www.banhalmiphotography.com/de-at/fallstudien/peter-magyar-portraet-2026/",
       "permanent": true,
       "has": [
         {
@@ -948,7 +948,7 @@
     },
     {
       "source": "/contact/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/kontakt/",
+      "destination": "https://www.banhalmiphotography.com/de-at/kontakt/",
       "permanent": true,
       "has": [
         {
@@ -960,7 +960,7 @@
     },
     {
       "source": "/cookie-policy/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/cookies/",
+      "destination": "https://www.banhalmiphotography.com/de-at/cookies/",
       "permanent": true,
       "has": [
         {
@@ -972,7 +972,7 @@
     },
     {
       "source": "/de-at/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/",
+      "destination": "https://www.banhalmiphotography.com/de-at/",
       "permanent": true,
       "has": [
         {
@@ -984,7 +984,7 @@
     },
     {
       "source": "/de-at/agb/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/agb/",
+      "destination": "https://www.banhalmiphotography.com/de-at/agb/",
       "permanent": true,
       "has": [
         {
@@ -996,7 +996,7 @@
     },
     {
       "source": "/de-at/anfrage/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/anfrage/",
+      "destination": "https://www.banhalmiphotography.com/de-at/anfrage/",
       "permanent": true,
       "has": [
         {
@@ -1008,7 +1008,7 @@
     },
     {
       "source": "/de-at/archiv/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/archiv/",
+      "destination": "https://www.banhalmiphotography.com/de-at/archiv/",
       "permanent": true,
       "has": [
         {
@@ -1020,7 +1020,7 @@
     },
     {
       "source": "/de-at/barrierefreiheit/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/barrierefreiheit/",
+      "destination": "https://www.banhalmiphotography.com/de-at/barrierefreiheit/",
       "permanent": true,
       "has": [
         {
@@ -1032,7 +1032,7 @@
     },
     {
       "source": "/de-at/brand/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/brand/",
+      "destination": "https://www.banhalmiphotography.com/de-at/brand/",
       "permanent": true,
       "has": [
         {
@@ -1044,7 +1044,7 @@
     },
     {
       "source": "/de-at/cookies/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/cookies/",
+      "destination": "https://www.banhalmiphotography.com/de-at/cookies/",
       "permanent": true,
       "has": [
         {
@@ -1056,7 +1056,7 @@
     },
     {
       "source": "/de-at/datenschutz/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/datenschutz/",
+      "destination": "https://www.banhalmiphotography.com/de-at/datenschutz/",
       "permanent": true,
       "has": [
         {
@@ -1068,7 +1068,7 @@
     },
     {
       "source": "/de-at/eventfotografie/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/eventfotografie/",
+      "destination": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
       "permanent": true,
       "has": [
         {
@@ -1080,7 +1080,7 @@
     },
     {
       "source": "/de-at/fallstudien/peter-magyar-portraet-2026/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/",
+      "destination": "https://www.banhalmiphotography.com/de-at/fallstudien/peter-magyar-portraet-2026/",
       "permanent": true,
       "has": [
         {
@@ -1092,7 +1092,7 @@
     },
     {
       "source": "/de-at/faq/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/faq/",
+      "destination": "https://www.banhalmiphotography.com/de-at/faq/",
       "permanent": true,
       "has": [
         {
@@ -1104,7 +1104,7 @@
     },
     {
       "source": "/de-at/fine-art/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/fine-art/",
+      "destination": "https://www.banhalmiphotography.com/de-at/fine-art/",
       "permanent": true,
       "has": [
         {
@@ -1116,7 +1116,7 @@
     },
     {
       "source": "/de-at/impressum/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/impressum/",
+      "destination": "https://www.banhalmiphotography.com/de-at/impressum/",
       "permanent": true,
       "has": [
         {
@@ -1128,7 +1128,7 @@
     },
     {
       "source": "/de-at/kontakt/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/kontakt/",
+      "destination": "https://www.banhalmiphotography.com/de-at/kontakt/",
       "permanent": true,
       "has": [
         {
@@ -1140,7 +1140,7 @@
     },
     {
       "source": "/de-at/partner/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/partner/",
+      "destination": "https://www.banhalmiphotography.com/de-at/partner/",
       "permanent": true,
       "has": [
         {
@@ -1152,7 +1152,7 @@
     },
     {
       "source": "/de-at/portrait/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/portrait/",
+      "destination": "https://www.banhalmiphotography.com/de-at/portrait/",
       "permanent": true,
       "has": [
         {
@@ -1164,7 +1164,7 @@
     },
     {
       "source": "/de-at/speier-viko/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/speier-viko/",
+      "destination": "https://www.banhalmiphotography.com/de-at/speier-viko/",
       "permanent": true,
       "has": [
         {
@@ -1176,7 +1176,7 @@
     },
     {
       "source": "/de-at/vertrauen/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -1188,7 +1188,7 @@
     },
     {
       "source": "/de-at/werk/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/werk/",
+      "destination": "https://www.banhalmiphotography.com/de-at/werk/",
       "permanent": true,
       "has": [
         {
@@ -1200,7 +1200,7 @@
     },
     {
       "source": "/event-photography/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/eventfotografie/",
+      "destination": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
       "permanent": true,
       "has": [
         {
@@ -1212,7 +1212,7 @@
     },
     {
       "source": "/faq/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/faq/",
+      "destination": "https://www.banhalmiphotography.com/de-at/faq/",
       "permanent": true,
       "has": [
         {
@@ -1224,7 +1224,7 @@
     },
     {
       "source": "/glamour/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/fine-art/",
+      "destination": "https://www.banhalmiphotography.com/de-at/fine-art/",
       "permanent": true,
       "has": [
         {
@@ -1236,7 +1236,7 @@
     },
     {
       "source": "/hu/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/",
+      "destination": "https://www.banhalmiphotography.com/de-at/",
       "permanent": true,
       "has": [
         {
@@ -1248,7 +1248,7 @@
     },
     {
       "source": "/hu/adatvedelem/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/datenschutz/",
+      "destination": "https://www.banhalmiphotography.com/de-at/datenschutz/",
       "permanent": true,
       "has": [
         {
@@ -1260,7 +1260,7 @@
     },
     {
       "source": "/hu/ajanlatkeres/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/anfrage/",
+      "destination": "https://www.banhalmiphotography.com/de-at/anfrage/",
       "permanent": true,
       "has": [
         {
@@ -1272,7 +1272,7 @@
     },
     {
       "source": "/hu/akadalymentesseg/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/barrierefreiheit/",
+      "destination": "https://www.banhalmiphotography.com/de-at/barrierefreiheit/",
       "permanent": true,
       "has": [
         {
@@ -1284,7 +1284,7 @@
     },
     {
       "source": "/hu/archivum/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/archiv/",
+      "destination": "https://www.banhalmiphotography.com/de-at/archiv/",
       "permanent": true,
       "has": [
         {
@@ -1296,7 +1296,7 @@
     },
     {
       "source": "/hu/aszf/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/agb/",
+      "destination": "https://www.banhalmiphotography.com/de-at/agb/",
       "permanent": true,
       "has": [
         {
@@ -1308,7 +1308,7 @@
     },
     {
       "source": "/hu/bizalom/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -1320,7 +1320,7 @@
     },
     {
       "source": "/hu/brand/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/brand/",
+      "destination": "https://www.banhalmiphotography.com/de-at/brand/",
       "permanent": true,
       "has": [
         {
@@ -1332,7 +1332,7 @@
     },
     {
       "source": "/hu/eletmu/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/werk/",
+      "destination": "https://www.banhalmiphotography.com/de-at/werk/",
       "permanent": true,
       "has": [
         {
@@ -1344,7 +1344,7 @@
     },
     {
       "source": "/hu/esettanulmanyok/magyar-peter-portre-2026/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/",
+      "destination": "https://www.banhalmiphotography.com/de-at/fallstudien/peter-magyar-portraet-2026/",
       "permanent": true,
       "has": [
         {
@@ -1356,7 +1356,7 @@
     },
     {
       "source": "/hu/gyik/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/faq/",
+      "destination": "https://www.banhalmiphotography.com/de-at/faq/",
       "permanent": true,
       "has": [
         {
@@ -1368,7 +1368,7 @@
     },
     {
       "source": "/hu/impresszum/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/impressum/",
+      "destination": "https://www.banhalmiphotography.com/de-at/impressum/",
       "permanent": true,
       "has": [
         {
@@ -1380,7 +1380,7 @@
     },
     {
       "source": "/hu/kapcsolat/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/kontakt/",
+      "destination": "https://www.banhalmiphotography.com/de-at/kontakt/",
       "permanent": true,
       "has": [
         {
@@ -1392,7 +1392,7 @@
     },
     {
       "source": "/hu/muveszi-fotografia/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/fine-art/",
+      "destination": "https://www.banhalmiphotography.com/de-at/fine-art/",
       "permanent": true,
       "has": [
         {
@@ -1404,7 +1404,7 @@
     },
     {
       "source": "/hu/partnerek/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/partner/",
+      "destination": "https://www.banhalmiphotography.com/de-at/partner/",
       "permanent": true,
       "has": [
         {
@@ -1416,7 +1416,7 @@
     },
     {
       "source": "/hu/portre/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/portrait/",
+      "destination": "https://www.banhalmiphotography.com/de-at/portrait/",
       "permanent": true,
       "has": [
         {
@@ -1428,7 +1428,7 @@
     },
     {
       "source": "/hu/rendezvenyfotozas/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/eventfotografie/",
+      "destination": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
       "permanent": true,
       "has": [
         {
@@ -1440,7 +1440,7 @@
     },
     {
       "source": "/hu/speier-viko/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/speier-viko/",
+      "destination": "https://www.banhalmiphotography.com/de-at/speier-viko/",
       "permanent": true,
       "has": [
         {
@@ -1452,7 +1452,7 @@
     },
     {
       "source": "/hu/sutik/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/cookies/",
+      "destination": "https://www.banhalmiphotography.com/de-at/cookies/",
       "permanent": true,
       "has": [
         {
@@ -1464,7 +1464,7 @@
     },
     {
       "source": "/impressum/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/impressum/",
+      "destination": "https://www.banhalmiphotography.com/de-at/impressum/",
       "permanent": true,
       "has": [
         {
@@ -1476,7 +1476,7 @@
     },
     {
       "source": "/lifestyle/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/brand/",
+      "destination": "https://www.banhalmiphotography.com/de-at/brand/",
       "permanent": true,
       "has": [
         {
@@ -1488,7 +1488,7 @@
     },
     {
       "source": "/partners/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/partner/",
+      "destination": "https://www.banhalmiphotography.com/de-at/partner/",
       "permanent": true,
       "has": [
         {
@@ -1500,7 +1500,7 @@
     },
     {
       "source": "/portrait/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/portrait/",
+      "destination": "https://www.banhalmiphotography.com/de-at/portrait/",
       "permanent": true,
       "has": [
         {
@@ -1512,7 +1512,7 @@
     },
     {
       "source": "/privacy-policy/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/datenschutz/",
+      "destination": "https://www.banhalmiphotography.com/de-at/datenschutz/",
       "permanent": true,
       "has": [
         {
@@ -1524,7 +1524,7 @@
     },
     {
       "source": "/requestaquote/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/anfrage/",
+      "destination": "https://www.banhalmiphotography.com/de-at/anfrage/",
       "permanent": true,
       "has": [
         {
@@ -1536,7 +1536,7 @@
     },
     {
       "source": "/speier-viko/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/speier-viko/",
+      "destination": "https://www.banhalmiphotography.com/de-at/speier-viko/",
       "permanent": true,
       "has": [
         {
@@ -1548,7 +1548,7 @@
     },
     {
       "source": "/terms-conditions/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/agb/",
+      "destination": "https://www.banhalmiphotography.com/de-at/agb/",
       "permanent": true,
       "has": [
         {
@@ -1560,7 +1560,7 @@
     },
     {
       "source": "/trust/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -1572,7 +1572,7 @@
     },
     {
       "source": "/de-at/trust",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -1584,7 +1584,7 @@
     },
     {
       "source": "/de-at/trust/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -1596,7 +1596,7 @@
     },
     {
       "source": "/hu/trust",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -1608,7 +1608,7 @@
     },
     {
       "source": "/hu/trust/",
-      "destination": "https://www.norbertbanhalmi.com/de-at/vertrauen/",
+      "destination": "https://www.banhalmiphotography.com/de-at/vertrauen/",
       "permanent": true,
       "has": [
         {
@@ -1620,7 +1620,7 @@
     },
     {
       "source": "/:path*",
-      "destination": "https://www.norbertbanhalmi.com/de-at/",
+      "destination": "https://www.banhalmiphotography.com/de-at/",
       "permanent": true,
       "has": [
         {
@@ -1632,7 +1632,7 @@
     },
     {
       "source": "/",
-      "destination": "https://www.norbertbanhalmi.com/hu/",
+      "destination": "https://www.banhalmiphotography.com/hu/",
       "permanent": true,
       "has": [
         {
@@ -1644,7 +1644,7 @@
     },
     {
       "source": "/about/",
-      "destination": "https://www.norbertbanhalmi.com/hu/eletmu/",
+      "destination": "https://www.banhalmiphotography.com/hu/eletmu/",
       "permanent": true,
       "has": [
         {
@@ -1656,7 +1656,7 @@
     },
     {
       "source": "/accessibility/",
-      "destination": "https://www.norbertbanhalmi.com/hu/akadalymentesseg/",
+      "destination": "https://www.banhalmiphotography.com/hu/akadalymentesseg/",
       "permanent": true,
       "has": [
         {
@@ -1668,7 +1668,7 @@
     },
     {
       "source": "/archive/",
-      "destination": "https://www.norbertbanhalmi.com/hu/archivum/",
+      "destination": "https://www.banhalmiphotography.com/hu/archivum/",
       "permanent": true,
       "has": [
         {
@@ -1680,7 +1680,7 @@
     },
     {
       "source": "/case-studies/peter-magyar-portrait-2026/",
-      "destination": "https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/",
+      "destination": "https://www.banhalmiphotography.com/hu/esettanulmanyok/magyar-peter-portre-2026/",
       "permanent": true,
       "has": [
         {
@@ -1692,7 +1692,7 @@
     },
     {
       "source": "/contact/",
-      "destination": "https://www.norbertbanhalmi.com/hu/kapcsolat/",
+      "destination": "https://www.banhalmiphotography.com/hu/kapcsolat/",
       "permanent": true,
       "has": [
         {
@@ -1704,7 +1704,7 @@
     },
     {
       "source": "/cookie-policy/",
-      "destination": "https://www.norbertbanhalmi.com/hu/sutik/",
+      "destination": "https://www.banhalmiphotography.com/hu/sutik/",
       "permanent": true,
       "has": [
         {
@@ -1716,7 +1716,7 @@
     },
     {
       "source": "/de-at/",
-      "destination": "https://www.norbertbanhalmi.com/hu/",
+      "destination": "https://www.banhalmiphotography.com/hu/",
       "permanent": true,
       "has": [
         {
@@ -1728,7 +1728,7 @@
     },
     {
       "source": "/de-at/agb/",
-      "destination": "https://www.norbertbanhalmi.com/hu/aszf/",
+      "destination": "https://www.banhalmiphotography.com/hu/aszf/",
       "permanent": true,
       "has": [
         {
@@ -1740,7 +1740,7 @@
     },
     {
       "source": "/de-at/anfrage/",
-      "destination": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/",
+      "destination": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
       "permanent": true,
       "has": [
         {
@@ -1752,7 +1752,7 @@
     },
     {
       "source": "/de-at/archiv/",
-      "destination": "https://www.norbertbanhalmi.com/hu/archivum/",
+      "destination": "https://www.banhalmiphotography.com/hu/archivum/",
       "permanent": true,
       "has": [
         {
@@ -1764,7 +1764,7 @@
     },
     {
       "source": "/de-at/barrierefreiheit/",
-      "destination": "https://www.norbertbanhalmi.com/hu/akadalymentesseg/",
+      "destination": "https://www.banhalmiphotography.com/hu/akadalymentesseg/",
       "permanent": true,
       "has": [
         {
@@ -1776,7 +1776,7 @@
     },
     {
       "source": "/de-at/brand/",
-      "destination": "https://www.norbertbanhalmi.com/hu/brand/",
+      "destination": "https://www.banhalmiphotography.com/hu/brand/",
       "permanent": true,
       "has": [
         {
@@ -1788,7 +1788,7 @@
     },
     {
       "source": "/de-at/cookies/",
-      "destination": "https://www.norbertbanhalmi.com/hu/sutik/",
+      "destination": "https://www.banhalmiphotography.com/hu/sutik/",
       "permanent": true,
       "has": [
         {
@@ -1800,7 +1800,7 @@
     },
     {
       "source": "/de-at/datenschutz/",
-      "destination": "https://www.norbertbanhalmi.com/hu/adatvedelem/",
+      "destination": "https://www.banhalmiphotography.com/hu/adatvedelem/",
       "permanent": true,
       "has": [
         {
@@ -1812,7 +1812,7 @@
     },
     {
       "source": "/de-at/eventfotografie/",
-      "destination": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
+      "destination": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
       "permanent": true,
       "has": [
         {
@@ -1824,7 +1824,7 @@
     },
     {
       "source": "/de-at/fallstudien/peter-magyar-portraet-2026/",
-      "destination": "https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/",
+      "destination": "https://www.banhalmiphotography.com/hu/esettanulmanyok/magyar-peter-portre-2026/",
       "permanent": true,
       "has": [
         {
@@ -1836,7 +1836,7 @@
     },
     {
       "source": "/de-at/faq/",
-      "destination": "https://www.norbertbanhalmi.com/hu/gyik/",
+      "destination": "https://www.banhalmiphotography.com/hu/gyik/",
       "permanent": true,
       "has": [
         {
@@ -1848,7 +1848,7 @@
     },
     {
       "source": "/de-at/fine-art/",
-      "destination": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+      "destination": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
       "permanent": true,
       "has": [
         {
@@ -1860,7 +1860,7 @@
     },
     {
       "source": "/de-at/impressum/",
-      "destination": "https://www.norbertbanhalmi.com/hu/impresszum/",
+      "destination": "https://www.banhalmiphotography.com/hu/impresszum/",
       "permanent": true,
       "has": [
         {
@@ -1872,7 +1872,7 @@
     },
     {
       "source": "/de-at/kontakt/",
-      "destination": "https://www.norbertbanhalmi.com/hu/kapcsolat/",
+      "destination": "https://www.banhalmiphotography.com/hu/kapcsolat/",
       "permanent": true,
       "has": [
         {
@@ -1884,7 +1884,7 @@
     },
     {
       "source": "/de-at/partner/",
-      "destination": "https://www.norbertbanhalmi.com/hu/partnerek/",
+      "destination": "https://www.banhalmiphotography.com/hu/partnerek/",
       "permanent": true,
       "has": [
         {
@@ -1896,7 +1896,7 @@
     },
     {
       "source": "/de-at/portrait/",
-      "destination": "https://www.norbertbanhalmi.com/hu/portre/",
+      "destination": "https://www.banhalmiphotography.com/hu/portre/",
       "permanent": true,
       "has": [
         {
@@ -1908,7 +1908,7 @@
     },
     {
       "source": "/de-at/speier-viko/",
-      "destination": "https://www.norbertbanhalmi.com/hu/speier-viko/",
+      "destination": "https://www.banhalmiphotography.com/hu/speier-viko/",
       "permanent": true,
       "has": [
         {
@@ -1920,7 +1920,7 @@
     },
     {
       "source": "/de-at/vertrauen/",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -1932,7 +1932,7 @@
     },
     {
       "source": "/de-at/werk/",
-      "destination": "https://www.norbertbanhalmi.com/hu/eletmu/",
+      "destination": "https://www.banhalmiphotography.com/hu/eletmu/",
       "permanent": true,
       "has": [
         {
@@ -1944,7 +1944,7 @@
     },
     {
       "source": "/event-photography/",
-      "destination": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
+      "destination": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
       "permanent": true,
       "has": [
         {
@@ -1956,7 +1956,7 @@
     },
     {
       "source": "/faq/",
-      "destination": "https://www.norbertbanhalmi.com/hu/gyik/",
+      "destination": "https://www.banhalmiphotography.com/hu/gyik/",
       "permanent": true,
       "has": [
         {
@@ -1968,7 +1968,7 @@
     },
     {
       "source": "/glamour/",
-      "destination": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+      "destination": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
       "permanent": true,
       "has": [
         {
@@ -1980,7 +1980,7 @@
     },
     {
       "source": "/hu/",
-      "destination": "https://www.norbertbanhalmi.com/hu/",
+      "destination": "https://www.banhalmiphotography.com/hu/",
       "permanent": true,
       "has": [
         {
@@ -1992,7 +1992,7 @@
     },
     {
       "source": "/hu/adatvedelem/",
-      "destination": "https://www.norbertbanhalmi.com/hu/adatvedelem/",
+      "destination": "https://www.banhalmiphotography.com/hu/adatvedelem/",
       "permanent": true,
       "has": [
         {
@@ -2004,7 +2004,7 @@
     },
     {
       "source": "/hu/ajanlatkeres/",
-      "destination": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/",
+      "destination": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
       "permanent": true,
       "has": [
         {
@@ -2016,7 +2016,7 @@
     },
     {
       "source": "/hu/akadalymentesseg/",
-      "destination": "https://www.norbertbanhalmi.com/hu/akadalymentesseg/",
+      "destination": "https://www.banhalmiphotography.com/hu/akadalymentesseg/",
       "permanent": true,
       "has": [
         {
@@ -2028,7 +2028,7 @@
     },
     {
       "source": "/hu/archivum/",
-      "destination": "https://www.norbertbanhalmi.com/hu/archivum/",
+      "destination": "https://www.banhalmiphotography.com/hu/archivum/",
       "permanent": true,
       "has": [
         {
@@ -2040,7 +2040,7 @@
     },
     {
       "source": "/hu/aszf/",
-      "destination": "https://www.norbertbanhalmi.com/hu/aszf/",
+      "destination": "https://www.banhalmiphotography.com/hu/aszf/",
       "permanent": true,
       "has": [
         {
@@ -2052,7 +2052,7 @@
     },
     {
       "source": "/hu/bizalom/",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -2064,7 +2064,7 @@
     },
     {
       "source": "/hu/brand/",
-      "destination": "https://www.norbertbanhalmi.com/hu/brand/",
+      "destination": "https://www.banhalmiphotography.com/hu/brand/",
       "permanent": true,
       "has": [
         {
@@ -2076,7 +2076,7 @@
     },
     {
       "source": "/hu/eletmu/",
-      "destination": "https://www.norbertbanhalmi.com/hu/eletmu/",
+      "destination": "https://www.banhalmiphotography.com/hu/eletmu/",
       "permanent": true,
       "has": [
         {
@@ -2088,7 +2088,7 @@
     },
     {
       "source": "/hu/esettanulmanyok/magyar-peter-portre-2026/",
-      "destination": "https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/",
+      "destination": "https://www.banhalmiphotography.com/hu/esettanulmanyok/magyar-peter-portre-2026/",
       "permanent": true,
       "has": [
         {
@@ -2100,7 +2100,7 @@
     },
     {
       "source": "/hu/gyik/",
-      "destination": "https://www.norbertbanhalmi.com/hu/gyik/",
+      "destination": "https://www.banhalmiphotography.com/hu/gyik/",
       "permanent": true,
       "has": [
         {
@@ -2112,7 +2112,7 @@
     },
     {
       "source": "/hu/impresszum/",
-      "destination": "https://www.norbertbanhalmi.com/hu/impresszum/",
+      "destination": "https://www.banhalmiphotography.com/hu/impresszum/",
       "permanent": true,
       "has": [
         {
@@ -2124,7 +2124,7 @@
     },
     {
       "source": "/hu/kapcsolat/",
-      "destination": "https://www.norbertbanhalmi.com/hu/kapcsolat/",
+      "destination": "https://www.banhalmiphotography.com/hu/kapcsolat/",
       "permanent": true,
       "has": [
         {
@@ -2136,7 +2136,7 @@
     },
     {
       "source": "/hu/muveszi-fotografia/",
-      "destination": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+      "destination": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
       "permanent": true,
       "has": [
         {
@@ -2148,7 +2148,7 @@
     },
     {
       "source": "/hu/partnerek/",
-      "destination": "https://www.norbertbanhalmi.com/hu/partnerek/",
+      "destination": "https://www.banhalmiphotography.com/hu/partnerek/",
       "permanent": true,
       "has": [
         {
@@ -2160,7 +2160,7 @@
     },
     {
       "source": "/hu/portre/",
-      "destination": "https://www.norbertbanhalmi.com/hu/portre/",
+      "destination": "https://www.banhalmiphotography.com/hu/portre/",
       "permanent": true,
       "has": [
         {
@@ -2172,7 +2172,7 @@
     },
     {
       "source": "/hu/rendezvenyfotozas/",
-      "destination": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
+      "destination": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
       "permanent": true,
       "has": [
         {
@@ -2184,7 +2184,7 @@
     },
     {
       "source": "/hu/speier-viko/",
-      "destination": "https://www.norbertbanhalmi.com/hu/speier-viko/",
+      "destination": "https://www.banhalmiphotography.com/hu/speier-viko/",
       "permanent": true,
       "has": [
         {
@@ -2196,7 +2196,7 @@
     },
     {
       "source": "/hu/sutik/",
-      "destination": "https://www.norbertbanhalmi.com/hu/sutik/",
+      "destination": "https://www.banhalmiphotography.com/hu/sutik/",
       "permanent": true,
       "has": [
         {
@@ -2208,7 +2208,7 @@
     },
     {
       "source": "/impressum/",
-      "destination": "https://www.norbertbanhalmi.com/hu/impresszum/",
+      "destination": "https://www.banhalmiphotography.com/hu/impresszum/",
       "permanent": true,
       "has": [
         {
@@ -2220,7 +2220,7 @@
     },
     {
       "source": "/lifestyle/",
-      "destination": "https://www.norbertbanhalmi.com/hu/brand/",
+      "destination": "https://www.banhalmiphotography.com/hu/brand/",
       "permanent": true,
       "has": [
         {
@@ -2232,7 +2232,7 @@
     },
     {
       "source": "/partners/",
-      "destination": "https://www.norbertbanhalmi.com/hu/partnerek/",
+      "destination": "https://www.banhalmiphotography.com/hu/partnerek/",
       "permanent": true,
       "has": [
         {
@@ -2244,7 +2244,7 @@
     },
     {
       "source": "/portrait/",
-      "destination": "https://www.norbertbanhalmi.com/hu/portre/",
+      "destination": "https://www.banhalmiphotography.com/hu/portre/",
       "permanent": true,
       "has": [
         {
@@ -2256,7 +2256,7 @@
     },
     {
       "source": "/privacy-policy/",
-      "destination": "https://www.norbertbanhalmi.com/hu/adatvedelem/",
+      "destination": "https://www.banhalmiphotography.com/hu/adatvedelem/",
       "permanent": true,
       "has": [
         {
@@ -2268,7 +2268,7 @@
     },
     {
       "source": "/requestaquote/",
-      "destination": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/",
+      "destination": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
       "permanent": true,
       "has": [
         {
@@ -2280,7 +2280,7 @@
     },
     {
       "source": "/speier-viko/",
-      "destination": "https://www.norbertbanhalmi.com/hu/speier-viko/",
+      "destination": "https://www.banhalmiphotography.com/hu/speier-viko/",
       "permanent": true,
       "has": [
         {
@@ -2292,7 +2292,7 @@
     },
     {
       "source": "/terms-conditions/",
-      "destination": "https://www.norbertbanhalmi.com/hu/aszf/",
+      "destination": "https://www.banhalmiphotography.com/hu/aszf/",
       "permanent": true,
       "has": [
         {
@@ -2304,7 +2304,7 @@
     },
     {
       "source": "/trust/",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -2316,7 +2316,7 @@
     },
     {
       "source": "/de-at/trust",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -2328,7 +2328,7 @@
     },
     {
       "source": "/de-at/trust/",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -2340,7 +2340,7 @@
     },
     {
       "source": "/hu/trust",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -2352,7 +2352,7 @@
     },
     {
       "source": "/hu/trust/",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -2364,7 +2364,7 @@
     },
     {
       "source": "/:path*",
-      "destination": "https://www.norbertbanhalmi.com/hu/",
+      "destination": "https://www.banhalmiphotography.com/hu/",
       "permanent": true,
       "has": [
         {
@@ -2376,7 +2376,7 @@
     },
     {
       "source": "/",
-      "destination": "https://www.norbertbanhalmi.com/hu/",
+      "destination": "https://www.banhalmiphotography.com/hu/",
       "permanent": true,
       "has": [
         {
@@ -2388,7 +2388,7 @@
     },
     {
       "source": "/about/",
-      "destination": "https://www.norbertbanhalmi.com/hu/eletmu/",
+      "destination": "https://www.banhalmiphotography.com/hu/eletmu/",
       "permanent": true,
       "has": [
         {
@@ -2400,7 +2400,7 @@
     },
     {
       "source": "/accessibility/",
-      "destination": "https://www.norbertbanhalmi.com/hu/akadalymentesseg/",
+      "destination": "https://www.banhalmiphotography.com/hu/akadalymentesseg/",
       "permanent": true,
       "has": [
         {
@@ -2412,7 +2412,7 @@
     },
     {
       "source": "/archive/",
-      "destination": "https://www.norbertbanhalmi.com/hu/archivum/",
+      "destination": "https://www.banhalmiphotography.com/hu/archivum/",
       "permanent": true,
       "has": [
         {
@@ -2424,7 +2424,7 @@
     },
     {
       "source": "/case-studies/peter-magyar-portrait-2026/",
-      "destination": "https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/",
+      "destination": "https://www.banhalmiphotography.com/hu/esettanulmanyok/magyar-peter-portre-2026/",
       "permanent": true,
       "has": [
         {
@@ -2436,7 +2436,7 @@
     },
     {
       "source": "/contact/",
-      "destination": "https://www.norbertbanhalmi.com/hu/kapcsolat/",
+      "destination": "https://www.banhalmiphotography.com/hu/kapcsolat/",
       "permanent": true,
       "has": [
         {
@@ -2448,7 +2448,7 @@
     },
     {
       "source": "/cookie-policy/",
-      "destination": "https://www.norbertbanhalmi.com/hu/sutik/",
+      "destination": "https://www.banhalmiphotography.com/hu/sutik/",
       "permanent": true,
       "has": [
         {
@@ -2460,7 +2460,7 @@
     },
     {
       "source": "/de-at/",
-      "destination": "https://www.norbertbanhalmi.com/hu/",
+      "destination": "https://www.banhalmiphotography.com/hu/",
       "permanent": true,
       "has": [
         {
@@ -2472,7 +2472,7 @@
     },
     {
       "source": "/de-at/agb/",
-      "destination": "https://www.norbertbanhalmi.com/hu/aszf/",
+      "destination": "https://www.banhalmiphotography.com/hu/aszf/",
       "permanent": true,
       "has": [
         {
@@ -2484,7 +2484,7 @@
     },
     {
       "source": "/de-at/anfrage/",
-      "destination": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/",
+      "destination": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
       "permanent": true,
       "has": [
         {
@@ -2496,7 +2496,7 @@
     },
     {
       "source": "/de-at/archiv/",
-      "destination": "https://www.norbertbanhalmi.com/hu/archivum/",
+      "destination": "https://www.banhalmiphotography.com/hu/archivum/",
       "permanent": true,
       "has": [
         {
@@ -2508,7 +2508,7 @@
     },
     {
       "source": "/de-at/barrierefreiheit/",
-      "destination": "https://www.norbertbanhalmi.com/hu/akadalymentesseg/",
+      "destination": "https://www.banhalmiphotography.com/hu/akadalymentesseg/",
       "permanent": true,
       "has": [
         {
@@ -2520,7 +2520,7 @@
     },
     {
       "source": "/de-at/brand/",
-      "destination": "https://www.norbertbanhalmi.com/hu/brand/",
+      "destination": "https://www.banhalmiphotography.com/hu/brand/",
       "permanent": true,
       "has": [
         {
@@ -2532,7 +2532,7 @@
     },
     {
       "source": "/de-at/cookies/",
-      "destination": "https://www.norbertbanhalmi.com/hu/sutik/",
+      "destination": "https://www.banhalmiphotography.com/hu/sutik/",
       "permanent": true,
       "has": [
         {
@@ -2544,7 +2544,7 @@
     },
     {
       "source": "/de-at/datenschutz/",
-      "destination": "https://www.norbertbanhalmi.com/hu/adatvedelem/",
+      "destination": "https://www.banhalmiphotography.com/hu/adatvedelem/",
       "permanent": true,
       "has": [
         {
@@ -2556,7 +2556,7 @@
     },
     {
       "source": "/de-at/eventfotografie/",
-      "destination": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
+      "destination": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
       "permanent": true,
       "has": [
         {
@@ -2568,7 +2568,7 @@
     },
     {
       "source": "/de-at/fallstudien/peter-magyar-portraet-2026/",
-      "destination": "https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/",
+      "destination": "https://www.banhalmiphotography.com/hu/esettanulmanyok/magyar-peter-portre-2026/",
       "permanent": true,
       "has": [
         {
@@ -2580,7 +2580,7 @@
     },
     {
       "source": "/de-at/faq/",
-      "destination": "https://www.norbertbanhalmi.com/hu/gyik/",
+      "destination": "https://www.banhalmiphotography.com/hu/gyik/",
       "permanent": true,
       "has": [
         {
@@ -2592,7 +2592,7 @@
     },
     {
       "source": "/de-at/fine-art/",
-      "destination": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+      "destination": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
       "permanent": true,
       "has": [
         {
@@ -2604,7 +2604,7 @@
     },
     {
       "source": "/de-at/impressum/",
-      "destination": "https://www.norbertbanhalmi.com/hu/impresszum/",
+      "destination": "https://www.banhalmiphotography.com/hu/impresszum/",
       "permanent": true,
       "has": [
         {
@@ -2616,7 +2616,7 @@
     },
     {
       "source": "/de-at/kontakt/",
-      "destination": "https://www.norbertbanhalmi.com/hu/kapcsolat/",
+      "destination": "https://www.banhalmiphotography.com/hu/kapcsolat/",
       "permanent": true,
       "has": [
         {
@@ -2628,7 +2628,7 @@
     },
     {
       "source": "/de-at/partner/",
-      "destination": "https://www.norbertbanhalmi.com/hu/partnerek/",
+      "destination": "https://www.banhalmiphotography.com/hu/partnerek/",
       "permanent": true,
       "has": [
         {
@@ -2640,7 +2640,7 @@
     },
     {
       "source": "/de-at/portrait/",
-      "destination": "https://www.norbertbanhalmi.com/hu/portre/",
+      "destination": "https://www.banhalmiphotography.com/hu/portre/",
       "permanent": true,
       "has": [
         {
@@ -2652,7 +2652,7 @@
     },
     {
       "source": "/de-at/speier-viko/",
-      "destination": "https://www.norbertbanhalmi.com/hu/speier-viko/",
+      "destination": "https://www.banhalmiphotography.com/hu/speier-viko/",
       "permanent": true,
       "has": [
         {
@@ -2664,7 +2664,7 @@
     },
     {
       "source": "/de-at/vertrauen/",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -2676,7 +2676,7 @@
     },
     {
       "source": "/de-at/werk/",
-      "destination": "https://www.norbertbanhalmi.com/hu/eletmu/",
+      "destination": "https://www.banhalmiphotography.com/hu/eletmu/",
       "permanent": true,
       "has": [
         {
@@ -2688,7 +2688,7 @@
     },
     {
       "source": "/event-photography/",
-      "destination": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
+      "destination": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
       "permanent": true,
       "has": [
         {
@@ -2700,7 +2700,7 @@
     },
     {
       "source": "/faq/",
-      "destination": "https://www.norbertbanhalmi.com/hu/gyik/",
+      "destination": "https://www.banhalmiphotography.com/hu/gyik/",
       "permanent": true,
       "has": [
         {
@@ -2712,7 +2712,7 @@
     },
     {
       "source": "/glamour/",
-      "destination": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+      "destination": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
       "permanent": true,
       "has": [
         {
@@ -2729,7 +2729,7 @@
     },
     {
       "source": "/hu/",
-      "destination": "https://www.norbertbanhalmi.com/hu/",
+      "destination": "https://www.banhalmiphotography.com/hu/",
       "permanent": true,
       "has": [
         {
@@ -2741,7 +2741,7 @@
     },
     {
       "source": "/hu/adatvedelem/",
-      "destination": "https://www.norbertbanhalmi.com/hu/adatvedelem/",
+      "destination": "https://www.banhalmiphotography.com/hu/adatvedelem/",
       "permanent": true,
       "has": [
         {
@@ -2753,7 +2753,7 @@
     },
     {
       "source": "/hu/ajanlatkeres/",
-      "destination": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/",
+      "destination": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
       "permanent": true,
       "has": [
         {
@@ -2765,7 +2765,7 @@
     },
     {
       "source": "/hu/akadalymentesseg/",
-      "destination": "https://www.norbertbanhalmi.com/hu/akadalymentesseg/",
+      "destination": "https://www.banhalmiphotography.com/hu/akadalymentesseg/",
       "permanent": true,
       "has": [
         {
@@ -2777,7 +2777,7 @@
     },
     {
       "source": "/hu/archivum/",
-      "destination": "https://www.norbertbanhalmi.com/hu/archivum/",
+      "destination": "https://www.banhalmiphotography.com/hu/archivum/",
       "permanent": true,
       "has": [
         {
@@ -2789,7 +2789,7 @@
     },
     {
       "source": "/hu/aszf/",
-      "destination": "https://www.norbertbanhalmi.com/hu/aszf/",
+      "destination": "https://www.banhalmiphotography.com/hu/aszf/",
       "permanent": true,
       "has": [
         {
@@ -2801,7 +2801,7 @@
     },
     {
       "source": "/hu/bizalom/",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -2813,7 +2813,7 @@
     },
     {
       "source": "/hu/brand/",
-      "destination": "https://www.norbertbanhalmi.com/hu/brand/",
+      "destination": "https://www.banhalmiphotography.com/hu/brand/",
       "permanent": true,
       "has": [
         {
@@ -2825,7 +2825,7 @@
     },
     {
       "source": "/hu/eletmu/",
-      "destination": "https://www.norbertbanhalmi.com/hu/eletmu/",
+      "destination": "https://www.banhalmiphotography.com/hu/eletmu/",
       "permanent": true,
       "has": [
         {
@@ -2837,7 +2837,7 @@
     },
     {
       "source": "/hu/esettanulmanyok/magyar-peter-portre-2026/",
-      "destination": "https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/",
+      "destination": "https://www.banhalmiphotography.com/hu/esettanulmanyok/magyar-peter-portre-2026/",
       "permanent": true,
       "has": [
         {
@@ -2849,7 +2849,7 @@
     },
     {
       "source": "/hu/gyik/",
-      "destination": "https://www.norbertbanhalmi.com/hu/gyik/",
+      "destination": "https://www.banhalmiphotography.com/hu/gyik/",
       "permanent": true,
       "has": [
         {
@@ -2861,7 +2861,7 @@
     },
     {
       "source": "/hu/impresszum/",
-      "destination": "https://www.norbertbanhalmi.com/hu/impresszum/",
+      "destination": "https://www.banhalmiphotography.com/hu/impresszum/",
       "permanent": true,
       "has": [
         {
@@ -2873,7 +2873,7 @@
     },
     {
       "source": "/hu/kapcsolat/",
-      "destination": "https://www.norbertbanhalmi.com/hu/kapcsolat/",
+      "destination": "https://www.banhalmiphotography.com/hu/kapcsolat/",
       "permanent": true,
       "has": [
         {
@@ -2885,7 +2885,7 @@
     },
     {
       "source": "/hu/muveszi-fotografia/",
-      "destination": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+      "destination": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
       "permanent": true,
       "has": [
         {
@@ -2897,7 +2897,7 @@
     },
     {
       "source": "/hu/partnerek/",
-      "destination": "https://www.norbertbanhalmi.com/hu/partnerek/",
+      "destination": "https://www.banhalmiphotography.com/hu/partnerek/",
       "permanent": true,
       "has": [
         {
@@ -2909,7 +2909,7 @@
     },
     {
       "source": "/hu/portre/",
-      "destination": "https://www.norbertbanhalmi.com/hu/portre/",
+      "destination": "https://www.banhalmiphotography.com/hu/portre/",
       "permanent": true,
       "has": [
         {
@@ -2921,7 +2921,7 @@
     },
     {
       "source": "/hu/rendezvenyfotozas/",
-      "destination": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
+      "destination": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
       "permanent": true,
       "has": [
         {
@@ -2933,7 +2933,7 @@
     },
     {
       "source": "/hu/speier-viko/",
-      "destination": "https://www.norbertbanhalmi.com/hu/speier-viko/",
+      "destination": "https://www.banhalmiphotography.com/hu/speier-viko/",
       "permanent": true,
       "has": [
         {
@@ -2945,7 +2945,7 @@
     },
     {
       "source": "/hu/sutik/",
-      "destination": "https://www.norbertbanhalmi.com/hu/sutik/",
+      "destination": "https://www.banhalmiphotography.com/hu/sutik/",
       "permanent": true,
       "has": [
         {
@@ -2957,7 +2957,7 @@
     },
     {
       "source": "/impressum/",
-      "destination": "https://www.norbertbanhalmi.com/hu/impresszum/",
+      "destination": "https://www.banhalmiphotography.com/hu/impresszum/",
       "permanent": true,
       "has": [
         {
@@ -2969,7 +2969,7 @@
     },
     {
       "source": "/lifestyle/",
-      "destination": "https://www.norbertbanhalmi.com/hu/brand/",
+      "destination": "https://www.banhalmiphotography.com/hu/brand/",
       "permanent": true,
       "has": [
         {
@@ -2981,7 +2981,7 @@
     },
     {
       "source": "/partners/",
-      "destination": "https://www.norbertbanhalmi.com/hu/partnerek/",
+      "destination": "https://www.banhalmiphotography.com/hu/partnerek/",
       "permanent": true,
       "has": [
         {
@@ -2993,7 +2993,7 @@
     },
     {
       "source": "/portrait/",
-      "destination": "https://www.norbertbanhalmi.com/hu/portre/",
+      "destination": "https://www.banhalmiphotography.com/hu/portre/",
       "permanent": true,
       "has": [
         {
@@ -3005,7 +3005,7 @@
     },
     {
       "source": "/privacy-policy/",
-      "destination": "https://www.norbertbanhalmi.com/hu/adatvedelem/",
+      "destination": "https://www.banhalmiphotography.com/hu/adatvedelem/",
       "permanent": true,
       "has": [
         {
@@ -3017,7 +3017,7 @@
     },
     {
       "source": "/requestaquote/",
-      "destination": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/",
+      "destination": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
       "permanent": true,
       "has": [
         {
@@ -3029,7 +3029,7 @@
     },
     {
       "source": "/speier-viko/",
-      "destination": "https://www.norbertbanhalmi.com/hu/speier-viko/",
+      "destination": "https://www.banhalmiphotography.com/hu/speier-viko/",
       "permanent": true,
       "has": [
         {
@@ -3041,7 +3041,7 @@
     },
     {
       "source": "/terms-conditions/",
-      "destination": "https://www.norbertbanhalmi.com/hu/aszf/",
+      "destination": "https://www.banhalmiphotography.com/hu/aszf/",
       "permanent": true,
       "has": [
         {
@@ -3053,7 +3053,7 @@
     },
     {
       "source": "/trust/",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -3065,7 +3065,7 @@
     },
     {
       "source": "/de-at/trust",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -3077,7 +3077,7 @@
     },
     {
       "source": "/de-at/trust/",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -3089,7 +3089,7 @@
     },
     {
       "source": "/hu/trust",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -3101,7 +3101,7 @@
     },
     {
       "source": "/hu/trust/",
-      "destination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+      "destination": "https://www.banhalmiphotography.com/hu/bizalom/",
       "permanent": true,
       "has": [
         {
@@ -3113,7 +3113,7 @@
     },
     {
       "source": "/:path*",
-      "destination": "https://www.norbertbanhalmi.com/hu/",
+      "destination": "https://www.banhalmiphotography.com/hu/",
       "permanent": true,
       "has": [
         {

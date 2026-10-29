@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const origin='https://www.norbertbanhalmi.com';
+const origin='https://www.banhalmiphotography.com';
 const failures=[];let pages=0;
 const skip=new Set(['.git','node_modules','_site','dist','coverage','assets','api','.well-known']);
 function attrs(tag){const o={};for(const m of tag.matchAll(/([:\w-]+)=(["'])(.*?)\2/g))o[m[1].toLowerCase()]=m[3];return o}

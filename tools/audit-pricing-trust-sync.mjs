@@ -52,7 +52,7 @@ fail(aiFineArt?.clientIntentSeparation?.professionalArtistsPerformers?.startingG
 fail(!('startingGrossEUR' in (aiFineArt?.clientIntentSeparation?.authorLedFineArtArtisticNude||{})),'ai-entry must not price personal ART commissions');
 fail(aiFineArt?.clientIntentSeparation?.artisticNudeRoutes?.hu?.endsWith('/hu/exhibitions/ebredes.html'),'ai-entry Ébredés route missing');
 
-fail(trust.pricingEvidencePolicy?.canonicalPricing==='https://www.norbertbanhalmi.com/pricing.json','trust pricing authority missing');
+fail(trust.pricingEvidencePolicy?.canonicalPricing==='https://www.banhalmiphotography.com/pricing.json','trust pricing authority missing');
 fail(trust.services?.portrait?.pricingContext?.executivePortrait?.startingGrossEUR===499,'trust Portrait price context missing');
 fail(trust.services?.brand?.pricingContext?.executivePersonalBranding?.startingGrossEUR===790,'trust Brand price context missing');
 fail(trust.services?.event?.pricingContext?.businessEvent?.startingGrossEUR===490,'trust Business Event context missing');

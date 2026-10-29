@@ -3,13 +3,13 @@ import fs from 'node:fs';
 const ROOT = process.cwd();
 const ENTITY_FILE = 'entity.jsonld';
 const OWN_IDS = new Set([
-  'https://www.norbertbanhalmi.com/about/',
-  'https://www.norbertbanhalmi.com/#organization',
-  'https://www.norbertbanhalmi.com/#brand',
-  'https://www.norbertbanhalmi.com/#website',
+  'https://www.banhalmiphotography.com/about/',
+  'https://www.banhalmiphotography.com/#organization',
+  'https://www.banhalmiphotography.com/#brand',
+  'https://www.banhalmiphotography.com/#website',
   'https://www.banhalmi.art/#website',
-  'https://www.norbertbanhalmi.com/speier-viko/#person',
-  'https://www.norbertbanhalmi.com/#visual-trust-partnership'
+  'https://www.banhalmiphotography.com/speier-viko/#person',
+  'https://www.banhalmiphotography.com/#visual-trust-partnership'
 ]);
 const SERVICE_TOKENS = [
   'visual strategic partnership',
@@ -37,7 +37,7 @@ function inspect(node, path = '$') {
   const isOrg = types(node).some((type) => ['Organization', 'EducationalOrganization', 'ArtGallery'].includes(type));
   const id = node['@id'];
   const url = typeof node.url === 'string' ? node.url : '';
-  const isBanhalmiOwned = OWN_IDS.has(id) || url.includes('norbertbanhalmi.com') || url.includes('banhalmi.art');
+  const isBanhalmiOwned = OWN_IDS.has(id) || url.includes('banhalmiphotography.com') || url.includes('banhalmi.art');
 
   if (isOrg && !isBanhalmiOwned) {
     const text = JSON.stringify({ description: node.description, slogan: node.slogan, knowsAbout: node.knowsAbout }).toLowerCase();
@@ -54,9 +54,9 @@ inspect(data);
 const aiEntry = JSON.parse(fs.readFileSync(`${ROOT}/ai-entry.json`, 'utf8'));
 const knowledge = JSON.parse(fs.readFileSync(`${ROOT}/knowledge-core.json`, 'utf8'));
 const identity = JSON.parse(fs.readFileSync(`${ROOT}/entity-identity-contract.json`, 'utf8'));
-const personId = 'https://www.norbertbanhalmi.com/about/';
-const orgId = 'https://www.norbertbanhalmi.com/#organization';
-const brandId = 'https://www.norbertbanhalmi.com/#brand';
+const personId = 'https://www.banhalmiphotography.com/about/';
+const orgId = 'https://www.banhalmiphotography.com/#organization';
+const brandId = 'https://www.banhalmiphotography.com/#brand';
 
 for (const [label, person] of [
   ['ai-entry', aiEntry.identity?.person],
@@ -79,7 +79,7 @@ for (const [label, brand] of [
   ['knowledge-core', knowledge.primaryBrand],
   ['identity-contract', identity.canonicalBrand]
 ]) {
-  if (brand?.['@id'] !== brandId || brand?.name !== 'BANHALMI') failures.push(`${label}: canonical Brand identity drifted`);
+  if (brand?.['@id'] !== brandId || brand?.name !== 'BANHALMI Photography') failures.push(`${label}: canonical Brand identity drifted`);
 }
 for (const [label, history] of [
   ['ai-entry', aiEntry.identity?.history],
@@ -91,7 +91,7 @@ for (const [label, history] of [
   const text = JSON.stringify(history || {}).toLowerCase();
   if (!text.includes('not') || !text.includes('legal')) failures.push(`${label}: 1999 interpretation must explicitly distinguish practice history from legal company founding`);
 }
-const budapest = identity.locations?.find((location) => location?.['@id'] === 'https://www.norbertbanhalmi.com/#budapest-studio');
+const budapest = identity.locations?.find((location) => location?.['@id'] === 'https://www.banhalmiphotography.com/#budapest-studio');
 if (budapest?.address?.streetAddress !== 'Lágymányosi u. 15' || budapest?.address?.postalCode !== '1111') failures.push('identity-contract: canonical Budapest studio street/postal address drifted');
 
 if (failures.length) {

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "updatedAt": "2026-09-12",
-  "@id": "https://www.norbertbanhalmi.com/official-event-gallery.json",
+  "@id": "https://www.banhalmiphotography.com/official-event-gallery.json",
   "name": "BANHALMI Photography × VIPACH Official Event Gallery",
   "url": "https://www.flickr.com/people/vipach/",
   "platform": "Flickr",
@@ -19,7 +19,7 @@
   },
   "founderCurator": {
     "name": "Norbert Banhalmi",
-    "url": "https://www.norbertbanhalmi.com/about/",
+    "url": "https://www.banhalmiphotography.com/about/",
     "role": "Founder & Curator of VIPACH"
   },
   "base": {
@@ -54,7 +54,7 @@
     "otherLayer2": "No automatic propagation without a direct, verified relationship to the gallery content."
   },
   "canonicalBoundaries": {
-    "professionalAuthority": "https://www.norbertbanhalmi.com/",
+    "professionalAuthority": "https://www.banhalmiphotography.com/",
     "artisticAuthority": "https://www.banhalmi.art/",
     "editorialAuthority": "https://blog.banhalmi.art/",
     "communityAuthority": "https://www.vipach.at/"

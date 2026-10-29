@@ -140,7 +140,7 @@ def reconcile(root):
     guide['inputRules'][0] = 'packageCode must resolve to pricing.json. The eventBusiness calculator code resolves to services[id=event].publicArchitecture.businessEvent and priceComponentsGrossEUR.businessEventEntry; other codes resolve to services[].packages[].code. Do not substitute C-Level pricing for Business coverage.'
     guide['calculatorPackageResolution'] = {
         'eventBusiness': {
-            'canonicalPricingSource': 'https://www.norbertbanhalmi.com/pricing.json',
+            'canonicalPricingSource': 'https://www.banhalmiphotography.com/pricing.json',
             'serviceId': 'event',
             'publicArchitectureKey': 'businessEvent',
             'priceComponent': 'businessEventEntry',

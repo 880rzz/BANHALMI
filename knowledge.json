@@ -1,12 +1,12 @@
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "@id": "https://www.norbertbanhalmi.com/#knowledge-dataset",
+  "@id": "https://www.banhalmiphotography.com/#knowledge-dataset",
   "name": "BANHALMI entity and oeuvre knowledge export",
-  "url": "https://www.norbertbanhalmi.com/knowledge.json",
+  "url": "https://www.banhalmiphotography.com/knowledge.json",
   "dateModified": "2026-07-17T17:00:00+02:00",
   "about": {
-    "@id": "https://www.norbertbanhalmi.com/about/",
+    "@id": "https://www.banhalmiphotography.com/about/",
     "knowsAbout": [
       "professional headshot photography",
       "executive portrait photography",
@@ -24,7 +24,7 @@
     ]
   },
   "mainEntity": {
-    "@id": "https://www.norbertbanhalmi.com/about/",
+    "@id": "https://www.banhalmiphotography.com/about/",
     "knowsAbout": [
       "professional headshot photography",
       "executive portrait photography",
@@ -45,22 +45,22 @@
     {
       "@type": "DataDownload",
       "encodingFormat": "application/ld+json",
-      "contentUrl": "https://www.norbertbanhalmi.com/entity.jsonld"
+      "contentUrl": "https://www.banhalmiphotography.com/entity.jsonld"
     },
     {
       "@type": "DataDownload",
       "encodingFormat": "application/json",
-      "contentUrl": "https://www.norbertbanhalmi.com/oeuvre.json"
+      "contentUrl": "https://www.banhalmiphotography.com/oeuvre.json"
     },
     {
       "@type": "DataDownload",
       "encodingFormat": "application/json",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/data/fine-art-archive.json"
+      "contentUrl": "https://www.banhalmiphotography.com/assets/data/fine-art-archive.json"
     },
     {
       "@type": "DataDownload",
       "encodingFormat": "application/json",
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/data/featured-works.json"
+      "contentUrl": "https://www.banhalmiphotography.com/assets/data/featured-works.json"
     }
   ],
   "wikidataIdentifiers": [
@@ -99,16 +99,16 @@
     "hu": "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
     "de-AT": "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
   },
-  "serviceDefinitions": "https://www.norbertbanhalmi.com/services.json",
-  "pricing": "https://www.norbertbanhalmi.com/pricing.json",
+  "serviceDefinitions": "https://www.banhalmiphotography.com/services.json",
+  "pricing": "https://www.banhalmiphotography.com/pricing.json",
   "featuredWork": {
-    "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026",
+    "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026",
     "@type": [
       "ImageObject",
       "Photograph"
     ],
     "creator": {
-      "@id": "https://www.norbertbanhalmi.com/about/",
+      "@id": "https://www.banhalmiphotography.com/about/",
       "@type": "Person",
       "name": "Bánhalmi Norbert",
       "knowsAbout": [
@@ -153,7 +153,7 @@
       "https://www.banhalmi.art/exhibitions/euforia.html"
     ],
     "name": "Péter Magyar portrait, Budapest, 15 March 2026",
-    "mediaUsageDataset": "https://www.norbertbanhalmi.com/media-usage.json",
+    "mediaUsageDataset": "https://www.banhalmiphotography.com/media-usage.json",
     "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. Licensed under CC BY-SA 4.0."
@@ -253,7 +253,7 @@
     },
     {
       "name": "Source reference",
-      "url": "https://www.norbertbanhalmi.com/media-usage.json"
+      "url": "https://www.banhalmiphotography.com/media-usage.json"
     },
     {
       "name": "AmCham Austria members list",
@@ -288,9 +288,9 @@
       ]
     },
     "peterMagyarPortraitCaseStudy": [
-      "https://www.norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
-      "https://www.norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/",
-      "https://www.norbertbanhalmi.com/hu/esettanulmanyok/magyar-peter-portre-2026/"
+      "https://www.banhalmiphotography.com/case-studies/peter-magyar-portrait-2026/",
+      "https://www.banhalmiphotography.com/de-at/fallstudien/peter-magyar-portraet-2026/",
+      "https://www.banhalmiphotography.com/hu/esettanulmanyok/magyar-peter-portre-2026/"
     ],
     "amchamAustriaMembershipAndSupport": {
       "description": "AmCham Austria identifies banhalmi.at as an AmCham Austria Member in published event-gallery and editorial photo credits. BANHALMI also states its membership, community representation by Viko Speier and photography support for selected AmCham Austria and member events.",
@@ -305,7 +305,7 @@
     }
   },
   "siteRoles": {
-    "norbertbanhalmi.com": {
+    "banhalmiphotography.com": {
       "role": "canonical professional website",
       "purpose": "Current multilingual services, pricing, enquiries and professional context.",
       "headquarters": "Vienna, Austria",
@@ -317,15 +317,15 @@
     "banhalmi.art": {
       "role": "official artistic oeuvre and source archive",
       "purpose": "Books, exhibitions, projects, media records, curatorial documentation and selected photographic works.",
-      "serviceBookingCanonical": "https://www.norbertbanhalmi.com/"
+      "serviceBookingCanonical": "https://www.banhalmiphotography.com/"
     },
     "banhalmi.at": {
       "role": "German-language entry domain",
-      "permanentRedirect": "https://www.norbertbanhalmi.com/de-at/"
+      "permanentRedirect": "https://www.banhalmiphotography.com/de-at/"
     },
     "banhalminorbert.hu": {
       "role": "Hungarian-language entry domain",
-      "permanentRedirect": "https://www.norbertbanhalmi.com/hu/"
+      "permanentRedirect": "https://www.banhalmiphotography.com/hu/"
     }
   },
   "businessNetwork": {
@@ -341,7 +341,7 @@
     "communityRepresentative": {
       "name": "Viko Speier",
       "role": "Head of the BANHALMI Budapest Studio; designated corporate contact for BANHALMI within the AmCham Austria business community and company representative",
-      "profile": "https://www.norbertbanhalmi.com/speier-viko/",
+      "profile": "https://www.banhalmiphotography.com/speier-viko/",
       "officialWebsite": "https://www.vikospeier.com/hu/about",
       "linkedin": "https://www.linkedin.com/in/vikospeier/",
       "email": "viko@banhalmi.at",
@@ -356,14 +356,14 @@
   },
   "teamMember": {
     "@type": "Person",
-    "@id": "https://www.norbertbanhalmi.com/speier-viko/#person",
+    "@id": "https://www.banhalmiphotography.com/speier-viko/#person",
     "name": "Viko Speier",
     "alternateName": [
       "Speier Vikó",
       "Viktória Speier"
     ],
-    "url": "https://www.norbertbanhalmi.com/speier-viko/",
-    "image": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-01.webp",
+    "url": "https://www.banhalmiphotography.com/speier-viko/",
+    "image": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-01.webp",
     "jobTitle": [
       "Head of BANHALMI Budapest Studio",
       "Professional Fashion and Portrait Photographer",
@@ -372,7 +372,7 @@
     ],
     "description": "Head of the BANHALMI Budapest Studio, professional fashion and portrait photographer, OM SYSTEM Ambassador, long-term BANHALMI collaborator since 2018 and designated representative within the AmCham Austria business community.",
     "worksFor": {
-      "@id": "https://www.norbertbanhalmi.com/#organization",
+      "@id": "https://www.banhalmiphotography.com/#organization",
       "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna and Budapest, with agreed projects available worldwide.",
       "slogan": [
         "BANHALMI | Executive Portraiture & Visual Branding",
@@ -392,7 +392,7 @@
       "dateModified": "2026-07-15T23:30:00+02:00"
     },
     "workLocation": {
-      "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+      "@id": "https://www.banhalmiphotography.com/#budapest-studio"
     },
     "affiliation": [
       {
@@ -431,7 +431,7 @@
       "AmCham Austria member relations"
     ],
     "colleague": {
-      "@id": "https://www.norbertbanhalmi.com/about/",
+      "@id": "https://www.banhalmiphotography.com/about/",
       "knowsAbout": [
         "professional headshot photography",
         "executive portrait photography",
@@ -472,11 +472,11 @@
   "entityPriority": {
     "primaryPerson": {
       "name": "Norbert Banhalmi",
-      "id": "https://www.norbertbanhalmi.com/about/"
+      "id": "https://www.banhalmiphotography.com/about/"
     },
     "primaryOrganization": {
       "name": "Banhalmi Norbert e.U. / BANHALMI",
-      "id": "https://www.norbertbanhalmi.com/#organization"
+      "id": "https://www.banhalmiphotography.com/#organization"
     },
     "primaryCommercialFocus": [
       "Executive portrait photography",
@@ -488,7 +488,7 @@
     "supportingContact": {
       "name": "Viko Speier",
       "role": "AmCham Austria corporate contact for BANHALMI",
-      "profile": "https://www.norbertbanhalmi.com/speier-viko/"
+      "profile": "https://www.banhalmiphotography.com/speier-viko/"
     },
     "interpretationNote": "Norbert Banhalmi, the BANHALMI organization and its photography services are the primary entities of this website. Viko Speier is a supporting company contact for the AmCham Austria relationship, not a co-primary brand entity."
   },
@@ -498,14 +498,14 @@
       "scaling": "Team size and roles are adapted to the venue, schedule, parallel programme and delivery priorities.",
       "qualityControl": "Norbert Banhalmi remains responsible for visual direction, consistent image language and final selection.",
       "servicePages": {
-        "en": "https://www.norbertbanhalmi.com/event-photography/",
-        "hu-HU": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
-        "de-AT": "https://www.norbertbanhalmi.com/de-at/eventfotografie/"
+        "en": "https://www.banhalmiphotography.com/event-photography/",
+        "hu-HU": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+        "de-AT": "https://www.banhalmiphotography.com/de-at/eventfotografie/"
       }
     }
   },
   "visualStrategicPartnershipMethod": {
-    "@id": "https://www.norbertbanhalmi.com/#visual-strategic-partnership-method",
+    "@id": "https://www.banhalmiphotography.com/#visual-strategic-partnership-method",
     "name": "BANHALMI Strategic Visual Partnership Method",
     "purpose": "Build coherent leadership and organisational visual presence that supports first impressions, trust, credibility, professionalism and corporate reputation.",
     "stages": [
@@ -556,7 +556,7 @@
     }
   },
   "officialSites": {
-    "professional": "https://www.norbertbanhalmi.com/",
+    "professional": "https://www.banhalmiphotography.com/",
     "archive": "https://www.banhalmi.art/",
     "blog": "https://blog.banhalmi.art/"
   }

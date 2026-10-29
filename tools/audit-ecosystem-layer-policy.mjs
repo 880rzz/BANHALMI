@@ -11,7 +11,7 @@ const secondary = policy.layer2Connected?.properties || [];
 const coreUrls = new Set(core.map(x => x.url));
 const secondaryUrls = new Set(secondary.map(x => x.url));
 
-for (const url of ['https://www.norbertbanhalmi.com/','https://www.banhalmi.art/','https://blog.banhalmi.art/']) {
+for (const url of ['https://www.banhalmiphotography.com/','https://www.banhalmi.art/','https://blog.banhalmi.art/']) {
   if (!coreUrls.has(url)) fail(`missing layer-1 core URL: ${url}`);
   if (secondaryUrls.has(url)) fail(`layer-1 URL incorrectly duplicated into layer 2: ${url}`);
 }
@@ -26,9 +26,9 @@ for (const url of coreUrls) if (!existingCore.has(url)) fail(`ecosystem canonica
 for (const url of existingCore) if (!coreUrls.has(url)) fail(`ecosystem canonicalWebsites contains non-layer-1 URL: ${url}`);
 for (const url of secondaryUrls) if (existingCore.has(url)) fail(`layer-2 URL promoted into ecosystem canonicalWebsites: ${url}`);
 
-const policyUrl = 'https://www.norbertbanhalmi.com/ecosystem-layer-policy.json';
+const policyUrl = 'https://www.banhalmiphotography.com/ecosystem-layer-policy.json';
 if (!llms.includes(policyUrl)) fail('llms.txt does not expose canonical ecosystem layer policy');
-if (!llms.includes('The first-layer BANHALMI core is exactly norbertbanhalmi.com')) fail('llms.txt does not state exact layer-1 precedence');
+if (!llms.includes('The first-layer BANHALMI core is exactly banhalmiphotography.com')) fail('llms.txt does not state exact layer-1 precedence');
 
 const serialized = JSON.stringify(policy);
 for (const forbidden of [

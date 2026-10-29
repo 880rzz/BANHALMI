@@ -3,14 +3,14 @@ import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '..');
 const expectations = [
-  ['redirects/hu/vercel.json', 'https://www.norbertbanhalmi.com/hu/:path*'],
-  ['redirects/at/vercel.json', 'https://www.norbertbanhalmi.com/de-at/:path*']
+  ['redirects/hu/vercel.json', 'https://www.banhalmiphotography.com/hu/:path*'],
+  ['redirects/at/vercel.json', 'https://www.banhalmiphotography.com/de-at/:path*']
 ];
 const rootExpectations = new Map([
-  ['banhalmi.at', 'https://www.norbertbanhalmi.com/de-at/:path*'],
-  ['www.banhalmi.at', 'https://www.norbertbanhalmi.com/de-at/:path*'],
-  ['banhalminorbert.hu', 'https://www.norbertbanhalmi.com/hu/:path*'],
-  ['www.banhalminorbert.hu', 'https://www.norbertbanhalmi.com/hu/:path*']
+  ['banhalmi.at', 'https://www.banhalmiphotography.com/de-at/:path*'],
+  ['www.banhalmi.at', 'https://www.banhalmiphotography.com/de-at/:path*'],
+  ['banhalminorbert.hu', 'https://www.banhalmiphotography.com/hu/:path*'],
+  ['www.banhalminorbert.hu', 'https://www.banhalmiphotography.com/hu/:path*']
 ]);
 
 const failures = [];

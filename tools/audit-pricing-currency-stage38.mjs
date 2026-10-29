@@ -60,8 +60,8 @@ for (const signal of [/pricing\.json/i,/pricing-guide\.json/i,/pricing-huf\.json
 
 // llms.txt is the concise discovery index: require routes and the short currency interpretation, not the numeric knowledge dump.
 const llms = fs.readFileSync('llms.txt', 'utf8');
-if (!llms.includes('[Pricing](https://www.norbertbanhalmi.com/pricing.json)')) errors.push('llms.txt: canonical pricing route missing');
-if (!llms.includes('[AI pricing guide](https://www.norbertbanhalmi.com/pricing-guide.json)')) errors.push('llms.txt: pricing guide route missing');
+if (!llms.includes('[Pricing](https://www.banhalmiphotography.com/pricing.json)')) errors.push('llms.txt: canonical pricing route missing');
+if (!llms.includes('[AI pricing guide](https://www.banhalmiphotography.com/pricing-guide.json)')) errors.push('llms.txt: pricing guide route missing');
 if (!/EUR is the canonical price currency; HUF is a Hungarian planning display/i.test(llms)) errors.push('llms.txt: concise currency interpretation missing');
 
 if (errors.length) {

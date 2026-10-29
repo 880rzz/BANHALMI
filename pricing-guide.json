@@ -3,8 +3,8 @@
   "schemaVersion": "2026-09-29-v4-executive-architecture",
   "dateModified": "2026-10-06",
   "name": "BANHALMI AI pricing interpretation and calculation guide",
-  "canonicalPricingSource": "https://www.norbertbanhalmi.com/pricing.json",
-  "quoteCalculator": "https://www.norbertbanhalmi.com/requestaquote/",
+  "canonicalPricingSource": "https://www.banhalmiphotography.com/pricing.json",
+  "quoteCalculator": "https://www.banhalmiphotography.com/requestaquote/",
   "currency": "EUR",
   "defaultTaxTreatment": {
     "displayMode": "gross",
@@ -206,7 +206,7 @@
     ]
   },
   "finalOfferNotice": "The final written offer is issued after review of purpose, location, number of people and photographers, production requirements, usage rights, deadline, travel and tax status. Hungarian HUF figures use a fixed planning rate of 1 EUR = 400 HUF; the accepted written offer records the contractual currency. Executive pricing is outcome-led: Professional Presence from EUR 499, Positioning from EUR 790, and Visual Library individually scoped.",
-  "hungarianPricingSource": "https://www.norbertbanhalmi.com/pricing-huf.json",
+  "hungarianPricingSource": "https://www.banhalmiphotography.com/pricing-huf.json",
   "displayCurrencyByLanguage": {
     "en": "EUR",
     "de-AT": "EUR",
@@ -275,7 +275,7 @@
   },
   "calculatorPackageResolution": {
     "eventBusiness": {
-      "canonicalPricingSource": "https://www.norbertbanhalmi.com/pricing.json",
+      "canonicalPricingSource": "https://www.banhalmiphotography.com/pricing.json",
       "serviceId": "event",
       "publicArchitectureKey": "businessEvent",
       "priceComponent": "businessEventEntry",
@@ -283,7 +283,7 @@
     }
   },
   "privateEventPricing": {
-    "source": "https://www.norbertbanhalmi.com/private-event-pricing.json",
+    "source": "https://www.banhalmiphotography.com/private-event-pricing.json",
     "serviceContext": "private-event",
     "calculation": "Use the private package for the selected duration. Never mutate C-Level or Business event prices. Standard event crew and optional-service components remain from pricing.json.",
     "travel": "City travel is included only for a private celebration at an explicitly selected Vienna or Budapest city location with matching country and an exact address. Other Austria/Hungary locations use the standard per-vehicle travel component; other countries require a custom travel quote.",

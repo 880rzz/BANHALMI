@@ -72,11 +72,11 @@ jobs:
       - name: Verify machine discovery bytes on the custom domain
         run: |
           for attempt in 1 2 3 4 5 6; do
-            agent_code="$(curl -sS -o live-agent.json -w '%{http_code}' -L https://www.norbertbanhalmi.com/.well-known/agent.json || true)"
-            nojekyll_code="$(curl -sS -o /dev/null -w '%{http_code}' -L https://www.norbertbanhalmi.com/.nojekyll || true)"
+            agent_code="$(curl -sS -o live-agent.json -w '%{http_code}' -L https://www.banhalmiphotography.com/.well-known/agent.json || true)"
+            nojekyll_code="$(curl -sS -o /dev/null -w '%{http_code}' -L https://www.banhalmiphotography.com/.nojekyll || true)"
             if [ "$agent_code" = "200" ] && [ "$nojekyll_code" = "200" ] && cmp -s .well-known/agent.json live-agent.json; then
-              curl -sS -I -L https://www.norbertbanhalmi.com/.well-known/agent.json | tr -d '\r'
-              curl -sS -I -L https://www.norbertbanhalmi.com/.nojekyll | tr -d '\r'
+              curl -sS -I -L https://www.banhalmiphotography.com/.well-known/agent.json | tr -d '\r'
+              curl -sS -I -L https://www.banhalmiphotography.com/.nojekyll | tr -d '\r'
               echo "Live agent.json matches committed source bytes for $GITHUB_SHA"
               exit 0
             fi

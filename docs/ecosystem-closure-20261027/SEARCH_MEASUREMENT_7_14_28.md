@@ -60,7 +60,7 @@ Másold a táblát, töltsd GSC/Bing Exporttal. Üres mező = még nincs adat.
 | Intent | Cél URL | 2026-11-02 OK? |
 | --- | --- | --- |
 | artistic nude / private art | ART Ébredés / private-photography |  |
-| Artists & Performers professional | norbertbanhalmi.com |  |
+| Artists & Performers professional | banhalmiphotography.com |  |
 | photography-history evidence | blog.banhalmi.art |  |
 
 ## Szabályok

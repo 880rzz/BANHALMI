@@ -1,9 +1,9 @@
 {
   "@context": "https://schema.org",
   "@type": "DataFeed",
-  "@id": "https://www.norbertbanhalmi.com/entity-graph.json",
+  "@id": "https://www.banhalmiphotography.com/entity-graph.json",
   "name": "BANHALMI canonical entity graph",
-  "url": "https://www.norbertbanhalmi.com/entity-graph.json",
+  "url": "https://www.banhalmiphotography.com/entity-graph.json",
   "dateModified": "2026-09-24T08:43:00+02:00",
   "inLanguage": [
     "en",
@@ -11,7 +11,7 @@
     "de-AT"
   ],
   "about": {
-    "@id": "https://www.norbertbanhalmi.com/about/",
+    "@id": "https://www.banhalmiphotography.com/about/",
     "knowsAbout": [
       "professional headshot photography",
       "executive portrait photography",
@@ -30,7 +30,7 @@
   },
   "dataFeedElement": [
     {
-      "@id": "https://www.norbertbanhalmi.com/about/",
+      "@id": "https://www.banhalmiphotography.com/about/",
       "knowsAbout": [
         "professional headshot photography",
         "executive portrait photography",
@@ -48,14 +48,14 @@
       ]
     },
     {
-      "@id": "https://www.norbertbanhalmi.com/#organization",
+      "@id": "https://www.banhalmiphotography.com/#organization",
       "sameAs": [
         "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40",
         "https://www.banhalmi.at/",
         "https://www.banhalminorbert.hu/"
       ],
       "headquarters": {
-        "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        "@id": "https://www.banhalmiphotography.com/#vienna-studio"
       },
       "additionalProperty": [
         {
@@ -84,7 +84,7 @@
       "dateModified": "2026-07-15T23:30:00+02:00"
     },
     {
-      "@id": "https://www.norbertbanhalmi.com/#website",
+      "@id": "https://www.banhalmiphotography.com/#website",
       "alternateName": [
         "banhalmi.at — German entry domain",
         "banhalminorbert.hu — Hungarian entry domain",
@@ -96,7 +96,7 @@
     {
       "@id": "https://www.banhalmi.art/#website",
       "name": "BANHALMI Art — official artistic oeuvre and source archive",
-      "description": "BANHALMI Art is Norbert Banhalmi's official artistic oeuvre and source archive for books, exhibitions, media appearances, curatorial documentation and selected photographic works. Current professional services, pricing and enquiries are canonical on norbertbanhalmi.com."
+      "description": "BANHALMI Art is Norbert Banhalmi's official artistic oeuvre and source archive for books, exhibitions, media appearances, curatorial documentation and selected photographic works. Current professional services, pricing and enquiries are canonical on banhalmiphotography.com."
     },
     {
       "@id": "https://www.wikidata.org/wiki/Q1741"
@@ -105,13 +105,13 @@
       "@id": "https://www.wikidata.org/wiki/Q1781"
     },
     {
-      "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+      "@id": "https://www.banhalmiphotography.com/#vienna-studio"
     },
     {
-      "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+      "@id": "https://www.banhalmiphotography.com/#budapest-studio"
     },
     {
-      "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"
+      "@id": "https://www.banhalmiphotography.com/#vienna-gersthofer-office"
     },
     {
       "@id": "https://www.wikidata.org/wiki/Q138413481"
@@ -185,7 +185,7 @@
       "name": "EUFÓRIA — The Anatomy of Presence",
       "sameAs": "https://www.wikidata.org/wiki/Q138717398",
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -203,11 +203,11 @@
         ]
       },
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "hasPart": [
         {
-          "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+          "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
         }
       ]
     },
@@ -216,10 +216,10 @@
         "ImageObject",
         "Photograph"
       ],
-      "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026",
+      "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026",
       "name": "Péter Magyar portrait, Budapest, 15 March 2026",
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "@type": "Person",
         "name": "Bánhalmi Norbert",
         "knowsAbout": [
@@ -252,7 +252,7 @@
       "sameAs": [
         "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg"
       ],
-      "contentUrl": "https://www.norbertbanhalmi.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
+      "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
       "description": "Portrait of Péter Magyar photographed by Norbert Banhalmi at Heroes’ Square in Budapest on 15 March 2026 at 16:57 as the first work in EUFÓRIA – The Anatomy of Presence. Wikimedia Commons documents creator, depicted person, date, location, project and CC BY-SA 4.0 licensing. The open image has documented reuse across international publications representing different editorial viewpoints.",
       "subjectOf": [
@@ -289,10 +289,10 @@
       ],
       "associatedMedia": {
         "@type": "DataFeed",
-        "@id": "https://www.norbertbanhalmi.com/media-usage.json#dataset",
-        "url": "https://www.norbertbanhalmi.com/media-usage.json"
+        "@id": "https://www.banhalmiphotography.com/media-usage.json#dataset",
+        "url": "https://www.banhalmiphotography.com/media-usage.json"
       },
-      "usageInfo": "https://www.norbertbanhalmi.com/media-usage.json",
+      "usageInfo": "https://www.banhalmiphotography.com/media-usage.json",
       "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
       "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. Licensed under CC BY-SA 4.0."
     },
@@ -306,20 +306,20 @@
       ],
       "url": "https://www.wikidata.org/wiki/Q124488292",
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "subjectOf": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       }
     },
     {
       "@id": "https://www.wikidata.org/wiki/Q138717398",
       "name": "Euphoria – The Anatomy of Presence",
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -339,7 +339,7 @@
     },
     {
       "@type": "EducationalOrganization",
-      "@id": "https://www.norbertbanhalmi.com/#gabor-denes-university",
+      "@id": "https://www.banhalmiphotography.com/#gabor-denes-university",
       "name": "Gábor Dénes University",
       "alternateName": [
         "Gábor Dénes Egyetem",
@@ -349,19 +349,19 @@
     },
     {
       "@type": "EducationalOrganization",
-      "@id": "https://www.norbertbanhalmi.com/#nyip",
+      "@id": "https://www.banhalmiphotography.com/#nyip",
       "name": "New York Institute of Photography",
       "url": "https://www.nyip.edu/"
     },
     {
       "@type": "EducationalOrganization",
-      "@id": "https://www.norbertbanhalmi.com/#focus-education",
+      "@id": "https://www.banhalmiphotography.com/#focus-education",
       "name": "FOCUS Oktatási Kft.",
       "alternateName": "FOCUS Education"
     },
     {
       "@type": "Organization",
-      "@id": "https://www.norbertbanhalmi.com/#pannon-photographers-association",
+      "@id": "https://www.banhalmiphotography.com/#pannon-photographers-association",
       "name": "Pannon Fényképészkör Egyesület",
       "url": "https://fenykepeszkor.hu/",
       "description": "BANHALMI creates leadership portraits, brand photography, employer-branding images and event photography between Vienna and Budapest. Every project begins by learning about the people, the organisation and where the photographs will be used.",
@@ -378,24 +378,24 @@
     },
     {
       "@type": "EducationalOrganization",
-      "@id": "https://www.norbertbanhalmi.com/#vienna-hungarian-school",
+      "@id": "https://www.banhalmiphotography.com/#vienna-hungarian-school",
       "name": "Bécsi Magyar Iskola",
       "alternateName": "Hungarian School Vienna",
       "url": "https://www.magyariskola.at/"
     },
     {
       "@type": "EducationalOccupationalProgram",
-      "@id": "https://www.norbertbanhalmi.com/#be-smart-kids-club",
+      "@id": "https://www.banhalmiphotography.com/#be-smart-kids-club",
       "name": "Be Smart Kids Club",
       "description": "Free digital skills programme launched in 2026 for Hungarian-speaking young people aged 10–16, connecting AI, content creation and modern web development with service to nonprofit organizations.",
       "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#vienna-hungarian-school"
+        "@id": "https://www.banhalmiphotography.com/#vienna-hungarian-school"
       },
       "educationalCredentialAwarded": "Practical digital and AI literacy"
     },
     {
       "@type": "ExhibitionEvent",
-      "@id": "https://www.norbertbanhalmi.com/#oncology-centre-permanent-exhibition",
+      "@id": "https://www.banhalmiphotography.com/#oncology-centre-permanent-exhibition",
       "name": "Permanent portrait exhibition at the Csolnoky Ferenc Hospital Oncology Centre",
       "startDate": "2018",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -410,7 +410,7 @@
       },
       "url": "https://www.veol.hu/vezeto-hirek/2018/03/csolnoky-ferenc-korhaz-onkologiai-centrum-rak-kiallitas",
       "contributor": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -430,13 +430,13 @@
     },
     {
       "@type": "CreativeWork",
-      "@id": "https://www.norbertbanhalmi.com/#wikipedia-biography-source",
+      "@id": "https://www.banhalmiphotography.com/#wikipedia-biography-source",
       "name": "Bánhalmi Norbert — Hungarian Wikipedia biography",
       "url": "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
       "dateModified": "2026-06-18T12:00:00+02:00",
       "inLanguage": "hu-HU",
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -477,10 +477,10 @@
         ]
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "creditText": "Primary project source documenting creation context, exact location and date, open licensing, and the later public history of the portrait."
     },
@@ -507,10 +507,10 @@
         ]
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "creditText": "Documents the photograph as a Wikimedia, structured-data and AI-discoverability teaching case."
     },
@@ -537,10 +537,10 @@
         ]
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "creditText": "Coverage focused on the photograph and its international circulation."
     },
@@ -567,10 +567,10 @@
         ]
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "creditText": "Uses the exact Commons file and visibly credits Wikimedia Commons; creator attribution is anchored in the Commons record."
     },
@@ -597,10 +597,10 @@
         ]
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "creditText": "Uses the portrait as the lead image and identifies Wikimedia Commons as the image source."
     },
@@ -627,10 +627,10 @@
         ]
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "creditText": "The portrait appears in the article body. No clear creator credit was visible in the archived page capture, so authorship is linked back to Wikimedia Commons."
     },
@@ -657,10 +657,10 @@
         ]
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "creditText": "Visible caption: Photo Credit: Norbert Banhalmi via Wikimedia Commons."
     },
@@ -687,10 +687,10 @@
         ]
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "creditText": "Visible image line names Norbert Banhalmi and identifies Flickr as the source."
     },
@@ -717,10 +717,10 @@
         ]
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "creditText": "Visible credit names Norbert Bánhalmi, CC BY-SA 4.0, via Wikimedia Commons, and states the image is unaltered."
     },
@@ -747,23 +747,23 @@
         ]
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"
+        "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "creditText": "Archived page capture visibly credits the photograph to Norbert Banhalmi and CC BY-SA 4.0 via Wikimedia Commons."
     },
     {
       "@type": "Person",
-      "@id": "https://www.norbertbanhalmi.com/speier-viko/#person",
+      "@id": "https://www.banhalmiphotography.com/speier-viko/#person",
       "name": "Viko Speier",
       "alternateName": [
         "Speier Vikó",
         "Viktória Speier"
       ],
-      "url": "https://www.norbertbanhalmi.com/speier-viko/",
-      "image": "https://www.norbertbanhalmi.com/assets/img/brand/gallery/brand-gallery-01.webp",
+      "url": "https://www.banhalmiphotography.com/speier-viko/",
+      "image": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-01.webp",
       "jobTitle": [
         "Head of BANHALMI Budapest Studio",
         "Professional Fashion and Portrait Photographer",
@@ -772,7 +772,7 @@
       ],
       "description": "Head of the BANHALMI Budapest Studio, professional fashion and portrait photographer, OM SYSTEM Ambassador, long-term BANHALMI collaborator since 2018 and designated representative within the AmCham Austria business community.",
       "worksFor": {
-        "@id": "https://www.norbertbanhalmi.com/#organization",
+        "@id": "https://www.banhalmiphotography.com/#organization",
         "description": "BANHALMI is a photography and visual branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business photography, team-led C-level event photography, fine-art photography, brand photography and strategic visual positioning in Vienna and Budapest, with agreed projects available worldwide.",
         "slogan": [
           "BANHALMI | Executive Portraiture & Visual Branding",
@@ -792,7 +792,7 @@
         "dateModified": "2026-07-15T23:30:00+02:00"
       },
       "workLocation": {
-        "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+        "@id": "https://www.banhalmiphotography.com/#budapest-studio"
       },
       "affiliation": [
         {
@@ -831,7 +831,7 @@
         "AmCham Austria member relations"
       ],
       "colleague": {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -874,7 +874,7 @@
       "dateModified": "2026-07-17T17:00:00+02:00",
       "item": {
         "@type": "HowTo",
-        "@id": "https://www.norbertbanhalmi.com/#visual-strategic-partnership-method",
+        "@id": "https://www.banhalmiphotography.com/#visual-strategic-partnership-method",
         "name": "BANHALMI Strategic Visual Partnership Method",
         "purpose": "Build coherent leadership and organisational visual presence that supports first impressions, trust, credibility, professionalism and corporate reputation.",
         "stages": [
@@ -931,8 +931,8 @@
     "hu": "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
     "de-AT": "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
   },
-  "serviceDefinitions": "https://www.norbertbanhalmi.com/services.json",
-  "pricing": "https://www.norbertbanhalmi.com/pricing.json",
+  "serviceDefinitions": "https://www.banhalmiphotography.com/services.json",
+  "pricing": "https://www.banhalmiphotography.com/pricing.json",
   "sourceReferences": [
     "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
     "https://www.wikidata.org/wiki/Q56391118",
@@ -948,7 +948,7 @@
     "https://politicsuk.com/news/a-new-dawn-for-hungary-the-election-that-ended-the-16-year-orban-era/",
     "https://www.americanthinker.com/articles/2026/04/hungary_a_thorny_transition_after_the_election.html",
     "https://themilitaryanalyst.com/2026/04/13/orban-surrenders-a-lesson-for-russia-europe-and-america/",
-    "https://www.norbertbanhalmi.com/media-usage.json",
+    "https://www.banhalmiphotography.com/media-usage.json",
     "https://amcham.at/members-list/",
     "https://www.wikidata.org/wiki/Q138413481",
     "https://www.vikospeier.com/hu/about",
@@ -956,7 +956,7 @@
     "https://amcham.at/galleries/amcham-talks-may-2026/"
   ],
   "siteRoles": {
-    "professionalCanonical": "https://www.norbertbanhalmi.com/",
+    "professionalCanonical": "https://www.banhalmiphotography.com/",
     "professionalPurpose": "Current multilingual services, pricing, enquiries and professional context.",
     "artisticArchive": "https://www.banhalmi.art/",
     "artisticArchivePurpose": "Official artistic oeuvre and source archive for books, exhibitions, projects, media records, curatorial documentation and selected works."
@@ -974,7 +974,7 @@
     "communityRepresentative": {
       "name": "Viko Speier",
       "role": "Head of the BANHALMI Budapest Studio; designated contact and company representative within the AmCham Austria community",
-      "profile": "https://www.norbertbanhalmi.com/speier-viko/",
+      "profile": "https://www.banhalmiphotography.com/speier-viko/",
       "email": "viko@banhalmi.at",
       "telephone": [
         "+36 30 478 8850",
@@ -989,7 +989,7 @@
     "communitySupport": "BANHALMI supports selected AmCham Austria and member-community events with professional photography and visual documentation."
   },
   "visualStrategicPartnershipMethod": {
-    "@id": "https://www.norbertbanhalmi.com/#visual-strategic-partnership-method",
+    "@id": "https://www.banhalmiphotography.com/#visual-strategic-partnership-method",
     "name": "BANHALMI Strategic Visual Partnership Method",
     "purpose": "Build coherent leadership and organisational visual presence that supports first impressions, trust, credibility, professionalism and corporate reputation.",
     "stages": [
@@ -1040,7 +1040,7 @@
     }
   },
   "officialSites": {
-    "professional": "https://www.norbertbanhalmi.com/",
+    "professional": "https://www.banhalmiphotography.com/",
     "archive": "https://www.banhalmi.art/",
     "blog": "https://blog.banhalmi.art/"
   }

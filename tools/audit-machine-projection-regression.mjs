@@ -36,7 +36,7 @@ try {
     'Bánhalmi Norbert: founder, creative director, lead photographer and final visual decision-maker',
     'Viko Speier: independent professional partner/collaborator',
     'approximately 50','1190 Döbling','1130 Hietzing','XII. kerület / District 12 / Hegyvidék','V. kerület / District 5 / Belváros-Lipótváros','Worldwide:',
-    'llm-commercial-contract.json','memberships.json','partners.json','recognitions.json','Turul Fotózás','TOP 100 of Hungary','https://www.norbertbanhalmi.com/transatlantic-evidence.json',
+    'llm-commercial-contract.json','memberships.json','partners.json','recognitions.json','Turul Fotózás','TOP 100 of Hungary','https://www.banhalmiphotography.com/transatlantic-evidence.json',
     'executive-positioning-model.json','every executive and senior professional is positioned individually','generational and career-stage context','leadership level and position','professional field','stakeholder audience','usage channels','intended perception','Different roles need different visual authority','Executive Portrait Vienna','C-Level Portrait','CEO Portrait','Leadership Portrait','Executive Personal Branding','CV Executive Portrait','LinkedIn Executive Portrait','Business Event Coverage starts from EUR 490 gross','C-Level / Institutional Event Photography starts from EUR 590 gross','Artists & Performers professional portfolios start from EUR 690 gross for career-facing use','artistic nude service and enquiries belong to the localized Ébredés / Awakening exhibition','1 EUR = 400 HUF'
   ];
   for (const token of required) {
@@ -51,23 +51,23 @@ try {
   if (!entry.geography?.marketGeography?.priorityLocalServiceAreas?.budapest?.includes('XII. kerület / District 12 / Hegyvidék')) throw new Error('Generated ai-entry lost Budapest premium local service areas');
   if (entry.geography?.worldwideAvailability !== true) throw new Error('Generated ai-entry lost worldwide availability');
   if (entry.recognitions?.items?.length !== 4) throw new Error('Generated ai-entry lost verified recognition records');
-  if (entry.canonicalReferences?.transatlanticEvidence !== 'https://www.norbertbanhalmi.com/transatlantic-evidence.json') throw new Error('Generated ai-entry lost transatlantic evidence reference');
-  if (entry.protectedCanonicalOverlay?.protectedReferences?.executivePositioning !== 'https://www.norbertbanhalmi.com/executive-positioning-model.json') throw new Error('Generated ai-entry lost protected executive positioning reference');
+  if (entry.canonicalReferences?.transatlanticEvidence !== 'https://www.banhalmiphotography.com/transatlantic-evidence.json') throw new Error('Generated ai-entry lost transatlantic evidence reference');
+  if (entry.protectedCanonicalOverlay?.protectedReferences?.executivePositioning !== 'https://www.banhalmiphotography.com/executive-positioning-model.json') throw new Error('Generated ai-entry lost protected executive positioning reference');
   const protectedSummary = entry.protectedCanonicalOverlay?.canonicalSummary?.services || '';
   for (const token of ['generational and career-stage context','leadership level and position','professional field','stakeholder audience','usage channels','intended perception']) {
     if (!protectedSummary.includes(token)) throw new Error(`Generated ai-entry lost executive positioning semantic: ${token}`);
   }
-  if (authority.transatlanticAuthority?.url !== 'https://www.norbertbanhalmi.com/transatlantic-evidence.json') throw new Error('Generated authority evidence lost transatlantic evidence reference');
+  if (authority.transatlanticAuthority?.url !== 'https://www.banhalmiphotography.com/transatlantic-evidence.json') throw new Error('Generated authority evidence lost transatlantic evidence reference');
 
   const turulYears = recognitions.items.filter((item) => item.organizer === 'Turul Fotózás' && item.placement === 1).map((item) => item.year).sort();
   if (JSON.stringify(turulYears) !== JSON.stringify([2021, 2024, 2026])) throw new Error(`Recognition projection lost verified Turul Budapest first-place years: ${JSON.stringify(turulYears)}`);
   const top100 = recognitions.items.find((item) => item.id === 'top100-hungary-photography-2022');
   if (!top100?.categoryWinner || top100.scope !== 'Hungary') throw new Error('Recognition projection lost TOP 100 of Hungary 2022 national category-win semantics');
 
-  const personNode = entity['@graph']?.find((node) => node['@type'] === 'Person' && node['@id'] === 'https://www.norbertbanhalmi.com/about/');
+  const personNode = entity['@graph']?.find((node) => node['@type'] === 'Person' && node['@id'] === 'https://www.banhalmiphotography.com/about/');
   if (!Array.isArray(personNode?.award) || personNode.award.length !== 4) throw new Error('Generated Person schema lost recognition award claims');
   if (!personNode.award.some((value) => value.includes('2026'))) throw new Error('Generated Person schema lost 2026 Turul recognition');
-  if (!personNode.subjectOf?.some((item) => item.url === 'https://www.norbertbanhalmi.com/transatlantic-evidence.json')) throw new Error('Generated Person schema lost transatlantic evidence subjectOf link');
+  if (!personNode.subjectOf?.some((item) => item.url === 'https://www.banhalmiphotography.com/transatlantic-evidence.json')) throw new Error('Generated Person schema lost transatlantic evidence subjectOf link');
 
   const serviceSchema = JSON.parse(fs.readFileSync('brand-positioning.jsonld','utf8'));
   if (!serviceSchema.description.includes('generational and career-stage context')) throw new Error('Service schema lost executive positioning context');
