@@ -27,6 +27,6 @@ const eco=JSON.parse(await read('ecosystem.json'));
 if(eco?.canonicalConsultation?.durationMinutes!==15) errors.push('ecosystem.json: canonical consultation must be 15 minutes');
 if(eco?.canonicalConsultation?.bookingUrl!=='https://meet.bookipi.com/zk5ly35r') errors.push('ecosystem.json: booking URL mismatch');
 const roles=new Map((eco.canonicalWebsites||[]).map(x=>[x.role,x.url]));
-for(const [role,url] of [['professional-services','https://www.norbertbanhalmi.com/'],['artistic-archive','https://www.banhalmi.art/'],['editorial-knowledge-layer','https://blog.banhalmi.art/']]) if(roles.get(role)!==url) errors.push('ecosystem.json: missing '+role+' -> '+url);
+for(const [role,url] of [['professional-services','https://www.banhalmiphotography.com/'],['artistic-archive','https://www.banhalmi.art/'],['editorial-knowledge-layer','https://blog.banhalmi.art/']]) if(roles.get(role)!==url) errors.push('ecosystem.json: missing '+role+' -> '+url);
 if(errors.length){console.error('Stage61 video-call/ecosystem audit failed:');errors.forEach(e=>console.error(' - '+e));process.exit(1);}
 console.log('Stage61 passed: 12 EN/HU/DE decision surfaces use the canonical 15-minute Google Meet consultation and the professional/archive/blog ecosystem contract is explicit.');

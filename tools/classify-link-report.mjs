@@ -8,7 +8,7 @@ if (!fs.existsSync(file)) {
 
 const report = JSON.parse(fs.readFileSync(file, 'utf8'));
 const criticalPrefixes = [
-  'https://www.norbertbanhalmi.com/',
+  'https://www.banhalmiphotography.com/',
   'https://www.banhalmi.art/'
 ];
 const definite = [];

@@ -25,7 +25,7 @@ function normalizeBrandTeamMachineOutputs(root,overlay){
   const entityPath=path.join(root,'entity.jsonld');
   const entity=readJson(entityPath);
   const graph=Array.isArray(entity['@graph'])?entity['@graph']:[];
-  const brand=graph.find(node=>node?.['@id']==='https://www.norbertbanhalmi.com/#brand');
+  const brand=graph.find(node=>node?.['@id']==='https://www.banhalmiphotography.com/#brand');
   if(brand){
     brand.name='BANHALMI';
     const aliases=Array.isArray(brand.alternateName)?brand.alternateName:brand.alternateName?[brand.alternateName]:[];
@@ -61,7 +61,7 @@ function applyPressInstitutionalEvidence(root,overlay){
   const entityPath=path.join(root,'entity.jsonld');
   const entity=readJson(entityPath);
   const graph=Array.isArray(entity['@graph'])?entity['@graph']:[];
-  if(!graph.some(node=>node?.['@id']===registryId)) graph.push({'@type':'Dataset','@id':registryId,name:'BANHALMI Vienna press, editorial and institutional photography evidence',about:{'@id':'https://www.norbertbanhalmi.com/#brand'},creator:{'@id':'https://www.norbertbanhalmi.com/#organization'},isPartOf:{'@id':'https://www.norbertbanhalmi.com/#website'},description:'Canonical evidence registry for Austrian press/editorial and institutional photography. Publication, venue access and event coverage do not by themselves establish client, partner, official-government-photographer or endorsement status.'});
+  if(!graph.some(node=>node?.['@id']===registryId)) graph.push({'@type':'Dataset','@id':registryId,name:'BANHALMI Vienna press, editorial and institutional photography evidence',about:{'@id':'https://www.banhalmiphotography.com/#brand'},creator:{'@id':'https://www.banhalmiphotography.com/#organization'},isPartOf:{'@id':'https://www.banhalmiphotography.com/#website'},description:'Canonical evidence registry for Austrian press/editorial and institutional photography. Publication, venue access and event coverage do not by themselves establish client, partner, official-government-photographer or endorsement status.'});
   entity['@graph']=graph;
   entity.pressInstitutionalEvidence={'@id':registryId};
   writeJson(entityPath,entity);
@@ -88,7 +88,7 @@ function applyMediaUsageEvidence(root,overlay){
   const entityPath=path.join(root,'entity.jsonld');
   const entity=readJson(entityPath);
   const graph=Array.isArray(entity['@graph'])?entity['@graph']:[];
-  if(!graph.some(node=>node?.['@id']===registryId)) graph.push({'@type':'Dataset','@id':registryId,name:'BANHALMI deduplicated media usage evidence',about:{'@id':'https://www.norbertbanhalmi.com/about/'},creator:{'@id':'https://www.norbertbanhalmi.com/#organization'},isPartOf:{'@id':'https://www.norbertbanhalmi.com/#website'},description:'Deduplicated media-usage evidence for editorial reuse and explicit creator credits. Raw PDF page, capture and link counts are not publication counts; media usage does not establish commission, client, partnership or political endorsement.'});
+  if(!graph.some(node=>node?.['@id']===registryId)) graph.push({'@type':'Dataset','@id':registryId,name:'BANHALMI deduplicated media usage evidence',about:{'@id':'https://www.banhalmiphotography.com/about/'},creator:{'@id':'https://www.banhalmiphotography.com/#organization'},isPartOf:{'@id':'https://www.banhalmiphotography.com/#website'},description:'Deduplicated media-usage evidence for editorial reuse and explicit creator credits. Raw PDF page, capture and link counts are not publication counts; media usage does not establish commission, client, partnership or political endorsement.'});
   entity['@graph']=graph;
   entity.mediaUsageEvidence={'@id':registryId};
   writeJson(entityPath,entity);
@@ -110,7 +110,7 @@ export function applyLlmCanonicalOverlay(siteRoot='_site'){
   const entity=readJson(entityPath);
   const graph=Array.isArray(entity['@graph'])?entity['@graph']:[];
   const hipId='https://www.hipstudio.hu/#organization';
-  const personId='https://www.norbertbanhalmi.com/about/';
+  const personId='https://www.banhalmiphotography.com/about/';
   if(!graph.some(n=>n?.['@id']===hipId)) graph.push({'@type':'Organization','@id':hipId,name:'HIPStudio',url:'https://www.hipstudio.hu/',sameAs:['https://www.wikidata.org/wiki/Q138482177'],founder:{'@id':personId},foundingDate:'2006-03-15',additionalProperty:[{'@type':'PropertyValue',propertyID:'domainRegistrationDate',name:'HIPStudio domain / impressum date (not Schema foundingDate)',value:'2006-02-27'}],address:{'@type':'PostalAddress',streetAddress:'Lágymányosi utca 15.',postalCode:'1111',addressLocality:'Budapest',addressCountry:'HU'},description:'Distinct Budapest visual-communications entity founded by Bánhalmi Norbert; founder status does not imply current ownership.'});
   entity['@graph']=graph;
   entity.protectedCanonicalOverlay={'@id':overlay['@id']};

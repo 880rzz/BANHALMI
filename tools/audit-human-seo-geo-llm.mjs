@@ -13,17 +13,17 @@ for (const heading of ['Voice system', 'SEO audit', 'Schema audit', 'GEO audit',
 
 const pages = {
   'about/index.html': {
-    canonical: 'https://www.norbertbanhalmi.com/about/',
+    canonical: 'https://www.banhalmiphotography.com/about/',
     origin: ['MOL Y2K project', 'IT specialist', '1.3-megapixel', 'Military documentation followed later'],
     retired: ['The first camera came into my hands during military service']
   },
   'hu/eletmu/index.html': {
-    canonical: 'https://www.norbertbanhalmi.com/hu/eletmu/',
+    canonical: 'https://www.banhalmiphotography.com/hu/eletmu/',
     origin: ['MOL Y2K projekt', 'informatikusként', '1,3 megapixeles', 'katonai dokumentáció később'],
     retired: ['Az első fényképezőgép a katonai szolgálat alatt került a kezembe']
   },
   'de-at/werk/index.html': {
-    canonical: 'https://www.norbertbanhalmi.com/de-at/werk/',
+    canonical: 'https://www.banhalmiphotography.com/de-at/werk/',
     origin: ['MOL-Y2K-Projekt', 'IT-Spezialist', '1,3 Megapixeln', 'militärische Dokumentation folgte später'],
     retired: ['Die erste Kamera kam während des Militärdienstes in meine Hände']
   }
@@ -34,7 +34,7 @@ for (const [relative, contract] of Object.entries(pages)) {
   if (!html.includes(`rel="canonical"`) || !html.includes(contract.canonical)) errors.push(`${relative}: canonical mismatch`);
   for (const token of contract.origin) if (!html.includes(token)) errors.push(`${relative}: origin chronology missing ${token}`);
   for (const token of contract.retired) if (html.includes(token)) errors.push(`${relative}: retired military-origin claim remains`);
-  if (!html.includes('https://www.norbertbanhalmi.com/about/')) errors.push(`${relative}: canonical Person missing`);
+  if (!html.includes('https://www.banhalmiphotography.com/about/')) errors.push(`${relative}: canonical Person missing`);
   for (const lang of ['hreflang="en"', 'hreflang="de-AT"', 'hreflang="hu-HU"', 'hreflang="x-default"']) {
     if (!html.includes(lang)) errors.push(`${relative}: hreflang cluster missing ${lang}`);
   }
@@ -45,25 +45,25 @@ const firstTimeline = Array.isArray(oeuvre.timeline?.[0]) ? oeuvre.timeline[0].j
 for (const token of ['1999', 'MOL Y2K', 'IT specialist', '1.3-megapixel']) {
   if (!firstTimeline.includes(token)) errors.push(`oeuvre.json: first timeline record missing ${token}`);
 }
-if (oeuvre.person?.canonicalId !== 'https://www.norbertbanhalmi.com/about/') errors.push('oeuvre.json: canonical Person ID missing');
+if (oeuvre.person?.canonicalId !== 'https://www.banhalmiphotography.com/about/') errors.push('oeuvre.json: canonical Person ID missing');
 
 // The concise llms.txt entry index carries identity/ecosystem routing; detailed origin evidence stays in ai.txt.
 const llms = read('llms.txt');
 for (const token of [
-  'https://www.norbertbanhalmi.com/about/',
-  'https://www.norbertbanhalmi.com/',
+  'https://www.banhalmiphotography.com/about/',
+  'https://www.banhalmiphotography.com/',
   'https://www.banhalmi.art/',
   'https://blog.banhalmi.art/'
 ]) {
   if (!llms.includes(token)) errors.push(`llms.txt: ecosystem token missing ${token}`);
 }
-if (!llms.includes('[AI reference](https://www.norbertbanhalmi.com/ai.txt)')) errors.push('llms.txt: detailed AI reference link missing');
+if (!llms.includes('[AI reference](https://www.banhalmiphotography.com/ai.txt)')) errors.push('llms.txt: detailed AI reference link missing');
 if (/first camera.*military service|military service.*first camera/i.test(llms)) errors.push('llms.txt: retired military-origin claim remains');
 
 const ai = read('ai.txt');
 for (const token of [
-  'https://www.norbertbanhalmi.com/about/',
-  'https://www.norbertbanhalmi.com/',
+  'https://www.banhalmiphotography.com/about/',
+  'https://www.banhalmiphotography.com/',
   'https://www.banhalmi.art/',
   'https://blog.banhalmi.art/',
   'MOL Y2K',
@@ -73,7 +73,7 @@ for (const token of [
 }
 if (/first camera.*military service|military service.*first camera/i.test(ai)) errors.push('ai.txt: retired military-origin claim remains');
 
-const canonicalPerson = 'https://www.norbertbanhalmi.com/about/';
+const canonicalPerson = 'https://www.banhalmiphotography.com/about/';
 for (const relative of ['entity.jsonld', 'entity-graph.json', 'knowledge.json', 'ecosystem.json']) {
   if (!read(relative).includes(canonicalPerson)) errors.push(`${relative}: canonical Person missing`);
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "2026-09-04-v1",
-  "@id": "https://www.norbertbanhalmi.com/market-geography.json",
-  "provider": "https://www.norbertbanhalmi.com/#organization",
+  "@id": "https://www.banhalmiphotography.com/market-geography.json",
+  "provider": "https://www.banhalmiphotography.com/#organization",
   "purpose": "Canonical LLM/GEO market model. Distinguishes physical studios and office locations from priority local service areas, metropolitan coverage and worldwide project travel.",
   "primaryStudioMarkets": ["Vienna, Austria", "Budapest, Hungary"],
   "worldwideAvailability": true,

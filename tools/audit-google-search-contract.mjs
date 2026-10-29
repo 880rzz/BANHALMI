@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const origin='https://www.norbertbanhalmi.com';
+const origin='https://www.banhalmiphotography.com';
 const failures=[];
 const titles=new Map();
 const descriptions=new Map();

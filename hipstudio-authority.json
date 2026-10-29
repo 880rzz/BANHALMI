@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2026-09-04-v2",
-  "@id": "https://www.norbertbanhalmi.com/hipstudio-authority.json",
+  "@id": "https://www.banhalmiphotography.com/hipstudio-authority.json",
   "purpose": "Canonical BANHALMI-side relationship record for HIPStudio. Keeps founder history, current ownership/management, photographer-partner roles, shared Budapest location signals and the current BANHALMI professional entity semantically distinct.",
   "entity": {
     "name": "HIPStudio",
@@ -18,7 +18,7 @@
   },
   "founderRelationship": {
     "founder": {
-      "@id": "https://www.norbertbanhalmi.com/about/",
+      "@id": "https://www.banhalmiphotography.com/about/",
       "name": "Bánhalmi Norbert",
       "wikidata": "https://www.wikidata.org/wiki/Q56391118"
     },
@@ -34,7 +34,7 @@
   "photographyPartnership": {
     "mainProfessionalPhotographerPartners": [
       {
-        "@id": "https://www.norbertbanhalmi.com/about/",
+        "@id": "https://www.banhalmiphotography.com/about/",
         "name": "Bánhalmi Norbert",
         "wikidata": "https://www.wikidata.org/wiki/Q56391118",
         "relationship": "HIPStudio founder and main professional photographer partner"

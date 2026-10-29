@@ -12,5 +12,5 @@ jobs:
       - name: Verify exact current main deployment SHA
         run: |
           expected="$(curl --fail --silent https://api.github.com/repos/880rzz/BANHALMI/commits/main | sed -n 's/.*"sha": "\([0-9a-f]*\)".*/\1/p' | head -1)"
-          live="$(curl --fail --silent https://www.norbertbanhalmi.com/deployment-sha.txt | tr -d '\r\n')"
+          live="$(curl --fail --silent https://www.banhalmiphotography.com/deployment-sha.txt | tr -d '\r\n')"
           test -n "$expected" && test "$live" = "$expected"

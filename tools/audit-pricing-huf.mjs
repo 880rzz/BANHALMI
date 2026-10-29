@@ -80,8 +80,8 @@ for (const token of ['pricing-huf.json','1 EUR = 400 HUF','not a live exchange r
 }
 // llms.txt stays a concise agent-entry index and only needs to route to canonical pricing resources.
 const llms = read('llms.txt');
-expect(llms.includes('[Pricing](https://www.norbertbanhalmi.com/pricing.json)'), 'llms.txt missing canonical pricing route');
-expect(llms.includes('[AI pricing guide](https://www.norbertbanhalmi.com/pricing-guide.json)'), 'llms.txt missing pricing-guide route');
+expect(llms.includes('[Pricing](https://www.banhalmiphotography.com/pricing.json)'), 'llms.txt missing canonical pricing route');
+expect(llms.includes('[AI pricing guide](https://www.banhalmiphotography.com/pricing-guide.json)'), 'llms.txt missing pricing-guide route');
 expect(/EUR is the canonical price currency; HUF is a Hungarian planning display/i.test(llms), 'llms.txt missing concise EUR/HUF interpretation');
 
 expect(guide.fixedCurrencyConversion?.rate === rate, 'pricing guide fixed rate missing');

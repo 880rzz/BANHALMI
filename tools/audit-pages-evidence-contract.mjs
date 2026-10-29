@@ -8,9 +8,9 @@ function requireContract(condition,message){if(!condition) throw new Error(messa
 const pressRef = overlay?.protectedReferences?.pressInstitutionalEvidence;
 const externalRef = overlay?.protectedReferences?.externalPhotographyEvidence;
 const mediaRef = overlay?.protectedReferences?.mediaUsageEvidence;
-requireContract(pressRef === 'https://www.norbertbanhalmi.com/press-institutional-evidence.json','Canonical press evidence ref drift');
-requireContract(externalRef === 'https://www.norbertbanhalmi.com/external-photography-evidence.json','Canonical external evidence ref drift');
-requireContract(mediaRef === 'https://www.norbertbanhalmi.com/media-usage-evidence.json','Canonical media usage evidence ref drift');
+requireContract(pressRef === 'https://www.banhalmiphotography.com/press-institutional-evidence.json','Canonical press evidence ref drift');
+requireContract(externalRef === 'https://www.banhalmiphotography.com/external-photography-evidence.json','Canonical external evidence ref drift');
+requireContract(mediaRef === 'https://www.banhalmiphotography.com/media-usage-evidence.json','Canonical media usage evidence ref drift');
 
 for(const token of [
   '_site/external-photography-evidence.json',
@@ -26,10 +26,10 @@ for(const token of [
   'mediaUsageEvidence',
   'protectedPressInstitutionalEvidence',
   'protectedMediaUsageEvidence',
-  'https://www.norbertbanhalmi.com/external-photography-evidence.json',
-  'https://www.norbertbanhalmi.com/press-institutional-evidence.json',
-  'https://www.norbertbanhalmi.com/media-usage-evidence.json',
-  'https://www.norbertbanhalmi.com/machine-manifest.json'
+  'https://www.banhalmiphotography.com/external-photography-evidence.json',
+  'https://www.banhalmiphotography.com/press-institutional-evidence.json',
+  'https://www.banhalmiphotography.com/media-usage-evidence.json',
+  'https://www.banhalmiphotography.com/machine-manifest.json'
 ]) requireContract(workflow.includes(token),`Pages workflow lost protected evidence assertion/route: ${token}`);
 
 requireContract(!workflow.includes('older projection code must not erase current commercial, geography, role or ecosystem semantics'),'Pages workflow still pins obsolete exact policy prose instead of semantic evidence keys');

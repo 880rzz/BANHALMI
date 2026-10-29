@@ -6,7 +6,7 @@ const core=read("knowledge-core.json");
 const ai=read("ai-entry.json");
 const graph=read("person-authority.jsonld")["@graph"];
 const agent=read(".well-known/agent.json");
-assert.equal(agent.canonical,"https://www.norbertbanhalmi.com/");
+assert.equal(agent.canonical,"https://www.banhalmiphotography.com/");
 for(const url of agent.read)assert.ok(url.startsWith("/api/v1/"));
 assert.equal(contract.entities.person.wikidata,"Q56391118");
 assert.equal(contract.entities.legalOrganization.wikidata,"Q138425941");

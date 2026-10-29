@@ -3,7 +3,7 @@
 Verified: 2026-10-25 (Europe/Budapest)
 
 ## Scope
-- Source of truth for historical www.norbertbanhalmi.com URLs: `880rzz/BANHALMI-C` @ `c989ace1984d84f524e0a2b826915b06359b2556`
+- Source of truth for historical www.banhalmiphotography.com URLs: `880rzz/BANHALMI-C` @ `c989ace1984d84f524e0a2b826915b06359b2556`
 - Current Professional repo: `880rzz/banhalmi` @ `10cdce915abab62442fff192c07cfa062f2434f2` (this branch)
 - Baseline contract: `data/banhalmi-c-url-image-parity.json` (sourceTreeSha `c989ace1984d84f524e0a2b826915b06359b2556`)
 

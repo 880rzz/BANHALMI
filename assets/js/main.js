@@ -747,7 +747,7 @@
         }
       }
       function openMailFallback() {
-        var supportEmail = (window.BANHALMI_CONFIG && window.BANHALMI_CONFIG.supportEmail) || 'hello@norbertbanhalmi.com';
+        var supportEmail = (window.BANHALMI_CONFIG && window.BANHALMI_CONFIG.supportEmail) || 'hello@banhalmiphotography.com';
         var subject = encodeURIComponent((isQuote? 'BANHALMI quote request — ': 'BANHALMI enquiry — ') + (payload.category || payload.subject || payload.service || 'photography'));
         var body = encodeURIComponent(Object.keys(payload).map(function (key) { return key + ': ' + payload[key]; }).join("\n"));
         window.location.href = "mailto:" + supportEmail + "?subject=" + subject + "&body=" + body;
@@ -1242,7 +1242,7 @@
   var close = wrap.querySelector(".banhalmi-contact-close");
   function revealDirectContact(button) {
     var kind = button.getAttribute("data-contact-kind");
-    var value = kind === "email" ? ["hello","norbertbanhalmi.com"].join("@") : viennaPhoneDisplay;
+    var value = kind === "email" ? ["hello","banhalmiphotography.com"].join("@") : viennaPhoneDisplay;
     var href = kind === "email" ? "mailto:" + value : "tel:" + viennaPhoneHref;
     var link = document.createElement("a");
     link.className = "banhalmi-contact-action";
@@ -1312,7 +1312,7 @@
       var url=new URL(raw,document.baseURI);
       return (url.protocol==="https:"||url.protocol==="http:")
         && canonicalHost(url.hostname)!==canonicalHost(window.location.hostname)
-        && canonicalHost(url.hostname)!=="norbertbanhalmi.com";
+        && canonicalHost(url.hostname)!=="banhalmiphotography.com";
     }catch(error){return false;}
   }
   function actionOrMedia(a){

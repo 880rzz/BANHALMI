@@ -3,7 +3,7 @@
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://www.norbertbanhalmi.com/about/",
+      "@id": "https://www.banhalmiphotography.com/about/",
       "name": "Bánhalmi Norbert",
       "alternateName": [
         "Norbert Bánhalmi",
@@ -11,7 +11,7 @@
         "Norbert BANHALMI",
         "BANHALMI"
       ],
-      "url": "https://www.norbertbanhalmi.com/about/",
+      "url": "https://www.banhalmiphotography.com/about/",
       "sameAs": [
         "https://www.wikidata.org/wiki/Q56391118",
         "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
@@ -30,11 +30,11 @@
           "@id": "https://blog.banhalmi.art/#website"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/hipstudio-authority.json"
+          "@id": "https://www.banhalmiphotography.com/hipstudio-authority.json"
         }
       ],
       "worksFor": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "affiliation": [
         {
@@ -67,36 +67,36 @@
       ],
       "workLocation": [
         {
-          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+          "@id": "https://www.banhalmiphotography.com/#vienna-studio"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"
+          "@id": "https://www.banhalmiphotography.com/#vienna-gersthofer-office"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+          "@id": "https://www.banhalmiphotography.com/#budapest-studio"
         }
       ]
     },
     {
       "@type": "Organization",
-      "@id": "https://www.norbertbanhalmi.com/#organization",
+      "@id": "https://www.banhalmiphotography.com/#organization",
       "name": "Banhalmi Norbert e.U.",
       "sameAs": [
         "https://www.wikidata.org/wiki/Q138425941",
         "https://www.linkedin.com/company/banhalmi/"
       ],
       "founder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "location": [
         {
-          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+          "@id": "https://www.banhalmiphotography.com/#vienna-studio"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"
+          "@id": "https://www.banhalmiphotography.com/#vienna-gersthofer-office"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+          "@id": "https://www.banhalmiphotography.com/#budapest-studio"
         }
       ]
     },
@@ -107,14 +107,14 @@
       "url": "https://www.hipstudio.hu/",
       "sameAs": "https://www.wikidata.org/wiki/Q138482177",
       "founder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "foundingDate": "2006-03-15",
       "description": "Distinct Budapest visual-communications entity founded by Bánhalmi Norbert; founder status is historical identity evidence and does not imply current ownership."
     },
     {
       "@type": "Place",
-      "@id": "https://www.norbertbanhalmi.com/#vienna-studio",
+      "@id": "https://www.banhalmiphotography.com/#vienna-studio",
       "name": "BANHALMI Vienna Studio — Schwedenplatz",
       "address": {
         "@type": "PostalAddress",
@@ -128,7 +128,7 @@
     },
     {
       "@type": "Place",
-      "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
+      "@id": "https://www.banhalmiphotography.com/#vienna-gersthofer-office",
       "name": "BANHALMI Vienna Office — Gersthofer Straße",
       "address": {
         "@type": "PostalAddress",
@@ -142,7 +142,7 @@
     },
     {
       "@type": "Place",
-      "@id": "https://www.norbertbanhalmi.com/#budapest-studio",
+      "@id": "https://www.banhalmiphotography.com/#budapest-studio",
       "name": "BANHALMI Budapest Studio",
       "address": {
         "@type": "PostalAddress",
@@ -156,14 +156,14 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.norbertbanhalmi.com/#website",
-      "url": "https://www.norbertbanhalmi.com/",
+      "@id": "https://www.banhalmiphotography.com/#website",
+      "url": "https://www.banhalmiphotography.com/",
       "name": "BANHALMI",
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "publisher": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       }
     },
     {
@@ -172,7 +172,7 @@
       "url": "https://www.banhalmi.art/",
       "name": "BANHALMI ART",
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       }
     },
     {
@@ -181,10 +181,10 @@
       "url": "https://blog.banhalmi.art/",
       "name": "BANHALMI Blog",
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "publisher": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       }
     }
   ]

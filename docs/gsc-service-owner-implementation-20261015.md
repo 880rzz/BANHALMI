@@ -2,7 +2,7 @@
 
 ## Evidence and interpretation
 
-Read GSC for https://www.norbertbanhalmi.com/ with query, page and country dimensions: 597 homepage rows and 609 property-wide rows for 2026-09-15–2026-10-12; 479 filtered service-query rows for the 90-day window 2026-07-15–2026-10-12. None of these requests was truncated. The country is measured; query language is inferred lexically and may remain undetermined. Homepage locale and query language are separate dimensions. Raw GSC rows and the per-query classification are kept in the private report, not published with the website.
+Read GSC for https://www.banhalmiphotography.com/ with query, page and country dimensions: 597 homepage rows and 609 property-wide rows for 2026-09-15–2026-10-12; 479 filtered service-query rows for the 90-day window 2026-07-15–2026-10-12. None of these requests was truncated. The country is measured; query language is inferred lexically and may remain undetermined. Homepage locale and query language are separate dimensions. Raw GSC rows and the per-query classification are kept in the private report, not published with the website.
 
 Most observed search visibility is on homepages; explicit portrait, headshot, personal-branding, artist-portfolio and artistic-commissioning queries have relevant existing service destinations. Broad photographer/city, brand-name and ambiguous portfolio queries do not warrant homepage redirects. Country alone does not justify choosing a language. No new boudoir/product/family/baby/wedding/real-estate/training service or landing page is invented from search exposure.
 

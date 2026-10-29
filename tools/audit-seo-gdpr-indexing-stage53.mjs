@@ -13,9 +13,9 @@ for (const file of walk(root).filter((p)=>p.endsWith('.html'))) {
 }
 const legacy = {
   'en/work/index.html':'https://www.banhalmi.art/',
-  'about/norbert-banhalmi/index.html':'https://www.norbertbanhalmi.com/about/',
-  'hu/rolam/banhalmi-norbert/index.html':'https://www.norbertbanhalmi.com/hu/eletmu/',
-  'de/ueber-mich/norbert-banhalmi/index.html':'https://www.norbertbanhalmi.com/de-at/werk/',
+  'about/norbert-banhalmi/index.html':'https://www.banhalmiphotography.com/about/',
+  'hu/rolam/banhalmi-norbert/index.html':'https://www.banhalmiphotography.com/hu/eletmu/',
+  'de/ueber-mich/norbert-banhalmi/index.html':'https://www.banhalmiphotography.com/de-at/werk/',
   'press/index.html':'https://www.banhalmi.art/press.html',
   'old-print/index.html':'https://www.banhalmi.art/press.html',
   'hu/sajto/megjelenesek/index.html':'https://www.banhalmi.art/hu/press.html',
@@ -31,7 +31,7 @@ for (const [relative,target] of Object.entries(legacy)) {
 }
 for (const relative of ['privacy-policy/index.html','hu/adatvedelem/index.html','de-at/datenschutz/index.html']) {
   const html=fs.readFileSync(path.join(root,relative),'utf8');
-  for (const token of ['www.norbertbanhalmi.com','www.banhalmi.art','blog.banhalmi.art','Google Analytics 4','Elfsight','data-privacy-domain-scope']) if (!html.includes(token)) errors.push(relative+': privacy scope/processors missing '+token);
+  for (const token of ['www.banhalmiphotography.com','www.banhalmi.art','blog.banhalmi.art','Google Analytics 4','Elfsight','data-privacy-domain-scope']) if (!html.includes(token)) errors.push(relative+': privacy scope/processors missing '+token);
 }
 if (errors.length) { console.error('SEO / GDPR / INDEXING STAGE 53 FAILED'); errors.forEach((e)=>console.error('-',e)); process.exit(1);}
 console.log('SEO/GDPR/indexing Stage 53 passed: every live BANHALMI page is indexable, robots allow crawling, legacy aliases resolve directly to current equivalents, and cross-domain processor scope is consistent.');

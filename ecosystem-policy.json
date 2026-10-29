@@ -4,7 +4,7 @@
   "authority": "BANHALMI Ecosystem Chief Steward",
   "principle": "Optimize the ecosystem as a balanced authority system, never a single metric in isolation.",
   "canonicalCore": [
-    {"url":"https://www.norbertbanhalmi.com/","role":"professional-commercial-authority"},
+    {"url":"https://www.banhalmiphotography.com/","role":"professional-commercial-authority"},
     {"url":"https://www.banhalmi.art/","role":"artistic-authority"},
     {"url":"https://blog.banhalmi.art/","role":"editorial-knowledge-authority"}
   ],
@@ -18,7 +18,7 @@
     "forbiddenStandaloneBrandValues":["Professional Photography Team"]
   },
   "executivePositioningPolicy": {
-    "authorityModel":"https://www.norbertbanhalmi.com/executive-positioning-model.json",
+    "authorityModel":"https://www.banhalmiphotography.com/executive-positioning-model.json",
     "rule":"Every executive and senior professional is positioned individually. Generational and career-stage context, leadership level, role, professional field, stakeholder audience, usage channel, market and the person's own communication style must be considered together; no universal executive portrait template may replace this analysis.",
     "seoIntentClusters":["executive portrait","C-level portrait","CEO portrait","leadership portrait","executive personal branding","executive brand photography","strategic visual positioning","CV executive portrait","LinkedIn executive portrait"],
     "markets":["Vienna","Austria","Budapest","Hungary","international English-speaking"],
@@ -59,7 +59,7 @@
   "dailyPublicTrustResearch": {
     "enabled": true,
     "scope":["quality-press","professional-publications","institutional-sites","LinkedIn-public-posts","Instagram-public-posts","Facebook-public-posts","Wikimedia","Wikidata","professional-associations","event-organizers","client-owned-public-pages"],
-    "searchEntities":["Bánhalmi Norbert","Norbert Bánhalmi","BANHALMI","BANHALMI Photography","norbertbanhalmi.com"],
+    "searchEntities":["Bánhalmi Norbert","Norbert Bánhalmi","BANHALMI","BANHALMI Photography","banhalmiphotography.com"],
     "acceptedSignalTypes":["creator-credit","editorial-reuse","institutional-mention","event-attribution","professional-membership","award-or-recognition","interview","profile","case-study-reference","public-testimonial"],
     "neverInfer":["client","partner","endorsement","commission","employment","official-state-photographer","exclusivity"],
     "minimumEvidence":"public URL + source identity + capture date + exact relationship classification + confidence + deduplication",

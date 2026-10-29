@@ -68,8 +68,8 @@ for(const rel of ['entity.jsonld','person-authority.jsonld']){
   for(const url of [...retired,...personal,...personForbiddenProfessional]) if(text.includes(url)) errors.push(`${rel}: forbidden active identity ${url}`);
   for(const url of company) if(!text.includes(url)) errors.push(`${rel}: organization authority missing ${url}`);
   for(const url of personPortfolio) if(!text.includes(url)) errors.push(`${rel}: person portfolio authority missing ${url}`);
-  const orgs=extractSameAs(text,'Organization').filter((node)=>String(node?.['@id']||'')==='https://www.norbertbanhalmi.com/#organization');
-  const people=extractSameAs(text,'Person').filter((node)=>String(node?.['@id']||'')==='https://www.norbertbanhalmi.com/about/');
+  const orgs=extractSameAs(text,'Organization').filter((node)=>String(node?.['@id']||'')==='https://www.banhalmiphotography.com/#organization');
+  const people=extractSameAs(text,'Person').filter((node)=>String(node?.['@id']||'')==='https://www.banhalmiphotography.com/about/');
   for(const org of orgs){
     const same=Array.isArray(org.sameAs)?org.sameAs:[org.sameAs].filter(Boolean);
     for(const url of personPortfolio) if(same.includes(url)) errors.push(`${rel}: Cherrydeck must not remain Organization.sameAs`);

@@ -10,15 +10,15 @@
     "de-at": true,
     "places": [
       {
-        "@id": "https://www.norbertbanhalmi.com/#vienna-studio",
+        "@id": "https://www.banhalmiphotography.com/#vienna-studio",
         "hasMap": "https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8"
       },
       {
-        "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
+        "@id": "https://www.banhalmiphotography.com/#vienna-gersthofer-office",
         "hasMap": "https://g.page/r/CdO4Kej3jIkfEBM"
       },
       {
-        "@id": "https://www.norbertbanhalmi.com/#budapest-studio",
+        "@id": "https://www.banhalmiphotography.com/#budapest-studio",
         "hasMap": "https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA"
       }
     ]

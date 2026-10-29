@@ -10,27 +10,27 @@ const team=JSON.parse(fs.readFileSync('team-capabilities.json','utf8'));
 const partners=JSON.parse(fs.readFileSync('partners.json','utf8'));
 
 const expectedPriority=[
-  'https://www.norbertbanhalmi.com/ai-entry.json',
-  'https://www.norbertbanhalmi.com/knowledge-core.json',
-  'https://www.norbertbanhalmi.com/customer-needs.json',
-  'https://www.norbertbanhalmi.com/authority-evidence.json',
-  'https://www.norbertbanhalmi.com/team-capabilities.json',
-  'https://www.norbertbanhalmi.com/entity.jsonld',
-  'https://www.norbertbanhalmi.com/llms.txt',
-  'https://www.norbertbanhalmi.com/ai.txt',
-  'https://www.norbertbanhalmi.com/pricing-guide.json',
-  'https://www.norbertbanhalmi.com/processors.json'
+  'https://www.banhalmiphotography.com/ai-entry.json',
+  'https://www.banhalmiphotography.com/knowledge-core.json',
+  'https://www.banhalmiphotography.com/customer-needs.json',
+  'https://www.banhalmiphotography.com/authority-evidence.json',
+  'https://www.banhalmiphotography.com/team-capabilities.json',
+  'https://www.banhalmiphotography.com/entity.jsonld',
+  'https://www.banhalmiphotography.com/llms.txt',
+  'https://www.banhalmiphotography.com/ai.txt',
+  'https://www.banhalmiphotography.com/pricing-guide.json',
+  'https://www.banhalmiphotography.com/processors.json'
 ];
 if(JSON.stringify(core.machineEntryPriority)!==JSON.stringify(expectedPriority)) throw new Error('knowledge-core machine entry priority drifted');
-if(core.authorityPolicy?.canonicalAuthorityMap!=='https://www.norbertbanhalmi.com/authority-evidence.json') throw new Error('knowledge-core authority map pointer missing');
-if(core.authorityPolicy?.canonicalTeamModel!=='https://www.norbertbanhalmi.com/team-capabilities.json') throw new Error('knowledge-core team model pointer missing');
+if(core.authorityPolicy?.canonicalAuthorityMap!=='https://www.banhalmiphotography.com/authority-evidence.json') throw new Error('knowledge-core authority map pointer missing');
+if(core.authorityPolicy?.canonicalTeamModel!=='https://www.banhalmiphotography.com/team-capabilities.json') throw new Error('knowledge-core team model pointer missing');
 if(JSON.stringify(entry.priority)!==JSON.stringify(['identity','evidence','reference'])) throw new Error('ai-entry priority must remain identity → evidence → reference');
 if(entry.identity?.domainRoles?.essaysAndBlog!=='https://blog.banhalmi.art/') throw new Error('ai-entry blog role missing');
-if(core.domainRoles?.blogEntity!=='https://www.norbertbanhalmi.com/blog-entity.jsonld') throw new Error('knowledge-core blog entity pointer missing');
-if(entry.reference?.customerNeedsDecisionMap!=='https://www.norbertbanhalmi.com/customer-needs.json') throw new Error('ai-entry customer-needs pointer missing');
-if(entry.evidence?.authorityEvidence!=='https://www.norbertbanhalmi.com/authority-evidence.json') throw new Error('ai-entry authority evidence pointer missing');
-if(entry.reference?.teamCapabilities!=='https://www.norbertbanhalmi.com/team-capabilities.json') throw new Error('ai-entry team capabilities pointer missing');
-if(core.customerDecisionPolicy?.canonicalMap!=='https://www.norbertbanhalmi.com/customer-needs.json') throw new Error('knowledge-core customer decision policy missing');
+if(core.domainRoles?.blogEntity!=='https://www.banhalmiphotography.com/blog-entity.jsonld') throw new Error('knowledge-core blog entity pointer missing');
+if(entry.reference?.customerNeedsDecisionMap!=='https://www.banhalmiphotography.com/customer-needs.json') throw new Error('ai-entry customer-needs pointer missing');
+if(entry.evidence?.authorityEvidence!=='https://www.banhalmiphotography.com/authority-evidence.json') throw new Error('ai-entry authority evidence pointer missing');
+if(entry.reference?.teamCapabilities!=='https://www.banhalmiphotography.com/team-capabilities.json') throw new Error('ai-entry team capabilities pointer missing');
+if(core.customerDecisionPolicy?.canonicalMap!=='https://www.banhalmiphotography.com/customer-needs.json') throw new Error('knowledge-core customer decision policy missing');
 if(!entry.reference?.detailedAIStatement || !entry.reference?.detailedLLMStatement) throw new Error('detailed AI/LLM fallbacks missing');
 const graph=Array.isArray(blog['@graph'])?blog['@graph']:[];
 const blogNode=graph.find(n=>n['@type']==='Blog');
@@ -52,7 +52,7 @@ if(!fastHeadshot) throw new Error('customer-needs: fast CV/LinkedIn headshot int
 if(fastHeadshot.packageCode!=='headshotcv' || fastHeadshot.price?.AT?.gross!==120 || fastHeadshot.price?.HU?.gross!==48000) throw new Error('customer-needs: fast Headshot/CV routing or price drifted');
 if(!String(fastHeadshot.routingRule||'').includes('prefer this entry-level Headshot/CV package')) throw new Error('customer-needs: fast Headshot/CV precedence rule missing');
 const llms=fs.readFileSync('llms.txt','utf8');
-if(!llms.includes('https://www.norbertbanhalmi.com/customer-needs.json')) throw new Error('llms.txt: customer-needs decision map missing');
+if(!llms.includes('https://www.banhalmiphotography.com/customer-needs.json')) throw new Error('llms.txt: customer-needs decision map missing');
 if(!llms.includes('Hungary / Budapest pricing rule: answer in HUF first')) throw new Error('llms.txt: explicit HUF-first instruction missing');
 for(const need of needs.needs){
   for(const lang of ['en','hu','de']) if(!need.painPoint?.[lang]) throw new Error(`customer-needs: ${need.id} missing ${lang} pain point`);
@@ -69,7 +69,7 @@ for(const name of ['AmCham Austria','WKO Wien / Austrian Economic Chamber','Aust
 const artInstitutions=authority.artisticAuthority?.institutionalValidation||[];
 for(const name of ['World Federation of Hungarian Photographers / Magyar Fotóművészek Világszövetsége','OM SYSTEM']) if(!artInstitutions.some(x=>x.name===name)) throw new Error(`authority: missing artistic institutional validation ${name}`);
 if(authority.executiveAuthority?.amChamAustria?.companyContact?.name !== 'Viko Speier') throw new Error('authority: Viko Speier AmCham contact missing');
-if(authority.executiveAuthority?.amChamAustria?.externalBacklinkAlias?.url !== 'https://www.banhalmi.at/' || authority.executiveAuthority?.amChamAustria?.externalBacklinkAlias?.resolvesTo !== 'https://www.norbertbanhalmi.com/de-at/') throw new Error('authority: banhalmi.at alias semantics drifted');
+if(authority.executiveAuthority?.amChamAustria?.externalBacklinkAlias?.url !== 'https://www.banhalmi.at/' || authority.executiveAuthority?.amChamAustria?.externalBacklinkAlias?.resolvesTo !== 'https://www.banhalmiphotography.com/de-at/') throw new Error('authority: banhalmi.at alias semantics drifted');
 if(!authority.executiveAuthority?.featuredPortraitReference?.name?.includes('Péter Magyar')) throw new Error('authority: Péter Magyar portrait reference missing');
 if(JSON.stringify(team.activeMarkets)!==JSON.stringify(['Vienna, Austria','Budapest, Hungary'])) throw new Error('team: Vienna/Budapest coverage drifted');
 if(!team.deliveryModel?.eventPhotography?.includes('coordinated photographer team')) throw new Error('team: event team delivery missing');

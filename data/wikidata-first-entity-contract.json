@@ -5,25 +5,25 @@
     "person": {
       "wikidata": "Q56391118",
       "wikidataUrl": "https://www.wikidata.org/wiki/Q56391118",
-      "canonicalId": "https://www.norbertbanhalmi.com/about/",
+      "canonicalId": "https://www.banhalmiphotography.com/about/",
       "schemaType": "Person",
       "sameAsPolicy": "Only exact identity sources; no partner, press, client or event URL"
     },
     "legalOrganization": {
       "wikidata": "Q138425941",
       "wikidataUrl": "https://www.wikidata.org/wiki/Q138425941",
-      "canonicalId": "https://www.norbertbanhalmi.com/#organization",
+      "canonicalId": "https://www.banhalmiphotography.com/#organization",
       "schemaType": "Organization",
       "sameAsPolicy": "Never equate the legal organization with the person or brand"
     },
     "brand": {
       "wikidata": null,
-      "canonicalId": "https://www.norbertbanhalmi.com/#brand",
+      "canonicalId": "https://www.banhalmiphotography.com/#brand",
       "schemaType": "Brand",
       "sameAsPolicy": "No dedicated Wikidata item; never borrow Q56391118 or Q138425941"
     },
     "professionalWebsite": {
-      "canonical": "https://www.norbertbanhalmi.com/",
+      "canonical": "https://www.banhalmiphotography.com/",
       "role": "Commercial photography services, bookings, locations, client trust"
     },
     "artWebsite": {

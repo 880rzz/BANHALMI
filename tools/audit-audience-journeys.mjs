@@ -27,7 +27,7 @@ for(const [file,key] of [['customer-intent-model.json','intents'],['customer-nee
  const d=JSON.parse(read(file));assert.ok(d[key].some(i=>i.id==='everyday-personal-portrait'));
  for(const item of d[key])for(const [lang,url] of Object.entries(item.visibleEntryPoints||{})){
   const u=new URL(url);
-  if(u.origin==='https://www.norbertbanhalmi.com'){
+  if(u.origin==='https://www.banhalmiphotography.com'){
    const text=read(u.pathname.slice(1)+'index.html');assert.ok(text.includes('id="'+u.hash.slice(1)+'"'),file+' '+item.id+' has a real '+lang+' destination');
   }else{
    assert.equal(u.origin,'https://www.banhalmi.art',file+' '+item.id+' must route private commission to ART');

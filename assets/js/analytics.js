@@ -90,7 +90,7 @@
           allow_google_signals: false,
           allow_ad_personalization_signals: false,
           linker: {
-            domains: ["norbertbanhalmi.com", "banhalmi.art"]
+            domains: ["banhalmiphotography.com", "banhalmi.art"]
           },
           send_page_view: true
         });
@@ -120,7 +120,7 @@
 
     function clearAnalyticsCookiesNow() {
       var host = location.hostname;
-      var domains = ["", host, "." + host, ".norbertbanhalmi.com", "norbertbanhalmi.com", ".banhalmi.art", "banhalmi.art"];
+      var domains = ["", host, "." + host, ".banhalmiphotography.com", "banhalmiphotography.com", ".banhalmi.art", "banhalmi.art"];
       var known = {
         _ga: 1, _gid: 1, _gat: 1, _clck: 1, _clsk: 1, CLID: 1, MUID: 1, ANONCHK: 1, MR: 1, SM: 1
       };

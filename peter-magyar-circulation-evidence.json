@@ -1,16 +1,16 @@
 {
   "@context": "https://schema.org",
   "@type": "DataFeed",
-  "@id": "https://www.norbertbanhalmi.com/peter-magyar-circulation-evidence.json#dataset",
+  "@id": "https://www.banhalmiphotography.com/peter-magyar-circulation-evidence.json#dataset",
   "name": "Péter Magyar portrait — documented circulation evidence",
   "description": "Publicly verifiable source-based evidence for editorial, social and Wikimedia circulation of Peter-Magyar-portrait-2026.jpg. Reuse, publication or political sharing does not imply endorsement, campaign commissioning or a client relationship.",
   "dateModified": "2026-09-25",
   "about": {
-    "@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026",
+    "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026",
     "name": "Péter Magyar portrait, Budapest, 15 March 2026"
   },
   "creator": {
-    "@id": "https://www.norbertbanhalmi.com/about/",
+    "@id": "https://www.banhalmiphotography.com/about/",
     "name": "Norbert Bánhalmi",
     "sameAs": "https://www.wikidata.org/wiki/Q56391118"
   },
@@ -208,7 +208,7 @@
         "@id": "https://x.com/TwinklyBlood/status/2039946267900498179",
         "url": "https://x.com/TwinklyBlood/status/2039946267900498179",
         "author": {"name": "TwinklyBlood"},
-        "sharedContent": {"@id": "https://www.norbertbanhalmi.com/#peter-magyar-portrait-2026"},
+        "sharedContent": {"@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"},
         "additionalProperty": [
           {"@type": "PropertyValue", "name": "evidenceClass", "value": "public-social-reuse"}
         ]

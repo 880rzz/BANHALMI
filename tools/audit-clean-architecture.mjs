@@ -103,7 +103,7 @@ if (exists('llms.txt')) {
 }
 if (exists('api/v1/actions.json')) {
   const actions = JSON.parse(read('api/v1/actions.json'));
-  if (actions?.requestQuote?.url !== 'https://www.norbertbanhalmi.com/requestaquote/') fail.push('actions.json: canonical requestQuote route drift');
+  if (actions?.requestQuote?.url !== 'https://www.banhalmiphotography.com/requestaquote/') fail.push('actions.json: canonical requestQuote route drift');
   if (actions?.transactionalApiAvailable !== false) fail.push('actions.json: agent must not treat browser form gateway as autonomous transactional API');
 }
 if (exists('.well-known/agent.json')) {

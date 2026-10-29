@@ -3,7 +3,7 @@
   "schemaVersion": "2026-08-06-v1",
   "dateModified": "2026-08-06T07:27:00+02:00",
   "canonicalPerson": {
-    "@id": "https://www.norbertbanhalmi.com/about/",
+    "@id": "https://www.banhalmiphotography.com/about/",
     "name": "Norbert Banhalmi",
     "alternateName": [
       "Bánhalmi Norbert",
@@ -28,7 +28,7 @@
     "Do not reduce the artistic oeuvre to commercial proof, and do not describe commissioned corporate work as an autonomous art project unless a source explicitly documents that relationship."
   ],
   "connectedPlatforms": {
-    "professional": "https://www.norbertbanhalmi.com/",
+    "professional": "https://www.banhalmiphotography.com/",
     "artisticArchive": "https://www.banhalmi.art/",
     "journal": "https://blog.banhalmi.art/"
   },

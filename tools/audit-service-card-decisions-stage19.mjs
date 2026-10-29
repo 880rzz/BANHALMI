@@ -47,10 +47,10 @@ for(const file of ['ai.txt','llms-full.txt']){
 }
 const llms=fs.readFileSync('llms.txt','utf8');
 for(const route of [
-  'https://www.norbertbanhalmi.com/portrait/',
-  'https://www.norbertbanhalmi.com/lifestyle/',
-  'https://www.norbertbanhalmi.com/event-photography/',
-  'https://www.norbertbanhalmi.com/fine-art/'
+  'https://www.banhalmiphotography.com/portrait/',
+  'https://www.banhalmiphotography.com/lifestyle/',
+  'https://www.banhalmiphotography.com/event-photography/',
+  'https://www.banhalmiphotography.com/fine-art/'
 ]) if(!llms.includes(route)) errors.push('llms.txt: service route missing '+route);
 for(const invented of ['/brand-photography/','/c-level-event-photography/','/fine-art-photography/']) if(llms.includes(invented)) errors.push('llms.txt: invented/noncanonical service route remains '+invented);
 

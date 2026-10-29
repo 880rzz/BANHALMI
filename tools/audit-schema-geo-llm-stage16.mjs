@@ -28,7 +28,7 @@ if (fs.existsSync(policyPath)) {
   for (const lang of ['en','hu-HU','de-AT']) if (!policy.languages?.includes(lang)) errors.push(`project-policy.json missing language ${lang}`);
   for (const lang of ['en','hu-HU','de-AT']) {
     const pages = policy.authoritativeHumanPages?.[lang];
-    for (const key of ['faq','privacy','terms','quote']) if (!pages?.[key]?.startsWith('https://www.norbertbanhalmi.com/')) errors.push(`project-policy.json missing ${lang} ${key} page`);
+    for (const key of ['faq','privacy','terms','quote']) if (!pages?.[key]?.startsWith('https://www.banhalmiphotography.com/')) errors.push(`project-policy.json missing ${lang} ${key} page`);
   }
   const policyText = JSON.stringify(policy);
   for (const token of [
@@ -59,8 +59,8 @@ if (fs.existsSync(schemaPath)) {
   if (!Array.isArray(graph)) errors.push('project-policy.jsonld @graph missing');
   else {
     for (const type of ['DigitalDocument','Service','HowTo']) if (!graph.some(node => node['@type'] === type)) errors.push(`project-policy.jsonld missing ${type}`);
-    if (!graph.some(node => node.provider?.['@id'] === 'https://www.norbertbanhalmi.com/#organization')) errors.push('project-policy.jsonld canonical provider missing');
-    if (!graph.some(node => node.author?.['@id'] === 'https://www.norbertbanhalmi.com/about/')) errors.push('project-policy.jsonld canonical author missing');
+    if (!graph.some(node => node.provider?.['@id'] === 'https://www.banhalmiphotography.com/#organization')) errors.push('project-policy.jsonld canonical provider missing');
+    if (!graph.some(node => node.author?.['@id'] === 'https://www.banhalmiphotography.com/about/')) errors.push('project-policy.jsonld canonical author missing');
     const schemaText = JSON.stringify(schema);
     for (const token of ['Booking payment','Currency and VAT','Invoice plan','Overdue payment','Additional costs']) if (!schemaText.includes(token)) errors.push(`project-policy.jsonld missing ${token}`);
   }
@@ -70,7 +70,7 @@ if (fs.existsSync(schemaPath)) {
 // the detailed AI layer and preserve the key geography distinction, but it must
 // not be forced to duplicate the full operational policy knowledge dump.
 const llms = fs.readFileSync(path.join(root, 'llms.txt'), 'utf8');
-if (!llms.includes('[AI reference](https://www.norbertbanhalmi.com/ai.txt)')) errors.push('llms.txt missing detailed AI reference link');
+if (!llms.includes('[AI reference](https://www.banhalmiphotography.com/ai.txt)')) errors.push('llms.txt missing detailed AI reference link');
 for (const token of [
   'BANHALMI operates in two cities through three active physical business locations',
   'New York is a major international reference and oeuvre chapter'
@@ -91,12 +91,12 @@ for (const token of [
 ]) if (!ai.includes(token)) errors.push(`ai.txt missing ${token}`);
 
 const ecosystem = JSON.parse(fs.readFileSync(path.join(root, 'ecosystem.json'), 'utf8'));
-for (const url of ['https://www.norbertbanhalmi.com/project-policy.json','https://www.norbertbanhalmi.com/project-policy.jsonld']) if (!ecosystem.authoritativeMachineReadableSources?.includes(url)) errors.push(`ecosystem.json missing ${url}`);
-if (ecosystem.operationalPolicy?.canonicalData !== 'https://www.norbertbanhalmi.com/project-policy.json') errors.push('ecosystem.json operationalPolicy canonicalData mismatch');
+for (const url of ['https://www.banhalmiphotography.com/project-policy.json','https://www.banhalmiphotography.com/project-policy.jsonld']) if (!ecosystem.authoritativeMachineReadableSources?.includes(url)) errors.push(`ecosystem.json missing ${url}`);
+if (ecosystem.operationalPolicy?.canonicalData !== 'https://www.banhalmiphotography.com/project-policy.json') errors.push('ecosystem.json operationalPolicy canonicalData mismatch');
 const expectedEcosystemVersion = '2026-09-07-v8-six-pillar-ecosystem';
 if (ecosystem.schemaVersion !== expectedEcosystemVersion) errors.push(`ecosystem.json schemaVersion mismatch: expected ${expectedEcosystemVersion}, received ${ecosystem.schemaVersion || 'missing'}`);
-if (ecosystem.corePracticeThesis?.canonicalSource !== 'https://www.norbertbanhalmi.com/presence-thesis.json') errors.push('ecosystem.json canonical presence thesis missing');
-if (!ecosystem.authoritativeMachineReadableSources?.includes('https://www.norbertbanhalmi.com/presence-thesis.json')) errors.push('ecosystem.json presence thesis source missing');
+if (ecosystem.corePracticeThesis?.canonicalSource !== 'https://www.banhalmiphotography.com/presence-thesis.json') errors.push('ecosystem.json canonical presence thesis missing');
+if (!ecosystem.authoritativeMachineReadableSources?.includes('https://www.banhalmiphotography.com/presence-thesis.json')) errors.push('ecosystem.json presence thesis source missing');
 if (!ecosystem.operationalPolicy?.controllingRecord?.includes('payment schedule')) errors.push('ecosystem.json payment schedule interpretation missing');
 const extensionRoles = new Set((ecosystem.ecosystemExtensions || []).map(item => item.role));
 for (const role of [

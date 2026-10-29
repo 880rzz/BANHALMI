@@ -15,13 +15,13 @@ try {
 }
 
 assert(ecosystem.documentType === 'canonical-digital-ecosystem-map', 'ecosystem.json: documentType drifted');
-assert(ecosystem.canonicalPerson?.['@id'] === 'https://www.norbertbanhalmi.com/about/', 'ecosystem.json: canonical Person @id drifted');
+assert(ecosystem.canonicalPerson?.['@id'] === 'https://www.banhalmiphotography.com/about/', 'ecosystem.json: canonical Person @id drifted');
 assert(ecosystem.canonicalPerson?.wikidata === 'https://www.wikidata.org/wiki/Q56391118', 'ecosystem.json: Wikidata identity drifted');
-assert(ecosystem.canonicalOrganization?.['@id'] === 'https://www.norbertbanhalmi.com/#organization', 'ecosystem.json: canonical Organization @id drifted');
+assert(ecosystem.canonicalOrganization?.['@id'] === 'https://www.banhalmiphotography.com/#organization', 'ecosystem.json: canonical Organization @id drifted');
 assert(ecosystem.canonicalOrganization?.legalName === 'Banhalmi Norbert e.U.', 'ecosystem.json: legal organization name drifted');
 
 const expectedRoles = new Map([
-  ['professional-services', 'https://www.norbertbanhalmi.com/'],
+  ['professional-services', 'https://www.banhalmiphotography.com/'],
   ['artistic-archive', 'https://www.banhalmi.art/'],
   ['editorial-knowledge-layer', 'https://blog.banhalmi.art/']
 ]);
@@ -34,8 +34,8 @@ for (const [role, url] of expectedRoles) {
 
 const aliases = Array.isArray(ecosystem.languageEntryDomains) ? ecosystem.languageEntryDomains : [];
 const expectedAliases = new Map([
-  ['https://www.banhalminorbert.hu/', 'https://www.norbertbanhalmi.com/hu/'],
-  ['https://www.banhalmi.at/', 'https://www.norbertbanhalmi.com/de-at/']
+  ['https://www.banhalminorbert.hu/', 'https://www.banhalmiphotography.com/hu/'],
+  ['https://www.banhalmi.at/', 'https://www.banhalmiphotography.com/de-at/']
 ]);
 for (const [url, target] of expectedAliases) {
   const item = aliases.find((entry) => entry?.url === url);
@@ -55,11 +55,11 @@ assert(consultation.bookingUrl === 'https://meet.bookipi.com/zk5ly35r', 'ecosyst
 assert(consultation.bookingInterfaceLanguage === 'en', 'ecosystem.json: booking interface language contract drifted');
 
 const expectedMachineSources = [
-  'https://www.norbertbanhalmi.com/entity.jsonld',
-  'https://www.norbertbanhalmi.com/knowledge.json',
-  'https://www.norbertbanhalmi.com/ecosystem.json',
-  'https://www.norbertbanhalmi.com/blog-entity.jsonld',
-  'https://www.norbertbanhalmi.com/blog-collections.json'
+  'https://www.banhalmiphotography.com/entity.jsonld',
+  'https://www.banhalmiphotography.com/knowledge.json',
+  'https://www.banhalmiphotography.com/ecosystem.json',
+  'https://www.banhalmiphotography.com/blog-entity.jsonld',
+  'https://www.banhalmiphotography.com/blog-collections.json'
 ];
 const machineSources = new Set(ecosystem.authoritativeMachineReadableSources || []);
 for (const url of expectedMachineSources) assert(machineSources.has(url), `ecosystem.json: authoritative machine source missing ${url}`);
@@ -72,7 +72,7 @@ for (const file of ['ai.txt', 'llms.txt']) {
 
 const networkAudit = read('tools/audit-seo-network.mjs');
 for (const url of [
-  'https://www.norbertbanhalmi.com/ecosystem.json',
+  'https://www.banhalmiphotography.com/ecosystem.json',
   'https://www.banhalmi.art/ecosystem-bridge.json',
   'https://www.banhalmi.art/ecosystem-bridge.jsonld',
   'https://blog.banhalmi.art/',
@@ -82,7 +82,7 @@ for (const url of [
 
 const productionRouting = read('tools/audit-production-routing.mjs');
 for (const url of [
-  'https://www.norbertbanhalmi.com/ecosystem.json',
+  'https://www.banhalmiphotography.com/ecosystem.json',
   'https://www.banhalmi.art/ecosystem-bridge.json',
   'https://www.banhalmi.art/ecosystem-bridge.jsonld',
   'https://blog.banhalmi.art/',

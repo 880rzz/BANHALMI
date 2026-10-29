@@ -2,9 +2,9 @@
   "documentType": "BANHALMI fixed-rate HUF orientation pricing",
   "schemaVersion": "2026-09-29-v3-executive-architecture",
   "dateModified": "2026-09-30",
-  "canonicalBasePricingSource": "https://www.norbertbanhalmi.com/pricing.json",
-  "aiInterpretationGuide": "https://www.norbertbanhalmi.com/pricing-guide.json",
-  "quoteCalculator": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/",
+  "canonicalBasePricingSource": "https://www.banhalmiphotography.com/pricing.json",
+  "aiInterpretationGuide": "https://www.banhalmiphotography.com/pricing-guide.json",
+  "quoteCalculator": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
   "currency": "HUF",
   "baseCurrency": "EUR",
   "conversion": {

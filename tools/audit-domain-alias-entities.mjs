@@ -1,10 +1,10 @@
 import fs from 'node:fs';
 
 const aliases = new Map([
-  ['https://www.banhalmi.at/', 'https://www.norbertbanhalmi.com/de-at/'],
-  ['https://banhalmi.at/', 'https://www.norbertbanhalmi.com/de-at/'],
-  ['https://www.banhalminorbert.hu/', 'https://www.norbertbanhalmi.com/hu/'],
-  ['https://banhalminorbert.hu/', 'https://www.norbertbanhalmi.com/hu/']
+  ['https://www.banhalmi.at/', 'https://www.banhalmiphotography.com/de-at/'],
+  ['https://banhalmi.at/', 'https://www.banhalmiphotography.com/de-at/'],
+  ['https://www.banhalminorbert.hu/', 'https://www.banhalmiphotography.com/hu/'],
+  ['https://banhalminorbert.hu/', 'https://www.banhalmiphotography.com/hu/']
 ]);
 
 const schema = JSON.parse(fs.readFileSync('domain-aliases.jsonld', 'utf8'));

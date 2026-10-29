@@ -58,38 +58,38 @@ async function checkAliasLanding(url, expectedTarget) {
   }
 }
 
-await checkPage('https://www.norbertbanhalmi.com/', {
+await checkPage('https://www.banhalmiphotography.com/', {
   all: ['Executive Portraiture', 'Since 1999'],
-  finalUrl: 'https://www.norbertbanhalmi.com/'
+  finalUrl: 'https://www.banhalmiphotography.com/'
 });
-await checkPage('https://www.norbertbanhalmi.com/hu/', {
+await checkPage('https://www.banhalmiphotography.com/hu/', {
   all: ['Executive portré', '1999 óta'],
-  finalUrl: 'https://www.norbertbanhalmi.com/hu/'
+  finalUrl: 'https://www.banhalmiphotography.com/hu/'
 });
-await checkPage('https://www.norbertbanhalmi.com/de-at/', {
+await checkPage('https://www.banhalmiphotography.com/de-at/', {
   all: ['Executive-Porträts', 'Seit 1999'],
-  finalUrl: 'https://www.norbertbanhalmi.com/de-at/'
+  finalUrl: 'https://www.banhalmiphotography.com/de-at/'
 });
 
 for (const [alias, target] of [
-  ['https://banhalmi.at/', 'https://www.norbertbanhalmi.com/de-at/'],
-  ['https://www.banhalmi.at/', 'https://www.norbertbanhalmi.com/de-at/'],
-  ['https://banhalminorbert.hu/', 'https://www.norbertbanhalmi.com/hu/'],
-  ['https://www.banhalminorbert.hu/', 'https://www.norbertbanhalmi.com/hu/']
+  ['https://banhalmi.at/', 'https://www.banhalmiphotography.com/de-at/'],
+  ['https://www.banhalmi.at/', 'https://www.banhalmiphotography.com/de-at/'],
+  ['https://banhalminorbert.hu/', 'https://www.banhalmiphotography.com/hu/'],
+  ['https://www.banhalminorbert.hu/', 'https://www.banhalmiphotography.com/hu/']
 ]) {
   await checkAliasLanding(alias, target);
 }
 
-await checkPage('https://www.norbertbanhalmi.com/robots.txt', {
-  all: ['User-agent: *', 'Allow: /', 'Sitemap: https://www.norbertbanhalmi.com/sitemap.xml']
+await checkPage('https://www.banhalmiphotography.com/robots.txt', {
+  all: ['User-agent: *', 'Allow: /', 'Sitemap: https://www.banhalmiphotography.com/sitemap.xml']
 });
-await checkPage('https://www.norbertbanhalmi.com/sitemap.xml', {
-  all: ['<urlset', '<loc>https://www.norbertbanhalmi.com/', '<lastmod>']
+await checkPage('https://www.banhalmiphotography.com/sitemap.xml', {
+  all: ['<urlset', '<loc>https://www.banhalmiphotography.com/', '<lastmod>']
 });
 
 // llms.txt is intentionally a concise discovery/agent index. Detailed evidence
 // and answer-policy prose belongs in ai.txt and canonical JSON resources.
-await checkPage('https://www.norbertbanhalmi.com/llms.txt', {
+await checkPage('https://www.banhalmiphotography.com/llms.txt', {
   all: [
     '# BANHALMI',
     '## Identity',
@@ -100,15 +100,15 @@ await checkPage('https://www.norbertbanhalmi.com/llms.txt', {
     'New York is not a studio, office, headquarters or operational base.'
   ]
 });
-await checkPage('https://www.norbertbanhalmi.com/ai.txt', {
-  all: ['## Canonical identity and answer contract', 'https://www.norbertbanhalmi.com/', 'https://www.banhalmi.art/', 'https://blog.banhalmi.art/', 'New York is not a studio, office, headquarters or operational base']
+await checkPage('https://www.banhalmiphotography.com/ai.txt', {
+  all: ['## Canonical identity and answer contract', 'https://www.banhalmiphotography.com/', 'https://www.banhalmi.art/', 'https://blog.banhalmi.art/', 'New York is not a studio, office, headquarters or operational base']
 });
-await checkPage('https://www.norbertbanhalmi.com/ecosystem.json', {
+await checkPage('https://www.banhalmiphotography.com/ecosystem.json', {
   all: ['canonical-digital-ecosystem-map', 'professional-services', 'artistic-archive', 'editorial-knowledge-layer', 'Q56391118', 'https://meet.bookipi.com/zk5ly35r']
 });
 
 await checkPage('https://www.banhalmi.art/', {
-  all: ['https://www.norbertbanhalmi.com/about/', 'https://www.norbertbanhalmi.com/'],
+  all: ['https://www.banhalmiphotography.com/about/', 'https://www.banhalmiphotography.com/'],
   any: [['Official Art Archive', 'official archive', 'artistic oeuvre', 'art archive']],
   patterns: [
     { pattern: /<link\b[^>]*rel=["']canonical["'][^>]*href=["']https:\/\/www\.banhalmi\.art\/?["'][^>]*>/i, label: 'the canonical banhalmi.art homepage declaration' },
@@ -119,7 +119,7 @@ await checkPage('https://www.banhalmi.art/ecosystem-bridge.json', {
   all: ['BANHALMI ART ecosystem bridge', 'professional-services', 'artistic-archive', 'editorial-knowledge-layer', 'Q56391118']
 });
 await checkPage('https://www.banhalmi.art/ecosystem-bridge.jsonld', {
-  all: ['https://www.norbertbanhalmi.com/about/', 'https://www.norbertbanhalmi.com/#website', 'https://www.banhalmi.art/#website', 'https://blog.banhalmi.art/#website']
+  all: ['https://www.banhalmiphotography.com/about/', 'https://www.banhalmiphotography.com/#website', 'https://www.banhalmi.art/#website', 'https://blog.banhalmi.art/#website']
 });
 
 await checkPage('https://blog.banhalmi.art/', {

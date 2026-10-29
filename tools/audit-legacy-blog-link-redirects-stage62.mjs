@@ -2,16 +2,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const routes = {
-  'oneletrajz-cv-fotozas': 'https://www.norbertbanhalmi.com/hu/portre/',
-  'portfolio-fotozas': 'https://www.norbertbanhalmi.com/hu/brand/',
+  'oneletrajz-cv-fotozas': 'https://www.banhalmiphotography.com/hu/portre/',
+  'portfolio-fotozas': 'https://www.banhalmiphotography.com/hu/brand/',
   'muveszi-aktfotozas': 'https://www.banhalmi.art/hu/exhibitions/ebredes.html',
-  'reklam-fotozas': 'https://www.norbertbanhalmi.com/hu/brand/',
-  'eskuvoi-fotozas-tihany': 'https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/',
-  'profifotos': 'https://www.norbertbanhalmi.com/hu/',
-  'portfolio-fotozas-budapest': 'https://www.norbertbanhalmi.com/hu/brand/',
-  'portfoliofotozas': 'https://www.norbertbanhalmi.com/hu/brand/',
-  'portrefotozas': 'https://www.norbertbanhalmi.com/hu/portre/',
-  'cvfotozas': 'https://www.norbertbanhalmi.com/hu/portre/',
+  'reklam-fotozas': 'https://www.banhalmiphotography.com/hu/brand/',
+  'eskuvoi-fotozas-tihany': 'https://www.banhalmiphotography.com/hu/rendezvenyfotozas/',
+  'profifotos': 'https://www.banhalmiphotography.com/hu/',
+  'portfolio-fotozas-budapest': 'https://www.banhalmiphotography.com/hu/brand/',
+  'portfoliofotozas': 'https://www.banhalmiphotography.com/hu/brand/',
+  'portrefotozas': 'https://www.banhalmiphotography.com/hu/portre/',
+  'cvfotozas': 'https://www.banhalmiphotography.com/hu/portre/',
   'post/amikor-csak-egy-táncpartnered-van-egész-estére': 'https://blog.banhalmi.art/post/amikor-csak-egy-táncpartnered-van-egész-estére',
   'blog/tags/filter-nélkül-a-testem-története': 'https://blog.banhalmi.art/blog'
 };
@@ -30,7 +30,7 @@ const vercel = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
 const edge = new Map((vercel.redirects || []).map(rule => [rule.source, rule]));
 for (const [route, target] of Object.entries(routes)) {
   const source = `/${route}`;
-  const expected = target.startsWith('https://www.norbertbanhalmi.com') ? new URL(target).pathname : target;
+  const expected = target.startsWith('https://www.banhalmiphotography.com') ? new URL(target).pathname : target;
   const rule = edge.get(source);
   if (!rule || rule.destination !== expected || rule.permanent !== true) errors.push(`${source}: permanent Vercel redirect mismatch`);
 }

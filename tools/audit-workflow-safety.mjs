@@ -63,7 +63,7 @@ for(const [name,text] of workflows){
     'Verify machine discovery bytes on the custom domain',
     'test -f _site/.nojekyll',
     'cmp -s .well-known/agent.json live-agent.json',
-    'https://www.norbertbanhalmi.com/.nojekyll',
+    'https://www.banhalmiphotography.com/.nojekyll',
     'Prove deployable tar retains machine discovery files',
     "grep -Fx './.nojekyll'",
     "grep -Fx './.well-known/agent.json'"]){

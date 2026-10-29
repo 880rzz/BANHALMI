@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const canonicalHosts = new Set(['www.norbertbanhalmi.com','norbertbanhalmi.com','banhalminorbert.hu','www.banhalminorbert.hu','banhalmi.at','www.banhalmi.at']);
+const canonicalHosts = new Set(['www.banhalmiphotography.com','banhalmiphotography.com','banhalminorbert.hu','www.banhalminorbert.hu','banhalmi.at','www.banhalmi.at']);
 const failures = [];
 let htmlCount = 0;
 let linkCount = 0;

@@ -19,9 +19,9 @@ for(const host of ['banhalmi.at','www.banhalmi.at','banhalminorbert.hu','www.ban
 
 const notices=registry.humanReadableNotices || {};
 const expectedNotices={
-  privacy:'https://www.norbertbanhalmi.com/privacy-policy/',
-  cookies:'https://www.norbertbanhalmi.com/cookie-policy/',
-  trustCenter:'https://www.norbertbanhalmi.com/trust/'
+  privacy:'https://www.banhalmiphotography.com/privacy-policy/',
+  cookies:'https://www.banhalmiphotography.com/cookie-policy/',
+  trustCenter:'https://www.banhalmiphotography.com/trust/'
 };
 for(const [key,value] of Object.entries(expectedNotices)){
   if(notices[key]!==value) throw new Error(`processors.json: ${key} human-readable notice must remain ${value}`);

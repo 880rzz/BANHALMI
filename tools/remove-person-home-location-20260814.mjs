@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-const PERSON_ID='https://www.norbertbanhalmi.com/about/';
+const PERSON_ID='https://www.banhalmiphotography.com/about/';
 let entityChanged=0,htmlChanged=0,personObjects=0;
 const entity=JSON.parse(fs.readFileSync('entity.jsonld','utf8'));const eg=Array.isArray(entity['@graph'])?entity['@graph']:[entity];const person=eg.find(n=>n?.['@id']===PERSON_ID&&(n?.['@type']==='Person'||(Array.isArray(n?.['@type'])&&n['@type'].includes('Person'))));if(!person)throw new Error('entity.jsonld canonical Person missing');if(Object.hasOwn(person,'homeLocation')){delete person.homeLocation;entityChanged=1;fs.writeFileSync('entity.jsonld',JSON.stringify(entity,null,2)+'\n');}
 const skip=new Set(['.git','node_modules','_site','dist','coverage','assets','api','.well-known']);

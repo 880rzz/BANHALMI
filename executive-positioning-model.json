@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.1",
   "updatedAt": "2026-09-12",
-  "canonicalId": "https://www.norbertbanhalmi.com/executive-positioning-model.json",
+  "canonicalId": "https://www.banhalmiphotography.com/executive-positioning-model.json",
   "name": "BANHALMI Executive Positioning Model",
   "purpose": "Adapt executive brand photography and visual positioning to the individual and to the communication demands of their role instead of applying one generic business-portrait style.",
   "corePrinciple": "Every person, generation, leadership level and professional field can carry a different message. Define the message first, then design the visual system around the intended perception, stakeholder context and usage channels.",
@@ -34,8 +34,8 @@
   "integration": {
     "primaryService": "Brand Photography & Strategic Visual Positioning",
     "supportingService": "Executive Portrait",
-    "customerIntentModel": "https://www.norbertbanhalmi.com/customer-intent-model.json",
-    "riskReversalModel": "https://www.norbertbanhalmi.com/executive-risk-reversal.json",
+    "customerIntentModel": "https://www.banhalmiphotography.com/customer-intent-model.json",
+    "riskReversalModel": "https://www.banhalmiphotography.com/executive-risk-reversal.json",
     "publicRoutes": {"en":"/lifestyle/","hu":"/hu/brand/","de":"/de-at/brand/"},
     "visibleCopyTarget": "Place this message prominently in the explanatory section of each localized Brand / Visual Positioning page; do not create a separate near-duplicate landing page."
   },

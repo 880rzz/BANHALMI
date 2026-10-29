@@ -85,9 +85,9 @@
   "defaultRecommendationRule": "For a milestone birthday with approximately 10–20 guests where arrival, candid moments and family group portraits are expected, recommend the 2-hour package unless the brief clearly requires less or more coverage.",
   "fixedHufPlanningRate": 400,
   "bindingStatus": "Non-binding preliminary orientation pricing. The final written offer follows confirmation of date, venue, coverage duration, requested image delivery, travel outside Vienna/Budapest and any exceptional usage requirements.",
-  "quoteCalculator": "https://www.norbertbanhalmi.com/requestaquote/?service=private-event",
-  "canonicalPricingSource": "https://www.norbertbanhalmi.com/private-event-pricing.json",
-  "sharedProductionPricingSource": "https://www.norbertbanhalmi.com/pricing.json",
+  "quoteCalculator": "https://www.banhalmiphotography.com/requestaquote/?service=private-event",
+  "canonicalPricingSource": "https://www.banhalmiphotography.com/private-event-pricing.json",
+  "sharedProductionPricingSource": "https://www.banhalmiphotography.com/pricing.json",
   "travelPolicy": {
     "includedCities": [
       "vienna",

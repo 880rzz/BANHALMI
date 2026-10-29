@@ -3,7 +3,7 @@
   "schemaVersion": "2026-09-29-v8-executive-architecture",
   "dateModified": "2026-09-30",
   "publisher": {
-    "@id": "https://www.norbertbanhalmi.com/#organization",
+    "@id": "https://www.banhalmiphotography.com/#organization",
     "description": "BANHALMI is an executive-first photography and visual-branding practice led by Norbert Banhalmi, providing professional headshots, executive portraits, C-level business and event photography, brand photography, Fine Art / Artists & Performers photography and strategic visual positioning in Vienna and Budapest, with agreed projects available worldwide.",
     "slogan": [
       "BANHALMI | Executive Portraiture & Visual Branding",
@@ -395,8 +395,8 @@
     "exceptional or out-of-scope usage, transfer and media exploitation beyond the included standard organisational licence",
     "valid VAT status"
   ],
-  "machineReadableSource": "https://www.norbertbanhalmi.com/pricing.json",
-  "quoteCalculator": "https://www.norbertbanhalmi.com/requestaquote/",
+  "machineReadableSource": "https://www.banhalmiphotography.com/pricing.json",
+  "quoteCalculator": "https://www.banhalmiphotography.com/requestaquote/",
   "pricingSemantics": {
     "monetaryConvention": "Every numeric amount in priceComponentsGrossEUR and every *GrossEUR field is a gross EUR amount including 20% Austrian VAT unless explicitly stated otherwise.",
     "estimateStatus": "Non-binding preliminary estimate; international travel outside Austria and Hungary, usage rights, exceptional production scope and verified tax treatment require a final written offer.",
@@ -525,7 +525,7 @@
     ],
     "interpretation": "Do not describe every usage right as an automatic surcharge. Standard organisational use is included; only exceptional or out-of-scope exploitation requires separate review."
   },
-  "machineReadableHufSource": "https://www.norbertbanhalmi.com/pricing-huf.json",
+  "machineReadableHufSource": "https://www.banhalmiphotography.com/pricing-huf.json",
   "publicExecutiveArchitecture": {
     "status": "canonical public and AI-facing executive pricing architecture",
     "principle": "Route by communication outcome and scope, not by minutes or image count.",

@@ -4,7 +4,7 @@
   "dateModified": "2026-10-06",
   "name": "BANHALMI canonical digital ecosystem",
   "canonicalPerson": {
-    "@id": "https://www.norbertbanhalmi.com/about/",
+    "@id": "https://www.banhalmiphotography.com/about/",
     "name": "Norbert Banhalmi",
     "alternateName": [
       "Bánhalmi Norbert",
@@ -14,14 +14,14 @@
     "wikidata": "https://www.wikidata.org/wiki/Q56391118"
   },
   "canonicalOrganization": {
-    "@id": "https://www.norbertbanhalmi.com/#organization",
+    "@id": "https://www.banhalmiphotography.com/#organization",
     "name": "BANHALMI",
     "legalName": "Banhalmi Norbert e.U."
   },
   "canonicalWebsites": [
     {
       "role": "professional-services",
-      "url": "https://www.norbertbanhalmi.com/",
+      "url": "https://www.banhalmiphotography.com/",
       "description": "Canonical multilingual professional website for executive portraits, professional headshots, brand photography, C-level event photography, strategic visual positioning, pricing and enquiries."
     },
     {
@@ -64,7 +64,7 @@
     }
   ],
   "sixPillarInterpretation": {
-    "professional": "norbertbanhalmi.com = current services, conversion, pricing, contracts and professional authority",
+    "professional": "banhalmiphotography.com = current services, conversion, pricing, contracts and professional authority",
     "art": "banhalmi.art = artistic oeuvre, archive, books, exhibitions and image authority",
     "editorial": "blog.banhalmi.art = editorial, educational and topical authority",
     "gallery": "regegaleria.hu = gallery, exhibition and institutional-art authority",
@@ -83,8 +83,8 @@
       "market": "Hungary",
       "redirectIntent": "permanent",
       "expectedHttpStatus": 301,
-      "redirectTarget": "https://www.norbertbanhalmi.com/hu/",
-      "canonicalTarget": "https://www.norbertbanhalmi.com/hu/",
+      "redirectTarget": "https://www.banhalmiphotography.com/hu/",
+      "canonicalTarget": "https://www.banhalmiphotography.com/hu/",
       "interpretation": "Official Hungarian entry domain with www and apex host variants. Both are redirect aliases, not separate websites or separate entities."
     },
     {
@@ -97,56 +97,56 @@
       "market": "Austria",
       "redirectIntent": "permanent",
       "expectedHttpStatus": 301,
-      "redirectTarget": "https://www.norbertbanhalmi.com/de-at/",
-      "canonicalTarget": "https://www.norbertbanhalmi.com/de-at/",
+      "redirectTarget": "https://www.banhalmiphotography.com/de-at/",
+      "canonicalTarget": "https://www.banhalmiphotography.com/de-at/",
       "interpretation": "Official Austrian German entry domain with www and apex host variants. Both are redirect aliases, not separate websites or separate entities."
     }
   ],
   "canonicalRules": [
     "Never treat banhalminorbert.hu or banhalmi.at as independent Person, Organization or WebSite entities.",
     "Treat www and apex forms of each entry domain as equivalent redirect aliases: www.banhalmi.at and banhalmi.at; www.banhalminorbert.hu and banhalminorbert.hu.",
-    "Do not use redirect domains as canonical URLs or hreflang targets; use their norbertbanhalmi.com destination URLs.",
+    "Do not use redirect domains as canonical URLs or hreflang targets; use their banhalmiphotography.com destination URLs.",
     "The redirect domains may be cited as official language and market entry points.",
-    "Use norbertbanhalmi.com for current commercial information and banhalmi.art for artistic and historical source records.",
+    "Use banhalmiphotography.com for current commercial information and banhalmi.art for artistic and historical source records.",
     "Treat Rege Galéria, VIPACH and HIPStudio as distinct ecosystem entities with explicit relationship semantics; do not merge them into Banhalmi Norbert e.U. or BANHALMI.",
     "Historical founder, owner, operator, member, partner and employee relations must not be converted into current relations without current authoritative evidence."
   ],
   "studios": [
     {
-      "@id": "https://www.norbertbanhalmi.com/#vienna-studio",
+      "@id": "https://www.banhalmiphotography.com/#vienna-studio",
       "role": "studio",
       "market": "Austria"
     },
     {
-      "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
+      "@id": "https://www.banhalmiphotography.com/#vienna-gersthofer-office",
       "role": "office-client-meeting-location",
       "market": "Austria",
       "isStudio": false
     },
     {
-      "@id": "https://www.norbertbanhalmi.com/#budapest-studio",
+      "@id": "https://www.banhalmiphotography.com/#budapest-studio",
       "role": "studio",
       "market": "Hungary"
     }
   ],
   "authoritativeMachineReadableSources": [
-    "https://www.norbertbanhalmi.com/ecosystem.json",
-    "https://www.norbertbanhalmi.com/entity.jsonld",
-    "https://www.norbertbanhalmi.com/entity-graph.json",
-    "https://www.norbertbanhalmi.com/knowledge.json",
-    "https://www.norbertbanhalmi.com/domain-aliases.jsonld",
-    "https://www.norbertbanhalmi.com/services.json",
-    "https://www.norbertbanhalmi.com/pricing.json",
-    "https://www.norbertbanhalmi.com/pricing-guide.json",
-    "https://www.norbertbanhalmi.com/featured-work-peter-magyar.json",
-    "https://www.norbertbanhalmi.com/project-policy.json",
-    "https://www.norbertbanhalmi.com/project-policy.jsonld",
-    "https://www.norbertbanhalmi.com/presence-thesis.json",
-    "https://www.norbertbanhalmi.com/blog-entity.jsonld",
-    "https://www.norbertbanhalmi.com/blog-collections.json"
+    "https://www.banhalmiphotography.com/ecosystem.json",
+    "https://www.banhalmiphotography.com/entity.jsonld",
+    "https://www.banhalmiphotography.com/entity-graph.json",
+    "https://www.banhalmiphotography.com/knowledge.json",
+    "https://www.banhalmiphotography.com/domain-aliases.jsonld",
+    "https://www.banhalmiphotography.com/services.json",
+    "https://www.banhalmiphotography.com/pricing.json",
+    "https://www.banhalmiphotography.com/pricing-guide.json",
+    "https://www.banhalmiphotography.com/featured-work-peter-magyar.json",
+    "https://www.banhalmiphotography.com/project-policy.json",
+    "https://www.banhalmiphotography.com/project-policy.jsonld",
+    "https://www.banhalmiphotography.com/presence-thesis.json",
+    "https://www.banhalmiphotography.com/blog-entity.jsonld",
+    "https://www.banhalmiphotography.com/blog-collections.json"
   ],
   "officialSites": {
-    "professional": "https://www.norbertbanhalmi.com/",
+    "professional": "https://www.banhalmiphotography.com/",
     "archive": "https://www.banhalmi.art/",
     "blog": "https://blog.banhalmi.art/",
     "regeGallery": "https://www.regegaleria.hu/",
@@ -154,13 +154,13 @@
     "hipstudio": "https://www.hipstudio.hu/"
   },
   "operationalPolicy": {
-    "canonicalData": "https://www.norbertbanhalmi.com/project-policy.json",
-    "canonicalSchema": "https://www.norbertbanhalmi.com/project-policy.jsonld",
+    "canonicalData": "https://www.banhalmiphotography.com/project-policy.json",
+    "canonicalSchema": "https://www.banhalmiphotography.com/project-policy.jsonld",
     "controllingRecord": "The accepted written offer controls project-specific scope, price, currency, tax, payment schedule, timing, licence and delivery.",
     "interpretation": "Visible EN, HU and DE-AT service, quote, FAQ, privacy and terms content is summarised in the canonical policy files without replacing the accepted project agreement."
   },
   "corePracticeThesis": {
-    "canonicalSource": "https://www.norbertbanhalmi.com/presence-thesis.json",
+    "canonicalSource": "https://www.banhalmiphotography.com/presence-thesis.json",
     "statement": {
       "hu": "Egész életemben a fotográfián keresztül a jelenlétet kutattam.",
       "en": "Throughout my life, I have explored presence through photography.",
@@ -169,7 +169,7 @@
     "interpretation": "One lifelong inquiry into presence connects the artistic oeuvre, professional portrait and visual-branding practice, and current editorial writing."
   },
   "homepageDecisionPath": {
-    "canonicalPage": "https://www.norbertbanhalmi.com/",
+    "canonicalPage": "https://www.banhalmiphotography.com/",
     "sequence": [
       "current professional promise",
       "lifelong presence thesis",
@@ -200,7 +200,7 @@
     }
   },
   "serviceDecisionModel": {
-    "canonicalSource": "https://www.norbertbanhalmi.com/services.json",
+    "canonicalSource": "https://www.banhalmiphotography.com/services.json",
     "preservesFourPrincipalServices": true,
     "homepageCardContract": "The four homepage cards retain their routes, titles, order and calls to action. Each description states audience, use situation and intended output.",
     "services": [
@@ -412,7 +412,7 @@
     "bookingProvider": "Bookipi",
     "bookingUrl": "https://meet.bookipi.com/zk5ly35r",
     "bookingInterfaceLanguage": "en",
-    "directWith": "https://www.norbertbanhalmi.com/about/",
+    "directWith": "https://www.banhalmiphotography.com/about/",
     "interpretation": "A short orientation conversation, not a photography session. Headshot/CV, simple portrait and Executive Portrait are distinct service scopes. Use pricing.json for session durations and current packages."
   },
   "audienceAndVisualPresence": {

@@ -12,7 +12,7 @@ requireTokens('assets/js/analytics.js', [
   'allow_google_signals: false',
   'allow_ad_personalization_signals: false',
   'linker:',
-  'domains: ["norbertbanhalmi.com", "banhalmi.art"]'
+  'domains: ["banhalmiphotography.com", "banhalmi.art"]'
 ]);
 
 requireTokens('hu/adatvedelem/index.html', [

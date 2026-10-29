@@ -26,7 +26,7 @@ for (const required of [
   assert.ok(serialized.includes(required), `Official event gallery missing guardrail: ${required}`);
 }
 
-assert.equal(gallery.canonicalBoundaries.professionalAuthority, 'https://www.norbertbanhalmi.com/');
+assert.equal(gallery.canonicalBoundaries.professionalAuthority, 'https://www.banhalmiphotography.com/');
 assert.equal(gallery.canonicalBoundaries.artisticAuthority, 'https://www.banhalmi.art/');
 assert.equal(gallery.canonicalBoundaries.editorialAuthority, 'https://blog.banhalmi.art/');
 assert.equal(gallery.canonicalBoundaries.communityAuthority, 'https://www.vipach.at/');
@@ -51,7 +51,7 @@ assert.ok(
   'Official gallery integrity workflow must remain read-only.'
 );
 assert.ok(
-  integrityWorkflow.includes('https://www.norbertbanhalmi.com/official-event-gallery.json'),
+  integrityWorkflow.includes('https://www.banhalmiphotography.com/official-event-gallery.json'),
   'Official gallery integrity workflow does not verify the live canonical contract.'
 );
 assert.ok(

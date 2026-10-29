@@ -17,9 +17,9 @@ for (const [file, tokens] of Object.entries({
     'npm run test:browser',
     'deployment-sha.txt',
     'Verify exact commit is live on the custom domain',
-    'https://www.norbertbanhalmi.com/deployment-sha.txt',
-    'https://www.norbertbanhalmi.com/hu/',
-    'https://www.norbertbanhalmi.com/de-at/'
+    'https://www.banhalmiphotography.com/deployment-sha.txt',
+    'https://www.banhalmiphotography.com/hu/',
+    'https://www.banhalmiphotography.com/de-at/'
   ],
   'package.json': [
     'audit-mobile-menu-and-footer-stage29.mjs',

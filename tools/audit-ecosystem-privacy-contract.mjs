@@ -8,7 +8,7 @@ const locales = {
   de: ['de-at/datenschutz/index.html', 'de-at/cookies/index.html']
 };
 const required = [
-  'www.norbertbanhalmi.com',
+  'www.banhalmiphotography.com',
   'www.banhalmi.art',
   'blog.banhalmi.art',
   'G-90C452LJKQ',

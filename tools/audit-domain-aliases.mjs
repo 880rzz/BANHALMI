@@ -1,8 +1,8 @@
 const aliases = [
-  ['https://banhalmi.at/', 'https://www.norbertbanhalmi.com/de-at/'],
-  ['https://www.banhalmi.at/', 'https://www.norbertbanhalmi.com/de-at/'],
-  ['https://banhalminorbert.hu/', 'https://www.norbertbanhalmi.com/hu/'],
-  ['https://www.banhalminorbert.hu/', 'https://www.norbertbanhalmi.com/hu/']
+  ['https://banhalmi.at/', 'https://www.banhalmiphotography.com/de-at/'],
+  ['https://www.banhalmi.at/', 'https://www.banhalmiphotography.com/de-at/'],
+  ['https://banhalminorbert.hu/', 'https://www.banhalmiphotography.com/hu/'],
+  ['https://www.banhalminorbert.hu/', 'https://www.banhalmiphotography.com/hu/']
 ];
 const failures = [];
 for (const [url, expected] of aliases) {

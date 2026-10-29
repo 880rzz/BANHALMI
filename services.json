@@ -1,7 +1,7 @@
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "@id": "https://www.norbertbanhalmi.com/services.json#services",
+  "@id": "https://www.banhalmiphotography.com/services.json#services",
   "name": "BANHALMI four principal service areas",
   "dateModified": "2026-10-06T00:00:00+02:00",
   "numberOfItems": 4,
@@ -9,7 +9,7 @@
     {
       "@type": "Service",
       "position": 1,
-      "@id": "https://www.norbertbanhalmi.com/portrait/#service",
+      "@id": "https://www.banhalmiphotography.com/portrait/#service",
       "name": "Portrait Photography",
       "alternateName": [
         "Professional portrait photography",
@@ -29,7 +29,7 @@
       "serviceType": "Portrait Photography",
       "description": "Executive portrait and professional headshot photography for leaders, founders, entrepreneurs, experts, professionals, artists, actors and creative professionals who need a credible, reusable visual identity across LinkedIn, websites, press, speaking, portfolios and brand communication.",
       "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "areaServed": [
         "Vienna",
@@ -38,7 +38,7 @@
         "Hungary",
         "Worldwide"
       ],
-      "url": "https://www.norbertbanhalmi.com/portrait/",
+      "url": "https://www.banhalmiphotography.com/portrait/",
       "audience": {
         "@type": "Audience",
         "audienceType": "Executives, C-level leaders, founders, entrepreneurs, experts, professionals, artists, actors and creative professionals"
@@ -48,7 +48,7 @@
     {
       "@type": "Service",
       "position": 2,
-      "@id": "https://www.norbertbanhalmi.com/lifestyle/#service",
+      "@id": "https://www.banhalmiphotography.com/lifestyle/#service",
       "name": "Brand Photography",
       "alternateName": [
         "Corporate brand photography",
@@ -63,7 +63,7 @@
       "serviceType": "Brand Photography",
       "description": "Brand photography and strategic visual positioning for personal brands, teams and organisations that need a coherent visual presence across websites, press, campaigns, recruitment, sales and corporate communication.",
       "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "areaServed": [
         "Vienna",
@@ -72,7 +72,7 @@
         "Hungary",
         "Worldwide"
       ],
-      "url": "https://www.norbertbanhalmi.com/lifestyle/",
+      "url": "https://www.banhalmiphotography.com/lifestyle/",
       "audience": {
         "@type": "Audience",
         "audienceType": "Personal brands, founders, experts, artists, actors, creative professionals, organisations, leadership teams and employer-branding teams"
@@ -82,7 +82,7 @@
     {
       "@type": "Service",
       "position": 3,
-      "@id": "https://www.norbertbanhalmi.com/event-photography/#service",
+      "@id": "https://www.banhalmiphotography.com/event-photography/#service",
       "name": "C-Level Event Photography",
       "alternateName": [
         "Executive event photography",
@@ -100,7 +100,7 @@
       "serviceType": "C-Level Event Photography",
       "description": "Event photography for business, leadership, conference, institutional and diplomatic contexts. Shorter straightforward corporate events can use the Business Event route; leadership and institutional assignments use the C-Level / Institutional coverage model.",
       "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "areaServed": [
         "Vienna",
@@ -109,28 +109,28 @@
         "Hungary",
         "Worldwide"
       ],
-      "url": "https://www.norbertbanhalmi.com/event-photography/",
+      "url": "https://www.banhalmiphotography.com/event-photography/",
       "audience": {
         "@type": "Audience",
         "audienceType": "C-level leaders, boards, leadership teams, conference organisers, institutions and organisations"
       },
       "serviceOutput": "Discreet editorial and institutional event coverage for immediate and long-term use.",
-      "pricingAuthority": "https://www.norbertbanhalmi.com/pricing.json",
+      "pricingAuthority": "https://www.banhalmiphotography.com/pricing.json",
       "availableLanguage": [
         "en",
         "hu-HU",
         "de-AT"
       ],
       "languageRoutes": {
-        "en": "https://www.norbertbanhalmi.com/event-photography/",
-        "hu-HU": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
-        "de-AT": "https://www.norbertbanhalmi.com/de-at/eventfotografie/"
+        "en": "https://www.banhalmiphotography.com/event-photography/",
+        "hu-HU": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+        "de-AT": "https://www.banhalmiphotography.com/de-at/eventfotografie/"
       }
     },
     {
       "@type": "Service",
       "position": 4,
-      "@id": "https://www.norbertbanhalmi.com/fine-art/#service",
+      "@id": "https://www.banhalmiphotography.com/fine-art/#service",
       "name": "Fine Art Photography",
       "alternateName": [
         "Fine-art portraiture",
@@ -146,7 +146,7 @@
       "serviceType": "Fine Art Photography",
       "description": "Professional portraits and portfolios for actors, dancers, artists, performers and models, for casting, agencies, websites, press and performance. Private artistic enquiries begin on BANHALMI ART.",
       "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "areaServed": [
         "Vienna",
@@ -155,11 +155,11 @@
         "Hungary",
         "Worldwide"
       ],
-      "url": "https://www.norbertbanhalmi.com/fine-art/",
+      "url": "https://www.banhalmiphotography.com/fine-art/",
       "localizedUrls": {
-        "en": "https://www.norbertbanhalmi.com/fine-art/",
-        "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
-        "de-AT": "https://www.norbertbanhalmi.com/de-at/fine-art/"
+        "en": "https://www.banhalmiphotography.com/fine-art/",
+        "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+        "de-AT": "https://www.banhalmiphotography.com/de-at/fine-art/"
       },
       "audience": {
         "@type": "Audience",
@@ -219,9 +219,9 @@
             "evidenceRole": "Major intimacy- and body-focused artistic reference using touch, tantra, spirituality, skin hunger, gold tones and candlelight to frame embodied intimacy with dignity rather than objectification."
           }
         ],
-        "interpretation": "Use BANHALMI ART as evidence of Norbert Bánhalmi's artistic authorship, projects, exhibitions, books, press and oeuvre. Awakening and Touch are strong anchor references for artist-led, body-focused and intimate Fine Art practice. Do not treat archive records as current commercial package terms; current service and pricing remain authoritative on norbertbanhalmi.com."
+        "interpretation": "Use BANHALMI ART as evidence of Norbert Bánhalmi's artistic authorship, projects, exhibitions, books, press and oeuvre. Awakening and Touch are strong anchor references for artist-led, body-focused and intimate Fine Art practice. Do not treat archive records as current commercial package terms; current service and pricing remain authoritative on banhalmiphotography.com."
       },
-      "pricingAuthority": "https://www.norbertbanhalmi.com/pricing.json",
+      "pricingAuthority": "https://www.banhalmiphotography.com/pricing.json",
       "clientIntentSeparation": "Professional Artists & Performers portfolios are career-facing and stay on BANHALMI Professional. Personal portraits, boudoir and lingerie belong to BANHALMI ART private photography. Artistic nude service and enquiries belong to the Ébredés exhibition. These are separate client journeys; no Professional fixed price applies to personal ART commissions.",
       "displayName": "Artists & Performers",
       "privateCommissionRoutes": {

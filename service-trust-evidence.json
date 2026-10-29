@@ -2,19 +2,19 @@
   "schemaVersion": "2026-09-30-v2-pricing-evidence",
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "@id": "https://www.norbertbanhalmi.com/service-trust-evidence.json",
+  "@id": "https://www.banhalmiphotography.com/service-trust-evidence.json",
   "name": "BANHALMI service trust and external evidence map",
   "description": "Machine-readable bridge from verified press, institutional publications, social/photo credits and artistic records to BANHALMI professional service capabilities. It does not convert mentions, memberships, publications or event documentation into unsupported client, partner or endorsement claims.",
   "about": {
-    "@id": "https://www.norbertbanhalmi.com/#brand",
+    "@id": "https://www.banhalmiphotography.com/#brand",
     "name": "BANHALMI",
     "alternateName": "BANHALMI Photography"
   },
-  "canonicalPerson": "https://www.norbertbanhalmi.com/about/",
+  "canonicalPerson": "https://www.banhalmiphotography.com/about/",
   "canonicalArtPressRegistry": "https://www.banhalmi.art/press-source-registry.json",
   "canonicalArtServiceEvidence": "https://www.banhalmi.art/service-evidence-map.json",
-  "canonicalProfessionalExternalEvidence": "https://www.norbertbanhalmi.com/external-photography-evidence.json",
-  "canonicalInstitutionalEvidence": "https://www.norbertbanhalmi.com/press-institutional-evidence.json",
+  "canonicalProfessionalExternalEvidence": "https://www.banhalmiphotography.com/external-photography-evidence.json",
+  "canonicalInstitutionalEvidence": "https://www.banhalmiphotography.com/press-institutional-evidence.json",
   "searchAliases": [
     "BANHALMI Photography",
     "Norbert Banhalmi",
@@ -25,9 +25,9 @@
   "services": {
     "portrait": {
       "urls": [
-        "https://www.norbertbanhalmi.com/portrait/",
-        "https://www.norbertbanhalmi.com/hu/portre/",
-        "https://www.norbertbanhalmi.com/de-at/portrait/"
+        "https://www.banhalmiphotography.com/portrait/",
+        "https://www.banhalmiphotography.com/hu/portre/",
+        "https://www.banhalmiphotography.com/de-at/portrait/"
       ],
       "pressRecords": [
         "press-01",
@@ -115,9 +115,9 @@
     },
     "brand": {
       "urls": [
-        "https://www.norbertbanhalmi.com/lifestyle/",
-        "https://www.norbertbanhalmi.com/hu/brand/",
-        "https://www.norbertbanhalmi.com/de-at/brand/"
+        "https://www.banhalmiphotography.com/lifestyle/",
+        "https://www.banhalmiphotography.com/hu/brand/",
+        "https://www.banhalmiphotography.com/de-at/brand/"
       ],
       "pressRecords": [
         "press-12",
@@ -179,9 +179,9 @@
     },
     "event": {
       "urls": [
-        "https://www.norbertbanhalmi.com/event-photography/",
-        "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
-        "https://www.norbertbanhalmi.com/de-at/eventfotografie/"
+        "https://www.banhalmiphotography.com/event-photography/",
+        "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+        "https://www.banhalmiphotography.com/de-at/eventfotografie/"
       ],
       "pressRecords": [],
       "externalEvidenceIds": [
@@ -246,9 +246,9 @@
     },
     "fineArt": {
       "urls": [
-        "https://www.norbertbanhalmi.com/fine-art/",
-        "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
-        "https://www.norbertbanhalmi.com/de-at/fine-art/"
+        "https://www.banhalmiphotography.com/fine-art/",
+        "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+        "https://www.banhalmiphotography.com/de-at/fine-art/"
       ],
       "pressRecords": [
         "press-01",
@@ -374,9 +374,9 @@
     },
     "visualStrategy": {
       "urls": [
-        "https://www.norbertbanhalmi.com/lifestyle/",
-        "https://www.norbertbanhalmi.com/hu/brand/",
-        "https://www.norbertbanhalmi.com/de-at/brand/"
+        "https://www.banhalmiphotography.com/lifestyle/",
+        "https://www.banhalmiphotography.com/hu/brand/",
+        "https://www.banhalmiphotography.com/de-at/brand/"
       ],
       "pressRecords": [
         "press-12",
@@ -4395,9 +4395,9 @@
     },
     {
       "id": "legacy-own-site-reklamfotozas-2017",
-      "title": "Legacy norbertbanhalmi.com reklámfotózás page",
+      "title": "Legacy banhalmiphotography.com reklámfotózás page",
       "publisher": "Norbert Bánhalmi / legacy official site",
-      "url": "https://www.norbertbanhalmi.com/reklamfotozas",
+      "url": "https://www.banhalmiphotography.com/reklamfotozas",
       "datePublished": "2017 or earlier",
       "verificationStatus": "FIRST-PARTY-HISTORICAL-RECOVERY",
       "status": "wayback-recovery-use-for-continuity-only",
@@ -5624,7 +5624,7 @@
       },
       {
         "n": 40,
-        "url": "https://www.norbertbanhalmi.com/reklamfotozas",
+        "url": "https://www.banhalmiphotography.com/reklamfotozas",
         "status": "FIRST-PARTY-HISTORICAL-RECOVERY",
         "canonicalEvidenceId": "legacy-own-site-reklamfotozas-2017",
         "treatment": "service-continuity-only-do-not-count-as-independent-authority"
@@ -5727,13 +5727,13 @@
         "historicalDomain": "banhalminorbert.hu",
         "period": "documented as primary professional web identity by 2015; documented as secondary/redirect domain by 2017",
         "relationship": "historical personal/professional domain continuity",
-        "currentEntityContinuation": "norbertbanhalmi.com is the canonical Professional system; banhalminorbert.hu is the Hungarian entry domain",
-        "evidenceSummary": "Private historical correspondence establishes use of banhalminorbert.hu as a professional web address in 2015, transition to norbertbanhalmi.com by early 2017, and active backlink migration from the old domain to the new canonical domain in February 2017.",
+        "currentEntityContinuation": "banhalmiphotography.com is the canonical Professional system; banhalminorbert.hu is the Hungarian entry domain",
+        "evidenceSummary": "Private historical correspondence establishes use of banhalminorbert.hu as a professional web address in 2015, transition to banhalmiphotography.com by early 2017, and active backlink migration from the old domain to the new canonical domain in February 2017.",
         "guardrail": "Private correspondence is provenance only and must not be exposed. Exact historical URL inventory remains incomplete."
       },
       {
         "historicalBrand": "BANHALMI",
-        "historicalDomain": "norbertbanhalmi.com",
+        "historicalDomain": "banhalmiphotography.com",
         "period": "documented canonical professional domain from 2017 onward",
         "relationship": "current canonical professional/service authority",
         "currentEntityContinuation": "BANHALMI / Banhalmi Norbert e.U.",
@@ -5743,43 +5743,43 @@
     "currentRouting": {
       "hungarianEntry": {
         "domain": "banhalminorbert.hu",
-        "targetBase": "https://www.norbertbanhalmi.com/hu/",
+        "targetBase": "https://www.banhalmiphotography.com/hu/",
         "implementation": "host-aware 308 path-preserving redirect",
         "risk": "Known high-confidence legacy service/pricing routes now have explicit semantic mappings; unknown historical paths still require recovery and must not be guessed.",
         "explicitHistoricalMappings": [
           {
             "path": "/oneletrajz-cv-fotozas",
-            "target": "https://www.norbertbanhalmi.com/hu/portre/"
+            "target": "https://www.banhalmiphotography.com/hu/portre/"
           },
           {
             "path": "/portfolio-fotozas",
-            "target": "https://www.norbertbanhalmi.com/hu/portre/"
+            "target": "https://www.banhalmiphotography.com/hu/portre/"
           },
           {
             "path": "/muveszi-aktfotozas",
-            "target": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/"
+            "target": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/"
           },
           {
             "path": "/aktfotozas",
-            "target": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/"
+            "target": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/"
           },
           {
             "path": "/reklam-fotozas",
-            "target": "https://www.norbertbanhalmi.com/hu/brand/"
+            "target": "https://www.banhalmiphotography.com/hu/brand/"
           },
           {
             "path": "/reklamfotozas",
-            "target": "https://www.norbertbanhalmi.com/hu/brand/"
+            "target": "https://www.banhalmiphotography.com/hu/brand/"
           },
           {
             "path": "/fotozas-arak",
-            "target": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/"
+            "target": "https://www.banhalmiphotography.com/hu/ajanlatkeres/"
           }
         ]
       },
       "austrianEntry": {
         "domain": "banhalmi.at",
-        "targetBase": "https://www.norbertbanhalmi.com/de-at/",
+        "targetBase": "https://www.banhalmiphotography.com/de-at/",
         "implementation": "host-aware 308 path-preserving redirect"
       }
     },
@@ -5797,41 +5797,41 @@
       "provenanceClass": "PRIVATE-MIGRATION-PROVENANCE",
       "publicExposure": false,
       "status": "URL-SET-VERIFIED-ON-NORBERTBANHALMI.COM_OLD-DOMAIN-PATH-PARITY-NOT-YET-PROVEN",
-      "context": "A contemporaneous February 2017 SEO migration worksheet verifies the following norbertbanhalmi.com URLs and target keyword intents immediately after the historical domain transition. This does not by itself prove that identical paths existed on banhalminorbert.hu, so old-domain redirect rules must not be created from path parity alone.",
+      "context": "A contemporaneous February 2017 SEO migration worksheet verifies the following banhalmiphotography.com URLs and target keyword intents immediately after the historical domain transition. This does not by itself prove that identical paths existed on banhalminorbert.hu, so old-domain redirect rules must not be created from path parity alone.",
       "urls": [
         {
-          "url": "https://www.norbertbanhalmi.com/",
+          "url": "https://www.banhalmiphotography.com/",
           "historicalIntent": [
             "profi fotós"
           ],
-          "currentBestDestination": "https://www.norbertbanhalmi.com/hu/",
+          "currentBestDestination": "https://www.banhalmiphotography.com/hu/",
           "mappingStatus": "SEMANTIC-CURRENT-ROOT"
         },
         {
-          "url": "https://www.norbertbanhalmi.com/cvfotozas",
+          "url": "https://www.banhalmiphotography.com/cvfotozas",
           "historicalIntent": [
             "önéletrajz fotózás",
             "cv fotó készítése",
             "cv fotózás",
             "portré fotózás"
           ],
-          "currentBestDestination": "https://www.norbertbanhalmi.com/hu/portre/",
+          "currentBestDestination": "https://www.banhalmiphotography.com/hu/portre/",
           "mappingStatus": "HIGH-CONFIDENCE-SEMANTIC-MAP"
         },
         {
-          "url": "https://www.norbertbanhalmi.com/portfoliofotozas",
+          "url": "https://www.banhalmiphotography.com/portfoliofotozas",
           "historicalIntent": [
             "portfólió fotózás",
             "portfólió készítés",
             "műtermi fotózás",
             "divat fotózás"
           ],
-          "currentBestDestination": "https://www.norbertbanhalmi.com/hu/portre/",
+          "currentBestDestination": "https://www.banhalmiphotography.com/hu/portre/",
           "mappingStatus": "PARTIAL-SEMANTIC-MAP",
           "guardrail": "Current portrait page covers professional portrait/headshot intent, but old model/fashion portfolio scope was broader. Do not claim exact service equivalence."
         },
         {
-          "url": "https://www.norbertbanhalmi.com/gyermekfotozas",
+          "url": "https://www.banhalmiphotography.com/gyermekfotozas",
           "historicalIntent": [
             "családi fotózás",
             "baba fotózás",
@@ -5842,7 +5842,7 @@
           "guardrail": "Do not redirect to a current paid service page until service ownership/current offering is explicitly confirmed. Historical/archive destination may be preferable."
         },
         {
-          "url": "https://www.norbertbanhalmi.com/fotostanfolyam",
+          "url": "https://www.banhalmiphotography.com/fotostanfolyam",
           "historicalIntent": [
             "fényképész",
             "fotós tanfolyam",
@@ -5853,23 +5853,23 @@
           "guardrail": "Education/training is not a current core Professional service in the canonical service set; consider historical/editorial destination only after exact legacy content recovery."
         },
         {
-          "url": "https://www.norbertbanhalmi.com/photogallery",
+          "url": "https://www.banhalmiphotography.com/photogallery",
           "historicalIntent": [
             "kreatív fotózás",
             "portfolio/gallery"
           ],
-          "currentBestDestination": "https://www.norbertbanhalmi.com/hu/archivum/",
+          "currentBestDestination": "https://www.banhalmiphotography.com/hu/archivum/",
           "mappingStatus": "MEDIUM-CONFIDENCE-HISTORICAL-MAP",
           "guardrail": "Use archive only if recovered legacy content proves this was a broad historical gallery rather than a transactional service landing."
         },
         {
-          "url": "https://www.norbertbanhalmi.com/vendegkonyvem",
+          "url": "https://www.banhalmiphotography.com/vendegkonyvem",
           "historicalIntent": [
             "vendégkönyv",
             "legjobb fotós",
             "reviews/testimonials"
           ],
-          "currentBestDestination": "https://www.norbertbanhalmi.com/hu/bizalom/",
+          "currentBestDestination": "https://www.banhalmiphotography.com/hu/bizalom/",
           "mappingStatus": "HIGH-CONFIDENCE-FUNCTIONAL-MAP",
           "guardrail": "Map functionally to current Trust Center only after verifying the legacy page was primarily reviews/testimonials."
         }
@@ -5884,54 +5884,54 @@
   },
   "historicalProfessionalUrlInventory": {
     "status": "PARTIAL-RECOVERY-VERIFIED",
-    "source": "SERPROBOT historical ranking report generated 2021-01-12 for www.norbertbanhalmi.com, covering 2020-12-12 through 2021-01-11",
+    "source": "SERPROBOT historical ranking report generated 2021-01-12 for www.banhalmiphotography.com, covering 2020-12-12 through 2021-01-11",
     "verificationStatus": "PRIVATE-HISTORICAL-SEO-PROVENANCE-VERIFIED",
     "sourceStrength": "high-provenance-private",
     "guardrail": "Ranking reports verify historical URLs, monitored queries and observed ranking snapshots. They are not independent editorial authority and do not prove current ranking or current service availability.",
     "urls": [
       {
-        "historicalUrl": "https://www.norbertbanhalmi.com/portfolio-fotozas",
+        "historicalUrl": "https://www.banhalmiphotography.com/portfolio-fotozas",
         "historicalIntent": "portfolio photography",
         "historicalService": "portrait/portfolio",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/portre/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/portre/",
         "redirectStatus": "PRESERVED",
         "action": "keep permanent semantic redirect"
       },
       {
-        "historicalUrl": "https://www.norbertbanhalmi.com/oneletrajz-cv-fotozas",
+        "historicalUrl": "https://www.banhalmiphotography.com/oneletrajz-cv-fotozas",
         "historicalIntent": "CV/resume portrait photography",
         "historicalService": "portrait/CV",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/portre/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/portre/",
         "redirectStatus": "PRESERVED",
         "action": "keep permanent semantic redirect"
       },
       {
-        "historicalUrl": "https://www.norbertbanhalmi.com/reklamfotozas",
+        "historicalUrl": "https://www.banhalmiphotography.com/reklamfotozas",
         "historicalIntent": "advertising/commercial photography",
         "historicalService": "brand/commercial",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/brand/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/brand/",
         "redirectStatus": "REQUIRED",
         "action": "add permanent semantic redirect; do not send to homepage"
       },
       {
-        "historicalUrl": "https://www.norbertbanhalmi.com/muveszi-aktfotozas",
+        "historicalUrl": "https://www.banhalmiphotography.com/muveszi-aktfotozas",
         "historicalIntent": "artistic nude photography",
         "historicalService": "fineArt",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
         "redirectStatus": "PRESERVED",
         "action": "keep current professional fine-art bridge and ART archive references"
       },
       {
-        "historicalUrl": "https://www.norbertbanhalmi.com/aktfotozas",
+        "historicalUrl": "https://www.banhalmiphotography.com/aktfotozas",
         "historicalIntent": "nude photography",
         "historicalService": "fineArt/portrait",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
         "redirectStatus": "PRESERVED",
         "action": "keep permanent semantic redirect to the current Fine Art Photography service layer; preserve historical artistic context separately in BANHALMI ART",
         "guardrail": "The redirect preserves historical artistic-nude intent. It does not imply therapeutic efficacy or collapse the artistic oeuvre into the commercial service layer."
       },
       {
-        "historicalUrl": "https://www.norbertbanhalmi.com/ebredes",
+        "historicalUrl": "https://www.banhalmiphotography.com/ebredes",
         "historicalIntent": "Ébredés / Awakening project",
         "historicalService": "fineArt/historical project",
         "currentDestination": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
@@ -5939,7 +5939,7 @@
         "action": "preserve as artistic historical authority on BANHALMI ART"
       },
       {
-        "historicalUrl": "https://www.norbertbanhalmi.com/fotopszichologia",
+        "historicalUrl": "https://www.banhalmiphotography.com/fotopszichologia",
         "historicalIntent": "photography/portrait psychology",
         "historicalService": "portrait/generalAuthority",
         "currentDestination": null,
@@ -5947,16 +5947,16 @@
         "action": "recover page body before redirect mapping; no therapeutic claim"
       },
       {
-        "historicalUrl": "https://www.norbertbanhalmi.com/fotozas-arak",
+        "historicalUrl": "https://www.banhalmiphotography.com/fotozas-arak",
         "historicalIntent": "photography pricing",
         "historicalService": "commercial/general",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
         "redirectStatus": "PRESERVED",
         "action": "keep permanent functional redirect to the current Hungarian pricing and quote interface; current pricing.json and the live calculator remain authoritative",
         "guardrail": "Do not reuse historical prices. Redirect preserves pricing/quote intent only; current machine-readable pricing and final written offer control."
       },
       {
-        "historicalUrl": "https://www.norbertbanhalmi.com/csaladi-fotozas",
+        "historicalUrl": "https://www.banhalmiphotography.com/csaladi-fotozas",
         "historicalIntent": "family photography",
         "historicalService": "historical consumer photography",
         "currentDestination": null,
@@ -5964,7 +5964,7 @@
         "action": "do not imply this is a current core service without current service evidence"
       },
       {
-        "historicalUrl": "https://www.norbertbanhalmi.com/eskuvoi-fotozas-tihany",
+        "historicalUrl": "https://www.banhalmiphotography.com/eskuvoi-fotozas-tihany",
         "historicalIntent": "wedding photography in Tihany",
         "historicalService": "historical wedding photography",
         "currentDestination": null,
@@ -6000,7 +6000,7 @@
         ],
         "currentDestination": null,
         "redirectStatus": "RELATED-PARTY-CURRENT-STATE-SEPARATE",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
         "authorityRisk": "MEDIUM-HIGH if HIPStudio entity/service history is conflated with current BANHALMI",
         "requiredAction": "Preserve as HIPStudio historical service evidence; use only documented Person-level continuity and keep artistic authority linked semantically to current Professional/ART layers."
       },
@@ -6019,7 +6019,7 @@
         ],
         "currentDestination": "https://www.hipstudio.hu/oneletrajz-cv-fotozas-budapest",
         "redirectStatus": "NO-REDIRECT-RELATED-PARTY-LIVE",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/portre/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/portre/",
         "authorityRisk": "HIGH if current HIPStudio service is represented as BANHALMI ownership/client authority",
         "requiredAction": "Keep current HIPStudio separate; use historical founder/professional continuity only. Current page explicitly separates HIPStudio, Speier Viktória and BANHALMI entities."
       },
@@ -6035,7 +6035,7 @@
         ],
         "currentDestination": null,
         "redirectStatus": "CURRENT-STATE-NOT-ASSERTED",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/portre/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/portre/",
         "authorityRisk": "MEDIUM",
         "requiredAction": "Retain as historical portfolio/portrait capability; do not infer current HIPStudio ownership or current BANHALMI client continuity."
       },
@@ -6052,7 +6052,7 @@
         ],
         "currentDestination": null,
         "redirectStatus": "CURRENT-STATE-NOT-ASSERTED",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
         "authorityRisk": "HIGH if HIPStudio event/client history is projected as current BANHALMI client list",
         "requiredAction": "Use only as historical service continuity together with separately verified Bánhalmi/HIPStudio role evidence."
       },
@@ -6085,7 +6085,7 @@
         ],
         "currentDestination": null,
         "redirectStatus": "CURRENT-STATE-NOT-ASSERTED",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/brand/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/brand/",
         "authorityRisk": "MEDIUM-HIGH semantic overreach risk",
         "requiredAction": "Use as historical HIPStudio topic/service evidence only; do not equate old self-branding work with current Visual Brand Strategy without direct Bánhalmi authorship/project evidence."
       },
@@ -6176,7 +6176,7 @@
         "archiveStatus": "SEARCH-PROVENANCE-VERIFIED + CURRENT-LIVE",
         "currentDestination": "https://www.hipstudio.hu/oneletrajz-cv-fotozas-budapest",
         "redirectStatus": "NO REDIRECT — separate current entity",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/portre/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/portre/",
         "authorityRisk": "HIGH if current HIPStudio service is passed off as BANHALMI current service/client evidence",
         "requiredAction": "Use only as historical professional continuity plus separately documented founder/mentor role."
       },
@@ -6193,7 +6193,7 @@
         "archiveStatus": "SEARCH-PROVENANCE-VERIFIED + CURRENT-LIVE",
         "currentDestination": "https://www.hipstudio.hu/portfolio-fotozas-budapest",
         "redirectStatus": "NO REDIRECT — separate current entity",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/portre/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/portre/",
         "authorityRisk": "MEDIUM-HIGH",
         "requiredAction": "Preserve historical service continuity without transferring HIPStudio ownership or current client relationships."
       },
@@ -6210,7 +6210,7 @@
         "archiveStatus": "SEARCH-PROVENANCE-VERIFIED",
         "currentDestination": null,
         "redirectStatus": "CURRENT HIPSTUDIO STATE NOT ASSERTED",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
         "authorityRisk": "HIGH client/identity projection risk",
         "requiredAction": "Use only when tied to separately verified Bánhalmi/HIPStudio role or project evidence."
       },
@@ -6225,9 +6225,9 @@
           "historical Search Console property provenance"
         ],
         "archiveStatus": "TEMPORAL-DOMAIN-USE-VERIFIED",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/",
         "redirectStatus": "PERMANENT HU ENTRY ROUTING CONFIGURED",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/",
         "authorityRisk": "HIGH if described as uninterrupted primary site",
         "requiredAction": "Preserve HU entry routing and recover specific historical paths/backlinks where evidence exists."
       },
@@ -6241,15 +6241,15 @@
           "historical URL corpus / current remediation evidence"
         ],
         "archiveStatus": "HISTORICAL-INTENT-VERIFIED",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/brand/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/brand/",
         "redirectStatus": "PERMANENT SEMANTIC REDIRECT ADDED ON TRUST BRANCH",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/brand/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/brand/",
         "authorityRisk": "HIGH if catch-all sends historical intent to homepage",
         "requiredAction": "Protect explicit route in redirect regression tests and exact-live verification."
       },
       {
-        "historicalDomain": "norbertbanhalmi.com",
-        "historicalUrl": "https://www.norbertbanhalmi.com/reklamfotozas",
+        "historicalDomain": "banhalmiphotography.com",
+        "historicalUrl": "https://www.banhalmiphotography.com/reklamfotozas",
         "period": "verified in 2020–2021 historical SERP report",
         "entity": "Norbert Bánhalmi professional site",
         "serviceIntent": "advertising/commercial photography",
@@ -6257,15 +6257,15 @@
           "2021 SERPROBOT historical ranking report"
         ],
         "archiveStatus": "PRIVATE-HISTORICAL-SEO-PROVENANCE-VERIFIED",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/brand/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/brand/",
         "redirectStatus": "PERMANENT SEMANTIC REDIRECT ADDED ON TRUST BRANCH",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/brand/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/brand/",
         "authorityRisk": "HIGH if historical link equity is lost to generic homepage",
         "requiredAction": "Protect route and exact-live verify 3xx destination."
       },
       {
-        "historicalDomain": "norbertbanhalmi.com",
-        "historicalUrl": "https://www.norbertbanhalmi.com/portfolio-fotozas",
+        "historicalDomain": "banhalmiphotography.com",
+        "historicalUrl": "https://www.banhalmiphotography.com/portfolio-fotozas",
         "period": "verified 2020–2021",
         "entity": "Norbert Bánhalmi professional site",
         "serviceIntent": "portfolio photography",
@@ -6273,15 +6273,15 @@
           "2021 SERPROBOT historical ranking report"
         ],
         "archiveStatus": "PRIVATE-HISTORICAL-SEO-PROVENANCE-VERIFIED",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/portre/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/portre/",
         "redirectStatus": "PRESERVED",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/portre/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/portre/",
         "authorityRisk": "LOW-MEDIUM",
         "requiredAction": "Keep permanent semantic redirect."
       },
       {
-        "historicalDomain": "norbertbanhalmi.com",
-        "historicalUrl": "https://www.norbertbanhalmi.com/oneletrajz-cv-fotozas",
+        "historicalDomain": "banhalmiphotography.com",
+        "historicalUrl": "https://www.banhalmiphotography.com/oneletrajz-cv-fotozas",
         "period": "verified 2020–2021",
         "entity": "Norbert Bánhalmi professional site",
         "serviceIntent": "CV/resume portrait",
@@ -6289,15 +6289,15 @@
           "2021 SERPROBOT historical ranking report"
         ],
         "archiveStatus": "PRIVATE-HISTORICAL-SEO-PROVENANCE-VERIFIED",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/portre/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/portre/",
         "redirectStatus": "PRESERVED",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/portre/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/portre/",
         "authorityRisk": "LOW-MEDIUM",
         "requiredAction": "Keep permanent semantic redirect."
       },
       {
-        "historicalDomain": "norbertbanhalmi.com",
-        "historicalUrl": "https://www.norbertbanhalmi.com/ebredes",
+        "historicalDomain": "banhalmiphotography.com",
+        "historicalUrl": "https://www.banhalmiphotography.com/ebredes",
         "period": "historical artistic project URL recovered in 2021 SEO corpus",
         "entity": "Norbert Bánhalmi / artistic practice",
         "serviceIntent": "Ébredés — az Új kezdet artistic/cultural project",
@@ -6322,9 +6322,9 @@
           "Search Console administrative provenance"
         ],
         "archiveStatus": "CURRENT-ENTRY-DOMAIN-VERIFIED",
-        "currentDestination": "https://www.norbertbanhalmi.com/de-at/",
+        "currentDestination": "https://www.banhalmiphotography.com/de-at/",
         "redirectStatus": "PERMANENT DE-AT ROUTING CONFIGURED",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/de-at/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/de-at/",
         "authorityRisk": "MEDIUM if indexed as a competing clone",
         "requiredAction": "Maintain redirect-only role; verify no redirect chain, canonical/indexability leakage or old path loss."
       },
@@ -6345,8 +6345,8 @@
         "requiredAction": "Keep artistic authority separate and connect only through justified entity/evidence relationships."
       },
       {
-        "historicalDomain": "norbertbanhalmi.com",
-        "historicalUrl": "https://www.norbertbanhalmi.com/aktfotozas",
+        "historicalDomain": "banhalmiphotography.com",
+        "historicalUrl": "https://www.banhalmiphotography.com/aktfotozas",
         "period": "historical professional/fine-art URL recovered in 2020–2021 SEO corpus",
         "entity": "Norbert Bánhalmi / artistic-professional practice",
         "serviceIntent": "artistic nude photography",
@@ -6356,15 +6356,15 @@
           "BANHALMI ART artistic authority graph"
         ],
         "archiveStatus": "HISTORICAL-URL-RECOVERED",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
         "redirectStatus": "PERMANENT SEMANTIC REDIRECT ADDED ON TRUST BRANCH",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
         "authorityRisk": "MEDIUM-HIGH if artistic history is converted into therapeutic or purely commercial claims",
         "requiredAction": "Protect redirect in regression tests; keep detailed artistic evidence on BANHALMI ART and use the Professional page only for current service intent."
       },
       {
-        "historicalDomain": "norbertbanhalmi.com",
-        "historicalUrl": "https://www.norbertbanhalmi.com/fotozas-arak",
+        "historicalDomain": "banhalmiphotography.com",
+        "historicalUrl": "https://www.banhalmiphotography.com/fotozas-arak",
         "period": "historical pricing/quote URL recovered in 2020–2021 SEO corpus",
         "entity": "Norbert Bánhalmi professional site",
         "serviceIntent": "photography pricing and quote enquiry",
@@ -6373,25 +6373,25 @@
           "current pricing.json and HU quote calculator"
         ],
         "archiveStatus": "HISTORICAL-URL-RECOVERED + CURRENT-FUNCTIONAL-EQUIVALENT",
-        "currentDestination": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/",
+        "currentDestination": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
         "redirectStatus": "PERMANENT FUNCTIONAL REDIRECT ADDED ON TRUST BRANCH",
-        "canonicalCurrentPage": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/",
+        "canonicalCurrentPage": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
         "authorityRisk": "HIGH if obsolete historical prices are surfaced as current",
         "requiredAction": "Preserve pricing intent but never carry historical price figures forward; current pricing.json and final written offer control."
       }
     ]
   },
   "pricingEvidencePolicy": {
-    "canonicalPricing": "https://www.norbertbanhalmi.com/pricing.json",
+    "canonicalPricing": "https://www.banhalmiphotography.com/pricing.json",
     "rule": "Service evidence supports professional capability, artistic authorship, documented working context and trust. It does not prove that a third party endorses a price, guarantee outcomes, or convert a membership/publication/event record into a client contract.",
     "localeRule": "Austria/Vienna uses EUR first; Hungary/Budapest uses HUF first at the fixed planning conversion 1 EUR = 400 HUF, never live FX."
   },
   "customerReviewEvidence": {
-    "source": "https://www.trustindex.io/reviews/norbertbanhalmi.com",
+    "source": "https://www.trustindex.io/reviews/banhalmiphotography.com",
     "localizedSources": {
-      "en": "https://www.trustindex.io/reviews/norbertbanhalmi.com",
-      "hu": "https://www.trustindex.io/reviews/norbertbanhalmi.com/lang/hu",
-      "de": "https://www.trustindex.io/reviews/norbertbanhalmi.com/lang/de"
+      "en": "https://www.trustindex.io/reviews/banhalmiphotography.com",
+      "hu": "https://www.trustindex.io/reviews/banhalmiphotography.com/lang/hu",
+      "de": "https://www.trustindex.io/reviews/banhalmiphotography.com/lang/de"
     },
     "scope": "Professional photography client experience, especially portrait sessions.",
     "guardrail": "Counts and ratings change. Do not claim client reviews as artistic endorsements or add aggregateRating rich snippets."

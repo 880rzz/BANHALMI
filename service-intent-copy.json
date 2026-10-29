@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2026-10-02-v2",
-  "@id": "https://www.norbertbanhalmi.com/service-intent-copy.json",
+  "@id": "https://www.banhalmiphotography.com/service-intent-copy.json",
   "purpose": "Canonical localized copy source for human-readable service-intent, GEO answer blocks and metadata refinement without creating new public service pages.",
   "portrait": {
     "en": {

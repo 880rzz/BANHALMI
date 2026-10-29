@@ -8,31 +8,31 @@ Not all observed service queries reach their intended service page. The table re
 
 | Query | Observed | Recommended | Impressions | Position |
 |---|---|---|---:|---:|
-| photography | https://www.norbertbanhalmi.com/hu/ | https://www.norbertbanhalmi.com/ | 433 | 1.67 |
-| portré fotózás budapest | https://www.norbertbanhalmi.com/hu/ | https://www.norbertbanhalmi.com/hu/portre/ | 49 | 4.22 |
-| boudoir photography | https://www.norbertbanhalmi.com/hu/ | https://www.banhalmi.art/private-photography.html | 45 | 3 |
-| photography | https://www.norbertbanhalmi.com/hu/ | https://www.norbertbanhalmi.com/ | 44 | 3.77 |
-| boudoir photography | https://www.norbertbanhalmi.com/de-at/ | https://www.banhalmi.art/private-photography.html | 31 | 3.16 |
-| portré fotózás | https://www.norbertbanhalmi.com/hu/ | https://www.norbertbanhalmi.com/hu/portre/ | 26 | 4.04 |
-| boudoir photography | https://www.norbertbanhalmi.com/hu/ | https://www.banhalmi.art/private-photography.html | 21 | 5.19 |
-| portré fotózás budapest | https://www.norbertbanhalmi.com/hu/ | https://www.norbertbanhalmi.com/hu/portre/ | 21 | 10.86 |
-| portraitfotografie | https://www.norbertbanhalmi.com/de-at/ | https://www.norbertbanhalmi.com/de-at/portrait/ | 19 | 3.58 |
-| fotografie porträt | https://www.norbertbanhalmi.com/de-at/ | https://www.norbertbanhalmi.com/de-at/portrait/ | 18 | 3.11 |
-| portré | https://www.norbertbanhalmi.com/hu/ | https://www.norbertbanhalmi.com/hu/portre/ | 15 | 5.07 |
-| professional photographer | https://www.norbertbanhalmi.com/de-at/ | https://www.norbertbanhalmi.com/ | 14 | 14.21 |
-| budapest photographer | https://www.norbertbanhalmi.com/hu/ | https://www.norbertbanhalmi.com/ | 13 | 1.62 |
-| professional photographer | https://www.norbertbanhalmi.com/de-at/ | https://www.norbertbanhalmi.com/ | 13 | 6.31 |
-| brand fotograf | https://www.norbertbanhalmi.com/ | https://www.norbertbanhalmi.com/de-at/brand/ | 12 | 8.17 |
-| portréfotózás budapest | https://www.norbertbanhalmi.com/hu/ | https://www.norbertbanhalmi.com/hu/portre/ | 12 | 21.17 |
-| intim portré fotózás | https://www.norbertbanhalmi.com/hu/ | https://www.banhalmi.art/hu/private-photography.html | 11 | 6.18 |
-| künstler portraits | https://www.norbertbanhalmi.com/ | https://www.norbertbanhalmi.com/de-at/portrait/ | 11 | 9.82 |
-| personal brand fotografie wien | https://www.norbertbanhalmi.com/de-at/ | https://www.norbertbanhalmi.com/de-at/brand/ | 11 | 5.36 |
-| portrait künstler | https://www.norbertbanhalmi.com/ | https://www.norbertbanhalmi.com/de-at/portrait/ | 11 | 3 |
-| aktfotózás | https://www.norbertbanhalmi.com/hu/ | https://www.banhalmi.art/hu/exhibitions/ebredes.html | 10 | 6.7 |
-| headshot | https://www.norbertbanhalmi.com/ | https://www.norbertbanhalmi.com/portrait/ | 10 | 3.7 |
-| portraitfotografie | https://www.norbertbanhalmi.com/de-at/ | https://www.norbertbanhalmi.com/de-at/portrait/ | 10 | 5 |
-| brand photographer | https://www.norbertbanhalmi.com/ | https://www.norbertbanhalmi.com/lifestyle/ | 9 | 9.56 |
-| professzionális portré fotózás | https://www.norbertbanhalmi.com/hu/ | https://www.norbertbanhalmi.com/hu/portre/ | 9 | 6.22 |
+| photography | https://www.banhalmiphotography.com/hu/ | https://www.banhalmiphotography.com/ | 433 | 1.67 |
+| portré fotózás budapest | https://www.banhalmiphotography.com/hu/ | https://www.banhalmiphotography.com/hu/portre/ | 49 | 4.22 |
+| boudoir photography | https://www.banhalmiphotography.com/hu/ | https://www.banhalmi.art/private-photography.html | 45 | 3 |
+| photography | https://www.banhalmiphotography.com/hu/ | https://www.banhalmiphotography.com/ | 44 | 3.77 |
+| boudoir photography | https://www.banhalmiphotography.com/de-at/ | https://www.banhalmi.art/private-photography.html | 31 | 3.16 |
+| portré fotózás | https://www.banhalmiphotography.com/hu/ | https://www.banhalmiphotography.com/hu/portre/ | 26 | 4.04 |
+| boudoir photography | https://www.banhalmiphotography.com/hu/ | https://www.banhalmi.art/private-photography.html | 21 | 5.19 |
+| portré fotózás budapest | https://www.banhalmiphotography.com/hu/ | https://www.banhalmiphotography.com/hu/portre/ | 21 | 10.86 |
+| portraitfotografie | https://www.banhalmiphotography.com/de-at/ | https://www.banhalmiphotography.com/de-at/portrait/ | 19 | 3.58 |
+| fotografie porträt | https://www.banhalmiphotography.com/de-at/ | https://www.banhalmiphotography.com/de-at/portrait/ | 18 | 3.11 |
+| portré | https://www.banhalmiphotography.com/hu/ | https://www.banhalmiphotography.com/hu/portre/ | 15 | 5.07 |
+| professional photographer | https://www.banhalmiphotography.com/de-at/ | https://www.banhalmiphotography.com/ | 14 | 14.21 |
+| budapest photographer | https://www.banhalmiphotography.com/hu/ | https://www.banhalmiphotography.com/ | 13 | 1.62 |
+| professional photographer | https://www.banhalmiphotography.com/de-at/ | https://www.banhalmiphotography.com/ | 13 | 6.31 |
+| brand fotograf | https://www.banhalmiphotography.com/ | https://www.banhalmiphotography.com/de-at/brand/ | 12 | 8.17 |
+| portréfotózás budapest | https://www.banhalmiphotography.com/hu/ | https://www.banhalmiphotography.com/hu/portre/ | 12 | 21.17 |
+| intim portré fotózás | https://www.banhalmiphotography.com/hu/ | https://www.banhalmi.art/hu/private-photography.html | 11 | 6.18 |
+| künstler portraits | https://www.banhalmiphotography.com/ | https://www.banhalmiphotography.com/de-at/portrait/ | 11 | 9.82 |
+| personal brand fotografie wien | https://www.banhalmiphotography.com/de-at/ | https://www.banhalmiphotography.com/de-at/brand/ | 11 | 5.36 |
+| portrait künstler | https://www.banhalmiphotography.com/ | https://www.banhalmiphotography.com/de-at/portrait/ | 11 | 3 |
+| aktfotózás | https://www.banhalmiphotography.com/hu/ | https://www.banhalmi.art/hu/exhibitions/ebredes.html | 10 | 6.7 |
+| headshot | https://www.banhalmiphotography.com/ | https://www.banhalmiphotography.com/portrait/ | 10 | 3.7 |
+| portraitfotografie | https://www.banhalmiphotography.com/de-at/ | https://www.banhalmiphotography.com/de-at/portrait/ | 10 | 5 |
+| brand photographer | https://www.banhalmiphotography.com/ | https://www.banhalmiphotography.com/lifestyle/ | 9 | 9.56 |
+| professzionális portré fotózás | https://www.banhalmiphotography.com/hu/ | https://www.banhalmiphotography.com/hu/portre/ | 9 | 6.22 |
 
 ## Six language/city cells
 

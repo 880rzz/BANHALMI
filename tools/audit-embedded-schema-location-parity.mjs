@@ -2,11 +2,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const PERSON_ID = 'https://www.norbertbanhalmi.com/about/';
-const ORG_ID = 'https://www.norbertbanhalmi.com/#organization';
-const STUDIO_VIE = 'https://www.norbertbanhalmi.com/#vienna-studio';
-const STUDIO_BUD = 'https://www.norbertbanhalmi.com/#budapest-studio';
-const OFFICE_ID = 'https://www.norbertbanhalmi.com/#vienna-gersthofer-office';
+const PERSON_ID = 'https://www.banhalmiphotography.com/about/';
+const ORG_ID = 'https://www.banhalmiphotography.com/#organization';
+const STUDIO_VIE = 'https://www.banhalmiphotography.com/#vienna-studio';
+const STUDIO_BUD = 'https://www.banhalmiphotography.com/#budapest-studio';
+const OFFICE_ID = 'https://www.banhalmiphotography.com/#vienna-gersthofer-office';
 const EXPECTED_LOCATIONS=[STUDIO_VIE,STUDIO_BUD,OFFICE_ID];
 const failures = [];
 

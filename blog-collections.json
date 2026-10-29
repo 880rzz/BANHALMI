@@ -2,19 +2,19 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "@id": "https://www.norbertbanhalmi.com/blog-collections.json#service-editorial-collections",
-  "url": "https://www.norbertbanhalmi.com/blog-collections.json",
+  "@id": "https://www.banhalmiphotography.com/blog-collections.json#service-editorial-collections",
+  "url": "https://www.banhalmiphotography.com/blog-collections.json",
   "name": "BANHALMI service-related editorial collections",
-  "description": "Multilingual editorial collections on blog.banhalmi.art connected to the professional service journeys on norbertbanhalmi.com. The professional site remains canonical for current services, pricing and enquiries; the blog provides explanatory, educational and narrative context. Artistic-nude editorial collections also resolve to the Ébredés / Awakening oeuvre authority on BANHALMI ART.",
+  "description": "Multilingual editorial collections on blog.banhalmi.art connected to the professional service journeys on banhalmiphotography.com. The professional site remains canonical for current services, pricing and enquiries; the blog provides explanatory, educational and narrative context. Artistic-nude editorial collections also resolve to the Ébredés / Awakening oeuvre authority on BANHALMI ART.",
   "publisher": {
-    "@id": "https://www.norbertbanhalmi.com/#organization"
+    "@id": "https://www.banhalmiphotography.com/#organization"
   },
   "author": {
-    "@id": "https://www.norbertbanhalmi.com/about/",
+    "@id": "https://www.banhalmiphotography.com/about/",
     "sameAs": "https://www.wikidata.org/wiki/Q56391118"
   },
   "isPartOf": {
-    "@id": "https://www.norbertbanhalmi.com/#website"
+    "@id": "https://www.banhalmiphotography.com/#website"
   },
   "itemListElement": [
     {
@@ -32,7 +32,7 @@
           "brandfotózás",
           "művészportfólió"
         ],
-        "isRelatedTo": "https://www.norbertbanhalmi.com/hu/brand/"
+        "isRelatedTo": "https://www.banhalmiphotography.com/hu/brand/"
       }
     },
     {
@@ -50,7 +50,7 @@
           "brand photography",
           "artist portfolio"
         ],
-        "isRelatedTo": "https://www.norbertbanhalmi.com/lifestyle/"
+        "isRelatedTo": "https://www.banhalmiphotography.com/lifestyle/"
       }
     },
     {
@@ -68,7 +68,7 @@
           "Brand-Fotografie",
           "Künstlerportfolio"
         ],
-        "isRelatedTo": "https://www.norbertbanhalmi.com/de-at/brand/"
+        "isRelatedTo": "https://www.banhalmiphotography.com/de-at/brand/"
       }
     },
     {
@@ -86,7 +86,7 @@
           "brandfotózás",
           "vizuális pozicionálás"
         ],
-        "isRelatedTo": "https://www.norbertbanhalmi.com/hu/brand/"
+        "isRelatedTo": "https://www.banhalmiphotography.com/hu/brand/"
       }
     },
     {
@@ -104,7 +104,7 @@
           "brand photography",
           "visual positioning"
         ],
-        "isRelatedTo": "https://www.norbertbanhalmi.com/lifestyle/"
+        "isRelatedTo": "https://www.banhalmiphotography.com/lifestyle/"
       }
     },
     {
@@ -122,7 +122,7 @@
           "Brand-Fotografie",
           "visuelle Positionierung"
         ],
-        "isRelatedTo": "https://www.norbertbanhalmi.com/de-at/brand/"
+        "isRelatedTo": "https://www.banhalmiphotography.com/de-at/brand/"
       }
     },
     {
@@ -142,7 +142,7 @@
           "önéletrajz fotózás",
           "társkereső fotózás"
         ],
-        "isRelatedTo": "https://www.norbertbanhalmi.com/hu/portre/"
+        "isRelatedTo": "https://www.banhalmiphotography.com/hu/portre/"
       }
     },
     {
@@ -161,7 +161,7 @@
           "CV photography",
           "dating profile photography"
         ],
-        "isRelatedTo": "https://www.norbertbanhalmi.com/portrait/"
+        "isRelatedTo": "https://www.banhalmiphotography.com/portrait/"
       }
     },
     {
@@ -180,7 +180,7 @@
           "Bewerbungsfoto",
           "Dating-Profil-Fotografie"
         ],
-        "isRelatedTo": "https://www.norbertbanhalmi.com/de-at/portrait/"
+        "isRelatedTo": "https://www.banhalmiphotography.com/de-at/portrait/"
       }
     },
     {
@@ -261,7 +261,7 @@
           "brandstratégia",
           "szakmai módszertan"
         ],
-        "isRelatedTo": "https://www.norbertbanhalmi.com/hu/"
+        "isRelatedTo": "https://www.banhalmiphotography.com/hu/"
       }
     },
     {
@@ -279,7 +279,7 @@
           "brand strategy",
           "professional methodology"
         ],
-        "isRelatedTo": "https://www.norbertbanhalmi.com/"
+        "isRelatedTo": "https://www.banhalmiphotography.com/"
       }
     },
     {
@@ -297,7 +297,7 @@
           "Markenstrategie",
           "professionelle Methodik"
         ],
-        "isRelatedTo": "https://www.norbertbanhalmi.com/de-at/"
+        "isRelatedTo": "https://www.banhalmiphotography.com/de-at/"
       }
     }
   ]

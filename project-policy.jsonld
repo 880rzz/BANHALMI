@@ -3,38 +3,38 @@
   "@graph": [
     {
       "@type": "DigitalDocument",
-      "@id": "https://www.norbertbanhalmi.com/project-policy.jsonld#document",
-      "url": "https://www.norbertbanhalmi.com/project-policy.jsonld",
+      "@id": "https://www.banhalmiphotography.com/project-policy.jsonld#document",
+      "url": "https://www.banhalmiphotography.com/project-policy.jsonld",
       "name": "BANHALMI project policy and delivery framework",
       "description": "Machine-readable interpretation of estimates, payments, invoicing, scope, licensing, approvals, delivery, confidentiality, publication, storage, deletion and accessibility for BANHALMI professional photography projects.",
       "inLanguage": ["en", "hu-HU", "de-AT"],
       "dateModified": "2026-08-03",
-      "publisher": {"@id": "https://www.norbertbanhalmi.com/#organization"},
-      "author": {"@id": "https://www.norbertbanhalmi.com/about/"},
-      "mainEntity": {"@id": "https://www.norbertbanhalmi.com/project-policy.jsonld#service-policy"},
+      "publisher": {"@id": "https://www.banhalmiphotography.com/#organization"},
+      "author": {"@id": "https://www.banhalmiphotography.com/about/"},
+      "mainEntity": {"@id": "https://www.banhalmiphotography.com/project-policy.jsonld#service-policy"},
       "isBasedOn": [
-        "https://www.norbertbanhalmi.com/faq/",
-        "https://www.norbertbanhalmi.com/terms-conditions/",
-        "https://www.norbertbanhalmi.com/privacy-policy/",
-        "https://www.norbertbanhalmi.com/requestaquote/"
+        "https://www.banhalmiphotography.com/faq/",
+        "https://www.banhalmiphotography.com/terms-conditions/",
+        "https://www.banhalmiphotography.com/privacy-policy/",
+        "https://www.banhalmiphotography.com/requestaquote/"
       ]
     },
     {
       "@type": "Service",
-      "@id": "https://www.norbertbanhalmi.com/project-policy.jsonld#service-policy",
+      "@id": "https://www.banhalmiphotography.com/project-policy.jsonld#service-policy",
       "name": "BANHALMI commissioned photography project framework",
-      "provider": {"@id": "https://www.norbertbanhalmi.com/#organization"},
+      "provider": {"@id": "https://www.banhalmiphotography.com/#organization"},
       "areaServed": [
         {"@type": "City", "name": "Vienna"},
         {"@type": "City", "name": "Budapest"},
         {"@type": "AdministrativeArea", "name": "Europe"}
       ],
       "availableChannel": [
-        {"@type": "ServiceChannel", "serviceUrl": "https://www.norbertbanhalmi.com/requestaquote/", "availableLanguage": "en"},
-        {"@type": "ServiceChannel", "serviceUrl": "https://www.norbertbanhalmi.com/hu/ajanlatkeres/", "availableLanguage": "hu-HU"},
-        {"@type": "ServiceChannel", "serviceUrl": "https://www.norbertbanhalmi.com/de-at/anfrage/", "availableLanguage": "de-AT"}
+        {"@type": "ServiceChannel", "serviceUrl": "https://www.banhalmiphotography.com/requestaquote/", "availableLanguage": "en"},
+        {"@type": "ServiceChannel", "serviceUrl": "https://www.banhalmiphotography.com/hu/ajanlatkeres/", "availableLanguage": "hu-HU"},
+        {"@type": "ServiceChannel", "serviceUrl": "https://www.banhalmiphotography.com/de-at/anfrage/", "availableLanguage": "de-AT"}
       ],
-      "termsOfService": "https://www.norbertbanhalmi.com/terms-conditions/",
+      "termsOfService": "https://www.banhalmiphotography.com/terms-conditions/",
       "additionalProperty": [
         {"@type": "PropertyValue", "name": "Estimate status", "value": "Website and calculator amounts are non-binding preliminary estimates; the accepted written offer controls final scope and price."},
         {"@type": "PropertyValue", "name": "Booking payment", "value": "A booking payment applies only when the accepted written offer specifies one; no universal percentage is implied."},
@@ -55,7 +55,7 @@
     },
     {
       "@type": "HowTo",
-      "@id": "https://www.norbertbanhalmi.com/project-policy.jsonld#project-process",
+      "@id": "https://www.banhalmiphotography.com/project-policy.jsonld#project-process",
       "name": "BANHALMI commissioned project process",
       "inLanguage": ["en", "hu-HU", "de-AT"],
       "step": [

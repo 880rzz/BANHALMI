@@ -4,8 +4,8 @@
   "dateModified": "2026-10-04",
   "controller": {
     "name": "Banhalmi Norbert e.U.",
-    "url": "https://www.norbertbanhalmi.com/",
-    "contact": "hello@norbertbanhalmi.com"
+    "url": "https://www.banhalmiphotography.com/",
+    "contact": "hello@banhalmiphotography.com"
   },
   "interpretation": "This registry is a machine-readable operational summary of providers described in the public privacy and cookie notices. It does not replace the applicable provider contracts, data-processing agreements or the human-readable legal notices.",
   "providers": [
@@ -19,7 +19,7 @@
         "deployment"
       ],
       "scope": [
-        "norbertbanhalmi.com",
+        "banhalmiphotography.com",
         "banhalmi.art"
       ],
       "dataCategories": [
@@ -88,7 +88,7 @@
         "navigation and content improvement"
       ],
       "scope": [
-        "norbertbanhalmi.com where analytics is enabled"
+        "banhalmiphotography.com where analytics is enabled"
       ],
       "dataCategories": [
         "device data",
@@ -115,7 +115,7 @@
         "optional Copilot summaries of dashboard data, recordings and heatmaps when invoked by an authorised project user"
       ],
       "scope": [
-        "norbertbanhalmi.com where analytics is enabled",
+        "banhalmiphotography.com where analytics is enabled",
         "banhalmi.art where analytics is enabled"
       ],
       "dataCategories": [
@@ -154,7 +154,7 @@
         "display user-requested video evidence and moving-image records"
       ],
       "scope": [
-        "norbertbanhalmi.com where a video poster is activated",
+        "banhalmiphotography.com where a video poster is activated",
         "banhalmi.art where a video poster is activated"
       ],
       "dataCategories": [
@@ -209,8 +209,8 @@
     }
   ],
   "humanReadableNotices": {
-    "privacy": "https://www.norbertbanhalmi.com/privacy-policy/",
-    "cookies": "https://www.norbertbanhalmi.com/cookie-policy/",
-    "trustCenter": "https://www.norbertbanhalmi.com/trust/"
+    "privacy": "https://www.banhalmiphotography.com/privacy-policy/",
+    "cookies": "https://www.banhalmiphotography.com/cookie-policy/",
+    "trustCenter": "https://www.banhalmiphotography.com/trust/"
   }
 }

@@ -44,8 +44,8 @@ const corpusFiles = [
 ].filter((file) => fs.existsSync(file));
 const corpus = corpusFiles.map(read).join('\n');
 
-const canonicalPersonId = 'https://www.norbertbanhalmi.com/about/';
-const canonicalServiceId = 'https://www.norbertbanhalmi.com/#visual-trust-partnership';
+const canonicalPersonId = 'https://www.banhalmiphotography.com/about/';
+const canonicalServiceId = 'https://www.banhalmiphotography.com/#visual-trust-partnership';
 assert(corpus.includes(canonicalPersonId), `canonical Person ID missing: ${canonicalPersonId}`);
 
 const requiredHomepageCopy = {
@@ -79,7 +79,7 @@ for (const legacy of forbiddenLegacyText) assert(!corpus.includes(legacy), `lega
 const entity = JSON.parse(read('entity.jsonld'));
 const graph = entity['@graph'] || [];
 const person = graph.find((node) => node['@id'] === canonicalPersonId);
-const organization = graph.find((node) => node['@id'] === 'https://www.norbertbanhalmi.com/#organization');
+const organization = graph.find((node) => node['@id'] === 'https://www.banhalmiphotography.com/#organization');
 const service = graph.find((node) => node['@id'] === canonicalServiceId);
 assert(person?.['@type'] === 'Person', 'canonical Person node missing from entity.jsonld');
 assert(organization?.['@type'] === 'Organization', 'Organization node missing from entity.jsonld');

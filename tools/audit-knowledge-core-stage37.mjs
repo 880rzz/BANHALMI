@@ -3,7 +3,7 @@ import fs from 'node:fs';
 const core=JSON.parse(fs.readFileSync('knowledge-core.json','utf8'));
 const fail=(m)=>{throw new Error(m)};
 if(core.primaryPerson?.wikidata!=='https://www.wikidata.org/wiki/Q56391118') fail('knowledge-core: canonical Wikidata mismatch');
-if(core.domainRoles?.professional!=='https://www.norbertbanhalmi.com/') fail('knowledge-core: professional domain mismatch');
+if(core.domainRoles?.professional!=='https://www.banhalmiphotography.com/') fail('knowledge-core: professional domain mismatch');
 if(core.domainRoles?.artArchive!=='https://www.banhalmi.art/') fail('knowledge-core: ART domain mismatch');
 if(core.domainRoles?.essays!=='https://blog.banhalmi.art/') fail('knowledge-core: blog domain mismatch');
 if(JSON.stringify(core.geography?.operationalBases)!==JSON.stringify(['Vienna','Budapest'])) fail('knowledge-core: operational bases must be Vienna + Budapest');

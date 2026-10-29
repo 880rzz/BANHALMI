@@ -3,8 +3,8 @@
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://www.norbertbanhalmi.com/about/",
-      "url": "https://www.norbertbanhalmi.com/about/",
+      "@id": "https://www.banhalmiphotography.com/about/",
+      "url": "https://www.banhalmiphotography.com/about/",
       "name": "Bánhalmi Norbert",
       "alternateName": [
         "Norbert Banhalmi",
@@ -21,22 +21,22 @@
         "Visual Branding Strategist",
         "Photography Curator"
       ],
-      "email": "mailto:hello@norbertbanhalmi.com",
+      "email": "mailto:hello@banhalmiphotography.com",
       "image": {
-        "@id": "https://www.norbertbanhalmi.com/about/#portrait"
+        "@id": "https://www.banhalmiphotography.com/about/#portrait"
       },
       "worksFor": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "workLocation": [
         {
-          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+          "@id": "https://www.banhalmiphotography.com/#vienna-studio"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+          "@id": "https://www.banhalmiphotography.com/#budapest-studio"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"
+          "@id": "https://www.banhalmiphotography.com/#vienna-gersthofer-office"
         }
       ],
       "knowsLanguage": [
@@ -74,40 +74,40 @@
       ],
       "subjectOf": [
         {
-          "@id": "https://www.norbertbanhalmi.com/#website"
+          "@id": "https://www.banhalmiphotography.com/#website"
         },
         {
           "@id": "https://www.banhalmi.art/#website"
         }
       ],
       "mainEntityOfPage": {
-        "@id": "https://www.norbertbanhalmi.com/about/#webpage"
+        "@id": "https://www.banhalmiphotography.com/about/#webpage"
       }
     },
     {
       "@type": "Organization",
-      "@id": "https://www.norbertbanhalmi.com/#organization",
+      "@id": "https://www.banhalmiphotography.com/#organization",
       "name": "Banhalmi Norbert e.U.",
       "legalName": "Banhalmi Norbert e.U.",
       "alternateName": [
         "BANHALMI"
       ],
-      "url": "https://www.norbertbanhalmi.com/",
+      "url": "https://www.banhalmiphotography.com/",
       "description": "BANHALMI is a Norbert Banhalmi-founded professional photography team and strategic visual partnership for executives, founders, experts, professionals, artists, actors, creative professionals, teams and organisations, built around executive portraiture, professional headshots, brand photography, C-level event photography, fine-art authorship and long-term visual positioning.",
       "founder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "brand": {
-        "@id": "https://www.norbertbanhalmi.com/#brand"
+        "@id": "https://www.banhalmiphotography.com/#brand"
       },
       "makesOffer": {
         "@type": "Offer",
-        "@id": "https://www.norbertbanhalmi.com/#visual-trust-partnership-offer",
+        "@id": "https://www.banhalmiphotography.com/#visual-trust-partnership-offer",
         "itemOffered": {
-          "@id": "https://www.norbertbanhalmi.com/#visual-trust-partnership"
+          "@id": "https://www.banhalmiphotography.com/#visual-trust-partnership"
         }
       },
-      "email": "hello@norbertbanhalmi.com",
+      "email": "hello@banhalmiphotography.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Schwedenplatz 2, Top 8–9",
@@ -117,17 +117,17 @@
       },
       "location": [
         {
-          "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+          "@id": "https://www.banhalmiphotography.com/#vienna-studio"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+          "@id": "https://www.banhalmiphotography.com/#budapest-studio"
         },
         {
-          "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office"
+          "@id": "https://www.banhalmiphotography.com/#vienna-gersthofer-office"
         }
       ],
       "headquarters": {
-        "@id": "https://www.norbertbanhalmi.com/#vienna-studio"
+        "@id": "https://www.banhalmiphotography.com/#vienna-studio"
       },
       "areaServed": [
         {
@@ -161,13 +161,13 @@
         "https://www.banhalminorbert.hu/"
       ],
       "logo": {
-        "@id": "https://www.norbertbanhalmi.com/#logo"
+        "@id": "https://www.banhalmiphotography.com/#logo"
       },
       "contactPoint": [
         {
           "@type": "ContactPoint",
           "contactType": "customer service",
-          "email": "hello@norbertbanhalmi.com",
+          "email": "hello@banhalmiphotography.com",
           "telephone": "+4367764733262",
           "availableLanguage": [
             "English",
@@ -177,7 +177,7 @@
         {
           "@type": "ContactPoint",
           "contactType": "customer service",
-          "email": "hello@norbertbanhalmi.com",
+          "email": "hello@banhalmiphotography.com",
           "telephone": "+4367761655592",
           "availableLanguage": [
             "Hungarian"
@@ -214,19 +214,17 @@
     },
     {
       "@type": "Brand",
-      "@id": "https://www.norbertbanhalmi.com/#brand",
-      "name": "BANHALMI",
-      "url": "https://www.norbertbanhalmi.com/",
+      "@id": "https://www.banhalmiphotography.com/#brand",
+      "name": "BANHALMI Photography",
+      "alternateName": ["BANHALMI", "Norbert Bánhalmi", "Bánhalmi Norbert"],
+      "url": "https://www.banhalmiphotography.com/",
       "owner": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "founder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
-      "description": "BANHALMI is the primary brand. BANHALMI Photography is its photography-facing commercial name, delivered through the BANHALMI Photography Team and creatively directed by Bánhalmi Norbert.",
-      "alternateName": [
-        "BANHALMI Photography"
-      ],
+      "description": "BANHALMI Photography is the primary commercial photography brand. BANHALMI, Norbert Bánhalmi and Bánhalmi Norbert are recognized secondary names within the same Brand entity; Photography Team is the delivery descriptor. This is not a separate Organization.",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -238,15 +236,15 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.norbertbanhalmi.com/#website",
-      "url": "https://www.norbertbanhalmi.com/",
+      "@id": "https://www.banhalmiphotography.com/#website",
+      "url": "https://www.banhalmiphotography.com/",
       "name": "BANHALMI | Norbert Banhalmi",
       "description": "Current multilingual professional services, pricing, enquiries and visual strategic partnership context for BANHALMI.",
       "publisher": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "inLanguage": [
         "en",
@@ -259,9 +257,9 @@
       "@id": "https://www.banhalmi.art/#website",
       "url": "https://www.banhalmi.art/",
       "name": "BANHALMI ART",
-      "description": "The official artistic oeuvre and source archive of Norbert Banhalmi for books, exhibitions, projects, media records, curatorial documentation and selected works. Current professional services, pricing and enquiries are canonical on norbertbanhalmi.com.",
+      "description": "The official artistic oeuvre and source archive of Norbert Banhalmi for books, exhibitions, projects, media records, curatorial documentation and selected works. Current professional services, pricing and enquiries are canonical on banhalmiphotography.com.",
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "inLanguage": [
         "en",
@@ -283,7 +281,7 @@
     },
     {
       "@type": "Place",
-      "@id": "https://www.norbertbanhalmi.com/#vienna-studio",
+      "@id": "https://www.banhalmiphotography.com/#vienna-studio",
       "name": "Norbert Banhalmi Studio Vienna",
       "sameAs": "https://www.wikidata.org/wiki/Q138426506",
       "address": {
@@ -300,7 +298,7 @@
     },
     {
       "@type": "Place",
-      "@id": "https://www.norbertbanhalmi.com/#budapest-studio",
+      "@id": "https://www.banhalmiphotography.com/#budapest-studio",
       "name": "BANHALMI Budapest Studio",
       "sameAs": "https://www.wikidata.org/wiki/Q138830452",
       "address": {
@@ -317,7 +315,7 @@
     },
     {
       "@type": "Place",
-      "@id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
+      "@id": "https://www.banhalmiphotography.com/#vienna-gersthofer-office",
       "name": "BANHALMI Vienna — Gersthofer office & client meeting location",
       "description": "Active Vienna office and client meeting location. This is not a photographic studio.",
       "address": {
@@ -334,7 +332,7 @@
     },
     {
       "@type": "Service",
-      "@id": "https://www.norbertbanhalmi.com/#visual-trust-partnership",
+      "@id": "https://www.banhalmiphotography.com/#visual-trust-partnership",
       "name": "BANHALMI Strategic Visual Partnership",
       "alternateName": [
         "Visual Strategic Partnership",
@@ -342,7 +340,7 @@
         "Strategische visuelle Partnerschaft"
       ],
       "provider": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "areaServed": [
         "Vienna",
@@ -365,23 +363,23 @@
     },
     {
       "@type": "Person",
-      "@id": "https://www.norbertbanhalmi.com/speier-viko/#person",
+      "@id": "https://www.banhalmiphotography.com/speier-viko/#person",
       "name": "Viko Speier",
       "alternateName": [
         "Speier Vikó",
         "Viktória Speier"
       ],
-      "url": "https://www.norbertbanhalmi.com/speier-viko/",
+      "url": "https://www.banhalmiphotography.com/speier-viko/",
       "jobTitle": [
         "Head of BANHALMI Budapest Studio",
         "Professional Fashion and Portrait Photographer",
         "OM SYSTEM Ambassador"
       ],
       "worksFor": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "workLocation": {
-        "@id": "https://www.norbertbanhalmi.com/#budapest-studio"
+        "@id": "https://www.banhalmiphotography.com/#budapest-studio"
       },
       "affiliation": {
         "@type": "Organization",
@@ -402,7 +400,7 @@
         "https://www.wikidata.org/wiki/Q138482177"
       ],
       "founder": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "foundingDate": "2006-03-15",
       "address": {
@@ -425,31 +423,31 @@
     },
     {
       "@type": "Dataset",
-      "@id": "https://www.norbertbanhalmi.com/press-institutional-evidence.json",
+      "@id": "https://www.banhalmiphotography.com/press-institutional-evidence.json",
       "name": "BANHALMI Vienna press, editorial and institutional photography evidence",
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/#brand"
+        "@id": "https://www.banhalmiphotography.com/#brand"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "isPartOf": {
-        "@id": "https://www.norbertbanhalmi.com/#website"
+        "@id": "https://www.banhalmiphotography.com/#website"
       },
       "description": "Canonical evidence registry for Austrian press/editorial and institutional photography. Publication, venue access and event coverage do not by themselves establish client, partner, official-government-photographer or endorsement status."
     },
     {
       "@type": "Dataset",
-      "@id": "https://www.norbertbanhalmi.com/media-usage-evidence.json",
+      "@id": "https://www.banhalmiphotography.com/media-usage-evidence.json",
       "name": "BANHALMI deduplicated media usage evidence",
       "about": {
-        "@id": "https://www.norbertbanhalmi.com/about/"
+        "@id": "https://www.banhalmiphotography.com/about/"
       },
       "creator": {
-        "@id": "https://www.norbertbanhalmi.com/#organization"
+        "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "isPartOf": {
-        "@id": "https://www.norbertbanhalmi.com/#website"
+        "@id": "https://www.banhalmiphotography.com/#website"
       },
       "description": "Deduplicated media-usage evidence for editorial reuse and explicit creator credits. Raw PDF page, capture and link counts are not publication counts; media usage does not establish commission, client, partnership or political endorsement."
     }
@@ -459,10 +457,10 @@
     "hu": "BANHALMI | Executive portréfotózás és vizuális brandstratégia",
     "de-AT": "BANHALMI | Executive-Porträts & visuelle Markenpositionierung"
   },
-  "serviceDefinitions": "https://www.norbertbanhalmi.com/services.json",
-  "pricing": "https://www.norbertbanhalmi.com/pricing.json",
+  "serviceDefinitions": "https://www.banhalmiphotography.com/services.json",
+  "pricing": "https://www.banhalmiphotography.com/pricing.json",
   "siteRoles": {
-    "professionalCanonical": "https://www.norbertbanhalmi.com/",
+    "professionalCanonical": "https://www.banhalmiphotography.com/",
     "professionalPurpose": "Current multilingual services, pricing, enquiries and professional context.",
     "artisticArchive": "https://www.banhalmi.art/",
     "artisticArchivePurpose": "Official artistic oeuvre and source archive for books, exhibitions, projects, media records, curatorial documentation and selected works."
@@ -474,12 +472,12 @@
     "description": "BANHALMI is the primary Brand; BANHALMI Photography is the photography-facing name of the same Brand; Photography Team is the team/delivery descriptor. BANHALMI Photography is not a separate Organization."
   },
   "protectedCanonicalOverlay": {
-    "@id": "https://www.norbertbanhalmi.com/llm-canonical-overlay.json"
+    "@id": "https://www.banhalmiphotography.com/llm-canonical-overlay.json"
   },
   "pressInstitutionalEvidence": {
-    "@id": "https://www.norbertbanhalmi.com/press-institutional-evidence.json"
+    "@id": "https://www.banhalmiphotography.com/press-institutional-evidence.json"
   },
   "mediaUsageEvidence": {
-    "@id": "https://www.norbertbanhalmi.com/media-usage-evidence.json"
+    "@id": "https://www.banhalmiphotography.com/media-usage-evidence.json"
   }
 }

@@ -3,16 +3,16 @@ import path from 'node:path';
 
 const root = process.cwd();
 const canonicalIds = new Set([
-  'https://www.norbertbanhalmi.com/about/',
-  'https://www.norbertbanhalmi.com/#organization',
-  'https://www.norbertbanhalmi.com/#brand',
-  'https://www.norbertbanhalmi.com/#website',
+  'https://www.banhalmiphotography.com/about/',
+  'https://www.banhalmiphotography.com/#organization',
+  'https://www.banhalmiphotography.com/#brand',
+  'https://www.banhalmiphotography.com/#website',
   'https://www.banhalmi.art/#website',
-  'https://www.norbertbanhalmi.com/#vienna-studio',
-  'https://www.norbertbanhalmi.com/#budapest-studio',
-  'https://www.norbertbanhalmi.com/#vienna-gersthofer-office',
-  'https://www.norbertbanhalmi.com/#visual-trust-partnership',
-  'https://www.norbertbanhalmi.com/speier-viko/#person'
+  'https://www.banhalmiphotography.com/#vienna-studio',
+  'https://www.banhalmiphotography.com/#budapest-studio',
+  'https://www.banhalmiphotography.com/#vienna-gersthofer-office',
+  'https://www.banhalmiphotography.com/#visual-trust-partnership',
+  'https://www.banhalmiphotography.com/speier-viko/#person'
 ]);
 const failures = [];
 let blocks = 0;

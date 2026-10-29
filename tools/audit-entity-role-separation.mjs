@@ -2,10 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const ROOT = process.cwd();
-const PERSON_ID = 'https://www.norbertbanhalmi.com/about/';
-const ORG_ID = 'https://www.norbertbanhalmi.com/#organization';
-const BRAND_ID = 'https://www.norbertbanhalmi.com/#brand';
-const SERVICE_ID = 'https://www.norbertbanhalmi.com/#visual-trust-partnership';
+const PERSON_ID = 'https://www.banhalmiphotography.com/about/';
+const ORG_ID = 'https://www.banhalmiphotography.com/#organization';
+const BRAND_ID = 'https://www.banhalmiphotography.com/#brand';
+const SERVICE_ID = 'https://www.banhalmiphotography.com/#visual-trust-partnership';
 const LEGAL_NAME = 'Banhalmi Norbert e.U.';
 const failures = [];
 let fullGraphs = 0;
@@ -44,7 +44,7 @@ function inspectGraph(data, label) {
   }
 
   if (brand) {
-    if (brand.name !== 'BANHALMI') failures.push(`${label}: canonical Brand name must be BANHALMI`);
+    if (brand.name !== 'BANHALMI Photography') failures.push(`${label}: canonical Brand name must be BANHALMI Photography`);
     if (brand.owner?.['@id'] !== ORG_ID) failures.push(`${label}: canonical Brand owner must be the Organization`);
     if (brand.founder?.['@id'] !== PERSON_ID) failures.push(`${label}: canonical Brand founder must be the Person`);
     if (brand.sameAs) failures.push(`${label}: BANHALMI Brand must not claim a sameAs identity until a dedicated verified Brand entity exists`);

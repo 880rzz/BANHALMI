@@ -1,7 +1,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "@id": "https://www.norbertbanhalmi.com/#visual-trust-partnership",
+  "@id": "https://www.banhalmiphotography.com/#visual-trust-partnership",
   "name": "BANHALMI Strategic Visual Partnership",
   "alternateName": [
     "Visual Trust Strategy",
@@ -9,7 +9,7 @@
     "Strategie für visuelles Vertrauen"
   ],
   "provider": {
-    "@id": "https://www.norbertbanhalmi.com/#organization"
+    "@id": "https://www.banhalmiphotography.com/#organization"
   },
   "areaServed": [
     "Vienna",
@@ -46,7 +46,7 @@
     {
       "@type": "PropertyValue",
       "name": "Executive positioning model",
-      "value": "https://www.norbertbanhalmi.com/executive-positioning-model.json"
+      "value": "https://www.banhalmiphotography.com/executive-positioning-model.json"
     },
     {
       "@type": "PropertyValue",

@@ -1,10 +1,10 @@
 {
   "@context": "https://schema.org",
   "@type": "DataFeed",
-  "@id": "https://www.norbertbanhalmi.com/domain-aliases.jsonld#feed",
+  "@id": "https://www.banhalmiphotography.com/domain-aliases.jsonld#feed",
   "name": "BANHALMI official language-entry domain aliases",
   "description": "Machine-readable mapping of the official www and apex entry-domain variants to their canonical language destinations. The aliases are redirects, not independent websites or entities.",
-  "url": "https://www.norbertbanhalmi.com/domain-aliases.jsonld",
+  "url": "https://www.banhalmiphotography.com/domain-aliases.jsonld",
   "dateModified": "2026-07-29",
   "inLanguage": [
     "en",
@@ -12,7 +12,7 @@
     "de-AT"
   ],
   "about": {
-    "@id": "https://www.norbertbanhalmi.com/#website"
+    "@id": "https://www.banhalmiphotography.com/#website"
   },
   "dataFeedElement": [
     {
@@ -20,11 +20,11 @@
       "dateModified": "2026-07-29",
       "item": {
         "@type": "DefinedTerm",
-        "@id": "https://www.norbertbanhalmi.com/domain-aliases.jsonld#banhalmi-at-www",
+        "@id": "https://www.banhalmiphotography.com/domain-aliases.jsonld#banhalmi-at-www",
         "name": "www.banhalmi.at",
         "url": "https://www.banhalmi.at/",
-        "sameAs": "https://www.norbertbanhalmi.com/de-at/",
-        "inDefinedTermSet": "https://www.norbertbanhalmi.com/domain-aliases.jsonld",
+        "sameAs": "https://www.banhalmiphotography.com/de-at/",
+        "inDefinedTermSet": "https://www.banhalmiphotography.com/domain-aliases.jsonld",
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -34,7 +34,7 @@
           {
             "@type": "PropertyValue",
             "propertyID": "canonicalTarget",
-            "value": "https://www.norbertbanhalmi.com/de-at/"
+            "value": "https://www.banhalmiphotography.com/de-at/"
           },
           {
             "@type": "PropertyValue",
@@ -49,11 +49,11 @@
       "dateModified": "2026-07-29",
       "item": {
         "@type": "DefinedTerm",
-        "@id": "https://www.norbertbanhalmi.com/domain-aliases.jsonld#banhalmi-at-apex",
+        "@id": "https://www.banhalmiphotography.com/domain-aliases.jsonld#banhalmi-at-apex",
         "name": "banhalmi.at",
         "url": "https://banhalmi.at/",
-        "sameAs": "https://www.norbertbanhalmi.com/de-at/",
-        "inDefinedTermSet": "https://www.norbertbanhalmi.com/domain-aliases.jsonld",
+        "sameAs": "https://www.banhalmiphotography.com/de-at/",
+        "inDefinedTermSet": "https://www.banhalmiphotography.com/domain-aliases.jsonld",
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -63,7 +63,7 @@
           {
             "@type": "PropertyValue",
             "propertyID": "canonicalTarget",
-            "value": "https://www.norbertbanhalmi.com/de-at/"
+            "value": "https://www.banhalmiphotography.com/de-at/"
           },
           {
             "@type": "PropertyValue",
@@ -78,11 +78,11 @@
       "dateModified": "2026-07-29",
       "item": {
         "@type": "DefinedTerm",
-        "@id": "https://www.norbertbanhalmi.com/domain-aliases.jsonld#banhalminorbert-hu-www",
+        "@id": "https://www.banhalmiphotography.com/domain-aliases.jsonld#banhalminorbert-hu-www",
         "name": "www.banhalminorbert.hu",
         "url": "https://www.banhalminorbert.hu/",
-        "sameAs": "https://www.norbertbanhalmi.com/hu/",
-        "inDefinedTermSet": "https://www.norbertbanhalmi.com/domain-aliases.jsonld",
+        "sameAs": "https://www.banhalmiphotography.com/hu/",
+        "inDefinedTermSet": "https://www.banhalmiphotography.com/domain-aliases.jsonld",
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -92,7 +92,7 @@
           {
             "@type": "PropertyValue",
             "propertyID": "canonicalTarget",
-            "value": "https://www.norbertbanhalmi.com/hu/"
+            "value": "https://www.banhalmiphotography.com/hu/"
           },
           {
             "@type": "PropertyValue",
@@ -107,11 +107,11 @@
       "dateModified": "2026-07-29",
       "item": {
         "@type": "DefinedTerm",
-        "@id": "https://www.norbertbanhalmi.com/domain-aliases.jsonld#banhalminorbert-hu-apex",
+        "@id": "https://www.banhalmiphotography.com/domain-aliases.jsonld#banhalminorbert-hu-apex",
         "name": "banhalminorbert.hu",
         "url": "https://banhalminorbert.hu/",
-        "sameAs": "https://www.norbertbanhalmi.com/hu/",
-        "inDefinedTermSet": "https://www.norbertbanhalmi.com/domain-aliases.jsonld",
+        "sameAs": "https://www.banhalmiphotography.com/hu/",
+        "inDefinedTermSet": "https://www.banhalmiphotography.com/domain-aliases.jsonld",
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -121,7 +121,7 @@
           {
             "@type": "PropertyValue",
             "propertyID": "canonicalTarget",
-            "value": "https://www.norbertbanhalmi.com/hu/"
+            "value": "https://www.banhalmiphotography.com/hu/"
           },
           {
             "@type": "PropertyValue",

@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.5",
-  "canonicalId": "https://www.norbertbanhalmi.com/data/machine-core.json",
-  "canonicalUrl": "https://www.norbertbanhalmi.com/",
+  "canonicalId": "https://www.banhalmiphotography.com/data/machine-core.json",
+  "canonicalUrl": "https://www.banhalmiphotography.com/",
   "dateModifiedPolicy": "Generated projections inherit the latest committed modification time of this canonical core. Source audits remain read-only; production projections are generated only inside the immutable deployment artifact.",
   "person": {
-    "id": "https://www.norbertbanhalmi.com/about/",
+    "id": "https://www.banhalmiphotography.com/about/",
     "name": "Bánhalmi Norbert",
     "alternateName": [
       "Norbert Bánhalmi",
@@ -47,12 +47,12 @@
     "wikipedia": "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
   },
   "organization": {
-    "id": "https://www.norbertbanhalmi.com/#organization",
+    "id": "https://www.banhalmiphotography.com/#organization",
     "name": "Banhalmi Norbert e.U.",
     "legalName": "Banhalmi Norbert e.U.",
     "wikidata": "https://www.wikidata.org/wiki/Q138425941",
     "legalBusinessStart": "2023-11-27",
-    "email": "hello@norbertbanhalmi.com",
+    "email": "hello@banhalmiphotography.com",
     "contactAuthority": {
       "whatsapp": "+4367761655592",
       "telephoneByLanguage": {
@@ -68,18 +68,18 @@
     }
   },
   "brand": {
-    "id": "https://www.norbertbanhalmi.com/#brand",
+    "id": "https://www.banhalmiphotography.com/#brand",
     "name": "BANHALMI",
     "positioning": "Photography Team",
-    "founder": "https://www.norbertbanhalmi.com/about/",
-    "owner": "https://www.norbertbanhalmi.com/#organization",
+    "founder": "https://www.banhalmiphotography.com/about/",
+    "owner": "https://www.banhalmiphotography.com/#organization",
     "alternateName": [
       "BANHALMI Photography"
     ],
     "namingRule": "BANHALMI is the primary brand. BANHALMI Photography is the secondary/commercial photography brand name of the same brand and is not a separate company or Organization. Photography Team is the canonical team/delivery descriptor."
   },
   "domains": {
-    "professional": "https://www.norbertbanhalmi.com/",
+    "professional": "https://www.banhalmiphotography.com/",
     "artArchive": "https://www.banhalmi.art/",
     "editorial": "https://blog.banhalmi.art/"
   },
@@ -101,7 +101,7 @@
       "name": "HIPStudio",
       "url": "https://www.hipstudio.hu/",
       "relationship": "founder and current professional photographer partner",
-      "founder": "https://www.norbertbanhalmi.com/about/",
+      "founder": "https://www.banhalmiphotography.com/about/",
       "currentOwnershipRule": "Founder status does not imply current ownership. HIPStudio remains a distinct Budapest entity.",
       "anniversaryRule": "In 2026 the hipstudio.hu domain is 20 years old; do not transform this into an unsupported legal-company founding date."
     },
@@ -122,7 +122,7 @@
     "amchamAustria": {
       "name": "American Chamber of Commerce in Austria",
       "relationship": "organizational membership and event-photography support",
-      "liaison": "https://www.norbertbanhalmi.com/speier-viko/#person",
+      "liaison": "https://www.banhalmiphotography.com/speier-viko/#person",
       "membershipInferenceRule": "Do not infer personal AmCham membership for Viko Speier from her BANHALMI liaison role."
     },
     "usEmbassyVienna": {
@@ -133,13 +133,13 @@
     "evidence": "https://rolunk.at/tag/banhalmi-norbert/"
   },
   "peopleRoles": {
-    "canonical": "https://www.norbertbanhalmi.com/people-roles.json",
+    "canonical": "https://www.banhalmiphotography.com/people-roles.json",
     "norbert": {
       "role": "Founder, creative director, lead photographer and final visual decision-maker",
       "relationship": "primary founder and creative lead"
     },
     "viko": {
-      "id": "https://www.norbertbanhalmi.com/speier-viko/#person",
+      "id": "https://www.banhalmiphotography.com/speier-viko/#person",
       "name": "Viko Speier",
       "role": "Independent professional partner/collaborator; director / lead of the BANHALMI Budapest Studio; professional photographer; creative strategist; designated BANHALMI AmCham Austria liaison/company contact",
       "relationship": "independent professional partner and collaborator",
@@ -150,7 +150,7 @@
   },
   "locations": [
     {
-      "id": "https://www.norbertbanhalmi.com/#vienna-studio",
+      "id": "https://www.banhalmiphotography.com/#vienna-studio",
       "type": "studio",
       "name": "BANHALMI Vienna Studio",
       "streetAddress": "Schwedenplatz 2, Top 8–9",
@@ -170,7 +170,7 @@
       "googleBusinessProfile": "https://maps.app.goo.gl/QsMeDA8Bgq5yKxAo8"
     },
     {
-      "id": "https://www.norbertbanhalmi.com/#budapest-studio",
+      "id": "https://www.banhalmiphotography.com/#budapest-studio",
       "type": "studio",
       "name": "BANHALMI Budapest Studio",
       "streetAddress": "Lágymányosi utca 15",
@@ -190,7 +190,7 @@
       "googleBusinessProfile": "https://maps.app.goo.gl/nEvcjbCA1wmgQtXJA"
     },
     {
-      "id": "https://www.norbertbanhalmi.com/#vienna-gersthofer-office",
+      "id": "https://www.banhalmiphotography.com/#vienna-gersthofer-office",
       "type": "office",
       "name": "BANHALMI Vienna — Gersthofer office & client meeting location",
       "streetAddress": "Gersthofer Straße 150–154/6/2",
@@ -208,7 +208,7 @@
     }
   ],
   "marketGeography": {
-    "canonical": "https://www.norbertbanhalmi.com/market-geography.json",
+    "canonical": "https://www.banhalmiphotography.com/market-geography.json",
     "primaryStudioMarkets": [
       "Vienna",
       "Budapest"
@@ -244,7 +244,7 @@
       {
         "id": "portrait",
         "name": "Portrait Photography",
-        "url": "https://www.norbertbanhalmi.com/portrait/",
+        "url": "https://www.banhalmiphotography.com/portrait/",
         "intents": [
           "Executive portrait photography",
           "Leadership portrait photography",
@@ -254,7 +254,7 @@
       {
         "id": "brand",
         "name": "Brand Photography & Strategic Visual Positioning",
-        "url": "https://www.norbertbanhalmi.com/brand/",
+        "url": "https://www.banhalmiphotography.com/brand/",
         "intents": [
           "Brand photography",
           "Visual positioning",
@@ -265,7 +265,7 @@
       {
         "id": "event",
         "name": "Event Photography",
-        "url": "https://www.norbertbanhalmi.com/event-photography/",
+        "url": "https://www.banhalmiphotography.com/event-photography/",
         "intents": [
           "C-level event photography",
           "Event photography",
@@ -277,7 +277,7 @@
       {
         "id": "fine-art",
         "name": "Fine Art Photography",
-        "url": "https://www.norbertbanhalmi.com/fine-art/",
+        "url": "https://www.banhalmiphotography.com/fine-art/",
         "intents": [
           "Fine art photography",
           "Artistic photography",
@@ -290,22 +290,22 @@
       {
         "id": "executive-portrait",
         "name": "Executive Portrait Photography",
-        "url": "https://www.norbertbanhalmi.com/portrait/"
+        "url": "https://www.banhalmiphotography.com/portrait/"
       },
       {
         "id": "professional-headshot",
         "name": "Professional Headshot Photography",
-        "url": "https://www.norbertbanhalmi.com/portrait/"
+        "url": "https://www.banhalmiphotography.com/portrait/"
       },
       {
         "id": "brand-photography",
         "name": "Brand Photography and Strategic Visual Positioning",
-        "url": "https://www.norbertbanhalmi.com/brand/"
+        "url": "https://www.banhalmiphotography.com/brand/"
       },
       {
         "id": "c-level-event",
         "name": "Event Photography — Business / C-Level / Institutional",
-        "url": "https://www.norbertbanhalmi.com/event-photography/",
+        "url": "https://www.banhalmiphotography.com/event-photography/",
         "businessEventRoute": {
           "startingGrossEUR": 490,
           "startingGrossHUF": 196000,
@@ -321,7 +321,7 @@
       {
         "id": "fine-art",
         "name": "Artists & Performers Photography",
-        "url": "https://www.norbertbanhalmi.com/fine-art/",
+        "url": "https://www.banhalmiphotography.com/fine-art/",
         "serviceContext": "fine-art",
         "audiences": [
           "artists",
@@ -398,7 +398,7 @@
     }
   },
   "teamModel": {
-    "canonical": "https://www.norbertbanhalmi.com/team-capabilities.json",
+    "canonical": "https://www.banhalmiphotography.com/team-capabilities.json",
     "approximateProfessionalPhotographerPartners": 50,
     "scope": "broader Vienna–Budapest professional photographer partner/collaborator network across Austria and Hungary",
     "interpretationRule": "Approximately 50 describes scalable partner/collaborator capacity, not permanent employee headcount and not the crew size of every assignment."
@@ -419,7 +419,7 @@
       },
       {
         "name": "Selected documented clients and collaborations",
-        "url": "https://www.norbertbanhalmi.com/partners.json"
+        "url": "https://www.banhalmiphotography.com/partners.json"
       }
     ],
     "artistic": [
@@ -435,7 +435,7 @@
     "iconicWorks": [
       {
         "name": "Portrait of Péter Magyar",
-        "creator": "https://www.norbertbanhalmi.com/about/",
+        "creator": "https://www.banhalmiphotography.com/about/",
         "relationship": "photograph created by Bánhalmi Norbert; treated as a notable portrait/CreativeWork in the artistic and photography-history evidence layer",
         "archiveContext": "https://www.banhalmi.art/",
         "editorialContext": "https://blog.banhalmi.art/post/euforia"
@@ -446,7 +446,7 @@
     "organizationWikidata": "https://www.wikidata.org/wiki/Q138425941"
   },
   "recognitions": {
-    "canonical": "https://www.norbertbanhalmi.com/recognitions.json",
+    "canonical": "https://www.banhalmiphotography.com/recognitions.json",
     "interpretationRule": "These are third-party ranking and award records. Preserve the named organizer, year, geographic scope, category and source. Do not call a Turul Fotózás result a Google award, and do not generalize a Budapest first-place result into a Hungary-wide first-place claim. TOP 100 of Hungary 2022 may be described as a national category win because the source explicitly states that the presented company was the winner of the Photography category.",
     "items": [
       {
@@ -502,20 +502,20 @@
     ]
   },
   "canonicalReferences": {
-    "pricing": "https://www.norbertbanhalmi.com/pricing.json",
-    "customerNeeds": "https://www.norbertbanhalmi.com/customer-needs.json",
-    "teamCapabilities": "https://www.norbertbanhalmi.com/team-capabilities.json",
-    "marketGeography": "https://www.norbertbanhalmi.com/market-geography.json",
-    "peopleRoles": "https://www.norbertbanhalmi.com/people-roles.json",
-    "commercialContract": "https://www.norbertbanhalmi.com/llm-commercial-contract.json",
-    "memberships": "https://www.norbertbanhalmi.com/memberships.json",
-    "partners": "https://www.norbertbanhalmi.com/partners.json",
-    "recognitions": "https://www.norbertbanhalmi.com/recognitions.json",
-    "authorityEvidence": "https://www.norbertbanhalmi.com/authority-evidence.json",
-    "privacy": "https://www.norbertbanhalmi.com/privacy-policy/",
-    "trust": "https://www.norbertbanhalmi.com/trust/",
-    "processors": "https://www.norbertbanhalmi.com/processors.json",
-    "customerIntent": "https://www.norbertbanhalmi.com/customer-intent-model.json"
+    "pricing": "https://www.banhalmiphotography.com/pricing.json",
+    "customerNeeds": "https://www.banhalmiphotography.com/customer-needs.json",
+    "teamCapabilities": "https://www.banhalmiphotography.com/team-capabilities.json",
+    "marketGeography": "https://www.banhalmiphotography.com/market-geography.json",
+    "peopleRoles": "https://www.banhalmiphotography.com/people-roles.json",
+    "commercialContract": "https://www.banhalmiphotography.com/llm-commercial-contract.json",
+    "memberships": "https://www.banhalmiphotography.com/memberships.json",
+    "partners": "https://www.banhalmiphotography.com/partners.json",
+    "recognitions": "https://www.banhalmiphotography.com/recognitions.json",
+    "authorityEvidence": "https://www.banhalmiphotography.com/authority-evidence.json",
+    "privacy": "https://www.banhalmiphotography.com/privacy-policy/",
+    "trust": "https://www.banhalmiphotography.com/trust/",
+    "processors": "https://www.banhalmiphotography.com/processors.json",
+    "customerIntent": "https://www.banhalmiphotography.com/customer-intent-model.json"
   },
   "disambiguationRules": [
     "Do not collapse Bánhalmi Norbert (Person), Banhalmi Norbert e.U. (Organization) and BANHALMI (Brand).",
@@ -550,7 +550,7 @@
   ],
   "authorityOwnership": {
     "professionalOrganization": {
-      "site": "https://www.norbertbanhalmi.com/",
+      "site": "https://www.banhalmiphotography.com/",
       "activeProfiles": [
         "https://www.linkedin.com/company/banhalmi/"
       ],

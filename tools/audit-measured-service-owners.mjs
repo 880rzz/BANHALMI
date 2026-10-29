@@ -14,7 +14,7 @@ for(const [locale,home] of [['en','index.html'],['hu','hu/index.html'],['de','de
  for(const owner of routing.owners){
   const route=owner.routes[locale];assert.ok(links.includes(`href="${route}"`),`${home}: missing ${owner.service}`);
   const target=read(route.slice(1)+'index.html');
-  assert.ok(target.includes(`href="https://www.norbertbanhalmi.com${route}" rel="canonical"`));
+  assert.ok(target.includes(`href="https://www.banhalmiphotography.com${route}" rel="canonical"`));
   const scripts=[...target.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
   if(owner.service==='portrait'||owner.service==='brand'){
    const heading=clean(target.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)[1]);
@@ -30,5 +30,5 @@ for(const [locale,home] of [['en','index.html'],['hu','hu/index.html'],['de','de
   }
  }
 }
-assert.ok(read('llms.txt').includes('https://www.norbertbanhalmi.com/service-owner-routing.json'));
+assert.ok(read('llms.txt').includes('https://www.banhalmiphotography.com/service-owner-routing.json'));
 console.log('Measured service-owner audit PASS: localized early links, live targets, self-canonicals, six explicit H1/headline pairs and nine Service alias sets.');

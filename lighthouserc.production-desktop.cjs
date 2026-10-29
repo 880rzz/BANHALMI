@@ -2,9 +2,9 @@ module.exports = {
   ci: {
     collect: {
       url: [
-        'https://www.norbertbanhalmi.com/',
-        'https://www.norbertbanhalmi.com/hu/',
-        'https://www.norbertbanhalmi.com/de-at/'
+        'https://www.banhalmiphotography.com/',
+        'https://www.banhalmiphotography.com/hu/',
+        'https://www.banhalmiphotography.com/de-at/'
       ],
       numberOfRuns: 3,
       settings: {

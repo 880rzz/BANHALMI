@@ -2,7 +2,7 @@
   "version": "2026-10-24-v11-wizard-structure",
   "status": "AUDITÁLT",
   "source": {
-    "property": "sc-domain:norbertbanhalmi.com",
+    "property": "sc-domain:banhalmiphotography.com",
     "settledThrough": "2026-10-22",
     "baseline28d": [
       "2026-09-24",
@@ -28,7 +28,7 @@
       "query": "fényképész budapest",
       "language": "HU",
       "city": "Budapest",
-      "currentUrl": "https://www.norbertbanhalmi.com/",
+      "currentUrl": "https://www.banhalmiphotography.com/",
       "position28d": 1.78,
       "impressions28d": 9,
       "status": "PROTECTED",
@@ -38,7 +38,7 @@
       "query": "fotós budapest",
       "language": "HU",
       "city": "Budapest",
-      "currentUrl": "https://www.norbertbanhalmi.com/",
+      "currentUrl": "https://www.banhalmiphotography.com/",
       "position28d": 2.6,
       "impressions28d": 25,
       "status": "PROTECTED"
@@ -47,7 +47,7 @@
       "query": "profi fotós",
       "language": "HU",
       "city": "unspecified",
-      "currentUrl": "https://www.norbertbanhalmi.com/",
+      "currentUrl": "https://www.banhalmiphotography.com/",
       "position28d": 2.92,
       "impressions28d": 49,
       "status": "PROTECTED"
@@ -56,7 +56,7 @@
       "query": "budapest fotós",
       "language": "HU",
       "city": "Budapest",
-      "currentUrl": "https://www.norbertbanhalmi.com/",
+      "currentUrl": "https://www.banhalmiphotography.com/",
       "position28d": 2.2,
       "impressions28d": 5,
       "status": "PROTECTED"
@@ -65,7 +65,7 @@
       "query": "banhalmi",
       "language": "brand",
       "city": "unspecified",
-      "currentUrl": "https://www.norbertbanhalmi.com/",
+      "currentUrl": "https://www.banhalmiphotography.com/",
       "position28d": 2.67,
       "impressions28d": 3,
       "status": "PROTECTED"
@@ -78,8 +78,8 @@
       "cluster": "event",
       "language": "EN",
       "city": "Budapest",
-      "currentUrl": "https://www.norbertbanhalmi.com/event-photography",
-      "correctUrl": "https://www.norbertbanhalmi.com/event-photography/",
+      "currentUrl": "https://www.banhalmiphotography.com/event-photography",
+      "correctUrl": "https://www.banhalmiphotography.com/event-photography/",
       "clicks6m": 3,
       "impressions6m": 193,
       "position6m": 9.54,
@@ -96,8 +96,8 @@
       "cluster": "event",
       "language": "EN",
       "city": "Budapest",
-      "currentUrl": "https://www.norbertbanhalmi.com/event-photography",
-      "correctUrl": "https://www.norbertbanhalmi.com/event-photography/",
+      "currentUrl": "https://www.banhalmiphotography.com/event-photography",
+      "correctUrl": "https://www.banhalmiphotography.com/event-photography/",
       "clicks6m": 0,
       "impressions6m": 14,
       "position6m": 8.07,
@@ -114,8 +114,8 @@
       "cluster": "event",
       "language": "EN",
       "city": "Vienna",
-      "currentUrl": "https://www.norbertbanhalmi.com/event-photography",
-      "correctUrl": "https://www.norbertbanhalmi.com/event-photography/",
+      "currentUrl": "https://www.banhalmiphotography.com/event-photography",
+      "correctUrl": "https://www.banhalmiphotography.com/event-photography/",
       "clicks6m": 0,
       "impressions6m": 47,
       "position6m": 10.21,
@@ -132,8 +132,8 @@
       "cluster": "brand",
       "language": "DE",
       "city": "Wien",
-      "currentUrl": "https://www.norbertbanhalmi.com/",
-      "correctUrl": "https://www.norbertbanhalmi.com/de-at/brand/",
+      "currentUrl": "https://www.banhalmiphotography.com/",
+      "correctUrl": "https://www.banhalmiphotography.com/de-at/brand/",
       "clicks6m": 0,
       "impressions6m": 190,
       "position6m": 10.33,
@@ -150,8 +150,8 @@
       "cluster": "brand",
       "language": "DE",
       "city": "Wien",
-      "currentUrl": "https://www.norbertbanhalmi.com/",
-      "correctUrl": "https://www.norbertbanhalmi.com/de-at/brand/",
+      "currentUrl": "https://www.banhalmiphotography.com/",
+      "correctUrl": "https://www.banhalmiphotography.com/de-at/brand/",
       "clicks6m": 0,
       "impressions6m": 158,
       "position6m": 13.91,
@@ -168,8 +168,8 @@
       "cluster": "portrait",
       "language": "DE",
       "city": "Wien",
-      "currentUrl": "https://www.norbertbanhalmi.com/de-at",
-      "correctUrl": "https://www.norbertbanhalmi.com/de-at/portrait/",
+      "currentUrl": "https://www.banhalmiphotography.com/de-at",
+      "correctUrl": "https://www.banhalmiphotography.com/de-at/portrait/",
       "clicks6m": 0,
       "impressions6m": 116,
       "position6m": 18.13,
@@ -186,8 +186,8 @@
       "cluster": "portrait",
       "language": "DE",
       "city": "Wien",
-      "currentUrl": "https://www.norbertbanhalmi.com/de-at",
-      "correctUrl": "https://www.norbertbanhalmi.com/de-at/portrait/",
+      "currentUrl": "https://www.banhalmiphotography.com/de-at",
+      "correctUrl": "https://www.banhalmiphotography.com/de-at/portrait/",
       "clicks6m": 0,
       "impressions6m": 65,
       "position6m": 25.55,
@@ -204,8 +204,8 @@
       "cluster": "portrait",
       "language": "HU",
       "city": "Budapest",
-      "currentUrl": "https://www.norbertbanhalmi.com/",
-      "correctUrl": "https://www.norbertbanhalmi.com/hu/portre/",
+      "currentUrl": "https://www.banhalmiphotography.com/",
+      "correctUrl": "https://www.banhalmiphotography.com/hu/portre/",
       "clicks6m": 0,
       "impressions6m": 137,
       "position6m": 13.27,
@@ -222,8 +222,8 @@
       "cluster": "portrait",
       "language": "HU",
       "city": "Budapest",
-      "currentUrl": "https://www.norbertbanhalmi.com/",
-      "correctUrl": "https://www.norbertbanhalmi.com/hu/portre/",
+      "currentUrl": "https://www.banhalmiphotography.com/",
+      "correctUrl": "https://www.banhalmiphotography.com/hu/portre/",
       "clicks6m": 0,
       "impressions6m": 139,
       "position6m": 20.32,
@@ -240,8 +240,8 @@
       "cluster": "portrait",
       "language": "HU",
       "city": "Budapest",
-      "currentUrl": "https://www.norbertbanhalmi.com/hu/portre/",
-      "correctUrl": "https://www.norbertbanhalmi.com/hu/portre/",
+      "currentUrl": "https://www.banhalmiphotography.com/hu/portre/",
+      "correctUrl": "https://www.banhalmiphotography.com/hu/portre/",
       "clicks6m": 0,
       "impressions6m": 20,
       "position6m": 17.35,
@@ -258,8 +258,8 @@
       "cluster": "portrait",
       "language": "EN",
       "city": "Budapest",
-      "currentUrl": "https://www.norbertbanhalmi.com/portrait",
-      "correctUrl": "https://www.norbertbanhalmi.com/portrait/",
+      "currentUrl": "https://www.banhalmiphotography.com/portrait",
+      "correctUrl": "https://www.banhalmiphotography.com/portrait/",
       "clicks6m": 0,
       "impressions6m": 13,
       "position6m": 10.54,
@@ -276,8 +276,8 @@
       "cluster": "portrait",
       "language": "HU",
       "city": "Budapest",
-      "currentUrl": "https://www.norbertbanhalmi.com/hu/portre/",
-      "correctUrl": "https://www.norbertbanhalmi.com/hu/portre/",
+      "currentUrl": "https://www.banhalmiphotography.com/hu/portre/",
+      "correctUrl": "https://www.banhalmiphotography.com/hu/portre/",
       "clicks6m": 0,
       "impressions6m": 3,
       "position6m": 10.67,
@@ -294,8 +294,8 @@
       "cluster": "corporate-brand",
       "language": "EN",
       "city": "UNSPECIFIED",
-      "currentUrl": "https://www.norbertbanhalmi.com/",
-      "correctUrl": "https://www.norbertbanhalmi.com/lifestyle/",
+      "currentUrl": "https://www.banhalmiphotography.com/",
+      "correctUrl": "https://www.banhalmiphotography.com/lifestyle/",
       "clicks6m": 0,
       "impressions6m": 77,
       "position6m": 20.18,
@@ -362,7 +362,7 @@
   ],
   "ecosystemProperties": {
     "professional": {
-      "property": "sc-domain:norbertbanhalmi.com",
+      "property": "sc-domain:banhalmiphotography.com",
       "intentOwner": "commercial/professional"
     },
     "art": {
@@ -478,7 +478,7 @@
   "crossSiteOwnership": [
     {
       "entityIntent": "Professional/commercial services",
-      "owner": "norbertbanhalmi.com",
+      "owner": "banhalmiphotography.com",
       "supporters": [
         "banhalmi.art contextual Person/oeuvre bridge",
         "blog.banhalmi.art contextual editorial bridge"
@@ -489,7 +489,7 @@
       "entityIntent": "Fine art / oeuvre / exhibitions",
       "owner": "banhalmi.art",
       "supporters": [
-        "norbertbanhalmi.com fine-art bridge",
+        "banhalmiphotography.com fine-art bridge",
         "blog.banhalmi.art relevant editorial articles"
       ],
       "rule": "Professional must not duplicate artistic collection intent."
@@ -499,7 +499,7 @@
       "owner": "blog.banhalmi.art",
       "supporters": [
         "banhalmi.art contextual cultural bridge",
-        "norbertbanhalmi.com Person/authority bridge"
+        "banhalmiphotography.com Person/authority bridge"
       ],
       "rule": "Keep Article/BlogPosting topical ownership on Blog."
     }
@@ -507,7 +507,7 @@
   "p0Resolved": [
     {
       "issue": "depobos historical spam/indexing incident",
-      "property": "sc-domain:norbertbanhalmi.com",
+      "property": "sc-domain:banhalmiphotography.com",
       "query": "depobos",
       "current28d": {
         "startDate": "2026-08-23",
@@ -521,24 +521,24 @@
   ],
   "canonicalServiceOwners": {
     "portrait": {
-      "en": "https://www.norbertbanhalmi.com/portrait/",
-      "hu": "https://www.norbertbanhalmi.com/hu/portre/",
-      "de-AT": "https://www.norbertbanhalmi.com/de-at/portrait/"
+      "en": "https://www.banhalmiphotography.com/portrait/",
+      "hu": "https://www.banhalmiphotography.com/hu/portre/",
+      "de-AT": "https://www.banhalmiphotography.com/de-at/portrait/"
     },
     "brand": {
-      "en": "https://www.norbertbanhalmi.com/lifestyle/",
-      "hu": "https://www.norbertbanhalmi.com/hu/brand/",
-      "de-AT": "https://www.norbertbanhalmi.com/de-at/brand/"
+      "en": "https://www.banhalmiphotography.com/lifestyle/",
+      "hu": "https://www.banhalmiphotography.com/hu/brand/",
+      "de-AT": "https://www.banhalmiphotography.com/de-at/brand/"
     },
     "event": {
-      "en": "https://www.norbertbanhalmi.com/event-photography/",
-      "hu": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
-      "de-AT": "https://www.norbertbanhalmi.com/de-at/eventfotografie/"
+      "en": "https://www.banhalmiphotography.com/event-photography/",
+      "hu": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+      "de-AT": "https://www.banhalmiphotography.com/de-at/eventfotografie/"
     },
     "fineArt": {
-      "en": "https://www.norbertbanhalmi.com/fine-art/",
-      "hu": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
-      "de-AT": "https://www.norbertbanhalmi.com/de-at/fine-art/",
+      "en": "https://www.banhalmiphotography.com/fine-art/",
+      "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+      "de-AT": "https://www.banhalmiphotography.com/de-at/fine-art/",
       "artisticAuthority": "https://www.banhalmi.art/"
     }
   },
@@ -551,9 +551,9 @@
     {
       "changeId": "portrait-owner-entity-20260922",
       "scope": [
-        "https://www.norbertbanhalmi.com/portrait/",
-        "https://www.norbertbanhalmi.com/hu/portre/",
-        "https://www.norbertbanhalmi.com/de-at/portrait/"
+        "https://www.banhalmiphotography.com/portrait/",
+        "https://www.banhalmiphotography.com/hu/portre/",
+        "https://www.banhalmiphotography.com/de-at/portrait/"
       ],
       "implementation": "PR #26 / commit eecd60caeffb6fdefbaebf0b413689d273e2e44f",
       "measurementStart": "2026-09-22",
@@ -565,8 +565,8 @@
     {
       "changeId": "brand-owner-entity-20260922",
       "scope": [
-        "https://www.norbertbanhalmi.com/hu/brand/",
-        "https://www.norbertbanhalmi.com/de-at/brand/"
+        "https://www.banhalmiphotography.com/hu/brand/",
+        "https://www.banhalmiphotography.com/de-at/brand/"
       ],
       "implementation": "PR #29 / commit 14775f334d6eea4feb7e746c086796a69a73b23f",
       "measurementStart": "2026-09-22",
@@ -578,8 +578,8 @@
     {
       "changeId": "fine-art-owner-entity-20260922",
       "scope": [
-        "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
-        "https://www.norbertbanhalmi.com/de-at/fine-art/"
+        "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+        "https://www.banhalmiphotography.com/de-at/fine-art/"
       ],
       "implementation": "PR #30 / commit 3e69538971a10d990fc43519bd75630a070fe9a2",
       "measurementStart": "2026-09-22",
@@ -591,9 +591,9 @@
     {
       "changeId": "event-evidence-authority-20260922",
       "scope": [
-        "https://www.norbertbanhalmi.com/event-photography/",
-        "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
-        "https://www.norbertbanhalmi.com/de-at/eventfotografie/"
+        "https://www.banhalmiphotography.com/event-photography/",
+        "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+        "https://www.banhalmiphotography.com/de-at/eventfotografie/"
       ],
       "implementation": "PR #32 / commit ac97573a75f7d3f242dec42cbd1c5962ee64a34c",
       "measurementStart": "2026-09-22",
@@ -606,15 +606,15 @@
   "ownershipRules": [
     {
       "cluster": "corporate-photographer",
-      "primaryOwner": "https://www.norbertbanhalmi.com/lifestyle/",
+      "primaryOwner": "https://www.banhalmiphotography.com/lifestyle/",
       "localizedOwners": {
-        "en": "https://www.norbertbanhalmi.com/lifestyle/",
-        "hu": "https://www.norbertbanhalmi.com/hu/brand/",
-        "de-AT": "https://www.norbertbanhalmi.com/de-at/brand/"
+        "en": "https://www.banhalmiphotography.com/lifestyle/",
+        "hu": "https://www.banhalmiphotography.com/hu/brand/",
+        "de-AT": "https://www.banhalmiphotography.com/de-at/brand/"
       },
       "support": {
-        "leadershipAndTeamHeadshots": "https://www.norbertbanhalmi.com/portrait/",
-        "corporateEvents": "https://www.norbertbanhalmi.com/event-photography/"
+        "leadershipAndTeamHeadshots": "https://www.banhalmiphotography.com/portrait/",
+        "corporateEvents": "https://www.banhalmiphotography.com/event-photography/"
       },
       "rule": "Broad organisational/corporate visual-system intent belongs to Brand Photography. Leadership/team headshot intent belongs to Portrait. Event-specific corporate intent belongs to Event Photography. Do not create a generic corporate doorway page absent stronger city/language demand."
     }
@@ -644,7 +644,7 @@
           "artSecondaryImpressions": 10,
           "artSecondaryPosition": 23.8
         },
-        "canonicalOwner": "https://www.norbertbanhalmi.com/hu/portre/",
+        "canonicalOwner": "https://www.banhalmiphotography.com/hu/portre/",
         "receiverEvidence": {
           "period": "2026-07-01..2026-09-21",
           "clicks": 0,
@@ -675,7 +675,7 @@
           "artSecondaryImpressions": 4,
           "artSecondaryPosition": 11.5
         },
-        "canonicalOwner": "https://www.norbertbanhalmi.com/hu/portre/",
+        "canonicalOwner": "https://www.banhalmiphotography.com/hu/portre/",
         "receiverEvidence": {
           "period": "2026-07-01..2026-09-21",
           "clicks": 0,
@@ -701,7 +701,7 @@
           "impressions": 6,
           "position": 5.5
         },
-        "canonicalOwner": "https://www.norbertbanhalmi.com/hu/brand/",
+        "canonicalOwner": "https://www.banhalmiphotography.com/hu/brand/",
         "receiverEvidence": {
           "period": "2026-07-01..2026-09-21",
           "rows": 0
@@ -734,7 +734,7 @@
           "artWwwImpressions": 3,
           "artWwwPosition": 15.33
         },
-        "canonicalOwner": "https://www.norbertbanhalmi.com/",
+        "canonicalOwner": "https://www.banhalmiphotography.com/",
         "receiverEvidence": {
           "period": "2026-07-01..2026-09-21",
           "homepageImpressions": 50,
@@ -769,7 +769,7 @@
           "artWwwImpressions": 16,
           "artWwwPosition": 8.31
         },
-        "canonicalOwner": "https://www.norbertbanhalmi.com/",
+        "canonicalOwner": "https://www.banhalmiphotography.com/",
         "receiverEvidence": {
           "period": "2026-07-01..2026-09-21",
           "homepageImpressions": 87,
@@ -809,7 +809,7 @@
           }
         },
         "canonicalOwner": "BANHALMI ART Ébredés / Awakening exhibition for current artistic-nude service and enquiry routing",
-        "professionalSupport": "https://www.norbertbanhalmi.com/fine-art/ (career-facing Artists & Performers portfolios only)",
+        "professionalSupport": "https://www.banhalmiphotography.com/fine-art/ (career-facing Artists & Performers portfolios only)",
         "authorityAction": "PROTECT ÉBREDÉS SERVICE OWNER / ROUTE ARTISTIC-NUDE DISCOVERY TO ÉBREDÉS",
         "status": "MÉRÉS ALATT",
         "note": "Historical GSC/URL Inspection evidence is retained as a baseline. Current localized artistic-nude service destination is Ébredés; the Professional calculator is not the personal commission route."
@@ -829,7 +829,7 @@
           "artRows": 0,
           "professionalRows": 0
         },
-        "canonicalOwner": "https://www.norbertbanhalmi.com/hu/rendezvenyfotozas/",
+        "canonicalOwner": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
         "authorityAction": "TRANSFER ROUTE PRESENT; INSUFFICIENT EXACT-QUERY SAMPLE",
         "status": "MÉRÉS ALATT"
       }
@@ -851,15 +851,15 @@
     "findings": [
       {
         "query": "portré fotózás budapest",
-        "correctUrl": "https://www.norbertbanhalmi.com/hu/portre/",
+        "correctUrl": "https://www.banhalmiphotography.com/hu/portre/",
         "observedOwners": [
           {
-            "url": "https://www.norbertbanhalmi.com/",
+            "url": "https://www.banhalmiphotography.com/",
             "impressions": 24,
             "position": 12.92
           },
           {
-            "url": "https://www.norbertbanhalmi.com/hu/",
+            "url": "https://www.banhalmiphotography.com/hu/",
             "impressions": 26,
             "position": 5.08
           },
@@ -873,15 +873,15 @@
       },
       {
         "query": "portréfotózás budapest",
-        "correctUrl": "https://www.norbertbanhalmi.com/hu/portre/",
+        "correctUrl": "https://www.banhalmiphotography.com/hu/portre/",
         "observedOwners": [
           {
-            "url": "https://www.norbertbanhalmi.com/",
+            "url": "https://www.banhalmiphotography.com/",
             "impressions": 16,
             "position": 21.31
           },
           {
-            "url": "https://www.norbertbanhalmi.com/hu/",
+            "url": "https://www.banhalmiphotography.com/hu/",
             "impressions": 3,
             "position": 6
           },
@@ -895,10 +895,10 @@
       },
       {
         "query": "portraitfotografie wien",
-        "correctUrl": "https://www.norbertbanhalmi.com/de-at/portrait/",
+        "correctUrl": "https://www.banhalmiphotography.com/de-at/portrait/",
         "observedOwners": [
           {
-            "url": "https://www.norbertbanhalmi.com/",
+            "url": "https://www.banhalmiphotography.com/",
             "impressions": 6,
             "position": 19.83
           },
@@ -912,15 +912,15 @@
       },
       {
         "query": "aktfotózás",
-        "correctUrl": "https://www.norbertbanhalmi.com/hu/muveszi-fotografia/",
+        "correctUrl": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
         "observedOwners": [
           {
-            "url": "https://www.norbertbanhalmi.com/",
+            "url": "https://www.banhalmiphotography.com/",
             "impressions": 4,
             "position": 11.5
           },
           {
-            "url": "https://www.norbertbanhalmi.com/hu/",
+            "url": "https://www.banhalmiphotography.com/hu/",
             "impressions": 4,
             "position": 9.75
           },
@@ -947,7 +947,7 @@
     ]
   },
   "latestWizardSnapshot": {
-    "property": "https://www.norbertbanhalmi.com/",
+    "property": "https://www.banhalmiphotography.com/",
     "searchType": "web",
     "baseline28d": [
       "2026-09-24",
@@ -963,7 +963,7 @@
         "impressions": 8,
         "ctr": 0,
         "position": 3.375,
-        "leadingPage": "https://www.norbertbanhalmi.com/hu/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6286584932719134667",
+        "leadingPage": "https://www.banhalmiphotography.com/hu/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6286584932719134667",
         "leadingPageImpressions": 6,
         "intendedOwner": "/"
       },
@@ -973,7 +973,7 @@
         "impressions": 20,
         "ctr": 0,
         "position": 2.3,
-        "leadingPage": "https://www.norbertbanhalmi.com/hu/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6286584932719134667",
+        "leadingPage": "https://www.banhalmiphotography.com/hu/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6286584932719134667",
         "leadingPageImpressions": 10,
         "intendedOwner": "/"
       },
@@ -983,7 +983,7 @@
         "impressions": 5,
         "ctr": 0,
         "position": 2.4,
-        "leadingPage": "https://www.norbertbanhalmi.com/hu/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6286584932719134667",
+        "leadingPage": "https://www.banhalmiphotography.com/hu/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6286584932719134667",
         "leadingPageImpressions": 4,
         "intendedOwner": "/"
       },
@@ -993,7 +993,7 @@
         "impressions": 34,
         "ctr": 0,
         "position": 3.588235294117647,
-        "leadingPage": "https://www.norbertbanhalmi.com/hu/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6286584932719134667",
+        "leadingPage": "https://www.banhalmiphotography.com/hu/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6286584932719134667",
         "leadingPageImpressions": 19,
         "intendedOwner": "/"
       }
@@ -1005,7 +1005,7 @@
         "impressions": 86,
         "ctr": 0,
         "position": 10.186046511627907,
-        "leadingPage": "https://www.norbertbanhalmi.com/hu/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6286584932719134667",
+        "leadingPage": "https://www.banhalmiphotography.com/hu/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6286584932719134667",
         "leadingPageImpressions": 36,
         "expectedOwner": "/hu/portre/",
         "cluster": "portrait",
@@ -1017,7 +1017,7 @@
         "impressions": 45,
         "ctr": 0,
         "position": 19.511111111111113,
-        "leadingPage": "https://www.norbertbanhalmi.com/hu/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6286584932719134667",
+        "leadingPage": "https://www.banhalmiphotography.com/hu/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6286584932719134667",
         "leadingPageImpressions": 26,
         "expectedOwner": "/hu/portre/",
         "cluster": "portrait",
@@ -1029,7 +1029,7 @@
         "impressions": 8,
         "ctr": 0,
         "position": 20.125,
-        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "leadingPage": "https://www.banhalmiphotography.com/",
         "leadingPageImpressions": 6,
         "expectedOwner": "/de-at/portrait/",
         "cluster": "portrait",
@@ -1041,7 +1041,7 @@
         "impressions": 23,
         "ctr": 0,
         "position": 14.91304347826087,
-        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "leadingPage": "https://www.banhalmiphotography.com/",
         "leadingPageImpressions": 23,
         "expectedOwner": "/de-at/brand/",
         "cluster": "brand",
@@ -1053,7 +1053,7 @@
         "impressions": 21,
         "ctr": 0,
         "position": 19.285714285714285,
-        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "leadingPage": "https://www.banhalmiphotography.com/",
         "leadingPageImpressions": 20,
         "expectedOwner": "/lifestyle/",
         "cluster": "brand",
@@ -1065,7 +1065,7 @@
         "impressions": 7,
         "ctr": 0,
         "position": 21.428571428571427,
-        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "leadingPage": "https://www.banhalmiphotography.com/",
         "leadingPageImpressions": 7,
         "expectedOwner": "/event-photography/",
         "cluster": "event",
@@ -1077,7 +1077,7 @@
         "impressions": 12,
         "ctr": 0,
         "position": 11.416666666666666,
-        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "leadingPage": "https://www.banhalmiphotography.com/",
         "leadingPageImpressions": 12,
         "expectedOwner": "/de-at/fine-art/",
         "cluster": "fine-art",
@@ -1089,7 +1089,7 @@
         "impressions": 11,
         "ctr": 0,
         "position": 9.454545454545455,
-        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "leadingPage": "https://www.banhalmiphotography.com/",
         "leadingPageImpressions": 4,
         "expectedOwner": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
         "cluster": "private-art-nude",
@@ -1102,7 +1102,7 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0,
-        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "leadingPage": "https://www.banhalmiphotography.com/",
         "expectedOwner": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
         "cluster": "private-art-nude",
         "priority": "P0",
@@ -1114,7 +1114,7 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0,
-        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "leadingPage": "https://www.banhalmiphotography.com/",
         "expectedOwner": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
         "cluster": "private-art-nude",
         "priority": "P0",
@@ -1126,7 +1126,7 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0,
-        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "leadingPage": "https://www.banhalmiphotography.com/",
         "expectedOwner": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
         "cluster": "private-art-nude",
         "priority": "P0",
@@ -1138,7 +1138,7 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0,
-        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "leadingPage": "https://www.banhalmiphotography.com/",
         "expectedOwner": "https://www.banhalmi.art/private-photography.html",
         "cluster": "private-art",
         "priority": "P0",
@@ -1150,7 +1150,7 @@
         "impressions": 0,
         "ctr": 0,
         "position": 0,
-        "leadingPage": "https://www.norbertbanhalmi.com/",
+        "leadingPage": "https://www.banhalmiphotography.com/",
         "expectedOwner": "https://www.banhalmi.art/private-photography.html",
         "cluster": "private-art",
         "priority": "P0",
@@ -1168,6 +1168,6 @@
         "fényképész tanfolyam"
       ]
     },
-    "notes": "Wizard dual-property run for norbertbanhalmi.com + banhalmi.art; Oct 23-24 incomplete. Professional: 79 clicks / 21908 impressions / CTR 0.36%. ART: 105 / 1565 / 6.71%. Mobile-majority traffic. Homepage must remain hub; service queries own service URLs; boudoir/akt own ART."
+    "notes": "Wizard dual-property run for banhalmiphotography.com + banhalmi.art; Oct 23-24 incomplete. Professional: 79 clicks / 21908 impressions / CTR 0.36%. ART: 105 / 1565 / 6.71%. Mobile-majority traffic. Homepage must remain hub; service queries own service URLs; boudoir/akt own ART."
   }
 }

@@ -3,8 +3,8 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   formEndpoint: "https://banhalmi-form-gateway.6ymnrwgnv9.workers.dev/api/banhalmi-form",
   submissionMode: "cloudflare-workers-dev-language-payload",
   siteLanguage: document.documentElement.lang || "en",
-  siteDomain: "www.norbertbanhalmi.com",
-  supportEmail: "hello@norbertbanhalmi.com",
+  siteDomain: "www.banhalmiphotography.com",
+  supportEmail: "hello@banhalmiphotography.com",
   analyticsMeasurementId: "G-90C452LJKQ"
 });
 
@@ -102,7 +102,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
         date:'Please choose a future date.',
         sending:'Sending…',
         sent:'Thank you. Your request has been sent.',
-        failed:'The request could not be sent. Please try again or email hello@norbertbanhalmi.com.'
+        failed:'The request could not be sent. Please try again or email hello@banhalmiphotography.com.'
       },
       hu: {
         invalid:'Kérem, ellenőrizze a kiemelt mezőket.',
@@ -113,7 +113,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
         date:'Kérem, jövőbeli dátumot válasszon.',
         sending:'Küldés…',
         sent:'Köszönöm. Az ajánlatkérése megérkezett.',
-        failed:'Az ajánlatkérés nem küldhető el. Próbálja újra, vagy írjon a hello@norbertbanhalmi.com címre.'
+        failed:'Az ajánlatkérés nem küldhető el. Próbálja újra, vagy írjon a hello@banhalmiphotography.com címre.'
       },
       de: {
         invalid:'Bitte prüfen Sie die markierten Felder.',
@@ -124,7 +124,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
         date:'Bitte wählen Sie ein zukünftiges Datum.',
         sending:'Wird gesendet…',
         sent:'Vielen Dank. Ihre Anfrage wurde gesendet.',
-        failed:'Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an hello@norbertbanhalmi.com.'
+        failed:'Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an hello@banhalmiphotography.com.'
       }
     };
     return messages[lang][key];

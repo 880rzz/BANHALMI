@@ -1,7 +1,7 @@
 {
   "requestQuote": {
     "method": "GET",
-    "url": "https://www.norbertbanhalmi.com/requestaquote/"
+    "url": "https://www.banhalmiphotography.com/requestaquote/"
   },
   "bookConsultation": {
     "method": "GET",

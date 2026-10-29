@@ -21,7 +21,7 @@ for(const route of routes){
     try{url=new URL(raw,document.baseURI);}catch{}
     const offsite=!!url&&['https:','http:'].includes(url.protocol)
       && canonicalHost(url.hostname)!==local
-      && canonicalHost(url.hostname)!=='norbertbanhalmi.com';
+      && canonicalHost(url.hostname)!=='banhalmiphotography.com';
     let excluded=a.matches('.brand,.footer-wko-profile,.btn,.btn-primary,.btn-secondary,.btn-ghost,.nav-cta,.banhalmi-contact-studio,[role="button"]')
       || !!a.querySelector('img,picture,svg,video');
     if(a.matches('.banhalmi-contact-action')){
@@ -51,7 +51,7 @@ test('added links and URL changes preserve external-only arrows and accessible l
   host.id='bn-external-arrow-test';
   host.innerHTML=[
    '<a id="bn-int" href="/hu/portre/">Internal ↗</a>',
-   '<a id="bn-absolute-int" href="https://www.norbertbanhalmi.com/de-at/portrait/">Internal absolute</a>',
+   '<a id="bn-absolute-int" href="https://www.banhalmiphotography.com/de-at/portrait/">Internal absolute</a>',
    '<a id="bn-external" href="https://example.org/guide">Outside ↗</a>',
    '<a id="bn-mail" href="mailto:test@example.org">Email ↗</a>',
    '<a id="bn-external-button" class="btn" href="https://example.org/">Button ↗</a>'
