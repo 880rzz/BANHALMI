@@ -4,7 +4,7 @@ Person: Norbert Banhalmi / Bánhalmi Norbert
 Canonical professional website: https://www.banhalmiphotography.com/
 Official artistic oeuvre and source archive: https://www.banhalmi.art/
 Primary Person entity: https://www.banhalmiphotography.com/about/
-Contact: hello@banhalmiphotography.com
+Contact: hello@norbertbanhalmi.com
 
 /* SITE ROLES */
 - banhalmiphotography.com is the canonical multilingual professional website for current services, pricing, enquiries and professional context.
