@@ -18,6 +18,11 @@ const personal=[
 const company=[
   'https://www.linkedin.com/company/banhalmi/'
 ];
+const footerPerson=[
+  'https://www.instagram.com/norbert.banhalmi/',
+  'https://www.facebook.com/banhalmi.norbert',
+  'https://www.youtube.com/@norbert.banhalmi'
+];
 const personPortfolio=[
   'https://cherrydeck.com/norbert.banhalmi'
 ];
@@ -46,14 +51,15 @@ for(const file of files(ROOT)){
   const html=fs.readFileSync(file,'utf8');
   if(!html.includes('class="site-footer"')) continue;
   for(const url of [...retired,...personForbiddenProfessional]) if(html.includes(url)) errors.push(`${rel}: stale/personal social authority ${url}`);
-  const allowedPersonal=contactPersonalProfileAllowlist.get(rel)||new Set();
-  for(const url of personal) if(html.includes(url)&&!allowedPersonal.has(url)) errors.push(`${rel}: stale/personal social authority ${url}`);
-  for(const url of [...company,...personPortfolio]) if(!html.includes(url)) errors.push(`${rel}: visible portfolio/company social missing ${url}`);
   const social=html.match(/<details class="footer-accordion" data-social-footer="">[\s\S]*?<\/details>/)?.[0]||'';
+  const htmlWithoutSocial=social?html.replace(social,''):html;
+  const allowedPersonal=contactPersonalProfileAllowlist.get(rel)||new Set();
+  for(const url of personal) if(htmlWithoutSocial.includes(url)&&!allowedPersonal.has(url)) errors.push(`${rel}: stale/personal social authority ${url}`);
+  for(const url of [...company,...personPortfolio,...footerPerson]) if(!html.includes(url)) errors.push(`${rel}: visible social/portfolio link missing ${url}`);
   if(!social) errors.push(`${rel}: social footer missing`);
   else{
-    for(const url of [...company,...personPortfolio]) if(!social.includes(url)) errors.push(`${rel}: social footer missing ${url}`);
-    for(const url of [...retired,...personal]) if(social.includes(url)) errors.push(`${rel}: social footer contains forbidden ${url}`);
+    for(const url of [...company,...personPortfolio,...footerPerson]) if(!social.includes(url)) errors.push(`${rel}: social footer missing ${url}`);
+    for(const url of [...retired,...personal.filter((url)=>!footerPerson.includes(url))]) if(social.includes(url)) errors.push(`${rel}: social footer contains forbidden ${url}`);
   }
 }
 
@@ -106,7 +112,7 @@ if(errors.length){
   console.error('Social/entity authority contract failed:\n- '+errors.join('\n- '));
   process.exit(1);
 }
-console.log('Social/entity authority contract OK: Organization.sameAs uses company LinkedIn only; Cherrydeck is Person.sameAs portfolio; Norbert personal LinkedIn is allowed only in the three Contact profile blocks; retired/personal profiles remain excluded from the Professional social footer and active organization identity while ART ownership remains declared in machine-core.');
+console.log('Social/entity authority contract OK: Organization.sameAs uses company LinkedIn only; Cherrydeck remains a Person portfolio authority; Instagram, Facebook and YouTube are allowed only as clearly labelled Norbert Bánhalmi footer navigation links, not Organization.sameAs; personal LinkedIn remains limited to the three Contact profile blocks; retired profiles stay excluded.');
 
 for (const file of ['ai.txt','llms-full.txt']) {
   const text=read(file);
