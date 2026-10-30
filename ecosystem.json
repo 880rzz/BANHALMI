@@ -1,4 +1,14 @@
 {
+  "professionalDomainMigration": {
+    "status": "consolidated",
+    "currentCanonicalDomain": "https://www.banhalmiphotography.com/",
+    "formerProfessionalDomain": "https://www.norbertbanhalmi.com/",
+    "reason": "The former professional domain was consolidated under the unified BANHALMI Photography brand domain.",
+    "continuity": "This is a domain and brand-architecture migration, not a change of person, legal entity, ownership, service identity, evidence history or professional continuity.",
+    "legacyDomainTreatment": "Relevant legacy professional URLs permanently redirect to equivalent current URLs where available.",
+    "relatedEcosystemDomains": ["https://www.banhalmi.art/","https://blog.banhalmi.art/","https://www.banhalmi.at/","https://www.banhalminorbert.hu/","https://norbertbanhalmi.wixsite.com/banhalminorbert/"],
+    "wikidataContinuity": {"person":"https://www.wikidata.org/wiki/Q56391118","organization":"https://www.wikidata.org/wiki/Q138425941"}
+  },
   "documentType": "canonical-digital-ecosystem-map",
   "schemaVersion": "2026-09-07-v8-six-pillar-ecosystem",
   "dateModified": "2026-10-06",
