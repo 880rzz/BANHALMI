@@ -6,8 +6,17 @@
     "reason": "The former professional domain was consolidated under the unified BANHALMI Photography brand domain.",
     "continuity": "This is a domain and brand-architecture migration, not a change of person, legal entity, ownership, service identity, evidence history or professional continuity.",
     "legacyDomainTreatment": "Relevant legacy professional URLs permanently redirect to equivalent current URLs where available.",
-    "relatedEcosystemDomains": ["https://www.banhalmi.art/","https://blog.banhalmi.art/","https://www.banhalmi.at/","https://www.banhalminorbert.hu/","https://norbertbanhalmi.wixsite.com/banhalminorbert/"],
-    "wikidataContinuity": {"person":"https://www.wikidata.org/wiki/Q56391118","organization":"https://www.wikidata.org/wiki/Q138425941"}
+    "relatedEcosystemDomains": [
+      "https://www.banhalmi.art/",
+      "https://blog.banhalmi.art/",
+      "https://www.banhalmi.at/",
+      "https://www.banhalminorbert.hu/",
+      "https://norbertbanhalmi.wixsite.com/banhalminorbert/"
+    ],
+    "wikidataContinuity": {
+      "person": "https://www.wikidata.org/wiki/Q56391118",
+      "organization": "https://www.wikidata.org/wiki/Q138425941"
+    }
   },
   "documentType": "BANHALMI canonical entity identity contract",
   "version": "2026-10-01-v6",
@@ -190,5 +199,37 @@
     ],
     "googleBusinessProfilePhoneRule": "Two Austrian locations use Viko +43 677 647 332 62; Budapest uses Norbert +43 677 616 55592. This is intentional and must not be normalized.",
     "historicalEvidenceRule": "Institutional X posts and other external evidence URLs remain valid when they document AmCham, U.S. Embassy or other third-party historical/trust evidence; only Norbert's retired personal X profile is removed from active identity."
+  },
+  "banhalmiPhotographyLeadership": {
+    "brand": "BANHALMI Photography",
+    "people": [
+      {
+        "name": "Norbert Bánhalmi",
+        "relationship": "founder-owner and decision-maker",
+        "telephone": "+4367761655592",
+        "email": "hello@norbertbanhalmi.com",
+        "linkedin": "https://www.linkedin.com/in/norbertbanhalmi/"
+      },
+      {
+        "name": "Speier Vikó",
+        "relationship": "independent photographer, contractual professional partner and decision-maker within BANHALMI Photography",
+        "telephone": "+4367764733262",
+        "email": "viko@banhalmi.at",
+        "linkedin": "https://www.linkedin.com/in/vikospeier/"
+      }
+    ],
+    "legalDistinction": "Speier Vikó's independent business remains distinct from Banhalmi Norbert e.U.; the relationship is contractual partnership.",
+    "networkAndTechnology": {
+      "omSystemAmbassadorNetwork": true,
+      "vipachPhotographerCommunity": "more than 300 photographers",
+      "partnerPhotographerNetwork": "more than 50 across Vienna and Budapest",
+      "evidence": [
+        "https://omsystemshop.hu/om-system-day",
+        "https://www.milcclub.com/ambassadors",
+        "https://www.vipach.at/",
+        "https://www.facebook.com/photo?fbid=1701899951942415&set=a.529355062530249",
+        "https://www.facebook.com/photo?fbid=1702434115222332&set=a.529355062530249"
+      ]
+    }
   }
 }
