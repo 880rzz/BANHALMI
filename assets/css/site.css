@@ -7300,3 +7300,11 @@ html body main .contact-profile-contact strong{
   }
 }
 /* /CONTACT_PROFILE_CONTACT_ROW_20261030 */
+
+/* MOBILE_HOME_HERO_MONOGRAM_POSITION_20261030: raise only the homepage monogram on compact screens. */
+@media (max-width:720px){
+  html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure .hero-center-logo{
+    top:calc(50% - 24px);
+  }
+}
+/* /MOBILE_HOME_HERO_MONOGRAM_POSITION_20261030 */
