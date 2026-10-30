@@ -4005,7 +4005,7 @@ html body main .trust-hero p.lead{
 
 /* One typographic scale: display type is restrained; body, descriptions and
    disclosure copy share a readable rhythm in every language. */
-html body main h1{font-size:clamp(2.5rem,3.2vw,2.75rem);line-height:1.08;letter-spacing:-.024em;text-wrap:balance;}
+html body main h1{font-size:clamp(2.2rem,2.8vw,2.5rem);line-height:1.08;letter-spacing:-.024em;text-wrap:balance;}
 html body main h2{font-size:var(--bn-context-h2-size,clamp(1.625rem,2.1vw,2.1rem));line-height:1.18;letter-spacing:-.022em;}
 html body main h3{font-size:clamp(18px,1.45vw,1.3rem);line-height:1.24;letter-spacing:-.012em;}
 html body main :is(p,li,dd){font-size:16px;line-height:1.68;}
@@ -4141,7 +4141,7 @@ html body .site-footer,html body .site-footer .wrap{min-height:0;}
 }
 
 @media(max-width:768px){
-  html body main h1{font-size:clamp(2.375rem,4.8vw,2.75rem);}
+  html body main h1{font-size:clamp(2.1rem,4.6vw,2.45rem);}
   html body main h2{font-size:var(--bn-context-h2-size,clamp(1.5625rem,3.2vw,2rem));}
   html body main :is(.cards,.steps,.card-grid,.grid-2,.grid-3,.service-info-cards,.category-grid,.legal-grid){grid-template-columns:1fr;}
   html body main :is(.service-process-grid,.quote-deep-details .card-grid){grid-template-columns:1fr;}
@@ -4153,7 +4153,7 @@ html body .site-footer,html body .site-footer .wrap{min-height:0;}
   html body .site-footer .footer-bottom>span:last-child{justify-self:start;text-align:left;white-space:normal;}
 }
 @media(max-width:560px){
-  html body main h1{font-size:clamp(2.15rem,4.8vw,2.5rem);text-wrap:balance;}
+  html body main h1{font-size:clamp(1.9rem,4.6vw,2.15rem);text-wrap:balance;}
   html body main h2{font-size:var(--bn-context-h2-size,clamp(1.55rem,3.2vw,2rem));}
   html body .site-footer :is(.footer-grid,.footer-bottom){grid-template-columns:1fr;}
   html body .site-footer .footer-legal-list{min-width:0;}
@@ -5782,6 +5782,9 @@ html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure:
    sweep lower in the artwork, and remove the oversized white handoff before
    the homepage positioning copy. */
 @media (max-width:720px){
+  html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-center-logo{
+    top:46%;
+  }
   html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-signature-line{
     top:56%;
     width:min(68%,480px);
@@ -6789,7 +6792,7 @@ html body main .service-gallery-section .service-lower-gallery-grid{margin-top:0
 
 /* BANHALMI-C SIMPLE SYSTEM 2026-10-23: presentation-only hierarchy layer. */
 html body main[data-homepage-redesign] .hero-copy-only h1,html body main[data-homepage-redesign] .section-head h2,html body main[data-homepage-redesign] .client-decision-bridge h2,html body main[data-homepage-redesign] .presence-thesis h2,html body main[data-homepage-redesign] .cta-band h2{max-width:24ch;text-wrap:balance;}
-html body main[data-homepage-redesign] .hero-copy-only h1{font-size:clamp(2.25rem,3.2vw,3.5rem);line-height:1.02;letter-spacing:-.04em;}
+html body main[data-homepage-redesign] .hero-copy-only h1{font-size:clamp(2rem,2.7vw,2.75rem);line-height:1.02;letter-spacing:-.04em;}
 html body main[data-homepage-redesign] .section-head h2,html body main[data-homepage-redesign] .client-decision-bridge h2,html body main[data-homepage-redesign] .presence-thesis h2{font-size:clamp(1.9rem,2.7vw,3rem);line-height:1.08;letter-spacing:-.035em;}
 html body main[data-homepage-redesign] .fp-decision-system .fp-decision-inner,html body main[data-homepage-redesign] #services>.wrap{width:min(1200px,100%);}
 html body main[data-homepage-redesign] #services .card p>strong{display:none;}
