@@ -11,11 +11,7 @@
   "viennaOffice": {
     "address": "Gersthofer Straße 150–154/6/2, 1180 Wien, Austria",
     "type": "office/client meeting location",
-    "googleBusinessProfile": "https://g.page/r/CdO4Kej3jIkfEBM",
-    "reviewEvidence": {
-      "status": "profile-exists",
-      "note": "Keep office reviews separate from studio review claims; this is an office/client meeting location, not a studio."
-    }
+    "map": "https://g.page/r/CdO4Kej3jIkfEBM"
   },
   "budapestStudio": {
     "address": "Lágymányosi u. 15, 1111 Budapest, Hungary",
