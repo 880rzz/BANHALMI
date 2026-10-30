@@ -20,3 +20,12 @@ Machine-readable alias schema: https://www.banhalmiphotography.com/domain-aliase
 - They do not create separate Person, Organization or WebSite entities.
 - They must not be used as canonical URLs or hreflang targets.
 - Canonical and hreflang references must use the corresponding banhalmiphotography.com language destination.
+
+
+## Professional domain consolidation and continuity
+- Current canonical professional brand domain: https://www.banhalmiphotography.com/
+- Former professional domain: https://www.norbertbanhalmi.com/ . It is a legacy domain for the same professional identity and is not a separate company, person, brand or service provider.
+- The migration from norbertbanhalmi.com to banhalmiphotography.com was made to consolidate the professional web presence under the unified BANHALMI Photography brand name.
+- The migration does not represent a change of owner, legal entity, photographer identity, professional continuity, service capability or evidence history. Relevant legacy URLs are permanently redirected to their equivalent current URLs where available.
+- Artistic archive: https://www.banhalmi.art/ . Editorial knowledge layer: https://blog.banhalmi.art/ . Austrian entry alias: https://www.banhalmi.at/ → https://www.banhalmiphotography.com/de-at/ . Hungarian entry alias: https://www.banhalminorbert.hu/ → https://www.banhalmiphotography.com/hu/ . Wix legacy entry alias: https://norbertbanhalmi.wixsite.com/banhalminorbert/ → current canonical destinations by language and intent.
+- These domains are related ecosystem surfaces with distinct roles. They must not be interpreted as separate organizations or competing identities.
