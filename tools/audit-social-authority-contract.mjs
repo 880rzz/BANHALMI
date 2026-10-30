@@ -25,6 +25,11 @@ const personForbiddenProfessional=[
   'https://cherrydeck.com/profile/norbert.banhalmi'
 ];
 const errors=[];
+const contactPersonalProfileAllowlist=new Map([
+  ['contact/index.html',new Set(['https://www.linkedin.com/in/norbertbanhalmi/'])],
+  ['hu/kapcsolat/index.html',new Set(['https://www.linkedin.com/in/norbertbanhalmi/'])],
+  ['de-at/kontakt/index.html',new Set(['https://www.linkedin.com/in/norbertbanhalmi/'])]
+]);
 
 function files(dir){
   return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>{
@@ -40,7 +45,9 @@ for(const file of files(ROOT)){
   const rel=path.relative(ROOT,file).replaceAll('\\','/');
   const html=fs.readFileSync(file,'utf8');
   if(!html.includes('class="site-footer"')) continue;
-  for(const url of [...retired,...personal,...personForbiddenProfessional]) if(html.includes(url)) errors.push(`${rel}: stale/personal social authority ${url}`);
+  for(const url of [...retired,...personForbiddenProfessional]) if(html.includes(url)) errors.push(`${rel}: stale/personal social authority ${url}`);
+  const allowedPersonal=contactPersonalProfileAllowlist.get(rel)||new Set();
+  for(const url of personal) if(html.includes(url)&&!allowedPersonal.has(url)) errors.push(`${rel}: stale/personal social authority ${url}`);
   for(const url of [...company,...personPortfolio]) if(!html.includes(url)) errors.push(`${rel}: visible portfolio/company social missing ${url}`);
   const social=html.match(/<details class="footer-accordion" data-social-footer="">[\s\S]*?<\/details>/)?.[0]||'';
   if(!social) errors.push(`${rel}: social footer missing`);
@@ -99,7 +106,7 @@ if(errors.length){
   console.error('Social/entity authority contract failed:\n- '+errors.join('\n- '));
   process.exit(1);
 }
-console.log('Social/entity authority contract OK: Organization.sameAs uses company LinkedIn only; Cherrydeck is Person.sameAs portfolio; retired/personal profiles are absent from active Professional identity while ART ownership remains declared in machine-core.');
+console.log('Social/entity authority contract OK: Organization.sameAs uses company LinkedIn only; Cherrydeck is Person.sameAs portfolio; Norbert personal LinkedIn is allowed only in the three Contact profile blocks; retired/personal profiles remain excluded from the Professional social footer and active organization identity while ART ownership remains declared in machine-core.');
 
 for (const file of ['ai.txt','llms-full.txt']) {
   const text=read(file);
