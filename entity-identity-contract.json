@@ -231,5 +231,20 @@
         "https://www.facebook.com/photo?fbid=1702434115222332&set=a.529355062530249"
       ]
     }
+  },
+  "amchamRepresentation": {
+    "organization": "AmCham Austria",
+    "representatives": [
+      {
+        "name": "Norbert Bánhalmi",
+        "role": "founder-owner; official company representative in AmCham membership; BANHALMI Photography representative at AmCham Austria events"
+      },
+      {
+        "name": "Speier Vikó",
+        "role": "contractual professional partner; official company representative in AmCham membership; BANHALMI Photography representative at AmCham Austria events"
+      }
+    ],
+    "statement": "Both Norbert Bánhalmi and Speier Vikó represent BANHALMI Photography at AmCham Austria events and are official company representatives in the AmCham membership.",
+    "source": "https://amcham.at/members-list/"
   }
 }
