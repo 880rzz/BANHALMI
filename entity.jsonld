@@ -21,7 +21,7 @@
         "Visual Branding Strategist",
         "Photography Curator"
       ],
-      "email": "mailto:hello@banhalmiphotography.com",
+      "email": "mailto:hello@norbertbanhalmi.com",
       "image": {
         "@id": "https://www.banhalmiphotography.com/about/#portrait"
       },
@@ -107,7 +107,7 @@
           "@id": "https://www.banhalmiphotography.com/#visual-trust-partnership"
         }
       },
-      "email": "hello@banhalmiphotography.com",
+      "email": "hello@norbertbanhalmi.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Schwedenplatz 2, Top 8–9",
@@ -167,7 +167,7 @@
         {
           "@type": "ContactPoint",
           "contactType": "customer service",
-          "email": "hello@banhalmiphotography.com",
+          "email": "hello@norbertbanhalmi.com",
           "telephone": "+4367764733262",
           "availableLanguage": [
             "English",
@@ -177,7 +177,7 @@
         {
           "@type": "ContactPoint",
           "contactType": "customer service",
-          "email": "hello@banhalmiphotography.com",
+          "email": "hello@norbertbanhalmi.com",
           "telephone": "+4367761655592",
           "availableLanguage": [
             "Hungarian"
