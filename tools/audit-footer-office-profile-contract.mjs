@@ -32,11 +32,11 @@ if(!/@media \(max-width:720px\)\{[\s\S]*footer-accordion>summary::after\{[\s\S]*
 if(!/footer-accordion\[open\]>summary::after\{content:"−";\}/.test(css))failures.push('mobile footer disclosures must switch the trailing marker to minus when open');
 if(css.includes('html body main>section.section-band[data-surface]{width:100vw'))failures.push('full-bleed section must not include the scrollbar in a 100vw width');
 if(!css.includes('html body main>section.section-band[data-surface]{width:100%;max-width:none;margin-inline:0;}'))failures.push('section surface must align with the document content edge');
-if(!css.includes('html body main h1{font-size:clamp(2.5rem,3.2vw,2.75rem);line-height:1.08;letter-spacing:-.024em;text-wrap:balance;}'))failures.push('shared main H1 scale or balanced line wrapping changed');
+if(!css.includes('html body main h1{font-size:clamp(2.2rem,2.8vw,2.5rem);line-height:1.08;letter-spacing:-.024em;text-wrap:balance;}'))failures.push('shared main H1 scale or balanced line wrapping changed');
 
 if(failures.length){
   console.error(`Footer and design-token contract failed (${failures.length}):`);
   for(const failure of failures)console.error(`- ${failure}`);
   process.exit(1);
 }
-console.log(`Footer and design-token contract passed: ${officePages} localized office footers, trailing gold plus, balanced 40–44px H1 scale and scrollbar-safe section edges.`);
+console.log(`Footer and design-token contract passed: ${officePages} localized office footers, trailing gold plus, balanced 35.2–40px H1 scale and scrollbar-safe section edges.`);
