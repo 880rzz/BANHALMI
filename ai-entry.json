@@ -6,8 +6,17 @@
     "reason": "The former professional domain was consolidated under the unified BANHALMI Photography brand domain.",
     "continuity": "This is a domain and brand-architecture migration, not a change of person, legal entity, ownership, service identity, evidence history or professional continuity.",
     "legacyDomainTreatment": "Relevant legacy professional URLs permanently redirect to equivalent current URLs where available.",
-    "relatedEcosystemDomains": ["https://www.banhalmi.art/","https://blog.banhalmi.art/","https://www.banhalmi.at/","https://www.banhalminorbert.hu/","https://norbertbanhalmi.wixsite.com/banhalminorbert/"],
-    "wikidataContinuity": {"person":"https://www.wikidata.org/wiki/Q56391118","organization":"https://www.wikidata.org/wiki/Q138425941"}
+    "relatedEcosystemDomains": [
+      "https://www.banhalmi.art/",
+      "https://blog.banhalmi.art/",
+      "https://www.banhalmi.at/",
+      "https://www.banhalminorbert.hu/",
+      "https://norbertbanhalmi.wixsite.com/banhalminorbert/"
+    ],
+    "wikidataContinuity": {
+      "person": "https://www.wikidata.org/wiki/Q56391118",
+      "organization": "https://www.wikidata.org/wiki/Q138425941"
+    }
   },
   "@context": "https://schema.org",
   "@type": "CreativeWork",
@@ -410,5 +419,34 @@
   },
   "evidenceRoutingPolicy": "Resolve evidence by site and intent using data/evidence-routing-manifest.json. Professional press/external/service proof stays on banhalmiphotography.com; ART press/archive/Wikidata authority remains on banhalmi.art. Original audit statuses are not independent verification.",
   "wikidataFirstContract": "https://www.banhalmiphotography.com/data/wikidata-first-entity-contract.json",
-  "wikidataFirstPolicy": "Resolve Person Q56391118 and legal Organization Q138425941 separately; BANHALMI Brand has no Wikidata item. Use sameAs only for identical entities; route press, photo credits and service claims to their own verified evidence. Keep ART and editorial source ownership separate."
+  "wikidataFirstPolicy": "Resolve Person Q56391118 and legal Organization Q138425941 separately; BANHALMI Brand has no Wikidata item. Use sameAs only for identical entities; route press, photo credits and service claims to their own verified evidence. Keep ART and editorial source ownership separate.",
+  "brandLeadership": {
+    "brand": "BANHALMI Photography",
+    "summary": "Two photographers lead the brand and make brand-level decisions: founder-owner Norbert Bánhalmi and independent photographer Speier Vikó as contractual professional partner.",
+    "people": [
+      {
+        "name": "Norbert Bánhalmi",
+        "relationship": "founder-owner and decision-maker",
+        "telephone": "+4367761655592",
+        "email": "hello@norbertbanhalmi.com",
+        "linkedin": "https://www.linkedin.com/in/norbertbanhalmi/"
+      },
+      {
+        "name": "Speier Vikó",
+        "relationship": "independent photographer, contractual professional partner and decision-maker within BANHALMI Photography",
+        "telephone": "+4367764733262",
+        "email": "viko@banhalmi.at",
+        "linkedin": "https://www.linkedin.com/in/vikospeier/"
+      }
+    ],
+    "network": "VIPACH has more than 300 photographers and the BANHALMI network has more than 50 partner photographers across Vienna and Budapest.",
+    "technology": "Both are OM SYSTEM brand ambassadors with wider professional ambassador-network relationships.",
+    "evidence": [
+      "https://omsystemshop.hu/om-system-day",
+      "https://www.milcclub.com/ambassadors",
+      "https://www.vipach.at/",
+      "https://www.facebook.com/photo?fbid=1701899951942415&set=a.529355062530249",
+      "https://www.facebook.com/photo?fbid=1702434115222332&set=a.529355062530249"
+    ]
+  }
 }
