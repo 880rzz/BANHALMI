@@ -1851,7 +1851,7 @@ main a.editorial-inline-link:hover{
 .universal-lightbox-close{top:20px;right:20px}.universal-lightbox-prev{left:20px;top:50%;transform:translateY(-50%)}.universal-lightbox-next{right:20px;top:50%;transform:translateY(-50%)}
 .oeuvre-teaser{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.8fr);gap:clamp(40px,8vw,120px);align-items:center;}
 .oeuvre-teaser .editorial-image img{width:100%;height:auto;}
-.archive-cards{grid-template-columns:repeat(3,minmax(0,1fr));}.archive-card .more{margin-top:auto;}
+.archive-cards{grid-template-columns:repeat(3,minmax(0,1fr));}.archive-card .more{margin-top:auto;white-space:nowrap;}
 .oeuvre-jump{position:sticky;top:72px;z-index:30;background:rgba(255,255,255,.94);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .oeuvre-jump .wrap{display:flex;gap:26px;overflow:auto;padding-top:15px;padding-bottom:15px;scrollbar-width:none}.oeuvre-jump a{white-space:nowrap;font-size:.9rem;color:var(--muted);}.oeuvre-jump a:hover{color:var(--text)}
 .timeline-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 54px;border-top:1px solid var(--line);}
@@ -6877,7 +6877,7 @@ html body main[data-homepage-redesign] > section[data-surface="dark"] + section[
 /* /HOMEPAGE_LEAN_SEPARATORS_V1 */
 /* HOMEPAGE_ART_PRIVATE_BRIDGE_V1 */
 html body main .homepage-art-private-bridge{margin:clamp(12px,1.4vw,18px) 0 0;max-width:46ch;color:#6e6e73;font-size:clamp(.92rem,.8vw,1.02rem);line-height:1.55}
-html body main .homepage-art-private-bridge a{color:inherit;text-decoration:underline;text-underline-offset:0.18em}
+html body main .homepage-art-private-bridge a{color:inherit;white-space:nowrap;text-decoration:underline;text-underline-offset:0.18em}
 /* /HOMEPAGE_ART_PRIVATE_BRIDGE_V1 */
 
 
