@@ -5782,6 +5782,9 @@ html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure:
    sweep lower in the artwork, and remove the oversized white handoff before
    the homepage positioning copy. */
 @media (max-width:720px){
+  html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-center-logo{
+    top:46%;
+  }
   html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-signature-line{
     top:56%;
     width:min(68%,480px);
@@ -6789,7 +6792,7 @@ html body main .service-gallery-section .service-lower-gallery-grid{margin-top:0
 
 /* BANHALMI-C SIMPLE SYSTEM 2026-10-23: presentation-only hierarchy layer. */
 html body main[data-homepage-redesign] .hero-copy-only h1,html body main[data-homepage-redesign] .section-head h2,html body main[data-homepage-redesign] .client-decision-bridge h2,html body main[data-homepage-redesign] .presence-thesis h2,html body main[data-homepage-redesign] .cta-band h2{max-width:24ch;text-wrap:balance;}
-html body main[data-homepage-redesign] .hero-copy-only h1{font-size:clamp(2.25rem,3.2vw,3.5rem);line-height:1.02;letter-spacing:-.04em;}
+html body main[data-homepage-redesign] .hero-copy-only h1{font-size:clamp(2rem,2.7vw,2.75rem);line-height:1.02;letter-spacing:-.04em;}
 html body main[data-homepage-redesign] .section-head h2,html body main[data-homepage-redesign] .client-decision-bridge h2,html body main[data-homepage-redesign] .presence-thesis h2{font-size:clamp(1.9rem,2.7vw,3rem);line-height:1.08;letter-spacing:-.035em;}
 html body main[data-homepage-redesign] .fp-decision-system .fp-decision-inner,html body main[data-homepage-redesign] #services>.wrap{width:min(1200px,100%);}
 html body main[data-homepage-redesign] #services .card p>strong{display:none;}
@@ -7236,6 +7239,13 @@ html body main .contact-profile-feature.oeuvre-hero .contact-profile-heading{
 @media (max-width:680px){
   html body main .contact-profile-feature.oeuvre-hero .contact-profile-heading{font-size:clamp(1.8rem,7.6vw,2.15rem);}
 }
+
+/* MOBILE_H1_REFINEMENT_20261030: preserve canonical base typography contract. */
+@media (max-width:720px){
+  html body main h1{font-size:clamp(1.95rem,5vw,2.2rem);}
+  html body main[data-homepage-redesign] .hero-copy-only h1{font-size:clamp(1.95rem,5vw,2.2rem);}
+}
+/* /MOBILE_H1_REFINEMENT_20261030 */
 
 /* CONTACT_PROFILE_CONTACT_ROW_20261030 */
 html body main .contact-profile-contact{
