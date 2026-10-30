@@ -7208,3 +7208,11 @@ html body main .contact-profile-feature-actions .btn{text-decoration:none;}
 /* CONTACT_PROFILE_CONTACT_DETAILS_20261030 */
 html body main .contact-profile-contact{margin-top:12px;color:var(--bn-text-muted,#585858);font-size:.94rem;line-height:1.55;}html body main .contact-profile-contact p{margin:0;max-width:78ch;}html body main .contact-profile-contact a{color:inherit;text-underline-offset:.18em;overflow-wrap:anywhere;}html body main .contact-profile-contact strong{color:var(--bn-text,#1d1d1f);}
 /* /CONTACT_PROFILE_CONTACT_DETAILS_20261030 */
+
+
+/* Contact profile blocks preserve profile-hero visual hierarchy while remaining subordinate to the Contact page H1. */
+html body main .contact-profile-feature.oeuvre-hero .contact-profile-heading{max-width:24ch;font-size:clamp(2.35rem,3.35vw,2.85rem);line-height:1.08;letter-spacing:-.035em;margin-left:0;margin-right:auto;text-align:left;text-wrap:pretty;color:#202530;}
+@media (min-width:960px){html body main .contact-profile-feature.oeuvre-hero .contact-profile-heading{grid-column:1;grid-row:2;}}
+@media (max-width:900px){html body main .contact-profile-feature.oeuvre-hero .contact-profile-heading{font-size:clamp(2.18rem,5.05vw,2.7rem);}}
+@media (max-width:680px){html body main .contact-profile-feature.oeuvre-hero .contact-profile-heading{font-size:clamp(2.02rem,8.9vw,2.32rem);line-height:1.1;}}
+@media (max-width:400px){html body main .contact-profile-feature.oeuvre-hero .contact-profile-heading{font-size:2rem;}}
