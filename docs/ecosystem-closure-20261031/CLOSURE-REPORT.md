@@ -8,8 +8,8 @@ Timezone: Europe/Budapest. Only checked results are marked VERIFIED.
 |---|---|---|---|
 | Professional `deployment-sha.txt` | `2951c6ec…` (#131 merge) | `2951c6ec6f4693e490b2ece8083a6a63a824da30` | **VERIFIED LIVE** |
 | Professional main tip | same | `2951c6ec…` | Match |
-| ART `deployment-sha.txt` | `208ea219…` (#328 merge tip) | `868b3c3503de7f3ee15f1fa9071dbe5c4ab2f7e6` | **PENDING DEPLOY** |
-| ART main tip | `208ea219a233b2b79215573744d9e7ae7a9a747c` | tip ahead of live | Deploy run `41249222601` in progress |
+| ART `deployment-sha.txt` | `208ea219…` (#328 merge tip) | `868b3c3503de7f3ee15f1fa9071dbe5c4ab2f7e6` | **PENDING DEPLOY** (re-checked ~00:15 CET) |
+| ART main tip | `208ea219a233b2b79215573744d9e7ae7a9a747c` | tip ahead of live | Pages deploy `41249222601` still `in_progress` (~35+ min; historical ~58 min) |
 | ART deploy #327 (`81ddf89e`) | success | **cancelled** | Superseded by #328 merge deploy |
 
 ### Professional service titles/descriptions (live 2026-11-01 ~00:12 CET)
