@@ -7313,7 +7313,7 @@ html body main .contact-profile-contact strong{
 /* MOBILE_HOME_HERO_MONOGRAM_POSITION_20261030: known-good mobile position restored. */
 @media (max-width:720px){
   html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure .hero-center-logo{
-    top:calc(50% - 56px);
+    top:calc(50% - 20px);
     width:clamp(46.4px,6.4vw,94.4px);
     max-width:80%;
     height:auto;
