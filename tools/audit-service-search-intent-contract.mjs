@@ -74,11 +74,26 @@ for (const check of checks) {
 const measuredOwnerChecks = [
   ['hu/portre/index.html', /Portréfotózás Budapest/i],
   ['de-at/portrait/index.html', /Portraitfotografie Wien/i],
-  ['hu/muveszi-fotografia/index.html', /aktfotózás/i]
+  // Artistic-nude intent is owned by Ébredés on ART — Professional Artists & Performers
+  // pages must hand off, not re-claim aktfotózás as a commercial GSC owner signal.
+  ['hu/muveszi-fotografia/index.html', /https:\/\/www\.banhalmi\.art\/hu\/exhibitions\/ebredes\.html/i],
+  ['fine-art/index.html', /https:\/\/www\.banhalmi\.art\/exhibitions\/ebredes\.html/i],
+  ['de-at/fine-art/index.html', /https:\/\/www\.banhalmi\.art\/de-at\/exhibitions\/ebredes\.html/i]
 ];
 for (const [path, rx] of measuredOwnerChecks) {
   const html = fs.readFileSync(path, 'utf8');
   if (!rx.test(html)) errors.push(`${path}: measured GSC owner signal missing ${rx}`);
+}
+for (const path of ['fine-art/index.html', 'hu/muveszi-fotografia/index.html', 'de-at/fine-art/index.html']) {
+  const html = fs.readFileSync(path, 'utf8');
+  const serviceBlocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map((m) => m[1])
+    .filter((raw) => /"@type"\s*:\s*"Service"/.test(raw));
+  for (const raw of serviceBlocks) {
+    if (/(Nude Art|Artistic nude photography|Művészi akt|Művészi aktfotózás|Künstlerischer Akt|Künstlerische Aktfotografie)/i.test(raw)) {
+      errors.push(`${path}: Service JSON-LD must not claim artistic-nude commercial ownership`);
+    }
+  }
 }
 
 const protectedHomepageTitles = new Map([

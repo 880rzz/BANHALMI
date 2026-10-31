@@ -1,0 +1,15 @@
+source_url,pattern,sample_hrefs,notes,severity,verification
+https://www.banhalmiphotography.com/fine-art/,ebredes,https://www.banhalmi.art/exhibitions/ebredes.html;https://www.banhalmi.art/exhibitions/ebredes.html,found,OK,live-html
+https://www.banhalmiphotography.com/fine-art/,private-photography,https://www.banhalmi.art/private-photography.html;https://www.banhalmi.art/private-photography.html,found,OK,live-html
+https://www.banhalmiphotography.com/fine-art/,norbertbanhalmi.com,mailto:hello@norbertbanhalmi.com,http_hits=0 mailto_or_other=1,OK,live-html
+https://www.banhalmiphotography.com/fine-art/,requestaquote,/requestaquote/;/requestaquote/?service=fine-art&amp;art_type=performer;/requestaquote/?service=fine-art;/requestaquote/,found,OK,live-html
+https://www.banhalmiphotography.com/hu/muveszi-fotografia/,ebredes,https://www.banhalmi.art/hu/exhibitions/ebredes.html;https://www.banhalmi.art/hu/exhibitions/ebredes.html,found,OK,live-html
+https://www.banhalmiphotography.com/hu/muveszi-fotografia/,private-photography,https://www.banhalmi.art/hu/private-photography.html;https://www.banhalmi.art/hu/private-photography.html,found,OK,live-html
+https://www.banhalmiphotography.com/hu/muveszi-fotografia/,norbertbanhalmi.com,mailto:hello@norbertbanhalmi.com,http_hits=0 mailto_or_other=1,OK,live-html
+https://www.banhalmiphotography.com/de-at/fine-art/,ebredes,https://www.banhalmi.art/de-at/exhibitions/ebredes.html;https://www.banhalmi.art/de-at/exhibitions/ebredes.html,found,OK,live-html
+https://www.banhalmiphotography.com/de-at/fine-art/,private-photography,https://www.banhalmi.art/de-at/private-photography.html;https://www.banhalmi.art/de-at/private-photography.html,found,OK,live-html
+https://www.banhalmiphotography.com/de-at/fine-art/,norbertbanhalmi.com,mailto:hello@norbertbanhalmi.com,http_hits=0 mailto_or_other=1,OK,live-html
+https://blog.banhalmi.art/,banhalmiphotography.com,https://www.banhalmiphotography.com/hu/impresszum/;https://www.banhalmiphotography.com/hu/adatvedelem/;https://www.banhalmiphotography.com/hu/aszf/;https://www.banhalmiphotography.com/hu/gyik/;https://www.banhalmiphotography.com/hu,found,OK,live-html
+https://blog.banhalmi.art/,banhalmi.art,https://blog.banhalmi.art;https://blog.banhalmi.art/;https://blog.banhalmi.art/de;https://blog.banhalmi.art/en;https://blog.banhalmi.art/;https://blog.banhalmi.art/blog-feed.xml;https://blog.banhalmi.art;https://blog.banhalmi.art,found,OK,live-html
+https://blog.banhalmi.art/,norbertbanhalmi.com,,http_hits=0 mailto_or_other=0,OK,live-html
+https://blog.banhalmi.art/,ebredes,,missing,P2,live-html

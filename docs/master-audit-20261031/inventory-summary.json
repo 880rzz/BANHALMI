@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-10-31T21:41:25.311Z",
+  "outputs": {
+    "csv": "/tmp/master-audit/ecosystem-url-inventory.csv",
+    "redirect_sample": "/tmp/master-audit/redirect-sample.json",
+    "summary": "/tmp/master-audit/inventory-summary.json"
+  },
+  "sitemap_sources": {
+    "professional": [
+      "https://www.banhalmiphotography.com/sitemap.xml"
+    ],
+    "art": [
+      "https://www.banhalmi.art/sitemap.xml"
+    ],
+    "blog": [
+      "https://blog.banhalmi.art/sitemap.xml",
+      "https://blog.banhalmi.art/blog-posts-sitemap.xml",
+      "https://blog.banhalmi.art/blog-categories-sitemap.xml",
+      "https://blog.banhalmi.art/pages-sitemap.xml",
+      "https://blog.banhalmi.art/en_en-sitemap.xml",
+      "https://blog.banhalmi.art/en_en-blog-posts-sitemap.xml",
+      "https://blog.banhalmi.art/en_en-blog-categories-sitemap.xml",
+      "https://blog.banhalmi.art/en_en-pages-sitemap.xml",
+      "https://blog.banhalmi.art/de_de-sitemap.xml",
+      "https://blog.banhalmi.art/de_de-blog-posts-sitemap.xml",
+      "https://blog.banhalmi.art/de_de-blog-categories-sitemap.xml",
+      "https://blog.banhalmi.art/de_de-pages-sitemap.xml"
+    ]
+  },
+  "total_urls": 690,
+  "by_surface": {
+    "blog": 546,
+    "art": 87,
+    "professional": 57
+  },
+  "http_status_counts": {
+    "200": 690
+  },
+  "non_200_count": 0,
+  "missing_canonical_html_count": 0,
+  "indexable_yes_count": 690,
+  "redirect_sample_count": 40,
+  "redirect_404_after_chain": 2,
+  "p0_findings": [
+    {
+      "severity": "P0",
+      "type": "404_after_redirect",
+      "summary": "Legacy alias /privacy/ on norbertbanhalmi.com 308s to www.banhalmiphotography.com/privacy/ which returns 404; canonical live page is /privacy-policy/ (in sitemap).",
+      "source": "https://norbertbanhalmi.com/privacy/",
+      "final_url": "https://www.banhalmiphotography.com/privacy/",
+      "chain": [
+        { "url": "https://norbertbanhalmi.com/privacy/", "status": 308 },
+        { "url": "https://www.banhalmiphotography.com/privacy/", "status": 404 }
+      ]
+    },
+    {
+      "severity": "P0",
+      "type": "404_after_redirect",
+      "summary": "Same broken /privacy/ chain on www.norbertbanhalmi.com.",
+      "source": "https://www.norbertbanhalmi.com/privacy/",
+      "final_url": "https://www.banhalmiphotography.com/privacy/",
+      "chain": [
+        { "url": "https://www.norbertbanhalmi.com/privacy/", "status": 308 },
+        { "url": "https://www.banhalmiphotography.com/privacy/", "status": 404 }
+      ]
+    }
+  ],
+  "redirect_sample_notes": {
+    "required_paths_included": [
+      "/privacy/",
+      "/privacy-policy/",
+      "/hu/",
+      "/de-at/",
+      "/portrait/",
+      "/requestaquote/"
+    ],
+    "other_samples": "Remaining samples mirror professional sitemap paths on norbertbanhalmi.com (apex and www); 38/40 chains end HTTP 200."
+  }
+}

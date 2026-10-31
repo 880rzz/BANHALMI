@@ -3280,6 +3280,16 @@
       "source": "/eskuvoi-fotozas-tihany",
       "destination": "/hu/rendezvenyfotozas/",
       "permanent": true
+    },
+    {
+      "source": "/muveszi-aktfotozas/",
+      "destination": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+      "permanent": true
+    },
+    {
+      "source": "/aktfotozas/",
+      "destination": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+      "permanent": true
     }
   ]
 }
