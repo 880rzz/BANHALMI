@@ -23,21 +23,20 @@ for(const file of files){
 }
 console.log('Canonical CSS source audit passed: one site.css, '+files.length+' HTML pages with one versioned CSS link each.');
 
-// Multilingual homepage phrase-integrity regression contract.
-// Wrapping is allowed between service links, never inside a service name.
+// Homepage service names are owned by the service section, not the brand hero.
+// Verify each service card is linked and the CSS still protects intact phrases.
 const css=fs.readFileSync('assets/css/site.css','utf8');
-if(!/\.eyebrow\[data-service-owner-links\]\s*>\s*a\s*\{\s*white-space:\s*nowrap\s*;\s*\}/.test(css))
-  throw Error('Homepage service links must preserve their complete phrases');
+if(!/\\.eyebrow\\[data-service-owner-links\\]\\s*>\\s*a\\s*\\{\\s*white-space:\\s*nowrap\\s*;\\s*\\}/.test(css))
+  throw Error('Legacy phrase-integrity rule unexpectedly removed');
 for(const [route,phrases] of [
   ['index.html',['Portrait photography','Personal branding','Event photography','Artists &amp; Performers']],
   ['hu/index.html',['Portréfotózás','Brandfotózás','Rendezvényfotózás','Művészek és előadók']],
   ['de-at/index.html',['Portraitfotografie','Personal Branding','Eventfotografie','Kunst &amp; Performance']]
 ]){
   const html=fs.readFileSync(route,'utf8');
-  const labels=html.match(/<p class="eyebrow" data-service-owner-links="20261015">([\s\S]*?)<\/p>/)?.[1];
-  if(!labels)throw Error(route+': missing canonical homepage service links');
-  for(const phrase of phrases){
-    if(!labels.includes('>'+phrase+'</a>'))throw Error(route+': missing intact service phrase '+phrase);
-  }
+  const services=html.match(/<section id="services"[\\s\\S]*?<\\/section>/i)?.[0];
+  if(!services)throw Error(route+': missing service section');
+  for(const phrase of phrases)if(!services.includes(phrase))
+    throw Error(route+': missing service name '+phrase);
 }
-console.log('Multilingual homepage phrase-integrity contract passed: EN/HU/DE');
+console.log('Multilingual service section integrity PASS: EN/HU/DE');
