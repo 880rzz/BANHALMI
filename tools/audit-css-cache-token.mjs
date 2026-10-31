@@ -29,9 +29,9 @@ const css=fs.readFileSync('assets/css/site.css','utf8');
 if(!/\.eyebrow\[data-service-owner-links\]\s*>\s*a\s*\{\s*white-space:\s*nowrap\s*;\s*\}/.test(css))
   throw Error('Legacy phrase-integrity rule unexpectedly removed');
 for(const [route,phrases] of [
-  ['index.html',['Portrait photography','Personal branding','Event photography','Artists &amp; Performers']],
+  ['index.html',['Portrait photography','Brand Photography','Event Photography','Artists &amp; Performers']],
   ['hu/index.html',['Portréfotózás','Brandfotózás','Rendezvényfotózás','Művészek és előadók']],
-  ['de-at/index.html',['Portraitfotografie','Personal Branding','Eventfotografie','Kunst &amp; Performance']]
+  ['de-at/index.html',['Portraitfotografie','Brandfotografie','Eventfotografie','Kunstschaffende &amp; Performer:innen']]
 ]){
   const html=fs.readFileSync(route,'utf8');
   const services=html.match(/<section id="services"[\s\S]*?<\/section>/i)?.[0];
