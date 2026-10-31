@@ -5,38 +5,27 @@ import assert from 'node:assert/strict';
 // what BANHALMI offers, for whom, where and how to take the next step.
 // This is a content/IA safeguard, not a substitute for user comprehension tests.
 const variants = [
-  {
-    file: 'index.html', quote: '/requestaquote/',
-    service: [/executive portraits/i, /headshots/i, /event photography/i],
-    location: [/vienna/i, /budapest/i], audience: /leaders/i
-  },
-  {
-    file: 'hu/index.html', quote: '/hu/ajanlatkeres/',
-    service: [/vezetői portré/i, /headshot/i, /rendezvényfotózás/i],
-    location: [/bécsben/i, /budapesten/i], audience: /vezetőknek/i
-  },
-  {
-    file: 'de-at/index.html', quote: '/de-at/anfrage/',
-    service: [/executive-porträts/i, /business-headshots/i, /eventfotografie/i],
-    location: [/wien/i, /budapest/i], audience: /führungskräfte/i
-  }
+  {file:'index.html', quote:'/requestaquote/', services:['/portrait/','/lifestyle/','/event-photography/','/fine-art/'], location:/vienna/i, brand:/BANHALMI Photography/i},
+  {file:'hu/index.html', quote:'/hu/ajanlatkeres/', services:['/hu/portre/','/hu/brand/','/hu/rendezvenyfotozas/','/hu/muveszi-fotografia/'], location:/bécsben/i, brand:/BANHALMI Photography/i},
+  {file:'de-at/index.html', quote:'/de-at/anfrage/', services:['/de-at/portrait/','/de-at/brand/','/de-at/eventfotografie/','/de-at/fine-art/'], location:/wien/i, brand:/BANHALMI Photography/i}
 ];
-for (const {file, quote, service, location, audience} of variants) {
-  const html = fs.readFileSync(file, 'utf8');
-  const hero = html.match(/<section class="hero hero-copy-only\b[\s\S]*?<\/section>/i)?.[0];
-  assert.ok(hero, file + ': homepage copy hero missing');
-  const paragraphs = hero.match(/<\/h1>\s*<p>([^<]+)<\/p>\s*<p>([^<]+)<\/p>/i);
-  assert.ok(paragraphs, file + ': purpose and value must follow H1 directly');
-  const [purpose, value] = [paragraphs[1].trim(), paragraphs[2].trim()];
-  assert.ok(purpose.length <= 200, file + ': first visible explanation is too long');
-  assert.ok(value.length <= 210, file + ': second explanation is too long');
-  for (const pattern of [...service, ...location, audience]) {
-    assert.match(purpose, pattern, file + ': missing direct offer, audience or location');
-  }
-  const serviceRow = hero.match(/<p class="eyebrow" data-service-owner-links[^>]*>([\s\S]*?)<\/p>/i)?.[1];
-  assert.ok(serviceRow, file + ': service choices must appear before heading');
-  assert.ok((serviceRow.match(/<a\s/g) || []).length >= 4, file + ': four services must be directly discoverable');
-  assert.ok(hero.includes('href="' + quote + '"'), file + ': quote action missing');
-  assert.equal((hero.match(/class="btn btn-primary"/g) || []).length, 1, file + ': one primary action required');
-  console.log('Five-second homepage clarity PASS: ' + file + ' (' + purpose.length + ' / ' + value.length + ' characters)');
+for(const {file,quote,services,location,brand} of variants){
+  const html=fs.readFileSync(file,'utf8');
+  const hero=html.match(/<section class="hero hero-copy-only\b[\s\S]*?<\/section>/i)?.[0];
+  assert.ok(hero,file+': homepage copy hero missing');
+  const h1=hero.match(/<h1>([^<]+)<\/h1>/i)?.[1];
+  assert.ok(h1 && h1.length<95,file+': short brand H1 required');
+  const summary=hero.match(/<\/h1>\s*<p>([^<]+)<\/p>/i)?.[1];
+  assert.ok(summary && summary.length<=260,file+': concise brand explanation required');
+  assert.match(summary,brand,file+': brand missing');
+  assert.match(summary,location,file+': geography missing');
+  assert.match(summary,/50/,file+': team scale missing');
+  assert.match(summary,/20|húsz|zwanzig/i,file+': operating history missing');
+  assert.ok(hero.includes('href="'+quote+'"'),file+': quote CTA missing');
+  assert.equal((hero.match(/class="btn btn-primary"/g)||[]).length,1,file+': one primary CTA');
+  assert.ok(!/data-service-owner-links/.test(hero),file+': repeated service keywords in hero');
+  const section=html.match(/<section id="services"[\s\S]*?<\/section>/i)?.[0];
+  assert.ok(section,file+': services section missing');
+  for(const href of services)assert.ok(section.includes('href="'+href+'"'),file+': missing service landing link '+href);
+  console.log('Brand-first homepage clarity PASS: '+file);
 }
