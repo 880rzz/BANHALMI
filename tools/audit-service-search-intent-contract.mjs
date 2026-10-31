@@ -78,7 +78,10 @@ const measuredOwnerChecks = [
   // pages must hand off, not re-claim aktfotózás as a commercial GSC owner signal.
   ['hu/muveszi-fotografia/index.html', /https:\/\/www\.banhalmi\.art\/hu\/exhibitions\/ebredes\.html/i],
   ['fine-art/index.html', /https:\/\/www\.banhalmi\.art\/exhibitions\/ebredes\.html/i],
-  ['de-at/fine-art/index.html', /https:\/\/www\.banhalmi\.art\/de-at\/exhibitions\/ebredes\.html/i]
+  ['de-at/fine-art/index.html', /https:\/\/www\.banhalmi\.art\/de-at\/exhibitions\/ebredes\.html/i],
+  ['lifestyle/index.html', /Personal Brand Photography/i],
+  ['de-at/brand/index.html', /Personal Brand Fotografie Wien/i],
+  ['event-photography/index.html', /Event Photographer Budapest/i]
 ];
 for (const [path, rx] of measuredOwnerChecks) {
   const html = fs.readFileSync(path, 'utf8');
