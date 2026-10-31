@@ -1,0 +1,10 @@
+property_or_page,window_start,window_end,clicks,impressions,ctr,avg_position,notes,source,fresh_api_pull
+sc-domain:banhalmiphotography.com,2026-07-31,2026-10-28,0,0,,,New primary domain post-migration; zero traffic not proof of indexing failure,user-verified-GSC-input-20261031,UNAVAILABLE_NO_GSC_API
+https://www.norbertbanhalmi.com/,2026-10-01,2026-10-28,41,16507,0.0025,3.63,Former professional domain 28d window,user-verified-GSC-input-20261031,UNAVAILABLE_NO_GSC_API
+https://www.norbertbanhalmi.com/ (HU home),2026-10-01,2026-10-28,22,15134,0.00145,,HU homepage; investigate high impressions/low CTR with query export (UNAVAILABLE in this run),user-verified-GSC-input-20261031,UNAVAILABLE_NO_GSC_API
+https://www.norbertbanhalmi.com/ (EN home),2026-10-01,2026-10-28,11,262,0.042,,EN homepage,user-verified-GSC-input-20261031,UNAVAILABLE_NO_GSC_API
+https://www.norbertbanhalmi.com/ (DE home),2026-10-01,2026-10-28,4,1053,0.0038,,DE homepage,user-verified-GSC-input-20261031,UNAVAILABLE_NO_GSC_API
+https://www.banhalmi.art/,2026-10-01,2026-10-28,57,741,0.0769,7.35,ART property,user-verified-GSC-input-20261031,UNAVAILABLE_NO_GSC_API
+https://www.banhalmi.art/ (HU home),2026-10-01,2026-10-28,24,176,0.1364,,ART HU homepage,user-verified-GSC-input-20261031,UNAVAILABLE_NO_GSC_API
+https://www.banhalmi.art/ (Ébredés EN),2026-10-01,2026-10-28,2,22,,10.27,Ébredés EN page,user-verified-GSC-input-20261031,UNAVAILABLE_NO_GSC_API
+https://blog.banhalmi.art/,2026-07-31,2026-10-28,15,661,0.0227,9.66,Blog property; 173 posts in sitemap; 49 URLs with impressions; query bánhalmi norbert 63 impr pos 4.76 across 9 competing pages,user-verified-GSC-input-20261031,UNAVAILABLE_NO_GSC_API

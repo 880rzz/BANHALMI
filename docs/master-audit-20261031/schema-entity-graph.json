@@ -1,0 +1,1654 @@
+{
+  "auditMeta": {
+    "auditedAt": "2026-10-31T21:42:51.013Z",
+    "method": "live HTML fetch + application/ld+json parse",
+    "pagesRequested": [
+      "https://www.banhalmiphotography.com/",
+      "https://www.banhalmiphotography.com/about/",
+      "https://www.banhalmiphotography.com/portrait/",
+      "https://www.banhalmi.art/",
+      "https://www.banhalmi.art/exhibitions/ebredes.html",
+      "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+      "https://www.banhalmi.art/de-at/exhibitions/ebredes.html",
+      "https://blog.banhalmi.art/",
+      "https://blog.banhalmi.art/en/post/dorothea-lange-migrant-mother-nipomo-1936-en",
+      "https://www.norbertbanhalmi.com/",
+      "https://www.norbertbanhalmi.com/about/"
+    ]
+  },
+  "wikidataVerification": {
+    "Q56391118": {
+      "verified": true,
+      "enLabel": "Norbert Banhalmi",
+      "entityType": "human"
+    },
+    "Q138425941": {
+      "verified": true,
+      "enLabel": "Norbert Banhalmi e.U.",
+      "entityType": "business"
+    },
+    "Q138717398": {
+      "verified": true,
+      "enLabel": "Euphoria – The Anatomy of Presence",
+      "entityType": "exhibition"
+    }
+  },
+  "wikidataUrlsSeenInSchema": [
+    "https://www.wikidata.org/wiki/Q138413557",
+    "https://www.wikidata.org/wiki/Q138416887",
+    "https://www.wikidata.org/wiki/Q138424838",
+    "https://www.wikidata.org/wiki/Q138425941",
+    "https://www.wikidata.org/wiki/Q138482177",
+    "https://www.wikidata.org/wiki/Q138717398",
+    "https://www.wikidata.org/wiki/Q56391118"
+  ],
+  "personById": {
+    "https://www.banhalmiphotography.com/about/": [
+      {
+        "page": "https://www.banhalmiphotography.com/",
+        "name": "Bánhalmi Norbert",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q56391118",
+          "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+          "https://cherrydeck.com/norbert.banhalmi"
+        ],
+        "email": "mailto:hello@norbertbanhalmi.com",
+        "url": "https://www.banhalmiphotography.com/about/"
+      },
+      {
+        "page": "https://www.banhalmiphotography.com/about/",
+        "name": "Bánhalmi Norbert",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q56391118",
+          "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+          "https://cherrydeck.com/norbert.banhalmi"
+        ],
+        "email": "mailto:hello@norbertbanhalmi.com",
+        "url": "https://www.banhalmiphotography.com/about/"
+      },
+      {
+        "page": "https://www.banhalmiphotography.com/portrait/",
+        "name": "Bánhalmi Norbert",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q56391118",
+          "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+          "https://cherrydeck.com/norbert.banhalmi"
+        ],
+        "email": "mailto:hello@norbertbanhalmi.com",
+        "url": "https://www.banhalmiphotography.com/about/"
+      },
+      {
+        "page": "https://www.banhalmi.art/",
+        "name": "Bánhalmi Norbert",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q56391118",
+          "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+          "https://www.linkedin.com/in/norbertbanhalmi/",
+          "https://www.instagram.com/norbert.banhalmi/",
+          "https://www.facebook.com/banhalmi.norbert",
+          "https://www.youtube.com/@norbert.banhalmi"
+        ],
+        "email": "mailto:hello@norbertbanhalmi.com",
+        "url": "https://www.banhalmiphotography.com/about/"
+      },
+      {
+        "page": "https://www.banhalmi.art/exhibitions/ebredes.html",
+        "name": "Bánhalmi Norbert",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q56391118",
+          "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+          "https://www.linkedin.com/in/norbertbanhalmi/",
+          "https://www.instagram.com/norbert.banhalmi/",
+          "https://www.facebook.com/banhalmi.norbert",
+          "https://www.youtube.com/@norbert.banhalmi"
+        ],
+        "email": "mailto:hello@norbertbanhalmi.com",
+        "url": "https://www.banhalmiphotography.com/about/"
+      },
+      {
+        "page": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+        "name": "Bánhalmi Norbert",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q56391118",
+          "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+          "https://www.linkedin.com/in/norbertbanhalmi/",
+          "https://www.instagram.com/norbert.banhalmi/",
+          "https://www.facebook.com/banhalmi.norbert",
+          "https://www.youtube.com/@norbert.banhalmi"
+        ],
+        "email": "mailto:hello@norbertbanhalmi.com",
+        "url": "https://www.banhalmiphotography.com/about/"
+      },
+      {
+        "page": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html",
+        "name": "Bánhalmi Norbert",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q56391118",
+          "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+          "https://www.linkedin.com/in/norbertbanhalmi/",
+          "https://www.instagram.com/norbert.banhalmi/",
+          "https://www.facebook.com/banhalmi.norbert",
+          "https://www.youtube.com/@norbert.banhalmi"
+        ],
+        "email": "mailto:hello@norbertbanhalmi.com",
+        "url": "https://www.banhalmiphotography.com/about/"
+      },
+      {
+        "page": "https://blog.banhalmi.art/",
+        "name": "Bánhalmi Norbert",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q56391118",
+          "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
+        ],
+        "url": "https://www.banhalmiphotography.com/about/"
+      },
+      {
+        "page": "https://blog.banhalmi.art/en/post/dorothea-lange-migrant-mother-nipomo-1936-en",
+        "name": "Bánhalmi Norbert",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q56391118",
+          "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
+        ],
+        "url": "https://www.banhalmiphotography.com/about/"
+      },
+      {
+        "page": "https://www.norbertbanhalmi.com/",
+        "name": "Bánhalmi Norbert",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q56391118",
+          "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+          "https://cherrydeck.com/norbert.banhalmi"
+        ],
+        "email": "mailto:hello@norbertbanhalmi.com",
+        "url": "https://www.banhalmiphotography.com/about/"
+      },
+      {
+        "page": "https://www.norbertbanhalmi.com/about/",
+        "name": "Bánhalmi Norbert",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q56391118",
+          "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+          "https://cherrydeck.com/norbert.banhalmi"
+        ],
+        "email": "mailto:hello@norbertbanhalmi.com",
+        "url": "https://www.banhalmiphotography.com/about/"
+      }
+    ],
+    "https://www.wikidata.org/wiki/Q124488292": [
+      {
+        "page": "https://www.banhalmiphotography.com/portrait/",
+        "name": "Péter Magyar",
+        "url": "https://www.wikidata.org/wiki/Q124488292"
+      }
+    ],
+    "https://www.norbertbanhalmi.com/about/": [
+      {
+        "page": "https://blog.banhalmi.art/",
+        "name": "Bánhalmi Norbert",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q56391118",
+          "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
+        ],
+        "url": "https://www.norbertbanhalmi.com/about/"
+      }
+    ]
+  },
+  "organizationNameVariants": [
+    "AmCham Austria @ https://amcham.at/members-list/",
+    "BANHALMI @ https://www.norbertbanhalmi.com/#organization",
+    "Banhalmi Norbert e.U. @ https://www.banhalmiphotography.com/#organization",
+    "Bánhalmi Norbert @ https://blog.banhalmi.art/en",
+    "Bánhalmi Norbert e.U. @ https://www.banhalmiphotography.com/#organization",
+    "HIPStudio @ https://www.hipstudio.hu/#organization",
+    "HIPStudio – Visual Identity & Presence Agency @ https://www.wikidata.org/wiki/Q138482177",
+    "MFVSZ — Magyar Fotóművészek Világszövetsége @ https://www.wikidata.org/wiki/Q138413557",
+    "Magyar Fotóművészek Világszövetsége @ https://www.mfvsz.com/hu/tagsag/",
+    "OM SYSTEM @ https://explore.omsystem.com/",
+    "Pannon Fényképészkör Egyesület @ https://fenykepeszkor.hu/",
+    "VIPACH – Vienna Photo Art & Creative Hub @ https://www.wikidata.org/wiki/Q138416887",
+    "WKO Berufsfotografie — Österreichische Fotografenkammer @ https://www.wikidata.org/wiki/Q138424838",
+    "WKO Wien — Landesinnung der Berufsfotografen @ https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40"
+  ],
+  "pages": {
+    "https://www.banhalmiphotography.com/": {
+      "fetchedVia": "photography-home.html",
+      "jsonLdBlocks": 3,
+      "entities": [
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.banhalmiphotography.com/about/",
+          "name": "Bánhalmi Norbert",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q56391118",
+            "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+            "https://cherrydeck.com/norbert.banhalmi"
+          ],
+          "email": "mailto:hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/about/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "Pannon Fényképészkör Egyesület",
+          "url": "https://fenykepeszkor.hu/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "WKO Wien — Landesinnung der Berufsfotografen",
+          "url": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "AmCham Austria",
+          "url": "https://amcham.at/members-list/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "Magyar Fotóművészek Világszövetsége",
+          "url": "https://www.mfvsz.com/hu/tagsag/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "OM SYSTEM",
+          "url": "https://explore.omsystem.com/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.banhalmiphotography.com/#organization",
+          "name": "Banhalmi Norbert e.U.",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138425941",
+            "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40",
+            "https://www.linkedin.com/company/banhalmi/",
+            "https://www.banhalmi.at/",
+            "https://www.banhalminorbert.hu/"
+          ],
+          "email": "hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmiphotography.com/#website",
+          "name": "BANHALMI | Norbert Banhalmi",
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmi.art/#website",
+          "name": "BANHALMI ART",
+          "url": "https://www.banhalmi.art/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138413557",
+          "name": "MFVSZ — Magyar Fotóművészek Világszövetsége",
+          "sameAs": "https://www.wikidata.org/wiki/Q138413557"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138424838",
+          "name": "WKO Berufsfotografie — Österreichische Fotografenkammer",
+          "sameAs": "https://www.wikidata.org/wiki/Q138424838"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138416887",
+          "name": "VIPACH – Vienna Photo Art & Creative Hub",
+          "sameAs": "https://www.wikidata.org/wiki/Q138416887",
+          "url": "https://www.vipach.at/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138482177",
+          "name": "HIPStudio – Visual Identity & Presence Agency",
+          "sameAs": "https://www.wikidata.org/wiki/Q138482177",
+          "url": "https://www.hipstudio.hu/"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Hayden Moore"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Carol Souya"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Becca Prior"
+        },
+        {
+          "types": [
+            "VisualArtwork"
+          ],
+          "id": "https://www.banhalmi.art/exhibitions/euforia.html#artwork",
+          "name": "EUFÓRIA — The Anatomy of Presence",
+          "sameAs": "https://www.wikidata.org/wiki/Q138717398",
+          "url": "https://www.banhalmi.art/exhibitions/euforia.html"
+        },
+        {
+          "types": [
+            "Service"
+          ],
+          "id": "https://www.banhalmiphotography.com/#visual-trust-partnership",
+          "name": "BANHALMI Strategic Visual Partnership"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmiphotography.com/#website",
+          "name": "BANHALMI",
+          "url": "https://www.banhalmiphotography.com/"
+        }
+      ]
+    },
+    "https://www.banhalmiphotography.com/about/": {
+      "fetchedVia": "photography-about.html",
+      "jsonLdBlocks": 4,
+      "entities": [
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.banhalmiphotography.com/about/",
+          "name": "Bánhalmi Norbert",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q56391118",
+            "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+            "https://cherrydeck.com/norbert.banhalmi"
+          ],
+          "email": "mailto:hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/about/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "Pannon Fényképészkör Egyesület",
+          "url": "https://fenykepeszkor.hu/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "WKO Wien — Landesinnung der Berufsfotografen",
+          "url": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "AmCham Austria",
+          "url": "https://amcham.at/members-list/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "Magyar Fotóművészek Világszövetsége",
+          "url": "https://www.mfvsz.com/hu/tagsag/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "OM SYSTEM",
+          "url": "https://explore.omsystem.com/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.banhalmiphotography.com/#organization",
+          "name": "Banhalmi Norbert e.U.",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138425941",
+            "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40",
+            "https://www.linkedin.com/company/banhalmi/",
+            "https://www.banhalmi.at/",
+            "https://www.banhalminorbert.hu/"
+          ],
+          "email": "hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmiphotography.com/#website",
+          "name": "BANHALMI | Norbert Banhalmi",
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmi.art/#website",
+          "name": "BANHALMI ART",
+          "url": "https://www.banhalmi.art/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138413557",
+          "name": "MFVSZ — Magyar Fotóművészek Világszövetsége",
+          "sameAs": "https://www.wikidata.org/wiki/Q138413557"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138424838",
+          "name": "WKO Berufsfotografie — Österreichische Fotografenkammer",
+          "sameAs": "https://www.wikidata.org/wiki/Q138424838"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138416887",
+          "name": "VIPACH – Vienna Photo Art & Creative Hub",
+          "sameAs": "https://www.wikidata.org/wiki/Q138416887",
+          "url": "https://www.vipach.at/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138482177",
+          "name": "HIPStudio – Visual Identity & Presence Agency",
+          "sameAs": "https://www.wikidata.org/wiki/Q138482177",
+          "url": "https://www.hipstudio.hu/"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Hayden Moore"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Carol Souya"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Becca Prior"
+        },
+        {
+          "types": [
+            "VisualArtwork"
+          ],
+          "id": "https://www.banhalmi.art/exhibitions/euforia.html#artwork",
+          "name": "EUFÓRIA — The Anatomy of Presence",
+          "sameAs": "https://www.wikidata.org/wiki/Q138717398",
+          "url": "https://www.banhalmi.art/exhibitions/euforia.html"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmiphotography.com/#website",
+          "name": "BANHALMI",
+          "url": "https://www.banhalmiphotography.com/"
+        }
+      ]
+    },
+    "https://www.banhalmiphotography.com/portrait/": {
+      "fetchedVia": "photography-portrait.html",
+      "jsonLdBlocks": 9,
+      "entities": [
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.banhalmiphotography.com/about/",
+          "name": "Bánhalmi Norbert",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q56391118",
+            "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+            "https://cherrydeck.com/norbert.banhalmi"
+          ],
+          "email": "mailto:hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/about/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "Pannon Fényképészkör Egyesület",
+          "url": "https://fenykepeszkor.hu/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "WKO Wien — Landesinnung der Berufsfotografen",
+          "url": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "AmCham Austria",
+          "url": "https://amcham.at/members-list/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "Magyar Fotóművészek Világszövetsége",
+          "url": "https://www.mfvsz.com/hu/tagsag/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "OM SYSTEM",
+          "url": "https://explore.omsystem.com/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.banhalmiphotography.com/#organization",
+          "name": "Banhalmi Norbert e.U.",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138425941",
+            "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40",
+            "https://www.linkedin.com/company/banhalmi/",
+            "https://www.banhalmi.at/",
+            "https://www.banhalminorbert.hu/"
+          ],
+          "email": "hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmiphotography.com/#website",
+          "name": "BANHALMI | Norbert Banhalmi",
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmi.art/#website",
+          "name": "BANHALMI ART",
+          "url": "https://www.banhalmi.art/"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q124488292",
+          "name": "Péter Magyar",
+          "url": "https://www.wikidata.org/wiki/Q124488292"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmiphotography.com/#website",
+          "name": "BANHALMI",
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "Service"
+          ],
+          "id": "https://www.banhalmiphotography.com/portrait/#service",
+          "name": "Headshots, Executive Portraits & C-Level Business Photography",
+          "url": "https://www.banhalmiphotography.com/portrait/"
+        },
+        {
+          "types": [
+            "Service"
+          ],
+          "name": "Professional Headshot Photography",
+          "url": "https://www.banhalmiphotography.com/portrait/#headshots"
+        },
+        {
+          "types": [
+            "Service"
+          ],
+          "name": "Executive Portrait Photography",
+          "url": "https://www.banhalmiphotography.com/portrait/#executive-portraits"
+        },
+        {
+          "types": [
+            "Service"
+          ],
+          "name": "C-Level Business Photography",
+          "url": "https://www.banhalmiphotography.com/portrait/#c-level-business-photography"
+        },
+        {
+          "types": [
+            "ImageGallery"
+          ],
+          "id": "https://www.banhalmiphotography.com/portrait/#image-gallery",
+          "name": "Portrait Photography | Executive, Editorial & Personal",
+          "url": "https://www.banhalmiphotography.com/portrait/"
+        },
+        {
+          "types": [
+            "Article"
+          ],
+          "id": "https://www.banhalmi.art/exhibitions/euforia.html#article",
+          "name": "EUFÓRIA — The Anatomy of Presence",
+          "url": "https://www.banhalmi.art/exhibitions/euforia.html"
+        }
+      ]
+    },
+    "https://www.banhalmi.art/": {
+      "fetchedVia": "banhalmi-art-home.html",
+      "jsonLdBlocks": 1,
+      "entities": [
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.banhalmiphotography.com/about/",
+          "name": "Bánhalmi Norbert",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q56391118",
+            "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+            "https://www.linkedin.com/in/norbertbanhalmi/",
+            "https://www.instagram.com/norbert.banhalmi/",
+            "https://www.facebook.com/banhalmi.norbert",
+            "https://www.youtube.com/@norbert.banhalmi"
+          ],
+          "email": "mailto:hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/about/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "OM SYSTEM",
+          "url": "https://explore.omsystem.com/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.banhalmiphotography.com/#organization",
+          "name": "Banhalmi Norbert e.U.",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138425941",
+            "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40"
+          ],
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmi.art/#website",
+          "name": "BANHALMI ART",
+          "url": "https://www.banhalmi.art/"
+        },
+        {
+          "types": [
+            "ImageGallery",
+            "ItemList"
+          ],
+          "id": "https://www.banhalmi.art/#gallery",
+          "name": "Best of — the reference gallery"
+        }
+      ]
+    },
+    "https://www.banhalmi.art/exhibitions/ebredes.html": {
+      "fetchedVia": "ebredes-en.html",
+      "jsonLdBlocks": 1,
+      "entities": [
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.banhalmiphotography.com/about/",
+          "name": "Bánhalmi Norbert",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q56391118",
+            "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+            "https://www.linkedin.com/in/norbertbanhalmi/",
+            "https://www.instagram.com/norbert.banhalmi/",
+            "https://www.facebook.com/banhalmi.norbert",
+            "https://www.youtube.com/@norbert.banhalmi"
+          ],
+          "email": "mailto:hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/about/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "OM SYSTEM",
+          "url": "https://explore.omsystem.com/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.banhalmiphotography.com/#organization",
+          "name": "Banhalmi Norbert e.U.",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138425941",
+            "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40"
+          ],
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmi.art/#website",
+          "name": "BANHALMI ART",
+          "url": "https://www.banhalmi.art/"
+        },
+        {
+          "types": [
+            "ExhibitionEvent"
+          ],
+          "id": "https://www.banhalmi.art/exhibitions/ebredes.html#exhibition",
+          "name": "Awakening — The New Beginning",
+          "url": "https://www.banhalmi.art/exhibitions/ebredes.html"
+        },
+        {
+          "types": [
+            "ImageGallery",
+            "ItemList"
+          ],
+          "id": "https://www.banhalmi.art/exhibitions/ebredes.html#gallery",
+          "name": "Awakening — The New Beginning"
+        },
+        {
+          "types": [
+            "Service"
+          ],
+          "id": "https://www.banhalmi.art/exhibitions/ebredes.html#artistic-nude-photography",
+          "name": "Artistic nude photography — Ébredés",
+          "url": "https://www.banhalmi.art/exhibitions/ebredes.html"
+        }
+      ]
+    },
+    "https://www.banhalmi.art/hu/exhibitions/ebredes.html": {
+      "fetchedVia": "www.banhalmi.art_hu_exhibitions_ebredes.html.html",
+      "jsonLdBlocks": 1,
+      "entities": [
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.banhalmiphotography.com/about/",
+          "name": "Bánhalmi Norbert",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q56391118",
+            "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+            "https://www.linkedin.com/in/norbertbanhalmi/",
+            "https://www.instagram.com/norbert.banhalmi/",
+            "https://www.facebook.com/banhalmi.norbert",
+            "https://www.youtube.com/@norbert.banhalmi"
+          ],
+          "email": "mailto:hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/about/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "OM SYSTEM",
+          "url": "https://explore.omsystem.com/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.banhalmiphotography.com/#organization",
+          "name": "Banhalmi Norbert e.U.",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138425941",
+            "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40"
+          ],
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmi.art/#website",
+          "name": "BANHALMI ART",
+          "url": "https://www.banhalmi.art/"
+        },
+        {
+          "types": [
+            "ExhibitionEvent"
+          ],
+          "id": "https://www.banhalmi.art/hu/exhibitions/ebredes.html#exhibition",
+          "name": "Ébredés — az Új kezdet",
+          "url": "https://www.banhalmi.art/hu/exhibitions/ebredes.html"
+        },
+        {
+          "types": [
+            "ImageGallery",
+            "ItemList"
+          ],
+          "id": "https://www.banhalmi.art/hu/exhibitions/ebredes.html#gallery",
+          "name": "Ébredés — az Új kezdet"
+        },
+        {
+          "types": [
+            "Service"
+          ],
+          "id": "https://www.banhalmi.art/hu/exhibitions/ebredes.html#artistic-nude-photography",
+          "name": "Művészi aktfotózás — Ébredés",
+          "url": "https://www.banhalmi.art/hu/exhibitions/ebredes.html"
+        }
+      ]
+    },
+    "https://www.banhalmi.art/de-at/exhibitions/ebredes.html": {
+      "fetchedVia": "www.banhalmi.art_de-at_exhibitions_ebredes.html.html",
+      "jsonLdBlocks": 1,
+      "entities": [
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.banhalmiphotography.com/about/",
+          "name": "Bánhalmi Norbert",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q56391118",
+            "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+            "https://www.linkedin.com/in/norbertbanhalmi/",
+            "https://www.instagram.com/norbert.banhalmi/",
+            "https://www.facebook.com/banhalmi.norbert",
+            "https://www.youtube.com/@norbert.banhalmi"
+          ],
+          "email": "mailto:hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/about/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "OM SYSTEM",
+          "url": "https://explore.omsystem.com/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.banhalmiphotography.com/#organization",
+          "name": "Banhalmi Norbert e.U.",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138425941",
+            "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40"
+          ],
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmi.art/#website",
+          "name": "BANHALMI ART",
+          "url": "https://www.banhalmi.art/"
+        },
+        {
+          "types": [
+            "ExhibitionEvent"
+          ],
+          "id": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html#exhibition",
+          "name": "Erwachen — Der neue Anfang",
+          "url": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
+        },
+        {
+          "types": [
+            "ImageGallery",
+            "ItemList"
+          ],
+          "id": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html#gallery",
+          "name": "Erwachen — Der neue Anfang"
+        },
+        {
+          "types": [
+            "Service"
+          ],
+          "id": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html#artistic-nude-photography",
+          "name": "Künstlerische Aktfotografie — Ébredés",
+          "url": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
+        }
+      ]
+    },
+    "https://blog.banhalmi.art/": {
+      "fetchedVia": "blog-root.html",
+      "jsonLdBlocks": 6,
+      "entities": [
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.banhalmiphotography.com/about/",
+          "name": "Bánhalmi Norbert",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q56391118",
+            "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
+          ],
+          "url": "https://www.banhalmiphotography.com/about/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.banhalmiphotography.com/#organization",
+          "name": "Bánhalmi Norbert e.U.",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138425941"
+          ],
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://blog.banhalmi.art/#website",
+          "name": "BANHALMI Blog",
+          "url": "https://blog.banhalmi.art/"
+        },
+        {
+          "types": [
+            "Blog"
+          ],
+          "id": "https://blog.banhalmi.art/#blog",
+          "name": "BANHALMI Blog",
+          "url": "https://blog.banhalmi.art/"
+        },
+        {
+          "types": [
+            "CreativeWork"
+          ],
+          "id": "https://blog.banhalmi.art/#hipstudio-founder-bridge",
+          "name": "BANHALMI HIPStudio founder bridge"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.hipstudio.hu/#organization",
+          "name": "HIPStudio",
+          "sameAs": "https://www.wikidata.org/wiki/Q138482177",
+          "url": "https://www.hipstudio.hu/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.norbertbanhalmi.com/#organization",
+          "name": "BANHALMI",
+          "url": "https://www.norbertbanhalmi.com/"
+        },
+        {
+          "types": [
+            "LocalBusiness"
+          ],
+          "name": "Bánhalmi Norbert | BANHALMI",
+          "url": "https://blog.banhalmi.art"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "name": "Bánhalmi Norbert",
+          "url": "https://blog.banhalmi.art"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.norbertbanhalmi.com/about/",
+          "name": "Bánhalmi Norbert",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q56391118",
+            "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
+          ],
+          "url": "https://www.norbertbanhalmi.com/about/"
+        }
+      ]
+    },
+    "https://blog.banhalmi.art/en/post/dorothea-lange-migrant-mother-nipomo-1936-en": {
+      "fetchedVia": "blog-post-en.html",
+      "jsonLdBlocks": 2,
+      "entities": [
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.banhalmiphotography.com/about/",
+          "name": "Bánhalmi Norbert",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q56391118",
+            "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
+          ],
+          "url": "https://www.banhalmiphotography.com/about/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.banhalmiphotography.com/#organization",
+          "name": "Bánhalmi Norbert e.U.",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138425941"
+          ],
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://blog.banhalmi.art/#website",
+          "name": "BANHALMI Blog",
+          "url": "https://blog.banhalmi.art/"
+        },
+        {
+          "types": [
+            "Blog"
+          ],
+          "id": "https://blog.banhalmi.art/#blog",
+          "name": "BANHALMI Blog",
+          "url": "https://blog.banhalmi.art/"
+        },
+        {
+          "types": [
+            "BlogPosting"
+          ],
+          "url": "https://blog.banhalmi.art/en/post/dorothea-lange-migrant-mother-nipomo-1936-en"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Bánhalmi Norbert "
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "Bánhalmi Norbert",
+          "url": "https://blog.banhalmi.art/en"
+        }
+      ]
+    },
+    "https://www.norbertbanhalmi.com/": {
+      "fetchedVia": "www.norbertbanhalmi.com_.html",
+      "jsonLdBlocks": 3,
+      "entities": [
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.banhalmiphotography.com/about/",
+          "name": "Bánhalmi Norbert",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q56391118",
+            "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+            "https://cherrydeck.com/norbert.banhalmi"
+          ],
+          "email": "mailto:hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/about/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "Pannon Fényképészkör Egyesület",
+          "url": "https://fenykepeszkor.hu/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "WKO Wien — Landesinnung der Berufsfotografen",
+          "url": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "AmCham Austria",
+          "url": "https://amcham.at/members-list/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "Magyar Fotóművészek Világszövetsége",
+          "url": "https://www.mfvsz.com/hu/tagsag/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "OM SYSTEM",
+          "url": "https://explore.omsystem.com/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.banhalmiphotography.com/#organization",
+          "name": "Banhalmi Norbert e.U.",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138425941",
+            "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40",
+            "https://www.linkedin.com/company/banhalmi/",
+            "https://www.banhalmi.at/",
+            "https://www.banhalminorbert.hu/"
+          ],
+          "email": "hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmiphotography.com/#website",
+          "name": "BANHALMI | Norbert Banhalmi",
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmi.art/#website",
+          "name": "BANHALMI ART",
+          "url": "https://www.banhalmi.art/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138413557",
+          "name": "MFVSZ — Magyar Fotóművészek Világszövetsége",
+          "sameAs": "https://www.wikidata.org/wiki/Q138413557"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138424838",
+          "name": "WKO Berufsfotografie — Österreichische Fotografenkammer",
+          "sameAs": "https://www.wikidata.org/wiki/Q138424838"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138416887",
+          "name": "VIPACH – Vienna Photo Art & Creative Hub",
+          "sameAs": "https://www.wikidata.org/wiki/Q138416887",
+          "url": "https://www.vipach.at/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138482177",
+          "name": "HIPStudio – Visual Identity & Presence Agency",
+          "sameAs": "https://www.wikidata.org/wiki/Q138482177",
+          "url": "https://www.hipstudio.hu/"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Hayden Moore"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Carol Souya"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Becca Prior"
+        },
+        {
+          "types": [
+            "VisualArtwork"
+          ],
+          "id": "https://www.banhalmi.art/exhibitions/euforia.html#artwork",
+          "name": "EUFÓRIA — The Anatomy of Presence",
+          "sameAs": "https://www.wikidata.org/wiki/Q138717398",
+          "url": "https://www.banhalmi.art/exhibitions/euforia.html"
+        },
+        {
+          "types": [
+            "Service"
+          ],
+          "id": "https://www.banhalmiphotography.com/#visual-trust-partnership",
+          "name": "BANHALMI Strategic Visual Partnership"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmiphotography.com/#website",
+          "name": "BANHALMI",
+          "url": "https://www.banhalmiphotography.com/"
+        }
+      ]
+    },
+    "https://www.norbertbanhalmi.com/about/": {
+      "fetchedVia": "www.norbertbanhalmi.com_about_.html",
+      "jsonLdBlocks": 4,
+      "entities": [
+        {
+          "types": [
+            "Person"
+          ],
+          "id": "https://www.banhalmiphotography.com/about/",
+          "name": "Bánhalmi Norbert",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q56391118",
+            "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
+            "https://cherrydeck.com/norbert.banhalmi"
+          ],
+          "email": "mailto:hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/about/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "Pannon Fényképészkör Egyesület",
+          "url": "https://fenykepeszkor.hu/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "WKO Wien — Landesinnung der Berufsfotografen",
+          "url": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "AmCham Austria",
+          "url": "https://amcham.at/members-list/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "Magyar Fotóművészek Világszövetsége",
+          "url": "https://www.mfvsz.com/hu/tagsag/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "name": "OM SYSTEM",
+          "url": "https://explore.omsystem.com/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.banhalmiphotography.com/#organization",
+          "name": "Banhalmi Norbert e.U.",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q138425941",
+            "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40",
+            "https://www.linkedin.com/company/banhalmi/",
+            "https://www.banhalmi.at/",
+            "https://www.banhalminorbert.hu/"
+          ],
+          "email": "hello@norbertbanhalmi.com",
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmiphotography.com/#website",
+          "name": "BANHALMI | Norbert Banhalmi",
+          "url": "https://www.banhalmiphotography.com/"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmi.art/#website",
+          "name": "BANHALMI ART",
+          "url": "https://www.banhalmi.art/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138413557",
+          "name": "MFVSZ — Magyar Fotóművészek Világszövetsége",
+          "sameAs": "https://www.wikidata.org/wiki/Q138413557"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138424838",
+          "name": "WKO Berufsfotografie — Österreichische Fotografenkammer",
+          "sameAs": "https://www.wikidata.org/wiki/Q138424838"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138416887",
+          "name": "VIPACH – Vienna Photo Art & Creative Hub",
+          "sameAs": "https://www.wikidata.org/wiki/Q138416887",
+          "url": "https://www.vipach.at/"
+        },
+        {
+          "types": [
+            "Organization"
+          ],
+          "id": "https://www.wikidata.org/wiki/Q138482177",
+          "name": "HIPStudio – Visual Identity & Presence Agency",
+          "sameAs": "https://www.wikidata.org/wiki/Q138482177",
+          "url": "https://www.hipstudio.hu/"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Hayden Moore"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Carol Souya"
+        },
+        {
+          "types": [
+            "Person"
+          ],
+          "name": "Becca Prior"
+        },
+        {
+          "types": [
+            "VisualArtwork"
+          ],
+          "id": "https://www.banhalmi.art/exhibitions/euforia.html#artwork",
+          "name": "EUFÓRIA — The Anatomy of Presence",
+          "sameAs": "https://www.wikidata.org/wiki/Q138717398",
+          "url": "https://www.banhalmi.art/exhibitions/euforia.html"
+        },
+        {
+          "types": [
+            "WebSite"
+          ],
+          "id": "https://www.banhalmiphotography.com/#website",
+          "name": "BANHALMI",
+          "url": "https://www.banhalmiphotography.com/"
+        }
+      ]
+    }
+  },
+  "identityConflicts": [
+    {
+      "kind": "multiple_person_ids",
+      "ids": [
+        "https://www.banhalmiphotography.com/about/",
+        "https://www.wikidata.org/wiki/Q124488292",
+        "https://www.norbertbanhalmi.com/about/"
+      ],
+      "detail": "More than one Person @id used across audited pages"
+    },
+    {
+      "kind": "cross_domain_person_id_split",
+      "norbertbanhalmi": [
+        {
+          "id": "https://www.norbertbanhalmi.com/about/",
+          "pages": [
+            "https://blog.banhalmi.art/"
+          ]
+        }
+      ],
+      "banhalmiphotography": [
+        {
+          "id": "https://www.banhalmiphotography.com/about/",
+          "pages": [
+            "https://www.banhalmiphotography.com/",
+            "https://www.banhalmiphotography.com/about/",
+            "https://www.banhalmiphotography.com/portrait/",
+            "https://www.banhalmi.art/",
+            "https://www.banhalmi.art/exhibitions/ebredes.html",
+            "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+            "https://www.banhalmi.art/de-at/exhibitions/ebredes.html",
+            "https://blog.banhalmi.art/",
+            "https://blog.banhalmi.art/en/post/dorothea-lange-migrant-mother-nipomo-1936-en",
+            "https://www.norbertbanhalmi.com/",
+            "https://www.norbertbanhalmi.com/about/"
+          ]
+        }
+      ],
+      "detail": "Person entity uses different canonical @id on norbertbanhalmi.com vs banhalmiphotography.com (no shared @id)"
+    }
+  ],
+  "crossSitePersonIds": {
+    "norbertbanhalmi_ids": [
+      "https://www.norbertbanhalmi.com/about/"
+    ],
+    "banhalmiphotography_ids": [
+      "https://www.banhalmiphotography.com/about/"
+    ]
+  },
+  "personEmailsSeen": [
+    "mailto:hello@norbertbanhalmi.com"
+  ],
+  "entityGraphSummary": {
+    "nodes": {
+      "person": {
+        "canonicalIdsObserved": [
+          "https://www.banhalmiphotography.com/about/",
+          "https://www.norbertbanhalmi.com/about/"
+        ],
+        "wikidata": "Q56391118",
+        "name": "Bánhalmi Norbert",
+        "email": "hello@norbertbanhalmi.com (Person uses mailto: prefix in most graphs)",
+        "sameAsVariants": {
+          "fullSocialSet": [
+            "Q56391118",
+            "hu.wikipedia",
+            "linkedin",
+            "instagram",
+            "facebook",
+            "youtube"
+          ],
+          "minimalSet": [
+            "Q56391118",
+            "hu.wikipedia",
+            "cherrydeck.com"
+          ],
+          "blogMinimal": [
+            "Q56391118",
+            "hu.wikipedia"
+          ]
+        }
+      },
+      "organization": {
+        "primaryId": "https://www.banhalmiphotography.com/#organization",
+        "alternateId": "https://www.norbertbanhalmi.com/#organization",
+        "wikidata": "Q138425941",
+        "legalNameVariants": [
+          "Banhalmi Norbert e.U.",
+          "Bánhalmi Norbert e.U.",
+          "BANHALMI"
+        ]
+      },
+      "websites": [
+        {
+          "id": "https://www.banhalmiphotography.com/#website",
+          "name": "BANHALMI | Norbert Banhalmi"
+        },
+        {
+          "id": "https://www.banhalmi.art/#website",
+          "name": "BANHALMI ART"
+        },
+        {
+          "id": "https://blog.banhalmi.art/#website",
+          "name": "BANHALMI Blog"
+        }
+      ],
+      "creativeWorks": [
+        {
+          "id": "https://www.banhalmi.art/exhibitions/euforia.html#artwork",
+          "type": "VisualArtwork",
+          "name": "EUFÓRIA — The Anatomy of Presence",
+          "sameAs": "Q138717398",
+          "note": "Q138717398 attached here, not on ebredes ExhibitionEvent pages"
+        },
+        {
+          "id": "https://blog.banhalmi.art/#hipstudio-founder-bridge",
+          "type": "CreativeWork",
+          "name": "BANHALMI HIPStudio founder bridge"
+        }
+      ],
+      "exhibitions": {
+        "ebredes": {
+          "en": {
+            "id": "https://www.banhalmi.art/exhibitions/ebredes.html#exhibition",
+            "name": "Awakening — The New Beginning",
+            "wikidataSameAs": null
+          },
+          "hu": {
+            "id": "https://www.banhalmi.art/hu/exhibitions/ebredes.html#exhibition",
+            "name": "Ébredés — az Új kezdet",
+            "wikidataSameAs": null
+          },
+          "de": {
+            "id": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html#exhibition",
+            "name": "Erwachen — Der neue Anfang",
+            "wikidataSameAs": null
+          }
+        }
+      },
+      "services": [
+        "https://www.banhalmiphotography.com/#visual-trust-partnership",
+        "https://www.banhalmiphotography.com/portrait/#headshots",
+        "https://www.banhalmiphotography.com/portrait/#executive-portraits",
+        "https://www.banhalmiphotography.com/portrait/#c-level-business-photography",
+        "https://www.banhalmi.art/exhibitions/ebredes.html#artistic-nude-photography (and locale variants)"
+      ]
+    },
+    "edges": [
+      "Person (Q56391118) -> worksFor/publisher refs -> Organization Q138425941 via same graph on commercial properties",
+      "banhalmi.art pages reference Person @id hosted on banhalmiphotography.com/about/",
+      "norbertbanhalmi.com HTML also points Person @id to banhalmiphotography.com/about/ (not local /about/)",
+      "blog.banhalmi.art additionally declares second Person @id at norbertbanhalmi.com/about/"
+    ]
+  },
+  "auditFindings": {
+    "P0": [
+      {
+        "id": "P0-person-dual-canonical-blog",
+        "title": "Dual Person @id on blog.banhalmi.art",
+        "evidence": "Same page graph includes Person @id https://www.banhalmiphotography.com/about/ and https://www.norbertbanhalmi.com/about/ (both Q56391118).",
+        "impact": "Search/knowledge systems may treat these as separate people or merge unpredictably."
+      },
+      {
+        "id": "P0-organization-duplicate-ids",
+        "title": "Duplicate Organization entities for one sole proprietorship",
+        "evidence": "blog.banhalmi.art maps Q138425941 to both https://www.banhalmiphotography.com/#organization and https://www.norbertbanhalmi.com/#organization with different names (e.U. vs BANHALMI).",
+        "impact": "Legal entity identity split across hostnames."
+      }
+    ],
+    "P1": [
+      {
+        "id": "P1-person-canonical-off-domain",
+        "title": "norbertbanhalmi.com pages use banhalmiphotography.com Person @id",
+        "evidence": "Live JSON-LD on https://www.norbertbanhalmi.com/ and /about/ sets Person @id to https://www.banhalmiphotography.com/about/.",
+        "impact": "Primary personal brand URL does not own its entity URI; weak sameAs closure for norbertbanhalmi.com."
+      },
+      {
+        "id": "P1-person-sameas-drift",
+        "title": "Inconsistent Person sameAs across properties",
+        "evidence": "banhalmi.art/ebredes use 6 sameAs links; photography/norbertbanhalmi home use cherrydeck-only extension; blog uses 2 links only.",
+        "impact": "Entity equivalence signals differ by URL."
+      },
+      {
+        "id": "P1-org-name-email-format",
+        "title": "Organization label and email format drift",
+        "evidence": "Banhalmi vs Bánhalmi e.U.; Organization email sometimes hello@ without mailto: on photography home.",
+        "impact": "Minor parsing/consistency risk for Organization Q138425941."
+      },
+      {
+        "id": "P1-q138717398-not-on-ebredes",
+        "title": "Q138717398 not linked from ebredes exhibition schema",
+        "evidence": "Wikidata Q138717398 verified live; schema sameAs appears on euforia VisualArtwork, while ebredes ExhibitionEvent nodes have no sameAs/identifier.",
+        "impact": "If Q138717398 is intended to represent Ébredés/ebredes, exhibition pages miss the Wikidata bridge (verify curatorial intent)."
+      }
+    ],
+    "P2": [
+      {
+        "id": "P2-blog-jsonld-block-count",
+        "title": "blog.banhalmi.art ships 6 JSON-LD blocks",
+        "evidence": "Multiple overlapping WebSite/Organization/Person declarations on homepage."
+      },
+      {
+        "id": "P2-portrait-subject-person",
+        "title": "Portrait page includes unrelated Person @id Q124488292",
+        "evidence": "Péter Magyar (Q124488292) appears as Person node on /portrait/ (likely testimonial/subject)."
+      }
+    ],
+    "P3": [
+      {
+        "id": "P3-photography-jsonld-triple-blocks",
+        "title": "banhalmiphotography.com home has 3 JSON-LD scripts",
+        "evidence": "Repeated graph fragments increase payload; not inherently invalid."
+      }
+    ]
+  }
+}

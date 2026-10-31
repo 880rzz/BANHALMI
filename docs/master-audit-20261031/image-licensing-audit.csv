@@ -1,0 +1,4 @@
+url_or_scope,claim,entity,target,language,evidence_type,status
+ecosystem-wide,Owner assertion: all images licensed through Google,ImageObject,n/a,all,licensing_assertion,REQUIRES_ASSET_LEVEL_VERIFICATION — Google Images licence badge ≠ grant of use rights
+https://www.banhalmi.art/exhibitions/ebredes.html,Ébredés exhibition images — copyright/creator expected Banhalmi,ImageObject,Ébredés EN,EN,exhibition_image,AUDIT_PARTIAL — verify license + acquireLicensePage per asset
+https://www.banhalmiphotography.com/fine-art/,Professional fine-art portfolio images — commercial service context,ImageObject,fine-art EN,EN,service_portfolio,Service schema nude categories removed 2026-10-31; licence URLs still require per-asset check

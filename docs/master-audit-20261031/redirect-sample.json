@@ -1,0 +1,606 @@
+{
+  "generated_at": "2026-10-31T21:41:25.311Z",
+  "sample_count": 40,
+  "results": [
+    {
+      "source": "https://norbertbanhalmi.com/privacy/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/privacy/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/privacy/",
+          "status": 404
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/privacy/",
+      "final_http_status": 404
+    },
+    {
+      "source": "https://www.norbertbanhalmi.com/privacy/",
+      "chain": [
+        {
+          "url": "https://www.norbertbanhalmi.com/privacy/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/privacy/",
+          "status": 404
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/privacy/",
+      "final_http_status": 404
+    },
+    {
+      "source": "https://norbertbanhalmi.com/privacy-policy/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/privacy-policy/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/privacy-policy/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/privacy-policy/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://www.norbertbanhalmi.com/privacy-policy/",
+      "chain": [
+        {
+          "url": "https://www.norbertbanhalmi.com/privacy-policy/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/privacy-policy/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/privacy-policy/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/hu/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/hu/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/hu/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/hu/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://www.norbertbanhalmi.com/hu/",
+      "chain": [
+        {
+          "url": "https://www.norbertbanhalmi.com/hu/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/hu/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/hu/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://www.norbertbanhalmi.com/de-at/",
+      "chain": [
+        {
+          "url": "https://www.norbertbanhalmi.com/de-at/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/portrait/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/portrait/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/portrait/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/portrait/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://www.norbertbanhalmi.com/portrait/",
+      "chain": [
+        {
+          "url": "https://www.norbertbanhalmi.com/portrait/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/portrait/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/portrait/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/requestaquote/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/requestaquote/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/requestaquote/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/requestaquote/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://www.norbertbanhalmi.com/requestaquote/",
+      "chain": [
+        {
+          "url": "https://www.norbertbanhalmi.com/requestaquote/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/requestaquote/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/requestaquote/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/about/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/about/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/about/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/about/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/accessibility/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/accessibility/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/accessibility/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/accessibility/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/archive/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/archive/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/archive/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/archive/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/case-studies/peter-magyar-portrait-2026/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/case-studies/peter-magyar-portrait-2026/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/case-studies/peter-magyar-portrait-2026/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/contact/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/contact/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/contact/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/contact/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/cookie-policy/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/cookie-policy/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/cookie-policy/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/cookie-policy/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/agb/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/agb/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/agb/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/agb/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/anfrage/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/anfrage/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/anfrage/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/anfrage/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/archiv/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/archiv/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/archiv/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/archiv/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/barrierefreiheit/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/barrierefreiheit/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/barrierefreiheit/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/barrierefreiheit/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/brand/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/brand/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/brand/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/brand/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/cookies/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/cookies/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/cookies/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/cookies/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/datenschutz/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/datenschutz/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/datenschutz/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/datenschutz/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/eventfotografie/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/eventfotografie/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/fallstudien/peter-magyar-portraet-2026/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/fallstudien/peter-magyar-portraet-2026/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/fallstudien/peter-magyar-portraet-2026/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/faq/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/faq/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/faq/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/faq/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/fine-art/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/fine-art/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/fine-art/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/fine-art/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/impressum/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/impressum/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/impressum/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/impressum/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/kontakt/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/kontakt/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/kontakt/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/kontakt/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/partner/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/partner/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/partner/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/partner/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/portrait/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/portrait/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/portrait/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/portrait/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/speier-viko/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/speier-viko/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/speier-viko/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/speier-viko/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/vertrauen/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/vertrauen/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/vertrauen/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/vertrauen/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/de-at/werk/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/de-at/werk/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/werk/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/de-at/werk/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/event-photography/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/event-photography/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/event-photography/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/event-photography/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/faq/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/faq/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/faq/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/faq/",
+      "final_http_status": 200
+    },
+    {
+      "source": "https://norbertbanhalmi.com/fine-art/",
+      "chain": [
+        {
+          "url": "https://norbertbanhalmi.com/fine-art/",
+          "status": 308
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/fine-art/",
+          "status": 200
+        }
+      ],
+      "final_url": "https://www.banhalmiphotography.com/fine-art/",
+      "final_http_status": 200
+    }
+  ]
+}

@@ -25,6 +25,46 @@
       "permanent": true
     },
     {
+      "source": "/privacy/",
+      "destination": "/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/hu/privacy/",
+      "destination": "/hu/adatvedelem/",
+      "permanent": true
+    },
+    {
+      "source": "/hu/privacy",
+      "destination": "/hu/adatvedelem/",
+      "permanent": true
+    },
+    {
+      "source": "/de-at/privacy/",
+      "destination": "/de-at/datenschutz/",
+      "permanent": true
+    },
+    {
+      "source": "/de-at/privacy",
+      "destination": "/de-at/datenschutz/",
+      "permanent": true
+    },
+    {
+      "source": "/de/privacy/",
+      "destination": "/de-at/datenschutz/",
+      "permanent": true
+    },
+    {
+      "source": "/de/privacy",
+      "destination": "/de-at/datenschutz/",
+      "permanent": true
+    },
+    {
       "source": "/quote/",
       "destination": "/requestaquote/",
       "permanent": true
@@ -3239,6 +3279,16 @@
     {
       "source": "/eskuvoi-fotozas-tihany",
       "destination": "/hu/rendezvenyfotozas/",
+      "permanent": true
+    },
+    {
+      "source": "/muveszi-aktfotozas/",
+      "destination": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
+      "permanent": true
+    },
+    {
+      "source": "/aktfotozas/",
+      "destination": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
       "permanent": true
     }
   ]

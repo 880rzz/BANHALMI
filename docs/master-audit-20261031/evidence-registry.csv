@@ -1,0 +1,5 @@
+source,claim,entity,target_page,language,evidence_type,status
+https://www.wikidata.org/wiki/Q56391118,Person identity Norbert Banhalmi / Bánhalmi Norbert,Person,https://www.banhalmiphotography.com/about/,EN/HU/DE,wikidata,VERIFIED
+https://www.wikidata.org/wiki/Q138425941,Professional organisation Norbert Banhalmi e.U.,Organization,https://www.banhalmiphotography.com/,EN/DE,wikidata,VERIFIED
+https://www.wikidata.org/wiki/Q138717398,EUFÓRIA exhibition / artwork entity,CreativeWork/Exhibition,https://www.banhalmi.art/exhibitions/euforia.html,EN,wikidata,VERIFIED
+https://firmen.wko.at/,WKO company listing referenced in schema sameAs,Organization,https://www.banhalmiphotography.com/,DE,institutional,PRESENT_IN_SCHEMA_NEEDS_URL_EXACT_LIVE_CHECK
