@@ -49,9 +49,9 @@ const canonicalServiceId = 'https://www.banhalmiphotography.com/#visual-trust-pa
 assert(corpus.includes(canonicalPersonId), `canonical Person ID missing: ${canonicalPersonId}`);
 
 const requiredHomepageCopy = {
-  'index.html': ['Portrait, brand and event photography — Vienna and Budapest.', 'The photograph is the means. Strategic visual positioning is the work.'],
-  'hu/index.html': ['Portré-, brand- és rendezvényfotózás — Bécs és Budapest.', 'A fénykép az eszköz. A munka a stratégiai vizuális pozicionálás.'],
-  'de-at/index.html': ['Porträt-, Brand- und Eventfotografie — Wien und Budapest.', 'Das Foto ist das Mittel. Die Arbeit ist strategische visuelle Positionierung.']
+  'index.html': ['Photography built around people. Backed by a team.', 'nearly 50 specialised photographers', 'developed over 20 years'],
+  'hu/index.html': ['Személyes látásmód. Egy teljes csapat biztonságával.', 'közel 50 különböző szakterületen dolgozó fotóst', 'húsz éve fejlesztett szakmai rendszerben'],
+  'de-at/index.html': ['Persönliche Bildsprache. Die Sicherheit eines ganzen Teams.', 'rund 50 spezialisierte Fotografinnen und Fotografen', 'über 20 Jahre entwickelten professionellen Servicesystem']
 };
 for (const [file, phrases] of Object.entries(requiredHomepageCopy)) {
   const body = visibleBody(read(file));
