@@ -11,9 +11,9 @@ const headings=file=>{
   };
 };
 const expected={
-  'index.html':{h1:'Portrait, brand and event photography — Vienna and Budapest.'},
-  'hu/index.html':{h1:'Portré-, brand- és rendezvényfotózás — Bécs és Budapest.'},
-  'de-at/index.html':{h1:'Porträt-, Brand- und Eventfotografie — Wien und Budapest.'},
+  'index.html':{h1:'Photography built around people. Backed by a team.'},
+  'hu/index.html':{h1:'Személyes látásmód. Egy teljes csapat biztonságával.'},
+  'de-at/index.html':{h1:'Persönliche Bildsprache. Die Sicherheit eines ganzen Teams.'},
   'portrait/index.html':{h1:'Business portraits for leaders and professionals.',h2:['Portraits for LinkedIn, websites, press and public profiles.','Choosing the main portrait for your profile']},
   'hu/portre/index.html':{h1:'Üzleti portrék vezetőknek és szakembereknek.',h2:['Portrék LinkedInhez, weboldalhoz, sajtóhoz és szakmai bemutatkozáshoz.','A fő portré kiválasztása']},
   'de-at/portrait/index.html':{h1:'Business-Porträts für Führungskräfte und Fachleute.',h2:['Porträts für LinkedIn, Website, Presse und berufliche Profile.','Das Hauptporträt auswählen']},
