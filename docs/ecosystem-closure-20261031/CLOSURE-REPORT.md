@@ -31,7 +31,7 @@
 | BANHALMI #130 / #131 | Wikidata + migration integrity, event gallery integrity, Vercel redirect statuses | **SUCCESS** |
 | BANHALMI #131 deploy | Actions run `41247984373` → **success** | **SUCCESS** |
 | ART #327 | Audit / live-links / palette / PageSpeed on merge | **SUCCESS** (deploy still in progress at report time) |
-| ART #328 | audit, live-links, lighthouse-mobile **pass**; desktop-regression **in progress** (Lighthouse desktop gate) | **CI PASSED — NOT MERGED** for required desktop gate until green |
+| ART #328 | audit, live-links, lighthouse-mobile, desktop-regression all **pass** (desktop ~41m) before merge | **SUCCESS** → merged |
 
 No merge performed on failing CI. No direct `main` commits.
 
@@ -42,7 +42,7 @@ No merge performed on failing CI. No direct `main` commits.
 | Surface | Probe | Observed SHA | vs main tip | Status |
 |---|---|---|---|---|
 | Professional | `https://www.banhalmiphotography.com/deployment-sha.txt` | `2951c6ec6f4693e490b2ece8083a6a63a824da30` | matches #131 merge | **VERIFIED LIVE** |
-| ART | `https://www.banhalmi.art/deployment-sha.txt` | `868b3c3503de7f3ee15f1fa9071dbe5c4ab2f7e6` | behind `81ddf89e…` (#327) | **MERGED — LIVE NOT VERIFIED** (Pages deploy in progress) |
+| ART | `https://www.banhalmi.art/deployment-sha.txt` | `868b3c3503de7f3ee15f1fa9071dbe5c4ab2f7e6` (pre-#327/#328 at first probe) | behind `208ea219…` | **MERGED — LIVE NOT VERIFIED** until Pages deploy for #327+#328 tip |
 | Blog | Wix | N/A (not git SHA) | — | Entity / Ébredés link regression below |
 
 Earlier reported SHAs (`c36177d9`, `868b3c35`) treated as historical only. Professional tip moved; ART tip still on pre-#327 until deploy finishes.
@@ -83,7 +83,7 @@ Mobile/desktop layout: covered by production deploy exhaustive browser QA + Ligh
 |---|---|---|---|---|
 | `/deployment-sha.txt` | 200 | still `868b3c35…` | behind main | **MERGED — LIVE NOT VERIFIED** for #327 |
 | `/`, `/hu/`, `/de-at/` | 200 | canonical + hreflang; professional bridge links | ok | **VERIFIED LIVE** (pre-slogan tip) |
-| Hero slogan EN/HU/DE | — | expected only after #328 deploy | not on live tip | **CI PASSED — NOT MERGED** / live pending |
+| Hero slogan EN/HU/DE | — | expected after #328 deploy (`Searching for presence…` / `Egész életemben a jelenlétet kerestem…` / `Ein Leben lang auf der Suche nach Präsenz…`) | not on live tip yet | **MERGED — LIVE NOT VERIFIED** |
 | `/exhibitions/ebredes.html` (+ HU/DE) | 200 | Ébredés pages; schema presence; pro links | ok | **VERIFIED LIVE** |
 | `/private-photography.html` (+ HU/DE) | 200 | ART ownership surface | ok | **VERIFIED LIVE** |
 
@@ -172,11 +172,10 @@ Missing legal proof list (no fabrication):
 
 ## 11. Open blockers
 
-1. **ART #328** — wait for desktop-regression SUCCESS → merge with `--match-head-commit` → deploy → exact-live slogan EN/HU/DE.  
-2. **ART #327 Pages deploy** — tip still `868b3c35`; wait for run `41247169551` then re-probe SHA.  
-3. **GSC fresh 28/90 exports** — **BLOCKED** without Wizard/API credentials.  
-4. **HUMAN LEGAL REVIEW** — GDPR processor/transfer/consent parity list above.  
-5. Optional: ART `#primaryimage` licence URL alignment (proven ownership already on node; no invented rights).
+1. **ART production tip** — #327+#328 merged to `208ea219…`; wait for Pages deploy → exact-live SHA + slogan EN/HU/DE.  
+2. **GSC fresh 28/90 exports** — **BLOCKED** without Wizard/API credentials.  
+3. **HUMAN LEGAL REVIEW** — GDPR processor/transfer/consent parity list above.  
+4. Optional: ART `#primaryimage` licence URL alignment (proven ownership already on node; no invented rights).
 
 ---
 
@@ -186,11 +185,10 @@ Missing legal proof list (no fabrication):
 |---|---|
 | BANHALMI required PRs #130/#131 | **MERGED** + Professional tip **VERIFIED LIVE** at `2951c6ec…` |
 | BANHALMI #129 | **CLOSED** (superseded) |
-| ART #327 | **MERGED** — production SHA **LIVE NOT VERIFIED** yet |
-| ART #328 | **CI PASSED — NOT MERGED** (desktop gate still running) |
+| ART #327 + #328 | **MERGED** to `208ea219…` — production SHA **LIVE NOT VERIFIED** pending Pages deploy |
 | GSC fresh measure | **BLOCKED** |
 | Image licence (Professional sample) | **VERIFIED LIVE** |
 | GDPR full compliance | **HUMAN LEGAL REVIEW** (technical privacy pages live) |
 | Wix Ébredés contextual links | **VERIFIED LIVE** |
 
-**Technical closure is partial:** Professional merge+deploy+exact-live for #130/#131 is complete. Full ecosystem technical closure requires ART deploy tip sync + #328 merge/live slogan verification. Legal and GSC items remain explicitly outside “done”.
+**Technical closure is partial:** Professional merge+deploy+exact-live for #130/#131 is complete; all listed ART PRs are merged. Full ecosystem technical closure requires ART deploy tip sync + slogan exact-live verification. Legal and GSC items remain explicitly outside “done”.
