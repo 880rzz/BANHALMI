@@ -25,6 +25,46 @@
       "permanent": true
     },
     {
+      "source": "/privacy/",
+      "destination": "/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/hu/privacy/",
+      "destination": "/hu/adatvedelem/",
+      "permanent": true
+    },
+    {
+      "source": "/hu/privacy",
+      "destination": "/hu/adatvedelem/",
+      "permanent": true
+    },
+    {
+      "source": "/de-at/privacy/",
+      "destination": "/de-at/datenschutz/",
+      "permanent": true
+    },
+    {
+      "source": "/de-at/privacy",
+      "destination": "/de-at/datenschutz/",
+      "permanent": true
+    },
+    {
+      "source": "/de/privacy/",
+      "destination": "/de-at/datenschutz/",
+      "permanent": true
+    },
+    {
+      "source": "/de/privacy",
+      "destination": "/de-at/datenschutz/",
+      "permanent": true
+    },
+    {
       "source": "/quote/",
       "destination": "/requestaquote/",
       "permanent": true
