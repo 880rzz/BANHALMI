@@ -5782,8 +5782,11 @@ html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure:
    sweep lower in the artwork, and remove the oversized white handoff before
    the homepage positioning copy. */
 @media (max-width:720px){
-  html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-center-logo{
-    top:46%;
+  html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure .hero-center-logo{
+    top:62%;
+    width:clamp(46.4px,6.4vw,94.4px);
+    max-width:80%;
+    height:auto;
   }
   html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-signature-line{
     top:56%;
@@ -7301,13 +7304,4 @@ html body main .contact-profile-contact strong{
 }
 /* /CONTACT_PROFILE_CONTACT_ROW_20261030 */
 
-/* MOBILE_HOME_HERO_MONOGRAM_POSITION_20261030: raise only the homepage monogram on compact screens. */
-@media (max-width:720px){
-  html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure .hero-center-logo{
-    top:62%;
-    width:clamp(46.4px,6.4vw,94.4px);
-    max-width:80%;
-    height:auto;
-  }
-}
-/* /MOBILE_HOME_HERO_MONOGRAM_POSITION_20261030 */
+
