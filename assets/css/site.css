@@ -7304,7 +7304,7 @@ html body main .contact-profile-contact strong{
 /* MOBILE_HOME_HERO_MONOGRAM_POSITION_20261030: raise only the homepage monogram on compact screens. */
 @media (max-width:720px){
   html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-figure .hero-center-logo{
-    top:calc(50% - 24px);
+    top:62%;
     width:clamp(46.4px,6.4vw,94.4px);
     max-width:80%;
     height:auto;
