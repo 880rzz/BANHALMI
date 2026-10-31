@@ -45,7 +45,7 @@ No merge performed on failing CI. No direct `main` commits.
 | ART | `https://www.banhalmi.art/deployment-sha.txt` | `868b3c3503de7f3ee15f1fa9071dbe5c4ab2f7e6` (pre-#327/#328 at first probe) | behind `208ea219…` | **MERGED — LIVE NOT VERIFIED** until Pages deploy for #327+#328 tip |
 | Blog | Wix | N/A (not git SHA) | — | Entity / Ébredés link regression below |
 
-Earlier reported SHAs (`c36177d9`, `868b3c35`) treated as historical only. Professional tip moved; ART tip still on pre-#327 until deploy finishes.
+Earlier reported SHAs (`c36177d9`, `868b3c35`) treated as historical only. Professional tip moved to `2951c6ec…`. ART tip still on `868b3c35…` until Pages deploy for `208ea219…` finishes.
 
 ---
 
