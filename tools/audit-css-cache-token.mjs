@@ -37,7 +37,7 @@ for(const [route,phrases] of [
   const labels=html.match(/<p class="eyebrow" data-service-owner-links="20261015">([\s\S]*?)<\/p>/)?.[1];
   if(!labels)throw Error(route+': missing canonical homepage service links');
   for(const phrase of phrases){
-    if(!labels.includes('>'+phrase.replace(/&(?!nbsp;)/g,'&amp;')+'</a>'))throw Error(route+': missing intact service phrase '+phrase);
+    if(!labels.includes('>'+phrase+'</a>'))throw Error(route+': missing intact service phrase '+phrase);
   }
 }
 console.log('Multilingual homepage phrase-integrity contract passed: EN/HU/DE');
