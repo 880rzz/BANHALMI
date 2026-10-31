@@ -29,9 +29,9 @@ const css=fs.readFileSync('assets/css/site.css','utf8');
 if(!/\.eyebrow\[data-service-owner-links\]\s*>\s*a\s*\{\s*white-space:\s*nowrap\s*;\s*\}/.test(css))
   throw Error('Homepage service links must preserve their complete phrases');
 for(const [route,phrases] of [
-  ['index.html',['Portrait photography','Personal branding','Event photography','Artists &amp; Performers']],
-  ['hu/index.html',['Portréfotózás','Brandfotózás','Rendezvényfotózás','Művészek és előadók']],
-  ['de-at/index.html',['Portraitfotografie','Personal Branding','Eventfotografie','Kunst &amp; Performance']]
+  ['index.html',['Portrait&nbsp;photography','Personal&nbsp;branding','Event&nbsp;photography','Artists&nbsp;&amp;&nbsp;Performers']],
+  ['hu/index.html',['Portréfotózás','Brandfotózás','Rendezvényfotózás','Művészek&nbsp;és&nbsp;előadók']],
+  ['de-at/index.html',['Portraitfotografie','Personal&nbsp;Branding','Eventfotografie','Kunst&nbsp;&amp;&nbsp;Performance']]
 ]){
   const html=fs.readFileSync(route,'utf8');
   const labels=html.match(/<p class="eyebrow" data-service-owner-links="20261015">([\s\S]*?)<\/p>/)?.[1];
