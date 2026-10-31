@@ -107,3 +107,16 @@ Only items above with live or registry-verified status are marked VERIFIED. Bot-
 - Adding Azahriah IMGKG node without a verified image metadata ledger entry.
 - Creating a new evidence database or claim graph product.
 - Declaring GDPR legal review complete (remains human legal ownership).
+
+
+## Follow-up from evidence + schema inventory (2026-11-01)
+
+Open gaps recorded for later targeted remediation — **not** fixed in this PR (would require cross-page JSON-LD harden coordination):
+
+1. **Person `sameAs` drift** — Professional HTML includes Cherrydeck; ART HTML uses Instagram/LinkedIn/Facebook/YouTube. Keep identity `sameAs` limited to true identity sources; social profiles should stay typed (e.g. `sameAs` vs `subjectOf` / contact authority) per existing contracts.
+2. **Founder/affiliation graph asymmetry** — Professional home/about expand VIPACH (Q138416887), HIPStudio (Q138482177), Rege (Q138414682); ART pages currently affiliation OM SYSTEM only. Prefer shared harden projection over page-by-page duplication.
+3. **`memberOf` placement tension** — HTML Person graphs list AmCham/WKO; some machine contracts assign chamber membership to Organization. Resolve in one authority pass; do not invent a second membership registry.
+4. **Blog dual Person `@id`** — master-audit notes `norbertbanhalmi.com/about/` alongside photography about `@id` (blog property). Out of scope for ART/Professional HTML in this PR.
+5. **Claim confidence corrections** — `C-1999-PRACTICE`, `C-VIPACH-FOUNDER`, `C-HIPSTUDIO` downgraded to PARTIALLY VERIFIED; `C-OM-SYSTEM` upgraded to VERIFIED with MILC Club / Bridges citations. Network ~50 remains PARTIALLY VERIFIED (first-party wording only).
+
+No parallel evidence system was added.
