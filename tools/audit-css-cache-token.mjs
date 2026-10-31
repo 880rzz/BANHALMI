@@ -26,7 +26,7 @@ console.log('Canonical CSS source audit passed: one site.css, '+files.length+' H
 // Homepage service names are owned by the service section, not the brand hero.
 // Verify each service card is linked and the CSS still protects intact phrases.
 const css=fs.readFileSync('assets/css/site.css','utf8');
-if(!/\\.eyebrow\\[data-service-owner-links\\]\\s*>\\s*a\\s*\\{\\s*white-space:\\s*nowrap\\s*;\\s*\\}/.test(css))
+if(!/\.eyebrow\[data-service-owner-links\]\s*>\s*a\s*\{\s*white-space:\s*nowrap\s*;\s*\}/.test(css))
   throw Error('Legacy phrase-integrity rule unexpectedly removed');
 for(const [route,phrases] of [
   ['index.html',['Portrait photography','Personal branding','Event photography','Artists &amp; Performers']],
@@ -34,7 +34,7 @@ for(const [route,phrases] of [
   ['de-at/index.html',['Portraitfotografie','Personal Branding','Eventfotografie','Kunst &amp; Performance']]
 ]){
   const html=fs.readFileSync(route,'utf8');
-  const services=html.match(/<section id="services"[\\s\\S]*?<\\/section>/i)?.[0];
+  const services=html.match(/<section id="services"[\s\S]*?<\/section>/i)?.[0];
   if(!services)throw Error(route+': missing service section');
   for(const phrase of phrases)if(!services.includes(phrase))
     throw Error(route+': missing service name '+phrase);
