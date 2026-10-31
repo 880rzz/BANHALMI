@@ -7359,7 +7359,7 @@ html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-brand-l
 }
 @media(max-width:720px){
   html body main[data-homepage-redesign="stage76"]>.hero-visual-only .hero-brand-lockup{
-    top:48%;
+    top:42%;
     width:min(84%,480px);
     gap:clamp(12px,3.5vw,18px);
   }
