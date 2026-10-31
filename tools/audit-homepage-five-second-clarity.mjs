@@ -20,7 +20,7 @@ for(const {file,quote,services,location,brand} of variants){
   assert.match(summary,brand,file+': brand missing');
   assert.match(summary,location,file+': geography missing');
   assert.match(summary,/50/,file+': team scale missing');
-  assert.match(summary,/20/,file+': operating history missing');
+  assert.match(summary,/20|húsz|zwanzig/i,file+': operating history missing');
   assert.ok(hero.includes('href="'+quote+'"'),file+': quote CTA missing');
   assert.equal((hero.match(/class="btn btn-primary"/g)||[]).length,1,file+': one primary CTA');
   assert.ok(!/data-service-owner-links/.test(hero),file+': repeated service keywords in hero');
