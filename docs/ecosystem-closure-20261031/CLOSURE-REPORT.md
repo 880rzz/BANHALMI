@@ -28,9 +28,15 @@ Timezone: Europe/Budapest. Only checked results are marked VERIFIED.
 
 **Status:** EN/HU/DE service-owner titles + descriptions **VERIFIED LIVE** on Professional for portrait / brand / event.
 
-### ART slogan / presence voice
+### ART slogan / presence voice (live 2026-11-01 ~00:36 CET)
 
-Live ART still on `868b3c35…`. Homepages currently show “Anatomy of Presence” family copy. Lifelong slogan from #328 requires deploy of `208ea219…` — **PENDING**.
+| Locale | Lifelong slogan checked | Status |
+|---|---|---|
+| EN `/` | Searching for presence my whole life | **VERIFIED LIVE** |
+| HU `/hu/` | Egész életemben a jelenlétet kerestem | **VERIFIED LIVE** |
+| DE `/de-at/` | Ein Leben lang auf der Suche nach Präsenz | **VERIFIED LIVE** |
+
+Archive “Anatomy of Presence” family wording may still appear as oeuvre/title context alongside the lifelong slogan — not treated as a deploy failure.
 
 ## GSC 28/90
 
@@ -62,13 +68,12 @@ Sampled live:
 
 ## Related open PRs (not required for this baseline)
 
-- ART intimate entity #329, evidence graph #330
+- ART intimate entity #329, evidence graph #330, content-edge inset #331
 - Professional evidence graph #136 (includes entity-authority pack); Vercel redirect aliases fail on build-rate-limit only
-- Intimate Pro handoff #135
+- Intimate Pro handoff #135; content-edge inset #137
 
 ## Blockers
 
-1. **ART production deploy** of `208ea219…` still in progress / live SHA lag.
-2. **GSC measurement** blocked without export credentials.
-3. **GDPR** requires human legal review.
-4. **ART primaryimage licence metadata** still open.
+1. **GSC measurement** blocked without export credentials.
+2. **GDPR** requires human legal review.
+3. **ART primaryimage licence metadata** still open.
