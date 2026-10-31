@@ -32,7 +32,7 @@
   --space-6:64px;
   --space-7:96px;
   --content-gutter:28px;
-  --content-gutter-mobile:20px;
+  --content-gutter-mobile:24px;
   --control-min:44px;
   --header-h:56px;
   /* SF stack — Display for headings, Text for body, as apple.com splits them */
@@ -2235,7 +2235,7 @@ main>section{padding:clamp(64px,7.5vw,104px) 0;}
 @media (max-width:680px){
   :root{--header-h:52px;}
   body{font-size:16px;line-height:1.5;letter-spacing:-.018em;}
-  .wrap{padding-inline:22px;}
+  .wrap{padding-inline:var(--content-gutter-mobile);}
   .nav{height:var(--header-h);min-height:var(--header-h);}
   .brand-word{font-size:.84rem;letter-spacing:.1em;}
   .brand-logo{width:22px;height:22px;}
@@ -2295,7 +2295,7 @@ main>section{padding:clamp(64px,7.5vw,104px) 0;}
   .grid-2{grid-template-columns:1fr;}
 }
 @media (max-width:400px){
-  .wrap{padding-inline:19px;}
+  .wrap{padding-inline:var(--content-gutter-mobile);}
   .brand-word{font-size:.8rem;}
   .lang-switch a{min-width:36px;padding:0 4px;font-size:.66rem;}
   h1,.hero.hero-image-first h1{font-size:2.12rem;}
@@ -3896,7 +3896,7 @@ p,li{line-height:1.58;}
   .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
 }
 @media (max-width:560px){
-  :root{--apple-section-space:52px;--apple-gutter:20px;--apple-card-gap:16px;}
+  :root{--apple-section-space:52px;--apple-gutter:var(--content-gutter-mobile);--apple-card-gap:16px;}
   body{font-size:16px;line-height:1.55;}
   h1{font-size:clamp(2.15rem,11vw,3rem);}
   h2{font-size:clamp(1.65rem,8vw,2.1rem);}
@@ -7320,3 +7320,42 @@ html body main .contact-profile-contact strong{
   }
 }
 /* /MOBILE_HOME_HERO_MONOGRAM_POSITION_20261030 */
+
+/* CONTENT_EDGE_INSET_20261101:START
+   Left-aligned copy shares one mobile inset. Earlier breakpoints had shrunk
+   .wrap padding to 19–22px and apple-gutter to 20px, so text sat against the
+   phone edge. A later html body main .wrap {padding-left/right:20px} rule at
+   max-width:720px also pinned main copy to 20px — override that with the
+   canonical --content-gutter-mobile floor and restore list start padding. */
+:root{
+  --apple-gutter:clamp(24px,4.2vw,56px);
+}
+html body .wrap,
+html body main .wrap{
+  padding-inline:max(var(--content-gutter-mobile),env(safe-area-inset-left,0px)) max(var(--content-gutter-mobile),env(safe-area-inset-right,0px));
+}
+@media (max-width:720px){
+  html body main .wrap{
+    padding-left:max(var(--content-gutter-mobile),env(safe-area-inset-left,0px));
+    padding-right:max(var(--content-gutter-mobile),env(safe-area-inset-right,0px));
+  }
+}
+@media (min-width:681px){
+  html body .wrap,
+  html body main .wrap{
+    padding-inline:clamp(24px,4vw,40px);
+  }
+}
+@media (min-width:901px){
+  html body .wrap,
+  html body main .wrap{
+    padding-inline:var(--content-gutter);
+  }
+}
+html body main :is(ul,ol){
+  padding-inline-start:1.25rem;
+}
+html body main :is(.linklist,.ticks,ul.socials,.footer-social-links,.nav-links,ul.nav-submenu-list){
+  padding-inline-start:0;
+}
+/* CONTENT_EDGE_INSET_20261101:END */
