@@ -29,15 +29,15 @@ const css=fs.readFileSync('assets/css/site.css','utf8');
 if(!/\.eyebrow\[data-service-owner-links\]\s*>\s*a\s*\{\s*white-space:\s*nowrap\s*;\s*\}/.test(css))
   throw Error('Homepage service links must preserve their complete phrases');
 for(const [route,phrases] of [
-  ['index.html',['Portrait&nbsp;photography','Personal&nbsp;branding','Event&nbsp;photography','Artists&nbsp;&amp;&nbsp;Performers']],
+  ['index.html',['Portrait&nbsp;photography','Personal&nbsp;branding','Event&nbsp;photography','Artists&nbsp;&&nbsp;Performers']],
   ['hu/index.html',['Portréfotózás','Brandfotózás','Rendezvényfotózás','Művészek&nbsp;és&nbsp;előadók']],
-  ['de-at/index.html',['Portraitfotografie','Personal&nbsp;Branding','Eventfotografie','Kunst&nbsp;&amp;&nbsp;Performance']]
+  ['de-at/index.html',['Portraitfotografie','Personal&nbsp;Branding','Eventfotografie','Kunst&nbsp;&&nbsp;Performance']]
 ]){
   const html=fs.readFileSync(route,'utf8');
   const labels=html.match(/<p class="eyebrow" data-service-owner-links="20261015">([\s\S]*?)<\/p>/)?.[1];
   if(!labels)throw Error(route+': missing canonical homepage service links');
   for(const phrase of phrases){
-    if(!labels.includes('>'+phrase+'</a>'))throw Error(route+': missing intact service phrase '+phrase);
+    if(!labels.includes('>'+phrase.replaceAll('&','&amp;')+'</a>'))throw Error(route+': missing intact service phrase '+phrase);
   }
 }
 console.log('Multilingual homepage phrase-integrity contract passed: EN/HU/DE');
