@@ -4195,6 +4195,17 @@ html body .site-footer .footer-accordion>summary{display:flex;align-items:center
   .banhalmi-contact-panel.is-compact .banhalmi-contact-fallback{display:block}
 }
 @media(prefers-reduced-motion:no-preference){.banhalmi-contact-panel{animation:banhalmiDockIn .16s ease-out}@keyframes banhalmiDockIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}
+/* Never let Contact compete with quote sticky price, menu, lightbox or tip dialogs.
+   Specificity beats the base .banhalmi-contact-dock rule without priority-debt overrides. */
+html.nav-open .banhalmi-contact-dock,
+body.info-modal-open .banhalmi-contact-dock,
+body:has(.universal-lightbox.open) .banhalmi-contact-dock,
+body:has(.age-verification-dialog.open) .banhalmi-contact-dock,
+body:has(form[data-smart-quote]) .banhalmi-contact-dock,
+body:has([data-quote-summary]) .banhalmi-contact-dock{
+  visibility:hidden;
+  pointer-events:none;
+}
 /* BANHALMI-CONTACT-DOCK-V1:END */
 
 /* CLS-ROOT-CAUSE-CLOSURE-20260920
