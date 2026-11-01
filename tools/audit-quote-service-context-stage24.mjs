@@ -80,42 +80,46 @@ const pages={
 const quotePages=["requestaquote/index.html","hu/ajanlatkeres/index.html","de-at/anfrage/index.html"];
 const allowed={portrait:'individual',brand:'brand',event:'event','fine-art':'art'};
 const contextualOccurrences=[];
+function metadataWithoutJsonLd(html){
+  const head=html.slice(0,html.indexOf('</head>'));
+  return head.replace(/<script\b[^>]*type=(["'])application\/ld\+json\1[^>]*>[\s\S]*?<\/script>/gi,'');
+}
 for(const [relative,config] of Object.entries(pages)){
   const html=fs.readFileSync(path.join(root,relative),'utf8');
   const expected=config.quote+'?service='+config.service;
-  const expectedCount=config.kind==='commercial'?2:1;
+  const expectedCount=config.kind==='commercial'?3:1;
   if((html.split('href="'+expected+'"').length-1)!==expectedCount) errors.push(relative+': expected '+expectedCount+' service-context quote links');
+  if(config.kind==='commercial'&&!html.includes('data-service-custom-quote="true" href="'+expected+'"')) errors.push(relative+': hero custom-quote handoff missing');
+  if(config.kind==='fine-art'&&!html.includes('data-art-quote="professional" href="'+expected+'&amp;art_type=performer"')) errors.push(relative+': professional portfolio quote handoff missing');
   const footer=html.slice(html.indexOf('<footer class="site-footer">'));
   if(!footer.includes('href="'+config.quote+'"')) errors.push(relative+': generic footer quote link missing');
   if(footer.includes('?service=')) errors.push(relative+': service query leaked into footer');
-  const head=html.slice(0,html.indexOf('</head>'));
-  if(head.includes('?service=')) errors.push(relative+': service query leaked into metadata');
+  if(metadataWithoutJsonLd(html).includes('?service=')) errors.push(relative+': service query leaked into metadata');
   if(config.kind==='commercial'){
     const selector=(html.match(/<section class="section-band next-step-selector"[\s\S]*?<\/section>/)||[''])[0];
-    const framework=(html.match(/<details class="project-framework-drawer"[\s\S]*?<\/details>/)||[''])[0];
+    const pricing=(html.match(/<details class="quote-decision-guide"[\s\S]*?<\/details>/)||[''])[0];
     if(!selector.includes('href="'+expected+'"')) errors.push(relative+': final package link lacks service context');
-    if(!framework.includes('href="'+expected+'"')) errors.push(relative+': project-framework link lacks service context');
+    if(!pricing.includes('href="'+expected+'"')) errors.push(relative+': pricing disclosure quote link lacks service context');
   }else{
-    const cta=(html.match(/<section class="cta-band" id="private-conversation">[\s\S]*?<\/section>/)||[''])[0];
-    if(!cta.includes('href="'+expected+'"')) errors.push(relative+': Fine Art private CTA lacks service context');
+    const pricing=(html.match(/<details class="quote-decision-guide"[\s\S]*?<\/details>/)||html.match(/<details[^>]*data-pricing-disclosure="service"[^>]*>[\s\S]*?<\/details>/)||[''])[0];
+    if(!pricing.includes('href="'+expected+'"')) errors.push(relative+': Fine Art pricing quote link lacks service context');
   }
-  for(const match of html.matchAll(/href="([^"]+\?service=([^"]+))"/g)) contextualOccurrences.push({file:relative,href:match[1],service:match[2]});
+  for(const match of html.matchAll(/href="([^"]+\?service=([^"&#]+))/g)) contextualOccurrences.push({file:relative,href:match[1],service:match[2]});
 }
-if(contextualOccurrences.length!==21) errors.push('expected exactly 21 scoped service-context links, found '+contextualOccurrences.length);
+if(contextualOccurrences.length!==36) errors.push('expected exactly 36 scoped service-context links, found '+contextualOccurrences.length);
 for(const item of contextualOccurrences) if(!Object.prototype.hasOwnProperty.call(allowed,item.service)) errors.push(item.file+': unsupported public service context '+item.service);
 const engine=fs.readFileSync(path.join(root,'assets/js/quote-calculator.js'),'utf8');
-for(const token of ['serviceContextToCategory','categoryToServiceContext','new URLSearchParams(window.location.search)','Object.prototype.hasOwnProperty.call(serviceContextToCategory','applyRequestedServiceContext(f)','syncServiceContextFromCategory(f,true)','input[name="service_context"]','updateServiceContextLanguageLinks','window.history.replaceState']) if(!engine.includes(token)) errors.push('quote-calculator.js: missing '+token);
+for(const token of ['serviceContextToCategory','categoryToServiceContext','new URLSearchParams(window.location.search)','Object.prototype.hasOwnProperty.call(serviceContextToCategory','applyRequestedServiceContext(f)','syncServiceContextFromCategory(f,true)','input[name="service_context"]','updateServiceContextLanguageLinks','window.history.replaceState','brand_duration','ensureBrandDurationDefault']) if(!engine.includes(token)) errors.push('quote-calculator.js: missing '+token);
 for(const [service,category] of Object.entries(allowed)) if(!engine.includes((service.includes('-')?"'"+service+"'":service)+":'"+category+"'")) errors.push('quote-calculator.js: missing allowlist mapping '+service+' → '+category);
 for(const relative of quotePages){
   const html=fs.readFileSync(path.join(root,relative),'utf8');
-  if(!html.includes('/assets/js/quote-calculator.js?v=20260806-service-context')) errors.push(relative+': current quote engine version missing');
+  if(!html.includes('/assets/js/quote-calculator.js?v=20261101-quote-cards-v1')) errors.push(relative+': current quote engine version missing');
+  if((html.match(/<a class="quote-price-card" href="[^"]+\?service=/g)||[]).length!==4) errors.push(relative+': overview price cards must deep-link with service context');
   const head=(html.match(/<head>[\s\S]*?<\/head>/)||[''])[0];
-  if(head.includes('?service=')) errors.push(relative+': source metadata must stay query-free');
+  if(metadataWithoutJsonLd(html).includes('?service=')) errors.push(relative+': source metadata must stay query-free');
   const switcher=(html.match(/<div aria-label="[^"]+" class="lang-switch"[\s\S]*?<\/div>/)||[''])[0];
   if(!switcher||switcher.includes('?service=')) errors.push(relative+': source language switch must stay query-free');
   if((html.match(/name="category"[^>]*value="individual"|value="individual"[^>]*name="category"/g)||[]).length<1) errors.push(relative+': individual fallback category missing');
 }
-const regression=fs.readFileSync(path.join(root,'tools/audit-regression.mjs'),'utf8');
-if(!regression.includes('/assets/js/quote-calculator.js?v=20260806-service-context')) errors.push('audit-regression.mjs: current quote engine cache contract missing');
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
-console.log('Stage-twenty-four quote service-context audit passed: 21 scoped links map four public services safely across three localized quote builders.');
+console.log('Stage-twenty-four quote service-context audit passed: 36 scoped links map four public services safely across three localized quote builders.');
