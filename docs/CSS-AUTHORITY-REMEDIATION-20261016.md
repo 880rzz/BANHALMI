@@ -54,6 +54,7 @@ Do not merge this draft PR if browser tests show any regression. Do not describe
 - The native service disclosure is at least 48 px high, keyboard operable and styled through one shared component rule. It is excluded from the generic section padding contract.
 - Service H1, lead, pricing disclosure and first footer text column share a measured optical x-axis across 390, 768 and 1440 px; H1 and lead sizes must match across all 12 routes.
 - External-link arrows are assigned only to off-site HTTP(S) text links. Internal, language, fragment, action and image links have none, and glyphs are aria-hidden.
+- Trailing `↗` stays glued to the final word (`GLOBAL-TEXT-LINK-ARROW-V2`): inside `.more` / `.partner-name` on flex cards, with a non-breaking space before the glyph so it never wraps alone.
 - The migration-era source specificity budget is now **599 site.css + 1,389 fluid CSS = 1,988 !important** (from the 2,081 initial count), with a CI rule forbidding increases. The production bundler additionally eliminates exact duplicate rules without altering ordering.
 - These are branch/CI claims, not evidence of release to the public domain.
 

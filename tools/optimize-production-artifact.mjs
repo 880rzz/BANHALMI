@@ -53,7 +53,7 @@ function renderExecutivePositioningCopy(rel, html) {
 
 const homeMegaMenuLoader = `<script data-banhalmi-mega-menu="" defer src="/assets/js/mega-menu.js?v=20261018-four-services-v1"></script>`;
 
-const homeRuntimeLoader = `<script defer src="/assets/js/main.js?v=20261026-contact-dock-arrows-v1"></script>`;
+const homeRuntimeLoader = `<script defer src="/assets/js/main.js?v=20261101-external-arrow-nowrap-v1"></script>`;
 
 function quoteRuntimeLoader(src) {
   const runtimeControls = '.menu-btn,[data-cookie-settings],.info-tip[data-tooltip]';
@@ -73,7 +73,7 @@ for (const file of htmlFiles) {
   html = renderExecutivePositioningCopy(rel, html);
 
   // Canonicalize the shared runtime cache key on every page before page-specific transformations.
-  html = html.replace(mainScriptSrcRe, function(_match, prefix){ return prefix + '20261023-footer-desktop-hero-still-v1'; });
+  html = html.replace(mainScriptSrcRe, function(_match, prefix){ return prefix + '20261101-external-arrow-nowrap-v1'; });
 
   /* Layout CSS is intentionally render-blocking. Deferring the canonical
      stylesheet painted service pages without their base geometry and then
@@ -113,7 +113,7 @@ for (const file of htmlFiles) {
     html = html.replace(/aria-label="Studio Budapest" class="map-card-link"/g, 'aria-label="Maps – Studio Budapest" class="map-card-link"');
   }
 
-  if (/\/assets\/js\/main\.js\?v=(?!20261023-footer-desktop-hero-still-v1)[^\"']+/.test(html)) throw new Error(`Non-canonical main.js cache token remained in ${rel}`);
+  if (/\/assets\/js\/main\.js\?v=(?!20261101-external-arrow-nowrap-v1)[^\"']+/.test(html)) throw new Error(`Non-canonical main.js cache token remained in ${rel}`);
   fs.writeFileSync(file, html);
 }
 

@@ -6545,12 +6545,14 @@ html body .sr-only{
 @media (max-width:680px){.collage-gallery{column-gap:var(--banhalmi-gallery-gap)}}
 
 
-/* GLOBAL-TEXT-LINK-ARROW-V1-20261007
-   Mirrors the footer LinkedIn ↗ treatment without changing accessible link names. */
+/* GLOBAL-TEXT-LINK-ARROW-V2-20261101
+   Mirrors the footer LinkedIn ↗ treatment without changing accessible link names.
+   The glyph must stay glued to the final word: never as a flex-column sibling of
+   .more / .partner-name, and never free to wrap after a breakable space. */
 html body a[data-banhalmi-link-arrow]::after{content:none;display:none;}
-html body a[data-banhalmi-link-arrow]>.banhalmi-link-arrow{
-  display:inline-block;
-  margin-inline-start:.28em;
+html body a[data-banhalmi-link-arrow] .banhalmi-link-arrow{
+  display:inline;
+  margin-inline-start:0;
   font-size:.72em;
   line-height:1;
   font-weight:inherit;
@@ -6558,9 +6560,13 @@ html body a[data-banhalmi-link-arrow]>.banhalmi-link-arrow{
   vertical-align:.12em;
   text-decoration:none;
   transform:none;
+  white-space:nowrap;
 }
-html body a[data-banhalmi-link-arrow]:hover>.banhalmi-link-arrow,
-html body a[data-banhalmi-link-arrow]:focus-visible>.banhalmi-link-arrow{opacity:.9;}
+html body a[data-banhalmi-link-arrow] :is(.more,.partner-name):has(> .banhalmi-link-arrow){
+  white-space:nowrap;
+}
+html body a[data-banhalmi-link-arrow]:hover .banhalmi-link-arrow,
+html body a[data-banhalmi-link-arrow]:focus-visible .banhalmi-link-arrow{opacity:.9;}
 /* The relocated pricing disclosure is the final content block; do not reserve
    the generic below-fold intrinsic height after its collapsed state. */
 html body main>.service-pricing-section--end{
