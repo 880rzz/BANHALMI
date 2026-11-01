@@ -1318,26 +1318,46 @@
   function actionOrMedia(a){
     if(a.matches('.brand,.footer-wko-profile,.btn,.btn-primary,.btn-secondary,.btn-ghost,.nav-cta,[role="button"],.banhalmi-contact-studio')) return true;
     if(a.matches('.banhalmi-contact-action')){
-      // Floating contact actions stay glyph-free, including Online meeting/booking.
-      return true;
+      // Booking keeps one decorative external glyph; WhatsApp and other dock actions do not.
+      return a.getAttribute('data-contact-role')!=='booking';
     }
     return !!a.querySelector("img,picture,svg,video");
   }
   function decorative(a){
-    return a.querySelector(":scope > .banhalmi-link-arrow");
+    return a.querySelector(".banhalmi-link-arrow");
   }
-  function removeLiteralArrow(a){
-    var walker=document.createTreeWalker(a,NodeFilter.SHOW_TEXT);
+  function glyphHost(a){
+    // Flex-column cards (.archive-card, .partner-card) own .more / .partner-name
+    // as the trailing label. Appending the glyph as a sibling of that label turns
+    // it into its own flex row; keep it inside the label host instead.
+    return a.querySelector(":scope > .more, :scope > .partner-name") || a;
+  }
+  function lastTextNode(root){
+    var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
     var node,last=null;
     while((node=walker.nextNode())){
       if(node.parentElement?.closest(".banhalmi-link-arrow")) continue;
       if(node.nodeValue&&node.nodeValue.trim())last=node;
     }
+    return last;
+  }
+  function removeLiteralArrow(a){
+    var last=lastTextNode(a);
     if(!last) return;
     // Strip trailing decorative marks (↗ and ›) so the decorator owns one glyph.
     if(/[\u2197\u203A]\s*$/.test(last.nodeValue)){
       last.nodeValue=last.nodeValue.replace(/\s*[\u2197\u203A]\s*$/,"").replace(/\s+$/,"");
     }
+  }
+  function glueGlyph(host,glyph){
+    var last=lastTextNode(host);
+    if(last){
+      last.nodeValue=last.nodeValue.replace(/\s+$/,"")+"\u00A0";
+      if(last.parentNode===host) host.appendChild(glyph);
+      else last.parentNode.insertBefore(glyph,last.nextSibling);
+      return;
+    }
+    host.appendChild(glyph);
   }
   function normalize(a){
     var qualifies=external(a)&&!actionOrMedia(a);
@@ -1364,7 +1384,7 @@
     glyph.className="banhalmi-link-arrow";
     glyph.setAttribute("aria-hidden","true");
     glyph.textContent="\u2197";
-    a.appendChild(glyph);
+    glueGlyph(glyphHost(a),glyph);
     a.setAttribute("data-banhalmi-link-arrow","");
   }
   function decorate(root){

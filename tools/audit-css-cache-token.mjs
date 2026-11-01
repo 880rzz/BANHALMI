@@ -28,6 +28,10 @@ console.log('Canonical CSS source audit passed: one site.css, '+files.length+' H
 const css=fs.readFileSync('assets/css/site.css','utf8');
 if(!/\.eyebrow\[data-service-owner-links\]\s*>\s*a\s*\{\s*white-space:\s*nowrap\s*;\s*\}/.test(css))
   throw Error('Legacy phrase-integrity rule unexpectedly removed');
+if(!css.includes('GLOBAL-TEXT-LINK-ARROW-V2-20261101'))
+  throw Error('External-link arrow nowrap authority missing');
+if(!css.includes(':is(.more,.partner-name):has(> .banhalmi-link-arrow)')||!css.includes('white-space:nowrap'))
+  throw Error('External-link arrow must stay inside label hosts with nowrap');
 for(const [route,phrases] of [
   ['index.html',['Portrait photography','Brand Photography','Event Photography','Artists &amp; Performers']],
   ['hu/index.html',['Portréfotózás','Brandfotózás','Rendezvényfotózás','Művészek és előadók']],

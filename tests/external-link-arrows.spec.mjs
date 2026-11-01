@@ -30,10 +30,13 @@ for(const route of routes){
     }
     const text=(a.textContent||'').replace(/\u2197/g,'').trim();
     const expected=offsite&&!excluded&&!!text;
-    const glyphs=[...a.querySelectorAll(':scope > .banhalmi-link-arrow')];
+    const glyphs=[...a.querySelectorAll('.banhalmi-link-arrow')];
     if(expected){
       if(glyphs.length!==1||glyphs[0].getAttribute('aria-hidden')!=='true')
         violations.push('external arrow: '+raw+' ('+glyphs.length+')');
+      const more=a.querySelector(':scope > .more, :scope > .partner-name');
+      if(more && !more.contains(glyphs[0]))
+        violations.push('arrow left label host: '+raw);
     }else if(glyphs.length||/↗\s*$/.test(a.textContent||'')){
       violations.push('forbidden arrow: '+raw);
     }
@@ -105,6 +108,47 @@ for(const route of ['/','/hu/','/de-at/']) {
   expect(['visible','clip'].includes(panelMetrics.overflowY) || panelMetrics.overflowY==='visible').toBeTruthy();
   expect(panelMetrics.scrollHeight).toBeLessThanOrEqual(panelMetrics.clientHeight+1);
   expect(panelMetrics.scrollWidth).toBeLessThanOrEqual(panelMetrics.clientWidth+1);
+ });
+}
+
+for(const route of ['/','/hu/','/de-at/']){
+ test('Archive card external arrows stay on the label line: '+route, async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(route);
+  const cards=page.locator('a.archive-card');
+  const count=await cards.count();
+  expect(count).toBeGreaterThan(0);
+  for(let i=0;i<count;i++){
+   const card=cards.nth(i);
+   const more=card.locator(':scope > .more');
+   const arrow=more.locator('.banhalmi-link-arrow');
+   await expect(arrow).toHaveCount(1);
+   const metrics=await card.evaluate((el)=>{
+    const label=el.querySelector(':scope > .more');
+    const glyph=label&&label.querySelector('.banhalmi-link-arrow');
+    if(!label||!glyph) return null;
+    const labelBox=label.getBoundingClientRect();
+    const glyphBox=glyph.getBoundingClientRect();
+    const insideLabel=
+      glyphBox.left>=labelBox.left-1
+      && glyphBox.right<=labelBox.right+1
+      && glyphBox.top>=labelBox.top-1
+      && glyphBox.bottom<=labelBox.bottom+1;
+    return {
+     insideLabel,
+     singleLine: labelBox.height<=Math.max(glyphBox.height,24)*1.6,
+     whiteSpace: getComputedStyle(label).whiteSpace,
+     hostContains: label.contains(glyph),
+     siblingArrow: !!el.querySelector(':scope > .banhalmi-link-arrow')
+    };
+   });
+   expect(metrics).not.toBeNull();
+   expect(metrics.hostContains).toBeTruthy();
+   expect(metrics.siblingArrow).toBeFalsy();
+   expect(metrics.insideLabel).toBeTruthy();
+   expect(metrics.singleLine).toBeTruthy();
+   expect(metrics.whiteSpace).toBe('nowrap');
+  }
  });
 }
 

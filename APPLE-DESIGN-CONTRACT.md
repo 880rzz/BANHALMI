@@ -67,6 +67,10 @@ This repository treats the following as a release-blocking visual contract for e
 - Primary and secondary CTAs remain visually distinct and concise.
 - Navigation links, inline text links, utility links, disclosures and CTA links may differ by role, but each role must remain typographically, spatially and interactively consistent across pages and languages.
 
+## External-link markers
+- Off-site text links use one decorative `↗` owned by `GLOBAL-TEXT-LINK-ARROW-V2`.
+- The glyph stays glued to the final word (NBSP + nowrap). On flex-column cards it lives inside `.more` / `.partner-name`, never as a sibling flex row.
+
 ## Restore / rewrite authority
 - `APPLE-DESIGN-CONTRACT.md`, `data/design-authority.json`, `tools/design-contract-policy.json`, and `assets/css/site.css` are canonical inputs for any automated generator, optimizer, restore, hardening, remediation or rewrite process that can affect layout.
 - The production artifact must parser-discover exactly one versioned stylesheet, `assets/css/site.css`, in `<head>` before first layout. A second maintained or runtime-loaded stylesheet is an architecture regression.
