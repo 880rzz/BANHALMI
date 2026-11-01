@@ -79,6 +79,14 @@ for(const f of html){
    const visit=v=>{if(!v||typeof v!=="object")return;if(Array.isArray(v)){v.forEach(visit);return;}
      if(v["@type"]==="ImageGallery"&&Array.isArray(v.associatedMedia)){
        if(v.numberOfItems!==undefined&&v.numberOfItems!==v.associatedMedia.length) fail(`${path.relative(ROOT,f)} ImageGallery count mismatch: ${v.numberOfItems} != ${v.associatedMedia.length}`);
+       for(const media of v.associatedMedia){
+         if(media?.["@type"]!=="ImageObject") continue;
+         for(const field of ["creator","copyrightHolder","copyrightNotice","creditText","license","acquireLicensePage"]) if(!media?.[field]) fail(`${path.relative(ROOT,f)} gallery ImageObject missing ${field}: ${media.contentUrl||media.url||"unknown"}`);
+         if(media.copyrightHolder?.["@id"]!==PERSON) fail(`${path.relative(ROOT,f)} gallery copyrightHolder drift: ${media.contentUrl||media.url||"unknown"}`);
+       }
+     }
+     if((v["@type"]==="ImageObject"||(Array.isArray(v["@type"])&&v["@type"].includes("ImageObject"))) && (v.license||v.acquireLicensePage||v.copyrightNotice)){
+       if(!v.copyrightHolder) fail(`${path.relative(ROOT,f)} ImageObject missing copyrightHolder: ${v["@id"]||v.contentUrl||v.url||"unknown"}`);
      }
      Object.values(v).forEach(visit);
    };visit(d);
