@@ -50,6 +50,8 @@ const isValidSchemaDate=value=>{
   if(!(isoDate.test(value)||isoDateTime.test(value))) return false;
   return Number.isFinite(Date.parse(value));
 };
+// GSC ProfilePage rejects date-only dateCreated/dateModified; require full date-time there.
+const isValidProfilePageDate=value=>typeof value==='string' && isoDateTime.test(value) && Number.isFinite(Date.parse(value));
 const types=node=>Array.isArray(node?.['@type'])?node['@type']:[node?.['@type']].filter(Boolean);
 let profilePageCount=0;
 let profileDateCreatedCount=0;
@@ -70,10 +72,10 @@ for(const file of htmlFiles){
       profilePageCount++;
       if(Object.prototype.hasOwnProperty.call(node,'dateCreated')){
         profileDateCreatedCount++;
-        req(isValidSchemaDate(node.dateCreated),`${file}: JSON-LD block ${index+1} ProfilePage has invalid dateCreated: ${JSON.stringify(node.dateCreated)}`);
+        req(isValidProfilePageDate(node.dateCreated),`${file}: JSON-LD block ${index+1} ProfilePage dateCreated must be ISO 8601 date-time (GSC rejects date-only): ${JSON.stringify(node.dateCreated)}`);
       }
       if(Object.prototype.hasOwnProperty.call(node,'dateModified')){
-        req(isValidSchemaDate(node.dateModified),`${file}: JSON-LD block ${index+1} ProfilePage has invalid dateModified: ${JSON.stringify(node.dateModified)}`);
+        req(isValidProfilePageDate(node.dateModified),`${file}: JSON-LD block ${index+1} ProfilePage dateModified must be ISO 8601 date-time (GSC rejects date-only): ${JSON.stringify(node.dateModified)}`);
       }
     }
   }
