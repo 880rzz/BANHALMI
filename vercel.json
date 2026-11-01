@@ -5,6 +5,18 @@
   },
   "redirects": [
     {
+      "source": "/:path*",
+      "destination": "https://www.banhalmiphotography.com/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "Host",
+          "value": "^(www\\.)?norbertbanhalmi\\.com$"
+        }
+      ]
+    },
+    {
       "source": "/de-at/trust/",
       "destination": "/de-at/vertrauen/",
       "permanent": true
