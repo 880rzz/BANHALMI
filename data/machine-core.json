@@ -254,7 +254,7 @@
       {
         "id": "brand",
         "name": "Brand Photography & Strategic Visual Positioning",
-        "url": "https://www.banhalmiphotography.com/brand/",
+        "url": "https://www.banhalmiphotography.com/lifestyle/",
         "intents": [
           "Brand photography",
           "Visual positioning",
@@ -281,7 +281,7 @@
         "intents": [
           "Fine art photography",
           "Artistic photography",
-          "Artistic nude photography"
+          "Artist and performer portfolio photography"
         ]
       }
     ],
@@ -300,7 +300,7 @@
       {
         "id": "brand-photography",
         "name": "Brand Photography and Strategic Visual Positioning",
-        "url": "https://www.banhalmiphotography.com/brand/"
+        "url": "https://www.banhalmiphotography.com/lifestyle/"
       },
       {
         "id": "c-level-event",
@@ -394,7 +394,7 @@
         "hu": "https://www.banhalmi.art/hu/private-photography.html",
         "de-AT": "https://www.banhalmi.art/de-at/private-photography.html"
       },
-      "policy": "Career-facing artist and performer portfolios belong to BANHALMI Professional. Personal artistic portraits, boudoir, intimate editorial and optional artistic nude begin on the localized BANHALMI ART private photography page. Existing fine-art calculator deep links and the canonical pricing/terms remain on Professional for compatibility; they do not change the primary private enquiry destination."
+      "policy": "Career-facing artist and performer portfolios belong to BANHALMI Professional. Personal artistic portraits, boudoir, intimate editorial, fashion/lifestyle and catalogue commissions begin on the localized BANHALMI ART private photography page. Artistic nude service and current enquiries belong to the localized Ébredés exhibition. Existing fine-art calculator deep links and the canonical pricing/terms remain on Professional for compatibility; they do not change the primary private enquiry destination."
     }
   },
   "teamModel": {

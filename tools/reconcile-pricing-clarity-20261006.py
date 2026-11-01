@@ -16,9 +16,9 @@ HERE = Path(__file__).resolve()
 SCRIPT = 'tools/reconcile-pricing-clarity-20261006.py'
 COPY = json.loads((HERE.parent / 'content/pricing-clarity-20261006.json').read_text())
 CONCISE_FINE_ART_LEADS = {
-    'en': 'Career-facing portfolios for artists and performers, created for casting, agencies, websites and press. For a personal artistic portrait, boudoir, lingerie or artistic nude, begin with the Ébredés exhibition on BANHALMI ART.',
-    'hu': 'Művészek és előadók szakmai portfóliója castinghoz, ügynökséghez, weboldalra és sajtóhoz. Személyes művészi portréhoz, boudoirhoz, fehérneműs vagy művészi aktfotózáshoz az Ébredés kiállítás oldalán érdeklődjön a BANHALMI ART-nál.',
-    'de': 'Berufliche Portfolios für Kunstschaffende und Performer:innen – für Casting, Agenturen, Websites und Presse. Für persönliche künstlerische Porträts, Boudoir, Lingerie oder künstlerischen Akt nutzen Sie die Ébredés-Ausstellung auf BANHALMI ART.'
+    'en': 'Career-facing portfolios for artists and performers, created for casting, agencies, websites and press. For a personal artistic portrait, boudoir or lingerie, use BANHALMI ART private photography; artistic nude begins with Ébredés.',
+    'hu': 'Művészek és előadók szakmai portfóliója castinghoz, ügynökséghez, weboldalra és sajtóhoz. Személyes művészi portréhoz, boudoirhoz vagy fehérneműs fotózáshoz a BANHALMI ART privát fotózása; művészi akt: Ébredés.',
+    'de': 'Berufliche Portfolios für Kunstschaffende und Performer:innen – für Casting, Agenturen, Websites und Presse. Persönliche künstlerische Porträts, Boudoir oder Lingerie: private Fotografie auf BANHALMI ART; künstlerischer Akt: Ébredés.'
 }
 PREVIOUS_FINE_ART_LEADS = {
     'en': 'Professional portfolios for artists and performers, or personal Fine Art projects. We agree the visual concept, boundaries and image use before the shoot.',
