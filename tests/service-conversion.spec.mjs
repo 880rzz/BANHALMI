@@ -16,6 +16,8 @@ for(const route of routes){
     await page.goto(route);
     const actions=page.locator('[data-service-hero-actions="stage22"]');
     await expect(actions).toHaveCount(1);
+    await expect(actions.locator('[data-service-custom-quote="true"]')).toHaveCount(1);
+    await expect(actions.locator('a[href="#next-step"]')).toHaveCount(1);
     await expect(page.locator('section.cta-band')).toHaveCount(0);
     await expect(page.locator('#selected-work')).toHaveCount(1);
     await expect(page.locator('#next-step')).toHaveCount(1);

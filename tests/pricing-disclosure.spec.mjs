@@ -8,8 +8,9 @@ for(const route of [...serviceRoutes,...quoteRoutes]){
    const calculator=page.locator('#quote-calculator');
    const summary=calculator.locator(':scope > summary');
    await expect(calculator).not.toHaveAttribute('open','');
-   await expect(page.locator('.quote-price-card')).toHaveCount(4);
-   await expect(page.locator('.quote-price-card').first()).toBeVisible();
+   await expect(page.locator('a.quote-price-card')).toHaveCount(4);
+   await expect(page.locator('a.quote-price-card').first()).toBeVisible();
+   await expect(page.locator('a.quote-price-card').first()).toHaveAttribute('href', /service=/);
    await summary.focus();await page.keyboard.press('Enter');
    await expect(calculator).toHaveAttribute('open','');
    await expect(page.locator('[data-smart-quote]')).toBeVisible();

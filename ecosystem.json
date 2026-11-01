@@ -398,6 +398,14 @@
           "guided120"
         ]
       },
+      "brand_duration": {
+        "requiresService": "brand",
+        "formField": "brand_duration",
+        "allowedValues": [
+          "brand60",
+          "brand120"
+        ]
+      },
       "art_type": {
         "requiresService": "fine-art",
         "formField": "art_type",

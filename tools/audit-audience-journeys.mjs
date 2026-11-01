@@ -21,7 +21,7 @@ for(const [lang,d] of Object.entries(copy)){
  assert.ok(art.includes('data-art-quote="professional" href="'+d.quote+'?service=fine-art&amp;art_type=performer"'),lang+' professional portfolio quote handoff');
  assert.ok(art.includes(d.privateUrl),lang+' private portrait/boudoir/lingerie route');
  assert.ok(art.includes(d.nudeUrl),lang+' private artistic route remains machine-linked');
- assert.ok(quote.includes('/assets/js/quote-calculator.js?v=20261006-audience-v3'),lang+' revised calculator is cache-safe');
+ assert.ok(quote.includes('/assets/js/quote-calculator.js?v=20261101-quote-cards-v1'),lang+' revised calculator is cache-safe');
 }
 for(const [file,key] of [['customer-intent-model.json','intents'],['customer-needs.json','needs']]){
  const d=JSON.parse(read(file));assert.ok(d[key].some(i=>i.id==='everyday-personal-portrait'));
@@ -50,5 +50,6 @@ assert.deepEqual(p.services.find(s=>s.id==='fine-art').packages.map(s=>s.grossEU
 assert.equal(p.services.find(s=>s.id==='fine-art').includedRetouchedImages,2);
 assert.equal(p.services.find(s=>s.id==='fine-art').extraRetouchedImageGrossEUR,45);
 const runtime=read('assets/js/quote-calculator.js');
-for(const token of ['applyAudienceSelection','syncAudienceSelectionUrl','portrait_mode','art_type'])assert.ok(runtime.includes(token));
+for(const token of ['applyAudienceSelection','syncAudienceSelectionUrl','portrait_mode','brand_duration','art_type','ensureBrandDurationDefault'])assert.ok(runtime.includes(token));
+assert.deepEqual(ecosystem.quoteServiceContext.audienceParameters.brand_duration.allowedValues,['brand60','brand120']);
 console.log('Audience journey contract PASS: three-language visible paths, optional nude boundary, package inclusion, real machine anchors and allowlisted quote handoff.');

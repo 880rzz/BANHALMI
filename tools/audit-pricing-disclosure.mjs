@@ -32,7 +32,8 @@ for(const route of [...serviceRoutes,...quoteRoutes]){
   assert.ok(calculator,`${route}: optional calculator disclosure missing`);
   const opening=html.slice(calculator.index,html.indexOf('>',calculator.index)+1);
   assert.ok(!/\bopen(?:\s|=|>)/.test(opening),`${route}: calculator must start closed`);
-  assert.ok(/<div class="quote-price-cards">[\s\S]*?<article class="quote-price-card">[\s\S]*?<\/article>[\s\S]*?<article class="quote-price-card">[\s\S]*?<\/article>[\s\S]*?<article class="quote-price-card">[\s\S]*?<\/article>[\s\S]*?<article class="quote-price-card">/.test(html.slice(overview,calculator.index)),`${route}: four simple prices must be visible before the calculator`);
+  assert.ok(/<div class="quote-price-cards">[\s\S]*?<(?:a|article) class="quote-price-card"[\s\S]*?<\/(?:a|article)>[\s\S]*?<(?:a|article) class="quote-price-card"[\s\S]*?<\/(?:a|article)>[\s\S]*?<(?:a|article) class="quote-price-card"[\s\S]*?<\/(?:a|article)>[\s\S]*?<(?:a|article) class="quote-price-card"/.test(html.slice(overview,calculator.index)),`${route}: four simple prices must be visible before the calculator`);
+  assert.ok((html.match(/<a class="quote-price-card" href="[^"]+\?service=/g)||[]).length===4,`${route}: overview cards must deep-link into the calculator with service context`);
   assert.ok(!/Personal Fine Art|artistic nude/i.test(html.slice(overview,calculator.index)),`${route}: private commission price leaked into professional overview`);
   assert.ok(html.indexOf('</form>')>calculator.index,`${route}: form must remain in the optional calculator`);
   for(const marker of ['data-smart-quote','data-estimate-gross','data-download-quote-pdf'])assert.ok(html.includes(marker));

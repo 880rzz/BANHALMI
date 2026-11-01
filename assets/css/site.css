@@ -6727,6 +6727,9 @@ html body main .service-gallery-section .service-lower-gallery-grid{margin-top:0
 /* Clear quote entry: the four starting routes are visible before the optional calculator. */
 .quote-price-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,2vw,24px);margin-block:24px}
 .quote-price-card{min-width:0;padding:clamp(18px,2vw,28px);border:1px solid var(--bn-border,#d8d4cb);border-radius:var(--bn-radius-card,18px);background:var(--bn-surface,#fff);display:flex;flex-direction:column;gap:10px}
+a.quote-price-card{color:inherit;text-decoration:none;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+a.quote-price-card:hover,a.quote-price-card:focus-visible{border-color:rgba(138,107,40,.55);box-shadow:0 10px 28px rgba(32,37,48,.08);transform:translateY(-1px)}
+a.quote-price-card:focus-visible{outline:2px solid var(--bn-accent,#8a6b28);outline-offset:3px}
 .quote-price-card h3{margin:0;font-size:clamp(1rem,1.25vw,1.25rem)}
 .quote-price-card p{margin:0;flex:1;color:var(--bn-text-muted,#585858)}
 .quote-price-card strong{margin-top:8px;color:var(--bn-accent,#8a6b28);font-size:1.15rem}
