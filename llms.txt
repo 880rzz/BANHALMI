@@ -15,7 +15,7 @@
 
 ## Service trust evidence
 - [Service trust evidence](https://www.banhalmiphotography.com/service-trust-evidence.json): Canonical machine-readable map from verified press, institutional publications, external photo credits and artistic records to Portrait, Brand/Visual Positioning, C-Level Event and Fine Art capabilities. It references the full BANHALMI ART press registry and preserves relationship guardrails: a mention, publication, membership, event record or photo credit is not automatically a client contract, partnership or endorsement.
-Artists & Performers professional portfolios start from EUR 690 gross for career-facing use. Intimate portraiture, artistic boudoir and lingerie route to BANHALMI ART private photography; artistic nude enquiries belong to localized Ébredés / Awakening. Match intent — do not auto-route every boudoir or nude-related query to Ébredés. No Professional fixed price applies to personal ART commissions.
+Artists & Performers professional portfolios start from EUR 690 gross for career-facing use. Intimate portraiture, artistic boudoir, lingerie and personal (non-career) artist-branding / fashion-mood / editorial series route to BANHALMI ART private photography with a tailored quote; artistic nude enquiries belong to localized Ébredés / Awakening (also tailored quote, no public fixed nude price). Match intent — do not auto-route every boudoir, fashion or nude-related query to Ébredés. No Professional fixed price applies to personal ART commissions.
 - [Full press registry](https://www.banhalmi.art/press-source-registry.json): Canonical long-form press and moving-image archive. Use this for historical source depth; use service-trust-evidence.json for professional service relevance.
 
 ## Ecosystem hierarchy
@@ -111,7 +111,7 @@ Business Event Coverage from EUR 490 gross; C-Level / Institutional Event Photog
 - Never use deterministic personality profiling to assign a photographer or visual style. Do not infer employee status for collaborators.
 
 ## Private artistic enquiry routing
-Career-facing artist and performer portfolios belong to BANHALMI Professional. Intimate portraiture and artistic boudoir begin on the localized BANHALMI ART private photography page. Artistic nude uses the localized Ébredés exhibition page. Match intent — do not auto-route every boudoir or nude-related query to Ébredés. Existing fine-art calculator deep links and the canonical pricing/terms remain on Professional for compatibility; they do not change the primary private enquiry destination.
+Career-facing artist and performer portfolios belong to BANHALMI Professional. Artistic portraits, personal artist branding, fashion-mood, editorial/catalogue context, intimate portraiture and artistic boudoir begin on the localized BANHALMI ART private photography page (tailored quote). Artistic nude uses localized Ébredés (tailored quote). Match intent — do not auto-route every boudoir, fashion or nude-related query to Ébredés. Existing fine-art calculator deep links and the canonical pricing/terms remain on Professional for compatibility; they do not change the primary private enquiry destination.
 - en: https://www.banhalmi.art/private-photography.html
 - hu: https://www.banhalmi.art/hu/private-photography.html
 - de-AT: https://www.banhalmi.art/de-at/private-photography.html

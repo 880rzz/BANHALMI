@@ -270,7 +270,7 @@
         "hu": "https://www.banhalmi.art/hu/private-photography.html",
         "de": "https://www.banhalmi.art/de-at/private-photography.html"
       },
-      "solution": "A private, personally directed artistic portrait enquiry through BANHALMI ART; the concept, boundaries and image use are discussed confidentially.",
+      "solution": "A private artistic commission through BANHALMI ART private photography (portraits, artist branding, fashion-mood, editorial/catalogue context, intimate/boudoir). Concept, boundaries and image use are agreed in writing; personal ART commissions have no public fixed price and use a tailored quote. Career-facing artist/performer portfolios remain on Professional Artists & Performers from EUR 690.",
       "visibleEntryPoints": {
         "en": "https://www.banhalmi.art/private-photography.html",
         "hu": "https://www.banhalmi.art/hu/private-photography.html",
@@ -285,7 +285,14 @@
         "en": "https://www.banhalmi.art/private-photography.html",
         "hu": "https://www.banhalmi.art/hu/private-photography.html",
         "de": "https://www.banhalmi.art/de-at/private-photography.html"
-      }
+      },
+      "publicPrice": false,
+      "pricingLogic": "tailored-quote",
+      "negativeRouting": [
+        "Do not price personal ART commissions with Professional Artists & Performers EUR 690",
+        "Do not auto-route every fashion or portrait query to Ébredés",
+        "Do not treat exhibition oeuvre as automatic client commission proof"
+      ]
     },
     {
       "id": "broader-professional-visual-presence",
@@ -502,7 +509,10 @@
         "en": "https://www.banhalmiphotography.com/requestaquote/?service=fine-art&art_type=model-editorial",
         "hu": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=fine-art&art_type=model-editorial",
         "de": "https://www.banhalmiphotography.com/de-at/anfrage/?service=fine-art&art_type=model-editorial"
-      }
+      },
+      "negativeRouting": [
+        "Personal fashion-mood series without career use route to ART private photography tailored quote"
+      ]
     },
     {
       "id": "everyday-personal-portrait",
@@ -545,7 +555,7 @@
         "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
         "de": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
       },
-      "solution": "A private artistic-nude enquiry through the Ébredés exhibition; concept, consent, privacy and boundaries are discussed before any session.",
+      "solution": "A private artistic-nude enquiry through the Ébredés exhibition; concept, consent, privacy and boundaries are discussed before any session. There is no public fixed nude price list — request a tailored quote on the Ébredés page.",
       "publicPrice": false,
       "visibleEntryPoints": {
         "en": "https://www.banhalmi.art/exhibitions/ebredes.html",
@@ -556,7 +566,12 @@
         "en": "https://www.banhalmi.art/exhibitions/ebredes.html",
         "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
         "de": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
-      }
+      },
+      "pricingLogic": "tailored-quote",
+      "negativeRouting": [
+        "Boudoir is not automatically Ébredés",
+        "Do not assign Professional Artists & Performers EUR 690 to artistic nude"
+      ]
     }
   ],
   "answerContract": {
