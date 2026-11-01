@@ -1179,6 +1179,9 @@
 (function () {
   "use strict";
   if (!document.querySelector("main") || document.querySelector(".banhalmi-contact-dock")) return;
+  /* Quote pages already own a sticky bottom summary in the same corner.
+     Mounting Contact there covers price and VAT — skip the dock entirely. */
+  if (document.querySelector("form[data-smart-quote], [data-quote-summary]")) return;
 
   var root = document.documentElement;
   var lang = String(root.lang || "en").toLowerCase();
@@ -1282,15 +1285,94 @@
   window.addEventListener("resize", function(){ if(!panel.hidden) syncCompact(); }, {passive:true});
 
   var cookieBar = document.querySelector(".cookie");
-  function syncCookie() {
-    var covered = !!(cookieBar && cookieBar.classList.contains("show"));
-    wrap.style.visibility = covered ? "hidden" : "";
-    wrap.style.pointerEvents = covered ? "none" : "";
-    if (covered && !panel.hidden) setOpen(false);
+  var dockOccluded = false;
+  var collisionFrame = 0;
+  var dockTargets = [
+    ".universal-lightbox.open",
+    ".universal-lightbox-close",
+    ".universal-lightbox-prev",
+    ".universal-lightbox-next",
+    ".age-verification-dialog.open",
+    ".info-modal.is-open",
+    "[data-quote-summary]",
+    ".quote-summary-card",
+    "main a.btn",
+    "main a.button",
+    "main .cta-row a",
+    "main .hero-cta a"
+  ].join(",");
+  function overlayOpen() {
+    if (root.classList.contains("nav-open")) return true;
+    if (document.body.classList.contains("info-modal-open")) return true;
+    if (cookieBar && cookieBar.classList.contains("show")) return true;
+    if (document.querySelector(".universal-lightbox.open, .age-verification-dialog.open, .info-modal.is-open")) return true;
+    return false;
   }
-  if (cookieBar) new MutationObserver(syncCookie).observe(cookieBar,{attributes:true,attributeFilter:["class"]});
-  syncCookie();
+  function rectsOverlap(a, b, pad) {
+    return a.right > b.left - pad && a.left < b.right + pad &&
+      a.bottom > b.top - pad && a.top < b.bottom + pad;
+  }
+  function syncDockVisibility() {
+    var hidden = dockOccluded || overlayOpen();
+    wrap.style.visibility = hidden ? "hidden" : "";
+    wrap.style.pointerEvents = hidden ? "none" : "";
+    if (hidden && !panel.hidden) setOpen(false);
+  }
+  function syncDockCollisions() {
+    collisionFrame = 0;
+    if (!panel.hidden) {
+      dockOccluded = false;
+      syncDockVisibility();
+      return;
+    }
+    var blocked = false;
+    var dockRect = trigger.getBoundingClientRect();
+    if (dockRect.width > 0 && dockRect.height > 0) {
+      var targets = document.querySelectorAll(dockTargets);
+      for (var i = 0; i < targets.length; i++) {
+        var el = targets[i];
+        var style = getComputedStyle(el);
+        if (style.display === "none" || style.visibility === "hidden" || Number(style.opacity) === 0) continue;
+        var rect = el.getBoundingClientRect();
+        if (rect.width < 1 || rect.height < 1) continue;
+        if (rectsOverlap(dockRect, rect, 4)) {
+          blocked = true;
+          break;
+        }
+      }
+    }
+    if (dockOccluded !== blocked) {
+      dockOccluded = blocked;
+      syncDockVisibility();
+    } else {
+      syncDockVisibility();
+    }
+  }
+  function scheduleDockCollisions() {
+    if (!collisionFrame) collisionFrame = requestAnimationFrame(syncDockCollisions);
+  }
+  if (cookieBar) {
+    new MutationObserver(scheduleDockCollisions).observe(cookieBar, {
+      attributes: true,
+      attributeFilter: ["class"]
+    });
+  }
+  new MutationObserver(scheduleDockCollisions).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"]
+  });
+  new MutationObserver(scheduleDockCollisions).observe(document.body, {
+    attributes: true,
+    attributeFilter: ["class"],
+    childList: true,
+    subtree: true
+  });
+  window.addEventListener("scroll", scheduleDockCollisions, {passive:true});
+  window.addEventListener("resize", scheduleDockCollisions, {passive:true});
+  window.addEventListener("orientationchange", scheduleDockCollisions, {passive:true});
+  document.addEventListener("click", scheduleDockCollisions, {passive:true});
   document.body.appendChild(wrap);
+  scheduleDockCollisions();
 })();
  /* BANHALMI-CONTACT-DOCK-V1:END */
 
