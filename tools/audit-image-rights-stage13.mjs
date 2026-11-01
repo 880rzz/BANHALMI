@@ -24,17 +24,19 @@ const pages=[
   ['de-at/agb/index.html','Bildnutzung, Freigaben und Referenzrechte','Vereinbarte Nutzung','Abgebildete Personen und Einwilligungen','Freigabe vor Veröffentlichung','Portfolio und spätere Einschränkungen']
 ];
 
+const stripTags=(value)=>String(value||'').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
 for(const [relative,...tokens] of pages){
   const file=path.join(root,relative);
   if(!fs.existsSync(file)){errors.push(`${relative}: missing file`);continue;}
   const html=fs.readFileSync(file,'utf8');
   if((html.match(/data-image-rights="stage13"/g)||[]).length!==1) errors.push(`${relative}: image-rights block must appear exactly once`);
   const section=(html.match(/<section class="section-band image-rights-clarity"[\s\S]*?<\/section>/)||[''])[0];
-  for(const token of tokens) if(!section.includes(token)) errors.push(`${relative}: missing ${token}`);
+  const plain=stripTags(section);
+  for(const token of tokens) if(!plain.includes(token) && !section.includes(token)) errors.push(`${relative}: missing ${token}`);
   if((section.match(/<article class="card reveal">/g)||[]).length!==4) errors.push(`${relative}: expected four image-rights cards`);
   if(!/does not by itself authorise BANHALMI|önmagában nem jogosítja fel a BANHALMI-t|allein berechtigt BANHALMI nicht/.test(section)) errors.push(`${relative}: independent portfolio permission rule missing`);
   if(!/Contact sheets|kontaktívek|Kontaktbögen/.test(section)) errors.push(`${relative}: preview publication restriction missing`);
-  if(!/later restriction or removal request|Későbbi korlátozási vagy eltávolítási kérelem|spätere Einschränkung oder Entfernung/.test(section)) errors.push(`${relative}: later restriction route missing`);
+  if(!/later restriction or removal request|Későbbi korlátozási vagy eltávolítási kérelem|spätere Einschränkung oder Entfernung/i.test(section)) errors.push(`${relative}: later restriction route missing`);
   const marker=html.indexOf('data-image-rights="stage13"');
   const mainClose=html.lastIndexOf('</main>');
   if(marker<0 || marker>mainClose) errors.push(`${relative}: image-rights block must stay inside main`);

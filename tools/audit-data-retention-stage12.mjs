@@ -30,7 +30,9 @@ for(const [relative,...tokens] of pages){
   const html=fs.readFileSync(file,'utf8');
   if((html.match(/data-data-retention="stage12"/g)||[]).length!==1) errors.push(`${relative}: data-retention block must appear exactly once`);
   const section=(html.match(/<section class="section-band data-retention-clarity"[\s\S]*?<\/section>/)||[''])[0];
-  for(const token of tokens) if(!section.includes(token)) errors.push(`${relative}: missing ${token}`);
+  const stripTags=(value)=>String(value||'').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+  const plain=stripTags(section);
+  for(const token of tokens) if(!plain.includes(token) && !section.includes(token)) errors.push(`${relative}: missing ${token}`);
   if((section.match(/<article class="card reveal">/g)||[]).length!==4) errors.push(`${relative}: expected four data-governance cards`);
   if(!/RAW|RAW-|RAW-Aufnahmen/.test(section)) errors.push(`${relative}: working-file distinction missing`);
   if(!/does not guarantee permanent storage|tartós archiválást nem garantál|garantiert jedoch keine dauerhafte Archivierung/.test(section)) errors.push(`${relative}: no-permanent-archive rule missing`);
