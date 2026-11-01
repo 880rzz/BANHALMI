@@ -26,7 +26,9 @@ for(const [relative,heading,approver,confidential,permission] of pages){
  const html=fs.readFileSync(file,'utf8');
  if((html.match(/data-governance-confidentiality="stage10"/g)||[]).length!==1) errors.push(`${relative}: governance block must appear exactly once`);
  const section=(html.match(/<section class="section-band governance-confidentiality"[\s\S]*?<\/section>/)||[''])[0];
- for(const token of [heading,approver,confidential,permission]) if(!section.includes(token)) errors.push(`${relative}: missing ${token}`);
+ const stripTags=(value)=>String(value||'').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+ const plain=stripTags(section);
+ for(const token of [heading,approver,confidential,permission]) if(!plain.includes(token) && !section.includes(token)) errors.push(`${relative}: missing ${token}`);
  if((section.match(/<article class="card reveal">/g)||[]).length!==4) errors.push(`${relative}: expected four governance cards`);
  if(!/single consolidated feedback|egyetlen összevont visszajelzés|gebündelte Rückmeldung/.test(section)) errors.push(`${relative}: consolidated feedback rule missing`);
  if(!/third part|harmadik fél|Dritte/.test(section)) errors.push(`${relative}: third-party rule missing`);
