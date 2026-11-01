@@ -22,8 +22,8 @@
       "position": 1,
       "item": {
         "@type": "CollectionPage",
-        "@id": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas#portfolio-hu",
-        "url": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas",
+        "@id": "https://blog.banhalmi.art/blog/categories/lifestyle-es-portfoliofotozas#portfolio-hu",
+        "url": "https://blog.banhalmi.art/blog/categories/lifestyle-es-portfoliofotozas",
         "name": "Portfólió- és divatfotózás",
         "inLanguage": "hu-HU",
         "about": [
@@ -76,8 +76,8 @@
       "position": 4,
       "item": {
         "@type": "CollectionPage",
-        "@id": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas#stylist-hu",
-        "url": "https://blog.banhalmi.art/blog/categories/portre-es-portfoliofotozas",
+        "@id": "https://blog.banhalmi.art/blog/categories/lifestyle-es-portfoliofotozas#stylist-hu",
+        "url": "https://blog.banhalmi.art/blog/categories/lifestyle-es-portfoliofotozas",
         "name": "Fotózás stylisttal",
         "inLanguage": "hu-HU",
         "about": [

@@ -80,7 +80,7 @@ if (!llms.includes('blog-collections.json')) errors.push('llms.txt: missing mult
 
 const menu = await text(path.join(root,'assets/js/mega-menu.js'));
 const blogCategoriesByLang = {
-  hu: ['portre-es-portfoliofotozas','portre-es-headshotfotozas','aktfotozas-muveszi-szemmel','vipach-fotografiai-kozosseg'],
+  hu: ['lifestyle-es-portfoliofotozas','portre-es-headshotfotozas','aktfotozas-muveszi-szemmel','vipach-fotografiai-kozosseg'],
   en: ['portrait-portfolio-photography','portrait-headshot-photography','fine-art-nude-photography','vipach-photography-community'],
   de: ['portraet-portfoliofotografie','portraet-headshotfotografie','kuenstlerische-aktfotografie','vipach-fotografie-community']
 };
