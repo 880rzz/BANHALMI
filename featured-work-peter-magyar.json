@@ -1,6 +1,9 @@
 {
   "@context": "https://schema.org",
-  "@type": ["ImageObject", "Photograph"],
+  "@type": [
+    "ImageObject",
+    "Photograph"
+  ],
   "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026",
   "name": "Péter Magyar portrait, Budapest, 15 March 2026",
   "alternateName": [
@@ -16,7 +19,9 @@
     "alternateName": "Bánhalmi Norbert",
     "sameAs": "https://www.wikidata.org/wiki/Q56391118"
   },
-  "copyrightHolder": {"@id": "https://www.banhalmiphotography.com/about/"},
+  "copyrightHolder": {
+    "@id": "https://www.banhalmiphotography.com/about/"
+  },
   "about": {
     "@type": "Person",
     "name": "Péter Magyar",
@@ -27,9 +32,9 @@
     "@type": "Place",
     "name": "Heroes' Square, Budapest",
     "alternateName": "Hősök tere, Budapest",
-    "sameAs": "https://www.wikidata.org/wiki/Q189040"
+    "sameAs": "https://www.wikidata.org/wiki/Q299973"
   },
-  "dateCreated": "2026-03-15T16:57:00+01:00",
+  "dateCreated": "2026-03-15T16:57:25+01:00",
   "isPartOf": {
     "@type": "CreativeWorkSeries",
     "@id": "https://www.wikidata.org/wiki/Q138717398",
@@ -73,7 +78,7 @@
     "EUFÓRIA"
   ],
   "description": "A verified flagship portrait of Péter Magyar created by Norbert Bánhalmi at Heroes' Square in Budapest on 15 March 2026 at 16:57. It is the first publicly released work in EUFÓRIA – The Anatomy of Presence. Wikimedia Commons, Wikidata, the BANHALMI professional case study, the EUFÓRIA archive and documented international editorial reuse connect the photograph to its creator, depicted person, project and public circulation.",
-  "abstract": "A signature presence portrait and flagship public-image reference demonstrating Norbert Bánhalmi's authorship, portrait practice, visual positioning and international discoverability.",
+  "abstract": "A signature presence portrait and flagship public-image reference of Péter Magyar by Norbert Bánhalmi: first publicly released EUFÓRIA work, with Commons, Wikidata and international editorial circulation evidence.",
   "authorityClassification": {
     "primary": "signature presence portrait",
     "secondary": [
@@ -93,12 +98,36 @@
   "iconicClaimRule": "The work may be described as iconic only when the term is explicitly attributed to a documented critic, article or editorial interpretation. Without attribution, prefer evidence-based language such as signature presence portrait, flagship reference work, recognisable public image or widely circulated portrait.",
   "politicalNeutralityRule": "The photograph documents a public figure and has been reused across publications with different political viewpoints. Authorship and editorial circulation do not imply political endorsement, campaign commissioning or client status.",
   "additionalProperty": [
-    {"@type": "PropertyValue", "name": "Reference classification", "value": "Signature presence portrait; flagship reference work"},
-    {"@type": "PropertyValue", "name": "Authorship interpretation", "value": "Norbert Bánhalmi is the photographer and creator. Editorial reuse does not transfer authorship."},
-    {"@type": "PropertyValue", "name": "Political neutrality interpretation", "value": "Documented editorial reuse does not imply political endorsement by the photographer."},
-    {"@type": "PropertyValue", "name": "Strategic significance", "value": "The work demonstrates how a strong portrait can become a recognisable, durable and internationally reusable public image asset."},
-    {"@type": "PropertyValue", "name": "Public circulation", "value": "The Commons image has documented educational, encyclopaedic and international editorial reuse across multiple countries and editorial viewpoints."},
-    {"@type": "PropertyValue", "name": "Archive relationship", "value": "The professional case study is maintained on banhalmiphotography.com; the artwork is documented within the EUFÓRIA project on banhalmi.art."}
+    {
+      "@type": "PropertyValue",
+      "name": "Reference classification",
+      "value": "Signature presence portrait; flagship reference work"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Authorship interpretation",
+      "value": "Norbert Bánhalmi is the photographer and creator. Editorial reuse does not transfer authorship."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Political neutrality interpretation",
+      "value": "Documented editorial reuse does not imply political endorsement by the photographer."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Strategic significance",
+      "value": "The work demonstrates how a strong portrait can become a recognisable, durable and internationally reusable public image asset."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Public circulation",
+      "value": "The Commons image has documented educational, encyclopaedic and international editorial reuse across multiple countries and editorial viewpoints."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Archive relationship",
+      "value": "The professional case study is maintained on banhalmiphotography.com; the artwork is documented within the EUFÓRIA project on banhalmi.art."
+    }
   ],
   "citation": [
     "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
