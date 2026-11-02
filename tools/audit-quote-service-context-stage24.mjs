@@ -86,11 +86,11 @@ function metadataWithoutJsonLd(html){
 }
 for(const [relative,config] of Object.entries(pages)){
   const html=fs.readFileSync(path.join(root,relative),'utf8');
-  const expected=config.quote+'?service='+config.service;
+  const expected=config.quote+'?service='+config.service+'#quote-calculator';
   const expectedCount=config.kind==='commercial'?3:1;
   if((html.split('href="'+expected+'"').length-1)!==expectedCount) errors.push(relative+': expected '+expectedCount+' service-context quote links');
   if(config.kind==='commercial'&&!html.includes('data-service-custom-quote="true" href="'+expected+'"')) errors.push(relative+': hero custom-quote handoff missing');
-  if(config.kind==='fine-art'&&!html.includes('data-art-quote="professional" href="'+expected+'&amp;art_type=performer"')) errors.push(relative+': professional portfolio quote handoff missing');
+  if(config.kind==='fine-art'&&!html.includes('data-art-quote="professional" href="'+config.quote+'?service=fine-art&amp;art_type=performer#quote-calculator"')) errors.push(relative+': professional portfolio quote handoff missing');
   const footer=html.slice(html.indexOf('<footer class="site-footer">'));
   if(!footer.includes('href="'+config.quote+'"')) errors.push(relative+': generic footer quote link missing');
   if(footer.includes('?service=')) errors.push(relative+': service query leaked into footer');
@@ -113,7 +113,7 @@ for(const token of ['serviceContextToCategory','categoryToServiceContext','new U
 for(const [service,category] of Object.entries(allowed)) if(!engine.includes((service.includes('-')?"'"+service+"'":service)+":'"+category+"'")) errors.push('quote-calculator.js: missing allowlist mapping '+service+' → '+category);
 for(const relative of quotePages){
   const html=fs.readFileSync(path.join(root,relative),'utf8');
-  if(!html.includes('/assets/js/quote-calculator.js?v=20261101-quote-cards-v1')) errors.push(relative+': current quote engine version missing');
+  if(!html.includes('/assets/js/quote-calculator.js?v=20261102-quote-scroll-anchor-v1')) errors.push(relative+': current quote engine version missing');
   if((html.match(/<a class="quote-price-card" href="[^"]+\?service=/g)||[]).length!==4) errors.push(relative+': overview price cards must deep-link with service context');
   const head=(html.match(/<head>[\s\S]*?<\/head>/)||[''])[0];
   if(metadataWithoutJsonLd(html).includes('?service=')) errors.push(relative+': source metadata must stay query-free');

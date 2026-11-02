@@ -147,5 +147,41 @@ var loc=val(f,'location','vienna'),needs=loc!=='vienna'&&loc!=='budapest',w=f.qu
   function renderAmount(node,estimate,amountKey,uiLang,f){if(!node)return;node.replaceChildren();if(!estimate.pricingReady){node.textContent=pricingError?pricingUiError(f):(uiLang==='hu'?'Számítás…':uiLang==='de'?'Berechnung…':'Calculating…');return;}function value(currency,amount){var span=document.createElement('span');span.className='quote-amount';span.setAttribute('data-currency',currency);span.textContent=money(amount,currency,uiLang);return span;}node.appendChild(value(estimate.displayCurrency,estimate[amountKey==='gross'?'displayGross':amountKey==='net'?'displayNet':'displayVat']));if(uiLang==='hu'){var euro=value('EUR',estimate[amountKey]);euro.classList.add('quote-euro-equivalent');euro.setAttribute('aria-label',(amountKey==='gross'?'Bruttó':amountKey==='net'?'Nettó':'ÁFA')+' euróban: '+money(estimate[amountKey],'EUR',uiLang));node.appendChild(euro);}}
   function paint(f){updatePanels(f);var e=calculate(f),uiLang=lang(f),l=copy[uiLang],root=quoteRoot(f),summary=f.querySelector('[data-estimate-summary]');if(summary)summary.value=e.parts;[['estimate_net',e.net],['estimate_vat',e.vat],['estimate_gross',e.gross],['estimate_vat_mode',e.vatMode],['estimate_summary',e.parts],['estimate_display_currency',e.displayCurrency],['estimate_display_rate',e.displayRate],['estimate_display_net',e.displayNet],['estimate_display_vat',e.displayVat],['estimate_display_gross',e.displayGross],['estimate_base_currency',e.baseCurrency]].forEach(function(pair){var x=f.querySelector('[name="'+pair[0]+'"]');if(x)x.value=pair[1];});var net=root.querySelector('[data-estimate-net]'),vat=root.querySelector('[data-estimate-vat]'),gross=root.querySelector('[data-estimate-gross]'),note=root.querySelector('[data-estimate-vat-note]')||root.querySelector('[data-vat-note]');renderAmount(net,e,'net',uiLang,f);renderAmount(vat,e,'vat',uiLang,f);renderAmount(gross,e,'gross',uiLang,f);if(note)note.textContent=e.reverseEligible?l.reverse:l.vat20;var warning=f.querySelector('[data-custom-travel-warning]');if(warning)warning.hidden=!e.customTravel;return e;}
   function init(f){applyRequestedServiceContext(f);setDateMins(f);f.addEventListener('change',function(event){if(event&&event.target&&['category','art_type','individual_mode','brand_duration'].indexOf(event.target.name)>=0)syncServiceContextFromCategory(f,true);paint(f);});f.addEventListener('input',function(){paint(f);});}
-  document.addEventListener('DOMContentLoaded',function(){var legacyDestination=legacyPersonalArtDestination();if(legacyDestination){window.location.replace(legacyDestination);return;}var disclosure=document.getElementById('quote-calculator');if(disclosure&&requestedServiceContext())disclosure.open=true;document.querySelectorAll('[data-smart-quote]').forEach(init);loadPricing();});window.BANHALMI_QUOTE={calculate:calculate,paint:paint,validate:validate,requiredPhotographers:requiredPhotographers,requiredInstantHours:requiredInstantHours,pricesGross:pricesGross,isPricingReady:function(){return pricingReady;},pricingError:function(){return pricingError;},requestedServiceContext:requestedServiceContext,applyRequestedServiceContext:applyRequestedServiceContext,syncServiceContextFromCategory:syncServiceContextFromCategory,legacyPersonalArtDestination:legacyPersonalArtDestination};
+  function filledQuoteStart(disclosure){return disclosure.querySelector('[data-quote-root],.smart-quote-layout,form[data-smart-quote],.quote-intro')||disclosure;}
+  function scrollToFilledQuote(disclosure){
+    var target=filledQuoteStart(disclosure);
+    function go(){
+      try{
+        var header=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h'))||64;
+        var top=window.scrollY+target.getBoundingClientRect().top-header-16;
+        if(!isFinite(top))throw new Error('bad-top');
+        var smooth=true;
+        try{smooth=!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);}catch(_){}
+        window.scrollTo({top:Math.max(0,top),behavior:smooth?'smooth':'auto'});
+      }catch(_){
+        try{target.scrollIntoView(true);}catch(__){try{disclosure.scrollIntoView(true);}catch(___){}}
+      }
+    }
+    // Native #quote-calculator hash scroll lands on the summary; wait one frame after open, then jump to the filled form.
+    requestAnimationFrame(function(){requestAnimationFrame(function(){go();setTimeout(go,120);});});
+  }
+  function focusFilledQuoteBlock(){
+    var disclosure=document.getElementById('quote-calculator');
+    if(!disclosure)return;
+    var wantsService=!!requestedServiceContext();
+    var wantsHash=false;
+    try{wantsHash=(window.location.hash||'')==='#quote-calculator';}catch(_){}
+    if(!wantsService&&!wantsHash)return;
+    try{if('scrollRestoration' in window.history)window.history.scrollRestoration='manual';}catch(_){}
+    disclosure.open=true;
+    try{
+      var url=new URL(window.location.href);
+      if(wantsService&&url.hash!=='#quote-calculator'){
+        url.hash='quote-calculator';
+        window.history.replaceState(window.history.state,'',url.pathname+url.search+url.hash);
+      }
+    }catch(_){}
+    scrollToFilledQuote(disclosure);
+  }
+  document.addEventListener('DOMContentLoaded',function(){var legacyDestination=legacyPersonalArtDestination();if(legacyDestination){window.location.replace(legacyDestination);return;}document.querySelectorAll('[data-smart-quote]').forEach(init);focusFilledQuoteBlock();loadPricing();});window.BANHALMI_QUOTE={calculate:calculate,paint:paint,validate:validate,requiredPhotographers:requiredPhotographers,requiredInstantHours:requiredInstantHours,pricesGross:pricesGross,isPricingReady:function(){return pricingReady;},pricingError:function(){return pricingError;},requestedServiceContext:requestedServiceContext,applyRequestedServiceContext:applyRequestedServiceContext,syncServiceContextFromCategory:syncServiceContextFromCategory,legacyPersonalArtDestination:legacyPersonalArtDestination,focusFilledQuoteBlock:focusFilledQuoteBlock};
 })();
