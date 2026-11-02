@@ -75,12 +75,53 @@ for (const token of [
   'not-featured',
   '254475',
   '474500',
-  'magyarpeterMP/status/2043223054503866784'
+  'magyarpeterMP/status/2043223054503866784',
+  'tol.org/client/article/magyar-the-savior-is-doing-his-best-and-the-hungarians-like-it-so-far.html',
+  'kontrast.at/ungarn-wahl-interview',
+  'pw-portal.de/repraesentation-und-parlamentarismus/ueberblick/nach-orbans-abwahl-wie-geradlinig-kann-ungarns-rueckkehr-zur-liberalen-demokratie-verlaufen',
+  'brusselstimes.com/2082148/hungarys-news-agency-wants-its-independence-back'
 ]) {
   if (!circulationText.includes(token)) failures.push(`circulation evidence missing required source/guardrail token: ${token}`);
 }
 if (!circulation.dataFeedElement?.some(entry => entry?.item?.['@id'] === 'https://x.com/magyarpeterMP/status/2043223054503866784')) {
   failures.push('circulation DataFeed must include the independently retrieved @magyarpeterMP X post that reuses the portrait');
+}
+const requiredEditorialCredits = [
+  {
+    id: 'https://tol.org/client/article/magyar-the-savior-is-doing-his-best-and-the-hungarians-like-it-so-far.html',
+    creditLevel: 'creator-named',
+    creditNeedle: /Norbert Banhalmi\s*\/\s*Wikimedia Commons/i
+  },
+  {
+    id: 'https://kontrast.at/ungarn-wahl-interview/',
+    creditLevel: 'creator-named',
+    creditNeedle: /Norbert Banhalmi\/CC BY-SA 4\.0/i
+  },
+  {
+    id: 'https://www.pw-portal.de/repraesentation-und-parlamentarismus/ueberblick/nach-orbans-abwahl-wie-geradlinig-kann-ungarns-rueckkehr-zur-liberalen-demokratie-verlaufen',
+    creditLevel: 'source-only',
+    creditNeedle: /Foto via WikiCommons/i
+  },
+  {
+    id: 'https://www.brusselstimes.com/2082148/hungarys-news-agency-wants-its-independence-back',
+    creditLevel: 'source-only',
+    creditNeedle: /© Wikimedia Commons/i
+  }
+];
+for (const required of requiredEditorialCredits) {
+  const entry = circulation.dataFeedElement?.find(item => item?.item?.['@id'] === required.id);
+  if (!entry) {
+    failures.push(`circulation DataFeed missing editorial reuse ${required.id}`);
+    continue;
+  }
+  const props = entry.item?.additionalProperty || [];
+  const creditLevel = props.find(p => p?.name === 'creditLevel')?.value;
+  if (creditLevel !== required.creditLevel) {
+    failures.push(`${required.id} must keep creditLevel=${required.creditLevel}`);
+  }
+  if (!required.creditNeedle.test(entry.item?.creditText || '')) {
+    failures.push(`${required.id} creditText must preserve the retrieved on-page attribution`);
+  }
 }
 if (circulation.archivedUsageSnapshot?.mustNotBeAttributedToSinglePortrait !== true) failures.push('aggregate Wikimedia snapshot must be guarded against single-image attribution');
 if (!circulation.evidencePolicy?.relationshipGuardrails?.some(rule => /political sharing is not photographer endorsement/i.test(rule))) failures.push('political-sharing neutrality guardrail missing');
