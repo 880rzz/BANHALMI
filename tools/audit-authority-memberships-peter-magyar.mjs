@@ -74,9 +74,13 @@ for (const token of [
   'promoted-to-Quality-Image',
   'not-featured',
   '254475',
-  '474500'
+  '474500',
+  'magyarpeterMP/status/2043223054503866784'
 ]) {
   if (!circulationText.includes(token)) failures.push(`circulation evidence missing required source/guardrail token: ${token}`);
+}
+if (!circulation.dataFeedElement?.some(entry => entry?.item?.['@id'] === 'https://x.com/magyarpeterMP/status/2043223054503866784')) {
+  failures.push('circulation DataFeed must include the independently retrieved @magyarpeterMP X post that reuses the portrait');
 }
 if (circulation.archivedUsageSnapshot?.mustNotBeAttributedToSinglePortrait !== true) failures.push('aggregate Wikimedia snapshot must be guarded against single-image attribution');
 if (!circulation.evidencePolicy?.relationshipGuardrails?.some(rule => /political sharing is not photographer endorsement/i.test(rule))) failures.push('political-sharing neutrality guardrail missing');

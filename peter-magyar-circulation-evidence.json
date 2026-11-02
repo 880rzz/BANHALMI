@@ -4,7 +4,7 @@
   "@id": "https://www.banhalmiphotography.com/peter-magyar-circulation-evidence.json#dataset",
   "name": "Péter Magyar portrait — documented circulation evidence",
   "description": "Publicly verifiable source-based evidence for editorial, social and Wikimedia circulation of Peter-Magyar-portrait-2026.jpg. Reuse, publication or political sharing does not imply endorsement, campaign commissioning or a client relationship.",
-  "dateModified": "2026-09-25",
+  "dateModified": "2026-11-02",
   "about": {
     "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026",
     "name": "Péter Magyar portrait, Budapest, 15 March 2026"
@@ -211,6 +211,37 @@
         "sharedContent": {"@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"},
         "additionalProperty": [
           {"@type": "PropertyValue", "name": "evidenceClass", "value": "public-social-reuse"}
+        ]
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateCreated": "2026-04-12",
+      "item": {
+        "@type": "SocialMediaPosting",
+        "@id": "https://x.com/magyarpeterMP/status/2043223054503866784",
+        "url": "https://x.com/magyarpeterMP/status/2043223054503866784",
+        "datePublished": "2026-04-12T07:01:52+00:00",
+        "headline": "Megkezdődött a sorsdöntő választás…",
+        "inLanguage": "hu",
+        "author": {
+          "@type": "Person",
+          "name": "Magyar Péter",
+          "alternateName": "Péter Magyar",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q124488292",
+            "https://x.com/magyarpeterMP"
+          ]
+        },
+        "sharedContent": {
+          "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
+        },
+        "image": "https://pbs.twimg.com/media/HFr8iL9WcAA5_fm.jpg",
+        "additionalProperty": [
+          {"@type": "PropertyValue", "name": "evidenceClass", "value": "public-social-reuse"},
+          {"@type": "PropertyValue", "name": "verificationMethod", "value": "oEmbed + fxtwitter media retrieval; perceptual hash match to Peter-Magyar-portrait-2026 local asset (ahash distance 0)"},
+          {"@type": "PropertyValue", "name": "creditLevel", "value": "creator-credit-not-asserted-in-post-text"},
+          {"@type": "PropertyValue", "name": "relationshipInterpretation", "value": "Subject-account reuse of the photograph. Political sharing is not photographer endorsement, commission or client proof."}
         ]
       }
     }
