@@ -20,13 +20,27 @@ for(const route of routes){
     const cards=page.locator('a.quote-price-card');
     await expect(cards).toHaveCount(4);
 
-    await expect(cards.nth(0)).toHaveAttribute('href', /brand_duration=brand60/);
+    await expect(cards.nth(0)).toHaveAttribute('href', /brand_duration=brand60#quote-calculator$/);
     await cards.nth(0).click();
     await ready(page);
     await expect(page).toHaveURL(/service=brand/);
     await expect(page).toHaveURL(/brand_duration=brand60/);
+    await expect(page).toHaveURL(/#quote-calculator/);
+    await expect(page.locator('#quote-calculator')).toHaveJSProperty('open',true);
     await expect(page.locator('[name="category"][value="brand"]')).toBeChecked();
     await expect(page.locator('[name="brand_duration"][value="brand60"]')).toBeChecked();
+    const filled=page.locator('#quote-calculator [data-quote-root], #quote-calculator .smart-quote-layout').first();
+    const summary=page.locator('#quote-calculator > summary');
+    await expect(filled).toBeVisible();
+    await expect.poll(async()=>{
+      return filled.evaluate((el, summaryHandle)=>{
+        const top=el.getBoundingClientRect().top;
+        const header=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h'))||64;
+        const summaryBottom=summaryHandle?summaryHandle.getBoundingClientRect().bottom:-Infinity;
+        // Land on the filled form start: summary is above the fold, filled block sits under the sticky header.
+        return summaryBottom<=header+24 && top>=0 && top<=header+96;
+      }, await summary.elementHandle());
+    },{timeout:8000}).toBe(true);
     const executive=Number.parseFloat((await page.locator(`[data-estimate-gross] [data-currency="${route.currency}"]`).textContent()).replace(/[^0-9,.-]/g,'').replace(/\.(?=\d{3})/g,'').replace(',','.'));
     expect(executive).toBe(route.executive);
 

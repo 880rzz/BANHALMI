@@ -18,10 +18,10 @@ for(const [lang,d] of Object.entries(copy)){
  assert.ok(art.includes(esc(d.artistChoiceLead)),lang+' purpose lead uses consistent formal language');
  assert.ok(art.includes('data-professional-package-inclusions')&&art.indexOf('data-professional-package-inclusions')>professional,lang+' image inclusions are disclosed in the pricing section');
  assert.ok(art.includes(esc(d.professionalIncluded)),lang+' total included images, extras and estimate status are visible');
- assert.ok(art.includes('data-art-quote="professional" href="'+d.quote+'?service=fine-art&amp;art_type=performer"'),lang+' professional portfolio quote handoff');
+ assert.ok(art.includes('data-art-quote="professional" href="'+d.quote+'?service=fine-art&amp;art_type=performer#quote-calculator"'),lang+' professional portfolio quote handoff');
  assert.ok(art.includes(d.privateUrl),lang+' private portrait/boudoir/lingerie route');
  assert.ok(art.includes(d.nudeUrl),lang+' private artistic route remains machine-linked');
- assert.ok(quote.includes('/assets/js/quote-calculator.js?v=20261101-quote-cards-v1'),lang+' revised calculator is cache-safe');
+ assert.ok(quote.includes('/assets/js/quote-calculator.js?v=20261102-quote-scroll-anchor-v1'),lang+' revised calculator is cache-safe');
 }
 for(const [file,key] of [['customer-intent-model.json','intents'],['customer-needs.json','needs']]){
  const d=JSON.parse(read(file));assert.ok(d[key].some(i=>i.id==='everyday-personal-portrait'));

@@ -195,13 +195,26 @@ for(const item of serviceRoutes){
     await openDetailedCalculator(page);
     const selector=item.kind==='commercial'?'#next-step article.card:first-child a.btn-link':'a[data-art-quote="professional"]';
     const link=page.locator(selector).first();
-    const serviceHref=item.kind==='commercial'?'\\?service='+item.service+'$':'\\?service=fine-art&art_type=performer$';
+    const serviceHref=item.kind==='commercial'?'\\?service='+item.service+'(?:#quote-calculator)?$':'\\?service=fine-art&art_type=performer(?:#quote-calculator)?$';
     await expect(link).toHaveAttribute('href',new RegExp(serviceHref));
     await link.click();
     await expect(page).toHaveURL(new RegExp('service='+item.service));
+    await expect(page).toHaveURL(/#quote-calculator/);
+    await expect(page.locator('#quote-calculator')).toHaveJSProperty('open',true);
     await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1,{timeout:10000});
     const categorySelector='input[name="category"][value="'+item.category+'"]'+(item.category==='event'?':not([data-private-event])':'');
     await expect(page.locator(categorySelector).first()).toBeChecked();
     await expect(page.locator('[data-smart-quote] input[name="service_context"]')).toHaveValue(item.service);
+    const filled=page.locator('#quote-calculator [data-quote-root], #quote-calculator .smart-quote-layout').first();
+    const summary=page.locator('#quote-calculator > summary');
+    await expect(filled).toBeVisible();
+    await expect.poll(async()=>{
+      return filled.evaluate((el, summaryHandle)=>{
+        const top=el.getBoundingClientRect().top;
+        const header=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h'))||64;
+        const summaryBottom=summaryHandle?summaryHandle.getBoundingClientRect().bottom:-Infinity;
+        return summaryBottom<=header+24 && top>=0 && top<=header+96;
+      }, await summary.elementHandle());
+    },{timeout:8000}).toBe(true);
   });
 }
