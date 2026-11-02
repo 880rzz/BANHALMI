@@ -18,7 +18,8 @@
       "dateCreated": "2026-03-15T16:57:25+01:00",
       "contentLocation": {
         "@type": "Place",
-        "name": "Hősök tere, Budapest, Hungary"
+        "name": "Hősök tere, Budapest, Hungary",
+        "sameAs": "https://www.wikidata.org/wiki/Q299973"
       },
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
       "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
