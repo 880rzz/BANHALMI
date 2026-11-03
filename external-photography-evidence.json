@@ -53,10 +53,33 @@
         "@type": "CreativeWork",
         "@id": "https://www.flickr.com/photos/vipach/albums/72177720336290536",
         "url": "https://www.flickr.com/photos/vipach/albums/72177720336290536",
-        "name": "VIPACH event photography reference album 4",
-        "evidenceRole": "External portfolio documentation of event-photography capability",
-        "attributionStatus": "team-level; individual photographer not independently verified",
-        "relationshipGuardrail": "Does not establish client, partner, official-photographer or endorsement status"
+        "name": "AmCham Talks: Business Breakfast – October (Vienna)",
+        "evidenceRole": "Event-photography portfolio documentation linked to the AmCham Austria October Business Breakfast gallery",
+        "attributionStatus": "team-level; individual photographer and official gallery credit not independently verified",
+        "relationshipGuardrail": "The gallery and album association does not by itself establish a client contract, official-photographer role or endorsement",
+        "officialEventGallery": "https://amcham.at/galleries/amcham-talks-business-breakfast-october/",
+        "sourceVerification": "Official gallery URL supplied by portfolio owner; independent page content and photographer credit not verified at integration time",
+        "linkedInPublications": [
+          {
+            "url": "https://www.linkedin.com/posts/amcham-austria_amchamtalk-activity-7519388327616131072-pO-J",
+            "publisher": "AmCham Austria",
+            "evidenceType": "original publication",
+            "verificationStatus": "owner-supplied; content not independently verified",
+            "shares": [
+              {
+                "url": "https://www.linkedin.com/posts/amcham-austria_amchamtalk-ugcPost-7519388326651437056-3fMt",
+                "relationship": "reshare of original publication; not an independent evidence source",
+                "verificationStatus": "relationship confirmed by owner"
+              }
+            ]
+          },
+          {
+            "url": "https://www.linkedin.com/posts/ugcPost-7519405612779376640-9tTA/",
+            "publisher": "Publisher not verified",
+            "evidenceType": "separate LinkedIn publication URL",
+            "verificationStatus": "owner-supplied; post contents and publisher not independently verified"
+          }
+        ]
       },
       {
         "@type": "CreativeWork",
