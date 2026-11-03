@@ -10,8 +10,7 @@
       "permanent": true,
       "has": [
         {
-          "type": "header",
-          "key": "Host",
+          "type": "host",
           "value": "^(www\\.)?norbertbanhalmi\\.com$"
         }
       ]
