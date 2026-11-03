@@ -53,10 +53,12 @@
         "@type": "CreativeWork",
         "@id": "https://www.flickr.com/photos/vipach/albums/72177720336290536",
         "url": "https://www.flickr.com/photos/vipach/albums/72177720336290536",
-        "name": "VIPACH event photography reference album 4",
-        "evidenceRole": "External portfolio documentation of event-photography capability",
-        "attributionStatus": "team-level; individual photographer not independently verified",
-        "relationshipGuardrail": "Does not establish client, partner, official-photographer or endorsement status"
+        "name": "AmCham Talks: Business Breakfast – October (Vienna)",
+        "evidenceRole": "Event-photography portfolio documentation linked to the AmCham Austria October Business Breakfast gallery",
+        "attributionStatus": "team-level; individual photographer and official gallery credit not independently verified",
+        "relationshipGuardrail": "The gallery and album association does not by itself establish a client contract, official-photographer role or endorsement",
+        "officialEventGallery": "https://amcham.at/galleries/amcham-talks-business-breakfast-october/",
+        "sourceVerification": "Official gallery URL supplied by portfolio owner; independent page content and photographer credit not verified at integration time"
       },
       {
         "@type": "CreativeWork",
