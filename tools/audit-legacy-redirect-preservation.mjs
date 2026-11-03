@@ -70,6 +70,38 @@ for (const [route, target] of Object.entries(mainDomainLegacyRedirects)) {
 
 const vercel = JSON.parse(read('vercel.json'));
 const edgeRules = Array.isArray(vercel.redirects) ? vercel.redirects : [];
+
+// Legacy professional host must retain the original localized path, not force DE-AT.
+// This is a source-config guard. Exact live host redirects still require Vercel verification.
+const legacyHostRule = edgeRules[0];
+if (legacyHostRule?.source !== '/:path*' ||
+    legacyHostRule?.destination !== 'https://www.banhalmiphotography.com/:path*' ||
+    legacyHostRule?.permanent !== true ||
+    legacyHostRule?.has?.length !== 1 ||
+    legacyHostRule.has[0]?.type !== 'host' ||
+    Object.hasOwn(legacyHostRule.has[0], 'key')) {
+  failures.push('vercel.json: leading legacy domain redirect must use the documented Vercel host condition and preserve the incoming path');
+} else {
+  try {
+    const hostRegex = new RegExp(legacyHostRule.has[0].value);
+    for (const host of ['norbertbanhalmi.com','www.norbertbanhalmi.com']) {
+      if (!hostRegex.test(host)) failures.push('vercel.json: legacy host not included: ' + host);
+    }
+    for (const host of ['banhalmiphotography.com','www.banhalmiphotography.com','banhalmi.at','banhalminorbert.hu']) {
+      if (hostRegex.test(host)) failures.push('vercel.json: legacy redirect may hijack unrelated domain: ' + host);
+    }
+    for (const route of ['/','/hu/','/de-at/','/hu/portre/','/hu/ajanlatkeres/']) {
+      const rel = route === '/' ? '' : route.slice(1);
+      const destination = legacyHostRule.destination.replace(':path*', rel);
+      if (destination !== 'https://www.banhalmiphotography.com' + route) {
+        failures.push('vercel.json: legacy path or language mapping drift: ' + route);
+      }
+    }
+  } catch (error) {
+    failures.push('vercel.json: legacy host matching regex invalid: ' + error.message);
+  }
+}
+
 for (const [route, target] of Object.entries(staticRedirects)) {
   const source = `/${route}`;
   const expectedDestination = target.startsWith('https://www.banhalmiphotography.com')
