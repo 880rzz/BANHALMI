@@ -6561,6 +6561,10 @@ html body .sr-only{
    The glyph must stay glued to the final word: never as a flex-column sibling of
    .more / .partner-name, and never free to wrap after a breakable space. */
 html body a[data-banhalmi-link-arrow]::after{content:none;display:none;}
+html body a[data-banhalmi-link-arrow]{
+  overflow-wrap:normal;
+  word-break:normal;
+}
 html body a[data-banhalmi-link-arrow] .banhalmi-link-arrow{
   display:inline;
   margin-inline-start:0;
@@ -6907,14 +6911,24 @@ html body main .homepage-art-private-bridge a{color:inherit;white-space:nowrap;t
 
 
 /* === HUMAN-LAYOUT-20261025 === */
-/* Keep lines from wrapping early when the viewport has room; restore missing vertical rhythm. */
+/* Keep lines from wrapping early when the viewport has room; restore missing vertical rhythm.
+   text-wrap:pretty deliberately wraps early to avoid short last lines — that fights
+   “use the full line when it still fits”. Headings and short descriptions use wrap. */
 html body main h1,
 html body main h2,
 html body main .section-head h1,
 html body main .section-head h2,
 html body main .hero h1{
   max-width:min(100%,42rem);
-  text-wrap:pretty;
+  text-wrap:wrap;
+}
+html body main .lead,
+html body main .section-head > p,
+html body main .fp-decision-lead,
+html body main .hero .lede,
+html body main .service-editorial-hero .lead,
+html body main .oeuvre-hero .lead{
+  text-wrap:wrap;
 }
 html body main .hero-copy-only h1,
 html body main[data-homepage-redesign] .hero-copy-only h1{
@@ -7259,7 +7273,7 @@ html body main .contact-profile-feature.oeuvre-hero .contact-profile-heading{
   margin-left:0;
   margin-right:auto;
   text-align:left;
-  text-wrap:pretty;
+  text-wrap:wrap;
   color:var(--navy);
 }
 @media (min-width:960px){
