@@ -62,17 +62,21 @@
         "linkedInPublications": [
           {
             "url": "https://www.linkedin.com/posts/amcham-austria_amchamtalk-activity-7519388327616131072-pO-J",
-            "publisher": "AmCham Austria (URL attribution)",
-            "verificationStatus": "owner-supplied; post contents not independently verified"
-          },
-          {
-            "url": "https://www.linkedin.com/posts/amcham-austria_amchamtalk-ugcPost-7519388326651437056-3fMt",
-            "publisher": "AmCham Austria (URL attribution)",
-            "verificationStatus": "owner-supplied; post contents not independently verified"
+            "publisher": "AmCham Austria",
+            "evidenceType": "original publication",
+            "verificationStatus": "owner-supplied; content not independently verified",
+            "shares": [
+              {
+                "url": "https://www.linkedin.com/posts/amcham-austria_amchamtalk-ugcPost-7519388326651437056-3fMt",
+                "relationship": "reshare of original publication; not an independent evidence source",
+                "verificationStatus": "relationship confirmed by owner"
+              }
+            ]
           },
           {
             "url": "https://www.linkedin.com/posts/ugcPost-7519405612779376640-9tTA/",
             "publisher": "Publisher not verified",
+            "evidenceType": "separate LinkedIn publication URL",
             "verificationStatus": "owner-supplied; post contents and publisher not independently verified"
           }
         ]
