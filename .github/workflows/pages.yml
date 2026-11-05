@@ -87,13 +87,17 @@ jobs:
       - name: Upload the exact audited Pages artifact
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages
+          # deploy-pages selects a single artifact by name. Include the workflow attempt
+          # so retries cannot collide with a retained artifact from the same run.
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/artifact.tar
           retention-days: 1
           if-no-files-found: error
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Verify exact commit is live on custom domain
         run: |
           for attempt in 1 2 3 4 5 6; do
