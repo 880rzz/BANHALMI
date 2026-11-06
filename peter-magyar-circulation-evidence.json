@@ -275,7 +275,7 @@
         "datePublished": "2026-04-13T15:54:51+00:00",
         "publisher": {"@type": "Organization", "name": "Kontrast"},
         "inLanguage": "de",
-        "creditText": "Pia Wieninger als Wahlbeobachterin in Ungarn. (Foto: Parlamentsdirektion/Thomas Topf; Norbert Banhalmi/all-rights-reserved; prior written permission required; Montage)",
+        "creditText": "Pia Wieninger als Wahlbeobachterin in Ungarn. (Foto: Parlamentsdirektion/Thomas Topf; Norbert Banhalmi/CC BY-SA 4.0; Montage)",
         "additionalProperty": [
           {"@type": "PropertyValue", "name": "evidenceClass", "value": "editorial-reuse"},
           {"@type": "PropertyValue", "name": "creditLevel", "value": "creator-named"},
