@@ -9,7 +9,7 @@
   "about": {
     "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
   },
-  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "license": "https://www.banhalmiphotography.com/terms-conditions/",
   "isBasedOn": [
     "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
     "https://www.wikidata.org/wiki/Q124488292",
@@ -33,7 +33,7 @@
       "image": {
         "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
-      "creditText": "Primary project source documenting creation context, exact location and date, open licensing, and the later public history of the portrait.",
+      "creditText": "Primary project source documenting creation context, exact location and date, protected original photography with permission required, and the later public history of the portrait.",
       "usageCategory": "projectSource",
       "creditLevel": "primary-source"
     },
@@ -202,7 +202,7 @@
       "image": {
         "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
-      "creditText": "Visible credit names Norbert Bánhalmi, CC BY-SA 4.0, via Wikimedia Commons, and states the image is unaltered.",
+      "creditText": "Visible credit names Norbert Bánhalmi, all-rights-reserved; prior written permission required, via Wikimedia Commons, and states the image is unaltered.",
       "usageCategory": "editorialUse",
       "creditLevel": "creator-named"
     },
@@ -223,7 +223,7 @@
       "image": {
         "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
-      "creditText": "Archived page capture visibly credits the photograph to Norbert Banhalmi and CC BY-SA 4.0 via Wikimedia Commons.",
+      "creditText": "Archived page capture visibly credits the photograph to Norbert Banhalmi and all-rights-reserved; prior written permission required via Wikimedia Commons.",
       "usageCategory": "editorialUse",
       "creditLevel": "creator-named"
     }
