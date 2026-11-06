@@ -253,8 +253,8 @@
         "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg"
       ],
       "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
-      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "description": "Portrait of Péter Magyar photographed by Norbert Banhalmi at Heroes’ Square in Budapest on 15 March 2026 at 16:57 as the first work in EUFÓRIA – The Anatomy of Presence. Wikimedia Commons documents creator, depicted person, date, location, project and CC BY-SA 4.0 licensing. The open image has documented reuse across international publications representing different editorial viewpoints.",
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "description": "Portrait of Péter Magyar photographed by Norbert Banhalmi at Heroes’ Square in Budapest on 15 March 2026 at 16:57 as the first work in EUFÓRIA – The Anatomy of Presence. Wikimedia Commons documents creator, depicted person, date, location, project and all-rights-reserved; prior written permission required licensing. The open image has documented reuse across international publications representing different editorial viewpoints.",
       "subjectOf": [
         {
           "@id": "https://www.banhalmi.art/exhibitions/euforia.html#article"
@@ -293,8 +293,8 @@
         "url": "https://www.banhalmiphotography.com/media-usage.json"
       },
       "usageInfo": "https://www.banhalmiphotography.com/media-usage.json",
-      "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
-      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. Licensed under CC BY-SA 4.0."
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved. Use requires prior written permission."
     },
     {
       "@type": "Person",
@@ -482,7 +482,7 @@
       "image": {
         "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
-      "creditText": "Primary project source documenting creation context, exact location and date, open licensing, and the later public history of the portrait."
+      "creditText": "Primary project source documenting creation context, exact location and date, protected original photography with permission required, and the later public history of the portrait."
     },
     {
       "@type": "Article",
@@ -722,7 +722,7 @@
       "image": {
         "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
-      "creditText": "Visible credit names Norbert Bánhalmi, CC BY-SA 4.0, via Wikimedia Commons, and states the image is unaltered."
+      "creditText": "Visible credit names Norbert Bánhalmi, all-rights-reserved; prior written permission required, via Wikimedia Commons, and states the image is unaltered."
     },
     {
       "@type": "NewsArticle",
@@ -752,7 +752,7 @@
       "image": {
         "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
-      "creditText": "Archived page capture visibly credits the photograph to Norbert Banhalmi and CC BY-SA 4.0 via Wikimedia Commons."
+      "creditText": "Archived page capture visibly credits the photograph to Norbert Banhalmi and all-rights-reserved; prior written permission required via Wikimedia Commons."
     },
     {
       "@type": "Person",

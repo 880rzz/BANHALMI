@@ -15,7 +15,7 @@
     "sameAs": "https://www.wikidata.org/wiki/Q56391118"
   },
   "canonicalImageSource": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
-  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "license": "https://www.banhalmiphotography.com/terms-conditions/",
   "evidencePolicy": {
     "publicFeedRequiresRetrievableEvidence": true,
     "unpublishedScreenshotOnlyClaimsExcluded": true,
@@ -56,7 +56,7 @@
         "headline": "Opinion: The End of the Strongman Spell",
         "author": {"@type": "Person", "name": "Péter Dósa"},
         "inLanguage": "en",
-        "creditText": "Photo by Norbert Bánhalmi via Wikimedia Commons, licensed under CC BY-SA 4.0.",
+        "creditText": "Photo by Norbert Bánhalmi via Wikimedia Commons, licensed under all-rights-reserved; prior written permission required.",
         "additionalProperty": [
           {"@type": "PropertyValue", "name": "evidenceClass", "value": "editorial-reuse"},
           {"@type": "PropertyValue", "name": "creditLevel", "value": "creator-named"}
@@ -110,7 +110,7 @@
         "author": {"@type": "Person", "name": "Mike Robertson"},
         "publisher": {"@type": "Organization", "name": "American Thinker"},
         "inLanguage": "en",
-        "creditText": "Norbert Bánhalmi, CC BY-SA 4.0, via Wikimedia Commons, unaltered.",
+        "creditText": "Norbert Bánhalmi, all-rights-reserved; prior written permission required, via Wikimedia Commons, unaltered.",
         "additionalProperty": [
           {"@type": "PropertyValue", "name": "evidenceClass", "value": "editorial-reuse"},
           {"@type": "PropertyValue", "name": "creditLevel", "value": "creator-named"}
@@ -144,7 +144,7 @@
         "headline": "Hungary in the news",
         "publisher": {"@type": "Organization", "name": "Quotulatiousness"},
         "inLanguage": "en",
-        "creditText": "Photo by Norbert Banhalmi and released under CC BY-SA 4.0 via Wikimedia Commons.",
+        "creditText": "Photo by Norbert Banhalmi and released under all-rights-reserved; prior written permission required via Wikimedia Commons.",
         "additionalProperty": [
           {"@type": "PropertyValue", "name": "evidenceClass", "value": "editorial-reuse"},
           {"@type": "PropertyValue", "name": "creditLevel", "value": "creator-named"}

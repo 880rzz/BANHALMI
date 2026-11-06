@@ -7,7 +7,7 @@
       ],
       "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026",
       "name": "Péter Magyar portrait, Budapest, 15 March 2026",
-      "description": "Portrait of Péter Magyar photographed by Norbert Banhalmi at Hősök tere in Budapest on 15 March 2026. The photograph is part of the EUFÓRIA – The Anatomy of Presence project and is published on Wikimedia Commons under CC BY-SA 4.0. Péter Magyar’s official Wikidata entity lists Peter-Magyar-portrait-2026.jpg as an image.",
+      "description": "Portrait of Péter Magyar photographed by Norbert Banhalmi at Hősök tere in Budapest on 15 March 2026. The photograph is part of the EUFÓRIA – The Anatomy of Presence project and is published on Wikimedia Commons under all-rights-reserved; prior written permission required. Péter Magyar’s official Wikidata entity lists Peter-Magyar-portrait-2026.jpg as an image.",
       "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/peter-magyar-portrait-2026-by-norbert-banhalmi.webp",
       "url": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
       "creator": {
@@ -21,8 +21,8 @@
         "name": "Hősök tere, Budapest, Hungary",
         "sameAs": "https://www.wikidata.org/wiki/Q299973"
       },
-      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Peter-Magyar-portrait-2026.jpg",
+      "license": "https://www.banhalmiphotography.com/terms-conditions/",
+      "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
       "isPartOf": [
         {
           "@id": "https://www.banhalmi.art/exhibitions/euforia.html#artwork"
@@ -66,7 +66,7 @@
       "copyrightHolder": {
         "@id": "https://www.banhalmiphotography.com/about/"
       },
-      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. Licensed under CC BY-SA 4.0.",
+      "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved. Use requires prior written permission.",
       "about": {
         "@id": "https://www.wikidata.org/wiki/Q124488292"
       },
