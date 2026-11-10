@@ -17,7 +17,7 @@ const pages = [
 for (const [path, primaryBlog, reportLabel, title] of pages) {
   const html = readFileSync(path, "utf8");
   assert.match(html, /data-trust-proof="stage6"/);
-  assert.ok(html.includes('data-trust-notes="event-references"'), path + ": missing delicate trust-notes block");
+  assert.ok(html.includes('data-event-refs="true"'), path + ": missing delicate event-refs block");
   assert.doesNotMatch(html, /event-credit-card/, path + ": heavy event-credit cards must not remain");
   assert.ok(html.includes('data-event-report="onsoranje-euro2020"'), path + ": missing event-report marker");
   assert.ok(html.includes(title), path + ": missing visible report title");
