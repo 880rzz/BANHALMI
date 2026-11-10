@@ -37,4 +37,4 @@ for (const path of pages) {
   }
   assert.ok(!html.includes('<iframe src="https://www.facebook.com/plugins/post.php'), path + ' must not embed Facebook iframe');
 }
-console.log('Event story refs expand audit passed: embassy report, U.S. Embassy Destination USA, Honvédelem cycling tour.');
+console.log('Event story refs expand audit passed: embassy report, U.S. Embassy Destination USA, Hungarian Defence Forces cycling tour.');

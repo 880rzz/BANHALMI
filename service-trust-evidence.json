@@ -1641,7 +1641,7 @@
     {
       "id": "honvedelem-hososz-event-credit-2026",
       "title": "Ismét tekert a sereg",
-      "publisher": "Honvédelem.hu",
+      "publisher": "Hungarian Defence Forces",
       "url": "https://honvedelem.hu/hirek/ismet-tekert-a-sereg.html",
       "evidenceKind": "official institutional editorial photo credit",
       "classification": [
@@ -1653,7 +1653,7 @@
         "event",
         "generalAuthority"
       ],
-      "context": "Honvédelem.hu credits the article photography as Bánhalmi Norbert (HOSOSZ) and maintains a dedicated photographer tag page for the credited material.",
+      "context": "Hungarian Defence Forces credits the article photography as Bánhalmi Norbert (HOSOSZ) and maintains a dedicated photographer tag page for the credited material.",
       "evidenceSummary": "Strong institutional editorial credit for event/documentary photography.",
       "guardrail": "Use as documented HOSOSZ/photography credit; do not infer military employment in 2026 or broader Ministry endorsement.",
       "verificationStatus": "LIVE-VERIFIED",
