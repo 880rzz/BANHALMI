@@ -157,8 +157,8 @@
       "credit": "Foto: BANHALMI Photography",
       "evidenceStatus": "publicly-verified-exact-live-photo-credit",
       "publicReadback": "Live article image credit reads: Foto: BANHALMI Photography. The image URL and filename also identify BANHALMI Photography.",
-        "verificationDate": "2026-10-29",
-        "guardrail": "Publication credit only; no commission, client, affiliation or endorsement implied."
+      "verificationDate": "2026-10-29",
+      "guardrail": "Publication credit only; no commission, client, affiliation or endorsement implied."
     },
     {
       "id": "peter-bence-mvm-dome-concert-2026",
@@ -170,6 +170,24 @@
       "photographer": "Bánhalmi Norbert",
       "evidenceStatus": "owner-published-flickr-album",
       "guardrail": "Professional concert portfolio reference; not an EUFÓRIA selected artwork, concert commission or artist endorsement."
+    },
+    {
+      "id": "amaped-collegium-hungaricum-1956-2026",
+      "type": "Institutional / association event photography / external photo credit",
+      "publisher": "AMAPED — Ausztriai Magyar Pedagógusok Egyesülete",
+      "officialPost": "https://www.facebook.com/permalink.php?story_fbid=pfbid0FqThBkyrTS3sxkhAYt3YxoiuzYEYPpRRGU2j22QmcxAVpYVJj6HkWbvrdfNtCQnhl&id=100076361554158",
+      "flickrAlbum": "https://www.flickr.com/photos/vipach/albums/72177720336267626/",
+      "event": "1956–2026 | 70 Years of Remembrance – Vienna (Collegium Hungaricum commemorative programme)",
+      "eventDate": "2026-10-22",
+      "location": "Collegium Hungaricum, Vienna",
+      "officialCredit": "Foto (c) Norbert Bánhalmi / BANHALMI Photography",
+      "photographer": "Bánhalmi Norbert",
+      "evidenceStatus": "owner-confirmed-screenshot-publication-credit-matched-to-photographer-album",
+      "capabilities": [
+        "Cultural / Institutional Event Photography",
+        "Independent publication / external photo-credit evidence"
+      ],
+      "guardrail": "The association’s published photo credit and matching Flickr album document event coverage and individual authorship. They do not establish commission, official-photographer status, client, partnership or endorsement."
     }
   ],
   "answerRules": [
