@@ -16,8 +16,13 @@ for (const [index,record] of records.entries()) {
 }
 for (const path of ["event-photography/index.html","hu/rendezvenyfotozas/index.html","de-at/eventfotografie/index.html"]) {
   const html = readFileSync(path, "utf8");
-  assert.match(html, /href="#event-flickr-gallery"/);
-  assert.match(html, /id="event-flickr-gallery"/);
+  assert.doesNotMatch(html, /id="event-flickr-gallery"/);
+  assert.doesNotMatch(html, /href="#event-flickr-gallery"/);
+  assert.doesNotMatch(html, /external-proof-card/);
+  assert.match(
+    html,
+    /data-service-hero-actions="stage22"[\s\S]*?<a class="btn btn-ghost" href="https:\/\/www\.flickr\.com\/photos\/vipach\/albums"/
+  );
   assert.match(html, /href="https:\/\/www\.flickr\.com\/photos\/vipach\/albums"/);
   assert.ok(html.includes("/albums/" + ids[0]),path + " must link the embassy-credit album");
   for (const id of ids.slice(1)) assert.ok(!html.includes("/albums/" + id), path + " must not expose unverified individual albums");
