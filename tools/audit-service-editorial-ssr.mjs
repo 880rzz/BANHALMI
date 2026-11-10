@@ -11,10 +11,8 @@ const pages = [
   ['fine-art/index.html', 'fine', ['portrait-portfolio-photography', 'vipach-photography-community']],
   ['hu/muveszi-fotografia/index.html', 'fine', ['lifestyle-es-portfoliofotozas', 'vipach-fotografiai-kozosseg']],
   ['de-at/fine-art/index.html', 'fine', ['portraet-portfoliofotografie', 'vipach-fotografie-community']],
-  ['event-photography/index.html', 'event', ['vipach-photography-community']],
-  ['hu/rendezvenyfotozas/index.html', 'event', ['vipach-fotografiai-kozosseg']],
-  ['de-at/eventfotografie/index.html', 'event', ['vipach-fotografie-community']],
 ];
+// Event pages intentionally omit the journal/blog SSR block.
 
 const failures = [];
 for (const [file, type, needles] of pages) {
@@ -55,7 +53,11 @@ if (!menu.includes("return'event'")) failures.push('mega-menu: event serviceEdit
 if (!menu.includes('fine:[0,4]')) {
   failures.push('mega-menu: fine editorial must use portfolio+vipach indexes, not nude');
 }
-if (!menu.includes('event:[4]')) failures.push('mega-menu: event editorial indexes missing');
+if (!menu.includes('event:[]')) failures.push('mega-menu: event editorial must stay empty (no blog block)');
+for (const file of ['event-photography/index.html', 'hu/rendezvenyfotozas/index.html', 'de-at/eventfotografie/index.html']) {
+  const html = fs.readFileSync(file, 'utf8');
+  if (html.includes('id="service-editorial"')) failures.push(`${file}: event page must not keep the journal/blog SSR block`);
+}
 
 const teamFiles = [
   ['about/index.html', 'may independently photograph'],

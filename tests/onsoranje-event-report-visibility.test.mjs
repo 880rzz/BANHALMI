@@ -25,8 +25,14 @@ for (const [path, primaryBlog, reportLabel, title] of pages) {
   assert.ok(html.includes(primaryBlog), path + ": missing language-matched blog URL");
   assert.ok(html.includes(blog.en) && html.includes(blog.de) && html.includes(blog.hu), path + ": all three blog language URLs must be visible");
   assert.ok(html.includes(onsoranje), path + ": missing OnsOranje official URL");
-  assert.match(html, new RegExp(`data-editorial-post="true"[^>]*data-event-report="onsoranje-euro2020"|data-event-report="onsoranje-euro2020"[^>]*data-editorial-post="true"`));
-  assert.ok(html.includes(`href="${primaryBlog}"`), path + ": editorial/report href mismatch");
+  assert.match(
+    html,
+    new RegExp(
+      `data-editorial-post="true"[^>]*data-event-report="onsoranje-euro2020"|data-event-report="onsoranje-euro2020"[^>]*data-editorial-post="true"`
+    )
+  );
+  assert.ok(html.includes(`href="${primaryBlog}"`), path + ": report href mismatch");
+  assert.doesNotMatch(html, /id="service-editorial"/, path + ": event journal/blog block must stay removed");
 }
 
 console.log("OnsOranje EURO 2020 event report visibility: PASS");
