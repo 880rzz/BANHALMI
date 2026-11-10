@@ -3208,6 +3208,23 @@ html[lang^="hu"] .quote-total{font-variant-numeric:tabular-nums;font-size:clamp(
 .service-hero-actions{margin:28px 0 32px;}
 #selected-work,#next-step{scroll-margin-top:92px;}
 @media (max-width:640px){.service-hero-actions{align-items:flex-start;margin-top:24px;margin-bottom:28px;}}
+/* Keep the Flickr Open gallery CTA first, but pair the primary offer + Custom quote
+   on one row inside the narrow editorial-hero copy column. */
+@media (min-width:621px){
+  html body main .hero.service-hero .service-hero-actions[data-service-hero-actions="stage22"]:has(> a.btn-ghost[href*="flickr.com/photos/vipach/albums"]:first-child){
+    display:grid;
+    grid-template-columns:auto auto;
+    justify-content:start;
+    justify-items:start;
+    align-items:center;
+    width:max-content;
+    max-width:100%;
+  }
+  html body main .hero.service-hero .service-hero-actions[data-service-hero-actions="stage22"] > a.btn-ghost[href*="flickr.com/photos/vipach/albums"]:first-child{
+    grid-column:1 / -1;
+    justify-self:start;
+  }
+}
 /* SERVICE-CONVERSION-PATH:END */
 
 /* FINE-ART-PRIVATE-JOURNEY:START */
