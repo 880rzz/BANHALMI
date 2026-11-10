@@ -24,7 +24,15 @@
         "PR headshot",
         "Vorstandsporträt",
         "Geschäftsführer Headshot",
-        "Pressefoto Führungskräfte"
+        "Pressefoto Führungskräfte",
+        "Speaker photography",
+        "Keynote speaker portraits",
+        "PR photography",
+        "Press photography",
+        "Corporate portraits",
+        "Founder portraits",
+        "Entrepreneur portraits",
+        "Leadership photography"
       ],
       "serviceType": "Portrait Photography",
       "description": "Executive portrait and professional headshot photography for leaders, founders, entrepreneurs, experts, professionals, artists, actors and creative professionals who need a credible, reusable visual identity across LinkedIn, websites, press, speaking, portfolios and brand communication.",
@@ -58,10 +66,17 @@
         "Visual brand strategy",
         "Strategic visual positioning",
         "sajtószoba vizuális tartalom",
-        "PR-Fotografie"
+        "PR-Fotografie",
+        "Personal branding photography",
+        "Personal brand visual library",
+        "Speaker photography",
+        "Media kit photography",
+        "Press kit photography",
+        "PR photography",
+        "Executive personal branding"
       ],
       "serviceType": "Brand Photography",
-      "description": "Brand photography and strategic visual positioning for personal brands, teams and organisations that need a coherent visual presence across websites, press, campaigns, recruitment, sales and corporate communication.",
+      "description": "Personal branding and brand photography for executives, founders, speakers and organisations that need a coherent planned visual library across websites, LinkedIn, press, PR, speaker profiles and professional communication.",
       "provider": {
         "@id": "https://www.banhalmiphotography.com/#organization"
       },
