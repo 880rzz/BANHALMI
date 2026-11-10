@@ -142,12 +142,15 @@
       "location": "Hungarian Embassy in Vienna",
       "officialCredit": "📷: Bánhalmi Norbert",
       "photographer": "Bánhalmi Norbert",
-      "evidenceStatus": "official-embassy-post-photo-credit-live-verified-and-matched-to-photographer-album",
+      "evidenceStatus": "official-embassy-post-photo-credit-and-report-matched-to-photographer-album",
       "capabilities": [
         "Institutional / Diplomatic Event Photography",
         "Independent publication / external photo-credit evidence"
       ],
-      "guardrail": "The embassy’s published photo credit and matching Flickr album document event coverage and individual authorship. They do not establish commission, official-photographer status, client, partnership or endorsement."
+      "guardrail": "The embassy’s published photo credit and matching Flickr album document event coverage and individual authorship. They do not establish commission, official-photographer status, client, partnership or endorsement.",
+      "reportPost": "https://www.facebook.com/HunEmbassy.Becs/posts/pfbid02Me9xLbZy2eBJiPVTFyicCavQJdYVvmvhtNV2uaekFZaQnPT326mUjfnxG514Dc3Hl",
+      "reportPublicationDate": "2026-10-28",
+      "reportCredit": "📷: Bánhalmi Norbert"
     },
     {
       "id": "danas-western-balkans-economy-2026",

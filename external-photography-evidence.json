@@ -479,6 +479,32 @@
       "interpretationRule": "Use only as screenshot-based association event-photography publication-credit evidence paired with the matching Flickr album. Do not infer a testimonial, endorsement, recommendation, client contract, ongoing relationship, partnership, exclusivity or official-photographer status."
     },
     {
+      "id": "facebook-hunembassy-freiheit-1956-report-20261028",
+      "url": "https://www.facebook.com/HunEmbassy.Becs/posts/pfbid02Me9xLbZy2eBJiPVTFyicCavQJdYVvmvhtNV2uaekFZaQnPT326mUjfnxG514Dc3Hl",
+      "publisherOrSubject": "Botschaft von Ungarn in Wien / Magyarország Bécsi Nagykövetsége",
+      "sourceType": "Institutional Facebook publication; owner-supplied screenshot evidence; direct public readback unavailable",
+      "publicationDate": "2026-10-28",
+      "event": "Freiheit – Ungarn – 1956",
+      "eventDate": "2026-10-20",
+      "location": "Hungarian Embassy in Vienna",
+      "photographer": "Bánhalmi Norbert",
+      "capabilities": [
+        "Institutional / Diplomatic Event Photography",
+        "Independent publication / external photo-credit evidence"
+      ],
+      "creditContext": "The user-supplied screenshot of the Hungarian Embassy in Vienna Facebook post dated 28 October 2026 displays the bilingual event report on the 20 October 2026 Freiheit – Ungarn – 1956 programme and the explicit credit “📷: Bánhalmi Norbert” in both the Hungarian and German sections.",
+      "evidenceStatus": "owner-confirmed-screenshot-publication-credit",
+      "screenshotEvidence": {
+        "fileName": "hunembassy-freiheit-1956-report-20261028.jpg",
+        "directPublicReadback": false
+      },
+      "eventArchive": "https://www.flickr.com/photos/vipach/albums/72177720336279769/",
+      "eventArchiveEvidenceStatus": "matched to the embassy photo-credit Flickr album already structured in flickrArchive.selectedEventAlbums",
+      "relatedCreditPublication": "https://www.facebook.com/HunEmbassy.Becs/posts/pfbid0HsjDoV8ASs1oUX1aiYgxSqHWTta9Dwn5E9xkuwyZWvi6zMHmGMMXftGL3q6eMr1Sl",
+      "postSummary": "The screenshot shows the embassy describing a 20 October 2026 discussion with about 100 young participants, featuring Wolfgang Schüssel, Gergely Prőhle and eyewitnesses Erzsébet Fuchs and Elisabeth Wurst, with bilingual HU/DE copy and a camera credit to Bánhalmi Norbert.",
+      "interpretationRule": "Use only as screenshot-based institutional event-photography publication-credit evidence paired with the matching Flickr album. Do not infer a testimonial, endorsement, recommendation, client contract, ongoing relationship, partnership, exclusivity or official-photographer status."
+    },
+    {
       "id": "linkedin-bladanyi-amchamaustria-ciobee-7519342109460578304",
       "url": "https://www.linkedin.com/posts/bladanyi_amchamaustria-ciobee-erp-share-7519342109460578304-8Wvu/",
       "publisherOrSubject": "Balint Ladanyi (LinkedIn author display name)",
@@ -525,6 +551,7 @@
     "The Tenger Média Zádory Édua record is explicit independent artist/performer photo-credit evidence.",
     "The Honvédelem / HOSOSZ record is explicit sport/community-event publication evidence with a named photographer byline and gallery; it does not establish official-state-photographer status.",
     "LikeBalaton Tihany material may support cultural/curatorial authority, but the supplied target page must not be represented as verified photo-credit evidence until its exact credit is publicly readable.",
-    "The AMAPED Collegium Hungaricum 1956 commemorative Facebook credit and matching Flickr album 72177720336267626 document individual authorship for that event only; do not generalize authorship to other VIPACH albums."
+    "The AMAPED Collegium Hungaricum 1956 commemorative Facebook credit and matching Flickr album 72177720336267626 document individual authorship for that event only; do not generalize authorship to other VIPACH albums.",
+    "The Hungarian Embassy Vienna Freiheit – Ungarn – 1956 report post dated 28 October 2026 and the earlier embassy photo-credit post are paired with Flickr album 72177720336279769; authorship applies to that event only."
   ]
 }
