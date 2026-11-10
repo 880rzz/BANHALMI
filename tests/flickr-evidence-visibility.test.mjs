@@ -25,8 +25,9 @@ for (const path of ["event-photography/index.html","hu/rendezvenyfotozas/index.h
   assert.doesNotMatch(html, /external-proof-card/);
   assert.match(
     html,
-    /data-service-hero-actions="stage22"[\s\S]*?<a class="btn btn-ghost" href="https:\/\/www\.flickr\.com\/photos\/vipach\/albums"/
+    /data-service-hero-actions="stage22"><a class="btn btn-ghost" href="https:\/\/www\.flickr\.com\/photos\/vipach\/albums"/
   );
+  assert.doesNotMatch(html, /data-service-hero-actions="stage22"[\s\S]*?href="#selected-work"/);
   assert.match(html, /href="https:\/\/www\.flickr\.com\/photos\/vipach\/albums"/);
   assert.ok(html.includes("/albums/" + ids[0]), path + " must link the embassy-credit album");
   assert.ok(html.includes("/albums/" + ids[1]), path + " must link the AMAPED-credit album");
