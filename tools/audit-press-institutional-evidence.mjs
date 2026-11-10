@@ -37,10 +37,18 @@ const embassyAlbum='https://www.flickr.com/photos/vipach/albums/7217772033627976
 requireContract(embassy?.officialPost===embassyPost && embassy?.flickrAlbum===embassyAlbum,'Embassy photo-credit sources lost');
 requireContract(embassy.eventDate==='2026-10-20' && embassy.photographer==='Bánhalmi Norbert','Embassy event attribution drift');
 requireContract(/do not establish commission.*client.*partnership.*endorsement/i.test(embassy.guardrail),'Embassy relationship guardrail lost');
+const amaped=evidence.find(item=>item.id==='amaped-collegium-hungaricum-1956-2026');
+const amapedPost='https://www.facebook.com/permalink.php?story_fbid=pfbid0FqThBkyrTS3sxkhAYt3YxoiuzYEYPpRRGU2j22QmcxAVpYVJj6HkWbvrdfNtCQnhl&id=100076361554158';
+const amapedAlbum='https://www.flickr.com/photos/vipach/albums/72177720336267626/';
+requireContract(amaped?.officialPost===amapedPost && amaped?.flickrAlbum===amapedAlbum,'AMAPED photo-credit sources lost');
+requireContract(amaped.eventDate==='2026-10-22' && amaped.photographer==='Bánhalmi Norbert','AMAPED event attribution drift');
+requireContract(/do not establish commission.*client.*partnership.*endorsement/i.test(amaped.guardrail),'AMAPED relationship guardrail lost');
+
 for (const page of ['event-photography/index.html','hu/rendezvenyfotozas/index.html','de-at/eventfotografie/index.html']) {
   const html=fs.readFileSync(page,'utf8');
   const section=html.match(/<section class="section-band service-evidence-ssr"[\s\S]*?<\/section>/)?.[0]||'';
   requireContract(section.includes(embassyPost) && section.includes(embassyAlbum),`Embassy sources absent from ${page}`);
+  requireContract(section.includes(amapedPost) && section.includes(amapedAlbum),`AMAPED sources absent from ${page}`);
   requireContract(!section.includes('<iframe'),`Third-party iframe added to ${page}`);
 }
 

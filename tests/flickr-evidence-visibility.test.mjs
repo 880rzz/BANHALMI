@@ -11,6 +11,10 @@ for (const [index,record] of records.entries()) {
   if (index === 0) {
     assert.match(record.attributionStatus, /credited by the embassy/);
     assert.match(record.independentPhotoCredit, /facebook\.com\/HunEmbassy\.Becs\/posts\//);
+  } else if (index === 1) {
+    assert.match(record.attributionStatus, /credited by AMAPED/);
+    assert.match(record.independentPhotoCredit, /story_fbid=pfbid0FqThBkyrTS3sxkhAYt3YxoiuzYEYPpRRGU2j22QmcxAVpYVJj6HkWbvrdfNtCQnhl/);
+    assert.match(record.name, /70 Years of Remembrance/);
   } else assert.match(record.attributionStatus, /team-level/);
   assert.match(record.relationshipGuardrail, /endorsement/);
 }
@@ -24,8 +28,9 @@ for (const path of ["event-photography/index.html","hu/rendezvenyfotozas/index.h
     /data-service-hero-actions="stage22"[\s\S]*?<a class="btn btn-ghost" href="https:\/\/www\.flickr\.com\/photos\/vipach\/albums"/
   );
   assert.match(html, /href="https:\/\/www\.flickr\.com\/photos\/vipach\/albums"/);
-  assert.ok(html.includes("/albums/" + ids[0]),path + " must link the embassy-credit album");
-  for (const id of ids.slice(1)) assert.ok(!html.includes("/albums/" + id), path + " must not expose unverified individual albums");
+  assert.ok(html.includes("/albums/" + ids[0]), path + " must link the embassy-credit album");
+  assert.ok(html.includes("/albums/" + ids[1]), path + " must link the AMAPED-credit album");
+  for (const id of ids.slice(2)) assert.ok(!html.includes("/albums/" + id), path + " must not expose unverified individual albums");
 }
 const llms = readFileSync("llms.txt", "utf8");
 assert.match(llms, /flickrArchive\.selectedEventAlbums/);
