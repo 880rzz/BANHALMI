@@ -3208,21 +3208,24 @@ html[lang^="hu"] .quote-total{font-variant-numeric:tabular-nums;font-size:clamp(
 .service-hero-actions{margin:28px 0 32px;}
 #selected-work,#next-step{scroll-margin-top:92px;}
 @media (max-width:640px){.service-hero-actions{align-items:flex-start;margin-top:24px;margin-bottom:28px;}}
-/* Keep the Flickr Open gallery CTA first, but pair the primary offer + Custom quote
-   on one row inside the narrow editorial-hero copy column. */
-@media (min-width:621px){
+/* Event heroes: keep Open gallery + primary offer + Custom quote on one row
+   inside the narrow editorial-hero copy column on desktop. */
+@media (min-width:1024px){
   html body main .hero.service-hero .service-hero-actions[data-service-hero-actions="stage22"]:has(> a.btn-ghost[href*="flickr.com/photos/vipach/albums"]:first-child){
-    display:grid;
-    grid-template-columns:auto auto;
-    justify-content:start;
-    justify-items:start;
+    display:flex;
+    flex-wrap:nowrap;
     align-items:center;
+    justify-content:flex-start;
+    gap:6px;
     width:max-content;
-    max-width:100%;
+    max-width:calc(100% + min(48px, var(--bn-editorial-gap, 48px) * .45));
   }
-  html body main .hero.service-hero .service-hero-actions[data-service-hero-actions="stage22"] > a.btn-ghost[href*="flickr.com/photos/vipach/albums"]:first-child{
-    grid-column:1 / -1;
-    justify-self:start;
+  html body main .hero.service-hero .service-hero-actions[data-service-hero-actions="stage22"]:has(> a.btn-ghost[href*="flickr.com/photos/vipach/albums"]:first-child) > .btn{
+    flex:0 0 auto;
+    padding:8px 11px;
+    font-size:.78rem;
+    letter-spacing:-.016em;
+    white-space:nowrap;
   }
 }
 /* SERVICE-CONVERSION-PATH:END */
