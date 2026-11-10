@@ -33,8 +33,10 @@ requireContract(feb?.officialCredit==='© banhalmi.at – (AmCham Austria Member
 
 const embassy=evidence.find(item=>item.id==='hungarian-embassy-vienna-freiheit-ungarn-1956-2026');
 const embassyPost='https://www.facebook.com/HunEmbassy.Becs/posts/pfbid0HsjDoV8ASs1oUX1aiYgxSqHWTta9Dwn5E9xkuwyZWvi6zMHmGMMXftGL3q6eMr1Sl';
+const embassyReport='https://www.facebook.com/HunEmbassy.Becs/posts/pfbid02Me9xLbZy2eBJiPVTFyicCavQJdYVvmvhtNV2uaekFZaQnPT326mUjfnxG514Dc3Hl';
 const embassyAlbum='https://www.flickr.com/photos/vipach/albums/72177720336279769/';
 requireContract(embassy?.officialPost===embassyPost && embassy?.flickrAlbum===embassyAlbum,'Embassy photo-credit sources lost');
+requireContract(embassy?.reportPost===embassyReport,'Embassy event-report Facebook source lost');
 requireContract(embassy.eventDate==='2026-10-20' && embassy.photographer==='Bánhalmi Norbert','Embassy event attribution drift');
 requireContract(/do not establish commission.*client.*partnership.*endorsement/i.test(embassy.guardrail),'Embassy relationship guardrail lost');
 const amaped=evidence.find(item=>item.id==='amaped-collegium-hungaricum-1956-2026');
@@ -44,12 +46,23 @@ requireContract(amaped?.officialPost===amapedPost && amaped?.flickrAlbum===amape
 requireContract(amaped.eventDate==='2026-10-22' && amaped.photographer==='Bánhalmi Norbert','AMAPED event attribution drift');
 requireContract(/do not establish commission.*client.*partnership.*endorsement/i.test(amaped.guardrail),'AMAPED relationship guardrail lost');
 
+const usLi='https://www.linkedin.com/posts/us-embassy-vienna_thank-you-to-everyone-who-joined-activity-7422226435219607553-sk0f';
+const usAlbum='https://www.flickr.com/photos/vipach/albums/72177720331699246/';
+const honvedUrl='https://honvedelem.hu/hirek/ismet-tekert-a-sereg.html';
+const honvedAlbum='https://www.flickr.com/photos/vipach/albums/72177720334092675/';
+
 for (const page of ['event-photography/index.html','hu/rendezvenyfotozas/index.html','de-at/eventfotografie/index.html']) {
   const html=fs.readFileSync(page,'utf8');
   const section=html.match(/<section class="section-band service-evidence-ssr"[\s\S]*?<\/section>/)?.[0]||'';
   requireContract(section.includes(embassyPost) && section.includes(embassyAlbum),`Embassy sources absent from ${page}`);
+  requireContract(section.includes(embassyReport),`Embassy report post absent from ${page}`);
   requireContract(section.includes(amapedPost) && section.includes(amapedAlbum),`AMAPED sources absent from ${page}`);
+  requireContract(section.includes(usLi) && section.includes(usAlbum),`U.S. Embassy Destination USA sources absent from ${page}`);
+  requireContract(section.includes(honvedUrl) && section.includes(honvedAlbum),`Honvédelem sources absent from ${page}`);
   requireContract(!section.includes('<iframe'),`Third-party iframe added to ${page}`);
+  requireContract(html.includes('data-event-evidence="hunembassy-freiheit-1956-report"'),`Embassy report story ref missing on ${page}`);
+  requireContract(html.includes('data-event-evidence="us-embassy-destination-usa"'),`U.S. Embassy story ref missing on ${page}`);
+  requireContract(html.includes('data-event-evidence="honvedelem-tekerj-a-sereggel"'),`Honvédelem story ref missing on ${page}`);
 }
 
 requireContract(team?.pressInstitutionalEvidence===ID,'Team contract must link press/institutional evidence');
