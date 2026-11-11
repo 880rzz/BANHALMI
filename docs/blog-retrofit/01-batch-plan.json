@@ -1,0 +1,40 @@
+{
+  "batchSizeRule": "max 10 translation groups (30 posts)",
+  "totalBatches": 18,
+  "lastBatchGroups": 9,
+  "order": "firstPublishedDate DESC by HU post within translation group",
+  "batches": [
+    {
+      "batch": 1,
+      "label": "Fotótörténelem #14–#23",
+      "groups": 10,
+      "posts": 30,
+      "status": "STRUCTURAL_DRAFTS_READY_AWAITING_PUBLISH_APPROVAL",
+      "changedPosts": 9,
+      "unchangedPosts": 21
+    },
+    {
+      "batch": 2,
+      "label": "next 10 groups by firstPublishedDate DESC",
+      "status": "PENDING"
+    },
+    {
+      "batch": "3-17",
+      "label": "subsequent groups",
+      "status": "PENDING"
+    },
+    {
+      "batch": 18,
+      "label": "final 9 groups",
+      "status": "PENDING"
+    }
+  ],
+  "perBatchQA": [
+    "0 category-less",
+    "0 wrong-language category",
+    "0 translation category mismatch",
+    "preservation: translationId/language/categoryIds/slug/url/firstPublishedDate/imageIds/linkTargets/memberId",
+    "0 double spacer",
+    "idempotent transform replay => no new changes"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "batch": 1,
+  "codexReviewAddressed": true,
+  "liveInventoryAfterDraftWrites": {
+    "publishedPosts": 537,
+    "byLanguage": {
+      "hu": 179,
+      "en": 179,
+      "de": 179
+    },
+    "categoryLess": 0,
+    "unpublishedChangesOnLive": 9,
+    "note": "9 hasUnpublishedChanges expected \u2014 draft structural edits awaiting publish approval."
+  },
+  "draftPreservationForMutatedPosts": {
+    "allOk": true,
+    "checks": [
+      "translationId",
+      "language",
+      "categoryIds",
+      "slug==seoSlug",
+      "url.path",
+      "memberId",
+      "imageIds",
+      "linkTargets",
+      "firstPublishedDate@secondPrecision"
+    ],
+    "h2DecorationComplete": true,
+    "h2DecorationShape": [
+      {
+        "type": "BOLD",
+        "fontWeightValue": 700
+      },
+      {
+        "type": "ITALIC",
+        "italicData": true
+      }
+    ]
+  },
+  "draftStructuralQA": {
+    "allDraftStructuralOk": true,
+    "doubleEmpty": 0,
+    "h2MissingBoldItalic": 0,
+    "imageMissingAfterSpace": 0,
+    "imageExtraSpace": 0,
+    "imageIdLoss": 0,
+    "linkLoss": 0
+  },
+  "ledgerCompleteness": {
+    "expectedEntries": 30,
+    "entriesWithPostId": 30
+  },
+  "nextAction": "On approval, UPDATE_PUBLISH the 9 changed drafts, re-run live inventory gates, then start Batch 2."
+}
