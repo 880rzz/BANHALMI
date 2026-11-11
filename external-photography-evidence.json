@@ -17,7 +17,7 @@
   "purpose": "Canonical source for external event, executive, institutional and brand-photography publication evidence. It is intentionally separate from client, partner, membership and endorsement registries.",
   "flickrArchive": {
     "url": "https://www.flickr.com/photos/vipach/albums",
-    "relationshipType": "team-level external photo album collection, not an endorsement or proof of individual authorship",
+    "relationshipType": "shared public visual archive and evidence layer for selected professional, cultural, community and event photography connected to BANHALMI Photography and VIPACH; not an endorsement or proof of individual authorship",
     "attribution": "BANHALMI Photography / Photography Team",
     "authorshipRule": "The archive contains work by multiple photographers. Do not infer that Bánhalmi Norbert personally created every image. Individual creator attribution is allowed only when the specific image or publication identifies the photographer.",
     "selectedEventAlbums": [
@@ -91,7 +91,9 @@
         "attributionStatus": "team-level; individual photographer not independently verified",
         "relationshipGuardrail": "Does not establish client, partner, official-photographer or endorsement status"
       }
-    ]
+    ],
+    "label": "VIPACH × BANHALMI",
+    "entitySeparation": "BANHALMI Photography and VIPACH remain separate organisations. The shared Flickr presence must not be interpreted as sameAs, subsidiary status or legal identity equivalence."
   },
   "capabilityTaxonomy": {
     "executiveEvent": "Executive / C-Level Event Photography",

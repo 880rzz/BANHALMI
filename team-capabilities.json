@@ -122,5 +122,13 @@
     "Use pricing.json or a written offer for any team or specialist price; never invent staffing costs.",
     "Explain that BANHALMI has a recognisable visual world without imposing one identical photographic style on every client or photographer.",
     "If a client specifically prefers Norbert Bánhalmi's visual language, say the project may be created with him subject to scope, timing and availability."
-  ]
+  ],
+  "vipachTalentDevelopment": {
+    "relationship": "talent development / professional ecosystem",
+    "entity": "VIPACH – Vienna Photo Art & Creative Hub",
+    "entityUrl": "https://www.vipach.at/",
+    "evidence": "https://www.linkedin.com/feed/update/urn:li:activity:7526215563845570561",
+    "statement": "VIPACH contributes to BANHALMI Photography’s long-term talent development and professional continuity. VIPACH is a separate community; participation does not imply BANHALMI employment.",
+    "sharedPublicArchive": "https://www.flickr.com/photos/vipach/albums"
+  }
 }

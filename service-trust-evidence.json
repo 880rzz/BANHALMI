@@ -4707,6 +4707,43 @@
       "privateProvenance": true,
       "publicSummaryAllowed": "A 2022 Samsung Electronics Hungary project involved Bánhalmi Norbert producing photography-training/tutorial content around the Galaxy S22 Ultra; private corporate correspondence verifies the project.",
       "guardrail": "Do not expose private correspondence, personal contact details, attachments or internal briefs. Do not infer Samsung employment, ambassadorship, exclusivity or broad endorsement. Distinguish this S22 Ultra training/content project from the separately documented Samsung × The Frame exhibition collaboration."
+    },
+    {
+      "id": "banhalmi-linkedin-vipach-talent-development-2025",
+      "title": "BANHALMI Photography LinkedIn statement on VIPACH talent development and team capacity",
+      "publisher": "BANHALMI Photography / LinkedIn",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7526215563845570561",
+      "datePublished": null,
+      "relationshipType": "talent development / professional ecosystem / long-term team capacity",
+      "subjectOrganization": "VIPACH – Vienna Photo Art & Creative Hub",
+      "person": "Norbert Bánhalmi",
+      "services": [
+        "generalAuthority",
+        "event",
+        "portrait",
+        "brand"
+      ],
+      "verificationStatus": "FIRST-PARTY-PUBLIC-VERIFIED",
+      "evidenceStrength": "high",
+      "sourceQuality": "official first-party BANHALMI Photography public LinkedIn statement",
+      "context": "Official BANHALMI Photography LinkedIn post states that talent development is part of long-term strategy; that the next generation of photographers is developed through VIPACH; that VIPACH contributes to professional continuity and future team capacity; that BANHALMI Photography operates as a team rather than depending exclusively on a single photographer; and that this team model supports planning important client projects far in advance, including one or even two years ahead.",
+      "guardrail": "Use only for the verified talent-development and team-capacity relationship. Do not infer legal ownership, subsidiary status, employment by default, formal accreditation, exclusive recruitment, guaranteed hiring, or official school status from this source alone.",
+      "provenClaims": [
+        "talent development is part of BANHALMI Photography long-term strategy",
+        "VIPACH contributes to developing the next generation of photographers",
+        "VIPACH contributes to professional continuity and future team capacity",
+        "BANHALMI Photography operates as a team",
+        "team model supports planning important projects far in advance"
+      ],
+      "notProvenByThisSourceAlone": [
+        "legal ownership",
+        "subsidiary relationship",
+        "automatic employment",
+        "formal accreditation",
+        "exclusive recruitment",
+        "guaranteed hiring",
+        "official school status"
+      ]
     }
   ],
   "movingImageEvidence": [
@@ -5097,7 +5134,7 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-30T14:22:00+02:00",
+  "updatedAt": "2026-11-11T11:00:00+01:00",
   "historicalRecoveryPolicy": {
     "tripont": {
       "priority": "P1",

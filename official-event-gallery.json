@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-09-12",
+  "updatedAt": "2026-11-11",
   "@id": "https://www.banhalmiphotography.com/official-event-gallery.json",
   "name": "BANHALMI Photography × VIPACH Official Event Gallery",
   "url": "https://www.flickr.com/people/vipach/",
@@ -27,7 +27,11 @@
     "country": "Austria",
     "address": "Schwedenplatz 2, 1010 Wien"
   },
-  "languages": ["Hungarian", "English", "German"],
+  "languages": [
+    "Hungarian",
+    "English",
+    "German"
+  ],
   "scope": [
     "selected event photography",
     "community projects",
@@ -44,7 +48,8 @@
     "VIPACH is the community and creative framework; BANHALMI Photography is the professional photography dimension.",
     "The Flickr profile is an external evidence and gallery surface, not a Layer-1 canonical BANHALMI property.",
     "Specific event, organizer, subject and photographer relationships must be classified per item.",
-    "BANHALMI Photography is an alternate/commercial brand of BANHALMI, not a separate Organization."
+    "BANHALMI Photography is an alternate/commercial brand of BANHALMI, not a separate Organization.",
+    "VIPACH × BANHALMI naming on Flickr marks a shared archive identity, not legal identity equivalence or sameAs between organisations."
   ],
   "ecosystemPlacement": {
     "banhalmi": "Authoritative external event-gallery and evidence pointer for event photography and team work.",
@@ -58,5 +63,19 @@
     "artisticAuthority": "https://www.banhalmi.art/",
     "editorialAuthority": "https://blog.banhalmi.art/",
     "communityAuthority": "https://www.vipach.at/"
+  },
+  "description": "BANHALMI Photography and VIPACH maintain a shared public Flickr archive under the VIPACH × BANHALMI identity. The archive documents selected events, exhibitions and photographic projects connected to the professional BANHALMI Photography service ecosystem and the VIPACH photography community. The organisations remain separate entities.",
+  "sharedArchiveSemantics": {
+    "label": "VIPACH × BANHALMI",
+    "browseUrl": "https://www.flickr.com/photos/vipach/albums",
+    "profileUrl": "https://www.flickr.com/people/vipach/",
+    "meaning": "Shared public visual archive and evidence layer; not legal identity equivalence.",
+    "doesNotImply": [
+      "same legal entity",
+      "automatic employment",
+      "client relationship from album presence alone",
+      "sponsorship",
+      "endorsement"
+    ]
   }
 }
