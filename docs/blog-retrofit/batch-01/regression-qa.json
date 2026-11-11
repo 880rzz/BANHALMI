@@ -1,32 +1,39 @@
 {
   "batch": 1,
+  "codexReviewAddressed": true,
   "liveInventoryAfterDraftWrites": {
     "publishedPosts": 537,
-    "byLanguage": { "hu": 179, "en": 179, "de": 179 },
+    "byLanguage": {
+      "hu": 179,
+      "en": 179,
+      "de": 179
+    },
     "categoryLess": 0,
     "unpublishedChangesOnLive": 9,
-    "note": "9 hasUnpublishedChanges flags are expected — draft structural edits awaiting publish approval. Live body still old for those 9."
+    "note": "9 hasUnpublishedChanges expected \u2014 draft structural edits awaiting publish approval."
   },
   "draftPreservationForMutatedPosts": {
-    "allOkAfterSeoSlugNormalization": true,
+    "allOk": true,
     "checks": [
       "translationId",
       "language",
       "categoryIds",
-      "slug == draft.seoSlug",
+      "slug==seoSlug",
       "url.path",
       "memberId",
       "imageIds",
-      "linkTargets"
+      "linkTargets",
+      "firstPublishedDate@secondPrecision"
     ],
-    "falsePositivesCleared": [
+    "h2DecorationComplete": true,
+    "h2DecorationShape": [
       {
-        "field": "slug",
-        "reason": "Live Post uses `slug`; Draft Post uses `seoSlug`. Values identical; URL path identical."
+        "type": "BOLD",
+        "fontWeightValue": 700
       },
       {
-        "field": "firstPublishedDate",
-        "reason": "Compared live vs draft response shape can differ by fieldset; live firstPublishedDate was never sent in PATCH and remains the published value."
+        "type": "ITALIC",
+        "italicData": true
       }
     ]
   },
@@ -39,39 +46,9 @@
     "imageIdLoss": 0,
     "linkLoss": 0
   },
-  "changedPostIds": [
-    "03b504e8-1839-4bd9-8b41-90143fd04dd3",
-    "81f97d88-591a-4f70-8166-ac4e7e672716",
-    "3b8db61e-3fc8-45be-8ca7-2dec3d829311",
-    "41bdb3e6-722d-4066-80d5-4d4618377de7",
-    "d927bb17-0d71-46d2-92b5-534910ef3df2",
-    "adb4d107-89d4-45c9-abcb-623468725f79",
-    "ae0e6d36-347c-4bc0-9f26-ba3e61f516c9",
-    "b583cf7c-79be-4cfc-9263-19b2f6da3245",
-    "19a61f79-d74c-4dc1-843e-10aad4f6825d"
-  ],
-  "unchangedPostIds": [
-    "28e89dc9-ad49-40ca-897e-77df38edf501",
-    "583b2226-461a-4a17-8806-f79ef1cde910",
-    "4141df7a-9f83-40b6-b85c-c50790f610e0",
-    "6d2613cc-fa8e-42b8-87aa-29a99911c5d5",
-    "2efc0910-e7d2-4da4-a0bd-d6d1e495c2e1",
-    "0ec64426-da02-4c1d-831a-59c65cbfd1a5",
-    "4cf1b075-0b2c-4b12-a98d-a4cbe36b84f1",
-    "a5ca1594-aae7-4fa7-8617-5f9fb921dcbd",
-    "cd5ff554-443b-414e-ba48-0528d27eba7d",
-    "6dfaf5b4-64f4-4868-82a2-8587399b7b12",
-    "dc74c620-f407-42b9-896b-c6dffc1cc513",
-    "2e610b99-823a-4628-aea9-b92ab4a40e1e",
-    "36df73f8-ba1d-46d0-9e4e-68e8550b3865",
-    "8ffd5f60-397a-4fc6-bb10-3a5fd45ccac3",
-    "e6e9a83c-ddd6-4bdc-8570-113b7892d92a",
-    "6bba266c-5287-4584-8333-6d83e4671e6a",
-    "33aededb-08a6-43c3-86d4-acea6b5f2c1d",
-    "13639f96-356b-4fad-b15c-18b674ee895d",
-    "af9b430b-e534-45dc-8888-0ebf18248045",
-    "d05aef95-ee00-4ef6-a314-affb37f5b5ef",
-    "ef61ff6e-c2f0-4599-b226-c37718ba7ae5"
-  ],
+  "ledgerCompleteness": {
+    "expectedEntries": 30,
+    "entriesWithPostId": 30
+  },
   "nextAction": "On approval, UPDATE_PUBLISH the 9 changed drafts, re-run live inventory gates, then start Batch 2."
 }

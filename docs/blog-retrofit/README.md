@@ -39,6 +39,14 @@ Fotótörténelem / Photography History / Fotogeschichte **#14–#23** (10 group
 
 - **#14–#20** (21 posts): spacing + H2 BOLD/ITALIC already present
 
+## Codex review fixes (PR follow-up)
+
+- Complete H2 decorations (`fontWeightValue: 700`, `italicData: true`) on draft writes
+- Before-image spacing for non-opening images
+- CAPTION child text for lead-image classification
+- Fail-closed `firstPublishedDate` UNKNOWN; second-precision date compare
+- Full 30-entry change ledger
+
 ## Safety notes
 
 1. Writes used Draft Posts `PATCH` **without** `UPDATE_PUBLISH` (live stays as before).

@@ -19,6 +19,20 @@ export function isEmptyParagraph(node) {
   });
 }
 
+/** Prefer imageData.caption; fall back to CAPTION child TEXT (authoritative Ricos shape). */
+export function imageCaptionText(imageNode) {
+  if (!imageNode || imageNode.type !== 'IMAGE') return '';
+  const field = imageNode.imageData && imageNode.imageData.caption;
+  if (field && String(field).trim()) return String(field).trim();
+  const captionChild = (imageNode.nodes || []).find((n) => n.type === 'CAPTION');
+  if (!captionChild) return '';
+  return (captionChild.nodes || [])
+    .filter((c) => c.type === 'TEXT')
+    .map((t) => (t.textData && t.textData.text) || '')
+    .join('')
+    .trim();
+}
+
 export function collectImageIds(nodes, out = []) {
   for (const n of nodes || []) {
     if (n.type === 'IMAGE') {
@@ -49,63 +63,114 @@ export function collectLinkTargets(nodes, out = []) {
   return out;
 }
 
-function ensureH2BoldItalic(headingNode) {
+const BOLD_DECORATION = { type: 'BOLD', fontWeightValue: 700 };
+const ITALIC_DECORATION = { type: 'ITALIC', italicData: true };
+
+/**
+ * @param {object[]} decorations
+ * @param {{ upgradeIncomplete?: boolean }} [opts]
+ *  - Missing BOLD/ITALIC always added with complete Ricos payload.
+ *  - Existing type-only decorations left as-is unless upgradeIncomplete (avoids
+ *    churn on live reference posts that already render with `{type:"BOLD"}`).
+ */
+function normalizeH2Decorations(decorations, opts = {}) {
+  const upgradeIncomplete = !!opts.upgradeIncomplete;
+  const next = [];
+  let hasBold = false;
+  let hasItalic = false;
   let changed = false;
+
+  for (const d of decorations || []) {
+    if (d.type === 'BOLD') {
+      hasBold = true;
+      if (upgradeIncomplete && d.fontWeightValue !== 700) {
+        next.push({ ...BOLD_DECORATION });
+        changed = true;
+      } else {
+        next.push(d);
+      }
+      continue;
+    }
+    if (d.type === 'ITALIC') {
+      hasItalic = true;
+      if (upgradeIncomplete && d.italicData !== true) {
+        next.push({ ...ITALIC_DECORATION });
+        changed = true;
+      } else {
+        next.push(d);
+      }
+      continue;
+    }
+    next.push(d);
+  }
+
+  if (!hasBold) {
+    next.push({ ...BOLD_DECORATION });
+    changed = true;
+  }
+  if (!hasItalic) {
+    next.push({ ...ITALIC_DECORATION });
+    changed = true;
+  }
+
+  return { decorations: next, changed };
+}
+
+function ensureH2BoldItalic(headingNode, opts = {}) {
+  let headingChanged = false;
   const nextNodes = (headingNode.nodes || []).map((child) => {
     if (child.type !== 'TEXT' || !child.textData) return child;
-    const decorations = [...(child.textData.decorations || [])];
-    const types = new Set(decorations.map((d) => d.type));
-    if (!types.has('BOLD')) {
-      decorations.push({ type: 'BOLD' });
-      changed = true;
-    }
-    if (!types.has('ITALIC')) {
-      decorations.push({ type: 'ITALIC' });
-      changed = true;
-    }
+    const { decorations, changed } = normalizeH2Decorations(
+      child.textData.decorations || [],
+      opts
+    );
     if (!changed) return child;
+    headingChanged = true;
     return {
       ...child,
       textData: { ...child.textData, decorations },
     };
   });
   return {
-    node: changed ? { ...headingNode, nodes: nextNodes } : headingNode,
-    changed,
+    node: headingChanged ? { ...headingNode, nodes: nextNodes } : headingNode,
+    changed: headingChanged,
   };
 }
 
 /**
  * Apply structural editorial rhythm.
+ * @param {object[]} nodes
+ * @param {{ upgradeIncompleteH2Decorations?: boolean }} [opts]
  * @returns {{ nodes, changes: string[], warnings: string[], reviewRequired: string[] }}
  */
-export function transformRichContentNodes(nodes) {
+export function transformRichContentNodes(nodes, opts = {}) {
   const changes = [];
   const warnings = [];
   const reviewRequired = [];
   let working = Array.isArray(nodes) ? nodes.map((n) => n) : [];
+  const h2Opts = {
+    upgradeIncomplete: !!opts.upgradeIncompleteH2Decorations,
+  };
 
-  // Opening IMAGE with caption = content lead (Fotótörténelem subject image), not decorative hero.
-  if (working[0]?.type === 'IMAGE') {
-    const cap = working[0].imageData && working[0].imageData.caption;
-    if (cap && String(cap).trim()) {
+  // Opening IMAGE with caption = content lead, not decorative hero.
+  const openingImage =
+    working[0]?.type === 'IMAGE'
+      ? working[0]
+      : isEmptyParagraph(working[0]) && working[1]?.type === 'IMAGE'
+        ? working[1]
+        : null;
+  if (openingImage) {
+    if (imageCaptionText(openingImage)) {
       warnings.push('CONTENT_LEAD_IMAGE_OK');
     } else {
       reviewRequired.push('HERO_IMAGE_REVIEW');
-    }
-  } else if (isEmptyParagraph(working[0]) && working[1]?.type === 'IMAGE') {
-    const cap = working[1].imageData && working[1].imageData.caption;
-    if (!(cap && String(cap).trim())) {
-      reviewRequired.push('HERO_IMAGE_REVIEW');
-    } else {
-      warnings.push('CONTENT_LEAD_IMAGE_OK');
     }
   }
 
-  // 1) H2 BOLD+ITALIC
+  // 1) H2 BOLD+ITALIC (complete Ricos decoration shape when adding)
   working = working.map((n) => {
     if (n.type === 'HEADING' && n.headingData && n.headingData.level === 2) {
-      const { node, changed } = ensureH2BoldItalic(n);
+      const { node, changed } = ensureH2BoldItalic(n, h2Opts);
       if (changed && !changes.includes('H2_FORMAT')) changes.push('H2_FORMAT');
       return node;
     }
@@ -115,14 +180,12 @@ export function transformRichContentNodes(nodes) {
     return n;
   });
 
-  // 2) IMAGE spacing: at most one empty before/after; add missing single empty after IMAGE when next is content
+  // 2) IMAGE spacing: at most one empty before (non-opening) and after
   {
     const out = [];
     for (let i = 0; i < working.length; i++) {
       const n = working[i];
-      const prev = out[out.length - 1];
       if (n.type === 'IMAGE') {
-        // collapse double empties before image
         while (
           out.length >= 2 &&
           isEmptyParagraph(out[out.length - 1]) &&
@@ -131,8 +194,16 @@ export function transformRichContentNodes(nodes) {
           out.pop();
           if (!changes.includes('IMAGE_SPACING')) changes.push('IMAGE_SPACING');
         }
-        // optional: do not force empty BEFORE first image at document start
+
+        const prev = out[out.length - 1];
+        // Insert missing empty BEFORE image when not document-start and prev is content
+        if (out.length > 0 && prev && !isEmptyParagraph(prev) && prev.type !== 'IMAGE') {
+          out.push(emptyParagraph());
+          if (!changes.includes('IMAGE_SPACING')) changes.push('IMAGE_SPACING');
+        }
+
         out.push(n);
+
         const next = working[i + 1];
         if (next && !isEmptyParagraph(next) && next.type !== 'IMAGE') {
           out.push(emptyParagraph());
@@ -140,18 +211,14 @@ export function transformRichContentNodes(nodes) {
         }
         continue;
       }
-      // skip empty that would create double after we already inserted after IMAGE
-      if (
-        isEmptyParagraph(n) &&
-        prev &&
-        isEmptyParagraph(prev)
-      ) {
+
+      if (isEmptyParagraph(n) && out.length && isEmptyParagraph(out[out.length - 1])) {
         if (!changes.includes('IMAGE_SPACING')) changes.push('IMAGE_SPACING');
-        continue; // collapse double empty
+        continue;
       }
       out.push(n);
     }
-    // collapse any remaining double empties (extra after image)
+
     const collapsed = [];
     for (const n of out) {
       if (
@@ -167,7 +234,7 @@ export function transformRichContentNodes(nodes) {
     working = collapsed;
   }
 
-  // 3) H2 paragraph rhythm: one empty before and after H2 at semantic boundaries (idempotent)
+  // 3) H2 paragraph rhythm: one empty before and after H2
   {
     const out = [];
     for (let i = 0; i < working.length; i++) {
@@ -198,23 +265,9 @@ export function transformRichContentNodes(nodes) {
         continue;
       }
 
-      // skip empty that was already ensured after H2 (idempotent re-run)
-      if (
-        isEmptyParagraph(n) &&
-        out.length &&
-        out[out.length - 1].type === 'HEADING' &&
-        out[out.length - 1].headingData &&
-        out[out.length - 1].headingData.level === 2
-      ) {
-        // keep single empty already placed; if this is a second empty from source, drop later via collapse
-        out.push(n);
-        continue;
-      }
-
       out.push(n);
     }
 
-    // If we inserted empty after H2 and source also had empty, collapse doubles
     const collapsed = [];
     for (const n of out) {
       if (
@@ -243,7 +296,6 @@ export function simpleHash(value) {
 }
 
 export function preservationSnapshot(post) {
-  // Draft posts expose seoSlug; live posts expose slug. Normalize for comparisons.
   const slug = post.slug || post.seoSlug || null;
   const urlPath = post.url && post.url.path ? post.url.path : null;
   return {
@@ -259,6 +311,10 @@ export function preservationSnapshot(post) {
   };
 }
 
+/**
+ * Fail closed on missing post-update firstPublishedDate when pre-update had one.
+ * @returns {{ regressions: string[], unknowns: string[] }}
+ */
 export function comparePreservation(before, after) {
   const fields = [
     'translationId',
@@ -268,17 +324,28 @@ export function comparePreservation(before, after) {
     'memberId',
   ];
   const regressions = [];
+  const unknowns = [];
+
   for (const f of fields) {
     if (before[f] !== after[f]) regressions.push(f);
   }
-  // firstPublishedDate: only flag when both sides present and differ (draft fieldsets may omit it)
-  if (
-    before.firstPublishedDate &&
-    after.firstPublishedDate &&
-    before.firstPublishedDate !== after.firstPublishedDate
-  ) {
-    regressions.push('firstPublishedDate');
+
+  if (before.firstPublishedDate) {
+    if (!after.firstPublishedDate) {
+      // Fail closed: missing post-update value is UNKNOWN, not a silent pass.
+      unknowns.push('firstPublishedDate');
+    } else {
+      // Draft API may truncate ms (…53.178Z vs …53Z); compare second precision.
+      const beforeSec = Math.floor(Date.parse(before.firstPublishedDate) / 1000);
+      const afterSec = Math.floor(Date.parse(after.firstPublishedDate) / 1000);
+      if (Number.isNaN(beforeSec) || Number.isNaN(afterSec)) {
+        unknowns.push('firstPublishedDate');
+      } else if (beforeSec !== afterSec) {
+        regressions.push('firstPublishedDate');
+      }
+    }
   }
+
   if (JSON.stringify(before.categoryIds) !== JSON.stringify(after.categoryIds)) {
     regressions.push('categoryIds');
   }
@@ -288,5 +355,17 @@ export function comparePreservation(before, after) {
   if (JSON.stringify(before.linkTargets) !== JSON.stringify(after.linkTargets)) {
     regressions.push('linkTargets');
   }
-  return regressions;
+
+  return { regressions, unknowns };
+}
+
+/** Gate passes only when regressions and unknowns are both empty. */
+export function preservationOk(result) {
+  return (
+    result &&
+    Array.isArray(result.regressions) &&
+    Array.isArray(result.unknowns) &&
+    result.regressions.length === 0 &&
+    result.unknowns.length === 0
+  );
 }
