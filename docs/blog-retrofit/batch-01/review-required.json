@@ -1,0 +1,39 @@
+{
+  "batch": 1,
+  "items": [
+    {
+      "code": "AWAIT_PUBLISH_APPROVAL",
+      "severity": "high",
+      "posts": 9,
+      "postIds": [
+        "03b504e8-1839-4bd9-8b41-90143fd04dd3",
+        "81f97d88-591a-4f70-8166-ac4e7e672716",
+        "3b8db61e-3fc8-45be-8ca7-2dec3d829311",
+        "41bdb3e6-722d-4066-80d5-4d4618377de7",
+        "d927bb17-0d71-46d2-92b5-534910ef3df2",
+        "adb4d107-89d4-45c9-abcb-623468725f79",
+        "ae0e6d36-347c-4bc0-9f26-ba3e61f516c9",
+        "b583cf7c-79be-4cfc-9263-19b2f6da3245",
+        "19a61f79-d74c-4dc1-843e-10aad4f6825d"
+      ],
+      "detail": "Structural richContent fixes are saved on draft posts only (hasUnpublishedChanges=true). Live published HTML is unchanged. Explicit approval needed before UPDATE_PUBLISH."
+    },
+    {
+      "code": "CONTENT_LEAD_IMAGE_OK",
+      "severity": "info",
+      "posts": 30,
+      "detail": "Every batch-1 post opens with the subject historical photograph + factual caption. This is content, not a decorative hero. No deletion performed. Marked OK under hero policy."
+    },
+    {
+      "code": "VOICE_EDIT_DEFERRED",
+      "severity": "normal",
+      "posts": 30,
+      "detail": "No BANHALMI voice rewrite in batch 1. Priority was structural (spacing/H2). Voice refinement scheduled after structural pass across remaining batches, only where AI-cliché or rhythm issues are evidenced."
+    },
+    {
+      "code": "SOURCE_STYLE_DEFERRED",
+      "severity": "low",
+      "detail": "Source/Quellen/Források blocks present on series posts; italic/source styling pass deferred unless evidence of missing visual separation after structural publish."
+    }
+  ]
+}

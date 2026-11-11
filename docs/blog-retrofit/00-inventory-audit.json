@@ -1,0 +1,31 @@
+{
+  "siteId": "5bfb58f7-cf3f-4eee-acbd-b8fcac6b217b",
+  "siteUrl": "https://blog.banhalmi.art/",
+  "auditedAt": "2026-11-11",
+  "totals": {
+    "publishedPosts": 537,
+    "byLanguage": {
+      "hu": 179,
+      "en": 179,
+      "de": 179
+    },
+    "translationGroupsCompleteHuEnDe": 179,
+    "incompleteTranslationGroups": 0,
+    "categories": 21,
+    "categoryTranslationGroups": 7,
+    "categoryLessPublishedPosts": 0,
+    "wrongLanguageCategoryAssignments": 0,
+    "translationCategoryParityMismatches": 0,
+    "missingTranslationId": 0
+  },
+  "gates": {
+    "0_category_less": true,
+    "0_wrong_language_category": true,
+    "0_translation_category_mismatch": true,
+    "0_incomplete_translation_groups": true
+  },
+  "notes": [
+    "Category parity must be compared via category.translationId, not raw categoryIds (each language has its own category id).",
+    "Opening IMAGE with factual caption in Fotótörténelem posts is CONTENT_LEAD_IMAGE, not decorative hero."
+  ]
+}
