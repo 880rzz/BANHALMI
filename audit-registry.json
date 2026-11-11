@@ -1,6 +1,6 @@
 {
   "schemaVersion":"1.3.0",
-  "updatedAt":"2026-09-12",
+  "updatedAt":"2026-11-11",
   "chiefOrchestrator":"BANHALMI Ecosystem Steward",
   "rules":{
     "singleOrchestrationAuthority":true,
@@ -22,7 +22,7 @@
     {"id":"executive-risk-reversal","scope":"qualified executive portrait lead conversion and Proof-of-Concept guardrails","type":"conversion-safety","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"executive-risk-reversal.json","rule":"Risk reversal must remain selective, privacy-safe, evidence-safe, commercially bounded and must never become an automatic free-service entitlement."},
     {"id":"executive-positioning-model","scope":"executive brand photography and visual positioning across person, seniority, generational context, role, professional field, stakeholder audience, channels and market culture","type":"positioning-integrity","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"executive-positioning-model.json","rule":"Executive visual positioning must be individualized and context-aware. Generation may inform communication context but must never become a demographic stereotype or a standalone styling rule."},
     {"id":"official-event-gallery","scope":"BANHALMI Photography × VIPACH Flickr profile and downstream relationship pointers","type":"external-gallery-authority","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"official-event-gallery.json","rule":"The Flickr profile is the official shared event and community photography gallery of BANHALMI Photography and VIPACH. It is an external evidence surface, not a Layer-1 canonical property, and must preserve team-level authorship and relationship boundaries."},
-    {"id":"vipach-banhalmi-relationship","scope":"BANHALMI Photography ↔ VIPACH talent-development relationship and VIPACH × BANHALMI Flickr shared archive semantics","type":"entity-relationship-evidence","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"tools/audit-vipach-banhalmi-relationship.mjs","rule":"Visible EN/HU/DE relationship copy, LinkedIn first-party provenance, separate-entity guardrails, and VIPACH × BANHALMI Flickr archive naming must remain coherent without sameAs or employment overclaim."}
+    {"id":"vipach-banhalmi-relationship","scope":"BANHALMI Photography ↔ VIPACH talent-development relationship and VIPACH × BANHALMI Flickr shared archive semantics","type":"entity-relationship-evidence","authority":"blocking","writeCapability":"none","requiredForRelease":true,"source":"tools/audit-vipach-banhalmi-relationship.mjs","rule":"Visible EN/HU/DE relationship copy, LinkedIn first-party provenance, verified VIPACH founder chain (Q138416887 → founder/P112 → Q56391118), separate-entity guardrails, and VIPACH × BANHALMI Flickr archive naming must remain coherent without sameAs or employment overclaim."}
   ],
   "requiredMutationFlow":["current-main-read","live-read","policy-read","proposed-diff","protected-regression-check","branch","PR","CI","merge","deploy","exact-live","reverse-audit"],
   "dailyBalanceReview":{

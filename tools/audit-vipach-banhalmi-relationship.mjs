@@ -5,6 +5,10 @@ import assert from 'node:assert/strict';
 const LINKEDIN = 'https://www.linkedin.com/feed/update/urn:li:activity:7526215563845570561';
 const VIPACH = 'https://www.vipach.at/';
 const FLICKR = 'https://www.flickr.com/photos/vipach/albums';
+const VIPACH_WIKIDATA = 'https://www.wikidata.org/wiki/Q138416887';
+const NORBERT_WIKIDATA = 'https://www.wikidata.org/wiki/Q56391118';
+const VIPACH_WIKIPEDIA = 'https://hu.wikipedia.org/wiki/VIPACH';
+const FOUNDER_STATEMENT = 'Q138416887 → founder (P112) → Q56391118';
 
 const aboutPages = [
   ['about/index.html', 'talent-development'],
@@ -76,6 +80,20 @@ else {
   }
 }
 
+const knowledge = JSON.parse(fs.readFileSync('knowledge.json', 'utf8'));
+if (knowledge.vipachFounderRelationship?.wikidataStatement !== FOUNDER_STATEMENT) failures.push('knowledge.json: exact VIPACH founder Wikidata statement missing/drift');
+if (knowledge.vipachFounderRelationship?.subject?.wikidata !== VIPACH_WIKIDATA) failures.push('knowledge.json: VIPACH Wikidata identity missing/drift');
+if (knowledge.vipachFounderRelationship?.founder?.wikidata !== NORBERT_WIKIDATA) failures.push('knowledge.json: Norbert Wikidata identity missing/drift');
+if (!(knowledge.vipachFounderRelationship?.evidence || []).some((e) => e.url === VIPACH_WIKIPEDIA)) failures.push('knowledge.json: VIPACH Wikipedia founder provenance missing');
+
+const founderEvidence = (ste.verifiedRelationshipEvidence || []).find((r) => r.id === 'vipach-founder-wikidata-wikipedia-verified');
+if (!founderEvidence) failures.push('service-trust-evidence: VIPACH founder evidence record missing');
+else {
+  if (founderEvidence.exactWikidataStatement !== FOUNDER_STATEMENT) failures.push('service-trust-evidence: founder statement drift');
+  if (!founderEvidence.evidence?.includes(VIPACH_WIKIDATA)) failures.push('service-trust-evidence: VIPACH Wikidata evidence missing');
+  if (!founderEvidence.evidence?.includes(VIPACH_WIKIPEDIA)) failures.push('service-trust-evidence: VIPACH Wikipedia evidence missing');
+}
+
 const gallery = JSON.parse(fs.readFileSync('official-event-gallery.json', 'utf8'));
 if (!/shared public Flickr archive|VIPACH × BANHALMI/i.test(gallery.description || '')) {
   failures.push('official-event-gallery: missing shared-archive description');
@@ -95,6 +113,7 @@ for (const path of ['llms.txt', 'ai.txt']) {
   if (!text.includes(LINKEDIN)) failures.push(`${path}: LinkedIn provenance missing`);
   if (!/VIPACH × BANHALMI/.test(text)) failures.push(`${path}: VIPACH × BANHALMI naming missing`);
   if (!/does not imply employment/i.test(text)) failures.push(`${path}: non-employment clarification missing`);
+  if (path === 'ai.txt' && !text.includes(FOUNDER_STATEMENT)) failures.push('ai.txt: exact VIPACH founder statement missing');
 }
 
 if (failures.length) {
@@ -102,4 +121,10 @@ if (failures.length) {
   for (const f of failures) console.error(' -', f);
   process.exit(1);
 }
-console.log('VIPACH–BANHALMI relationship + Flickr archive audit passed: visible EN/HU/DE parity, LinkedIn provenance, shared archive semantics, no employment/sameAs overclaim.');
+const llmsFull = fs.readFileSync('llms-full.txt', 'utf8');
+if (!llmsFull.includes(FOUNDER_STATEMENT)) {
+  console.error('VIPACH–BANHALMI relationship audit FAILED:');
+  console.error(' - llms-full.txt: exact VIPACH founder statement missing');
+  process.exit(1);
+}
+console.log('VIPACH–BANHALMI relationship + founder provenance + Flickr archive audit passed: EN/HU/DE parity, LinkedIn provenance, Q138416887 → founder/P112 → Q56391118, shared archive semantics, no employment/sameAs overclaim.');
