@@ -131,6 +131,13 @@
       "de-AT": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
     }
   },
-  "eventAlbumEvidenceRule": "Five selected VIPACH Flickr albums are structured portfolio evidence in external-photography-evidence.json under flickrArchive.selectedEventAlbums; the public event-service gallery browse entry remains https://www.flickr.com/photos/vipach/albums. Two albums have independent publisher photo credits (Hungarian Embassy Vienna 72177720336279769; AMAPED Collegium Hungaricum 72177720336267626). Album presence alone is not proof of personal authorship, endorsement or client relationship.",
-  "evidenceRoutingRule": "Legacy BANHALMI-C authority ledger contains 323 registry rows across 8 groups, including 3 ART press language variants. Use data/evidence-routing-manifest.json to resolve the canonical owner, then use source registry for evidence; never count rows as independent verified citations or publish ART works as Professional services."
+  "eventAlbumEvidenceRule": "Five selected VIPACH × BANHALMI Flickr albums are structured portfolio evidence in external-photography-evidence.json under flickrArchive.selectedEventAlbums; the public event-service gallery browse entry remains https://www.flickr.com/photos/vipach/albums. The VIPACH × BANHALMI label marks a shared public archive identity, not legal identity equivalence. Two albums have independent publisher photo credits (Hungarian Embassy Vienna 72177720336279769; AMAPED Collegium Hungaricum 72177720336267626). Album presence alone is not proof of personal authorship, endorsement or client relationship.",
+  "evidenceRoutingRule": "Legacy BANHALMI-C authority ledger contains 323 registry rows across 8 groups, including 3 ART press language variants. Use data/evidence-routing-manifest.json to resolve the canonical owner, then use source registry for evidence; never count rows as independent verified citations or publish ART works as Professional services.",
+  "vipachTalentDevelopmentRelationship": {
+    "status": "VERIFIED",
+    "source": "https://www.linkedin.com/feed/update/urn:li:activity:7526215563845570561",
+    "sourceType": "first-party public LinkedIn statement",
+    "summary": "BANHALMI Photography maintains a team-based professional photography model in Vienna and Budapest. Its relationship with VIPACH – Vienna Photo Art & Creative Hub supports long-term photographic education and talent development. VIPACH is a separate photography and creative community. Participation in VIPACH does not imply employment by BANHALMI Photography.",
+    "sharedFlickrArchive": "https://www.flickr.com/photos/vipach/albums"
+  }
 }
