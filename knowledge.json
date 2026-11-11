@@ -23,7 +23,7 @@
   "@id": "https://www.banhalmiphotography.com/#knowledge-dataset",
   "name": "BANHALMI entity and oeuvre knowledge export",
   "url": "https://www.banhalmiphotography.com/knowledge.json",
-  "dateModified": "2026-07-17T17:00:00+02:00",
+  "dateModified": "2026-11-11T11:10:00+01:00",
   "about": {
     "@id": "https://www.banhalmiphotography.com/about/",
     "knowsAbout": [
@@ -293,6 +293,16 @@
     {
       "name": "AmCham Austria member photo credit",
       "url": "https://amcham.at/2026/03/23/shaping-austrias-competitive-future/"
+    },
+    {
+      "name": "VIPACH — Hungarian Wikipedia",
+      "url": "https://hu.wikipedia.org/wiki/VIPACH",
+      "relationship": "founder provenance"
+    },
+    {
+      "name": "VIPACH — Wikidata Q138416887",
+      "url": "https://www.wikidata.org/wiki/Q138416887",
+      "relationship": "entity identity and founder statement"
     }
   ],
   "verifiedExternalEvidence": {
@@ -622,5 +632,42 @@
     ],
     "statement": "Both representatives represent BANHALMI Photography at AmCham Austria events and act as official company representatives in the company's AmCham membership.",
     "source": "https://amcham.at/members-list/"
+  },
+  "vipachFounderRelationship": {
+    "status": "VERIFIED",
+    "relationship": "founder",
+    "subject": {
+      "name": "VIPACH – Vienna Photo Art & Creative Hub",
+      "wikidata": "https://www.wikidata.org/wiki/Q138416887",
+      "canonicalUrl": "https://www.vipach.at/"
+    },
+    "founder": {
+      "name": "Norbert Bánhalmi",
+      "wikidata": "https://www.wikidata.org/wiki/Q56391118",
+      "canonicalPerson": "https://www.banhalmiphotography.com/about/"
+    },
+    "wikidataStatement": "Q138416887 → founder (P112) → Q56391118",
+    "evidence": [
+      {
+        "type": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q138416887",
+        "proves": "VIPACH entity identity and founder statement to Norbert Banhalmi"
+      },
+      {
+        "type": "Wikipedia",
+        "url": "https://hu.wikipedia.org/wiki/VIPACH",
+        "proves": "VIPACH history identifies Bánhalmi Norbert as founder"
+      },
+      {
+        "type": "Official organization source",
+        "url": "https://www.vipach.at/",
+        "proves": "Primary first-party organizational provenance referenced by Wikidata"
+      }
+    ],
+    "guardrails": [
+      "VIPACH and BANHALMI Photography remain separate entities.",
+      "Founder relationship does not imply legal identity equivalence, subsidiary status or automatic employment.",
+      "Use sameAs only for identity-equivalent URLs."
+    ]
   }
 }
