@@ -1,0 +1,141 @@
+{
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  "name": "BANHALMI official starting-price guide",
+  "description": "Machine-readable public starting prices for BANHALMI photography services. Final scope, availability and fee are confirmed in the accepted written offer.",
+  "url": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
+  "inLanguage": ["hu-HU", "de-AT", "en"],
+  "dateModified": "2026-11-12",
+  "priceCurrency": "EUR",
+  "priceType": "grossStartingPrice",
+  "vatIncluded": true,
+  "vatRate": 0.20,
+  "conversionPolicy": "Published HUF amounts use the planning conversion 1 EUR = 400 HUF and are not a live exchange rate.",
+  "itemListElement": [
+    {
+      "@type": "Offer",
+      "name": "Headshot / CV portrait",
+      "price": 120,
+      "priceCurrency": "EUR",
+      "priceHUF": 48000,
+      "description": "10-minute session and 1 retouched image.",
+      "url": "https://www.banhalmiphotography.com/hu/portre/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Executive Portrait",
+      "price": 499,
+      "priceCurrency": "EUR",
+      "priceHUF": 199600,
+      "description": "Focused portrait production for executives, leadership profiles, company communication and press use; 3 retouched images.",
+      "url": "https://www.banhalmiphotography.com/hu/portre/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Executive Personal Branding",
+      "price": 790,
+      "priceCurrency": "EUR",
+      "priceHUF": 316000,
+      "description": "Extended personal-branding production for leadership communication; 3 retouched images.",
+      "url": "https://www.banhalmiphotography.com/hu/brand/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Profilportré / 30-minute portrait session",
+      "price": 220,
+      "priceCurrency": "EUR",
+      "priceHUF": 88000,
+      "url": "https://www.banhalmiphotography.com/hu/ajanlatkeres/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Személyes portré / 60-minute portrait session",
+      "price": 420,
+      "priceCurrency": "EUR",
+      "priceHUF": 168000,
+      "url": "https://www.banhalmiphotography.com/hu/ajanlatkeres/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Portré-sorozat / 120-minute portrait session",
+      "price": 690,
+      "priceCurrency": "EUR",
+      "priceHUF": 276000,
+      "url": "https://www.banhalmiphotography.com/hu/ajanlatkeres/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Business Event Photography",
+      "price": 490,
+      "priceCurrency": "EUR",
+      "priceHUF": 196000,
+      "url": "https://www.banhalmiphotography.com/hu/ajanlatkeres/"
+    },
+    {
+      "@type": "Offer",
+      "name": "C-Level / Institutional Event Photography",
+      "price": 590,
+      "priceCurrency": "EUR",
+      "priceHUF": 236000,
+      "url": "https://www.banhalmiphotography.com/hu/ajanlatkeres/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Artists & Performers",
+      "price": 690,
+      "priceCurrency": "EUR",
+      "priceHUF": 276000,
+      "description": "Creative portrait production for artists and performers; 2 retouched images.",
+      "url": "https://www.banhalmiphotography.com/hu/ajanlatkeres/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Personal Fine Art",
+      "price": 690,
+      "priceCurrency": "EUR",
+      "priceHUF": 276000,
+      "description": "Fine-art portrait production; any nude or boudoir direction is agreed in advance.",
+      "url": "https://www.banhalmiphotography.com/hu/ajanlatkeres/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Private celebration photography / 1 hour",
+      "price": 390,
+      "priceCurrency": "EUR",
+      "priceHUF": 156000,
+      "url": "https://www.banhalmiphotography.com/hu/ajanlatkeres/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Private celebration photography / recommended 2 hours",
+      "price": 590,
+      "priceCurrency": "EUR",
+      "priceHUF": 236000,
+      "url": "https://www.banhalmiphotography.com/hu/ajanlatkeres/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Executive Visual Library",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": null,
+        "priceCurrency": "EUR",
+        "description": "Custom quote."
+      },
+      "url": "https://www.banhalmiphotography.com/hu/brand/"
+    }
+  ],
+  "scopeNotes": [
+    "All listed amounts are gross starting prices.",
+    "Additional images, crew, travel, location production, styling and other options are quoted separately where applicable.",
+    "Team photography is individually scoped; this file does not assert a fixed team-package price.",
+    "VAT treatment for cross-border B2B work depends on the customer's status and is confirmed in the written offer; do not infer a 0% VAT rate from this file.",
+    "The accepted written offer is the controlling source for the final scope, availability, currency and fee."
+  ],
+  "sourcePages": [
+    "https://www.banhalmiphotography.com/hu/portre/",
+    "https://www.banhalmiphotography.com/hu/brand/",
+    "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
+    "https://www.banhalmiphotography.com/hu/aszf/"
+  ]
+}
