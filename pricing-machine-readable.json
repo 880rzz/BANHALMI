@@ -4,12 +4,16 @@
   "name": "BANHALMI official starting-price guide",
   "description": "Machine-readable public starting prices for BANHALMI photography services. Final scope, availability and fee are confirmed in the accepted written offer.",
   "url": "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
-  "inLanguage": ["hu-HU", "de-AT", "en"],
+  "inLanguage": [
+    "hu-HU",
+    "de-AT",
+    "en"
+  ],
   "dateModified": "2026-11-12",
   "priceCurrency": "EUR",
   "priceType": "grossStartingPrice",
   "vatIncluded": true,
-  "vatRate": 0.20,
+  "vatRate": 0.2,
   "conversionPolicy": "Published HUF amounts use the planning conversion 1 EUR = 400 HUF and are not a live exchange rate.",
   "itemListElement": [
     {
@@ -137,5 +141,9 @@
     "https://www.banhalmiphotography.com/hu/brand/",
     "https://www.banhalmiphotography.com/hu/ajanlatkeres/",
     "https://www.banhalmiphotography.com/hu/aszf/"
-  ]
+  ],
+  "canonical": "https://www.banhalmiphotography.com/pricing-machine-readable.json",
+  "hreflang": {
+    "x-default": "https://www.banhalmiphotography.com/pricing-machine-readable.json"
+  }
 }
