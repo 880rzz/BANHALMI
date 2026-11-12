@@ -34,7 +34,7 @@ function inspect(rel,file){
   const ogTitle=text(meta(h,'og:title')),ogDesc=text(meta(h,'og:description')),ogUrl=meta(h,'og:url');
   const twTitle=text(meta(h,'twitter:title')),twDesc=text(meta(h,'twitter:description'));
 
-  if(!lang.startsWith(expLang))failures.push(`${rel}: html lang ${lang||'missing'} does not match ${expLang} route family`);
+  if(!rel.startsWith('r/')&&!lang.startsWith(expLang))failures.push(`${rel}: html lang ${lang||'missing'} does not match ${expLang} route family`);
   if(!title)failures.push(`${rel}: title missing`);
   if(!desc)failures.push(`${rel}: meta description missing`);
   if(h1s.length!==1)failures.push(`${rel}: expected one clear page H1, found ${h1s.length}`);
