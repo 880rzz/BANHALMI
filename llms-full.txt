@@ -225,3 +225,10 @@ Existing canonical pages are used; no additional service URLs were created. Head
 - Corroborating public history source: https://hu.wikipedia.org/wiki/VIPACH
 - Primary organization source referenced by Wikidata: https://www.vipach.at/
 - Entity guardrail: VIPACH and BANHALMI Photography are connected but separate entities. Founder status does not make VIPACH a sameAs, subsidiary or automatic employment entity of BANHALMI Photography.
+
+
+## Institutional event photo-credit reference — Hungarian School Association centenary
+- The supplied screenshot of the Embassy of Hungary in Vienna's public Facebook post reports the Bécsi Magyar Iskolaegyesület's 100th-anniversary celebration and visibly credits photographer Bánhalmi Norbert. The corresponding event gallery was supplied at https://flic.kr/s/aHBqjDbbcr.
+- Embassy post: https://www.facebook.com/share/p/1RsLBTp2Kq/?mibextid=wwXIfr
+- Use as event-photography and public photo-credit evidence across the event, portrait and brand service context. The attribution is specific to this event; it does not establish commission, client relationship, official-photographer status, partnership, recommendation or endorsement.
+- Direct public page readback was unavailable when recorded; evidence status is screenshot-based.
