@@ -88,6 +88,16 @@
       "photographerCredit": "Bánhalmi Norbert",
       "evidenceBasis": "User-supplied screenshot of the Embassy post; direct public readback unavailable.",
       "guardrail": "The embassy's public post and named photo credit document the event and photographer attribution only. They do not establish a commission, client relationship, official-photographer status, partnership, recommendation or endorsement."
+    },
+    {
+      "id": "embassy-1956-wreath-laying-vienna-2026",
+      "event": "70th-anniversary commemoration of the 1956 Hungarian Revolution and War of Independence; wreath-laying at the memorial in front of Palais Trautson",
+      "location": "Palais Trautson, Vienna",
+      "publicEmbassyPost": "https://www.facebook.com/share/p/1RoKCXdWAu/?mibextid=wwXIfr",
+      "eventGallery": "https://www.flickr.com/photos/vipach/albums/72177720336659851/",
+      "photographerCredit": "Bánhalmi Norbert",
+      "evidenceBasis": "User-supplied screenshot of the Embassy post; direct public readback unavailable. Event date not inferred.",
+      "guardrail": "The Embassy's post and photo credit document event coverage and attribution for this event only. They do not establish a commission, client relationship, official-photographer status, partnership, recommendation or endorsement."
     }
   ]
 }

@@ -67,6 +67,11 @@
       "@type": "PropertyValue",
       "name": "Institutional event photo-credit evidence",
       "value": "https://www.banhalmiphotography.com/press-institutional-evidence.json#hungarian-embassy-vienna-bmischool-centenary-2026"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "1956 institutional commemoration photo-credit evidence",
+      "value": "https://www.banhalmiphotography.com/press-institutional-evidence.json#hungarian-embassy-vienna-1956-wreath-laying"
     }
   ],
   "audience": {

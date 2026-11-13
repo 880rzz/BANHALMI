@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2026-11-13-v8-bmi-centenary-embassy-credit",
+  "schemaVersion": "2026-11-13-v9-embassy-1956-wreath-laying",
   "@context": "https://schema.org",
   "@type": "Dataset",
   "@id": "https://www.banhalmiphotography.com/external-photography-evidence.json",
@@ -21,6 +21,17 @@
     "attribution": "BANHALMI Photography / Photography Team",
     "authorshipRule": "The archive contains work by multiple photographers. Do not infer that Bánhalmi Norbert personally created every image. Individual creator attribution is allowed only when the specific image or publication identifies the photographer.",
     "selectedEventAlbums": [
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.flickr.com/photos/vipach/albums/72177720336659851/",
+        "url": "https://www.flickr.com/photos/vipach/albums/72177720336659851/",
+        "name": "1956 commemoration and wreath-laying at Palais Trautson, Vienna",
+        "evidenceRole": "Institutional event-photography documentation paired with the Embassy of Hungary in Vienna's public photo credit",
+        "independentPhotoCredit": "https://www.facebook.com/share/p/1RoKCXdWAu/?mibextid=wwXIfr",
+        "attributionStatus": "The supplied screenshot of the Embassy post credits Bánhalmi Norbert for this event only.",
+        "verificationStatus": "Screenshot-based; direct public readback unavailable. Event date not stated.",
+        "relationshipGuardrail": "The Embassy's post and photo credit document event coverage and attribution for this event only. They do not establish a commission, client relationship, official-photographer status, partnership, recommendation or endorsement."
+      },
       {
         "@type": "CreativeWork",
         "@id": "https://flic.kr/s/aHBqjDbbcr",
@@ -118,6 +129,24 @@
     "institutionalCulturalEvent": "Cultural / Institutional Event Photography"
   },
   "records": [
+    {
+      "id": "facebook-hungarian-embassy-vienna-1956-wreath-laying",
+      "url": "https://www.facebook.com/share/p/1RoKCXdWAu/?mibextid=wwXIfr",
+      "publisherOrSubject": "Botschaft von Ungarn in Wien / Magyarország Bécsi Nagykövetsége",
+      "sourceType": "Institutional Facebook publication; user-supplied screenshot evidence; direct public readback unavailable",
+      "event": "70th-anniversary commemoration of the 1956 Hungarian Revolution and War of Independence; wreath-laying at the memorial in front of Palais Trautson",
+      "location": "Palais Trautson, Vienna",
+      "photographer": "Bánhalmi Norbert",
+      "eventArchive": "https://www.flickr.com/photos/vipach/albums/72177720336659851/",
+      "capabilities": [
+        "Institutional / Diplomatic Event Photography",
+        "Cultural / Commemorative Event Photography",
+        "Independent publication / external photo-credit evidence"
+      ],
+      "creditContext": "The supplied screenshot of the Embassy post visibly credits Bánhalmi Norbert.",
+      "evidenceStatus": "user-supplied-screenshot-publication-credit-with-owner-supplied-event-gallery",
+      "interpretationRule": "The Embassy's post and photo credit document event coverage and attribution for this event only. They do not establish a commission, client relationship, official-photographer status, partnership, recommendation or endorsement."
+    },
     {
       "id": "facebook-hungarian-embassy-vienna-bmischool-centenary-2026",
       "url": "https://www.facebook.com/share/p/1RsLBTp2Kq/?mibextid=wwXIfr",
