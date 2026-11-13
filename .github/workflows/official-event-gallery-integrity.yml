@@ -1,8 +1,10 @@
 name: BANHALMI official event gallery integrity
 
 on:
-  push:
+  workflow_run:
+    workflows: ["BANHALMI production deploy"]
     branches: [main]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -10,10 +12,13 @@ permissions:
 
 jobs:
   integrity:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout exact committed revision
+      - name: Checkout deployed commit
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
       - name: Verify official gallery contract
         run: |
           node tools/audit-official-event-gallery.mjs
