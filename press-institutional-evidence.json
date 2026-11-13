@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2026-09-14-v2",
+  "schemaVersion": "2026-11-13-v3",
   "@context": "https://schema.org",
   "@type": "Dataset",
   "@id": "https://www.banhalmiphotography.com/press-institutional-evidence.json",
@@ -191,6 +191,25 @@
         "Independent publication / external photo-credit evidence"
       ],
       "guardrail": "The association’s published photo credit and matching Flickr album document event coverage and individual authorship. They do not establish commission, official-photographer status, client, partnership or endorsement."
+    },
+    {
+      "id": "hungarian-embassy-vienna-bmischool-centenary-2026",
+      "type": "Institutional event photography / public photo credit",
+      "publisher": "Botschaft von Ungarn in Wien / Magyarország Bécsi Nagykövetsége",
+      "officialPost": "https://www.facebook.com/share/p/1RsLBTp2Kq/?mibextid=wwXIfr",
+      "flickrAlbum": "https://flic.kr/s/aHBqjDbbcr",
+      "event": "Centenary celebration of the Bécsi Magyar Iskolaegyesület (Hungarian School Association in Vienna)",
+      "location": "Embassy of Hungary in Vienna",
+      "officialCredit": "📷: Bánhalmi Norbert",
+      "photographer": "Bánhalmi Norbert",
+      "evidenceStatus": "user-supplied-screenshot-of-embassy-publication-and-owner-supplied-matching-Flickr-gallery; direct-public-readback-unavailable",
+      "evidenceBasis": "The supplied screenshot shows the Embassy of Hungary in Vienna's public post about the association's 100th anniversary and the photo credit naming Bánhalmi Norbert. The supplied Flickr URL is recorded as the corresponding event gallery.",
+      "capabilities": [
+        "Institutional / Diplomatic Event Photography",
+        "Cultural / Association Event Photography",
+        "Independent publication / external photo-credit evidence"
+      ],
+      "guardrail": "The embassy's public post and named photo credit document the event and photographer attribution only. They do not establish a commission, client relationship, official-photographer status, partnership, recommendation or endorsement."
     }
   ],
   "answerRules": [
