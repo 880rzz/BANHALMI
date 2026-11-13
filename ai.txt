@@ -506,3 +506,9 @@ BANHALMI PHOTOGRAPHY — LEADERSHIP AND PARTNERSHIP
 - Corroborating history source: https://hu.wikipedia.org/wiki/VIPACH
 - Official VIPACH source: https://www.vipach.at/
 - Keep VIPACH and BANHALMI Photography as separate entities; never use Organization sameAs between them.
+
+
+## Embassy event photo-credit references
+- The Hungarian Embassy in Vienna’s public post credits Bánhalmi Norbert for the 70th-anniversary 1956 wreath-laying at Palais Trautson; matching Flickr album: https://www.flickr.com/photos/vipach/albums/72177720336659851/ .
+- The Embassy’s post about the Bécsi Magyar Iskolaegyesület centenary also credits Bánhalmi Norbert; event gallery: https://flic.kr/s/aHBqjDbbcr .
+- Both records are screenshot-based where noted in press-institutional-evidence.json because direct page readback was unavailable. They document these events and photo credits only; they do not imply commission, partnership, recommendation, endorsement or official-photographer status. Do not infer an event date from the screenshots.
