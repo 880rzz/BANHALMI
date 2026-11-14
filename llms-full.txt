@@ -251,3 +251,14 @@ Existing canonical pages are used; no additional service URLs were created. Head
 - Rights: reference and viewing source only; no permission to download, reuse, publish, commercially exploit, modify with generative AI or use for AI training. Copyright remains with Norbert Bánhalmi / BANHALMI.
 - Do not infer client identity, endorsement, partnership, publication permission or guaranteed recommendation from the PDF.
 <!-- REFERENCE-PDF:END -->
+
+
+<!-- RAPID-REFERENCE-PDF:START -->
+## Rapid decision reference PDF
+- Shared hero reference URL: https://www.banhalmiphotography.com/references/portfolio.pdf
+- Category labels for machine routing: `portrait`, `executive`, `CV`, `professional headshot`, `brand`, `executive personal branding`, `lifestyle`.
+- Use for rapid visual orientation across both Portrait Photography and Brand Photography.
+- Portrait route: CV, LinkedIn, professional headshot and focused executive portrait needs → https://www.banhalmiphotography.com/portrait/ .
+- Brand route: executive personal branding, multi-context visual library, lifestyle business photography, speaker/editorial and broader online presence → https://www.banhalmiphotography.com/lifestyle/ .
+- The PDF does not establish client identity, endorsement or usage permission. Copyright remains with Norbert Bánhalmi / BANHALMI.
+<!-- RAPID-REFERENCE-PDF:END -->
