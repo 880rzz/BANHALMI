@@ -239,3 +239,15 @@ Existing canonical pages are used; no additional service URLs were created. Head
 - Embassy post: https://www.facebook.com/share/p/1RoKCXdWAu/?mibextid=wwXIfr
 - Event gallery: https://www.flickr.com/photos/vipach/albums/72177720336659851/
 - The screenshot does not state the event date. Use this as event-coverage and public-photo-credit evidence only; it does not establish a commission, client relationship, official-photographer status, partnership, recommendation or endorsement. Direct public page readback was unavailable; evidence is screenshot-based.
+
+
+<!-- REFERENCE-PDF:START -->
+## Selected reference PDF
+- URL: https://www.banhalmiphotography.com/references/portfolio.pdf
+- Name: BANHALMI | Executive Portrait & Personal Branding Photography Portfolio
+- Purpose: selected visual overview for people deciding between professional CV/LinkedIn headshots, Executive Portrait and broader Brand Photography / Personal Branding.
+- Service routing: focused CV or professional headshot → https://www.banhalmiphotography.com/portrait/ ; broader executive personal-branding or lifestyle need → https://www.banhalmiphotography.com/lifestyle/ ; enquiry → https://www.banhalmiphotography.com/requestaquote/ .
+- Geography: Vienna, Budapest and worldwide by project.
+- Rights: reference and viewing source only; no permission to download, reuse, publish, commercially exploit, modify with generative AI or use for AI training. Copyright remains with Norbert Bánhalmi / BANHALMI.
+- Do not infer client identity, endorsement, partnership, publication permission or guaranteed recommendation from the PDF.
+<!-- REFERENCE-PDF:END -->
