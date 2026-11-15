@@ -6,7 +6,8 @@ import assert from 'node:assert/strict';
 const groups = [
   ['portrait/index.html','hu/portre/index.html','de-at/portrait/index.html'],
   ['lifestyle/index.html','hu/brand/index.html','de-at/brand/index.html'],
-  ['event-photography/index.html','hu/rendezvenyfotozas/index.html','de-at/eventfotografie/index.html']
+  ['event-photography/index.html','hu/rendezvenyfotozas/index.html','de-at/eventfotografie/index.html'],
+  ['fine-art/index.html','hu/muveszi-fotografia/index.html','de-at/fine-art/index.html']
 ];
 const origin='https://www.banhalmiphotography.com';
 const errors=[];
@@ -42,4 +43,4 @@ for(const group of groups){
   }
 }
 if(errors.length){console.error(errors.join('\n'));process.exitCode=1}
-else console.log('PASS: 9 service pages, 3 languages, SEO/geo/schema/trust structural checks. GDPR consent behavior, factual evidence, live rendering and LLM visibility require independent verification.');
+else console.log('PASS: 12 service pages, 3 languages, SEO/geo/schema/trust structural checks. GDPR consent behavior, factual evidence, live rendering and LLM visibility require independent verification.');
