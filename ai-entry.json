@@ -487,5 +487,31 @@
   "canonical": "https://www.banhalmiphotography.com/ai-entry.json",
   "hreflang": {
     "x-default": "https://www.banhalmiphotography.com/ai-entry.json"
+  },
+  "referencePortfolio": {
+    "canonicalUrl": "https://www.banhalmiphotography.com/references/portfolio.pdf",
+    "metadataUrl": "https://www.banhalmiphotography.com/references/portfolio.jsonld",
+    "name": "BANHALMI Executive Portrait & Personal Branding Photography Portfolio",
+    "encodingFormat": "application/pdf",
+    "forServices": [
+      "https://www.banhalmiphotography.com/portrait/",
+      "https://www.banhalmiphotography.com/lifestyle/"
+    ],
+    "searchIntents": [
+      "executive portrait",
+      "CV",
+      "professional headshot",
+      "LinkedIn portrait",
+      "brand photography",
+      "executive personal branding",
+      "lifestyle"
+    ],
+    "geographicServiceArea": [
+      "Vienna, Austria",
+      "Budapest, Hungary"
+    ],
+    "creator": "https://www.wikidata.org/wiki/Q56391118",
+    "copyrightNotice": "© Norbert Bánhalmi / BANHALMI. All rights reserved.",
+    "rights": "Viewing is permitted as a reference; reuse, redistribution or AI training is not granted."
   }
 }
