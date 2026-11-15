@@ -698,11 +698,7 @@
         "brand"
       ],
       "context": "Project documentation states that the digital exhibition concept was developed by Samsung Hungary and Norbert Bánhalmi and identifies him as curator and Olympus ambassador.",
-      "guardrail": "Use for documented collaboration/project capability only; avoid implying broader Samsung or Olympus endorsement beyond the stated project/ambassador context. Private correspondence is used only as non-public provenance corroboration; do not expose personal contact details or infer a broader Samsung endorsement/ambassadorship.",
-      "corroboration": [
-        "Contemporaneous 2021 first-party correspondence with Samsung Electronics Hungary corroborates Samsung participation, The Frame display provision, logistics, naming/brand-book review and exhibition planning for the Tihany digital photography project."
-      ],
-      "relationshipEvidence": "FIRST-PARTY-CORRESPONDENCE-CORROBORATED",
+      "corroboration": [],
       "verificationStatus": "LIVE-VERIFIED",
       "sourceStrength": "medium-high",
       "evidenceType": [
@@ -2900,7 +2896,6 @@
       "publisher": "iMagazin",
       "url": "http://imagazin.hu/fotos-utomunkara-ipad-lehetseges/",
       "title": "Fotós utómunkára iPad? Lehetséges!",
-      "reason": "The historical publication URL and existence are directly preserved in contemporaneous correspondence, but the public article body is no longer directly retrievable. Treat as historical first-party publication reference, not independent editorial endorsement.",
       "status": "archive-verified",
       "verificationStatus": "ARCHIVE-VERIFIED",
       "evidenceType": [
@@ -2924,8 +2919,7 @@
         "User-preserved 12-page PDF capture of the published iMagazin article, visually verified in full on 2026-09-28.",
         "The PDF contains the title 'Fotós utómunkára iPad? Lehetséges!'.",
         "The iMagazin editorial introduction explicitly names Bánhalmi Norbert as the photographer whose iPad workflow is being presented.",
-        "The closing page carries the explicit byline 'Bánhalmi Norbert fotográfus'.",
-        "Contemporaneous 2016 Gmail correspondence preserves the exact original iMagazin URL and publication timing."
+        "The closing page carries the explicit byline 'Bánhalmi Norbert fotográfus'."
       ],
       "evidenceKind": "archived first-person professional publication / editorially framed guest article",
       "serviceRelevance": [
@@ -3464,7 +3458,6 @@
       "evidenceSummary": "International Swiss editorial publication and explicit attribution of a Bánhalmi portrait.",
       "sourceStrength": "high",
       "provenance": [
-        "Original saved PDF of the article 'Ein talentierter Schlawiner' dated 2026-04-01 was recovered from contemporaneous Gmail correspondence.",
         "Visual inspection of the PDF confirms the lead portrait caption and the separate credit line 'Norbert Banhalmi'."
       ],
       "guardrail": "Photo-credit/circulation evidence only. Do not infer a commission, client relationship, political affiliation, political support, endorsement, editorial agreement or relationship with the photographed political figure or the publisher."
@@ -3645,19 +3638,14 @@
       "evidenceSummary": "Archived related-party/project-partner magazine evidence for Bánhalmi's photography, project-development contribution and the Ébredés book/exhibition, with direct image credits and a first-hand project-origin account.",
       "sourceStrength": "medium-high",
       "provenance": [
-        "Preserved 15-page Női Egészség Magazin PDF dated October 2017 from contemporaneous correspondence.",
         "Visual verification of the imprint shows Női Egészség Magazin, Ars Hilaris Kft., ISSN 2560-0788 and Bánhalmi Norbert among credited photographers.",
         "Visual verification of the Ébredés feature shows multiple explicit 'fotó: Bánhalmi Norbert' credits.",
         "The published 'Így történt' section by Elek Erika gives a first-hand project-origin account and names Bánhalmi's contribution to creating the exhibition and book."
-      ],
-      "guardrail": "This is project-partner/related-party documentation, not independent editorial endorsement. Use it as first-hand project provenance, publication/photo-credit and artistic/portrait authority evidence. Do not convert participant or editorial statements about illness, body image, psychology, recovery or personal transformation into medical, psychological or therapeutic efficacy claims. Do not expose private correspondence used to recover the PDF."
+      ]
     },
     {
       "id": "coca-cola-coke-club-reference-2008-2012",
-      "title": "Private historical Coke Club reference — authentication pending",
-      "publisher": "Private historical reference document",
       "datePublished": "2013-05-28",
-      "evidenceKind": "private historical reference document",
       "verificationStatus": "PRIVATE-PROVENANCE-AUTHENTICATION-PENDING",
       "evidenceType": [
         "PROJECT-COVERAGE",
@@ -3675,8 +3663,6 @@
       ],
       "services": [],
       "serviceRelevance": [],
-      "context": "A private historical reference document contains detailed claims about Coke Club photography and photo/video communication work. The document has been visually recovered, but its corporate authenticity has not been independently authenticated. Public sources separately corroborate the historical Coke Club project and Bánhalmi's involvement at a narrower level.",
-      "evidenceSummary": "Preserved as private provenance only; not an authenticated corporate citation and not a service authority point.",
       "sourceStrength": "private-authentication-pending",
       "corroboratingUrls": [
         "https://www.hipstudio.hu/_files/ugd/b0aee1_357ff796b7a145d28d1f8f021ad884d5.pdf",
@@ -3899,7 +3885,6 @@
       "reason": "Event identity and album delivery are privately verified, but public Flickr metadata/credit remains inaccessible. Keep unbound until direct public metadata is recovered.",
       "status": "private-project-provenance-verified-public-metadata-pending",
       "lastChecked": "2026-09-28",
-      "guardrail": "Do not expose private correspondence. Do not treat private feedback as a public testimonial. Do not service-bind or present the album as public institutional evidence until exact public album metadata/credit is retrievable.",
       "title": "Vienna cultural concert event — Flickr album 72177720335859544",
       "dateRange": "2026-09-24 event; album shared 2026-09-27",
       "evidenceKind": "private project provenance with unresolved public album metadata",
@@ -3930,10 +3915,7 @@
       "canonicalArtCatalogueNumber": "BAS-0029",
       "canonicalArtSourceRegistry": "https://www.banhalmi.art/master-source-database.json",
       "provenance": [
-        "Current Tripont page preserves Bánhalmi Norbert attribution although the article body is deleted.",
-        "Contemporaneous January-February 2018 publisher/editor correspondence preserves the original Tripont Problog preview URLs and confirms Tripont editorial review, author attribution and planned promotion.",
-        "A full contemporaneous DOCX draft of the article is preserved in the publisher correspondence.",
-        "The publisher/editor correspondence explicitly discusses the Lume Cube article, Olympus PEN E-PL7/MILC testing, article editing and finalization."
+        "Current Tripont page preserves Bánhalmi Norbert attribution although the article body is deleted."
       ],
       "recoveryPriority": "P1-HISTORICAL-AUTHORITY",
       "verificationStatus": "PARTIAL-LIVE-PLUS-CONTEMPORANEOUS-PUBLISHER-DRAFT-VERIFIED",
@@ -3943,7 +3925,6 @@
         "FIRST-PARTY"
       ],
       "services": [],
-      "guardrail": "Do not label ARCHIVE-VERIFIED until the exact final published body is recovered. The preserved draft contains first-person psychological/therapeutic language; do not convert those statements into clinical, medical or therapeutic efficacy claims. Do not expose private correspondence or personal details.",
       "datePublished": "2018-01/02",
       "publisher": "Tripont Foto Video / Problog",
       "originalProblogUrls": [
@@ -3987,10 +3968,7 @@
       "sourceType": "ArchivedArticle",
       "provenance": [
         "current-hungarian-wikipedia",
-        "BANHALMI ART master source database",
-        "Contemporaneous February 2018 correspondence from the Tripont editor preserves the publisher-side URL '.../2950/a_muveszi_akt_pszichologiaja' and states that the text was streamlined into a blog post.",
-        "The same correspondence records Bánhalmi's review/approval of the edited article.",
-        "The full author DOCX used in the editorial process is preserved in the contemporaneous correspondence."
+        "BANHALMI ART master source database"
       ],
       "recoveryPriority": "P1-HISTORICAL-AUTHORITY",
       "verificationStatus": "CONTEMPORANEOUS-PUBLISHER-DRAFT-VERIFIED",
@@ -4013,7 +3991,6 @@
         "Tripont editorial publication"
       ],
       "sourceStrength": "medium-high historical provenance",
-      "evidenceSummary": "Publisher-side editorial correspondence and preserved source text verify the substance and editorial workflow of the Tripont article on artistic nude photography, trust and photographic process, while the exact final published body remains unavailable.",
       "expectedServiceRelevance": [
         "portrait",
         "fineArt",
@@ -4050,7 +4027,6 @@
       "guardrail": "Historical New York professional/publication evidence only. Do not infer a current New York studio, U.S. employment, immigration/work status or current U.S. client base. Do not mark full ARCHIVE-VERIFIED until the exact final archived body is recovered.",
       "datePublished": "2018-03",
       "sourceStrength": "medium-high historical provenance",
-      "evidenceSummary": "Publisher-side editorial correspondence verifies that Tripont edited and prepared the New York article at the exact 3032 URL. The exact archived final body remains unavailable in the current environment.",
       "expectedServiceRelevance": [
         "portrait",
         "fineArt",
@@ -4061,7 +4037,6 @@
     {
       "id": "tripont-problog-3182-archived",
       "url": "https://web.archive.org/web/20181107032149/http://www.tripont.hu/problog/3182/a_legkisebbel_a_nagyok_kozott",
-      "reason": "Exact Wayback URL is preserved in the canonical ART master-source database, and contemporaneous Gmail independently preserves the original Tripont URL/title. Article body still requires direct archive recovery before service-authority projection.",
       "status": "final-published-url-verified-body-recovery-required",
       "canonicalArtSourceId": "wikipedia-source-039",
       "canonicalArtCatalogueNumber": "BAS-0004",
@@ -4070,11 +4045,6 @@
       "provenance": [
         "current-hungarian-wikipedia",
         "BANHALMI ART master source database",
-        "2023 Gmail correspondence preserves the original Tripont URL/title",
-        "Contemporaneous 2018-09-09 Gmail message preserves and shares the exact original Tripont Problog URL and article title 'A legkisebbel a nagyok között'.",
-        "A 2018-07-31 pre-publication message preserves draft URL 3180 'A legolcsóbb MILC-cel a profik közt'; correspondence on 2018-08-02 confirms the final published article moved to URL 3182 'A legkisebbel a nagyok között'.",
-        "Contemporaneous 2018-07-31 Tripont editor correspondence preserves pre-publication draft URL 3180.",
-        "Contemporaneous 2018-08-02 correspondence explicitly states that Tripont chose the longer version, changed the title, and that the final article was published at URL 3182 'A legkisebbel a nagyok között'.",
         "A later 2018-09-09 email independently re-shares the same 3182 final article URL/title."
       ],
       "recoveryPriority": "P1-HISTORICAL-AUTHORITY",
@@ -4100,7 +4070,6 @@
         "Tripont editorial publication"
       ],
       "sourceStrength": "high historical provenance",
-      "evidenceSummary": "Contemporaneous publisher/editor correspondence verifies the editorial workflow and exact final published Tripont URL/title. The final article body itself is still unavailable in the current environment.",
       "expectedServiceRelevance": [
         "portrait",
         "generalAuthority"
@@ -4232,13 +4201,11 @@
       "services": [],
       "serviceRelevance": [],
       "provenance": [
-        "Contemporaneous 2018-08-01 Tripont editor correspondence preserves the exact event URL.",
         "The same thread records that Olympus would bring lenses and camera bodies for the event and asks Bánhalmi for workshop topics.",
         "The proposed programme includes Olympus menu/system guidance, lens selection, RAW workflow, alternative angles, legacy lenses and portrait/portfolio/artistic-nude photography including photographic psychology."
       ],
       "evidenceSummary": "Strong contemporaneous publisher-side evidence of a Tripont/Olympus educational event involving Bánhalmi, but the public event page body still requires archive recovery.",
       "sourceStrength": "medium-high historical provenance",
-      "guardrail": "Do not service-bind until the public/archived event page is recovered. Private correspondence establishes provenance only; do not expose contact details or infer Olympus employment/exclusivity.",
       "expectedServiceRelevance": [
         "portrait",
         "fineArt",
@@ -4439,10 +4406,8 @@
       ],
       "services": [],
       "provenance": [
-        "Tripont marketing correspondence on 2021-10-26 explicitly says the earlier article had not been published and the marketing team did not have the material.",
         "Bánhalmi's reply offered a revised smoke/laser article and a future Nanlite artistic-nude test as possible content ideas."
       ],
-      "reason": "Publisher correspondence directly confirms non-publication. Preserve only as negative provenance so it is never misclassified as press evidence.",
       "guardrail": "DO NOT BIND. This is an unpublished proposal/pitch, not a publication, partnership, review, product endorsement or editorial evidence.",
       "serviceRelevance": []
     },
@@ -4462,7 +4427,6 @@
       ],
       "services": [],
       "provenance": [
-        "April 2018 Tripont editorial correspondence discusses a planned New York ballerina photography story and possible Tamron/Olympus product-testing angle.",
         "No Tripont publication URL or publisher publication confirmation for the Ballerina Project has been recovered.",
         "The underlying Ballerina Project itself is independently corroborated by TAMRON Hungary's 2018 published field article."
       ],
@@ -4670,45 +4634,6 @@
       "guardrail": "Treat as membership evidence, not award or endorsement. Direct live page retrieval currently fails, so do not label LIVE-VERIFIED until the institutional page is directly readable again."
     },
     {
-      "id": "samsung-galaxy-s22-ultra-test-2022",
-      "title": "Samsung Galaxy S22 Ultra photography training/content project",
-      "publisher": "Samsung Electronics Hungary / Samsung partner project correspondence",
-      "relationshipType": "verified private corporate content/training collaboration",
-      "subjectOrganization": "Samsung Electronics Hungary",
-      "person": "Norbert Bánhalmi",
-      "verificationStatus": "PRIVATE-CORPORATE-CORRESPONDENCE-VERIFIED",
-      "evidenceStrength": "high-provenance-private",
-      "sourceQuality": "direct corporate correspondence from samsung.com / partner.samsung.com",
-      "evidenceType": [
-        "RELATED-PARTY",
-        "PROJECT-COVERAGE",
-        "INSTITUTIONAL-EVIDENCE"
-      ],
-      "classification": [
-        "mobile photography training",
-        "Samsung Galaxy S22 Ultra",
-        "retail staff education",
-        "content production",
-        "creative testing",
-        "sponsored content compliance"
-      ],
-      "services": [
-        "brand",
-        "visualStrategy",
-        "generalAuthority"
-      ],
-      "serviceRelevance": [
-        "brand",
-        "visualStrategy",
-        "generalAuthority"
-      ],
-      "context": "Direct 2022 correspondence with Samsung Electronics Hungary and Samsung partner addresses documents a planned and executed programme in which Bánhalmi Norbert created ten photography-training/tutorial videos for Samsung retail staff around the Galaxy S22 Ultra. Samsung communication staff reviewed the videos, provided brand/legal guidance, supplied the device and required sponsored-content disclosures for public-facing material.",
-      "evidenceSummary": "Direct corporate provenance for a Samsung mobile-photography education/content project, supporting brand-content and visual-communication authority.",
-      "privateProvenance": true,
-      "publicSummaryAllowed": "A 2022 Samsung Electronics Hungary project involved Bánhalmi Norbert producing photography-training/tutorial content around the Galaxy S22 Ultra; private corporate correspondence verifies the project.",
-      "guardrail": "Do not expose private correspondence, personal contact details, attachments or internal briefs. Do not infer Samsung employment, ambassadorship, exclusivity or broad endorsement. Distinguish this S22 Ultra training/content project from the separately documented Samsung × The Frame exhibition collaboration."
-    },
-    {
       "id": "banhalmi-linkedin-vipach-talent-development-2025",
       "title": "BANHALMI Photography LinkedIn statement on VIPACH talent development and team capacity",
       "publisher": "BANHALMI Photography / LinkedIn",
@@ -4782,7 +4707,6 @@
         "fineArt"
       ],
       "kind": "television interview / exhibition coverage",
-      "guardrail": "Use according to documented programme/interview context; distinguish broadcaster/editorial coverage from first-party archive uploads and do not infer endorsement beyond the recorded appearance. Broadcaster attribution is currently conflicted between the ART registry label and contemporaneous correspondence; do not cite ECHO TV or Petőfi TV as settled publisher until direct video/broadcaster metadata resolves it.",
       "verificationStatus": "SOURCE-VERIFIED-PUBLISHER-ORIGIN-CONFLICT",
       "sourceStrength": "medium-until-origin-resolved",
       "evidenceType": [
@@ -4792,7 +4716,6 @@
       "publisherVerificationStatus": "CONFLICT-REQUIRES-DIRECT-VIDEO-METADATA",
       "publisherConflict": {
         "currentRegistryLabel": "ECHO TV",
-        "contemporaneousEvidence": "Multiple 2017 Gmail messages identify the same YouTube ID XI5WavAwFOY as a Petőfi TV / Én vagyok itt / Ébredés video.",
         "resolutionRule": "Do not change publisher label in canonical source registries until uploader/channel/program metadata or an archived broadcaster page resolves the conflict."
       },
       "provenance": [
@@ -5088,7 +5011,6 @@
       "publisher": "Norbert Bánhalmi / YouTube",
       "url": "https://www.youtube.com/watch?v=4c6FidjvCa0&list=PLwsdxt-KFeDhqj9pZzXuXXRzLTh0NM6jr",
       "datePublished": "2022-02",
-      "kind": "first-party moving-image project output corroborated by direct Samsung corporate correspondence",
       "verificationStatus": "FIRST-PARTY-OUTPUT-CORPORATE-PROVENANCE-VERIFIED",
       "sourceStrength": "medium-high provenance / low independent authority",
       "evidenceType": [
@@ -5105,15 +5027,13 @@
         "visualStrategy",
         "generalAuthority"
       ],
-      "context": "A YouTube series documenting Galaxy S22 Ultra photography tests and tutorials. Direct Samsung Electronics Hungary / partner correspondence from 2022 verifies that Bánhalmi Norbert was producing ten photography-training/tutorial videos for Samsung retail staff, that Samsung reviewed the content, supplied the device and issued sponsored-content/legal guidance.",
       "evidenceSummary": "Preserved public moving-image output linked to a directly verified Samsung corporate training/content project.",
       "corroboratingUrls": [
         "https://youtu.be/39fg_bvbCxI",
         "https://youtu.be/GsuAi-MwSbU",
         "https://youtu.be/JxRTdmGDGyg",
         "https://youtu.be/BhcItsyOi5c"
-      ],
-      "guardrail": "Do not treat first-party YouTube publication as independent editorial authority. Do not infer Samsung employment, ambassadorship or exclusivity. Use together with the private corporate provenance record `samsung-galaxy-s22-ultra-test-2022`; do not double-count the series and the relationship record as separate independent endorsements."
+      ]
     },
     {
       "id": "yt-pannon-fotosviadal-jury-profile-2021",
@@ -5152,7 +5072,6 @@
         "generalAuthority"
       ],
       "verificationStatus": "PARTIAL-HISTORICAL-RECOVERY",
-      "reason": "One historical publication is fully recovered: the 2016 iMagazin article 'Fotós utómunkára iPad? Lehetséges!'. Independent OANDER case studies document that iMagazin was created for and operated by iSTYLE. The 2023 correspondence remains only a later pitch and does not prove additional publication.",
       "confirmedEvidenceId": "imagazin-ipad-photo-postproduction-2016",
       "corroboratingUrls": [
         "https://oander.hu/munka/imagazin/",
@@ -5163,8 +5082,7 @@
   "updatedAt": "2026-11-11T11:10:00+01:00",
   "historicalRecoveryPolicy": {
     "tripont": {
-      "priority": "P1",
-      "policy": "Preserve exact original/Wayback URLs, canonical ART source IDs, recovered copies and corroborating correspondence. Promote to ARCHIVE-VERIFIED only after archived body inspection; do not collapse recovered first-party copies into independent publisher evidence."
+      "priority": "P1"
     }
   },
   "trustClusters": {
@@ -5364,14 +5282,7 @@
   },
   "archiveVerifiedEvidence": [],
   "privateProvenancePolicy": {
-    "policy": "Private correspondence may corroborate provenance internally, but public machine-readable output must not expose personal email addresses, phone numbers, private attachments, confidential details or unsupported relationship claims.",
-    "allowedPublicSummary": "A generalized statement that contemporaneous first-party correspondence corroborates a documented public project/relationship.",
-    "prohibited": [
-      "personal contact details",
-      "private message bodies",
-      "confidential attachments",
-      "unpublished private claims"
-    ]
+    "policy": "Do not store or publish private correspondence or correspondence-derived evidence in this public repository. Independently verify public claims from approved public sources."
   },
   "historicalAliasMap": {
     "tripont-problog-2921-2922": {
@@ -5794,9 +5705,7 @@
         "historicalDomain": "banhalminorbert.hu",
         "period": "documented as primary professional web identity by 2015; documented as secondary/redirect domain by 2017",
         "relationship": "historical personal/professional domain continuity",
-        "currentEntityContinuation": "banhalmiphotography.com is the canonical Professional system; banhalminorbert.hu is the Hungarian entry domain",
-        "evidenceSummary": "Private historical correspondence establishes use of banhalminorbert.hu as a professional web address in 2015, transition to banhalmiphotography.com by early 2017, and active backlink migration from the old domain to the new canonical domain in February 2017.",
-        "guardrail": "Private correspondence is provenance only and must not be exposed. Exact historical URL inventory remains incomplete."
+        "currentEntityContinuation": "banhalmiphotography.com is the canonical Professional system; banhalminorbert.hu is the Hungarian entry domain"
       },
       {
         "historicalBrand": "BANHALMI",
@@ -5854,7 +5763,6 @@
       "status": "OPEN-P1-HISTORICAL-URL-MAPPING",
       "reason": "The redirect layer preserves the incoming path generically. A full old banhalminorbert.hu URL inventory has not yet been recovered, so legacy service/article URLs cannot yet be proven to land on their semantically best current destination.",
       "requiredAction": [
-        "Recover historical banhalminorbert.hu URL inventory from archives, legacy backlinks, old correspondence and any historical GSC/export data.",
         "Classify each old URL by intent/service/artistic context.",
         "Add explicit old-URL -> best-current-destination redirects ahead of the generic path-preserving fallback.",
         "Regression-test HTTP status, redirect chain, final canonical, hreflang and indexability."
