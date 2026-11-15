@@ -77,7 +77,7 @@ Distinctions enforced (unchanged policy):
 | Fine-art nude / Ébredés | BANHALMI ART | Ébredés pages + artisticIntentProjection + deep-search classifications |
 | Intimate portraiture / artistic boudoir | BANHALMI ART | private-photography pages + customer-intent routing + claim register additions |
 
-`customer-intent-evidence.json` artisticPhotography answerRequirements updated to match intent-split ART routing (no mass Ébredés redirect; no corporate misclassification).
+Historical note: the enquiry-derived public intent dataset was withdrawn for confidentiality reasons. Do not restore, republish or link to that dataset. Maintain the professional-versus-artistic intent split using independently verifiable public content.
 
 ## Schema / sameAs
 
