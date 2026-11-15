@@ -4302,38 +4302,6 @@
       "dateModified": "2026-07-12T12:00:00+02:00",
       "item": {
         "@type": "ImageObject",
-        "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-38-vertical-balanced.webp#image",
-        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-38-vertical-balanced.webp",
-        "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-38-vertical-balanced.webp",
-        "description": "Layered portrait of a woman seen through glass or reflection, with one eye sharply visible; the fragmented foreground suggests observation, privacy and complex identity.",
-        "caption": "Layered portrait of a woman seen through glass or reflection, with one eye sharply visible; the fragmented foreground suggests observation, privacy and complex identity.",
-        "genre": "portrait photography",
-        "keywords": [
-          "portrait",
-          "executive portrait",
-          "editorial portrait"
-        ],
-        "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
-          "@type": "Person",
-          "name": "Bánhalmi Norbert"
-        },
-        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
-        "license": "https://www.banhalmiphotography.com/terms-conditions/",
-        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
-        "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
-          "@type": "Person",
-          "name": "Norbert Bánhalmi"
-        }
-      }
-    },
-    {
-      "@type": "DataFeedItem",
-      "dateModified": "2026-07-12T12:00:00+02:00",
-      "item": {
-        "@type": "ImageObject",
         "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-39-horizontal-deep.webp#image",
         "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-39-horizontal-deep.webp",
         "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-39-horizontal-deep.webp",
@@ -5400,6 +5368,575 @@
           "@id": "https://www.banhalmiphotography.com/about/"
         },
         "genre": "executive and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-01.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-01.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-01.webp",
+        "description": "Outdoor professional headshot of a woman in a light blazer against a softly blurred city background.",
+        "caption": "Outdoor professional headshot of a woman in a light blazer against a softly blurred city background.",
+        "width": 1500,
+        "height": 1164,
+        "encodingFormat": "image/webp",
+        "genre": "portrait and executive photography",
+        "keywords": [
+          "portrait",
+          "executive portrait",
+          "professional headshot",
+          "CV portrait"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-02.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-02.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-02.webp",
+        "description": "Relaxed outdoor portrait of a silver-haired man wearing a white shirt and patterned neck scarf.",
+        "caption": "Relaxed outdoor portrait of a silver-haired man wearing a white shirt and patterned neck scarf.",
+        "width": 1500,
+        "height": 1500,
+        "encodingFormat": "image/webp",
+        "genre": "portrait and executive photography",
+        "keywords": [
+          "portrait",
+          "executive portrait",
+          "professional headshot",
+          "CV portrait"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-03.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-03.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-03.webp",
+        "description": "Expressive editorial portrait of a dark-haired woman in a white top with directional light and deep shadows.",
+        "caption": "Expressive editorial portrait of a dark-haired woman in a white top with directional light and deep shadows.",
+        "width": 1056,
+        "height": 1056,
+        "encodingFormat": "image/webp",
+        "genre": "portrait and executive photography",
+        "keywords": [
+          "portrait",
+          "executive portrait",
+          "professional headshot",
+          "CV portrait"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-04.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-04.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-04.webp",
+        "description": "Black-and-white character portrait of a curly-haired man wearing dark sunglasses against a black background.",
+        "caption": "Black-and-white character portrait of a curly-haired man wearing dark sunglasses against a black background.",
+        "width": 1500,
+        "height": 1500,
+        "encodingFormat": "image/webp",
+        "genre": "portrait and executive photography",
+        "keywords": [
+          "portrait",
+          "executive portrait",
+          "professional headshot",
+          "CV portrait"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-05.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-05.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-05.webp",
+        "description": "Close-up studio character portrait of a red-haired woman in a blue geometric patterned top.",
+        "caption": "Close-up studio character portrait of a red-haired woman in a blue geometric patterned top.",
+        "width": 1500,
+        "height": 1500,
+        "encodingFormat": "image/webp",
+        "genre": "portrait and executive photography",
+        "keywords": [
+          "portrait",
+          "executive portrait",
+          "professional headshot",
+          "CV portrait"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-06.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-06.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-06.webp",
+        "description": "Natural smiling portrait of a dark-haired woman wearing a gray knitted scarf outdoors.",
+        "caption": "Natural smiling portrait of a dark-haired woman wearing a gray knitted scarf outdoors.",
+        "width": 1500,
+        "height": 1500,
+        "encodingFormat": "image/webp",
+        "genre": "portrait and executive photography",
+        "keywords": [
+          "portrait",
+          "executive portrait",
+          "professional headshot",
+          "CV portrait"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-07.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-07.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-07.webp",
+        "description": "Creative personal branding headshot of a woman with glasses lit by blue and green accents.",
+        "caption": "Creative personal branding headshot of a woman with glasses lit by blue and green accents.",
+        "width": 1244,
+        "height": 1244,
+        "encodingFormat": "image/webp",
+        "genre": "portrait and executive photography",
+        "keywords": [
+          "portrait",
+          "executive portrait",
+          "professional headshot",
+          "CV portrait"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-08.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-08.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-08.webp",
+        "description": "Candid outdoor portrait of a smiling silver-blonde woman with a colorful patterned scarf.",
+        "caption": "Candid outdoor portrait of a smiling silver-blonde woman with a colorful patterned scarf.",
+        "width": 895,
+        "height": 1156,
+        "encodingFormat": "image/webp",
+        "genre": "portrait and executive photography",
+        "keywords": [
+          "portrait",
+          "executive portrait",
+          "professional headshot",
+          "CV portrait"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-09.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-09.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-portrait-ref-20261115-09.webp",
+        "description": "Fine monochrome beauty portrait of a blonde woman looking toward the camera with her hands near her face.",
+        "caption": "Fine monochrome beauty portrait of a blonde woman looking toward the camera with her hands near her face.",
+        "width": 800,
+        "height": 1200,
+        "encodingFormat": "image/webp",
+        "genre": "portrait and executive photography",
+        "keywords": [
+          "portrait",
+          "executive portrait",
+          "professional headshot",
+          "CV portrait"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-55.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-55.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-55.webp",
+        "description": "Professional lifestyle portrait of a man in a dark tailored coat holding a smartphone on a city street.",
+        "caption": "Professional lifestyle portrait of a man in a dark tailored coat holding a smartphone on a city street.",
+        "width": 1000,
+        "height": 1500,
+        "encodingFormat": "image/webp",
+        "genre": "brand and visual positioning",
+        "keywords": [
+          "brand photography",
+          "personal branding",
+          "visual positioning"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-56.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-56.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-56.webp",
+        "description": "Contemporary menswear personal branding portrait of a seated man in a brown coat adjusting sunglasses outside a modern building.",
+        "caption": "Contemporary menswear personal branding portrait of a seated man in a brown coat adjusting sunglasses outside a modern building.",
+        "width": 1500,
+        "height": 1000,
+        "encodingFormat": "image/webp",
+        "genre": "brand and visual positioning",
+        "keywords": [
+          "brand photography",
+          "personal branding",
+          "visual positioning"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-57.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-57.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-57.webp",
+        "description": "Fitness personal brand photograph of an athletic woman lifting a barbell in a gym.",
+        "caption": "Fitness personal brand photograph of an athletic woman lifting a barbell in a gym.",
+        "width": 1500,
+        "height": 1000,
+        "encodingFormat": "image/webp",
+        "genre": "brand and visual positioning",
+        "keywords": [
+          "brand photography",
+          "personal branding",
+          "visual positioning"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-58.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-58.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-58.webp",
+        "description": "Artist branding photograph of a woman in a red dress holding a violin and bow in front of a historic urban facade.",
+        "caption": "Artist branding photograph of a woman in a red dress holding a violin and bow in front of a historic urban facade.",
+        "width": 1500,
+        "height": 1000,
+        "encodingFormat": "image/webp",
+        "genre": "brand and visual positioning",
+        "keywords": [
+          "brand photography",
+          "personal branding",
+          "visual positioning"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-59.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-59.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-59.webp",
+        "description": "Conceptual editorial portrait of a woman in a black outfit with a dark cloth across her eyes beneath a blue sky.",
+        "caption": "Conceptual editorial portrait of a woman in a black outfit with a dark cloth across her eyes beneath a blue sky.",
+        "width": 832,
+        "height": 1248,
+        "encodingFormat": "image/webp",
+        "genre": "brand and visual positioning",
+        "keywords": [
+          "brand photography",
+          "personal branding",
+          "visual positioning"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-60.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-60.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-60.webp",
+        "description": "Dramatic low-key athletic branding portrait of a muscular shirtless man against a black studio backdrop.",
+        "caption": "Dramatic low-key athletic branding portrait of a muscular shirtless man against a black studio backdrop.",
+        "width": 846,
+        "height": 1268,
+        "encodingFormat": "image/webp",
+        "genre": "brand and visual positioning",
+        "keywords": [
+          "brand photography",
+          "personal branding",
+          "visual positioning"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-61.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-61.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-61.webp",
+        "description": "Luxury travel lifestyle portrait of a woman in a bright orange dress seated on a sailboat at dusk.",
+        "caption": "Luxury travel lifestyle portrait of a woman in a bright orange dress seated on a sailboat at dusk.",
+        "width": 1000,
+        "height": 1500,
+        "encodingFormat": "image/webp",
+        "genre": "brand and visual positioning",
+        "keywords": [
+          "brand photography",
+          "personal branding",
+          "visual positioning"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
       }
     }
   ]
