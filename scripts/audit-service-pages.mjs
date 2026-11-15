@@ -11,6 +11,9 @@ const groups = [
 ];
 const origin='https://www.banhalmiphotography.com';
 const errors=[];
+// Portfolio PDF is shared by Portrait and Brand across all three languages.
+const rapidReference='/references/portfolio.pdf';
+
 const check=(ok,message)=>{if(!ok)errors.push(message)};
 for(const group of groups){
   const urls=group.map(p=>origin+'/'+p.replace(/index.html$/,''));
@@ -39,6 +42,14 @@ for(const group of groups){
     for(const type of ['Person','Organization','WebPage','Service','BreadcrumbList'])check(types.has(type),path+': missing schema '+type);
     check(s.includes('Q56391118'),path+': verified person identifier');
     check(/Wien|Vienna|Bécs/.test(s)&&/Budapest/.test(s),path+': Vienna/Budapest intent');
+    if(groups.indexOf(group)<2){
+      check(s.includes('href="'+rapidReference+'"'),path+': rapid reference PDF link');
+      check(fs.existsSync(rapidReference.slice(1)) && fs.statSync(rapidReference.slice(1)).size>0,path+': rapid reference PDF exists and is nonempty');
+    }
+    const images=tag(/<img\\b[^>]*>/gi);
+    for(const image of images){
+      check(/\\balt\\s*=/.test(image[0]),path+': image missing alt attribute');
+    }
     check(!/data-lightbox-src="[^"]*brand-gallery-39\.webp"/.test(s),path+': removed gallery asset');
   }
 }
