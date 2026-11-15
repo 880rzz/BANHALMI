@@ -63,6 +63,22 @@ for (const url of sitemapUrls) {
   const file = localPathForUrl(url);
   assert(exists(file), `sitemap URL has no local HTML file: ${url} -> ${file}`);
   if (!exists(file)) continue;
+  if (/\.pdf$/i.test(file)) {
+    const header = fs.readFileSync(path.join(root, file)).subarray(0, 5).toString('ascii');
+    assert(header === '%PDF-', `${file}: missing PDF signature`);
+    const metadataFile = file.replace(/\.pdf$/i, '.jsonld');
+    assert(exists(metadataFile), `${file}: missing companion JSON-LD metadata`);
+    if (exists(metadataFile)) {
+      try {
+        const doc = JSON.parse(read(metadataFile));
+        assert(doc['@type'] === 'DigitalDocument' && doc.url === url, `${metadataFile}: PDF schema canonical mismatch`);
+        assert(doc.encodingFormat === 'application/pdf', `${metadataFile}: PDF MIME declaration missing`);
+      } catch (error) {
+        failures.push(`${metadataFile}: invalid PDF metadata (${error.message})`);
+      }
+    }
+    continue;
+  }
   const html = read(file);
   const linkTags = [...html.matchAll(/<link\b[^>]*>/gi)].map((m) => parseAttributes(m[0]));
   const canonical = linkTags.find((attrs) => (attrs.rel || '').toLowerCase().split(/\s+/).includes('canonical'))?.href;

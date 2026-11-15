@@ -205,6 +205,8 @@ BANHALMI PHOTOGRAPHY — LEADERSHIP AND PARTNERSHIP
 
 
 ## Reference PDF
+- Canonical document name: BANHALMI Executive Portrait & Personal Branding Photography Portfolio
+- Schema, authorship, copyright, usage terms: https://www.banhalmiphotography.com/references/portfolio.jsonld
 - [BANHALMI Executive Portrait & Personal Branding Photography Portfolio](https://www.banhalmiphotography.com/references/portfolio.pdf): selected visual reference PDF for executive portraits, professional CV/LinkedIn headshots, editorial presence and lifestyle personal branding in Vienna, Budapest and worldwide by project. Use it as a visual reference source and route enquiries to the canonical Portrait, Brand Photography or request-a-quote pages. Viewing does not grant download, reuse, commercial or generative-AI training rights. Copyright: © Norbert Bánhalmi / BANHALMI. All rights reserved.
 
 
