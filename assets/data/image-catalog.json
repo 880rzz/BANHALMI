@@ -7,7 +7,7 @@
   "creator": {
     "@id": "https://www.banhalmiphotography.com/about/"
   },
-  "dateModified": "2026-07-18T00:45:00+02:00",
+  "dateModified": "2026-11-15",
   "dataFeedElement": [
     {
       "@type": "DataFeedItem",
@@ -531,38 +531,6 @@
         "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-17.webp",
         "description": "Intimate lifestyle portrait of a tattooed couple embracing outdoors; close physical contact and natural light express trust, attraction and emotional immediacy.",
         "caption": "Intimate lifestyle portrait of a tattooed couple embracing outdoors; close physical contact and natural light express trust, attraction and emotional immediacy.",
-        "genre": "brand and visual positioning",
-        "keywords": [
-          "brand photography",
-          "personal branding",
-          "visual positioning"
-        ],
-        "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
-          "@type": "Person",
-          "name": "Bánhalmi Norbert"
-        },
-        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
-        "license": "https://www.banhalmiphotography.com/terms-conditions/",
-        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
-        "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
-          "@type": "Person",
-          "name": "Norbert Bánhalmi"
-        }
-      }
-    },
-    {
-      "@type": "DataFeedItem",
-      "dateModified": "2026-07-12T12:00:00+02:00",
-      "item": {
-        "@type": "ImageObject",
-        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-18.webp#image",
-        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-18.webp",
-        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-18.webp",
-        "description": "Multi-image corporate portrait story showing a suited professional in conversation, walking, presenting and interacting; the sequence demonstrates a complete leadership image system across formal and candid situations.",
-        "caption": "Multi-image corporate portrait story showing a suited professional in conversation, walking, presenting and interacting; the sequence demonstrates a complete leadership image system across formal and candid situations.",
         "genre": "brand and visual positioning",
         "keywords": [
           "brand photography",
@@ -4937,6 +4905,501 @@
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-40.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-40.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-40.webp",
+        "caption": "Executive colleagues walking and discussing in a historic corridor.",
+        "description": "Executive colleagues walking and discussing in a historic corridor.",
+        "width": 1024,
+        "height": 1536,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "executive portrait",
+          "personal brand photography",
+          "corporate lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "executive and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-41.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-41.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-41.webp",
+        "caption": "Male executive in a three-piece suit during a professional conversation.",
+        "description": "Male executive in a three-piece suit during a professional conversation.",
+        "width": 1024,
+        "height": 1536,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "executive portrait",
+          "personal brand photography",
+          "corporate lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "executive and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-42.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-42.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-42.webp",
+        "caption": "Businesswoman in a dark suit speaking with a colleague by a staircase.",
+        "description": "Businesswoman in a dark suit speaking with a colleague by a staircase.",
+        "width": 1024,
+        "height": 1536,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "executive portrait",
+          "personal brand photography",
+          "corporate lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "executive and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-43.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-43.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-43.webp",
+        "caption": "Confident businesswoman in a black suit in an architectural interior.",
+        "description": "Confident businesswoman in a black suit in an architectural interior.",
+        "width": 1024,
+        "height": 1536,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "executive portrait",
+          "personal brand photography",
+          "corporate lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "executive and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-44.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-44.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-44.webp",
+        "caption": "Relaxed studio personal-branding portrait of a woman in a white shirt.",
+        "description": "Relaxed studio personal-branding portrait of a woman in a white shirt.",
+        "width": 1024,
+        "height": 1536,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "executive portrait",
+          "personal brand photography",
+          "corporate lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "executive and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-45.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-45.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-45.webp",
+        "caption": "Expressive black-and-white portrait with directional striped light.",
+        "description": "Expressive black-and-white portrait with directional striped light.",
+        "width": 1024,
+        "height": 1536,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "personal branding photography",
+          "editorial portrait",
+          "lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "editorial lifestyle and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-46.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-46.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-46.webp",
+        "caption": "Executive in a charcoal suit posing outside a modern office building.",
+        "description": "Executive in a charcoal suit posing outside a modern office building.",
+        "width": 1536,
+        "height": 1024,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "executive portrait",
+          "personal brand photography",
+          "corporate lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "executive and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-47.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-47.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-47.webp",
+        "caption": "Pianist at a grand piano on a dramatically lit concert stage.",
+        "description": "Pianist at a grand piano on a dramatically lit concert stage.",
+        "width": 1024,
+        "height": 1536,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "personal branding photography",
+          "editorial portrait",
+          "lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "editorial lifestyle and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-48.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-48.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-48.webp",
+        "caption": "Outdoor lifestyle portrait beside the Brooklyn Bridge in New York.",
+        "description": "Outdoor lifestyle portrait beside the Brooklyn Bridge in New York.",
+        "width": 1600,
+        "height": 1066,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "personal branding photography",
+          "editorial portrait",
+          "lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "editorial lifestyle and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-49.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-49.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-49.webp",
+        "caption": "Urban fashion portrait of a woman in black with a dynamic pose.",
+        "description": "Urban fashion portrait of a woman in black with a dynamic pose.",
+        "width": 1600,
+        "height": 1066,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "personal branding photography",
+          "editorial portrait",
+          "lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "editorial lifestyle and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-50.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-50.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-50.webp",
+        "caption": "Black-and-white action portrait of a dancer jumping over stage smoke in a city street.",
+        "description": "Black-and-white action portrait of a dancer jumping over stage smoke in a city street.",
+        "width": 1024,
+        "height": 1536,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "personal branding photography",
+          "editorial portrait",
+          "lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "editorial lifestyle and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-51.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-51.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-51.webp",
+        "caption": "Black-and-white editorial beauty portrait with a sculptural hairstyle and leather jacket.",
+        "description": "Black-and-white editorial beauty portrait with a sculptural hairstyle and leather jacket.",
+        "width": 1536,
+        "height": 1024,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "personal branding photography",
+          "editorial portrait",
+          "lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "editorial lifestyle and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-52.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-52.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-52.webp",
+        "caption": "Black-and-white fashion portrait featuring an expressive pose on a chair.",
+        "description": "Black-and-white fashion portrait featuring an expressive pose on a chair.",
+        "width": 1536,
+        "height": 1024,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "personal branding photography",
+          "editorial portrait",
+          "lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "editorial lifestyle and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-53.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-53.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-53.webp",
+        "caption": "Black-and-white city lifestyle portrait of a woman sitting on exterior steps.",
+        "description": "Black-and-white city lifestyle portrait of a woman sitting on exterior steps.",
+        "width": 1536,
+        "height": 1024,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "personal branding photography",
+          "editorial portrait",
+          "lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "editorial lifestyle and personal branding"
+      }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-54.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-54.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-54.webp",
+        "caption": "Smiling professional man with glasses in an informal business portrait.",
+        "description": "Smiling professional man with glasses in an informal business portrait.",
+        "width": 1536,
+        "height": 1024,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "executive portrait",
+          "personal brand photography",
+          "corporate lifestyle photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "genre": "executive and personal branding"
       }
     }
   ]
