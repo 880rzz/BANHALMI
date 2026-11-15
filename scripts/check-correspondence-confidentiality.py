@@ -8,7 +8,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_EXT = {".html",".htm",".md",".txt",".json",".jsonld",".xml",".csv",".yml",".yaml",".js",".mjs",".cjs",".ts",".tsx",".jsx",".css",".svg",".py",".sh",".toml"}
 BLOCKED_EXT = {".eml",".msg",".mbox",".pst",".ost",".vcf",".ics"}
-BLOCKED_NAMES = {"mail-export.json","gmail-export.json","customer-emails.csv","email-threads.json"}
+BLOCKED_NAMES = {"mail-export.json","gmail-export.json","customer-emails.csv","email-threads.json",
+                 "customer-intent-evidence.json", "banhalmi_voice_and_content_audit_2026-10-25.md"}
 SKIP = {"scripts/check-correspondence-confidentiality.py"}
 # High-confidence *structural* evidence only. No real addresses or client strings are embedded.
 RULES = {
