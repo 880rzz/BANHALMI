@@ -1,6 +1,6 @@
 # Content audit decision log — 2026-10-25
 
-Source brief: `docs/BANHALMI_VOICE_AND_CONTENT_AUDIT_2026-10-25.md`  
+Source provenance: historical content audit; the private-correspondence-derived source brief was withdrawn and must not be republished.  
 Diff inventory: `docs/content-audit-before-after.csv`
 
 ## Decisions (Professional)
