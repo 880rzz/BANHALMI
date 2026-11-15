@@ -47,8 +47,13 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
     return storagePrefix + (form.getAttribute('data-lang') || document.documentElement.lang || 'en');
   }
 
+  // Remove legacy persistent drafts without restoring personal data from localStorage.
+  function purgeLegacyDraft(form){
+    try { localStorage.removeItem(draftKey(form)); } catch(e) {}
+  }
+
   function hasDraft(form){
-    try { return !!localStorage.getItem(draftKey(form)); } catch(e) { return false; }
+    try { return !!sessionStorage.getItem(draftKey(form)); } catch(e) { return false; }
   }
 
   function serializeDraft(form){
@@ -67,7 +72,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
 
   function restoreDraft(form){
     var raw;
-    try { raw = localStorage.getItem(draftKey(form)); } catch(e) { return; }
+    try { raw = sessionStorage.getItem(draftKey(form)); } catch(e) { return; }
     if(!raw) return;
     var values;
     try { values = JSON.parse(raw); } catch(e) { return; }
@@ -85,11 +90,11 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   }
 
   function saveDraft(form){
-    try { localStorage.setItem(draftKey(form), JSON.stringify(serializeDraft(form))); } catch(e) {}
+    try { sessionStorage.setItem(draftKey(form), JSON.stringify(serializeDraft(form))); } catch(e) {}
   }
 
   function clearDraft(form){
-    try { localStorage.removeItem(draftKey(form)); } catch(e) {}
+    try { sessionStorage.removeItem(draftKey(form)); } catch(e) {}
   }
 
   function messageFor(lang, key){
@@ -266,6 +271,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   function initForm(form){
     if(form.dataset.banhalmiHardened === 'true') return;
     form.dataset.banhalmiHardened = 'true';
+    purgeLegacyDraft(form);
     restoreDraft(form);
     Array.prototype.forEach.call(form.elements || [], function(field){
       if(field.type === 'date') field.min = tomorrowIso();
