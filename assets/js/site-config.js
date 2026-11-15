@@ -389,9 +389,15 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   function initForm(form){
     ensureSubmissionKey(form, false);
     placePdfAction(form);
-    form.querySelectorAll('input[type="radio"][name="category"]').forEach(function(input){
-      input.checked = false;
-    });
+    // Preserve the category restored from a session draft; clear defaults only on a fresh form.
+    var sessionDraftKey = 'banhalmi_quote_draft_v1:' + (form.getAttribute('data-lang') || document.documentElement.lang || 'en');
+    var hasSessionDraft = false;
+    try { hasSessionDraft = !!sessionStorage.getItem(sessionDraftKey); } catch(e) {}
+    if(!hasSessionDraft){
+      form.querySelectorAll('input[type="radio"][name="category"]').forEach(function(input){
+        input.checked = false;
+      });
+    }
 
     var nativeReset = form.reset.bind(form);
     form.reset = function(){
