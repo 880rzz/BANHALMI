@@ -5938,6 +5938,42 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
       }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-38-vertical-balanced.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-38-vertical-balanced.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-38-vertical-balanced.webp",
+        "description": "Layered portrait of a woman seen through glass or reflection, with one eye sharply visible; the fragmented foreground suggests observation, privacy and complex identity.",
+        "caption": "Layered portrait of a woman seen through glass or reflection, with one eye sharply visible; the fragmented foreground suggests observation, privacy and complex identity.",
+        "genre": "brand and visual positioning",
+        "keywords": [
+          "personal branding",
+          "brand photography",
+          "editorial portrait",
+          "visual identity"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Norbert Bánhalmi"
+        },
+        "width": 933,
+        "height": 1400,
+        "encodingFormat": "image/webp"
+      }
     }
   ]
 }
