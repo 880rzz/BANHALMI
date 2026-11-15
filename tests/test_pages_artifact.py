@@ -77,21 +77,17 @@ class PagesArtifactTests(unittest.TestCase):
             self.assertEqual(hidden_files, ['./.nojekyll', './.well-known/agent.json'])
             self.assertNotIn('./.gitignore', archive.getnames())
 
-    def test_source_only_evidence_audit_ledgers_are_not_published(self):
-        for name in PACKAGER.INTERNAL_SOURCE_ONLY_FILES:
-            self.write(name, b'Internal audit snapshot, not a public authority claim.\n')
-        self.write('docs/release-checklist.md', b'Public release checklist.\n')
+    def test_all_docs_are_source_only_and_never_published(self):
+        self.write('docs/release-checklist.md', b'Internal release checklist.\n')
+        self.write('docs/private/customer-notes.json', b'{"synthetic":true}\n')
         self.write('press-institutional-evidence.json', b'{"public":true}\n')
         report = self.pack()
         with tarfile.open(self.archive) as archive:
             names = set(archive.getnames())
-            for name in PACKAGER.INTERNAL_SOURCE_ONLY_FILES:
-                self.assertNotIn('./' + name, names)
-                self.assertTrue((self.site / name).is_file())
-            self.assertIn('./docs/release-checklist.md', names)
+            self.assertFalse(any(name == './docs' or name.startswith('./docs/') for name in names))
             self.assertIn('./press-institutional-evidence.json', names)
             self.assertIn('./.well-known/agent.json', names)
-            self.assertIn('./.nojekyll', names)
+        self.assertTrue((self.site / 'docs/release-checklist.md').is_file())
         self.assertTrue(report['byte_identity_verified'])
 
     def test_source_only_audit_ledgers_are_hidden_from_branch_pages_build(self):
