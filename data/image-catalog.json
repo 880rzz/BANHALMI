@@ -5938,6 +5938,42 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
       }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-62.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-62.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-62.webp",
+        "caption": "Layered personal-brand portrait of a woman seen through glass and reflections, with one eye sharply in focus; the fragmented foreground conveys privacy and individual identity.",
+        "description": "Layered personal-brand portrait of a woman seen through glass and reflections, with one eye sharply in focus; the fragmented foreground conveys privacy and individual identity.",
+        "width": 933,
+        "height": 1400,
+        "encodingFormat": "image/webp",
+        "genre": "personal branding and editorial photography",
+        "keywords": [
+          "personal branding",
+          "visual identity",
+          "editorial portrait",
+          "brand photography"
+        ],
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
+      }
     }
   ]
 }
