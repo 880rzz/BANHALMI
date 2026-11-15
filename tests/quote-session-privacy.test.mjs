@@ -13,4 +13,6 @@ assert.match(source, /purgeLegacyDraft\(form\);\s*restoreDraft\(form\);/, 'Purge
 assert.match(source, /body\.adminEmailSent === true && body\.customerEmailSent === true/, 'Require both delivery confirmations');
 assert.match(source, /if\(verifiedDelivery\)\{\s*clearDraft\(form\);\s*form\.reset\(\);/, 'Clear only after verified delivery');
 assert.match(source, /if\(!response\.ok \|\| !body \|\| body\.ok !== true\) throw/, 'Reject unsuccessful gateway responses');
+assert.match(source, /data\.ok === true && data\.adminEmailSent === true && data\.customerEmailSent === true/, 'Guard must require gateway success and both delivery flags');
+assert.match(source, /markDeliveryState\(response\.ok \? data : null\)/, 'HTTP failure must not mark delivery verified');
 console.log('Quote session privacy and delivery-state source contract passed');
