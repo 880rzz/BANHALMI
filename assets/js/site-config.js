@@ -348,7 +348,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
   }
 
   function markDeliveryState(data){
-    var verified = !!(data && data.adminEmailSent === true && data.customerEmailSent === true);
+    var verified = !!(data && data.ok === true && data.adminEmailSent === true && data.customerEmailSent === true);
     quoteForms().forEach(function(form){
       form.dataset.deliveryVerified = verified ? 'true' : 'false';
     });
@@ -376,7 +376,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
         return response.clone().text().then(function(text){
           var data = {};
           try { data = text ? JSON.parse(text) : {}; } catch(e) {}
-          markDeliveryState(data);
+          markDeliveryState(response.ok ? data : null);
           return response;
         }).catch(function(){
           markDeliveryState(null);
