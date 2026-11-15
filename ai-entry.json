@@ -359,8 +359,7 @@
       "memberships": "https://www.banhalmiphotography.com/memberships.json",
       "authority": "https://www.banhalmiphotography.com/authority-evidence.json",
       "hipstudio": "https://www.banhalmiphotography.com/hipstudio-authority.json",
-      "serviceIntentCopy": "https://www.banhalmiphotography.com/service-intent-copy.json",
-      "customerIntentEvidence": "https://www.banhalmiphotography.com/customer-intent-evidence.json"
+      "serviceIntentCopy": "https://www.banhalmiphotography.com/service-intent-copy.json"
     },
     "canonicalSummary": {
       "identity": "Bánhalmi Norbert is the canonical Person Q56391118. Banhalmi Norbert e.U. is the legal Organization. BANHALMI is the primary Brand. BANHALMI Photography is the photography-facing commercial/alternate name of the same BANHALMI Brand and is not a separate company or Organization.",
