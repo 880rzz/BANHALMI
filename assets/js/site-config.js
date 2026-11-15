@@ -255,7 +255,7 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
         clearDraft(form);
         form.reset();
       }
-      setStatus(form,messageFor(lang,'sent'),'success');
+      setStatus(form,messageFor(lang,verifiedDelivery ? 'sent' : 'failed'),verifiedDelivery ? 'success' : 'error');
     }catch(error){
       setStatus(form,messageFor(lang,'failed'),'error');
     }finally{
