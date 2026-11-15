@@ -5938,6 +5938,41 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/"
       }
+    },
+    {
+      "@type": "DataFeedItem",
+      "dateModified": "2026-11-15",
+      "item": {
+        "@type": "ImageObject",
+        "@id": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-62.webp#image",
+        "contentUrl": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-62.webp",
+        "url": "https://www.banhalmiphotography.com/assets/img/brand/gallery/brand-gallery-62.webp",
+        "caption": "Editorial personal-branding portrait of a woman seen through layered glass reflections, with one eye in sharp focus.",
+        "description": "Editorial personal-branding portrait of a woman seen through layered glass reflections, with one eye in sharp focus.",
+        "width": 933,
+        "height": 1400,
+        "encodingFormat": "image/webp",
+        "creator": {
+          "@id": "https://www.banhalmiphotography.com/about/",
+          "@type": "Person",
+          "name": "Bánhalmi Norbert"
+        },
+        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
+        "keywords": [
+          "editorial portrait",
+          "personal brand photography",
+          "lifestyle portrait",
+          "visual identity photography"
+        ],
+        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
+        "license": "https://www.banhalmiphotography.com/terms-conditions/",
+        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://www.banhalmiphotography.com/about/"
+        },
+        "representativeOfPage": false,
+        "genre": "editorial lifestyle and personal branding"
+      }
     }
   ]
 }
