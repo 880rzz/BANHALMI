@@ -7520,3 +7520,167 @@ html body main :is(.linklist,.ticks,ul.socials,.footer-social-links,.nav-links,u
   padding-inline-start:0;
 }
 /* CONTENT_EDGE_INSET_20261101:END */
+
+
+/* CINEMATIC-CITY-HERO 2026-11-16: scoped EN/HU/DE-AT homepage design. */
+html body.has-cinematic-home{padding-top:0;background:#111114}
+html body.has-cinematic-home .site-header{
+  background:rgba(14,14,16,.84);border-bottom:1px solid rgba(255,255,255,.13);
+  box-shadow:none;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)
+}
+html body.has-cinematic-home .site-header :is(.brand-word,.brand-word strong,.brand-word>span,.nav-links a,.nav-submenu summary,.lang-switch a){color:#f7f6f2}
+html body.has-cinematic-home .site-header .brand-logo{filter:brightness(0) invert(1)}
+html body.has-cinematic-home .site-header .menu-btn span{background:#f7f6f2}
+html body.has-cinematic-home .site-header :is(.lang-switch a.active,.nav-links a[aria-current="page"]){color:#eed08a}
+html body.has-cinematic-home .site-header :is(a,button,summary):focus-visible{outline:2px solid #f0d38e;outline-offset:3px}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero{display:block;overflow:clip;background:#fff}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic{
+  position:relative;isolation:isolate;display:block;width:100%;
+  height:clamp(640px,90svh,920px);min-height:640px;max-height:none;
+  margin:0;padding:0;overflow:hidden;border:0;background:#101012
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic>.wrap{
+  position:relative;display:flex;align-items:center;width:100%;max-width:none;
+  height:100%;min-height:0;margin:0;padding:0
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure{
+  position:absolute;inset:0;display:block;width:100%;max-width:none;height:100%;
+  min-height:0;max-height:none;margin:0;padding:0;overflow:hidden;
+  border:0;border-radius:0;background:#101012;box-shadow:none
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure::after{content:none;display:none}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(7,8,10,.81),rgba(10,10,12,.56) 30%,rgba(12,12,12,.10) 66%,rgba(12,12,12,.04)),
+             linear-gradient(0deg,rgba(7,8,9,.29),transparent 30%,rgba(7,8,9,.18))
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure picture,
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure picture>img.hero-cinematic-photo{
+  display:block;width:100%;max-width:none;height:100%;min-height:0;max-height:none;
+  padding:0;margin:0;aspect-ratio:auto;border-radius:0;background:#101012
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure picture>img.hero-cinematic-photo{
+  object-fit:cover;object-position:58% 50%;transform:none;filter:none
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-cinematic-content{
+  position:relative;z-index:2;width:min(660px,calc(100% - 64px));max-width:660px;min-width:0;
+  margin:0 0 0 clamp(32px,5.4vw,108px);padding:clamp(100px,12vh,164px) 0 clamp(56px,7vh,96px);
+  color:#f7f6f2;text-align:left
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-eyebrow{
+  margin:0 0 clamp(20px,2.2vw,34px);color:#f0d08a;
+  font-size:clamp(.73rem,.83vw,.98rem);font-weight:600;line-height:1.45;
+  letter-spacing:.25em;text-transform:uppercase;text-shadow:0 1px 12px rgba(0,0,0,.6)
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-content h1{
+  max-width:12ch;margin:0 0 clamp(22px,2.3vw,36px);color:#faf8f3;
+  font-family:Georgia,"Times New Roman",serif;font-size:clamp(3.15rem,6.05vw,6.9rem);
+  font-weight:400;letter-spacing:-.045em;line-height:.99;text-wrap:balance;
+  text-shadow:0 2px 30px rgba(0,0,0,.22)
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-lead{
+  max-width:37ch;margin:0;color:#f3f0e9;font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.07rem,1.45vw,1.48rem);line-height:1.46;letter-spacing:-.012em;
+  text-shadow:0 1px 16px rgba(0,0,0,.5)
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-actions{
+  display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:clamp(28px,3vw,48px)
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-button{
+  display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;
+  min-height:52px;padding:13px clamp(20px,2.3vw,30px);
+  border:1px solid transparent;border-radius:0;
+  font-size:clamp(.73rem,.78vw,.9rem);font-weight:650;line-height:1.25;
+  letter-spacing:.15em;text-decoration:none;text-transform:uppercase;text-align:center;
+  transition:background-color .18s ease,color .18s ease,border-color .18s ease
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-button-primary{
+  background:#c9a759;border-color:#c9a759;color:#111114
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-button-primary:is(:hover,:focus-visible){
+  background:#ebcd86;border-color:#ebcd86;color:#111114
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-button-secondary{
+  border-color:rgba(255,255,255,.85);background:rgba(9,10,12,.28);color:#fff
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-button-secondary:is(:hover,:focus-visible){
+  border-color:#fff;background:rgba(255,255,255,.95);color:#101012
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-button:focus-visible{
+  outline:2px solid #fff;outline-offset:4px
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-copy-only{
+  display:block;grid-column:auto;width:100%;height:auto;min-height:0;max-height:none;
+  padding:clamp(46px,6vw,92px) clamp(22px,5.5vw,108px);
+  margin:0;border:0;background:#fff;overflow:visible
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-copy-only>.wrap{
+  width:min(100%,1080px);max-width:1080px;margin:0 auto;padding:0
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-copy-only h2{
+  max-width:23ch;margin:0 0 22px;font-size:clamp(1.8rem,3.05vw,3rem);
+  line-height:1.12;letter-spacing:-.035em;color:#202530
+}
+html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-copy-only>.wrap>p:not(.hero-location-line){
+  max-width:68ch;color:#424245;font-size:clamp(1rem,1.2vw,1.16rem);line-height:1.65
+}
+@media(max-width:1179px){
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic{
+    height:clamp(620px,88svh,880px);min-height:620px
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-cinematic-content{
+    width:min(580px,calc(100% - 48px));margin-left:clamp(24px,6vw,64px)
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-content h1{
+    font-size:clamp(3rem,7.3vw,5.4rem)
+  }
+}
+@media(max-width:620px){
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic{
+    display:block;width:100%;height:auto;min-height:max(720px,100svh);max-height:none;
+    padding:0;margin:0;background:#101012
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic>.wrap{
+    display:flex;align-items:flex-end;width:100%;height:auto;min-height:max(720px,100svh);padding:0
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure,
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure picture,
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure picture>img.hero-cinematic-photo{
+    position:absolute;inset:0;width:100%;height:100%;min-height:0;max-height:none
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure picture>img.hero-cinematic-photo{
+    object-position:51% center
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure::before{
+    background:linear-gradient(180deg,rgba(6,7,9,.40),rgba(8,8,10,.18) 34%,rgba(8,8,10,.73) 61%,rgba(5,6,8,.97))
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-cinematic-content{
+    width:calc(100% - 40px);max-width:540px;margin:0 20px;padding:140px 0 clamp(42px,8svh,68px)
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-eyebrow{
+    margin-bottom:18px;font-size:.7rem;letter-spacing:.18em
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-content h1{
+    max-width:100%;margin-bottom:18px;font-size:clamp(2.7rem,11vw,4.1rem);line-height:1.02
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-lead{
+    max-width:36ch;font-size:clamp(1.04rem,4.3vw,1.2rem);line-height:1.45
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-actions{
+    display:grid;grid-template-columns:1fr 1fr;width:100%;gap:10px;margin-top:26px
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-button{
+    width:100%;min-width:0;min-height:48px;padding:12px 8px;
+    font-size:clamp(.65rem,2.62vw,.74rem);letter-spacing:.065em
+  }
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-copy-only{
+    padding:clamp(44px,9vw,68px) 20px
+  }
+}
+@media(max-width:360px){
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-actions{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  html body main[data-homepage-redesign="stage76"].has-cinematic-hero .hero-cinematic-button{transition:none}
+}
+/* /CINEMATIC-CITY-HERO */
