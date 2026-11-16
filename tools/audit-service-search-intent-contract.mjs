@@ -160,6 +160,55 @@ for (const { path, brandRoute, narrative } of eventBrandIntentBridges) {
   }
 }
 
+// Give visitors a human, locale-correct choice between a focused portrait
+// and a longer-term Brand image library. Keep these links within editorial prose,
+// not only repeated navigation or another prominent CTA.
+const portraitBrandBridges = [
+  {
+    portrait: 'portrait/index.html', brand: 'lifestyle/index.html',
+    brandRoute: '/lifestyle/', portraitRoute: '/portrait/',
+    portraitNarrative: /For a broader multi-channel personal-branding library/,
+    brandNarrative: /If you only need one portrait for LinkedIn/
+  },
+  {
+    portrait: 'hu/portre/index.html', brand: 'hu/brand/index.html',
+    brandRoute: '/hu/brand/', portraitRoute: '/hu/portre/',
+    portraitNarrative: /Szélesebb, többfelületes personal branding képanyaghoz/,
+    brandNarrative: /Ha elsősorban egyetlen portréra van szüksége/
+  },
+  {
+    portrait: 'de-at/portrait/index.html', brand: 'de-at/brand/index.html',
+    brandRoute: '/de-at/brand/', portraitRoute: '/de-at/portrait/',
+    portraitNarrative: /Für eine breitere Personal-Branding-Bildbibliothek/,
+    brandNarrative: /Wenn Sie vor allem ein einzelnes Porträt/
+  }
+];
+for (const bridge of portraitBrandBridges) {
+  const portraitHtml = fs.readFileSync(bridge.portrait, 'utf8');
+  const heroStart = portraitHtml.indexOf('<section class="hero service-hero');
+  const heroEnd = portraitHtml.indexOf('<div class="hero-actions', heroStart);
+  if (heroStart < 0 || heroEnd < 0) {
+    errors.push(bridge.portrait + ': editorial service hero missing');
+  } else {
+    const intro = portraitHtml.slice(heroStart, heroEnd);
+    if (!bridge.portraitNarrative.test(intro) || !intro.includes('href="' + bridge.brandRoute + '"')) {
+      errors.push(bridge.portrait + ': localised contextual Brand choice missing from hero prose');
+    }
+  }
+
+  const brandHtml = fs.readFileSync(bridge.brand, 'utf8');
+  const selectedStart = brandHtml.indexOf('id="selected-work"');
+  const galleryStart = brandHtml.indexOf('class="collage-gallery', selectedStart);
+  if (selectedStart < 0 || galleryStart < 0) {
+    errors.push(bridge.brand + ': selected-work editorial intro missing');
+  } else {
+    const intro = brandHtml.slice(selectedStart, galleryStart);
+    if (!bridge.brandNarrative.test(intro) || !intro.includes('href="' + bridge.portraitRoute + '"')) {
+      errors.push(bridge.brand + ': localised contextual Portrait choice missing from gallery prose');
+    }
+  }
+}
+
 const protectedHomepageTitles = new Map([
   ['index.html', 'BANHALMI | Portrait & brand photography | Vienna–Budapest'],
   ['hu/index.html', 'BANHALMI | Portréfotózás és brandfotózás | Bécs–Budapest'],
