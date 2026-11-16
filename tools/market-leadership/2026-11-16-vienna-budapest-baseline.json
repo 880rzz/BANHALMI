@@ -160,7 +160,9 @@
     "Studio and GBP reviews with source URLs, timestamps, business attribution; no aggregated stars",
     "Full Cloudflare Worker to mailbox real-delivery test using dedicated authorised test accounts",
     "GA4 conversion events and enquiry-to-booking CRM/financial evidence",
-    "AI recommendation experiment with exact prompts, providers, dates, grounded outputs"
+    "AI recommendation experiment with exact prompts, providers, dates, grounded outputs",
+    "Cross-check HIPStudio current company register and Austrian VIPACH maintainer ZVR rather than relying only on their own legal imprints",
+    "Audit BANHALMI Vienna office at 1180 separately from actual photo studio locations; verify address consistency in GBP and schema"
   ],
   "measurement": {
     "minimumWindowDays": 30,
@@ -182,5 +184,39 @@
       "regression and error rate"
     ],
     "noUnsupportedAttribution": true
-  }
+  },
+  "entityRelationshipEvidence": [
+    {
+      "subject": "BANHALMI Professional",
+      "relationship": "Austrian sole-proprietor commercial business; separate from artist archive and cultural community",
+      "evidence": "https://www.banhalmiphotography.com/de-at/impressum/",
+      "observedAt": "2026-11-16",
+      "verification": "OWNER_SITE_LEGAL_DISCLOSURE",
+      "caution": "Company registration 2023 in Austria, photography practice since 1999; do not conflate dates or legal histories."
+    },
+    {
+      "subject": "HIPStudio",
+      "relationship": "HIPStudio brand established by Bánhalmi Norbert in 2006; current site operator is Hipstudió Kft.; collaboration with Speier Vikó but legally distinct businesses",
+      "evidence": "https://www.hipstudio.hu/impresszum",
+      "observedAt": "2026-11-16",
+      "verification": "OPERATOR_LEGAL_IMPRINT_PENDING_REGISTRY_CROSSCHECK",
+      "caution": "Shared studio at 1111 Budapest Lágymányosi utca 15 does not imply identical business ownership or shared Google reviews."
+    },
+    {
+      "subject": "VIPACH",
+      "relationship": "Photography creative community maintained under Hungarian School of Vienna/Central Alliance; founder and leader Bánhalmi Norbert; not a separately incorporated legal person according to own imprint",
+      "evidence": "https://www.vipach.at/kapcsolat/impresszum",
+      "observedAt": "2026-11-16",
+      "verification": "OFFICIAL_ORGANISATION_IMPRINT_PENDING_INDEPENDENT_REGISTRY_VERIFICATION",
+      "caution": "Do not treat cultural community member count as commercial team employment or independently legally registered VIPACH."
+    },
+    {
+      "subject": "Speier Vikó",
+      "relationship": "Independent photo partner with HIPStudio; separate legal identity, involved in Budapest photography coordination",
+      "evidence": "https://www.hipstudio.hu/kapcsolat",
+      "observedAt": "2026-11-16",
+      "verification": "PARTNER_SITE_STATEMENT",
+      "caution": "Do not assert sameAs or ownership equivalence based solely on collaboration."
+    }
+  ]
 }
