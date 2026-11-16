@@ -288,6 +288,20 @@ window.BANHALMI_CONFIG = Object.assign({}, window.BANHALMI_CONFIG || {}, {
 
   function init(){
     document.querySelectorAll('form[data-banhalmi-form], form[data-quote-form], form.quote-form').forEach(initForm);
+    document.querySelectorAll('form[data-smart-quote]').forEach(function(form){
+      if(form.dataset.banhalmiDraftBound === 'true') return;
+      form.dataset.banhalmiDraftBound = 'true';
+      purgeLegacyDraft(form);
+      restoreDraft(form);
+      Array.prototype.forEach.call(form.elements || [], function(field){
+        if(!field.name || field.type === 'file') return;
+        field.addEventListener('input', function(){ saveDraft(form); });
+        field.addEventListener('change', function(){ saveDraft(form); });
+      });
+      form.addEventListener('reset', function(){
+        if(form.dataset.deliveryVerified === 'true') clearDraft(form);
+      });
+    });
     window.addEventListener('beforeunload',function(event){
       if(verifiedDelivery) return;
       var dirty = Array.prototype.some.call(document.querySelectorAll('form[data-banhalmi-form], form[data-quote-form], form.quote-form'),function(form){ return hasDraft(form); });
