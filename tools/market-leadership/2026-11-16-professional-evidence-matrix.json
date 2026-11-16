@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-16",
+  "repo": "880rzz/BANHALMI",
+  "scope": "Professional commercial evidence, artistic identity, community and legally independent partners",
+  "policy": "Every proof needs type, source, independent-vs-self-reported classification, role, caveat and publication authority. No client private correspondence or unauthorized image rights. PublicUse=REVIEW is not automatic authorization.",
+  "sourceHierarchy": [
+    "official business or association primary register",
+    "independent host publication or credits",
+    "business-owned legal imprint",
+    "self-reported marketing or directory listing",
+    "unknown"
+  ],
+  "items": [
+    {
+      "claimId": "business-wko",
+      "claim": "Banhalmi Norbert e.U. registered Austrian commercial photography entity, 2023 foundation; Vienna office",
+      "subject": "BANHALMI Professional",
+      "claimType": "legal_identity",
+      "relationshipType": "registered_operator",
+      "source": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=2ac00da5-198a-4840-9678-3b5719ce154e&standortid=1&standortname=wien+%28bundesland%29&suchbegriff=f%C3%BChrung",
+      "sourceRole": "official chamber company directory",
+      "evidenceStrength": "OFFICIAL_DIRECTORY",
+      "publicUse": "YES",
+      "caveat": "Business established 2023; photographer practice first began 1999, do not conflate."
+    },
+    {
+      "claimId": "network-50",
+      "claim": "Approximately 50 specialist photographers in an established professional network; not a 50-person employee payroll",
+      "subject": "BANHALMI Photography",
+      "claimType": "capacity",
+      "relationshipType": "external_partner_network",
+      "source": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=2ac00da5-198a-4840-9678-3b5719ce154e&standortid=1&standortname=wien+%28bundesland%29&suchbegriff=f%C3%BChrung",
+      "sourceRole": "company-authored description hosted by official chamber; chamber directory lists 1 employee",
+      "evidenceStrength": "SELF_REPORTED_ON_OFFICIAL_DIRECTORY",
+      "publicUse": "QUALIFIED_ONLY",
+      "caveat": "Roster, categories and actual contractual/project-based relationship unverified. Do not infer 50 employees."
+    },
+    {
+      "claimId": "pannon-honorary",
+      "claim": "Norbert Bánhalmi is an honorary member of Pannon Fényképészkör Egyesület",
+      "subject": "Norbert Bánhalmi",
+      "claimType": "membership",
+      "relationshipType": "honorary_member",
+      "source": "https://fenykepeszkor.hu/egyesuleti-tag/banhalmi-norbert/",
+      "sourceRole": "association's own member profile",
+      "evidenceStrength": "PRIMARY_ASSOCIATION_RECORD",
+      "publicUse": "YES",
+      "caveat": "Honorary membership must not be called employment or formal board office."
+    },
+    {
+      "claimId": "amcham-photo-credit",
+      "claim": "AmCham Austria official team page credits a photo to Norbert Banhalmi",
+      "subject": "Norbert Bánhalmi",
+      "claimType": "publication_evidence",
+      "relationshipType": "photo_credit",
+      "source": "https://amcham.at/amcham-team/",
+      "sourceRole": "independent institution publication",
+      "evidenceStrength": "PRIMARY_THIRD_PARTY_CREDIT",
+      "publicUse": "YES_WITH_SOURCE",
+      "caveat": "Photography credit alone cannot prove AmCham membership or a contracted assignment."
+    },
+    {
+      "claimId": "amcham-member",
+      "claim": "BANHALMI Photography is a member of AmCham Austria",
+      "subject": "BANHALMI Professional",
+      "claimType": "membership",
+      "relationshipType": "organization_member",
+      "source": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=2ac00da5-198a-4840-9678-3b5719ce154e&standortid=1&standortname=wien+%28bundesland%29&suchbegriff=f%C3%BChrung",
+      "sourceRole": "company-authored WKO business description",
+      "additionalSource": "https://amcham.at/members-list/",
+      "evidenceStrength": "SELF_REPORTED_PENDING_AMCHAM_MEMBER_DIRECTORY_MATCH",
+      "publicUse": "REVIEW",
+      "caveat": "External membership directory match not yet independently demonstrated; do not represent institutional endorsement."
+    },
+    {
+      "claimId": "om-ambassador",
+      "claim": "Norbert Bánhalmi has served as Hungarian OM SYSTEM/Olympus brand ambassador since 2018",
+      "subject": "Norbert Bánhalmi",
+      "claimType": "ambassador",
+      "relationshipType": "brand_ambassador",
+      "source": "https://www.banhalmi.art/hu/writing.html",
+      "sourceRole": "artist's own historical statement",
+      "evidenceStrength": "SELF_REPORTED_PENDING_BRAND_CONFIRMATION",
+      "publicUse": "REVIEW",
+      "caveat": "Find official OM SYSTEM ambassador listing or brand written confirmation, avoid implied contemporary exclusive contract."
+    },
+    {
+      "claimId": "mfvsz",
+      "claim": "Member of Magyar Fotóművészek Világszövetsége",
+      "subject": "Norbert Bánhalmi",
+      "claimType": "membership",
+      "relationshipType": "individual_member",
+      "source": "https://www.banhalmi.art/hu/writing.html",
+      "sourceRole": "artist-owned professional record",
+      "evidenceStrength": "SELF_REPORTED_PENDING_ASSOCIATION_CONFIRMATION",
+      "publicUse": "REVIEW",
+      "caveat": "Do not infer degree, award or honorary office."
+    },
+    {
+      "claimId": "hipstudio",
+      "claim": "HIPStudio was founded as a brand by Norbert Bánhalmi in 2006, currently operated by Hipstudió Kft., a distinct business",
+      "subject": "HIPStudio",
+      "claimType": "organizational_history",
+      "relationshipType": "historical_founder_not_current_legal_equivalence",
+      "source": "https://www.hipstudio.hu/impresszum",
+      "sourceRole": "current operator's legal imprint",
+      "evidenceStrength": "PRIMARY_OPERATOR_LEGAL_STATEMENT",
+      "publicUse": "YES_WITH_LEGAL_SEPARATION",
+      "caveat": "Founder of brand does not imply current company ownership."
+    },
+    {
+      "claimId": "viko-partner",
+      "claim": "Speier Vikó is an independent photography partner involved in Budapest studio work",
+      "subject": "Speier Vikó",
+      "claimType": "operational_relation",
+      "relationshipType": "independent_partner",
+      "source": "https://www.hipstudio.hu/impresszum",
+      "sourceRole": "current studio operator's legal imprint",
+      "evidenceStrength": "PRIMARY_PARTNER_RELATION_STATEMENT",
+      "publicUse": "YES_WITH_LEGAL_SEPARATION",
+      "caveat": "Viko business and reviews must not be merged with BANHALMI or HIPStudio."
+    },
+    {
+      "claimId": "vipach-maintainer",
+      "claim": "VIPACH project belongs to Central Federation/BMI framework, with founder/leader Norbert Bánhalmi, not independent juridical person",
+      "subject": "VIPACH",
+      "claimType": "cultural_governance",
+      "relationshipType": "community_founded_within_association",
+      "source": "https://www.vipach.at/kapcsolat/impresszum",
+      "sourceRole": "project legal imprint",
+      "evidenceStrength": "PRIMARY_PROJECT_SELF_DISCLOSURE",
+      "publicUse": "QUALIFIED_ONLY",
+      "caveat": "Association ZVR 079797621 refers to legal maintainer, not to an independent VIPACH corporate registration."
+    },
+    {
+      "claimId": "mcsm",
+      "claim": "MCSM professional membership acronym",
+      "subject": "Norbert Bánhalmi",
+      "claimType": "membership",
+      "relationshipType": "unknown",
+      "source": null,
+      "sourceRole": "only stated in requested master plan",
+      "evidenceStrength": "UNVERIFIED",
+      "publicUse": "NO",
+      "caveat": "Determine exact legal organization name and authentic membership evidence before use."
+    }
+  ],
+  "openTasks": [
+    "Verify OM SYSTEM official ambassador registry and date/status",
+    "Verify MFVSZ current membership independently",
+    "Verify AmCham member listing and exact member legal entity",
+    "Resolve MCSM acronym",
+    "Confirm partner roster, real 50-person capacity and distinction from actual employees",
+    "Audit image permissions separately from image metadata",
+    "Audit date of founding vs timeline of photography business vs Austrian legal entity"
+  ]
+}
