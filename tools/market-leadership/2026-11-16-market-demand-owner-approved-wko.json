@@ -844,5 +844,82 @@
       "PRIMARY_SOURCE_ACCESS_BLOCKED": 2
     },
     "publicationRule": "The figures document packages from retrieved pages, not city rank, equivalent contract value, current live prices, business quality or recommendations. Recheck before any public competitor claim. VAT, rights, crew, retouching and delivery differ."
+  },
+  "serviceLandingBaseline": {
+    "source": "Google Search Console, GSC Wizard connected sc-domain:banhalmiphotography.com, page dimension, web search",
+    "period": {
+      "startDate": "2026-10-17",
+      "endDate": "2026-11-13"
+    },
+    "propertyTotals": {
+      "clicks": 16,
+      "impressions": 9437,
+      "ctrPercent": 0.17,
+      "averagePositionWeighted": 3.72
+    },
+    "measuredPages": [
+      {
+        "path": "/portrait/",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 9
+      },
+      {
+        "path": "/hu/portre/",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 15.6667
+      },
+      {
+        "path": "/de-at/portrait/",
+        "clicks": 0,
+        "impressions": 7,
+        "position": 58.2857
+      },
+      {
+        "path": "/lifestyle/",
+        "clicks": 0,
+        "impressions": 0,
+        "position": null
+      },
+      {
+        "path": "/hu/brand/",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 5
+      },
+      {
+        "path": "/de-at/brand/",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 12
+      },
+      {
+        "path": "/event-photography/",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 8
+      },
+      {
+        "path": "/hu/rendezvenyfotozas/",
+        "clicks": 0,
+        "impressions": 0,
+        "position": null
+      },
+      {
+        "path": "/de-at/eventfotografie/",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 29
+      }
+    ],
+    "measuredPageTotals": {
+      "clicks": 0,
+      "impressions": 16
+    },
+    "shareOfPropertyImpressionsPercent": 0.17,
+    "indexCoverage": "All 9 routes had separate GSC URL Inspection PASS and self-selected canonical in inspections stored 2026-11-16. Search exposure is not equivalent to indexing state.",
+    "interpretation": "Core commercial pages received 16 combined page impressions and no clicks despite being indexed; the homepage currently captures most observed commercial-query exposure. Do not assume a missing index or a city SERP rank from these sparse country-level observations.",
+    "measurementRule": "Track each of the nine canonical pages and relevant query-to-page pairs for at least 28 settled days after the exact-live code change. No guaranteed CTR uplift or automatic Google reallocation."
   }
 }
