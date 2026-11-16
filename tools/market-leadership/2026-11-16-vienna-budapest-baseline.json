@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "createdAt": "2026-11-16",
   "status": "AUDITÁLT",
   "scope": "BANHALMI Professional: Vienna, Austria + Budapest, Hungary. Research only; no web-facing claims or SEO changes.",
@@ -401,7 +401,8 @@
         "publicOfficialSource": "https://www.banhalmiphotography.com/de-at/impressum/",
         "officialPhone": "+43 677 616 55592",
         "thirdPartyListingPhone": "+43 677 64733262",
-        "status": "CHECK_DIRECT_GOOGLE_BUSINESS_PROFILE_BEFORE_ANY_UPDATE"
+        "status": "ROLE_EXPLAINED_BUT_DIRECT_GBP_OWNER_NOT_VERIFIED",
+        "interpretation": "Legal imprint +43 677 616 55592 is Norbert's legal/WhatsApp line. Vienna operating +43 677 647 332 62 is deliberately assigned to independent partner Speier Viko in the repository contactAuthority policy. Different roles, not necessarily an incorrect phone number."
       }
     ],
     "publicationRule": "No cross-entity review total, self-review schema, or AggregateRating until each direct GBP listing and ownership is verified and duplicate/relationship caveats are explicit.",
@@ -475,7 +476,7 @@
           "verification": "UNRESOLVED_DIRECT_MATCH; secondary publisher reports 242"
         }
       ],
-      "implication": "Counts vary between structured local data and secondary directories: Budapest BANHALMI 739/741/743 and Viko 55/53. Do not combine BANHALMI Budapest+Vienna records as a single review aggregate before ownership, distinctness and canonical GBP IDs are verified. Document phone differences among legal website, business listings and independent coordinator phone."
+      "implication": "Counts differ by source and refresh: BANHALMI Budapest 739 (structured local), 740 (Hungary Event Venues), 741 (LocalHungary); Vikó 55 (structured local) and 53 (LocalHungary prior observation). Older 743 lead is not validated and must not be treated as an observed current count. BANHALMI Vienna Schwedenplatz 122 and Gersthofer office 9 are distinct place IDs; do not aggregate or assume duplicates. Source-specific public phone observations require direct GBP owner checks."
     }
   },
   "lastReverifiedAt": "2026-11-16",
@@ -569,14 +570,21 @@
     "comparisonRule": "Published offers vary in VAT, duration, included image count, licensing, make-up, studio/on-location terms and target buyer. Do not derive normalized competitor ranks, quality scores or a recommended BANHALMI price directly from these snapshots."
   },
   "phoneConsistencyReview": {
-    "status": "NEEDS_OWNER_INTENT_AND_DIRECT_GBP_CHECK",
+    "status": "ROLE_AUTHORITY_RESOLVED; DIRECT_GBP_AND_HIPSTUDIO_DIRECTORY_VERIFICATION_PENDING",
     "websiteLegal": "https://www.banhalmiphotography.com/de-at/impressum/",
     "mainLegalPhone": "+43 677 616 55592",
     "websiteHomeFooter": "https://www.banhalmiphotography.com/",
     "differentFooterPhone": "+43 677 647 332 62",
     "websiteContactPage": "https://www.banhalmiphotography.com/contact/",
-    "possibleExplanation": "A separate photographer/coordinator line appears elsewhere, but cannot treat as identical to legal business phone without explicit role labels.",
+    "possibleExplanation": "Confirmed in repository policy: Norbert legal/WhatsApp +43 677 616 55592; Vikó's EN/DE-AT operating phone +43 677 647 332 62 and expected Austrian GBP phone. A different number is not by itself a mistake. Separately, +36 70 469 8397 is flagged RETIRED in BANHALMI repository but remains on Budapest structured/directory listings; HIPStudio official +36 30 221 5506 differs from secondary directory +36 70 469 8397.",
     "risk": "NAP / local trust ambiguity; do not silently overwrite a legitimate second professional line.",
-    "recommendedAction": "Verify intended public line, owner, listed GBP phone and structured-data telephone before making a controlled PR."
+    "recommendedAction": "Audit owner-controlled GBP location details for BANHALMI Budapest/Vienna, HIPStudio and Viko separately; ask owner to confirm intended number and role before any public edits. Do not replace Viko's legitimate operational phone with Norbert's legal phone as a blanket NAP fix."
+  },
+  "reputationEvidenceReconciliation": {
+    "date": "2026-11-16",
+    "status": "AUDITÁLT",
+    "evidenceFile": "tools/market-leadership/2026-11-16-reputation-source-attribution.json",
+    "scope": "No public site, schema, customer data or GBP edits",
+    "principle": "Every count and phone retained with business entity, location, provider, evidence type, role and verification status."
   }
 }
