@@ -1,0 +1,267 @@
+{
+  "version": 1,
+  "createdAt": "2026-11-16",
+  "status": "AUDITÁLT",
+  "scope": "BANHALMI Professional: Vienna, Austria + Budapest, Hungary. Research only; no web-facing claims or SEO changes.",
+  "production": {
+    "canonicalDomain": "https://www.banhalmiphotography.com/",
+    "productionGitHubRepo": "880rzz/BANHALMI",
+    "mainBaselineCommit": "86c9396cc058d9ff9a78205a84b9545e19867355",
+    "note": "PR #220 merged; production deploy #209 needs separate exact-live verification."
+  },
+  "gsc": {
+    "property": "sc-domain:banhalmiphotography.com",
+    "dataSource": "Google Search Console via GSC Wizard connected account",
+    "startDate": "2026-10-17",
+    "endDate": "2026-11-13",
+    "clicks": 16,
+    "impressions": 9437,
+    "ctrPct": 0.16954540637914592,
+    "averagePosition": 3.717918830136696,
+    "limitations": "Small, recent property data. Average position across all queries cannot be used as a competitive keyword rank. Query/page rows are not a complete denominator and Google hides some queries.",
+    "queryPageSignals": [
+      {
+        "query": "reportagefotograf wien",
+        "observedPage": "/de-at/",
+        "impressions": 70,
+        "clicks": 0,
+        "averagePosition": 2.7,
+        "candidatePrimaryPage": "/de-at/eventfotografie/",
+        "status": "ROUTING_HYPOTHESIS",
+        "caveat": "Reportage can include non-corporate contexts; verify intent before content changes"
+      },
+      {
+        "query": "portréfotózás budapest",
+        "observedPage": "/hu/",
+        "impressions": 37,
+        "clicks": 0,
+        "averagePosition": 3.1,
+        "candidatePrimaryPage": "/hu/portre/",
+        "status": "ROUTING_HYPOTHESIS"
+      },
+      {
+        "query": "portraitfotografie wien",
+        "observedPage": "/de-at/",
+        "impressions": 29,
+        "clicks": 0,
+        "averagePosition": 4.9,
+        "candidatePrimaryPage": "/de-at/portrait/",
+        "status": "ROUTING_HYPOTHESIS"
+      },
+      {
+        "query": "personal branding fotograf wien",
+        "observedPage": "/de-at/",
+        "impressions": 8,
+        "clicks": 0,
+        "averagePosition": 4.6,
+        "candidatePrimaryPage": "/de-at/brand/",
+        "status": "ROUTING_HYPOTHESIS"
+      },
+      {
+        "query": "künstlerportrait fotograf",
+        "observedPage": "/de-at/fine-art/",
+        "impressions": 13,
+        "clicks": 0,
+        "averagePosition": 58,
+        "candidatePrimaryPage": "/de-at/fine-art/",
+        "status": "LOW_SAMPLE_REVIEW"
+      }
+    ]
+  },
+  "businessClaimEvidence": [
+    {
+      "claim": "Photographer Norbert Bánhalmi has been active since 1999",
+      "source": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=11&standortname=wien+1.+bezirk+%28innere+stadt%29&suchbegriff=f%C3%BChrung",
+      "sourceNature": "Public company-authored profile at Austrian Chamber of Commerce",
+      "verification": "PUBLISHED_SELF_REPORTED",
+      "publicUse": "YES_WITH_ACCURATE_ATTRIBUTION"
+    },
+    {
+      "claim": "Network of approximately 50 specialist photographers, NOT 50 employees",
+      "source": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=11&standortname=wien+1.+bezirk+%28innere+stadt%29&suchbegriff=f%C3%BChrung",
+      "sourceNature": "Public company-authored profile at Austrian Chamber of Commerce",
+      "verification": "PUBLISHED_SELF_REPORTED_NOT_INDEPENDENT_MEMBERSHIP_ROSTER",
+      "publicUse": "RESTRICTED_NO_EMPLOYMENT_INFERENCE"
+    }
+  ],
+  "competitorDiscovery": {
+    "status": "CANDIDATES_NOT_GEO_TARGETED_SERP_RANKS",
+    "observedAt": "2026-11-16",
+    "caveat": "A web search/business listing is not an exact organic Google rank. Rankings by country, city, device, and language remain unverified.",
+    "vienna": [
+      {
+        "business": "Studio NEXT",
+        "site": "https://www.studionext.at/",
+        "observedOffering": "Executive and PR portrait, employee and event photo, self-bookable packages",
+        "source": "https://www.studionext.at/"
+      },
+      {
+        "business": "Businessfoto Wien / Lars Ternes",
+        "site": "https://www.businessfoto.wien/",
+        "observedOffering": "Senior professional portrait approach, editorial references, studio packages",
+        "source": "https://www.businessfoto.wien/preise-business-fotoshooting"
+      },
+      {
+        "business": "Ihr Businessfoto / Gregor Schwarzacher",
+        "site": "https://www.ihrbusinessfoto.at/",
+        "observedOffering": "Executive, LinkedIn and company teams, professional B2B positioning",
+        "source": "https://www.ihrbusinessfoto.at/"
+      },
+      {
+        "business": "Foto WILKE",
+        "site": "https://foto-wilke.at/",
+        "observedOffering": "Business / executive portraits and mobile studio, web package publicly listed",
+        "source": "https://foto-wilke.at/shootings/businessportraits-wien"
+      },
+      {
+        "business": "NOVA Fotografie",
+        "site": "https://novafotografie.at/",
+        "observedOffering": "Mobile business portraits for Wien; public tiered portrait packages",
+        "source": "https://novafotografie.at/businessfotograf-wien/preise/"
+      }
+    ],
+    "budapest": [
+      {
+        "business": "Budapest Camera",
+        "site": "https://budapest.camera/",
+        "observedOffering": "Executive and business portrait with lighting/style-selection editorial content",
+        "source": "https://budapest.camera/hu/uzleti-portre-fotozas/"
+      },
+      {
+        "business": "Draskovics Ádám",
+        "site": "https://www.adamdraskovics.com/",
+        "observedOffering": "Portrait and executive branding packages; corporate-volume work",
+        "source": "https://www.adamdraskovics.com/uzleti-portre"
+      },
+      {
+        "business": "PollakPhoto",
+        "site": "https://www.portrefotos.hu/",
+        "observedOffering": "Business portrait, executive portrait and SceneShift variation package",
+        "source": "https://www.portrefotos.hu/"
+      },
+      {
+        "business": "TB Studio / Tóth Balázs",
+        "site": "https://www.tb-photo.hu/",
+        "observedOffering": "Specialised business headshots and company scale with photography team",
+        "source": "https://www.tb-photo.hu/"
+      },
+      {
+        "business": "Tóth Szabolcs",
+        "site": "https://art.szabolcs-toth.com/",
+        "observedOffering": "Business portraits, personal branding and corporate content day",
+        "source": "https://art.szabolcs-toth.com/uzleti/"
+      }
+    ]
+  },
+  "pendingVerification": [
+    "Controlled Google organic Top 5 per priority keyword in separate AT Vienna and HU Budapest contexts, desktop/mobile, ads and Maps excluded",
+    "Company-team contractual boundaries and independent evidence behind approximately 50 collaborators",
+    "Legal boundaries between BANHALMI Professional, HIPStudio, Viko, VIPACH, photo club",
+    "Studio and GBP reviews with source URLs, timestamps, business attribution; no aggregated stars",
+    "Full Cloudflare Worker to mailbox real-delivery test using dedicated authorised test accounts",
+    "GA4 conversion events and enquiry-to-booking CRM/financial evidence",
+    "AI recommendation experiment with exact prompts, providers, dates, grounded outputs",
+    "Cross-check HIPStudio current company register and Austrian VIPACH maintainer ZVR rather than relying only on their own legal imprints",
+    "Audit BANHALMI Vienna office at 1180 separately from actual photo studio locations; verify address consistency in GBP and schema",
+    "Directly verify Vienna/Budapest BANHALMI GBP review counts, HIPStudio GBP, Viko GBP, profile IDs and distinct customer sets before discussing any >1000 combined figure"
+  ],
+  "measurement": {
+    "minimumWindowDays": 30,
+    "checkpoints": [
+      30,
+      60,
+      90
+    ],
+    "primaryMetrics": [
+      "qualified enquiries",
+      "verified quote form sends",
+      "accepted proposals",
+      "revenue if verified from authorised source",
+      "organic clicks/impressions/CTR by service-page and market"
+    ],
+    "secondaryMetrics": [
+      "Google Business Profile verified calls and actions",
+      "AI recommendation test appearances with citations",
+      "regression and error rate"
+    ],
+    "noUnsupportedAttribution": true
+  },
+  "entityRelationshipEvidence": [
+    {
+      "subject": "BANHALMI Professional",
+      "relationship": "Austrian sole-proprietor commercial business; separate from artist archive and cultural community",
+      "evidence": "https://www.banhalmiphotography.com/de-at/impressum/",
+      "observedAt": "2026-11-16",
+      "verification": "OWNER_SITE_LEGAL_DISCLOSURE",
+      "caution": "Company registration 2023 in Austria, photography practice since 1999; do not conflate dates or legal histories."
+    },
+    {
+      "subject": "HIPStudio",
+      "relationship": "HIPStudio brand established by Bánhalmi Norbert in 2006; current site operator is Hipstudió Kft.; collaboration with Speier Vikó but legally distinct businesses",
+      "evidence": "https://www.hipstudio.hu/impresszum",
+      "observedAt": "2026-11-16",
+      "verification": "OPERATOR_LEGAL_IMPRINT_PENDING_REGISTRY_CROSSCHECK",
+      "caution": "Shared studio at 1111 Budapest Lágymányosi utca 15 does not imply identical business ownership or shared Google reviews."
+    },
+    {
+      "subject": "VIPACH",
+      "relationship": "Photography creative community maintained under Hungarian School of Vienna/Central Alliance; founder and leader Bánhalmi Norbert; not a separately incorporated legal person according to own imprint",
+      "evidence": "https://www.vipach.at/kapcsolat/impresszum",
+      "observedAt": "2026-11-16",
+      "verification": "OFFICIAL_ORGANISATION_IMPRINT_PENDING_INDEPENDENT_REGISTRY_VERIFICATION",
+      "caution": "Do not treat cultural community member count as commercial team employment or independently legally registered VIPACH."
+    },
+    {
+      "subject": "Speier Vikó",
+      "relationship": "Independent photo partner with HIPStudio; separate legal identity, involved in Budapest photography coordination",
+      "evidence": "https://www.hipstudio.hu/kapcsolat",
+      "observedAt": "2026-11-16",
+      "verification": "PARTNER_SITE_STATEMENT",
+      "caution": "Do not assert sameAs or ownership equivalence based solely on collaboration."
+    }
+  ],
+  "reputationLeads": {
+    "status": "SECONDARY_SNAPSHOTS_NOT_DIRECT_GBP_VERIFIED",
+    "observedAt": "2026-11-16",
+    "mustNotSum": true,
+    "entries": [
+      {
+        "name": "BANHALMI Budapest",
+        "city": "Budapest",
+        "observedReviewCount": 741,
+        "observedAverage": 5,
+        "sourceUrl": "https://localhungary.net/ceg/banhalmi-executive-portre-es-vizualis-strategia-budapest-xi-kerulet",
+        "sourceCategory": "THIRD_PARTY_GOOGLE_DATA_REPUBLISHER",
+        "caveat": "Another directory shows 740. Direct Google Business Profile profile ID and fresh count required. Do not add to other business review counts blindly."
+      },
+      {
+        "name": "HIPStudio Budapest",
+        "city": "Budapest",
+        "observedReviewCount": 242,
+        "observedAverage": 5,
+        "sourceUrl": "https://localhungary.net/kategoria/fotosok-fotostudiok/budapest/budapest-xi-kerulet",
+        "sourceCategory": "THIRD_PARTY_GOOGLE_DATA_REPUBLISHER",
+        "caveat": "Independent legal operator; never transfer this business's reviews to BANHALMI."
+      },
+      {
+        "name": "VIKÓ SPEIER Budapest",
+        "city": "Budapest",
+        "observedReviewCount": 53,
+        "observedAverage": 5,
+        "sourceUrl": "https://localhungary.net/ceg/viko-speier-uzleti-es-kreativ-portrefotozas-divat-es-portfolio-fotozas-muveszi",
+        "sourceCategory": "THIRD_PARTY_GOOGLE_DATA_REPUBLISHER",
+        "caveat": "Other business provider surfaced 55. Separate legal entity and possible overlapping customer set."
+      }
+    ],
+    "discrepancies": [
+      {
+        "area": "Vienna business listing phone",
+        "publicOfficialSource": "https://www.banhalmiphotography.com/de-at/impressum/",
+        "officialPhone": "+43 677 616 55592",
+        "thirdPartyListingPhone": "+43 677 64733262",
+        "status": "CHECK_DIRECT_GOOGLE_BUSINESS_PROFILE_BEFORE_ANY_UPDATE"
+      }
+    ],
+    "publicationRule": "No cross-entity review total, self-review schema, or AggregateRating until each direct GBP listing and ownership is verified and duplicate/relationship caveats are explicit."
+  }
+}

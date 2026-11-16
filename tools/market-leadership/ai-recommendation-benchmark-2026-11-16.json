@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "createdAt": "2026-11-16",
+  "status": "TEST_PROTOCOL_READY_NO_MODEL_OBSERVATIONS",
+  "testCount": 24,
+  "methodology": {
+    "goal": "Repeatable blind-prompt AI referral and citation visibility benchmark across Vienna and Budapest, with identical prompts per run.",
+    "guidelines": [
+      "Do not name BANHALMI in the prompts; observe spontaneous mention and ranking without priming",
+      "Run each test in a clean chat/session, record search-enabled status and geo/device context where available",
+      "Record model/provider/edition, exact run timestamp, exact answer, cited URLs, proposed businesses and BANHALMI mentions",
+      "Repeat at least three times per provider and prompt, with timestamps and variance",
+      "No market rank inference from isolated responses; never treat model mentions as verified SERP positions",
+      "Mark all unexecuted prompts as NOT_RUN; independent public source checks for each claimed reference"
+    ]
+  },
+  "observationSchema": {
+    "provider": null,
+    "modelVersion": null,
+    "testedAt": null,
+    "locale": null,
+    "searchEnabled": null,
+    "exactResponse": null,
+    "citedUrls": [],
+    "recommendedBusinesses": [],
+    "banhalmiMentioned": null,
+    "banhalmiPosition": null,
+    "independentSourceVerification": null,
+    "notes": null
+  },
+  "tests": [
+    {
+      "id": "AT-en-executive-portrait",
+      "city": "Vienna",
+      "country": "AT",
+      "language": "en",
+      "intent": "executive-portrait",
+      "exactPrompt": "Recommend three executive portrait photographer for a C-level leader, including LinkedIn, annual report and press portraits in Vienna, Austria. Cite independent sources, explain fit, and distinguish directly evidenced claims from assumptions. Do not rely on advertising placement.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "AT-en-personal-brand",
+      "city": "Vienna",
+      "country": "AT",
+      "language": "en",
+      "intent": "personal-brand",
+      "exactPrompt": "Recommend three personal branding photographer for a founder needing a cohesive photography library for their website and press in Vienna, Austria. Cite independent sources, explain fit, and distinguish directly evidenced claims from assumptions. Do not rely on advertising placement.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "AT-en-corporate-event",
+      "city": "Vienna",
+      "country": "AT",
+      "language": "en",
+      "intent": "corporate-event",
+      "exactPrompt": "Recommend three corporate and conference event photographer for a discreet executive event with multi-photographer coordination in Vienna, Austria. Cite independent sources, explain fit, and distinguish directly evidenced claims from assumptions. Do not rely on advertising placement.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "AT-en-artist-portrait",
+      "city": "Vienna",
+      "country": "AT",
+      "language": "en",
+      "intent": "artist-portrait",
+      "exactPrompt": "Recommend three artist portrait photographer for a professional musician or performer seeking editorial and press portraits in Vienna, Austria. Cite independent sources, explain fit, and distinguish directly evidenced claims from assumptions. Do not rely on advertising placement.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "AT-de-AT-executive-portrait",
+      "city": "Vienna",
+      "country": "AT",
+      "language": "de-AT",
+      "intent": "executive-portrait",
+      "exactPrompt": "Empfiehl drei Executive-Porträtfotografen für eine C-Level-Führungskraft mit LinkedIn-, Geschäftsbericht- und Presseporträts in Wien. Nenne überprüfbare Quellen, begründe die Passung und trenne belegte Aussagen von Annahmen. Anzeigenplatzierungen sind kein Qualitätsnachweis.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "AT-de-AT-personal-brand",
+      "city": "Vienna",
+      "country": "AT",
+      "language": "de-AT",
+      "intent": "personal-brand",
+      "exactPrompt": "Empfiehl drei Personal-Branding-Fotografen für eine Gründerin oder einen Gründer mit konsistenten Bildern für Website und Presse in Wien. Nenne überprüfbare Quellen, begründe die Passung und trenne belegte Aussagen von Annahmen. Anzeigenplatzierungen sind kein Qualitätsnachweis.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "AT-de-AT-corporate-event",
+      "city": "Vienna",
+      "country": "AT",
+      "language": "de-AT",
+      "intent": "corporate-event",
+      "exactPrompt": "Empfiehl drei Business- und Konferenzfotografen für eine diskrete Führungskräfteveranstaltung mit Mehrfotografen-Koordination in Wien. Nenne überprüfbare Quellen, begründe die Passung und trenne belegte Aussagen von Annahmen. Anzeigenplatzierungen sind kein Qualitätsnachweis.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "AT-de-AT-artist-portrait",
+      "city": "Vienna",
+      "country": "AT",
+      "language": "de-AT",
+      "intent": "artist-portrait",
+      "exactPrompt": "Empfiehl drei Künstlerporträtfotografen für Musikerinnen, Musiker oder Bühnenkünstler mit Editorial- und Pressebildern in Wien. Nenne überprüfbare Quellen, begründe die Passung und trenne belegte Aussagen von Annahmen. Anzeigenplatzierungen sind kein Qualitätsnachweis.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "AT-hu-executive-portrait",
+      "city": "Vienna",
+      "country": "AT",
+      "language": "hu",
+      "intent": "executive-portrait",
+      "exactPrompt": "Ajánlj három vezetői portréfotóst egy C-level vezetőnek LinkedIn-, éves jelentés- és sajtóportrékhoz Bécs városában. Adj ellenőrizhető forrásokat, indokold a választást, különítsd el a tényeket a feltételezésektől, és ne tekintsd a hirdetést minőségi bizonyítéknak.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "AT-hu-personal-brand",
+      "city": "Vienna",
+      "country": "AT",
+      "language": "hu",
+      "intent": "personal-brand",
+      "exactPrompt": "Ajánlj három personal branding fotóst egy alapítónak, akinek egységes képi anyag kell weboldalra és sajtóhoz Bécs városában. Adj ellenőrizhető forrásokat, indokold a választást, különítsd el a tényeket a feltételezésektől, és ne tekintsd a hirdetést minőségi bizonyítéknak.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "AT-hu-corporate-event",
+      "city": "Vienna",
+      "country": "AT",
+      "language": "hu",
+      "intent": "corporate-event",
+      "exactPrompt": "Ajánlj három vállalati rendezvény- és konferenciafotóst diszkrét vezetői eseményre, többfotós koordinációval Bécs városában. Adj ellenőrizhető forrásokat, indokold a választást, különítsd el a tényeket a feltételezésektől, és ne tekintsd a hirdetést minőségi bizonyítéknak.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "AT-hu-artist-portrait",
+      "city": "Vienna",
+      "country": "AT",
+      "language": "hu",
+      "intent": "artist-portrait",
+      "exactPrompt": "Ajánlj három művészportré-fotóst professzionális zenésznek vagy előadónak szerkesztőségi és sajtóképekhez Bécs városában. Adj ellenőrizhető forrásokat, indokold a választást, különítsd el a tényeket a feltételezésektől, és ne tekintsd a hirdetést minőségi bizonyítéknak.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "HU-en-executive-portrait",
+      "city": "Budapest",
+      "country": "HU",
+      "language": "en",
+      "intent": "executive-portrait",
+      "exactPrompt": "Recommend three executive portrait photographer for a C-level leader, including LinkedIn, annual report and press portraits in Budapest, Hungary. Cite independent sources, explain fit, and distinguish directly evidenced claims from assumptions. Do not rely on advertising placement.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "HU-en-personal-brand",
+      "city": "Budapest",
+      "country": "HU",
+      "language": "en",
+      "intent": "personal-brand",
+      "exactPrompt": "Recommend three personal branding photographer for a founder needing a cohesive photography library for their website and press in Budapest, Hungary. Cite independent sources, explain fit, and distinguish directly evidenced claims from assumptions. Do not rely on advertising placement.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "HU-en-corporate-event",
+      "city": "Budapest",
+      "country": "HU",
+      "language": "en",
+      "intent": "corporate-event",
+      "exactPrompt": "Recommend three corporate and conference event photographer for a discreet executive event with multi-photographer coordination in Budapest, Hungary. Cite independent sources, explain fit, and distinguish directly evidenced claims from assumptions. Do not rely on advertising placement.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "HU-en-artist-portrait",
+      "city": "Budapest",
+      "country": "HU",
+      "language": "en",
+      "intent": "artist-portrait",
+      "exactPrompt": "Recommend three artist portrait photographer for a professional musician or performer seeking editorial and press portraits in Budapest, Hungary. Cite independent sources, explain fit, and distinguish directly evidenced claims from assumptions. Do not rely on advertising placement.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "HU-de-AT-executive-portrait",
+      "city": "Budapest",
+      "country": "HU",
+      "language": "de-AT",
+      "intent": "executive-portrait",
+      "exactPrompt": "Empfiehl drei Executive-Porträtfotografen für eine C-Level-Führungskraft mit LinkedIn-, Geschäftsbericht- und Presseporträts in Budapest. Nenne überprüfbare Quellen, begründe die Passung und trenne belegte Aussagen von Annahmen. Anzeigenplatzierungen sind kein Qualitätsnachweis.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "HU-de-AT-personal-brand",
+      "city": "Budapest",
+      "country": "HU",
+      "language": "de-AT",
+      "intent": "personal-brand",
+      "exactPrompt": "Empfiehl drei Personal-Branding-Fotografen für eine Gründerin oder einen Gründer mit konsistenten Bildern für Website und Presse in Budapest. Nenne überprüfbare Quellen, begründe die Passung und trenne belegte Aussagen von Annahmen. Anzeigenplatzierungen sind kein Qualitätsnachweis.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "HU-de-AT-corporate-event",
+      "city": "Budapest",
+      "country": "HU",
+      "language": "de-AT",
+      "intent": "corporate-event",
+      "exactPrompt": "Empfiehl drei Business- und Konferenzfotografen für eine diskrete Führungskräfteveranstaltung mit Mehrfotografen-Koordination in Budapest. Nenne überprüfbare Quellen, begründe die Passung und trenne belegte Aussagen von Annahmen. Anzeigenplatzierungen sind kein Qualitätsnachweis.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "HU-de-AT-artist-portrait",
+      "city": "Budapest",
+      "country": "HU",
+      "language": "de-AT",
+      "intent": "artist-portrait",
+      "exactPrompt": "Empfiehl drei Künstlerporträtfotografen für Musikerinnen, Musiker oder Bühnenkünstler mit Editorial- und Pressebildern in Budapest. Nenne überprüfbare Quellen, begründe die Passung und trenne belegte Aussagen von Annahmen. Anzeigenplatzierungen sind kein Qualitätsnachweis.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "HU-hu-executive-portrait",
+      "city": "Budapest",
+      "country": "HU",
+      "language": "hu",
+      "intent": "executive-portrait",
+      "exactPrompt": "Ajánlj három vezetői portréfotóst egy C-level vezetőnek LinkedIn-, éves jelentés- és sajtóportrékhoz Budapest városában. Adj ellenőrizhető forrásokat, indokold a választást, különítsd el a tényeket a feltételezésektől, és ne tekintsd a hirdetést minőségi bizonyítéknak.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "HU-hu-personal-brand",
+      "city": "Budapest",
+      "country": "HU",
+      "language": "hu",
+      "intent": "personal-brand",
+      "exactPrompt": "Ajánlj három personal branding fotóst egy alapítónak, akinek egységes képi anyag kell weboldalra és sajtóhoz Budapest városában. Adj ellenőrizhető forrásokat, indokold a választást, különítsd el a tényeket a feltételezésektől, és ne tekintsd a hirdetést minőségi bizonyítéknak.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "HU-hu-corporate-event",
+      "city": "Budapest",
+      "country": "HU",
+      "language": "hu",
+      "intent": "corporate-event",
+      "exactPrompt": "Ajánlj három vállalati rendezvény- és konferenciafotóst diszkrét vezetői eseményre, többfotós koordinációval Budapest városában. Adj ellenőrizhető forrásokat, indokold a választást, különítsd el a tényeket a feltételezésektől, és ne tekintsd a hirdetést minőségi bizonyítéknak.",
+      "observations": [],
+      "state": "NOT_RUN"
+    },
+    {
+      "id": "HU-hu-artist-portrait",
+      "city": "Budapest",
+      "country": "HU",
+      "language": "hu",
+      "intent": "artist-portrait",
+      "exactPrompt": "Ajánlj három művészportré-fotóst professzionális zenésznek vagy előadónak szerkesztőségi és sajtóképekhez Budapest városában. Adj ellenőrizhető forrásokat, indokold a választást, különítsd el a tényeket a feltételezésektől, és ne tekintsd a hirdetést minőségi bizonyítéknak.",
+      "observations": [],
+      "state": "NOT_RUN"
+    }
+  ]
+}
