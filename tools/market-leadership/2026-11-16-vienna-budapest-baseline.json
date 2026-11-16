@@ -162,7 +162,8 @@
     "GA4 conversion events and enquiry-to-booking CRM/financial evidence",
     "AI recommendation experiment with exact prompts, providers, dates, grounded outputs",
     "Cross-check HIPStudio current company register and Austrian VIPACH maintainer ZVR rather than relying only on their own legal imprints",
-    "Audit BANHALMI Vienna office at 1180 separately from actual photo studio locations; verify address consistency in GBP and schema"
+    "Audit BANHALMI Vienna office at 1180 separately from actual photo studio locations; verify address consistency in GBP and schema",
+    "Directly verify Vienna/Budapest BANHALMI GBP review counts, HIPStudio GBP, Viko GBP, profile IDs and distinct customer sets before discussing any >1000 combined figure"
   ],
   "measurement": {
     "minimumWindowDays": 30,
@@ -218,5 +219,49 @@
       "verification": "PARTNER_SITE_STATEMENT",
       "caution": "Do not assert sameAs or ownership equivalence based solely on collaboration."
     }
-  ]
+  ],
+  "reputationLeads": {
+    "status": "SECONDARY_SNAPSHOTS_NOT_DIRECT_GBP_VERIFIED",
+    "observedAt": "2026-11-16",
+    "mustNotSum": true,
+    "entries": [
+      {
+        "name": "BANHALMI Budapest",
+        "city": "Budapest",
+        "observedReviewCount": 741,
+        "observedAverage": 5,
+        "sourceUrl": "https://localhungary.net/ceg/banhalmi-executive-portre-es-vizualis-strategia-budapest-xi-kerulet",
+        "sourceCategory": "THIRD_PARTY_GOOGLE_DATA_REPUBLISHER",
+        "caveat": "Another directory shows 740. Direct Google Business Profile profile ID and fresh count required. Do not add to other business review counts blindly."
+      },
+      {
+        "name": "HIPStudio Budapest",
+        "city": "Budapest",
+        "observedReviewCount": 242,
+        "observedAverage": 5,
+        "sourceUrl": "https://localhungary.net/kategoria/fotosok-fotostudiok/budapest/budapest-xi-kerulet",
+        "sourceCategory": "THIRD_PARTY_GOOGLE_DATA_REPUBLISHER",
+        "caveat": "Independent legal operator; never transfer this business's reviews to BANHALMI."
+      },
+      {
+        "name": "VIKÓ SPEIER Budapest",
+        "city": "Budapest",
+        "observedReviewCount": 53,
+        "observedAverage": 5,
+        "sourceUrl": "https://localhungary.net/ceg/viko-speier-uzleti-es-kreativ-portrefotozas-divat-es-portfolio-fotozas-muveszi",
+        "sourceCategory": "THIRD_PARTY_GOOGLE_DATA_REPUBLISHER",
+        "caveat": "Other business provider surfaced 55. Separate legal entity and possible overlapping customer set."
+      }
+    ],
+    "discrepancies": [
+      {
+        "area": "Vienna business listing phone",
+        "publicOfficialSource": "https://www.banhalmiphotography.com/de-at/impressum/",
+        "officialPhone": "+43 677 616 55592",
+        "thirdPartyListingPhone": "+43 677 64733262",
+        "status": "CHECK_DIRECT_GOOGLE_BUSINESS_PROFILE_BEFORE_ANY_UPDATE"
+      }
+    ],
+    "publicationRule": "No cross-entity review total, self-review schema, or AggregateRating until each direct GBP listing and ownership is verified and duplicate/relationship caveats are explicit."
+  }
 }
