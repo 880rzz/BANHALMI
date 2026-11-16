@@ -15,6 +15,7 @@ jobs:
           import json
           import sys
           import urllib.request
+          from datetime import datetime, timedelta, timezone
 
           base = 'https://api.github.com/repos/880rzz/BANHALMI'
           headers = {'User-Agent': 'BANHALMI-live-production-probe',
@@ -47,9 +48,13 @@ jobs:
 
           # A newer release can become visible before its workflow has passed
           # every exact-live/privacy gate. Do not issue a false alarm mid-release.
+          cutoff = datetime.now(timezone.utc) - timedelta(hours=1)
           active = [r for r in runs
                     if r.get('status') in ('queued', 'requested', 'waiting',
-                                           'pending', 'in_progress')]
+                                           'pending', 'in_progress')
+                    and datetime.fromisoformat(
+                        r['created_at'].replace('Z', '+00:00')
+                    ) > cutoff]
           if active:
               print('DEFERRED: Pages deployment still active; latest successful',
                     expected, 'live', live)
