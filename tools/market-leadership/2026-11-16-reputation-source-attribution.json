@@ -260,6 +260,15 @@
       "phoneE164": "+36304788850",
       "conflictWith": null,
       "classification": "MATCHES_INDEPENDENT_PARTNER_CONTACT"
+    },
+    {
+      "entityId": "banhalmi-vienna-schwedenplatz",
+      "sourceType": "AUSTRIAN_CHAMBER_PUBLIC_DIRECTORY",
+      "sourceUrl": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien+%28bundesland%29&suchbegriff=f%C3%BChrung",
+      "phoneE164": "+36704698397",
+      "conflictWith": "banhalmi-official-retired-phone",
+      "classification": "P1_RETIRED_SECONDARY_MOBILE_STILL_IN_WKO_PROFILE",
+      "ownerAction": "Authenticated WKO directory correction needed; preserve Norbert +43 and independent Vikó operational roles."
     }
   ],
   "findings": [
@@ -305,6 +314,16 @@
       "priority": "P3",
       "issue": "HIPStudio official imprint states founding 2006-02-27 while public contact page has 2006-03-15. Distinguish brand founding, incorporation and domain registration rather than silently normalizing.",
       "status": "SOURCE_DATE_RECONCILIATION_PENDING"
+    },
+    {
+      "id": "R-008",
+      "priority": "P1",
+      "issue": "Austrian WKO Firmen A-Z official public listing displays retired BANHALMI Hungarian mobile +36 70 469 8397 alongside authorized +43 677 616 55592.",
+      "sourceUrl": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien+%28bundesland%29&suchbegriff=f%C3%BChrung",
+      "sourceType": "AUSTRIAN_CHAMBER_PUBLIC_DIRECTORY",
+      "status": "WKO_OWNER_PROFILE_CORRECTION_PENDING",
+      "ownerAction": "Use owner-authorized WKO Firmen A-Z business profile editor; remove retired mobile after confirming contact role; verify public profile afterwards.",
+      "note": "External WKO profile cannot be changed through BANHALMI GitHub source."
     }
   ],
   "nextRequiredEvidence": [
