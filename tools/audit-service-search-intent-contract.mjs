@@ -138,6 +138,28 @@ for (const path of commercialServicePages) {
   }
 }
 
+// Keep the editorial distinction between one-time event reportage and ongoing
+// brand photography actionable; this is a contextual link, not extra CTA clutter.
+const eventBrandIntentBridges = [
+  { path: 'event-photography/index.html', brandRoute: '/lifestyle/', narrative: /Event coverage documents a particular occasion/ },
+  { path: 'hu/rendezvenyfotozas/index.html', brandRoute: '/hu/brand/', narrative: /A rendezvényriport egy konkrét alkalmat dokumentál/ },
+  { path: 'de-at/eventfotografie/index.html', brandRoute: '/de-at/brand/', narrative: /Eine Eventreportage dokumentiert einen konkreten Anlass/ }
+];
+for (const { path, brandRoute, narrative } of eventBrandIntentBridges) {
+  const html = fs.readFileSync(path, 'utf8');
+  const start = html.indexOf('id="selected-work"');
+  const gallery = html.indexOf('class="collage-gallery', start);
+  if (start < 0 || gallery < 0) {
+    errors.push(path + ': selected work / gallery section missing');
+    continue;
+  }
+  const editorialIntro = html.slice(start, gallery);
+  if (!narrative.test(editorialIntro)) errors.push(path + ': event-reportage service distinction missing');
+  if (!editorialIntro.includes('href="' + brandRoute + '"')) {
+    errors.push(path + ': contextual Brand cross-link missing or wrong locale');
+  }
+}
+
 const protectedHomepageTitles = new Map([
   ['index.html', 'BANHALMI | Portrait & brand photography | Vienna–Budapest'],
   ['hu/index.html', 'BANHALMI | Portréfotózás és brandfotózás | Bécs–Budapest'],
