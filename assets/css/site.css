@@ -65,6 +65,13 @@ body{
 
 img{max-width:100%;display:block;}
 a{color:var(--navy);text-decoration:none;}
+/* Contextual service links must remain identifiable in running text without colour alone. */
+.service-search-context a,
+.service-gallery-section .section-head p a{
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:.16em;
+}
 a:hover{color:var(--gold-deep);}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--content-gutter);}
