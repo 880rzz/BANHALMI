@@ -644,8 +644,16 @@
       "currency": "EUR",
       "vat": "included",
       "offer": "Quick headshot 1 retouched photo",
-      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
-      "observedForContextOnly": true
+      "verificationStatus": "PARTIAL_PRICE_ONLY",
+      "observedForContextOnly": true,
+      "primarySourceRecheck": {
+        "retrievalDate": "2026-11-16",
+        "evidenceUrl": "https://www.studionext.at/",
+        "confirmed": [
+          "minimum_business_photo_price_EUR_160"
+        ],
+        "limitations": "Homepage confirms business photos from €160, but not the exact 'Quick headshot 1 retouched photo' configuration on the archived source route."
+      }
     },
     {
       "city": "Wien",
@@ -655,8 +663,16 @@
       "currency": "EUR",
       "vat": "net",
       "offer": "Executive & PR Portraits",
-      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
-      "observedForContextOnly": true
+      "verificationStatus": "PRIMARY_PAGE_PRICE_MATCH",
+      "observedForContextOnly": true,
+      "primarySourceRecheck": {
+        "retrievalDate": "2026-11-16",
+        "evidenceUrl": "https://www.studionext.at/",
+        "confirmed": [
+          "Executive_PR_portraits_EUR_790_net"
+        ],
+        "limitations": "Current retrieved homepage and price page support €790 net executive/PR offer."
+      }
     },
     {
       "city": "Wien",
@@ -666,8 +682,17 @@
       "currency": "EUR",
       "vat": "included",
       "offer": "Premium business portrait, about 60 minutes",
-      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
-      "observedForContextOnly": true
+      "verificationStatus": "PRIMARY_PAGE_PACKAGE_MATCH",
+      "observedForContextOnly": true,
+      "primarySourceRecheck": {
+        "retrievalDate": "2026-11-16",
+        "evidenceUrl": "https://www.businessfoto.wien/preise-business-fotoshooting",
+        "confirmed": [
+          "premium_60_minutes",
+          "EUR_360_gross"
+        ],
+        "limitations": "Provider's package page states €300 net / €360 gross, about 60 minutes."
+      }
     },
     {
       "city": "Wien",
@@ -677,8 +702,18 @@
       "currency": "EUR",
       "vat": "unverified",
       "offer": "Business Professional, 60 min, 4 retouched",
-      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
-      "observedForContextOnly": true
+      "verificationStatus": "PRIMARY_PAGE_PACKAGE_MATCH",
+      "observedForContextOnly": true,
+      "primarySourceRecheck": {
+        "retrievalDate": "2026-11-16",
+        "evidenceUrl": "https://novafotografie.at/businessfotograf-wien/preise/",
+        "confirmed": [
+          "Business_Professional_EUR_269_end_price",
+          "60_min",
+          "4_retouched_images"
+        ],
+        "limitations": "Price displayed as end price; VAT treatment not independently established."
+      }
     },
     {
       "city": "Wien",
@@ -688,8 +723,17 @@
       "currency": "EUR",
       "vat": "unverified",
       "offer": "Plus: 3 retouched portraits",
-      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
-      "observedForContextOnly": true
+      "verificationStatus": "PRIMARY_PAGE_PACKAGE_MATCH",
+      "observedForContextOnly": true,
+      "primarySourceRecheck": {
+        "retrievalDate": "2026-11-16",
+        "evidenceUrl": "https://hammerfoto.at/businessfotos-mitarbeiterfotos-wien/",
+        "confirmed": [
+          "Plus_EUR_450",
+          "3_business_portraits"
+        ],
+        "limitations": "VAT treatment not specified on retrieved package section."
+      }
     },
     {
       "city": "Budapest",
@@ -699,8 +743,18 @@
       "currency": "EUR",
       "vat": "unverified",
       "offer": "Business Start, 30 min, 4 images",
-      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
-      "observedForContextOnly": true
+      "verificationStatus": "PRIMARY_PAGE_PACKAGE_MATCH",
+      "observedForContextOnly": true,
+      "primarySourceRecheck": {
+        "retrievalDate": "2026-11-16",
+        "evidenceUrl": "https://www.muhariphoto.com/business-arak/",
+        "confirmed": [
+          "Business_Start_EUR_200",
+          "30_minutes",
+          "4_retouched_images"
+        ],
+        "limitations": "VAT treatment and usage-rights scope require separate comparison."
+      }
     },
     {
       "city": "Budapest",
@@ -710,8 +764,18 @@
       "currency": "EUR",
       "vat": "unverified",
       "offer": "Business Pro, 60 min, 10 images",
-      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
-      "observedForContextOnly": true
+      "verificationStatus": "PRIMARY_PAGE_PACKAGE_MATCH",
+      "observedForContextOnly": true,
+      "primarySourceRecheck": {
+        "retrievalDate": "2026-11-16",
+        "evidenceUrl": "https://www.muhariphoto.com/business-arak/",
+        "confirmed": [
+          "Business_Pro_EUR_400",
+          "60_minutes",
+          "10_retouched_images"
+        ],
+        "limitations": "VAT treatment and usage-rights scope require separate comparison."
+      }
     },
     {
       "city": "Budapest",
@@ -721,8 +785,14 @@
       "currency": "HUF",
       "vat": "unverified",
       "offer": "CV-LinkedIn, about 20 min, 2 images",
-      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
-      "observedForContextOnly": true
+      "verificationStatus": "PRIMARY_SOURCE_ACCESS_BLOCKED",
+      "observedForContextOnly": true,
+      "primarySourceRecheck": {
+        "retrievalDate": "2026-11-16",
+        "evidenceUrl": "https://uzletiportrefoto.hu/uzleti-portre-fotozas-budapest-business-portre-ceges-portre-fotozas/",
+        "confirmed": [],
+        "limitations": "Provider's page returned bot-verification gate, so price and package details are NOT current-verified."
+      }
     },
     {
       "city": "Budapest",
@@ -732,8 +802,14 @@
       "currency": "HUF",
       "vat": "unverified",
       "offer": "Business portrait, about 60 min, 5 images",
-      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
-      "observedForContextOnly": true
+      "verificationStatus": "PRIMARY_SOURCE_ACCESS_BLOCKED",
+      "observedForContextOnly": true,
+      "primarySourceRecheck": {
+        "retrievalDate": "2026-11-16",
+        "evidenceUrl": "https://uzletiportrefoto.hu/uzleti-portre-fotozas-budapest-business-portre-ceges-portre-fotozas/",
+        "confirmed": [],
+        "limitations": "Provider's page returned bot-verification gate, so price and package details are NOT current-verified."
+      }
     }
   ],
   "WKO": {
@@ -757,5 +833,16 @@
   ],
   "recordStatus": "RECONCILED_AFTER_OWNER_INSTRUCTION",
   "updatedOn": "2026-11-16",
-  "supersedesDraftPr": 229
+  "supersedesDraftPr": 229,
+  "competitorEvidenceSummary": {
+    "sourceReviewDate": "2026-11-16",
+    "sourceType": "PUBLIC_PRIMARY_PROVIDER_WEBPAGES_AS_RETRIEVED",
+    "statusCounts": {
+      "PARTIAL_PRICE_ONLY": 1,
+      "PRIMARY_PAGE_PRICE_MATCH": 1,
+      "PRIMARY_PAGE_PACKAGE_MATCH": 5,
+      "PRIMARY_SOURCE_ACCESS_BLOCKED": 2
+    },
+    "publicationRule": "The figures document packages from retrieved pages, not city rank, equivalent contract value, current live prices, business quality or recommendations. Recheck before any public competitor claim. VAT, rights, crew, retouching and delivery differ."
+  }
 }
