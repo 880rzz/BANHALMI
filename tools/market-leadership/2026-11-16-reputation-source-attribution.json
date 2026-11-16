@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "observedOn": "2026-11-16",
   "status": "AUDITÁLT",
   "scope": "Repository research only. No public website, customer data, Google Business Profile, or schema change.",
@@ -175,11 +175,12 @@
     {
       "authorityId": "banhalmi-budapest-gbp-expected",
       "subject": "BANHALMI Budapest",
-      "role": "Expected Budapest Google Business Profile phone per repository policy, not owner-authenticated observation",
+      "role": "Previously expected +43 677 616 55592 under repository policy, but owner now explicitly permits +36 70 469 8397 to remain on the BANHALMI Budapest Google Business Profile; prior expectation must not trigger replacement.",
       "phoneE164": "+4367761655592",
       "sourceType": "FIRST_PARTY_REPOSITORY_CONTRACT",
       "sourcePath": "tools/audit-single-public-phone.mjs",
-      "status": "EXPECTED_REQUIRES_OWNER_GBP_CHECK"
+      "status": "REPOSITORY_PRIOR_EXPECTATION_SUPERSEDED_BY_OWNER_ALLOWED_GOOGLE_ALTERNATE",
+      "ownerApprovedAlternateE164": "+36704698397"
     },
     {
       "authorityId": "hipstudio-official",
@@ -202,12 +203,12 @@
     },
     {
       "authorityId": "retired-budapest-shared",
-      "subject": "BANHALMI older published Budapest listing number",
-      "role": "Retired from BANHALMI public-site phone contract; owner expressly permits this number to remain on the WKO chamber listing; other uses remain subject to entity/location verification.",
+      "subject": "BANHALMI formerly published Budapest number, retained for owner-approved WKO and Budapest Google listings",
+      "role": "Retired from first-party BANHALMI site/Contact Dock contract only. Explicitly owner-allowed on BANHALMI WKO and Budapest Google Business Profile; not a universal contact authority for separate brands.",
       "phoneE164": "+36704698397",
       "sourceType": "FIRST_PARTY_REPOSITORY_CONTRACT",
       "sourcePath": "tools/audit-single-public-phone.mjs",
-      "status": "RETIRED_FROM_SITE_CONTRACT_WKO_EXCEPTION_ALLOWED"
+      "status": "RETIRED_FIRST_PARTY_SITE_ONLY_WKO_AND_BUDAPEST_GOOGLE_ALLOWED"
     }
   ],
   "phoneObservations": [
@@ -216,9 +217,10 @@
       "sourceType": "STRUCTURED_LOCAL_BUSINESS_SEARCH",
       "placeId": "ChIJnWq6XK3dQUcRD_6uu2u-2Jw",
       "phoneE164": "+36704698397",
-      "conflictWith": "banhalmi-budapest-gbp-expected",
-      "classification": "P1_PUBLIC_DIRECTORY_STALE_OR_CONTACT_OWNERSHIP_UNRESOLVED",
-      "ownerAction": "Check direct GBP owner location phone; do not overwrite any other entity."
+      "conflictWith": null,
+      "classification": "OWNER_APPROVED_KEEP_BUDAPEST_GOOGLE_LISTING",
+      "ownerAction": "No correction for this number on BANHALMI Budapest Google Business Profile; read-only owner-admin check still required to confirm exact profile identity/location and review counts.",
+      "ownerDecisionId": "OWNER-GOOGLE-HU-PHONE-002"
     },
     {
       "entityId": "banhalmi-budapest",
@@ -272,10 +274,10 @@
     },
     {
       "id": "R-002",
-      "priority": "P1",
-      "issue": "BANHALMI Budapest structured listing exposes retired +36 70 469 8397 while repository requires +43 677 616 55592 for Budapest GBP.",
-      "status": "DIRECT_GBP_OWNER_VERIFICATION_PENDING",
-      "note": "WKO chamber profile is explicitly permitted to display +36 70 469 8397 by owner instruction. This finding concerns the separate Budapest structured Google-style listing and still needs direct GBP owner verification; do not automatically remove the WKO phone."
+      "priority": "P3",
+      "issue": "BANHALMI Budapest structured listing displays +36 70 469 8397. Owner permits this number on Google and WKO. Previously flagged +43-only expectation should not lead to a correction.",
+      "status": "CLOSED_OWNER_APPROVED_KEEP_PHONE_GOOGLE_AND_WKO",
+      "note": "No phone change requested for BANHALMI Budapest Google profile or WKO. Only direct profile attribution/counts still require separate verification. Do not propagate this exception to HIPStudio, Viko or website footer/WhatsApp."
     },
     {
       "id": "R-003",
@@ -310,7 +312,7 @@
   ],
   "nextRequiredEvidence": [
     "Read-only owner-admin Google Business Profiles match for each location and distinct entity: place/location ID, service role, current displayed review count and phone, screenshot/timestamp",
-    "Explicit owner approval of intended customer-facing contact per location and business entity",
+    "Owner approval of WKO and BANHALMI Budapest Google +36 contact is recorded; remaining consent/authority requirements concern other entities or locations.",
     "Then propose separate controlled corrections; do not modify schema, public phone, business listings or reviews in this research PR",
     "Preserve source-date, provider and verification method on all future observations; never infer city SERP rank from country-level GSC data"
   ],
@@ -329,8 +331,18 @@
       "subject": "BANHALMI WKO public professional directory entry",
       "numberE164": "+36704698397",
       "decision": "KEEP_PER_OWNER_INSTRUCTION",
-      "scope": "WKO business/chamber directory listing only",
-      "notes": "The owner has expressly stated that the Hungarian number may remain on the WKO profile. Do not treat its mere presence there as a defect, and do not request removal. This is not a universal number authority for BANHALMI websites, its Google Business Profiles, HIPStudio, or unrelated external listings; all such roles require separate owner/location verification."
+      "scope": "WKO business/chamber directory listing only; additionally owner-approved for BANHALMI Budapest Google Business Profile in decision OWNER-GOOGLE-HU-PHONE-002",
+      "notes": "The owner explicitly permits this Hungarian number to remain on the WKO profile; do not request removal. A separate subsequent owner decision also allows this number on BANHALMI Budapest Google profile. These exceptions do not authorize this number for BANHALMI website footer/WhatsApp or HIPStudio."
+    },
+    {
+      "id": "OWNER-GOOGLE-HU-PHONE-002",
+      "recordedAt": "2026-11-16",
+      "subject": "BANHALMI Budapest Google Business Profile",
+      "placeId": "ChIJnWq6XK3dQUcRD_6uu2u-2Jw",
+      "numberE164": "+36704698397",
+      "decision": "KEEP_PER_OWNER_INSTRUCTION",
+      "scope": "BANHALMI Budapest Google Business Profile; no change required solely due to this number",
+      "notes": "Owner expressly permits Hungarian number to remain in Google. Do not auto-replace with +43 677 616 55592 and do not categorize presence of +36 as stale or an error. Profile ID/current admin screen still not authenticated; no claim about profile ownership or exact current Google display. Does not apply to HIPStudio, Viko or BANHALMI first-party web phone/WhatsApp."
     }
   ]
 }
