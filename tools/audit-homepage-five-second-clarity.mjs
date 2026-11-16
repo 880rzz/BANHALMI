@@ -11,21 +11,30 @@ const variants = [
 ];
 for(const {file,quote,services,location,brand} of variants){
   const html=fs.readFileSync(file,'utf8');
-  const hero=html.match(/<section class="hero hero-copy-only\b[\s\S]*?<\/section>/i)?.[0];
-  assert.ok(hero,file+': homepage copy hero missing');
+  const hero=html.match(/<section class="hero hero-image-first hero-visual-only hero-cinematic"[^>]*>[\s\S]*?<\/section>/i)?.[0];
+  assert.ok(hero,file+': photographic homepage hero missing');
+  assert.ok(hero.includes('class="hero-cinematic-content"'),file+': overlaid hero text missing');
+  assert.equal((html.match(/<h1(?:\s|>)/g)||[]).length,1,file+': exactly one H1 required');
   const h1=hero.match(/<h1>([^<]+)<\/h1>/i)?.[1];
-  assert.ok(h1 && h1.length<95,file+': short brand H1 required');
-  const summary=hero.match(/<\/h1>\s*<p>([^<]+)<\/p>/i)?.[1];
-  assert.ok(summary && summary.length<=260,file+': concise brand explanation required');
+  assert.ok(h1 && h1.length<60,file+': concise photo hero H1 required');
+  assert.ok(hero.includes('href="'+quote+'"'),file+': quote CTA missing from photo hero');
+  assert.ok(hero.includes('href="#services"'),file+': services CTA missing');
+  assert.ok(hero.includes('hero-cinematic-photo'),file+': static photo missing');
+  assert.ok(hero.includes('fetchpriority="high"'),file+': photo LCP priority missing');
+  assert.ok(hero.includes('src="/assets/img/curated/hero-city-skateboard-1920.avif"'),file+': expected photo path missing');
+  assert.ok(!/data-service-owner-links/.test(hero),file+': repeated service labels in hero');
+  const team=html.match(/<section class="hero hero-copy-only\b[\s\S]*?<\/section>/i)?.[0];
+  assert.ok(team,file+': team explanation section missing below hero');
+  const summary=team.match(/<\/h2>\s*<p>([^<]+)<\/p>/i)?.[1];
+  assert.ok(summary && summary.length<=260,file+': concise team explanation required');
   assert.match(summary,brand,file+': brand missing');
   assert.match(summary,location,file+': geography missing');
   assert.match(summary,/50/,file+': team scale missing');
   assert.match(summary,/20|húsz|zwanzig/i,file+': operating history missing');
-  assert.ok(hero.includes('href="'+quote+'"'),file+': quote CTA missing');
-  assert.equal((hero.match(/class="btn btn-primary"/g)||[]).length,1,file+': one primary CTA');
-  assert.ok(!/data-service-owner-links/.test(hero),file+': repeated service keywords in hero');
+  assert.ok(fs.existsSync('assets/img/curated/hero-city-skateboard-1920.avif'),file+': uploaded image missing');
+
   const section=html.match(/<section id="services"[\s\S]*?<\/section>/i)?.[0];
   assert.ok(section,file+': services section missing');
   for(const href of services)assert.ok(section.includes('href="'+href+'"'),file+': missing service landing link '+href);
-  console.log('Brand-first homepage clarity PASS: '+file);
+  console.log('Cinematic homepage clarity PASS: '+file);
 }
