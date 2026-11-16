@@ -46,7 +46,10 @@ for(const rel of ['index.html','hu/index.html','de-at/index.html']){
   const html=fs.readFileSync(rel,'utf8');
   must(html.includes('data-homepage-redesign="stage76"'),`${rel}: homepage geometry scope missing`);
   must(!html.includes('class="hero-video"'),`${rel}: retired homepage hero video reintroduced`);
-  must(html.includes('hero-signature-2400.avif'),`${rel}: shared homepage hero still missing`);
+  must(html.includes('hero-city-skateboard-1920.avif'),`${rel}: user-approved cinematic homepage image missing`);
+  must(html.includes('class="hero-cinematic-content"'),`${rel}: photo-overlaid homepage copy missing`);
+  must(html.includes('class="hero-cinematic-photo"'),`${rel}: static LCP image contract missing`);
+  must(html.includes('class="hero hero-copy-only surface-white"'),`${rel}: verified 50-photographer team explanation missing`);
 }
 must(!hardener.includes('--homepage-hero-media-height'),'production hardener must not overwrite canonical homepage media geometry');
 must(hardener.includes("let canonicalCss = fs.readFileSync(siteCssPath, 'utf8')"),'production hardener must preserve the committed canonical stylesheet before scoped hardening');
