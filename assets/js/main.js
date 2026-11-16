@@ -795,10 +795,27 @@
           });
         });
       }
+      // Emit a non-identifying GA4 lead event only for an explicitly verified quote.
+      // Do not send names, contact fields, enquiry text, submission IDs or amounts.
+      function trackVerifiedQuoteLead() {
+        if (!isQuote) return;
+        var analytics = window.BANHALMI_ANALYTICS;
+        if (!analytics || typeof analytics.hasConsent !== 'function' || !analytics.hasConsent()) return;
+        if (typeof window.gtag !== 'function') return;
+        var lang = form.getAttribute('data-lang') || document.documentElement.lang || 'en';
+        var locale = lang.indexOf('hu') === 0 ? 'hu' : lang.indexOf('de') === 0 ? 'de' : 'en';
+        try {
+          window.gtag('event', 'generate_lead', {
+            lead_type: 'quote_request',
+            form_language: locale
+          });
+        } catch (error) {}
+      }
       setSubmitBusy(true);
       if (endpoint && window.fetch) {
         submitVerified().then(function(data){
           showNote(message(data && data.unverified? 'successUnverified': 'success') + (data && data.submissionId? ' ID: ' + data.submissionId: ''), false);
+          if (isQuote) trackVerifiedQuoteLead();
           form.reset();
           if (window.turnstile) { try { window.turnstile.reset(); } catch (e) {} }
           if (isQuote && window.BANHALMI_QUOTE && typeof window.BANHALMI_QUOTE.paint === 'function') { window.BANHALMI_QUOTE.paint(form); updateProjectSummary(form); }
