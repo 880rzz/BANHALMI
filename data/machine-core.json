@@ -63,7 +63,8 @@
       "googleBusinessProfilePhoneRule": {
         "austriaLocations": "+4367764733262",
         "budapestLocation": "+4367761655592",
-        "rule": "The two Austrian Google Business Profile locations use Viko's Austrian number; the Budapest Google Business Profile uses Norbert's Austrian number. Do not normalize these location-profile numbers."
+        "budapestOwnerApprovedGoogleAlternative": "+36704698397",
+        "rule": "The two Austrian Google Business Profile locations use Viko's Austrian number. The Budapest Google Business Profile may retain the owner-approved Hungarian +36 70 469 8397 number; the previous Austrian +43 677 616 55592 is the Norbert owner contact, not a mandatory replacement for Google. This location-specific exception does not change the first-party website footer, WhatsApp or HIPStudio and Viko contacts."
       }
     }
   },
