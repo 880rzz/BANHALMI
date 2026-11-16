@@ -1,0 +1,474 @@
+{
+  "version": 1,
+  "issuedAt": "2026-11-16",
+  "scope": "BANHALMI Professional Vienna/Budapest three-language commercial market execution, existing master prompt",
+  "classification": "INTERNAL_RESEARCH_IN_PUBLIC_GITHUB_REPOSITORY",
+  "publicationAuthority": "NONE_FROM_THIS_REPORT",
+  "productionChanges": false,
+  "statusVocabulary": [
+    "AUDITÁLT",
+    "TERVEZETT",
+    "JAVÍTOTT",
+    "CI-ELLENŐRZÖTT",
+    "PRODUCTION-ELLENŐRZÖTT",
+    "MÉRÉS ALATT",
+    "INPUT-NEM-ELÉRHETŐ",
+    "FÜGGŐ"
+  ],
+  "sources": {
+    "previousBaselines": [
+      "tools/market-leadership/2026-11-16-vienna-budapest-baseline.json",
+      "tools/market-leadership/2026-11-16-professional-evidence-matrix.json",
+      "tools/market-leadership/ai-recommendation-benchmark-2026-11-16.json"
+    ],
+    "gsc": "GSC Wizard connected first-party Search Console sc-domain:banhalmiphotography.com; web, 2026-10-17 to 2026-11-13; query_top_pages and query_search_analytics",
+    "ga4": "GSC Wizard list_ga4_properties + query_ga4_report via account hello@norbertbanhalmi.com",
+    "github": "https://github.com/880rzz/BANHALMI/actions/runs/43899106842",
+    "competitorExamples": [
+      {
+        "business": "Studio NEXT",
+        "market": "Vienna",
+        "role": "published offer example, not ranked result",
+        "source": "https://www.studionext.at/preise/",
+        "offer": "Executive & PR portraits",
+        "price": "790 EUR net",
+        "tax": "net plus VAT",
+        "included": "10 images; 3 motif types per official offer",
+        "requiresScopeCheck": true
+      },
+      {
+        "business": "Studio NEXT",
+        "market": "Vienna",
+        "role": "published offer example, not ranked result",
+        "source": "https://www.studionext.at/preise/",
+        "offer": "Businessfotos Executive",
+        "price": "450 EUR gross",
+        "tax": "incl 20% VAT",
+        "included": "8 images / 24h on current pricing index",
+        "requiresScopeCheck": true
+      },
+      {
+        "business": "Muhari Photo",
+        "market": "Budapest",
+        "role": "published offer example, not ranked result",
+        "source": "https://www.muhariphoto.com/business-arak/",
+        "offer": "Business Start",
+        "price": "200 EUR",
+        "tax": "not confirmed",
+        "included": "30 min; 4 retouched images",
+        "requiresScopeCheck": true
+      },
+      {
+        "business": "Muhari Photo",
+        "market": "Budapest",
+        "role": "published offer example, not ranked result",
+        "source": "https://www.muhariphoto.com/business-arak/",
+        "offer": "Business Pro",
+        "price": "400 EUR",
+        "tax": "not confirmed",
+        "included": "60 min; 10 retouched images",
+        "requiresScopeCheck": true
+      }
+    ]
+  },
+  "releasedTechnical": {
+    "quoteEmailFlagGate": {
+      "pr": 219,
+      "merged": true,
+      "commit": "f0ba0d999e9e49f3b4448dbb86e7c385b239cf38",
+      "productionWorkflow": 208,
+      "status": "PRODUCTION-ELLENŐRZÖTT",
+      "caveat": "Automated deployed-code verification, not real outbound mailbox receipt"
+    },
+    "quoteMockBrowserE2E": {
+      "pr": 220,
+      "merged": true,
+      "mergeSHA": "86c9396cc058d9ff9a78205a84b9545e19867355",
+      "scenarios": 12,
+      "status": "CI-ELLENŐRZÖTT",
+      "caveat": "No real Cloudflare to two inboxes delivery proven"
+    },
+    "consentedGenerateLead": {
+      "pr": 224,
+      "merged": true,
+      "mergeSHA": "b4d4360ad129181c4a6768a42ceb1c672159a21f",
+      "productionWorkflow": 212,
+      "status": "CI-ELLENŐRZÖTT",
+      "caveat": "Production deploy succeeded; exact-live GA4 receipt and analytics-GSC account linkage not verified"
+    }
+  },
+  "searchBaseline": {
+    "site": "sc-domain:banhalmiphotography.com",
+    "period": {
+      "from": "2026-10-17",
+      "to": "2026-11-13",
+      "days": 28,
+      "settledThrough": "UNCONFIRMED_AT_LATEST_PROBE"
+    },
+    "propertyTotals": {
+      "clicks": 16,
+      "impressions": 9437,
+      "ctrPct": 0.17,
+      "averagePosition": 3.72
+    },
+    "caveat": "GSC property-wide average position is not a city/keyword ranking, searcher country cannot prove city, and live 2026-11-16 data maturity could not be read.",
+    "firstPartyPageRows": [
+      {
+        "page": "/hu/",
+        "clicks": 14,
+        "impressions": 7814,
+        "ctrPct": 0.1791656,
+        "position": 3.15165
+      },
+      {
+        "page": "/de-at/",
+        "clicks": 1,
+        "impressions": 1456,
+        "ctrPct": 0.0686813,
+        "position": 3.32761
+      },
+      {
+        "page": "/hu/portre/",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 15.6667
+      },
+      {
+        "page": "/de-at/portrait/",
+        "clicks": 0,
+        "impressions": 7,
+        "position": 58.2857
+      },
+      {
+        "page": "/hu/brand/",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 5
+      },
+      {
+        "page": "/de-at/brand/",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 12
+      },
+      {
+        "page": "/de-at/eventfotografie/",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 29
+      },
+      {
+        "page": "/de-at/fine-art/",
+        "clicks": 0,
+        "impressions": 62,
+        "position": 64.5968
+      }
+    ],
+    "interpretation": "Homepages dominate displayed search impressions. The sample is small and non-conversion evidence; analyze query-to-intent mismatch rather than assigning cause to title lengths or indexation."
+  },
+  "queryIntentTriage": [
+    {
+      "id": "Q01",
+      "market": "Budapest",
+      "language": "hu",
+      "query": "portréfotózás budapest",
+      "observedLanding": "/hu/",
+      "candidateOwner": "/hu/portre/",
+      "baselineImpressions": 37,
+      "baselineClicks": 0,
+      "baselineAvgPosition": 3.1,
+      "priority": "P1",
+      "method": "Compare entire query/page and targeted page GSC rows; inspect existing internal links, canonical, headings, actual rendered copy before editorial or technical PR",
+      "status": "ROUTING_HYPOTHESIS"
+    },
+    {
+      "id": "Q02",
+      "market": "Vienna",
+      "language": "de-AT",
+      "query": "portraitfotografie wien",
+      "observedLanding": "/de-at/",
+      "candidateOwner": "/de-at/portrait/",
+      "baselineImpressions": 29,
+      "baselineClicks": 0,
+      "baselineAvgPosition": 4.9,
+      "priority": "P1",
+      "method": "Verify intent with controlled independent SERP and exact German service page, no assumed redirect",
+      "status": "ROUTING_HYPOTHESIS"
+    },
+    {
+      "id": "Q03",
+      "market": "Vienna",
+      "language": "de-AT",
+      "query": "reportagefotograf wien",
+      "observedLanding": "/de-at/",
+      "candidateOwner": "/de-at/eventfotografie/",
+      "baselineImpressions": 70,
+      "baselineClicks": 0,
+      "baselineAvgPosition": 2.7,
+      "priority": "P1",
+      "method": "Distinguish documentary vs corporate event before changing H1/Service",
+      "status": "ROUTING_HYPOTHESIS"
+    },
+    {
+      "id": "Q04",
+      "market": "Vienna",
+      "language": "de-AT",
+      "query": "personal branding fotograf wien",
+      "observedLanding": "/de-at/",
+      "candidateOwner": "/de-at/brand/",
+      "baselineImpressions": 8,
+      "baselineClicks": 0,
+      "baselineAvgPosition": 4.6,
+      "priority": "P2",
+      "method": "Verify small sample and current personal-brand content",
+      "status": "ROUTING_HYPOTHESIS"
+    },
+    {
+      "id": "Q05",
+      "market": "cross-market",
+      "language": "hu / de-AT",
+      "query": "boudoir photography and akt foto variants",
+      "observedLanding": "/hu/ and /de-at/",
+      "candidateOwner": "BANHALMI ART Ébredés / private photography",
+      "priority": "P1",
+      "method": "First check whether this is legacy GSC indexing rather than current Professional content; keep ART/professional intent separation, no unsupported redirect",
+      "status": "LEGACY_INTENT_OR_ROUTING_INVESTIGATION"
+    }
+  ],
+  "marketResearchGate": {
+    "purpose": "Establish city-specific, non-personalised competitor Top 5 by defined priority queries; existing five businesses per city are CANDIDATES, not certified ranks.",
+    "priorityQueries": [
+      {
+        "city": "Vienna",
+        "language": "de-AT",
+        "query": "executive porträt fotograf wien",
+        "landingIntent": "portrait"
+      },
+      {
+        "city": "Vienna",
+        "language": "de-AT",
+        "query": "businessfotografie wien",
+        "landingIntent": "business"
+      },
+      {
+        "city": "Vienna",
+        "language": "en",
+        "query": "executive portrait photographer Vienna",
+        "landingIntent": "portrait"
+      },
+      {
+        "city": "Vienna",
+        "language": "de-AT",
+        "query": "eventfotograf firmenveranstaltung wien",
+        "landingIntent": "event"
+      },
+      {
+        "city": "Budapest",
+        "language": "hu",
+        "query": "üzleti portréfotózás budapest",
+        "landingIntent": "portrait"
+      },
+      {
+        "city": "Budapest",
+        "language": "hu",
+        "query": "vezetői portréfotózás budapest",
+        "landingIntent": "portrait"
+      },
+      {
+        "city": "Budapest",
+        "language": "en",
+        "query": "executive portrait photographer Budapest",
+        "landingIntent": "portrait"
+      },
+      {
+        "city": "Budapest",
+        "language": "hu",
+        "query": "céges rendezvényfotózás budapest",
+        "landingIntent": "event"
+      }
+    ],
+    "minimumObservationColumns": [
+      "observedAt",
+      "searchEngine",
+      "query",
+      "city",
+      "geoGroundingMethod",
+      "language",
+      "device",
+      "personalizationControl",
+      "resultType",
+      "rank",
+      "url",
+      "businessEntity",
+      "evidenceCapture",
+      "notes"
+    ],
+    "requiredStrata": [
+      "city",
+      "language",
+      "mobile",
+      "desktop",
+      "organic ranking excluding ads and map pack",
+      "independent repeat"
+    ],
+    "sampleProtocol": "Use consistent dates, clean/anonymous sessions, and controlled city geolocation; store actual result URLs and whether results are organic/local/advertisement, repeat at least twice. Results may still vary; never invent a precise Top 5 from a search directory or national country rank.",
+    "status": "INPUT-NEM-ELÉRHETŐ"
+  },
+  "authorityEvidenceGate": {
+    "separateIdentity": [
+      "BANHALMI Professional",
+      "BANHALMI ART",
+      "HIPStudio legal operator",
+      "Speier Viko independent professional",
+      "VIPACH cultural project",
+      "Fotótörténelem editorial"
+    ],
+    "approvedProofClasses": [
+      "official registry",
+      "independent publication/credit",
+      "association-verified record",
+      "self-reported offer clearly labeled"
+    ],
+    "criticalProofPending": [
+      "Approx 50 professional collaborators: a network claim, not employees; consented current roster by category and region",
+      "AmCham actual membership matched to legal entity vs photography credit",
+      "OM SYSTEM ambassador current status and duration",
+      "HIPStudio and Viko legal and operational role boundaries; GBPs by place ID",
+      "VIPACH maintainer vs cultural affiliation",
+      "Image license and written publication authority"
+    ],
+    "status": "FÜGGŐ"
+  },
+  "measurement": {
+    "ga4Current": {
+      "status": "FÜGGŐ",
+      "connected": true,
+      "account": "hello@norbertbanhalmi.com",
+      "propertyId": "properties/383874731",
+      "propertyDisplayName": "Bánhalmi Norbert - profi fotós – GA4",
+      "linkedSiteUrls": [
+        "https://www.norbertbanhalmi.com/",
+        "https://www.norbertbanhalmi.com/hu/",
+        "https://www.norbertbanhalmi.com/de-at/",
+        "https://www.banhalmi.art/de-at/",
+        "https://www.banhalmi.art/hu/"
+      ],
+      "missingLink": "sc-domain:banhalmiphotography.com",
+      "ga4QueryResult": "notConfigured:no_property",
+      "interpretation": "GSC Wizard linkage missing; do not conclude GA4 tracking tag absent or no leads occurred",
+      "ownerTask": "Link existing property 383874731 to sc-domain:banhalmiphotography.com in GSC Wizard account hello@norbertbanhalmi.com"
+    },
+    "funnelDefinitions": [
+      {
+        "event": "organic_qualified_visit",
+        "definition": "Organic arrival on intended commercial landing page, source/time/market grounded; no cross-device user identity guess",
+        "source": "GA4 only after analytics consent; GSC separately"
+      },
+      {
+        "event": "quote_request_verified",
+        "definition": "Server confirms HTTP 2xx and body.ok and both allowed admin/customer email send flags; does not certify mailbox arrival",
+        "source": "Privacy-safe server operation counters; consented GA4 generate_lead is a subset"
+      },
+      {
+        "event": "qualified_enquiry",
+        "definition": "Real, service-relevant request with location/date/budget or decision brief, counted once after authorized human classification",
+        "source": "Restricted CRM/consented records, never public repository"
+      },
+      {
+        "event": "proposal_sent",
+        "definition": "Written commercial offer delivered to qualified prospect",
+        "source": "Restricted CRM"
+      },
+      {
+        "event": "proposal_accepted",
+        "definition": "Written offer accepted / confirmed project",
+        "source": "Restricted CRM"
+      },
+      {
+        "event": "revenue_realised",
+        "definition": "Invoice paid or recognized according to chosen accounting method",
+        "source": "Restricted accounting only"
+      }
+    ],
+    "checkpoints": [
+      {
+        "days": 30,
+        "date": "2026-12-16",
+        "purpose": "First comparable trend after change freeze; verify lead event integrity and landing-intent shifts"
+      },
+      {
+        "days": 60,
+        "date": "2027-01-15",
+        "purpose": "Recheck segments, channel and qualified proposal funnel"
+      },
+      {
+        "days": 90,
+        "date": "2027-02-14",
+        "purpose": "Evaluate attributable conversion and margin with seasonality caveats"
+      }
+    ],
+    "measurementRules": [
+      "Use fixed comparable completed windows; do not mix GSC partially processed days with settled periods",
+      "Track AT and HU country separately as proxies, not city proof",
+      "No revenue, CRM lead or customer email exports into public GitHub",
+      "GA4 generate_lead only consented, not denominator for all verified leads",
+      "Never claim causality from 16 baseline clicks; document low sample and seasonality",
+      "Separate first-party Search, Analytics, direct GBP and qualitative AI-model referral observations"
+    ]
+  },
+  "p1Backlog": [
+    {
+      "id": "P1-A",
+      "title": "Owner-authorized full dual-mail Cloudflare E2E",
+      "gate": "Dedicated test identities, exact server response, both inbox receipts, resend/failure audit with explicit authorization",
+      "safety": "Never send actual customers; avoid PII in logs",
+      "status": "FÜGGŐ"
+    },
+    {
+      "id": "P1-B",
+      "title": "GSC Wizard GA4 source linkage",
+      "gate": "Existing GA4 property linked and query_ga4_report returns current property without no_property; verify generate_lead on controlled test separately",
+      "status": "FÜGGŐ"
+    },
+    {
+      "id": "P1-C",
+      "title": "City-level organic SERP benchmark",
+      "gate": "All 8 query intents independently captured for Vienna and Budapest, with device+language and repeat, city not country proxy",
+      "status": "FÜGGŐ"
+    },
+    {
+      "id": "P1-D",
+      "title": "Professional team and partner proof matrix",
+      "gate": "Credible non-sensitive collaborator group by capabilities, role, years, consent + exact third-party proof status; 50 as network not payroll",
+      "status": "FÜGGŐ"
+    },
+    {
+      "id": "P1-E",
+      "title": "BANHALMI/HIPStudio/Viko GBP owner location audit",
+      "gate": "Entity/location/review/phone matched and role-authorized; never sum brands",
+      "relatedPR": 226,
+      "status": "FÜGGŐ"
+    },
+    {
+      "id": "P1-F",
+      "title": "Three-language exact service query intent remediation",
+      "gate": "Evidence-backed changes scoped to pages, after canonical/index/hero visual check and full CI/live QA",
+      "status": "TERVEZETT"
+    },
+    {
+      "id": "P1-G",
+      "title": "Unprimed AI recommendation benchmark",
+      "gate": "All 24 baseline prompts repeated 3 times per engine/mode with raw timestamp and citations; no fake city ranking",
+      "status": "FÜGGŐ"
+    }
+  ],
+  "releasePolicy": {
+    "currentPR": "EVIDENCE_ONLY",
+    "allowedPaths": "tools/market-leadership/**",
+    "customerData": false,
+    "productionCode": false,
+    "publicSchema": false,
+    "needsCI": true,
+    "mergeWithoutGreenChecks": false
+  }
+}
