@@ -1,0 +1,761 @@
+{
+  "version": 2,
+  "observedOn": "2026-11-16",
+  "scope": "BANHALMI Professional Vienna/Budapest search demand, competitor snapshots, owner-approved WKO contact",
+  "status": "AUDITÁLT",
+  "productionChange": false,
+  "limitations": [
+    "GSC country is NOT Vienna/Budapest city SERP; ranks describe GSC impressions by country/device only",
+    "GSC not_ranking or 0 impressions does not prove zero Google index coverage",
+    "Public competitor offers are not a comparable price ranking; VAT, usage licences, experience and delivery differ",
+    "No review score aggregation, no unsupported competitor rank or claim allowed in public schema",
+    "WKO +36 70 469 8397 is explicitly owner-approved to remain on the WKO directory and BANHALMI Budapest Google Business Profile. This is not a drift requiring correction.",
+    "Competitor offer amounts and VAT details are research snapshots, not verified as current prices in this reconciliation; check the primary source before pricing comparisons.",
+    "Country/device Search Console data do not prove actual Vienna/Budapest city SERP placement or business demand."
+  ],
+  "rankChecker": {
+    "siteUrl": "sc-domain:banhalmiphotography.com",
+    "source": "GSC Wizard connected first-party Rank Checker",
+    "period": "2026-10-17..2026-11-13",
+    "countryDeviceSets": [
+      {
+        "name": "AUT mobile",
+        "setId": "c1905dbd-144e-4a4d-bfe2-991d82c2b5a8",
+        "lastCheckedAt": "2026-11-16T15:20:04.787+00:00",
+        "keywords": [
+          {
+            "q": "business headshot wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "businessfotograf wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "businessportrait wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "ceo portrait wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "corporate event photographer vienna",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "corporate photography vienna",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "eventfotograf wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "executive portrait photographer vienna",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "executive portrait wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "executive porträt fotograf wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "firmenfotograf wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "geschäftsführer portrait wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "headshot fotograf wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "künstlerportrait wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "personal branding fotograf wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "reportagefotograf wien",
+            "position": 3.67,
+            "impressions": 3,
+            "clicks": 0,
+            "landingPage": "https://www.banhalmiphotography.com/de-at/",
+            "status": "new"
+          },
+          {
+            "q": "unternehmensfotografie wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "name": "AUT desktop",
+        "setId": "6c4379c0-4e96-4bd8-9d04-9728bddeaacf",
+        "lastCheckedAt": "2026-11-16T15:20:06.407+00:00",
+        "keywords": [
+          {
+            "q": "business headshot wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "businessfotograf wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "businessportrait wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "ceo portrait wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "corporate event photographer vienna",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "corporate photography vienna",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "eventfotograf wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "executive portrait photographer vienna",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "executive portrait wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "executive porträt fotograf wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "firmenfotograf wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "geschäftsführer portrait wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "headshot fotograf wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "künstlerportrait wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "personal branding fotograf wien",
+            "position": 4.63,
+            "impressions": 8,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "new"
+          },
+          {
+            "q": "reportagefotograf wien",
+            "position": 2.69,
+            "impressions": 67,
+            "clicks": 0,
+            "landingPage": "https://www.banhalmiphotography.com/de-at/",
+            "status": "new"
+          },
+          {
+            "q": "unternehmensfotografie wien",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "name": "HUN mobile",
+        "setId": "cec07bb5-4f05-466f-bcc9-22d8cf48e417",
+        "lastCheckedAt": "2026-11-16T15:35:00.987+00:00",
+        "keywords": [
+          {
+            "q": "brandfotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "business headshot budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "céges fotózás",
+            "position": 4.1,
+            "impressions": 10,
+            "clicks": 0,
+            "landingPage": "https://www.banhalmiphotography.com/hu/",
+            "status": "new"
+          },
+          {
+            "q": "céges portréfotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "cégvezető portréfotózás",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "executive portrait photographer budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "executive portré budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "konferencia fotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "művészportré budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "personal branding fotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "portréfotózás budapest",
+            "position": 3,
+            "impressions": 21,
+            "clicks": 0,
+            "landingPage": "https://www.banhalmiphotography.com/hu/",
+            "status": "new"
+          },
+          {
+            "q": "rendezvényfotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "üzleti portré fotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "üzleti portréfotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "vállalati fotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "vállalati rendezvényfotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "vezetői portréfotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "name": "HUN desktop",
+        "setId": "91947efa-90be-4d0a-9aa5-b3b803c687b9",
+        "lastCheckedAt": "2026-11-16T15:35:02.476+00:00",
+        "keywords": [
+          {
+            "q": "brandfotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "business headshot budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "céges fotózás",
+            "position": 7,
+            "impressions": 7,
+            "clicks": 0,
+            "landingPage": "https://www.banhalmiphotography.com/hu/",
+            "status": "new"
+          },
+          {
+            "q": "céges portréfotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "cégvezető portréfotózás",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "executive portrait photographer budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "executive portré budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "konferencia fotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "művészportré budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "personal branding fotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "portréfotózás budapest",
+            "position": 3.57,
+            "impressions": 14,
+            "clicks": 0,
+            "landingPage": "https://www.banhalmiphotography.com/hu/",
+            "status": "new"
+          },
+          {
+            "q": "rendezvényfotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "üzleti portré fotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "üzleti portréfotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "vállalati fotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "not_ranking"
+          },
+          {
+            "q": "vállalati rendezvényfotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          },
+          {
+            "q": "vezetői portréfotózás budapest",
+            "position": null,
+            "impressions": 0,
+            "clicks": 0,
+            "landingPage": null,
+            "status": "pending"
+          }
+        ]
+      }
+    ],
+    "addedKeywordEntries": 20,
+    "uniqueAddedKeywords": 10,
+    "addedOn": "2026-11-16",
+    "newKeywordStatus": "Positions pending app check; not current live SERPs"
+  },
+  "demandLandingEvidence": [
+    {
+      "q": "portréfotózás budapest",
+      "impressions": 37,
+      "clicks": 0,
+      "position": 3.14,
+      "landing": "/hu/",
+      "candidate": "/hu/portre/"
+    },
+    {
+      "q": "reportagefotograf wien",
+      "impressions": 70,
+      "clicks": 0,
+      "position": 2.73,
+      "landing": "/de-at/",
+      "candidate": "/de-at/eventfotografie/"
+    },
+    {
+      "q": "personal branding fotograf wien",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 4.63,
+      "landing": "/de-at/",
+      "candidate": "/de-at/brand/"
+    },
+    {
+      "q": "céges fotózás",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 5.29,
+      "landing": "/hu/",
+      "candidate": "/hu/rendezvenyfotozas/",
+      "alternativeCandidates": [
+        "/hu/brand/",
+        "/hu/rendezvenyfotozas/"
+      ],
+      "intentInterpretation": "The broad query may denote corporate portraits, image library or event coverage; resolve with query refinements and conversion evidence, not a mandatory homepage-to-event redirect."
+    }
+  ],
+  "publicOffers": [
+    {
+      "city": "Wien",
+      "brand": "Studio NEXT",
+      "source": "https://www.studionext.at/corporate-headshots-vienna/",
+      "amount": 160,
+      "currency": "EUR",
+      "vat": "included",
+      "offer": "Quick headshot 1 retouched photo",
+      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
+      "observedForContextOnly": true
+    },
+    {
+      "city": "Wien",
+      "brand": "Studio NEXT",
+      "source": "https://www.studionext.at/",
+      "amount": 790,
+      "currency": "EUR",
+      "vat": "net",
+      "offer": "Executive & PR Portraits",
+      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
+      "observedForContextOnly": true
+    },
+    {
+      "city": "Wien",
+      "brand": "Businessfoto Wien",
+      "source": "https://www.businessfoto.wien/preise-business-fotoshooting",
+      "amount": 360,
+      "currency": "EUR",
+      "vat": "included",
+      "offer": "Premium business portrait, about 60 minutes",
+      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
+      "observedForContextOnly": true
+    },
+    {
+      "city": "Wien",
+      "brand": "NOVA Fotografie",
+      "source": "https://novafotografie.at/businessfotograf-wien/preise/",
+      "amount": 269,
+      "currency": "EUR",
+      "vat": "unverified",
+      "offer": "Business Professional, 60 min, 4 retouched",
+      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
+      "observedForContextOnly": true
+    },
+    {
+      "city": "Wien",
+      "brand": "Hammerfoto",
+      "source": "https://hammerfoto.at/businessfotos-mitarbeiterfotos-wien/",
+      "amount": 450,
+      "currency": "EUR",
+      "vat": "unverified",
+      "offer": "Plus: 3 retouched portraits",
+      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
+      "observedForContextOnly": true
+    },
+    {
+      "city": "Budapest",
+      "brand": "Muhari Photo",
+      "source": "https://www.muhariphoto.com/business-arak/",
+      "amount": 200,
+      "currency": "EUR",
+      "vat": "unverified",
+      "offer": "Business Start, 30 min, 4 images",
+      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
+      "observedForContextOnly": true
+    },
+    {
+      "city": "Budapest",
+      "brand": "Muhari Photo",
+      "source": "https://www.muhariphoto.com/business-arak/",
+      "amount": 400,
+      "currency": "EUR",
+      "vat": "unverified",
+      "offer": "Business Pro, 60 min, 10 images",
+      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
+      "observedForContextOnly": true
+    },
+    {
+      "city": "Budapest",
+      "brand": "Üzleti Portré Fotó Budapest",
+      "source": "https://uzletiportrefoto.hu/uzleti-portre-fotozas-budapest-business-portre-ceges-portre-fotozas/",
+      "amount": 35000,
+      "currency": "HUF",
+      "vat": "unverified",
+      "offer": "CV-LinkedIn, about 20 min, 2 images",
+      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
+      "observedForContextOnly": true
+    },
+    {
+      "city": "Budapest",
+      "brand": "Üzleti Portré Fotó Budapest",
+      "source": "https://uzletiportrefoto.hu/uzleti-portre-fotozas-budapest-business-portre-ceges-portre-fotozas/",
+      "amount": 50000,
+      "currency": "HUF",
+      "vat": "unverified",
+      "offer": "Business portrait, about 60 min, 5 images",
+      "verificationStatus": "REVALIDATE_CURRENT_OFFER_BEFORE_EXTERNAL_USE",
+      "observedForContextOnly": true
+    }
+  ],
+  "WKO": {
+    "source": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40&standortid=1&standortname=wien+%28bundesland%29&suchbegriff=f%C3%BChrung",
+    "address": "Schwedenplatz 2, 1010 Wien, Austria",
+    "mainPhone": "+4367761655592",
+    "ownerApprovedHungarianPhone": "+36704698397",
+    "ownerDecisionId": "OWNER-WKO-HU-PHONE-001",
+    "googleOwnerDecisionId": "OWNER-GOOGLE-HU-PHONE-002",
+    "status": "OWNER_APPROVED_KEEP_NO_DIRECTORY_CORRECTION",
+    "interpretation": "BANHALMI may retain the Hungarian +36 number alongside the Austrian main number in its WKO public directory. The same +36 is permitted for BANHALMI Budapest Google Business Profile. No removal/replacement request is appropriate. Separate HIPStudio and Viko identities are outside this approval.",
+    "externalProfileModified": false,
+    "notVerifiedAs": "Current authenticated GBP ownership or individual review count"
+  },
+  "acceptance": [
+    "WKO owner instruction confirmed: Hungarian secondary number may remain; do not request external correction",
+    "24 AI recommendation baseline prompts remain NOT_RUN pending actual experiments",
+    "City-specific device/language Google Top 5 still needs controlled repeatable search; do not treat retrieved websites as ranks",
+    "GA4 GSC Wizard canonical domain property link pending",
+    "Do not change SEO titles/H1 until query intent and production canonical integrity are verified"
+  ],
+  "recordStatus": "RECONCILED_AFTER_OWNER_INSTRUCTION",
+  "updatedOn": "2026-11-16",
+  "supersedesDraftPr": 229
+}
