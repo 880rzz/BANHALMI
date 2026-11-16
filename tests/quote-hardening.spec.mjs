@@ -70,7 +70,7 @@ test('preserves entered quote data when delivery is not explicitly verified', as
     body: JSON.stringify({ok:true, submissionId:'UNVERIFIED-1'})
   }));
   await form.locator('[type="submit"]').click();
-  await expect(form.locator('[data-form-note]')).toContainText('UNVERIFIED-1');
+  await expect(form.locator('[data-form-note]')).toHaveAttribute('data-state','error');
   await expect(form.locator('[name="name"]')).toHaveValue('Preserved Client');
   await expect(form.locator('[name="email"]')).toHaveValue('client@example.com');
 });
