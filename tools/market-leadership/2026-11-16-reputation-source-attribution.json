@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "observedOn": "2026-11-16",
   "status": "AUDITÁLT",
   "scope": "Repository research only. No public website, customer data, Google Business Profile, or schema change.",
@@ -203,11 +203,11 @@
     {
       "authorityId": "retired-budapest-shared",
       "subject": "BANHALMI older published Budapest listing number",
-      "role": "Explicitly RETIRED from BANHALMI public-site source contract",
+      "role": "Retired from BANHALMI public-site phone contract; owner expressly permits this number to remain on the WKO chamber listing; other uses remain subject to entity/location verification.",
       "phoneE164": "+36704698397",
       "sourceType": "FIRST_PARTY_REPOSITORY_CONTRACT",
       "sourcePath": "tools/audit-single-public-phone.mjs",
-      "status": "RETIRED_SITE_TOKEN_PUBLIC_DIRECTORY_STILL_DISPLAYS"
+      "status": "RETIRED_FROM_SITE_CONTRACT_WKO_EXCEPTION_ALLOWED"
     }
   ],
   "phoneObservations": [
@@ -274,7 +274,8 @@
       "id": "R-002",
       "priority": "P1",
       "issue": "BANHALMI Budapest structured listing exposes retired +36 70 469 8397 while repository requires +43 677 616 55592 for Budapest GBP.",
-      "status": "DIRECT_GBP_OWNER_VERIFICATION_PENDING"
+      "status": "DIRECT_GBP_OWNER_VERIFICATION_PENDING",
+      "note": "WKO chamber profile is explicitly permitted to display +36 70 469 8397 by owner instruction. This finding concerns the separate Budapest structured Google-style listing and still needs direct GBP owner verification; do not automatically remove the WKO phone."
     },
     {
       "id": "R-003",
@@ -320,5 +321,16 @@
     "gbpEdits": false,
     "schemaEdits": false,
     "mergePolicy": "PR review and CI, no production claim from PR/merge alone"
-  }
+  },
+  "ownerDecisions": [
+    {
+      "id": "OWNER-WKO-HU-PHONE-001",
+      "recordedAt": "2026-11-16",
+      "subject": "BANHALMI WKO public professional directory entry",
+      "numberE164": "+36704698397",
+      "decision": "KEEP_PER_OWNER_INSTRUCTION",
+      "scope": "WKO business/chamber directory listing only",
+      "notes": "The owner has expressly stated that the Hungarian number may remain on the WKO profile. Do not treat its mere presence there as a defect, and do not request removal. This is not a universal number authority for BANHALMI websites, its Google Business Profiles, HIPStudio, or unrelated external listings; all such roles require separate owner/location verification."
+    }
+  ]
 }
