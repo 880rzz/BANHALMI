@@ -209,6 +209,12 @@ for (const bridge of portraitBrandBridges) {
   }
 }
 
+// Keep new service-decision links recognisable inside paragraphs (WCAG 1.4.1).
+const serviceLinkCss = fs.readFileSync('assets/css/site.css', 'utf8');
+if (!/\.service-search-context a,\s*\.service-gallery-section \.section-head p a\s*\{[^}]*text-decoration:\s*underline;/s.test(serviceLinkCss)) {
+  errors.push('Service intent links must be underlined in portrait and selected-work prose');
+}
+
 const protectedHomepageTitles = new Map([
   ['index.html', 'BANHALMI | Portrait & brand photography | Vienna–Budapest'],
   ['hu/index.html', 'BANHALMI | Portréfotózás és brandfotózás | Bécs–Budapest'],
