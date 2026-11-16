@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "createdAt": "2026-11-16",
   "status": "AUDITÁLT",
   "scope": "BANHALMI Professional: Vienna, Austria + Budapest, Hungary. Research only; no web-facing claims or SEO changes.",
@@ -66,7 +66,145 @@
         "candidatePrimaryPage": "/de-at/fine-art/",
         "status": "LOW_SAMPLE_REVIEW"
       }
-    ]
+    ],
+    "geoPerformance": {
+      "period": {
+        "startDate": "2026-10-17",
+        "endDate": "2026-11-13",
+        "settledThrough": "2026-11-14",
+        "source": "First-party GSC property sc-domain:banhalmiphotography.com; dimensions:country"
+      },
+      "countryData": [
+        {
+          "code": "hun",
+          "impressions": 7689,
+          "clicks": 13,
+          "ctrPct": 0.16907270126154247,
+          "avgPosition": 3.176876056704383
+        },
+        {
+          "code": "aut",
+          "impressions": 1574,
+          "clicks": 1,
+          "ctrPct": 0.06353240152477764,
+          "avgPosition": 6.41423125794155
+        }
+      ],
+      "methodLimit": "Country of searcher, not exact city; these figures are from GSC and must not be mistaken for Vienna-only or Budapest-only search volume."
+    },
+    "urlInspections": {
+      "checkedAt": "2026-11-16",
+      "method": "Google Search Console URL Inspection API via connected GSC Wizard",
+      "sampleSize": 9,
+      "passCount": 9,
+      "allSubmittedAndIndexed": true,
+      "allIndexingAllowed": true,
+      "allGoogleCanonicalsMatchDeclared": true,
+      "urls": [
+        {
+          "url": "https://www.banhalmiphotography.com/portrait/",
+          "verdict": "PASS",
+          "coverage": "Submitted and indexed",
+          "lastCrawl": "2026-11-15T11:55:13Z",
+          "googleCanonicalMatches": true
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/hu/portre/",
+          "verdict": "PASS",
+          "coverage": "Submitted and indexed",
+          "lastCrawl": "2026-11-15T12:01:49Z",
+          "googleCanonicalMatches": true
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/portrait/",
+          "verdict": "PASS",
+          "coverage": "Submitted and indexed",
+          "lastCrawl": "2026-11-14T23:22:25Z",
+          "googleCanonicalMatches": true
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/lifestyle/",
+          "verdict": "PASS",
+          "coverage": "Submitted and indexed",
+          "lastCrawl": "2026-11-16T10:24:24Z",
+          "googleCanonicalMatches": true
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/hu/brand/",
+          "verdict": "PASS",
+          "coverage": "Submitted and indexed",
+          "lastCrawl": "2026-10-31T15:20:21Z",
+          "googleCanonicalMatches": true
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/brand/",
+          "verdict": "PASS",
+          "coverage": "Submitted and indexed",
+          "lastCrawl": "2026-10-31T17:05:48Z",
+          "googleCanonicalMatches": true
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/event-photography/",
+          "verdict": "PASS",
+          "coverage": "Submitted and indexed",
+          "lastCrawl": "2026-11-16T07:12:07Z",
+          "googleCanonicalMatches": true
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+          "verdict": "PASS",
+          "coverage": "Submitted and indexed",
+          "lastCrawl": "2026-11-03T16:40:14Z",
+          "googleCanonicalMatches": true
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
+          "verdict": "PASS",
+          "coverage": "Submitted and indexed",
+          "lastCrawl": "2026-11-03T09:50:41Z",
+          "googleCanonicalMatches": true
+        }
+      ],
+      "interpretation": "Low search impressions are not explained by index exclusion on these nine pages; evaluate target-intent, content, internal links and off-site authority."
+    },
+    "rankTrackerSetup": {
+      "createdAt": "2026-11-16",
+      "totalUniqueKeywords": 24,
+      "totalTrackingPositions": 48,
+      "geographicScope": "National country codes AUT/HUN (not actual city-level SERP)",
+      "alerts": false,
+      "sets": [
+        {
+          "name": "BANHALMI AT / Wien intents / Mobile (country proxy)",
+          "id": "c1905dbd-144e-4a4d-bfe2-991d82c2b5a8",
+          "country": "AUT",
+          "device": "MOBILE",
+          "keywords": 12
+        },
+        {
+          "name": "BANHALMI AT / Wien intents / Desktop (country proxy)",
+          "id": "6c4379c0-4e96-4bd8-9d04-9728bddeaacf",
+          "country": "AUT",
+          "device": "DESKTOP",
+          "keywords": 12
+        },
+        {
+          "name": "BANHALMI HU / Budapest intents / Mobile (country proxy)",
+          "id": "cec07bb5-4f05-466f-bcc9-22d8cf48e417",
+          "country": "HUN",
+          "device": "MOBILE",
+          "keywords": 12
+        },
+        {
+          "name": "BANHALMI HU / Budapest intents / Desktop (country proxy)",
+          "id": "91947efa-90be-4d0a-9aa5-b3b803c687b9",
+          "country": "HUN",
+          "device": "DESKTOP",
+          "keywords": 12
+        }
+      ],
+      "rule": "Google Search Console observations of the owned property. This is not an independent competitors' Top 5 organic SERP ranking."
+    }
   },
   "businessClaimEvidence": [
     {
@@ -151,7 +289,8 @@
         "observedOffering": "Business portraits, personal branding and corporate content day",
         "source": "https://art.szabolcs-toth.com/uzleti/"
       }
-    ]
+    ],
+    "methodNote": "Web search and business-directory discovery only; none of the 5 city candidates per city is a verified city+language+device Google organic Top 5. Use controlled SERP verification before assigning ranks."
   },
   "pendingVerification": [
     "Controlled Google organic Top 5 per priority keyword in separate AT Vienna and HU Budapest contexts, desktop/mobile, ads and Maps excluded",
@@ -163,7 +302,10 @@
     "AI recommendation experiment with exact prompts, providers, dates, grounded outputs",
     "Cross-check HIPStudio current company register and Austrian VIPACH maintainer ZVR rather than relying only on their own legal imprints",
     "Audit BANHALMI Vienna office at 1180 separately from actual photo studio locations; verify address consistency in GBP and schema",
-    "Directly verify Vienna/Budapest BANHALMI GBP review counts, HIPStudio GBP, Viko GBP, profile IDs and distinct customer sets before discussing any >1000 combined figure"
+    "Directly verify Vienna/Budapest BANHALMI GBP review counts, HIPStudio GBP, Viko GBP, profile IDs and distinct customer sets before discussing any >1000 combined figure",
+    "Verify GSC country baseline with city-specific controlled SERPs, not country-level positions alone",
+    "Verify main-footer role-labelled phone vs legal imprint, direct Google Business Profile and schema; no automatic replacement",
+    "Benchmark competitor price and delivery promises by legally comparable VAT and licence terms"
   ],
   "measurement": {
     "minimumWindowDays": 30,
@@ -262,6 +404,136 @@
         "status": "CHECK_DIRECT_GOOGLE_BUSINESS_PROFILE_BEFORE_ANY_UPDATE"
       }
     ],
-    "publicationRule": "No cross-entity review total, self-review schema, or AggregateRating until each direct GBP listing and ownership is verified and duplicate/relationship caveats are explicit."
+    "publicationRule": "No cross-entity review total, self-review schema, or AggregateRating until each direct GBP listing and ownership is verified and duplicate/relationship caveats are explicit.",
+    "verifiedSourceCrossCheck": {
+      "asOf": "2026-11-16",
+      "verifiedOnPublicSourceOnly": true,
+      "notDirectGBPOwnerAccess": true,
+      "examples": [
+        {
+          "business": "BANHALMI Budapest",
+          "source": "https://localhungary.net/ceg/banhalmi-executive-portre-es-vizualis-strategia-budapest-xi-kerulet",
+          "thirdPartyDisplayedReviewCount": 741,
+          "thirdPartyDisplayedScore": 5,
+          "stalenessUnknown": true
+        },
+        {
+          "business": "HIPStudio Budapest",
+          "source": "https://localhungary.net/kategoria/fotosok-fotostudiok/budapest/budapest-xi-kerulet",
+          "thirdPartyDisplayedReviewCount": 242,
+          "thirdPartyDisplayedScore": 5,
+          "stalenessUnknown": true
+        },
+        {
+          "business": "Speier Vikó Budapest",
+          "source": "https://localhungary.net/ceg/viko-speier-uzleti-es-kreativ-portrefotozas-divat-es-portfolio-fotozas-muveszi",
+          "thirdPartyDisplayedReviewCount": 53,
+          "thirdPartyDisplayedScore": 5,
+          "stalenessUnknown": true
+        }
+      ],
+      "caution": "Separate legal entities and stale/differing third-party snapshots. No total for marketing and no AggregateRating."
+    }
+  },
+  "lastReverifiedAt": "2026-11-16",
+  "competitorPriceEvidence": {
+    "capturedAt": "2026-11-16",
+    "status": "PUBLISHED_PRICE_OFFERS_VERIFIED_ON_OWN_WEBSITES_NOT_EXACT_SERP_RANKS",
+    "vienna": [
+      {
+        "name": "NOVA Fotografie",
+        "source": "https://novafotografie.at/businessfotograf-wien/preise/",
+        "offer": "Executive Focus",
+        "listedAmount": 149,
+        "currency": "EUR",
+        "duration": "20–30 min",
+        "included": "1 retouched photo; on-location; commercial use",
+        "grossNet": "not determined from excerpt"
+      },
+      {
+        "name": "Businessfoto Wien",
+        "source": "https://www.businessfoto.wien/preise-business-fotoshooting",
+        "offer": "Premium Businessportrait",
+        "listedAmount": 360,
+        "currency": "EUR",
+        "duration": "approximately 60 min",
+        "included": "individual consultation, multiple backgrounds and lighting; edited images",
+        "grossNet": "gross; 300 EUR net"
+      },
+      {
+        "name": "Studio NEXT",
+        "source": "https://www.studionext.at/",
+        "offer": "Executive & PR Portraits",
+        "listedAmount": 790,
+        "currency": "EUR",
+        "duration": "not reliably determined from indexed source",
+        "included": "leadership portrait offer",
+        "grossNet": "net, website explicitly states"
+      },
+      {
+        "name": "Studio NEXT",
+        "source": "https://www.studionext.at/corporate-headshots-vienna/",
+        "offer": "Executive headshot",
+        "listedAmount": 450,
+        "currency": "EUR",
+        "duration": "not reliably determined from indexed source",
+        "included": "8 images",
+        "grossNet": "site says headshots price includes VAT"
+      }
+    ],
+    "budapest": [
+      {
+        "name": "Muhari Photo",
+        "source": "https://www.muhariphoto.com/business-arak/",
+        "offer": "Business Start",
+        "listedAmount": 200,
+        "currency": "EUR",
+        "duration": "30 min",
+        "included": "4 retouched photos",
+        "grossNet": "unconfirmed; do not compare as VAT-inclusive"
+      },
+      {
+        "name": "Muhari Photo",
+        "source": "https://www.muhariphoto.com/business-arak/",
+        "offer": "Business Pro",
+        "listedAmount": 400,
+        "currency": "EUR",
+        "duration": "60 min",
+        "included": "10 retouched photos",
+        "grossNet": "unconfirmed"
+      },
+      {
+        "name": "Üzleti Portré Fotó Budapest",
+        "source": "https://uzletiportrefoto.hu/uzleti-portre-fotozas-budapest-business-portre-ceges-portre-fotozas/",
+        "offer": "CV – LinkedIn",
+        "listedAmount": 35000,
+        "currency": "HUF",
+        "duration": "approximately 20 min",
+        "included": "2 retouched images",
+        "grossNet": "unconfirmed"
+      },
+      {
+        "name": "Vikó Speier",
+        "source": "https://www.vikospeier.com/service-page/creative-business-portraits",
+        "offer": "Creative & Business Portraits",
+        "listedAmount": 64990,
+        "currency": "HUF",
+        "duration": "60 min",
+        "included": "3 retouched images plus raw images delivered",
+        "grossNet": "service says VAT-exempt invoice"
+      }
+    ],
+    "comparisonRule": "Published offers vary in VAT, duration, included image count, licensing, make-up, studio/on-location terms and target buyer. Do not derive normalized competitor ranks, quality scores or a recommended BANHALMI price directly from these snapshots."
+  },
+  "phoneConsistencyReview": {
+    "status": "NEEDS_OWNER_INTENT_AND_DIRECT_GBP_CHECK",
+    "websiteLegal": "https://www.banhalmiphotography.com/de-at/impressum/",
+    "mainLegalPhone": "+43 677 616 55592",
+    "websiteHomeFooter": "https://www.banhalmiphotography.com/",
+    "differentFooterPhone": "+43 677 647 332 62",
+    "websiteContactPage": "https://www.banhalmiphotography.com/contact/",
+    "possibleExplanation": "A separate photographer/coordinator line appears elsewhere, but cannot treat as identical to legal business phone without explicit role labels.",
+    "risk": "NAP / local trust ambiguity; do not silently overwrite a legitimate second professional line.",
+    "recommendedAction": "Verify intended public line, owner, listed GBP phone and structured-data telephone before making a controlled PR."
   }
 }
