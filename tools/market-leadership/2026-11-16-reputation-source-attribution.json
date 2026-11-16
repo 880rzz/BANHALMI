@@ -1,0 +1,324 @@
+{
+  "version": 1,
+  "observedOn": "2026-11-16",
+  "status": "AUDITÁLT",
+  "scope": "Repository research only. No public website, customer data, Google Business Profile, or schema change.",
+  "provenance": "Public business listings, owner legal imprints, connected HIPStudio business configuration, and 880rzz/BANHALMI source contracts. The business-search feed is not authenticated Google Business Profile owner data.",
+  "entityPolicy": {
+    "entitiesDistinct": [
+      "BANHALMI / Banhalmi Norbert e.U.",
+      "HIPStudio / Hipstudió Kft.",
+      "Speier Vikó independent photography business"
+    ],
+    "sharedBudapestStudio": "Lágymányosi u. 15, 1111 Budapest, Hungary",
+    "restriction": "NEVER sum review counts across entities or business locations; shared studio, founding history, operational role and partner phone do not imply corporate identity.",
+    "schemaPolicy": "Do not add or update Review or AggregateRating or public structured data from these observations.",
+    "publicity": "No competitive superiority, customer rating, or endorsement claim can be published from secondary snapshots alone."
+  },
+  "businessIdentity": [
+    {
+      "id": "banhalmi-budapest",
+      "brand": "BANHALMI",
+      "legalOperator": "Banhalmi Norbert e.U.",
+      "placeId": "ChIJnWq6XK3dQUcRD_6uu2u-2Jw",
+      "address": "Lágymányosi u. 15, 1111 Budapest, Hungary",
+      "placeIdStatus": "MATCHED_STRUCTURED_LOCAL_SEARCH_NOT_GBP_OWNER"
+    },
+    {
+      "id": "banhalmi-vienna-schwedenplatz",
+      "brand": "BANHALMI",
+      "legalOperator": "Banhalmi Norbert e.U.",
+      "placeId": "ChIJ-cyH0PkBbUcRJrcQiBpKe1k",
+      "address": "Schwedenplatz 2, 1010 Wien, Austria",
+      "placeIdStatus": "MATCHED_STRUCTURED_LOCAL_SEARCH_NOT_GBP_OWNER"
+    },
+    {
+      "id": "banhalmi-vienna-gersthofer",
+      "brand": "BANHALMI",
+      "legalOperator": "Banhalmi Norbert e.U.",
+      "placeId": "ChIJnzPWWm0JbUcR07gp6PeMiR8",
+      "address": "Gersthofer Strasse 150-154, 1180 Wien, Austria",
+      "placeIdStatus": "MATCHED_STRUCTURED_LOCAL_SEARCH_NOT_GBP_OWNER",
+      "locationRole": "Meeting office, NOT photography studio per legal imprint"
+    },
+    {
+      "id": "hipstudio-budapest",
+      "brand": "HIPStudio",
+      "legalOperator": "Hipstudió Kft.",
+      "placeId": null,
+      "address": "Lágymányosi u. 15, 1111 Budapest, Hungary",
+      "placeIdStatus": "NOT_RESOLVED_FROM_STRUCTURED_SEARCH"
+    },
+    {
+      "id": "viko-budapest",
+      "brand": "VIKÓ SPEIER",
+      "legalOperator": "Independent professional entity; exact legal register not checked",
+      "placeId": "ChIJi0WN-MXdQUcR6CQXFYN-u9s",
+      "address": "Lágymányosi u. 15, 1111 Budapest, Hungary",
+      "placeIdStatus": "MATCHED_STRUCTURED_LOCAL_SEARCH_NOT_GBP_OWNER"
+    }
+  ],
+  "reviewObservations": [
+    {
+      "entityId": "banhalmi-budapest",
+      "sourceType": "SECONDARY_LOCAL_DIRECTORY",
+      "sourceName": "LocalHungary",
+      "sourceUrl": "https://localhungary.net/ceg/banhalmi-executive-portre-es-vizualis-strategia-budapest-xi-kerulet",
+      "count": 741,
+      "rating": 5,
+      "staleness": "UNKNOWN",
+      "verifiedDirectGBP": false
+    },
+    {
+      "entityId": "banhalmi-budapest",
+      "sourceType": "SECONDARY_EVENT_DIRECTORY",
+      "sourceName": "Hungary Event Venues",
+      "sourceUrl": "https://hungaryeventvenues.com/hu/fot%C3%B3sok-budapest/",
+      "count": 740,
+      "rating": 5,
+      "staleness": "UNKNOWN",
+      "verifiedDirectGBP": false
+    },
+    {
+      "entityId": "banhalmi-budapest",
+      "sourceType": "STRUCTURED_LOCAL_BUSINESS_SEARCH",
+      "sourceName": "Business search",
+      "placeId": "ChIJnWq6XK3dQUcRD_6uu2u-2Jw",
+      "count": 739,
+      "rating": 5,
+      "staleness": "UNKNOWN",
+      "verifiedDirectGBP": false
+    },
+    {
+      "entityId": "hipstudio-budapest",
+      "sourceType": "SECONDARY_LOCAL_DIRECTORY",
+      "sourceName": "LocalHungary",
+      "sourceUrl": "https://localhungary.net/kategoria/fotosok-fotostudiok/budapest/budapest-xi-kerulet",
+      "count": 242,
+      "rating": 5,
+      "staleness": "UNKNOWN",
+      "verifiedDirectGBP": false
+    },
+    {
+      "entityId": "hipstudio-budapest",
+      "sourceType": "SECONDARY_EVENT_DIRECTORY",
+      "sourceName": "Hungary Event Venues",
+      "sourceUrl": "https://hungaryeventvenues.com/hu/fot%C3%B3sok-budapest/",
+      "count": 242,
+      "rating": 5,
+      "staleness": "UNKNOWN",
+      "verifiedDirectGBP": false,
+      "independenceCaution": "Two secondary publishers may derive from the same upstream Google snapshot; not proof of independent confirmation."
+    },
+    {
+      "entityId": "viko-budapest",
+      "sourceType": "SECONDARY_LOCAL_DIRECTORY",
+      "sourceName": "LocalHungary",
+      "sourceUrl": "https://localhungary.net/ceg/viko-speier-uzleti-es-kreativ-portrefotozas-divat-es-portfolio-fotozas-muveszi",
+      "count": 53,
+      "rating": 5,
+      "staleness": "UNKNOWN",
+      "verifiedDirectGBP": false,
+      "observationNote": "Carried forward from #222; direct refetch unavailable during this audit"
+    },
+    {
+      "entityId": "viko-budapest",
+      "sourceType": "STRUCTURED_LOCAL_BUSINESS_SEARCH",
+      "sourceName": "Business search",
+      "placeId": "ChIJi0WN-MXdQUcR6CQXFYN-u9s",
+      "count": 55,
+      "rating": 5,
+      "staleness": "UNKNOWN",
+      "verifiedDirectGBP": false
+    },
+    {
+      "entityId": "banhalmi-vienna-schwedenplatz",
+      "sourceType": "STRUCTURED_LOCAL_BUSINESS_SEARCH",
+      "sourceName": "Business search",
+      "placeId": "ChIJ-cyH0PkBbUcRJrcQiBpKe1k",
+      "count": 122,
+      "rating": 5,
+      "staleness": "UNKNOWN",
+      "verifiedDirectGBP": false
+    },
+    {
+      "entityId": "banhalmi-vienna-gersthofer",
+      "sourceType": "STRUCTURED_LOCAL_BUSINESS_SEARCH",
+      "sourceName": "Business search",
+      "placeId": "ChIJnzPWWm0JbUcR07gp6PeMiR8",
+      "count": 9,
+      "rating": 5,
+      "staleness": "UNKNOWN",
+      "verifiedDirectGBP": false
+    }
+  ],
+  "phoneAuthorities": [
+    {
+      "authorityId": "banhalmi-owner-legal",
+      "subject": "BANHALMI / Banhalmi Norbert e.U.",
+      "role": "Legal imprint and canonical WhatsApp Norbert",
+      "phoneE164": "+4367761655592",
+      "sourceType": "FIRST_PARTY_LEGAL_IMPRINT",
+      "sourceUrl": "https://www.banhalmiphotography.com/de-at/impressum/",
+      "status": "PUBLISHED_OWNER_LEGAL"
+    },
+    {
+      "authorityId": "banhalmi-viko-vienna",
+      "subject": "Speier Vikó as independent BANHALMI operations partner",
+      "role": "EN and DE-AT operational phone; intended Austrian BANHALMI GBP contact per repository policy, distinct from legal imprint",
+      "phoneE164": "+4367764733262",
+      "sourceType": "FIRST_PARTY_REPOSITORY_CONTRACT",
+      "sourcePath": "tools/audit-machine-core.mjs",
+      "relatedPath": "people-roles.json",
+      "status": "ROLE_EXPLICIT_INTENDED_NOT_INHERENT_LEGAL_ERROR"
+    },
+    {
+      "authorityId": "banhalmi-budapest-gbp-expected",
+      "subject": "BANHALMI Budapest",
+      "role": "Expected Budapest Google Business Profile phone per repository policy, not owner-authenticated observation",
+      "phoneE164": "+4367761655592",
+      "sourceType": "FIRST_PARTY_REPOSITORY_CONTRACT",
+      "sourcePath": "tools/audit-single-public-phone.mjs",
+      "status": "EXPECTED_REQUIRES_OWNER_GBP_CHECK"
+    },
+    {
+      "authorityId": "hipstudio-official",
+      "subject": "Hipstudió Kft.",
+      "role": "Company official contact",
+      "phoneE164": "+36302215506",
+      "sourceType": "FIRST_PARTY_LEGAL_IMPRINT_AND_CONNECTED_WIX_BUSINESS_DETAILS",
+      "sourceUrl": "https://www.hipstudio.hu/impresszum",
+      "status": "OWNER_PUBLISHED_AND_CONFIG_MATCH"
+    },
+    {
+      "authorityId": "viko-independent",
+      "subject": "Speier Vikó",
+      "role": "Independent Budapest business listing and partner contact",
+      "phoneE164": "+36304788850",
+      "sourceType": "STRUCTURED_LOCAL_BUSINESS_SEARCH_AND_FIRST_PARTY_REPOSITORY_PARTNER_RECORD",
+      "placeId": "ChIJi0WN-MXdQUcR6CQXFYN-u9s",
+      "sourcePath": "people-roles.json",
+      "status": "ROLE_MATCHED_NOT_LEGAL_PHONE_GBP_OWNER_VERIFIED"
+    },
+    {
+      "authorityId": "retired-budapest-shared",
+      "subject": "BANHALMI older published Budapest listing number",
+      "role": "Explicitly RETIRED from BANHALMI public-site source contract",
+      "phoneE164": "+36704698397",
+      "sourceType": "FIRST_PARTY_REPOSITORY_CONTRACT",
+      "sourcePath": "tools/audit-single-public-phone.mjs",
+      "status": "RETIRED_SITE_TOKEN_PUBLIC_DIRECTORY_STILL_DISPLAYS"
+    }
+  ],
+  "phoneObservations": [
+    {
+      "entityId": "banhalmi-budapest",
+      "sourceType": "STRUCTURED_LOCAL_BUSINESS_SEARCH",
+      "placeId": "ChIJnWq6XK3dQUcRD_6uu2u-2Jw",
+      "phoneE164": "+36704698397",
+      "conflictWith": "banhalmi-budapest-gbp-expected",
+      "classification": "P1_PUBLIC_DIRECTORY_STALE_OR_CONTACT_OWNERSHIP_UNRESOLVED",
+      "ownerAction": "Check direct GBP owner location phone; do not overwrite any other entity."
+    },
+    {
+      "entityId": "banhalmi-budapest",
+      "sourceType": "SECONDARY_LOCAL_DIRECTORY",
+      "sourceUrl": "https://localhungary.net/ceg/banhalmi-executive-portre-es-vizualis-strategia-budapest-xi-kerulet",
+      "phoneE164": "+4367761655592",
+      "conflictWith": null,
+      "classification": "MATCHES_OWNER_LEGAL"
+    },
+    {
+      "entityId": "hipstudio-budapest",
+      "sourceType": "SECONDARY_LOCAL_DIRECTORY",
+      "sourceUrl": "https://localhungary.net/kategoria/fotosok-fotostudiok/budapest/budapest-xi-kerulet",
+      "phoneE164": "+36704698397",
+      "conflictWith": "hipstudio-official",
+      "classification": "P1_HIPSTUDIO_DIRECTORY_PHONE_DIFFERS_FROM_OWNER_IMPRINT",
+      "ownerAction": "Verify HIPStudio directly administered GBP contact and correct secondary directory only if owner approved."
+    },
+    {
+      "entityId": "banhalmi-vienna-schwedenplatz",
+      "sourceType": "STRUCTURED_LOCAL_BUSINESS_SEARCH",
+      "placeId": "ChIJ-cyH0PkBbUcRJrcQiBpKe1k",
+      "phoneE164": "+4367764733262",
+      "conflictWith": null,
+      "classification": "MATCHES_ROLE_BASED_VIKO_VIENNA_OPERATIONS_BUT_DIFFERS_LEGAL_OWNER_NUMBER"
+    },
+    {
+      "entityId": "banhalmi-vienna-gersthofer",
+      "sourceType": "STRUCTURED_LOCAL_BUSINESS_SEARCH",
+      "placeId": "ChIJnzPWWm0JbUcR07gp6PeMiR8",
+      "phoneE164": "+4367764733262",
+      "conflictWith": null,
+      "classification": "MATCHES_ROLE_BASED_VIKO_VIENNA_OPERATIONS_BUT_LOCATION_IS_OFFICE_NOT_STUDIO"
+    },
+    {
+      "entityId": "viko-budapest",
+      "sourceType": "STRUCTURED_LOCAL_BUSINESS_SEARCH",
+      "placeId": "ChIJi0WN-MXdQUcR6CQXFYN-u9s",
+      "phoneE164": "+36304788850",
+      "conflictWith": null,
+      "classification": "MATCHES_INDEPENDENT_PARTNER_CONTACT"
+    }
+  ],
+  "findings": [
+    {
+      "id": "R-001",
+      "priority": "P1",
+      "issue": "BANHALMI Budapest review counts disagree across 3 independent retrieval surfaces (739, 740, 741).",
+      "explanation": "Difference is a source snapshot mismatch; not evidence of lost or added reviews, fraud or negative review manipulation.",
+      "status": "DIRECT_GBP_OWNER_VERIFICATION_PENDING"
+    },
+    {
+      "id": "R-002",
+      "priority": "P1",
+      "issue": "BANHALMI Budapest structured listing exposes retired +36 70 469 8397 while repository requires +43 677 616 55592 for Budapest GBP.",
+      "status": "DIRECT_GBP_OWNER_VERIFICATION_PENDING"
+    },
+    {
+      "id": "R-003",
+      "priority": "P1",
+      "issue": "HIPStudio third-party directory exposes +36 70 469 8397 instead of verified Hipstudió Kft. +36 30 221 5506.",
+      "status": "DIRECT_GBP_OWNER_AND_DIRECTORY_CORRECTION_PENDING"
+    },
+    {
+      "id": "R-004",
+      "priority": "P2",
+      "issue": "Vienna local-listing number differs from legal imprint, but source contract explicitly assigns it to independent operations partner Vikó; NOT automatically incorrect.",
+      "status": "ROLE_LABELED_SOURCE_CONTRACT_CONFIRMED"
+    },
+    {
+      "id": "R-005",
+      "priority": "P2",
+      "issue": "Vikó's secondary vs structured review counts 53 vs 55; distinct entity.",
+      "status": "DIRECT_GBP_OWNER_VERIFICATION_PENDING"
+    },
+    {
+      "id": "R-006",
+      "priority": "P2",
+      "issue": "Two BANHALMI Vienna place IDs, Schwedenplatz and Gersthofer, represent distinct location entries (122 and 9) and must not be summed or assumed duplicate without GBP location audit.",
+      "status": "LOCATION_TYPE_AND_OWNER_VERIFICATION_PENDING"
+    },
+    {
+      "id": "R-007",
+      "priority": "P3",
+      "issue": "HIPStudio official imprint states founding 2006-02-27 while public contact page has 2006-03-15. Distinguish brand founding, incorporation and domain registration rather than silently normalizing.",
+      "status": "SOURCE_DATE_RECONCILIATION_PENDING"
+    }
+  ],
+  "nextRequiredEvidence": [
+    "Read-only owner-admin Google Business Profiles match for each location and distinct entity: place/location ID, service role, current displayed review count and phone, screenshot/timestamp",
+    "Explicit owner approval of intended customer-facing contact per location and business entity",
+    "Then propose separate controlled corrections; do not modify schema, public phone, business listings or reviews in this research PR",
+    "Preserve source-date, provider and verification method on all future observations; never infer city SERP rank from country-level GSC data"
+  ],
+  "releaseGate": {
+    "allowedFiles": "tools/market-leadership/** only",
+    "publicContentEdits": false,
+    "customerDataEdits": false,
+    "gbpEdits": false,
+    "schemaEdits": false,
+    "mergePolicy": "PR review and CI, no production claim from PR/merge alone"
+  }
+}
