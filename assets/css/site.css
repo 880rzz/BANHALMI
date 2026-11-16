@@ -7541,12 +7541,12 @@ html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinema
 }
 html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic>.wrap{
   position:relative;display:flex;align-items:center;width:100%;max-width:none;
-  height:100%;min-height:0;margin:0;padding:0
+  height:100%;min-height:0;max-height:none;margin:0;padding:0
 }
 html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure{
   position:absolute;inset:0;display:block;width:100%;max-width:none;height:100%;
   min-height:0;max-height:none;margin:0;padding:0;overflow:hidden;
-  border:0;border-radius:0;background:#101012;box-shadow:none
+  border:0;border-radius:0;background:#101012;box-shadow:none;transform:none
 }
 html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure::after{content:none;display:none}
 html body main[data-homepage-redesign="stage76"].has-cinematic-hero>.hero-cinematic .hero-figure::before{
