@@ -433,6 +433,49 @@
         }
       ],
       "caution": "Separate legal entities and stale/differing third-party snapshots. No total for marketing and no AggregateRating."
+    },
+    "structuredLocalSearchCrossCheck": {
+      "checkedAt": "2026-11-16",
+      "sourceType": "Structured local business search result, not Google Business Profile owner/API control",
+      "records": [
+        {
+          "business": "BANHALMI Vienna",
+          "searchBusinessPlaceId": "ChIJ-cyH0PkBbUcRJrcQiBpKe1k",
+          "displayedReviewCount": 122,
+          "displayedRating": 5,
+          "address": "Schwedenpl. 2, 1010 Wien, Austria",
+          "displayedPhone": "+43 677 64733262",
+          "verification": "MATCHED_LOCATION_NOT_AUTHENTICATED_GBP_OWNER"
+        },
+        {
+          "business": "Bánhalmi Norbert Budapest",
+          "searchBusinessPlaceId": "ChIJnWq6XK3dQUcRD_6uu2u-2Jw",
+          "displayedReviewCount": 739,
+          "displayedRating": 5,
+          "address": "Lágymányosi u. 15, 1111 Budapest, Hungary",
+          "displayedPhone": "+36 70 469 8397",
+          "verification": "MATCHED_LOCATION_NOT_AUTHENTICATED_GBP_OWNER"
+        },
+        {
+          "business": "Vikó Speier Budapest",
+          "searchBusinessPlaceId": "ChIJi0WN-MXdQUcR6CQXFYN-u9s",
+          "displayedReviewCount": 55,
+          "displayedRating": 5,
+          "address": "Lágymányosi u. 15, 1111 Budapest, Hungary",
+          "displayedPhone": "+36 30 478 8850",
+          "verification": "DISTINCT_INDEPENDENT_PROFESSIONAL"
+        },
+        {
+          "business": "HIPStudio Budapest",
+          "searchBusinessPlaceId": null,
+          "displayedReviewCount": null,
+          "displayedRating": null,
+          "address": "Lágymányosi u. 15, 1111 Budapest, Hungary",
+          "displayedPhone": null,
+          "verification": "UNRESOLVED_DIRECT_MATCH; secondary publisher reports 242"
+        }
+      ],
+      "implication": "Counts vary between structured local data and secondary directories: Budapest BANHALMI 739/741/743 and Viko 55/53. Do not combine BANHALMI Budapest+Vienna records as a single review aggregate before ownership, distinctness and canonical GBP IDs are verified. Document phone differences among legal website, business listings and independent coordinator phone."
     }
   },
   "lastReverifiedAt": "2026-11-16",
