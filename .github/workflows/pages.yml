@@ -77,6 +77,8 @@ jobs:
           exit 1
       - name: Run exhaustive browser QA
         run: node tools/audit-browser-layout.mjs
+      - name: Verify three-language mock quote delivery fail-closed behavior
+        run: npx playwright test tests/quote-delivery-fail-closed.spec.mjs --workers=2
       - name: Run mobile Lighthouse strict 100 gate
         run: npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.mobile.cjs
       - name: Run desktop Lighthouse strict 100 gate

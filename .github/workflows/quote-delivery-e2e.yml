@@ -1,0 +1,33 @@
+name: BANHALMI quote delivery mock E2E
+
+on:
+  pull_request:
+    paths:
+      - 'assets/js/site-config.js'
+      - 'tests/quote-delivery-fail-closed.spec.mjs'
+      - '.github/workflows/quote-delivery-e2e.yml'
+      - 'requestaquote/index.html'
+      - 'hu/ajanlatkeres/index.html'
+      - 'de-at/anfrage/index.html'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quote-delivery-mock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local-only site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory . > /tmp/banhalmi-quote-mock.log 2>&1 &
+          for attempt in 1 2 3 4 5; do curl --fail --silent http://127.0.0.1:4173/requestaquote/ >/dev/null && exit 0; sleep 1; done
+          cat /tmp/banhalmi-quote-mock.log
+          exit 1
+      - name: Verify EN/HU/DE success and fail-closed responses without external emails
+        run: npx playwright test tests/quote-delivery-fail-closed.spec.mjs --workers=2

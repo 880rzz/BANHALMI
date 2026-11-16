@@ -742,6 +742,7 @@
         if (note) {
           note.hidden = false;
           note.textContent = text || message('success');
+          note.dataset.state = isError ? 'error' : 'success';
           note.style.color = isError? '#8a2f18': 'var(--gold-deep)';
           note.scrollIntoView({ behavior: reduce? "auto": "smooth", block: "center" });
         }
@@ -787,6 +788,9 @@
               var err = new Error((data && data.error) || ('Form endpoint returned HTTP ' + response.status));
               err.status = response.status; err.payload = data; throw err;
             }
+            if (isQuote && (data.ok !== true || data.adminEmailSent !== true || data.customerEmailSent !== true)) {
+              throw new Error('Quote email delivery not verified');
+            }
             return data;
           });
         });
@@ -810,7 +814,8 @@
               de:'Der Formulardienst ist noch nicht vollständig konfiguriert. Bitte senden Sie die Anfrage per E-Mail; die Websiteverwaltung wurde informiert.'
             };
             showNote(configCopy[key] || configCopy.en, true);
-          } else { fallbackMailto({fromVerifiedSubmit:true}); }
+          } else if (isQuote) { showNote(message('error'), true); }
+          else { fallbackMailto({fromVerifiedSubmit:true}); }
         });
       } else {
         fallbackMailto();
