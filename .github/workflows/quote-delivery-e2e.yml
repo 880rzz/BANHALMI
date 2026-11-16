@@ -4,6 +4,9 @@ on:
   pull_request:
     paths:
       - 'assets/js/site-config.js'
+      - 'assets/js/main.js'
+      - 'assets/js/analytics.js'
+      - 'tests/quote-session-privacy.test.mjs'
       - 'tests/quote-delivery-fail-closed.spec.mjs'
       - '.github/workflows/quote-delivery-e2e.yml'
       - 'requestaquote/index.html'
