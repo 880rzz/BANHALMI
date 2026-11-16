@@ -15,4 +15,6 @@ assert.match(source, /if\(verifiedDelivery\)\{\s*clearDraft\(form\);\s*form\.res
 assert.match(source, /if\(!response\.ok \|\| !body \|\| body\.ok !== true\) throw/, 'Reject unsuccessful gateway responses');
 assert.match(source, /data\.ok === true && data\.adminEmailSent === true && data\.customerEmailSent === true/, 'Guard must require gateway success and both delivery flags');
 assert.match(source, /markDeliveryState\(response\.ok \? data : null\)/, 'HTTP failure must not mark delivery verified');
+assert.match(source, /document\.querySelectorAll\('form\[data-smart-quote\]'\)\.forEach/, 'Guided quote drafts must be session-scoped');
+assert.match(source, /form\.addEventListener\('reset',[\s\S]*?clearDraft\(form\)/, 'Clearing the guided quote requires verified delivery');
 console.log('Quote session privacy and delivery-state source contract passed');
