@@ -15,7 +15,7 @@ const cases = [
 async function fillValidQuote(page, path) {
   await page.goto(path);
   const details = page.locator('#quote-calculator');
-  if (!await details.evaluate(node => node.open)) await details.locator('summary').click();
+  if (!await details.evaluate(node => node.open)) await page.locator('#quote-calculator > summary').click();
   await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 15000 });
   const form = page.locator('form[data-smart-quote]');
   await expect(form).toHaveCount(1);
