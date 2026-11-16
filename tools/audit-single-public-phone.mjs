@@ -50,7 +50,7 @@ const core=JSON.parse(read('data/machine-core.json'));
 const auth=core.organization?.contactAuthority;
 if(auth?.whatsapp!==NORBERT.compact) failures.push('machine-core: WhatsApp must be Norbert');
 if(auth?.telephoneByLanguage?.en!==VIKO.compact||auth?.telephoneByLanguage?.['de-AT']!==VIKO.compact||auth?.telephoneByLanguage?.['hu-HU']!==NORBERT.compact) failures.push('machine-core: locale telephone mapping drift');
-if(auth?.googleBusinessProfilePhoneRule?.austriaLocations!==VIKO.compact||auth?.googleBusinessProfilePhoneRule?.budapestLocation!==NORBERT.compact) failures.push('machine-core: Google Business Profile phone rule drift');
+if(auth?.googleBusinessProfilePhoneRule?.austriaLocations!==VIKO.compact||auth?.googleBusinessProfilePhoneRule?.budapestLocation!==NORBERT.compact||auth?.googleBusinessProfilePhoneRule?.budapestOwnerApprovedGoogleAlternative!=='+36704698397') failures.push('machine-core: Google Business Profile owner-approved phone rule drift');
 
 if(failures.length){
   console.error('Locale phone authority contract failed:\n'+failures.join('\n'));

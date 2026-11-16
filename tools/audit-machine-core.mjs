@@ -18,7 +18,8 @@ fail(contactAuthority.telephoneByLanguage?.en === '+4367764733262', 'EN phone au
 fail(contactAuthority.telephoneByLanguage?.['de-AT'] === '+4367764733262', 'DE phone authority must remain Viko');
 fail(contactAuthority.telephoneByLanguage?.['hu-HU'] === '+4367761655592', 'HU phone authority must remain Norbert');
 fail(contactAuthority.googleBusinessProfilePhoneRule?.austriaLocations === '+4367764733262', 'Austrian GBP phone authority drift');
-fail(contactAuthority.googleBusinessProfilePhoneRule?.budapestLocation === '+4367761655592', 'Budapest GBP phone authority drift');
+fail(contactAuthority.googleBusinessProfilePhoneRule?.budapestLocation === '+4367761655592', 'Budapest owner contact reference drift');
+fail(contactAuthority.googleBusinessProfilePhoneRule?.budapestOwnerApprovedGoogleAlternative === '+36704698397', 'Owner-approved Hungarian Budapest GBP phone must remain permitted');
 const ownership=core.authorityOwnership||{};
 for (const url of ['https://www.linkedin.com/company/banhalmi/']) fail((ownership.professionalOrganization?.activeProfiles||[]).includes(url), `Professional organization profile missing: ${url}`);
 fail(!(ownership.professionalOrganization?.activeProfiles||[]).includes('https://cherrydeck.com/norbert.banhalmi'), 'Cherrydeck must not remain professionalOrganization.activeProfiles');
