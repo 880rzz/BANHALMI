@@ -99,6 +99,45 @@ for (const path of ['fine-art/index.html', 'hu/muveszi-fotografia/index.html', '
   }
 }
 
+// Every commercial service page must explicitly identify both primary markets in
+// Service.areaServed. Country-only schema loses the intended city-level entity link.
+const commercialServicePages = [
+  'portrait/index.html',
+  'lifestyle/index.html',
+  'event-photography/index.html',
+  'fine-art/index.html',
+  'hu/portre/index.html',
+  'hu/brand/index.html',
+  'hu/rendezvenyfotozas/index.html',
+  'hu/muveszi-fotografia/index.html',
+  'de-at/portrait/index.html',
+  'de-at/brand/index.html',
+  'de-at/eventfotografie/index.html',
+  'de-at/fine-art/index.html'
+];
+for (const path of commercialServicePages) {
+  const html = fs.readFileSync(path, 'utf8');
+  const blocks = [...html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)];
+  const serviceNodes = [];
+  for (const block of blocks) {
+    let data;
+    try { data = JSON.parse(block[1]); } catch { continue; }
+    if (data?.['@type'] === 'Service') serviceNodes.push(data);
+    for (const node of data?.['@graph'] || []) if (node?.['@type'] === 'Service') serviceNodes.push(node);
+  }
+  if (serviceNodes.length !== 1) {
+    errors.push(path + ': expected exactly one commercial Service JSON-LD node');
+    continue;
+  }
+  const served = serviceNodes[0].areaServed || [];
+  for (const id of ['Q1741', 'Q1781']) {
+    if (!served.some((place) => place?.['@type'] === 'City' &&
+        [place['@id'], place.sameAs].some((link) => typeof link === 'string' && link.endsWith('/' + id)))) {
+      errors.push(path + ': Service.areaServed missing primary city Wikidata ' + id);
+    }
+  }
+}
+
 const protectedHomepageTitles = new Map([
   ['index.html', 'BANHALMI | Portrait & brand photography | Vienna–Budapest'],
   ['hu/index.html', 'BANHALMI | Portréfotózás és brandfotózás | Bécs–Budapest'],
