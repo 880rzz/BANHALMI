@@ -31,10 +31,23 @@ async function fillValidQuote(page, path) {
   return form;
 }
 
+async function mockAnalyticsConsent(page, consent) {
+  // Intercept GA4 in memory. No network analytics requests and no real emails.
+  await page.evaluate((allowed) => {
+    window.__BANHALMI_TEST_GA4_EVENTS__ = [];
+    window.BANHALMI_ANALYTICS = { hasConsent: () => allowed };
+    window.gtag = (...args) => window.__BANHALMI_TEST_GA4_EVENTS__.push(args);
+  }, consent);
+}
+async function analyticsEvents(page) {
+  return page.evaluate(() => window.__BANHALMI_TEST_GA4_EVENTS__ || []);
+}
+
 for (const locale of routes) {
   for (const failure of cases) {
     test(locale.lang + ': reject ' + failure.name + ' without clearing quote', async ({ page }) => {
       const form = await fillValidQuote(page, locale.path);
+      await mockAnalyticsConsent(page, true);
       let intercepted = 0;
       await page.route('**/api/banhalmi-form', async route => {
         intercepted += 1;
@@ -55,11 +68,13 @@ for (const locale of routes) {
         return sessionStorage.getItem('banhalmi_quote_draft_v1:' + lang);
       });
       expect(draft).toContain('Regression Client');
+      expect(await analyticsEvents(page)).toHaveLength(0);
     });
   }
 
   test(locale.lang + ': clear quote only after fully verified mock delivery', async ({ page }) => {
     const form = await fillValidQuote(page, locale.path);
+    await mockAnalyticsConsent(page, true);
     let intercepted = 0;
     await page.route('**/api/banhalmi-form', async route => {
       intercepted += 1;
@@ -80,5 +95,28 @@ for (const locale of routes) {
       return sessionStorage.getItem('banhalmi_quote_draft_v1:' + lang);
     });
     expect(draft).toBeNull();
+    const events = await analyticsEvents(page);
+    const leadEvents = events.filter(args => args[0] === 'event' && args[1] === 'generate_lead');
+    expect(leadEvents).toHaveLength(1);
+    expect(leadEvents[0][2]).toEqual({
+      lead_type: 'quote_request',
+      form_language: locale.lang === 'DE-AT' ? 'de' : locale.lang.toLowerCase()
+    });
+    expect(JSON.stringify(leadEvents[0])).not.toMatch(/Regression Client|regression@example\.com|MOCK-ONLY|Mock-only delivery/);
   });
+  test(locale.lang + ': no GA4 event without analytics consent after verified quote', async ({ page }) => {
+    const form = await fillValidQuote(page, locale.path);
+    await mockAnalyticsConsent(page, false);
+    await page.route('**/api/banhalmi-form', async route => {
+      await route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: JSON.stringify({ ok: true, adminEmailSent: true, customerEmailSent: true })
+      });
+    });
+    await form.locator('[type="submit"]').click();
+    await expect(form.locator('[data-form-note]')).toHaveAttribute('data-state', 'success');
+    expect(await analyticsEvents(page)).toHaveLength(0);
+  });
+
 }
