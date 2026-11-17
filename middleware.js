@@ -52,6 +52,15 @@ function redirectTarget(request) {
 
 
   const pathWithSlash = cleanPath ? '/' + cleanPath.replace(/\/+$/, '') + '/' : '/';
+  // The retired Professional domain keeps English as its default language.
+  // Special alias rules below otherwise send these paths to German.
+  if (legacyProfessionalHost && (pathWithSlash === '/quote/' || pathWithSlash === '/trust/')) {
+    const target = new URL(pathWithSlash === '/quote/'
+      ? 'https://www.banhalmiphotography.com/requestaquote/'
+      : 'https://www.banhalmiphotography.com/trust/');
+    target.search = incoming.search;
+    return target;
+  }
   if (pathWithSlash === '/hu/trust/' || pathWithSlash === '/de-at/trust/') {
     const dest = pathWithSlash.startsWith('/hu/')
       ? 'https://www.banhalmiphotography.com/hu/bizalom/'
