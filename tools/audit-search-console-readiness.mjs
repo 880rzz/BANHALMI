@@ -20,6 +20,12 @@ req(!fs.readFileSync('ai.txt','utf8').includes('Professional Photography Team'),
 req(!fs.readFileSync('llms.txt','utf8').includes('Professional Photography Team'),'llms.txt still contains retired team descriptor');
 req(!fs.readFileSync('tools/generate-machine-projections.mjs','utf8').includes('Professional Photography Team'),'machine projection generator can regenerate retired team descriptor');
 req(!/<lastmod>/.test(sitemap),'Source sitemap must remain a lastmod-free template; production lastmod is Git-history rendered');
+req(pages.includes('Verify SEO and LLM entrypoints exact-live'),'SEO/LLM exact-live release gate missing');
+for (const seoFile of ['robots.txt', 'sitemap.xml', 'llms.txt', 'ai.txt', 'references/portfolio.jsonld']) {
+  req(pages.includes('https://www.banhalmiphotography.com/$file'),'Canonical URL source missing from SEO/LLM exact-live gate');
+  req(fs.existsSync(seoFile), `SEO/LLM gate source missing: ${seoFile}`);
+}
+req(pages.includes('cmp -s "$file" "$live"'),'SEO/LLM exact-live gate must validate source byte parity');
 req(pages.includes('git archive --format=tar HEAD'),'Production deploy must build an immutable committed artifact');
 req(pages.includes('test -s _site/sitemap.xml'),'Production deploy must verify the committed sitemap exists');
 req(!pages.includes('render-production-sitemap-lastmod.mjs _site'),'Production deploy must not mutate sitemap lastmod after checkout');
