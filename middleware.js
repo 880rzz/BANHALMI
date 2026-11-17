@@ -6,8 +6,13 @@ function redirectTarget(request) {
   const incoming = new URL(request.url);
   const host = (request.headers.get('host') || incoming.hostname).toLowerCase();
 
+  // The former Professional domain is a verified Vercel alias, not a separate site.
+  // Redirect its original paths to the current canonical Professional domain.
+  const legacyProfessionalHost = host === 'norbertbanhalmi.com' || host === 'www.norbertbanhalmi.com';
   let languageBase;
-  if (host.includes('banhalminorbert.hu') || host.includes('banhalmi-hu-redirect')) {
+  if (legacyProfessionalHost) {
+    languageBase = 'https://www.banhalmiphotography.com/';
+  } else if (host.includes('banhalminorbert.hu') || host.includes('banhalmi-hu-redirect')) {
     languageBase = 'https://www.banhalmiphotography.com/hu/';
   } else if (host.includes('banhalmi.at') || host.includes('banhalmi-at-redirect')) {
     languageBase = 'https://www.banhalmiphotography.com/de-at/';
