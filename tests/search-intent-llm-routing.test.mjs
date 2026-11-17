@@ -16,6 +16,6 @@ for (const [service, routes] of groups) {
 for (const domain of domains) assert.ok(section.includes(domain), 'Missing authority domain ' + domain);
 assert.match(section, /céges fotózás.*ambiguous/s, 'Ambiguous corporate photography should not be auto-routed');
 assert.match(section, /not claims of current Google rankings/, 'Do not mistake route hints for rank guarantees');
-assert.match(section, /do not prove the ranking will change/, 'Record measurement uncertainty');
+assert.match(section, /does not prove the ranking will change/, 'Record measurement uncertainty');
 assert.ok(!section.includes('https://www.norbertbanhalmi.com/'), 'Legacy host must not be a canonical service route');
 console.log('Three-language search intent and LLM authority routing contract passed');
