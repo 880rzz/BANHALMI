@@ -20,8 +20,9 @@ for (const file of trackedFiles) {
   if(text.includes(retiredIssueUrl)||text.includes(retiredSourceId)) {
     throw new Error('Retired Tripont source is present in a tracked file: '+file);
   }
-  // Trustindex is an external professional-client evidence URL. Prevent
-  // stale hostname/locale variants from returning via generated artifacts.
+  // Enforce canonical Trustindex links in all current published artifacts.
+  // Internal snapshots preserve historical source URLs and are not site output.
+  if (file.startsWith('.github/internal-evidence/')) continue;
   for (const match of text.matchAll(/https?:\/\/(?:www\.)?trustindex\.io\/reviews\/[a-z0-9.-]+(?:\/lang\/[a-z-]+)?/gi)) {
     if (match[0] !== canonicalTrustindex) {
       throw new Error('Noncanonical Trustindex review link in '+file+': '+match[0]);
