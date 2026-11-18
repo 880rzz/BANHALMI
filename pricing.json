@@ -303,7 +303,7 @@
             "art180"
           ]
         },
-        "separationRule": "Professional Artists & Performers portfolios are career-facing. Personal portraits, boudoir and lingerie enquiries route to localized BANHALMI ART private photography. Artistic nude service and enquiries belong to the localized Ébredés / Awakening exhibition. No Professional fixed price is stated for those personal commissions."
+        "separationRule": "Professional Artists & Performers portfolios are career-facing and priced only on BANHALMI Photography. BANHALMI ART documents personal artworks and the historical Ébredés / Awakening exhibition and book. These are archival sources, not commercial enquiries or priced artistic-nude services."
       }
     },
     {
@@ -405,7 +405,7 @@
     "hungarianDisplay": "The Hungarian interface displays HUF using the fixed planning conversion 1 EUR = 400 HUF. EUR remains the canonical base price. Convert gross first, then derive HUF net and VAT so the HUF figures reconcile exactly.",
     "usageLicence": "The standard organisational licence is included and unlimited in time and territory for the agreed client and channels. Exceptional transfer, resale, sublicensing or out-of-scope use is reviewed in the final written offer.",
     "executiveArchitecture": "Public/AI Executive pricing is outcome-led: Professional Presence from EUR 499; Positioning from EUR 790; Communication System / Visual Library individually scoped. The EUR 220/420/690 portrait options remain separate non-executive portrait calculator options. EUR 1090/1390 brand duration components are internal scope components, not public Executive tiers.",
-    "fineArtIntentPolicy": "The fineArt package components price career-facing Artists & Performers portfolios in the Professional calculator. They do not establish a public price for personal portrait, boudoir, lingerie or artistic nude commissions on BANHALMI ART."
+    "fineArtIntentPolicy": "The fineArt package components price career-facing Artists & Performers portfolios in the Professional calculator. They never establish a price, personal photography service or booking for artistic works archived on BANHALMI ART, including the historical Ébredés project."
   },
   "calculationRules": {
     "individualPortrait": {
