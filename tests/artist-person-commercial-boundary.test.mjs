@@ -14,5 +14,9 @@ for(const [path,scope,unpriced] of variants){
   assert.match(html,/id="professional-portfolio"/,path+': career-facing commercial portfolio route missing');
   assert.match(html,/https:\/\/www\.banhalmi\.art\//,path+': personal ART archive must remain visible as distinct provenance');
   assert.match(html,/data-pricing-disclosure="service"/,path+': legitimate Professional portfolio pricing disclosure missing');
+  const locale=path.startsWith('hu/')?'hu':path.startsWith('de-at/')?'de':'en';
+  const archiveLabel={en:'Personal artistic photography in the ART archive',hu:'Személyes művészi fotográfia az ART archívumban',de:'Persönliche künstlerische Fotografie im ART-Archiv'}[locale];
+  assert.ok(html.includes(archiveLabel),path+': ART link must describe the destination as an artistic archive');
+  assert.doesNotMatch(html,/(?:A personal project begins with a private conversation|Személyes projekthez először beszélünk|Ein persönliches Projekt beginnt mit einem vertraulichen Gespräch)/i,path+': ART archival destination must not be described as a commercial enquiry landing page');
 }
 console.log('Professional vs personal artistic roles: 3-language content is clear; nude is unpriced, career portfolios remain commercial.');
