@@ -1,0 +1,39 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+
+const canonical = 'https://www.trustindex.io/reviews/banhalmiphotography.com';
+const sources = {
+  en: 'portrait/index.html',
+  hu: 'hu/portre/index.html',
+  de: 'de-at/portrait/index.html'
+};
+for (const [locale, file] of Object.entries(sources)) {
+  const html = readFileSync(file, 'utf8');
+  const section = html.match(/<section class="trustindex-evidence"[^>]*>[\s\S]*?<\/section>/)?.[0];
+  assert.ok(section, locale + ': reviews evidence section exists');
+  const hrefs = [...section.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)].map(x => x[1]);
+  assert.deepEqual(hrefs, [canonical], locale + ': single canonical external review link');
+  assert.match(section, /rel="noopener noreferrer"[^>]*target="_blank"/,
+    locale + ': safe external link');
+  assert.doesNotMatch(section, /ratingValue|ratingCount|reviewCount|aggregateRating/i,
+    locale + ': no invented rating counts in review section');
+}
+const raw = readFileSync('service-trust-evidence.json', 'utf8');
+const evidence = JSON.parse(raw);
+const review = evidence.customerReviewEvidence;
+assert.equal(review.source, canonical);
+for (const locale of Object.keys(sources)) {
+  assert.equal(review.localizedSources[locale], canonical, locale + ': evidence URL parity');
+}
+const thirdPartyReview = evidence.evidence?.find?.(x => x.id === 'trustindex-google-reviews-2026')
+  ?? evidence.sources?.find?.(x => x.id === 'trustindex-google-reviews-2026')
+  ?? null;
+assert.ok(raw.includes('"id": "trustindex-google-reviews-2026"'), 'review identity retained');
+assert.ok(!raw.includes('https://www.trustindex.io/reviews/banhalmi.art'),
+  'retired art-domain review profile removed from professional trust evidence');
+assert.ok(raw.includes('"url": "' + canonical + '"'),
+  'review source references the canonical profile');
+assert.ok(!raw.includes(canonical + '/lang/'), 'unverified locale-specific paths are not asserted');
+assert.ok(review.guardrail.includes('Counts and ratings change'),
+  'review score and count guardrail retained');
+console.log('Trustindex profile source and review link canonicalization PASS: EN/HU/DE.');
