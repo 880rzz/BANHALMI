@@ -62,7 +62,7 @@ if(hipstudio.founderRelationship?.founder?.wikidata!=='https://www.wikidata.org/
 if(hipstudio.sharedBudapestEntitySignals?.googleBusinessProfilePresence?.exactProfileUrlsRecordedHere!==false) throw new Error('HIPStudio authority must not pretend exact GBP URLs are recorded when they are not');
 
 const overlayText=JSON.stringify(overlay);
-for(const token of ['Q138482177','approximately 50 professional photographer partners/collaborators','independent professional partner/collaborator','founded HIPStudio','main professional photographer partners','HIPStudio photography-services contact','viko@banhalmi.at','+36304788850','+4367764733262','Lágymányosi utca 15','Google Business Profile','worldwide by travel','Business Event Coverage starts from EUR 490 gross','C-Level / Institutional Event Photography starts from EUR 590 gross','Artists & Performers professional portfolios start from EUR 690 gross for career-facing use','artistic nude service and enquiries belong to the localized Ébredés / Awakening exhibition','1 EUR = 400 HUF']) if(!overlayText.includes(token)) throw new Error(`LLM protected overlay missing ${token}`);
+for(const token of ['Q138482177','approximately 50 professional photographer partners/collaborators','independent professional partner/collaborator','founded HIPStudio','main professional photographer partners','HIPStudio photography-services contact','viko@banhalmi.at','+36304788850','+4367764733262','Lágymányosi utca 15','Google Business Profile','worldwide by travel','Business Event Coverage starts from EUR 490 gross','C-Level / Institutional Event Photography starts from EUR 590 gross','Artists & Performers professional portfolios start from EUR 690 gross for career-facing use','Ébredés is the historical exhibition and book','1 EUR = 400 HUF']) if(!overlayText.includes(token)) throw new Error(`LLM protected overlay missing ${token}`);
 if(!hardener.includes('applyLlmCanonicalOverlay(root)')) throw new Error('Production hardener must apply protected LLM overlay after generated projections');
 for(const token of ['ai-entry.json','entity.jsonld','llms.txt','ai.txt','Q138482177']) if(!hardener.includes(token)) throw new Error(`Production hardener protected-state gate missing ${token}`);
 for(const token of ['protectedCanonicalOverlay','Q138482177','approximately 50 professional photographer partners/collaborators','founded HIPStudio']) if(!overlayApplier.includes(token)) throw new Error(`Overlay applier missing ${token}`);
@@ -75,7 +75,8 @@ const llmGuide=fs.readFileSync('llms.txt','utf8');
 const ov=JSON.stringify(overlay);
 const commercialText=JSON.stringify(commercial);
 for(const [label,source] of [['ai.txt',aiGuide],['llms.txt',llmGuide]]){
-  if(!source.includes('personal artistic/oeuvre source') || !source.includes('any subject and style') || !source.includes('without a published nude price')) throw new Error(label+': ART personal and unpriced nude boundary missing');
+  if(!source.includes('BANHALMI ART') || !source.includes('Ébredés') || !/archiv|oeuvre/i.test(source)) throw new Error(label+': historical artistic archive context missing');
+  if(/current artistic-nude enquiries belong|artistic nude service and enquiries belong|tailored[- ]quote/i.test(source)) throw new Error(label+': retired ART commercial enquiry routing returned');
   if(source.includes('Existing fine-art calculator deep links')) throw new Error(label+': legacy ART to Professional calculator route persists');
 }
 if(!ov.includes('primary personal artistic-oeuvre source') || !commercialText.includes('primary personal artistic-oeuvre source')) throw new Error('ART Person authority must be separate from Photography business in protected machine contracts');

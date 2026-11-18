@@ -39,7 +39,7 @@ fail(s>=0&&e>s,'embedded pricing markers missing');
 if(s>=0&&e>s) fail(JSON.stringify(JSON.parse(embedded.slice(s+pre.length,e)))===JSON.stringify(pricing),'embedded pricing differs from pricing.json');
 
 const overlayPricing=overlay?.canonicalSummary?.pricing||'';
-for(const token of ['Business Event Coverage starts from EUR 490 gross','C-Level / Institutional Event Photography starts from EUR 590 gross','Artists & Performers professional portfolios start from EUR 690 gross for career-facing use','artistic nude service and enquiries belong to the localized Ébredés / Awakening exhibition','1 EUR = 400 HUF']){
+for(const token of ['Business Event Coverage starts from EUR 490 gross','C-Level / Institutional Event Photography starts from EUR 590 gross','Artists & Performers professional portfolios start from EUR 690 gross for career-facing use','Ébredés / Awakening is an exhibition and book, not a booking or quote endpoint','1 EUR = 400 HUF']){
   fail(overlayPricing.includes(token),`overlay pricing missing: ${token}`);
 }
 fail(knowledge.pricingPolicy?.eventArchitecture?.businessEvent?.includes('EUR 490'),'knowledge-core Business Event missing');
@@ -66,7 +66,7 @@ fail(intents.intents.some(x=>x.id==='business-event-coverage'&&x.pricing?.fromGr
 const eventService=services.itemListElement?.find(x=>x.position===3);
 fail(eventService?.alternateName?.includes('Business Event Photography'),'services Business Event alias missing');
 const fineService=services.itemListElement?.find(x=>x.position===4);
-fail(String(fineService?.clientIntentSeparation||'').includes('separate client journeys'),'services Fine Art client-intent boundary missing');
+fail(String(fineService?.clientIntentSeparation||'').includes('Career-facing artist and performer portfolios are Professional services') && /Ébredés.*historic|historic.*Ébredés/.test(String(fineService?.clientIntentSeparation||'')),'services Fine Art must keep career portfolios commercial and Ébredés archival');
 
 const servicePages={
  'portrait/index.html':[['499','EUR']],
