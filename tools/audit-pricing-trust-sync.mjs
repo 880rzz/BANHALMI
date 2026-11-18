@@ -66,7 +66,7 @@ fail(intents.intents.some(x=>x.id==='business-event-coverage'&&x.pricing?.fromGr
 const eventService=services.itemListElement?.find(x=>x.position===3);
 fail(eventService?.alternateName?.includes('Business Event Photography'),'services Business Event alias missing');
 const fineService=services.itemListElement?.find(x=>x.position===4);
-fail(String(fineService?.clientIntentSeparation||'').includes('separate client journeys'),'services Fine Art client-intent boundary missing');
+fail(String(fineService?.clientIntentSeparation||'').includes('Career-facing artist and performer portfolios are Professional services') && /Ébredés.*historic|historic.*Ébredés/.test(String(fineService?.clientIntentSeparation||'')),'services Fine Art must keep career portfolios commercial and Ébredés archival');
 
 const servicePages={
  'portrait/index.html':[['499','EUR']],
