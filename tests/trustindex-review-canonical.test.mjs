@@ -7,7 +7,11 @@ const sources = {
   hu: { file: 'hu/portre/index.html', url: canonical + '/lang/hu' },
   de: { file: 'de-at/portrait/index.html', url: canonical + '/lang/de' }
 };
+const homepages = { en: 'index.html', hu: 'hu/index.html', de: 'de-at/index.html' };
 for (const [locale, source] of Object.entries(sources)) {
+  const home = readFileSync(homepages[locale], 'utf8');
+  assert.equal(home.split('href="' + source.url + '"').length - 1, 1,
+    locale + ': homepage links to the exact localized Trustindex profile');
   const html = readFileSync(source.file, 'utf8');
   const section = html.match(/<section class="trustindex-evidence"[^>]*>[\s\S]*?<\/section>/)?.[0];
   assert.ok(section, locale + ': reviews evidence section exists');
