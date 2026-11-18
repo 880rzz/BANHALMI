@@ -372,14 +372,14 @@
             "intent": "career-facing professional portfolio photography"
           },
           "authorLedFineArtArtisticNude": {
-            "intent": "personal author-led artistic nude; current service and enquiry ownership belongs to the localized Ébredés exhibition on BANHALMI ART",
+            "intent": "Artistic-nude oeuvre documentation: the historical Ébredés exhibition and book on BANHALMI ART, not an active service, quote or photography package.",
             "primaryEnquiryRoutes": {
               "en": "https://www.banhalmi.art/exhibitions/ebredes.html",
               "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
               "de-AT": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
             }
           },
-          "rule": "Career-facing artist and performer portfolios and their stated Professional starting prices remain on BANHALMI Professional. Personal artistic portraits, boudoir and lingerie use localized BANHALMI ART private photography. Artistic nude service and current enquiries belong to the localized Ébredés exhibition; no fixed Professional price applies to personal ART commissions. Existing Professional calculator deep links remain for legacy compatibility and do not change enquiry ownership."
+          "rule": "Professional Artists & Performers packages and prices apply only to career-facing portfolios on BANHALMI Photography. BANHALMI ART documents personal art across subjects and styles; Ébredés is a historical exhibition/book. ART routes are archival evidence, not commission or quote destinations; Professional calculator routes apply solely to Professional services."
         }
       },
       {
@@ -395,7 +395,7 @@
         "hu": "https://www.banhalmi.art/hu/private-photography.html",
         "de-AT": "https://www.banhalmi.art/de-at/private-photography.html"
       },
-      "policy": "Career-facing artist and performer portfolios belong to BANHALMI Professional. Personal artistic portraits, boudoir, intimate editorial, fashion/lifestyle and catalogue commissions begin on the localized BANHALMI ART private photography page. Artistic nude service and current enquiries belong to the localized Ébredés exhibition. Existing fine-art calculator deep links and the canonical pricing/terms remain on Professional for compatibility; they do not change the primary private enquiry destination."
+      "policy": "Legacy private-route identifiers now resolve to artistic archive records and image-rights provenance on BANHALMI ART. Professional prices and business enquiries apply only to career-facing Artists & Performers and other BANHALMI Photography services; never refer ART visitors into commercial funnels."
     }
   },
   "teamModel": {
@@ -587,6 +587,6 @@
       "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
       "de-AT": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
     },
-    "policy": "Career-facing artist and performer portfolios and their stated Professional starting prices belong to BANHALMI Professional. Personal artistic portraits, boudoir and lingerie use localized BANHALMI ART private photography. Artistic nude service and current enquiries belong to localized Ébredés. No fixed Professional price applies to personal ART commissions. Existing fine-art calculator deep links and canonical terms remain on Professional for compatibility only."
+    "policy": "ART-only archival reading for personal artworks, artistic nude and Ébredés exhibition/book. No pricing, booking, artistic package, commercial enquiry or Professional quote handoff is authorized by these routes."
   }
 }
