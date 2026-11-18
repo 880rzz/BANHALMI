@@ -29,7 +29,7 @@ function fire({ locale = 'en', category = 'individual', consent = true,
     estimateGross: 999
   };
   runInNewContext(tracker + '\ntrackVerifiedQuoteLead();',
-    { window, form, document, payload, isQuote },
+    { window, form, document, payload, isQuote, trackedCategoryCode: category },
     { filename: 'lead-event-tracker.js' });
   return events;
 }
