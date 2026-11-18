@@ -5,9 +5,13 @@ const canonical = 'https://www.trustindex.io/reviews/banhalmiphotography.com';
 const sources = {
   en: { file: 'portrait/index.html', url: canonical },
   hu: { file: 'hu/portre/index.html', url: canonical + '/lang/hu' },
-  de: { file: 'de-at/portrait/index.html', url: canonical }
+  de: { file: 'de-at/portrait/index.html', url: canonical + '/lang/de' }
 };
+const homepages = { en: 'index.html', hu: 'hu/index.html', de: 'de-at/index.html' };
 for (const [locale, source] of Object.entries(sources)) {
+  const home = readFileSync(homepages[locale], 'utf8');
+  assert.equal(home.split('href="' + source.url + '"').length - 1, 1,
+    locale + ': homepage must link to exact localized Trustindex address');
   const html = readFileSync(source.file, 'utf8');
   const section = html.match(/<section class="trustindex-evidence"[^>]*>[\s\S]*?<\/section>/)?.[0];
   assert.ok(section, locale + ': reviews evidence section exists');
@@ -33,8 +37,8 @@ assert.ok(!raw.includes('https://www.trustindex.io/reviews/banhalmi.art'),
   'retired art-domain review profile removed from professional trust evidence');
 assert.ok(raw.includes('"url": "' + canonical + '"'),
   'review source references the canonical profile');
-assert.ok(raw.includes(canonical + '/lang/hu') && !raw.includes(canonical + '/lang/de'),
-  'HU retains localized Trustindex URL; DE shares owner-provided third base URL');
+assert.ok(raw.includes(canonical + '/lang/hu') && raw.includes(canonical + '/lang/de'),
+  'HU and DE retain the separately supplied localized Trustindex URLs');
 assert.ok(review.guardrail.includes('Counts and ratings change'),
   'review score and count guardrail retained');
 console.log('Trustindex profile source and review link canonicalization PASS: EN/HU/DE.');
