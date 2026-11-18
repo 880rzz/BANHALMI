@@ -67,4 +67,24 @@ if(!hardener.includes('applyLlmCanonicalOverlay(root)')) throw new Error('Produc
 for(const token of ['ai-entry.json','entity.jsonld','llms.txt','ai.txt','Q138482177']) if(!hardener.includes(token)) throw new Error(`Production hardener protected-state gate missing ${token}`);
 for(const token of ['protectedCanonicalOverlay','Q138482177','approximately 50 professional photographer partners/collaborators','founded HIPStudio']) if(!overlayApplier.includes(token)) throw new Error(`Overlay applier missing ${token}`);
 
+
+// ART/Professional separation, 2026-11-18: semantic boundary is a
+// production contract, not a Google ranking or AI citation guarantee.
+const aiGuide=fs.readFileSync('ai.txt','utf8');
+const llmGuide=fs.readFileSync('llms.txt','utf8');
+const ov=JSON.stringify(overlay);
+const commercialText=JSON.stringify(commercial);
+for(const [label,source] of [['ai.txt',aiGuide],['llms.txt',llmGuide]]){
+  if(!source.includes('personal artistic/oeuvre source') || !source.includes('any subject and style') || !source.includes('without a published nude price')) throw new Error(label+': ART personal and unpriced nude boundary missing');
+  if(source.includes('Existing fine-art calculator deep links')) throw new Error(label+': legacy ART to Professional calculator route persists');
+}
+if(!ov.includes('primary personal artistic-oeuvre source') || !commercialText.includes('primary personal artistic-oeuvre source')) throw new Error('ART Person authority must be separate from Photography business in protected machine contracts');
+if(ov.includes('Shared canonical terms remain on Professional') || commercialText.includes('shared written terms remain on banhalmiphotography.com')) throw new Error('Legacy shared ART/Professional commercial terms persist');
+const nudeCommission=commercial.pricing?.executivePublicArchitecture?.fineArtPhotography?.artisticNudeFineArt;
+if(nudeCommission?.startingGrossEUR!==null) throw new Error('Artistic nude must have no Professional fixed public price');
+const professionalPortfolio=commercial.pricing?.executivePublicArchitecture?.fineArtPhotography?.professionalArtistsPerformers;
+if(professionalPortfolio?.startingGrossEUR!==690) throw new Error('Career-facing paid professional portfolio pricing must remain intact');
+const artPrice=pricing.services?.find(x=>x.id==='fine-art');
+if(JSON.stringify(artPrice?.packages?.map(x=>x.code))!==JSON.stringify(['art60','art120','art180'])) throw new Error('Professional artists and performers calculator packages changed');
+
 console.log('LLM commercial contract audit passed: geography, services, references, memberships, team size, pricing, Norbert/Viko roles, HIPStudio founder/partner/contact authority, shared Budapest entity signals and rollback protection are internally consistent.');
