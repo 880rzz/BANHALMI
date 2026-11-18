@@ -29,4 +29,20 @@ assert.ok(huQuote.includes('Művészek és előadók szakmai portfóliócsomagja
 assert.ok(!huQuote.includes('Művészek & előadók és külön Fine Art / művészi akt út 276 000 Ft-tól (€690).'),
   'HU quote OfferCatalog must not price artistic nude');
 
+
+// Artistic nude as archive not lead: HU/EN/de-AT prices describe only
+// professional career-facing portfolios; Ébredés is an art exhibition/book.
+const clarity=JSON.parse(fs.readFileSync('tools/content/pricing-clarity-20261006.json','utf8'));
+for(const [locale,route] of [['en','requestaquote/index.html'],['hu','hu/ajanlatkeres/index.html'],['de','de-at/anfrage/index.html']]){
+  const html=fs.readFileSync(route,'utf8');
+  for(const key of ['artTip','artGuide','artPrivateLabel','artNudeLabel']) {
+    assert.ok(html.includes(clarity[locale][key]),route+': '+key+' must match approved archive description');
+  }
+  assert.doesNotMatch(clarity[locale].artNudeLabel,/Enquire|Érdeklődjön|Anfrage über/i,locale+': no Ébredés enquiry CTA');
+  assert.match(clarity[locale].artNudeLabel,/exhibition|kiállítás|Ausstellung/i,locale+': the link leads to an art exhibition');
+}
+const huf=JSON.parse(fs.readFileSync('pricing-huf.json','utf8'));
+assert.match(huf.services.find(s=>s.id==='fine-art').publicArchitecture.separationRule,/nem része ennek az árnak/i,
+  'HU career portfolio price cannot also cover artistic nude');
+
 console.log('Professional vs personal artistic roles: 3-language content is clear; nude is unpriced, career portfolios remain commercial.');
