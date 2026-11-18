@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync, statSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 
 const canonical = 'https://www.trustindex.io/reviews/banhalmiphotography.com';
 const sources = {
@@ -37,4 +38,29 @@ assert.ok(raw.includes(canonical + '/lang/hu') && raw.includes(canonical + '/lan
   'both owner-confirmed Hungarian and German locale URLs are present');
 assert.ok(review.guardrail.includes('Counts and ratings change'),
   'review score and count guardrail retained');
+
+// Exhaustive audit of published/source review links, not just the three UI cards.
+// Historical negative examples in tests and build tools are not customer-facing links.
+const approved = new Set([canonical, canonical + '/lang/hu', canonical + '/lang/de']);
+const tracked = execFileSync('git', ['ls-files', '-z'], { encoding: 'utf8' })
+  .split('\0').filter(Boolean);
+let inspectedLinks = 0;
+for (const file of tracked) {
+  if (/^(?:tests|tools|\.github|docs)\//.test(file)) continue;
+  if (!/\.(?:html?|json|jsonld|mjs|js|ts|tsx|md|txt|xml|yaml|yml)$/i.test(file)) continue;
+  if (!existsSync(file) || statSync(file).size > 8_000_000) continue;
+  const data = readFileSync(file, 'utf8');
+  for (const match of data.matchAll(/https?:\/\/(?:www\.)?trustindex\.io\/reviews\/[a-z0-9.-]+(?:\/lang\/[a-z-]+)?/gi)) {
+    const url = match[0];
+    assert.ok(approved.has(url), file + ': stale or unsupported Trustindex URL: ' + url);
+    if (file.endsWith('.html')) {
+      const expected = file.startsWith('hu/') ? canonical + '/lang/hu'
+        : file.startsWith('de-at/') ? canonical + '/lang/de' : canonical;
+      assert.equal(url, expected, file + ': review link must match page language');
+    }
+    inspectedLinks++;
+  }
+}
+assert.ok(inspectedLinks >= 8, 'published and machine-readable Trustindex references were inspected');
+
 console.log('Trustindex profile source and review link canonicalization PASS: EN/HU/DE.');
