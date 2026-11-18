@@ -36,4 +36,22 @@ assert.match(fullMachineText,/Ébredés|Awakening/,'AI entry lost historical art
 assert.doesNotMatch(fullMachineText,/artistic nude service and enquiries belong|current artistic-nude enquiries belong/i,'AI entry reintroduced commercial art offering');
 assert.match(JSON.stringify(overlay.privateCommissionRouting),/BANHALMI ART/,'Protected source lost ART-only identity');
 
+
+// Archive intents must not have quote entrypoints, including legacy AI IDs.
+const needs=JSON.parse(read('customer-needs.json')).needs;
+const intents=JSON.parse(read('customer-intent-model.json')).intents;
+for(const [source,collection,ids] of [
+  ['customer-needs',needs,['personal-fine-art','artistic-nude-commission']],
+  ['customer-intent-model',intents,['guided-fine-art','artistic-nude-commission']]
+]){
+ for(const id of ids){
+  const item=collection.find(x=>x.id===id);
+  assert.ok(item,source+': legacy search intent missing '+id);
+  assert.equal(item.archiveOnly,true,source+': historical artwork must be marked archiveOnly: '+id);
+  assert.ok(!item.quoteEntryPoints||Object.keys(item.quoteEntryPoints).length===0,source+': ART quotes are prohibited: '+id);
+  assert.match(JSON.stringify(item),/banhalmi\.art\//,source+': keep artistic evidence URLs: '+id);
+  assert.doesNotMatch(item.solution||'',/request a tailored quote|private artistic-nude enquiry through/i,source+': retired sales promise: '+id);
+ }
+}
+
 console.log('ART/Professional boundary passed: archive-only Ébredés in three languages; paid business portfolios remain on Professional.');
