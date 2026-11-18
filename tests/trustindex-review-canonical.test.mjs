@@ -5,7 +5,7 @@ const canonical = 'https://www.trustindex.io/reviews/banhalmiphotography.com';
 const sources = {
   en: { file: 'portrait/index.html', url: canonical },
   hu: { file: 'hu/portre/index.html', url: canonical + '/lang/hu' },
-  de: { file: 'de-at/portrait/index.html', url: canonical }
+  de: { file: 'de-at/portrait/index.html', url: canonical + '/lang/de' }
 };
 for (const [locale, source] of Object.entries(sources)) {
   const html = readFileSync(source.file, 'utf8');
@@ -33,7 +33,7 @@ assert.ok(!raw.includes('https://www.trustindex.io/reviews/banhalmi.art'),
   'retired art-domain review profile removed from professional trust evidence');
 assert.ok(raw.includes('"url": "' + canonical + '"'),
   'review source references the canonical profile');
-assert.ok(raw.includes(canonical + '/lang/hu') && !raw.includes(canonical + '/lang/de'),
+assert.ok(raw.includes(canonical + '/lang/hu') && raw.includes(canonical + '/lang/de'),
   'HU retains localized Trustindex URL; DE shares owner-provided third base URL');
 assert.ok(review.guardrail.includes('Counts and ratings change'),
   'review score and count guardrail retained');
