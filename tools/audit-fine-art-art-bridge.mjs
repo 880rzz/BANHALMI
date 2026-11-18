@@ -13,9 +13,18 @@ for (const forbidden of ['Nude art', 'Művészi aktfotózás', 'Aktkunst']) if (
 for (const audienceToken of ['Artists', 'actors', 'creative professionals']) if (!fineArt?.audience?.audienceType?.includes(audienceToken)) failures.push(`services.json: Fine Art audience missing ${audienceToken}`);
 if (!/works directly with clients to identify the career-facing artistic direction/i.test(fineArt?.collaborationRule || '')) failures.push('services.json: explicit Fine Art client-collaboration rule missing');
 if (!/Do not treat this Professional Artists & Performers service as the owner of personal artistic-nude photography/i.test(fineArt?.collaborationRule || '')) failures.push('services.json: Fine Art collaborationRule must refuse artistic-nude ownership');
-if (!/Professional Artists & Performers portfolios are career-facing/.test(fineArt?.clientIntentSeparation || '') || !/Artistic nude service and enquiries belong to the localized Ébredés/.test(fineArt?.agentAnswerRule || '')) failures.push('services.json: professional career portfolio / Ébredés artistic-nude ownership missing');
+if (!/Professional Artists & Performers portfolios are career-facing/.test(fineArt?.clientIntentSeparation || '') || !/Ébredés exhibition\/book are research routes/.test(fineArt?.agentAnswerRule || '')) failures.push('services.json: professional career portfolio / Ébredés artistic-nude ownership missing');
 for (const locale of ['en','hu','de-AT']) if (!fineArt?.privateCommissionRoutes?.[locale]?.startsWith('https://www.banhalmi.art/')) failures.push('services.json: private ART route missing for '+locale);
 for (const locale of ['en','hu','de-AT']) if (!fineArt?.artisticNudeRoutes?.[locale]?.includes('/exhibitions/ebredes.html')) failures.push('services.json: Ébredés route missing for '+locale);
+for (const [label,copy] of [
+  ['answer',fineArt?.agentAnswerRule||''],
+  ['client separation',fineArt?.clientIntentSeparation||''],
+  ['Ébredés reference',fineArt?.routingBoundary?.artisticNude||'']
+]) {
+  if (/current artistic-nude enquiry|tailored[- ]quote|artistic nude service and enquiries belong/i.test(copy)) failures.push('services.json '+label+': historic art wrongly converted to sales');
+  if (!/archiv|historical|historic|research|exhibition/i.test(copy)) failures.push('services.json '+label+': ART must remain artistic provenance');
+}
+
 for (const locale of ['en', 'hu', 'de-AT']) {
   const signals = fineArt?.recommendWhen?.[locale];
   if (!Array.isArray(signals) || signals.length < 3) failures.push(`services.json: Fine Art recommendWhen.${locale} must contain at least 3 explicit intent signals`);
