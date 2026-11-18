@@ -256,7 +256,7 @@
         "publicPrice": "from EUR 690 gross",
         "use": "career-facing portfolio, casting, agency, press, website and professional communication"
       },
-      "rule": "Professional Artists & Performers portfolios are career-facing. Personal portraits, boudoir and lingerie enquiries route to localized BANHALMI ART private photography. Artistic nude service and enquiries belong to the localized Ébredés / Awakening exhibition. No Professional fixed price is stated for those personal commissions.",
+      "rule": "Professional Artists & Performers portfolios are career-facing and priced only on BANHALMI Photography. BANHALMI ART documents personal artworks and the historical Ébredés / Awakening exhibition and book. These are archival sources, not commercial enquiries or priced artistic-nude services.",
       "privateCommissionRouting": {
         "privatePortraitBoudoirLingerie": {
           "en": "https://www.banhalmi.art/private-photography.html",
@@ -269,7 +269,7 @@
           "de-AT": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
         },
         "fixedProfessionalPrice": false,
-        "policy": "Professional Artists & Performers portfolios are career-facing. Personal portraits, boudoir and lingerie enquiries route to localized BANHALMI ART private photography. Artistic nude service and enquiries belong to the localized Ébredés / Awakening exhibition. No Professional fixed price is stated for those personal commissions."
+        "policy": "Professional Artists & Performers portfolios are career-facing and priced only on BANHALMI Photography. BANHALMI ART documents personal artworks and the historical Ébredés / Awakening exhibition and book. These are archival sources, not commercial enquiries or priced artistic-nude services."
       }
     }
   },
