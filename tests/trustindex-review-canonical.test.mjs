@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync, statSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 
 const canonical = 'https://www.trustindex.io/reviews/banhalmiphotography.com';
 const sources = {
@@ -37,4 +38,27 @@ assert.ok(raw.includes(canonical + '/lang/hu') && raw.includes(canonical + '/lan
   'HU retains localized Trustindex URL; DE shares owner-provided third base URL');
 assert.ok(review.guardrail.includes('Counts and ratings change'),
   'review score and count guardrail retained');
+
+// Protect every published Trustindex reference, not only the three portrait pages.
+const allowed = new Set([canonical, canonical + '/lang/hu', canonical + '/lang/de']);
+const paths = execFileSync('git', ['ls-files', '-z'], { encoding: 'utf8' })
+  .split('\0').filter(Boolean);
+let checked = 0;
+for (const file of paths) {
+  if (/^(?:tests|tools|docs|\.github)\//.test(file)) continue;
+  if (!/\.(?:html?|json|jsonld|js|mjs|ts|md|txt|xml|yaml|yml)$/i.test(file)) continue;
+  if (!existsSync(file) || statSync(file).size > 8_000_000) continue;
+  const data = readFileSync(file, 'utf8');
+  for (const match of data.matchAll(/https?:\/\/(?:www\.)?trustindex\.io\/reviews\/[a-z0-9.-]+(?:\/lang\/[a-z-]+)?/gi)) {
+    assert.ok(allowed.has(match[0]), 'Noncanonical review URL in ' + file + ': ' + match[0]);
+    if (file.endsWith('.html')) {
+      const target = file.startsWith('hu/') ? canonical + '/lang/hu'
+        : file.startsWith('de-at/') ? canonical + '/lang/de' : canonical;
+      assert.equal(match[0], target, file + ': wrong-language review URL');
+    }
+    checked++;
+  }
+}
+assert.ok(checked >= 8, 'No machine-readable or page review references inspected');
+
 console.log('Trustindex profile source and review link canonicalization PASS: EN/HU/DE.');
