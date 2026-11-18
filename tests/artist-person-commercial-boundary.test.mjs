@@ -19,4 +19,14 @@ for(const [path,scope,unpriced] of variants){
   assert.ok(html.includes(archiveLabel),path+': ART link must describe the destination as an artistic archive');
   assert.doesNotMatch(html,/(?:A personal project begins with a private conversation|Személyes projekthez először beszélünk|Ein persönliches Projekt beginnt mit einem vertraulichen Gespräch)/i,path+': ART archival destination must not be described as a commercial enquiry landing page');
 }
+
+// The professional Artists & Performers portfolio has a genuine commercial
+// package; personal artistic-nude work has no advertised price or quote funnel.
+// Check the machine-readable HU offer summary, not only visible copy.
+const huQuote=fs.readFileSync('hu/ajanlatkeres/index.html','utf8');
+assert.ok(huQuote.includes('Művészek és előadók szakmai portfóliócsomagja 276 000 Ft-tól (€690).'),
+  'HU offer must attach the EUR 690 starting price only to professional artist portfolios');
+assert.ok(!huQuote.includes('Művészek & előadók és külön Fine Art / művészi akt út 276 000 Ft-tól (€690).'),
+  'HU quote OfferCatalog must not price artistic nude');
+
 console.log('Professional vs personal artistic roles: 3-language content is clear; nude is unpriced, career portfolios remain commercial.');
