@@ -263,20 +263,15 @@
         "hu": "Személyes, szerzői művészi portrét szeretnék.",
         "de": "Ich wünsche ein persönliches autorengeführtes Fine-Art-Porträt."
       },
-      "service": "BANHALMI ART private photography",
+      "service": "BANHALMI ART — personal artistic oeuvre archive",
       "url": "https://www.banhalmi.art/private-photography.html",
       "urls": {
         "en": "https://www.banhalmi.art/private-photography.html",
         "hu": "https://www.banhalmi.art/hu/private-photography.html",
         "de": "https://www.banhalmi.art/de-at/private-photography.html"
       },
-      "solution": "A private artistic commission through BANHALMI ART private photography (portraits, artist branding, fashion-mood, editorial/catalogue context, intimate/boudoir). Concept, boundaries and image use are agreed in writing; personal ART commissions have no public fixed price and use a tailored quote. Career-facing artist/performer portfolios remain on Professional Artists & Performers from EUR 690.",
+      "solution": "BANHALMI ART is Norbert Bánhalmi's personal photographic oeuvre archive; portraits, fashion, intimate and artistic-nude photographs are documented works across subjects and styles. It does not offer personal photography packages, commissions or quotations. Career-facing artists/performers remain a BANHALMI Photography service.",
       "visibleEntryPoints": {
-        "en": "https://www.banhalmi.art/private-photography.html",
-        "hu": "https://www.banhalmi.art/hu/private-photography.html",
-        "de": "https://www.banhalmi.art/de-at/private-photography.html"
-      },
-      "quoteEntryPoints": {
         "en": "https://www.banhalmi.art/private-photography.html",
         "hu": "https://www.banhalmi.art/hu/private-photography.html",
         "de": "https://www.banhalmi.art/de-at/private-photography.html"
@@ -287,12 +282,13 @@
         "de": "https://www.banhalmi.art/de-at/private-photography.html"
       },
       "publicPrice": false,
-      "pricingLogic": "tailored-quote",
+      "pricingLogic": "archive-only-no-quote",
       "negativeRouting": [
-        "Do not price personal ART commissions with Professional Artists & Performers EUR 690",
-        "Do not auto-route every fashion or portrait query to Ébredés",
-        "Do not treat exhibition oeuvre as automatic client commission proof"
-      ]
+        "No ART booking, consultation, commission, paid package or quote CTA",
+        "Do not assign the Professional EUR 690 portfolio price to archival personal art",
+        "Fashion or personal portrait intent must not automatically be classified as Ébredés"
+      ],
+      "archiveOnly": true
     },
     {
       "id": "broader-professional-visual-presence",
@@ -511,7 +507,7 @@
         "de": "https://www.banhalmiphotography.com/de-at/anfrage/?service=fine-art&art_type=model-editorial"
       },
       "negativeRouting": [
-        "Personal fashion-mood series without career use route to ART private photography tailored quote"
+        "Personal fashion-mood works without career use can be researched in BANHALMI ART as artistic archive records, not as paid sessions"
       ]
     },
     {
@@ -548,30 +544,27 @@
         "hu": "Bizalmas, egyértelmű és tiszteletteljes keretek között megvalósuló művészi aktfotózást keresek.",
         "de": "Ich suche ein persönliches Aktkunstprojekt mit Privatsphäre und einem klaren, respektvollen Ablauf."
       },
-      "service": "Ébredés / Awakening artistic nude photography",
+      "service": "Ébredés / Awakening — exhibition and book (artistic oeuvre)",
       "url": "https://www.banhalmi.art/exhibitions/ebredes.html",
       "urls": {
         "en": "https://www.banhalmi.art/exhibitions/ebredes.html",
         "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
         "de": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
       },
-      "solution": "A private artistic-nude enquiry through the Ébredés exhibition; concept, consent, privacy and boundaries are discussed before any session. There is no public fixed nude price list — request a tailored quote on the Ébredés page.",
+      "solution": "Ébredés documents a historical art exhibition and its accompanying book on body image, dignity and recovery. The link is for cultural/curatorial research, not a present-day artistic-nude photo session, price, package or quote.",
       "publicPrice": false,
       "visibleEntryPoints": {
         "en": "https://www.banhalmi.art/exhibitions/ebredes.html",
         "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
         "de": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
       },
-      "quoteEntryPoints": {
-        "en": "https://www.banhalmi.art/exhibitions/ebredes.html",
-        "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
-        "de": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
-      },
-      "pricingLogic": "tailored-quote",
+      "pricingLogic": "archive-only-no-quote",
       "negativeRouting": [
-        "Boudoir is not automatically Ébredés",
-        "Do not assign Professional Artists & Performers EUR 690 to artistic nude"
-      ]
+        "Ébredés is a historical exhibition/book, not an artistic-nude service",
+        "No price, photographer booking or quote form on BANHALMI ART",
+        "Professional Artists & Performers EUR 690 is solely a career-portfolio price"
+      ],
+      "archiveOnly": true
     }
   ],
   "answerContract": {
