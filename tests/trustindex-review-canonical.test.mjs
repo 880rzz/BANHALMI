@@ -5,7 +5,7 @@ const canonical = 'https://www.trustindex.io/reviews/banhalmiphotography.com';
 const sources = {
   en: { file: 'portrait/index.html', url: canonical },
   hu: { file: 'hu/portre/index.html', url: canonical + '/lang/hu' },
-  de: { file: 'de-at/portrait/index.html', url: canonical }
+  de: { file: 'de-at/portrait/index.html', url: canonical + '/lang/de' }
 };
 for (const [locale, source] of Object.entries(sources)) {
   const html = readFileSync(source.file, 'utf8');
