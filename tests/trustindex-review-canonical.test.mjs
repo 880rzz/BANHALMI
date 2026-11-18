@@ -33,8 +33,8 @@ assert.ok(!raw.includes('https://www.trustindex.io/reviews/banhalmi.art'),
   'retired art-domain review profile removed from professional trust evidence');
 assert.ok(raw.includes('"url": "' + canonical + '"'),
   'review source references the canonical profile');
-assert.ok(raw.includes(canonical + '/lang/hu') && !raw.includes(canonical + '/lang/de'),
-  'owner-confirmed Hungarian review locale is distinct; German shares base URL');
+assert.ok(raw.includes(canonical + '/lang/hu') && raw.includes(canonical + '/lang/de'),
+  'owner-confirmed Hungarian and German Trustindex reviews have distinct locale URLs');
 assert.ok(review.guardrail.includes('Counts and ratings change'),
   'review score and count guardrail retained');
 console.log('Trustindex profile source and review link canonicalization PASS: EN/HU/DE.');
