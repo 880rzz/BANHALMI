@@ -804,10 +804,24 @@
         if (typeof window.gtag !== 'function') return;
         var lang = form.getAttribute('data-lang') || document.documentElement.lang || 'en';
         var locale = lang.indexOf('hu') === 0 ? 'hu' : lang.indexOf('de') === 0 ? 'de' : 'en';
+        // Only allowlisted internal category codes enter analytics, never form text,
+        // contact details, amounts, the submitted URL or the delivery response.
+        var serviceByCategory = {
+          individual: 'portrait',
+          group: 'portrait',
+          brand: 'brand',
+          event: 'event',
+          art: 'artists'
+        };
+        var category = payload && payload.categoryCode;
+        var service = Object.prototype.hasOwnProperty.call(serviceByCategory, category)
+          ? serviceByCategory[category] : 'unspecified';
         try {
           window.gtag('event', 'generate_lead', {
             lead_type: 'quote_request',
-            form_language: locale
+            form_language: locale,
+            event_category: 'quote_request',
+            event_label: locale + '_' + service
           });
         } catch (error) {}
       }
