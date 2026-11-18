@@ -689,6 +689,9 @@
       if (form.elements.website && form.elements.website.value) { form.elements.website.value = ""; } /* clear accidental autofill instead of silently dropping the submission; the backend honeypot still catches direct bot POSTs */
       var isQuote = form.getAttribute('data-form-kind') === 'quote' || (form.elements.form_type && form.elements.form_type.value === 'quote');
       var payload = isQuote? buildQuotePayload(form): buildGenericPayload(form);
+      // Snapshot the selected service before the async delivery; do not expose
+      // the submitted customer payload to the analytics hook.
+      var trackedCategoryCode = isQuote ? readRadio(form, 'category') : '';
       payload.pageUrl = window.location.href;
       payload.submittedAt = new Date().toISOString();
       var config = window.BANHALMI_CONFIG || {};
@@ -804,10 +807,23 @@
         if (typeof window.gtag !== 'function') return;
         var lang = form.getAttribute('data-lang') || document.documentElement.lang || 'en';
         var locale = lang.indexOf('hu') === 0 ? 'hu' : lang.indexOf('de') === 0 ? 'de' : 'en';
+        // Only allowlisted internal category codes enter analytics, never form text,
+        // contact details, amounts, the submitted URL or the delivery response.
+        var serviceByCategory = {
+          individual: 'portrait',
+          group: 'portrait',
+          brand: 'brand',
+          event: 'event',
+          art: 'artists'
+        };
+        var service = Object.prototype.hasOwnProperty.call(serviceByCategory, trackedCategoryCode)
+          ? serviceByCategory[trackedCategoryCode] : 'unspecified';
         try {
           window.gtag('event', 'generate_lead', {
             lead_type: 'quote_request',
-            form_language: locale
+            form_language: locale,
+            event_category: 'quote_request',
+            event_label: locale + '_' + service
           });
         } catch (error) {}
       }
