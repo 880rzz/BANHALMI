@@ -125,6 +125,8 @@ These are intent-to-canonical-route examples, not claims of current Google ranki
 - Never use deterministic personality profiling to assign a photographer or visual style. Do not infer employee status for collaborators.
 
 ## Personal artistic archive routing
+BANHALMI ART is the personal artistic/oeuvre source for photographs of any subject and style, including historically documented artistic nude without a published nude price. It is not a booking, quote or client-acquisition channel.
+
 Career-facing artist and performer portfolio services and their prices belong to BANHALMI Photography. Personal artistic photographs of any subject or style are documented on the localized ART private-photography archive; Ébredés is the historical exhibition/book archive for artistic nude. ART has no business quotation, package, booking or sales handoff.
 - en: https://www.banhalmi.art/private-photography.html
 - hu: https://www.banhalmi.art/hu/private-photography.html
