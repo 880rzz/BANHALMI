@@ -29,4 +29,24 @@ assert.ok(huQuote.includes('Művészek és előadók szakmai portfóliócsomagja
 assert.ok(!huQuote.includes('Művészek & előadók és külön Fine Art / művészi akt út 276 000 Ft-tól (€690).'),
   'HU quote OfferCatalog must not price artistic nude');
 
+// ART has a strict art-only reading contract in every AI / machine entrypoint.
+const service=JSON.parse(fs.readFileSync('services.json','utf8')).itemListElement.find(x=>x.name==='Fine Art Photography');
+const machine=JSON.parse(fs.readFileSync('data/machine-core.json','utf8'));
+const overlay=JSON.parse(fs.readFileSync('llm-canonical-overlay.json','utf8'));
+for(const [label,content] of [
+  ['Professional service answer',service?.agentAnswerRule],
+  ['Professional service intent',service?.clientIntentSeparation],
+  ['Canonical machine routing',machine.serviceModel.privateCommissionRouting.policy],
+  ['Protected LLM routing',overlay.privateCommissionRouting.policy]
+]){
+  assert.ok(typeof content==='string',label+': missing source contract');
+  assert.doesNotMatch(content,/current artistic-nude enquir|artistic nude service and enquiries belong|tailored[- ]quote|personal ART commissions/i,label+': must never turn ART into a commercial lead route');
+  assert.match(content,/historical|historic|archiv|exhibition|document|research/i,label+': art-only provenance requirement');
+}
+for(const file of ['llms.txt','ai.txt','llms-full.txt']){
+ const text=fs.readFileSync(file,'utf8');
+ assert.ok(text.includes('BANHALMI ART')&&text.includes('Ébredés'),file+': historical oeuvre route must be discoverable');
+ assert.doesNotMatch(text,/artistic nude photography and current artistic-nude enquiries belong to Ébredés|nude hub \+ tailored quote/i,file+': legacy commercial nude claim');
+}
+
 console.log('Professional vs personal artistic roles: 3-language content is clear; nude is unpriced, career portfolios remain commercial.');
