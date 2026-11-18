@@ -98,9 +98,12 @@ for (const locale of routes) {
     const events = await analyticsEvents(page);
     const leadEvents = events.filter(args => args[0] === 'event' && args[1] === 'generate_lead');
     expect(leadEvents).toHaveLength(1);
+    const language = locale.lang === 'DE-AT' ? 'de' : locale.lang.toLowerCase();
     expect(leadEvents[0][2]).toEqual({
       lead_type: 'quote_request',
-      form_language: locale.lang === 'DE-AT' ? 'de' : locale.lang.toLowerCase()
+      form_language: language,
+      event_category: 'quote_request',
+      event_label: language + '_portrait'
     });
     expect(JSON.stringify(leadEvents[0])).not.toMatch(/Regression Client|regression@example\.com|MOCK-ONLY|Mock-only delivery/);
   });
