@@ -11,6 +11,7 @@ if(rawEvidence.includes(['Do not promote ', 'Trip Magazin', ' to ARCHIVE-VERIFIE
   throw new Error('Obsolete retired-interview promotion rule remains in service evidence');
 }
 // Scan ALL tracked source and generated text artifacts; a future importer must not recreate the retired link.
+const canonicalTrustindex = 'https://www.trustindex.io/reviews/norbertbanhalmi.com';
 const trackedFiles = execFileSync('git',['ls-files','-z'],{encoding:'utf8'}).split('\0').filter(Boolean);
 for (const file of trackedFiles) {
   if(!/\.(?:html|json|jsonld|mjs|js|ts|tsx|py|md|txt|xml|yml|yaml|css|csv|toml)$/i.test(file))continue;
@@ -18,6 +19,13 @@ for (const file of trackedFiles) {
   const text = fs.readFileSync(file,'utf8');
   if(text.includes(retiredIssueUrl)||text.includes(retiredSourceId)) {
     throw new Error('Retired Tripont source is present in a tracked file: '+file);
+  }
+  // Trustindex is an external professional-client evidence URL. Prevent
+  // stale hostname/locale variants from returning via generated artifacts.
+  for (const match of text.matchAll(/https?:\/\/(?:www\.)?trustindex\.io\/reviews\/[a-z0-9.-]+(?:\/lang\/[a-z-]+)?/gi)) {
+    if (match[0] !== canonicalTrustindex) {
+      throw new Error('Noncanonical Trustindex review link in '+file+': '+match[0]);
+    }
   }
 }
 
@@ -48,5 +56,12 @@ const pages = [
 for (const p of pages) {
   const html = fs.readFileSync(p, "utf8");
   if (!html.includes("/service-trust-evidence.json")) throw new Error(`Missing service trust alternate link: ${p}`);
+}
+for (const p of ['portrait/index.html','hu/portre/index.html','de-at/portrait/index.html']) {
+  const html = fs.readFileSync(p, 'utf8');
+  const exact = 'href="' + canonicalTrustindex + '"';
+  if ((html.split(exact).length - 1) !== 1 || !html.includes('class="trustindex-evidence"')) {
+    throw new Error('Portrait review link must lead to canonical profile exactly once: ' + p);
+  }
 }
 console.log("Service trust evidence contract OK");
