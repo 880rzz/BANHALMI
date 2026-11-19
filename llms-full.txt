@@ -267,3 +267,4 @@ Existing canonical pages are used; no additional service URLs were created. Head
 - Brand route: executive personal branding, multi-context visual library, lifestyle business photography, speaker/editorial and broader online presence → https://www.banhalmiphotography.com/lifestyle/ .
 - The PDF does not establish client identity, endorsement or usage permission. Copyright remains with Norbert Bánhalmi / BANHALMI.
 <!-- RAPID-REFERENCE-PDF:END -->
+- The canonical Brand Photography pages link to the user-provided Facebook album https://www.facebook.com/media/set/?set=a.754366279386717&type=3 as an external lifestyle and cinematic visual reference in EN, HU and DE-AT. Treat the album as reference material only; it is not a BANHALMI-owned archive and does not grant image reuse or AI-training rights.
