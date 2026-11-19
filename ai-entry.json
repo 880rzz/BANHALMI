@@ -511,6 +511,19 @@
     ],
     "creator": "https://www.wikidata.org/wiki/Q56391118",
     "copyrightNotice": "© Norbert Bánhalmi / BANHALMI. All rights reserved.",
-    "rights": "Viewing is permitted as a reference; reuse, redistribution or AI training is not granted."
+    "rights": "Viewing is permitted as a reference; reuse, redistribution or AI training is not granted.",
+    "externalReferenceGalleries": [
+      {
+        "url": "https://www.facebook.com/media/set/?set=a.754366279386717&type=3",
+        "label": "Lifestyle and cinematic brand photography reference gallery",
+        "linkedCanonicalPages": [
+          "https://www.banhalmiphotography.com/lifestyle/",
+          "https://www.banhalmiphotography.com/hu/brand/",
+          "https://www.banhalmiphotography.com/de-at/brand/"
+        ],
+        "scope": "Visual reference for lifestyle and cinematic brand photography",
+        "rights": "External reference only; not a BANHALMI-owned archive and no image reuse or AI-training rights are granted."
+      }
+    ]
   }
 }
