@@ -7,7 +7,7 @@
   "creator": {
     "@id": "https://www.banhalmiphotography.com/about/"
   },
-  "dateModified": "2026-11-15",
+  "dateModified": "2026-11-19",
   "dataFeedElement": [
     {
       "@type": "DataFeedItem",
@@ -4659,38 +4659,6 @@
         "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-50-horizontal-balanced.webp",
         "description": "Environmental leadership portrait of a bearded man in a suit standing beside a woman with dark curly hair; low-angle city framing suggests partnership, ambition and shared direction.",
         "caption": "Environmental leadership portrait of a bearded man in a suit standing beside a woman with dark curly hair; low-angle city framing suggests partnership, ambition and shared direction.",
-        "genre": "portrait photography",
-        "keywords": [
-          "portrait",
-          "executive portrait",
-          "editorial portrait"
-        ],
-        "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
-          "@type": "Person",
-          "name": "Bánhalmi Norbert"
-        },
-        "creditText": "Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography",
-        "acquireLicensePage": "https://www.banhalmiphotography.com/requestaquote/",
-        "license": "https://www.banhalmiphotography.com/terms-conditions/",
-        "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
-        "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
-          "@type": "Person",
-          "name": "Norbert Bánhalmi"
-        }
-      }
-    },
-    {
-      "@type": "DataFeedItem",
-      "dateModified": "2026-07-12T12:00:00+02:00",
-      "item": {
-        "@type": "ImageObject",
-        "@id": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-51-horizontal-balanced.webp#image",
-        "contentUrl": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-51-horizontal-balanced.webp",
-        "url": "https://www.banhalmiphotography.com/assets/img/portraits/service-gallery/banhalmi-executive-portrait-51-horizontal-balanced.webp",
-        "description": "Second frame of the vintage car portrait, showing the woman’s poised profile, gloved hand and classic interior; the cinematic treatment reinforces a controlled, recognisable character.",
-        "caption": "Second frame of the vintage car portrait, showing the woman’s poised profile, gloved hand and classic interior; the cinematic treatment reinforces a controlled, recognisable character.",
         "genre": "portrait photography",
         "keywords": [
           "portrait",
