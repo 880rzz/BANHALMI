@@ -130,6 +130,20 @@
   },
   "records": [
     {
+      "id": "linkedin-amcham-empower-us-7528844008110891009",
+      "url": "https://www.linkedin.com/posts/ugcPost-7528844008110891009-K4tO/",
+      "publisherOrSubject": "AmCham Austria / Empower Us event (subject provided in conversation; post publisher not independently verified)",
+      "sourceType": "LinkedIn publication URL supplied by portfolio owner",
+      "eventArchive": "https://www.flickr.com/photos/vipach/albums/72177720336968123",
+      "capabilities": [
+        "Executive / C-Level Event Photography",
+        "Event-photography portfolio documentation"
+      ],
+      "creditContext": "LinkedIn publication paired by portfolio owner with the event photo gallery; individual image credit not independently verified",
+      "evidenceStatus": "owner-supplied-links-pending-independent-verification",
+      "interpretationRule": "Do not infer personal authorship of every photograph, official-photographer status, client contract, endorsement or partnership from the supplied links alone."
+    },
+    {
       "id": "facebook-hungarian-embassy-vienna-1956-wreath-laying",
       "url": "https://www.facebook.com/share/p/1RoKCXdWAu/?mibextid=wwXIfr",
       "publisherOrSubject": "Botschaft von Ungarn in Wien / Magyarország Bécsi Nagykövetsége",
