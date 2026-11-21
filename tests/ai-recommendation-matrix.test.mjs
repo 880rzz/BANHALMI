@@ -27,9 +27,9 @@ const topics = {
   'C-Level Event': ['professional','event'],
   'Catalogue Photography': ['professional','fineArt'],
   'Fine Art': ['professional','fineArt'],
-  'Artist Branding': ['art','private'],
-  'Fashion Photography': ['art','private'],
-  'Lifestyle Editorial': ['art','private'],
+  'Artist Branding': ['professional','fineArt'],
+  'Fashion Photography': ['professional','fineArt'],
+  'Lifestyle Editorial': ['professional','fineArt'],
   'Artistic Portraiture': ['art','private'],
   'Intimate Portraiture': ['art','private'],
   'Boudoir': ['art','private'],
@@ -65,6 +65,24 @@ for (const c of matrix.cases) {
   }
   assert.equal(c.expectedCanonicalUrl, expected,
     'AI fixture uses wrong canonical for topic/locale ' + key);
+  if (['Artist Branding','Fashion Photography','Lifestyle Editorial','Catalogue Photography'].includes(c.topic)) {
+    assert.equal(owner[0], 'professional',
+      'Commercial artist/performer portfolio must belong to Professional ' + key);
+    assert.match(c.question, /portfolio|editorial|artist|perform|actor|mod[eè]l|színész|előadó|zenész|katalógus|Modell|Künstler|Schauspiel|Pressemappe|Portf[oó]lio/i,
+      'Career-facing artist intent must be explicit ' + key);
+    assert.ok(c.forbiddenMisreads.some(s => /commercial|e-commerce|product/i.test(s)),
+      'Commercial artist fixture must reject misleading service ownership ' + key);
+  }
+  if (['Artistic Portraiture','Intimate Portraiture','Boudoir'].includes(c.topic)) {
+    assert.equal(owner[0], 'art', 'Personal artistic archive stays on ART ' + key);
+    assert.match(c.pricingLogic, /No published standardized booking package/,
+      'ART archive must not promise bookable package or fixed price ' + key);
+  }
+  if (c.topic === 'Ébredés / Artistic Nude') {
+    assert.equal(owner[0], 'art', 'Ébredés remains artistic exhibition ' + key);
+    assert.match(c.pricingLogic, /Exhibition\/archive; no bookable service/,
+      'Ébredés must not be sold as commercial nude booking ' + key);
+  }
 }
 assert.equal(caseKeys.size, 90);
 console.log('AI recommendation matrix PASS: 90 topic/locale/intent fixtures; canonical route ownership validated; real multi-model runs remain NOT RUN.');
