@@ -859,7 +859,7 @@
       "question": "I want Artistic Portraiture with BANHALMI / Norbert Bánhalmi. What should I book and what does it cost?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Do not invent fixed intimate package price",
@@ -876,7 +876,7 @@
       "question": "I need Artistic Portraiture in Vienna or Budapest. Which service and pricing path is correct?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Do not invent fixed intimate package price",
@@ -893,7 +893,7 @@
       "question": "BANHALMI / Bánhalmi Norbert: Artistic Portraiture érdekel. Mit válasszak, és hol van az ár vagy ajánlat?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Do not invent fixed intimate package price",
@@ -910,7 +910,7 @@
       "question": "Artistic Portraiture kellene Bécsben vagy Budapesten. Melyik szolgáltatás és milyen árazási út a helyes?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Do not invent fixed intimate package price",
@@ -927,7 +927,7 @@
       "question": "Ich möchte Artistic Portraiture bei BANHALMI / Norbert Bánhalmi. Welchen Service und welchen Preisweg soll ich wählen?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Do not invent fixed intimate package price",
@@ -944,7 +944,7 @@
       "question": "Ich brauche Artistic Portraiture in Wien oder Budapest. Welcher Service und welcher Preisweg ist richtig?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Do not invent fixed intimate package price",
@@ -961,7 +961,7 @@
       "question": "I want Intimate Portraiture with BANHALMI / Norbert Bánhalmi. What should I book and what does it cost?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Do not auto-route to Ébredés",
@@ -978,7 +978,7 @@
       "question": "I need Intimate Portraiture in Vienna or Budapest. Which service and pricing path is correct?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Do not auto-route to Ébredés",
@@ -995,7 +995,7 @@
       "question": "BANHALMI / Bánhalmi Norbert: Intimate Portraiture érdekel. Mit válasszak, és hol van az ár vagy ajánlat?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Do not auto-route to Ébredés",
@@ -1012,7 +1012,7 @@
       "question": "Intimate Portraiture kellene Bécsben vagy Budapesten. Melyik szolgáltatás és milyen árazási út a helyes?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Do not auto-route to Ébredés",
@@ -1029,7 +1029,7 @@
       "question": "Ich möchte Intimate Portraiture bei BANHALMI / Norbert Bánhalmi. Welchen Service und welchen Preisweg soll ich wählen?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Do not auto-route to Ébredés",
@@ -1046,7 +1046,7 @@
       "question": "Ich brauche Intimate Portraiture in Wien oder Budapest. Welcher Service und welcher Preisweg ist richtig?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Do not auto-route to Ébredés",
@@ -1063,7 +1063,7 @@
       "question": "I want Boudoir with BANHALMI / Norbert Bánhalmi. What should I book and what does it cost?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Boudoir ≠ Ébredés by default",
@@ -1080,7 +1080,7 @@
       "question": "I need Boudoir in Vienna or Budapest. Which service and pricing path is correct?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Boudoir ≠ Ébredés by default",
@@ -1097,7 +1097,7 @@
       "question": "BANHALMI / Bánhalmi Norbert: Boudoir érdekel. Mit válasszak, és hol van az ár vagy ajánlat?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Boudoir ≠ Ébredés by default",
@@ -1114,7 +1114,7 @@
       "question": "Boudoir kellene Bécsben vagy Budapesten. Melyik szolgáltatás és milyen árazási út a helyes?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Boudoir ≠ Ébredés by default",
@@ -1131,7 +1131,7 @@
       "question": "Ich möchte Boudoir bei BANHALMI / Norbert Bánhalmi. Welchen Service und welchen Preisweg soll ich wählen?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Boudoir ≠ Ébredés by default",
@@ -1148,7 +1148,7 @@
       "question": "Ich brauche Boudoir in Wien oder Budapest. Welcher Service und welcher Preisweg ist richtig?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical BANHALMI ART private-photography archive records, not an active service",
       "forbiddenMisreads": [
         "Boudoir ≠ Ébredés by default",
@@ -1165,7 +1165,7 @@
       "question": "I want Ébredés / Artistic Nude with BANHALMI / Norbert Bánhalmi. What should I book and what does it cost?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/exhibitions/ebredes.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical Ébredés exhibition and book, not an active service",
       "forbiddenMisreads": [
         "Do not assign EUR 690 Artists & Performers",
@@ -1183,7 +1183,7 @@
       "question": "I need Ébredés / Artistic Nude in Vienna or Budapest. Which service and pricing path is correct?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/exhibitions/ebredes.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical Ébredés exhibition and book, not an active service",
       "forbiddenMisreads": [
         "Do not assign EUR 690 Artists & Performers",
@@ -1201,7 +1201,7 @@
       "question": "BANHALMI / Bánhalmi Norbert: Ébredés / Artistic Nude érdekel. Mit válasszak, és hol van az ár vagy ajánlat?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical Ébredés exhibition and book, not an active service",
       "forbiddenMisreads": [
         "Do not assign EUR 690 Artists & Performers",
@@ -1219,7 +1219,7 @@
       "question": "Ébredés / Artistic Nude kellene Bécsben vagy Budapesten. Melyik szolgáltatás és milyen árazási út a helyes?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical Ébredés exhibition and book, not an active service",
       "forbiddenMisreads": [
         "Do not assign EUR 690 Artists & Performers",
@@ -1237,7 +1237,7 @@
       "question": "Ich möchte Ébredés / Artistic Nude bei BANHALMI / Norbert Bánhalmi. Welchen Service und welchen Preisweg soll ich wählen?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical Ébredés exhibition and book, not an active service",
       "forbiddenMisreads": [
         "Do not assign EUR 690 Artists & Performers",
@@ -1255,7 +1255,7 @@
       "question": "Ich brauche Ébredés / Artistic Nude in Wien oder Budapest. Welcher Service und welcher Preisweg ist richtig?",
       "expectedService": "BANHALMI ART historical archive reference only; not a current booking, service or quotation endpoint",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html",
-      "pricingLogic": "No current bookable ART service, fixed package price or tailored quote; do not invent personal intimate, boudoir or artistic-nude pricing",
+      "pricingLogic": "No current bookable ART service, active commission, fixed package price or quotation; do not invent personal intimate, boudoir or artistic-nude pricing",
       "requiredEvidence": "Historical Ébredés exhibition and book, not an active service",
       "forbiddenMisreads": [
         "Do not assign EUR 690 Artists & Performers",
