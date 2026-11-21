@@ -1,0 +1,28 @@
+name: BANHALMI AI recommendation fixture contract (offline)
+
+on:
+  pull_request:
+    paths:
+      - 'tests/ai-recommendation-matrix.json'
+      - 'tests/ai-recommendation-matrix.test.mjs'
+      - 'ai-entry.json'
+      - 'services.json'
+      - 'sitemap.xml'
+      - '.github/workflows/ai-recommendation-eval-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  canonical-ai-fixtures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check all 90 multilingual AI recommendation fixtures and ART archive boundary
+        run: |
+          node tests/ai-recommendation-matrix.test.mjs
+          node tests/ai-trust-art-archive-route-contract.test.mjs
+      - name: Confirm tests do not claim unperformed live model runs
+        run: |
+          node -e "const m=require('./tests/ai-recommendation-matrix.json');if(m.liveApiStatus!=='NOT RUN'||m.cases.some(c=>c.liveResult!=='NOT RUN'))process.exit(1)"
