@@ -150,7 +150,7 @@ jobs:
       - name: Verify SEO and LLM entrypoints exact-live
         run: |
           set -euo pipefail
-          for file in robots.txt sitemap.xml llms.txt ai.txt references/portfolio.jsonld; do
+          for file in robots.txt sitemap.xml llms.txt ai.txt references/portfolio.jsonld api/v1/services.json; do
             live="/tmp/banhalmi-live-$(basename "$file")"
             matched=0
             for attempt in 1 2 3 4 5 6; do
