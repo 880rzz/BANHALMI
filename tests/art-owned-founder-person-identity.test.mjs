@@ -21,6 +21,16 @@ assert.ok(authority.some(node=>node['@type']==='Organization' && node['@id']===B
 // WebPage; it is no longer the cross-site Person identifier.
 const about = fs.readFileSync('about/index.html','utf8');
 assert.match(about, /<link\b[^>]+href="https:\/\/www\.banhalmiphotography\.com\/about\/"[^>]+rel="canonical"/);
+// Business About remains its own ProfilePage, not an ART-hosted page.
+// Only mainEntity changes ownership to the shared ART Person node.
+const profileBlocks=[...about.matchAll(/<script\\b[^>]*type=["']application\\/ld\\+json["'][^>]*>([\\s\\S]*?)<\\/script>/gi)]
+  .map(m=>JSON.parse(m[1]));
+const businessProfile=profileBlocks.flatMap(j=>j['@graph']||[j]).find(j=>j['@type']==='ProfilePage');
+assert.equal(businessProfile?.url,BUSINESS_ABOUT,'business profile url must match business canonical');
+assert.equal(businessProfile?.['@id'],BUSINESS_ABOUT+'#webpage','business ProfilePage id must stay local');
+assert.equal(businessProfile?.primaryImageOfPage?.['@id'],BUSINESS_ABOUT+'#primaryimage');
+assert.equal(businessProfile?.mainEntity?.['@id'],ART_PERSON,'profile page describes the shared ART Person');
+
 const files = [];
 function walk(dir){
   for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
