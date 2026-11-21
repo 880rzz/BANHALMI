@@ -9,7 +9,7 @@ function requireContract(condition,message){if(!condition) throw new Error(messa
 const ID='https://www.banhalmiphotography.com/media-usage-evidence.json';
 requireContract(registry?.['@type']==='Dataset','Media usage evidence must remain a Dataset');
 requireContract(registry?.['@id']===ID,'Media usage canonical Dataset ID drift');
-requireContract(registry?.person?.['@id']==='https://www.banhalmiphotography.com/about/','Canonical Person ID drift in media evidence');
+requireContract(registry?.person?.['@id']==='https://www.banhalmi.art/#about','Canonical Person ID drift in media evidence');
 requireContract(registry?.sourceDocument?.pageCount===98,'Raw PDF page count drift');
 requireContract(registry?.sourceDocument?.uniqueTextCaptureGroups===58,'Capture-level dedupe count drift');
 requireContract(registry?.sourceDocument?.duplicateCaptureGroups===14,'Duplicate capture group count drift');

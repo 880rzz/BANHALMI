@@ -108,7 +108,7 @@ await checkPage('https://www.banhalmiphotography.com/ecosystem.json', {
 });
 
 await checkPage('https://www.banhalmi.art/', {
-  all: ['https://www.banhalmiphotography.com/about/', 'https://www.banhalmiphotography.com/'],
+  all: ['https://www.banhalmi.art/#about', 'https://www.banhalmiphotography.com/'],
   any: [['Official Art Archive', 'official archive', 'artistic oeuvre', 'art archive']],
   patterns: [
     { pattern: /<link\b[^>]*rel=["']canonical["'][^>]*href=["']https:\/\/www\.banhalmi\.art\/?["'][^>]*>/i, label: 'the canonical banhalmi.art homepage declaration' },
@@ -119,7 +119,7 @@ await checkPage('https://www.banhalmi.art/ecosystem-bridge.json', {
   all: ['BANHALMI ART ecosystem bridge', 'professional-services', 'artistic-archive', 'editorial-knowledge-layer', 'Q56391118']
 });
 await checkPage('https://www.banhalmi.art/ecosystem-bridge.jsonld', {
-  all: ['https://www.banhalmiphotography.com/about/', 'https://www.banhalmiphotography.com/#website', 'https://www.banhalmi.art/#website', 'https://blog.banhalmi.art/#website']
+  all: ['https://www.banhalmi.art/#about', 'https://www.banhalmiphotography.com/#website', 'https://www.banhalmi.art/#website', 'https://blog.banhalmi.art/#website']
 });
 
 await checkPage('https://blog.banhalmi.art/', {

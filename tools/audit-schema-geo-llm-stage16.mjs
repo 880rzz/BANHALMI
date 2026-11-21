@@ -60,7 +60,7 @@ if (fs.existsSync(schemaPath)) {
   else {
     for (const type of ['DigitalDocument','Service','HowTo']) if (!graph.some(node => node['@type'] === type)) errors.push(`project-policy.jsonld missing ${type}`);
     if (!graph.some(node => node.provider?.['@id'] === 'https://www.banhalmiphotography.com/#organization')) errors.push('project-policy.jsonld canonical provider missing');
-    if (!graph.some(node => node.author?.['@id'] === 'https://www.banhalmiphotography.com/about/')) errors.push('project-policy.jsonld canonical author missing');
+    if (!graph.some(node => node.author?.['@id'] === 'https://www.banhalmi.art/#about')) errors.push('project-policy.jsonld canonical author missing');
     const schemaText = JSON.stringify(schema);
     for (const token of ['Booking payment','Currency and VAT','Invoice plan','Overdue payment','Additional costs']) if (!schemaText.includes(token)) errors.push(`project-policy.jsonld missing ${token}`);
   }
