@@ -13,12 +13,16 @@
       "hu": "https://www.banhalmi.art/hu/private-photography.html",
       "de-AT": "https://www.banhalmi.art/de-at/private-photography.html"
     },
-    "policy": "Artistic nude enquiries belong to the Ébredés exhibition on BANHALMI ART. Personal artistic portraits, boudoir and lingerie use the localized BANHALMI ART private photography page. Professional artist and performer portfolios remain on BANHALMI Professional. No Professional fixed price or calculator route applies to personal ART commissions.",
+    "policy": "Career-facing artist and performer portfolios belong to BANHALMI Professional. Personal art, boudoir, intimate editorial, fashion/lifestyle and catalogue works are documented as historical references in the localized BANHALMI ART archive. Ébredés is the historical artistic-nude exhibition and book. These archive URLs are for research only: no booking, no quote, no commercial enquiry or price is offered by BANHALMI ART. Professional calculators apply to career-facing services only.",
     "artisticNudeRoutes": {
       "en": "https://www.banhalmi.art/exhibitions/ebredes.html",
       "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
       "de-AT": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
     },
-    "noFixedProfessionalPrice": true
+    "noFixedProfessionalPrice": true,
+    "routePurpose": "historical BANHALMI ART oeuvre and exhibition references, not bookable services",
+    "isBookable": false,
+    "acceptsQuotes": false,
+    "acceptsEnquiries": false
   }
 }

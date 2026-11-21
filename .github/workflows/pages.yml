@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -104,6 +105,23 @@ jobs:
           path: ${{ runner.temp }}/artifact.tar
           retention-days: 1
           if-no-files-found: error
+      - name: Wait for Pages artifact API visibility
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          expected="github-pages-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          for attempt in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            names="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" --jq '.artifacts[].name' 2>/dev/null || true)"
+            if grep -Fqx "$expected" <<< "$names"; then
+              echo "Pages artifact now discoverable: $expected"
+              exit 0
+            fi
+            echo "Pages artifact not visible yet: $expected attempt=$attempt"
+            sleep 5
+          done
+          echo "::error::Uploaded Pages artifact was not discoverable through the GitHub Actions API"
+          exit 1
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
@@ -150,7 +168,7 @@ jobs:
       - name: Verify SEO and LLM entrypoints exact-live
         run: |
           set -euo pipefail
-          for file in robots.txt sitemap.xml llms.txt ai.txt references/portfolio.jsonld; do
+          for file in robots.txt sitemap.xml llms.txt ai.txt references/portfolio.jsonld api/v1/services.json; do
             live="/tmp/banhalmi-live-$(basename "$file")"
             matched=0
             for attempt in 1 2 3 4 5 6; do

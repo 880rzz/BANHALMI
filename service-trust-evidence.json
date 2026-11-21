@@ -372,7 +372,12 @@
             "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
             "de-AT": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
           },
-          "fixedProfessionalPrice": false
+          "fixedProfessionalPrice": false,
+          "routePurpose": "historical BANHALMI ART oeuvre and exhibition references, not bookable services",
+          "isBookable": false,
+          "acceptsQuotes": false,
+          "acceptsEnquiries": false,
+          "policy": "These BANHALMI ART URLs provide historical artistic and exhibition research only. Ébredés documents a past exhibition and book. Personal intimate/artistic-nude photography cannot be booked or quoted through BANHALMI ART or the Professional service calculator. Career-facing artist/performer portfolios remain professional BANHALMI services."
         }
       }
     },
