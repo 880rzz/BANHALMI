@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotDate": "2026-11-21",
+  "purpose": "Immutable evidence snapshot for BANHALMI search-intent and AI-referral growth; this is NOT a fresh/live GSC feed.",
+  "property": "sc-domain:banhalmiphotography.com",
+  "canonicalHost": "www.banhalmiphotography.com",
+  "sources": [
+    "Google Search Console API via GSC Wizard",
+    "Google Analytics 4 via GSC Wizard",
+    "880rzz/BANHALMI GitHub main inspection"
+  ],
+  "dataMaturity": {
+    "gscSettledThrough": "2026-11-19",
+    "ga4WindowEnd": "2026-11-18"
+  },
+  "gsc": {
+    "last28Days": {
+      "start": "2026-10-22",
+      "end": "2026-11-18",
+      "clicks": 22,
+      "impressions": 13997,
+      "ctrPercent": 0.1571765378295349,
+      "averagePosition": 3.741301707508752
+    },
+    "last7Days": {
+      "start": "2026-11-12",
+      "end": "2026-11-18",
+      "clicks": 8,
+      "impressions": 6147,
+      "ctrPercent": 0.1301447860745079,
+      "averagePosition": 3.7641125752399542,
+      "previousClicks": 7,
+      "previousImpressions": 5054
+    },
+    "genericQueryEvidence": [
+      {
+        "query": "portfolio",
+        "impressions": 3613,
+        "clicks": 0,
+        "observedLanding": "https://www.banhalmiphotography.com/hu/"
+      },
+      {
+        "query": "photography",
+        "impressions": 1669,
+        "clicks": 0,
+        "observedLandings": [
+          "https://www.banhalmiphotography.com/hu/",
+          "https://www.banhalmiphotography.com/de-at/"
+        ]
+      }
+    ],
+    "commercialIntentEvidence": [
+      {
+        "query": "reportagefotograf wien",
+        "impressions": 29,
+        "clicks": 0,
+        "averagePosition": 2.1724,
+        "observedLanding": "https://www.banhalmiphotography.com/de-at/",
+        "expectedServiceOwner": "https://www.banhalmiphotography.com/de-at/eventfotografie/"
+      },
+      {
+        "query": "portraitfotografie",
+        "impressions": 28,
+        "clicks": 0,
+        "averagePosition": 2.7857,
+        "observedLanding": "https://www.banhalmiphotography.com/de-at/",
+        "expectedServiceOwner": "https://www.banhalmiphotography.com/de-at/portrait/"
+      },
+      {
+        "query": "portréfotózás budapest",
+        "impressions": 16,
+        "clicks": 0,
+        "averagePosition": 3.5,
+        "observedLanding": "https://www.banhalmiphotography.com/hu/",
+        "expectedServiceOwner": "https://www.banhalmiphotography.com/hu/portre/"
+      },
+      {
+        "query": "corporate portrait photographer",
+        "impressions": 11,
+        "clicks": 0,
+        "averagePosition": 3.5455,
+        "observedLanding": "https://www.banhalmiphotography.com/de-at/",
+        "expectedServiceOwner": "https://www.banhalmiphotography.com/de-at/portrait/"
+      }
+    ],
+    "indexingTracker": {
+      "checkedAt": "2026-11-21T12:23:22.660Z",
+      "tracked": 58,
+      "indexed": 51,
+      "notIndexed": 7,
+      "warnings": 0,
+      "knownLegacyGoogleCanonical": {
+        "url": "https://www.banhalmiphotography.com/terms-conditions/",
+        "googleCanonical": "https://www.norbertbanhalmi.com/terms-conditions/",
+        "lastCrawl": "2026-11-02T19:50:04Z"
+      }
+    }
+  },
+  "ga4": {
+    "period": {
+      "start": "2026-10-22",
+      "end": "2026-11-18"
+    },
+    "propertyId": "properties/383874731",
+    "siteSessions": 173,
+    "chatgptReferralSessions": 22,
+    "chatgptActiveUsers": 11,
+    "chatgptEngagedSessions": 20,
+    "chatgptFormStarts": 4,
+    "chatgptVerifiedLeads": 0,
+    "allVerifiedLeadEvents": 2,
+    "allVerifiedLeadsSource": "(direct) / (none)",
+    "selfReferralSessions": 7,
+    "caveat": "chatgpt.com / ai-assistant referrer proves referral sessions, not that a model recommended BANHALMI. No Google AI Overviews referral distinction. GA4 key events other than generate_lead are not automatically lead submissions."
+  },
+  "actions": {
+    "permitted": [
+      "Read-only query/page/device/country monitoring",
+      "Service owner intent audit without title/H1 churn",
+      "GA4 source/medium and genuine lead verification",
+      "Investigate www/apex self-referral and GA4 attribution configuration without changing consent"
+    ],
+    "forbiddenWithoutNewEvidence": [
+      "Resubmit tracked URLs",
+      "Rewrite measuring service or homepage content",
+      "Override Google canonical by force",
+      "Claim AI recommendations from referrals alone",
+      "Deploy through Vercel as site host"
+    ],
+    "changeGate": "Evidence => smallest source PR => CI => merge => GitHub Pages deploy => exact live SHA and files => GSC/GA4 measurement"
+  }
+}
