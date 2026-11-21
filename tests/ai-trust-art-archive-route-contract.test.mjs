@@ -45,6 +45,9 @@ for(const [locale,url] of Object.entries(api.privateCommissionRouting.artisticNu
  assert.ok(url.startsWith('https://www.banhalmi.art/'));
  assert.ok(url.endsWith('exhibitions/ebredes.html'));
 }
+const pagesWorkflow=fs.readFileSync('.github/workflows/pages.yml','utf8');
+assert.ok(pagesWorkflow.includes('references/portfolio.jsonld api/v1/services.json; do'),
+  'Exact-live Pages gate must compare machine service API bytes on canonical custom domain');
 assert.equal(api.privateCommissionRouting.noFixedProfessionalPrice,true);
 assert.ok(api.services?.length > 0,'Preserve canonical Professional service API inventory');
 assert.match(api.privateCommissionRouting.policy,/no booking, no quote, no commercial enquiry or price/i);
