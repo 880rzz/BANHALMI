@@ -45,12 +45,12 @@ const firstTimeline = Array.isArray(oeuvre.timeline?.[0]) ? oeuvre.timeline[0].j
 for (const token of ['1999', 'MOL Y2K', 'IT specialist', '1.3-megapixel']) {
   if (!firstTimeline.includes(token)) errors.push(`oeuvre.json: first timeline record missing ${token}`);
 }
-if (oeuvre.person?.canonicalId !== 'https://www.banhalmiphotography.com/about/') errors.push('oeuvre.json: canonical Person ID missing');
+if (oeuvre.person?.canonicalId !== 'https://www.banhalmi.art/#about') errors.push('oeuvre.json: canonical Person ID missing');
 
 // The concise llms.txt entry index carries identity/ecosystem routing; detailed origin evidence stays in ai.txt.
 const llms = read('llms.txt');
 for (const token of [
-  'https://www.banhalmiphotography.com/about/',
+  'https://www.banhalmi.art/#about',
   'https://www.banhalmiphotography.com/',
   'https://www.banhalmi.art/',
   'https://blog.banhalmi.art/'
@@ -62,7 +62,7 @@ if (/first camera.*military service|military service.*first camera/i.test(llms))
 
 const ai = read('ai.txt');
 for (const token of [
-  'https://www.banhalmiphotography.com/about/',
+  'https://www.banhalmi.art/#about',
   'https://www.banhalmiphotography.com/',
   'https://www.banhalmi.art/',
   'https://blog.banhalmi.art/',
@@ -73,7 +73,7 @@ for (const token of [
 }
 if (/first camera.*military service|military service.*first camera/i.test(ai)) errors.push('ai.txt: retired military-origin claim remains');
 
-const canonicalPerson = 'https://www.banhalmiphotography.com/about/';
+const canonicalPerson = 'https://www.banhalmi.art/#about';
 for (const relative of ['entity.jsonld', 'entity-graph.json', 'knowledge.json', 'ecosystem.json']) {
   if (!read(relative).includes(canonicalPerson)) errors.push(`${relative}: canonical Person missing`);
 }
