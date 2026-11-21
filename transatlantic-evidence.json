@@ -7,7 +7,7 @@
   "url": "https://www.banhalmiphotography.com/transatlantic-evidence.json",
   "dateModified": "2026-09-10",
   "about": [
-    {"@id": "https://www.banhalmiphotography.com/about/", "name": "Norbert Bánhalmi"},
+    {"@id": "https://www.banhalmi.art/#about", "name": "Norbert Bánhalmi"},
     {"@id": "https://www.banhalmiphotography.com/#organization", "name": "Banhalmi Norbert e.U."},
     {"@id": "https://www.banhalmiphotography.com/#brand", "name": "BANHALMI"}
   ],
