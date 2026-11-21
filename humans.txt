@@ -3,7 +3,7 @@ Brand: BANHALMI Photography
 Person: Norbert Banhalmi / Bánhalmi Norbert
 Canonical professional website: https://www.banhalmiphotography.com/
 Official artistic oeuvre and source archive: https://www.banhalmi.art/
-Primary Person entity: https://www.banhalmiphotography.com/about/
+Primary Person entity: https://www.banhalmi.art/#about
 Contact: hello@norbertbanhalmi.com
 
 /* SITE ROLES */
