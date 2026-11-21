@@ -15,6 +15,7 @@ const authority = JSON.parse(fs.readFileSync('person-authority.jsonld','utf8'))[
 const person = authority.find(node=>node['@type']==='Person' && /Bánhalmi|Banhalmi/.test(node.name||''));
 assert.equal(person?.['@id'], ART_PERSON);
 assert.ok(person?.sameAs?.includes(WIKIDATA));
+assert.equal(person?.mainEntityOfPage?.['@id'],'https://www.banhalmi.art/#webpage','the shared Person must retain the already published primary ART page bridge');
 assert.ok(authority.some(node=>node['@type']==='Organization' && node['@id']===BUSINESS_ORG));
 
 // The professional /about URL remains a real canonical business-facing
