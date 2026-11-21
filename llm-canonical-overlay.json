@@ -127,7 +127,11 @@
       "en": "https://www.banhalmi.art/exhibitions/ebredes.html",
       "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
       "de-AT": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
-    }
+    },
+    "routePurpose": "historical BANHALMI ART oeuvre and exhibition references, not bookable services",
+    "isBookable": false,
+    "acceptsQuotes": false,
+    "acceptsEnquiries": false
   },
   "eventAlbumEvidenceRule": "Seven selected VIPACH × BANHALMI Flickr records are structured event-photography evidence in external-photography-evidence.json under flickrArchive.selectedEventAlbums; the public event-service gallery browse entry remains https://www.flickr.com/photos/vipach/albums. The VIPACH × BANHALMI label marks a shared public archive identity, not legal identity equivalence. Four records have independent publisher photo credits: Hungarian Embassy Vienna, Freiheit – Ungarn – 1956 (72177720336279769); Embassy wreath-laying at Palais Trautson (72177720336659851); Embassy centenary event for the Bécsi Magyar Iskolaegyesület (https://flic.kr/s/aHBqjDbbcr); and AMAPED Collegium Hungaricum remembrance programme (72177720336267626). The Palais Trautson and school-centenary Embassy references are recorded from user-supplied screenshots because direct public readback was unavailable; the AMAPED credit is a separate association reference. Album presence alone is not proof of personal authorship, endorsement or client relationship.",
   "evidenceRoutingRule": "Legacy BANHALMI-C authority ledger contains 323 registry rows across 8 groups, including 3 ART press language variants. Use data/evidence-routing-manifest.json to resolve the canonical owner, then use source registry for evidence; never count rows as independent verified citations or publish ART works as Professional services.",
