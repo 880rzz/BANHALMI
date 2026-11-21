@@ -82,6 +82,8 @@ for (const c of matrix.cases) {
   }
   if (careerTopics.has(c.topic)) {
     assert.equal(c.routeStatus, 'professional_enquiry', 'Career intent must use Professional: ' + key);
+    assert.match(c.question, /career|professional|beruflich|portfolio|portfólió|szakmai|schauspiel|színész|model|performer|előadóművész|editorial|musiker|zenész/i,
+      'Career-specific AI question must make actor, artist, model or performer professional intent explicit: ' + key);
     assert.equal(c.expectedCanonicalUrl, professional + professionalRoutes.fineArt[c.lang]);
     assert.ok(c.pricingLogic.includes('EUR 690'), 'Use verified professional career portfolio anchor: ' + key);
     assert.match(c.forbiddenMisreads.join(' '), /do not route a current career portfolio booking to BANHALMI ART/i);
