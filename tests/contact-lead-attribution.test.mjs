@@ -47,4 +47,8 @@ const sensitive = { ok:true, adminEmailSent:true, email:'private@example.com',
 assert.doesNotMatch(JSON.stringify(fire({response:sensitive})),
   /private@example\.com|Confidential client material|PRIVATE|utm_source/,
   'Contact analytics does not leak payload, identifiers or referral URLs');
-console.log('GA4 verified contact lead attribution PASS: 3 languages, consent, delivery and PII guards.');
+const failClosed = 'if (!isQuote && (!data || data.ok !== true || data.adminEmailSent !== true || data.unverified === true))';
+assert.ok(source.includes(failClosed), 'Never report contact success on unconfirmed gateway delivery');
+assert.ok(source.indexOf(failClosed) < source.indexOf('else trackVerifiedContactLead(data);'),
+  'Delivery verification must precede contact analytics and form reset');
+console.log('GA4 verified contact lead attribution PASS: 3 languages, consent, delivery, false-success and PII guards.');

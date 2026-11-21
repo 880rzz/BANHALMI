@@ -51,7 +51,22 @@ for (const locale of routes) {
       status:200, contentType:'application/json', body:JSON.stringify({ok:true,adminEmailSent:false})
     }));
     await form.locator('[type="submit"]').click();
-    await expect(form.locator('[data-form-note]')).toHaveAttribute('data-state','success');
+    await expect(form.locator('[data-form-note]')).toHaveAttribute('data-state','error');
+    await expect(form.locator('[name="name"]')).toHaveValue('Mock Contact');
+    await expect(form.locator('[name="email"]')).toHaveValue('mock-only@example.com');
+    await expect(form.locator('[name="message"]')).toHaveValue('This is a fully mocked browser test; no emails sent.');
+    expect(await events(page)).toHaveLength(0);
+  });
+  test(locale.lang + ': unverified gateway response never clears the contact form', async ({page}) => {
+    const form = await fillContact(page, locale.path);
+    await mockConsent(page, true);
+    await page.route('**/api/banhalmi-form', route => route.fulfill({
+      status:200, contentType:'application/json',
+      body:JSON.stringify({ok:true,adminEmailSent:true,unverified:true})
+    }));
+    await form.locator('[type="submit"]').click();
+    await expect(form.locator('[data-form-note]')).toHaveAttribute('data-state','error');
+    await expect(form.locator('[name="email"]')).toHaveValue('mock-only@example.com');
     expect(await events(page)).toHaveLength(0);
   });
   test(locale.lang + ': no lead event without analytics consent', async ({page}) => {

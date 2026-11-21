@@ -848,6 +848,12 @@
       setSubmitBusy(true);
       if (endpoint && window.fetch) {
         submitVerified().then(function(data){
+          // A contact HTTP 200 alone is not proof that the team received the enquiry.
+          // Do not show success, reset fields or count a lead for unverified delivery.
+          if (!isQuote && (!data || data.ok !== true || data.adminEmailSent !== true || data.unverified === true)) {
+            showNote(message('error'), true);
+            return;
+          }
           showNote(message(data && data.unverified? 'successUnverified': 'success') + (data && data.submissionId? ' ID: ' + data.submissionId: ''), false);
           if (isQuote) trackVerifiedQuoteLead();
           else trackVerifiedContactLead(data);
