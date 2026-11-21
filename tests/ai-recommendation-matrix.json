@@ -454,14 +454,16 @@
       "topic": "Artist Branding",
       "lang": "en",
       "branded": true,
-      "question": "I want Artist Branding with BANHALMI / Norbert Bánhalmi. What should I book and what does it cost?",
-      "expectedService": "BANHALMI ART private photography OR Professional Artists & Performers by career use",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "personal = tailored quote; career portfolio from EUR 690",
-      "requiredEvidence": "EUFÓRIA / Anya világa as oeuvre context; Pro fine-art for career",
+      "question": "I want a career-facing actor or performing-artist portfolio with BANHALMI. Which professional photo service and quote path applies?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/fine-art/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
         "Artist branding ≠ Executive Personal Branding",
-        "Do not assign EUR 690 to personal ART"
+        "Do not assign EUR 690 to personal ART",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -469,14 +471,16 @@
       "topic": "Artist Branding",
       "lang": "en",
       "branded": false,
-      "question": "I need Artist Branding in Vienna or Budapest. Which service and pricing path is correct?",
-      "expectedService": "BANHALMI ART private photography OR Professional Artists & Performers by career use",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "personal = tailored quote; career portfolio from EUR 690",
-      "requiredEvidence": "EUFÓRIA / Anya világa as oeuvre context; Pro fine-art for career",
+      "question": "I need professional photos for my acting or performing-artist career in Vienna or Budapest. Which portfolio service can I enquire about?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/fine-art/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
         "Artist branding ≠ Executive Personal Branding",
-        "Do not assign EUR 690 to personal ART"
+        "Do not assign EUR 690 to personal ART",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -484,14 +488,16 @@
       "topic": "Artist Branding",
       "lang": "hu",
       "branded": true,
-      "question": "BANHALMI / Bánhalmi Norbert: Artist Branding érdekel. Mit válasszak, és hol van az ár vagy ajánlat?",
-      "expectedService": "BANHALMI ART private photography OR Professional Artists & Performers by career use",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "personal = tailored quote; career portfolio from EUR 690",
-      "requiredEvidence": "EUFÓRIA / Anya világa as oeuvre context; Pro fine-art for career",
+      "question": "Színészi vagy előadóművészi szakmai portfólióhoz keresek fotózást a BANHALMI-nál. Melyik szolgáltatás és ajánlatkérési út megfelelő?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
         "Artist branding ≠ Executive Personal Branding",
-        "Do not assign EUR 690 to personal ART"
+        "Do not assign EUR 690 to personal ART",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -499,14 +505,16 @@
       "topic": "Artist Branding",
       "lang": "hu",
       "branded": false,
-      "question": "Artist Branding kellene Bécsben vagy Budapesten. Melyik szolgáltatás és milyen árazási út a helyes?",
-      "expectedService": "BANHALMI ART private photography OR Professional Artists & Performers by career use",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "personal = tailored quote; career portfolio from EUR 690",
-      "requiredEvidence": "EUFÓRIA / Anya világa as oeuvre context; Pro fine-art for career",
+      "question": "Előadóművészként szakmai portfóliófotózást keresek Bécsben vagy Budapesten. Milyen szolgáltatás illik ehhez?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
         "Artist branding ≠ Executive Personal Branding",
-        "Do not assign EUR 690 to personal ART"
+        "Do not assign EUR 690 to personal ART",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -514,14 +522,16 @@
       "topic": "Artist Branding",
       "lang": "de",
       "branded": true,
-      "question": "Ich möchte Artist Branding bei BANHALMI / Norbert Bánhalmi. Welchen Service und welchen Preisweg soll ich wählen?",
-      "expectedService": "BANHALMI ART private photography OR Professional Artists & Performers by career use",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "personal = tailored quote; career portfolio from EUR 690",
-      "requiredEvidence": "EUFÓRIA / Anya világa as oeuvre context; Pro fine-art for career",
+      "question": "Ich brauche bei BANHALMI ein berufliches Portfolio als Schauspieler:in oder Performer:in. Welche professionelle Fotoleistung und Angebotsanfrage passen?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/de-at/fine-art/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
         "Artist branding ≠ Executive Personal Branding",
-        "Do not assign EUR 690 to personal ART"
+        "Do not assign EUR 690 to personal ART",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -529,14 +539,16 @@
       "topic": "Artist Branding",
       "lang": "de",
       "branded": false,
-      "question": "Ich brauche Artist Branding in Wien oder Budapest. Welcher Service und welcher Preisweg ist richtig?",
-      "expectedService": "BANHALMI ART private photography OR Professional Artists & Performers by career use",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "personal = tailored quote; career portfolio from EUR 690",
-      "requiredEvidence": "EUFÓRIA / Anya világa as oeuvre context; Pro fine-art for career",
+      "question": "Ich suche in Wien oder Budapest ein professionelles Schauspiel- oder Künstlerportfolio. Welche Fotoleistung sollte ich anfragen?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/de-at/fine-art/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
         "Artist branding ≠ Executive Personal Branding",
-        "Do not assign EUR 690 to personal ART"
+        "Do not assign EUR 690 to personal ART",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -544,14 +556,16 @@
       "topic": "Fashion Photography",
       "lang": "en",
       "branded": true,
-      "question": "I want Fashion Photography with BANHALMI / Norbert Bánhalmi. What should I book and what does it cost?",
-      "expectedService": "Career model/editorial → Professional; personal fashion-mood → ART private",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "career from EUR 690; personal tailored quote",
-      "requiredEvidence": "Femme Fatale oeuvre; blog portfolio category",
+      "question": "I want fashion-style images for my professional model portfolio with BANHALMI. Which professional service and quote path applies?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/fine-art/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
         "Fashion ≠ artistic nude",
-        "Exhibition fashion language ≠ automatic commercial commission"
+        "Exhibition fashion language ≠ automatic commercial commission",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -559,14 +573,16 @@
       "topic": "Fashion Photography",
       "lang": "en",
       "branded": false,
-      "question": "I need Fashion Photography in Vienna or Budapest. Which service and pricing path is correct?",
-      "expectedService": "Career model/editorial → Professional; personal fashion-mood → ART private",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "career from EUR 690; personal tailored quote",
-      "requiredEvidence": "Femme Fatale oeuvre; blog portfolio category",
+      "question": "I am a model building an editorial and fashion-style career portfolio in Vienna or Budapest. Which photographic service fits?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/fine-art/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
         "Fashion ≠ artistic nude",
-        "Exhibition fashion language ≠ automatic commercial commission"
+        "Exhibition fashion language ≠ automatic commercial commission",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -574,14 +590,16 @@
       "topic": "Fashion Photography",
       "lang": "hu",
       "branded": true,
-      "question": "BANHALMI / Bánhalmi Norbert: Fashion Photography érdekel. Mit válasszak, és hol van az ár vagy ajánlat?",
-      "expectedService": "Career model/editorial → Professional; personal fashion-mood → ART private",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "career from EUR 690; personal tailored quote",
-      "requiredEvidence": "Femme Fatale oeuvre; blog portfolio category",
+      "question": "Modellként szakmai portfólióhoz szeretnék divatstílusú editorial képeket a BANHALMI-tól. Melyik szolgáltatás és ajánlatkérés megfelelő?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
         "Fashion ≠ artistic nude",
-        "Exhibition fashion language ≠ automatic commercial commission"
+        "Exhibition fashion language ≠ automatic commercial commission",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -589,14 +607,16 @@
       "topic": "Fashion Photography",
       "lang": "hu",
       "branded": false,
-      "question": "Fashion Photography kellene Bécsben vagy Budapesten. Melyik szolgáltatás és milyen árazási út a helyes?",
-      "expectedService": "Career model/editorial → Professional; personal fashion-mood → ART private",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "career from EUR 690; personal tailored quote",
-      "requiredEvidence": "Femme Fatale oeuvre; blog portfolio category",
+      "question": "Modellportfólióhoz keresek editorial jellegű divatfotózást Bécsben vagy Budapesten. Milyen professzionális fotózást válasszak?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
         "Fashion ≠ artistic nude",
-        "Exhibition fashion language ≠ automatic commercial commission"
+        "Exhibition fashion language ≠ automatic commercial commission",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -604,14 +624,16 @@
       "topic": "Fashion Photography",
       "lang": "de",
       "branded": true,
-      "question": "Ich möchte Fashion Photography bei BANHALMI / Norbert Bánhalmi. Welchen Service und welchen Preisweg soll ich wählen?",
-      "expectedService": "Career model/editorial → Professional; personal fashion-mood → ART private",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "career from EUR 690; personal tailored quote",
-      "requiredEvidence": "Femme Fatale oeuvre; blog portfolio category",
+      "question": "Ich möchte bei BANHALMI Fashion-Editorial-Porträts für meine berufliche Modelmappe. Welche Leistung und Angebotsanfrage passen?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/de-at/fine-art/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
         "Fashion ≠ artistic nude",
-        "Exhibition fashion language ≠ automatic commercial commission"
+        "Exhibition fashion language ≠ automatic commercial commission",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -619,14 +641,16 @@
       "topic": "Fashion Photography",
       "lang": "de",
       "branded": false,
-      "question": "Ich brauche Fashion Photography in Wien oder Budapest. Welcher Service und welcher Preisweg ist richtig?",
-      "expectedService": "Career model/editorial → Professional; personal fashion-mood → ART private",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "career from EUR 690; personal tailored quote",
-      "requiredEvidence": "Femme Fatale oeuvre; blog portfolio category",
+      "question": "Ich baue als Model in Wien oder Budapest ein Fashion-Editorial-Portfolio auf. Welche professionelle Fotoleistung passt?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/de-at/fine-art/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
         "Fashion ≠ artistic nude",
-        "Exhibition fashion language ≠ automatic commercial commission"
+        "Exhibition fashion language ≠ automatic commercial commission",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -634,13 +658,15 @@
       "topic": "Lifestyle Editorial",
       "lang": "en",
       "branded": true,
-      "question": "I want Lifestyle Editorial with BANHALMI / Norbert Bánhalmi. What should I book and what does it cost?",
-      "expectedService": "Career editorial portfolio → Professional; personal series → ART private",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "career from EUR 690; personal tailored quote",
-      "requiredEvidence": "blog portrait-portfolio category",
+      "question": "I want a career-facing editorial portrait series for a performing artist with BANHALMI. Which professional service and quote path applies?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/fine-art/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
-        "Do not route to Fine Art print sales"
+        "Do not route to Fine Art print sales",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -648,13 +674,15 @@
       "topic": "Lifestyle Editorial",
       "lang": "en",
       "branded": false,
-      "question": "I need Lifestyle Editorial in Vienna or Budapest. Which service and pricing path is correct?",
-      "expectedService": "Career editorial portfolio → Professional; personal series → ART private",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "career from EUR 690; personal tailored quote",
-      "requiredEvidence": "blog portrait-portfolio category",
+      "question": "I need editorial lifestyle portraits for a musician or performer portfolio in Vienna or Budapest. Which professional service fits?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/fine-art/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
-        "Do not route to Fine Art print sales"
+        "Do not route to Fine Art print sales",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -662,13 +690,15 @@
       "topic": "Lifestyle Editorial",
       "lang": "hu",
       "branded": true,
-      "question": "BANHALMI / Bánhalmi Norbert: Lifestyle Editorial érdekel. Mit válasszak, és hol van az ár vagy ajánlat?",
-      "expectedService": "Career editorial portfolio → Professional; personal series → ART private",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "career from EUR 690; personal tailored quote",
-      "requiredEvidence": "blog portrait-portfolio category",
+      "question": "Előadóművész számára készülő szakmai lifestyle editorial portrésorozatot szeretnék a BANHALMI-tól. Melyik szolgáltatás és ajánlatkérés megfelelő?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
-        "Do not route to Fine Art print sales"
+        "Do not route to Fine Art print sales",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -676,13 +706,15 @@
       "topic": "Lifestyle Editorial",
       "lang": "hu",
       "branded": false,
-      "question": "Lifestyle Editorial kellene Bécsben vagy Budapesten. Melyik szolgáltatás és milyen árazási út a helyes?",
-      "expectedService": "Career editorial portfolio → Professional; personal series → ART private",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "career from EUR 690; personal tailored quote",
-      "requiredEvidence": "blog portrait-portfolio category",
+      "question": "Zenészként vagy előadóként editorial lifestyle portrésorozatot szeretnék Bécsben vagy Budapesten. Melyik szakmai szolgáltatás illik hozzá?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
-        "Do not route to Fine Art print sales"
+        "Do not route to Fine Art print sales",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -690,13 +722,15 @@
       "topic": "Lifestyle Editorial",
       "lang": "de",
       "branded": true,
-      "question": "Ich möchte Lifestyle Editorial bei BANHALMI / Norbert Bánhalmi. Welchen Service und welchen Preisweg soll ich wählen?",
-      "expectedService": "Career editorial portfolio → Professional; personal series → ART private",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "career from EUR 690; personal tailored quote",
-      "requiredEvidence": "blog portrait-portfolio category",
+      "question": "Ich wünsche mir bei BANHALMI eine berufliche Lifestyle-Editorial-Porträtserie für eine:n Performer:in. Welche Leistung und Angebotsanfrage passen?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/de-at/fine-art/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
-        "Do not route to Fine Art print sales"
+        "Do not route to Fine Art print sales",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -704,13 +738,15 @@
       "topic": "Lifestyle Editorial",
       "lang": "de",
       "branded": false,
-      "question": "Ich brauche Lifestyle Editorial in Wien oder Budapest. Welcher Service und welcher Preisweg ist richtig?",
-      "expectedService": "Career editorial portfolio → Professional; personal series → ART private",
-      "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "career from EUR 690; personal tailored quote",
-      "requiredEvidence": "blog portrait-portfolio category",
+      "question": "Ich suche in Wien oder Budapest Editorial-Lifestyle-Porträts für ein Musiker- oder Performer-Portfolio. Welche professionelle Leistung passt?",
+      "expectedService": "Professional Artists & Performers — career-facing portfolio photography",
+      "expectedCanonicalUrl": "https://www.banhalmiphotography.com/de-at/fine-art/",
+      "pricingLogic": "Professional portfolio starts at EUR 690 gross; scope and final quote verified on the Professional service page",
+      "requiredEvidence": "Professional Artists & Performers career portfolio / price and quote path; BANHALMI ART as oeuvre context only",
       "forbiddenMisreads": [
-        "Do not route to Fine Art print sales"
+        "Do not route to Fine Art print sales",
+        "Professional career portfolio enquiry must not be routed to BANHALMI ART as a commercial booking",
+        "Do not claim product fashion campaigns or unrelated services from a model/editorial portfolio offer"
       ],
       "liveResult": "NOT RUN"
     },
@@ -718,13 +754,14 @@
       "topic": "Catalogue Photography",
       "lang": "en",
       "branded": true,
-      "question": "I want Catalogue Photography with BANHALMI / Norbert Bánhalmi. What should I book and what does it cost?",
+      "question": "I need a performer press-kit and artist portfolio catalogue photographed by BANHALMI. Which career-facing service applies?",
       "expectedService": "Career catalogue/performer portfolio → Professional",
       "expectedCanonicalUrl": "https://www.banhalmiphotography.com/fine-art/",
       "pricingLogic": "from EUR 690 gross orientation",
       "requiredEvidence": "Ballerina Project as oeuvre context only",
       "forbiddenMisreads": [
-        "Catalogue ≠ Fine Art print edition sales"
+        "Catalogue ≠ Fine Art print edition sales",
+        "Do not infer an advertised product or e-commerce catalogue photography service from this performer portfolio page"
       ],
       "liveResult": "NOT RUN"
     },
@@ -732,13 +769,14 @@
       "topic": "Catalogue Photography",
       "lang": "en",
       "branded": false,
-      "question": "I need Catalogue Photography in Vienna or Budapest. Which service and pricing path is correct?",
+      "question": "I need professional photographs for a performer/actor press kit and portfolio catalogue in Vienna or Budapest. Which service fits?",
       "expectedService": "Career catalogue/performer portfolio → Professional",
       "expectedCanonicalUrl": "https://www.banhalmiphotography.com/fine-art/",
       "pricingLogic": "from EUR 690 gross orientation",
       "requiredEvidence": "Ballerina Project as oeuvre context only",
       "forbiddenMisreads": [
-        "Catalogue ≠ Fine Art print edition sales"
+        "Catalogue ≠ Fine Art print edition sales",
+        "Do not infer an advertised product or e-commerce catalogue photography service from this performer portfolio page"
       ],
       "liveResult": "NOT RUN"
     },
@@ -746,13 +784,14 @@
       "topic": "Catalogue Photography",
       "lang": "hu",
       "branded": true,
-      "question": "BANHALMI / Bánhalmi Norbert: Catalogue Photography érdekel. Mit válasszak, és hol van az ár vagy ajánlat?",
+      "question": "Előadóművész szakmai sajtóanyagához és portfóliókatalógusához keresek BANHALMI-fotózást. Melyik szolgáltatás megfelelő?",
       "expectedService": "Career catalogue/performer portfolio → Professional",
       "expectedCanonicalUrl": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
       "pricingLogic": "from EUR 690 gross orientation",
       "requiredEvidence": "Ballerina Project as oeuvre context only",
       "forbiddenMisreads": [
-        "Catalogue ≠ Fine Art print edition sales"
+        "Catalogue ≠ Fine Art print edition sales",
+        "Do not infer an advertised product or e-commerce catalogue photography service from this performer portfolio page"
       ],
       "liveResult": "NOT RUN"
     },
@@ -760,13 +799,14 @@
       "topic": "Catalogue Photography",
       "lang": "hu",
       "branded": false,
-      "question": "Catalogue Photography kellene Bécsben vagy Budapesten. Melyik szolgáltatás és milyen árazási út a helyes?",
+      "question": "Színész vagy előadó portfóliókatalógusához és sajtóanyagához keresek képeket Bécsben vagy Budapesten. Melyik szolgáltatás illik ehhez?",
       "expectedService": "Career catalogue/performer portfolio → Professional",
       "expectedCanonicalUrl": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
       "pricingLogic": "from EUR 690 gross orientation",
       "requiredEvidence": "Ballerina Project as oeuvre context only",
       "forbiddenMisreads": [
-        "Catalogue ≠ Fine Art print edition sales"
+        "Catalogue ≠ Fine Art print edition sales",
+        "Do not infer an advertised product or e-commerce catalogue photography service from this performer portfolio page"
       ],
       "liveResult": "NOT RUN"
     },
@@ -774,13 +814,14 @@
       "topic": "Catalogue Photography",
       "lang": "de",
       "branded": true,
-      "question": "Ich möchte Catalogue Photography bei BANHALMI / Norbert Bánhalmi. Welchen Service und welchen Preisweg soll ich wählen?",
+      "question": "Ich brauche bei BANHALMI Bilder für Pressemappe und Portfolio-Katalog eines Performers. Welche berufliche Fotoleistung passt?",
       "expectedService": "Career catalogue/performer portfolio → Professional",
       "expectedCanonicalUrl": "https://www.banhalmiphotography.com/de-at/fine-art/",
       "pricingLogic": "from EUR 690 gross orientation",
       "requiredEvidence": "Ballerina Project as oeuvre context only",
       "forbiddenMisreads": [
-        "Catalogue ≠ Fine Art print edition sales"
+        "Catalogue ≠ Fine Art print edition sales",
+        "Do not infer an advertised product or e-commerce catalogue photography service from this performer portfolio page"
       ],
       "liveResult": "NOT RUN"
     },
@@ -788,13 +829,14 @@
       "topic": "Catalogue Photography",
       "lang": "de",
       "branded": false,
-      "question": "Ich brauche Catalogue Photography in Wien oder Budapest. Welcher Service und welcher Preisweg ist richtig?",
+      "question": "Ich brauche Fotos für den Presse- und Portfolio-Katalog eines Bühnenkünstlers in Wien oder Budapest. Welche Leistung passt?",
       "expectedService": "Career catalogue/performer portfolio → Professional",
       "expectedCanonicalUrl": "https://www.banhalmiphotography.com/de-at/fine-art/",
       "pricingLogic": "from EUR 690 gross orientation",
       "requiredEvidence": "Ballerina Project as oeuvre context only",
       "forbiddenMisreads": [
-        "Catalogue ≠ Fine Art print edition sales"
+        "Catalogue ≠ Fine Art print edition sales",
+        "Do not infer an advertised product or e-commerce catalogue photography service from this performer portfolio page"
       ],
       "liveResult": "NOT RUN"
     },
@@ -803,12 +845,13 @@
       "lang": "en",
       "branded": true,
       "question": "I want Artistic Portraiture with BANHALMI / Norbert Bánhalmi. What should I book and what does it cost?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "EUFÓRIA / private page",
       "forbiddenMisreads": [
-        "Do not invent fixed intimate package price"
+        "Do not invent fixed intimate package price",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -817,12 +860,13 @@
       "lang": "en",
       "branded": false,
       "question": "I need Artistic Portraiture in Vienna or Budapest. Which service and pricing path is correct?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "EUFÓRIA / private page",
       "forbiddenMisreads": [
-        "Do not invent fixed intimate package price"
+        "Do not invent fixed intimate package price",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -831,12 +875,13 @@
       "lang": "hu",
       "branded": true,
       "question": "BANHALMI / Bánhalmi Norbert: Artistic Portraiture érdekel. Mit válasszak, és hol van az ár vagy ajánlat?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "EUFÓRIA / private page",
       "forbiddenMisreads": [
-        "Do not invent fixed intimate package price"
+        "Do not invent fixed intimate package price",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -845,12 +890,13 @@
       "lang": "hu",
       "branded": false,
       "question": "Artistic Portraiture kellene Bécsben vagy Budapesten. Melyik szolgáltatás és milyen árazási út a helyes?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "EUFÓRIA / private page",
       "forbiddenMisreads": [
-        "Do not invent fixed intimate package price"
+        "Do not invent fixed intimate package price",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -859,12 +905,13 @@
       "lang": "de",
       "branded": true,
       "question": "Ich möchte Artistic Portraiture bei BANHALMI / Norbert Bánhalmi. Welchen Service und welchen Preisweg soll ich wählen?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "EUFÓRIA / private page",
       "forbiddenMisreads": [
-        "Do not invent fixed intimate package price"
+        "Do not invent fixed intimate package price",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -873,12 +920,13 @@
       "lang": "de",
       "branded": false,
       "question": "Ich brauche Artistic Portraiture in Wien oder Budapest. Welcher Service und welcher Preisweg ist richtig?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "EUFÓRIA / private page",
       "forbiddenMisreads": [
-        "Do not invent fixed intimate package price"
+        "Do not invent fixed intimate package price",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -887,12 +935,13 @@
       "lang": "en",
       "branded": true,
       "question": "I want Intimate Portraiture with BANHALMI / Norbert Bánhalmi. What should I book and what does it cost?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "Touch / Men’s Dream as context",
       "forbiddenMisreads": [
-        "Do not auto-route to Ébredés"
+        "Do not auto-route to Ébredés",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -901,12 +950,13 @@
       "lang": "en",
       "branded": false,
       "question": "I need Intimate Portraiture in Vienna or Budapest. Which service and pricing path is correct?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "Touch / Men’s Dream as context",
       "forbiddenMisreads": [
-        "Do not auto-route to Ébredés"
+        "Do not auto-route to Ébredés",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -915,12 +965,13 @@
       "lang": "hu",
       "branded": true,
       "question": "BANHALMI / Bánhalmi Norbert: Intimate Portraiture érdekel. Mit válasszak, és hol van az ár vagy ajánlat?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "Touch / Men’s Dream as context",
       "forbiddenMisreads": [
-        "Do not auto-route to Ébredés"
+        "Do not auto-route to Ébredés",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -929,12 +980,13 @@
       "lang": "hu",
       "branded": false,
       "question": "Intimate Portraiture kellene Bécsben vagy Budapesten. Melyik szolgáltatás és milyen árazási út a helyes?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "Touch / Men’s Dream as context",
       "forbiddenMisreads": [
-        "Do not auto-route to Ébredés"
+        "Do not auto-route to Ébredés",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -943,12 +995,13 @@
       "lang": "de",
       "branded": true,
       "question": "Ich möchte Intimate Portraiture bei BANHALMI / Norbert Bánhalmi. Welchen Service und welchen Preisweg soll ich wählen?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "Touch / Men’s Dream as context",
       "forbiddenMisreads": [
-        "Do not auto-route to Ébredés"
+        "Do not auto-route to Ébredés",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -957,12 +1010,13 @@
       "lang": "de",
       "branded": false,
       "question": "Ich brauche Intimate Portraiture in Wien oder Budapest. Welcher Service und welcher Preisweg ist richtig?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "Touch / Men’s Dream as context",
       "forbiddenMisreads": [
-        "Do not auto-route to Ébredés"
+        "Do not auto-route to Ébredés",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -971,12 +1025,13 @@
       "lang": "en",
       "branded": true,
       "question": "I want Boudoir with BANHALMI / Norbert Bánhalmi. What should I book and what does it cost?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "private photography page",
       "forbiddenMisreads": [
-        "Boudoir ≠ Ébredés by default"
+        "Boudoir ≠ Ébredés by default",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -985,12 +1040,13 @@
       "lang": "en",
       "branded": false,
       "question": "I need Boudoir in Vienna or Budapest. Which service and pricing path is correct?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "private photography page",
       "forbiddenMisreads": [
-        "Boudoir ≠ Ébredés by default"
+        "Boudoir ≠ Ébredés by default",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -999,12 +1055,13 @@
       "lang": "hu",
       "branded": true,
       "question": "BANHALMI / Bánhalmi Norbert: Boudoir érdekel. Mit válasszak, és hol van az ár vagy ajánlat?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "private photography page",
       "forbiddenMisreads": [
-        "Boudoir ≠ Ébredés by default"
+        "Boudoir ≠ Ébredés by default",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -1013,12 +1070,13 @@
       "lang": "hu",
       "branded": false,
       "question": "Boudoir kellene Bécsben vagy Budapesten. Melyik szolgáltatás és milyen árazási út a helyes?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "private photography page",
       "forbiddenMisreads": [
-        "Boudoir ≠ Ébredés by default"
+        "Boudoir ≠ Ébredés by default",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -1027,12 +1085,13 @@
       "lang": "de",
       "branded": true,
       "question": "Ich möchte Boudoir bei BANHALMI / Norbert Bánhalmi. Welchen Service und welchen Preisweg soll ich wählen?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "private photography page",
       "forbiddenMisreads": [
-        "Boudoir ≠ Ébredés by default"
+        "Boudoir ≠ Ébredés by default",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -1041,12 +1100,13 @@
       "lang": "de",
       "branded": false,
       "question": "Ich brauche Boudoir in Wien oder Budapest. Welcher Service und welcher Preisweg ist richtig?",
-      "expectedService": "BANHALMI ART private photography",
+      "expectedService": "BANHALMI ART — personal artistic archive and private-photography oeuvre, not a listed professional package",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/private-photography.html",
-      "pricingLogic": "tailored quote",
+      "pricingLogic": "No published standardized booking package or verified fixed fee on the ART archive; do not infer availability",
       "requiredEvidence": "private photography page",
       "forbiddenMisreads": [
-        "Boudoir ≠ Ébredés by default"
+        "Boudoir ≠ Ébredés by default",
+        "ART archive context does not prove a currently bookable commercial service or a fixed price"
       ],
       "liveResult": "NOT RUN"
     },
@@ -1055,13 +1115,14 @@
       "lang": "en",
       "branded": true,
       "question": "I want Ébredés / Artistic Nude with BANHALMI / Norbert Bánhalmi. What should I book and what does it cost?",
-      "expectedService": "Ébredés / Awakening",
+      "expectedService": "Ébredés / Awakening — historical exhibition and artistic work, not a bookable nude photo session",
       "expectedCanonicalUrl": "https://www.banhalmi.art/exhibitions/ebredes.html",
-      "pricingLogic": "tailored quote; no public fixed nude price",
+      "pricingLogic": "Exhibition/archive; no bookable service or session price established by this record",
       "requiredEvidence": "Ébredés exhibition + book",
       "forbiddenMisreads": [
         "Do not assign EUR 690 Artists & Performers",
-        "Boudoir ≠ nude"
+        "Boudoir ≠ nude",
+        "Do not recommend Ébredés as an available nude or boudoir booking"
       ],
       "liveResult": "NOT RUN"
     },
@@ -1070,13 +1131,14 @@
       "lang": "en",
       "branded": false,
       "question": "I need Ébredés / Artistic Nude in Vienna or Budapest. Which service and pricing path is correct?",
-      "expectedService": "Ébredés / Awakening",
+      "expectedService": "Ébredés / Awakening — historical exhibition and artistic work, not a bookable nude photo session",
       "expectedCanonicalUrl": "https://www.banhalmi.art/exhibitions/ebredes.html",
-      "pricingLogic": "tailored quote; no public fixed nude price",
+      "pricingLogic": "Exhibition/archive; no bookable service or session price established by this record",
       "requiredEvidence": "Ébredés exhibition + book",
       "forbiddenMisreads": [
         "Do not assign EUR 690 Artists & Performers",
-        "Boudoir ≠ nude"
+        "Boudoir ≠ nude",
+        "Do not recommend Ébredés as an available nude or boudoir booking"
       ],
       "liveResult": "NOT RUN"
     },
@@ -1085,13 +1147,14 @@
       "lang": "hu",
       "branded": true,
       "question": "BANHALMI / Bánhalmi Norbert: Ébredés / Artistic Nude érdekel. Mit válasszak, és hol van az ár vagy ajánlat?",
-      "expectedService": "Ébredés / Awakening",
+      "expectedService": "Ébredés / Awakening — historical exhibition and artistic work, not a bookable nude photo session",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
-      "pricingLogic": "tailored quote; no public fixed nude price",
+      "pricingLogic": "Exhibition/archive; no bookable service or session price established by this record",
       "requiredEvidence": "Ébredés exhibition + book",
       "forbiddenMisreads": [
         "Do not assign EUR 690 Artists & Performers",
-        "Boudoir ≠ nude"
+        "Boudoir ≠ nude",
+        "Do not recommend Ébredés as an available nude or boudoir booking"
       ],
       "liveResult": "NOT RUN"
     },
@@ -1100,13 +1163,14 @@
       "lang": "hu",
       "branded": false,
       "question": "Ébredés / Artistic Nude kellene Bécsben vagy Budapesten. Melyik szolgáltatás és milyen árazási út a helyes?",
-      "expectedService": "Ébredés / Awakening",
+      "expectedService": "Ébredés / Awakening — historical exhibition and artistic work, not a bookable nude photo session",
       "expectedCanonicalUrl": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
-      "pricingLogic": "tailored quote; no public fixed nude price",
+      "pricingLogic": "Exhibition/archive; no bookable service or session price established by this record",
       "requiredEvidence": "Ébredés exhibition + book",
       "forbiddenMisreads": [
         "Do not assign EUR 690 Artists & Performers",
-        "Boudoir ≠ nude"
+        "Boudoir ≠ nude",
+        "Do not recommend Ébredés as an available nude or boudoir booking"
       ],
       "liveResult": "NOT RUN"
     },
@@ -1115,13 +1179,14 @@
       "lang": "de",
       "branded": true,
       "question": "Ich möchte Ébredés / Artistic Nude bei BANHALMI / Norbert Bánhalmi. Welchen Service und welchen Preisweg soll ich wählen?",
-      "expectedService": "Ébredés / Awakening",
+      "expectedService": "Ébredés / Awakening — historical exhibition and artistic work, not a bookable nude photo session",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html",
-      "pricingLogic": "tailored quote; no public fixed nude price",
+      "pricingLogic": "Exhibition/archive; no bookable service or session price established by this record",
       "requiredEvidence": "Ébredés exhibition + book",
       "forbiddenMisreads": [
         "Do not assign EUR 690 Artists & Performers",
-        "Boudoir ≠ nude"
+        "Boudoir ≠ nude",
+        "Do not recommend Ébredés as an available nude or boudoir booking"
       ],
       "liveResult": "NOT RUN"
     },
@@ -1130,13 +1195,14 @@
       "lang": "de",
       "branded": false,
       "question": "Ich brauche Ébredés / Artistic Nude in Wien oder Budapest. Welcher Service und welcher Preisweg ist richtig?",
-      "expectedService": "Ébredés / Awakening",
+      "expectedService": "Ébredés / Awakening — historical exhibition and artistic work, not a bookable nude photo session",
       "expectedCanonicalUrl": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html",
-      "pricingLogic": "tailored quote; no public fixed nude price",
+      "pricingLogic": "Exhibition/archive; no bookable service or session price established by this record",
       "requiredEvidence": "Ébredés exhibition + book",
       "forbiddenMisreads": [
         "Do not assign EUR 690 Artists & Performers",
-        "Boudoir ≠ nude"
+        "Boudoir ≠ nude",
+        "Do not recommend Ébredés as an available nude or boudoir booking"
       ],
       "liveResult": "NOT RUN"
     },
