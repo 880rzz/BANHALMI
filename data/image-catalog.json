@@ -5,7 +5,7 @@
   "name": "BANHALMI detailed image catalogue",
   "description": "Detailed human-reviewed descriptions of photographs displayed in the portrait, visual positioning, event and fine-art galleries.",
   "creator": {
-    "@id": "https://www.banhalmiphotography.com/about/"
+    "@id": "https://www.banhalmi.art/#about"
   },
   "dateModified": "2026-11-19",
   "dataFeedElement": [
@@ -26,7 +26,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -35,7 +35,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -58,7 +58,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -67,7 +67,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -90,7 +90,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -99,7 +99,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -122,7 +122,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -131,7 +131,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -154,7 +154,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -163,7 +163,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -186,7 +186,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -195,7 +195,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -218,7 +218,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -227,7 +227,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -250,7 +250,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -259,7 +259,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -282,7 +282,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -291,7 +291,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -314,7 +314,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -323,7 +323,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -346,7 +346,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -355,7 +355,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -378,7 +378,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -387,7 +387,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -410,7 +410,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -419,7 +419,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -442,7 +442,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -451,7 +451,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -474,7 +474,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -483,7 +483,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -506,7 +506,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -515,7 +515,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -538,7 +538,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -547,7 +547,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -570,7 +570,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -579,7 +579,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -602,7 +602,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -611,7 +611,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -634,7 +634,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -643,7 +643,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -666,7 +666,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -675,7 +675,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -698,7 +698,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -707,7 +707,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -730,7 +730,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -739,7 +739,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -762,7 +762,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -771,7 +771,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -794,7 +794,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -803,7 +803,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -826,7 +826,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -835,7 +835,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -858,7 +858,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -867,7 +867,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -890,7 +890,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -899,7 +899,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -922,7 +922,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -931,7 +931,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -954,7 +954,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -963,7 +963,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -986,7 +986,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -995,7 +995,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1018,7 +1018,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1027,7 +1027,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1050,7 +1050,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1059,7 +1059,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1082,7 +1082,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1091,7 +1091,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1114,7 +1114,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1123,7 +1123,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1146,7 +1146,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1155,7 +1155,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1178,7 +1178,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1187,7 +1187,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1210,7 +1210,7 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1219,7 +1219,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1242,7 +1242,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1251,7 +1251,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1274,7 +1274,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1283,7 +1283,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1306,7 +1306,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1315,7 +1315,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1338,7 +1338,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1347,7 +1347,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1370,7 +1370,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1379,7 +1379,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1402,7 +1402,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1411,7 +1411,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1434,7 +1434,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1443,7 +1443,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1466,7 +1466,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1475,7 +1475,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1498,7 +1498,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1507,7 +1507,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1530,7 +1530,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1539,7 +1539,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1562,7 +1562,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1571,7 +1571,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1594,7 +1594,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1603,7 +1603,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1626,7 +1626,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1635,7 +1635,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1658,7 +1658,7 @@
           "institutional memory"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1667,7 +1667,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1690,7 +1690,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1699,7 +1699,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1722,7 +1722,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1731,7 +1731,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1754,7 +1754,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1763,7 +1763,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1786,7 +1786,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1795,7 +1795,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1818,7 +1818,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1827,7 +1827,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1850,7 +1850,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1859,7 +1859,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1882,7 +1882,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1891,7 +1891,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1914,7 +1914,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1923,7 +1923,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1946,7 +1946,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1955,7 +1955,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -1978,7 +1978,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -1987,7 +1987,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2010,7 +2010,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2019,7 +2019,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2042,7 +2042,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2051,7 +2051,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2074,7 +2074,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2083,7 +2083,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2106,7 +2106,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2115,7 +2115,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2138,7 +2138,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2147,7 +2147,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2170,7 +2170,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2179,7 +2179,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2202,7 +2202,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2211,7 +2211,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2234,7 +2234,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2243,7 +2243,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2266,7 +2266,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2275,7 +2275,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2298,7 +2298,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2307,7 +2307,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2330,7 +2330,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2339,7 +2339,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2362,7 +2362,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2371,7 +2371,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2394,7 +2394,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2403,7 +2403,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2426,7 +2426,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2435,7 +2435,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2458,7 +2458,7 @@
           "urban photography"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2467,7 +2467,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2490,7 +2490,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2499,7 +2499,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2522,7 +2522,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2531,7 +2531,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2554,7 +2554,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2563,7 +2563,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2586,7 +2586,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2595,7 +2595,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2618,7 +2618,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2627,7 +2627,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2650,7 +2650,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2659,7 +2659,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2682,7 +2682,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2691,7 +2691,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2714,7 +2714,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2723,7 +2723,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2746,7 +2746,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2755,7 +2755,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2778,7 +2778,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2787,7 +2787,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2810,7 +2810,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2819,7 +2819,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2842,7 +2842,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2851,7 +2851,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2874,7 +2874,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2883,7 +2883,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2906,7 +2906,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2915,7 +2915,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2938,7 +2938,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2947,7 +2947,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -2970,7 +2970,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -2979,7 +2979,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3002,7 +3002,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3011,7 +3011,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3034,7 +3034,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3043,7 +3043,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3066,7 +3066,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3075,7 +3075,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3098,7 +3098,7 @@
           "visual narrative"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3107,7 +3107,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3130,7 +3130,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3139,7 +3139,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3162,7 +3162,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3171,7 +3171,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3194,7 +3194,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3203,7 +3203,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3226,7 +3226,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3235,7 +3235,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3258,7 +3258,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3267,7 +3267,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3290,7 +3290,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3299,7 +3299,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3322,7 +3322,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3331,7 +3331,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3354,7 +3354,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3363,7 +3363,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3386,7 +3386,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3395,7 +3395,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3418,7 +3418,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3427,7 +3427,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3450,7 +3450,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3459,7 +3459,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3482,7 +3482,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3491,7 +3491,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3514,7 +3514,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3523,7 +3523,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3546,7 +3546,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3555,7 +3555,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3578,7 +3578,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3587,7 +3587,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3610,7 +3610,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3619,7 +3619,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3642,7 +3642,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3651,7 +3651,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3674,7 +3674,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3683,7 +3683,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3706,7 +3706,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3715,7 +3715,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3738,7 +3738,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3747,7 +3747,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3770,7 +3770,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3779,7 +3779,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3802,7 +3802,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3811,7 +3811,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3834,7 +3834,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3843,7 +3843,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3866,7 +3866,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3875,7 +3875,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3898,7 +3898,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3907,7 +3907,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3930,7 +3930,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3939,7 +3939,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3962,7 +3962,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -3971,7 +3971,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -3994,7 +3994,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4003,7 +4003,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4026,7 +4026,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4035,7 +4035,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4058,7 +4058,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4067,7 +4067,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4090,7 +4090,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4099,7 +4099,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4122,7 +4122,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4131,7 +4131,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4154,7 +4154,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4163,7 +4163,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4186,7 +4186,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4195,7 +4195,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4218,7 +4218,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4227,7 +4227,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4250,7 +4250,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4259,7 +4259,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4282,7 +4282,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4291,7 +4291,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4314,7 +4314,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4323,7 +4323,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4346,7 +4346,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4355,7 +4355,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4378,7 +4378,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4387,7 +4387,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4410,7 +4410,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4419,7 +4419,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4442,7 +4442,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4451,7 +4451,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4474,7 +4474,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4483,7 +4483,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4506,7 +4506,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4515,7 +4515,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4538,7 +4538,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4547,7 +4547,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4570,7 +4570,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4579,7 +4579,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4602,7 +4602,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4611,7 +4611,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4634,7 +4634,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4643,7 +4643,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4666,7 +4666,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4675,7 +4675,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4698,7 +4698,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4707,7 +4707,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4730,7 +4730,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4739,7 +4739,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4762,7 +4762,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4771,7 +4771,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4794,7 +4794,7 @@
           "editorial portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4803,7 +4803,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4828,7 +4828,7 @@
           "Wikimedia Commons"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4837,7 +4837,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved. Use requires prior written permission.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Norbert Bánhalmi"
         }
@@ -4857,7 +4857,7 @@
         "height": 1536,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4871,7 +4871,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "executive and personal branding"
       }
@@ -4890,7 +4890,7 @@
         "height": 1536,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4904,7 +4904,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "executive and personal branding"
       }
@@ -4923,7 +4923,7 @@
         "height": 1536,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4937,7 +4937,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "executive and personal branding"
       }
@@ -4956,7 +4956,7 @@
         "height": 1536,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -4970,7 +4970,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "executive and personal branding"
       }
@@ -4989,7 +4989,7 @@
         "height": 1536,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5003,7 +5003,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "executive and personal branding"
       }
@@ -5022,7 +5022,7 @@
         "height": 1536,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5036,7 +5036,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "editorial lifestyle and personal branding"
       }
@@ -5055,7 +5055,7 @@
         "height": 1024,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5069,7 +5069,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "executive and personal branding"
       }
@@ -5088,7 +5088,7 @@
         "height": 1536,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5102,7 +5102,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "editorial lifestyle and personal branding"
       }
@@ -5121,7 +5121,7 @@
         "height": 1066,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5135,7 +5135,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "editorial lifestyle and personal branding"
       }
@@ -5154,7 +5154,7 @@
         "height": 1066,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5168,7 +5168,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "editorial lifestyle and personal branding"
       }
@@ -5187,7 +5187,7 @@
         "height": 1536,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5201,7 +5201,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "editorial lifestyle and personal branding"
       }
@@ -5220,7 +5220,7 @@
         "height": 1024,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5234,7 +5234,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "editorial lifestyle and personal branding"
       }
@@ -5253,7 +5253,7 @@
         "height": 1024,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5267,7 +5267,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "editorial lifestyle and personal branding"
       }
@@ -5286,7 +5286,7 @@
         "height": 1024,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5300,7 +5300,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "editorial lifestyle and personal branding"
       }
@@ -5319,7 +5319,7 @@
         "height": 1024,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5333,7 +5333,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "genre": "executive and personal branding"
       }
@@ -5359,12 +5359,12 @@
           "CV portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5395,12 +5395,12 @@
           "CV portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5431,12 +5431,12 @@
           "CV portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5467,12 +5467,12 @@
           "CV portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5503,12 +5503,12 @@
           "CV portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5539,12 +5539,12 @@
           "CV portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5575,12 +5575,12 @@
           "CV portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5611,12 +5611,12 @@
           "CV portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5647,12 +5647,12 @@
           "CV portrait"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5682,12 +5682,12 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5717,12 +5717,12 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5752,12 +5752,12 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5787,12 +5787,12 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5822,12 +5822,12 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5857,12 +5857,12 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5892,12 +5892,12 @@
           "visual positioning"
         ],
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5921,7 +5921,7 @@
         "height": 1400,
         "encodingFormat": "image/webp",
         "creator": {
-          "@id": "https://www.banhalmiphotography.com/about/",
+          "@id": "https://www.banhalmi.art/#about",
           "@type": "Person",
           "name": "Bánhalmi Norbert"
         },
@@ -5936,7 +5936,7 @@
         "license": "https://www.banhalmiphotography.com/terms-conditions/",
         "copyrightNotice": "© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.",
         "copyrightHolder": {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         "representativeOfPage": false,
         "genre": "editorial lifestyle and personal branding"

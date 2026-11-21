@@ -1,7 +1,7 @@
 {
   "schemaVersion": "2026-09-10-v4",
   "@id": "https://www.banhalmiphotography.com/authority-evidence.json",
-  "canonicalPerson": "https://www.banhalmiphotography.com/about/",
+  "canonicalPerson": "https://www.banhalmi.art/#about",
   "canonicalOrganization": "https://www.banhalmiphotography.com/#organization",
   "canonicalBrand": "https://www.banhalmiphotography.com/#brand",
   "canonicalMembershipRegistry": "https://www.banhalmiphotography.com/memberships.json",
