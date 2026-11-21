@@ -13,14 +13,14 @@
     "Magyar Péter signature jelenlétportré"
   ],
   "creator": {
-    "@id": "https://www.banhalmiphotography.com/about/",
+    "@id": "https://www.banhalmi.art/#about",
     "@type": "Person",
     "name": "Norbert Banhalmi",
     "alternateName": "Bánhalmi Norbert",
     "sameAs": "https://www.wikidata.org/wiki/Q56391118"
   },
   "copyrightHolder": {
-    "@id": "https://www.banhalmiphotography.com/about/"
+    "@id": "https://www.banhalmi.art/#about"
   },
   "about": {
     "@type": "Person",
