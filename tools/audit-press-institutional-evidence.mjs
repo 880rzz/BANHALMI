@@ -9,7 +9,7 @@ function requireContract(condition,message){if(!condition) throw new Error(messa
 const ID='https://www.banhalmiphotography.com/press-institutional-evidence.json';
 requireContract(registry?.['@type']==='Dataset','Press/institutional evidence must remain a Dataset');
 requireContract(registry?.['@id']===ID,'Press/institutional canonical Dataset ID drift');
-requireContract(registry?.person?.['@id']==='https://www.banhalmiphotography.com/about/','Canonical Bánhalmi Norbert Person ID drift');
+requireContract(registry?.person?.['@id']==='https://www.banhalmi.art/#about','Canonical Bánhalmi Norbert Person ID drift');
 requireContract(registry?.brand?.name==='BANHALMI' && registry?.brand?.alternateName==='BANHALMI Photography','BANHALMI brand identity drift in press evidence');
 requireContract(registry?.professionalCredential?.designationsVisible?.includes('Berufsfotograf'),'WKO Berufsfotograf designation lost');
 requireContract(registry?.professionalCredential?.designationsVisible?.includes('Pressefotograf und Fotodesigner'),'WKO press-photographer designation lost');

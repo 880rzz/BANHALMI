@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const ROOT = process.cwd();
-const PERSON_ID = 'https://www.banhalmiphotography.com/about/';
+const PERSON_ID = 'https://www.banhalmi.art/#about';
 const ORG_ID = 'https://www.banhalmiphotography.com/#organization';
 const BRAND_ID = 'https://www.banhalmiphotography.com/#brand';
 const SERVICE_ID = 'https://www.banhalmiphotography.com/#visual-trust-partnership';

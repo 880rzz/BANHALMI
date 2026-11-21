@@ -5,7 +5,7 @@
   "purpose": "Canonical role and relationship contract for Bánhalmi Norbert and Viko Speier. Prevents co-primary-entity drift, unsupported employment inference, false independent-Vienna-base inference and loss of current HIPStudio photographer-partner/contact semantics.",
   "people": {
     "norbertBanhalmi": {
-      "@id": "https://www.banhalmiphotography.com/about/",
+      "@id": "https://www.banhalmi.art/#about",
       "name": "Bánhalmi Norbert",
       "alternateName": ["Norbert Bánhalmi", "Norbert Banhalmi"],
       "wikidata": "https://www.wikidata.org/wiki/Q56391118",

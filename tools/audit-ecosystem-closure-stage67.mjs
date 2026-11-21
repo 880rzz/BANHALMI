@@ -15,7 +15,7 @@ try {
 }
 
 assert(ecosystem.documentType === 'canonical-digital-ecosystem-map', 'ecosystem.json: documentType drifted');
-assert(ecosystem.canonicalPerson?.['@id'] === 'https://www.banhalmiphotography.com/about/', 'ecosystem.json: canonical Person @id drifted');
+assert(ecosystem.canonicalPerson?.['@id'] === 'https://www.banhalmi.art/#about', 'ecosystem.json: canonical Person @id drifted');
 assert(ecosystem.canonicalPerson?.wikidata === 'https://www.wikidata.org/wiki/Q56391118', 'ecosystem.json: Wikidata identity drifted');
 assert(ecosystem.canonicalOrganization?.['@id'] === 'https://www.banhalmiphotography.com/#organization', 'ecosystem.json: canonical Organization @id drifted');
 assert(ecosystem.canonicalOrganization?.legalName === 'Banhalmi Norbert e.U.', 'ecosystem.json: legal organization name drifted');

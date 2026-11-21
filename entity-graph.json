@@ -11,7 +11,7 @@
     "de-AT"
   ],
   "about": {
-    "@id": "https://www.banhalmiphotography.com/about/",
+    "@id": "https://www.banhalmi.art/#about",
     "knowsAbout": [
       "professional headshot photography",
       "executive portrait photography",
@@ -30,7 +30,7 @@
   },
   "dataFeedElement": [
     {
-      "@id": "https://www.banhalmiphotography.com/about/",
+      "@id": "https://www.banhalmi.art/#about",
       "knowsAbout": [
         "professional headshot photography",
         "executive portrait photography",
@@ -185,7 +185,7 @@
       "name": "EUFÓRIA — The Anatomy of Presence",
       "sameAs": "https://www.wikidata.org/wiki/Q138717398",
       "creator": {
-        "@id": "https://www.banhalmiphotography.com/about/",
+        "@id": "https://www.banhalmi.art/#about",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -219,7 +219,7 @@
       "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026",
       "name": "Péter Magyar portrait, Budapest, 15 March 2026",
       "creator": {
-        "@id": "https://www.banhalmiphotography.com/about/",
+        "@id": "https://www.banhalmi.art/#about",
         "@type": "Person",
         "name": "Bánhalmi Norbert",
         "knowsAbout": [
@@ -319,7 +319,7 @@
         "@id": "https://www.banhalmiphotography.com/#peter-magyar-portrait-2026"
       },
       "creator": {
-        "@id": "https://www.banhalmiphotography.com/about/",
+        "@id": "https://www.banhalmi.art/#about",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -410,7 +410,7 @@
       },
       "url": "https://www.veol.hu/vezeto-hirek/2018/03/csolnoky-ferenc-korhaz-onkologiai-centrum-rak-kiallitas",
       "contributor": {
-        "@id": "https://www.banhalmiphotography.com/about/",
+        "@id": "https://www.banhalmi.art/#about",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -436,7 +436,7 @@
       "dateModified": "2026-06-18T12:00:00+02:00",
       "inLanguage": "hu-HU",
       "about": {
-        "@id": "https://www.banhalmiphotography.com/about/",
+        "@id": "https://www.banhalmi.art/#about",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",
@@ -831,7 +831,7 @@
         "AmCham Austria member relations"
       ],
       "colleague": {
-        "@id": "https://www.banhalmiphotography.com/about/",
+        "@id": "https://www.banhalmi.art/#about",
         "knowsAbout": [
           "professional headshot photography",
           "executive portrait photography",

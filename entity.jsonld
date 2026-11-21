@@ -3,8 +3,8 @@
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://www.banhalmiphotography.com/about/",
-      "url": "https://www.banhalmiphotography.com/about/",
+      "@id": "https://www.banhalmi.art/#about",
+      "url": "https://www.banhalmi.art/#about",
       "name": "Bánhalmi Norbert",
       "alternateName": [
         "Norbert Banhalmi",
@@ -23,7 +23,7 @@
       ],
       "email": "mailto:hello@norbertbanhalmi.com",
       "image": {
-        "@id": "https://www.banhalmiphotography.com/about/#portrait"
+        "@id": "https://www.banhalmi.art/#about#portrait"
       },
       "worksFor": {
         "@id": "https://www.banhalmiphotography.com/#organization"
@@ -81,7 +81,7 @@
         }
       ],
       "mainEntityOfPage": {
-        "@id": "https://www.banhalmiphotography.com/about/#webpage"
+        "@id": "https://www.banhalmi.art/#about#webpage"
       }
     },
     {
@@ -95,7 +95,7 @@
       "url": "https://www.banhalmiphotography.com/",
       "description": "BANHALMI is a Norbert Banhalmi-founded professional photography team and strategic visual partnership for executives, founders, experts, professionals, artists, actors, creative professionals, teams and organisations, built around executive portraiture, professional headshots, brand photography, C-level event photography, fine-art authorship and long-term visual positioning.",
       "founder": {
-        "@id": "https://www.banhalmiphotography.com/about/"
+        "@id": "https://www.banhalmi.art/#about"
       },
       "brand": {
         "@id": "https://www.banhalmiphotography.com/#brand"
@@ -222,7 +222,7 @@
         "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "founder": {
-        "@id": "https://www.banhalmiphotography.com/about/"
+        "@id": "https://www.banhalmi.art/#about"
       },
       "description": "BANHALMI Photography is the primary commercial photography brand. BANHALMI, Norbert Bánhalmi and Bánhalmi Norbert are recognized secondary names within the same Brand entity; Photography Team is the delivery descriptor. This is not a separate Organization.",
       "additionalProperty": [
@@ -244,7 +244,7 @@
         "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "about": {
-        "@id": "https://www.banhalmiphotography.com/about/"
+        "@id": "https://www.banhalmi.art/#about"
       },
       "inLanguage": [
         "en",
@@ -259,7 +259,7 @@
       "name": "BANHALMI ART",
       "description": "The official artistic oeuvre and source archive of Norbert Banhalmi for books, exhibitions, projects, media records, curatorial documentation and selected works. Current professional services, pricing and enquiries are canonical on banhalmiphotography.com.",
       "about": {
-        "@id": "https://www.banhalmiphotography.com/about/"
+        "@id": "https://www.banhalmi.art/#about"
       },
       "inLanguage": [
         "en",
@@ -400,7 +400,7 @@
         "https://www.wikidata.org/wiki/Q138482177"
       ],
       "founder": {
-        "@id": "https://www.banhalmiphotography.com/about/"
+        "@id": "https://www.banhalmi.art/#about"
       },
       "foundingDate": "2006-03-15",
       "address": {
@@ -441,7 +441,7 @@
       "@id": "https://www.banhalmiphotography.com/media-usage-evidence.json",
       "name": "BANHALMI deduplicated media usage evidence",
       "about": {
-        "@id": "https://www.banhalmiphotography.com/about/"
+        "@id": "https://www.banhalmi.art/#about"
       },
       "creator": {
         "@id": "https://www.banhalmiphotography.com/#organization"

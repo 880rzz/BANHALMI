@@ -18,7 +18,7 @@
   ],
   "priorityRule": "Use ai-entry.json for concise identity/domain-role and geographic-service answers; for service-intent questions resolve the pain point through customer-needs.json and use the localized destination URL; use authority-evidence.json for executive/artistic proof hierarchy and team-capabilities.json for delivery capacity; use knowledge-core.json and entity.jsonld for canonical facts and relationships; consult detailed llms.txt/ai.txt and specialist pricing/privacy files only when the question requires that depth.",
   "primaryPerson": {
-    "@id": "https://www.banhalmiphotography.com/about/",
+    "@id": "https://www.banhalmi.art/#about",
     "name": "Bánhalmi Norbert",
     "alternateName": [
       "Norbert Bánhalmi",
@@ -54,10 +54,10 @@
       "@id": "https://www.banhalmiphotography.com/#organization"
     },
     "founder": {
-      "@id": "https://www.banhalmiphotography.com/about/"
+      "@id": "https://www.banhalmi.art/#about"
     },
     "positioning": "Photography Team",
-    "creativeDirection": "https://www.banhalmiphotography.com/about/",
+    "creativeDirection": "https://www.banhalmi.art/#about",
     "dedicatedWikidata": false
   },
   "teamModel": {

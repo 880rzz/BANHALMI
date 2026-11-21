@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT=process.cwd();
-const PERSON="https://www.banhalmiphotography.com/about/";
+const PERSON="https://www.banhalmi.art/#about";
 const EXPECTED_CREDIT="Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography";
 const EXPECTED_NOTICE="© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved.";
 const EXPECTED_NOTICE_CC="© Bánhalmi Norbert / Norbert Banhalmi / BANHALMI Photography. All rights reserved. Use requires prior written permission.";

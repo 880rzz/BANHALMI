@@ -30,7 +30,7 @@
   ],
   "identity": {
     "person": {
-      "@id": "https://www.banhalmiphotography.com/about/",
+      "@id": "https://www.banhalmi.art/#about",
       "name": "Bánhalmi Norbert",
       "alternateName": [
         "Norbert Bánhalmi",
@@ -57,11 +57,11 @@
         "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "founder": {
-        "@id": "https://www.banhalmiphotography.com/about/"
+        "@id": "https://www.banhalmi.art/#about"
       },
       "positioning": "Photography Team",
       "creativeDirection": {
-        "@id": "https://www.banhalmiphotography.com/about/"
+        "@id": "https://www.banhalmi.art/#about"
       },
       "deliveryModel": "Norbert-led project-specific photographers and specialists",
       "wikidataPolicy": "BANHALMI currently has no dedicated Wikidata item. Do not use the Person Q56391118 or Organization Q138425941 as a sameAs identifier for the Brand.",

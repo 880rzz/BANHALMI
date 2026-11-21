@@ -9,14 +9,14 @@
   "fileFormat": "application/pdf",
   "creator": {
     "@type": "Person",
-    "@id": "https://www.banhalmiphotography.com/about/",
+    "@id": "https://www.banhalmi.art/#about",
     "name": "Norbert Bánhalmi"
   },
   "publisher": {
     "@id": "https://www.banhalmiphotography.com/#organization"
   },
   "copyrightHolder": {
-    "@id": "https://www.banhalmiphotography.com/about/"
+    "@id": "https://www.banhalmi.art/#about"
   },
   "copyrightYear": 2026,
   "copyrightNotice": "© Norbert Bánhalmi / BANHALMI. All rights reserved.",

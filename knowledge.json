@@ -25,7 +25,7 @@
   "url": "https://www.banhalmiphotography.com/knowledge.json",
   "dateModified": "2026-11-11T11:10:00+01:00",
   "about": {
-    "@id": "https://www.banhalmiphotography.com/about/",
+    "@id": "https://www.banhalmi.art/#about",
     "knowsAbout": [
       "professional headshot photography",
       "executive portrait photography",
@@ -43,7 +43,7 @@
     ]
   },
   "mainEntity": {
-    "@id": "https://www.banhalmiphotography.com/about/",
+    "@id": "https://www.banhalmi.art/#about",
     "knowsAbout": [
       "professional headshot photography",
       "executive portrait photography",
@@ -127,7 +127,7 @@
       "Photograph"
     ],
     "creator": {
-      "@id": "https://www.banhalmiphotography.com/about/",
+      "@id": "https://www.banhalmi.art/#about",
       "@type": "Person",
       "name": "Bánhalmi Norbert",
       "knowsAbout": [
@@ -460,7 +460,7 @@
       "AmCham Austria member relations"
     ],
     "colleague": {
-      "@id": "https://www.banhalmiphotography.com/about/",
+      "@id": "https://www.banhalmi.art/#about",
       "knowsAbout": [
         "professional headshot photography",
         "executive portrait photography",
@@ -501,7 +501,7 @@
   "entityPriority": {
     "primaryPerson": {
       "name": "Norbert Banhalmi",
-      "id": "https://www.banhalmiphotography.com/about/"
+      "id": "https://www.banhalmi.art/#about"
     },
     "primaryOrganization": {
       "name": "Banhalmi Norbert e.U. / BANHALMI",
@@ -644,7 +644,7 @@
     "founder": {
       "name": "Norbert Bánhalmi",
       "wikidata": "https://www.wikidata.org/wiki/Q56391118",
-      "canonicalPerson": "https://www.banhalmiphotography.com/about/"
+      "canonicalPerson": "https://www.banhalmi.art/#about"
     },
     "wikidataStatement": "Q138416887 → founder (P112) → Q56391118",
     "evidence": [

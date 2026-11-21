@@ -10,7 +10,7 @@
       "inLanguage": ["en", "hu-HU", "de-AT"],
       "dateModified": "2026-08-03",
       "publisher": {"@id": "https://www.banhalmiphotography.com/#organization"},
-      "author": {"@id": "https://www.banhalmiphotography.com/about/"},
+      "author": {"@id": "https://www.banhalmi.art/#about"},
       "mainEntity": {"@id": "https://www.banhalmiphotography.com/project-policy.jsonld#service-policy"},
       "isBasedOn": [
         "https://www.banhalmiphotography.com/faq/",
