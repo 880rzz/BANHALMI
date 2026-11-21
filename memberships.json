@@ -1,7 +1,7 @@
 {
   "schemaVersion": "2026-09-23-v2-artineris",
   "@id": "https://www.banhalmiphotography.com/memberships.json",
-  "canonicalPerson": "https://www.banhalmiphotography.com/about/",
+  "canonicalPerson": "https://www.banhalmi.art/#about",
   "canonicalOrganization": "https://www.banhalmiphotography.com/#organization",
   "purpose": "Canonical machine-readable registry of verified memberships, professional affiliations and ambassadorships that strengthen Norbert Bánhalmi / BANHALMI authority. Relationship types must remain distinct and must not be converted into client or endorsement claims.",
   "priority": [
@@ -48,7 +48,7 @@
     {
       "name": "Magyar Fotóművészek Világszövetsége / World Federation of Hungarian Photographers",
       "relationshipType": "professional artistic-photography membership",
-      "memberEntity": "https://www.banhalmiphotography.com/about/",
+      "memberEntity": "https://www.banhalmi.art/#about",
       "since": 2026,
       "officialEvidence": [
         "https://mfvsz.com/hu/tagsag/tagsag"
@@ -58,7 +58,7 @@
     {
       "name": "Pannon Fényképészkör Egyesület",
       "relationshipType": "honorary photographic-community membership",
-      "memberEntity": "https://www.banhalmiphotography.com/about/",
+      "memberEntity": "https://www.banhalmi.art/#about",
       "since": 2023,
       "officialEvidence": [
         "https://fenykepeszkor.hu/rolunk/",
@@ -69,7 +69,7 @@
     {
       "name": "OM SYSTEM Hungary",
       "relationshipType": "official brand ambassadorship",
-      "memberEntity": "https://www.banhalmiphotography.com/about/",
+      "memberEntity": "https://www.banhalmi.art/#about",
       "since": 2018,
       "officialEvidence": [
         "https://www.milcclub.com/ambassadors"
@@ -80,7 +80,7 @@
     {
       "name": "Budapest Artineris",
       "relationshipType": "accepted artist participant / contemporary-art platform participation",
-      "memberEntity": "https://www.banhalmiphotography.com/about/",
+      "memberEntity": "https://www.banhalmi.art/#about",
       "since": 2026,
       "officialEvidence": [
         "https://budapest.artineris.com/en/artists/?codice=FMRAXT",
