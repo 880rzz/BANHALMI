@@ -75,7 +75,10 @@
         {
           "@id": "https://www.banhalmiphotography.com/#budapest-studio"
         }
-      ]
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://www.banhalmi.art/#webpage"
+      }
     },
     {
       "@type": "Organization",
