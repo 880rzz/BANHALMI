@@ -23,6 +23,6 @@ assert.ok(leadHook.length > 250, 'Verified quote analytics hook must exist');
 assert.match(leadHook, /analytics\.hasConsent\(\)/, 'Lead event must require explicit analytics consent');
 assert.match(leadHook, /gtag\('event', 'generate_lead'/, 'Only verified quote emits GA4 generate_lead');
 assert.doesNotMatch(leadHook, /payload|submissionId|\.email|\.name|\.message/, 'Never include client identity or enquiry details in lead event');
-assert.match(quoteMain, /if \(isQuote\) trackVerifiedQuoteLead\(\);\s*form\.reset\(\)/, 'Emit consent-safe conversion only in fully verified success path');
+assert.match(quoteMain, /if \(isQuote\) trackVerifiedQuoteLead\(\);\s*else trackVerifiedContactLead\(data\);\s*form\.reset\(\)/, 'Emit consent-safe conversion only in fully verified success path');
 
 console.log('Quote session privacy and delivery-state source contract passed');

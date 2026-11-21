@@ -8,6 +8,11 @@ on:
       - 'assets/js/analytics.js'
       - 'tests/quote-session-privacy.test.mjs'
       - 'tests/quote-delivery-fail-closed.spec.mjs'
+      - 'tests/contact-lead-attribution.test.mjs'
+      - 'tests/contact-delivery-attribution.spec.mjs'
+      - 'contact/index.html'
+      - 'hu/kapcsolat/index.html'
+      - 'de-at/kontakt/index.html'
       - '.github/workflows/quote-delivery-e2e.yml'
       - 'requestaquote/index.html'
       - 'hu/ajanlatkeres/index.html'
@@ -32,5 +37,7 @@ jobs:
           for attempt in 1 2 3 4 5; do curl --fail --silent http://127.0.0.1:4173/requestaquote/ >/dev/null && exit 0; sleep 1; done
           cat /tmp/banhalmi-quote-mock.log
           exit 1
-      - name: Verify EN/HU/DE success and fail-closed responses without external emails
-        run: npx playwright test tests/quote-delivery-fail-closed.spec.mjs --workers=2
+      - name: Verify source analytics and privacy contracts
+        run: npm test
+      - name: Verify EN/HU/DE quote and contact mock responses without external emails
+        run: npx playwright test tests/quote-delivery-fail-closed.spec.mjs tests/contact-delivery-attribution.spec.mjs --workers=2

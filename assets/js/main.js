@@ -827,11 +827,30 @@
           });
         } catch (error) {}
       }
+      // Record consented contact enquiries only after the gateway confirms
+      // delivery to the team. Do not send the enquiry, source URL or any PII.
+      function trackVerifiedContactLead(data) {
+        if (isQuote || !data || data.ok !== true || data.adminEmailSent !== true || data.unverified === true) return;
+        var analytics = window.BANHALMI_ANALYTICS;
+        if (!analytics || typeof analytics.hasConsent !== 'function' || !analytics.hasConsent()) return;
+        if (typeof window.gtag !== 'function') return;
+        var lang = form.getAttribute('data-lang') || document.documentElement.lang || 'en';
+        var locale = lang.indexOf('hu') === 0 ? 'hu' : lang.indexOf('de') === 0 ? 'de' : 'en';
+        try {
+          window.gtag('event', 'generate_lead', {
+            lead_type: 'contact_enquiry',
+            form_language: locale,
+            event_category: 'contact_enquiry',
+            event_label: locale + '_contact'
+          });
+        } catch (error) {}
+      }
       setSubmitBusy(true);
       if (endpoint && window.fetch) {
         submitVerified().then(function(data){
           showNote(message(data && data.unverified? 'successUnverified': 'success') + (data && data.submissionId? ' ID: ' + data.submissionId: ''), false);
           if (isQuote) trackVerifiedQuoteLead();
+          else trackVerifiedContactLead(data);
           form.reset();
           if (window.turnstile) { try { window.turnstile.reset(); } catch (e) {} }
           if (isQuote && window.BANHALMI_QUOTE && typeof window.BANHALMI_QUOTE.paint === 'function') { window.BANHALMI_QUOTE.paint(form); updateProjectSummary(form); }
