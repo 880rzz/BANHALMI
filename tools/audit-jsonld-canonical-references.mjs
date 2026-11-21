@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const canonicalIds = new Set([
-  'https://www.banhalmiphotography.com/about/',
+  'https://www.banhalmi.art/#about',
   'https://www.banhalmiphotography.com/#organization',
   'https://www.banhalmiphotography.com/#brand',
   'https://www.banhalmiphotography.com/#website',

@@ -3,7 +3,7 @@ import fs from 'node:fs';
 const ROOT = process.cwd();
 const ENTITY_FILE = 'entity.jsonld';
 const OWN_IDS = new Set([
-  'https://www.banhalmiphotography.com/about/',
+  'https://www.banhalmi.art/#about',
   'https://www.banhalmiphotography.com/#organization',
   'https://www.banhalmiphotography.com/#brand',
   'https://www.banhalmiphotography.com/#website',
@@ -54,7 +54,7 @@ inspect(data);
 const aiEntry = JSON.parse(fs.readFileSync(`${ROOT}/ai-entry.json`, 'utf8'));
 const knowledge = JSON.parse(fs.readFileSync(`${ROOT}/knowledge-core.json`, 'utf8'));
 const identity = JSON.parse(fs.readFileSync(`${ROOT}/entity-identity-contract.json`, 'utf8'));
-const personId = 'https://www.banhalmiphotography.com/about/';
+const personId = 'https://www.banhalmi.art/#about';
 const orgId = 'https://www.banhalmiphotography.com/#organization';
 const brandId = 'https://www.banhalmiphotography.com/#brand';
 
