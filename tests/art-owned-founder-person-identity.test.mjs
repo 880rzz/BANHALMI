@@ -23,7 +23,7 @@ const about = fs.readFileSync('about/index.html','utf8');
 assert.match(about, /<link\b[^>]+href="https:\/\/www\.banhalmiphotography\.com\/about\/"[^>]+rel="canonical"/);
 // Business About remains its own ProfilePage, not an ART-hosted page.
 // Only mainEntity changes ownership to the shared ART Person node.
-const profileBlocks=[...about.matchAll(/<script\\b[^>]*type=["']application\\/ld\\+json["'][^>]*>([\\s\\S]*?)<\\/script>/gi)]
+const profileBlocks=[...about.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)]
   .map(m=>JSON.parse(m[1]));
 const businessProfile=profileBlocks.flatMap(j=>j['@graph']||[j]).find(j=>j['@type']==='ProfilePage');
 assert.equal(businessProfile?.url,BUSINESS_ABOUT,'business profile url must match business canonical');
