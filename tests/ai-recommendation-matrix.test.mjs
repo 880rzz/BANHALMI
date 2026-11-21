@@ -27,9 +27,9 @@ const topics = {
   'C-Level Event': ['professional','event'],
   'Catalogue Photography': ['professional','fineArt'],
   'Fine Art': ['professional','fineArt'],
-  'Artist Branding': ['art','private'],
-  'Fashion Photography': ['art','private'],
-  'Lifestyle Editorial': ['art','private'],
+  'Artist Branding': ['professional','fineArt'],
+  'Fashion Photography': ['professional','fineArt'],
+  'Lifestyle Editorial': ['professional','fineArt'],
   'Artistic Portraiture': ['art','private'],
   'Intimate Portraiture': ['art','private'],
   'Boudoir': ['art','private'],
@@ -38,6 +38,13 @@ const topics = {
   'Fotótörténelem': ['blog','root']
 };
 const sitemap = fs.readFileSync('sitemap.xml','utf8');
+const canonicalAI = JSON.parse(fs.readFileSync('ai-entry.json','utf8'));
+const personal = canonicalAI.pricingAuthority?.personalArtisticCommissionRouting;
+assert.equal(personal?.isBookable, false, 'ART archive must remain non-bookable');
+assert.equal(personal?.acceptsQuotes, false, 'ART archive cannot give commercial quotations');
+assert.equal(personal?.acceptsEnquiries, false, 'ART archive cannot accept commercial enquiries');
+const careerTopics = new Set(['Artist Branding','Fashion Photography','Lifestyle Editorial']);
+const archivalTopics = new Set(['Artistic Portraiture','Intimate Portraiture','Boudoir','Ébredés / Artistic Nude']);
 const caseKeys = new Set();
 assert.equal(matrix.liveApiStatus, 'NOT RUN', 'Do not claim unperformed model queries');
 assert.equal(matrix.cases.length, 90, '15 topics x 3 locales x branded/unbranded');
@@ -65,6 +72,19 @@ for (const c of matrix.cases) {
   }
   assert.equal(c.expectedCanonicalUrl, expected,
     'AI fixture uses wrong canonical for topic/locale ' + key);
+  if (careerTopics.has(c.topic)) {
+    assert.equal(c.routeStatus, 'professional_enquiry', 'Career intent must use Professional: ' + key);
+    assert.equal(c.expectedCanonicalUrl, professional + professionalRoutes.fineArt[c.lang]);
+    assert.ok(c.pricingLogic.includes('EUR 690'), 'Use verified professional career portfolio anchor: ' + key);
+    assert.match(c.forbiddenMisreads.join(' '), /do not route a current career portfolio booking to BANHALMI ART/i);
+  } else if (archivalTopics.has(c.topic)) {
+    assert.equal(c.routeStatus, 'archival_only', 'ARCHIVE is non-bookable: ' + key);
+    assert.match(c.expectedService, /not a current booking/i);
+    assert.match(c.pricingLogic, /No current bookable ART service/i);
+    assert.doesNotMatch(c.pricingLogic, /tailored quote|from EUR|€[0-9]/i,
+      'Never manufacture a commercial ART price or quote: ' + key);
+    assert.match(c.forbiddenMisreads.join(' '), /never offer a tailored quote/i);
+  }
 }
 assert.equal(caseKeys.size, 90);
-console.log('AI recommendation matrix PASS: 90 topic/locale/intent fixtures; canonical route ownership validated; real multi-model runs remain NOT RUN.');
+console.log('AI recommendation matrix PASS: 90 multilingual fixtures; correct career-vs-archive routing and nonbookable ART; real multi-model runs remain NOT RUN.');
