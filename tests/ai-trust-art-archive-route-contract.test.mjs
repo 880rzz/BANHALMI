@@ -46,6 +46,14 @@ for(const [locale,url] of Object.entries(api.privateCommissionRouting.artisticNu
  assert.ok(url.endsWith('exhibitions/ebredes.html'));
 }
 const pagesWorkflow=fs.readFileSync('.github/workflows/pages.yml','utf8');
+assert.ok(pagesWorkflow.includes('Wait for the same artifact backend used by deploy-pages') &&
+  pagesWorkflow.includes('@actions/artifact@2.1.3') &&
+  pagesWorkflow.includes('client.listArtifacts()'),
+  'Pages release must poll the Twirp artifact backend deploy-pages actually queries');
+assert.ok(
+  pagesWorkflow.indexOf('Wait for the same artifact backend used by deploy-pages') <
+  pagesWorkflow.indexOf('      - name: Deploy to GitHub Pages'),
+  'Artifact readiness preflight must run before deployment');
 assert.ok(pagesWorkflow.includes('Wait for Pages artifact API visibility') &&
   pagesWorkflow.includes('gh api "repos/') &&
   pagesWorkflow.includes('actions: read'),
