@@ -72,6 +72,14 @@ for (const c of matrix.cases) {
   }
   assert.equal(c.expectedCanonicalUrl, expected,
     'AI fixture uses wrong canonical for topic/locale ' + key);
+  if (c.topic === 'Catalogue Photography') {
+    assert.match(c.question, /press.kit|portfolio.?catalogue|portfóliókatalógus|sajtóanyag|Portfolio.Katalog|Pressemappe/i,
+      'Catalogue prompt must explicitly mean actor/performer press kit, not generic product catalogues: ' + key);
+    assert.equal(c.expectedCanonicalUrl, professional + professionalRoutes.fineArt[c.lang],
+      'Performer catalogue belongs to current Professional Artists & Performers service');
+    assert.match(c.forbiddenMisreads.join(' '), /do not infer an advertised product or e-commerce catalogue photography/i,
+      'Never suggest unverified product/e-commerce catalogue offering');
+  }
   if (careerTopics.has(c.topic)) {
     assert.equal(c.routeStatus, 'professional_enquiry', 'Career intent must use Professional: ' + key);
     assert.equal(c.expectedCanonicalUrl, professional + professionalRoutes.fineArt[c.lang]);
