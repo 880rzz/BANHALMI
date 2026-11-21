@@ -46,14 +46,21 @@ for(const [locale,url] of Object.entries(api.privateCommissionRouting.artisticNu
  assert.ok(url.endsWith('exhibitions/ebredes.html'));
 }
 const pagesWorkflow=fs.readFileSync('.github/workflows/pages.yml','utf8');
-assert.ok(pagesWorkflow.includes('Wait for the same artifact backend used by deploy-pages') &&
+assert.ok(pagesWorkflow.includes('Install Pages artifact client for readiness probe') &&
   pagesWorkflow.includes('@actions/artifact@2.1.3') &&
+  pagesWorkflow.includes('Wait for deploy-pages artifact backend in action runtime') &&
+  pagesWorkflow.includes('uses: actions/github-script@v8') &&
+  pagesWorkflow.includes("require('@actions/artifact')") &&
   pagesWorkflow.includes('client.listArtifacts()'),
-  'Pages release must poll the Twirp artifact backend deploy-pages actually queries');
+  'Pages release must query the exact Twirp backend from an authenticated action step');
 assert.ok(
-  pagesWorkflow.indexOf('Wait for the same artifact backend used by deploy-pages') <
+  pagesWorkflow.indexOf('Wait for deploy-pages artifact backend in action runtime') <
   pagesWorkflow.indexOf('      - name: Deploy to GitHub Pages'),
   'Artifact readiness preflight must run before deployment');
+assert.ok(!pagesWorkflow.includes('      - name: Wait for the same artifact backend used by deploy-pages'),
+  'Do not call the Twirp artifact client in shell steps without ACTIONS_RUNTIME_TOKEN');
+assert.ok(!pagesWorkflow.includes("core.exportVariable('ACTIONS_RUNTIME_TOKEN'"),
+  'Runtime credential must not be copied into shell environments');
 assert.ok(pagesWorkflow.includes('Wait for Pages artifact API visibility') &&
   pagesWorkflow.includes('gh api "repos/') &&
   pagesWorkflow.includes('actions: read'),
