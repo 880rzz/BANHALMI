@@ -46,6 +46,10 @@ for(const [locale,url] of Object.entries(api.privateCommissionRouting.artisticNu
  assert.ok(url.endsWith('exhibitions/ebredes.html'));
 }
 const pagesWorkflow=fs.readFileSync('.github/workflows/pages.yml','utf8');
+assert.ok(pagesWorkflow.includes('Wait for Pages artifact API visibility') &&
+  pagesWorkflow.includes('gh api "repos/') &&
+  pagesWorkflow.includes('actions: read'),
+  'Pages release must wait for GitHub artifact metadata visibility before deploying');
 assert.ok(pagesWorkflow.includes('references/portfolio.jsonld api/v1/services.json; do'),
   'Exact-live Pages gate must compare machine service API bytes on canonical custom domain');
 assert.equal(api.privateCommissionRouting.noFixedProfessionalPrice,true);
