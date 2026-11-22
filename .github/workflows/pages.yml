@@ -46,10 +46,9 @@ jobs:
           cmp -s .well-known/agent.json _site/.well-known/agent.json
           test -s _site/sitemap.xml
           test -s _site/references/portfolio.pdf
-          # Source hero WebPs may be metadata-free. Stamp rights-only XMP in the
-          # published artifact and verify it before the exact deploy checks.
-          # Pixel-bearing VP8 bytes stay identical and no third-party images are stamped.
-          node tools/ensure-hero-webp-rights.mjs --root _site
+          # Immutable release: owner-stated hero WebP rights XMP is committed
+          # in Git. Verify the audited artifact; do not mutate published bytes.
+          # Source-vs-artifact SHA-256 integrity remains strict for every file.
           node tools/ensure-hero-webp-rights.mjs --root _site --verify-only
           python3 -c "from pathlib import Path; p=Path('_site/references/portfolio.pdf'); assert p.read_bytes()[:5] == b'%PDF-', 'Invalid reference PDF bytes'"
           test "$(cat _site/deployment-sha.txt)" = "$GITHUB_SHA"
