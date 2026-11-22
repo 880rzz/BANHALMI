@@ -91,7 +91,7 @@ function stampWebP(buffer) {
   const existingXmp = chunks.find(c => c.type === 'XMP ');
   if (existingXmp) {
     const text = buffer.toString('utf8', existingXmp.offset, existingXmp.offset + existingXmp.size);
-    if (!text.includes('<xmpRights:WebStatement>') ||
+    if (!text.includes('<xmpRights:WebStatement>' + RIGHTS + '</xmpRights:WebStatement>') ||
         !text.includes('Bánhalmi Norbert') || !text.includes('photoshop:Credit')) {
       // Do not override unknown licensor or copyright metadata.
       throw new Error('Existing XMP requires independent rights review');
