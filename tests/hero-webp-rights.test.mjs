@@ -5,7 +5,19 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 
 const script = path.resolve('tools/ensure-hero-webp-rights.mjs');
-const fixture = fs.readFileSync('assets/img/portraits/hero/portrait-hero-640.webp');
+// Use the authentic compressed VP8 bytes from a committed rights-tagged file,
+// rebuilding a simple metadata-free RIFF for the writer regression. This keeps
+// our test valid after the source hero itself gains required XMP.
+const taggedSource = fs.readFileSync('assets/img/portraits/hero/portrait-hero-640.webp');
+const rawVp8 = chunks(taggedSource).find(c => c.type === 'VP8 ')?.data;
+assert.ok(rawVp8?.length, 'Committed portrait hero must retain genuine VP8 bytes');
+const fixture = Buffer.alloc(20 + rawVp8.length + (rawVp8.length & 1));
+fixture.write('RIFF', 0, 'ascii');
+fixture.writeUInt32LE(fixture.length - 8, 4);
+fixture.write('WEBP', 8, 'ascii');
+fixture.write('VP8 ', 12, 'ascii');
+fixture.writeUInt32LE(rawVp8.length, 16);
+rawVp8.copy(fixture, 20);
 const root = fs.mkdtempSync(path.join(os.tmpdir(), 'banhalmi-webp-rights-'));
 const pages = [
   'portrait/index.html', 'lifestyle/index.html',
