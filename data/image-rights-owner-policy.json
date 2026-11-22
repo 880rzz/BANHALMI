@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0",
+  "declaredAt": "2026-11-22",
+  "declarationBasis": "first-party-owner-statement",
+  "copyrightHolder": {
+    "legalName": "Bánhalmi Norbert",
+    "internationalName": "Norbert Banhalmi",
+    "brand": "BANHALMI",
+    "personId": "https://www.banhalmi.art/#about",
+    "legalBusiness": "Banhalmi Norbert e.U."
+  },
+  "scope": "Original BANHALMI photographs created by Bánhalmi Norbert and published on the Professional site.",
+  "notProofOf": "Individual rights chain of every uploaded client, third-party, agency, commissioned, cropped or responsive file, consent of pictured subjects, or proof of Google Images display.",
+  "mediaCatalogs": [
+    "data/image-catalog.json",
+    "data/fine-art-archive.json"
+  ],
+  "licensedImagesNotice": "Commercial BANHALMI originals may be offered under https://www.banhalmiphotography.com/terms-conditions/; this does not invalidate previously granted licences on any particular source image.",
+  "exceptions": [
+    "Wikimedia Commons images previously published under CC BY-SA 4.0 retain the specified licence for the covered originals and corresponding covered derivatives.",
+    "Third-party creators retain their individual rights unless a distinct valid assignment or authorization is documented.",
+    "Content subjects' privacy, likeness rights and consent are independent of copyright ownership.",
+    "A visually similar but separate media rendition must be matched to its original before copying attribution or license metadata."
+  ],
+  "verification": {
+    "ownerDeclarationRecorded": true,
+    "perAssetBinaryMetadataVerified": false,
+    "allGoogleSelectedResponsiveRenditionsConfirmed": false,
+    "googleLicensableBadgeObserved": false
+  },
+  "relatedArtRightsPolicy": "https://github.com/880rzz/ART/blob/main/data/image-rights-owner-policy.json"
+}
