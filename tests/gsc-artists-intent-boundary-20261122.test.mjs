@@ -18,6 +18,15 @@ for(const [file,route,phrases] of routes){
   assert.ok(html.includes('"@id":"https://www.banhalmiphotography.com/#organization"'),file+': business entity changed');
   assert.ok(html.includes('"@type":"Service"'),file+': professional service node missing');
 }
+for(const [file,metaPhrase] of [
+  ['fine-art/index.html','Portrait and portfolio photography for actors'],
+  ['hu/muveszi-fotografia/index.html','Színészportré, modellportfólió'],
+  ['de-at/fine-art/index.html','Künstlerporträts, Schauspieler-Headshots']
+]) {
+  const html=readFileSync(file,'utf8');
+  assert.ok(html.includes('name="description"') && html.includes(metaPhrase),file+': weak SERP service snippet');
+}
+assert.match(readFileSync('de-at/fine-art/index.html','utf8'),/<title>Künstlerporträts &amp; Portfoliofotografie \| Wien–Budapest \| BANHALMI<\/title>/);
 const routing=JSON.parse(readFileSync('service-owner-routing.json','utf8'));
 assert.deepEqual(routing.owners.map(x=>x.service),['portrait','brand','event','fine-art'],'Professional has exactly four service owners');
 assert.equal(routing.owners.find(x=>x.service==='fine-art').routes.de,'/de-at/fine-art/');
