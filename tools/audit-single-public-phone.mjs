@@ -5,6 +5,8 @@ const ROOT=process.cwd();
 const NORBERT={compact:'+4367761655592',display:'+43 677 616 55592'};
 const VIKO={compact:'+4367764733262',display:'+43 677 647 332 62'};
 const RETIRED=['+36704698397','+36 70 469 8397','+36 70 469 83 97'];
+// Owner-approved Hungarian direct lines may appear only on the three localized Contact pages.
+const CONTACT_PAGES=new Set(['contact/index.html','hu/kapcsolat/index.html','de-at/kontakt/index.html']);
 const SKIP=new Set(['.git','.github','node_modules','_site','artifacts']);
 const failures=[];
 
@@ -32,7 +34,7 @@ for(const file of files(ROOT)){
     if(m[1]!==expected.compact||m[2]!==expected.display) failures.push(`${rel}: footer phone drift ${m[2]} / ${m[1]}`);
   }
   if(!html.includes('https://wa.me/4367761655592')) failures.push(`${rel}: canonical Norbert WhatsApp missing`);
-  for(const token of RETIRED) if(html.includes(token)) failures.push(`${rel}: retired Hungarian public phone token ${token}`);
+  if(!CONTACT_PAGES.has(rel)) for(const token of RETIRED) if(html.includes(token)) failures.push(`${rel}: Hungarian direct phone outside Contact ${token}`);
 }
 
 for(const rel of ['assets/js/main.js','js/main.js']){
