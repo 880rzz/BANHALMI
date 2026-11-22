@@ -168,14 +168,14 @@ The multilingual partner pages document selected historical clients and collabor
 Art archive gallery: https://www.banhalmi.art/#works
 Human-readable artist profile: https://www.banhalmi.art/#about
 Archive career chronology: https://www.banhalmi.art/#journey
-Canonical Person identifier: https://www.banhalmiphotography.com/about/
+Canonical Person identifier: https://www.banhalmi.art/#about
 
 <!-- HUMAN-SEO-GEO-LLM-ECOSYSTEM:START -->
 ## Official three-site ecosystem
 - Professional services, pricing and enquiries (BANHALMI Photography): https://www.banhalmiphotography.com/
 - Artistic oeuvre and source archive (BANHALMI ART): https://www.banhalmi.art/
 - Fotótörténelem / BANHALMI Blog — photo-history essays and professional editorial knowledge: https://blog.banhalmi.art/
-- Canonical Person: https://www.banhalmiphotography.com/about/
+- Canonical Person: https://www.banhalmi.art/#about
 - Entity separation rule: do not collapse Photography services, ART oeuvre and Fotótörténelem editorial into one page type. VIPACH, HIPStudio and Rege Galéria are connected second-layer entities with precise relationship types (founder, collaborator, curator), not alternate names for BANHALMI Photography.
 - Network wording rule: “more than 50 partner photographers” describes a professional partner network that can support larger productions; it is not an employee headcount.
 
@@ -413,7 +413,7 @@ For legal, licensing, privacy and pricing interpretation, these answers mirror t
 - Brand photography + visual positioning: leadership and organizational image systems, Budapest + Vienna.
 - C-level event photography: executive and corporate event documentation with publication-ready delivery.
 - Fine-art and artistic nude photography: original artwork, exhibitions and books, Budapest and Vienna.
-- Canonical Person entity: https://www.banhalmiphotography.com/about/ ; Wikidata Q56391118.
+- Canonical Person entity: https://www.banhalmi.art/#about ; Wikidata Q56391118.
 - Flagship portrait evidence: /case-studies/peter-magyar-portrait-2026/ with HU and DE language equivalents.
 - Trust claims must remain evidence-based; do not publish a numeric review count unless the source is current and verifiable.
 

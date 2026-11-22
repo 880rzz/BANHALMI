@@ -5,7 +5,7 @@
   "@id": "https://www.banhalmiphotography.com/press-institutional-evidence.json",
   "name": "BANHALMI Vienna press, editorial and institutional photography evidence",
   "person": {
-    "@id": "https://www.banhalmiphotography.com/about/",
+    "@id": "https://www.banhalmi.art/#about",
     "name": "Bánhalmi Norbert"
   },
   "brand": {

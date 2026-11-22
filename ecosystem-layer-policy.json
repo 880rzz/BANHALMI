@@ -5,7 +5,7 @@
   "name": "BANHALMI ecosystem layer hierarchy",
   "dateModified": "2026-09-10",
   "purpose": "Define which digital properties constitute the canonical BANHALMI core and which connected entities are secondary ecosystem context. This policy controls SEO/GEO/Schema/LLM interpretation and prevents partner, volunteer, historical and institutional relationships from being promoted to canonical-core status.",
-  "canonicalPerson": "https://www.banhalmiphotography.com/about/",
+  "canonicalPerson": "https://www.banhalmi.art/#about",
   "canonicalBrand": "https://www.banhalmiphotography.com/#brand",
   "layer1Core": {
     "priority": 1,

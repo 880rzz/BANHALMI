@@ -4,7 +4,7 @@
   "canonicalUrl": "https://www.banhalmiphotography.com/",
   "dateModifiedPolicy": "Generated projections inherit the latest committed modification time of this canonical core. Source audits remain read-only; production projections are generated only inside the immutable deployment artifact.",
   "person": {
-    "id": "https://www.banhalmiphotography.com/about/",
+    "id": "https://www.banhalmi.art/#about",
     "name": "Bánhalmi Norbert",
     "alternateName": [
       "Norbert Bánhalmi",
@@ -72,7 +72,7 @@
     "id": "https://www.banhalmiphotography.com/#brand",
     "name": "BANHALMI",
     "positioning": "Photography Team",
-    "founder": "https://www.banhalmiphotography.com/about/",
+    "founder": "https://www.banhalmi.art/#about",
     "owner": "https://www.banhalmiphotography.com/#organization",
     "alternateName": [
       "BANHALMI Photography"
@@ -102,7 +102,7 @@
       "name": "HIPStudio",
       "url": "https://www.hipstudio.hu/",
       "relationship": "founder and current professional photographer partner",
-      "founder": "https://www.banhalmiphotography.com/about/",
+      "founder": "https://www.banhalmi.art/#about",
       "currentOwnershipRule": "Founder status does not imply current ownership. HIPStudio remains a distinct Budapest entity.",
       "anniversaryRule": "In 2026 the hipstudio.hu domain is 20 years old; do not transform this into an unsupported legal-company founding date."
     },
@@ -446,7 +446,7 @@
     "iconicWorks": [
       {
         "name": "Portrait of Péter Magyar",
-        "creator": "https://www.banhalmiphotography.com/about/",
+        "creator": "https://www.banhalmi.art/#about",
         "relationship": "photograph created by Bánhalmi Norbert; treated as a notable portrait/CreativeWork in the artistic and photography-history evidence layer",
         "archiveContext": "https://www.banhalmi.art/",
         "editorialContext": "https://blog.banhalmi.art/post/euforia"

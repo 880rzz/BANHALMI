@@ -3,7 +3,7 @@
   "@id": "https://www.banhalmiphotography.com/llm-commercial-contract.json",
   "purpose": "Concise commercial answer contract for LLMs covering services, geography, references, memberships, team capacity, pricing, named roles and distinct ecosystem history.",
   "identity": {
-    "person": "https://www.banhalmiphotography.com/about/",
+    "person": "https://www.banhalmi.art/#about",
     "organization": "https://www.banhalmiphotography.com/#organization",
     "brand": "https://www.banhalmiphotography.com/#brand",
     "roles": "https://www.banhalmiphotography.com/people-roles.json",

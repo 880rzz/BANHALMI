@@ -5,7 +5,7 @@
   "authoritativeArtArchive": "https://www.banhalmi.art/",
   "purpose": "Machine-readable bridge between current BANHALMI professional services and the authoritative BANHALMI ART oeuvre and evidence database.",
   "canonicalPerson": {
-    "@id": "https://www.banhalmiphotography.com/about/",
+    "@id": "https://www.banhalmi.art/#about",
     "wikidata": "https://www.wikidata.org/wiki/Q56391118"
   },
   "roleRule": "banhalmiphotography.com is authoritative for current services, pricing and enquiries. banhalmi.art is authoritative for artistic oeuvre, exhibitions, books, projects, press, curatorial documentation and source-backed artistic evidence. Both describe the same creator Person and must be connected without collapsing their distinct roles.",

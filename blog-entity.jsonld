@@ -13,10 +13,10 @@
         "de-AT"
       ],
       "author": {
-        "@id": "https://www.banhalmiphotography.com/about/"
+        "@id": "https://www.banhalmi.art/#about"
       },
       "creator": {
-        "@id": "https://www.banhalmiphotography.com/about/"
+        "@id": "https://www.banhalmi.art/#about"
       },
       "publisher": {
         "@id": "https://www.banhalmiphotography.com/#organization"
@@ -34,7 +34,7 @@
       ],
       "about": [
         {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         },
         {
           "@id": "https://www.banhalmi.art/#website"
@@ -79,10 +79,10 @@
         "@id": "https://www.banhalmiphotography.com/#organization"
       },
       "creator": {
-        "@id": "https://www.banhalmiphotography.com/about/"
+        "@id": "https://www.banhalmi.art/#about"
       },
       "about": {
-        "@id": "https://www.banhalmiphotography.com/about/"
+        "@id": "https://www.banhalmi.art/#about"
       },
       "mainEntity": {
         "@id": "https://blog.banhalmi.art/#blog"
@@ -209,7 +209,7 @@
           "@id": "https://www.banhalmiphotography.com/#website"
         },
         {
-          "@id": "https://www.banhalmiphotography.com/about/"
+          "@id": "https://www.banhalmi.art/#about"
         }
       ]
     }

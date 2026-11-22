@@ -10,7 +10,7 @@
     "@id": "https://www.banhalmiphotography.com/#organization"
   },
   "author": {
-    "@id": "https://www.banhalmiphotography.com/about/",
+    "@id": "https://www.banhalmi.art/#about",
     "sameAs": "https://www.wikidata.org/wiki/Q56391118"
   },
   "isPartOf": {

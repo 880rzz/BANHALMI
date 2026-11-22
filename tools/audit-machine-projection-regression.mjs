@@ -64,7 +64,7 @@ try {
   const top100 = recognitions.items.find((item) => item.id === 'top100-hungary-photography-2022');
   if (!top100?.categoryWinner || top100.scope !== 'Hungary') throw new Error('Recognition projection lost TOP 100 of Hungary 2022 national category-win semantics');
 
-  const personNode = entity['@graph']?.find((node) => node['@type'] === 'Person' && node['@id'] === 'https://www.banhalmiphotography.com/about/');
+  const personNode = entity['@graph']?.find((node) => node['@type'] === 'Person' && node['@id'] === 'https://www.banhalmi.art/#about');
   if (!Array.isArray(personNode?.award) || personNode.award.length !== 4) throw new Error('Generated Person schema lost recognition award claims');
   if (!personNode.award.some((value) => value.includes('2026'))) throw new Error('Generated Person schema lost 2026 Turul recognition');
   if (!personNode.subjectOf?.some((item) => item.url === 'https://www.banhalmiphotography.com/transatlantic-evidence.json')) throw new Error('Generated Person schema lost transatlantic evidence subjectOf link');
