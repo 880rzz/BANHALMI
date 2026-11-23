@@ -244,9 +244,15 @@ const wixSamples = [
     "url": "https://blog.banhalmi.art/de/post/júlia-dominik-modelportfolio"
   }
 ];
+const fullWixCategories = ['1', 'true'].includes(String(process.env.WIX_FULL_CATEGORY_QA || '').toLowerCase());
+const wixAuditSamples = fullWixCategories ? wixSamples : wixSamples.filter(entry =>
+  entry.type !== 'category' || entry.url.includes('/lifestyle-es-portfoliofotozas') ||
+  entry.url.includes('/portrait-portfolio-photography') ||
+  entry.url.includes('/portraet-portfoliofotografie')
+);
 const wix = [];
 const browser = await chromium.launch({ headless: true });
-for (const entry of wixSamples) {
+for (const entry of wixAuditSamples) {
   for (const width of [390, 1440]) {
     const ctx = await browser.newContext(width < 500
       ? { ...devices['iPhone 13'], viewport: { width, height: 844 } }
@@ -303,8 +309,9 @@ await browser.close();
 rows.sort((a, b) => a.url.localeCompare(b.url));
 const result = {
   generatedAt: new Date().toISOString(),
-  scope: 'All 57 Professional and 93 ART sitemap HTML routes: production HTTP and semantic source/live checks. Wix: 3 homepages, ALL 21 localized category routes and 3 post samples at 2 viewports (54 renders); NOT all 555 post renders.',
+  scope: 'All 57 Professional and 93 ART sitemap HTML routes: production HTTP and semantic source/live checks. Wix: 3 homepages + 3 category + 3 post routes at 2 viewports (18 renders) in regular CI; optional WIX_FULL_CATEGORY_QA=1 covers all 21 localized categories (54 renders); NOT all 555 post renders.',
   deployment,
+  wixMode: fullWixCategories ? 'full-21-categories' : 'rate-limit-safe-sample',
   routeCounts: { professional: rows.filter(r => r.site === 'professional').length, art: rows.filter(r => r.site === 'art').length },
   failures, warnings, rows, wix
 };
