@@ -34,7 +34,7 @@ Vienna is the company headquarters. Vienna and Budapest are equal active service
 - `blog.banhalmi.art` is the editorial knowledge layer.
 - HIPStudio is a distinct Budapest entity. Bánhalmi Norbert is its founder; it must not be merged with BANHALMI / Banhalmi Norbert e.U.
 - The professional Oeuvre page remains a commercial-context overview; Gallery links directly to the language-matched `banhalmi.art/#works` destination.
-- The canonical Person identifier is `https://www.banhalmiphotography.com/about/`; its human-readable profile is `https://www.banhalmi.art/#about`.
+- The canonical shared Person `@id` is `https://www.banhalmi.art/#about` (also used by `person-authority.jsonld` and the ART archive). The professional biography and service-context page is `https://www.banhalmiphotography.com/about/`; these are two pages about the same person, not two Person entities.
 - Permanent GitHub Actions are read-only with respect to canonical source content. Production projections are generated only inside the deployment artifact, then the protected LLM overlay is applied.
 - Emergency deployment uses the same protected LLM/entity hardening and the same production concurrency group; it cannot intentionally bypass the current entity/role/geography contract.
 - A permanent live integrity workflow verifies the public `llms.txt`, `ai.txt`, `ai-entry.json`, `entity.jsonld`, HIPStudio authority, market geography, team capacity and Viko non-employment semantics after deploys and on schedule.
