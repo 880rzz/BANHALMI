@@ -101,6 +101,41 @@ async function cookieControlCandidates(page) {
   return out;
 }
 
+
+// Wix custom toggles may not expose a visible ARIA checkbox; inspect their
+// non-sensitive public label/state without reading cookie values or private data.
+async function consentToggleCandidates(page) {
+  const hits = [];
+  const category = /analytics|analyse|analitik|statistik|functional|funktion|marketing|advertis|essential|necessary|notwendig|szükséges/i;
+  for (const frame of page.frames()) {
+    try {
+      const raw = await frame.locator('input[type="checkbox"], [role="switch"], [role="checkbox"], [aria-checked]')
+        .evaluateAll(elements => elements.slice(0, 50).map(el => {
+          const label = el.labels?.[0]?.textContent ||
+            el.closest('label')?.textContent ||
+            el.parentElement?.parentElement?.textContent ||
+            el.getAttribute('aria-label') || '';
+          const name = String(label).trim().replace(/\\s+/g, ' ').slice(0, 115);
+          return {
+            name,
+            tag: el.tagName.toLowerCase(),
+            role: el.getAttribute('role'),
+            type: el.getAttribute('type'),
+            checked: el.checked === undefined ? el.getAttribute('aria-checked') : el.checked,
+            disabled: !!el.disabled
+          };
+        }));
+      for (const item of raw) {
+        if (category.test(item.name)) hits.push(item);
+        if (hits.length >= 30) return hits;
+      }
+    } catch {
+      // Frame may be short-lived; an empty result remains explicitly unproven.
+    }
+  }
+  return hits;
+}
+
 const browser = await chromium.launch({ headless: true });
 const results = [];
 const acceptResults = [];
@@ -223,6 +258,7 @@ try {
     let postWithdrawalAnalyticsKinds = [], postWithdrawalAcceptVisible = null;
     let postWithdrawalRevisitVisible = null, withdrawalError = null;
     let revisitControls = [];
+    let revisitToggles = [];
     try {
       const revisit = await findRevisitButton(page);
       if (revisit) {
@@ -230,6 +266,7 @@ try {
         await revisit.click({ timeout: 8000 });
         await page.waitForTimeout(1500);
         revisitControls = await cookieControlCandidates(page);
+        revisitToggles = await consentToggleCandidates(page);
         const decline = await findDeclineButton(page);
         if (decline) {
           await decline.click({ timeout: 8000 });
@@ -250,6 +287,7 @@ try {
       locale: target.lang,
       revisitFound,
       revisitControls,
+      revisitToggles,
       declineAfterAcceptClicked: withdrawalClicked,
       postWithdrawalAnalyticsKinds,
       postWithdrawalAcceptVisible,
