@@ -1,3 +1,5 @@
+> **ARCHIVÁLT RÉSZJELENTÉS — 2026-11-23.** A korábbi FÜGGŐ bejegyzések történeti állapotot rögzítenek. A teljes háromoldalas javítási folyamat aktuális, tartós zárójelentése: [ECOSYSTEM_FINAL_CLOSURE_2026-11-23.md](./ECOSYSTEM_FINAL_CLOSURE_2026-11-23.md). A #315-ös GA4-ügy a tulajdonos elfogadott tesztjei alapján lezárt; a 555/555 Wix-cikk teljes URL-szintű böngészős ellenőrzése a 37 Wix HTTP429 miatti kímélő ismétléssel együtt sikeres. A bizonyítatlan opcionális Google-/képjogi mezőket változatlanul hagytuk. A végső main SHA pontos élesítése külön Github Actions kiadási kapu, nem feltételezzük a merge-ből.
+
 # BANHALMI ecosystem — verification evidence and remaining gates
 2026-11-23 · Audit scope: Professional / ART / Fotótörténelem Wix Blog · HU/EN/DE-AT
 
