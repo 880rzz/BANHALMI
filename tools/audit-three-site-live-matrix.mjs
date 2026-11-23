@@ -7,7 +7,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { chromium } from 'playwright';
+import { chromium, devices } from 'playwright';
 
 const dir = 'artifacts/three-site-live-matrix';
 fs.mkdirSync(dir, { recursive: true });
@@ -248,7 +248,9 @@ const wix = [];
 const browser = await chromium.launch({ headless: true });
 for (const entry of wixSamples) {
   for (const width of [390, 1440]) {
-    const ctx = await browser.newContext({ viewport: { width, height: width < 500 ? 844 : 900 }, deviceScaleFactor: 1 });
+    const ctx = await browser.newContext(width < 500
+      ? { ...devices['iPhone 13'], viewport: { width, height: 844 } }
+      : { viewport: { width, height: 900 }, deviceScaleFactor: 1 });
     const page = await ctx.newPage();
     const item = { ...entry, width, status: null, finalUrl: null, overflow: null, visibleH1: null, imageCount: null, potentialTopHero: null, screenshot: null, issue: null };
     try {
@@ -268,6 +270,8 @@ for (const entry of wixSamples) {
         });
         return {
           overflow: Math.max(document.documentElement.scrollWidth, document.body?.scrollWidth || 0) - innerWidth,
+          actualViewport: innerWidth,
+          pageScrollWidth: Math.max(document.documentElement.scrollWidth, document.body?.scrollWidth || 0),
           visibleH1: h1,
           imageCount: images.length,
           potentialTopHero: visibleImage.some(img => {
