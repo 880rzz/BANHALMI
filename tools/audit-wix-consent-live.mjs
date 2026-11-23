@@ -39,8 +39,30 @@ async function findDeclineButton(page) {
   return null;
 }
 
+function readMeasurementId(raw) {
+  try {
+    const u = new URL(raw);
+    const id = u.searchParams.get('tid') || u.searchParams.get('id');
+    return /^G-[A-Z0-9]{6,18}$/.test(id || '') ? id : null;
+  } catch { return null; }
+}
+
+async function findAcceptButton(page) {
+  const names = /^(?:Összes elfogadása|Elfogadás|Accept all|Accept|Alle akzeptieren|Alles akzeptieren|Akzeptieren)$/i;
+  for (const frame of page.frames()) {
+    const query = frame.getByRole('button', { name: names });
+    const size = Math.min(await query.count().catch(() => 0), 8);
+    for (let i = 0; i < size; i++) {
+      const element = query.nth(i);
+      if (await element.isVisible().catch(() => false)) return element;
+    }
+  }
+  return null;
+}
+
 const browser = await chromium.launch({ headless: true });
 const results = [];
+const acceptResults = [];
 
 try {
   for (const target of targets) {
@@ -88,12 +110,63 @@ try {
       await context.close();
     }
   }
+  for (const target of targets) {
+    const context = await browser.newContext({
+      locale: target.locale,
+      viewport: { width: 1440, height: 900 },
+      ignoreHTTPSErrors: false
+    });
+    const page = await context.newPage();
+    const observed = [];
+    page.on('request', request => {
+      const kind = classifyRequest(request.url());
+      if (kind) observed.push({ kind, measurementId: readMeasurementId(request.url()) });
+    });
+    let status = null, accepted = false, error = null, before = [], after = [];
+    try {
+      const response = await page.goto(target.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
+      status = response?.status() ?? null;
+      await page.waitForTimeout(4500);
+      before = [...observed];
+      const button = await findAcceptButton(page);
+      if (button) {
+        await button.click({ timeout: 8000 });
+        accepted = true;
+        await page.waitForTimeout(4500);
+        if (!observed.slice(before.length).some(x => x.measurementId === 'G-EY91Q4QSVF')) {
+          await page.reload({ waitUntil: 'domcontentloaded', timeout: 45000 });
+          await page.waitForTimeout(3500);
+        }
+      }
+      after = observed.slice(before.length);
+    } catch (e) {
+      error = e?.name === 'TimeoutError' ? 'navigation-or-control-timeout' : 'navigation-or-consent-control-error';
+    }
+    const ids = [...new Set(after.map(x => x.measurementId).filter(Boolean))];
+    const unexpected = ids.filter(x => x !== 'G-EY91Q4QSVF');
+    const check = {
+      locale: target.lang,
+      httpStatus: status,
+      acceptButtonClicked: accepted,
+      preConsentAnalyticsKinds: [...new Set(before.map(x => x.kind))],
+      postAcceptAnalyticsKinds: [...new Set(after.map(x => x.kind))],
+      postAcceptMeasurementIDs: ids,
+      error,
+      result: error || !status || status >= 400 || !accepted
+        ? 'INCONCLUSIVE_OR_FAILED'
+        : before.length || unexpected.length || after.some(x => x.kind === 'microsoft-clarity')
+          ? 'CONSENT_LEAK_OR_WRONG_MEASUREMENT'
+          : ids.includes('G-EY91Q4QSVF') ? 'PASS' : 'NO_NATIVE_GA4_EVIDENCE'
+    };
+    acceptResults.push(check);
+    await context.close();
+  }
 } finally {
   await browser.close();
 }
 
-console.log(JSON.stringify({ audit: 'Wix Blog consent-first network', timestamp: new Date().toISOString(), checks: results }, null, 2));
-if (results.length !== targets.length * widths.length || results.some(row => row.result !== 'PASS')) {
+console.log(JSON.stringify({ audit: 'Wix Blog consent-first network plus native GA4 acceptance', timestamp: new Date().toISOString(), declineChecks: results, acceptChecks: acceptResults }, null, 2));
+if (results.length !== targets.length * widths.length || results.some(row => row.result !== 'PASS') || acceptResults.length !== targets.length || acceptResults.some(row => row.result !== 'PASS')) {
   console.error('Wix consent gate is not proven. Do not mark GDPR live compliance complete or delete the remediation journal.');
   process.exitCode = 1;
 }
