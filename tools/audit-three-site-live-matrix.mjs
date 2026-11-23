@@ -263,7 +263,9 @@ for (const entry of wixAuditSamples) {
   for (const width of [375, 390, 768, 1024, 1280, 1440, 1920]) {
     const ctx = await browser.newContext(width < 500
       ? { ...devices['iPhone 13'], viewport: { width, height: 844 } }
-      : { viewport: { width, height: 900 }, deviceScaleFactor: 1 });
+      : width <= 1024
+        ? { ...devices['iPad (gen 7)'], viewport: { width, height: 1024 } }
+        : { viewport: { width, height: 900 }, deviceScaleFactor: 1 });
     const page = await ctx.newPage();
     const item = { ...entry, width, status: null, finalUrl: null, overflow: null, visibleH1: null, imageCount: null, potentialTopHero: null, screenshot: null, issue: null };
     try {
@@ -285,6 +287,7 @@ for (const entry of wixAuditSamples) {
           overflow: Math.max(document.documentElement.scrollWidth, document.body?.scrollWidth || 0) - innerWidth,
           actualViewport: innerWidth,
           pageScrollWidth: Math.max(document.documentElement.scrollWidth, document.body?.scrollWidth || 0),
+          overshootingElements: [...document.querySelectorAll('body *')].filter(el => { const r = el.getBoundingClientRect(); return r.width > 0 && r.left >= 0 && r.right > innerWidth + 8; }).slice(0, 6).map(el => ({tag: el.tagName.toLowerCase(), className: typeof el.className === 'string' ? el.className.slice(0, 50) : '', width: Math.round(el.getBoundingClientRect().width), right: Math.round(el.getBoundingClientRect().right)})),
           visibleH1: h1,
           imageCount: images.length,
           potentialTopHero: visibleImage.some(img => {
