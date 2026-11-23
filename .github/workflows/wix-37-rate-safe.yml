@@ -1,0 +1,37 @@
+name: Wix targeted 37 rate-safe English recheck
+on:
+  pull_request:
+    paths:
+      - tools/audit-wix-37-rate-safe.mjs
+      - tools/fixtures/wix-20261123-english-429-retest.json
+      - .github/workflows/wix-37-rate-safe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rate-safe-wix:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout scoped audited source
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install audited Playwright
+        run: npm ci
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Validate 37 throttled English pages with pacing and 429 early abort
+        run: node tools/audit-wix-37-rate-safe.mjs
+      - name: Retain diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wix-english-37-rate-safe-evidence
+          path: artifacts/wix-37-throttle-recheck
+          retention-days: 14
+          if-no-files-found: warn
