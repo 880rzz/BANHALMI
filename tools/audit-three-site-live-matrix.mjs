@@ -33,7 +33,7 @@ const artBase = 'https://www.banhalmi.art/';
 
 async function getText(url, timeout = 24000) {
   let last;
-  for (let attempt = 0; attempt < 2; attempt++) {
+  for (let attempt = 0; attempt < 3; attempt++) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeout);
     try {
@@ -42,6 +42,13 @@ async function getText(url, timeout = 24000) {
         signal: controller.signal,
         headers: { 'User-Agent': 'BANHALMI-ReadOnly-Release-Audit/1.0', Accept: 'text/html, application/xml, text/plain' }
       });
+      // A short-lived CDN/upstream 502/503/504 is retryable, but a persistent
+      // server fault must still fail the full production audit.
+      if ([502, 503, 504].includes(response.status) && attempt < 2) {
+        await response.arrayBuffer().catch(() => {});
+        await new Promise(resolve => setTimeout(resolve, 750 * (attempt + 1)));
+        continue;
+      }
       return { status: response.status, url: response.url, body: await response.text() };
     } catch (e) {
       last = String(e?.message || e);
