@@ -34,49 +34,31 @@ try {
         await page.waitForTimeout(5000);
         const found = [];
         for (const frame of page.frames()) {
-          const candidates = frame.getByRole('link', { name: target.label });
-          const count = Math.min(15, await candidates.count().catch(() => 0));
+          const candidates = frame.locator('[data-hook="consent-banner-view-policy-link"]');
+          const count = Math.min(10, await candidates.count().catch(() => 0));
           for (let i = 0; i < count; i++) {
             const link = candidates.nth(i);
-            if (!(await link.isVisible().catch(() => false))) continue;
             const href = await link.getAttribute('href').catch(() => null);
             const text = await link.innerText().catch(() => '');
-            const pos = await link.boundingBox().catch(() => null);
-            const withinViewport = pos && pos.y >= -20 && pos.y < (width < 500 ? 844 : 900);
-            found.push({ link, href, text: text.slice(0, 80), withinViewport });
-            record.anchors.push({ href, text: text.slice(0, 80), withinViewport });
+            const visible = await link.isVisible().catch(() => false);
+            found.push({ link, href, text: text.slice(0, 80), visible });
+            record.anchors.push({ href, text: text.slice(0, 80), visible });
           }
         }
-        record.diagnostics = [];
-        for (const frame of page.frames()) {
-          try {
-            const d = await frame.evaluate(() => ({
-              anchors: [...document.querySelectorAll('a,[role="link"]')]
-                .filter(el => /privacy|cookie|datenschutz|adatvéd|süti|policy|richtlinie|banhalmiphotography/i.test((el.textContent || '') + ' ' + (el.getAttribute('href') || '')))
-                .slice(0, 16).map(el => ({ text: (el.textContent || '').trim().slice(0, 64), href: el.getAttribute('href'), hook: el.getAttribute('data-hook') })),
-              controls: [...document.querySelectorAll('button,[role="button"]')]
-                .filter(el => /cookie|consent|privacy|süti|adatvéd|akzept|accept|decline|ablehn|elutas/i.test((el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')))
-                .slice(0, 12).map(el => ({ text: (el.textContent || '').trim().slice(0, 64), hook: el.getAttribute('data-hook') })),
-              bannerHooks: [...document.querySelectorAll('[data-hook*="consent-banner"]')].slice(0, 8).map(el => el.getAttribute('data-hook'))
-            }));
-            record.diagnostics.push(d);
-          } catch { record.diagnostics.push({ inaccessibleFrame: true }); }
-        }
-        const picked = found.find(c => c.withinViewport && c.href?.includes('banhalmiphotography.com'))
-          || found.find(c => c.withinViewport) || found[0];
+        const picked = found.find(c => c.visible && c.href === target.expected) || found.find(c => c.visible);
         if (!picked) {
-          record.classification = 'BANNER_POLICY_LINK_NOT_OBSERVED';
+          record.classification = 'BANNER_POLICY_LINK_NOT_VISIBLE';
           failures.push(target.lang + ' ' + width + 'px policy link not observed; rendered policy link proof absent');
         } else {
           record.selectedHref = picked.href;
           try {
             await picked.link.click({ timeout: 7000 });
-            await page.waitForTimeout(1200);
+            await page.waitForTimeout(1600);
             record.clickedDestination = popup ? popup.url() : page.url();
           } catch {
             warnings.push(target.lang + ' ' + width + 'px link click inconclusive');
           }
-          const actual = canon(record.clickedDestination) || canon(picked.href);
+          const actual = canon(record.clickedDestination);
           if (actual === canon(target.expected)) record.classification = 'CORRECT_LOCALIZED_COOKIE_POLICY';
           else if (actual === canon('https://www.banhalmiphotography.com/privacy-policy/'))
             record.classification = 'GLOBAL_EN_PRIVACY_FALLBACK';
