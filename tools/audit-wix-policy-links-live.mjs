@@ -32,6 +32,25 @@ try {
         const response = await page.goto(target.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
         record.homepageStatus = response?.status() ?? null;
         await page.waitForTimeout(5000);
+        // Independent check of legacy Wix site-menu/layout href, distinct from consent banner.
+        // Inspect every Wix frame before clicking the correct native policy link.
+        record.legacyPrivacyAnchors = [];
+        for (const frame of page.frames()) {
+          const obsolete = frame.locator('a[href*="www.norbertbanhalmi.com/privacy-policy"]');
+          const count = Math.min(30, await obsolete.count().catch(() => 0));
+          for (let i = 0; i < count; i++) {
+            const link = obsolete.nth(i);
+            record.legacyPrivacyAnchors.push({
+              href: await link.getAttribute('href').catch(() => null),
+              text: (await link.innerText().catch(() => '')).slice(0, 80),
+              visible: await link.isVisible().catch(() => false)
+            });
+          }
+        }
+        if (record.legacyPrivacyAnchors.length > 0) {
+          failures.push(target.lang + ' ' + width + 'px obsolete Wix privacy link persists in rendered DOM: ' +
+            record.legacyPrivacyAnchors.map(a => a.href).join(', '));
+        }
         const found = [];
         for (const frame of page.frames()) {
           const candidates = frame.locator('[data-hook="consent-banner-view-policy-link"]');
