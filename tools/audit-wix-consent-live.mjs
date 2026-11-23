@@ -77,6 +77,30 @@ async function findRevisitButton(page) {
   return null;
 }
 
+
+// Only inspect the visible, public cookie-controls UI; never log cookies or private values.
+async function cookieControlCandidates(page) {
+  const out = [];
+  const relevant = /cookie|consent|privacy|analytics|statistik|statistical|süti|adatvéd|mentés|save|speichern|ablehnen|decline|elutasít|accept|elfogad|akzeptier|essential|necessary|erforderlich|szükséges|functional|marketing/i;
+  for (const frame of page.frames()) {
+    for (const role of ['button', 'checkbox', 'switch']) {
+      const loc = frame.getByRole(role);
+      const count = Math.min(await loc.count().catch(() => 0), 60);
+      for (let i = 0; i < count; i++) {
+        const el = loc.nth(i);
+        if (!(await el.isVisible().catch(() => false))) continue;
+        const name = String((await el.getAttribute('aria-label').catch(() => null)) ||
+          (await el.innerText().catch(() => '')) || '').trim().replace(/\\s+/g, ' ').slice(0, 85);
+        if (!relevant.test(name)) continue;
+        const checked = role !== 'button' ? await el.isChecked().catch(() => null) : null;
+        out.push({ role, name, checked });
+        if (out.length >= 30) return out;
+      }
+    }
+  }
+  return out;
+}
+
 const browser = await chromium.launch({ headless: true });
 const results = [];
 const acceptResults = [];
@@ -142,12 +166,18 @@ try {
     });
     let status = null, accepted = false, error = null, before = [], after = [];
     let afterAcceptBannerVisible = null, consentCookieNameCount = null, consentStorageKeyCount = null;
+    let initialAcceptControls = [];
     try {
       const response = await page.goto(target.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
       status = response?.status() ?? null;
       await page.waitForTimeout(4500);
       before = [...observed];
-      const button = await findAcceptButton(page);
+      let button = await findAcceptButton(page);
+      if (!button) {
+        await page.waitForTimeout(3000);
+        button = await findAcceptButton(page);
+        if (!button) initialAcceptControls = await cookieControlCandidates(page);
+      }
       if (button) {
         await button.click({ timeout: 8000 });
         accepted = true;
@@ -171,6 +201,7 @@ try {
       locale: target.lang,
       httpStatus: status,
       acceptButtonClicked: accepted,
+      initialAcceptControls,
       afterAcceptBannerVisible,
       consentCookieNameCount,
       consentStorageKeyCount,
@@ -191,12 +222,14 @@ try {
     let revisitFound = false, withdrawalClicked = false;
     let postWithdrawalAnalyticsKinds = [], postWithdrawalAcceptVisible = null;
     let postWithdrawalRevisitVisible = null, withdrawalError = null;
+    let revisitControls = [];
     try {
       const revisit = await findRevisitButton(page);
       if (revisit) {
         revisitFound = true;
         await revisit.click({ timeout: 8000 });
         await page.waitForTimeout(1500);
+        revisitControls = await cookieControlCandidates(page);
         const decline = await findDeclineButton(page);
         if (decline) {
           await decline.click({ timeout: 8000 });
@@ -216,6 +249,7 @@ try {
     const withdrawalResult = {
       locale: target.lang,
       revisitFound,
+      revisitControls,
       declineAfterAcceptClicked: withdrawalClicked,
       postWithdrawalAnalyticsKinds,
       postWithdrawalAcceptVisible,
