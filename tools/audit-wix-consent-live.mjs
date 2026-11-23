@@ -202,7 +202,6 @@ try {
       const response = await page.goto(target.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
       status = response?.status() ?? null;
       await page.waitForTimeout(4500);
-      before = [...observed];
       let button = await findAcceptButton(page);
       if (!button) {
         await page.waitForTimeout(3000);
@@ -217,6 +216,9 @@ try {
         button = await findAcceptButton(page);
         if (!button) initialAcceptControls = await cookieControlCandidates(page);
       }
+      // Capture ALL first-load and retry/reload requests as pre-consent evidence;
+      // never accidentally count requests during a retry as post-Accept telemetry.
+      before = [...observed];
       if (button) {
         await button.click({ timeout: 8000 });
         accepted = true;
