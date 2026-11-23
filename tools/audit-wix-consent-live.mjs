@@ -148,8 +148,16 @@ try {
         const response = await page.goto(target.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
         status = response?.status() ?? null;
         await page.waitForTimeout(5500);
+        let reject = await findDeclineButton(page);
+        // Wix may occasionally defer the native banner; allow one genuine page reload
+        // before classifying the UX as missing. Keep tracking disabled until opt-in.
+        if (!reject) {
+          await page.waitForTimeout(2500);
+          await page.reload({ waitUntil: 'domcontentloaded', timeout: 45000 });
+          await page.waitForTimeout(4500);
+          reject = await findDeclineButton(page);
+        }
         before = [...observed];
-        const reject = await findDeclineButton(page);
         if (reject) {
           await reject.click({ timeout: 8000 });
           declined = true;
@@ -198,6 +206,14 @@ try {
       let button = await findAcceptButton(page);
       if (!button) {
         await page.waitForTimeout(3000);
+        button = await findAcceptButton(page);
+        if (!button) initialAcceptControls = await cookieControlCandidates(page);
+      }
+      if (!button) {
+        // One fresh first-party Wix page reload for delayed/nonrendered native CMP.
+        // Never set cookies, grant consent, inject a script, or synthesize a hit.
+        await page.reload({ waitUntil: 'domcontentloaded', timeout: 45000 });
+        await page.waitForTimeout(6500);
         button = await findAcceptButton(page);
         if (!button) initialAcceptControls = await cookieControlCandidates(page);
       }
