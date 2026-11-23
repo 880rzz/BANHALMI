@@ -1,6 +1,13 @@
 name: Wix Blog live consent-first network audit
 
 on:
+  push:
+    branches:
+      - main
+      - test/wix-blog-live-consent-network-20261123
+    paths:
+      - tools/audit-wix-consent-live.mjs
+      - .github/workflows/wix-consent-live-audit.yml
   pull_request:
     paths:
       - tools/audit-wix-consent-live.mjs
