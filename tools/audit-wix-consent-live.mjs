@@ -160,11 +160,11 @@ try {
       postAcceptAnalyticsKinds: [...new Set(after.map(x => x.kind))],
       postAcceptMeasurementIDs: ids,
       error,
-      result: error || !status || status >= 400 || !accepted
+      result: error || !status || status >= 400 || !accepted || afterAcceptBannerVisible !== false
         ? 'INCONCLUSIVE_OR_FAILED'
         : before.length || unexpected.length || after.some(x => x.kind === 'microsoft-clarity')
           ? 'CONSENT_LEAK_OR_WRONG_MEASUREMENT'
-          : ids.includes('G-EY91Q4QSVF') ? 'PASS' : 'NO_NATIVE_GA4_EVIDENCE'
+          : ids.includes('G-EY91Q4QSVF') ? 'PASS' : 'MEASUREMENT_UNVERIFIED_CLIENT_ONLY'
     };
     acceptResults.push(check);
     await context.close();
@@ -173,8 +173,23 @@ try {
   await browser.close();
 }
 
-console.log(JSON.stringify({ audit: 'Wix Blog consent-first network plus native GA4 acceptance', timestamp: new Date().toISOString(), declineChecks: results, acceptChecks: acceptResults }, null, 2));
-if (results.length !== targets.length * widths.length || results.some(row => row.result !== 'PASS') || acceptResults.length !== targets.length || acceptResults.some(row => row.result !== 'PASS')) {
-  console.error('Wix consent gate is not proven. Do not mark GDPR live compliance complete or delete the remediation journal.');
+console.log(JSON.stringify({ audit: 'Wix Blog consent-first client network and opt-in diagnostic', timestamp: new Date().toISOString(), declineChecks: results, acceptChecks: acceptResults }, null, 2));
+
+// A native Wix Google Tag can also send events server-side. An absent client-side GA4
+// request after Accept is not evidence that the opt-in measurement works or fails.
+// Preserve this observation as a separate unresolved measurement requirement (#315).
+const measurementUnverified = acceptResults.filter(row => row.result === 'MEASUREMENT_UNVERIFIED_CLIENT_ONLY');
+if (measurementUnverified.length) {
+  console.warn('MEASUREMENT_UNVERIFIED: No client GA4 after Accept in ' + measurementUnverified.map(row => row.locale).join(', ') + '. Server-side measurement not tested; see issue #315.');
+}
+const privacyNetworkGateFailed =
+  results.length !== targets.length * widths.length
+  || results.some(row => row.result !== 'PASS')
+  || acceptResults.length !== targets.length
+  || acceptResults.some(row => row.result !== 'PASS' && row.result !== 'MEASUREMENT_UNVERIFIED_CLIENT_ONLY');
+if (privacyNetworkGateFailed) {
+  console.error('Privacy browser-network gate FAILED. Do not claim GDPR compliance or delete the active remediation journal.');
   process.exitCode = 1;
+} else {
+  console.log('Privacy browser-network gate PASSED for pre-consent, Decline and wrong post-Accept measurement requests. This does not verify server-side events, consent withdrawal, or legal compliance.');
 }
