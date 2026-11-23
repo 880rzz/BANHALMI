@@ -1,0 +1,36 @@
+name: Three-site live route and editorial visual matrix
+on:
+  pull_request:
+    paths:
+      - tools/audit-three-site-live-matrix.mjs
+      - .github/workflows/three-site-live-matrix.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  three-site-readonly:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Checkout tested audit tool
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install locked Playwright dependency
+        run: npm ci
+      - name: Install headless Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Audit canonical 150 HTML routes and 27 Wix routes at two viewports
+        run: node tools/audit-three-site-live-matrix.mjs
+      - name: Retain read-only evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: three-site-live-matrix
+          path: artifacts/three-site-live-matrix
+          retention-days: 14
+          if-no-files-found: warn
