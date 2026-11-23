@@ -136,6 +136,37 @@ async function consentToggleCandidates(page) {
   return hits;
 }
 
+
+// Bounded public DOM inspection of the analytics category in Wix's reopened
+// preference panel. No cookies, credentials, site visitors or input values.
+async function analyticsCategoryMarkup(page) {
+  const out = [];
+  const regex = /Analitikai sütik|Analytics Cookies|Analyse-Cookies|Analytische Cookies/i;
+  for (const frame of page.frames()) {
+    try {
+      const matches = frame.getByText(regex);
+      const count = Math.min(await matches.count().catch(() => 0), 4);
+      for (let i = 0; i < count; i++) {
+        const match = matches.nth(i);
+        if (!(await match.isVisible().catch(() => false))) continue;
+        const info = await match.evaluate(el => {
+          const block = el.closest('li') || el.closest('[class*="category"]') ||
+            el.parentElement?.parentElement?.parentElement || el.parentElement;
+          return {
+            elementTag: el.tagName.toLowerCase(),
+            parentMarkup: block?.outerHTML?.slice(0, 1900) || ''
+          };
+        });
+        out.push(info);
+        if (out.length >= 3) return out;
+      }
+    } catch {
+      // A disappearing Wix frame cannot establish the toggle's accessibility.
+    }
+  }
+  return out;
+}
+
 const browser = await chromium.launch({ headless: true });
 const results = [];
 const acceptResults = [];
@@ -259,6 +290,7 @@ try {
     let postWithdrawalRevisitVisible = null, withdrawalError = null;
     let revisitControls = [];
     let revisitToggles = [];
+    let analyticsMarkup = [];
     try {
       const revisit = await findRevisitButton(page);
       if (revisit) {
@@ -267,6 +299,7 @@ try {
         await page.waitForTimeout(1500);
         revisitControls = await cookieControlCandidates(page);
         revisitToggles = await consentToggleCandidates(page);
+        analyticsMarkup = await analyticsCategoryMarkup(page);
         const decline = await findDeclineButton(page);
         if (decline) {
           await decline.click({ timeout: 8000 });
@@ -288,6 +321,7 @@ try {
       revisitFound,
       revisitControls,
       revisitToggles,
+      analyticsMarkup,
       declineAfterAcceptClicked: withdrawalClicked,
       postWithdrawalAnalyticsKinds,
       postWithdrawalAcceptVisible,
