@@ -47,11 +47,26 @@ try {
             record.anchors.push({ href, text: text.slice(0, 80), withinViewport });
           }
         }
+        record.diagnostics = [];
+        for (const frame of page.frames()) {
+          try {
+            const d = await frame.evaluate(() => ({
+              anchors: [...document.querySelectorAll('a,[role="link"]')]
+                .filter(el => /privacy|cookie|datenschutz|adatvéd|süti|policy|richtlinie|banhalmiphotography/i.test((el.textContent || '') + ' ' + (el.getAttribute('href') || '')))
+                .slice(0, 16).map(el => ({ text: (el.textContent || '').trim().slice(0, 64), href: el.getAttribute('href'), hook: el.getAttribute('data-hook') })),
+              controls: [...document.querySelectorAll('button,[role="button"]')]
+                .filter(el => /cookie|consent|privacy|süti|adatvéd|akzept|accept|decline|ablehn|elutas/i.test((el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')))
+                .slice(0, 12).map(el => ({ text: (el.textContent || '').trim().slice(0, 64), hook: el.getAttribute('data-hook') })),
+              bannerHooks: [...document.querySelectorAll('[data-hook*="consent-banner"]')].slice(0, 8).map(el => el.getAttribute('data-hook'))
+            }));
+            record.diagnostics.push(d);
+          } catch { record.diagnostics.push({ inaccessibleFrame: true }); }
+        }
         const picked = found.find(c => c.withinViewport && c.href?.includes('banhalmiphotography.com'))
           || found.find(c => c.withinViewport) || found[0];
         if (!picked) {
           record.classification = 'BANNER_POLICY_LINK_NOT_OBSERVED';
-          warnings.push(target.lang + ' ' + width + 'px policy link not observed, cannot infer destination');
+          failures.push(target.lang + ' ' + width + 'px policy link not observed; rendered policy link proof absent');
         } else {
           record.selectedHref = picked.href;
           try {
