@@ -260,7 +260,7 @@ const wixAuditSamples = fullWixCategories ? wixSamples : wixSamples.filter(entry
 const wix = [];
 const browser = await chromium.launch({ headless: true });
 for (const entry of wixAuditSamples) {
-  for (const width of [390, 1440]) {
+  for (const width of [375, 390, 768, 1024, 1280, 1440, 1920]) {
     const ctx = await browser.newContext(width < 500
       ? { ...devices['iPhone 13'], viewport: { width, height: 844 } }
       : { viewport: { width, height: 900 }, deviceScaleFactor: 1 });
@@ -313,17 +313,74 @@ for (const entry of wixAuditSamples) {
 }
 await browser.close();
 
+const fixture = JSON.parse(fs.readFileSync('tools/fixtures/wix-20261123-live-urls.json', 'utf8'));
+if (fixture.posts.length !== 555) failures.push('Wix fixture must contain exactly 555 published posts, got ' + fixture.posts.length);
+const wixHttp = [];
+const targetChecks = [];
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+async function wixHttpGet(url) {
+  // Sequentially paced lookups prevent load bursts against public Wix production.
+  let r;
+  for (let attempt = 0; attempt < 5; attempt++) {
+    r = await getText(url, 28000);
+    if (r.status !== 429) return r;
+    await sleep(Math.min(12000, 2000 * (attempt + 1)));
+  }
+  return r;
+}
+for (const u of [...new Set(fixture.targets.map(s => s.split('#')[0]))]) {
+  const result = await wixHttpGet(u);
+  const record = { url: u, status: result.status, finalUrl: result.url };
+  targetChecks.push(record);
+  if (result.status !== 200) {
+    if (result.status === 429) warnings.push('rate limited cross-site link target ' + u);
+    else failures.push('Broken live cross-site blog target ' + u + ' HTTP ' + result.status);
+  }
+  await sleep(120);
+}
+
+const pendingPosts = [...fixture.posts];
+async function postWorker() {
+  while (pendingPosts.length) {
+    const entry = pendingPosts.shift();
+    const result = await wixHttpGet(entry.url);
+    const html = result.body || '';
+    const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1] || '';
+    const links = headLinks(html);
+    const canonical = links.find(x => String(x.rel || '').toLowerCase().split(/\s+/).includes('canonical'))?.href || null;
+    const rec = {
+      url: entry.url, lang: entry.lang, httpStatus: result.status,
+      finalUrl: result.url, canonical,
+      title: /<title\b[^>]*>[^<]+<\/title>/i.test(head),
+      hasH1: /<h1\b/i.test(html),
+      noindex: /<meta\b[^>]*\bname=["']robots["'][^>]*\bcontent=["'][^"']*\bnoindex/i.test(head)
+    };
+    wixHttp.push(rec);
+    if (result.status === 429) warnings.push('Wix public endpoint throttled: ' + entry.url + '; cannot verify HTTP');
+    else if (result.status !== 200) failures.push('Wix published blog HTTP failure ' + entry.url + ': ' + result.status);
+    if (result.status === 200 && (!rec.title || !rec.hasH1)) warnings.push('Wix publication missing title or H1 in static HTML: ' + entry.url);
+    if (rec.noindex) failures.push('Wix published article unexpectedly noindex: ' + entry.url);
+    await sleep(680);
+  }
+}
+await Promise.all([postWorker(), postWorker()]);
+if (wixHttp.length !== fixture.posts.length) failures.push('Wix HTTP inventory incomplete');
+const watch = fixture.watch.map(entry => {
+  const page = wixHttp.find(rec => rec.url === entry.url);
+  return { ...entry, currentHttp: page?.httpStatus ?? null, currentCanonical: page?.canonical ?? null };
+});
+
 rows.sort((a, b) => a.url.localeCompare(b.url));
 const result = {
   generatedAt: new Date().toISOString(),
-  scope: 'All 57 Professional and 93 ART sitemap HTML routes: production HTTP and semantic source/live checks. Wix: 3 homepages + 3 category + 3 post routes at 2 viewports (18 renders) in regular CI; optional WIX_FULL_CATEGORY_QA=1 covers all 21 localized categories (54 renders); NOT all 555 post renders.',
+  scope: 'All 57 Professional and 93 ART sitemap HTML routes: production HTTP and semantic source/live checks. Wix: 3 homepages + 3 localized categories + 3 posts at 7 viewport widths (63 browser renders); optional WIX_FULL_CATEGORY_QA=1 covers all 21 localized categories; all 555 posts get separate paced live HTTP readback and 36 contextual ART/Professional targets are verified. NOT all 555 post visual renders.',
   deployment,
   wixMode: fullWixCategories ? 'full-21-categories' : 'rate-limit-safe-sample',
   routeCounts: { professional: rows.filter(r => r.site === 'professional').length, art: rows.filter(r => r.site === 'art').length },
-  failures, warnings, rows, wix
+  failures, warnings, rows, wix, wixHttp, targetChecks, watch
 };
 fs.writeFileSync(path.join(dir, 'results.json'), JSON.stringify(result, null, 2) + '\n');
-console.log('THREE-SITE-LIVE-MATRIX ' + JSON.stringify({ deployment, routeCounts: result.routeCounts, wixRendered: wix.length, failures: failures.length, warnings: warnings.length }));
+console.log('THREE-SITE-LIVE-MATRIX ' + JSON.stringify({ deployment, routeCounts: result.routeCounts, wixRendered: wix.length, wixHttpChecked: wixHttp.length, targetChecks: targetChecks.length, warningsTracked: watch.length, failures: failures.length, warnings: warnings.length }));
 for (const v of failures.slice(0, 30)) console.error('FAIL ' + v);
 for (const v of warnings.slice(0, 30)) console.warn('WARN ' + v);
 if (failures.length) process.exitCode = 1;
