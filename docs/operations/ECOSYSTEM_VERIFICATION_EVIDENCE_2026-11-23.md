@@ -24,7 +24,7 @@
 - Wix native `GOOGLE_ANALYTICS` enabled for `blog.banhalmi.art`, ID `G-EY91Q4QSVF`; old custom HEAD GA4 and Clarity embeds remain disabled, consent defaults remain fail-closed. No speculative duplicate analytics tag or forced consent is permitted.
 - Browser pre-consent and Decline traffic passed 6/6, and user-visible optional-category withdrawal passed 3/3 in https://github.com/880rzz/BANHALMI/actions/runs/45173373254 . These are **client-side**, not server-side proofs.
 - Wix multilingual policy URL production check **passed 6/6 real clicks**, HU/EN/DE at 390 and 1440px. Link destinations are respectively `/hu/sutik/`, `/cookie-policy/`, `/de-at/cookies/` on the Professional site. No warnings/failures. PR #322 merged, verified run https://github.com/880rzz/BANHALMI/actions/runs/45216751688; evidence https://github.com/880rzz/BANHALMI/actions/runs/45216751688/artifacts/14839426217 .
-- Some Wix mobile DOM samples also contained a legacy `https://www.norbertbanhalmi.com/privacy-policy` navigation href, distinct from the **correct** native consent-banner policy link. Its effective visibility/clickability and Wix Editor ownership were not established; this is a separately scoped follow-up, not proof the native cookie-policy link is wrong.
+- The site owner corrected the separate legacy Wix mobile-menu privacy link in Classic Editor. Fresh independent six-view HU/EN/DE 390/1440px browser check https://github.com/880rzz/BANHALMI/actions/runs/45245554090 (test-only PR #327, merged) found **zero** obsolete `www.norbertbanhalmi.com/privacy-policy` anchors in rendered Wix frames and **6/6** matching native cookie-policy click destinations, 0 warnings/errors. This bounds the live repair proof to tested views, not every article/menu route.
 - P1 **OPEN** https://github.com/880rzz/BANHALMI/issues/315 : no individually attributable, post-Accept native Wix GA4 event in a controlled test; no independent **server-side** post-withdrawal proof; no signed Austrian/EU controller or counsel review of processor/vendor/transfer disclosures. Historic GA4 hostName metrics are not causally attributable to the controlled test. Closing as `not_planned` previously did not satisfy legal signoff.
 - Do **not** declare GDPR compliance or delete the remediation journal without the recorded signoff or an explicitly documented lawful alternative. Existing public legal notice and cookie disclosure updates remain as shipped.
 
@@ -47,8 +47,12 @@
 
 1. Independent Wix server-side opt-in and post-withdrawal GA4 attribution with valid consent — owner/Wix/vendor diagnostics; no fabricated proof.
 2. Qualified Austrian/EU controller or counsel legal review/signoff for processor, transfer and privacy-policy statements.
-3. Review any residual responsive overflow, Wix legacy mobile navigation href and remaining editorial visual/content/media coverage beyond the sampled 63 renders.
+3. Review any residual responsive overflow and remaining editorial visual/content/media coverage beyond the sampled 63 renders; the previously noted separate Wix legacy navigation href was independently cleared in six tested live views (run 45245554090).
 4. Reconcile live deploy and source SHA after all current PRs, finish reverse audit with **zero unacknowledged P0/P1**, and write immutable final closure decision.
 5. Retain `docs/operations/ACTIVE_ECOSYSTEM_REMEDIATION_JOURNAL_2026-11-23.md` until the master prompt's own deletion gates ALL pass. The presence of a merged PR or an administratively closed issue does not waive mandatory evidence.
 
 This report is not itself an auditor's certification, legal opinion or SEO traffic guarantee.
+
+## F. Latest readback (2026-11-23)
+- Professional main `88e67cbb92f8bbdcb8bd02e81513b9a3a1411587` after merging test-only PR #327; prior `e8746540ff5620f35412bc51f321df29c1c928f8` was exact-live proven at https://github.com/880rzz/BANHALMI/actions/runs/45223600256 . Verify exact custom-domain release SHA again after any main change.
+- User attests analytics starts only on affirmative analytics consent. That aligns with existing six negative preconsent/Decline network browser tests and three withdrawal UI tests; no fresh attributed post-Accept GA4 event or server-side revocation proof yet. Qualified legal signoff remains open in issue #315. Do not change safe native Wix consent settings.
