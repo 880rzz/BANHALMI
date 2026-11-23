@@ -13,7 +13,7 @@ Evidence rule: each checkpoint MUST record exact source URL/PR/CI/build/live pro
 |---|---|---|---|---|
 | CK-00 | Whole ecosystem | Persist full prompt and restart journal | JAVÍTOTT on branch; CI/merge pending | GitHub PR required |
 | CK-01 | All routes | Enumerate actual URL inventory, canonical/hreflang and source-to-live SHA | AUDITÁLT (source/sitemaps only) | ART 93 indexable HTML (31 per locale), Professional 58 sitemap URLs (57 HTML + 1 PDF), Wix 555 posts/185 groups + 21 categories; exact-live and per-page render pending |
-| CK-02 | ART | Fix EN editorial /en/ link and Person identity docs drift | JAVÍTOTT (PR #455, latest CI pending) | https://github.com/880rzz/ART/pull/455 ; HEAD 502099ecbe42708f7be393fc5ef631bb5d70979b ; 93 ART sitemap routes + three 404 now language-matched footer links, ai.txt/README corrected, regression test updated; merge and exact-live pending |
+| CK-02 | ART | Fix EN editorial /en/ link and Person identity docs drift | JAVÍTOTT (PR #455, latest CI pending) | https://github.com/880rzz/ART/pull/455 ; HEAD a3d18496a2577692e8b1916e46f06d4a90e12b52 ; 93 ART sitemap routes + three 404 now language-matched footer links, ai.txt/README corrected, regression test updated; merge and exact-live pending |
 | CK-03 | Professional | Query-intent/service/role consistency, 3-language complete audit | FÜGGŐ | GSC, source, visual |
 | CK-04 | Wix | Complete indexable post/category + actual DOM/mobile/cover QA | FÜGGŐ | 555/21 historical baseline only |
 | CK-05 | Entity/Schema | Resolve active structured data and organization/person/author/image rights | FÜGGŐ | Resolved tags + validator |
@@ -85,3 +85,11 @@ Az ACTIVE napló CSAK AKKOR TÖRÖLHETŐ külön kontrollált GitHub PR-rel, ha:
 - GSC sitemap inventory: blog 6 existing sitemaps with 0 errors/0 warnings, ART 2 with 0/0, Professional 1 with 0/0. These are 2026-11-23 baseline readings, NOT post-remediation submissions. All future GSC re-submissions held until exact-live release gates pass.
 - Gate blockers: full 93+57 route source/live and responsive audit, production-specific Wix CSS rendering and consent network trace, privacy/legal review, target page linkage/intent review, ART #455 CI/deploy, final GSC send and reverse audit.
 - Do not delete this journal. Do not state the ecosystem is complete.
+
+
+## Checkpoint 2026-11-23 / ART CI, sitemap and live proof
+- Current ART #455 head a3d18496a2577692e8b1916e46f06d4a90e12b52. A one-time source migration edited 31 EN and 31 DE sitemap routes to the correct Wix language, kept HU root intact, and repaired EN/DE localized 404 footers. The ART test now enforces all 96 routes. No generic runtime redirect override was used.
+- ART sitemap lastmod changed for modified EN/DE documents only to 2026-11-23. The ART #455 Audit, palette, Commons, confidentiality and external links CI currently pass; desktop regression and PageSpeed currently in progress. Explicitly do not merge until every required check passes.
+- Exact-live ART/Professional/Wix HTTP, mobile rendered output and cookie consent network trace are not proven in this execution context (web cache not fresh and container outbound DNS unavailable). No exact-live proof means no production completion.
+- The GSC baseline includes nine existing sitemap URLs with zero recorded errors/warnings (six Wix Blog, two ART, one Professional). These have NOT been resubmitted as part of this remediation. After all PRs deploy and all exact-live/consent gates pass, submit the already-published sitemaps on the appropriate active GSC property and log response.
+- Status checkpoint: ART source JAVÍTOTT; CI-ELLENŐRZÖTT incomplete; PRODUCTION-ELLENŐRZÖTT incomplete; GSC not sent; journal must stay.
