@@ -123,6 +123,7 @@ try {
       if (kind) observed.push({ kind, measurementId: readMeasurementId(request.url()) });
     });
     let status = null, accepted = false, error = null, before = [], after = [];
+    let afterAcceptBannerVisible = null, consentCookieNameCount = null, consentStorageKeyCount = null;
     try {
       const response = await page.goto(target.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
       status = response?.status() ?? null;
@@ -139,6 +140,10 @@ try {
         }
       }
       after = observed.slice(before.length);
+      // Diagnose whether acceptance persisted; never inspect or log cookie/storage values.
+      afterAcceptBannerVisible = Boolean(await findAcceptButton(page));
+      consentCookieNameCount = (await context.cookies()).filter(cookie => /consent|cookie|privacy|usercentrics|^uc_/i.test(cookie.name)).length;
+      consentStorageKeyCount = await page.evaluate(() => Object.keys(localStorage).filter(name => /consent|cookie|privacy|usercentrics|^uc_/i.test(name)).length);
     } catch (e) {
       error = e?.name === 'TimeoutError' ? 'navigation-or-control-timeout' : 'navigation-or-consent-control-error';
     }
@@ -148,6 +153,9 @@ try {
       locale: target.lang,
       httpStatus: status,
       acceptButtonClicked: accepted,
+      afterAcceptBannerVisible,
+      consentCookieNameCount,
+      consentStorageKeyCount,
       preConsentAnalyticsKinds: [...new Set(before.map(x => x.kind))],
       postAcceptAnalyticsKinds: [...new Set(after.map(x => x.kind))],
       postAcceptMeasurementIDs: ids,
