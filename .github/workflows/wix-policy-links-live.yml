@@ -1,0 +1,32 @@
+name: Wix rendered multilingual privacy link evidence
+on:
+  pull_request:
+    paths:
+      - tools/audit-wix-policy-links-live.mjs
+      - .github/workflows/wix-policy-links-live.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  wix-policy-readonly:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Click actual Wix privacy banner links on HU/EN/DE mobile and desktop
+        run: node tools/audit-wix-policy-links-live.mjs
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wix-policy-links-evidence
+          path: artifacts/wix-policy-link-evidence
+          retention-days: 30
+          if-no-files-found: warn
