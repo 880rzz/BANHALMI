@@ -24,7 +24,7 @@ jobs:
         run: npm ci
       - name: Install headless Chromium
         run: npx playwright install --with-deps chromium
-      - name: Audit canonical 150 HTML routes and nine Wix routes at two viewports
+      - name: Audit canonical 150 HTML routes and 27 Wix routes at two viewports
         run: node tools/audit-three-site-live-matrix.mjs
       - name: Retain read-only evidence
         if: always()
