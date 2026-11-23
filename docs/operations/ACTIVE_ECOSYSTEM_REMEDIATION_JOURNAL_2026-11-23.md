@@ -1,0 +1,79 @@
+# ACTIVE remediation journal — BANHALMI ecosystem
+STATUS: FÜGGŐ (never delete until all closure gates pass)
+Created: 2026-11-23, Europe/Vienna
+Primary repo: 880rzz/BANHALMI | Companion repo: 880rzz/ART | Wix site: 5bfb58f7-cf3f-4eee-acbd-b8fcac6b217b
+Last confirmed baseline: BANHALMI Professional GitHub main, ART GitHub main, Wix 555 posts/185 complete translation groups/21 categories, GSC blog six submitted sitemaps.
+Current checkpoint: 00 — prompt and journal persisted; full route-by-route exact-live audit NOT COMPLETE.
+Next action: validate main and production SHAs; repair ART ai.txt EN blog link /en/ and ART README Person @id; build 3-language cross-link/SEO matrix; run CI/live verification; inspect Wix consent and responsive rendering; only when completely green submit sitemaps.
+Expected next work stages: 01 Inventory; 02 Technical SEO; 03 Cross-linking; 04 Schema/entities; 05 GDPR/AI Trust; 06 Visual/performance; 07 Release; 08 Exact-live; 09 GSC; 10 Reverse audit; 11 Close/delete journal.
+Evidence rule: each checkpoint MUST record exact source URL/PR/CI/build/live proof and explicit unresolved blockers. No invented success or claims of background execution. Do not put private e-mails, names or sensitive lead data here.
+
+## Progress table
+| ID | Scope | Task | State | Proof/next |
+|---|---|---|---|---|
+| CK-00 | Whole ecosystem | Persist full prompt and restart journal | JAVÍTOTT on branch; CI/merge pending | GitHub PR required |
+| CK-01 | All routes | Enumerate actual URL inventory, canonical/hreflang and source-to-live SHA | FÜGGŐ | Sitemaps + repo route inventory |
+| CK-02 | ART | Fix EN editorial /en/ link and Person identity docs drift | JAVÍTOTT (PR #455, CI in progress) | https://github.com/880rzz/ART/pull/455 ; branch fix/editorial-language-links-person-authority-20261123 ; head d313a83e60a0554d899c0f30ec8209decee31e98 ; exact-live still pending |
+| CK-03 | Professional | Query-intent/service/role consistency, 3-language complete audit | FÜGGŐ | GSC, source, visual |
+| CK-04 | Wix | Complete indexable post/category + actual DOM/mobile/cover QA | FÜGGŐ | 555/21 historical baseline only |
+| CK-05 | Entity/Schema | Resolve active structured data and organization/person/author/image rights | FÜGGŐ | Resolved tags + validator |
+| CK-06 | GDPR/AI trust | Consent before/after/refusal/revoke request evidence; legal signoff | INPUT-NEM-ELÉRHETŐ for exact browser network | Need runtime evidence |
+| CK-07 | Links | Six directional cross-site link paths + HU/EN/DE matrix | FÜGGŐ | Verify live target for each new link |
+| CK-08 | Deployment | All PRs green, merged, deployed with exact live SHA | FÜGGŐ | CI + Pages artifacts + live |
+| CK-09 | GSC | Submit all existing published sitemaps ONLY AFTER live gates | FÜGGŐ | GSC response IDs |
+| CK-10 | Closure | Reverse audit, no P0/P1, durable final report, journal deletion PR | FÜGGŐ | Delete only on complete success |
+
+## Full master prompt — replay verbatim
+# BANHALMI – ART – Fotótörténelem | MASTER REMEDIATION PROMPT
+2026-11-23 | HU / EN / DE-AT | Production-grade SEO / GEO / AEO / Schema / LLM / E-E-A-T / GDPR / AI Trust
+
+## 0. Feladat és hatókör
+Végezd el a teljes, háromnyelvű ökoszisztéma bizonyítékalapú javítását, ne csak ellenőrzési javaslatot írj. Három külön szerep: (A) BANHALMI Professional, repo 880rzz/BANHALMI, https://www.banhalmiphotography.com/: vezetői portré, personal branding, üzleti és rendezvényfotózás, ajánlatkérés, Vienna/Budapest. (B) BANHALMI ART, repo 880rzz/ART, https://www.banhalmi.art/: önálló alkotói életmű, művek, könyvek, kiállítások, proveniencia, nem értékesítési másolat. (C) Fotótörténelem / Photography History / Fotogeschichte, Wix site 5bfb58f7-cf3f-4eee-acbd-b8fcac6b217b, https://blog.banhalmi.art/: szerkesztői, történeti és fotográfiai tudás. Minden indexelhető HTML-URL, Blog-poszt és kategória a hatókörben van; enumeráld a tényleges sitemaps/route táblák alapján, ne feltételezz állandó darabszámot. Régi redirectek, noindex archívum, robots, llms.txt, ai.txt, JSON-LD, lábléc, navigáció, űrlapok, OG és képoldalak is vizsgálandók.
+
+## 1. Kötelező, megszakítható munkafolyamat
+DISCOVER -> BASELINE -> INVENTORY -> ROOT CAUSE -> PLAN -> MINIMAL FIX -> LOCAL CHECKS -> BRANCH -> PR -> CI -> SAFE MERGE -> DEPLOY -> EXACT-LIVE CHECK -> REVERSE AUDIT -> SEARCH CONSOLE -> MEASURE. A GitHub main közvetlenül nem írható. Minden PR a main aktuális SHA-jából induljon; merge előtt friss összevetés, expected_head_sha; failing CI esetén nincs merge. Nem elegendő a merge vagy zöld CI: a custom domain éles HTML, assetek, viselkedés és szükséges redirect bizonyítandó. Wix esetén ugyanazon műveletben régi adat mentése, pontos ID-alapú módosítás, publikálás, újraolvasás, fordításcsoport és dátum-egyezőség. Megálláskor a journal checkpointot olvasd; idempotens műveletekkel folytass, ne ismételj sikeres publikálást vagy sitemap-kérelmet vakon. Csak bizonyítékkal jelölj KÉSZ státuszt.
+
+## 2. Felderítés, piaci szándék és nyelvi pozicionálás
+GSC 28 és 90 nap: query, landing page, ország, CTR, pozíció, branded/nonbranded, device, nyelv, indexelhetőség; ahol lehet GA4 lead-konverzió és forrás. Ne értékeld túl az általános portfolio/photography megjelenéseket; célozd a mérhető magas szándékú executive portrait, personal branding, corporate/team headshots, event photographer Vienna/Budapest és kapcsolódó HU/EN/DE-AT kereséseket. Vállalati és privát vásárlói szándékot külön kezeld. Céges persona: vezető/ügyvezető, marketing/PR, HR/employer branding, rendezvény- és intézményi szervező. Privát: szakmai CV/LinkedIn portré, önkifejező művészi portré, művész/előadó, személyes emlék. Az életkor és nem nem mérhető GSC-ből; kizárólag tervezési hipotézis, tilos tényként közölni. Cím/H1/szöveg csak keresési szándék és tényleges oldalérték alapján módosítható; minőségromboló keyword stuffing tilos. Teljes HU/EN/DE-AT szemantikai, ár-, jogi és UX-paritás kötelező, a blog Wix útvonala EN /en/, DE /de/; Professional és ART DE /de-at/.
+
+## 3. Három márka, egy személy, nem összemosott entitások
+Közös Person @id a vizsgált machine-readable authority források szerint https://www.banhalmi.art/#about, Wikidata Q56391118. A Professional /about/ üzleti kontextusú profiloldal, nem második Person. A BANHALMI / Banhalmi Norbert e.U. külön vállalkozási entitás; HIPStudio, VIPACH, Bécsi Magyar Iskola, Központi Szövetség, Rege Galéria nem alternatív nevei. Viko szerepét az aktuális bizonyíték szerint jelöld, ne állíts automatikusan munkaviszonyt. Bécs és Budapest tényleges szolgáltatási bázis; New York művészeti referencia, nem irodacím. Médiafelhasználás, fotócredit, intézményi esemény, tagság, megbízás és endorsement külön kapcsolatfajták. Ne írj át igazolt művészeti provenienciát eladási szöveggé.
+
+## 4. Teljes SEO és indexelési audit
+URL-onként: HTTP státusz, önhivatkozó canonical, valóban indexelhető-e, robots meta/X-Robots-Tag, robots.txt, sitemap jelenlét és lastmod, noindex/redirect kizárások, paraméteres/duplikált URL-ek, 301 cél és redirect chain, 404/soft-404, hreflang hu-HU/en/de-AT illetve a Wix által szolgált megfelelő locale-kódok és x-default; visszamutató nyelvi linkek, ország- és nyelvkódok valós séma szerint; title, meta description, 1 logikus H1, H2/H3 ritmus, Breadcrumb, belső linkek és horgonyszövegek, OG/Twitter, képméret és license metadata. Ne módosíts jó Wix natív canonicalt csak azért, mert nincs külön mentett override. Ellenőrizd mindhárom régió legfontosabb szolgáltatási céloldalait és minden URL inventoryját, orphan page-eket, belső 404-et, oldalak közötti keyword cannibalizációt. A blog történeti cikkeiben ne erőltesd a bécsi helyi keresőkifejezéseket.
+
+## 5. Schema, AEO, GEO, LLM
+Oldaltípusonként a leghasznosabb, bizonyítható WebSite, Organization, LocalBusiness, Service, Person, ProfilePage, BlogPosting/Article, CollectionPage, BreadcrumbList, ImageObject, VisualArtwork/CreativeWork, Event séma; ne mindenhol mindegyik. Egy domináns Article és egy domináns CollectionPage – Wix esetén csak a ténylegesen AKTÍV resolvedTags számít, a disabled automatikus verzió önmagában nem aktív duplikátum. Valós author (vendégszerző nem válhat automatikusan Norbertté), publisher, @id, datePublished, dateModified, inLanguage, mainEntityOfPage, kép-creator/licence/credit, korrekt sameAs/subjectOf/about/mentions. Nincs kitalált AggregateRating, Review, FAQPage, HowTo, Official Photographer, AI-eredmény vagy el nem végzett szolgáltatás. Ha a valós tartalom kérdés–válasz formájú, embernek szóló rövid válasz megfelelő; ne gyárts keresőnek szánt sablon-GYIK-et. A llms.txt és ai.txt csak hiteles, karbantartott index, a robots és az emberi tartalom elsődleges. Tilos hamis AI-ajánlási vagy keresési láthatósági garancia.
+
+## 6. Kontextuális háromszög-keresztlinkelés
+Mindhárom nyelven ellenőrizd és javítsd az ART -> Blog, ART -> Professional, Professional -> ART, Professional -> Blog, Blog -> ART és Blog -> Professional irányokat. Elsődlegesen ugyanazon nyelvű céloldalt használj. ART / => Blog /en/ és Professional /; ART /hu/ => Blog / és Professional /hu/; ART /de-at/ => Blog /de/ és Professional /de-at/. Az eredeti Wix blog HU gyökér, EN /en/, DE /de/. A szabad művészeti tartalomba ne tegyél tolakodó céges CTA-t; csak ténylegesen releváns alkotáshoz, kiállításhoz, történeti cikkhez vagy szolgáltatáshoz linkelj. A linkcélakat HTTP/éles megjelenés szerint ellenőrizd, és ne hozd vissza a www.norbertbanhalmi.com hivatkozási domaint. A legacy redirectek bizonyított átirányításként megőrzendők. Építs nyelvi/link-mátrixot minden eltéréssel; új link csak akkor, ha hozzáad az olvasói útvonalhoz.
+
+## 7. Szerkesztőség, képjog és dizájn
+Wix: nincs nagy, ismétlődő felső hero sem blogposzton, sem kategóriafejlécen. A borítókép meta/OG/kártya célra megmarad, az eredeti történeti felvétel a cikk törzsében, jogilag igazolt forrással és képaláírással szerepel. A jelenlegi ritmus – törzsszöveg 1,64–1,66 line-height; bekezdésköz kb. 1,18–1,2 em; H2/H3 térköz – minden régi és új bejegyzésben, HU/EN/DE, mobilon is érvényes. Az eredeti képet ne cseréld generált illusztrációra, ne állítsd Public Domain-nek bizonyíték nélkül; ne hamisíts fotós adatokat, szöveges idézetet vagy személyazonosítót. Alt-szöveg valódi képtartalmon alapuljon, ne pusztán marketingjelmondat. ART vizuális archívum és Professional letisztult tipográfia külön kontextus. Futtass screenshot/DOM/kontraszt/horizontális-overflow/reszponzív/a11y QA-t legalább 375, 390, 768, 1024, 1280, 1440 és 1920 pixelen. Külön validáld a hero elrejtést, kártyaképeket, képeket és eredeti videók lejátszását.
+
+## 8. GDPR, EU AI Act, adatkezelés
+Oldalanként ellenőrizd Impressum, Datenschutz/Privacy, cookie és kontakt, controller, cél/jogalap, megőrzés, címzettek, adattovábbítás, érintetti jogok, analitikai beszállítók és adattovábbítási tájékoztatás nyelvi egyezőségét; jogi véleményt ne találj ki. A nem létfontosságú GA4/Clarity/TWIPLA és marketing tracking alapállapotban TILOS, amíg érvényes hozzájárulás nincs; ellenőrizd elutasítás / elfogadás / visszavonás alatt a valódi hálózati kéréseket és storage-ot. Wix cookie-banner HU/EN/DE fordítás és tényleges céldomain; alapeset: essential true, analytics/advertising/functional/dataToThirdParty false, korábbi választást nem írsz felül. Az AI-tartalom generálására, képmódosítására, szerkesztői ellenőrzésére és jogokra csak igazolt, oldaltípushoz megfelelő EU AI Act Article 50 / AI Trust állítás tehető. Különösen: ne állítsd, hogy minden kép generált vagy sosem használtak AI-t, ha nem bizonyítható. Bizalmas e-mailt, ügyfélnevet, nyers ajánlatkérést vagy egészségügyi / személyes adatot a GitHub naplóba TILOS írni.
+
+## 9. Visszaírás és kiadási szabályok
+GitHub módosítás: main SHA és konfliktusellenőrzés, keskeny branch, minimális diff, PR, CI, expected_head_sha merge, deployment, ugyanazon commit SHA exact-live validálás. Nem írhat felül regeneráló vagy restore script; statikus ART HTML a forrásigazság. Wix API: csak dokumentált végpont, ismert site ID, média- és fordítás-azonosítók, firstPublishedDate és translationId változatlan, read-after-write; újraindulásnál előbb ellenőrizd, megtörtént-e a lépés. Search Console-t NEM szabad a javítások előtt újra beküldeni. Csak ha az összes szükséges változás live, indexelhető és robots/canonical/hreflang/sitemap QA zöld: az adott három domain létező sitemapjeit az aktív, jogosult GSC tulajdon alatt küldd be. Ne állítsd, hogy a beküldés indexelési garancia; mérési ablakok 7, 28 és 90 nap. Nem támogatott URL Inspection ≠ kötelező indexbe vétel.
+
+## 10. Állapotnapló és megszakítás-kezelés
+A központi ACTIVE_ECOSYSTEM_REMEDIATION_JOURNAL_2026-11-23.md tartalmazza ezt a TELJES master promptot, a repo/branch/PR/SHA és site ID-ket, URL inventoryk számát, feltárt hibák azonosítóit, előtte-utána bizonyítékot, failed/pending checkpointokat, nextAction-t, CI és live bizonyítékokat, GSC műveletet. Változtatásonként: changeId, timestamp, site, URL, nyelv, file/record ID, before, after, rootCause, source, risk, regression, PR, CI, merge SHA, deploy proof, exact-live proof, Search Console, státusz. Státusz: AUDITÁLT / JAVÍTOTT / CI-ELLENŐRZÖTT / PRODUCTION-ELLENŐRZÖTT / MÉRÉS ALATT / FÜGGŐ / INPUT-NEM-ELÉRHETŐ. Nincs hamis KÉSZ. A naplót minden checkpoint után menteni kell, hogy a következő futás onnan folytathassa. A master prompt külön állandó fájlban is megmarad.
+
+## 11. Kötelező lezárási feltételek és naplótörlés
+Az ACTIVE napló CSAK AKKOR TÖRÖLHETŐ külön kontrollált GitHub PR-rel, ha: minden indexelhető URL auditja és javítása dokumentált, fordítás/link és Schema/author/creator hibák javítva; 100% elvárt CI és PR merge; professional, ART és Wix exact-live desktop/mobil vizuális és működési tesztek; GDPR hálózati consent-gate igazolva vagy jogi szakértő által rögzített jogszerű, dokumentált döntés; éles sitemapek hibamentesek és GSC-ben sikeresen beküldve; teljes reverse audit 0 P0/P1; végső tartós megőrzésű zárójelentés. Ha bármelyik hiányzik, marad FÜGGŐ és a napló megmarad, a sikert nem szabad kijelenteni. A naplót ne töröld automatikusan a master prompt szerinti feladatok részleges sikerét követően.
+
+## Induló, már ismert ellenőrzési tételek 2026-11-23
+- ART ai.txt: English editorial link a /en/ változat helyett HU rootra mutat; pontosítsd.
+- ART README a Person @id-ról a Professional /about/ URL-t írja; ellenőrizd és egyeztesd a main authority JSON-LD-vel.
+- ART/Professional minden szolgáltatás, alkotás és nyelvi belső hivatkozásának teljes URL-mátrixa vizsgálandó; ne tekints minden korábbi asszisztens állítást hitelesítettnek.
+- Wix: korábban 555 publikált poszt, 185 fordításcsoport, 21 kategória; mindhárom aktualitását újra mérd.
+- Wix: 21 CollectionPage schema, alternates, 96 redundáns elsődleges cikkjelölés javításának readbackje; a disabled duplikátum nem aktív.
+- Wix: post-hero vizuális elrejtés, tipográfiai térköz és cookie consent hálózati működés még renderelt QA-t igényel.
+- GSC blog: 2026-11-23-án hat sitemap beküldve; frissítés csak új éles javítás után, nem feltétlenül minden lépésnél.
+- Fokozott kontroll: ART 5 könyv, képlicenc, WKO/Austria tényállítások, Budapest/Vienna egyenrangú szolgáltatási bázis, fotósok száma csak igazolt kontextusban.
+
+
+## Checkpoint 2026-11-23 / ART PR created
+- Change ART-001: source ART ai.txt line 37 (EN blog reference root -> /en/; DE normalized /de/) and README Canonical Person @id (Professional /about/ -> shared ART #about). Before/after exact diff in https://github.com/880rzz/ART/pull/455 . Risk: low, documentation/AI discovery only. Review required CI; no merge until all green. No production-live proof yet. No Search Console action permitted yet.
+- BANHALMI #301 includes master and journal. CI three completed green as of initial check; follow-up readback/merge required.
