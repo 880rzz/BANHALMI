@@ -13,7 +13,7 @@ Evidence rule: each checkpoint MUST record exact source URL/PR/CI/build/live pro
 |---|---|---|---|---|
 | CK-00 | Whole ecosystem | Persist full prompt and restart journal | JAVÍTOTT on branch; CI/merge pending | GitHub PR required |
 | CK-01 | All routes | Enumerate actual URL inventory, canonical/hreflang and source-to-live SHA | FÜGGŐ | Sitemaps + repo route inventory |
-| CK-02 | ART | Fix EN editorial /en/ link and Person identity docs drift | FÜGGŐ | Narrow PR + CI + live |
+| CK-02 | ART | Fix EN editorial /en/ link and Person identity docs drift | JAVÍTOTT (PR #455, CI in progress) | https://github.com/880rzz/ART/pull/455 ; branch fix/editorial-language-links-person-authority-20261123 ; head d313a83e60a0554d899c0f30ec8209decee31e98 ; exact-live still pending |
 | CK-03 | Professional | Query-intent/service/role consistency, 3-language complete audit | FÜGGŐ | GSC, source, visual |
 | CK-04 | Wix | Complete indexable post/category + actual DOM/mobile/cover QA | FÜGGŐ | 555/21 historical baseline only |
 | CK-05 | Entity/Schema | Resolve active structured data and organization/person/author/image rights | FÜGGŐ | Resolved tags + validator |
@@ -72,3 +72,8 @@ Az ACTIVE napló CSAK AKKOR TÖRÖLHETŐ külön kontrollált GitHub PR-rel, ha:
 - Wix: post-hero vizuális elrejtés, tipográfiai térköz és cookie consent hálózati működés még renderelt QA-t igényel.
 - GSC blog: 2026-11-23-án hat sitemap beküldve; frissítés csak új éles javítás után, nem feltétlenül minden lépésnél.
 - Fokozott kontroll: ART 5 könyv, képlicenc, WKO/Austria tényállítások, Budapest/Vienna egyenrangú szolgáltatási bázis, fotósok száma csak igazolt kontextusban.
+
+
+## Checkpoint 2026-11-23 / ART PR created
+- Change ART-001: source ART ai.txt line 37 (EN blog reference root -> /en/; DE normalized /de/) and README Canonical Person @id (Professional /about/ -> shared ART #about). Before/after exact diff in https://github.com/880rzz/ART/pull/455 . Risk: low, documentation/AI discovery only. Review required CI; no merge until all green. No production-live proof yet. No Search Console action permitted yet.
+- BANHALMI #301 includes master and journal. CI three completed green as of initial check; follow-up readback/merge required.
