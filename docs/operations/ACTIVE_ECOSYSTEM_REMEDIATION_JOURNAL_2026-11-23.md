@@ -3,25 +3,25 @@ STATUS: FÜGGŐ (never delete until all closure gates pass)
 Created: 2026-11-23, Europe/Vienna
 Primary repo: 880rzz/BANHALMI | Companion repo: 880rzz/ART | Wix site: 5bfb58f7-cf3f-4eee-acbd-b8fcac6b217b
 Last confirmed baseline: BANHALMI Professional GitHub main, ART GitHub main, Wix 555 posts/185 complete translation groups/21 categories, GSC blog six submitted sitemaps.
-Current checkpoint: 00 — prompt and journal persisted; full route-by-route exact-live audit NOT COMPLETE.
-Next action: validate main and production SHAs; repair ART ai.txt EN blog link /en/ and ART README Person @id; build 3-language cross-link/SEO matrix; run CI/live verification; inspect Wix consent and responsive rendering; only when completely green submit sitemaps.
+Current checkpoint: 11 — technical route/readback evidence completed (Professional 57, ART 93, Wix 555 public HTML URLs); final legal/GA4 server-side evidence and the separate legacy Wix mobile-layout link remain FÜGGŐ. Latest examined Professional main SHA a030d911dbef16bea10ac99993b6015825224ccf; production exact-live release status must be reconfirmed after each main change.
+Next action: verify latest main exact-live deploy; determine whether the Wix legacy Adatvédelem mobile anchor is visible/clickable, remove or localize it in Wix Classic Editor and publish/re-test when editor access is available; obtain new individually attributable lawful GA4 consent-on evidence and independent post-withdrawal server-side suppression proof; obtain responsible Austrian/EU legal controller/counsel signoff; recheck all nine already-submitted GSC sitemaps without blind resubmission.
 Expected next work stages: 01 Inventory; 02 Technical SEO; 03 Cross-linking; 04 Schema/entities; 05 GDPR/AI Trust; 06 Visual/performance; 07 Release; 08 Exact-live; 09 GSC; 10 Reverse audit; 11 Close/delete journal.
 Evidence rule: each checkpoint MUST record exact source URL/PR/CI/build/live proof and explicit unresolved blockers. No invented success or claims of background execution. Do not put private e-mails, names or sensitive lead data here.
 
 ## Progress table
 | ID | Scope | Task | State | Proof/next |
 |---|---|---|---|---|
-| CK-00 | Whole ecosystem | Persist full prompt and restart journal | JAVÍTOTT on branch; CI/merge pending | GitHub PR required |
-| CK-01 | All routes | Enumerate actual URL inventory, canonical/hreflang and source-to-live SHA | AUDITÁLT (source/sitemaps only) | ART 93 indexable HTML (31 per locale), Professional 58 sitemap URLs (57 HTML + 1 PDF), Wix 555 posts/185 groups + 21 categories; exact-live and per-page render pending |
-| CK-02 | ART | Fix EN editorial /en/ link and Person identity docs drift | PRODUCTION-ELLENŐRZÖTT (PR #455, Pages #45147036504) | https://github.com/880rzz/ART/pull/455 ; HEAD a3d18496a2577692e8b1916e46f06d4a90e12b52 ; 93 ART sitemap routes + three 404 now language-matched footer links, ai.txt/README corrected, regression test updated; merge and exact-live pending |
-| CK-03 | Professional | Query-intent/service/role consistency, 3-language complete audit | AUDITÁLT: 57/57 source SEO contracts; full per-route live FÜGGŐ | GSC/live visual and intent still require reverse audit |
-| CK-04 | Wix | Complete indexable post/category + actual DOM/mobile/cover QA | FÜGGŐ | 555/21 historical baseline only |
-| CK-05 | Entity/Schema | Resolve active structured data and organization/person/author/image rights | FÜGGŐ | Resolved tags + validator |
-| CK-06 | GDPR/AI trust | Consent before/after/refusal/revoke request evidence; legal signoff | INPUT-NEM-ELÉRHETŐ for exact browser network | Need runtime evidence |
-| CK-07 | Links | Six directional cross-site link paths + HU/EN/DE matrix | AUDITÁLT: Professional 57 and ART 93 source refs | Wix outbound semantic + live target matrix FÜGGŐ |
-| CK-08 | Deployment | All PRs green, merged, deployed with exact live SHA | PRODUCTION-ELLENŐRZÖTT for current Professional/ART main releases | Professional run 45175252791, ART run 45147036504; each exact-live gate PASS |
-| CK-09 | GSC | Existing submitted sitemaps, health and measurement | MÉRÉS ALATT | 6 Wix + 2 ART + 1 Professional already submitted; 0 errors/0 warnings; do not blindly resubmit |
-| CK-10 | Closure | Reverse audit, no P0/P1, durable final report, journal deletion PR | FÜGGŐ | Delete only on complete success |
+| CK-00 | Whole ecosystem | Full master prompt and restart journal preserved | JAVÍTOTT | #301 merged; immutable prompt remains embedded below |
+| CK-01 | All routes | URL, locale and SEO inventory | PRODUCTION-ELLENŐRZÖTT for bounded route metadata | 57/57 Professional, 93/93 ART, 555/555 Wix public post HTTP readback; 21 Wix categories, 185 trilingual groups |
+| CK-02 | ART | EN/DE editorial routes, shared Person identity docs | PRODUCTION-ELLENŐRZÖTT | ART #455, main fd0854ed9946f114291de0850d76a7d292712b47, Pages 45147036504 SUCCESS |
+| CK-03 | Professional + ART | Source SEO and live canonical/title/H1/hreflang | PRODUCTION-ELLENŐRZÖTT for tested releases | All 150 HTML routes passed technical matrix; semantic claims and subsequent SHAs remain separately gated |
+| CK-04 | Wix | Complete published URL audit and responsive sample | CI-ELLENŐRZÖTT; partial visual evidence | 555/555 HTTP 200; 63 actual browser renders passed including 768px iPad; NOT 555 individual visual checks, legacy mobile link pending |
+| CK-05 | Entity/Schema | Active article tags, ImageObject and 3-language identity | AUDITÁLT with remaining semantic exceptions | 555/555 exactly one active BlogPosting; ART 15/15 book cover creator/credit/copyright; unverified third-party cover licenses not invented |
+| CK-06 | GDPR/AI Trust | Banner policy, negative client-consent, withdrawal, legal signoff | FÜGGŐ (P1) | 6/6 policy clicks and decline cases, 3/3 client withdrawal UI; native post-Accept GA4 attribution, server-side revocation and legal signoff remain #315 |
+| CK-07 | Crosslinks | Six directions and live destinations | CI-ELLENŐRZÖTT for bounded targets | 30/30 deduplicated Wix-to-Professional/ART HTTP targets 200; 555-article locale scan; exhaustive semantic review not implied |
+| CK-08 | Release | Merged PRs, CI and custom-domain SHA | FÜGGŐ for newest Professional SHA | ART fd0854e verified; Professional main a030d911dbef16bea10ac99993b6015825224ccf latest checked; exact-live deploy must be checked for this SHA (prior production passes remain valid for earlier SHAs) |
+| CK-09 | GSC | Nine submitted sitemaps and inspection tracker | MÉRÉS ALATT | Professional 1 + ART 2 + Wix 6, zero recorded errors/warnings; 588 Wix tracked URLs, including 36 inspected on Nov 23 |
+| CK-10 | Closure | 0 unacknowledged P0/P1; final signoff; journal deletion | FÜGGŐ | #315 legal/GA4 evidence, Wix legacy menu edit and full final reverse audit; journal deletion prohibited |
 
 ## Full master prompt — replay verbatim
 # BANHALMI – ART – Fotótörténelem | MASTER REMEDIATION PROMPT
@@ -235,3 +235,10 @@ Az ACTIVE napló CSAK AKKOR TÖRÖLHETŐ külön kontrollált GitHub PR-rel, ha:
 - Current GSC: nine published/fetched sitemaps (Professional 1, ART 2, Wix 6) with **zero errors and zero warnings**; 36 additionally published Wix post URLs added to indexing tracker and inspected successfully (14 indexed, 2 discovered/not indexed, 20 unknown to Google). Google's decision to index is not a deployment gate; the tracker remains under measurement.
 - **Genuine external P1 open**: https://github.com/880rzz/BANHALMI/issues/315 tracks independent positive post-Accept native Wix GA4 attribution, server-side post-withdrawal suppression and Austrian/EU controller/counsel approval. These have NOT been proven even though historic GA4 hostName traffic exists and native cookie banner client tests pass. Never close as completed or erase journal without legal signoff.
 - Production Pages SHA must be rechecked after any subsequent source or documentation-only main merge; GitHub merge ≠ exact-live proof. The ACTIVE journal stays, and the separate durable report `docs/operations/ECOSYSTEM_VERIFICATION_EVIDENCE_2026-11-23.md` remains the archive; do not delete it. No indexable page/sitemap changed in this checkpoint, so no sitemap resubmission is warranted.
+
+## Checkpoint 2026-11-23 / reconciliation of stale journal header and evidence report
+- The earlier top-of-file checkpoint `00` and progress table were stale relative to later append-only checkpoints. This documentation reconciliation updates the current-status summary without altering the immutable master prompt or superseding historic observations.
+- Evidence already recorded: BANHALMI PR #321 and #322 merged; PR #324 merged at `bc5102e59b6f5655486669c7c062c0360c458b92` after focused Wix SSR tests passed in run 45221629845. Subsequent main SHA examined: `a030d911dbef16bea10ac99993b6015825224ccf` (documentation-only). The prior bc5102e5 production workflow was cancelled due to superseding main; the newer production exact-live workflow must be evaluated independently, never assumed green.
+- Four unrelated Vercel redirect-preview checks reported build rate-limit failure. Their failed status is not a passing check and does not independently disprove earlier unchanged production redirects; avoid triggering unnecessary builds.
+- Both BANHALMI and ART reported zero open PRs at checkpoint readback; #315 remains open and blocks full legal/analytics closure. Legacy Wix editor link `https://www.norbertbanhalmi.com/privacy-policy` was detected in mobile DOM, but neither live clickability nor editor removal is established. Native consent-banner locale links remain verified 6/6 correct; do not change them to compensate for the separate layout anchor.
+- No website HTML, Wix page/editor data, GA4 configuration, consent defaults, GSC sitemaps or redirect rules are modified by this documentation correction. Next exact-live production verification must use the subsequent merged main SHA if this PR merges; do not delete ACTIVE journal.
