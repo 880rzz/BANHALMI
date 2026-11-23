@@ -41,6 +41,16 @@ for (const [locale, routes] of Object.entries(locales)) {
       }
       if (!html.includes('data-cross-site-privacy="true"')) failures.push(`${route}: ecosystem privacy section missing`);
     }
+    const isPrivacy = index === 0;
+    const wixMarker = isPrivacy ? 'data-wix-blog-disclosure="20261123"' : 'data-wix-blog-cookie-scope="20261123"';
+    if (html.split(wixMarker).length !== 2) failures.push(`${route}: Wix Blog vendor disclosure must appear exactly once`);
+    for (const vendor of ['Wix Blog', 'TWIPLA Website Intelligence', 'Twipla Session Recordings', 'Microsoft Clarity']) {
+      if (!html.includes(vendor)) failures.push(`${route}: missing actual vendor disclosure ${vendor}`);
+    }
+    if (!isPrivacy) {
+      const editorialUrl = locale === 'en' ? 'https://blog.banhalmi.art/en/' : locale === 'de' ? 'https://blog.banhalmi.art/de/' : 'https://blog.banhalmi.art/';
+      if (!html.includes(`<a href="${editorialUrl}">`)) failures.push(`${route}: language-matched editorial consent link missing`);
+    }
     const clarityStart = html.indexOf('data-clarity-disclosure=');
     const clarityEnd = html.indexOf('</section>', clarityStart);
     const claritySection = clarityStart >= 0 && clarityEnd >= 0 ? html.slice(clarityStart, clarityEnd) : '';
