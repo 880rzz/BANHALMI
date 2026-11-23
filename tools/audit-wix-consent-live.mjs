@@ -102,69 +102,26 @@ async function cookieControlCandidates(page) {
 }
 
 
-// Wix custom toggles may not expose a visible ARIA checkbox; inspect their
-// non-sensitive public label/state without reading cookie values or private data.
-async function consentToggleCandidates(page) {
-  const hits = [];
-  const category = /analytics|analyse|analitik|statistik|functional|funktion|marketing|advertis|essential|necessary|notwendig|szükséges/i;
+// Wix's visible settings panel contains stable category sections and native checkbox inputs.
+async function findConsentSections(page) {
   for (const frame of page.frames()) {
-    try {
-      const raw = await frame.locator('input[type="checkbox"], [role="switch"], [role="checkbox"], [aria-checked]')
-        .evaluateAll(elements => elements.slice(0, 50).map(el => {
-          const label = el.labels?.[0]?.textContent ||
-            el.closest('label')?.textContent ||
-            el.parentElement?.parentElement?.textContent ||
-            el.getAttribute('aria-label') || '';
-          const name = String(label).trim().replace(/\\s+/g, ' ').slice(0, 115);
-          return {
-            name,
-            tag: el.tagName.toLowerCase(),
-            role: el.getAttribute('role'),
-            type: el.getAttribute('type'),
-            checked: el.checked === undefined ? el.getAttribute('aria-checked') : el.checked,
-            disabled: !!el.disabled
-          };
-        }));
-      for (const item of raw) {
-        if (category.test(item.name)) hits.push(item);
-        if (hits.length >= 30) return hits;
-      }
-    } catch {
-      // Frame may be short-lived; an empty result remains explicitly unproven.
-    }
+    const sections = frame.locator('[data-hook="consent-banner-settings-dialog"] [data-hook="consent-banner-section-root"]');
+    if (await sections.count().catch(() => 0) >= 2) return sections;
   }
-  return hits;
+  return null;
 }
 
-
-// Bounded public DOM inspection of the analytics category in Wix's reopened
-// preference panel. No cookies, credentials, site visitors or input values.
-async function analyticsCategoryMarkup(page) {
-  const out = [];
-  const regex = /Analitikai sütik|Analytics Cookies|Analyse-Cookies|Analytische Cookies/i;
+async function findSaveConsentButton(page) {
+  const names = /^(?:Mentés|Save|Speichern)$/i;
   for (const frame of page.frames()) {
-    try {
-      const matches = frame.getByText(regex);
-      const count = Math.min(await matches.count().catch(() => 0), 4);
-      for (let i = 0; i < count; i++) {
-        const match = matches.nth(i);
-        if (!(await match.isVisible().catch(() => false))) continue;
-        const info = await match.evaluate(el => {
-          const block = el.closest('li') || el.closest('[class*="category"]') ||
-            el.parentElement?.parentElement?.parentElement || el.parentElement;
-          return {
-            elementTag: el.tagName.toLowerCase(),
-            parentMarkup: block?.outerHTML?.slice(0, 1900) || ''
-          };
-        });
-        out.push(info);
-        if (out.length >= 3) return out;
-      }
-    } catch {
-      // A disappearing Wix frame cannot establish the toggle's accessibility.
+    const loc = frame.getByRole('button', { name: names });
+    const count = Math.min(await loc.count().catch(() => 0), 4);
+    for (let i = 0; i < count; i++) {
+      const button = loc.nth(i);
+      if (await button.isVisible().catch(() => false)) return button;
     }
   }
-  return out;
+  return null;
 }
 
 const browser = await chromium.launch({ headless: true });
@@ -288,29 +245,64 @@ try {
     let revisitFound = false, withdrawalClicked = false;
     let postWithdrawalAnalyticsKinds = [], postWithdrawalAcceptVisible = null;
     let postWithdrawalRevisitVisible = null, withdrawalError = null;
-    let revisitControls = [];
-    let revisitToggles = [];
-    let analyticsMarkup = [];
+    let optionalCategoriesFound = 0, optionalCategoriesTurnedOff = 0;
+    let persistedOptionalCategories = null, persistedAllOff = false;
+    let saveButtonClicked = false;
     try {
       const revisit = await findRevisitButton(page);
       if (revisit) {
         revisitFound = true;
         await revisit.click({ timeout: 8000 });
-        await page.waitForTimeout(1500);
-        revisitControls = await cookieControlCandidates(page);
-        revisitToggles = await consentToggleCandidates(page);
-        analyticsMarkup = await analyticsCategoryMarkup(page);
-        const decline = await findDeclineButton(page);
-        if (decline) {
-          await decline.click({ timeout: 8000 });
-          withdrawalClicked = true;
-          await page.waitForTimeout(1500);
-          const marker = observed.length;
-          await page.reload({ waitUntil: 'domcontentloaded', timeout: 45000 });
-          await page.waitForTimeout(4000);
-          postWithdrawalAnalyticsKinds = [...new Set(observed.slice(marker).map(x => x.kind))];
-          postWithdrawalAcceptVisible = Boolean(await findAcceptButton(page));
-          postWithdrawalRevisitVisible = Boolean(await findRevisitButton(page));
+        await page.waitForTimeout(1200);
+        const sections = await findConsentSections(page);
+        if (sections) {
+          const count = Math.min(await sections.count(), 12);
+          let allOffBeforeSave = true;
+          for (let i = 0; i < count; i++) {
+            const section = sections.nth(i);
+            const input = section.locator('input[data-hook="consent-banner-section-toggle-input"]').first();
+            if (await input.count() !== 1 || await input.isDisabled()) continue;
+            optionalCategoriesFound++;
+            if (await input.isChecked()) {
+              const label = section.locator('label[for]').first();
+              if (await label.count() === 1 && await label.isVisible()) {
+                await label.click({ timeout: 8000 });
+                optionalCategoriesTurnedOff++;
+              }
+            }
+            if (await input.isChecked()) allOffBeforeSave = false;
+          }
+          const save = await findSaveConsentButton(page);
+          if (optionalCategoriesFound > 0 && allOffBeforeSave && save) {
+            const marker = observed.length;
+            await save.click({ timeout: 8000 });
+            saveButtonClicked = true;
+            await page.waitForTimeout(1400);
+            await page.reload({ waitUntil: 'domcontentloaded', timeout: 45000 });
+            await page.waitForTimeout(4000);
+            postWithdrawalAnalyticsKinds = [...new Set(observed.slice(marker).map(x => x.kind))];
+            postWithdrawalAcceptVisible = Boolean(await findAcceptButton(page));
+            const reopen = await findRevisitButton(page);
+            postWithdrawalRevisitVisible = Boolean(reopen);
+            if (reopen) {
+              await reopen.click({ timeout: 8000 });
+              await page.waitForTimeout(1200);
+              const secondSections = await findConsentSections(page);
+              if (secondSections) {
+                let activeOptional = 0, optionalCount = 0;
+                const countAgain = Math.min(await secondSections.count(), 12);
+                for (let k = 0; k < countAgain; k++) {
+                  const input = secondSections.nth(k).locator('input[data-hook="consent-banner-section-toggle-input"]').first();
+                  if (await input.count() !== 1 || await input.isDisabled()) continue;
+                  optionalCount++;
+                  if (await input.isChecked()) activeOptional++;
+                }
+                persistedOptionalCategories = optionalCount;
+                persistedAllOff = optionalCount > 0 && activeOptional === 0;
+              }
+            }
+            withdrawalClicked = true;
+          }
         }
       }
     } catch (e) {
@@ -319,17 +311,18 @@ try {
     const withdrawalResult = {
       locale: target.lang,
       revisitFound,
-      revisitControls,
-      revisitToggles,
-      analyticsMarkup,
-      declineAfterAcceptClicked: withdrawalClicked,
+      optionalCategoriesFound,
+      optionalCategoriesTurnedOff,
+      saveButtonClicked,
+      persistedOptionalCategories,
+      persistedAllOff,
       postWithdrawalAnalyticsKinds,
       postWithdrawalAcceptVisible,
       postWithdrawalRevisitVisible,
       error: withdrawalError,
       result: postWithdrawalAnalyticsKinds.length
         ? 'POST_WITHDRAWAL_CLIENT_LEAK'
-        : withdrawalError || !revisitFound || !withdrawalClicked || postWithdrawalAcceptVisible !== false
+        : withdrawalError || !revisitFound || !withdrawalClicked || !persistedAllOff || postWithdrawalAcceptVisible !== false
           ? 'WITHDRAWAL_UI_NOT_PROVEN'
           : 'CLIENT_WITHDRAWAL_PASS'
     };
@@ -366,5 +359,5 @@ if (privacyNetworkGateFailed) {
 if (withdrawalResults.some(row => row.result !== 'CLIENT_WITHDRAWAL_PASS')) {
   console.warn('WITHDRAWAL_UNVERIFIED: One or more language/consent flows did not prove client withdrawal. See #315; preserve active remediation journal.');
 } else {
-  console.log('CLIENT_WITHDRAWAL_PASS: Revisit -> Decline -> Reload showed no classified client analytics requests in all three locales. Server-side tracking and legal consent still require separate evidence.');
+  console.log('CLIENT_WITHDRAWAL_PASS: Revisit -> disable optional categories -> Save -> Reload -> re-open confirmed opt-out in all locales, without classified client analytics requests. Server-side tracking and legal consent still require separate evidence.');
 }
