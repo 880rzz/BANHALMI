@@ -1,0 +1,36 @@
+name: Wix Blog live consent-first network audit
+
+on:
+  push:
+    branches:
+      - main
+      - test/wix-blog-live-consent-network-20261123
+    paths:
+      - tools/audit-wix-consent-live.mjs
+      - .github/workflows/wix-consent-live-audit.yml
+  pull_request:
+    paths:
+      - tools/audit-wix-consent-live.mjs
+      - .github/workflows/wix-consent-live-audit.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  wix-consent-live:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout tested source
+        uses: actions/checkout@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install audited Playwright dependency
+        run: npm ci
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verify all three locales before consent and after decline, mobile and desktop
+        run: node tools/audit-wix-consent-live.mjs
