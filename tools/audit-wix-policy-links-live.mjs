@@ -97,6 +97,7 @@ try {
   }
 } finally { await browser.close(); }
 fs.writeFileSync(path.join(outDir, 'results.json'), JSON.stringify({ timestamp: new Date().toISOString(), results, failures, warnings }, null, 2));
+console.log('WIX-POLICY-DOM-DIAGNOSTICS ' + JSON.stringify(results.map(x => ({ lang: x.lang, width: x.width, diagnostics: x.diagnostics }))));
 console.log('WIX-POLICY-LINK-EVIDENCE ' + JSON.stringify({ tested: results.length, failures: failures.length, warnings: warnings.length, classification: results.map(x => [x.lang, x.width, x.classification, x.selectedHref, x.clickedDestination]) }));
 for (const f of failures) console.error('FAIL ' + f);
 for (const w of warnings) console.warn('WARN ' + w);
