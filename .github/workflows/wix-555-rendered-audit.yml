@@ -1,0 +1,44 @@
+name: Wix all 555 published posts rendered audit
+on:
+  pull_request:
+    paths:
+      - tools/audit-wix-all-posts-rendered.mjs
+      - tools/fixtures/wix-20261123-live-urls.json
+      - .github/workflows/wix-555-rendered-audit.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  wix-rendered:
+    name: Chromium native rendered audit (${{ matrix.lang }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      matrix:
+        lang: [hu, en, de]
+    steps:
+      - name: Checkout audited source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install locked audited Playwright
+        run: npm ci
+      - name: Install Chromium with system dependencies
+        run: npx playwright install --with-deps chromium
+      - name: Read-only full published Wix locale DOM and viewport audit
+        env:
+          WIX_LOCALE: ${{ matrix.lang }}
+        run: node tools/audit-wix-all-posts-rendered.mjs
+      - name: Retain scoped rendered evidence (private CI artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wix-all-posts-rendered-${{ matrix.lang }}
+          path: artifacts/wix-555-rendered/${{ matrix.lang }}
+          retention-days: 14
+          if-no-files-found: warn
