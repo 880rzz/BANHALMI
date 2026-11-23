@@ -108,15 +108,141 @@ for (const site of audits) {
 }
 
 const wixSamples = [
-  { lang: 'hu', type: 'home', url: 'https://blog.banhalmi.art/' },
-  { lang: 'en', type: 'home', url: 'https://blog.banhalmi.art/en/' },
-  { lang: 'de', type: 'home', url: 'https://blog.banhalmi.art/de/' },
-  { lang: 'hu', type: 'category', url: 'https://blog.banhalmi.art/blog/categories/lifestyle-es-portfoliofotozas' },
-  { lang: 'en', type: 'category', url: 'https://blog.banhalmi.art/en/blog/categories/portrait-portfolio-photography' },
-  { lang: 'de', type: 'category', url: 'https://blog.banhalmi.art/de/blog/categories/portraet-portfoliofotografie' },
-  { lang: 'hu', type: 'post', url: 'https://blog.banhalmi.art/post/júlia-dominik-modell-portfóliója' },
-  { lang: 'en', type: 'post', url: 'https://blog.banhalmi.art/en/post/júlia-dominik-model-portfolio' },
-  { lang: 'de', type: 'post', url: 'https://blog.banhalmi.art/de/post/júlia-dominik-modelportfolio' }
+  {
+    "lang": "hu",
+    "type": "home",
+    "url": "https://blog.banhalmi.art/"
+  },
+  {
+    "lang": "en",
+    "type": "home",
+    "url": "https://blog.banhalmi.art/en/"
+  },
+  {
+    "lang": "de",
+    "type": "home",
+    "url": "https://blog.banhalmi.art/de/"
+  },
+  {
+    "lang": "hu",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg"
+  },
+  {
+    "lang": "hu",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/blog/categories/noi-tortenetek"
+  },
+  {
+    "lang": "hu",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/blog/categories/lifestyle-es-portfoliofotozas"
+  },
+  {
+    "lang": "hu",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/blog/categories/no-filter-oszinte-tortenetek"
+  },
+  {
+    "lang": "hu",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/blog/categories/aktfotozas-muveszi-szemmel"
+  },
+  {
+    "lang": "hu",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas"
+  },
+  {
+    "lang": "hu",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/blog/categories/fototortenelem"
+  },
+  {
+    "lang": "en",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/en/blog/categories/vipach-photography-community"
+  },
+  {
+    "lang": "en",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/en/blog/categories/womens-stories"
+  },
+  {
+    "lang": "en",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/en/blog/categories/portrait-portfolio-photography"
+  },
+  {
+    "lang": "en",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/en/blog/categories/no-filter-honest-stories"
+  },
+  {
+    "lang": "en",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/en/blog/categories/fine-art-nude-photography"
+  },
+  {
+    "lang": "en",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/en/blog/categories/portrait-headshot-photography"
+  },
+  {
+    "lang": "en",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/en/blog/categories/photography-history"
+  },
+  {
+    "lang": "de",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/de/blog/categories/vipach-fotografie-community"
+  },
+  {
+    "lang": "de",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/de/blog/categories/geschichten-von-frauen"
+  },
+  {
+    "lang": "de",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/de/blog/categories/portraet-portfoliofotografie"
+  },
+  {
+    "lang": "de",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/de/blog/categories/no-filter-ehrliche-geschichten"
+  },
+  {
+    "lang": "de",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/de/blog/categories/kuenstlerische-aktfotografie"
+  },
+  {
+    "lang": "de",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/de/blog/categories/portraet-headshotfotografie"
+  },
+  {
+    "lang": "de",
+    "type": "category",
+    "url": "https://blog.banhalmi.art/de/blog/categories/fotogeschichte"
+  },
+  {
+    "lang": "hu",
+    "type": "post",
+    "url": "https://blog.banhalmi.art/post/júlia-dominik-modell-portfóliója"
+  },
+  {
+    "lang": "en",
+    "type": "post",
+    "url": "https://blog.banhalmi.art/en/post/júlia-dominik-model-portfolio"
+  },
+  {
+    "lang": "de",
+    "type": "post",
+    "url": "https://blog.banhalmi.art/de/post/júlia-dominik-modelportfolio"
+  }
 ];
 const wix = [];
 const browser = await chromium.launch({ headless: true });
@@ -172,7 +298,7 @@ await browser.close();
 rows.sort((a, b) => a.url.localeCompare(b.url));
 const result = {
   generatedAt: new Date().toISOString(),
-  scope: 'All 57 Professional and 93 ART sitemap HTML routes: production HTTP and semantic source/live checks. Wix: 9 editorial route samples at 2 viewports only, NOT all 555 posts or 21 categories.',
+  scope: 'All 57 Professional and 93 ART sitemap HTML routes: production HTTP and semantic source/live checks. Wix: 3 homepages, ALL 21 localized category routes and 3 post samples at 2 viewports (54 renders); NOT all 555 post renders.',
   deployment,
   routeCounts: { professional: rows.filter(r => r.site === 'professional').length, art: rows.filter(r => r.site === 'art').length },
   failures, warnings, rows, wix
