@@ -1,0 +1,32 @@
+name: Wix suspicious SSR post title H1 readback
+on:
+  pull_request:
+    paths:
+      - tools/audit-wix-ssr-three-posts.mjs
+      - .github/workflows/wix-ssr-three-posts.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ssr-three-posts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Check repeated Wix static HTML and rendered title H1 per locale
+        run: node tools/audit-wix-ssr-three-posts.mjs
+      - name: Retain evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wix-ssr-three-posts
+          path: artifacts/wix-ssr-post-reproduction
+          retention-days: 14
+          if-no-files-found: warn
