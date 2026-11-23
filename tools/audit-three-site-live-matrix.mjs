@@ -277,7 +277,8 @@ for (const entry of wixSamples) {
         };
       });
       Object.assign(item, facts);
-      const shot = entry.lang + '-' + entry.type + '-' + width + '.png';
+      const slug = new URL(entry.url).pathname.split('/').filter(Boolean).at(-1) || 'home';
+      const shot = (entry.lang + '-' + entry.type + '-' + slug.normalize('NFKD').replace(/[^a-zA-Z0-9-]/g, '-').slice(0,70) + '-' + width + '.png');
       item.screenshot = shot;
       await page.screenshot({ path: path.join(dir, shot), fullPage: false });
       if (item.status !== 200 || item.overflow > 8)
