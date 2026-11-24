@@ -7520,3 +7520,48 @@ html body main :is(.linklist,.ticks,ul.socials,.footer-social-links,.nav-links,u
   padding-inline-start:0;
 }
 /* CONTENT_EDGE_INSET_20261101:END */
+
+/* Quote pages only: keep the calculated amount in the form, not just in a floating card. */
+[data-smart-quote] .quote-option-price {
+  display:block;
+  margin-top:.3em;
+  font-size:.875rem;
+  line-height:1.4;
+  font-weight:650;
+  color:inherit;
+}
+[data-smart-quote] .quote-before-send {
+  margin:1rem 0;
+  padding:clamp(.75rem,2vw,1rem);
+  border:1px solid #b5bcc5;
+  border-radius:12px;
+  background:#f5f7fa;
+  color:#1d1d1f;
+  min-width:0;
+  overflow-wrap:anywhere;
+}
+[data-smart-quote] .quote-before-send :is(h4,p) {margin:0 0 .35rem}
+[data-smart-quote] .quote-before-send :last-child {margin-bottom:0}
+[data-smart-quote] .quote-before-send-amount {font-size:1.2rem;font-weight:700}
+[data-smart-quote] .quote-before-send-amount .quote-euro-equivalent {
+  display:inline-block;
+  margin:0 0 0 .5em;
+  font-size:inherit;
+}
+@media (max-width:900px) {
+  html body [data-quote-root] .quote-summary-card .quote-total {
+    min-width:0;
+    overflow-wrap:anywhere;
+    white-space:normal;
+  }
+  /* A consent choice must remain easy to reach. Fall back to the same
+     estimate in normal flow instead of stacking floating controls. */
+  html body:has(.cookie.show) [data-quote-root] .quote-summary-card,
+  html body:has([data-smart-quote] :is(input:not([type=radio],[type=checkbox],[type=hidden]),select,textarea):focus) [data-quote-root] .quote-summary-card {
+    position:static;
+    margin:0 0 1rem;
+  }
+  html body [data-smart-quote] :is(.quote-before-send,.quote-submit-actions,[data-form-note]) {
+    scroll-margin-block:calc(var(--header-h,64px) + 12px) 7rem;
+  }
+}
