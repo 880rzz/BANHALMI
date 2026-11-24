@@ -311,3 +311,40 @@ for (const fixture of guidedQuotes) {
     await expect(receipt).not.toContainText('guided60');
   });
 }
+
+for (const fixture of guidedQuotes) {
+  test(fixture.lang + ': PDF uses the portrait name, not its visible base-price caption', async ({ page }) => {
+    await mockOnlyQuoteNetwork(page);
+    await page.addInitScript(() => {
+      window.__quotePdfText = [];
+      const original = CanvasRenderingContext2D.prototype.fillText;
+      CanvasRenderingContext2D.prototype.fillText = function (text, ...args) {
+        window.__quotePdfText.push(text);
+        return original.call(this, text, ...args);
+      };
+    });
+    const form = await openGuidedQuote(page, fixture);
+    await page.locator('.cookie.show [data-decline]').click();
+    await form.locator('[name="name"]').fill('PDF Fixture');
+    await form.locator('[name="email"]').fill('portrait@example.invalid');
+    await form.locator('[name="customer_type"]').selectOption('private');
+    await form.locator('[name="billing_country"]').selectOption('HU');
+    await form.locator('[name="message"]').fill('Mock-only local PDF test.');
+    await form.locator('[name="date_coordination_requested"]').check();
+    await form.locator('[name="privacy_acknowledged"]').check();
+    await form.locator('[name="retouched_images"]').fill('2');
+    const [pdf] = await Promise.all([
+      page.waitForEvent('download'),
+      page.locator('[data-download-quote-pdf]').click()
+    ]);
+    expect(pdf.suggestedFilename()).toMatch(/\.pdf$/);
+    const words = await page.evaluate(() => window.__quotePdfText);
+    const packageLabel = { EN: 'Package', HU: 'Csomag', 'DE-AT': 'Paket' }[fixture.lang];
+    expect(words[words.indexOf(packageLabel) + 1]).toBe(fixture.label);
+    // The final estimate includes the second retouch; the unselected one-image
+    // package's base-price caption must not leak onto a separate PDF line.
+    const updated = fixture.lang === 'HU' ? /182\s*000\s*Ft/ : /€\s*455[.,]00/;
+    expect(words.some(line => updated.test(line))).toBe(true);
+    expect(words.some(line => fixture.amount.test(line))).toBe(false);
+  });
+}
