@@ -28,6 +28,60 @@
     "evidence",
     "reference"
   ],
+  "photoProduction": {
+    "name": "Full-service photo production on request",
+    "relationship": "capability-within-existing-services",
+    "description": "For selected branding, advertising campaign and bespoke art-direction briefs, one point of contact can coordinate full-service photo production with a project-specific team. Vienna is the primary market; Budapest is also actively served. Clarify the intended result and usage first, then set scope, supplier bookings or contracts and usage rights in a written offer. This is a capability, not a separate service, standard package or automatic calculator price.",
+    "localizedNames": {
+      "en": "Full-service photo production for larger campaigns",
+      "de-AT": "Full-Service-Fotoproduktion für größere Kampagnen",
+      "hu-HU": "Teljes körű fotóprodukció nagyobb kampányokhoz"
+    },
+    "hypotheticalExample": {
+      "en": "Example brief: if you want brand images built around a classic car, we can scout a garage or car wash, arrange the location hire and bookings, source the lighting and equipment, and bring in models, a stylist, hair and makeup when the concept calls for them. This is an example of how a brief could be planned, not a client project.",
+      "de-AT": "Ein mögliches Briefing: Sollen die Markenbilder rund um einen Oldtimer entstehen, können wir eine Werkstatt oder eine Waschanlage suchen, den Ort mieten, Buchungen koordinieren, Licht und Technik besorgen und bei Bedarf Models, Styling, Haare und Make-up organisieren. Das ist ein Beispiel für die Planung, kein Kundenprojekt.",
+      "hu-HU": "Példa egy lehetséges briefre: ha a márkafotók középpontjában egy oldtimer áll, kereshetünk hozzá illő műhelyt vagy autómosót, kibérelhetjük a helyszínt, egyeztetünk a partnerekkel, és gondoskodunk a világításról és a felszerelésről. Ha a koncepcióhoz kell, modelleket, stylistot, sminkest és fodrászt is szervezünk. Ez egy lehetséges produkciós terv, nem ügyfélreferencia."
+    },
+    "productionSteps": [
+      "brief, creative concept and art direction, moodboard, shot list and call sheet",
+      "location scouting and hire, partner bookings or contracts within the written scope, casting and model booking, wardrobe and set styling, hair and makeup",
+      "camera, lighting and grip rentals, specialist photographers and technical crew, scheduling, on-set coordination and agreed hospitality",
+      "selection, retouching, delivery formats and image usage as agreed"
+    ],
+    "rightsAndPermissions": "Coordinate location permissions and releases, model consent and agreed image usage with responsible parties and external legal specialists when needed. Approvals are conditional; this is not legal advice or a guarantee.",
+    "observers": "Only invited guests and prior agreement, with venue, safety, capacity, privacy and participant consent considered; no public admission.",
+    "where": {
+      "primaryMarket": "Vienna, Austria",
+      "activeSecondaryMarket": "Budapest, Hungary"
+    },
+    "routes": {
+      "en": {
+        "details": "https://www.banhalmiphotography.com/lifestyle/#production-capability",
+        "enquiry": "https://www.banhalmiphotography.com/contact/#contact-form"
+      },
+      "de-AT": {
+        "details": "https://www.banhalmiphotography.com/de-at/brand/#production-capability",
+        "enquiry": "https://www.banhalmiphotography.com/de-at/kontakt/#kontaktformular"
+      },
+      "hu-HU": {
+        "details": "https://www.banhalmiphotography.com/hu/brand/#production-capability",
+        "enquiry": "https://www.banhalmiphotography.com/hu/kapcsolat/#kapcsolatfelveteli-urlap"
+      }
+    },
+    "experience": {
+      "description": "Norbert Bánhalmi’s two decades of production practice and international network include earlier work through the HIPStudio creative brand he founded in 2006, general public-sector and financial-sector work, and past assignments in Vienna, Hungary, New York and other countries. New York is not an operating base. HIPStudio is a separate business, not the current BANHALMI contracting entity.",
+      "founderAndSeparateBusinessSource": "https://www.hipstudio.hu/impresszum",
+      "attribution": "Owner-reported prior scope and countries; first-party HIPStudio source verifies the founding and separate entities, not project clients or scope."
+    },
+    "historicalPhotography": {
+      "description": "Norbert’s public account of photographing the Budapest Dutch supporters’ light activation with ShootEasy at EURO 2020 in 2021. Documentary photography context; not evidence of an HIPStudio/BANHALMI contract, campaign lead, endorsement or whole production credit.",
+      "articles": {
+        "en": "https://blog.banhalmi.art/en/post/smoke-and-laser-the-dutch-are-coming",
+        "de-AT": "https://blog.banhalmi.art/de/post/rauch-und-laser-die-holl%C3%A4nder-greifen-an",
+        "hu-HU": "https://blog.banhalmi.art/post/fust-es-lezer-tamadnak-a-hollandok"
+      }
+    }
+  },
   "editorialPublication": {
     "@id": "https://blog.banhalmi.art/#blog",
     "url": "https://blog.banhalmi.art/",
