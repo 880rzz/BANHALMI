@@ -174,6 +174,13 @@ for (const j of journeys) {
     await page.locator('.lang-switch:not(.lang-switch--footer) a[hreflang="' + (other.currency === 'HUF' ? 'hu-HU' : 'en') + '"]').first().click();
     await expect(page).toHaveURL(new RegExp(other.quote+'\\?service=event&event_duration=event60#quote-calculator$'));
     await assertEstimate(page, other.currency, 590);
+    await page.locator('[data-smart-quote] input[name="event_duration"][value="eventFullDay"]').check();
+    await expect(page).toHaveURL(/service=event&event_duration=eventFullDay#quote-calculator$/);
+    await assertEstimate(page, other.currency, 2490);
+    const returnLanguage = j.locale === 'DE-AT' ? 'de-AT' : j.locale === 'HU' ? 'hu-HU' : 'en';
+    await page.locator('.lang-switch a[hreflang="' + returnLanguage + '"]').first().click();
+    await expect(page).toHaveURL(new RegExp(j.quote+'\\?service=event&event_duration=eventFullDay#quote-calculator$'));
+    await assertEstimate(page, j.currency, 2490);
     await page.locator('[data-smart-quote] input[name="category"][data-private-event="true"]').check();
     await expect(page).toHaveURL(/service=private-event(?:#quote-calculator)?$/);
     await expect(page.locator('[data-smart-quote] input[name="event_duration"][value="event120"]')).toBeChecked();

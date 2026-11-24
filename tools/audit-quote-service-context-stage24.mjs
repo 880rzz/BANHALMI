@@ -119,7 +119,7 @@ for(const token of ['serviceContextToCategory','categoryToServiceContext','new U
 for(const [service,category] of Object.entries(allowed)) if(!engine.includes((service.includes('-')?"'"+service+"'":service)+":'"+category+"'")) errors.push('quote-calculator.js: missing allowlist mapping '+service+' → '+category);
 for(const relative of quotePages){
   const html=fs.readFileSync(path.join(root,relative),'utf8');
-  if(!html.includes('/assets/js/quote-calculator.js?v=20261124-intent-prefill-v2')) errors.push(relative+': current quote engine version missing');
+  if(!html.includes('/assets/js/quote-calculator.js?v=20261124-intent-prefill-v3')) errors.push(relative+': current quote engine version missing');
   if((html.match(/<a class="quote-price-card" href="[^"]+\?service=/g)||[]).length!==4) errors.push(relative+': overview price cards must deep-link with service context');
   const head=(html.match(/<head>[\s\S]*?<\/head>/)||[''])[0];
   if(metadataWithoutJsonLd(html).includes('?service=')) errors.push(relative+': source metadata must stay query-free');
