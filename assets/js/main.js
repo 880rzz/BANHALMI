@@ -435,7 +435,7 @@
   function cleanOptionLabel(label) {
     if (!label) return '';
     var clone = label.cloneNode(true);
-    clone.querySelectorAll('.info-tip,[data-tooltip]').forEach(function (node) { node.remove(); });
+    clone.querySelectorAll('.info-tip,[data-tooltip],[data-quote-option-price]').forEach(function (node) { node.remove(); });
     return (clone.textContent || '').replace(/\s+/g, ' ').trim();
   }
   function selectedOptionText(form, name) {
@@ -568,7 +568,8 @@
     if (category === 'individual') {
       payload.packageName = readRadio(form, 'individual_mode');
       payload.packageCode = payload.packageName;
-      payload.packageLabel = selectedOptionText(form, 'individual_mode') || payload.packageName;
+      var selection = estimate && quoteEngine && quoteEngine.quoteSelection ? quoteEngine.quoteSelection(form, estimate) : null;
+      payload.packageLabel = selection ? selection.packageLabel : selectedOptionText(form, 'individual_mode');
       payload.durationCode = payload.packageName;
       payload.duration = ql.durations[payload.packageName] || '';
       payload.retouchMode = ql.retouch.selected;
@@ -689,6 +690,13 @@
       if (form.elements.website && form.elements.website.value) { form.elements.website.value = ""; } /* clear accidental autofill instead of silently dropping the submission; the backend honeypot still catches direct bot POSTs */
       var isQuote = form.getAttribute('data-form-kind') === 'quote' || (form.elements.form_type && form.elements.form_type.value === 'quote');
       var payload = isQuote? buildQuotePayload(form): buildGenericPayload(form);
+      // Preserve exactly what the visitor saw when sending; edits while a
+      // request is in flight must not change the later receipt.
+      var quoteSnapshot = isQuote && quoteEngine && quoteEngine.quoteSelection ?
+        quoteEngine.quoteSelection(form, quoteEngine.calculate(form)) : null;
+      var estimateNote = quoteSnapshot && form.querySelector('[data-quote-before-send-note]');
+      var quoteReceipt = quoteSnapshot ? ' ' + quoteSnapshot.description + '. ' + quoteSnapshot.amount + '. ' +
+        (estimateNote ? estimateNote.textContent : '') : '';
       // Snapshot the selected service before the async delivery; do not expose
       // the submitted customer payload to the analytics hook.
       var trackedCategoryCode = isQuote ? readRadio(form, 'category') : '';
@@ -854,7 +862,7 @@
             showNote(message('error'), true);
             return;
           }
-          showNote(message(data && data.unverified? 'successUnverified': 'success') + (data && data.submissionId? ' ID: ' + data.submissionId: ''), false);
+          showNote(message(data && data.unverified? 'successUnverified': 'success') + (data && data.unverified ? '' : quoteReceipt) + (data && data.submissionId? ' ID: ' + data.submissionId: ''), false);
           if (isQuote) trackVerifiedQuoteLead();
           else trackVerifiedContactLead(data);
           form.reset();

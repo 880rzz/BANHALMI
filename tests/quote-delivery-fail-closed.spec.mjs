@@ -189,3 +189,125 @@ for (const j of journeys) {
     await expect(page.locator('[data-smart-quote] input[name="event_duration"][value="event120"]')).toBeChecked();
   });
 }
+
+const guidedQuotes = [
+  { path: '/requestaquote/', lang: 'EN', label: '60-minute guided portrait', duration: '1 hour', count: '1 retouched image', amount: /€\s*420(?:\.00)?/, decline: 'Only necessary' },
+  { path: '/hu/ajanlatkeres/', lang: 'HU', label: '60 perces vezetett portré', duration: '1 óra', count: '1 retusált kép', amount: /168\s*000\s*Ft/, equivalent: /420,00\s*EUR/, decline: 'Csak szükséges' },
+  { path: '/de-at/anfrage/', lang: 'DE-AT', label: 'Geführtes 60-Minuten-Porträt', duration: '1 Stunde', count: '1 retuschiertes Bild', amount: /(?:€\s*420[,.]00|420(?:[,.]00)?\s*€)/, decline: 'Nur notwendige' }
+];
+
+async function openGuidedQuote(page, fixture) {
+  await page.goto(fixture.path + '?service=portrait&portrait_mode=guided60#quote-calculator');
+  const form = page.locator('form[data-smart-quote]');
+  await expect(form).toHaveAttribute('data-pricing-ready', 'true');
+  await expect(form.locator('input[name="individual_mode"][value="guided60"]')).toBeChecked();
+  await page.keyboard.press('Tab'); // Load the production deferred first-interaction runtime.
+  await expect(page.locator('.cookie.show')).toBeVisible();
+  await form.locator('[name="location"]').selectOption('budapest');
+  return form;
+}
+
+async function mockOnlyQuoteNetwork(page, onSubmit = null) {
+  await page.route('**/*', async route => {
+    const url = new URL(route.request().url());
+    if (url.origin === 'http://127.0.0.1:4173') {
+      if (route.request().method() === 'GET') return route.continue();
+      throw new Error('Unexpected request to the isolated local site');
+    }
+    if (url.pathname === '/api/banhalmi-form' && onSubmit) {
+      return onSubmit(route);
+    }
+    return route.abort();
+  });
+}
+
+for (const fixture of guidedQuotes) {
+  test(fixture.lang + ': portrait option, gross estimate and consent layout at 320–1440 px', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 667 });
+    await mockOnlyQuoteNetwork(page);
+    const form = await openGuidedQuote(page, fixture);
+    const recap = form.locator('[data-quote-before-send]');
+    const amount = recap.locator('[data-quote-before-send-amount]');
+    const option = form.locator('[data-quote-option-price="guided60"]');
+    await expect(option).toContainText(fixture.amount);
+    await expect(recap).toContainText(fixture.label);
+    await expect(recap).toContainText(fixture.duration);
+    await expect(recap).toContainText(fixture.count);
+    const budget = form.locator('[name="budget"]');
+    await expect(budget).toHaveValue('');
+    await expect(budget).not.toHaveAttribute('required', /.*/);
+    await expect(budget).not.toHaveAttribute('placeholder', /.*/);
+    await expect(budget).toHaveAttribute('aria-describedby', 'quote-budget-help');
+    for (const width of [320, 375, 390, 430, 768, 900, 1024, 1280, 1440]) {
+      await page.setViewportSize({ width, height: width <= 430 ? 667 : 900 });
+      await amount.evaluate(node => node.scrollIntoView({ block: 'center' }));
+      await expect(amount).toBeInViewport({ ratio: 1 });
+      await expect(amount).toContainText(fixture.amount);
+      await expect(amount.locator('[data-currency]')).toHaveCount(fixture.equivalent ? 2 : 1);
+      const noOverlap = await amount.evaluate(node => {
+        const a = node.getBoundingClientRect();
+        const c = document.querySelector('.cookie.show').getBoundingClientRect();
+        const floats = document.querySelector('[data-quote-summary]');
+        return a.left >= 0 && a.right <= innerWidth &&
+          (a.bottom <= c.top || a.right <= c.left || a.left >= c.right) &&
+          (innerWidth > 900 || getComputedStyle(floats).position === 'static');
+      });
+      expect(noOverlap, 'visible estimate does not compete with the cookie prompt at ' + width).toBe(true);
+    }
+    await page.setViewportSize({ width: 390, height: 667 });
+    const original = await amount.textContent();
+    await budget.fill('50000');
+    await expect(amount).toHaveText(original);
+    await budget.clear();
+    // Consent control remains actionable, then smaller visual space + input
+    // focus simulate an on-screen keyboard without claiming native iOS testing.
+    await page.locator('.cookie.show [data-decline]').click();
+    await expect(page.locator('.cookie.show')).toHaveCount(0);
+    await budget.focus();
+    await page.setViewportSize({ width: 390, height: 380 });
+    await expect(page.locator('[data-quote-summary]')).toHaveCSS('position', 'static');
+    await budget.blur();
+    await expect(page.locator('[data-quote-summary]')).toHaveCSS('position', 'fixed');
+    await amount.evaluate(node => node.scrollIntoView({ block: 'center' }));
+    await expect(amount).toBeInViewport({ ratio: 1 });
+    if (fixture.equivalent) await expect(amount.locator('[data-currency="EUR"]')).toContainText(fixture.equivalent);
+  });
+
+  test(fixture.lang + ': blank-budget portrait sends the chosen estimate and preserves receipt during an edit', async ({ page }) => {
+    let submitted, completeDelivery;
+    const delivery = new Promise(resolve => { completeDelivery = resolve; });
+    await mockOnlyQuoteNetwork(page, async route => {
+      submitted = route.request().postDataJSON();
+      await delivery;
+      await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ok: true, adminEmailSent: true, customerEmailSent: true, submissionId: 'MOCK-GUIDED' }) });
+    });
+    const form = await openGuidedQuote(page, fixture);
+    await page.locator('.cookie.show [data-decline]').click();
+    await form.locator('[name="name"]').fill('Regression Client');
+    await form.locator('[name="email"]').fill('portrait@example.invalid');
+    await form.locator('[name="customer_type"]').selectOption('private');
+    await form.locator('[name="billing_country"]').selectOption('HU');
+    await form.locator('[name="message"]').fill('Mock-only portrait test.');
+    await form.locator('[name="date_coordination_requested"]').check();
+    await form.locator('[name="privacy_acknowledged"]').check();
+    await expect(form.locator('[data-quote-before-send]')).toContainText(fixture.amount);
+    await form.locator('[type="submit"]').click();
+    await expect.poll(() => submitted?.packageLabel).toBe(fixture.label);
+    expect(submitted).toMatchObject({
+      budget: '', categoryCode: 'individual', packageCode: 'guided60', duration: fixture.duration,
+      retouchedImagesTotal: '1', grossAmount: '420', vatRate: '20%',
+      displayCurrency: fixture.lang === 'HU' ? 'HUF' : 'EUR',
+      displayGrossAmount: fixture.lang === 'HU' ? '168000' : '420'
+    });
+    expect(submitted.category).not.toMatch(/Executive/i);
+    await form.locator('[name="retouched_images"]').fill('2');
+    await expect(form.locator('[data-quote-before-send]')).not.toContainText(fixture.amount);
+    completeDelivery();
+    const receipt = form.locator('[data-form-note][data-state="success"]');
+    await expect(receipt).toContainText(fixture.label);
+    await expect(receipt).toContainText(fixture.duration);
+    await expect(receipt).toContainText(fixture.count);
+    await expect(receipt).toContainText(fixture.amount);
+    await expect(receipt).not.toContainText('guided60');
+  });
+}
