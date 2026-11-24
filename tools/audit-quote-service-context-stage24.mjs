@@ -128,4 +128,4 @@ for(const relative of quotePages){
   if((html.match(/name="category"[^>]*value="individual"|value="individual"[^>]*name="category"/g)||[]).length<1) errors.push(relative+': individual fallback category missing');
 }
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
-console.log('Stage-twenty-four quote service-context audit passed: 36 scoped links map four public services safely across three localized quote builders.');
+console.log('Stage-twenty-four quote service-context audit passed: 42 scoped links map four public services safely across three localized quote builders.');
