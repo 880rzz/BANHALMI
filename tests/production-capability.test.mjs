@@ -39,7 +39,15 @@ for (const [l,[home, fine,exampleLabel, exampleBoundary]] of Object.entries(path
   const scoped = section(brand, 'production-capability');
   assert.ok(scoped.includes(capability.localizedNames[l]));
   assert.ok(scoped.includes('href="'+enquiry.pathname+enquiry.hash+'"'));
-  assert.ok(scoped.includes('href="'+capability.historicalPhotography.articles[l]+'"'));
+  const references = [...scoped.matchAll(/<p data-production-reference>([\s\S]*?)<\/p>/g)];
+  assert.equal(references.length, 1, l+' one visible real production reference');
+  const reference = references[0][1];
+  assert.match(reference, /<strong>[^<]+:<\/strong>/);
+  assert.match(reference, /Join the Wave.*Budapest.*2021.*EURO 2020/);
+  assert.match(reference, /ShootEasy/);
+  assert.ok(reference.includes('href="'+capability.historicalPhotography.articles[l]+'"'));
+  assert.doesNotMatch(reference, /HIPStudio|KNVB|data-production-example|oldtimer|classic car/i);
+  assert.ok(!scoped.match(/<p data-production-example>[^<]*<\/p>/)?.[0].includes('Join the Wave'), l+' actual credit must not appear in the hypothetical example');
   assert.ok(scoped.includes('data-production-example'));
   assert.ok(scoped.includes(exampleLabel) && scoped.includes(exampleBoundary), l+' example must stay clearly hypothetical');
   assert.doesNotMatch(scoped, /#quote-calculator|data-pricing-disclosure|OfferCatalog|"@type":"Service"/i);
