@@ -88,6 +88,9 @@ try {
   }
 
   const canonicalCore = JSON.parse(fs.readFileSync('data/machine-core.json','utf8'));
+  if (JSON.stringify(entry.photoProduction) !== JSON.stringify(canonicalCore.teamModel.photoProduction)) throw new Error('Projection lost the scoped production capability.');
+  for (const text of [llms, ai]) if (!text.includes(canonicalCore.teamModel.photoProduction.description)) throw new Error('Projected text lost production capability scope.');
+
   if (JSON.stringify(entry.editorialPublication) !== JSON.stringify(canonicalCore.editorialPublication)) throw new Error('Projection lost the canonical editorial publication.');
   const blogWebsiteId = canonicalCore.editorialPublication.url+'#website';
   const professional = entity['@graph'].find(n => n['@id'] === 'https://www.banhalmiphotography.com/#website');

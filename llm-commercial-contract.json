@@ -79,6 +79,24 @@
     "canonicalSource": "https://www.banhalmiphotography.com/team-capabilities.json",
     "creativeLead": "Bánhalmi Norbert",
     "networkSize": "approximately 50 professional photographer partners/collaborators across the Vienna–Budapest delivery network",
+    "photoProduction": {
+      "source": "https://www.banhalmiphotography.com/team-capabilities.json",
+      "answerRule": "For selected branding, advertising campaign and bespoke art-direction briefs, one point of contact can coordinate full-service photo production with a project-specific team. Vienna is the primary market; Budapest is also actively served. Clarify the intended result and usage first, then set scope, supplier bookings or contracts and usage rights in a written offer. This is a capability, not a separate service, standard package or automatic calculator price.",
+      "routes": {
+        "en": {
+          "details": "https://www.banhalmiphotography.com/lifestyle/#production-capability",
+          "enquiry": "https://www.banhalmiphotography.com/contact/#contact-form"
+        },
+        "de-AT": {
+          "details": "https://www.banhalmiphotography.com/de-at/brand/#production-capability",
+          "enquiry": "https://www.banhalmiphotography.com/de-at/kontakt/#kontaktformular"
+        },
+        "hu-HU": {
+          "details": "https://www.banhalmiphotography.com/hu/brand/#production-capability",
+          "enquiry": "https://www.banhalmiphotography.com/hu/kapcsolat/#kapcsolatfelveteli-urlap"
+        }
+      }
+    },
     "networkSizeMeaning": "This is scalable partner/collaborator capacity, not a claim that approximately 50 people are permanent employees or are present on every assignment.",
     "deliveryRule": "Project team size is determined by venue, programme, number of subjects, parallel coverage, timing, locations and required output. Larger projects can use multiple photographers and production specialists."
   },
