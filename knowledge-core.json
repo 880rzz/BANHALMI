@@ -116,19 +116,26 @@
       "wkoSource": "https://firmen.wko.at/norbert-banhalmi-visuelle-strategische-partnerschaft-f%C3%BCr-f%C3%BChrungskr%C3%A4fte/wien/?firmaid=12bd142c-5fcf-4457-9a90-47fbff162b40"
     },
     "localPrimaryCoverage": [
-      "Vienna and surrounding area",
-      "Budapest and surrounding area"
+      "Vienna and surrounding area"
     ],
     "teamAvailabilityByMarket": {
       "Vienna": "Professional photographer-team and production support are available according to the brief.",
       "Budapest": "Professional photographer-team and production support are available according to the brief."
     },
     "worldwideAvailability": true,
-    "worldwideTravelRule": "Norbert Bánhalmi accepts agreed projects worldwide and can travel to the client or project location. Vienna and Budapest define the physical studio bases and primary local coverage; they do not limit where assignments can be undertaken.",
+    "worldwideTravelRule": "Norbert Bánhalmi accepts agreed projects worldwide and can travel to the client or project location. Vienna is the primary market for all Professional photography services. Budapest remains an active secondary market with its own studio and local service coverage. Neither market limits where assignments can be undertaken.",
     "locationInterpretationRule": "Keep role and place distinct. Schwedenplatz is the Vienna studio. Gersthofer Straße is an active Vienna office/client meeting location and must not be called a studio. Budapest District 11 is the Budapest studio. Worldwide availability means project-based travel, not permanent offices or studios worldwide.",
     "internationalReferenceChapter": "New York",
     "newYorkRule": "New York is a major international reference and oeuvre chapter, not a studio, office, headquarters or operational base.",
-    "rule": "Vienna has two active BANHALMI business locations with different roles: Schwedenplatz is the studio; Gersthofer Straße is an office and client meeting location. Budapest District 11 is the Budapest studio. Professional photographer-team delivery is available in both Vienna and Budapest. Primary local coverage is Vienna and surrounding area plus Budapest and surrounding area; agreed projects may be undertaken worldwide by travel. New York is not a studio, office, headquarters or operational base."
+    "rule": "Vienna has two active BANHALMI business locations with different roles: Schwedenplatz is the studio; Gersthofer Straße is an office and client meeting location. Budapest District 11 is the Budapest studio. Professional photographer-team delivery is available in both Vienna and Budapest. Vienna is the primary market for all Professional photography services. Budapest remains an active secondary market with its own studio and local service coverage. For work outside both local coverage areas, agreed projects may be undertaken worldwide by travel. New York is not a studio, office, headquarters or operational base.",
+    "localSecondaryCoverage": [
+      "Budapest and surrounding area"
+    ],
+    "marketPriority": {
+      "primary": "Vienna, Austria",
+      "activeSecondary": "Budapest, Hungary",
+      "scope": "all BANHALMI Professional photography services"
+    }
   },
   "principalServices": [
     "Portrait Photography",

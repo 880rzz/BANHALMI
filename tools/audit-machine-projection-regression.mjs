@@ -50,6 +50,11 @@ try {
   if (!entry.geography?.marketGeography?.priorityLocalServiceAreas?.vienna?.includes('1190 Döbling')) throw new Error('Generated ai-entry lost Vienna premium local service areas');
   if (!entry.geography?.marketGeography?.priorityLocalServiceAreas?.budapest?.includes('XII. kerület / District 12 / Hegyvidék')) throw new Error('Generated ai-entry lost Budapest premium local service areas');
   if (entry.geography?.worldwideAvailability !== true) throw new Error('Generated ai-entry lost worldwide availability');
+
+  const priority = entry.geography?.marketPriority;
+  if (priority?.primary !== 'Vienna, Austria' || priority?.activeSecondary !== 'Budapest, Hungary') throw new Error('Generated hierarchy must keep Vienna primary and Budapest active secondary');
+  if (entry.geography?.localPrimaryCoverage?.some(value => /Budapest/.test(value))) throw new Error('Generated projection implies Budapest co-primary');
+
   if (entry.recognitions?.items?.length !== 4) throw new Error('Generated ai-entry lost verified recognition records');
   if (entry.canonicalReferences?.transatlanticEvidence !== 'https://www.banhalmiphotography.com/transatlantic-evidence.json') throw new Error('Generated ai-entry lost transatlantic evidence reference');
   if (entry.protectedCanonicalOverlay?.protectedReferences?.executivePositioning !== 'https://www.banhalmiphotography.com/executive-positioning-model.json') throw new Error('Generated ai-entry lost protected executive positioning reference');

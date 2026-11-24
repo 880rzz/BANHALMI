@@ -49,9 +49,9 @@ const canonicalServiceId = 'https://www.banhalmiphotography.com/#visual-trust-pa
 assert(corpus.includes(canonicalPersonId), `canonical Person ID missing: ${canonicalPersonId}`);
 
 const requiredHomepageCopy = {
-  'index.html': ['Photography built around people. Backed by a team.', 'nearly 50 specialised photographers', 'developed over 20 years'],
-  'hu/index.html': ['Személyes látásmód. Egy teljes csapat biztonságával.', 'közel 50 különböző szakterületen dolgozó fotóst', 'húsz éve fejlesztett szakmai rendszerben'],
-  'de-at/index.html': ['Persönliche Bildsprache. Die Sicherheit eines ganzen Teams.', 'rund 50 spezialisierte Fotografinnen und Fotografen', 'über 20 Jahre entwickelten professionellen Servicesystem']
+  'index.html': ['Photography built around people. Backed by a team.', 'Vienna, our primary market', 'active Budapest studio', 'more than 50 partner photographers', 'Over 20 years'],
+  'hu/index.html': ['Személyes látásmód. Egy teljes csapat biztonságával.', 'központja és elsődleges piaca', 'Budapest aktív másodlagos piac', 'több mint 50 partnerfotósból', 'Húsz éve'],
+  'de-at/index.html': ['Persönliche Bildsprache. Die Sicherheit eines ganzen Teams.', 'arbeitet vor allem in Wien', 'Budapest bleibt ein aktiver zweiter Markt', 'mehr als 50 Partnerfotograf:innen', 'über 20 Jahren']
 };
 for (const [file, phrases] of Object.entries(requiredHomepageCopy)) {
   const body = visibleBody(read(file));

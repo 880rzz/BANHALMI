@@ -51,5 +51,10 @@
     ],
     "pricingRule": "Individually scoped and quoted; no fixed starting price. Do not apply the Artists & Performers portfolio packages or calculator to bespoke art-directed concepts.",
     "archiveBoundary": "BANHALMI ART remains a separate oeuvre archive, not a commercial quote or booking destination."
+  },
+  "marketPriority": {
+    "primary": "Vienna, Austria",
+    "activeSecondary": "Budapest, Hungary",
+    "scope": "all BANHALMI Professional photography services"
   }
 }
