@@ -6,7 +6,7 @@
       "@id": "https://blog.banhalmi.art/#blog",
       "url": "https://blog.banhalmi.art/",
       "name": "BANHALMI Blog",
-      "description": "Essays, professional reflections and current writing connected to Norbert Bánhalmi's photographic practice.",
+      "description": "Norbert Bánhalmi’s editorial publication: firsthand photography stories, published perspectives of people photographed, selected VIPACH community and event reports including sessions led by Norbert, and Photography History essays analysing individual images and their historical context. The publication is for reading and learning, not a service catalogue, booking channel, artistic oeuvre archive or independent customer-review source.",
       "inLanguage": [
         "hu-HU",
         "en-GB",
@@ -52,6 +52,27 @@
         },
         {
           "@id": "https://blog.banhalmi.art/en/blog/categories/vipach-photography-community#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/blog/categories/fototortenelem#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/en/blog/categories/photography-history#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/de/blog/categories/fotogeschichte#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/de/blog/categories/vipach-fotografie-community#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/de/blog/categories/portraet-headshotfotografie#collection"
         }
       ],
       "subjectOf": {
@@ -59,11 +80,8 @@
         "@id": "https://www.banhalmiphotography.com/blog-collections.json#service-editorial-collections",
         "contentUrl": "https://www.banhalmiphotography.com/blog-collections.json",
         "encodingFormat": "application/json",
-        "name": "BANHALMI multilingual service-related editorial collection map"
-      },
-      "sameAs": [
-        "https://blog.banhalmi.art/"
-      ]
+        "name": "BANHALMI multilingual editorial collection map"
+      }
     },
     {
       "@type": "WebSite",
@@ -93,6 +111,21 @@
         },
         {
           "@id": "https://www.banhalmi.art/#website"
+        }
+      ],
+      "description": "Norbert Bánhalmi’s editorial publication: firsthand photography stories, published perspectives of people photographed, selected VIPACH community and event reports including sessions led by Norbert, and Photography History essays analysing individual images and their historical context. The publication is for reading and learning, not a service catalogue, booking channel, artistic oeuvre archive or independent customer-review source.",
+      "hasPart": [
+        {
+          "@id": "https://blog.banhalmi.art/#blog"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/#editorial-landing"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/en#editorial-landing"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/de#editorial-landing"
         }
       ]
     },
@@ -147,7 +180,8 @@
         {
           "@id": "https://www.banhalmiphotography.com/de-at/portrait/"
         }
-      ]
+      ],
+      "inLanguage": "en-GB"
     },
     {
       "@type": "CollectionPage",
@@ -194,12 +228,11 @@
       "@type": "CollectionPage",
       "@id": "https://blog.banhalmi.art/en/blog/categories/vipach-photography-community#collection",
       "url": "https://blog.banhalmi.art/en/blog/categories/vipach-photography-community",
-      "name": "Professional photography and visual-positioning articles",
+      "name": "VIPACH event stories",
       "about": [
-        "photography",
-        "visual positioning",
-        "brand strategy",
-        "professional methodology"
+        "VIPACH photography community",
+        "selected event reports",
+        "community learning"
       ],
       "isPartOf": {
         "@id": "https://blog.banhalmi.art/#blog"
@@ -210,6 +243,164 @@
         },
         {
           "@id": "https://www.banhalmi.art/#about"
+        }
+      ],
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/blog/categories/fototortenelem#collection",
+      "url": "https://blog.banhalmi.art/blog/categories/fototortenelem",
+      "name": "Fotótörténelem",
+      "inLanguage": "hu-HU",
+      "isPartOf": {
+        "@id": "https://blog.banhalmi.art/#blog"
+      },
+      "about": [
+        "photography history",
+        "individual photographs and their historical context",
+        "photography education"
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg#collection",
+      "url": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg",
+      "name": "VIPACH-beszámolók",
+      "inLanguage": "hu-HU",
+      "isPartOf": {
+        "@id": "https://blog.banhalmi.art/#blog"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas#collection",
+      "url": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas",
+      "name": "Történetek a fotózásokról",
+      "inLanguage": "hu-HU",
+      "isPartOf": {
+        "@id": "https://blog.banhalmi.art/#blog"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/#editorial-landing",
+      "url": "https://blog.banhalmi.art/",
+      "name": "Fotótörténelem / BANHALMI Blog",
+      "inLanguage": "hu-HU",
+      "isPartOf": {
+        "@id": "https://blog.banhalmi.art/#website"
+      },
+      "mainEntity": {
+        "@id": "https://blog.banhalmi.art/#blog"
+      },
+      "hasPart": [
+        {
+          "@id": "https://blog.banhalmi.art/blog/categories/fototortenelem#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas#collection"
+        }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/en/blog/categories/photography-history#collection",
+      "url": "https://blog.banhalmi.art/en/blog/categories/photography-history",
+      "name": "Photography History",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://blog.banhalmi.art/#blog"
+      },
+      "about": [
+        "photography history",
+        "individual photographs and their historical context",
+        "photography education"
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/en#editorial-landing",
+      "url": "https://blog.banhalmi.art/en",
+      "name": "BANHALMI Blog & Photography History",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://blog.banhalmi.art/#website"
+      },
+      "mainEntity": {
+        "@id": "https://blog.banhalmi.art/#blog"
+      },
+      "hasPart": [
+        {
+          "@id": "https://blog.banhalmi.art/en/blog/categories/photography-history#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/en/blog/categories/vipach-photography-community#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/en/blog/categories/portrait-headshot-photography#collection"
+        }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/de/blog/categories/fotogeschichte#collection",
+      "url": "https://blog.banhalmi.art/de/blog/categories/fotogeschichte",
+      "name": "Fotogeschichte",
+      "inLanguage": "de-AT",
+      "isPartOf": {
+        "@id": "https://blog.banhalmi.art/#blog"
+      },
+      "about": [
+        "photography history",
+        "individual photographs and their historical context",
+        "photography education"
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/de/blog/categories/vipach-fotografie-community#collection",
+      "url": "https://blog.banhalmi.art/de/blog/categories/vipach-fotografie-community",
+      "name": "VIPACH-Veranstaltungsberichte",
+      "inLanguage": "de-AT",
+      "isPartOf": {
+        "@id": "https://blog.banhalmi.art/#blog"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/de/blog/categories/portraet-headshotfotografie#collection",
+      "url": "https://blog.banhalmi.art/de/blog/categories/portraet-headshotfotografie",
+      "name": "Geschichten aus der Porträtpraxis",
+      "inLanguage": "de-AT",
+      "isPartOf": {
+        "@id": "https://blog.banhalmi.art/#blog"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.banhalmi.art/de#editorial-landing",
+      "url": "https://blog.banhalmi.art/de",
+      "name": "BANHALMI Blog & Fotogeschichte",
+      "inLanguage": "de-AT",
+      "isPartOf": {
+        "@id": "https://blog.banhalmi.art/#website"
+      },
+      "mainEntity": {
+        "@id": "https://blog.banhalmi.art/#blog"
+      },
+      "hasPart": [
+        {
+          "@id": "https://blog.banhalmi.art/de/blog/categories/fotogeschichte#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/de/blog/categories/vipach-fotografie-community#collection"
+        },
+        {
+          "@id": "https://blog.banhalmi.art/de/blog/categories/portraet-headshotfotografie#collection"
         }
       ]
     }

@@ -250,6 +250,11 @@
         "en",
         "hu-HU",
         "de-AT"
+      ],
+      "mentions": [
+        {
+          "@id": "https://blog.banhalmi.art/#website"
+        }
       ]
     },
     {

@@ -645,5 +645,34 @@
     "isBookable": false,
     "acceptsQuotes": false,
     "acceptsEnquiries": false
+  },
+  "editorialPublication": {
+    "@id": "https://blog.banhalmi.art/#blog",
+    "url": "https://blog.banhalmi.art/",
+    "entity": "https://www.banhalmiphotography.com/blog-entity.jsonld",
+    "collections": "https://www.banhalmiphotography.com/blog-collections.json",
+    "role": "canonical-editorial-education",
+    "creator": "https://www.banhalmi.art/#about",
+    "locales": {
+      "hu-HU": {
+        "url": "https://blog.banhalmi.art/",
+        "photographyHistory": "https://blog.banhalmi.art/blog/categories/fototortenelem",
+        "vipachReports": "https://blog.banhalmi.art/blog/categories/vipach-fotografiai-kozosseg",
+        "portraitPractice": "https://blog.banhalmi.art/blog/categories/portre-es-headshotfotozas"
+      },
+      "en-GB": {
+        "url": "https://blog.banhalmi.art/en",
+        "photographyHistory": "https://blog.banhalmi.art/en/blog/categories/photography-history",
+        "vipachReports": "https://blog.banhalmi.art/en/blog/categories/vipach-photography-community",
+        "portraitPractice": "https://blog.banhalmi.art/en/blog/categories/portrait-headshot-photography"
+      },
+      "de-AT": {
+        "url": "https://blog.banhalmi.art/de",
+        "photographyHistory": "https://blog.banhalmi.art/de/blog/categories/fotogeschichte",
+        "vipachReports": "https://blog.banhalmi.art/de/blog/categories/vipach-fotografie-community",
+        "portraitPractice": "https://blog.banhalmi.art/de/blog/categories/portraet-headshotfotografie"
+      }
+    },
+    "description": "Norbert Bánhalmi’s editorial publication: firsthand photography stories, published perspectives of people photographed, selected VIPACH community and event reports including sessions led by Norbert, and Photography History essays analysing individual images and their historical context. The publication is for reading and learning, not a service catalogue, booking channel, artistic oeuvre archive or independent customer-review source."
   }
 }

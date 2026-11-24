@@ -88,6 +88,14 @@ try {
   }
 
   const canonicalCore = JSON.parse(fs.readFileSync('data/machine-core.json','utf8'));
+  if (JSON.stringify(entry.editorialPublication) !== JSON.stringify(canonicalCore.editorialPublication)) throw new Error('Projection lost the canonical editorial publication.');
+  const blogWebsiteId = canonicalCore.editorialPublication.url+'#website';
+  const professional = entity['@graph'].find(n => n['@id'] === 'https://www.banhalmiphotography.com/#website');
+  if (!professional?.mentions?.some(n => n['@id'] === blogWebsiteId)) throw new Error('Generated professional WebSite lost the separate Blog relation.');
+  for (const text of [llms, ai]) {
+    if (!text.includes(canonicalCore.editorialPublication.entity)) throw new Error('Generated text lost the Blog entity path.');
+    for (const {url} of Object.values(canonicalCore.editorialPublication.locales)) if (!text.includes(url)) throw new Error('Generated text lost editorial locale '+url);
+  }
   for (const route of Object.values(canonicalCore.serviceModel.privateCommissionRouting.routes)) {
     for (const file of ['llms.txt','api/v1/services.json']) {
       if (!fs.readFileSync(path.join(tmp,file),'utf8').includes(route)) throw new Error(file+' lost private ART routing '+route);
