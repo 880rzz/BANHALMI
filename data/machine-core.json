@@ -380,6 +380,33 @@
             }
           },
           "rule": "Career-facing artist and performer portfolios and their stated Professional starting prices remain on BANHALMI Professional. Personal artistic portraits, boudoir and intimate photographs are documented in localized BANHALMI ART archive records. Artistic-nude works and the exhibition/book are documented in localized Ébredés without bookings or quotes; no fixed Professional price applies to personal ART commissions. The Professional calculator serves only career-facing bookable business services, never ART archive visitors."
+        },
+        "artDirectedConcept": {
+          "intent": "Art-directed editorial or campaign photography for a specific idea, such as a composed hero/cover image or a coherent editorial series. Distinct from a standard headshot and an ongoing personal-brand image library.",
+          "name": {
+            "en": "Editorial portraits and art-directed concepts",
+            "hu": "Szerkesztőségi portré és egyedi fotókoncepció",
+            "de-AT": "Editorialporträts und individuelle Fotokonzepte"
+          },
+          "routes": {
+            "en": "https://www.banhalmiphotography.com/fine-art/#art-directed-concept",
+            "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/#art-directed-concept",
+            "de-AT": "https://www.banhalmiphotography.com/de-at/fine-art/#art-directed-concept"
+          },
+          "enquiryRoutes": {
+            "en": "https://www.banhalmiphotography.com/contact/#contact-form",
+            "hu": "https://www.banhalmiphotography.com/hu/kapcsolat/#kapcsolatfelveteli-urlap",
+            "de-AT": "https://www.banhalmiphotography.com/de-at/kontakt/#kontaktformular"
+          },
+          "briefInputs": [
+            "intended feeling and story",
+            "priority images and publishing channels",
+            "orientation and crops",
+            "intentional space for headline or logo if needed",
+            "intended use and rights"
+          ],
+          "pricingRule": "Individually scoped and quoted; no fixed starting price. Do not apply the Artists & Performers portfolio packages or calculator to bespoke art-directed concepts.",
+          "archiveBoundary": "BANHALMI ART remains a separate oeuvre archive, not a commercial quote or booking destination."
         }
       },
       {

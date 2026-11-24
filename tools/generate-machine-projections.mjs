@@ -84,6 +84,7 @@ export function generateMachineProjections(siteRoot = '_site') {
     dateModified,
     provider: core.organization.id,
     services: core.serviceModel.services,
+    artDirectedConcept: core.serviceModel.services.find(service => service.id === 'fine-art')?.artDirectedConcept,
     privateCommissionRouting: core.serviceModel.privateCommissionRouting,
     canonicalPricing: core.canonicalReferences.pricing,
     canonicalCustomerNeeds: core.canonicalReferences.customerNeeds

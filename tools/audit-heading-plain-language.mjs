@@ -23,9 +23,9 @@ const expected={
   'event-photography/index.html':{h1:'Event photography for conferences, corporate and institutional events.',h2:['Speakers, guests, atmosphere and key moments.']},
   'hu/rendezvenyfotozas/index.html':{h1:'Rendezvényfotózás konferenciákhoz, üzleti és intézményi eseményekhez.',h2:['Előadók, vendégek, hangulat és fontos pillanatok.']},
   'de-at/eventfotografie/index.html':{h1:'Eventfotografie für Konferenzen, Unternehmens- und institutionelle Veranstaltungen.',h2:['Redner:innen, Gäste, Atmosphäre und wichtige Momente.']},
-  'fine-art/index.html':{h1:'Portrait and portfolio photography for artists and performers.',h2:['Photographs for press, casting, websites and promotion.']},
-  'hu/muveszi-fotografia/index.html':{h1:'Portré- és portfóliófotózás művészeknek és előadóknak.',h2:['Fotók sajtóhoz, castinghoz, weboldalhoz és promócióhoz.']},
-  'de-at/fine-art/index.html':{h1:'Porträt- und Portfoliofotografie für Kunstschaffende und Performer:innen.',h2:['Fotos für Presse, Casting, Website und Promotion.']},
+  'fine-art/index.html':{h1:'Editorial portraits and artist portfolios.',h2:['A photographic concept made for its intended use','Photographs for press, casting, websites and promotion.']},
+  'hu/muveszi-fotografia/index.html':{h1:'Egyedi fotókoncepciók és művészportfóliók.',h2:['Fotókoncepció a tényleges felhasználáshoz','Fotók sajtóhoz, castinghoz, weboldalhoz és promócióhoz.']},
+  'de-at/fine-art/index.html':{h1:'Editorialporträts und Portfolios für Kunstschaffende.',h2:['Ein Fotokonzept für den tatsächlichen Einsatz','Fotos für Presse, Casting, Website und Promotion.']},
   'about/index.html':{h1:'Norbert Bánhalmi',h2:['How I work with people in front of the camera.','Turning points in my work.','Studios and office in Vienna and Budapest']},
   'hu/eletmu/index.html':{h1:'Norbert Bánhalmi',h2:['Hogyan dolgozom azokkal, akiket fényképezek.','Szakmai fordulópontok.','Stúdiók és iroda Bécsben és Budapesten']},
   'de-at/werk/index.html':{h1:'Norbert Bánhalmi',h2:['Wie ich mit Menschen vor der Kamera arbeite.','Wichtige Wendepunkte meiner Arbeit.','Studios und Büro in Wien und Budapest']}
