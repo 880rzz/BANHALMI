@@ -81,7 +81,7 @@ const measuredOwnerChecks = [
   ['de-at/fine-art/index.html', /https:\/\/www\.banhalmi\.art\/de-at\/exhibitions\/ebredes\.html/i],
   ['lifestyle/index.html', /Personal Brand Photography/i],
   ['de-at/brand/index.html', /Personal Brand Fotografie Wien/i],
-  ['event-photography/index.html', /Event Photographer Budapest/i]
+  ['event-photography/index.html', /<title>[^<]*Event Photographer Vienna\s*(?:&amp;|&)\s*Budapest[^<]*<\/title>/i]
 ];
 for (const [path, rx] of measuredOwnerChecks) {
   const html = fs.readFileSync(path, 'utf8');
