@@ -104,7 +104,7 @@ try { collections = JSON.parse(await text(path.join(root,'blog-collections.json'
 catch { collections = null; errors.push('blog-collections.json: invalid or unreadable JSON'); }
 if (collections) {
   const items = Array.isArray(collections.itemListElement) ? collections.itemListElement : [];
-  if (items.length !== 15) errors.push(`blog-collections.json: expected 15 localized collection records, found ${items.length}`);
+  if (items.length !== 18) errors.push(`blog-collections.json: expected 18 localized collection records, found ${items.length}`);
   const urls = items.map(x => x?.item?.url).filter(Boolean);
   for (const url of blogCategoryUrls) {
     if (!urls.includes(url)) errors.push(`blog-collections.json: missing ${url}`);

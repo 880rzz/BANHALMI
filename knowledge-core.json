@@ -279,5 +279,12 @@
     "BANHALMI Photography: authentic human presence for executives, brands, C-level events and career artist portfolios.",
     "Not an AI content factory. Brand photography is the authentic visual source for later adaptations.",
     "ART documents personal photographic works in any topic and style; Ébredés is the historical artistic-nude exhibition and book, not a service enquiry route."
-  ]
+  ],
+  "editorialPublication": {
+    "@id": "https://blog.banhalmi.art/#blog",
+    "entity": "https://www.banhalmiphotography.com/blog-entity.jsonld",
+    "url": "https://blog.banhalmi.art/",
+    "role": "canonical-editorial-education",
+    "creator": "https://www.banhalmi.art/#about"
+  }
 }

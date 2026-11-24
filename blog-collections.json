@@ -4,8 +4,8 @@
   "@type": "ItemList",
   "@id": "https://www.banhalmiphotography.com/blog-collections.json#service-editorial-collections",
   "url": "https://www.banhalmiphotography.com/blog-collections.json",
-  "name": "BANHALMI service-related editorial collections",
-  "description": "Multilingual editorial collections on blog.banhalmi.art connected to the professional service journeys on banhalmiphotography.com. The professional site remains canonical for current services, pricing and enquiries; the blog provides explanatory, educational and narrative context. Artistic-nude editorial collections also resolve to the Ébredés / Awakening oeuvre authority on BANHALMI ART.",
+  "name": "BANHALMI multilingual editorial collections",
+  "description": "Selected multilingual reading routes for portrait practice, photography history, and VIPACH community reporting, alongside other collections about the photographic practice. The Blog is editorial and educational; current services and offers belong to BANHALMI Photography, and the artistic oeuvre to BANHALMI ART.",
   "publisher": {
     "@id": "https://www.banhalmiphotography.com/#organization"
   },
@@ -298,6 +298,48 @@
           "professionelle Methodik"
         ],
         "isRelatedTo": "https://www.banhalmiphotography.com/de-at/"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "item": {
+        "@type": "CollectionPage",
+        "@id": "https://blog.banhalmi.art/blog/categories/fototortenelem#collection",
+        "url": "https://blog.banhalmi.art/blog/categories/fototortenelem",
+        "name": "Fotótörténelem",
+        "inLanguage": "hu-HU",
+        "isPartOf": {
+          "@id": "https://blog.banhalmi.art/#blog"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "item": {
+        "@type": "CollectionPage",
+        "@id": "https://blog.banhalmi.art/en/blog/categories/photography-history#collection",
+        "url": "https://blog.banhalmi.art/en/blog/categories/photography-history",
+        "name": "Photography History",
+        "inLanguage": "en-GB",
+        "isPartOf": {
+          "@id": "https://blog.banhalmi.art/#blog"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 18,
+      "item": {
+        "@type": "CollectionPage",
+        "@id": "https://blog.banhalmi.art/de/blog/categories/fotogeschichte#collection",
+        "url": "https://blog.banhalmi.art/de/blog/categories/fotogeschichte",
+        "name": "Fotogeschichte",
+        "inLanguage": "de-AT",
+        "isPartOf": {
+          "@id": "https://blog.banhalmi.art/#blog"
+        }
       }
     }
   ]

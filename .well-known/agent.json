@@ -13,5 +13,15 @@
     "/api/v1/services.json",
     "/api/v1/locations.json",
     "/api/v1/actions.json"
-  ]
+  ],
+  "editorialPublication": {
+    "url": "https://blog.banhalmi.art/",
+    "role": "canonical-editorial-education",
+    "entity": "https://www.banhalmiphotography.com/blog-entity.jsonld",
+    "locales": {
+      "hu-HU": "https://blog.banhalmi.art/",
+      "en-GB": "https://blog.banhalmi.art/en",
+      "de-AT": "https://blog.banhalmi.art/de"
+    }
+  }
 }

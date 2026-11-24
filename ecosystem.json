@@ -42,7 +42,13 @@
     {
       "role": "editorial-knowledge-layer",
       "url": "https://blog.banhalmi.art/",
-      "description": "Editorial knowledge layer for professional articles, service-related guides and contextual stories. It supports the professional site and artistic archive without replacing either canonical role."
+      "description": "Norbert Bánhalmi’s editorial publication: firsthand photography stories, published perspectives of people photographed, selected VIPACH community and event reports including sessions led by Norbert, and Photography History essays analysing individual images and their historical context. The publication is for reading and learning, not a service catalogue, booking channel, artistic oeuvre archive or independent customer-review source.",
+      "machineEntity": "https://www.banhalmiphotography.com/blog-entity.jsonld",
+      "localizedReadingRoutes": {
+        "hu-HU": "https://blog.banhalmi.art/",
+        "en-GB": "https://blog.banhalmi.art/en",
+        "de-AT": "https://blog.banhalmi.art/de"
+      }
     }
   ],
   "ecosystemExtensions": [

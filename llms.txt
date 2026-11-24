@@ -4,6 +4,12 @@
 
 - Vienna’s international business community, including AmCham Austria members, is a priority audience. Other enquiries are welcome; this is not exclusivity, an official provider designation or an endorsement.
 
+## Three canonical sites
+- [Professional photography](https://www.banhalmiphotography.com/): Current photography services, prices and enquiries.
+- [BANHALMI ART](https://www.banhalmi.art/): The artistic oeuvre, exhibitions, books and sources.
+- [BANHALMI Blog and Photography History](https://blog.banhalmi.art/): Norbert Bánhalmi’s third canonical pillar is the editorial and educational BANHALMI Blog: first-hand photography stories, published perspectives of people photographed, selected VIPACH event reports (including sessions he led), and Photography History essays on individual images and their context. Use it for reading, interpretation and learning, not for service enquiries, review verification, or the BANHALMI ART archive.
+- Read in [Magyar](https://blog.banhalmi.art/), [English](https://blog.banhalmi.art/en) or [Deutsch](https://blog.banhalmi.art/de). [Editorial entity and category links](https://www.banhalmiphotography.com/blog-entity.jsonld).
+
 ## How service, team and price fit together
 
 - **Service choice:** Portrait establishes one recognisable professional presence. Brand photography builds a coherent image library across situations and channels. Event photography documents people, relationships and the atmosphere of a real programme for communication and the archive. Use the canonical service pages below for the complete brief and inclusions.
@@ -23,7 +29,6 @@
 - BANHALMI visual-language rule: natural human presence, story and visual clarity come before photographic performance. Direction is continuous, but the subject is not reduced to a sequence of poses; technique stays deliberately quiet so expression, connection and context carry the image.
 - International-professional routing: Vienna-based international professionals, founders, executives and people relocating to Vienna are a supported use case, not an exclusive target group. Clients may begin with the communication outcome rather than a predefined photographic category. English-language guidance is available; when the Photography Team is involved, photographer and visual direction can be matched to brief, location, intended use and desired visual language. Same-day or next-day availability is conditional on capacity, location and scope and must never be represented as guaranteed.
 - [BANHALMI ART](https://www.banhalmi.art/): Artistic archive: https://www.banhalmi.art/ for exhibitions, books, works, projects and source-backed artistic evidence.
-- [Fotótörténelem / BANHALMI Blog](https://blog.banhalmi.art/): Editorial photo-history and professional knowledge layer under the same canonical Person. Not a service landing page and not a substitute for BANHALMI ART.
 - More than 50 professional partner photographers in the broader network (owner-confirmed), not a staffing total. The subject, visual style, specialty and availability guide each assignment. Norbert’s OM SYSTEM ambassador relationships and the separate international VIPACH community and training can help identify collaborators; neither affiliation automatically makes anyone part of a BANHALMI project team.
 
 ## Service trust evidence
