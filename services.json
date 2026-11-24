@@ -159,7 +159,7 @@
         "Künstler- und Performer-Portfolio"
       ],
       "serviceType": "Fine Art Photography",
-      "description": "Career-facing portraits and portfolios for actors, dancers, artists, performers and models, for casting, agencies, websites, press and performance. BANHALMI ART separately documents Norbert Bánhalmi's personal artworks, books and exhibitions; it is not an enquiry or booking site.",
+      "description": "Individually scoped art-directed photography for original briefs and career-facing portraits and portfolios for artists and performers. BANHALMI ART separately documents Norbert Bánhalmi's personal artworks, books and exhibitions; it is not an enquiry or booking site.",
       "provider": {
         "@id": "https://www.banhalmiphotography.com/#organization"
       },
@@ -249,6 +249,33 @@
         "en": "https://www.banhalmi.art/exhibitions/ebredes.html",
         "hu": "https://www.banhalmi.art/hu/exhibitions/ebredes.html",
         "de-AT": "https://www.banhalmi.art/de-at/exhibitions/ebredes.html"
+      },
+      "artDirectedConcept": {
+        "intent": "Art-directed editorial or campaign photography for a specific idea, such as a composed hero/cover image or a coherent editorial series. Distinct from a standard headshot and an ongoing personal-brand image library.",
+        "name": {
+          "en": "Editorial portraits and art-directed concepts",
+          "hu": "Szerkesztőségi portré és egyedi fotókoncepció",
+          "de-AT": "Editorialporträts und individuelle Fotokonzepte"
+        },
+        "routes": {
+          "en": "https://www.banhalmiphotography.com/fine-art/#art-directed-concept",
+          "hu": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/#art-directed-concept",
+          "de-AT": "https://www.banhalmiphotography.com/de-at/fine-art/#art-directed-concept"
+        },
+        "enquiryRoutes": {
+          "en": "https://www.banhalmiphotography.com/contact/#contact-form",
+          "hu": "https://www.banhalmiphotography.com/hu/kapcsolat/#kapcsolatfelveteli-urlap",
+          "de-AT": "https://www.banhalmiphotography.com/de-at/kontakt/#kontaktformular"
+        },
+        "briefInputs": [
+          "intended feeling and story",
+          "priority images and publishing channels",
+          "orientation and crops",
+          "intentional space for headline or logo if needed",
+          "intended use and rights"
+        ],
+        "pricingRule": "Individually scoped and quoted; no fixed starting price. Do not apply the Artists & Performers portfolio packages or calculator to bespoke art-directed concepts.",
+        "archiveBoundary": "BANHALMI ART remains a separate oeuvre archive, not a commercial quote or booking destination."
       }
     }
   ],
