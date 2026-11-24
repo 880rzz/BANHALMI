@@ -23,7 +23,7 @@ for(const [lang,d] of Object.entries(copy)){
  assert.ok(quote.includes('class="quote-price-card" href="'+d.quote+'?service=fine-art&amp;art_type=performer#quote-calculator"'),lang+' artist quote choice preserves performer intent');
  assert.ok(art.includes(d.privateUrl),lang+' private portrait/boudoir/lingerie route');
  assert.ok(art.includes(d.nudeUrl),lang+' private artistic route remains machine-linked');
- assert.ok(quote.includes('/assets/js/quote-calculator.js?v=20261102-quote-scroll-anchor-v1'),lang+' revised calculator is cache-safe');
+ assert.ok(quote.includes('/assets/js/quote-calculator.js?v=20261124-intent-prefill-v2'),lang+' revised calculator is cache-safe');
 }
 for(const [file,key] of [['customer-intent-model.json','intents'],['customer-needs.json','needs']]){
  const d=JSON.parse(read(file));assert.ok(d[key].some(i=>i.id==='everyday-personal-portrait'));
@@ -54,4 +54,6 @@ assert.equal(p.services.find(s=>s.id==='fine-art').extraRetouchedImageGrossEUR,4
 const runtime=read('assets/js/quote-calculator.js');
 for(const token of ['applyAudienceSelection','syncAudienceSelectionUrl','portrait_mode','brand_duration','art_type','ensureBrandDurationDefault'])assert.ok(runtime.includes(token));
 assert.deepEqual(ecosystem.quoteServiceContext.audienceParameters.brand_duration.allowedValues,['brand60','brand120']);
+assert.equal(ecosystem.quoteServiceContext.audienceParameters.event_duration.requiresService,'event');
+assert.deepEqual(ecosystem.quoteServiceContext.audienceParameters.event_duration.allowedValues,['eventBusiness','event60','event120','event180','event240','eventfullday']);
 console.log('Audience journey contract PASS: three-language visible paths, optional nude boundary, package inclusion, real machine anchors and allowlisted quote handoff.');

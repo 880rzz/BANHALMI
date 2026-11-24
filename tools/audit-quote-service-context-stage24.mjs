@@ -5,14 +5,16 @@ const root=path.resolve(import.meta.dirname,'..');
 const errors=[];
 const pages={
   "portrait/index.html": {
-    "service": "portrait",
-    "category": "individual",
+    "service": "brand",
+    "category": "brand",
+    "packageSelection": "brand60",
     "quote": "/requestaquote/",
     "kind": "commercial"
   },
   "lifestyle/index.html": {
     "service": "brand",
     "category": "brand",
+    "packageSelection": "brand120",
     "quote": "/requestaquote/",
     "kind": "commercial"
   },
@@ -23,14 +25,16 @@ const pages={
     "kind": "commercial"
   },
   "hu/portre/index.html": {
-    "service": "portrait",
-    "category": "individual",
+    "service": "brand",
+    "category": "brand",
+    "packageSelection": "brand60",
     "quote": "/hu/ajanlatkeres/",
     "kind": "commercial"
   },
   "hu/brand/index.html": {
     "service": "brand",
     "category": "brand",
+    "packageSelection": "brand120",
     "quote": "/hu/ajanlatkeres/",
     "kind": "commercial"
   },
@@ -41,14 +45,16 @@ const pages={
     "kind": "commercial"
   },
   "de-at/portrait/index.html": {
-    "service": "portrait",
-    "category": "individual",
+    "service": "brand",
+    "category": "brand",
+    "packageSelection": "brand60",
     "quote": "/de-at/anfrage/",
     "kind": "commercial"
   },
   "de-at/brand/index.html": {
     "service": "brand",
     "category": "brand",
+    "packageSelection": "brand120",
     "quote": "/de-at/anfrage/",
     "kind": "commercial"
   },
@@ -86,8 +92,8 @@ function metadataWithoutJsonLd(html){
 }
 for(const [relative,config] of Object.entries(pages)){
   const html=fs.readFileSync(path.join(root,relative),'utf8');
-  const expected=config.quote+'?service='+config.service+'#quote-calculator';
-  const expectedCount=config.kind==='commercial'?3:1;
+  const expected=config.quote+'?service='+config.service+(config.packageSelection?'&amp;brand_duration='+config.packageSelection:config.kind==='fine-art'?'&amp;art_type=performer':'')+'#quote-calculator';
+  const expectedCount=config.kind==='commercial'?3:2;
   if((html.split('href="'+expected+'"').length-1)!==expectedCount) errors.push(relative+': expected '+expectedCount+' service-context quote links');
   if(config.kind==='commercial'&&!html.includes('data-service-custom-quote="true" href="'+expected+'"')) errors.push(relative+': hero custom-quote handoff missing');
   if(config.kind==='fine-art'&&!html.includes('data-art-quote="professional" href="'+config.quote+'?service=fine-art&amp;art_type=performer#quote-calculator"')) errors.push(relative+': professional portfolio quote handoff missing');
@@ -106,14 +112,14 @@ for(const [relative,config] of Object.entries(pages)){
   }
   for(const match of html.matchAll(/href="([^"]+\?service=([^"&#]+))/g)) contextualOccurrences.push({file:relative,href:match[1],service:match[2]});
 }
-if(contextualOccurrences.length!==36) errors.push('expected exactly 36 scoped service-context links, found '+contextualOccurrences.length);
+if(contextualOccurrences.length!==42) errors.push('expected exactly 42 scoped service-context links, found '+contextualOccurrences.length);
 for(const item of contextualOccurrences) if(!Object.prototype.hasOwnProperty.call(allowed,item.service)) errors.push(item.file+': unsupported public service context '+item.service);
 const engine=fs.readFileSync(path.join(root,'assets/js/quote-calculator.js'),'utf8');
 for(const token of ['serviceContextToCategory','categoryToServiceContext','new URLSearchParams(window.location.search)','Object.prototype.hasOwnProperty.call(serviceContextToCategory','applyRequestedServiceContext(f)','syncServiceContextFromCategory(f,true)','input[name="service_context"]','updateServiceContextLanguageLinks','window.history.replaceState','brand_duration','ensureBrandDurationDefault']) if(!engine.includes(token)) errors.push('quote-calculator.js: missing '+token);
 for(const [service,category] of Object.entries(allowed)) if(!engine.includes((service.includes('-')?"'"+service+"'":service)+":'"+category+"'")) errors.push('quote-calculator.js: missing allowlist mapping '+service+' → '+category);
 for(const relative of quotePages){
   const html=fs.readFileSync(path.join(root,relative),'utf8');
-  if(!html.includes('/assets/js/quote-calculator.js?v=20261102-quote-scroll-anchor-v1')) errors.push(relative+': current quote engine version missing');
+  if(!html.includes('/assets/js/quote-calculator.js?v=20261124-intent-prefill-v2')) errors.push(relative+': current quote engine version missing');
   if((html.match(/<a class="quote-price-card" href="[^"]+\?service=/g)||[]).length!==4) errors.push(relative+': overview price cards must deep-link with service context');
   const head=(html.match(/<head>[\s\S]*?<\/head>/)||[''])[0];
   if(metadataWithoutJsonLd(html).includes('?service=')) errors.push(relative+': source metadata must stay query-free');

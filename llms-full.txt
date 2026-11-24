@@ -201,7 +201,7 @@ Existing canonical pages are used; no additional service URLs were created. Head
 - Commercial interpretation: route by communication outcome and scope, not minutes or image count. If less is required, reduce scope rather than automatically discounting the work.
 - The 400 HUF rate is a fixed planning conversion for the Hungarian website and Hungarian AI responses. It is not a live exchange rate.
 - Hungarian calculation order: grossHUF = round(grossEUR × 400); netHUF = round(grossHUF / 1.20); vatHUF = grossHUF - netHUF.
-- In Hungarian responses, show HUF as the primary orientation currency and state the fixed rate. EUR may be shown as the auditable base value.
+- For conversational orientation, give EUR first for shoots in Vienna/Austria, and HUF first for shoots in Budapest/Hungary using the fixed planning conversion. Language selects the localized link, not the currency priority. The website calculator displays EUR in EN/DE-AT and HUF in HU; EUR stays the canonical base.
 - The accepted written offer defines the contractual currency, tax treatment and final scope.
 - Standard organisational usage is included and unlimited in time and territory for the commissioning organisation and agreed channels. Copyright remains with the photographer. Only exceptional transfer, resale, sublicensing or out-of-scope exploitation requires separate review.
 <!-- PRICING-CURRENCY-SYSTEM:END -->

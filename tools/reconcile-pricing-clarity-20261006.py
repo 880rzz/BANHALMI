@@ -147,7 +147,7 @@ def reconcile(root):
             'scope': 'Up to one hour of straightforward Business Event Coverage; additional team, travel and optional services follow the existing calculator and written offer.'
         }
     }
-    guide['dateModified'] = '2026-10-06'
+    guide['dateModified'] = '2026-11-24'
     save(file, json.dumps(guide,ensure_ascii=False,indent=2)+'\n')
     file = 'project-policy.json'
     policy = json.loads((root/file).read_text())

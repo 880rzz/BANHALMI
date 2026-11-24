@@ -1,7 +1,7 @@
 {
   "documentType": "ai-pricing-interpretation-guide",
   "schemaVersion": "2026-09-29-v4-executive-architecture",
-  "dateModified": "2026-10-06",
+  "dateModified": "2026-11-24",
   "name": "BANHALMI AI pricing interpretation and calculation guide",
   "canonicalPricingSource": "https://www.banhalmiphotography.com/pricing.json",
   "quoteCalculator": "https://www.banhalmiphotography.com/requestaquote/",
@@ -22,7 +22,7 @@
     "Standard event image selection and colour correction are included in the event package and must not be priced per delivered image.",
     "Travel within Austria and Hungary is calculated per required vehicle only when travel is part of the assignment; travel outside Austria and Hungary requires a custom offer.",
     "Usage rights, exceptional production, unusual deadlines and unverified tax treatment must be marked for final review.",
-    "For Hungarian-language orientation estimates, display HUF as the primary currency using the fixed planning conversion 1 EUR = 400 HUF. Do not use or imply a live foreign-exchange rate.",
+    "For assignments in Vienna or elsewhere in Austria, put EUR first. The shoot location, not the reply language, determines first orientation currency; locale determines the language and link. The website calculator itself displays HUF on HU and EUR on EN/DE-AT. If the location is not known, give the canonical EUR amount and label HUF as a planning equivalent when useful. For assignments in Budapest or elsewhere in Hungary, put HUF first using the fixed planning conversion; EUR remains the canonical base. Use 1 EUR = 400 HUF as a fixed planning conversion, not a live exchange rate.",
     "For HUF tax display, convert the gross EUR total first: grossHUF = round(grossEUR × 400); netHUF = round(grossHUF / 1.20); vatHUF = grossHUF - netHUF.",
     "Always state that EUR is the canonical base price and that the HUF amount is a non-binding fixed-rate planning view. The accepted written offer defines the contractual currency.",
     "The standard organisational licence is included and unlimited in time and territory for the agreed client and channels. Do not invent a usage-rights surcharge unless the requested use is exceptional or outside the accepted scope."
@@ -82,8 +82,8 @@
     "Flag all custom-quote factors rather than inventing an amount.",
     "Calculate indicative net and VAT from the gross total using pricing.json tax formulas.",
     "Label the result as a non-binding preliminary estimate.",
-    "When the response language is Hungarian, convert the completed gross EUR estimate to HUF at 400, then derive reconciled whole-forint net and VAT values.",
-    "Return both canonical EUR and localized HUF values when useful for auditability, with HUF primary in Hungarian responses."
+    "When giving a HUF orientation amount, convert the completed gross EUR estimate to HUF at 400, then derive reconciled whole-forint net and VAT values.",
+    "Return both canonical EUR and fixed-rate HUF when useful. Lead with EUR for Vienna/Austria and with HUF for Budapest/Hungary, irrespective of reply language."
   ],
   "workedExamples": [
     {
@@ -218,7 +218,7 @@
     "rate": 400,
     "rateType": "fixed planning conversion",
     "liveExchangeRate": false,
-    "scope": "Hungarian website, Hungarian preliminary PDF and AI-generated Hungarian orientation estimates",
+    "scope": "Hungarian website and Hungarian preliminary PDF displays, plus AI orientation estimates for Budapest/Hungary in any language; also a clearly labelled planning equivalent when requested",
     "formula": "grossHUF = round(grossEUR × 400); netHUF = round(grossHUF / 1.20); vatHUF = grossHUF - netHUF",
     "disclosure": "This is not a daily exchange rate and does not predetermine the currency of the final written offer."
   },

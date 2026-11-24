@@ -123,3 +123,59 @@ for (const locale of routes) {
   });
 
 }
+
+// Verify the site's real service-to-estimate entry points, without submitting anything.
+const journeys = [
+  { locale: 'EN', portrait: '/portrait/', brand: '/lifestyle/', event: '/event-photography/', quote: '/requestaquote/', currency: 'EUR' },
+  { locale: 'DE-AT', portrait: '/de-at/portrait/', brand: '/de-at/brand/', event: '/de-at/eventfotografie/', quote: '/de-at/anfrage/', currency: 'EUR' },
+  { locale: 'HU', portrait: '/hu/portre/', brand: '/hu/brand/', event: '/hu/rendezvenyfotozas/', quote: '/hu/ajanlatkeres/', currency: 'HUF' }
+];
+async function assertEstimate(page, currency, euro) {
+  const form = page.locator('form[data-smart-quote]');
+  await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1, { timeout: 15000 });
+  await expect(page.locator('#quote-calculator')).toHaveJSProperty('open', true);
+  const result = await form.evaluate(node => window.BANHALMI_QUOTE.calculate(node));
+  expect(result.gross).toBe(euro);
+  expect(result.displayCurrency).toBe(currency);
+  expect(result.displayGross).toBe(currency === 'HUF' ? euro * 400 : euro);
+  await expect(form.locator('[name="location"]')).toHaveValue('vienna');
+}
+for (const j of journeys) {
+  test(j.locale + ': portrait and branding links select the advertised package', async ({ page }) => {
+    await page.route('**/api/banhalmi-form', route => route.abort());
+    await page.goto(j.portrait);
+    await page.locator('[data-service-custom-quote]').click();
+    await expect(page).toHaveURL(/service=brand&brand_duration=brand60#quote-calculator$/);
+    await assertEstimate(page, j.currency, 499);
+    const other = j.currency === 'HUF' ? journeys[0] : journeys[2];
+    await page.locator('.lang-switch:not(.lang-switch--footer) a[hreflang="' + (other.currency === 'HUF' ? 'hu-HU' : 'en') + '"]').first().click();
+    await expect(page).toHaveURL(new RegExp(other.quote+'\\?service=brand&brand_duration=brand60#quote-calculator$'));
+    await assertEstimate(page, other.currency, 499);
+    await page.goto(j.portrait);
+    await page.locator('details[data-pricing-disclosure="service"] > summary').click();
+    await page.locator('details[data-pricing-disclosure="service"] a[href*="portrait_mode=headshotcv"]').click();
+    await assertEstimate(page, j.currency, 120);
+    await page.goto(j.brand);
+    await page.locator('[data-service-custom-quote]').click();
+    await expect(page).toHaveURL(/service=brand&brand_duration=brand120#quote-calculator$/);
+    await assertEstimate(page, j.currency, 790);
+  });
+  test(j.locale + ': Business, C-Level and private event estimates remain distinct', async ({ page }) => {
+    await page.route('**/api/banhalmi-form', route => route.abort());
+    await page.goto(j.event);
+    await page.locator('[data-service-custom-quote]').click();
+    await assertEstimate(page, j.currency, 490);
+    await page.goto(j.event);
+    await page.locator('details[data-pricing-disclosure="service"] > summary').click();
+    await page.locator('details[data-pricing-disclosure="service"] a[href*="event_duration=event60"]').click();
+    await expect(page).toHaveURL(/service=event&event_duration=event60#quote-calculator$/);
+    await assertEstimate(page, j.currency, 590);
+    const other = j.currency === 'HUF' ? journeys[0] : journeys[2];
+    await page.locator('.lang-switch:not(.lang-switch--footer) a[hreflang="' + (other.currency === 'HUF' ? 'hu-HU' : 'en') + '"]').first().click();
+    await expect(page).toHaveURL(new RegExp(other.quote+'\\?service=event&event_duration=event60#quote-calculator$'));
+    await assertEstimate(page, other.currency, 590);
+    await page.goto(j.quote + '?service=private-event&event_duration=event60');
+    await expect(page.locator('[data-smart-quote] input[name="category"][data-private-event="true"]')).toBeChecked();
+    await expect(page.locator('[data-smart-quote] input[name="event_duration"][value="event120"]')).toBeChecked();
+  });
+}
