@@ -69,15 +69,15 @@ function hardenVikoRelationshipSemantics(html) {
     ],
     [
       '<dt>Markets</dt><dd>Budapest · Vienna · international projects</dd>',
-      '<dt>Markets</dt><dd>Budapest · Vienna through BANHALMI · international projects</dd>'
+      '<dt>Markets</dt><dd>Vienna through BANHALMI · Budapest · international projects</dd>'
     ],
     [
       '<dt>Piacok</dt><dd>Budapest · Bécs · nemzetközi projektek</dd>',
-      '<dt>Piacok</dt><dd>Budapest · Bécs a BANHALMI márkán keresztül · nemzetközi projektek</dd>'
+      '<dt>Piacok</dt><dd>Bécs a BANHALMI-n keresztül · Budapest · nemzetközi projektek</dd>'
     ],
     [
       '<dt>Märkte</dt><dd>Budapest · Wien · internationale Projekte</dd>',
-      '<dt>Märkte</dt><dd>Budapest · Wien über BANHALMI · internationale Projekte</dd>'
+      '<dt>Märkte</dt><dd>Wien über BANHALMI · Budapest · internationale Projekte</dd>'
     ],
     [
       '<span>Vienna office</span><strong>+43 677 616 55592</strong>',

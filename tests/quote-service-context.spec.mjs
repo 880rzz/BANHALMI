@@ -118,14 +118,16 @@ test('manual category change synchronizes the public URL and localized language 
 const serviceRoutes=[
   {
     "route": "/portrait/index.html",
-    "service": "portrait",
-    "category": "individual",
+    "service": "brand",
+    "category": "brand",
+    "brandDuration": "brand60",
     "kind": "commercial"
   },
   {
     "route": "/lifestyle/index.html",
     "service": "brand",
     "category": "brand",
+    "brandDuration": "brand120",
     "kind": "commercial"
   },
   {
@@ -136,14 +138,16 @@ const serviceRoutes=[
   },
   {
     "route": "/hu/portre/index.html",
-    "service": "portrait",
-    "category": "individual",
+    "service": "brand",
+    "category": "brand",
+    "brandDuration": "brand60",
     "kind": "commercial"
   },
   {
     "route": "/hu/brand/index.html",
     "service": "brand",
     "category": "brand",
+    "brandDuration": "brand120",
     "kind": "commercial"
   },
   {
@@ -154,14 +158,16 @@ const serviceRoutes=[
   },
   {
     "route": "/de-at/portrait/index.html",
-    "service": "portrait",
-    "category": "individual",
+    "service": "brand",
+    "category": "brand",
+    "brandDuration": "brand60",
     "kind": "commercial"
   },
   {
     "route": "/de-at/brand/index.html",
     "service": "brand",
     "category": "brand",
+    "brandDuration": "brand120",
     "kind": "commercial"
   },
   {
@@ -195,7 +201,7 @@ for(const item of serviceRoutes){
     await openDetailedCalculator(page);
     const selector=item.kind==='commercial'?'#next-step article.card:first-child a.btn-link':'a[data-art-quote="professional"]';
     const link=page.locator(selector).first();
-    const serviceHref=item.kind==='commercial'?'\\?service='+item.service+'(?:#quote-calculator)?$':'\\?service=fine-art&art_type=performer(?:#quote-calculator)?$';
+    const serviceHref=item.kind==='commercial'?'\\?service='+item.service+(item.brandDuration?'&brand_duration='+item.brandDuration:'')+'(?:#quote-calculator)?$':'\\?service=fine-art&art_type=performer(?:#quote-calculator)?$';
     await expect(link).toHaveAttribute('href',new RegExp(serviceHref));
     await link.click();
     await expect(page).toHaveURL(new RegExp('service='+item.service));
@@ -204,6 +210,7 @@ for(const item of serviceRoutes){
     await expect(page.locator('[data-pricing-ready="true"]')).toHaveCount(1,{timeout:10000});
     const categorySelector='input[name="category"][value="'+item.category+'"]'+(item.category==='event'?':not([data-private-event])':'');
     await expect(page.locator(categorySelector).first()).toBeChecked();
+    if (item.brandDuration) await expect(page.locator('input[name="brand_duration"][value="'+item.brandDuration+'"]')).toBeChecked();
     await expect(page.locator('[data-smart-quote] input[name="service_context"]')).toHaveValue(item.service);
     const filled=page.locator('#quote-calculator [data-quote-root], #quote-calculator .smart-quote-layout').first();
     const summary=page.locator('#quote-calculator > summary');

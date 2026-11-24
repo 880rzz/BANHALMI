@@ -379,7 +379,7 @@
       "hu/muveszi-fotografia/index.html",
       "de-at/fine-art/index.html"
     ],
-    "scopedLinks": 33,
+    "scopedLinks": 42,
     "behavior": "The allowlisted service context selects the matching existing quote category before the first calculator paint. Unknown or missing values leave the existing individual-portrait default unchanged.",
     "continuity": [
       "localized quote-page language switching",
@@ -406,6 +406,11 @@
           "brand120"
         ]
       },
+      "event_duration": {
+        "requiresService": "event",
+        "formField": "event_duration",
+        "allowedValues": ["eventBusiness", "event60", "event120", "event180", "event240", "eventfullday"]
+      },
       "art_type": {
         "requiresService": "fine-art",
         "formField": "art_type",
@@ -421,7 +426,7 @@
         ]
       }
     },
-    "audienceSelectionRule": "Only allowlisted values select existing controls before the first estimate. Language switching preserves valid choices; a change of service removes incompatible audience parameters. Canonical and hreflang URLs remain query-free. No new backend price authority is introduced."
+    "audienceSelectionRule": "Only allowlisted values select existing controls before the first estimate. Language switching preserves valid choices; a change of service removes incompatible audience parameters. Canonical and hreflang URLs remain query-free. The event_duration parameter applies only to public Business and C-Level packages, not private celebrations. No new backend price authority is introduced."
   },
   "canonicalConsultation": {
     "type": "video-call",

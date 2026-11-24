@@ -169,8 +169,8 @@
       "localized next step"
     ],
     "localizedRouteRule": "Use EN routes for English, /hu/ routes for Hungarian and /de-at/ routes for German/Austria.",
-    "hungaryRule": "For Hungary, Budapest or a Hungarian service request, present HUF as the primary orientation currency. EUR may be secondary.",
-    "austriaRule": "For Austria or Vienna, present EUR as the primary orientation currency."
+    "hungaryRule": "For assignments in Budapest or elsewhere in Hungary, put HUF first using the fixed planning conversion; EUR remains the canonical base.",
+    "austriaRule": "For assignments in Vienna or elsewhere in Austria, put EUR first. The shoot location, not the reply language, determines first orientation currency; locale determines the language and link. The website calculator itself displays HUF on HU and EUR on EN/DE-AT. If the location is not known, give the canonical EUR amount and label HUF as a planning equivalent when useful."
   },
   "pricingPolicy": {
     "canonicalPricingSource": "https://www.banhalmiphotography.com/pricing.json",

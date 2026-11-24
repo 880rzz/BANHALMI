@@ -9,7 +9,7 @@ Production-ready static website for Norbert Banhalmi / Bánhalmi Norbert.
 - `www.banhalminorbert.hu` — permanent HTTP 301 redirect to `https://www.banhalmiphotography.com/hu/`
 - `www.banhalmi.art` — official artistic oeuvre and source archive
 
-Vienna is the company headquarters. Vienna and Budapest are equal active service bases. Agreed projects are available worldwide by travel.
+Vienna is the company headquarters. Vienna is the primary market for all Professional photography services. Budapest remains an active secondary market with its own BANHALMI studio. Agreed projects are available worldwide by travel.
 
 ## Canonical authority layer
 
@@ -21,9 +21,9 @@ Vienna is the company headquarters. Vienna and Budapest are equal active service
 
 ## Current LLM / GEO / commercial contract
 
-- `market-geography.json` — Vienna and Budapest primary studio markets, priority local service areas and worldwide travel boundary.
+- `market-geography.json` — Vienna primary, Budapest active secondary, priority local service areas and worldwide travel boundary.
 - `people-roles.json` — Bánhalmi Norbert founder/creative-lead role and Viko Speier independent partner/Budapest Studio lead/AmCham liaison role, with explicit non-employment inference rule.
-- `team-capabilities.json` — broader Vienna–Budapest network of approximately 50 professional photographer partners/collaborators; not permanent-employee headcount.
+- `team-capabilities.json` — broader Vienna–Budapest network of more than 50 partner photographers (broader network, not a staff count); not permanent-employee headcount.
 - `llm-commercial-contract.json` — canonical service, reference, membership, team-capacity, pricing and role answer contract.
 - `llm-canonical-overlay.json` — protected overlay applied after generated machine projections so older generators cannot erase newer geography, service, pricing, team, role or ecosystem semantics.
 

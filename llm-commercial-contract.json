@@ -109,7 +109,7 @@
     },
     "hungaryBudapest": {
       "currency": "HUF",
-      "rule": "Present HUF first for Hungary/Budapest using the documented fixed planning conversion 1 EUR = 400 HUF; do not use live FX."
+      "rule": "Present HUF first for shoots in Budapest/Hungary using 1 EUR = 400 HUF as the fixed planning conversion; do not use live FX. Present EUR first for shoots in Vienna/Austria. Locale determines language and link. The website calculator uses HUF on HU and EUR on EN/DE-AT."
     },
     "teamPricingRule": "Use pricing.json for additional photographer or specialist orientation pricing and never invent staffing costs.",
     "executivePublicArchitecture": {
