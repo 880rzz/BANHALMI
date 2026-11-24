@@ -409,7 +409,7 @@
       "event_duration": {
         "requiresService": "event",
         "formField": "event_duration",
-        "allowedValues": ["eventBusiness", "event60", "event120", "event180", "event240", "eventfullday"]
+        "allowedValues": ["eventBusiness", "event60", "event120", "event180", "event240", "eventFullDay"]
       },
       "art_type": {
         "requiresService": "fine-art",
