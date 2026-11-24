@@ -240,19 +240,22 @@ for (const fixture of guidedQuotes) {
     await expect(budget).toHaveAttribute('aria-describedby', 'quote-budget-help');
     for (const width of [320, 375, 390, 430, 768, 900, 1024, 1280, 1440]) {
       await page.setViewportSize({ width, height: width <= 430 ? 667 : 900 });
-      await amount.evaluate(node => node.scrollIntoView({ block: 'center' }));
-      await expect(amount).toBeInViewport({ ratio: 1 });
-      await expect(amount).toContainText(fixture.amount);
-      await expect(amount.locator('[data-currency]')).toHaveCount(fixture.equivalent ? 2 : 1);
-      const noOverlap = await amount.evaluate(node => {
+      // The deep link also performs an automatic entrance scroll. Center the
+      // actual amount after any pending motion instead of sampling mid-scroll.
+      await expect.poll(() => amount.evaluate(node => {
+        node.scrollIntoView({ block: 'center', behavior: 'instant' });
         const a = node.getBoundingClientRect();
         const c = document.querySelector('.cookie.show').getBoundingClientRect();
         const floats = document.querySelector('[data-quote-summary]');
-        return a.left >= 0 && a.right <= innerWidth &&
+        const hit = document.elementFromPoint((a.left + a.right) / 2, (a.top + a.bottom) / 2);
+        return a.top >= 0 && a.bottom <= innerHeight && a.left >= 0 && a.right <= innerWidth &&
+          node.contains(hit) &&
           (a.bottom <= c.top || a.right <= c.left || a.left >= c.right) &&
           (innerWidth > 900 || getComputedStyle(floats).position === 'static');
-      });
-      expect(noOverlap, 'visible estimate does not compete with the cookie prompt at ' + width).toBe(true);
+      }), { message: 'visible estimate does not compete with the cookie prompt at ' + width }).toBe(true);
+      await expect(amount).toBeInViewport({ ratio: 1 });
+      await expect(amount).toContainText(fixture.amount);
+      await expect(amount.locator('[data-currency]')).toHaveCount(fixture.equivalent ? 2 : 1);
     }
     await page.setViewportSize({ width: 390, height: 667 });
     const original = await amount.textContent();
@@ -268,7 +271,7 @@ for (const fixture of guidedQuotes) {
     await expect(page.locator('[data-quote-summary]')).toHaveCSS('position', 'static');
     await budget.blur();
     await expect(page.locator('[data-quote-summary]')).toHaveCSS('position', 'fixed');
-    await amount.evaluate(node => node.scrollIntoView({ block: 'center' }));
+    await amount.evaluate(node => node.scrollIntoView({ block: 'center', behavior: 'instant' }));
     await expect(amount).toBeInViewport({ ratio: 1 });
     if (fixture.equivalent) await expect(amount.locator('[data-currency="EUR"]')).toContainText(fixture.equivalent);
   });
