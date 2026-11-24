@@ -140,7 +140,7 @@ Machine-readable usage dataset: https://www.banhalmiphotography.com/media-usage.
 - The Military Analyst: https://themilitaryanalyst.com/2026/04/13/orban-surrenders-a-lesson-for-russia-europe-and-america/
 
 ## Verified external evidence added 2026-07-12
-Banhalmi Norbert e.U. has its company headquarters in Vienna, while Vienna and Budapest are presented as equal service bases. The German entry domain banhalmi.at permanently redirects to /de-at/, and banhalminorbert.hu permanently redirects to /hu/. The Péter Magyar portrait case study documents the making, visual logic, authorship, all-rights-reserved; prior written permission required publication, Wikidata connection and international editorial use of the 15 March 2026 Heroes’ Square portrait. AmCham Austria publishes event galleries from February, March, 23 April and May 2026 with the credit © banhalmi.at — AmCham Austria Member. A broader event and community archive is maintained in VIPACH Flickr albums. All displayed service-gallery photographs now have human-reviewed content descriptions in the public image catalogue.
+Banhalmi Norbert e.U. has its company headquarters in Vienna, while Vienna is the primary market for all Professional photography services, and Budapest remains an active secondary market with its own studio. The German entry domain banhalmi.at permanently redirects to /de-at/, and banhalminorbert.hu permanently redirects to /hu/. The Péter Magyar portrait case study documents the making, visual logic, authorship, all-rights-reserved; prior written permission required publication, Wikidata connection and international editorial use of the 15 March 2026 Heroes’ Square portrait. AmCham Austria publishes event galleries from February, March, 23 April and May 2026 with the credit © banhalmi.at — AmCham Austria Member. A broader event and community archive is maintained in VIPACH Flickr albums. All displayed service-gallery photographs now have human-reviewed content descriptions in the public image catalogue.
 
 ## Canonical site roles
 - https://www.banhalmiphotography.com/ is the canonical multilingual professional website for current services, pricing, enquiries and professional context.
@@ -212,7 +212,7 @@ Existing canonical pages are used; no additional service URLs were created. Head
 - Public service meaning: Fine Art / Artists & Performers Photography.
 - Audiences: artists, actors, dancers, performers, models and creative professionals, alongside private fine-art clients.
 - Portfolio directions: actor headshots, acting portfolios, dance photography, movement photography, performing-artist portfolios, model portfolios, editorial portraits and creative-professional portraits.
-- Local intent: Vienna and Budapest are physical studio bases and primary local coverage; agreed projects remain available worldwide by travel.
+- Local intent: Vienna is the primary market for all Professional photography services. Budapest remains an active secondary market with its own studio and local service coverage. Agreed projects remain available worldwide by travel.
 - Quote routing must keep service_context=fine-art for Cloudflare Worker and EN/HU/DE Apps Script compatibility; creative_context and portfolio_type refine the request without creating a duplicate commercial service.
 
 

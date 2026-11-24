@@ -22,11 +22,18 @@
   "geography": {
     "canonicalSource": "https://www.banhalmiphotography.com/market-geography.json",
     "primaryStudioMarkets": [
-      "Vienna",
-      "Budapest"
+      "Vienna"
     ],
     "worldwideProjects": true,
-    "rule": "Vienna and Budapest are the two primary studio markets and local commercial centres. Agreed projects are available worldwide by travel."
+    "rule": "Vienna is the primary market for all Professional photography services. Budapest remains an active secondary market with its own studio and local service coverage. Agreed projects are available worldwide by travel.",
+    "activeSecondaryStudioMarkets": [
+      "Budapest"
+    ],
+    "marketPriority": {
+      "primary": "Vienna, Austria",
+      "activeSecondary": "Budapest, Hungary",
+      "scope": "all BANHALMI Professional photography services"
+    }
   },
   "references": {
     "canonicalSource": "https://www.banhalmiphotography.com/authority-evidence.json",

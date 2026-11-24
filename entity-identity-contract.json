@@ -146,11 +146,18 @@
   ],
   "serviceGeography": {
     "primaryLocalCoverage": [
-      "Vienna and surrounding area",
-      "Budapest and surrounding area"
+      "Vienna and surrounding area"
     ],
     "worldwideAvailability": true,
-    "rule": "Agreed projects may be undertaken worldwide by travel. Worldwide project locations do not become permanent studios or offices."
+    "rule": "Agreed projects may be undertaken worldwide by travel. Worldwide project locations do not become permanent studios or offices.",
+    "secondaryLocalCoverage": [
+      "Budapest and surrounding area"
+    ],
+    "marketPriority": {
+      "primary": "Vienna, Austria",
+      "activeSecondary": "Budapest, Hungary",
+      "scope": "all BANHALMI Professional photography services"
+    }
   },
   "rules": [
     "Q56391118 identifies the Person only.",

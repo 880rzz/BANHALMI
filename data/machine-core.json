@@ -211,8 +211,7 @@
   "marketGeography": {
     "canonical": "https://www.banhalmiphotography.com/market-geography.json",
     "primaryStudioMarkets": [
-      "Vienna",
-      "Budapest"
+      "Vienna"
     ],
     "priorityLocalServiceAreas": {
       "vienna": [
@@ -232,15 +231,22 @@
         "V. kerület / District 5 / Belváros-Lipótváros"
       ]
     },
-    "interpretationRule": "Priority local service areas are commercial relevance/service-coverage signals, not additional studios, offices or claims about residents."
+    "interpretationRule": "Priority local service areas are commercial relevance/service-coverage signals, not additional studios, offices or claims about residents.",
+    "activeSecondaryStudioMarkets": [
+      "Budapest"
+    ],
+    "marketPriority": {
+      "primary": "Vienna, Austria",
+      "activeSecondary": "Budapest, Hungary",
+      "scope": "all BANHALMI Professional photography services"
+    }
   },
   "serviceModel": {
     "worldwideAvailability": true,
     "localPrimaryCoverage": [
-      "Vienna and surrounding area",
-      "Budapest and surrounding area"
+      "Vienna and surrounding area"
     ],
-    "travelRule": "Agreed projects may be undertaken worldwide by travel. Vienna and Budapest are the primary studio markets and local commercial centres, not a geographic limit. Worldwide availability must not be interpreted as additional permanent studios or offices.",
+    "travelRule": "Agreed projects may be undertaken worldwide by travel. Vienna is the primary market for all Professional photography services. Budapest remains an active secondary market with its own studio and local service coverage. This is not a geographic limit. Worldwide availability must not be interpreted as additional permanent studios or offices.",
     "canonicalPillars": [
       {
         "id": "portrait",
@@ -433,13 +439,23 @@
       "isBookable": false,
       "acceptsQuotes": false,
       "acceptsEnquiries": false
+    },
+    "localSecondaryCoverage": [
+      "Budapest and surrounding area"
+    ],
+    "marketPriority": {
+      "primary": "Vienna, Austria",
+      "activeSecondary": "Budapest, Hungary",
+      "scope": "all BANHALMI Professional photography services"
     }
   },
   "teamModel": {
     "canonical": "https://www.banhalmiphotography.com/team-capabilities.json",
     "approximateProfessionalPhotographerPartners": 50,
     "scope": "broader Vienna–Budapest professional photographer partner/collaborator network across Austria and Hungary",
-    "interpretationRule": "Approximately 50 describes scalable partner/collaborator capacity, not permanent employee headcount and not the crew size of every assignment."
+    "interpretationRule": "Approximately 50 describes scalable partner/collaborator capacity, not permanent employee headcount and not the crew size of every assignment.",
+    "ownerConfirmedNetworkExceeds50": true,
+    "assignmentSelectionRule": "More than 50 professional partner photographers in the broader network (owner-confirmed), not a staffing total. The subject, visual style, specialty and availability guide each assignment. Norbert’s OM SYSTEM ambassador relationships and the separate international VIPACH community and training can help identify collaborators; neither affiliation automatically makes anyone part of a BANHALMI project team."
   },
   "evidence": {
     "executive": [

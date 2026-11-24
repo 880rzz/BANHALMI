@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 // weak professional service-page clicks. Preserve commercial/ART separation.
 const routes = [
   ['fine-art/index.html','/fine-art/', ['Fine Art photography in Vienna and Budapest','actor headshots','dancer portraits','model portfolio']],
-  ['hu/muveszi-fotografia/index.html','/hu/muveszi-fotografia/', ['Művészi fotózás Budapesten és Bécsben','színészportré','modellportfólió']],
+  ['hu/muveszi-fotografia/index.html','/hu/muveszi-fotografia/', ['Művészi fotózás Bécsben és Budapesten','színészportré','modellportfólió']],
   ['de-at/fine-art/index.html','/de-at/fine-art/', ['Fine-Art-Fotografie in Wien und Budapest','Künstlerporträts','Schauspieler-Headshots','Tanzportfolios']]
 ];
 for(const [file,route,phrases] of routes){

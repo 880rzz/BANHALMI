@@ -26,6 +26,18 @@ for(const token of ['XI. kerület','II. kerület','XII. kerület','V. kerület',
 }
 if(market.worldwideAvailability!==true) throw new Error('market-geography worldwideAvailability must remain true');
 
+const core=readJson('data/machine-core.json');
+const machineLocations=readJson('api/v1/locations.json');
+const machineServices=readJson('api/v1/services.json');
+for(const [label, model] of [['market',market],['core',core.marketGeography],['commercial',commercial.geography],['locations API',machineLocations],['services API',machineServices]]){
+  const priority=model.marketPriority;
+  if(priority?.primary!=='Vienna, Austria'||priority?.activeSecondary!=='Budapest, Hungary') throw new Error(label+': explicit Vienna/Budapest hierarchy missing');
+  if(model.primaryStudioMarkets?.includes('Budapest, Hungary')) throw new Error(label+': Budapest must not be described as co-primary');
+}
+if(core.teamModel.ownerConfirmedNetworkExceeds50!==true||team.deliveryModel.ownerConfirmedNetworkExceeds50!==true) throw new Error('Owner-confirmed >50 partner threshold missing');
+if(core.teamModel.assignmentSelectionRule!==team.deliveryModel.assignmentSelectionRule||!core.teamModel.assignmentSelectionRule.includes('neither affiliation automatically')) throw new Error('Project matching / independent community and ambassador relation boundary drift');
+
+
 const viko=roles.people?.vikoSpeier;
 const norbert=roles.people?.norbertBanhalmi;
 if(!viko || !norbert) throw new Error('people-roles missing Norbert or Viko');

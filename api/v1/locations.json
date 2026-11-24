@@ -24,5 +24,10 @@
   },
   "worldwideTravel": true,
   "organizationWikidata": "https://www.wikidata.org/wiki/Q138425941",
-  "locationModel": "two cities, three active physical business locations"
+  "locationModel": "two cities, three active physical business locations",
+  "marketPriority": {
+    "primary": "Vienna, Austria",
+    "activeSecondary": "Budapest, Hungary",
+    "scope": "all BANHALMI Professional photography services"
+  }
 }
