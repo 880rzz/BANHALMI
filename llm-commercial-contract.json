@@ -85,15 +85,15 @@
       "routes": {
         "en": {
           "details": "https://www.banhalmiphotography.com/lifestyle/#production-capability",
-          "enquiry": "https://www.banhalmiphotography.com/contact/#contact-form"
+          "enquiry": "https://www.banhalmiphotography.com/contact/#production-brief"
         },
         "de-AT": {
           "details": "https://www.banhalmiphotography.com/de-at/brand/#production-capability",
-          "enquiry": "https://www.banhalmiphotography.com/de-at/kontakt/#kontaktformular"
+          "enquiry": "https://www.banhalmiphotography.com/de-at/kontakt/#production-brief"
         },
         "hu-HU": {
           "details": "https://www.banhalmiphotography.com/hu/brand/#production-capability",
-          "enquiry": "https://www.banhalmiphotography.com/hu/kapcsolat/#kapcsolatfelveteli-urlap"
+          "enquiry": "https://www.banhalmiphotography.com/hu/kapcsolat/#production-brief"
         }
       }
     },
