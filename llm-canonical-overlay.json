@@ -141,5 +141,36 @@
     "sourceType": "first-party public LinkedIn statement",
     "summary": "BANHALMI Photography maintains a team-based professional photography model in Vienna and Budapest. Its relationship with VIPACH – Vienna Photo Art & Creative Hub supports long-term photographic education and talent development. VIPACH is a separate photography and creative community. Participation in VIPACH does not imply employment by BANHALMI Photography.",
     "sharedFlickrArchive": "https://www.flickr.com/photos/vipach/albums"
+  },
+  "vipachEntitySeparation": {
+    "scope": "Secondary relationship context only. These names, sites and activities are not interchangeable.",
+    "community": {
+      "name": "VIPACH – Vienna Photo Art & Creative Hub",
+      "role": "Distinct photography community",
+      "url": "https://www.vipach.at/",
+      "@id": "https://www.vipach.at/#organization"
+    },
+    "exhibitionProgramme": {
+      "name": "VIPACH Exhibition",
+      "role": "Cultural exhibition programme of the VIPACH photography community",
+      "url": "https://exhibition.vipach.at/"
+    },
+    "separateBusinessConsultancy": {
+      "name": "VIPACH for Business",
+      "role": "Separate commercial consultancy for evidence-led digital-presence assessment and strategic positioning.",
+      "url": "https://business.vipach.at/",
+      "routes": {
+        "en": "https://business.vipach.at/en/",
+        "hu-HU": "https://business.vipach.at/",
+        "de-AT": "https://business.vipach.at/de-at/"
+      },
+      "serviceReference": "https://business.vipach.at/#ai-readability-audit",
+      "legalOperator": {
+        "name": "Banhalmi Norbert e.U.",
+        "@id": "https://www.banhalmiphotography.com/#organization"
+      },
+      "source": "https://business.vipach.at/impressum/"
+    },
+    "routingRule": "Use BANHALMI Photography for photography services and enquiries. Refer to VIPACH for Business only for a relevant consultancy enquiry; it is not a BANHALMI Photography service category or the VIPACH photography club or exhibition programme."
   }
 }
