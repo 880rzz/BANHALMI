@@ -622,15 +622,36 @@
     }
     return payload;
   }
+  var productionBriefCopy = {"en": {"subject": "Production brief", "labels": {"specific_location": "Location", "timeframe": "Timing", "budget": "Budget range", "production_usage": "Where and how will the images be used?", "production_support": "What should we organise?", "production_delivery": "What needs to be delivered?", "production_reference": "Visual reference link (optional)"}}, "hu": {"subject": "Produkciós brief", "labels": {"specific_location": "Helyszín", "timeframe": "Időzítés", "budget": "Költségkeret", "production_usage": "Hol és hogyan használják majd a képeket?", "production_support": "Mit szervezzünk meg?", "production_delivery": "Milyen anyagot szeretne átvenni?", "production_reference": "Vizuális referencia linkje (opcionális)"}}, "de": {"subject": "Produktionsbriefing", "labels": {"specific_location": "Ort", "timeframe": "Zeitrahmen", "budget": "Budgetrahmen", "production_usage": "Wo und wie werden die Bilder eingesetzt?", "production_support": "Was sollen wir organisieren?", "production_delivery": "Welche Bilder und Formate brauchen Sie?", "production_reference": "Link zu visuellen Referenzen (optional)"}}};
+  function openProductionBriefFromHash() {
+    if (window.location.hash !== '#production-brief') return;
+    var section = document.querySelector('[data-production-brief]');
+    if (section) section.open = true;
+  }
+  openProductionBriefFromHash();
+  window.addEventListener('hashchange', openProductionBriefFromHash);
+  function addProductionBrief(form, payload) {
+    var section = form.querySelector('[data-production-brief]');
+    var settings = productionBriefCopy[normalizeUiLanguage(payload.language)];
+    if (!section || !section.open || !settings) return;
+    var details = Object.keys(settings.labels).map(function (key) {
+      var value = readField(form, key).replace(/\s+/g,' ').trim().slice(0,key === 'production_reference' ? 360 : 250);
+      return value ? settings.labels[key] + ': ' + value : '';
+    }).filter(Boolean);
+    var subject = String(payload.subject || '').replace(/\s+/g,' ').trim().slice(0,140);
+    payload.subject = '[' + settings.subject + ']' + (subject ? ' ' + subject : '');
+    payload.message = [String(payload.message || '').trim()].concat(details).filter(Boolean).join('\n\n');
+  }
   function buildGenericPayload(form) {
     var data = new FormData(form);
     var payload = { language: form.getAttribute('data-lang') || document.documentElement.lang || 'en', pageUrl: window.location.href, payloadVersion: 'banhalmi-contact-v2', formType: form.getAttribute('data-form-kind') || 'contact', formTitle: form.getAttribute('data-form-title') || 'BANHALMI contact form', category: form.getAttribute('data-form-kind') === 'contact'? 'Contact': '' };
     data.forEach(function (value, key) {
-      if (key === 'website') return;
+      if (key === 'website' || key.indexOf('production_') === 0) return;
       payload[key] = value;
     });
     payload.privacyAcknowledged =!!form.querySelector('[name="privacy_acknowledged"]:checked');
     delete payload.privacy_acknowledged;
+    if (payload.formType === 'contact') addProductionBrief(form, payload);
     return payload;
   }
 
