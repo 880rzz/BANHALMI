@@ -240,19 +240,22 @@ for (const fixture of guidedQuotes) {
     await expect(budget).toHaveAttribute('aria-describedby', 'quote-budget-help');
     for (const width of [320, 375, 390, 430, 768, 900, 1024, 1280, 1440]) {
       await page.setViewportSize({ width, height: width <= 430 ? 667 : 900 });
-      await amount.evaluate(node => node.scrollIntoView({ block: 'center' }));
-      await expect(amount).toBeInViewport({ ratio: 1 });
-      await expect(amount).toContainText(fixture.amount);
-      await expect(amount.locator('[data-currency]')).toHaveCount(fixture.equivalent ? 2 : 1);
-      const noOverlap = await amount.evaluate(node => {
+      // The deep link also performs an automatic entrance scroll. Center the
+      // actual amount after any pending motion instead of sampling mid-scroll.
+      await expect.poll(() => amount.evaluate(node => {
+        node.scrollIntoView({ block: 'center', behavior: 'instant' });
         const a = node.getBoundingClientRect();
         const c = document.querySelector('.cookie.show').getBoundingClientRect();
         const floats = document.querySelector('[data-quote-summary]');
-        return a.left >= 0 && a.right <= innerWidth &&
+        const hit = document.elementFromPoint((a.left + a.right) / 2, (a.top + a.bottom) / 2);
+        return a.top >= 0 && a.bottom <= innerHeight && a.left >= 0 && a.right <= innerWidth &&
+          node.contains(hit) &&
           (a.bottom <= c.top || a.right <= c.left || a.left >= c.right) &&
           (innerWidth > 900 || getComputedStyle(floats).position === 'static');
-      });
-      expect(noOverlap, 'visible estimate does not compete with the cookie prompt at ' + width).toBe(true);
+      }), { message: 'visible estimate does not compete with the cookie prompt at ' + width }).toBe(true);
+      await expect(amount).toBeInViewport({ ratio: 1 });
+      await expect(amount).toContainText(fixture.amount);
+      await expect(amount.locator('[data-currency]')).toHaveCount(fixture.equivalent ? 2 : 1);
     }
     await page.setViewportSize({ width: 390, height: 667 });
     const original = await amount.textContent();
@@ -268,7 +271,7 @@ for (const fixture of guidedQuotes) {
     await expect(page.locator('[data-quote-summary]')).toHaveCSS('position', 'static');
     await budget.blur();
     await expect(page.locator('[data-quote-summary]')).toHaveCSS('position', 'fixed');
-    await amount.evaluate(node => node.scrollIntoView({ block: 'center' }));
+    await amount.evaluate(node => node.scrollIntoView({ block: 'center', behavior: 'instant' }));
     await expect(amount).toBeInViewport({ ratio: 1 });
     if (fixture.equivalent) await expect(amount.locator('[data-currency="EUR"]')).toContainText(fixture.equivalent);
   });
@@ -309,5 +312,42 @@ for (const fixture of guidedQuotes) {
     await expect(receipt).toContainText(fixture.count);
     await expect(receipt).toContainText(fixture.amount);
     await expect(receipt).not.toContainText('guided60');
+  });
+}
+
+for (const fixture of guidedQuotes) {
+  test(fixture.lang + ': PDF uses the portrait name, not its visible base-price caption', async ({ page }) => {
+    await mockOnlyQuoteNetwork(page);
+    await page.addInitScript(() => {
+      window.__quotePdfText = [];
+      const original = CanvasRenderingContext2D.prototype.fillText;
+      CanvasRenderingContext2D.prototype.fillText = function (text, ...args) {
+        window.__quotePdfText.push(text);
+        return original.call(this, text, ...args);
+      };
+    });
+    const form = await openGuidedQuote(page, fixture);
+    await page.locator('.cookie.show [data-decline]').click();
+    await form.locator('[name="name"]').fill('PDF Fixture');
+    await form.locator('[name="email"]').fill('portrait@example.invalid');
+    await form.locator('[name="customer_type"]').selectOption('private');
+    await form.locator('[name="billing_country"]').selectOption('HU');
+    await form.locator('[name="message"]').fill('Mock-only local PDF test.');
+    await form.locator('[name="date_coordination_requested"]').check();
+    await form.locator('[name="privacy_acknowledged"]').check();
+    await form.locator('[name="retouched_images"]').fill('2');
+    const [pdf] = await Promise.all([
+      page.waitForEvent('download'),
+      page.locator('[data-download-quote-pdf]').click()
+    ]);
+    expect(pdf.suggestedFilename()).toMatch(/\.pdf$/);
+    const words = await page.evaluate(() => window.__quotePdfText);
+    const packageLabel = { EN: 'Package', HU: 'Csomag', 'DE-AT': 'Paket' }[fixture.lang];
+    expect(words[words.indexOf(packageLabel) + 1]).toBe(fixture.label);
+    // The final estimate includes the second retouch; the unselected one-image
+    // package's base-price caption must not leak onto a separate PDF line.
+    const updated = fixture.lang === 'HU' ? /182\s*000\s*Ft/ : /€\s*455[.,]00/;
+    expect(words.some(line => updated.test(line))).toBe(true);
+    expect(words.some(line => fixture.amount.test(line))).toBe(false);
   });
 }
