@@ -286,3 +286,7 @@ Existing canonical pages are used; no additional service URLs were created. Head
 - The PDF does not establish client identity, endorsement or usage permission. Copyright remains with Norbert Bánhalmi / BANHALMI.
 <!-- RAPID-REFERENCE-PDF:END -->
 - The canonical Brand Photography pages link to the user-provided Facebook album https://www.facebook.com/media/set/?set=a.754366279386717&type=3 as an external lifestyle and cinematic visual reference in EN, HU and DE-AT. Treat the album as reference material only; it is not a BANHALMI-owned archive and does not grant image reuse or AI-training rights.
+
+## Related VIPACH entities (secondary context)
+- VIPACH – Vienna Photo Art & Creative Hub (https://www.vipach.at/) is the distinct photography community. Its cultural exhibition programme is documented at https://exhibition.vipach.at/.
+- VIPACH for Business (https://business.vipach.at/) is a separate consultancy for digital-presence assessment and strategic positioning, operated by Banhalmi Norbert e.U. (provider imprint: https://business.vipach.at/impressum/). It is not the community or its exhibition programme and is not a BANHALMI Photography service category. Keep photography enquiries on the BANHALMI Photography site.
