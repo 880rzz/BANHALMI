@@ -57,15 +57,15 @@
     "routes": {
       "en": {
         "details": "https://www.banhalmiphotography.com/lifestyle/#production-capability",
-        "enquiry": "https://www.banhalmiphotography.com/contact/#contact-form"
+        "enquiry": "https://www.banhalmiphotography.com/contact/#production-brief"
       },
       "de-AT": {
         "details": "https://www.banhalmiphotography.com/de-at/brand/#production-capability",
-        "enquiry": "https://www.banhalmiphotography.com/de-at/kontakt/#kontaktformular"
+        "enquiry": "https://www.banhalmiphotography.com/de-at/kontakt/#production-brief"
       },
       "hu-HU": {
         "details": "https://www.banhalmiphotography.com/hu/brand/#production-capability",
-        "enquiry": "https://www.banhalmiphotography.com/hu/kapcsolat/#kapcsolatfelveteli-urlap"
+        "enquiry": "https://www.banhalmiphotography.com/hu/kapcsolat/#production-brief"
       }
     },
     "experience": {
@@ -80,7 +80,9 @@
         "de-AT": "https://blog.banhalmi.art/de/post/rauch-und-laser-die-holl%C3%A4nder-greifen-an",
         "hu-HU": "https://blog.banhalmi.art/post/fust-es-lezer-tamadnak-a-hollandok"
       }
-    }
+    },
+    "enquiryWorkflow": "A production enquiry is a guided contact brief, not a standard package. Vikó Speier is the first contact and creative production lead; both BANHALMI recipients remain on the established contact workflow. Scoping precedes any individual written offer.",
+    "commercialSpaces": "Art-directed photography of office buildings, interiors, showrooms and stands for company usage, catalogues and architecture portfolios is scoped within existing creative photography. It is neither the artist portfolio calculator nor a separate main service."
   },
   "editorialPublication": {
     "@id": "https://blog.banhalmi.art/#blog",
@@ -620,5 +622,36 @@
         "rights": "External reference only; not a BANHALMI-owned archive and no image reuse or AI-training rights are granted."
       }
     ]
+  },
+  "vipachEntitySeparation": {
+    "scope": "Secondary relationship context only. These names, sites and activities are not interchangeable.",
+    "community": {
+      "name": "VIPACH – Vienna Photo Art & Creative Hub",
+      "role": "Distinct photography community",
+      "url": "https://www.vipach.at/",
+      "@id": "https://www.vipach.at/#organization"
+    },
+    "exhibitionProgramme": {
+      "name": "VIPACH Exhibition",
+      "role": "Cultural exhibition programme of the VIPACH photography community",
+      "url": "https://exhibition.vipach.at/"
+    },
+    "separateBusinessConsultancy": {
+      "name": "VIPACH for Business",
+      "role": "Separate commercial consultancy for evidence-led digital-presence assessment and strategic positioning.",
+      "url": "https://business.vipach.at/",
+      "routes": {
+        "en": "https://business.vipach.at/en/",
+        "hu-HU": "https://business.vipach.at/",
+        "de-AT": "https://business.vipach.at/de-at/"
+      },
+      "serviceReference": "https://business.vipach.at/#ai-readability-audit",
+      "legalOperator": {
+        "name": "Banhalmi Norbert e.U.",
+        "@id": "https://www.banhalmiphotography.com/#organization"
+      },
+      "source": "https://business.vipach.at/impressum/"
+    },
+    "routingRule": "Use BANHALMI Photography for photography services and enquiries. Refer to VIPACH for Business only for a relevant consultancy enquiry; it is not a BANHALMI Photography service category or the VIPACH photography club or exhibition programme."
   }
 }
