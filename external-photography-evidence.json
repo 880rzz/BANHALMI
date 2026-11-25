@@ -181,6 +181,25 @@
       "interpretationRule": "Do not infer a commission, client relationship, official-photographer status, partnership, recommendation or endorsement from this event coverage or public photo credit. The screenshot documents the credit for this event only."
     },
     {
+      "id": "danas-nemanja-lazendic-editorial-photo-credit-20261125",
+      "url": "https://www.danas.rs/vesti/ekonomija/ai-kompanije-izlaze-na-berzu-nova-prilika-za-investitore-ili-prebacivanja-rizika-na-trziste/",
+      "publisherOrSubject": "Danas",
+      "publicationTitle": "AI kompanije izlaze na berzu: Nova prilika za investitore ili prebacivanja rizika na tržište?",
+      "publicationDate": "2026-11-25",
+      "publicationLanguage": "sr",
+      "articleAuthor": "Nemanja Lazendić",
+      "sourceType": "Independent newspaper article with an explicit in-article photo credit",
+      "capabilities": [
+        "Executive / Corporate Brand Photography",
+        "Independent publication / external photo-credit evidence"
+      ],
+      "photographyCredit": "Privatna arhiva/BANHALMI Photography",
+      "creditContext": "The Danas economics article credits its second, in-article photograph to Privatna arhiva/BANHALMI Photography. The lead image has a separate EPA / SARAH YENESEL credit.",
+      "evidenceStatus": "publicly-verified-publisher-photo-credit",
+      "publicReadback": "Verified on the original publisher page on 2026-11-25.",
+      "interpretationRule": "Use as evidence of editorial use and brand-level attribution for one photograph only. Do not infer a commission, client or partner relationship, endorsement, individual photographer attribution, image license or publication rights from this credit."
+    },
+    {
       "id": "linkedin-nemanja-lazendic-7503011271332773888",
       "url": "https://www.linkedin.com/posts/nemanjalazendic_strong-banking-sector-can-still-leave-a-financing-activity-7503011271332773888-kuQv",
       "publisherOrSubject": "Nemanja Lazendic",
