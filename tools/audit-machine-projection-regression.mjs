@@ -9,6 +9,7 @@ try {
   fs.mkdirSync(path.join(tmp, 'data'), { recursive: true });
   const copies = [
     ['data/machine-core.json','data/machine-core.json'],
+    ['service-owner-routing.json','service-owner-routing.json'],
     ['transatlantic-evidence.json','transatlantic-evidence.json'],
     ['llm-canonical-overlay.json','llm-canonical-overlay.json'],
     ['hipstudio-authority.json','hipstudio-authority.json'],
@@ -31,6 +32,13 @@ try {
   const recognitions = JSON.parse(fs.readFileSync(path.join(tmp, 'recognitions.json'), 'utf8'));
   const entity = JSON.parse(fs.readFileSync(path.join(tmp, 'entity.jsonld'), 'utf8'));
   const authority = JSON.parse(fs.readFileSync(path.join(tmp, 'authority-evidence.json'), 'utf8'));
+  const serviceApi = JSON.parse(fs.readFileSync(path.join(tmp, 'api/v1/services.json'), 'utf8'));
+  const committedServiceApi = JSON.parse(fs.readFileSync('api/v1/services.json', 'utf8'));
+  if (JSON.stringify(serviceApi.canonicalServiceOwners) !== JSON.stringify(committedServiceApi.canonicalServiceOwners) ||
+      serviceApi.canonicalServiceOwnerSource !== committedServiceApi.canonicalServiceOwnerSource) {
+    throw new Error('Generated canonical service owners drifted from committed routes.');
+  }
+
 
   const required = [
     'Bánhalmi Norbert: founder, creative director, lead photographer and final visual decision-maker',

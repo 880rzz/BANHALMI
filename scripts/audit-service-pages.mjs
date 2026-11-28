@@ -55,3 +55,6 @@ for(const group of groups){
 }
 if(errors.length){console.error(errors.join('\n'));process.exitCode=1}
 else console.log('PASS: 12 service pages, 3 languages, SEO/geo/schema/trust structural checks. GDPR consent behavior, factual evidence, live rendering and LLM visibility require independent verification.');
+
+// Exercise the full two-city scope in the existing pull-request gate.
+await import("../tools/audit-intent-location-language.mjs");

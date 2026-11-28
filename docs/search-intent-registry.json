@@ -1,0 +1,1544 @@
+{
+  "version": "2026-11-28-baseline.1",
+  "property": "sc-domain:banhalmiphotography.com",
+  "sourceProductionSha": "c514678e81b6415d3114fb88ccdb515127068885",
+  "canonicalOwnershipSource": "https://www.banhalmiphotography.com/service-owner-routing.json",
+  "policy": "Query lexical language and named target city are independent from GSC country. Ambiguous, branded, artistic archive, cityless and out-of-scope rows are excluded from the commercial-city metric. Null means no disclosed classifiable row, never zero demand. Observed homepage impressions are not automatically cannibalization.",
+  "metrics": {
+    "7": {
+      "window": [
+        "2026-11-19",
+        "2026-11-25"
+      ],
+      "queryPageRows": 198,
+      "queryCountryRows": 203,
+      "queryDeviceRows": 213,
+      "cityQueryPageImpressions": 117,
+      "classifiedImpressions": 58,
+      "correctLandingImpressions": 4,
+      "intentLandingAccuracy": 0.068966,
+      "unclassifiedCityImpressions": 59,
+      "hiddenImpressionsShareEstimate": 0.043
+    },
+    "28": {
+      "window": [
+        "2026-10-29",
+        "2026-11-25"
+      ],
+      "queryPageRows": 429,
+      "queryCountryRows": 471,
+      "queryDeviceRows": 486,
+      "cityQueryPageImpressions": 519,
+      "classifiedImpressions": 270,
+      "correctLandingImpressions": 4,
+      "intentLandingAccuracy": 0.014815,
+      "unclassifiedCityImpressions": 249,
+      "hiddenImpressionsShareEstimate": 0.0494
+    },
+    "90": {
+      "window": [
+        "2026-08-28",
+        "2026-11-25"
+      ],
+      "queryPageRows": 429,
+      "queryCountryRows": 471,
+      "queryDeviceRows": 486,
+      "cityQueryPageImpressions": 519,
+      "classifiedImpressions": 270,
+      "correctLandingImpressions": 4,
+      "intentLandingAccuracy": 0.014815,
+      "unclassifiedCityImpressions": 249,
+      "hiddenImpressionsShareEstimate": 0.0494
+    },
+    "7p": {
+      "window": [
+        "2026-11-12",
+        "2026-11-18"
+      ],
+      "queryPageRows": 195,
+      "queryCountryRows": 208,
+      "queryDeviceRows": 222,
+      "cityQueryPageImpressions": 131,
+      "classifiedImpressions": 55,
+      "correctLandingImpressions": 0,
+      "intentLandingAccuracy": 0.0,
+      "unclassifiedCityImpressions": 76,
+      "hiddenImpressionsShareEstimate": 0.042
+    },
+    "28p": {
+      "window": [
+        "2026-10-01",
+        "2026-10-28"
+      ],
+      "queryPageRows": 0,
+      "queryCountryRows": 0,
+      "queryDeviceRows": 0,
+      "cityQueryPageImpressions": 0,
+      "classifiedImpressions": 0,
+      "correctLandingImpressions": 0,
+      "intentLandingAccuracy": null,
+      "unclassifiedCityImpressions": 0,
+      "hiddenImpressionsShareEstimate": null
+    },
+    "90p": {
+      "window": [
+        "2026-05-30",
+        "2026-08-27"
+      ],
+      "queryPageRows": 0,
+      "queryCountryRows": 0,
+      "queryDeviceRows": 0,
+      "cityQueryPageImpressions": 0,
+      "classifiedImpressions": 0,
+      "correctLandingImpressions": 0,
+      "intentLandingAccuracy": null,
+      "unclassifiedCityImpressions": 0,
+      "hiddenImpressionsShareEstimate": null
+    }
+  },
+  "records": [
+    {
+      "intentId": "portrait.vienna.en",
+      "customerProblem": "An outdated or missing portrait for leadership profiles, LinkedIn, a CV, press or a consistent team introduction.",
+      "serviceCategory": "portrait",
+      "searchTermsAndSynonyms": [
+        "executive portrait photography Vienna",
+        "business headshots Vienna",
+        "LinkedIn photographer Vienna",
+        "professional CV photo Vienna",
+        "headshot photographer Vienna",
+        "portrait photographer Vienna"
+      ],
+      "locale": "en",
+      "city": "Vienna",
+      "market": "vienna",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/portrait/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/contact/",
+        "https://www.banhalmiphotography.com/speier-viko/"
+      ],
+      "relatedCaseStudies": [
+        "https://www.banhalmiphotography.com/case-studies/peter-magyar-portrait-2026/"
+      ],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "portrait"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/requestaquote/?service=portrait#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/portrait/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P1",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "portrait.budapest.en",
+      "customerProblem": "An outdated or missing portrait for leadership profiles, LinkedIn, a CV, press or a consistent team introduction.",
+      "serviceCategory": "portrait",
+      "searchTermsAndSynonyms": [
+        "executive portrait photography Budapest",
+        "business headshots Budapest",
+        "LinkedIn photographer Budapest",
+        "professional CV photo Budapest",
+        "headshot photographer Budapest",
+        "portrait photographer Budapest"
+      ],
+      "locale": "en",
+      "city": "Budapest",
+      "market": "budapest",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/portrait/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/contact/",
+        "https://www.banhalmiphotography.com/speier-viko/"
+      ],
+      "relatedCaseStudies": [
+        "https://www.banhalmiphotography.com/case-studies/peter-magyar-portrait-2026/"
+      ],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "portrait"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/requestaquote/?service=portrait#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/portrait/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "portrait.vienna.hu-HU",
+      "customerProblem": "Elavult vagy hiányzó vezetői, LinkedIn-, önéletrajz-, sajtó- vagy egységes csapatportré.",
+      "serviceCategory": "portrait",
+      "searchTermsAndSynonyms": [
+        "vezetői portréfotózás Bécs",
+        "üzleti portréfotózás Bécs",
+        "LinkedIn fotózás Bécs",
+        "önéletrajzfotózás Bécs",
+        "portréfotózás Bécs",
+        "portré fotózás Bécs"
+      ],
+      "locale": "hu-HU",
+      "city": "Bécs",
+      "market": "vienna",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/hu/portre/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/hu/kapcsolat/",
+        "https://www.banhalmiphotography.com/hu/speier-viko/"
+      ],
+      "relatedCaseStudies": [
+        "https://www.banhalmiphotography.com/hu/esettanulmanyok/magyar-peter-portre-2026/"
+      ],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "portrait"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=portrait#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/hu/portre/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "portrait.budapest.hu-HU",
+      "customerProblem": "Elavult vagy hiányzó vezetői, LinkedIn-, önéletrajz-, sajtó- vagy egységes csapatportré.",
+      "serviceCategory": "portrait",
+      "searchTermsAndSynonyms": [
+        "vezetői portréfotózás Budapest",
+        "üzleti portréfotózás Budapest",
+        "LinkedIn fotózás Budapest",
+        "önéletrajzfotózás Budapest",
+        "portréfotózás Budapest",
+        "portré fotózás Budapest"
+      ],
+      "locale": "hu-HU",
+      "city": "Budapest",
+      "market": "budapest",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/hu/portre/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/hu/kapcsolat/",
+        "https://www.banhalmiphotography.com/hu/speier-viko/"
+      ],
+      "relatedCaseStudies": [
+        "https://www.banhalmiphotography.com/hu/esettanulmanyok/magyar-peter-portre-2026/"
+      ],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "portrait"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=portrait#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/hu/portre/",
+      "gsc": {
+        "impressions": 73,
+        "clicks": 1,
+        "ctr": 1.37,
+        "averagePosition": 4.27,
+        "currentlyRankingUrl": "https://www.banhalmiphotography.com/hu/",
+        "currentlyRankingUrls": [
+          "https://www.banhalmiphotography.com/hu/",
+          "https://www.banhalmiphotography.com/hu/portre/",
+          "https://www.banhalmiphotography.com/hu/brand/"
+        ],
+        "matchingImpressions": 3,
+        "status": "measured_disclosed_rows"
+      },
+      "gapCause": "owner_mismatch_observed_cause_unproven",
+      "priority": "P1",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "portrait.vienna.de-AT",
+      "customerProblem": "Ein veraltetes oder fehlendes Porträt für Führungskräfteprofil, LinkedIn, Bewerbung, Presse oder konsistente Teamfotos.",
+      "serviceCategory": "portrait",
+      "searchTermsAndSynonyms": [
+        "Führungskräfteporträt Wien",
+        "Business-Porträt Wien",
+        "LinkedIn-Fotograf Wien",
+        "Bewerbungsfoto Wien",
+        "Portraitfotografie Wien",
+        "Portraitfotograf Wien"
+      ],
+      "locale": "de-AT",
+      "city": "Wien",
+      "market": "vienna",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/de-at/portrait/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/de-at/kontakt/",
+        "https://www.banhalmiphotography.com/de-at/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "portrait"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/de-at/anfrage/?service=portrait#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/de-at/portrait/",
+      "gsc": {
+        "impressions": 62,
+        "clicks": 0,
+        "ctr": 0.0,
+        "averagePosition": 7.03,
+        "currentlyRankingUrl": "https://www.banhalmiphotography.com/de-at/",
+        "currentlyRankingUrls": [
+          "https://www.banhalmiphotography.com/de-at/",
+          "https://www.banhalmiphotography.com/de-at/portrait/"
+        ],
+        "matchingImpressions": 1,
+        "status": "measured_disclosed_rows"
+      },
+      "gapCause": "owner_mismatch_observed_cause_unproven",
+      "priority": "P1",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "portrait.budapest.de-AT",
+      "customerProblem": "Ein veraltetes oder fehlendes Porträt für Führungskräfteprofil, LinkedIn, Bewerbung, Presse oder konsistente Teamfotos.",
+      "serviceCategory": "portrait",
+      "searchTermsAndSynonyms": [
+        "Führungskräfteporträt Budapest",
+        "Business-Porträt Budapest",
+        "LinkedIn-Fotograf Budapest",
+        "Bewerbungsfoto Budapest",
+        "Portraitfotografie Budapest",
+        "Portraitfotograf Budapest"
+      ],
+      "locale": "de-AT",
+      "city": "Budapest",
+      "market": "budapest",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/de-at/portrait/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/de-at/kontakt/",
+        "https://www.banhalmiphotography.com/de-at/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "portrait"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/de-at/anfrage/?service=portrait#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/de-at/portrait/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "brand.vienna.en",
+      "customerProblem": "A coherent set of on-brand photographs for a new website, campaigns, presentations, social media or PR.",
+      "serviceCategory": "brand",
+      "searchTermsAndSynonyms": [
+        "personal branding photographer Vienna",
+        "personal brand photography Vienna",
+        "visual brand photography Vienna"
+      ],
+      "locale": "en",
+      "city": "Vienna",
+      "market": "vienna",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/lifestyle/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/contact/",
+        "https://www.banhalmiphotography.com/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "brand"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/requestaquote/?service=brand&brand_duration=brand120#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/lifestyle/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P1",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "brand.budapest.en",
+      "customerProblem": "A coherent set of on-brand photographs for a new website, campaigns, presentations, social media or PR.",
+      "serviceCategory": "brand",
+      "searchTermsAndSynonyms": [
+        "personal branding photographer Budapest",
+        "personal brand photography Budapest",
+        "visual brand photography Budapest"
+      ],
+      "locale": "en",
+      "city": "Budapest",
+      "market": "budapest",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/lifestyle/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/contact/",
+        "https://www.banhalmiphotography.com/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "brand"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/requestaquote/?service=brand&brand_duration=brand120#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/lifestyle/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "brand.vienna.hu-HU",
+      "customerProblem": "Egységes arculatú képkönyvtár hiányzik a weboldalhoz, kampányhoz, előadáshoz, közösségi médiához vagy sajtóhoz.",
+      "serviceCategory": "brand",
+      "searchTermsAndSynonyms": [
+        "személyes márka fotózás Bécs",
+        "brandfotózás Bécs",
+        "arculati fotózás Bécs"
+      ],
+      "locale": "hu-HU",
+      "city": "Bécs",
+      "market": "vienna",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/hu/brand/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/hu/kapcsolat/",
+        "https://www.banhalmiphotography.com/hu/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "brand"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=brand&brand_duration=brand120#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/hu/brand/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "brand.budapest.hu-HU",
+      "customerProblem": "Egységes arculatú képkönyvtár hiányzik a weboldalhoz, kampányhoz, előadáshoz, közösségi médiához vagy sajtóhoz.",
+      "serviceCategory": "brand",
+      "searchTermsAndSynonyms": [
+        "személyes márka fotózás Budapest",
+        "brandfotózás Budapest",
+        "arculati fotózás Budapest"
+      ],
+      "locale": "hu-HU",
+      "city": "Budapest",
+      "market": "budapest",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/hu/brand/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/hu/kapcsolat/",
+        "https://www.banhalmiphotography.com/hu/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "brand"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=brand&brand_duration=brand120#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/hu/brand/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "brand.vienna.de-AT",
+      "customerProblem": "Ein zusammenhängender Bildbestand für Website, Kampagne, Vortrag, Social Media oder Presse fehlt.",
+      "serviceCategory": "brand",
+      "searchTermsAndSynonyms": [
+        "Personal Branding Fotograf Wien",
+        "Personal Brand Fotograf Wien",
+        "Brandfotografie Wien",
+        "Brand Fotograf Wien"
+      ],
+      "locale": "de-AT",
+      "city": "Wien",
+      "market": "vienna",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/de-at/brand/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/de-at/kontakt/",
+        "https://www.banhalmiphotography.com/de-at/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "brand"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/de-at/anfrage/?service=brand&brand_duration=brand120#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/de-at/brand/",
+      "gsc": {
+        "impressions": 10,
+        "clicks": 0,
+        "ctr": 0.0,
+        "averagePosition": 7.2,
+        "currentlyRankingUrl": "https://www.banhalmiphotography.com/de-at/",
+        "currentlyRankingUrls": [
+          "https://www.banhalmiphotography.com/de-at/"
+        ],
+        "matchingImpressions": 0,
+        "status": "measured_disclosed_rows"
+      },
+      "gapCause": "owner_mismatch_observed_cause_unproven",
+      "priority": "P1",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "brand.budapest.de-AT",
+      "customerProblem": "Ein zusammenhängender Bildbestand für Website, Kampagne, Vortrag, Social Media oder Presse fehlt.",
+      "serviceCategory": "brand",
+      "searchTermsAndSynonyms": [
+        "Personal Branding Fotograf Budapest",
+        "Personal Brand Fotograf Budapest",
+        "Brandfotografie Budapest",
+        "Brand Fotograf Budapest"
+      ],
+      "locale": "de-AT",
+      "city": "Budapest",
+      "market": "budapest",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/de-at/brand/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/de-at/kontakt/",
+        "https://www.banhalmiphotography.com/de-at/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "brand"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/de-at/anfrage/?service=brand&brand_duration=brand120#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/de-at/brand/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "event.vienna.en",
+      "customerProblem": "A corporate, conference or institutional event needs documented moments and usable press images on an agreed deadline.",
+      "serviceCategory": "event",
+      "searchTermsAndSynonyms": [
+        "corporate event photographer Vienna",
+        "conference photographer Vienna",
+        "event photography Vienna",
+        "event photographer Vienna",
+        "reportage photographer Vienna"
+      ],
+      "locale": "en",
+      "city": "Vienna",
+      "market": "vienna",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/event-photography/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/contact/",
+        "https://www.banhalmiphotography.com/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "event"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/official-event-gallery.json",
+          "relation": "documented_event_photography_check_per_record"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/requestaquote/?service=event#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/event-photography/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P1",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "event.budapest.en",
+      "customerProblem": "A corporate, conference or institutional event needs documented moments and usable press images on an agreed deadline.",
+      "serviceCategory": "event",
+      "searchTermsAndSynonyms": [
+        "corporate event photographer Budapest",
+        "conference photographer Budapest",
+        "event photography Budapest",
+        "event photographer Budapest",
+        "reportage photographer Budapest"
+      ],
+      "locale": "en",
+      "city": "Budapest",
+      "market": "budapest",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/event-photography/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/contact/",
+        "https://www.banhalmiphotography.com/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "event"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/requestaquote/?service=event#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/event-photography/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "event.vienna.hu-HU",
+      "customerProblem": "Konferenciáról, vállalati vagy intézményi rendezvényről dokumentáció és a megállapodott határidőre felhasználható sajtóképek kellenek.",
+      "serviceCategory": "event",
+      "searchTermsAndSynonyms": [
+        "rendezvényfotózás Bécs",
+        "konferenciafotózás Bécs",
+        "céges rendezvényfotózás Bécs",
+        "riportfotózás Bécs"
+      ],
+      "locale": "hu-HU",
+      "city": "Bécs",
+      "market": "vienna",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/hu/kapcsolat/",
+        "https://www.banhalmiphotography.com/hu/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "event"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/official-event-gallery.json",
+          "relation": "documented_event_photography_check_per_record"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=event#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "event.budapest.hu-HU",
+      "customerProblem": "Konferenciáról, vállalati vagy intézményi rendezvényről dokumentáció és a megállapodott határidőre felhasználható sajtóképek kellenek.",
+      "serviceCategory": "event",
+      "searchTermsAndSynonyms": [
+        "rendezvényfotózás Budapest",
+        "konferenciafotózás Budapest",
+        "céges rendezvényfotózás Budapest",
+        "riportfotózás Budapest"
+      ],
+      "locale": "hu-HU",
+      "city": "Budapest",
+      "market": "budapest",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/hu/kapcsolat/",
+        "https://www.banhalmiphotography.com/hu/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "event"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=event#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "event.vienna.de-AT",
+      "customerProblem": "Eine Konferenz oder Unternehmens- oder institutionelle Veranstaltung braucht Dokumentation und nutzbare Pressebilder zum vereinbarten Termin.",
+      "serviceCategory": "event",
+      "searchTermsAndSynonyms": [
+        "Eventfotograf Wien",
+        "Eventfotografie Wien",
+        "Kongressfotograf Wien",
+        "Konferenzfotografie Wien",
+        "Reportagefotograf Wien",
+        "Veranstaltungsfotograf Wien"
+      ],
+      "locale": "de-AT",
+      "city": "Wien",
+      "market": "vienna",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/de-at/kontakt/",
+        "https://www.banhalmiphotography.com/de-at/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "event"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/official-event-gallery.json",
+          "relation": "documented_event_photography_check_per_record"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/de-at/anfrage/?service=event#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
+      "gsc": {
+        "impressions": 125,
+        "clicks": 0,
+        "ctr": 0.0,
+        "averagePosition": 2.72,
+        "currentlyRankingUrl": "https://www.banhalmiphotography.com/de-at/",
+        "currentlyRankingUrls": [
+          "https://www.banhalmiphotography.com/de-at/"
+        ],
+        "matchingImpressions": 0,
+        "status": "measured_disclosed_rows"
+      },
+      "gapCause": "owner_mismatch_observed_cause_unproven",
+      "priority": "P1",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "event.budapest.de-AT",
+      "customerProblem": "Eine Konferenz oder Unternehmens- oder institutionelle Veranstaltung braucht Dokumentation und nutzbare Pressebilder zum vereinbarten Termin.",
+      "serviceCategory": "event",
+      "searchTermsAndSynonyms": [
+        "Eventfotograf Budapest",
+        "Eventfotografie Budapest",
+        "Kongressfotograf Budapest",
+        "Konferenzfotografie Budapest",
+        "Reportagefotograf Budapest",
+        "Veranstaltungsfotograf Budapest"
+      ],
+      "locale": "de-AT",
+      "city": "Budapest",
+      "market": "budapest",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/de-at/kontakt/",
+        "https://www.banhalmiphotography.com/de-at/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "event"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/de-at/anfrage/?service=event#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/de-at/eventfotografie/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "artists.vienna.en",
+      "customerProblem": "An actor, musician, dancer or performer needs photographs for casting, a press kit or a professional portfolio.",
+      "serviceCategory": "artists",
+      "searchTermsAndSynonyms": [
+        "actor headshots Vienna",
+        "artist portrait photographer Vienna",
+        "performer portfolio photographer Vienna",
+        "musician portraits Vienna",
+        "casting photos Vienna"
+      ],
+      "locale": "en",
+      "city": "Vienna",
+      "market": "vienna",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/fine-art/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/contact/",
+        "https://www.banhalmiphotography.com/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "fineArt"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/requestaquote/?service=fine-art&art_type=performer#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/fine-art/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P1",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "artists.budapest.en",
+      "customerProblem": "An actor, musician, dancer or performer needs photographs for casting, a press kit or a professional portfolio.",
+      "serviceCategory": "artists",
+      "searchTermsAndSynonyms": [
+        "actor headshots Budapest",
+        "artist portrait photographer Budapest",
+        "performer portfolio photographer Budapest",
+        "musician portraits Budapest",
+        "casting photos Budapest"
+      ],
+      "locale": "en",
+      "city": "Budapest",
+      "market": "budapest",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/fine-art/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/contact/",
+        "https://www.banhalmiphotography.com/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "fineArt"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/requestaquote/?service=fine-art&art_type=performer#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/fine-art/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "artists.vienna.hu-HU",
+      "customerProblem": "Színésznek, zenésznek, táncosnak vagy más előadónak castinghoz, sajtóanyaghoz vagy szakmai portfólióhoz kell képsorozat.",
+      "serviceCategory": "artists",
+      "searchTermsAndSynonyms": [
+        "színészportré Bécs",
+        "castingfotó Bécs",
+        "zenészportré Bécs",
+        "táncosportfólió Bécs",
+        "művészportré Bécs"
+      ],
+      "locale": "hu-HU",
+      "city": "Bécs",
+      "market": "vienna",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/hu/kapcsolat/",
+        "https://www.banhalmiphotography.com/hu/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "fineArt"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=fine-art&art_type=performer#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "artists.budapest.hu-HU",
+      "customerProblem": "Színésznek, zenésznek, táncosnak vagy más előadónak castinghoz, sajtóanyaghoz vagy szakmai portfólióhoz kell képsorozat.",
+      "serviceCategory": "artists",
+      "searchTermsAndSynonyms": [
+        "színészportré Budapest",
+        "castingfotó Budapest",
+        "zenészportré Budapest",
+        "táncosportfólió Budapest",
+        "művészportré Budapest"
+      ],
+      "locale": "hu-HU",
+      "city": "Budapest",
+      "market": "budapest",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/hu/kapcsolat/",
+        "https://www.banhalmiphotography.com/hu/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "fineArt"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/hu/ajanlatkeres/?service=fine-art&art_type=performer#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "artists.vienna.de-AT",
+      "customerProblem": "Schauspiel, Musik, Tanz oder Bühne erfordern passende Fotos für Casting, Pressemappe oder Berufsportfolio.",
+      "serviceCategory": "artists",
+      "searchTermsAndSynonyms": [
+        "Schauspielerporträts Wien",
+        "Schauspieler-Headshots Wien",
+        "Künstlerporträts Wien",
+        "Musikerporträt Wien",
+        "Castingfotos Wien"
+      ],
+      "locale": "de-AT",
+      "city": "Wien",
+      "market": "vienna",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/de-at/fine-art/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/de-at/kontakt/",
+        "https://www.banhalmiphotography.com/de-at/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "fineArt"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/de-at/anfrage/?service=fine-art&art_type=performer#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/de-at/fine-art/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P1",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    },
+    {
+      "intentId": "artists.budapest.de-AT",
+      "customerProblem": "Schauspiel, Musik, Tanz oder Bühne erfordern passende Fotos für Casting, Pressemappe oder Berufsportfolio.",
+      "serviceCategory": "artists",
+      "searchTermsAndSynonyms": [
+        "Schauspielerporträts Budapest",
+        "Schauspieler-Headshots Budapest",
+        "Künstlerporträts Budapest",
+        "Musikerporträt Budapest",
+        "Castingfotos Budapest"
+      ],
+      "locale": "de-AT",
+      "city": "Budapest",
+      "market": "budapest",
+      "intentType": "commercial_service",
+      "primaryLandingPage": "https://www.banhalmiphotography.com/de-at/fine-art/",
+      "secondarySupportPages": [
+        "https://www.banhalmiphotography.com/de-at/kontakt/",
+        "https://www.banhalmiphotography.com/de-at/speier-viko/"
+      ],
+      "relatedCaseStudies": [],
+      "verifiedReferences": [
+        {
+          "url": "https://www.banhalmiphotography.com/market-geography.json",
+          "relation": "declared_service_area_not_case_proof"
+        },
+        {
+          "url": "https://www.banhalmiphotography.com/service-trust-evidence.json",
+          "relation": "verified_evidence_registry_not_endorsement",
+          "key": "fineArt"
+        }
+      ],
+      "cta": "https://www.banhalmiphotography.com/de-at/anfrage/?service=fine-art&art_type=performer#quote-calculator",
+      "desiredRankingUrl": "https://www.banhalmiphotography.com/de-at/fine-art/",
+      "gsc": {
+        "impressions": null,
+        "clicks": null,
+        "ctr": null,
+        "averagePosition": null,
+        "currentlyRankingUrl": null,
+        "currentlyRankingUrls": [],
+        "matchingImpressions": null,
+        "status": "no_disclosed_classifiable_rows"
+      },
+      "gapCause": "insufficient_disclosed_data",
+      "priority": "P2",
+      "measurementStatus": "baseline_before_351_settled",
+      "technicalAcceptance": {
+        "http": 200,
+        "canonical": true,
+        "hreflangReciprocal": true,
+        "inSitemap": true,
+        "visibleCity": true,
+        "serviceProviderMatch": true,
+        "ctaInStaticHtml": true,
+        "exactLiveAtBaseline": true
+      },
+      "evaluationStatus": "offline_evidence_only_not_an_external_model_recommendation"
+    }
+  ]
+}
