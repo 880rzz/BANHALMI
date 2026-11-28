@@ -35,38 +35,45 @@ const homes = [
   {
     path: 'index.html',
     title: 'BANHALMI | Portrait & brand photography | Vienna–Budapest',
+    routes: ["/portrait/","/lifestyle/","/event-photography/","/fine-art/"],
     anchors: [
-      'Portrait photography in Vienna &amp; Budapest ›',
-      'Brand photography in Vienna &amp; Budapest ›',
+      'Portrait photography for leaders in Vienna &amp; Budapest ›',
+      'Personal branding in Vienna &amp; Budapest ›',
       'Event photography in Vienna &amp; Budapest ›',
-      'Fine Art photography in Vienna &amp; Budapest ›'
+      'Artist portfolios in Vienna &amp; Budapest ›'
     ]
   },
   {
     path: 'hu/index.html',
     title: 'BANHALMI | Portréfotózás és brandfotózás | Bécs–Budapest',
+    routes: ["/hu/portre/","/hu/brand/","/hu/rendezvenyfotozas/","/hu/muveszi-fotografia/"],
     anchors: [
-      'Portréfotózás Bécsben és Budapesten ›',
-      'Brandfotózás Bécsben és Budapesten ›',
+      'Portréfotózás vezetőknek Bécsben és Budapesten ›',
+      'Personal branding fotózás Bécsben és Budapesten ›',
       'Rendezvényfotózás Bécsben és Budapesten ›',
-      'Művészi fotózás Bécsben és Budapesten ›'
+      'Művészportfólió Bécsben és Budapesten ›'
     ]
   },
   {
     path: 'de-at/index.html',
     title: 'BANHALMI | Porträt- & Brandfotografie | Wien–Budapest',
+    routes: ["/de-at/portrait/","/de-at/brand/","/de-at/eventfotografie/","/de-at/fine-art/"],
     anchors: [
       'Portraitfotografie in Wien &amp; Budapest ›',
-      'Brandfotografie in Wien &amp; Budapest ›',
-      'Eventfotografie in Wien &amp; Budapest ›',
-      'Fine-Art-Fotografie in Wien &amp; Budapest ›'
+      'Personal Branding in Wien &amp; Budapest ›',
+      'Eventfotografie &amp; Reportage in Wien &amp; Budapest ›',
+      'Künstlerportfolios in Wien &amp; Budapest ›'
     ]
   }
 ];
 for (const home of homes) {
   const html = read(home.path);
   if (!html.includes(`<title>${home.title}</title>`)) errors.push(`${home.path}: protected homepage title changed`);
-  for (const anchor of home.anchors) if (!html.includes(anchor)) errors.push(`${home.path}: missing contextual service anchor ${anchor}`);
+  const cards = [...html.matchAll(/<a class="card reveal" href="([^"]+)">([\s\S]*?)<\/a>/g)];
+  for (const [i, anchor] of home.anchors.entries()) {
+    const matches = cards.filter(card => card[1] === home.routes[i] && card[2].includes('<span class="more">' + anchor + '</span>'));
+    if (matches.length !== 1) errors.push(`${home.path}: missing or duplicate contextual service anchor ${anchor} for ${home.routes[i]}`);
+  }
 }
 
 const serviceOwners = [
