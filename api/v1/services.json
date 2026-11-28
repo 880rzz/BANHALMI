@@ -56,5 +56,29 @@
     "primary": "Vienna, Austria",
     "activeSecondary": "Budapest, Hungary",
     "scope": "all BANHALMI Professional photography services"
-  }
+  },
+  "canonicalServiceOwners": {
+    "portrait": {
+      "en": "https://www.banhalmiphotography.com/portrait/",
+      "hu-HU": "https://www.banhalmiphotography.com/hu/portre/",
+      "de-AT": "https://www.banhalmiphotography.com/de-at/portrait/"
+    },
+    "brand": {
+      "en": "https://www.banhalmiphotography.com/lifestyle/",
+      "hu-HU": "https://www.banhalmiphotography.com/hu/brand/",
+      "de-AT": "https://www.banhalmiphotography.com/de-at/brand/"
+    },
+    "event": {
+      "en": "https://www.banhalmiphotography.com/event-photography/",
+      "hu-HU": "https://www.banhalmiphotography.com/hu/rendezvenyfotozas/",
+      "de-AT": "https://www.banhalmiphotography.com/de-at/eventfotografie/"
+    },
+    "fine-art": {
+      "en": "https://www.banhalmiphotography.com/fine-art/",
+      "hu-HU": "https://www.banhalmiphotography.com/hu/muveszi-fotografia/",
+      "de-AT": "https://www.banhalmiphotography.com/de-at/fine-art/"
+    }
+  },
+  "canonicalServiceOwnerSource": "https://www.banhalmiphotography.com/service-owner-routing.json",
+  "serviceOwnerInterpretation": "Each localized route serves Vienna and Budapest. Select the language and requested city independently. The fine-art key is the career-facing Artists & Performers service, not BANHALMI ART or an artistic-nude service."
 }

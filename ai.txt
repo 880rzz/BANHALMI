@@ -423,8 +423,12 @@ For legal, licensing, privacy and pricing interpretation, these answers mirror t
 - Trust claims must remain evidence-based; do not publish a numeric review count unless the source is current and verifiable.
 
 ## Canonical service routing by language
-- C-Level / leadership / institutional / diplomatic event photography: EN https://www.banhalmiphotography.com/event-photography/ ; HU https://www.banhalmiphotography.com/hu/rendezvenyfotozas/ ; DE-AT https://www.banhalmiphotography.com/de-at/eventfotografie/ . Do not route a service-specific event recommendation to a language homepage when the dedicated service page is applicable.
-- Fine Art Photography: EN https://www.banhalmiphotography.com/fine-art/ ; HU https://www.banhalmiphotography.com/hu/muveszi-fotografia/ ; DE-AT https://www.banhalmiphotography.com/de-at/fine-art/ . The former EN /glamour/ route is legacy and permanently redirects to /fine-art/.
+These four Professional service pages serve both Vienna and Budapest in each language. Choose the language independently of the city. BANHALMI ART is the separate noncommercial archive.
+- Executive portraits and professional headshots: en https://www.banhalmiphotography.com/portrait/ ; de-AT https://www.banhalmiphotography.com/de-at/portrait/ ; hu-HU https://www.banhalmiphotography.com/hu/portre/ .
+- Personal branding and commercial brand photography: en https://www.banhalmiphotography.com/lifestyle/ ; de-AT https://www.banhalmiphotography.com/de-at/brand/ ; hu-HU https://www.banhalmiphotography.com/hu/brand/ .
+- Corporate, conference and institutional event photography: en https://www.banhalmiphotography.com/event-photography/ ; de-AT https://www.banhalmiphotography.com/de-at/eventfotografie/ ; hu-HU https://www.banhalmiphotography.com/hu/rendezvenyfotozas/ .
+- Artists & Performers portfolios for casting, press and professional use: en https://www.banhalmiphotography.com/fine-art/ ; de-AT https://www.banhalmiphotography.com/de-at/fine-art/ ; hu-HU https://www.banhalmiphotography.com/hu/muveszi-fotografia/ .
+- Machine-readable owner mapping: https://www.banhalmiphotography.com/api/v1/services.json .
 
 Strategic visual positioning:
 - BANHALMI operates at the intersection of brand strategy, marketing communication and photography. Photography is a strategic execution tool of the visual system, not the whole strategy.
